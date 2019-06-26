@@ -2,60 +2,81 @@ Return-Path: <jfs-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+jfs-discussion@lfdr.de
 Delivered-To: lists+jfs-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id 13EA956129
-	for <lists+jfs-discussion@lfdr.de>; Wed, 26 Jun 2019 06:12:45 +0200 (CEST)
-Received: from [127.0.0.1] (helo=sfs-ml-1.v29.lw.sourceforge.com)
-	by sfs-ml-1.v29.lw.sourceforge.com with esmtp (Exim 4.90_1)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8E912569B1
+	for <lists+jfs-discussion@lfdr.de>; Wed, 26 Jun 2019 14:48:44 +0200 (CEST)
+Received: from [127.0.0.1] (helo=sfs-ml-3.v29.lw.sourceforge.com)
+	by sfs-ml-3.v29.lw.sourceforge.com with esmtp (Exim 4.90_1)
 	(envelope-from <jfs-discussion-bounces@lists.sourceforge.net>)
-	id 1hfzI3-0006da-Ou; Wed, 26 Jun 2019 04:12:11 +0000
+	id 1hg7LO-0001Yp-Hc; Wed, 26 Jun 2019 12:48:10 +0000
 Received: from [172.30.20.202] (helo=mx.sourceforge.net)
  by sfs-ml-1.v29.lw.sourceforge.com with esmtps
  (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
- (envelope-from <viro@ftp.linux.org.uk>)
- id 1hfzI2-0006dK-JU; Wed, 26 Jun 2019 04:12:10 +0000
+ (envelope-from <rpeterso@redhat.com>)
+ id 1hg6vG-0005IT-Kc; Wed, 26 Jun 2019 12:21:10 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=sourceforge.net; s=x; h=Sender:In-Reply-To:Content-Type:MIME-Version:
- References:Message-ID:Subject:Cc:To:From:Date:Reply-To:
- Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
- Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
- List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=rH4OF0GHPClOZ4K9k6rCWew4+MWIr6v83apdz0y+Mu4=; b=Ak2tnFKQVG4SP3Qp/bHhalEFc
- 059qSb2TZBycHGyWpbPPR+uvra8QGSwsHLQSnAOHGK5QTTeF3B7za34nIMuaPnp6YyIWuSDZ5g/eG
- 18xBDkDC96PN6Hnuy0Pu0+buTH1L1Ha9HZoL+3VaQuSi+cQS+Ytwd2cD6DiIC7egh2xVo=;
+ d=sourceforge.net; s=x; h=Content-Transfer-Encoding:Content-Type:MIME-Version
+ :Subject:References:In-Reply-To:Message-ID:Cc:To:From:Date:Sender:Reply-To:
+ Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
+ Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
+ List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=lJpZ5W/5WxDNjMZm8yNYs4WsNv/o06f5eh03oqGL7gg=; b=LQmivjpWsP7QfPOQlqVfDC46i9
+ CIT39xat08JTD4FWXmDRC5dXZgmhkwM2/3xtHloFgR/wiypjPmrBE7SL1ZsQMTbEbksZGu0iSCi+s
+ f8TvgKh6TuEDcIndD7XSRMebZAV9BFbfEK28GUQ9ZKrImEh1XdJ9kYRWMBjQHZa2t0e8=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
- h=Sender:In-Reply-To:Content-Type:MIME-Version:References:Message-ID:
- Subject:Cc:To:From:Date:Reply-To:Content-Transfer-Encoding:Content-ID:
+ h=Content-Transfer-Encoding:Content-Type:MIME-Version:Subject:References:
+ In-Reply-To:Message-ID:Cc:To:From:Date:Sender:Reply-To:Content-ID:
  Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
  :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
  List-Post:List-Owner:List-Archive;
- bh=rH4OF0GHPClOZ4K9k6rCWew4+MWIr6v83apdz0y+Mu4=; b=ATLP4+HuRwmNLtUvFNJRV+wdHP
- N8J71OgmsL4aaFnsk71skhCpxCABLHydFuFEdw2c420H/JZqJt6ekwsd9qy4+gteoTthda47RXLlN
- zK59WQoNq+fLuyWCZS8RmBbDdK4ChAxq7UjMvZYRHskOfRcUgHC020YY+tjdW+oWCEms=;
-Received: from zeniv.linux.org.uk ([195.92.253.2])
+ bh=lJpZ5W/5WxDNjMZm8yNYs4WsNv/o06f5eh03oqGL7gg=; b=Wxb6gZI8g0WMC3brue4chpOfYF
+ iXtrymqcHZO0OMpRjwPumbsKYOjaxW8PEDs7KawI7cRy7Np/f94y/+uxUPXIRH+SJbbTyEDc+eFt4
+ 9C0lttXmpBlTyztKGEIaSZYYKMus/g75gfQxPLQ34BaURpOgIr0mgRe9ApS9B2LXtUTU=;
+Received: from mx1.redhat.com ([209.132.183.28])
  by sfi-mx-1.v28.lw.sourceforge.com with esmtps
  (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
- id 1hfzI9-00AMpy-6y; Wed, 26 Jun 2019 04:12:21 +0000
-Received: from viro by ZenIV.linux.org.uk with local (Exim 4.92 #3 (Red Hat
- Linux)) id 1hfzHR-0000Pn-Ag; Wed, 26 Jun 2019 04:11:33 +0000
-Date: Wed, 26 Jun 2019 05:11:33 +0100
-From: Al Viro <viro@zeniv.linux.org.uk>
+ id 1hg6vQ-00Ap2M-Ty; Wed, 26 Jun 2019 12:21:22 +0000
+Received: from smtp.corp.redhat.com (int-mx04.intmail.prod.int.phx2.redhat.com
+ [10.5.11.14])
+ (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
+ (No client certificate requested)
+ by mx1.redhat.com (Postfix) with ESMTPS id 6DBE3308792C;
+ Wed, 26 Jun 2019 12:20:52 +0000 (UTC)
+Received: from colo-mx.corp.redhat.com
+ (colo-mx01.intmail.prod.int.phx2.redhat.com [10.5.11.20])
+ by smtp.corp.redhat.com (Postfix) with ESMTPS id 0DAEC5D9C6;
+ Wed, 26 Jun 2019 12:20:49 +0000 (UTC)
+Received: from zmail21.collab.prod.int.phx2.redhat.com
+ (zmail21.collab.prod.int.phx2.redhat.com [10.5.83.24])
+ by colo-mx.corp.redhat.com (Postfix) with ESMTP id 26F8E1806B0E;
+ Wed, 26 Jun 2019 12:20:43 +0000 (UTC)
+Date: Wed, 26 Jun 2019 08:20:42 -0400 (EDT)
+From: Bob Peterson <rpeterso@redhat.com>
 To: "Darrick J. Wong" <darrick.wong@oracle.com>
-Message-ID: <20190626041133.GB32272@ZenIV.linux.org.uk>
+Message-ID: <868182386.37358699.1561551642881.JavaMail.zimbra@redhat.com>
+In-Reply-To: <156151633004.2283456.4175543089138173586.stgit@magnolia>
 References: <156151632209.2283456.3592379873620132456.stgit@magnolia>
- <156151633829.2283456.834142172527987802.stgit@magnolia>
+ <156151633004.2283456.4175543089138173586.stgit@magnolia>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <156151633829.2283456.834142172527987802.stgit@magnolia>
-User-Agent: Mutt/1.11.3 (2019-02-01)
-X-Spam-Score: 0.0 (/)
+X-Originating-IP: [10.3.116.201, 10.4.195.9]
+Thread-Topic: create a generic checking and prep function for FS_IOC_SETFLAGS
+Thread-Index: 5u1cuSAsKRaw36dS1F+PjLFgFqc7sA==
+X-Scanned-By: MIMEDefang 2.79 on 10.5.11.14
+X-Greylist: Sender IP whitelisted, not delayed by milter-greylist-4.5.16
+ (mx1.redhat.com [10.5.110.45]); Wed, 26 Jun 2019 12:21:15 +0000 (UTC)
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: Spam Filtering performed by mx.sourceforge.net.
  See http://spamassassin.org/tag/ for more details.
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
-X-Headers-End: 1hfzI9-00AMpy-6y
-Subject: Re: [Jfs-discussion] [PATCH 2/5] vfs: create a generic checking
- function for FS_IOC_FSSETXATTR
+ 0.0 URIBL_BLOCKED ADMINISTRATOR NOTICE: The query to URIBL was blocked.
+ See
+ http://wiki.apache.org/spamassassin/DnsBlocklists#dnsbl-block
+ for more information. [URIs: suse.com]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+X-Headers-End: 1hg6vQ-00Ap2M-Ty
+X-Mailman-Approved-At: Wed, 26 Jun 2019 12:48:09 +0000
+Subject: Re: [Jfs-discussion] [Cluster-devel] [PATCH 1/5] vfs: create a
+ generic checking and prep function for FS_IOC_SETFLAGS
 X-BeenThere: jfs-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -68,45 +89,57 @@ List-Help: <mailto:jfs-discussion-request@lists.sourceforge.net?subject=help>
 List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/jfs-discussion>, 
  <mailto:jfs-discussion-request@lists.sourceforge.net?subject=subscribe>
 Cc: shaggy@kernel.org, jfs-discussion@lists.sourceforge.net,
- linux-efi@vger.kernel.org, Jan Kara <jack@suse.cz>, hch@infradead.org,
- linux-btrfs@vger.kernel.org, yuchao0@huawei.com, clm@fb.com,
- adilger.kernel@dilger.ca, matthew.garrett@nebula.com,
- linux-nilfs@vger.kernel.org, cluster-devel@redhat.com,
- linux-ext4@vger.kernel.org, josef@toxicpanda.com,
- reiserfs-devel@vger.kernel.org, dsterba@suse.com, jaegeuk@kernel.org,
- tytso@mit.edu, ard.biesheuvel@linaro.org, linux-kernel@vger.kernel.org,
+ linux-efi@vger.kernel.org, Jan Kara <jack@suse.cz>, yuchao0@huawei.com,
+ clm@fb.com, adilger kernel <adilger.kernel@dilger.ca>,
+ ocfs2-devel@oss.oracle.com, Christoph Hellwig <hch@lst.de>,
+ matthew garrett <matthew.garrett@nebula.com>, cluster-devel@redhat.com,
+ hch@infradead.org, linux-ext4@vger.kernel.org, josef@toxicpanda.com,
+ reiserfs-devel@vger.kernel.org, linux-nilfs@vger.kernel.org,
+ viro@zeniv.linux.org.uk, dsterba@suse.com, jaegeuk@kernel.org, tytso@mit.edu,
+ ard biesheuvel <ard.biesheuvel@linaro.org>, linux-kernel@vger.kernel.org,
  linux-f2fs-devel@lists.sourceforge.net, linux-xfs@vger.kernel.org,
  jk@ozlabs.org, jack@suse.com, linux-fsdevel@vger.kernel.org,
- linux-mtd@lists.infradead.org, ocfs2-devel@oss.oracle.com
+ linux-mtd@lists.infradead.org, linux-btrfs@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Errors-To: jfs-discussion-bounces@lists.sourceforge.net
 
-On Tue, Jun 25, 2019 at 07:32:18PM -0700, Darrick J. Wong wrote:
-> --- a/fs/btrfs/ioctl.c
-> +++ b/fs/btrfs/ioctl.c
-> @@ -373,10 +373,9 @@ static int check_xflags(unsigned int flags)
->  static int btrfs_ioctl_fsgetxattr(struct file *file, void __user *arg)
->  {
->  	struct btrfs_inode *binode = BTRFS_I(file_inode(file));
-> -	struct fsxattr fa;
-> -
-> -	memset(&fa, 0, sizeof(fa));
-> -	fa.fsx_xflags = btrfs_inode_flags_to_xflags(binode->flags);
-> +	struct fsxattr fa = {
-> +		.fsx_xflags = btrfs_inode_flags_to_xflags(binode->flags),
-> +	};
+----- Original Message -----
+> From: Darrick J. Wong <darrick.wong@oracle.com>
+> 
+> Create a generic function to check incoming FS_IOC_SETFLAGS flag values
+> and later prepare the inode for updates so that we can standardize the
+> implementations that follow ext4's flag values.
+> 
+> Signed-off-by: Darrick J. Wong <darrick.wong@oracle.com>
+> Reviewed-by: Jan Kara <jack@suse.cz>
+> Reviewed-by: Christoph Hellwig <hch@lst.de>
+> Acked-by: David Sterba <dsterba@suse.com>
+> ---
+>  fs/btrfs/ioctl.c    |   13 +++++--------
+>  fs/efivarfs/file.c  |   26 +++++++++++++++++---------
+>  fs/ext2/ioctl.c     |   16 ++++------------
+>  fs/ext4/ioctl.c     |   13 +++----------
+>  fs/f2fs/file.c      |    7 ++++---
+>  fs/gfs2/file.c      |   42 +++++++++++++++++++++++++++++-------------
+>  fs/hfsplus/ioctl.c  |   21 ++++++++++++---------
+>  fs/inode.c          |   24 ++++++++++++++++++++++++
+>  fs/jfs/ioctl.c      |   22 +++++++---------------
+>  fs/nilfs2/ioctl.c   |    9 ++-------
+>  fs/ocfs2/ioctl.c    |   13 +++----------
+>  fs/orangefs/file.c  |   35 ++++++++++++++++++++++++++---------
+>  fs/reiserfs/ioctl.c |   10 ++++------
+>  fs/ubifs/ioctl.c    |   13 +++----------
+>  include/linux/fs.h  |    3 +++
+>  15 files changed, 146 insertions(+), 121 deletions(-)
 
-Umm...  Sure, there's no padding, but still - you are going to copy that thing
-to userland...  How about
+The gfs2 portion looks correct.
 
-static inline void simple_fill_fsxattr(struct fsxattr *fa, unsigned xflags)
-{
-	memset(fa, 0, sizeof(*fa));
-	fa->fsx_xflags = xflags;
-}
+Reviewed-by: Bob Peterson <rpeterso@redhat.com>
 
-and let the compiler optimize the crap out?
+Regards,
+
+Bob Peterson
 
 
 _______________________________________________
