@@ -2,27 +2,26 @@ Return-Path: <jfs-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+jfs-discussion@lfdr.de
 Delivered-To: lists+jfs-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0930E56DF9
-	for <lists+jfs-discussion@lfdr.de>; Wed, 26 Jun 2019 17:44:03 +0200 (CEST)
-Received: from [127.0.0.1] (helo=sfs-ml-1.v29.lw.sourceforge.com)
-	by sfs-ml-1.v29.lw.sourceforge.com with esmtp (Exim 4.90_1)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5C35757566
+	for <lists+jfs-discussion@lfdr.de>; Thu, 27 Jun 2019 02:22:47 +0200 (CEST)
+Received: from [127.0.0.1] (helo=sfs-ml-2.v29.lw.sourceforge.com)
+	by sfs-ml-2.v29.lw.sourceforge.com with esmtp (Exim 4.90_1)
 	(envelope-from <jfs-discussion-bounces@lists.sourceforge.net>)
-	id 1hgA59-0007zx-Ed; Wed, 26 Jun 2019 15:43:35 +0000
+	id 1hgIBC-000872-Jo; Thu, 27 Jun 2019 00:22:22 +0000
 Received: from [172.30.20.202] (helo=mx.sourceforge.net)
- by sfs-ml-1.v29.lw.sourceforge.com with esmtps
+ by sfs-ml-2.v29.lw.sourceforge.com with esmtps
  (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
- (envelope-from
- <BATV+ab1f803c58217d155be4+5785+infradead.org+hch@bombadil.srs.infradead.org>)
- id 1hgA58-0007zi-H7; Wed, 26 Jun 2019 15:43:34 +0000
+ (envelope-from <darrick.wong@oracle.com>)
+ id 1hgIBB-00086q-7S; Thu, 27 Jun 2019 00:22:21 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=sourceforge.net; s=x; h=In-Reply-To:Content-Type:MIME-Version:References:
  Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:Content-Transfer-Encoding:
  Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
  Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=DVYqe3tpQ8e1sMTCWOSh9xLpYFRFLHE+hBBBu6gUiVY=; b=Wrc3c3PjdFvz74KH1kSO9Nhhaw
- 0waAJRO+U6BfuFNsAjnJtg79ziyFunycwbJ7OjyslXxHwfaMTT1/evlZ/uW61zDpve6/DHMWlWcSY
- kL+NIbB/bE4kibVHcFJE5qrFweIPlu1kxlqxzt2wWcpxxUL5rxmc6pz0NmU/79Cefz68=;
+ bh=OZ6e0FbvZ6ih1IklP3kOWEbcdJlaHfvXLF3leRVcWUY=; b=HhOO0X6LdUu2zIZfMLWyFP0mwy
+ CjQVuXbLAkUMbRtNMRS7o/7/6iV38zFLZMFiQejjdKVQBRBBhw8blFpv/pCKrCFr92eN6isqvDnUw
+ UHB2aGcBPS1kk/rRSY6sTgFTVtPTcB8hK+uCqB1CsMLhjCSQxIFV/qTUMhpgxgA7lIbA=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
  h=In-Reply-To:Content-Type:MIME-Version:References:Message-ID:Subject:Cc:To
@@ -30,52 +29,84 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
  :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
  List-Post:List-Owner:List-Archive;
- bh=DVYqe3tpQ8e1sMTCWOSh9xLpYFRFLHE+hBBBu6gUiVY=; b=DQD9+rVW0G9aLRnxIlq+P74uKD
- xe0tCCfzKE05KYgfef+PCxDjhPeSdWE1q61K0L6Xj1MCQNaq72JptC0nfDaqm2y68K+52yF6hDFBz
- eS8JRDHujl067YA6l1efAEYQa0b3msRGWLeIHSquhX0iVbTbnUxU3aadCsnuzB2c0lE4=;
-Received: from bombadil.infradead.org ([198.137.202.133])
- by sfi-mx-3.v28.lw.sourceforge.com with esmtps
+ bh=OZ6e0FbvZ6ih1IklP3kOWEbcdJlaHfvXLF3leRVcWUY=; b=Tagq4f6+q+lBwyLZNNa6SRATYB
+ R1IpSRzP0brrXrPmegTZfWDtL8Zz5v0XL0ht1B5bXV1NtfS0ynGBabtl1k7YYmXjKKw4lZRkyekm2
+ BwqWiYQkj6ePAD6GtZ6UkeiAxF9ez3saD56G1BRBvk7bHFhGptizYnA79OfpHisoj6eU=;
+Received: from userp2130.oracle.com ([156.151.31.86])
+ by sfi-mx-1.v28.lw.sourceforge.com with esmtps
  (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
- id 1hgA5H-00Es49-Ep; Wed, 26 Jun 2019 15:43:46 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=infradead.org; s=bombadil.20170209; h=In-Reply-To:Content-Type:MIME-Version
- :References:Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:
- Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
- Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
- List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=DVYqe3tpQ8e1sMTCWOSh9xLpYFRFLHE+hBBBu6gUiVY=; b=JiqZyiWjMhOWaBcr2IrbgLkM4
- 0syeulFERs2blphfx8J9OQQYfDcD66MEDA/eYqMG3YlVaiNtVmnfwdsQ65mUOa5tobSAjIu4o0moB
- 8ozOmeOpYAerFJ54x2vEzjiR8SfnDfyWG+bdR1ZUOZNrlL/SYacZFBNxtNQ7BkGu8CuE2RuIHDLu+
- CaRHYuI+HSdl81J/22Qtg+UiLTkGUTCTPoK9RgIw1FJLZsPC0ZS5UU4A0RQGMZLPHDKHcZxxfrX3Z
- j7RrqvM1qVcwEiIAm5WRBQmOct/BZjqliivvm1uRzpyKv/GzpK/wBw3vN8gt+E6H+zEEVMvM/k0vT
- MgqmUKwSQ==;
-Received: from hch by bombadil.infradead.org with local (Exim 4.92 #3 (Red Hat
- Linux)) id 1hgA4c-0000SB-CS; Wed, 26 Jun 2019 15:43:02 +0000
-Date: Wed, 26 Jun 2019 08:43:02 -0700
-From: Christoph Hellwig <hch@infradead.org>
-To: "Darrick J. Wong" <darrick.wong@oracle.com>
-Message-ID: <20190626154302.GA31445@infradead.org>
+ id 1hgIBD-00CE3x-Gu; Thu, 27 Jun 2019 00:22:26 +0000
+Received: from pps.filterd (userp2130.oracle.com [127.0.0.1])
+ by userp2130.oracle.com (8.16.0.27/8.16.0.27) with SMTP id x5R095sZ153911;
+ Thu, 27 Jun 2019 00:21:35 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=oracle.com;
+ h=date : from : to : cc
+ : subject : message-id : references : mime-version : content-type :
+ in-reply-to; s=corp-2018-07-02;
+ bh=OZ6e0FbvZ6ih1IklP3kOWEbcdJlaHfvXLF3leRVcWUY=;
+ b=nB7qaexUVLsnWtZZL8ilmpxLc4CbV8CD4zkMKrWoh3xml3JhUaIp9+OiX8KWgEiq+QTV
+ TmxH5cPDR/GN/Mim9pS0HSeUZriivu5IXjKymJeB4VlwuYqux8YFE96Q7ZuFaywS9GAs
+ IfOynDYAH9wgXQWBBSy6D0VCSg6NmF9n/ECyAKjhrIbHx+AeA7tGFvV0wlMxz0hVhnnB
+ xmxNQ5IUCjtH5vC5g7w5I84m4u6ESWlV3qRYMg8v1xYN3YBxl87OiOZnnvitl0kRmOQG
+ ZRsajauz8/ilsNemW/ld4kcCe0+NXHIqitakDgA0iOejAf6kjQWlHHswxg9S0B9x2R/i YA== 
+Received: from userp3030.oracle.com (userp3030.oracle.com [156.151.31.80])
+ by userp2130.oracle.com with ESMTP id 2t9brtd8qm-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
+ Thu, 27 Jun 2019 00:21:34 +0000
+Received: from pps.filterd (userp3030.oracle.com [127.0.0.1])
+ by userp3030.oracle.com (8.16.0.27/8.16.0.27) with SMTP id x5R0I1KJ030470;
+ Thu, 27 Jun 2019 00:19:34 GMT
+Received: from pps.reinject (localhost [127.0.0.1])
+ by userp3030.oracle.com with ESMTP id 2t99f4r2nb-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=FAIL);
+ Thu, 27 Jun 2019 00:19:34 +0000
+Received: from userp3030.oracle.com (userp3030.oracle.com [127.0.0.1])
+ by pps.reinject (8.16.0.27/8.16.0.27) with SMTP id x5R0JYLu032344;
+ Thu, 27 Jun 2019 00:19:34 GMT
+Received: from userv0122.oracle.com (userv0122.oracle.com [156.151.31.75])
+ by userp3030.oracle.com with ESMTP id 2t99f4r2n4-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
+ Thu, 27 Jun 2019 00:19:34 +0000
+Received: from abhmp0013.oracle.com (abhmp0013.oracle.com [141.146.116.19])
+ by userv0122.oracle.com (8.14.4/8.14.4) with ESMTP id x5R0JTqS006644;
+ Thu, 27 Jun 2019 00:19:29 GMT
+Received: from localhost (/10.145.178.41)
+ by default (Oracle Beehive Gateway v4.0)
+ with ESMTP ; Wed, 26 Jun 2019 17:19:28 -0700
+Date: Wed, 26 Jun 2019 17:19:26 -0700
+From: "Darrick J. Wong" <darrick.wong@oracle.com>
+To: Christoph Hellwig <hch@infradead.org>
+Message-ID: <20190627001926.GL5171@magnolia>
 References: <156151632209.2283456.3592379873620132456.stgit@magnolia>
  <156151633829.2283456.834142172527987802.stgit@magnolia>
  <20190626041133.GB32272@ZenIV.linux.org.uk>
  <20190626153542.GE5171@magnolia>
+ <20190626154302.GA31445@infradead.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20190626153542.GE5171@magnolia>
-User-Agent: Mutt/1.11.4 (2019-03-13)
-X-SRS-Rewrite: SMTP reverse-path rewritten from <hch@infradead.org> by
- bombadil.infradead.org. See http://www.infradead.org/rpr.html
+In-Reply-To: <20190626154302.GA31445@infradead.org>
+User-Agent: Mutt/1.9.4 (2018-02-28)
+X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9300
+ signatures=668687
+X-Proofpoint-Spam-Details: rule=notspam policy=default score=0
+ priorityscore=1501 malwarescore=0
+ suspectscore=0 phishscore=0 bulkscore=0 spamscore=0 clxscore=1015
+ lowpriorityscore=0 mlxscore=0 impostorscore=0 mlxlogscore=999 adultscore=0
+ classifier=spam adjust=0 reason=mlx scancount=1 engine=8.0.1-1810050000
+ definitions=main-1906270000
 X-Spam-Score: -0.1 (/)
 X-Spam-Report: Spam Filtering performed by mx.sourceforge.net.
  See http://spamassassin.org/tag/ for more details.
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_AU Message has a valid DKIM or DK signature from author's
  domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature,
  not necessarily valid
-X-Headers-End: 1hgA5H-00Es49-Ep
+ 0.0 UNPARSEABLE_RELAY Informational: message has unparseable relay lines
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+X-Headers-End: 1hgIBD-00CE3x-Gu
 Subject: Re: [Jfs-discussion] [PATCH 2/5] vfs: create a generic checking
  function for FS_IOC_FSSETXATTR
 X-BeenThere: jfs-discussion@lists.sourceforge.net
@@ -90,7 +121,7 @@ List-Help: <mailto:jfs-discussion-request@lists.sourceforge.net?subject=help>
 List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/jfs-discussion>, 
  <mailto:jfs-discussion-request@lists.sourceforge.net?subject=subscribe>
 Cc: shaggy@kernel.org, jfs-discussion@lists.sourceforge.net,
- linux-efi@vger.kernel.org, Jan Kara <jack@suse.cz>, hch@infradead.org,
+ linux-efi@vger.kernel.org, Jan Kara <jack@suse.cz>,
  linux-btrfs@vger.kernel.org, yuchao0@huawei.com, clm@fb.com,
  adilger.kernel@dilger.ca, matthew.garrett@nebula.com,
  linux-nilfs@vger.kernel.org, cluster-devel@redhat.com,
@@ -105,29 +136,36 @@ Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Errors-To: jfs-discussion-bounces@lists.sourceforge.net
 
-On Wed, Jun 26, 2019 at 08:35:42AM -0700, Darrick J. Wong wrote:
-> > static inline void simple_fill_fsxattr(struct fsxattr *fa, unsigned xflags)
-> > {
-> > 	memset(fa, 0, sizeof(*fa));
-> > 	fa->fsx_xflags = xflags;
-> > }
+On Wed, Jun 26, 2019 at 08:43:02AM -0700, Christoph Hellwig wrote:
+> On Wed, Jun 26, 2019 at 08:35:42AM -0700, Darrick J. Wong wrote:
+> > > static inline void simple_fill_fsxattr(struct fsxattr *fa, unsigned xflags)
+> > > {
+> > > 	memset(fa, 0, sizeof(*fa));
+> > > 	fa->fsx_xflags = xflags;
+> > > }
+> > > 
+> > > and let the compiler optimize the crap out?
 > > 
-> > and let the compiler optimize the crap out?
+> > The v2 series used to do that, but Christoph complained that having a
+> > helper for a two-line memset and initialization was silly[1] so now we
+> > have this version.
+> > 
+> > I don't mind reinstating it as a static inline helper, but I'd like some
+> > input from any of the btrfs developers (or you, Al) about which form is
+> > preferred.
 > 
-> The v2 series used to do that, but Christoph complained that having a
-> helper for a two-line memset and initialization was silly[1] so now we
-> have this version.
-> 
-> I don't mind reinstating it as a static inline helper, but I'd like some
-> input from any of the btrfs developers (or you, Al) about which form is
-> preferred.
+> I complained having that helper in btrfs.  I think Al wants a generic
+> one, which at least makes a little more sense.
 
-I complained having that helper in btrfs.  I think Al wants a generic
-one, which at least makes a little more sense.
+Ok.
 
-That being said I wonder if we should lift these attr ioctls to
-file op methods and deal with all that crap in VFS code instead of
-having all those duplicated ioctl parsers.
+> That being said I wonder if we should lift these attr ioctls to
+> file op methods and deal with all that crap in VFS code instead of
+> having all those duplicated ioctl parsers.
+
+That sounds like an excellent next patchset. :)
+
+--D
 
 
 _______________________________________________
