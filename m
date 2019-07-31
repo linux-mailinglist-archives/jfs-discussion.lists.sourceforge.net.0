@@ -2,78 +2,85 @@ Return-Path: <jfs-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+jfs-discussion@lfdr.de
 Delivered-To: lists+jfs-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id 01A3A7D00D
-	for <lists+jfs-discussion@lfdr.de>; Wed, 31 Jul 2019 23:28:34 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2DF257D05A
+	for <lists+jfs-discussion@lfdr.de>; Wed, 31 Jul 2019 23:56:09 +0200 (CEST)
 Received: from [127.0.0.1] (helo=sfs-ml-1.v29.lw.sourceforge.com)
 	by sfs-ml-1.v29.lw.sourceforge.com with esmtp (Exim 4.90_1)
 	(envelope-from <jfs-discussion-bounces@lists.sourceforge.net>)
-	id 1hsw8x-0007lz-Vv; Wed, 31 Jul 2019 21:28:19 +0000
+	id 1hswZa-0002bs-2N; Wed, 31 Jul 2019 21:55:50 +0000
 Received: from [172.30.20.202] (helo=mx.sourceforge.net)
  by sfs-ml-1.v29.lw.sourceforge.com with esmtps
  (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
- (envelope-from <mchehab+samsung@kernel.org>) id 1hsw8w-0007le-CP
- for jfs-discussion@lists.sourceforge.net; Wed, 31 Jul 2019 21:28:18 +0000
+ (envelope-from <broonie@sirena.org.uk>) id 1hswZY-0002bX-1g
+ for jfs-discussion@lists.sourceforge.net; Wed, 31 Jul 2019 21:55:48 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=sourceforge.net; s=x; h=Content-Transfer-Encoding:Content-Type:MIME-Version
- :References:In-Reply-To:Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:
+ d=sourceforge.net; s=x; h=In-Reply-To:Content-Type:MIME-Version:References:
+ Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:Content-Transfer-Encoding:
  Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
  Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=ojbkQD1a7MQMcAHB0nbk0TNEefbMHs3972JP2NcjJME=; b=Muj4IWhCJIY9X3ETCi4FebfhKZ
- LOLJuSLpSmx28nLAm9be1PFp4XawYuf18EhuH6DOwVk6a92+dheq72RVemjaqYxBH7dhNfGBxEk9W
- 7YROctgeWnnjw4I1bj41nSn3Z/85IRYgDVqjwhdlUpcaaJiLMJq54NQ64bBUgjOb4xx8=;
+ bh=K/tOdg0rARIHNKt8myQdNk7juboEm6U9R00/FeIUiBE=; b=ZNLC1xSRAN+lLR59H6y4TbEskT
+ 0x1g0tTTH5D5Kz3y04TQwq8GMj5qdRVqKJRbgknwI92EXrjrtJddH32qkfyuvzrbQWnPjWJ+XmVx1
+ XqyXlgQP729tKMq5+Hy27ivfm57tXje8suATb6j3buXzap9ifoNlT5dZCv21Wf8uGixA=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
- h=Content-Transfer-Encoding:Content-Type:MIME-Version:References:
- In-Reply-To:Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:Content-ID:
+ h=In-Reply-To:Content-Type:MIME-Version:References:Message-ID:Subject:Cc:To
+ :From:Date:Sender:Reply-To:Content-Transfer-Encoding:Content-ID:
  Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
  :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
  List-Post:List-Owner:List-Archive;
- bh=ojbkQD1a7MQMcAHB0nbk0TNEefbMHs3972JP2NcjJME=; b=CDf1kY6QZ1R9YxRTtGgBUhrDzR
- aiqNx1AAprnpEks/0NU+hsCijDa4QUJzXOUwkpqTsD4TRnvJAdveojOLZCuLI5aXBL7ofk+Y2h6Vr
- xLo4P5ULZS0uRs63xMNB9zRRVUjwrshHmGcWwq7uvVpEX7c/9ncggNxUoIMWaNqxmyGU=;
-Received: from bombadil.infradead.org ([198.137.202.133])
- by sfi-mx-4.v28.lw.sourceforge.com with esmtps
+ bh=K/tOdg0rARIHNKt8myQdNk7juboEm6U9R00/FeIUiBE=; b=d7j9qR+S0URXgb8XZaVIkbsmZ4
+ 7K13KdX3K3Cz+w37ykk/klMEomhs+TflcVn3iUsZYykcG8Q4gESsHXl9hgCqg3+2YRlQI3P+c4PbC
+ gBAiR+2mBc8GcrpeS96VuW4V4lMbZDJQY3trkSzCt2tWYPzzebYtVVg0ytgQWHMmU+gI=;
+Received: from heliosphere.sirena.org.uk ([172.104.155.198])
+ by sfi-mx-1.v28.lw.sourceforge.com with esmtps
  (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
- id 1hsw8v-005g2d-0j
- for jfs-discussion@lists.sourceforge.net; Wed, 31 Jul 2019 21:28:18 +0000
+ id 1hswZW-00491C-7I
+ for jfs-discussion@lists.sourceforge.net; Wed, 31 Jul 2019 21:55:47 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=infradead.org; s=bombadil.20170209; h=Content-Transfer-Encoding:
- Content-Type:MIME-Version:References:In-Reply-To:Message-ID:Subject:Cc:To:
- From:Date:Sender:Reply-To:Content-ID:Content-Description:Resent-Date:
+ d=sirena.org.uk; s=20170815-heliosphere; h=In-Reply-To:Content-Type:
+ MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:
+ Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
  Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
  List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=ojbkQD1a7MQMcAHB0nbk0TNEefbMHs3972JP2NcjJME=; b=g83i6fG6pLz5k+ubFSnN8EkA5
- UONDm7X0pnk+aEXdmFccZHoiA/MwLcT3bciBvO1P/EPjm9w8DWxTy97HZrc+BdRKb+EgxEQ2sotEY
- MsEte0kaui9SJBYnpz2cVbQjTQfjElvMKIWI6V5wqmkV+8dU6kjbQ/91+vlvuSzIz08B81Pm1tR53
- Hvm/XYnYMcHDHQYcvFC6f8pqy/unIZORk47M8Lmo1dFfIdsORd+7CHhf8lrV4waeQjIwLfl27lujE
- JiRPbITNDfNg+OgMhYM3B51EPP6j7Bw+mnUM0iyfG5dpLSulcXgKe3UHGtWtHkzcxSQw4+I3NKq51
- irVg2nqrA==;
-Received: from [191.33.152.89] (helo=coco.lan)
- by bombadil.infradead.org with esmtpsa (Exim 4.92 #3 (Red Hat Linux))
- id 1hsw8I-0001T3-HP; Wed, 31 Jul 2019 21:27:38 +0000
-Date: Wed, 31 Jul 2019 18:27:29 -0300
-From: Mauro Carvalho Chehab <mchehab+samsung@kernel.org>
-To: Mark Brown <broonie@kernel.org>
-Message-ID: <20190731182729.01c98cd3@coco.lan>
-In-Reply-To: <20190731203712.GJ4369@sirena.org.uk>
+ bh=K/tOdg0rARIHNKt8myQdNk7juboEm6U9R00/FeIUiBE=; b=dAQCdVcqawi/p92YlttDZTR93
+ BKyG7tTLWgF7ROCBKJ78mPeMReOpPz03DvX3MgsE3fL4jZKpXbSgEfnsqgHzMIJoSh2RNJNUt/7Vs
+ W4pmxcdPzOCef23B1cmjFfttX03YC386eRlZje3tRqBKZnkd81Qs+16ww3Bey4vn/dVho=;
+Received: from ypsilon.sirena.org.uk ([2001:470:1f1d:6b5::7])
+ by heliosphere.sirena.org.uk with esmtpsa
+ (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
+ (envelope-from <broonie@sirena.org.uk>)
+ id 1hswZ4-0003OG-Ci; Wed, 31 Jul 2019 21:55:18 +0000
+Received: by ypsilon.sirena.org.uk (Postfix, from userid 1000)
+ id 1A3322742C6C; Wed, 31 Jul 2019 22:55:17 +0100 (BST)
+Date: Wed, 31 Jul 2019 22:55:16 +0100
+From: Mark Brown <broonie@kernel.org>
+To: Mauro Carvalho Chehab <mchehab+samsung@kernel.org>
+Message-ID: <20190731215516.GM4369@sirena.org.uk>
 References: <cover.1564603513.git.mchehab+samsung@kernel.org>
  <20190731141734.1fa9ce64@lwn.net>
  <20190731202007.GI4369@sirena.org.uk>
  <20190731172613.32d65ad8@coco.lan>
  <20190731203712.GJ4369@sirena.org.uk>
-X-Mailer: Claws Mail 3.17.3 (GTK+ 2.24.32; x86_64-redhat-linux-gnu)
+ <20190731182729.01c98cd3@coco.lan>
 MIME-Version: 1.0
-X-Spam-Score: 0.5 (/)
+In-Reply-To: <20190731182729.01c98cd3@coco.lan>
+X-Cookie: FEELINGS are cascading over me!!!
+User-Agent: Mutt/1.10.1 (2018-07-13)
+X-Spam-Score: -0.3 (/)
 X-Spam-Report: Spam Filtering performed by mx.sourceforge.net.
  See http://spamassassin.org/tag/ for more details.
- 1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/, no
+ trust [172.104.155.198 listed in list.dnswl.org]
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level mail
+ domains are different
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature,
  not necessarily valid
  -0.5 AWL AWL: Adjusted score from AWL reputation of From: address
-X-Headers-End: 1hsw8v-005g2d-0j
+X-Headers-End: 1hswZW-00491C-7I
 Subject: Re: [Jfs-discussion] [PATCH 0/6] ReST conversion patches not
  applied yet
 X-BeenThere: jfs-discussion@lists.sourceforge.net
@@ -105,63 +112,77 @@ Cc: Mark Rutland <mark.rutland@arm.com>, Dave Kleikamp <shaggy@kernel.org>,
  Liam Girdwood <lgirdwood@gmail.com>, linux-iio@vger.kernel.org,
  linux-spi@vger.kernel.org, Steve French <sfrench@samba.org>,
  Hartmut Knaack <knaack.h@gmx.de>, Jonathan Cameron <jic23@kernel.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: multipart/mixed; boundary="===============8207679102731755914=="
 Errors-To: jfs-discussion-bounces@lists.sourceforge.net
 
-Em Wed, 31 Jul 2019 21:37:12 +0100
-Mark Brown <broonie@kernel.org> escreveu:
 
-> On Wed, Jul 31, 2019 at 05:26:13PM -0300, Mauro Carvalho Chehab wrote:
-> > Mark Brown <broonie@kernel.org> escreveu:  
-> 
-> > > There were outstanding questions about where it was going to get moved
-> > > to but if I read the diff correctly it looks like it didn't actually get
-> > > moved in the end?  
-> 
-> > Yeah, it doesn't have the move. My understanding from our discussions
-> > is that we didn't reach a conclusion.  
-> 
-> Yes, that was my understanding too which was why I was surprised to see
-> this going in.  This is OK then, I'd have acked it.
-> 
-> > In any case, I can send a separate patch with the move part once
-> > we reach an agreement about what's the best way to proceed (or you
-> > can do it directly, if you prefer so).  
-> 
-> I'm not likely to do anything without someone sending patches, I'm not
-> clear on the utility of the move with the current division of the
-> manuals.
+--===============8207679102731755914==
+Content-Type: multipart/signed; micalg=pgp-sha512;
+	protocol="application/pgp-signature"; boundary="iKKZt69u2Wx/rspf"
+Content-Disposition: inline
 
-Same here: I do see value on having docs focused on their audience.
 
-Yet, I'm not so sure how worth is to break some subsystem documentation 
-into books, as, on some cases, this would mean huge efforts.
+--iKKZt69u2Wx/rspf
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
 
-I'd prefer to see the big picture first, finishing the conversion and
-then looking at the resulting docs.
+On Wed, Jul 31, 2019 at 06:27:29PM -0300, Mauro Carvalho Chehab wrote:
 
-Meanwhile, if someone needs something that it is at the wrong book, he
-can just use some search tool to seek what he needs, no matter on
-what book the relevant information is stored.
+> Meanwhile, if someone needs something that it is at the wrong book, he
+> can just use some search tool to seek what he needs, no matter on
+> what book the relevant information is stored.
 
-> I don't know if it makes sense to have an embedded developer's
-> manual as well?
+OTOH it might be weird for the intended audience of the book.
 
-Yeah, that's a good question. 
+> Mark Brown <broonie@kernel.org> escreveu:
 
-Jon is planning todo a documentation track at LPC. One of the things
-that should be discussed, IMO, is how we'll organize the books.
+> > I don't know if it makes sense to have an embedded developer's
+> > manual as well?
 
-I suspect that, once we finish the conversion of the remaining ~300
-files to ReST, the next logical step is to check what are the gaps
-and have a list of pending tasks.
+> Yeah, that's a good question.=20
 
-Thanks,
-Mauro
+> Jon is planning todo a documentation track at LPC. One of the things
+> that should be discussed, IMO, is how we'll organize the books.
 
+I'll be at Plumbers, not sure what the schedule's looking like yet
+though.
+
+--iKKZt69u2Wx/rspf
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iQEzBAABCgAdFiEEreZoqmdXGLWf4p/qJNaLcl1Uh9AFAl1CDkQACgkQJNaLcl1U
+h9DmyQf8CbO6RT3vDVCTbWB0f/yKJ/A87r+D9XnXG94SH0Vqj3KAl/HFsPpl4gyU
+1t9Uo9ZtFC8lSFh29z5fxpIzNkfsanBjnTrJS1lxOvU+DgmoTfXV5+2xa3rel1E0
+oOzMumEUJLWQmAQIaSzObUMvLTHaHZXE9UwveI9WkjfE0k7lsrK4vKzotxGDUk1a
+6B/LdVb+NH3ME369z6GL2hpH6SkNc0jCRYj4PcGud8PTKBqHim7kBI3AeE51lFUV
+Dsr7zD6gH+cbj/GXdXApIDJvlR8bH6LLM/dakss84cM6CvJoD/pd4z9fn2kmUkVY
+5tMO7f2i3x9slM6yQ78bDwGSrn8XIg==
+=1tp/
+-----END PGP SIGNATURE-----
+
+--iKKZt69u2Wx/rspf--
+
+
+--===============8207679102731755914==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
+
+
+--===============8207679102731755914==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 Jfs-discussion mailing list
 Jfs-discussion@lists.sourceforge.net
 https://lists.sourceforge.net/lists/listinfo/jfs-discussion
+
+--===============8207679102731755914==--
+
