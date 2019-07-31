@@ -2,115 +2,112 @@ Return-Path: <jfs-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+jfs-discussion@lfdr.de
 Delivered-To: lists+jfs-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id 996E17C696
-	for <lists+jfs-discussion@lfdr.de>; Wed, 31 Jul 2019 17:31:09 +0200 (CEST)
-Received: from [127.0.0.1] (helo=sfs-ml-4.v29.lw.sourceforge.com)
-	by sfs-ml-4.v29.lw.sourceforge.com with esmtp (Exim 4.90_1)
-	(envelope-from <jfs-discussion-bounces@lists.sourceforge.net>)
-	id 1hsqYx-0002Pn-9o; Wed, 31 Jul 2019 15:30:47 +0000
-Received: from [172.30.20.202] (helo=mx.sourceforge.net)
- by sfs-ml-4.v29.lw.sourceforge.com with esmtps
- (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
- (envelope-from <darrick.wong@oracle.com>) id 1hsqYv-0002Pf-5z
- for jfs-discussion@lists.sourceforge.net; Wed, 31 Jul 2019 15:30:45 +0000
+	by mail.lfdr.de (Postfix) with ESMTPS id B47FF7CA0E
+	for <lists+jfs-discussion@lfdr.de>; Wed, 31 Jul 2019 19:13:32 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=sourceforge.net; s=x; h=In-Reply-To:Content-Type:MIME-Version:References:
- Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:Content-Transfer-Encoding:
- Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
- Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
+	d=lists.sourceforge.net; s=beta; h=Content-Transfer-Encoding:Content-Type:Cc:
+	Reply-To:From:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:To:Sender:
+	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
+	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
+	bh=qcZrODr6Ewad15AaRHGFmllVAUFNNM24wNV6S5ZnLpU=; b=OtBr0xDF6so7wgPV5AvBTFLDpm
+	tC0Qpx0JOpbXjJ0mBLzCKPRgVtHeGrFkcwlS9OsD/vIPrihuRrA6x5SDFZsq0iIS93M5ma+VVG4I5
+	QiuKq1/PJp47679TYHUwn41gjAjQu+lclrZnLxjooEh+jQoW/eo+lEN8vj9s/7IKHtAo=;
+Received: from [127.0.0.1] (helo=sfs-ml-1.v29.lw.sourceforge.com)
+	by sfs-ml-1.v29.lw.sourceforge.com with esmtp (Exim 4.90_1)
+	(envelope-from <jfs-discussion-bounces@lists.sourceforge.net>)
+	id 1hssA4-0003W0-GR; Wed, 31 Jul 2019 17:13:12 +0000
+Received: from [172.30.20.202] (helo=mx.sourceforge.net)
+ by sfs-ml-1.v29.lw.sourceforge.com with esmtps
+ (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
+ (envelope-from <salyzyn@android.com>) id 1hsrvf-0000gw-Tb
+ for jfs-discussion@lists.sourceforge.net; Wed, 31 Jul 2019 16:58:19 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=sourceforge.net; s=x; h=Content-Transfer-Encoding:Content-Type:MIME-Version
+ :Message-Id:Date:Subject:Cc:To:From:Sender:Reply-To:Content-ID:
+ Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+ :Resent-Message-ID:In-Reply-To:References:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=e//p2MeonEpNRd3oew+L/RI5f1yyX9Uye2F9qPC3fxo=; b=gEpqGLtnm4TK/61NsFQ2Hem0Sx
- kUnb+CzRE3lm/L7yDbeeMjsjTmmnjDiS7N5FNBs4JXwNDguNwpnU6mA+DLAa45mtBHf57QNS1TANh
- kAX1UlepSvuJYzXUYctfamz7hkHw4TK19eolqk/JiMT0malYRFVQW1aK7uoWe7lAWDEs=;
+ bh=YkWr+p+vKLuVNlEdLhOL/tn/V0J5xAeOTfzwbmW2id8=; b=gAaA6/AN2PqIzK+8Nyp1f4w2IK
+ q7KdX3rQBi7zDDIpFpzhzCBD/Cq0EWnNktmBp+cS807NAZl2UBZd6NEJWmoTa3AHtobY9c98p5XS7
+ 7AHAQn2ZZ3CMXiOx8LxwiGC91re8MfuEhoVmGaEa6kOxBdFIy34xGQDWbi2P+v+KV4x8=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
- h=In-Reply-To:Content-Type:MIME-Version:References:Message-ID:Subject:Cc:To
- :From:Date:Sender:Reply-To:Content-Transfer-Encoding:Content-ID:
- Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
- :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
- List-Post:List-Owner:List-Archive;
- bh=e//p2MeonEpNRd3oew+L/RI5f1yyX9Uye2F9qPC3fxo=; b=ZFDq9UhEidqnnTxmw12hx/iYAC
- RGOEyWWtKbgETR1VzpbTuKIEB9j8r3RJii1g1yz9V1VMrWLwbpdZk3To9wDGIMGHFBlmlZ+2vrqmM
- yhMXqlNLC0WcQTsvnnG8Cip3AQxaSAI/islqKqY9At201TfIBFs9UDbl6GF/hHdCXDEw=;
-Received: from userp2130.oracle.com ([156.151.31.86])
- by sfi-mx-4.v28.lw.sourceforge.com with esmtps
- (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
- id 1hsqYt-005Noa-FI
- for jfs-discussion@lists.sourceforge.net; Wed, 31 Jul 2019 15:30:45 +0000
-Received: from pps.filterd (userp2130.oracle.com [127.0.0.1])
- by userp2130.oracle.com (8.16.0.27/8.16.0.27) with SMTP id x6VF8ggp167637;
- Wed, 31 Jul 2019 15:28:40 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=oracle.com;
- h=date : from : to : cc
- : subject : message-id : references : mime-version : content-type :
- in-reply-to; s=corp-2018-07-02;
- bh=e//p2MeonEpNRd3oew+L/RI5f1yyX9Uye2F9qPC3fxo=;
- b=SJCgVT+05ciRAoA/gSCHXMfxdCLFnhl8qjVh90DOPzm1mguk3Q8SSTQgI3dKu0cZpbWn
- zYmqtERsA/qiUgG0xrMjP5PJz+tveGesCAD7BjOCBVFeXYdy9ssM+y6VDbPm/vY++yuu
- YtB0fL4/DCN+jLinaLi3hdPDML9GS1p1HDSXkBpIM1OCDn6vNddvPbvX2pD3IDUj/UAJ
- +m3CXc4pxA86xCiTMzYcl+aAxnrDSoGM9kqYX9nPE8nroqK/gAHdssaqyVW9r8zDGJ7h
- thAaDEOUE+KEn6v+AmOecuxAX026po7pz8x6zNbawgSJVE1tBbhOv581HIQe+2QPqdnA qQ== 
-Received: from userp3030.oracle.com (userp3030.oracle.com [156.151.31.80])
- by userp2130.oracle.com with ESMTP id 2u0e1tx735-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
- Wed, 31 Jul 2019 15:28:39 +0000
-Received: from pps.filterd (userp3030.oracle.com [127.0.0.1])
- by userp3030.oracle.com (8.16.0.27/8.16.0.27) with SMTP id x6VFRiIc127699;
- Wed, 31 Jul 2019 15:28:39 GMT
-Received: from aserv0121.oracle.com (aserv0121.oracle.com [141.146.126.235])
- by userp3030.oracle.com with ESMTP id 2u38fb5f53-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
- Wed, 31 Jul 2019 15:28:39 +0000
-Received: from abhmp0014.oracle.com (abhmp0014.oracle.com [141.146.116.20])
- by aserv0121.oracle.com (8.14.4/8.13.8) with ESMTP id x6VFSWe5001806;
- Wed, 31 Jul 2019 15:28:32 GMT
-Received: from localhost (/67.169.218.210)
- by default (Oracle Beehive Gateway v4.0)
- with ESMTP ; Wed, 31 Jul 2019 08:28:31 -0700
-Date: Wed, 31 Jul 2019 08:28:29 -0700
-From: "Darrick J. Wong" <darrick.wong@oracle.com>
-To: Deepa Dinamani <deepa.kernel@gmail.com>
-Message-ID: <20190731152829.GS1561054@magnolia>
-References: <20190730014924.2193-1-deepa.kernel@gmail.com>
- <20190730014924.2193-7-deepa.kernel@gmail.com>
+ h=Content-Transfer-Encoding:Content-Type:MIME-Version:Message-Id:Date:
+ Subject:Cc:To:From:Sender:Reply-To:Content-ID:Content-Description:Resent-Date
+ :Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+ References:List-Id:List-Help:List-Unsubscribe:List-Subscribe:List-Post:
+ List-Owner:List-Archive; bh=YkWr+p+vKLuVNlEdLhOL/tn/V0J5xAeOTfzwbmW2id8=; b=m
+ AHj5QUE9IyGu7+TLzFwRPvGaTqIBtlyVKGydFQvvGkESCjva5n61H/tJS6t+6yd3G5xTJXg60aXDR
+ rjC6+yWnkbMWsIZgDJS1XjCubfxTbHpZCEgw2WZJNpsWYwOhzJRAEpaf87iDoHnHqmOuhsrGHHQSM
+ 2Sk3qDYON3pf4C9s=;
+Received: from mail-pg1-f195.google.com ([209.85.215.195])
+ by sfi-mx-1.v28.lw.sourceforge.com with esmtps
+ (TLSv1.2:ECDHE-RSA-AES128-GCM-SHA256:128) (Exim 4.90_1)
+ id 1hsrvd-003ded-8f
+ for jfs-discussion@lists.sourceforge.net; Wed, 31 Jul 2019 16:58:19 +0000
+Received: by mail-pg1-f195.google.com with SMTP id o13so32318428pgp.12
+ for <jfs-discussion@lists.sourceforge.net>;
+ Wed, 31 Jul 2019 09:58:17 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=android.com; s=20161025;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=YkWr+p+vKLuVNlEdLhOL/tn/V0J5xAeOTfzwbmW2id8=;
+ b=cfX4VNn7i5fVUAJEVA4MBhomWV9u/SiICGvW/8hoXIHAFSEgly0mFbnQ+ACtuwiC3g
+ IpRmu1ckKjW2mFtirOT4pZeZvT2dDPhZMzF32ZvoQFr92hPVsLC2dNO3QsACLmwar0UV
+ QGuSfotvuKuTlqK5sSL0gn6Mhis1cY41gMWMYYlYUWkSVqwTLLDgqF7CYEi0YCD1g00b
+ 7XO/I47/oxluNGrRhfkGi6MsDix8d8wmsmYqbtCrJdMXSv2+AjyqFMUYQjA2L9of7CoM
+ 8oMQRrlSd8a/C7QbtWiQIXkLjDxq+jhIt0VkS66EI4A6SO7z2CwCPG6R7kaiAWc0Io97
+ PoBw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=YkWr+p+vKLuVNlEdLhOL/tn/V0J5xAeOTfzwbmW2id8=;
+ b=khnJ0sKtQ1kOrVq+5Ns9t6G5Tn1gcswtRkZqY3SSz22SccsSozfP/GNpYNsBP2tcZd
+ ZNPb3CVb+QF+xqc6GM/ypztJ4edgx4PdnfZqzDBT6Xzt4BcybqmXX/McEKEhg9c1Wmc7
+ 5EmBDZaTfx0C6jj31VnWXiCrSbkM7BlM56kpYOJ3MHwnnXI+Irm8yCQXT1YE/4FyqHGX
+ dmgC3lrj6vXitOtWrQcnzdBh2+HPPTYm09yNTdVyIlc/t72ipUlwPNNXOagDLgV9218C
+ mS3XkSol9tNQ3kA6RFCTKqYZRRQxWb6VTpgfgFDXDbIIlDd8YgGyn4jFdBo46Vh+aRl9
+ cLrg==
+X-Gm-Message-State: APjAAAXupp3Q5BvtBzzSESCgCDtlPaYlL6mV/ffkRZwPGVvhpqLMsOze
+ R3PDleMw0ftHBFatnP3gv0s=
+X-Google-Smtp-Source: APXvYqy8vRIpYoYhq+l1XHKOf/Pp65RQkYrvXTYdFcAiznSLIUoJDMNElyzOyLh9v1G4MbxuSIIkEQ==
+X-Received: by 2002:a17:90a:2041:: with SMTP id
+ n59mr3794829pjc.6.1564592291310; 
+ Wed, 31 Jul 2019 09:58:11 -0700 (PDT)
+Received: from nebulus.mtv.corp.google.com
+ ([2620:15c:211:200:5404:91ba:59dc:9400])
+ by smtp.gmail.com with ESMTPSA id f72sm2245954pjg.10.2019.07.31.09.58.09
+ (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
+ Wed, 31 Jul 2019 09:58:10 -0700 (PDT)
+To: linux-kernel@vger.kernel.org
+Date: Wed, 31 Jul 2019 09:57:55 -0700
+Message-Id: <20190731165803.4755-1-salyzyn@android.com>
+X-Mailer: git-send-email 2.22.0.770.g0f2c4a37fd-goog
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190730014924.2193-7-deepa.kernel@gmail.com>
-User-Agent: Mutt/1.9.4 (2018-02-28)
-X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9335
- signatures=668685
-X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 suspectscore=18
- malwarescore=0
- phishscore=0 bulkscore=0 spamscore=0 mlxscore=0 mlxlogscore=999
- adultscore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.0.1-1906280000 definitions=main-1907310157
-X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9335
- signatures=668685
-X-Proofpoint-Spam-Details: rule=notspam policy=default score=0
- priorityscore=1501 malwarescore=0
- suspectscore=18 phishscore=0 bulkscore=0 spamscore=0 clxscore=1011
- lowpriorityscore=0 mlxscore=0 impostorscore=0 mlxlogscore=999 adultscore=0
- classifier=spam adjust=0 reason=mlx scancount=1 engine=8.0.1-1906280000
- definitions=main-1907310156
 X-Spam-Score: -0.1 (/)
 X-Spam-Report: Spam Filtering performed by mx.sourceforge.net.
  See http://spamassassin.org/tag/ for more details.
  0.0 URIBL_BLOCKED ADMINISTRATOR NOTICE: The query to URIBL was blocked.
  See
  http://wiki.apache.org/spamassassin/DnsBlocklists#dnsbl-block
- for more information. [URIs: infradead.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ for more information. [URIs: netapp.com]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/, no
+ trust [209.85.215.195 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_AU Message has a valid DKIM or DK signature from author's
  domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature,
  not necessarily valid
- 0.0 UNPARSEABLE_RELAY Informational: message has unparseable relay lines
  -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
-X-Headers-End: 1hsqYt-005Noa-FI
-Subject: Re: [Jfs-discussion] [PATCH 06/20] fs: Fill in max and min
- timestamps in superblock
+ 0.0 AWL AWL: Adjusted score from AWL reputation of From: address
+X-Headers-End: 1hsrvd-003ded-8f
+X-Mailman-Approved-At: Wed, 31 Jul 2019 17:13:11 +0000
+Subject: [Jfs-discussion] [PATCH v13 0/5] overlayfs override_creds=off
 X-BeenThere: jfs-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -122,318 +119,151 @@ List-Post: <mailto:jfs-discussion@lists.sourceforge.net>
 List-Help: <mailto:jfs-discussion-request@lists.sourceforge.net?subject=help>
 List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/jfs-discussion>, 
  <mailto:jfs-discussion-request@lists.sourceforge.net?subject=subscribe>
-Cc: shaggy@kernel.org, jfs-discussion@lists.sourceforge.net, al@alarsen.net,
- linux-mtd@lists.infradead.org, codalist@telemann.coda.cs.cmu.edu,
- y2038@lists.linaro.org, richard@nod.at, hch@infradead.org, coda@cs.cmu.edu,
- linux-ext4@vger.kernel.org, salah.triki@gmail.com, dushistov@mail.ru,
- arnd@arndb.de, reiserfs-devel@vger.kernel.org, viro@zeniv.linux.org.uk,
- aivazian.tigran@gmail.com, jaharkes@cs.cmu.edu, luisbg@kernel.org,
- nico@fluxnic.net, linux-kernel@vger.kernel.org, linux-xfs@vger.kernel.org,
- jack@suse.com, linux-fsdevel@vger.kernel.org, phillip@squashfs.org.uk,
- dwmw2@infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+From: Mark Salyzyn via Jfs-discussion <jfs-discussion@lists.sourceforge.net>
+Reply-To: Mark Salyzyn <salyzyn@android.com>
+Cc: Latchesar Ionkov <lucho@ionkov.net>, Dave Kleikamp <shaggy@kernel.org>,
+ jfs-discussion@lists.sourceforge.net, Randy Dunlap <rdunlap@infradead.org>,
+ linux-doc@vger.kernel.org, Martin Brandenburg <martin@omnibond.com>,
+ samba-technical@lists.samba.org, Dominique Martinet <asmadeus@codewreck.org>,
+ Amir Goldstein <amir73il@gmail.com>, David Howells <dhowells@redhat.com>,
+ Chris Mason <clm@fb.com>, "David S . Miller" <davem@davemloft.net>,
+ Andreas Dilger <adilger.kernel@dilger.ca>, ocfs2-devel@oss.oracle.com,
+ netdev@vger.kernel.org, Tyler Hicks <tyhicks@canonical.com>,
+ linux-afs@lists.infradead.org, Mike Marshall <hubcap@omnibond.com>,
+ linux-xfs@vger.kernel.org, Andreas Gruenbacher <agruenba@redhat.com>,
+ Sage Weil <sage@redhat.com>, Jonathan Corbet <corbet@lwn.net>,
+ Richard Weinberger <richard@nod.at>, Mark Fasheh <mark@fasheh.com>,
+ devel@lists.orangefs.org, Hugh Dickins <hughd@google.com>,
+ linux-security-module@vger.kernel.org, cluster-devel@redhat.com,
+ v9fs-developer@lists.sourceforge.net, Ilya Dryomov <idryomov@gmail.com>,
+ linux-ext4@vger.kernel.org, Stephen Smalley <sds@tycho.nsa.gov>,
+ linux-mm@kvack.org, Vivek Goyal <vgoyal@redhat.com>,
+ Chao Yu <yuchao0@huawei.com>, linux-cifs@vger.kernel.org,
+ Eric Van Hensbergen <ericvh@gmail.com>, ecryptfs@vger.kernel.org,
+ Josef Bacik <josef@toxicpanda.com>,
+ "Darrick J . Wong" <darrick.wong@oracle.com>, reiserfs-devel@vger.kernel.org,
+ Tejun Heo <tj@kernel.org>, Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Joel Becker <jlbec@evilplan.org>, linux-mtd@lists.infradead.org,
+ David Sterba <dsterba@suse.com>, Jaegeuk Kim <jaegeuk@kernel.org>,
+ ceph-devel@vger.kernel.org, Trond Myklebust <trond.myklebust@hammerspace.com>,
+ linux-nfs@vger.kernel.org, linux-f2fs-devel@lists.sourceforge.net,
+ Theodore Ts'o <tytso@mit.edu>, linux-fsdevel@vger.kernel.org,
+ Joseph Qi <joseph.qi@linux.alibaba.com>, Mathieu Malaterre <malat@debian.org>,
+ kernel-team@android.com, Miklos Szeredi <miklos@szeredi.hu>,
+ Jeff Layton <jlayton@kernel.org>, linux-unionfs@vger.kernel.org,
+ stable@vger.kernel.org, Mark Salyzyn <salyzyn@android.com>,
+ Steve French <sfrench@samba.org>,
+ =?UTF-8?q?Ernesto=20A=20=2E=20Fern=C3=A1ndez?=
+ <ernesto.mnd.fernandez@gmail.com>,
+ "Eric W . Biederman" <ebiederm@xmission.com>, Jan Kara <jack@suse.com>,
+ Bob Peterson <rpeterso@redhat.com>, Phillip Lougher <phillip@squashfs.org.uk>,
+ Andrew Morton <akpm@linux-foundation.org>,
+ David Woodhouse <dwmw2@infradead.org>,
+ Anna Schumaker <anna.schumaker@netapp.com>, linux-btrfs@vger.kernel.org,
+ Alexander Viro <viro@zeniv.linux.org.uk>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Errors-To: jfs-discussion-bounces@lists.sourceforge.net
 
-On Mon, Jul 29, 2019 at 06:49:10PM -0700, Deepa Dinamani wrote:
-> Fill in the appropriate limits to avoid inconsistencies
-> in the vfs cached inode times when timestamps are
-> outside the permitted range.
-> 
-> Even though some filesystems are read-only, fill in the
-> timestamps to reflect the on-disk representation.
-> 
-> Signed-off-by: Deepa Dinamani <deepa.kernel@gmail.com>
-> Cc: aivazian.tigran@gmail.com
-> Cc: al@alarsen.net
-> Cc: coda@cs.cmu.edu
-> Cc: darrick.wong@oracle.com
-> Cc: dushistov@mail.ru
-> Cc: dwmw2@infradead.org
-> Cc: hch@infradead.org
-> Cc: jack@suse.com
-> Cc: jaharkes@cs.cmu.edu
-> Cc: luisbg@kernel.org
-> Cc: nico@fluxnic.net
-> Cc: phillip@squashfs.org.uk
-> Cc: richard@nod.at
-> Cc: salah.triki@gmail.com
-> Cc: shaggy@kernel.org
-> Cc: linux-xfs@vger.kernel.org
-> Cc: codalist@coda.cs.cmu.edu
-> Cc: linux-ext4@vger.kernel.org
-> Cc: linux-mtd@lists.infradead.org
-> Cc: jfs-discussion@lists.sourceforge.net
-> Cc: reiserfs-devel@vger.kernel.org
-> ---
->  fs/befs/linuxvfs.c       | 2 ++
->  fs/bfs/inode.c           | 2 ++
->  fs/coda/inode.c          | 3 +++
->  fs/cramfs/inode.c        | 2 ++
->  fs/efs/super.c           | 2 ++
->  fs/ext2/super.c          | 2 ++
->  fs/freevxfs/vxfs_super.c | 2 ++
->  fs/jffs2/fs.c            | 3 +++
->  fs/jfs/super.c           | 2 ++
->  fs/minix/inode.c         | 2 ++
->  fs/qnx4/inode.c          | 2 ++
->  fs/qnx6/inode.c          | 2 ++
->  fs/reiserfs/super.c      | 3 +++
->  fs/romfs/super.c         | 2 ++
->  fs/squashfs/super.c      | 2 ++
->  fs/ufs/super.c           | 7 +++++++
->  fs/xfs/xfs_super.c       | 2 ++
->  17 files changed, 42 insertions(+)
-> 
-> diff --git a/fs/befs/linuxvfs.c b/fs/befs/linuxvfs.c
-> index 462d096ff3e9..64cdf4d8e424 100644
-> --- a/fs/befs/linuxvfs.c
-> +++ b/fs/befs/linuxvfs.c
-> @@ -893,6 +893,8 @@ befs_fill_super(struct super_block *sb, void *data, int silent)
->  	sb_set_blocksize(sb, (ulong) befs_sb->block_size);
->  	sb->s_op = &befs_sops;
->  	sb->s_export_op = &befs_export_operations;
-> +	sb->s_time_min = 0;
-> +	sb->s_time_max = 0xffffffffffffll;
->  	root = befs_iget(sb, iaddr2blockno(sb, &(befs_sb->root_dir)));
->  	if (IS_ERR(root)) {
->  		ret = PTR_ERR(root);
-> diff --git a/fs/bfs/inode.c b/fs/bfs/inode.c
-> index 5e97bed073d7..f8ce1368218b 100644
-> --- a/fs/bfs/inode.c
-> +++ b/fs/bfs/inode.c
-> @@ -324,6 +324,8 @@ static int bfs_fill_super(struct super_block *s, void *data, int silent)
->  		return -ENOMEM;
->  	mutex_init(&info->bfs_lock);
->  	s->s_fs_info = info;
-> +	s->s_time_min = 0;
-> +	s->s_time_max = U32_MAX;
->  
->  	sb_set_blocksize(s, BFS_BSIZE);
->  
-> diff --git a/fs/coda/inode.c b/fs/coda/inode.c
-> index 321f56e487cb..b1c70e2b9b1e 100644
-> --- a/fs/coda/inode.c
-> +++ b/fs/coda/inode.c
-> @@ -188,6 +188,9 @@ static int coda_fill_super(struct super_block *sb, void *data, int silent)
->  	sb->s_magic = CODA_SUPER_MAGIC;
->  	sb->s_op = &coda_super_operations;
->  	sb->s_d_op = &coda_dentry_operations;
-> +	sb->s_time_gran = 1;
-> +	sb->s_time_min = S64_MIN;
-> +	sb->s_time_max = S64_MAX;
->  
->  	error = super_setup_bdi(sb);
->  	if (error)
-> diff --git a/fs/cramfs/inode.c b/fs/cramfs/inode.c
-> index 9352487bd0fc..4d1d8b7761ed 100644
-> --- a/fs/cramfs/inode.c
-> +++ b/fs/cramfs/inode.c
-> @@ -597,6 +597,8 @@ static int cramfs_finalize_super(struct super_block *sb,
->  
->  	/* Set it all up.. */
->  	sb->s_flags |= SB_RDONLY;
-> +	sb->s_time_min = 0;
-> +	sb->s_time_max = 0;
->  	sb->s_op = &cramfs_ops;
->  	root = get_cramfs_inode(sb, cramfs_root, 0);
->  	if (IS_ERR(root))
-> diff --git a/fs/efs/super.c b/fs/efs/super.c
-> index 867fc24dee20..4a6ebff2af76 100644
-> --- a/fs/efs/super.c
-> +++ b/fs/efs/super.c
-> @@ -257,6 +257,8 @@ static int efs_fill_super(struct super_block *s, void *d, int silent)
->  	if (!sb)
->  		return -ENOMEM;
->  	s->s_fs_info = sb;
-> +	s->s_time_min = 0;
-> +	s->s_time_max = U32_MAX;
->   
->  	s->s_magic		= EFS_SUPER_MAGIC;
->  	if (!sb_set_blocksize(s, EFS_BLOCKSIZE)) {
-> diff --git a/fs/ext2/super.c b/fs/ext2/super.c
-> index 44eb6e7eb492..baa36c6fb71e 100644
-> --- a/fs/ext2/super.c
-> +++ b/fs/ext2/super.c
-> @@ -1002,6 +1002,8 @@ static int ext2_fill_super(struct super_block *sb, void *data, int silent)
->  
->  	sb->s_maxbytes = ext2_max_size(sb->s_blocksize_bits);
->  	sb->s_max_links = EXT2_LINK_MAX;
-> +	sb->s_time_min = S32_MIN;
-> +	sb->s_time_max = S32_MAX;
->  
->  	if (le32_to_cpu(es->s_rev_level) == EXT2_GOOD_OLD_REV) {
->  		sbi->s_inode_size = EXT2_GOOD_OLD_INODE_SIZE;
-> diff --git a/fs/freevxfs/vxfs_super.c b/fs/freevxfs/vxfs_super.c
-> index a89f68c3cbed..578a5062706e 100644
-> --- a/fs/freevxfs/vxfs_super.c
-> +++ b/fs/freevxfs/vxfs_super.c
-> @@ -229,6 +229,8 @@ static int vxfs_fill_super(struct super_block *sbp, void *dp, int silent)
->  
->  	sbp->s_op = &vxfs_super_ops;
->  	sbp->s_fs_info = infp;
-> +	sbp->s_time_min = 0;
-> +	sbp->s_time_max = U32_MAX;
->  
->  	if (!vxfs_try_sb_magic(sbp, silent, 1,
->  			(__force __fs32)cpu_to_le32(VXFS_SUPER_MAGIC))) {
-> diff --git a/fs/jffs2/fs.c b/fs/jffs2/fs.c
-> index 8a20ddd25f2d..d0b59d03a7a9 100644
-> --- a/fs/jffs2/fs.c
-> +++ b/fs/jffs2/fs.c
-> @@ -590,6 +590,9 @@ int jffs2_do_fill_super(struct super_block *sb, void *data, int silent)
->  	sb->s_blocksize = PAGE_SIZE;
->  	sb->s_blocksize_bits = PAGE_SHIFT;
->  	sb->s_magic = JFFS2_SUPER_MAGIC;
-> +	sb->s_time_min = 0;
-> +	sb->s_time_max = U32_MAX;
-> +
->  	if (!sb_rdonly(sb))
->  		jffs2_start_garbage_collect_thread(c);
->  	return 0;
-> diff --git a/fs/jfs/super.c b/fs/jfs/super.c
-> index f4e10cb9f734..b2dc4d1f9dcc 100644
-> --- a/fs/jfs/super.c
-> +++ b/fs/jfs/super.c
-> @@ -503,6 +503,8 @@ static int jfs_fill_super(struct super_block *sb, void *data, int silent)
->  
->  	sb->s_fs_info = sbi;
->  	sb->s_max_links = JFS_LINK_MAX;
-> +	sb->s_time_min = 0;
-> +	sb->s_time_max = U32_MAX;
->  	sbi->sb = sb;
->  	sbi->uid = INVALID_UID;
->  	sbi->gid = INVALID_GID;
-> diff --git a/fs/minix/inode.c b/fs/minix/inode.c
-> index f96073f25432..7cb5fd38eb14 100644
-> --- a/fs/minix/inode.c
-> +++ b/fs/minix/inode.c
-> @@ -277,6 +277,8 @@ static int minix_fill_super(struct super_block *s, void *data, int silent)
->  
->  	/* set up enough so that it can read an inode */
->  	s->s_op = &minix_sops;
-> +	s->s_time_min = 0;
-> +	s->s_time_max = U32_MAX;
->  	root_inode = minix_iget(s, MINIX_ROOT_INO);
->  	if (IS_ERR(root_inode)) {
->  		ret = PTR_ERR(root_inode);
-> diff --git a/fs/qnx4/inode.c b/fs/qnx4/inode.c
-> index 922d083bbc7c..e8da1cde87b9 100644
-> --- a/fs/qnx4/inode.c
-> +++ b/fs/qnx4/inode.c
-> @@ -201,6 +201,8 @@ static int qnx4_fill_super(struct super_block *s, void *data, int silent)
->  	s->s_op = &qnx4_sops;
->  	s->s_magic = QNX4_SUPER_MAGIC;
->  	s->s_flags |= SB_RDONLY;	/* Yup, read-only yet */
-> +	s->s_time_min = 0;
-> +	s->s_time_max = U32_MAX;
->  
->  	/* Check the superblock signature. Since the qnx4 code is
->  	   dangerous, we should leave as quickly as possible
-> diff --git a/fs/qnx6/inode.c b/fs/qnx6/inode.c
-> index 0f8b0ff1ba43..345db56c98fd 100644
-> --- a/fs/qnx6/inode.c
-> +++ b/fs/qnx6/inode.c
-> @@ -429,6 +429,8 @@ static int qnx6_fill_super(struct super_block *s, void *data, int silent)
->  	s->s_op = &qnx6_sops;
->  	s->s_magic = QNX6_SUPER_MAGIC;
->  	s->s_flags |= SB_RDONLY;        /* Yup, read-only yet */
-> +	s->s_time_min = 0;
-> +	s->s_time_max = U32_MAX;
->  
->  	/* ease the later tree level calculations */
->  	sbi = QNX6_SB(s);
-> diff --git a/fs/reiserfs/super.c b/fs/reiserfs/super.c
-> index ab028ea0e561..d69b4ac0ae2f 100644
-> --- a/fs/reiserfs/super.c
-> +++ b/fs/reiserfs/super.c
-> @@ -1976,6 +1976,9 @@ static int reiserfs_fill_super(struct super_block *s, void *data, int silent)
->  		goto error_unlocked;
->  	}
->  
-> +	s->s_time_min = 0;
-> +	s->s_time_max = U32_MAX;
-> +
->  	rs = SB_DISK_SUPER_BLOCK(s);
->  	/*
->  	 * Let's do basic sanity check to verify that underlying device is not
-> diff --git a/fs/romfs/super.c b/fs/romfs/super.c
-> index 7d580f7c3f1d..a42c0e3079dc 100644
-> --- a/fs/romfs/super.c
-> +++ b/fs/romfs/super.c
-> @@ -478,6 +478,8 @@ static int romfs_fill_super(struct super_block *sb, void *data, int silent)
->  	sb->s_maxbytes = 0xFFFFFFFF;
->  	sb->s_magic = ROMFS_MAGIC;
->  	sb->s_flags |= SB_RDONLY | SB_NOATIME;
-> +	sb->s_time_min = 0;
-> +	sb->s_time_max = 0;
->  	sb->s_op = &romfs_super_ops;
->  
->  #ifdef CONFIG_ROMFS_ON_MTD
-> diff --git a/fs/squashfs/super.c b/fs/squashfs/super.c
-> index effa638d6d85..a9e9837617a9 100644
-> --- a/fs/squashfs/super.c
-> +++ b/fs/squashfs/super.c
-> @@ -183,6 +183,8 @@ static int squashfs_fill_super(struct super_block *sb, void *data, int silent)
->  		(u64) le64_to_cpu(sblk->id_table_start));
->  
->  	sb->s_maxbytes = MAX_LFS_FILESIZE;
-> +	sb->s_time_min = 0;
-> +	sb->s_time_max = U32_MAX;
->  	sb->s_flags |= SB_RDONLY;
->  	sb->s_op = &squashfs_super_ops;
->  
-> diff --git a/fs/ufs/super.c b/fs/ufs/super.c
-> index 4ed0dca52ec8..1da0be667409 100644
-> --- a/fs/ufs/super.c
-> +++ b/fs/ufs/super.c
-> @@ -843,6 +843,10 @@ static int ufs_fill_super(struct super_block *sb, void *data, int silent)
->  
->  	sb->s_maxbytes = MAX_LFS_FILESIZE;
->  
-> +	sb->s_time_gran = NSEC_PER_SEC;
-> +	sb->s_time_min = S32_MIN;
-> +	sb->s_time_max = S32_MAX;
-> +
->  	switch (sbi->s_mount_opt & UFS_MOUNT_UFSTYPE) {
->  	case UFS_MOUNT_UFSTYPE_44BSD:
->  		UFSD("ufstype=44bsd\n");
-> @@ -861,6 +865,9 @@ static int ufs_fill_super(struct super_block *sb, void *data, int silent)
->  		uspi->s_fshift = 9;
->  		uspi->s_sbsize = super_block_size = 1536;
->  		uspi->s_sbbase =  0;
-> +		sb->s_time_gran = 1;
-> +		sb->s_time_min = S64_MIN;
-> +		sb->s_time_max = S64_MAX;
->  		flags |= UFS_TYPE_UFS2 | UFS_DE_44BSD | UFS_UID_44BSD | UFS_ST_44BSD | UFS_CG_44BSD;
->  		break;
->  		
-> diff --git a/fs/xfs/xfs_super.c b/fs/xfs/xfs_super.c
-> index a14d11d78bd8..1a0daf46bae8 100644
-> --- a/fs/xfs/xfs_super.c
-> +++ b/fs/xfs/xfs_super.c
-> @@ -1685,6 +1685,8 @@ xfs_fs_fill_super(
->  	sb->s_maxbytes = xfs_max_file_offset(sb->s_blocksize_bits);
->  	sb->s_max_links = XFS_MAXLINK;
->  	sb->s_time_gran = 1;
-> +	sb->s_time_min = S32_MIN;
-> +	sb->s_time_max = S32_MAX;
-
-For the XFS part,
-
-Reviewed-by: Darrick J. Wong <darrick.wong@oracle.com>
-
---D
-
->  	set_posix_acl_flag(sb);
->  
->  	/* version 5 superblocks support inode version counters. */
-> -- 
-> 2.17.1
-> 
-
-
-_______________________________________________
-Jfs-discussion mailing list
-Jfs-discussion@lists.sourceforge.net
-https://lists.sourceforge.net/lists/listinfo/jfs-discussion
+UGF0Y2ggc2VyaWVzOgoKb3ZlcmxheWZzOiBjaGVjayBDQVBfREFDX1JFQURfU0VBUkNIIGJlZm9y
+ZSBpc3N1aW5nIGV4cG9ydGZzX2RlY29kZV9maApBZGQgZmxhZ3Mgb3B0aW9uIHRvIGdldCB4YXR0
+ciBtZXRob2QgcGFpcmVkIHRvIF9fdmZzX2dldHhhdHRyCm92ZXJsYXlmczogaGFuZGxlIFhBVFRS
+X05PU0VDVVJJVFkgZmxhZyBmb3IgZ2V0IHhhdHRyIG1ldGhvZApvdmVybGF5ZnM6IGludGVybmFs
+IGdldHhhdHRyIG9wZXJhdGlvbnMgd2l0aG91dCBzZXBvbGljeSBjaGVja2luZwpvdmVybGF5ZnM6
+IG92ZXJyaWRlX2NyZWRzPW9mZiBvcHRpb24gYnlwYXNzIGNyZWF0b3JfY3JlZAoKVGhlIGZpcnN0
+IGZvdXIgcGF0Y2hlcyBhZGRyZXNzIGZ1bmRhbWVudGFsIHNlY3VyaXR5IGlzc3VlcyB0aGF0IHNo
+b3VsZApiZSBzb2x2ZWQgcmVnYXJkbGVzcyBvZiB0aGUgb3ZlcnJpZGVfY3JlZHM9b2ZmIGZlYXR1
+cmUuCm9uIHRoZW0pLgoKVGhlIGZpZnRoIGFkZHMgdGhlIGZlYXR1cmUgZGVwZW5kcyBvbiB0aGVz
+ZSBvdGhlciBmaXhlcy4KCkJ5IGRlZmF1bHQsIGFsbCBhY2Nlc3MgdG8gdGhlIHVwcGVyLCBsb3dl
+ciBhbmQgd29yayBkaXJlY3RvcmllcyBpcyB0aGUKcmVjb3JkZWQgbW91bnRlcidzIE1BQyBhbmQg
+REFDIGNyZWRlbnRpYWxzLiAgVGhlIGluY29taW5nIGFjY2Vzc2VzIGFyZQpjaGVja2VkIGFnYWlu
+c3QgdGhlIGNhbGxlcidzIGNyZWRlbnRpYWxzLgoKSWYgdGhlIHByaW5jaXBsZXMgb2YgbGVhc3Qg
+cHJpdmlsZWdlIGFyZSBhcHBsaWVkIGZvciBzZXBvbGljeSwgdGhlCm1vdW50ZXIncyBjcmVkZW50
+aWFscyBtaWdodCBub3Qgb3ZlcmxhcCB0aGUgY3JlZGVudGlhbHMgb2YgdGhlIGNhbGxlcidzCndo
+ZW4gYWNjZXNzaW5nIHRoZSBvdmVybGF5ZnMgZmlsZXN5c3RlbS4gIEZvciBleGFtcGxlLCBhIGZp
+bGUgdGhhdCBhCmxvd2VyIERBQyBwcml2aWxlZ2VkIGNhbGxlciBjYW4gZXhlY3V0ZSwgaXMgTUFD
+IGRlbmllZCB0byB0aGUKZ2VuZXJhbGx5IGhpZ2hlciBEQUMgcHJpdmlsZWdlZCBtb3VudGVyLCB0
+byBwcmV2ZW50IGFuIGF0dGFjayB2ZWN0b3IuCgpXZSBhZGQgdGhlIG9wdGlvbiB0byB0dXJuIG9m
+ZiBvdmVycmlkZV9jcmVkcyBpbiB0aGUgbW91bnQgb3B0aW9uczsgYWxsCnN1YnNlcXVlbnQgb3Bl
+cmF0aW9ucyBhZnRlciBtb3VudCBvbiB0aGUgZmlsZXN5c3RlbSB3aWxsIGJlIG9ubHkgdGhlCmNh
+bGxlcidzIGNyZWRlbnRpYWxzLiAgVGhlIG1vZHVsZSBib29sZWFuIHBhcmFtZXRlciBhbmQgbW91
+bnQgb3B0aW9uCm92ZXJyaWRlX2NyZWRzIGlzIGFsc28gYWRkZWQgYXMgYSBwcmVzZW5jZSBjaGVj
+ayBmb3IgdGhpcyAiZmVhdHVyZSIsCmV4aXN0ZW5jZSBvZiAvc3lzL21vZHVsZS9vdmVybGF5L3Bh
+cmFtZXRlcnMvb3ZlcmxheV9jcmVkcwoKU2lnbmVkLW9mZi1ieTogTWFyayBTYWx5enluIDxzYWx5
+enluQGFuZHJvaWQuY29tPgpDYzogTWlrbG9zIFN6ZXJlZGkgPG1pa2xvc0BzemVyZWRpLmh1PgpD
+YzogSm9uYXRoYW4gQ29yYmV0IDxjb3JiZXRAbHduLm5ldD4KQ2M6IFZpdmVrIEdveWFsIDx2Z295
+YWxAcmVkaGF0LmNvbT4KQ2M6IEVyaWMgVy4gQmllZGVybWFuIDxlYmllZGVybUB4bWlzc2lvbi5j
+b20+CkNjOiBBbWlyIEdvbGRzdGVpbiA8YW1pcjczaWxAZ21haWwuY29tPgpDYzogUmFuZHkgRHVu
+bGFwIDxyZHVubGFwQGluZnJhZGVhZC5vcmc+CkNjOiBTdGVwaGVuIFNtYWxsZXkgPHNkc0B0eWNo
+by5uc2EuZ292PgpDYzogbGludXgtdW5pb25mc0B2Z2VyLmtlcm5lbC5vcmcKQ2M6IGxpbnV4LWRv
+Y0B2Z2VyLmtlcm5lbC5vcmcKQ2M6IGxpbnV4LWtlcm5lbEB2Z2VyLmtlcm5lbC5vcmcKQ2M6IEVy
+aWMgVmFuIEhlbnNiZXJnZW4gPGVyaWN2aEBnbWFpbC5jb20+CkNjOiBMYXRjaGVzYXIgSW9ua292
+IDxsdWNob0Bpb25rb3YubmV0PgpDYzogRG9taW5pcXVlIE1hcnRpbmV0IDxhc21hZGV1c0Bjb2Rl
+d3JlY2sub3JnPgpDYzogRGF2aWQgSG93ZWxscyA8ZGhvd2VsbHNAcmVkaGF0LmNvbT4KQ2M6IENo
+cmlzIE1hc29uIDxjbG1AZmIuY29tPgpDYzogSm9zZWYgQmFjaWsgPGpvc2VmQHRveGljcGFuZGEu
+Y29tPgpDYzogRGF2aWQgU3RlcmJhIDxkc3RlcmJhQHN1c2UuY29tPgpDYzogSmVmZiBMYXl0b24g
+PGpsYXl0b25Aa2VybmVsLm9yZz4KQ2M6IFNhZ2UgV2VpbCA8c2FnZUByZWRoYXQuY29tPgpDYzog
+SWx5YSBEcnlvbW92IDxpZHJ5b21vdkBnbWFpbC5jb20+CkNjOiBTdGV2ZSBGcmVuY2ggPHNmcmVu
+Y2hAc2FtYmEub3JnPgpDYzogVHlsZXIgSGlja3MgPHR5aGlja3NAY2Fub25pY2FsLmNvbT4KQ2M6
+IEphbiBLYXJhIDxqYWNrQHN1c2UuY29tPgpDYzogVGhlb2RvcmUgVHMnbyA8dHl0c29AbWl0LmVk
+dT4KQ2M6IEFuZHJlYXMgRGlsZ2VyIDxhZGlsZ2VyLmtlcm5lbEBkaWxnZXIuY2E+CkNjOiBKYWVn
+ZXVrIEtpbSA8amFlZ2V1a0BrZXJuZWwub3JnPgpDYzogQ2hhbyBZdSA8eXVjaGFvMEBodWF3ZWku
+Y29tPgpDYzogQm9iIFBldGVyc29uIDxycGV0ZXJzb0ByZWRoYXQuY29tPgpDYzogQW5kcmVhcyBH
+cnVlbmJhY2hlciA8YWdydWVuYmFAcmVkaGF0LmNvbT4KQ2M6IERhdmlkIFdvb2Rob3VzZSA8ZHdt
+dzJAaW5mcmFkZWFkLm9yZz4KQ2M6IFJpY2hhcmQgV2VpbmJlcmdlciA8cmljaGFyZEBub2QuYXQ+
+CkNjOiBEYXZlIEtsZWlrYW1wIDxzaGFnZ3lAa2VybmVsLm9yZz4KQ2M6IEdyZWcgS3JvYWgtSGFy
+dG1hbiA8Z3JlZ2toQGxpbnV4Zm91bmRhdGlvbi5vcmc+CkNjOiBUZWp1biBIZW8gPHRqQGtlcm5l
+bC5vcmc+CkNjOiBUcm9uZCBNeWtsZWJ1c3QgPHRyb25kLm15a2xlYnVzdEBoYW1tZXJzcGFjZS5j
+b20+CkNjOiBBbm5hIFNjaHVtYWtlciA8YW5uYS5zY2h1bWFrZXJAbmV0YXBwLmNvbT4KQ2M6IE1h
+cmsgRmFzaGVoIDxtYXJrQGZhc2hlaC5jb20+CkNjOiBKb2VsIEJlY2tlciA8amxiZWNAZXZpbHBs
+YW4ub3JnPgpDYzogSm9zZXBoIFFpIDxqb3NlcGgucWlAbGludXguYWxpYmFiYS5jb20+CkNjOiBN
+aWtlIE1hcnNoYWxsIDxodWJjYXBAb21uaWJvbmQuY29tPgpDYzogTWFydGluIEJyYW5kZW5idXJn
+IDxtYXJ0aW5Ab21uaWJvbmQuY29tPgpDYzogQWxleGFuZGVyIFZpcm8gPHZpcm9AemVuaXYubGlu
+dXgub3JnLnVrPgpDYzogUGhpbGxpcCBMb3VnaGVyIDxwaGlsbGlwQHNxdWFzaGZzLm9yZy51az4K
+Q2M6IERhcnJpY2sgSi4gV29uZyA8ZGFycmljay53b25nQG9yYWNsZS5jb20+CkNjOiBsaW51eC14
+ZnNAdmdlci5rZXJuZWwub3JnCkNjOiBIdWdoIERpY2tpbnMgPGh1Z2hkQGdvb2dsZS5jb20+CkNj
+OiBEYXZpZCBTLiBNaWxsZXIgPGRhdmVtQGRhdmVtbG9mdC5uZXQ+CkNjOiBBbmRyZXcgTW9ydG9u
+IDxha3BtQGxpbnV4LWZvdW5kYXRpb24ub3JnPgpDYzogTWF0aGlldSBNYWxhdGVycmUgPG1hbGF0
+QGRlYmlhbi5vcmc+CkNjOiBFcm5lc3RvIEEuIEZlcm7DoW5kZXogPGVybmVzdG8ubW5kLmZlcm5h
+bmRlekBnbWFpbC5jb20+CkNjOiBWeWFjaGVzbGF2IER1YmV5a28gPHNsYXZhQGR1YmV5a28uY29t
+PgpDYzogdjlmcy1kZXZlbG9wZXJAbGlzdHMuc291cmNlZm9yZ2UubmV0CkNjOiBsaW51eC1hZnNA
+bGlzdHMuaW5mcmFkZWFkLm9yZwpDYzogbGludXgtYnRyZnNAdmdlci5rZXJuZWwub3JnCkNjOiBj
+ZXBoLWRldmVsQHZnZXIua2VybmVsLm9yZwpDYzogbGludXgtY2lmc0B2Z2VyLmtlcm5lbC5vcmcK
+Q2M6IHNhbWJhLXRlY2huaWNhbEBsaXN0cy5zYW1iYS5vcmcKQ2M6IGVjcnlwdGZzQHZnZXIua2Vy
+bmVsLm9yZwpDYzogbGludXgtZXh0NEB2Z2VyLmtlcm5lbC5vcmcKQ2M6IGxpbnV4LWYyZnMtZGV2
+ZWxAbGlzdHMuc291cmNlZm9yZ2UubmV0CkNjOiBsaW51eC1mc2RldmVsQHZnZXIua2VybmVsLm9y
+ZwpDYzogY2x1c3Rlci1kZXZlbEByZWRoYXQuY29tCkNjOiBsaW51eC1tdGRAbGlzdHMuaW5mcmFk
+ZWFkLm9yZwpDYzogamZzLWRpc2N1c3Npb25AbGlzdHMuc291cmNlZm9yZ2UubmV0CkNjOiBsaW51
+eC1uZnNAdmdlci5rZXJuZWwub3JnCkNjOiBvY2ZzMi1kZXZlbEBvc3Mub3JhY2xlLmNvbQpDYzog
+ZGV2ZWxAbGlzdHMub3JhbmdlZnMub3JnCkNjOiByZWlzZXJmcy1kZXZlbEB2Z2VyLmtlcm5lbC5v
+cmcKQ2M6IGxpbnV4LW1tQGt2YWNrLm9yZwpDYzogbmV0ZGV2QHZnZXIua2VybmVsLm9yZwpDYzog
+bGludXgtc2VjdXJpdHktbW9kdWxlQHZnZXIua2VybmVsLm9yZwpDYzogc3RhYmxlQHZnZXIua2Vy
+bmVsLm9yZyAjIDQuNCwgNC45LCA0LjE0ICYgNC4xOQotLS0KdjEzOgotIGFkZCBmbGFncyBhcmd1
+bWVudCB0byBfX3Zmc19nZXR4YXR0cgotIGRyb3AgR0ZQX05PRlMgc2lkZS1lZmZlY3QKCnYxMjoK
+LSBSZXN0b3JlIHNxdWlzaGVkIG91dCBwYXRjaCAyIGFuZCAzIGluIHRoZSBzZXJpZXMsCiAgdGhl
+biBjaGFuZ2UgYWxnb3JpdGhtIHRvIGFkZCBmbGFncyBhcmd1bWVudC4KICBQZXItdGhyZWFkIGZs
+YWcgaXMgYSBsYXJnZSBzZWN1cml0eSBzdXJmYWNlLgoKdjExOgotIFNxdWlzaCBvdXQgdjEwIGlu
+dHJvZHVjZWQgcGF0Y2ggMiBhbmQgMyBpbiB0aGUgc2VyaWVzLAogIHRoZW4gYW5kIHVzZSBwZXIt
+dGhyZWFkIGZsYWcgaW5zdGVhZCBmb3IgbmVzdGluZy4KLSBTd2l0Y2ggbmFtZSB0byBvdmxfZG9f
+dmRzX2dldHhhdHRyIGZvciBfX3Zkc19nZXR4YXR0ciB3cmFwcGVyLgotIEFkZCBzYiBhcmd1bWVu
+dCB0byBvdmxfcmV2ZXJ0X2NyZWRzIHRvIG1hdGNoIGZ1dHVyZSB3b3JrLgoKdjEwOgotIFJldHVy
+biBOVUxMIG9uIENBUF9EQUNfUkVBRF9TRUFSQ0gKLSBBZGQgX19nZXQgeGF0dHIgbWV0aG9kIHRv
+IHNvbHZlIHNlcG9saWN5IGxvZ2dpbmcgaXNzdWUKLSBEcm9wIHVubmVjZXNzYXJ5IHN5c19hZG1p
+biBzZXBvbGljeSBjaGVja2luZyBmb3IgYWRtaW5pc3RyYXRpdmUKICBkcml2ZXIgaW50ZXJuYWwg
+eGF0dHIgZnVuY3Rpb25zLgoKdjY6Ci0gRHJvcCBDT05GSUdfT1ZFUkxBWV9GU19PVkVSUklERV9D
+UkVEUy4KLSBEbyBiZXR0ZXIgd2l0aCB0aGUgZG9jdW1lbnRhdGlvbiwgZHJvcCByYXRpb25hbGl6
+YXRpb25zLgotIHByX3dhcm4gbWVzc2FnZSBhZGp1c3RlZCB0byByZXBvcnQgY29uc2VxdWVuY2Vz
+LgoKdjU6Ci0gYmVlZmVkIHVwIHRoZSBjYXZlYXRzIGluIHRoZSBEb2N1bWVudGF0aW9uCi0gSXMg
+ZGVwZW5kZW50IG9uCiAgIm92ZXJsYXlmczogY2hlY2sgQ0FQX0RBQ19SRUFEX1NFQVJDSCBiZWZv
+cmUgaXNzdWluZyBleHBvcnRmc19kZWNvZGVfZmgiCiAgIm92ZXJsYXlmczogY2hlY2sgQ0FQX01L
+Tk9EIGJlZm9yZSBpc3N1aW5nIHZmc193aGl0ZW91dCIKLSBBZGRlZCBwcndhcm4gd2hlbiBvdmVy
+cmlkZV9jcmVkcz1vZmYKCnY0OgotIHNwZWxsaW5nIGFuZCBncmFtbWFyIGVycm9ycyBpbiB0ZXh0
+Cgp2MzoKLSBDaGFuZ2UgbmFtZSBmcm9tIGNhbGxlcl9jcmVkZW50aWFscyAvIGNyZWF0b3JfY3Jl
+ZGVudGlhbHMgdG8gdGhlCiAgYm9vbGVhbiBvdmVycmlkZV9jcmVkcy4KLSBDaGFuZ2VkIGZyb20g
+Y3JlYXRvciB0byBtb3VudGVyIGNyZWRlbnRpYWxzLgotIFVwZGF0ZWQgYW5kIGZvcnRpZmllZCB0
+aGUgZG9jdW1lbnRhdGlvbi4KLSBBZGRlZCBDT05GSUdfT1ZFUkxBWV9GU19PVkVSUklERV9DUkVE
+UwoKdjI6Ci0gRm9yd2FyZCBwb3J0IGNoYW5nZWQgYXR0ciB0byBzdGF0LCByZXN1bHRpbmcgaW4g
+YSBidWlsZCBlcnJvci4KLSBhbHRlcmVkIGNvbW1pdCBtZXNzYWdlLgoKCl9fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCkpmcy1kaXNjdXNzaW9uIG1haWxpbmcg
+bGlzdApKZnMtZGlzY3Vzc2lvbkBsaXN0cy5zb3VyY2Vmb3JnZS5uZXQKaHR0cHM6Ly9saXN0cy5z
+b3VyY2Vmb3JnZS5uZXQvbGlzdHMvbGlzdGluZm8vamZzLWRpc2N1c3Npb24K
