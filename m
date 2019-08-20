@@ -2,100 +2,78 @@ Return-Path: <jfs-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+jfs-discussion@lfdr.de
 Delivered-To: lists+jfs-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id C099B95E96
-	for <lists+jfs-discussion@lfdr.de>; Tue, 20 Aug 2019 14:32:20 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 46676963EF
+	for <lists+jfs-discussion@lfdr.de>; Tue, 20 Aug 2019 17:16:47 +0200 (CEST)
 Received: from [127.0.0.1] (helo=sfs-ml-2.v29.lw.sourceforge.com)
 	by sfs-ml-2.v29.lw.sourceforge.com with esmtp (Exim 4.90_1)
 	(envelope-from <jfs-discussion-bounces@lists.sourceforge.net>)
-	id 1i03Ix-0007Hg-Eg; Tue, 20 Aug 2019 12:32:03 +0000
+	id 1i05rx-0006ze-3B; Tue, 20 Aug 2019 15:16:21 +0000
 Received: from [172.30.20.202] (helo=mx.sourceforge.net)
- by sfs-ml-2.v29.lw.sourceforge.com with esmtps
+ by sfs-ml-1.v29.lw.sourceforge.com with esmtps
  (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
- (envelope-from <aivazian.tigran@gmail.com>) id 1i039y-0006sT-Cc
- for jfs-discussion@lists.sourceforge.net; Tue, 20 Aug 2019 12:22:46 +0000
+ (envelope-from <lkp@intel.com>)
+ id 1i05oy-0002e8-9j; Tue, 20 Aug 2019 15:13:16 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=sourceforge.net; s=x; h=Content-Type:Cc:To:Subject:Message-ID:Date:From:
- In-Reply-To:References:MIME-Version:Sender:Reply-To:Content-Transfer-Encoding
- :Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
+ d=sourceforge.net; s=x; h=In-Reply-To:Content-Type:MIME-Version:References:
+ Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:Content-Transfer-Encoding:
+ Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
  Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=0UMyUpDMp4Y4RG9lBvVE80wlqaE+NFQ1Rn4U8oBgA74=; b=U/86rrRAAd+9F6egsyJ1ZqpXQa
- r+HWk0VV5Kv8rQuD488fbAVl9MABEJrdgTG+kBaM5ycq08hq6v1joyjtLahpvUSQ0vq9pE+KXQ5sz
- /y7rQcbGZ2BgrYWWbqkqTYY/iBA3is2mzq51Db8DYsohebIOYaAvVbQnMq6E+jy1z9X4=;
+ bh=azyyXOQP0Y2dDSJIT26NKYAYSdljkGqKQkr4FACKBJs=; b=O/fqZHqBD4YzW3wRBO7I5jdtOT
+ iExtUq1ySmvm9+TwEnRKzWrw67wWSSxt8243pgW5XFfKwESWcx/M8i0NGNcnzH27YRj882F3eCzrX
+ YoVl8zHos0ZYkTiOGJ7OcCIUE6CXde1EmUwnRaqz7FOw+Qn3ID5mjmuekQwTqNEBN9Z4=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
- h=Content-Type:Cc:To:Subject:Message-ID:Date:From:In-Reply-To:References:
- MIME-Version:Sender:Reply-To:Content-Transfer-Encoding:Content-ID:
+ h=In-Reply-To:Content-Type:MIME-Version:References:Message-ID:Subject:Cc:To
+ :From:Date:Sender:Reply-To:Content-Transfer-Encoding:Content-ID:
  Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
  :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
  List-Post:List-Owner:List-Archive;
- bh=0UMyUpDMp4Y4RG9lBvVE80wlqaE+NFQ1Rn4U8oBgA74=; b=Jfi4xr90sUA9xnz522Q+dCGLN5
- qF9DKj0KvWWDnnpCuO6rS5iw0iNvm6j26ddnqjW9kTBXLWx4hF9yoMJ5fNi9SKhrLcUxSx1yknusH
- kUGpG2gC044lNjFHRXlG4xzCk6Qmb3dr9EmL1kn9/IIAKA3VjDOdts3/ZXp84CW4y2JQ=;
-Received: from mail-wr1-f65.google.com ([209.85.221.65])
- by sfi-mx-1.v28.lw.sourceforge.com with esmtps
- (TLSv1.2:ECDHE-RSA-AES128-GCM-SHA256:128) (Exim 4.90_1)
- id 1i039w-00DF9P-IZ
- for jfs-discussion@lists.sourceforge.net; Tue, 20 Aug 2019 12:22:46 +0000
-Received: by mail-wr1-f65.google.com with SMTP id z11so12176233wrt.4
- for <jfs-discussion@lists.sourceforge.net>;
- Tue, 20 Aug 2019 05:22:44 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=0UMyUpDMp4Y4RG9lBvVE80wlqaE+NFQ1Rn4U8oBgA74=;
- b=ZcvKQljWr2uhTzqHLbeNQpZCR/fYPkyHVLwNatJZSdSxHF2peDtCNPJPyOslgXmyHa
- pzmqdcQynzVocfWGpC0eWqoo8joalB7ENiHftOPVda1K998zDt/IO0bCCEfP0ysDkPUq
- y7eYh7vgPzjY87GpZZ/t9pKJr5oNyCc9MNknPezvwgvtUGG8ybxQ5qU3CudzP/Rw+IW2
- IZQkvmpSy4duei9dbVyzzXe2Fg32mG69NHv5LCn7FAejVuyPd5+g7NGcPyIOQTuE5dAz
- ZHEuZRB2rU8DrzBU+ku4AkuFD/4gsOmrBP3/7zMWh8uqy0C1cJEMKiYj9ydhDK5PO/sl
- yVYQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=0UMyUpDMp4Y4RG9lBvVE80wlqaE+NFQ1Rn4U8oBgA74=;
- b=Uh4GwCMWPiw+Gwf6rPYgWGbRmEtLCL/MCxyCU9WkPnEVpINEI+ASvsyKYjYeTzOiLL
- /Ol8q7uaJvkiGK2Rf3xQe66LXZTj4FDkW5i/y91xN/1aOwR9/JLIc7e3pnESppJv+w+D
- nYWuQBdXp2TZ0RzoxY6xxvhhTF2yGNmTSysAbBh9jQnPuwPwrvg6lVhr4rj1FFjLHYur
- sUSYfrkWpHqpQiR2/DgErgkwW+YsUxN/H/TIduGm5Ql2VkrNP3BFm9yrCJGSCcDcQhNk
- tbdzIFxr9WiaAM46AWyZR044pPPsA4w8BmkwKR75a4dXFtGJd/s9wxgXDsq7tBwtfjD8
- xq5Q==
-X-Gm-Message-State: APjAAAVTk68W+IRLDZsin4OlHt07IOWuHOCiXSHi6LTLiOb4q5YyzQXw
- ZiWh2R/9bHMYfvpARIFXfE4+Kk03jyedReAFZ9c=
-X-Google-Smtp-Source: APXvYqwCk7LFMS1FVu6jj+qUZvU/vrFRKFMDMnAO3XMpYFR/+wgzBfeRNqqF3NICibh1CzrIrEa/eLe38RHC9VqyBK8=
-X-Received: by 2002:adf:de02:: with SMTP id b2mr34040833wrm.204.1566303757872; 
- Tue, 20 Aug 2019 05:22:37 -0700 (PDT)
+ bh=azyyXOQP0Y2dDSJIT26NKYAYSdljkGqKQkr4FACKBJs=; b=hCq/MD/74CQD94Q3XMDo/OENfG
+ 3QqsupKUqXwza22v/sk0A7bwnLyDoj6chn1z1NEKrenvfoNpaqUKUTbHaBtRVLa9i/ef18zKt3Y63
+ IJIz4tqhbxbTFJdl2/9iTe6lCvNDm5aws1DB+UU0fMNDq3H0wrMARhaz/If5yyWwVCQI=;
+Received: from mga14.intel.com ([192.55.52.115])
+ by sfi-mx-3.v28.lw.sourceforge.com with esmtps
+ (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
+ id 1i05ow-00A6PL-96; Tue, 20 Aug 2019 15:13:16 +0000
+X-Amp-Result: UNKNOWN
+X-Amp-Original-Verdict: FILE UNKNOWN
+X-Amp-File-Uploaded: False
+Received: from orsmga005.jf.intel.com ([10.7.209.41])
+ by fmsmga103.fm.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
+ 20 Aug 2019 08:13:08 -0700
+X-ExtLoop1: 1
+X-IronPort-AV: E=Sophos;i="5.64,408,1559545200"; 
+ d="gz'50?scan'50,208,50";a="353603591"
+Received: from lkp-server01.sh.intel.com (HELO lkp-server01) ([10.239.97.150])
+ by orsmga005.jf.intel.com with ESMTP; 20 Aug 2019 08:12:52 -0700
+Received: from kbuild by lkp-server01 with local (Exim 4.89)
+ (envelope-from <lkp@intel.com>)
+ id 1i05oZ-0004T4-Ls; Tue, 20 Aug 2019 23:12:51 +0800
+Date: Tue, 20 Aug 2019 23:12:03 +0800
+From: kbuild test robot <lkp@intel.com>
+To: Mark Salyzyn <salyzyn@android.com>
+Message-ID: <201908202356.Jnt6ivbB%lkp@intel.com>
+References: <20190819183305.153583-1-salyzyn@android.com>
 MIME-Version: 1.0
-References: <20190818165817.32634-1-deepa.kernel@gmail.com>
- <20190818165817.32634-7-deepa.kernel@gmail.com>
-In-Reply-To: <20190818165817.32634-7-deepa.kernel@gmail.com>
-From: Tigran Aivazian <aivazian.tigran@gmail.com>
-Date: Tue, 20 Aug 2019 13:22:26 +0100
-Message-ID: <CAK+_RLmK0Vy79giAZnUCmmivvRT+GLZXyiMqBoFB0_Ed1W8BkA@mail.gmail.com>
-To: Deepa Dinamani <deepa.kernel@gmail.com>
-X-Spam-Score: 0.9 (/)
+Content-Type: multipart/mixed; boundary="4et4ewpskge26opw"
+Content-Disposition: inline
+In-Reply-To: <20190819183305.153583-1-salyzyn@android.com>
+X-Patchwork-Hint: ignore
+User-Agent: NeoMutt/20170113 (1.7.2)
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: Spam Filtering performed by mx.sourceforge.net.
  See http://spamassassin.org/tag/ for more details.
  0.0 URIBL_BLOCKED ADMINISTRATOR NOTICE: The query to URIBL was blocked.
  See
  http://wiki.apache.org/spamassassin/DnsBlocklists#dnsbl-block
- for more information. [URIs: squashfs.org.uk]
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/, no
- trust [209.85.221.65 listed in list.dnswl.org]
- 0.0 FREEMAIL_FROM Sender email is commonly abused enduser mail provider
- (aivazian.tigran[at]gmail.com)
+ for more information. [URIs: intel.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 1.0 HTML_MESSAGE           BODY: HTML included in message
- -0.1 DKIM_VALID_AU Message has a valid DKIM or DK signature from author's
- domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature,
- not necessarily valid
-X-Headers-End: 1i039w-00DF9P-IZ
-X-Mailman-Approved-At: Tue, 20 Aug 2019 12:32:01 +0000
-Subject: Re: [Jfs-discussion] [PATCH v8 06/20] fs: Fill in max and min
- timestamps in superblock
+X-Headers-End: 1i05ow-00A6PL-96
+X-Mailman-Approved-At: Tue, 20 Aug 2019 15:16:19 +0000
+Subject: Re: [Jfs-discussion] [PATCH v5] Add flags option to get xattr
+ method paired to __vfs_getxattr
 X-BeenThere: jfs-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -107,728 +85,282 @@ List-Post: <mailto:jfs-discussion@lists.sourceforge.net>
 List-Help: <mailto:jfs-discussion-request@lists.sourceforge.net?subject=help>
 List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/jfs-discussion>, 
  <mailto:jfs-discussion-request@lists.sourceforge.net?subject=subscribe>
-Cc: shaggy@kernel.org, jfs-discussion@lists.sourceforge.net, al@alarsen.net,
- linux-mtd@lists.infradead.org, darrick.wong@oracle.com, y2038@lists.linaro.org,
- richard@nod.at, codalist@coda.cs.cmu.edu, hch@infradead.org, coda@cs.cmu.edu,
- linux-ext4@vger.kernel.org, salah.triki@gmail.com, dushistov@mail.ru,
- arnd@arndb.de, reiserfs-devel@vger.kernel.org,
- Al Viro <viro@zeniv.linux.org.uk>, jaharkes@cs.cmu.edu, luisbg@kernel.org,
- nico@fluxnic.net, LKML <linux-kernel@vger.kernel.org>,
- linux-xfs@vger.kernel.org, jack@suse.com,
- linux-fsdevel <linux-fsdevel@vger.kernel.org>, phillip@squashfs.org.uk,
- dwmw2@infradead.org
-Content-Type: multipart/mixed; boundary="===============3304127166569224027=="
+Cc: Latchesar Ionkov <lucho@ionkov.net>, Hugh Dickins <hughd@google.com>,
+ Mike Marshall <hubcap@omnibond.com>, James Morris <jmorris@namei.org>,
+ devel@lists.orangefs.org, Eric Van Hensbergen <ericvh@gmail.com>,
+ Joel Becker <jlbec@evilplan.org>, Anna Schumaker <anna.schumaker@netapp.com>,
+ Trond Myklebust <trond.myklebust@hammerspace.com>,
+ Mathieu Malaterre <malat@debian.org>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>, linux-kernel@vger.kernel.org,
+ kbuild-all@01.org, Jan Kara <jack@suse.com>,
+ Casey Schaufler <casey@schaufler-ca.com>,
+ Andrew Morton <akpm@linux-foundation.org>, Dave Kleikamp <shaggy@kernel.org>,
+ linux-doc@vger.kernel.org, Jeff Layton <jlayton@kernel.org>,
+ Chao Yu <yuchao0@huawei.com>, Mimi Zohar <zohar@linux.ibm.com>,
+ linux-cifs@vger.kernel.org, Paul Moore <paul@paul-moore.com>,
+ "Darrick J. Wong" <darrick.wong@oracle.com>,
+ Eric Sandeen <sandeen@sandeen.net>, kernel-team@android.com,
+ selinux@vger.kernel.org, Brian Foster <bfoster@redhat.com>,
+ reiserfs-devel@vger.kernel.org, Tejun Heo <tj@kernel.org>,
+ Jaegeuk Kim <jaegeuk@kernel.org>, Theodore Ts'o <tytso@mit.edu>,
+ Miklos Szeredi <miklos@szeredi.hu>, linux-f2fs-devel@lists.sourceforge.net,
+ Benjamin Coddington <bcodding@redhat.com>, linux-integrity@vger.kernel.org,
+ Martin Brandenburg <martin@omnibond.com>, Chris Mason <clm@fb.com>,
+ linux-mtd@lists.infradead.org, linux-afs@lists.infradead.org,
+ Jonathan Corbet <corbet@lwn.net>,
+ Allison Henderson <allison.henderson@oracle.com>,
+ Ilya Dryomov <idryomov@gmail.com>, linux-ext4@vger.kernel.org,
+ Stephen Smalley <sds@tycho.nsa.gov>, Serge Hallyn <serge@hallyn.com>,
+ Gao Xiang <gaoxiang25@huawei.com>, Eric Paris <eparis@parisplace.org>,
+ ceph-devel@vger.kernel.org, linux-nfs@vger.kernel.org, linux-mm@kvack.org,
+ samba-technical@lists.samba.org, linux-xfs@vger.kernel.org,
+ Bob Peterson <rpeterso@redhat.com>, linux-fsdevel@vger.kernel.org,
+ linux-erofs@lists.ozlabs.org, "David S. Miller" <davem@davemloft.net>,
+ ocfs2-devel@oss.oracle.com, jfs-discussion@lists.sourceforge.net,
+ Eric Biggers <ebiggers@google.com>,
+ Dominique Martinet <asmadeus@codewreck.org>, Jeff Mahoney <jeffm@suse.com>,
+ linux-unionfs@vger.kernel.org, David Howells <dhowells@redhat.com>,
+ Joseph Qi <joseph.qi@linux.alibaba.com>,
+ Andreas Dilger <adilger.kernel@dilger.ca>, Mark Salyzyn <salyzyn@android.com>,
+ devel@driverdev.osuosl.org, "J. Bruce Fields" <bfields@redhat.com>,
+ Andreas Gruenbacher <agruenba@redhat.com>, Sage Weil <sage@redhat.com>,
+ Richard Weinberger <richard@nod.at>, Mark Fasheh <mark@fasheh.com>,
+ linux-security-module@vger.kernel.org, cluster-devel@redhat.com,
+ Steve French <sfrench@samba.org>, v9fs-developer@lists.sourceforge.net,
+ Bharath Vedartham <linux.bhar@gmail.com>, Jann Horn <jannh@google.com>,
+ ecryptfs@vger.kernel.org, Josef Bacik <josef@toxicpanda.com>,
+ Dave Chinner <dchinner@redhat.com>, David Sterba <dsterba@suse.com>,
+ Artem Bityutskiy <dedekind1@gmail.com>, netdev@vger.kernel.org,
+ Adrian Hunter <adrian.hunter@intel.com>, stable@vger.kernel.org,
+ Tyler Hicks <tyhicks@canonical.com>,
+ Ernesto =?unknown-8bit?Q?A=2E_Fern=C3=A1ndez?=
+ <ernesto.mnd.fernandez@gmail.com>, Phillip Lougher <phillip@squashfs.org.uk>,
+ David Woodhouse <dwmw2@infradead.org>, linux-btrfs@vger.kernel.org,
+ Alexander Viro <viro@zeniv.linux.org.uk>
 Errors-To: jfs-discussion-bounces@lists.sourceforge.net
 
---===============3304127166569224027==
-Content-Type: multipart/alternative; boundary="0000000000001934b005908b83d2"
 
---0000000000001934b005908b83d2
-Content-Type: text/plain; charset="UTF-8"
+--4et4ewpskge26opw
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
 
-I see no problems for BFS.
+Hi Mark,
 
-Acked-By: Tigran Aivazian <aivazian.tigran@gmail.com>
+Thank you for the patch! Yet something to improve:
 
-On Sun, 18 Aug 2019 at 17:59, Deepa Dinamani <deepa.kernel@gmail.com> wrote:
+[auto build test ERROR on linus/master]
+[cannot apply to v5.3-rc5 next-20190820]
+[if your patch is applied to the wrong git tree, please drop us a note to help improve the system]
 
-> Fill in the appropriate limits to avoid inconsistencies
-> in the vfs cached inode times when timestamps are
-> outside the permitted range.
->
-> Even though some filesystems are read-only, fill in the
-> timestamps to reflect the on-disk representation.
->
-> Signed-off-by: Deepa Dinamani <deepa.kernel@gmail.com>
-> Reviewed-by: Darrick J. Wong <darrick.wong@oracle.com>
-> Cc: aivazian.tigran@gmail.com
-> Cc: al@alarsen.net
-> Cc: coda@cs.cmu.edu
-> Cc: darrick.wong@oracle.com
-> Cc: dushistov@mail.ru
-> Cc: dwmw2@infradead.org
-> Cc: hch@infradead.org
-> Cc: jack@suse.com
-> Cc: jaharkes@cs.cmu.edu
-> Cc: luisbg@kernel.org
-> Cc: nico@fluxnic.net
-> Cc: phillip@squashfs.org.uk
-> Cc: richard@nod.at
-> Cc: salah.triki@gmail.com
-> Cc: shaggy@kernel.org
-> Cc: linux-xfs@vger.kernel.org
-> Cc: codalist@coda.cs.cmu.edu
-> Cc: linux-ext4@vger.kernel.org
-> Cc: linux-mtd@lists.infradead.org
-> Cc: jfs-discussion@lists.sourceforge.net
-> Cc: reiserfs-devel@vger.kernel.org
-> ---
->  fs/befs/linuxvfs.c       | 2 ++
->  fs/bfs/inode.c           | 2 ++
->  fs/coda/inode.c          | 3 +++
->  fs/cramfs/inode.c        | 2 ++
->  fs/efs/super.c           | 2 ++
->  fs/ext2/super.c          | 2 ++
->  fs/freevxfs/vxfs_super.c | 2 ++
->  fs/jffs2/fs.c            | 3 +++
->  fs/jfs/super.c           | 2 ++
->  fs/minix/inode.c         | 2 ++
->  fs/qnx4/inode.c          | 2 ++
->  fs/qnx6/inode.c          | 2 ++
->  fs/reiserfs/super.c      | 3 +++
->  fs/romfs/super.c         | 2 ++
->  fs/squashfs/super.c      | 2 ++
->  fs/ufs/super.c           | 7 +++++++
->  fs/xfs/xfs_super.c       | 2 ++
->  17 files changed, 42 insertions(+)
->
-> diff --git a/fs/befs/linuxvfs.c b/fs/befs/linuxvfs.c
-> index 462d096ff3e9..64cdf4d8e424 100644
-> --- a/fs/befs/linuxvfs.c
-> +++ b/fs/befs/linuxvfs.c
-> @@ -893,6 +893,8 @@ befs_fill_super(struct super_block *sb, void *data,
-> int silent)
->         sb_set_blocksize(sb, (ulong) befs_sb->block_size);
->         sb->s_op = &befs_sops;
->         sb->s_export_op = &befs_export_operations;
-> +       sb->s_time_min = 0;
-> +       sb->s_time_max = 0xffffffffffffll;
->         root = befs_iget(sb, iaddr2blockno(sb, &(befs_sb->root_dir)));
->         if (IS_ERR(root)) {
->                 ret = PTR_ERR(root);
-> diff --git a/fs/bfs/inode.c b/fs/bfs/inode.c
-> index 5e97bed073d7..f8ce1368218b 100644
-> --- a/fs/bfs/inode.c
-> +++ b/fs/bfs/inode.c
-> @@ -324,6 +324,8 @@ static int bfs_fill_super(struct super_block *s, void
-> *data, int silent)
->                 return -ENOMEM;
->         mutex_init(&info->bfs_lock);
->         s->s_fs_info = info;
-> +       s->s_time_min = 0;
-> +       s->s_time_max = U32_MAX;
->
->         sb_set_blocksize(s, BFS_BSIZE);
->
-> diff --git a/fs/coda/inode.c b/fs/coda/inode.c
-> index 59a9a29ade0a..e07b5f2ceccc 100644
-> --- a/fs/coda/inode.c
-> +++ b/fs/coda/inode.c
-> @@ -223,6 +223,9 @@ static int coda_fill_super(struct super_block *sb,
-> struct fs_context *fc)
->         sb->s_magic = CODA_SUPER_MAGIC;
->         sb->s_op = &coda_super_operations;
->         sb->s_d_op = &coda_dentry_operations;
-> +       sb->s_time_gran = 1;
-> +       sb->s_time_min = S64_MIN;
-> +       sb->s_time_max = S64_MAX;
->
->         error = super_setup_bdi(sb);
->         if (error)
-> diff --git a/fs/cramfs/inode.c b/fs/cramfs/inode.c
-> index 2ee89a353d64..c304ae8357ef 100644
-> --- a/fs/cramfs/inode.c
-> +++ b/fs/cramfs/inode.c
-> @@ -599,6 +599,8 @@ static int cramfs_finalize_super(struct super_block
-> *sb,
->
->         /* Set it all up.. */
->         sb->s_flags |= SB_RDONLY;
-> +       sb->s_time_min = 0;
-> +       sb->s_time_max = 0;
->         sb->s_op = &cramfs_ops;
->         root = get_cramfs_inode(sb, cramfs_root, 0);
->         if (IS_ERR(root))
-> diff --git a/fs/efs/super.c b/fs/efs/super.c
-> index 867fc24dee20..4a6ebff2af76 100644
-> --- a/fs/efs/super.c
-> +++ b/fs/efs/super.c
-> @@ -257,6 +257,8 @@ static int efs_fill_super(struct super_block *s, void
-> *d, int silent)
->         if (!sb)
->                 return -ENOMEM;
->         s->s_fs_info = sb;
-> +       s->s_time_min = 0;
-> +       s->s_time_max = U32_MAX;
->
->         s->s_magic              = EFS_SUPER_MAGIC;
->         if (!sb_set_blocksize(s, EFS_BLOCKSIZE)) {
-> diff --git a/fs/ext2/super.c b/fs/ext2/super.c
-> index 44eb6e7eb492..baa36c6fb71e 100644
-> --- a/fs/ext2/super.c
-> +++ b/fs/ext2/super.c
-> @@ -1002,6 +1002,8 @@ static int ext2_fill_super(struct super_block *sb,
-> void *data, int silent)
->
->         sb->s_maxbytes = ext2_max_size(sb->s_blocksize_bits);
->         sb->s_max_links = EXT2_LINK_MAX;
-> +       sb->s_time_min = S32_MIN;
-> +       sb->s_time_max = S32_MAX;
->
->         if (le32_to_cpu(es->s_rev_level) == EXT2_GOOD_OLD_REV) {
->                 sbi->s_inode_size = EXT2_GOOD_OLD_INODE_SIZE;
-> diff --git a/fs/freevxfs/vxfs_super.c b/fs/freevxfs/vxfs_super.c
-> index a89f68c3cbed..578a5062706e 100644
-> --- a/fs/freevxfs/vxfs_super.c
-> +++ b/fs/freevxfs/vxfs_super.c
-> @@ -229,6 +229,8 @@ static int vxfs_fill_super(struct super_block *sbp,
-> void *dp, int silent)
->
->         sbp->s_op = &vxfs_super_ops;
->         sbp->s_fs_info = infp;
-> +       sbp->s_time_min = 0;
-> +       sbp->s_time_max = U32_MAX;
->
->         if (!vxfs_try_sb_magic(sbp, silent, 1,
->                         (__force __fs32)cpu_to_le32(VXFS_SUPER_MAGIC))) {
-> diff --git a/fs/jffs2/fs.c b/fs/jffs2/fs.c
-> index 25736676a456..05fe6cf5f1ac 100644
-> --- a/fs/jffs2/fs.c
-> +++ b/fs/jffs2/fs.c
-> @@ -591,6 +591,9 @@ int jffs2_do_fill_super(struct super_block *sb, struct
-> fs_context *fc)
->         sb->s_blocksize = PAGE_SIZE;
->         sb->s_blocksize_bits = PAGE_SHIFT;
->         sb->s_magic = JFFS2_SUPER_MAGIC;
-> +       sb->s_time_min = 0;
-> +       sb->s_time_max = U32_MAX;
-> +
->         if (!sb_rdonly(sb))
->                 jffs2_start_garbage_collect_thread(c);
->         return 0;
-> diff --git a/fs/jfs/super.c b/fs/jfs/super.c
-> index f4e10cb9f734..b2dc4d1f9dcc 100644
-> --- a/fs/jfs/super.c
-> +++ b/fs/jfs/super.c
-> @@ -503,6 +503,8 @@ static int jfs_fill_super(struct super_block *sb, void
-> *data, int silent)
->
->         sb->s_fs_info = sbi;
->         sb->s_max_links = JFS_LINK_MAX;
-> +       sb->s_time_min = 0;
-> +       sb->s_time_max = U32_MAX;
->         sbi->sb = sb;
->         sbi->uid = INVALID_UID;
->         sbi->gid = INVALID_GID;
-> diff --git a/fs/minix/inode.c b/fs/minix/inode.c
-> index f96073f25432..7cb5fd38eb14 100644
-> --- a/fs/minix/inode.c
-> +++ b/fs/minix/inode.c
-> @@ -277,6 +277,8 @@ static int minix_fill_super(struct super_block *s,
-> void *data, int silent)
->
->         /* set up enough so that it can read an inode */
->         s->s_op = &minix_sops;
-> +       s->s_time_min = 0;
-> +       s->s_time_max = U32_MAX;
->         root_inode = minix_iget(s, MINIX_ROOT_INO);
->         if (IS_ERR(root_inode)) {
->                 ret = PTR_ERR(root_inode);
-> diff --git a/fs/qnx4/inode.c b/fs/qnx4/inode.c
-> index 922d083bbc7c..e8da1cde87b9 100644
-> --- a/fs/qnx4/inode.c
-> +++ b/fs/qnx4/inode.c
-> @@ -201,6 +201,8 @@ static int qnx4_fill_super(struct super_block *s, void
-> *data, int silent)
->         s->s_op = &qnx4_sops;
->         s->s_magic = QNX4_SUPER_MAGIC;
->         s->s_flags |= SB_RDONLY;        /* Yup, read-only yet */
-> +       s->s_time_min = 0;
-> +       s->s_time_max = U32_MAX;
->
->         /* Check the superblock signature. Since the qnx4 code is
->            dangerous, we should leave as quickly as possible
-> diff --git a/fs/qnx6/inode.c b/fs/qnx6/inode.c
-> index 0f8b0ff1ba43..345db56c98fd 100644
-> --- a/fs/qnx6/inode.c
-> +++ b/fs/qnx6/inode.c
-> @@ -429,6 +429,8 @@ static int qnx6_fill_super(struct super_block *s, void
-> *data, int silent)
->         s->s_op = &qnx6_sops;
->         s->s_magic = QNX6_SUPER_MAGIC;
->         s->s_flags |= SB_RDONLY;        /* Yup, read-only yet */
-> +       s->s_time_min = 0;
-> +       s->s_time_max = U32_MAX;
->
->         /* ease the later tree level calculations */
->         sbi = QNX6_SB(s);
-> diff --git a/fs/reiserfs/super.c b/fs/reiserfs/super.c
-> index ab028ea0e561..d69b4ac0ae2f 100644
-> --- a/fs/reiserfs/super.c
-> +++ b/fs/reiserfs/super.c
-> @@ -1976,6 +1976,9 @@ static int reiserfs_fill_super(struct super_block
-> *s, void *data, int silent)
->                 goto error_unlocked;
->         }
->
-> +       s->s_time_min = 0;
-> +       s->s_time_max = U32_MAX;
-> +
->         rs = SB_DISK_SUPER_BLOCK(s);
->         /*
->          * Let's do basic sanity check to verify that underlying device is
-> not
-> diff --git a/fs/romfs/super.c b/fs/romfs/super.c
-> index 4636f867b9e8..338ac8521e65 100644
-> --- a/fs/romfs/super.c
-> +++ b/fs/romfs/super.c
-> @@ -477,6 +477,8 @@ static int romfs_fill_super(struct super_block *sb,
-> struct fs_context *fc)
->         sb->s_maxbytes = 0xFFFFFFFF;
->         sb->s_magic = ROMFS_MAGIC;
->         sb->s_flags |= SB_RDONLY | SB_NOATIME;
-> +       sb->s_time_min = 0;
-> +       sb->s_time_max = 0;
->         sb->s_op = &romfs_super_ops;
->
->  #ifdef CONFIG_ROMFS_ON_MTD
-> diff --git a/fs/squashfs/super.c b/fs/squashfs/super.c
-> index 0311171af72d..e2d6566371ec 100644
-> --- a/fs/squashfs/super.c
-> +++ b/fs/squashfs/super.c
-> @@ -186,6 +186,8 @@ static int squashfs_fill_super(struct super_block *sb,
-> struct fs_context *fc)
->                 (u64) le64_to_cpu(sblk->id_table_start));
->
->         sb->s_maxbytes = MAX_LFS_FILESIZE;
-> +       sb->s_time_min = 0;
-> +       sb->s_time_max = U32_MAX;
->         sb->s_flags |= SB_RDONLY;
->         sb->s_op = &squashfs_super_ops;
->
-> diff --git a/fs/ufs/super.c b/fs/ufs/super.c
-> index 4ed0dca52ec8..1da0be667409 100644
-> --- a/fs/ufs/super.c
-> +++ b/fs/ufs/super.c
-> @@ -843,6 +843,10 @@ static int ufs_fill_super(struct super_block *sb,
-> void *data, int silent)
->
->         sb->s_maxbytes = MAX_LFS_FILESIZE;
->
-> +       sb->s_time_gran = NSEC_PER_SEC;
-> +       sb->s_time_min = S32_MIN;
-> +       sb->s_time_max = S32_MAX;
-> +
->         switch (sbi->s_mount_opt & UFS_MOUNT_UFSTYPE) {
->         case UFS_MOUNT_UFSTYPE_44BSD:
->                 UFSD("ufstype=44bsd\n");
-> @@ -861,6 +865,9 @@ static int ufs_fill_super(struct super_block *sb, void
-> *data, int silent)
->                 uspi->s_fshift = 9;
->                 uspi->s_sbsize = super_block_size = 1536;
->                 uspi->s_sbbase =  0;
-> +               sb->s_time_gran = 1;
-> +               sb->s_time_min = S64_MIN;
-> +               sb->s_time_max = S64_MAX;
->                 flags |= UFS_TYPE_UFS2 | UFS_DE_44BSD | UFS_UID_44BSD |
-> UFS_ST_44BSD | UFS_CG_44BSD;
->                 break;
->
-> diff --git a/fs/xfs/xfs_super.c b/fs/xfs/xfs_super.c
-> index f9450235533c..d3b10900fc24 100644
-> --- a/fs/xfs/xfs_super.c
-> +++ b/fs/xfs/xfs_super.c
-> @@ -1663,6 +1663,8 @@ xfs_fs_fill_super(
->         sb->s_maxbytes = xfs_max_file_offset(sb->s_blocksize_bits);
->         sb->s_max_links = XFS_MAXLINK;
->         sb->s_time_gran = 1;
-> +       sb->s_time_min = S32_MIN;
-> +       sb->s_time_max = S32_MAX;
->         sb->s_iflags |= SB_I_CGROUPWB;
->
->         set_posix_acl_flag(sb);
-> --
-> 2.17.1
->
->
+url:    https://github.com/0day-ci/linux/commits/Mark-Salyzyn/Add-flags-option-to-get-xattr-method-paired-to-__vfs_getxattr/20190820-220307
+config: um-x86_64_defconfig (attached as .config)
+compiler: gcc-7 (Debian 7.4.0-10) 7.4.0
+reproduce:
+        # save the attached .config to linux build tree
+        make ARCH=um SUBARCH=x86_64
 
---0000000000001934b005908b83d2
-Content-Type: text/html; charset="UTF-8"
-Content-Transfer-Encoding: quoted-printable
+If you fix the issue, kindly add following tag
+Reported-by: kbuild test robot <lkp@intel.com>
 
-<div dir=3D"ltr">I see no problems for BFS.<div><br></div><div>Acked-By: Ti=
-gran Aivazian &lt;<a href=3D"mailto:aivazian.tigran@gmail.com">aivazian.tig=
-ran@gmail.com</a>&gt;</div></div><br><div class=3D"gmail_quote"><div dir=3D=
-"ltr" class=3D"gmail_attr">On Sun, 18 Aug 2019 at 17:59, Deepa Dinamani &lt=
-;<a href=3D"mailto:deepa.kernel@gmail.com">deepa.kernel@gmail.com</a>&gt; w=
-rote:<br></div><blockquote class=3D"gmail_quote" style=3D"margin:0px 0px 0p=
-x 0.8ex;border-left:1px solid rgb(204,204,204);padding-left:1ex">Fill in th=
-e appropriate limits to avoid inconsistencies<br>
-in the vfs cached inode times when timestamps are<br>
-outside the permitted range.<br>
-<br>
-Even though some filesystems are read-only, fill in the<br>
-timestamps to reflect the on-disk representation.<br>
-<br>
-Signed-off-by: Deepa Dinamani &lt;<a href=3D"mailto:deepa.kernel@gmail.com"=
- target=3D"_blank">deepa.kernel@gmail.com</a>&gt;<br>
-Reviewed-by: Darrick J. Wong &lt;<a href=3D"mailto:darrick.wong@oracle.com"=
- target=3D"_blank">darrick.wong@oracle.com</a>&gt;<br>
-Cc: <a href=3D"mailto:aivazian.tigran@gmail.com" target=3D"_blank">aivazian=
-.tigran@gmail.com</a><br>
-Cc: <a href=3D"mailto:al@alarsen.net" target=3D"_blank">al@alarsen.net</a><=
-br>
-Cc: <a href=3D"mailto:coda@cs.cmu.edu" target=3D"_blank">coda@cs.cmu.edu</a=
-><br>
-Cc: <a href=3D"mailto:darrick.wong@oracle.com" target=3D"_blank">darrick.wo=
-ng@oracle.com</a><br>
-Cc: <a href=3D"mailto:dushistov@mail.ru" target=3D"_blank">dushistov@mail.r=
-u</a><br>
-Cc: <a href=3D"mailto:dwmw2@infradead.org" target=3D"_blank">dwmw2@infradea=
-d.org</a><br>
-Cc: <a href=3D"mailto:hch@infradead.org" target=3D"_blank">hch@infradead.or=
-g</a><br>
-Cc: <a href=3D"mailto:jack@suse.com" target=3D"_blank">jack@suse.com</a><br=
->
-Cc: <a href=3D"mailto:jaharkes@cs.cmu.edu" target=3D"_blank">jaharkes@cs.cm=
-u.edu</a><br>
-Cc: <a href=3D"mailto:luisbg@kernel.org" target=3D"_blank">luisbg@kernel.or=
-g</a><br>
-Cc: <a href=3D"mailto:nico@fluxnic.net" target=3D"_blank">nico@fluxnic.net<=
-/a><br>
-Cc: <a href=3D"mailto:phillip@squashfs.org.uk" target=3D"_blank">phillip@sq=
-uashfs.org.uk</a><br>
-Cc: <a href=3D"mailto:richard@nod.at" target=3D"_blank">richard@nod.at</a><=
-br>
-Cc: <a href=3D"mailto:salah.triki@gmail.com" target=3D"_blank">salah.triki@=
-gmail.com</a><br>
-Cc: <a href=3D"mailto:shaggy@kernel.org" target=3D"_blank">shaggy@kernel.or=
-g</a><br>
-Cc: <a href=3D"mailto:linux-xfs@vger.kernel.org" target=3D"_blank">linux-xf=
-s@vger.kernel.org</a><br>
-Cc: <a href=3D"mailto:codalist@coda.cs.cmu.edu" target=3D"_blank">codalist@=
-coda.cs.cmu.edu</a><br>
-Cc: <a href=3D"mailto:linux-ext4@vger.kernel.org" target=3D"_blank">linux-e=
-xt4@vger.kernel.org</a><br>
-Cc: <a href=3D"mailto:linux-mtd@lists.infradead.org" target=3D"_blank">linu=
-x-mtd@lists.infradead.org</a><br>
-Cc: <a href=3D"mailto:jfs-discussion@lists.sourceforge.net" target=3D"_blan=
-k">jfs-discussion@lists.sourceforge.net</a><br>
-Cc: <a href=3D"mailto:reiserfs-devel@vger.kernel.org" target=3D"_blank">rei=
-serfs-devel@vger.kernel.org</a><br>
----<br>
-=C2=A0fs/befs/linuxvfs.c=C2=A0 =C2=A0 =C2=A0 =C2=A0| 2 ++<br>
-=C2=A0fs/bfs/inode.c=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0| 2 ++<br>
-=C2=A0fs/coda/inode.c=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 | 3 +++<br>
-=C2=A0fs/cramfs/inode.c=C2=A0 =C2=A0 =C2=A0 =C2=A0 | 2 ++<br>
-=C2=A0fs/efs/super.c=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0| 2 ++<br>
-=C2=A0fs/ext2/super.c=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 | 2 ++<br>
-=C2=A0fs/freevxfs/vxfs_super.c | 2 ++<br>
-=C2=A0fs/jffs2/fs.c=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 | 3 +++<br>
-=C2=A0fs/jfs/super.c=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0| 2 ++<br>
-=C2=A0fs/minix/inode.c=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0| 2 ++<br>
-=C2=A0fs/qnx4/inode.c=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 | 2 ++<br>
-=C2=A0fs/qnx6/inode.c=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 | 2 ++<br>
-=C2=A0fs/reiserfs/super.c=C2=A0 =C2=A0 =C2=A0 | 3 +++<br>
-=C2=A0fs/romfs/super.c=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0| 2 ++<br>
-=C2=A0fs/squashfs/super.c=C2=A0 =C2=A0 =C2=A0 | 2 ++<br>
-=C2=A0fs/ufs/super.c=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0| 7 +++++++<br=
->
-=C2=A0fs/xfs/xfs_super.c=C2=A0 =C2=A0 =C2=A0 =C2=A0| 2 ++<br>
-=C2=A017 files changed, 42 insertions(+)<br>
-<br>
-diff --git a/fs/befs/linuxvfs.c b/fs/befs/linuxvfs.c<br>
-index 462d096ff3e9..64cdf4d8e424 100644<br>
---- a/fs/befs/linuxvfs.c<br>
-+++ b/fs/befs/linuxvfs.c<br>
-@@ -893,6 +893,8 @@ befs_fill_super(struct super_block *sb, void *data, int=
- silent)<br>
-=C2=A0 =C2=A0 =C2=A0 =C2=A0 sb_set_blocksize(sb, (ulong) befs_sb-&gt;block_=
-size);<br>
-=C2=A0 =C2=A0 =C2=A0 =C2=A0 sb-&gt;s_op =3D &amp;befs_sops;<br>
-=C2=A0 =C2=A0 =C2=A0 =C2=A0 sb-&gt;s_export_op =3D &amp;befs_export_operati=
-ons;<br>
-+=C2=A0 =C2=A0 =C2=A0 =C2=A0sb-&gt;s_time_min =3D 0;<br>
-+=C2=A0 =C2=A0 =C2=A0 =C2=A0sb-&gt;s_time_max =3D 0xffffffffffffll;<br>
-=C2=A0 =C2=A0 =C2=A0 =C2=A0 root =3D befs_iget(sb, iaddr2blockno(sb, &amp;(=
-befs_sb-&gt;root_dir)));<br>
-=C2=A0 =C2=A0 =C2=A0 =C2=A0 if (IS_ERR(root)) {<br>
-=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 ret =3D PTR_ERR(roo=
-t);<br>
-diff --git a/fs/bfs/inode.c b/fs/bfs/inode.c<br>
-index 5e97bed073d7..f8ce1368218b 100644<br>
---- a/fs/bfs/inode.c<br>
-+++ b/fs/bfs/inode.c<br>
-@@ -324,6 +324,8 @@ static int bfs_fill_super(struct super_block *s, void *=
-data, int silent)<br>
-=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 return -ENOMEM;<br>
-=C2=A0 =C2=A0 =C2=A0 =C2=A0 mutex_init(&amp;info-&gt;bfs_lock);<br>
-=C2=A0 =C2=A0 =C2=A0 =C2=A0 s-&gt;s_fs_info =3D info;<br>
-+=C2=A0 =C2=A0 =C2=A0 =C2=A0s-&gt;s_time_min =3D 0;<br>
-+=C2=A0 =C2=A0 =C2=A0 =C2=A0s-&gt;s_time_max =3D U32_MAX;<br>
-<br>
-=C2=A0 =C2=A0 =C2=A0 =C2=A0 sb_set_blocksize(s, BFS_BSIZE);<br>
-<br>
-diff --git a/fs/coda/inode.c b/fs/coda/inode.c<br>
-index 59a9a29ade0a..e07b5f2ceccc 100644<br>
---- a/fs/coda/inode.c<br>
-+++ b/fs/coda/inode.c<br>
-@@ -223,6 +223,9 @@ static int coda_fill_super(struct super_block *sb, stru=
-ct fs_context *fc)<br>
-=C2=A0 =C2=A0 =C2=A0 =C2=A0 sb-&gt;s_magic =3D CODA_SUPER_MAGIC;<br>
-=C2=A0 =C2=A0 =C2=A0 =C2=A0 sb-&gt;s_op =3D &amp;coda_super_operations;<br>
-=C2=A0 =C2=A0 =C2=A0 =C2=A0 sb-&gt;s_d_op =3D &amp;coda_dentry_operations;<=
-br>
-+=C2=A0 =C2=A0 =C2=A0 =C2=A0sb-&gt;s_time_gran =3D 1;<br>
-+=C2=A0 =C2=A0 =C2=A0 =C2=A0sb-&gt;s_time_min =3D S64_MIN;<br>
-+=C2=A0 =C2=A0 =C2=A0 =C2=A0sb-&gt;s_time_max =3D S64_MAX;<br>
-<br>
-=C2=A0 =C2=A0 =C2=A0 =C2=A0 error =3D super_setup_bdi(sb);<br>
-=C2=A0 =C2=A0 =C2=A0 =C2=A0 if (error)<br>
-diff --git a/fs/cramfs/inode.c b/fs/cramfs/inode.c<br>
-index 2ee89a353d64..c304ae8357ef 100644<br>
---- a/fs/cramfs/inode.c<br>
-+++ b/fs/cramfs/inode.c<br>
-@@ -599,6 +599,8 @@ static int cramfs_finalize_super(struct super_block *sb=
-,<br>
-<br>
-=C2=A0 =C2=A0 =C2=A0 =C2=A0 /* Set it all up.. */<br>
-=C2=A0 =C2=A0 =C2=A0 =C2=A0 sb-&gt;s_flags |=3D SB_RDONLY;<br>
-+=C2=A0 =C2=A0 =C2=A0 =C2=A0sb-&gt;s_time_min =3D 0;<br>
-+=C2=A0 =C2=A0 =C2=A0 =C2=A0sb-&gt;s_time_max =3D 0;<br>
-=C2=A0 =C2=A0 =C2=A0 =C2=A0 sb-&gt;s_op =3D &amp;cramfs_ops;<br>
-=C2=A0 =C2=A0 =C2=A0 =C2=A0 root =3D get_cramfs_inode(sb, cramfs_root, 0);<=
-br>
-=C2=A0 =C2=A0 =C2=A0 =C2=A0 if (IS_ERR(root))<br>
-diff --git a/fs/efs/super.c b/fs/efs/super.c<br>
-index 867fc24dee20..4a6ebff2af76 100644<br>
---- a/fs/efs/super.c<br>
-+++ b/fs/efs/super.c<br>
-@@ -257,6 +257,8 @@ static int efs_fill_super(struct super_block *s, void *=
-d, int silent)<br>
-=C2=A0 =C2=A0 =C2=A0 =C2=A0 if (!sb)<br>
-=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 return -ENOMEM;<br>
-=C2=A0 =C2=A0 =C2=A0 =C2=A0 s-&gt;s_fs_info =3D sb;<br>
-+=C2=A0 =C2=A0 =C2=A0 =C2=A0s-&gt;s_time_min =3D 0;<br>
-+=C2=A0 =C2=A0 =C2=A0 =C2=A0s-&gt;s_time_max =3D U32_MAX;<br>
-<br>
-=C2=A0 =C2=A0 =C2=A0 =C2=A0 s-&gt;s_magic=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0=
- =C2=A0 =C2=A0 =3D EFS_SUPER_MAGIC;<br>
-=C2=A0 =C2=A0 =C2=A0 =C2=A0 if (!sb_set_blocksize(s, EFS_BLOCKSIZE)) {<br>
-diff --git a/fs/ext2/super.c b/fs/ext2/super.c<br>
-index 44eb6e7eb492..baa36c6fb71e 100644<br>
---- a/fs/ext2/super.c<br>
-+++ b/fs/ext2/super.c<br>
-@@ -1002,6 +1002,8 @@ static int ext2_fill_super(struct super_block *sb, vo=
-id *data, int silent)<br>
-<br>
-=C2=A0 =C2=A0 =C2=A0 =C2=A0 sb-&gt;s_maxbytes =3D ext2_max_size(sb-&gt;s_bl=
-ocksize_bits);<br>
-=C2=A0 =C2=A0 =C2=A0 =C2=A0 sb-&gt;s_max_links =3D EXT2_LINK_MAX;<br>
-+=C2=A0 =C2=A0 =C2=A0 =C2=A0sb-&gt;s_time_min =3D S32_MIN;<br>
-+=C2=A0 =C2=A0 =C2=A0 =C2=A0sb-&gt;s_time_max =3D S32_MAX;<br>
-<br>
-=C2=A0 =C2=A0 =C2=A0 =C2=A0 if (le32_to_cpu(es-&gt;s_rev_level) =3D=3D EXT2=
-_GOOD_OLD_REV) {<br>
-=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 sbi-&gt;s_inode_siz=
-e =3D EXT2_GOOD_OLD_INODE_SIZE;<br>
-diff --git a/fs/freevxfs/vxfs_super.c b/fs/freevxfs/vxfs_super.c<br>
-index a89f68c3cbed..578a5062706e 100644<br>
---- a/fs/freevxfs/vxfs_super.c<br>
-+++ b/fs/freevxfs/vxfs_super.c<br>
-@@ -229,6 +229,8 @@ static int vxfs_fill_super(struct super_block *sbp, voi=
-d *dp, int silent)<br>
-<br>
-=C2=A0 =C2=A0 =C2=A0 =C2=A0 sbp-&gt;s_op =3D &amp;vxfs_super_ops;<br>
-=C2=A0 =C2=A0 =C2=A0 =C2=A0 sbp-&gt;s_fs_info =3D infp;<br>
-+=C2=A0 =C2=A0 =C2=A0 =C2=A0sbp-&gt;s_time_min =3D 0;<br>
-+=C2=A0 =C2=A0 =C2=A0 =C2=A0sbp-&gt;s_time_max =3D U32_MAX;<br>
-<br>
-=C2=A0 =C2=A0 =C2=A0 =C2=A0 if (!vxfs_try_sb_magic(sbp, silent, 1,<br>
-=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=
-=A0 =C2=A0 (__force __fs32)cpu_to_le32(VXFS_SUPER_MAGIC))) {<br>
-diff --git a/fs/jffs2/fs.c b/fs/jffs2/fs.c<br>
-index 25736676a456..05fe6cf5f1ac 100644<br>
---- a/fs/jffs2/fs.c<br>
-+++ b/fs/jffs2/fs.c<br>
-@@ -591,6 +591,9 @@ int jffs2_do_fill_super(struct super_block *sb, struct =
-fs_context *fc)<br>
-=C2=A0 =C2=A0 =C2=A0 =C2=A0 sb-&gt;s_blocksize =3D PAGE_SIZE;<br>
-=C2=A0 =C2=A0 =C2=A0 =C2=A0 sb-&gt;s_blocksize_bits =3D PAGE_SHIFT;<br>
-=C2=A0 =C2=A0 =C2=A0 =C2=A0 sb-&gt;s_magic =3D JFFS2_SUPER_MAGIC;<br>
-+=C2=A0 =C2=A0 =C2=A0 =C2=A0sb-&gt;s_time_min =3D 0;<br>
-+=C2=A0 =C2=A0 =C2=A0 =C2=A0sb-&gt;s_time_max =3D U32_MAX;<br>
-+<br>
-=C2=A0 =C2=A0 =C2=A0 =C2=A0 if (!sb_rdonly(sb))<br>
-=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 jffs2_start_garbage=
-_collect_thread(c);<br>
-=C2=A0 =C2=A0 =C2=A0 =C2=A0 return 0;<br>
-diff --git a/fs/jfs/super.c b/fs/jfs/super.c<br>
-index f4e10cb9f734..b2dc4d1f9dcc 100644<br>
---- a/fs/jfs/super.c<br>
-+++ b/fs/jfs/super.c<br>
-@@ -503,6 +503,8 @@ static int jfs_fill_super(struct super_block *sb, void =
-*data, int silent)<br>
-<br>
-=C2=A0 =C2=A0 =C2=A0 =C2=A0 sb-&gt;s_fs_info =3D sbi;<br>
-=C2=A0 =C2=A0 =C2=A0 =C2=A0 sb-&gt;s_max_links =3D JFS_LINK_MAX;<br>
-+=C2=A0 =C2=A0 =C2=A0 =C2=A0sb-&gt;s_time_min =3D 0;<br>
-+=C2=A0 =C2=A0 =C2=A0 =C2=A0sb-&gt;s_time_max =3D U32_MAX;<br>
-=C2=A0 =C2=A0 =C2=A0 =C2=A0 sbi-&gt;sb =3D sb;<br>
-=C2=A0 =C2=A0 =C2=A0 =C2=A0 sbi-&gt;uid =3D INVALID_UID;<br>
-=C2=A0 =C2=A0 =C2=A0 =C2=A0 sbi-&gt;gid =3D INVALID_GID;<br>
-diff --git a/fs/minix/inode.c b/fs/minix/inode.c<br>
-index f96073f25432..7cb5fd38eb14 100644<br>
---- a/fs/minix/inode.c<br>
-+++ b/fs/minix/inode.c<br>
-@@ -277,6 +277,8 @@ static int minix_fill_super(struct super_block *s, void=
- *data, int silent)<br>
-<br>
-=C2=A0 =C2=A0 =C2=A0 =C2=A0 /* set up enough so that it can read an inode *=
-/<br>
-=C2=A0 =C2=A0 =C2=A0 =C2=A0 s-&gt;s_op =3D &amp;minix_sops;<br>
-+=C2=A0 =C2=A0 =C2=A0 =C2=A0s-&gt;s_time_min =3D 0;<br>
-+=C2=A0 =C2=A0 =C2=A0 =C2=A0s-&gt;s_time_max =3D U32_MAX;<br>
-=C2=A0 =C2=A0 =C2=A0 =C2=A0 root_inode =3D minix_iget(s, MINIX_ROOT_INO);<b=
-r>
-=C2=A0 =C2=A0 =C2=A0 =C2=A0 if (IS_ERR(root_inode)) {<br>
-=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 ret =3D PTR_ERR(roo=
-t_inode);<br>
-diff --git a/fs/qnx4/inode.c b/fs/qnx4/inode.c<br>
-index 922d083bbc7c..e8da1cde87b9 100644<br>
---- a/fs/qnx4/inode.c<br>
-+++ b/fs/qnx4/inode.c<br>
-@@ -201,6 +201,8 @@ static int qnx4_fill_super(struct super_block *s, void =
-*data, int silent)<br>
-=C2=A0 =C2=A0 =C2=A0 =C2=A0 s-&gt;s_op =3D &amp;qnx4_sops;<br>
-=C2=A0 =C2=A0 =C2=A0 =C2=A0 s-&gt;s_magic =3D QNX4_SUPER_MAGIC;<br>
-=C2=A0 =C2=A0 =C2=A0 =C2=A0 s-&gt;s_flags |=3D SB_RDONLY;=C2=A0 =C2=A0 =C2=
-=A0 =C2=A0 /* Yup, read-only yet */<br>
-+=C2=A0 =C2=A0 =C2=A0 =C2=A0s-&gt;s_time_min =3D 0;<br>
-+=C2=A0 =C2=A0 =C2=A0 =C2=A0s-&gt;s_time_max =3D U32_MAX;<br>
-<br>
-=C2=A0 =C2=A0 =C2=A0 =C2=A0 /* Check the superblock signature. Since the qn=
-x4 code is<br>
-=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0dangerous, we should leave as quic=
-kly as possible<br>
-diff --git a/fs/qnx6/inode.c b/fs/qnx6/inode.c<br>
-index 0f8b0ff1ba43..345db56c98fd 100644<br>
---- a/fs/qnx6/inode.c<br>
-+++ b/fs/qnx6/inode.c<br>
-@@ -429,6 +429,8 @@ static int qnx6_fill_super(struct super_block *s, void =
-*data, int silent)<br>
-=C2=A0 =C2=A0 =C2=A0 =C2=A0 s-&gt;s_op =3D &amp;qnx6_sops;<br>
-=C2=A0 =C2=A0 =C2=A0 =C2=A0 s-&gt;s_magic =3D QNX6_SUPER_MAGIC;<br>
-=C2=A0 =C2=A0 =C2=A0 =C2=A0 s-&gt;s_flags |=3D SB_RDONLY;=C2=A0 =C2=A0 =C2=
-=A0 =C2=A0 /* Yup, read-only yet */<br>
-+=C2=A0 =C2=A0 =C2=A0 =C2=A0s-&gt;s_time_min =3D 0;<br>
-+=C2=A0 =C2=A0 =C2=A0 =C2=A0s-&gt;s_time_max =3D U32_MAX;<br>
-<br>
-=C2=A0 =C2=A0 =C2=A0 =C2=A0 /* ease the later tree level calculations */<br=
->
-=C2=A0 =C2=A0 =C2=A0 =C2=A0 sbi =3D QNX6_SB(s);<br>
-diff --git a/fs/reiserfs/super.c b/fs/reiserfs/super.c<br>
-index ab028ea0e561..d69b4ac0ae2f 100644<br>
---- a/fs/reiserfs/super.c<br>
-+++ b/fs/reiserfs/super.c<br>
-@@ -1976,6 +1976,9 @@ static int reiserfs_fill_super(struct super_block *s,=
- void *data, int silent)<br>
-=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 goto error_unlocked=
-;<br>
-=C2=A0 =C2=A0 =C2=A0 =C2=A0 }<br>
-<br>
-+=C2=A0 =C2=A0 =C2=A0 =C2=A0s-&gt;s_time_min =3D 0;<br>
-+=C2=A0 =C2=A0 =C2=A0 =C2=A0s-&gt;s_time_max =3D U32_MAX;<br>
-+<br>
-=C2=A0 =C2=A0 =C2=A0 =C2=A0 rs =3D SB_DISK_SUPER_BLOCK(s);<br>
-=C2=A0 =C2=A0 =C2=A0 =C2=A0 /*<br>
-=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0* Let&#39;s do basic sanity check to veri=
-fy that underlying device is not<br>
-diff --git a/fs/romfs/super.c b/fs/romfs/super.c<br>
-index 4636f867b9e8..338ac8521e65 100644<br>
---- a/fs/romfs/super.c<br>
-+++ b/fs/romfs/super.c<br>
-@@ -477,6 +477,8 @@ static int romfs_fill_super(struct super_block *sb, str=
-uct fs_context *fc)<br>
-=C2=A0 =C2=A0 =C2=A0 =C2=A0 sb-&gt;s_maxbytes =3D 0xFFFFFFFF;<br>
-=C2=A0 =C2=A0 =C2=A0 =C2=A0 sb-&gt;s_magic =3D ROMFS_MAGIC;<br>
-=C2=A0 =C2=A0 =C2=A0 =C2=A0 sb-&gt;s_flags |=3D SB_RDONLY | SB_NOATIME;<br>
-+=C2=A0 =C2=A0 =C2=A0 =C2=A0sb-&gt;s_time_min =3D 0;<br>
-+=C2=A0 =C2=A0 =C2=A0 =C2=A0sb-&gt;s_time_max =3D 0;<br>
-=C2=A0 =C2=A0 =C2=A0 =C2=A0 sb-&gt;s_op =3D &amp;romfs_super_ops;<br>
-<br>
-=C2=A0#ifdef CONFIG_ROMFS_ON_MTD<br>
-diff --git a/fs/squashfs/super.c b/fs/squashfs/super.c<br>
-index 0311171af72d..e2d6566371ec 100644<br>
---- a/fs/squashfs/super.c<br>
-+++ b/fs/squashfs/super.c<br>
-@@ -186,6 +186,8 @@ static int squashfs_fill_super(struct super_block *sb, =
-struct fs_context *fc)<br>
-=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 (u64) le64_to_cpu(s=
-blk-&gt;id_table_start));<br>
-<br>
-=C2=A0 =C2=A0 =C2=A0 =C2=A0 sb-&gt;s_maxbytes =3D MAX_LFS_FILESIZE;<br>
-+=C2=A0 =C2=A0 =C2=A0 =C2=A0sb-&gt;s_time_min =3D 0;<br>
-+=C2=A0 =C2=A0 =C2=A0 =C2=A0sb-&gt;s_time_max =3D U32_MAX;<br>
-=C2=A0 =C2=A0 =C2=A0 =C2=A0 sb-&gt;s_flags |=3D SB_RDONLY;<br>
-=C2=A0 =C2=A0 =C2=A0 =C2=A0 sb-&gt;s_op =3D &amp;squashfs_super_ops;<br>
-<br>
-diff --git a/fs/ufs/super.c b/fs/ufs/super.c<br>
-index 4ed0dca52ec8..1da0be667409 100644<br>
---- a/fs/ufs/super.c<br>
-+++ b/fs/ufs/super.c<br>
-@@ -843,6 +843,10 @@ static int ufs_fill_super(struct super_block *sb, void=
- *data, int silent)<br>
-<br>
-=C2=A0 =C2=A0 =C2=A0 =C2=A0 sb-&gt;s_maxbytes =3D MAX_LFS_FILESIZE;<br>
-<br>
-+=C2=A0 =C2=A0 =C2=A0 =C2=A0sb-&gt;s_time_gran =3D NSEC_PER_SEC;<br>
-+=C2=A0 =C2=A0 =C2=A0 =C2=A0sb-&gt;s_time_min =3D S32_MIN;<br>
-+=C2=A0 =C2=A0 =C2=A0 =C2=A0sb-&gt;s_time_max =3D S32_MAX;<br>
-+<br>
-=C2=A0 =C2=A0 =C2=A0 =C2=A0 switch (sbi-&gt;s_mount_opt &amp; UFS_MOUNT_UFS=
-TYPE) {<br>
-=C2=A0 =C2=A0 =C2=A0 =C2=A0 case UFS_MOUNT_UFSTYPE_44BSD:<br>
-=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 UFSD(&quot;ufstype=
-=3D44bsd\n&quot;);<br>
-@@ -861,6 +865,9 @@ static int ufs_fill_super(struct super_block *sb, void =
-*data, int silent)<br>
-=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 uspi-&gt;s_fshift =
-=3D 9;<br>
-=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 uspi-&gt;s_sbsize =
-=3D super_block_size =3D 1536;<br>
-=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 uspi-&gt;s_sbbase =
-=3D=C2=A0 0;<br>
-+=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0sb-&gt;s_time_gran =
-=3D 1;<br>
-+=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0sb-&gt;s_time_min =
-=3D S64_MIN;<br>
-+=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0sb-&gt;s_time_max =
-=3D S64_MAX;<br>
-=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 flags |=3D UFS_TYPE=
-_UFS2 | UFS_DE_44BSD | UFS_UID_44BSD | UFS_ST_44BSD | UFS_CG_44BSD;<br>
-=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 break;<br>
-<br>
-diff --git a/fs/xfs/xfs_super.c b/fs/xfs/xfs_super.c<br>
-index f9450235533c..d3b10900fc24 100644<br>
---- a/fs/xfs/xfs_super.c<br>
-+++ b/fs/xfs/xfs_super.c<br>
-@@ -1663,6 +1663,8 @@ xfs_fs_fill_super(<br>
-=C2=A0 =C2=A0 =C2=A0 =C2=A0 sb-&gt;s_maxbytes =3D xfs_max_file_offset(sb-&g=
-t;s_blocksize_bits);<br>
-=C2=A0 =C2=A0 =C2=A0 =C2=A0 sb-&gt;s_max_links =3D XFS_MAXLINK;<br>
-=C2=A0 =C2=A0 =C2=A0 =C2=A0 sb-&gt;s_time_gran =3D 1;<br>
-+=C2=A0 =C2=A0 =C2=A0 =C2=A0sb-&gt;s_time_min =3D S32_MIN;<br>
-+=C2=A0 =C2=A0 =C2=A0 =C2=A0sb-&gt;s_time_max =3D S32_MAX;<br>
-=C2=A0 =C2=A0 =C2=A0 =C2=A0 sb-&gt;s_iflags |=3D SB_I_CGROUPWB;<br>
-<br>
-=C2=A0 =C2=A0 =C2=A0 =C2=A0 set_posix_acl_flag(sb);<br>
--- <br>
-2.17.1<br>
-<br>
-</blockquote></div>
+All errors (new ones prefixed by >>):
 
---0000000000001934b005908b83d2--
+   fs//kernfs/inode.c: In function 'kernfs_vfs_xattr_set':
+>> fs//kernfs/inode.c:322:27: error: 'inode' undeclared (first use in this function)
+     struct kernfs_node *kn = inode->i_private;
+                              ^~~~~
+   fs//kernfs/inode.c:322:27: note: each undeclared identifier is reported only once for each function it appears in
 
+vim +/inode +322 fs//kernfs/inode.c
 
---===============3304127166569224027==
+b230d5aba2d1a7 Ondrej Mosnacek 2019-02-22  318  
+1537ad15c9c59c Ondrej Mosnacek 2019-04-03  319  static int kernfs_vfs_xattr_set(const struct xattr_handler *handler,
+7d823b0879d4e2 Mark Salyzyn    2019-08-19  320  				struct xattr_gs_args *args)
+b230d5aba2d1a7 Ondrej Mosnacek 2019-02-22  321  {
+b230d5aba2d1a7 Ondrej Mosnacek 2019-02-22 @322  	struct kernfs_node *kn = inode->i_private;
+b230d5aba2d1a7 Ondrej Mosnacek 2019-02-22  323  
+7d823b0879d4e2 Mark Salyzyn    2019-08-19  324  	return kernfs_xattr_set(kn, xattr_full_name(handler, args->name),
+7d823b0879d4e2 Mark Salyzyn    2019-08-19  325  				args->value, args->size, args->flags);
+b230d5aba2d1a7 Ondrej Mosnacek 2019-02-22  326  }
+b230d5aba2d1a7 Ondrej Mosnacek 2019-02-22  327  
+
+:::::: The code at line 322 was first introduced by commit
+:::::: b230d5aba2d1a7b0636408889a75bf9eae6b8bc7 LSM: add new hook for kernfs node initialization
+
+:::::: TO: Ondrej Mosnacek <omosnace@redhat.com>
+:::::: CC: Paul Moore <paul@paul-moore.com>
+
+---
+0-DAY kernel test infrastructure                Open Source Technology Center
+https://lists.01.org/pipermail/kbuild-all                   Intel Corporation
+
+--4et4ewpskge26opw
+Content-Type: application/gzip
+Content-Disposition: attachment; filename=".config.gz"
+Content-Transfer-Encoding: base64
+
+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
+
+--4et4ewpskge26opw
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
 Content-Disposition: inline
 
 
---===============3304127166569224027==
+--4et4ewpskge26opw
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -839,5 +371,5 @@ Jfs-discussion mailing list
 Jfs-discussion@lists.sourceforge.net
 https://lists.sourceforge.net/lists/listinfo/jfs-discussion
 
---===============3304127166569224027==--
+--4et4ewpskge26opw--
 
