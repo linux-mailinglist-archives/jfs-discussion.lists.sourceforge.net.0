@@ -2,26 +2,26 @@ Return-Path: <jfs-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+jfs-discussion@lfdr.de
 Delivered-To: lists+jfs-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id A93A913FE1E
-	for <lists+jfs-discussion@lfdr.de>; Fri, 17 Jan 2020 00:34:53 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 50D9C13FE25
+	for <lists+jfs-discussion@lfdr.de>; Fri, 17 Jan 2020 00:34:56 +0100 (CET)
 Received: from [127.0.0.1] (helo=sfs-ml-1.v29.lw.sourceforge.com)
 	by sfs-ml-1.v29.lw.sourceforge.com with esmtp (Exim 4.90_1)
 	(envelope-from <jfs-discussion-bounces@lists.sourceforge.net>)
-	id 1isEen-0003PS-JW; Thu, 16 Jan 2020 23:34:33 +0000
+	id 1isEen-0003Pa-Lr; Thu, 16 Jan 2020 23:34:33 +0000
 Received: from [172.30.20.202] (helo=mx.sourceforge.net)
- by sfs-ml-4.v29.lw.sourceforge.com with esmtps
+ by sfs-ml-1.v29.lw.sourceforge.com with esmtps
  (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
- (envelope-from <sashal@kernel.org>) id 1is95s-0004Xx-S7
- for jfs-discussion@lists.sourceforge.net; Thu, 16 Jan 2020 17:38:08 +0000
+ (envelope-from <sashal@kernel.org>) id 1is9Bv-0003h3-U6
+ for jfs-discussion@lists.sourceforge.net; Thu, 16 Jan 2020 17:44:23 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=sourceforge.net; s=x; h=Content-Transfer-Encoding:MIME-Version:References:
  In-Reply-To:Message-Id:Date:Subject:Cc:To:From:Sender:Reply-To:Content-Type:
  Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
  Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=ndHgS67eoMi4H34VeuDuxbcAjnCKHFmi1vK0sBOhhG8=; b=GP4JeKnfn5vo8wCs0/X53e3/ik
- FfqB9ViYyRZf9UPanqDf3WkkbxBlAdvCcKvJQFaRfzF52kgm+ajQnaYkvYO+TLy37ZnbXcChCfKsK
- VVeef35mvmIgOrCsr+TMwma9cy5QlhqEIc6jFMe8upYVf3eU5ZIIJuKoW7/u2bOTwFic=;
+ bh=E8YG6DTCZhDff8AB5qK2BON4ZZlJ5VmQOBTPKmchxxE=; b=PGQknQFKaz38AbR++9gndC0ac7
+ p4IOBAqsUCkxPfO+zlnmJLPuFcVVlKEezUZ4QMTcqkeHg5soIe7W6UDEz11fKhJpiCJCB8+r4Do9V
+ 0y0pfiNyczm85+hRSQpAtdoaSwuF7cTj9ZWqwJmz4nl5ACsMZz6BMisL7sXWoUaeULsU=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
  h=Content-Transfer-Encoding:MIME-Version:References:In-Reply-To:Message-Id:
@@ -29,35 +29,35 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
  :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
  List-Post:List-Owner:List-Archive;
- bh=ndHgS67eoMi4H34VeuDuxbcAjnCKHFmi1vK0sBOhhG8=; b=RelGJ0VUu7siNMNBB5rAGz+JUp
- Q/zyRLzCMfFFcMbY7LZk1HmT1B9an+oWah6HWZEIuj1LIigQAKcGoovVq4BngamRJm+CXNtnhDUn0
- waObX5y5bXFuBVGXudn28GpP3Epz6feIgMn81v7dQP3L8HlU8CeQSd7sd22vwcgGalM8=;
+ bh=E8YG6DTCZhDff8AB5qK2BON4ZZlJ5VmQOBTPKmchxxE=; b=HyN3BnlcyrE1DBliWsgWeNGXiQ
+ wAFMgDm0h+Hbky+U2Sqn0Ba3/b4K1v7xFTLC3Ai3ajcxpLhdGl6dUV/lpcLzkFO4TEQ7d04CwOgHb
+ WjTsmGayIyBUNj4aDxfJEBBr2KCGMQ3ne+M027vIvdEjw6ld0e6lcVEKMVl0VGQTl9pw=;
 Received: from mail.kernel.org ([198.145.29.99])
- by sfi-mx-1.v28.lw.sourceforge.com with esmtps
+ by sfi-mx-4.v28.lw.sourceforge.com with esmtps
  (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.92.2)
- id 1is95r-009bew-OS
- for jfs-discussion@lists.sourceforge.net; Thu, 16 Jan 2020 17:38:08 +0000
+ id 1is9Bt-006oLu-VK
+ for jfs-discussion@lists.sourceforge.net; Thu, 16 Jan 2020 17:44:23 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 16442246E1;
- Thu, 16 Jan 2020 17:38:00 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 9068D24764;
+ Thu, 16 Jan 2020 17:44:15 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1579196282;
- bh=7+YWIhcNEOIuEvafzelpdtdaQmB3T7mH9FS6SgZ5Xwc=;
+ s=default; t=1579196656;
+ bh=Cq8Wtn2reVxGdiGtTvpmp9TfpUrvmzek3sU2F8MwtBs=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=O/d64gK5v2WKJbgxIaFy1BPXslJbGot4HbTbWNRtotopsZTIOrubWFjQRVLoZUlab
- 1ZDP142S+C+CA2qCsz+xeUrTYCXalzagDjQoPaC8oCQyTE4JWgwZVi89OOyqVq+Syy
- UVD7TfYjYKt+G2kOS8qJc7xxnStG5GKPmfLUb88A=
+ b=LKvDpKbfI5EpGgSHnidQMcQfbf8PQuks/Xl3kd8+lySyf1Jov7vpHUo8UKOZ/m/mP
+ Wjw1KtIJR8qS9a/KuEpDtN1Ahs181SZmDQK3cmzmpyNlUx69OTHmtyoKJp5ZRum/U4
+ aPoOtM0q4iEeJ1E5yiXpy5hi3U33vCk5kx8d+GE4=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Date: Thu, 16 Jan 2020 12:34:10 -0500
-Message-Id: <20200116173641.22137-61-sashal@kernel.org>
+Date: Thu, 16 Jan 2020 12:41:00 -0500
+Message-Id: <20200116174251.24326-63-sashal@kernel.org>
 X-Mailer: git-send-email 2.20.1
-In-Reply-To: <20200116173641.22137-1-sashal@kernel.org>
-References: <20200116173641.22137-1-sashal@kernel.org>
+In-Reply-To: <20200116174251.24326-1-sashal@kernel.org>
+References: <20200116174251.24326-1-sashal@kernel.org>
 MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
@@ -76,10 +76,10 @@ X-Spam-Report: Spam Filtering performed by mx.sourceforge.net.
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature,
  not necessarily valid
  -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
- -0.4 AWL AWL: Adjusted score from AWL reputation of From: address
-X-Headers-End: 1is95r-009bew-OS
+ -0.3 AWL AWL: Adjusted score from AWL reputation of From: address
+X-Headers-End: 1is9Bt-006oLu-VK
 X-Mailman-Approved-At: Thu, 16 Jan 2020 23:34:30 +0000
-Subject: [Jfs-discussion] [PATCH AUTOSEL 4.9 101/251] jfs: fix bogus
+Subject: [Jfs-discussion] [PATCH AUTOSEL 4.4 063/174] jfs: fix bogus
  variable self-initialization
 X-BeenThere: jfs-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
@@ -122,7 +122,7 @@ Signed-off-by: Sasha Levin <sashal@kernel.org>
  1 file changed, 1 insertion(+), 2 deletions(-)
 
 diff --git a/fs/jfs/jfs_txnmgr.c b/fs/jfs/jfs_txnmgr.c
-index 4d973524c887..224ef034004b 100644
+index d595856453b2..de6351c1c8db 100644
 --- a/fs/jfs/jfs_txnmgr.c
 +++ b/fs/jfs/jfs_txnmgr.c
 @@ -1928,8 +1928,7 @@ static void xtLog(struct jfs_log * log, struct tblock * tblk, struct lrd * lrd,
