@@ -2,75 +2,75 @@ Return-Path: <jfs-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+jfs-discussion@lfdr.de
 Delivered-To: lists+jfs-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id EAAC51441AE
-	for <lists+jfs-discussion@lfdr.de>; Tue, 21 Jan 2020 17:08:28 +0100 (CET)
-Received: from [127.0.0.1] (helo=sfs-ml-2.v29.lw.sourceforge.com)
-	by sfs-ml-2.v29.lw.sourceforge.com with esmtp (Exim 4.90_1)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3D717151D4D
+	for <lists+jfs-discussion@lfdr.de>; Tue,  4 Feb 2020 16:32:12 +0100 (CET)
+Received: from [127.0.0.1] (helo=sfs-ml-1.v29.lw.sourceforge.com)
+	by sfs-ml-1.v29.lw.sourceforge.com with esmtp (Exim 4.90_1)
 	(envelope-from <jfs-discussion-bounces@lists.sourceforge.net>)
-	id 1itw4Y-0006CN-Ha; Tue, 21 Jan 2020 16:08:10 +0000
+	id 1iz0B4-0002Vl-2e; Tue, 04 Feb 2020 15:31:50 +0000
 Received: from [172.30.20.202] (helo=mx.sourceforge.net)
- by sfs-ml-2.v29.lw.sourceforge.com with esmtps
+ by sfs-ml-1.v29.lw.sourceforge.com with esmtps
  (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
- (envelope-from <dave.kleikamp@oracle.com>) id 1itw4X-0006CG-U2
- for jfs-discussion@lists.sourceforge.net; Tue, 21 Jan 2020 16:08:09 +0000
+ (envelope-from <dave.kleikamp@oracle.com>) id 1iz0B2-0002VQ-TJ
+ for jfs-discussion@lists.sourceforge.net; Tue, 04 Feb 2020 15:31:48 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=sourceforge.net; s=x; h=Content-Transfer-Encoding:Content-Type:In-Reply-To:
- MIME-Version:Date:Message-ID:From:References:Cc:To:Subject:Sender:Reply-To:
- Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
- Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
+ d=sourceforge.net; s=x; h=Content-Transfer-Encoding:Content-Type:MIME-Version
+ :Date:Message-ID:Cc:To:Subject:From:Sender:Reply-To:Content-ID:
+ Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+ :Resent-Message-ID:In-Reply-To:References:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=f3vQlMvJvZpj/nj2cp8CI59a4AP3M8gxtnZf866KyzQ=; b=H10gcQ/boBOvG0aBT3k9ptFp0P
- evVnklcgnPymUIrxIN9UzbqMDC8EyPE0vYwEUhS6BBqs4anWkkE28V5OvM3xOZodIPcs8XCSro91G
- P7YDA5lBkcXrQwpNUzVJW3+cfBmGf5X+/SXOG6DKTV+B2I45i4N0ZMmFBdLmaGOdjXfc=;
+ bh=rdhxp4sZ+odDvboe4BcMy7m7ry7TPB1rb7axMCM+iyo=; b=JoR6FwXXv696hu7+aMeBcuF89A
+ 1e7oLZq9Pq1kIAPFjLMC2nLIhWICUj7Do4M6+4XRbL+bIjQh4PBPlR1mK9Uf8nyc6OrfX5UNZwBpj
+ p385i2x1KqOv6KGatFnZgJQ6iztd2k6IzTZFL+3ZpLLjEYEhjBgy3g7HsC8WCQCPKO10=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
- h=Content-Transfer-Encoding:Content-Type:In-Reply-To:MIME-Version:Date:
- Message-ID:From:References:Cc:To:Subject:Sender:Reply-To:Content-ID:
- Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
- :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
- List-Post:List-Owner:List-Archive;
- bh=f3vQlMvJvZpj/nj2cp8CI59a4AP3M8gxtnZf866KyzQ=; b=aSx+UdgYDqtGyclb+N2rZfm8/y
- lSwQEdVFxhXSgsKQOs9u73bv7aA329YrV4uAejP2a9VJV06YA9Amcxn145AS+Hg5LXX5S9sbNXQ/I
- GyPNoh+vh9JmEOae3goQBj+qTpqBAzBdPWKYrZGhDAzJ+w/kzT3xY2ox7TVV2WEZdQMY=;
-Received: from userp2130.oracle.com ([156.151.31.86])
- by sfi-mx-3.v28.lw.sourceforge.com with esmtps
+ h=Content-Transfer-Encoding:Content-Type:MIME-Version:Date:Message-ID:Cc:To
+ :Subject:From:Sender:Reply-To:Content-ID:Content-Description:Resent-Date:
+ Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+ References:List-Id:List-Help:List-Unsubscribe:List-Subscribe:List-Post:
+ List-Owner:List-Archive; bh=rdhxp4sZ+odDvboe4BcMy7m7ry7TPB1rb7axMCM+iyo=; b=G
+ wmyX4NEDlQNKxrhY2cPzgKw35XIwiGz2bt1EUtsrVqoq/5nXTebYPUeOvgTc8uJ5dfkpngQqJFD4r
+ WaB2TaTgFPBI/bOvsf0K1Oyuqn6ZIv3sebWCw4al9FK5zN9yDjlU0zK/mzFnQoLiBFdbccJJX50Nt
+ hFV+TyhZqJ8MDcU8=;
+Received: from userp2120.oracle.com ([156.151.31.85])
+ by sfi-mx-4.v28.lw.sourceforge.com with esmtps
  (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.92.2)
- id 1itw4R-00Cd3L-Af
- for jfs-discussion@lists.sourceforge.net; Tue, 21 Jan 2020 16:08:09 +0000
-Received: from pps.filterd (userp2130.oracle.com [127.0.0.1])
- by userp2130.oracle.com (8.16.0.27/8.16.0.27) with SMTP id 00LFsxLq066307;
- Tue, 21 Jan 2020 16:07:50 GMT
+ id 1iz0B1-00A5m4-2R
+ for jfs-discussion@lists.sourceforge.net; Tue, 04 Feb 2020 15:31:48 +0000
+Received: from pps.filterd (userp2120.oracle.com [127.0.0.1])
+ by userp2120.oracle.com (8.16.0.27/8.16.0.27) with SMTP id 014FQg6m037549;
+ Tue, 4 Feb 2020 15:31:37 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=oracle.com;
- h=subject : to : cc :
- references : from : message-id : date : mime-version : in-reply-to :
- content-type : content-transfer-encoding; s=corp-2019-08-05;
- bh=f3vQlMvJvZpj/nj2cp8CI59a4AP3M8gxtnZf866KyzQ=;
- b=ZVGLtMo5HMtvYvvzZMNHnOmqqzmATrh35zVybeBT9UJIyO7JqzCQ31RSYrQ2XXGNerT2
- 48cnULbbHRj8sml3HGOpkf4RF9JDtdpg/HLsMz+ykidpJRE1yRtwcd7IcBEVoTZiGUvY
- cw5mtXDUfhTo5FVILLi5BArvTPfc0qGVuCdKplRPYX4UoZUaPGwiuqSAgVqjoyww6D+a
- oYuRRwDI1yaMHqqyB4TbKO8pqdzK7KaeJwuwwEIIB+yMELj5N5jBbyPhn4Ee6nmXn88u
- czfljPV1WIXhDODLOpwMjm3h2K25R1/YXPgyplyt2smZewD0Ug2agF1Nv+ej/7hcWIFM rw== 
+ h=from : subject : to :
+ cc : message-id : date : mime-version : content-type :
+ content-transfer-encoding; s=corp-2019-08-05;
+ bh=rdhxp4sZ+odDvboe4BcMy7m7ry7TPB1rb7axMCM+iyo=;
+ b=pw47cjdHWEuTYMWhy3Li36ZhjoZLOFoby/nZ6f3MYNXY0TeamciIsu2qtXYK3ImDJIKF
+ bkiqki9zmuf6TfVjuEUErUjQfTXWEh+yKli28QmpLEU99cCe09agooutsLjyFaRmFk9z
+ BTIF21Chk9BSGkdyNwLTQMvo+vIR9tSVt+tzvIdpOsHobJYV5xHbchfqE9KtXc37kdrT
+ 75Q6aKNLQJWBs14/zTis54iN37x/Ycstccq6AoTdcoshF4o4r0IG1WDHsZSh2H0RIaZF
+ b7gJ5DbiJHH+fLiNVlT7cyGRY5HN64UxgcHvAKbMz97fBMy0Ira6jLtOdwlRCxU2S0F7 RQ== 
 Received: from userp3030.oracle.com (userp3030.oracle.com [156.151.31.80])
- by userp2130.oracle.com with ESMTP id 2xkseue4qu-1
+ by userp2120.oracle.com with ESMTP id 2xwyg9kmky-1
  (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
- Tue, 21 Jan 2020 16:07:49 +0000
+ Tue, 04 Feb 2020 15:31:37 +0000
 Received: from pps.filterd (userp3030.oracle.com [127.0.0.1])
- by userp3030.oracle.com (8.16.0.27/8.16.0.27) with SMTP id 00LFsv55020755;
- Tue, 21 Jan 2020 16:07:48 GMT
-Received: from userv0122.oracle.com (userv0122.oracle.com [156.151.31.75])
- by userp3030.oracle.com with ESMTP id 2xnsa8wn3q-1
+ by userp3030.oracle.com (8.16.0.27/8.16.0.27) with SMTP id 014FOFFV106123;
+ Tue, 4 Feb 2020 15:31:37 GMT
+Received: from userv0121.oracle.com (userv0121.oracle.com [156.151.31.72])
+ by userp3030.oracle.com with ESMTP id 2xxvus0vgh-1
  (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
- Tue, 21 Jan 2020 16:07:48 +0000
-Received: from abhmp0004.oracle.com (abhmp0004.oracle.com [141.146.116.10])
- by userv0122.oracle.com (8.14.4/8.14.4) with ESMTP id 00LG7l0J007763;
- Tue, 21 Jan 2020 16:07:47 GMT
+ Tue, 04 Feb 2020 15:31:37 +0000
+Received: from abhmp0018.oracle.com (abhmp0018.oracle.com [141.146.116.24])
+ by userv0121.oracle.com (8.14.4/8.13.8) with ESMTP id 014FVaoi019276;
+ Tue, 4 Feb 2020 15:31:36 GMT
 Received: from [192.168.0.189] (/68.201.65.98)
  by default (Oracle Beehive Gateway v4.0)
- with ESMTP ; Tue, 21 Jan 2020 08:07:47 -0800
-To: Alex Shi <alex.shi@linux.alibaba.com>
-References: <1579596560-257920-1-git-send-email-alex.shi@linux.alibaba.com>
+ with ESMTP ; Tue, 04 Feb 2020 07:31:36 -0800
 From: Dave Kleikamp <dave.kleikamp@oracle.com>
-Autocrypt: addr=dave.kleikamp@oracle.com; prefer-encrypt=mutual; keydata=
+To: Linus Torvalds <torvalds@linux-foundation.org>
+X-Mozilla-News-Host: news://news.gmane.org
+Autocrypt: addr=dave.kleikamp@oracle.com; keydata=
  mQINBE7VCEMBEAC3kywrdIxxL/I9maTCxaWTBiHZFNhT5K8QZGLUfW3uFrW89PdAtloSEc1W
  ScC9O+D2Ygqwx46ZVA7qMXHxpNQ6IZp8he88gQ9lilWD8OJ/T3OKyT6ITdkmsgv6G08QdGCP
  0+mCpETv79kcj+Z4pzKLN5QyKW40R3LGcJ6a+0AG5As5/ZkmhceSffdSyDS6zKff3c6cgfQH
@@ -113,28 +113,27 @@ Autocrypt: addr=dave.kleikamp@oracle.com; prefer-encrypt=mutual; keydata=
  9YJoKXbnOlKuzjsm9lZIwVwqw07Qi1uFmzJopHW0H3P6zUlujM0buDmaio+Q8znJchizOrQ3
  58pn7BNKx3mmswoyZlDtukab9QGF7BZBMjwmafn1RuEVGdlSB52F8TShLgKUM+0dkFmI2yf/
  rnNNL3zBkwD3nWcTxFnX
-Message-ID: <e040c2cd-7b5c-e91e-d357-e36668cc7589@oracle.com>
-Date: Tue, 21 Jan 2020 10:07:46 -0600
+Message-ID: <ce930730-248c-7e5c-dbf6-7ba5a2db07b0@oracle.com>
+Date: Tue, 4 Feb 2020 09:31:35 -0600
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.4.1
+ Thunderbird/68.4.2
 MIME-Version: 1.0
-In-Reply-To: <1579596560-257920-1-git-send-email-alex.shi@linux.alibaba.com>
 Content-Language: en-US
-X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9506
+X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9520
  signatures=668685
 X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 suspectscore=0
  malwarescore=0
- phishscore=0 bulkscore=0 spamscore=0 mlxscore=0 mlxlogscore=999
+ phishscore=0 bulkscore=0 spamscore=0 mlxscore=0 mlxlogscore=663
  adultscore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.0.1-1911140001 definitions=main-2001210127
-X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9506
+ engine=8.0.1-1911140001 definitions=main-2002040106
+X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9520
  signatures=668685
 X-Proofpoint-Spam-Details: rule=notspam policy=default score=0
  priorityscore=1501 malwarescore=0
  suspectscore=0 phishscore=0 bulkscore=0 spamscore=0 clxscore=1011
- lowpriorityscore=0 mlxscore=0 impostorscore=0 mlxlogscore=999 adultscore=0
+ lowpriorityscore=0 mlxscore=0 impostorscore=0 mlxlogscore=719 adultscore=0
  classifier=spam adjust=0 reason=mlx scancount=1 engine=8.0.1-1911140001
- definitions=main-2001210127
+ definitions=main-2002040106
 X-Spam-Score: -0.1 (/)
 X-Spam-Report: Spam Filtering performed by mx.sourceforge.net.
  See http://spamassassin.org/tag/ for more details.
@@ -146,8 +145,8 @@ X-Spam-Report: Spam Filtering performed by mx.sourceforge.net.
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature,
  not necessarily valid
  -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
-X-Headers-End: 1itw4R-00Cd3L-Af
-Subject: Re: [Jfs-discussion] [PATCH] fs/jfs: remove unused MAXL2PAGES
+X-Headers-End: 1iz0B1-00A5m4-2R
+Subject: [Jfs-discussion] [GIT PULL] jfs update for v5.6
 X-BeenThere: jfs-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -159,44 +158,35 @@ List-Post: <mailto:jfs-discussion@lists.sourceforge.net>
 List-Help: <mailto:jfs-discussion-request@lists.sourceforge.net?subject=help>
 List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/jfs-discussion>, 
  <mailto:jfs-discussion-request@lists.sourceforge.net?subject=subscribe>
-Cc: Dave Kleikamp <shaggy@kernel.org>, jfs-discussion@lists.sourceforge.net,
- linux-kernel@vger.kernel.org
+Cc: "jfs-discussion@lists.sourceforge.net"
+ <jfs-discussion@lists.sourceforge.net>, LKML <linux-kernel@vger.kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Errors-To: jfs-discussion-bounces@lists.sourceforge.net
 
-On 1/21/20 2:49 AM, Alex Shi wrote:
-> No one use it from Linux-2.6.12-rc2, so better to remove it.
+The following changes since commit d96d875ef5dd372f533059a44f98e92de9cf0d42:
 
-Looks good. I'm changing this to "This has never been used."
+  Merge tag 'fixes_for_v5.5-rc8' of
+git://git.kernel.org/pub/scm/linux/kernel/git/jack/linux-fs (2020-01-20
+11:24:13 -0800)
 
-Applied to jfs-next
+are available in the Git repository at:
 
-Thanks,
-Shaggy
+  git://github.com/kleikamp/linux-shaggy.git tags/jfs-5.6
 
-> 
-> Signed-off-by: Alex Shi <alex.shi@linux.alibaba.com>
-> Cc: Dave Kleikamp <shaggy@kernel.org> 
-> Cc: jfs-discussion@lists.sourceforge.net 
-> Cc: linux-kernel@vger.kernel.org 
-> ---
->  fs/jfs/jfs_dmap.c | 1 -
->  1 file changed, 1 deletion(-)
-> 
-> diff --git a/fs/jfs/jfs_dmap.c b/fs/jfs/jfs_dmap.c
-> index caade185e568..7dfcab2a2da6 100644
-> --- a/fs/jfs/jfs_dmap.c
-> +++ b/fs/jfs/jfs_dmap.c
-> @@ -4027,7 +4027,6 @@ static int dbGetL2AGSize(s64 nblocks)
->   */
->  #define MAXL0PAGES	(1 + LPERCTL)
->  #define MAXL1PAGES	(1 + LPERCTL * MAXL0PAGES)
-> -#define MAXL2PAGES	(1 + LPERCTL * MAXL1PAGES)
->  
->  /*
->   * convert number of map pages to the zero origin top dmapctl level
-> 
+for you to fetch changes up to 802a5017ffb27ade616d0fe605f699a3c6303aa3:
+
+  jfs: remove unused MAXL2PAGES (2020-01-21 10:06:55 -0600)
+
+----------------------------------------------------------------
+Trivial cleanup for jfs
+
+----------------------------------------------------------------
+Alex Shi (1):
+      jfs: remove unused MAXL2PAGES
+
+ fs/jfs/jfs_dmap.c | 1 -
+ 1 file changed, 1 deletion(-)
 
 
 _______________________________________________
