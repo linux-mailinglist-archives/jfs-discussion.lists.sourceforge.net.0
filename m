@@ -2,52 +2,52 @@ Return-Path: <jfs-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+jfs-discussion@lfdr.de
 Delivered-To: lists+jfs-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id 622681C40B9
-	for <lists+jfs-discussion@lfdr.de>; Mon,  4 May 2020 19:04:00 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 571F11C40B8
+	for <lists+jfs-discussion@lfdr.de>; Mon,  4 May 2020 19:03:56 +0200 (CEST)
 Received: from [127.0.0.1] (helo=sfs-ml-4.v29.lw.sourceforge.com)
 	by sfs-ml-4.v29.lw.sourceforge.com with esmtp (Exim 4.90_1)
 	(envelope-from <jfs-discussion-bounces@lists.sourceforge.net>)
-	id 1jVeVI-0001x6-5t; Mon, 04 May 2020 17:03:40 +0000
+	id 1jVeVI-0001xC-7Q; Mon, 04 May 2020 17:03:40 +0000
 Received: from [172.30.20.202] (helo=mx.sourceforge.net)
- by sfs-ml-1.v29.lw.sourceforge.com with esmtps
+ by sfs-ml-2.v29.lw.sourceforge.com with esmtps
  (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
- (envelope-from <Markus.Elfring@web.de>) id 1jVdl9-0003DS-09
- for jfs-discussion@lists.sourceforge.net; Mon, 04 May 2020 16:15:59 +0000
+ (envelope-from <Markus.Elfring@web.de>) id 1jVeF7-0006dt-0X
+ for jfs-discussion@lists.sourceforge.net; Mon, 04 May 2020 16:46:57 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=sourceforge.net; s=x; h=Content-Transfer-Encoding:Content-Type:MIME-Version
  :Date:Message-ID:From:Subject:Cc:To:Sender:Reply-To:Content-ID:
  Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
  :Resent-Message-ID:In-Reply-To:References:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=ZPn0X4Iapd1gR3vVFyfZ1NN2uKV4QNSZ4tgj+6oTY6Y=; b=W5XDPRklwnP9som+hmvwttew0U
- 3jqIHDQEFquzAzHea6dvd33S4vC02agIbqiipbFOgr4WNaGoiKUgS75lTETi4od9Izt2Jjc8Pqdmo
- exFDvuoEYRfl5ONNsODLa+HwvzBaFA0yQtDuyWE/lVCObybn/VYLC1H0OD3QS6UL5DT0=;
+ bh=qC0SI+5SZ49ylQlp3ZhuDSCxoQ1HHJLYKeHEfROkZiA=; b=gNaPhBY534Vz3UxrTWi6V1Na3F
+ gHmQk5Es+SSJSxDZDi5Vc5ALrGPV55RWE/4svIpss8MIFA0URIuBSs0f+IBCINtwufVglvaDF6ZJC
+ 1A8R6D2g1Xkr1t/WiYaL3iM7edeMU6YDH0F/X23odWbt7yqhVJoDSjdSLaPfTYycH5Rg=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
  h=Content-Transfer-Encoding:Content-Type:MIME-Version:Date:Message-ID:From:
  Subject:Cc:To:Sender:Reply-To:Content-ID:Content-Description:Resent-Date:
  Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
  References:List-Id:List-Help:List-Unsubscribe:List-Subscribe:List-Post:
- List-Owner:List-Archive; bh=ZPn0X4Iapd1gR3vVFyfZ1NN2uKV4QNSZ4tgj+6oTY6Y=; b=L
- NVepTHGCuVOgRj++a4kUVcoXdvJtYYlZFzhwQkJQ6C3nDkBLthGbW/3SdoeI988++4SyHqHcYpIsD
- ht4yOIILDxkrKtSZKRZEJOQcsxtMcowYg07qCJcZ/J4OCdvPsZY0v0nnzQ1kzKAmqddqQ0iGQRmvY
- 8WOwd+uZo4iraFSQ=;
-Received: from mout.web.de ([212.227.17.11])
+ List-Owner:List-Archive; bh=qC0SI+5SZ49ylQlp3ZhuDSCxoQ1HHJLYKeHEfROkZiA=; b=d
+ Bo81izpXQBCjQeWimzvN57aJ3+uFYPArVwz90RvKW7BdZRGx70OJMONZUWFkEzbZXQFad7dleyzU+
+ VtKNxAwzDEevJlOKW6sXXimYijahMBTZiS9SvjHBNdaZv7793XhQfJEO7AVqi9Pdv7OGJHBLJ4Xek
+ 34EbYQqzCs5ndhqY=;
+Received: from mout.web.de ([217.72.192.78])
  by sfi-mx-3.v28.lw.sourceforge.com with esmtps
  (TLSv1.2:ECDHE-RSA-AES128-GCM-SHA256:128) (Exim 4.92.2)
- id 1jVdl6-0074Vt-NX
- for jfs-discussion@lists.sourceforge.net; Mon, 04 May 2020 16:15:58 +0000
+ id 1jVeF4-0077o9-Vw
+ for jfs-discussion@lists.sourceforge.net; Mon, 04 May 2020 16:46:56 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=web.de;
- s=dbaedf251592; t=1588608949;
- bh=DQ2nnjZEA8s4f3e4nypJA7Djufr+5weaQyav93E3Oso=;
+ s=dbaedf251592; t=1588610808;
+ bh=iKajeEThUjwNdKgviLkmcHAYeTjhUS1wUVRcmyQKF6Y=;
  h=X-UI-Sender-Class:To:Cc:Subject:From:Date;
- b=lyh772TgdBb6MLT0ZJZ2riRi3nvnhxRjy/UD3s5yXQIEALNk+EpgNIeuB1E6nOAJd
- XDKwCVIh6XOKeMx6f+/uxhvnYUTvVF08ifKtTqsKNcrCGLixZfwJh37n5KrKEcJHLm
- exGCX5KqYsXodl/Xst42Ngvhm7UuvqqNzy/ofsfI=
+ b=IGJxO6vdV8gOdb0aQLZX66gSK4ajITvlzIHmFlSzaBFRhESYqpTwuffgjCKIw5/l/
+ 2f7EFBJxSu7oHqMlQx/sTE/ZCEG+HObBAOxWRYsxxBXejmXBGv4rSB/Xp3dKPE9yN5
+ WJvSbCfOCVvmXcTQrLx1ekMz9YjtRnVxtVsrI3sk=
 X-UI-Sender-Class: c548c8c5-30a9-4db5-a2e7-cb6cb037b8f9
 Received: from [192.168.1.2] ([93.133.152.69]) by smtp.web.de (mrweb102
- [213.165.67.124]) with ESMTPSA (Nemesis) id 0MT8bi-1jg7M31zUs-00S3b7; Mon, 04
- May 2020 18:15:49 +0200
+ [213.165.67.124]) with ESMTPSA (Nemesis) id 0LxODe-1j3ir10BNy-016u7u; Mon, 04
+ May 2020 18:33:41 +0200
 To: Jia-Ju Bai <baijiaju1990@gmail.com>, jfs-discussion@lists.sourceforge.net
 From: Markus Elfring <Markus.Elfring@web.de>
 Autocrypt: addr=Markus.Elfring@web.de; prefer-encrypt=mutual; keydata=
@@ -93,43 +93,43 @@ Autocrypt: addr=Markus.Elfring@web.de; prefer-encrypt=mutual; keydata=
  Z/wsLiWTgKlih2QYULvW61XU+mWsK8+ZlYUrRMpkauN4CJ5yTpvp+Orcz5KixHQmc5tbkLWf
  x0n1QFc1xxJhbzN+r9djSGGN/5IBDfUqSANC8cWzHpWaHmSuU3JSAMB/N+yQjIad2ztTckZY
  pwT6oxng29LzZspTYUEzMz3wK2jQHw+U66qBFk8whA7B2uAU1QdGyPgahLYSOa4XAEGb6wbI FEE=
-Message-ID: <5ef374a5-0e2e-5c74-a827-0148c384f6e3@web.de>
-Date: Mon, 4 May 2020 18:15:48 +0200
+Message-ID: <bcfeb785-b787-4ebe-c1e1-159b6efc7e51@web.de>
+Date: Mon, 4 May 2020 18:33:40 +0200
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
  Thunderbird/68.7.0
 MIME-Version: 1.0
 Content-Language: en-GB
-X-Provags-ID: V03:K1:8/af1Ha9nzjc2lhZ5r//wz9hohzEA2pfMMozzIES8IlmQdG9k1y
- BKeq18KyyjcU61EVm7XNPp4CtjUHkYKPFVDMMHJ/RNxc4syj33nSr+vVhQt3mCce2gMp5dI
- EN09JEFU8qaIncDi4YTbj7Fq1T5z1YmY4pySdhWxCQo0Nc6eSxY1/YVtR4XXcFNo2KB9trT
- nZNH/YD2V1eKirZfeMePw==
+X-Provags-ID: V03:K1:7YzZOCIxWKK/06F9z/ZoK6WsDS8atsDgIU4fFcNjE6d6Q+wNyQX
+ TbHjc+gy8VxPl6nXw2MEX992I2z5RX7o3FEyn1hhQRCKfQviHJjoPn4YQ9Zn1UI4TT/7LnQ
+ 5bTsgigi4YzCdVxOShXOLhDjtc4tFK8v5Vf/ZazivbflC/VT09VwzktchzAsYooQzhcZLIp
+ WXyV3/ul3uZpfuPLJYI4Q==
 X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:ArymooPZTeg=:Dmrghxo4++2SROSRIDzjLs
- KUlKg1b382hJrekSx8GrThMoLNhDaH5QLV0YfUDoKGNPPdGcFtxTsfjy18Lbjvnp57aGna+FK
- Jf0AqGDtF4QFONPIXcdrTYIXGdR4/L32GOjM9XBAc3FAlFNN12YavBRDEIC41eMeJKQ9teHiK
- D7vOY7RZoYK6wqg98jNJ+97qntaRK/D6i3UqwE04MmbIy124VxrWnHWcKcJVtjUXY//NlNNdN
- uZrUfFObTDg0tiwo9DswTYU0aU6rWvSd/pvXoSDVUeC3fxWcjH6mx8JHvqQEmnNL4lshl6bks
- NPHskXYMY2JVGMwbJcwOKss6YM7fOjvGI6+oj2QxhdfGF+uMfjhAGmanvpyCGd9145uP61vtn
- wzpkoyoHRr4aRgulr3LWTBigFEfZWvqcxPzbFSMw9X3bvoyrFinFPXEgCyNp4LB1B3MG6KvRy
- r3kHxPew2Dyne8HgrLo/3RNiH3GHTt9+MGurpptPCHIJaLW519VUv8QzgtS/eXItBqT8SQDIA
- kRY8tsPjx6HsIScW7FNza6Sfu18XnjB9NPYNi/rJIWT0UBid/qESlGZHnK91Fy91NlpnpHEum
- oyViDeD5vkSvMoR71kn6J2Wxx5TGk+BXOXz3N2Bb2Tw7deep5P/cxq6Q68XvX1O9UhlVf2PQU
- GuKibhy7whZcdrRZD7mdp5eJV4kWtb6hGKddtayhTRNpZwWkvcu3HSm1PoeQpzAzK1slrdwfk
- qIfcG4kyjEtuaIjIOalmymsRX2FOujh/+7hteZy1poWavA58zRZ48SIb+P5WPuFXB2eIZKRTt
- KrLhvn8z/yIE+ZFDzTJrneG/SQZvs++mgGEjRtMGalosadISLUGY7QKj7w4kyd3CIor0fslFU
- bMuj4WjJXxLeAReYSZCvqIKGf6bX22SVkAMzePLTiiQGlyH/DZB+wSXnNSFOA7Llp9Yjg1nmj
- hBWdeOcLe8RlMWE8N4RsSSEPc+nbGUugO9MFj8lA2CM4jgEeeBeo+iKlXe2xWMZmBp7/gNn9f
- apLo76LXr84JwQr6E4YfhpA1Z5Xm//Q17UxXfetgA+I89m3O1nQPMar5REX14mkw3y7XUiu2N
- frujy6IW7UipGGbHPZRi20B5WhP2sjvIaw1N8zh7Y3Qzmv0CeQ2mzKWYWJ0fCYHb+8b8Y9MXc
- azl95sxk2K5ZTGRXXR1pUUAWfNLn5Uh/nY3rLKYXMV3U2IcH+VMxCYH40NqkC3G4cndrsku+z
- sgybEMRZCeh6hawSq
+X-UI-Out-Filterresults: notjunk:1;V03:K0:qfwwgB5/ceA=:xIUpZoVliLivOxMT+Q4iyI
+ 0D1Y8/TBx+58gMJheJKjl8OAhiVEY6ZbnkzU1Z8EDKd3C4EQ7L+zdNaDHmIvlL0DCQX5eNoyx
+ eHH9PFOJdyGT5tc4BZdqbSvDHitvXVQAFSK58xtFdyUvwB6fZsKp3nmmWcU7Poigs2dwxh6m+
+ 5AeEs3IYy67NBhdsvy9RclsEQGlLN3+cXL5O4HYwbBZiUUHjgmUSeVOxyyNhxQmc8AUQzKD1c
+ viaIepM+8g8l6kx0gt+DccsOefmX+1oihLLLwHq3B18H1hxBgLDa53cPoJNxzcFjOQpyMJCS/
+ ln8yaY/AelLqbgqNMcEgGNy7IN6AEwa6eBr4bzcOwBZmatvrXfLiY58sPe9JSJaT6F7rV8N3C
+ l1SF+H+d0+U2Az/Uj/5vE6yQ4/DaC4cyxMHhH9hD30hFPXEwzC2EaQzZBCB+dnAvZI0Lxv+VW
+ Ty1wdTDlQWer5IjehNttfTrPHAhY9kuN+g3dNrnaXhWGst+G86yv66CjHZrr9cER/ZoikVid1
+ OXXMEd+DXTckjpSPRoeK6rvEX7RDM3ZfFHqiFrcp01x6Rslc6FsLVo9SQ0ce6Hqd0cfkpOR5l
+ Onb/cF8o27R9W/RKTcqv6ZHmHvoj5mF8lcrYfJtbebYFqFvLeDj5s3D8ouguaMM25nLOhNEK/
+ 9VRygd3WP4DD/Sp0Vx314lfBH1KLOkczb98dxmFRQEiK/SmTXs0LoGLAgN2i720vDUKArPesa
+ Q9VQEhY0GLSjn7muQOkdLRtwsmVJmI49VI3vLtHemHH18Lp5f7y+0bmhJp37tIfQ91jFHvB34
+ /8aeW81YzLRFidl2WshePddFERS0Z2f09riYfbCQUwbZq7aDqEuktq4jpRY7BnuZ7z2SVGlY1
+ RaKxx/fu6RiXOqiK3cH/OJUNTN9sF+IBi7sm+yvZVSopscqyIt8M7H04mlm2j8xAu/t6/2Ljh
+ k8dyPcGJIvrvNjD0IagKYMXG/yCRaOYyKcmGDXo5x+a2swIB0qGdu6u8lVAH/wyHDh8di8aQH
+ 0pUu9k3Gt/mkq4Ea3MfTkcTmZ0Whk71Nkl71mU0TzUToL+3dXDXrFtQdAJ66xvjCa3zMkbnFX
+ lmo7u430NRS79sfv5kStYOTEfKMx8g+blDcLwy7LjPo/cF62y0qkPgHY9myhZFLMg7NZB1pJo
+ 7NAVK+84hg+Ui2+oTP7jBMTS0QHAtfDL3wmMxB5bm57pSrICaX+ymnLnjT98XIwB9lFaM+0TO
+ 2cWn9J2GZeyaygF9p
 X-Spam-Score: -0.3 (/)
 X-Spam-Report: Spam Filtering performed by mx.sourceforge.net.
  See http://spamassassin.org/tag/ for more details.
  0.0 FREEMAIL_FROM Sender email is commonly abused enduser mail provider
  (markus.elfring[at]web.de)
- -0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [212.227.17.11 listed in wl.mailspike.net]
+ -0.0 RCVD_IN_MSPIKE_H4      RBL: Very Good reputation (+4)
+ [217.72.192.78 listed in wl.mailspike.net]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_AU Message has a valid DKIM or DK signature from author's
@@ -139,10 +139,10 @@ X-Spam-Report: Spam Filtering performed by mx.sourceforge.net.
  not necessarily valid
  -0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
  -0.2 AWL AWL: Adjusted score from AWL reputation of From: address
-X-Headers-End: 1jVdl6-0074Vt-NX
+X-Headers-End: 1jVeF4-0077o9-Vw
 X-Mailman-Approved-At: Mon, 04 May 2020 17:03:39 +0000
 Subject: Re: [Jfs-discussion] [PATCH] fs: jfs: fix a possible data race in
- txBegin()
+ metapage_writepage()
 X-BeenThere: jfs-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -160,17 +160,16 @@ Content-Type: text/plain; charset="utf-8"
 Content-Transfer-Encoding: base64
 Errors-To: jfs-discussion-bounces@lists.sourceforge.net
 
-PiBUaHVzLCBhIGRhdGEgcmFjZSBjYW4gb2NjdXIgZm9yIHRibGstPmZsYWcuCj4KPiBUbyBmaXgg
-dGhpcyBkYXRhIHJhY2UsIHRoZSBzcGlubG9jayBsb2ctPmdjbG9jayBpcyB1c2VkIGluCj4gdHhC
-ZWdpbigpLgo+Cj4gVGhpcyBkYXRhIHJhY2UgaXMgZm91bmQgYnkgb3VyIGNvbmN1cnJlbmN5IGZ1
-enplci4KCkhvdyBkbyB5b3UgdGhpbmsgYWJvdXQgYSB3b3JkaW5nIHZhcmlhbnQgbGlrZSB0aGUg
-Zm9sbG93aW5nPwoKICAgQ2hhbmdlIGRlc2NyaXB0aW9uOgogICBBIGRhdGEgcmFjZSBjYW4gb2Nj
-dXIgZm9yIHRoZSBkYXRhIHN0cnVjdHVyZSBtZW1iZXIg4oCcZmxhZ+KAnS4KICAgVGhpcyBkYXRh
-IHJhY2Ugd2FzIGZvdW5kIGJ5IG91ciBjb25jdXJyZW5jeSBmdXp6ZXIuCgogICBUaHVzIHVzZSB0
-aGUgc3BpbiBsb2NrIOKAnGdjbG9ja+KAnSBmb3IgdGhlIHJlc2V0dGluZyBvZiBmaXZlCiAgIGRh
-dGEgc3RydWN0dXJlIG1lbWJlcnMgaW4gdGhpcyBmdW5jdGlvbiBpbXBsZW1lbnRhdGlvbi4KCgpX
-b3VsZCB5b3UgbGlrZSB0byBhZGQgdGhlIHRhZyDigJxGaXhlc+KAnSB0byB0aGUgY29tbWl0IG1l
-c3NhZ2U/CgpSZWdhcmRzLApNYXJrdXMKCgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fXwpKZnMtZGlzY3Vzc2lvbiBtYWlsaW5nIGxpc3QKSmZzLWRpc2N1c3Np
-b25AbGlzdHMuc291cmNlZm9yZ2UubmV0Cmh0dHBzOi8vbGlzdHMuc291cmNlZm9yZ2UubmV0L2xp
-c3RzL2xpc3RpbmZvL2pmcy1kaXNjdXNzaW9uCg==
+4oCmCj4gVG8gZml4IHRoaXMgZGF0YSByYWNlLCB0aGUgc3BpbmxvY2sgbXAtPmxvZy0+Z2Nsb2Nr
+IGlzIHVzZWQgaW4KPiBtZXRhcGFnZV93cml0ZXBhZ2UoKS4KPgo+IFRoaXMgZGF0YSByYWNlIGlz
+IGZvdW5kIGJ5IG91ciBjb25jdXJyZW5jeSBmdXp6ZXIuCgpIb3cgZG8geW91IHRoaW5rIGFib3V0
+IGEgd29yZGluZyB2YXJpYW50IGxpa2UgdGhlIGZvbGxvd2luZz8KCiAgIENoYW5nZSBkZXNjcmlw
+dGlvbjoKICAg4oCmCiAgIFRoaXMgZGF0YSByYWNlIHdhcyBmb3VuZCBieSBvdXIgY29uY3VycmVu
+Y3kgZnV6emVyLgoKICAgVGh1cyB1c2UgdGhlIHNwaW4gbG9jayDigJxtcC0+bG9nLT5nY2xvY2vi
+gJ0gZm9yIHRoZSBhc3NpZ25tZW50IG9mCiAgIHRoZSBkYXRhIHN0cnVjdHVyZSBtZW1iZXIg4oCc
+bG9nLT5jZmxhZ+KAnSB0byBhIGxvY2FsIHZhcmlhYmxlCiAgIGluIHRoaXMgZnVuY3Rpb24gaW1w
+bGVtZW50YXRpb24uCgoKV291bGQgeW91IGxpa2UgdG8gYWRkIHRoZSB0YWcg4oCcRml4ZXPigJ0g
+dG8gdGhlIGNvbW1pdCBtZXNzYWdlPwoKUmVnYXJkcywKTWFya3VzCgoKX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18KSmZzLWRpc2N1c3Npb24gbWFpbGluZyBs
+aXN0Ckpmcy1kaXNjdXNzaW9uQGxpc3RzLnNvdXJjZWZvcmdlLm5ldApodHRwczovL2xpc3RzLnNv
+dXJjZWZvcmdlLm5ldC9saXN0cy9saXN0aW5mby9qZnMtZGlzY3Vzc2lvbgo=
