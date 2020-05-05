@@ -2,88 +2,101 @@ Return-Path: <jfs-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+jfs-discussion@lfdr.de
 Delivered-To: lists+jfs-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8A9721C5775
-	for <lists+jfs-discussion@lfdr.de>; Tue,  5 May 2020 15:52:29 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BF9131C5780
+	for <lists+jfs-discussion@lfdr.de>; Tue,  5 May 2020 15:54:17 +0200 (CEST)
 Received: from [127.0.0.1] (helo=sfs-ml-2.v29.lw.sourceforge.com)
 	by sfs-ml-2.v29.lw.sourceforge.com with esmtp (Exim 4.90_1)
 	(envelope-from <jfs-discussion-bounces@lists.sourceforge.net>)
-	id 1jVxzY-0003nG-3V; Tue, 05 May 2020 13:52:12 +0000
+	id 1jVy1H-0003ul-H9; Tue, 05 May 2020 13:53:59 +0000
 Received: from [172.30.20.202] (helo=mx.sourceforge.net)
- by sfs-ml-1.v29.lw.sourceforge.com with esmtps
+ by sfs-ml-2.v29.lw.sourceforge.com with esmtps
  (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
- (envelope-from <baijiaju1990@163.com>) id 1jVxgO-0003Jp-HL
- for jfs-discussion@lists.sourceforge.net; Tue, 05 May 2020 13:32:24 +0000
+ (envelope-from <baijiaju1990@gmail.com>) id 1jVy1G-0003ue-2d
+ for jfs-discussion@lists.sourceforge.net; Tue, 05 May 2020 13:53:58 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=sourceforge.net; s=x; h=Content-Transfer-Encoding:Content-Type:In-Reply-To:
- MIME-Version:Date:Message-ID:From:References:Cc:To:Subject:Sender:Reply-To:
- Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
- Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
+ d=sourceforge.net; s=x; h=Message-Id:Date:Subject:Cc:To:From:Sender:Reply-To:
+ MIME-Version:Content-Type:Content-Transfer-Encoding:Content-ID:
+ Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+ :Resent-Message-ID:In-Reply-To:References:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=vtE9LBKKqPY2QgOdCyMuZW9mjYDyjGtNVqWc4Ka9luo=; b=LcIU4qneY89pSQdYlpK8A5LolF
- ULY7kZpdYJ1ZB1hCRa/c07+E5+JWttXhoLZNJRNF7hDzbU4Xrmso8jCi4+xRrOUkQw9GfQuvAYnMW
- 5rj4MhRYDbFUJd15MAx+h5Xozmp9Pbv/nRUROTOr13cuUwBID1ecHMficMv3Uz6p+dOk=;
+ bh=QJU1rgdyR3dsjV2URMfZxPtiLnMEVx7zziz4YW88wtc=; b=MqT64V1+JJSoR8WcJl/lfCY5Md
+ Shl4kQMB0LmudjbIu1IYCko1xpPHkrBlKIkLWcOA2mw/reokjdyMMe7gja3hm4aOTHSG+5PMa+Izd
+ 0z6giRYSz4gBoMKaETZUPth9+AzFDYF2ZLb5lwOwflbyCdfr8rCmYgW2cSEQ8lCkzTAw=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
- h=Content-Transfer-Encoding:Content-Type:In-Reply-To:MIME-Version:Date:
- Message-ID:From:References:Cc:To:Subject:Sender:Reply-To:Content-ID:
- Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
- :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
+ h=Message-Id:Date:Subject:Cc:To:From:Sender:Reply-To:MIME-Version:
+ Content-Type:Content-Transfer-Encoding:Content-ID:Content-Description:
+ Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+ In-Reply-To:References:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
  List-Post:List-Owner:List-Archive;
- bh=vtE9LBKKqPY2QgOdCyMuZW9mjYDyjGtNVqWc4Ka9luo=; b=c3w3Tcazd+elw8d6wFoxqy8Y90
- LG3BbTguxCwWGeAETl8rK82A+yePUoklEl5UOlS0C4sW3woq0lN2IIec9ENs6T0DHA4560Imi+RAo
- x308aFR5VXCDSwuooMboEeQtvR0ArtvHQA1RbdPGuge+k0uZ3yztfq1S5BXQGUnzPAOo=;
-Received: from m12-17.163.com ([220.181.12.17])
+ bh=QJU1rgdyR3dsjV2URMfZxPtiLnMEVx7zziz4YW88wtc=; b=b2HlJ7VB0AJvjpVHhSH/EKNSKz
+ k9wqxGgMYHdTuuy88Sfe3Wl8322IzkaVRI+AXW3Dc9kas9KpFZ/piYOV9PrKNJ5wkt7Wao6CUHivs
+ oK3dL7z305Oj5cdS0NcAHwZ6Z4fuEzyHEdV14lCL25VyefjzPVOLdds7p92FBqiV94/E=;
+Received: from mail-pf1-f195.google.com ([209.85.210.195])
  by sfi-mx-1.v28.lw.sourceforge.com with esmtps
- (TLSv1.2:DHE-RSA-AES256-SHA:256) (Exim 4.92.2) id 1jVxgK-00EKPI-2J
- for jfs-discussion@lists.sourceforge.net; Tue, 05 May 2020 13:32:24 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=163.com;
- s=s110527; h=Subject:From:Message-ID:Date:MIME-Version; bh=vtE9L
- BKKqPY2QgOdCyMuZW9mjYDyjGtNVqWc4Ka9luo=; b=bpuZ7YTYNZo8qjLCX6F9U
- ay8iGfhemsjWMvllBx3GKhJ2anA8/6VNjQXiQqR11jgKHjYSFM0cd3YiXkgkIwSS
- BOsWXdIVUF8umu3yxdlGCG4kJFMgFqbc8uK+/7XmSmdNqdLvpKojArPHjk2jz/Q5
- 1tIjBv3mehZ4LaEbnKmgbY=
-Received: from [192.168.1.7] (unknown [120.244.110.63])
- by smtp13 (Coremail) with SMTP id EcCowAB37v3carFejW99BA--.112S2;
- Tue, 05 May 2020 21:32:12 +0800 (CST)
-To: Dave Kleikamp <dave.kleikamp@oracle.com>,
- Markus Elfring <Markus.Elfring@web.de>, Jia-Ju Bai <baijiaju1990@gmail.com>,
- jfs-discussion@lists.sourceforge.net
-References: <5ef374a5-0e2e-5c74-a827-0148c384f6e3@web.de>
- <abbb03ec-7ce3-08b6-7d08-420743067f19@gmail.com>
- <fa6fabec-8cc5-fc62-657f-3794e9405fac@web.de>
- <df165b9f-7a51-a632-b1a0-a2cf1efa1915@oracle.com>
-From: Jia-Ju Bai <baijiaju1990@163.com>
-Message-ID: <565e317a-396e-9221-11bb-bc8c76cc9f7a@163.com>
-Date: Tue, 5 May 2020 21:32:11 +0800
-User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:68.0) Gecko/20100101
- Thunderbird/68.4.1
-MIME-Version: 1.0
-In-Reply-To: <df165b9f-7a51-a632-b1a0-a2cf1efa1915@oracle.com>
-Content-Language: en-US
-X-CM-TRANSID: EcCowAB37v3carFejW99BA--.112S2
-X-Coremail-Antispam: 1Uf129KBjvdXoWrKrWkWFy8ZFyUuF1UKw45Jrb_yoWDCFc_uF
- s5CFyUGwn8uF1rXFZ7Jw4fZry3Zw47ZF1Yywn5JrW7J3s3tFs5CFZ7KFyYy3W5tF9akrsr
- Ca1Sqw4Dt3W2qjkaLaAFLSUrUUUUUb8apTn2vfkv8UJUUUU8Yxn0WfASr-VFAUDa7-sFnT
- 9fnUUvcSsGvfC2KfnxnUUI43ZEXa7IU5M5l5UUUUU==
-X-Originating-IP: [120.244.110.63]
-X-CM-SenderInfo: xedlyx5dmximizq6il2tof0z/1tbiVhwbelqzk2jEvAAAsB
-X-Spam-Score: 0.2 (/)
+ (TLSv1.2:ECDHE-RSA-AES128-GCM-SHA256:128) (Exim 4.92.2)
+ id 1jVy1D-00EM2T-VA
+ for jfs-discussion@lists.sourceforge.net; Tue, 05 May 2020 13:53:58 +0000
+Received: by mail-pf1-f195.google.com with SMTP id w65so891579pfc.12
+ for <jfs-discussion@lists.sourceforge.net>;
+ Tue, 05 May 2020 06:53:55 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:to:cc:subject:date:message-id;
+ bh=QJU1rgdyR3dsjV2URMfZxPtiLnMEVx7zziz4YW88wtc=;
+ b=I9RO3pgjGmr1FZpr0FwTzwdMQZjnnQ/wVjovFIecF1T58ixbSFm2fJTWOqsJQ+QiHg
+ OyJFLLZyE5MrODJ7pAmAy3cKW7fO7d9SZOH8/p55bXqM1ySA0LLe6GZ4LP9nHsoIhRBI
+ 5TqYq3nNSBYoL+U8t/9YNBd2CVnf/oW0AKwN9Aj+dI0UVFEMsiM5iLDXSMIyiSyA0h7+
+ C6kWDkjUSP+ebxyGtTmhkRcALPduflyZwo1on3TtMGHfANUKwPXUSFUZt8NoZWV5s45v
+ aSCOBUSupfNy1R/dN+O+5R0A4/Uc0YEUHBDJDnAcYaXZGx9D7Qt2Q1Z90tIDjrRTWhAH
+ tFcA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id;
+ bh=QJU1rgdyR3dsjV2URMfZxPtiLnMEVx7zziz4YW88wtc=;
+ b=T/xXiffIHV2DAIuK63nQhLfnmiKsNROEXqGmcWSq9gcHW766TXZvu39THni4MsRTL3
+ tZHiVhwpyL7ieAZsBZJU48j2iq14B4my2hxyLEQpPCqLKxIUlFrNf76sM6GZSZO3mKX1
+ 5m7gGtqKqKwbSOyndsUVGVMH9IMwciFe2qYr15TP6qrdpeOBlICSGDCa3HSQu/Mmm1wc
+ 13moMgRQQDkR98+j9DWrNvfhs/ekPZyPzQK9s2VgDWBCqmWTFE1MykLAyGfPtRvYIt8E
+ uG4tpl9/kdAEujJarmm67kpsqNiQ5Y8dhK7FKNU5WMUtDdMjtA4er+LkZKdedPkhmn0g
+ i/cg==
+X-Gm-Message-State: AGi0Pub+JlN0ZZpczcagQC4ftMRxVzOKZnH/1m1qZsSNN9tGVW8r83oa
+ UbvoMwCoUHQCjv8JucrmUQY=
+X-Google-Smtp-Source: APiQypJTpVbLFJfbC4pTfe+3bRqpJK6v1l7Gl1XmYpllcrZp8mtXHfu530JzQx2s1IZ5/Qt1u+NwBQ==
+X-Received: by 2002:a62:e51a:: with SMTP id n26mr3180048pff.301.1588686829155; 
+ Tue, 05 May 2020 06:53:49 -0700 (PDT)
+Received: from localhost.localdomain ([120.244.110.63])
+ by smtp.gmail.com with ESMTPSA id i15sm2061013pfo.195.2020.05.05.06.53.45
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Tue, 05 May 2020 06:53:48 -0700 (PDT)
+From: Jia-Ju Bai <baijiaju1990@gmail.com>
+To: shaggy@kernel.org,
+	Markus.Elfring@web.de
+Date: Tue,  5 May 2020 21:53:13 +0800
+Message-Id: <20200505135313.28793-1-baijiaju1990@gmail.com>
+X-Mailer: git-send-email 2.17.1
+X-Spam-Score: 0.1 (/)
 X-Spam-Report: Spam Filtering performed by mx.sourceforge.net.
  See http://spamassassin.org/tag/ for more details.
  0.0 FREEMAIL_FROM Sender email is commonly abused enduser mail provider
- (baijiaju1990[at]163.com)
+ (baijiaju1990[at]gmail.com)
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/, no
+ trust [209.85.210.195 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends in
- digit (baijiaju1990[at]163.com)
+ digit (baijiaju1990[at]gmail.com)
  -0.1 DKIM_VALID_AU Message has a valid DKIM or DK signature from author's
  domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature,
  not necessarily valid
-X-Headers-End: 1jVxgK-00EKPI-2J
-X-Mailman-Approved-At: Tue, 05 May 2020 13:52:11 +0000
-Subject: Re: [Jfs-discussion] fs: jfs: fix a possible data race in txBegin()
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [209.85.210.195 listed in wl.mailspike.net]
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ -0.0 AWL AWL: Adjusted score from AWL reputation of From: address
+X-Headers-End: 1jVy1D-00EM2T-VA
+Subject: [Jfs-discussion] [PATCH v2] fs: jfs: fix a possible data race in
+ metapage_writepage()
 X-BeenThere: jfs-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -95,29 +108,87 @@ List-Post: <mailto:jfs-discussion@lists.sourceforge.net>
 List-Help: <mailto:jfs-discussion-request@lists.sourceforge.net?subject=help>
 List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/jfs-discussion>, 
  <mailto:jfs-discussion-request@lists.sourceforge.net?subject=subscribe>
-Cc: kernel-janitors@vger.kernel.org, linux-kernel@vger.kernel.org
-Content-Transfer-Encoding: base64
-Content-Type: text/plain; charset="utf-8"; Format="flowed"
+Cc: jfs-discussion@lists.sourceforge.net, Jia-Ju Bai <baijiaju1990@gmail.com>,
+ linux-kernel@vger.kernel.org
+MIME-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Errors-To: jfs-discussion-bounces@lists.sourceforge.net
 
-CgpPbiAyMDIwLzUvNSAyMToyMywgRGF2ZSBLbGVpa2FtcCB3cm90ZToKPiBPbiA1LzUvMjAgMTI6
-MTIgQU0sIE1hcmt1cyBFbGZyaW5nIHdyb3RlOgo+Pj4gSSBhbSBub3Qgc3VyZSBob3cgdG8gYWRk
-IHRoZSB0YWcgIkZpeGVzIi4uLgo+PiBIb3cgaGVscGZ1bCBkbyB5b3UgZmluZCB0aGUgYXZhaWxh
-YmxlIHNvZnR3YXJlIGRvY3VtZW50YXRpb24/Cj4+IGh0dHBzOi8vZ2l0Lmtlcm5lbC5vcmcvcHVi
-L3NjbS9saW51eC9rZXJuZWwvZ2l0L3RvcnZhbGRzL2xpbnV4LmdpdC90cmVlL0RvY3VtZW50YXRp
-b24vcHJvY2Vzcy9zdWJtaXR0aW5nLXBhdGNoZXMucnN0P2lkPTQ3Y2YxYjQyMmU2MDkzYWVlMmEz
-ZTU1ZDVlMTYyMTEyYTJjNjk4NzAjbjE4Mwo+Pgo+Pgo+Pj4gSSBuZWVkIHRvIGZpbmQgd2hpY2gg
-cHJldmlvdXMgY29tbWl0IGFkZCB0aGUgY29kZSBhYm91dCB0eEJlZ2luKCk/Cj4+IEkgc3VnZ2Vz
-dCB0byB0YWtlIGFub3RoZXIgbG9vayBhdCBjb3JyZXNwb25kaW5nIHNvdXJjZSBjb2RlIHBsYWNl
-cwo+PiBieSBhIGNvbW1hbmQgbGlrZSDigJxnaXQgYmxhbWXigJ0uCj4+IGh0dHBzOi8vZ2l0LXNj
-bS5jb20vYm9vay9lbi92Mi9HaXQtVG9vbHMtRGVidWdnaW5nLXdpdGgtR2l0cwo+IEkgc3VzcGVj
-dCB0aGF0IHRoZSBwcm9ibGVtIHdhcyBpbiB0aGUgY29kZSBtdWNoIGxvbmdlciB0aGFuIGl0IGhh
-cyBiZWVuCj4gdW5kZXIgZ2l0IHNvdXJjZSBjb250cm9sLgoKSSBhZ3JlZSwgYmVjYXVzZSAiZ2l0
-IGJsYW1lIiBzaG93cyB0aGUgbGFzdCBjaGFuZ2UgdG8gdHhCZWdpbigpIGlzIApjb21taXQgMWRh
-MTc3ZTRjM2Y0LCB3aGljaCB3YXMgc3VibWl0dGVkIGluIDIwMDUuLi4KQW5kIHRoaXMgY29tbWl0
-IGp1c3QgYWRkZWQgb3IgbWVyZ2VkIHRoZSBmaWxlc3lzdGVtIHRvIHRoZSBMaW51eCBrZXJuZWwu
-ClRodXMsIGFkZGluZyB0aGUgdGFnICJGaXhlcyIgb2YgdGhpcyBjb21taXQgc2hvdWxkIGJlIHVz
-ZWxlc3MuLi4KCgpCZXN0IHdpc2hlcywKSmlhLUp1IEJhaQoKCgpfX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fXwpKZnMtZGlzY3Vzc2lvbiBtYWlsaW5nIGxpc3QK
-SmZzLWRpc2N1c3Npb25AbGlzdHMuc291cmNlZm9yZ2UubmV0Cmh0dHBzOi8vbGlzdHMuc291cmNl
-Zm9yZ2UubmV0L2xpc3RzL2xpc3RpbmZvL2pmcy1kaXNjdXNzaW9uCg==
+The functions metapage_writepage() and lmPostGC() can be concurrently 
+executed in the following call contexts:
+
+Thread1:
+  metapage_writepage()
+
+Thread2:
+  lbmIODone()
+    lmPostGC()
+
+In metapage_writepage():
+  if (mp->log && !(mp->log->cflag & logGC_PAGEOUT))
+
+In lmPostGC():
+  spin_lock_irqsave(&log->gclock, flags);
+  ...
+  log->cflag &= ~logGC_PAGEOUT
+  ...
+  spin_unlock_irqrestore(&log->gclock, flags);
+
+The memory addresses of mp->log->cflag and log->cflag can be identical,
+and thus a data race can occur.
+
+This data race is found by our concurrency fuzzer.
+
+Thus use the spin lock "mp->log->gclock" for the assignment of 
+the data structure member "log->cflag" to a local variable 
+in this function implementation.
+
+Signed-off-by: Jia-Ju Bai <baijiaju1990@gmail.com>
+---
+v2:
+* Change the description.
+  Thank Markus Elfring for good advice.
+
+---
+ fs/jfs/jfs_metapage.c | 11 +++++++++--
+ 1 file changed, 9 insertions(+), 2 deletions(-)
+
+diff --git a/fs/jfs/jfs_metapage.c b/fs/jfs/jfs_metapage.c
+index a2f5338a5ea1..026c11b2572d 100644
+--- a/fs/jfs/jfs_metapage.c
++++ b/fs/jfs/jfs_metapage.c
+@@ -351,6 +351,7 @@ static int metapage_writepage(struct page *page, struct writeback_control *wbc)
+ 	unsigned long bio_offset = 0;
+ 	int offset;
+ 	int bad_blocks = 0;
++	uint cflag;
+ 
+ 	page_start = (sector_t)page->index <<
+ 		     (PAGE_SHIFT - inode->i_blkbits);
+@@ -370,8 +371,14 @@ static int metapage_writepage(struct page *page, struct writeback_control *wbc)
+ 			 * Make sure this page isn't blocked indefinitely.
+ 			 * If the journal isn't undergoing I/O, push it
+ 			 */
+-			if (mp->log && !(mp->log->cflag & logGC_PAGEOUT))
+-				jfs_flush_journal(mp->log, 0);
++
++			if (mp->log) {
++				spin_lock_irq(&mp->log->gclock);
++				cflag = mp->log->cflag;
++				spin_unlock_irq(&mp->log->gclock);
++				if (!(cflag & logGC_PAGEOUT))
++					jfs_flush_journal(mp->log, 0);
++			}
+ 			continue;
+ 		}
+ 
+-- 
+2.17.1
+
+
+
+_______________________________________________
+Jfs-discussion mailing list
+Jfs-discussion@lists.sourceforge.net
+https://lists.sourceforge.net/lists/listinfo/jfs-discussion
