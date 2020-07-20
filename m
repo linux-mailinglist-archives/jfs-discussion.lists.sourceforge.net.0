@@ -2,86 +2,78 @@ Return-Path: <jfs-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+jfs-discussion@lfdr.de
 Delivered-To: lists+jfs-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id EAA1720B35B
-	for <lists+jfs-discussion@lfdr.de>; Fri, 26 Jun 2020 16:17:11 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1227C2255BD
+	for <lists+jfs-discussion@lfdr.de>; Mon, 20 Jul 2020 04:04:36 +0200 (CEST)
 Received: from [127.0.0.1] (helo=sfs-ml-3.v29.lw.sourceforge.com)
 	by sfs-ml-3.v29.lw.sourceforge.com with esmtp (Exim 4.90_1)
 	(envelope-from <jfs-discussion-bounces@lists.sourceforge.net>)
-	id 1jop9r-0007FC-5L; Fri, 26 Jun 2020 14:16:47 +0000
+	id 1jxLA2-0006eO-Hs; Mon, 20 Jul 2020 02:04:10 +0000
 Received: from [172.30.20.202] (helo=mx.sourceforge.net)
- by sfs-ml-4.v29.lw.sourceforge.com with esmtps
+ by sfs-ml-2.v29.lw.sourceforge.com with esmtps
  (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
- (envelope-from <cgxu519@mykernel.net>) id 1johHA-0000a1-Qq
- for jfs-discussion@lists.sourceforge.net; Fri, 26 Jun 2020 05:51:48 +0000
+ (envelope-from <rdunlap@infradead.org>) id 1jxJRa-0002BD-1q
+ for jfs-discussion@lists.sourceforge.net; Mon, 20 Jul 2020 00:14:10 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=sourceforge.net; s=x; h=Content-Type:Content-Transfer-Encoding:MIME-Version
- :Date:Subject:Message-ID:Cc:To:From:Sender:Reply-To:Content-ID:
+ d=sourceforge.net; s=x; h=Content-Transfer-Encoding:MIME-Version:Message-Id:
+ Date:Subject:Cc:To:From:Sender:Reply-To:Content-Type:Content-ID:
  Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
  :Resent-Message-ID:In-Reply-To:References:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=38p+ZZeAwAW4P+uY9+lkPLWkJahkcxqdsw/dCI+H5mM=; b=c9HH9gBu6J53KSd5ROr4yV51Jr
- +iFyu14rlvWn6Y95ykJ43I/0czy1nUfHzeplbc1mwApSYPoBe80gxnD9sbuMJ4+L3uKFAirQ97D92
- 3ohJKA2oY7SUUc5ysKfDWJIWS1Rqx0DLA7zbqMAJo8dT3nbf8Vl722E3UAnK0zN0Zy1Y=;
+ bh=+8KIohn8oTybDj4EKgVF5l5KNyz4huEAk4t5RDm5bJA=; b=RbbpQLINr/2ojvYkirF6lRC/e6
+ 97SmbOlhF3Qs6DshmuV6wgkqkkEz+prZmnEd8IT21h9Sz4mv2jWcP4jwDnu6BaUxPum9nK90uCvJ4
+ E5v5Cx6hubkaxMBBX6HjKSV1mLZoJvEs3XXxkWTKYufMWCrS/tmthINChKqdl0H462h4=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
- h=Content-Type:Content-Transfer-Encoding:MIME-Version:Date:Subject:
- Message-ID:Cc:To:From:Sender:Reply-To:Content-ID:Content-Description:
- Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
- In-Reply-To:References:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
- List-Post:List-Owner:List-Archive;
- bh=38p+ZZeAwAW4P+uY9+lkPLWkJahkcxqdsw/dCI+H5mM=; b=Xau9lRIbImBeqK0U5Aztg9Ws21
- mAMrPquhsloggFATakKONZLOfc391fQjCFkTLiwpi2/gkM72VkDpNvg0L8WAQBgyJ/pZcXToxHTmG
- SkCjVWfGwTO4fBzkHJFqbsG6YHckKlg/pBSou17aVPsODJyCsecRZ7tczdaqtAF+nHP8=;
-Received: from [163.53.93.243] (helo=sender2-op-o12.zoho.com.cn)
- by sfi-mx-1.v28.lw.sourceforge.com with esmtps
- (TLSv1.2:ECDHE-RSA-AES256-SHA384:256) (Exim 4.92.2)
- id 1johGx-001aDX-6i
- for jfs-discussion@lists.sourceforge.net; Fri, 26 Jun 2020 05:51:48 +0000
-ARC-Seal: i=1; a=rsa-sha256; t=1593150670; cv=none; d=zoho.com.cn; s=zohoarc; 
- b=iNbDzhqENpkMVl0rboMbjSsg5064dC1MVzoDJTcBQ8lF3QEFfvlYbTogybTXEZFE6uPIFrP1xfxBYJwISqM6k0iPktRZvSCYqxKx/R0Xx1l+1e6SGSVVMNs2+hAWhznUSWPTc1b+CAyTc8hXhi5n9WbNiXgBVkZDQuCFukEIdqc=
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=zoho.com.cn;
- s=zohoarc; t=1593150670;
- h=Content-Type:Content-Transfer-Encoding:Cc:Date:From:MIME-Version:Message-ID:Subject:To;
- bh=38p+ZZeAwAW4P+uY9+lkPLWkJahkcxqdsw/dCI+H5mM=; 
- b=cEBfe2pRLFYYaojbkEN7y9bYP6ckjCtFLvmudUgavaYoKJcTt35guEuf9PyKlMxstKXVIzLF+4xOmivTPuKh+KjnSohs8/j44CK1EwRtzHAZxOtpF/l60/CvS/RfARBtfJCUDHtdhkrd+48LAV4FcqZV8BBQESSTgerLQxyJepI=
-ARC-Authentication-Results: i=1; mx.zoho.com.cn;
- dkim=pass  header.i=mykernel.net;
- spf=pass  smtp.mailfrom=cgxu519@mykernel.net;
- dmarc=pass header.from=<cgxu519@mykernel.net>
- header.from=<cgxu519@mykernel.net>
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; t=1593150670; 
- s=zohomail; d=mykernel.net; i=cgxu519@mykernel.net;
- h=From:To:Cc:Message-ID:Subject:Date:MIME-Version:Content-Transfer-Encoding:Content-Type;
- bh=38p+ZZeAwAW4P+uY9+lkPLWkJahkcxqdsw/dCI+H5mM=;
- b=OjFX4+S1nEWL5+IyRYl/zWT53otJ+r+Z0vy6aLnedPL3ZykWPvdGCNNgkasyrRiD
- c9XcDVyCQE91bMCag+cHG/Iwjfb6FfFRODQCRxO0u99TRTGM6t9K0uL2JJWN/8nhouv
- iyg5HJ/uXU8M95SjPUoNtPKkgp3WRAxjLGXZuB7E=
-Received: from localhost.localdomain (116.30.194.71 [116.30.194.71]) by
- mx.zoho.com.cn with SMTPS id 1593150668492488.9291615956349;
- Fri, 26 Jun 2020 13:51:08 +0800 (CST)
-From: Chengguang Xu <cgxu519@mykernel.net>
-To: shaggy@kernel.org
-Message-ID: <20200626055106.114239-1-cgxu519@mykernel.net>
-Date: Fri, 26 Jun 2020 13:51:06 +0800
+ h=Content-Transfer-Encoding:MIME-Version:Message-Id:Date:Subject:Cc:To:From
+ :Sender:Reply-To:Content-Type:Content-ID:Content-Description:Resent-Date:
+ Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+ References:List-Id:List-Help:List-Unsubscribe:List-Subscribe:List-Post:
+ List-Owner:List-Archive; bh=+8KIohn8oTybDj4EKgVF5l5KNyz4huEAk4t5RDm5bJA=; b=D
+ K99XT2KrY7eHZeBY8dtvfP5kHX7BZEMNQMD0d2IBRVYMwDC5hxwNfzgjKrt8rrjxQHntkVT2famsp
+ b/Rz26WWxDvZc29m3K0uULnrnrELWwS9NEh1BbfRj363+xefUhmIC1BY0n+Hx72df6DeoApOZAM/Q
+ /TKKjtsuVt5Swz3Y=;
+Received: from merlin.infradead.org ([205.233.59.134])
+ by sfi-mx-3.v28.lw.sourceforge.com with esmtps
+ (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.92.2)
+ id 1jxJRY-0091VC-NQ
+ for jfs-discussion@lists.sourceforge.net; Mon, 20 Jul 2020 00:14:09 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=infradead.org; s=merlin.20170209; h=Content-Transfer-Encoding:MIME-Version:
+ Message-Id:Date:Subject:Cc:To:From:Sender:Reply-To:Content-Type:Content-ID:
+ Content-Description:In-Reply-To:References;
+ bh=+8KIohn8oTybDj4EKgVF5l5KNyz4huEAk4t5RDm5bJA=; b=IQP0zmhtpzvcJU/JkzWpO+HJSV
+ GHi7XB174Vq4IFZi9P7nGj3EmLLmsqCO7mLDGK8q7vwnI+QJ22W2pQWq5nRZQZjGrtnbkr78eu6Az
+ Tlf18qGi8Jum2LcM5mDHAwibGC0usaK2/H0/CVFxSGk3L+m4a7r5maz11f7VCgUeMS717FroOD7aG
+ nGrHmGkesoWHH17GrMBUAAImB46D+2cv2mqAp2yUVwgddYJKG/0Y6R54ANMglIX7pm6r1EGsCo06D
+ zWCiGqo/oAfwCsIx2YHN1aoEMpbGBce0IvPqoBmSZDADj8jJ9TKTdoAOyoIfi5asiS5HGfCWW+qD4
+ EWwZbvNQ==;
+Received: from [2601:1c0:6280:3f0::19c2] (helo=smtpauth.infradead.org)
+ by merlin.infradead.org with esmtpsa (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jxJRN-0003yN-ML; Mon, 20 Jul 2020 00:13:58 +0000
+From: Randy Dunlap <rdunlap@infradead.org>
+To: linux-kernel@vger.kernel.org
+Date: Sun, 19 Jul 2020 17:13:53 -0700
+Message-Id: <20200720001353.26200-1-rdunlap@infradead.org>
 X-Mailer: git-send-email 2.26.2
 MIME-Version: 1.0
-X-ZohoCNMailClient: External
-X-Spam-Score: 0.9 (/)
+X-Spam-Score: -0.4 (/)
 X-Spam-Report: Spam Filtering performed by mx.sourceforge.net.
  See http://spamassassin.org/tag/ for more details.
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/, no
- trust [163.53.93.243 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [205.233.59.134 listed in wl.mailspike.net]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_AU Message has a valid DKIM or DK signature from author's
  domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature,
  not necessarily valid
- 1.0 RDNS_NONE Delivered to internal network by a host with no rDNS
-X-Headers-End: 1johGx-001aDX-6i
-X-Mailman-Approved-At: Fri, 26 Jun 2020 14:16:43 +0000
-Subject: [Jfs-discussion] [PATCH] jfs: initialize quota info in EA operations
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ -0.3 AWL AWL: Adjusted score from AWL reputation of From: address
+X-Headers-End: 1jxJRY-0091VC-NQ
+X-Mailman-Approved-At: Mon, 20 Jul 2020 02:04:09 +0000
+Subject: [Jfs-discussion] [PATCH] jfs: delete duplicated words in header
+ files
 X-BeenThere: jfs-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -93,62 +85,44 @@ List-Post: <mailto:jfs-discussion@lists.sourceforge.net>
 List-Help: <mailto:jfs-discussion-request@lists.sourceforge.net?subject=help>
 List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/jfs-discussion>, 
  <mailto:jfs-discussion-request@lists.sourceforge.net?subject=subscribe>
-Cc: Chengguang Xu <cgxu519@mykernel.net>, jfs-discussion@lists.sourceforge.net
+Cc: Dave Kleikamp <shaggy@kernel.org>, jfs-discussion@lists.sourceforge.net,
+ Randy Dunlap <rdunlap@infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Errors-To: jfs-discussion-bounces@lists.sourceforge.net
 
-In order to correctly account/limit space usage, should initialize
-quota info before calling quota related functions.
+Drop the repeated words "allocation" and "if" in comments.
 
-Signed-off-by: Chengguang Xu <cgxu519@mykernel.net>
+Signed-off-by: Randy Dunlap <rdunlap@infradead.org>
+Cc: Dave Kleikamp <shaggy@kernel.org>
+Cc: jfs-discussion@lists.sourceforge.net
 ---
- fs/jfs/xattr.c | 14 ++++++++++++++
- 1 file changed, 14 insertions(+)
+ fs/jfs/jfs_extent.h |    2 +-
+ fs/jfs/jfs_logmgr.h |    2 +-
+ 2 files changed, 2 insertions(+), 2 deletions(-)
 
-diff --git a/fs/jfs/xattr.c b/fs/jfs/xattr.c
-index db41e7803163..c8a62c3f29d5 100644
---- a/fs/jfs/xattr.c
-+++ b/fs/jfs/xattr.c
-@@ -666,6 +666,10 @@ int __jfs_setxattr(tid_t tid, struct inode *inode, const char *name,
- 	int rc;
- 	int length;
+--- linux-next-20200717.orig/fs/jfs/jfs_extent.h
++++ linux-next-20200717/fs/jfs/jfs_extent.h
+@@ -5,7 +5,7 @@
+ #ifndef	_H_JFS_EXTENT
+ #define _H_JFS_EXTENT
  
-+	rc = dquot_initialize(inode);
-+	if (rc)
-+		return rc;
-+
- 	down_write(&JFS_IP(inode)->xattr_sem);
+-/*  get block allocation allocation hint as location of disk inode */
++/*  get block allocation hint as location of disk inode */
+ #define	INOHINT(ip)	\
+ 	(addressPXD(&(JFS_IP(ip)->ixpxd)) + lengthPXD(&(JFS_IP(ip)->ixpxd)) - 1)
  
- 	xattr_size = ea_get(inode, &ea_buf, 0);
-@@ -801,6 +805,11 @@ ssize_t __jfs_getxattr(struct inode *inode, const char *name, void *data,
- 	ssize_t size;
- 	int namelen = strlen(name);
- 	char *value;
-+	int rc;
-+
-+	rc = dquot_initialize(inode);
-+	if (rc)
-+		return rc;
- 
- 	down_read(&JFS_IP(inode)->xattr_sem);
- 
-@@ -861,6 +870,11 @@ ssize_t jfs_listxattr(struct dentry * dentry, char *data, size_t buf_size)
- 	struct jfs_ea_list *ealist;
- 	struct jfs_ea *ea;
- 	struct ea_buffer ea_buf;
-+	int rc;
-+
-+	rc = dquot_initialize(inode);
-+	if (rc)
-+		return rc;
- 
- 	down_read(&JFS_IP(inode)->xattr_sem);
- 
--- 
-2.26.2
-
-
+--- linux-next-20200717.orig/fs/jfs/jfs_logmgr.h
++++ linux-next-20200717/fs/jfs/jfs_logmgr.h
+@@ -132,7 +132,7 @@ struct logpage {
+  * (this comment should be rewritten !)
+  * jfs uses only "after" log records (only a single writer is allowed
+  * in a page, pages are written to temporary paging space if
+- * if they must be written to disk before commit, and i/o is
++ * they must be written to disk before commit, and i/o is
+  * scheduled for modified pages to their home location after
+  * the log records containing the after values and the commit
+  * record is written to the log on disk, undo discards the copy
 
 
 _______________________________________________
