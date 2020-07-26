@@ -2,78 +2,98 @@ Return-Path: <jfs-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+jfs-discussion@lfdr.de
 Delivered-To: lists+jfs-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1227C2255BD
-	for <lists+jfs-discussion@lfdr.de>; Mon, 20 Jul 2020 04:04:36 +0200 (CEST)
-Received: from [127.0.0.1] (helo=sfs-ml-3.v29.lw.sourceforge.com)
-	by sfs-ml-3.v29.lw.sourceforge.com with esmtp (Exim 4.90_1)
+	by mail.lfdr.de (Postfix) with ESMTPS id ED00A22DF6A
+	for <lists+jfs-discussion@lfdr.de>; Sun, 26 Jul 2020 15:00:40 +0200 (CEST)
+Received: from [127.0.0.1] (helo=sfs-ml-4.v29.lw.sourceforge.com)
+	by sfs-ml-4.v29.lw.sourceforge.com with esmtp (Exim 4.90_1)
 	(envelope-from <jfs-discussion-bounces@lists.sourceforge.net>)
-	id 1jxLA2-0006eO-Hs; Mon, 20 Jul 2020 02:04:10 +0000
+	id 1jzgGE-0002pN-M6; Sun, 26 Jul 2020 13:00:14 +0000
 Received: from [172.30.20.202] (helo=mx.sourceforge.net)
- by sfs-ml-2.v29.lw.sourceforge.com with esmtps
+ by sfs-ml-4.v29.lw.sourceforge.com with esmtps
  (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
- (envelope-from <rdunlap@infradead.org>) id 1jxJRa-0002BD-1q
- for jfs-discussion@lists.sourceforge.net; Mon, 20 Jul 2020 00:14:10 +0000
+ (envelope-from <jernej's-sflist@eternallybored.org>)
+ id 1jzgGD-0002pC-6U
+ for jfs-discussion@lists.sourceforge.net; Sun, 26 Jul 2020 13:00:13 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=sourceforge.net; s=x; h=Content-Transfer-Encoding:MIME-Version:Message-Id:
- Date:Subject:Cc:To:From:Sender:Reply-To:Content-Type:Content-ID:
+ d=sourceforge.net; s=x; h=Content-Transfer-Encoding:Content-Type:MIME-Version
+ :Subject:To:Message-ID:From:Date:Sender:Reply-To:Cc:Content-ID:
  Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
  :Resent-Message-ID:In-Reply-To:References:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=+8KIohn8oTybDj4EKgVF5l5KNyz4huEAk4t5RDm5bJA=; b=RbbpQLINr/2ojvYkirF6lRC/e6
- 97SmbOlhF3Qs6DshmuV6wgkqkkEz+prZmnEd8IT21h9Sz4mv2jWcP4jwDnu6BaUxPum9nK90uCvJ4
- E5v5Cx6hubkaxMBBX6HjKSV1mLZoJvEs3XXxkWTKYufMWCrS/tmthINChKqdl0H462h4=;
+ bh=uOha0PBAdyAojxr8XNzcZeF1VwAdN9WaeoXUDPud048=; b=dH8j1I7XNt7fgdVIp4YiZTpOeN
+ DdrgxY+CVEvu589QNLWh/wVCuGsK9nCRpUttPlVl7IuC9dO+tr4RYmhtnlFMAC2OU7TbXeMcUsMKG
+ W/1GFBOLznfiwa4wV+eS2z107fZdCa5Rp1awnsk2DBEnXPBOYHERYnRa51lz0/HwQPo4=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
- h=Content-Transfer-Encoding:MIME-Version:Message-Id:Date:Subject:Cc:To:From
- :Sender:Reply-To:Content-Type:Content-ID:Content-Description:Resent-Date:
+ h=Content-Transfer-Encoding:Content-Type:MIME-Version:Subject:To:Message-ID
+ :From:Date:Sender:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:
  Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
  References:List-Id:List-Help:List-Unsubscribe:List-Subscribe:List-Post:
- List-Owner:List-Archive; bh=+8KIohn8oTybDj4EKgVF5l5KNyz4huEAk4t5RDm5bJA=; b=D
- K99XT2KrY7eHZeBY8dtvfP5kHX7BZEMNQMD0d2IBRVYMwDC5hxwNfzgjKrt8rrjxQHntkVT2famsp
- b/Rz26WWxDvZc29m3K0uULnrnrELWwS9NEh1BbfRj363+xefUhmIC1BY0n+Hx72df6DeoApOZAM/Q
- /TKKjtsuVt5Swz3Y=;
-Received: from merlin.infradead.org ([205.233.59.134])
+ List-Owner:List-Archive; bh=uOha0PBAdyAojxr8XNzcZeF1VwAdN9WaeoXUDPud048=; b=l
+ oZhv3gPbR6rcFJU8FcqA88NW7AF4OUPTOrITwBm1kj2wpOscyGKc5Jfn7SVQVGw6hPwt8Uh5eqNdK
+ 3EDJLECBX8N7RjcI/Zjzsc05CyFqru6CWXj339yFe41YbJ6pqKmHDuO/nwwQlzrgfRP5DpspCPB1b
+ jGvudZ4FbpN8v9u8=;
+Received: from m0.konto.si ([93.103.81.110])
  by sfi-mx-3.v28.lw.sourceforge.com with esmtps
  (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.92.2)
- id 1jxJRY-0091VC-NQ
- for jfs-discussion@lists.sourceforge.net; Mon, 20 Jul 2020 00:14:09 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=infradead.org; s=merlin.20170209; h=Content-Transfer-Encoding:MIME-Version:
- Message-Id:Date:Subject:Cc:To:From:Sender:Reply-To:Content-Type:Content-ID:
- Content-Description:In-Reply-To:References;
- bh=+8KIohn8oTybDj4EKgVF5l5KNyz4huEAk4t5RDm5bJA=; b=IQP0zmhtpzvcJU/JkzWpO+HJSV
- GHi7XB174Vq4IFZi9P7nGj3EmLLmsqCO7mLDGK8q7vwnI+QJ22W2pQWq5nRZQZjGrtnbkr78eu6Az
- Tlf18qGi8Jum2LcM5mDHAwibGC0usaK2/H0/CVFxSGk3L+m4a7r5maz11f7VCgUeMS717FroOD7aG
- nGrHmGkesoWHH17GrMBUAAImB46D+2cv2mqAp2yUVwgddYJKG/0Y6R54ANMglIX7pm6r1EGsCo06D
- zWCiGqo/oAfwCsIx2YHN1aoEMpbGBce0IvPqoBmSZDADj8jJ9TKTdoAOyoIfi5asiS5HGfCWW+qD4
- EWwZbvNQ==;
-Received: from [2601:1c0:6280:3f0::19c2] (helo=smtpauth.infradead.org)
- by merlin.infradead.org with esmtpsa (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jxJRN-0003yN-ML; Mon, 20 Jul 2020 00:13:58 +0000
-From: Randy Dunlap <rdunlap@infradead.org>
-To: linux-kernel@vger.kernel.org
-Date: Sun, 19 Jul 2020 17:13:53 -0700
-Message-Id: <20200720001353.26200-1-rdunlap@infradead.org>
-X-Mailer: git-send-email 2.26.2
+ id 1jzgG8-0007Hr-Cr
+ for jfs-discussion@lists.sourceforge.net; Sun, 26 Jul 2020 13:00:13 +0000
+Received: from localhost (postar.konto.si [127.0.0.1])
+ by m0.konto.si (Postfix) with ESMTP id 60869F200189
+ for <jfs-discussion@lists.sourceforge.net>;
+ Sun, 26 Jul 2020 14:43:56 +0200 (CEST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=
+ eternallybored.org; h=content-transfer-encoding:content-type
+ :content-type:mime-version:subject:subject:message-id
+ :organization:x-mailer:from:from:date:date:received:received; s=
+ k1; t=1595767435; x=1597581836; bh=7/L3899JMswNII4IAmVWXhmkII9jX
+ /OYK+Mlw/OIwQI=; b=g+YGjUURlyxuvwWmhd8lQYie49ts/cgQlf1+EL76pYWEV
+ VaxxOlk8mNICX3aokN0qsfsxN+O9MBckjn3PQ0XjE5m0nbg7YJB5qkccMKmlSJn7
+ /19JlzNBpL7MUPOh6BYRB4jsnPeUCwsoXBtsV2hDBiy7CYcJK6dioaE10WUphjjz
+ RiYB+9Rte2hXrHeppUa5kOeM0/4fzuWbx1J2Nd/FjlnWw9+GrQZS3Ypa/YTgl5eU
+ kGWDl7vHACX8tPVR4GGRE92kTTsNhYDnCVW2TkWlY1VIQvtBWTKkHmszwmaHiAcp
+ gwV6aI/MvmoGAZVdYY9WRNx/kmZ5iK2p/HN/YaJYw==
+X-Virus-Scanned: amavisd-new (outgoing)
+Received: from m0.konto.si ([127.0.0.1])
+ by localhost (postar.konto.si [127.0.0.1]) (amavisd-new, port 10026)
+ with ESMTP id Smh4N5vXBMka for <jfs-discussion@lists.sourceforge.net>;
+ Sun, 26 Jul 2020 14:43:55 +0200 (CEST)
+Received: from HACTAR.yggdrasil.local (unknown
+ [IPv6:2a01:260:4094:1:9565:7211:234f:f848])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by m0.konto.si (Postfix) with ESMTPSA id 383AFF26A700
+ for <jfs-discussion@lists.sourceforge.net>;
+ Sun, 26 Jul 2020 14:43:55 +0200 (CEST)
+Date: Sun, 26 Jul 2020 14:43:54 +0200
+From: =?utf-8?Q?Jernej_Simon=C4=8Dic=CC=8C?=
+ <jernej's-sflist@eternallybored.org>
+X-Mailer: The Bat! (v9.2.2.1 (BETA)) Professional
+Organization: E-mailaholics International
+Message-ID: <833415339.20200726144354@eternallybored.org>
+To: jfs-discussion@lists.sourceforge.net
+X-Face: *BXrgB!?f3c"BwmeN:<Q~Z[5F-qZK~t;
+ k]KluGog=8Wl6qa@Rhn=(<OL//@Zo*+3C1opTjt
+ 7l,QM>=h6[k:#^'6]0MuPu-@By.:}Io=wJ\]<V4L,<C`FM}a7R2oNq@Q8jY8`s)2^~@4o:FM>}W1N>
+ n:~ixb-b:#nOD2|Eut%&
 MIME-Version: 1.0
-X-Spam-Score: -0.4 (/)
+X-Spam-Score: 0.7 (/)
 X-Spam-Report: Spam Filtering performed by mx.sourceforge.net.
  See http://spamassassin.org/tag/ for more details.
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [205.233.59.134 listed in wl.mailspike.net]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ 0.8 APOSTROPHE_FROM        From address contains an apostrophe
+ 0.0 URIBL_BLOCKED ADMINISTRATOR NOTICE: The query to URIBL was blocked.
+ See
+ http://wiki.apache.org/spamassassin/DnsBlocklists#dnsbl-block
+ for more information. [URIs: eternallybored.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_AU Message has a valid DKIM or DK signature from author's
  domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature,
  not necessarily valid
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
- -0.3 AWL AWL: Adjusted score from AWL reputation of From: address
-X-Headers-End: 1jxJRY-0091VC-NQ
-X-Mailman-Approved-At: Mon, 20 Jul 2020 02:04:09 +0000
-Subject: [Jfs-discussion] [PATCH] jfs: delete duplicated words in header
- files
+X-Headers-End: 1jzgG8-0007Hr-Cr
+Subject: [Jfs-discussion] fsck.jfs segfaults
 X-BeenThere: jfs-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -85,47 +105,32 @@ List-Post: <mailto:jfs-discussion@lists.sourceforge.net>
 List-Help: <mailto:jfs-discussion-request@lists.sourceforge.net?subject=help>
 List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/jfs-discussion>, 
  <mailto:jfs-discussion-request@lists.sourceforge.net?subject=subscribe>
-Cc: Dave Kleikamp <shaggy@kernel.org>, jfs-discussion@lists.sourceforge.net,
- Randy Dunlap <rdunlap@infradead.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Errors-To: jfs-discussion-bounces@lists.sourceforge.net
 
-Drop the repeated words "allocation" and "if" in comments.
-
-Signed-off-by: Randy Dunlap <rdunlap@infradead.org>
-Cc: Dave Kleikamp <shaggy@kernel.org>
-Cc: jfs-discussion@lists.sourceforge.net
----
- fs/jfs/jfs_extent.h |    2 +-
- fs/jfs/jfs_logmgr.h |    2 +-
- 2 files changed, 2 insertions(+), 2 deletions(-)
-
---- linux-next-20200717.orig/fs/jfs/jfs_extent.h
-+++ linux-next-20200717/fs/jfs/jfs_extent.h
-@@ -5,7 +5,7 @@
- #ifndef	_H_JFS_EXTENT
- #define _H_JFS_EXTENT
- 
--/*  get block allocation allocation hint as location of disk inode */
-+/*  get block allocation hint as location of disk inode */
- #define	INOHINT(ip)	\
- 	(addressPXD(&(JFS_IP(ip)->ixpxd)) + lengthPXD(&(JFS_IP(ip)->ixpxd)) - 1)
- 
---- linux-next-20200717.orig/fs/jfs/jfs_logmgr.h
-+++ linux-next-20200717/fs/jfs/jfs_logmgr.h
-@@ -132,7 +132,7 @@ struct logpage {
-  * (this comment should be rewritten !)
-  * jfs uses only "after" log records (only a single writer is allowed
-  * in a page, pages are written to temporary paging space if
-- * if they must be written to disk before commit, and i/o is
-+ * they must be written to disk before commit, and i/o is
-  * scheduled for modified pages to their home location after
-  * the log records containing the after values and the commit
-  * record is written to the log on disk, undo discards the copy
-
-
-_______________________________________________
-Jfs-discussion mailing list
-Jfs-discussion@lists.sourceforge.net
-https://lists.sourceforge.net/lists/listinfo/jfs-discussion
+QWZ0ZXIgSSByZWJvb3RlZCBteSBzZXJ2ZXIsIG9uZSBvZiB0aGUgdm9sdW1lcyBmYWlsZWQgdG8g
+bW91bnQsIGFuZAp3aGVuIEkgcnVuIGZzY2suamZzIG9uIGl0LCBpdCBzZWdmYXVsdHM6CgojIGZz
+Y2suamZzIC12IC9kZXYvbG9vcDEyCmZzY2suamZzIHZlcnNpb24gMS4xLjE1LCAwNC1NYXItMjAx
+MQpwcm9jZXNzaW5nIHN0YXJ0ZWQ6IDcvMjYvMjAyMCAxNDozNzoyNwpVc2luZyBkZWZhdWx0IHBh
+cmFtZXRlcjogLXAKVGhlIGN1cnJlbnQgZGV2aWNlIGlzOiAgL2Rldi9sb29wMTIKT3BlbiguLi5S
+RUFEL1dSSVRFIEVYQ0xVU0lWRS4uLikgcmV0dXJuZWQgcmMgPSAwClByaW1hcnkgc3VwZXJibG9j
+ayBpcyB2YWxpZC4KVGhlIHR5cGUgb2YgZmlsZSBzeXN0ZW0gZm9yIHRoZSBkZXZpY2UgaXMgSkZT
+LgpCbG9jayBzaXplIGluIGJ5dGVzOiAgNDA5NgpGaWxlc3lzdGVtIHNpemUgaW4gYmxvY2tzOiAg
+NDM5NDUyOTc5MgoqKlBoYXNlIDAgLSBSZXBsYXkgSm91cm5hbCBMb2cKTE9HUkVETzogIExvZyBy
+ZWNvcmQgZm9yIFN5bmMgUG9pbnQgYXQ6ICAgIDB4MDFhODIzZjAKTE9HUkVETzogIEJlZ2lubmlu
+ZyB0byB1cGRhdGUgdGhlIElub2RlIEFsbG9jYXRpb24gTWFwLgpMT0dSRURPOiAgRXJyb3IgZm9y
+IHBtYXAgYW5kIGlub2V4dCB3aGVuIHJlYnVpbGRpbmcgdGhlIElub2RlIEFsbG9jYXRpb24gTWFw
+ICgxKS4KW15yZXBlYXRzIDUyIHRpbWVzXQpMT0dSRURPOiAgRG9uZSB1cGRhdGluZyB0aGUgSW5v
+ZGUgQWxsb2NhdGlvbiBNYXAuCkxPR1JFRE86ICBCZWdpbm5pbmcgdG8gdXBkYXRlIHRoZSBCbG9j
+ayBNYXAuClNlZ21lbnRhdGlvbiBmYXVsdAoKVGhpcyBpcyBvbiBHZW50b28geDg2XzY0LCBidXQg
+dGhlIHNlZ2ZhdWx0IGFsc28gaGFwcGVucyBpZiBJIGJvb3QKMzItYml0IHN5c3Jlc2NjZC5vcmcu
+IEFueSBpZGVhcyBvbiBob3cgdG8gcHJvY2VlZD8gSSBjYW4gcHJvdmlkZSB0aGUKY29yZSBmaWxl
+IGlmIG5lZWRlZC4KCi0tIAo8IEplcm5laiBTaW1vbsSNacSNID48Pjw+PD48Pjw+PD48Pjw+PD48
+Pjw+PCBodHRwczovL2V0ZXJuYWxseWJvcmVkLm9yZy8gPgoKICAgICAgICAgICBCZWNhdXNlIDEw
+IGJpbGxpb24geWVhcnMnIHRpbWUgaXMgc28gZnJhZ2lsZSwgc28gZXBoZW1lcmFsLi4uCml0IGFy
+b3VzZXMgc3VjaCBhIGJpdHRlcnN3ZWV0LCBhbG1vc3QgaGVhcnRicmVha2luZyBmb25kbmVzcy4K
+CgoKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18KSmZzLWRp
+c2N1c3Npb24gbWFpbGluZyBsaXN0Ckpmcy1kaXNjdXNzaW9uQGxpc3RzLnNvdXJjZWZvcmdlLm5l
+dApodHRwczovL2xpc3RzLnNvdXJjZWZvcmdlLm5ldC9saXN0cy9saXN0aW5mby9qZnMtZGlzY3Vz
+c2lvbgo=
