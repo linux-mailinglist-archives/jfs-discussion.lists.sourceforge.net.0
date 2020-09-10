@@ -2,16 +2,16 @@ Return-Path: <jfs-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+jfs-discussion@lfdr.de
 Delivered-To: lists+jfs-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id B1D3E2655BC
-	for <lists+jfs-discussion@lfdr.de>; Fri, 11 Sep 2020 01:48:05 +0200 (CEST)
-Received: from [127.0.0.1] (helo=sfs-ml-1.v29.lw.sourceforge.com)
-	by sfs-ml-1.v29.lw.sourceforge.com with esmtp (Exim 4.90_1)
+	by mail.lfdr.de (Postfix) with ESMTPS id BCC2F2655BE
+	for <lists+jfs-discussion@lfdr.de>; Fri, 11 Sep 2020 01:48:18 +0200 (CEST)
+Received: from [127.0.0.1] (helo=sfs-ml-2.v29.lw.sourceforge.com)
+	by sfs-ml-2.v29.lw.sourceforge.com with esmtp (Exim 4.90_1)
 	(envelope-from <jfs-discussion-bounces@lists.sourceforge.net>)
-	id 1kGWI9-0006Iy-Sw; Thu, 10 Sep 2020 23:47:49 +0000
+	id 1kGWIP-0001Rt-Nl; Thu, 10 Sep 2020 23:48:05 +0000
 Received: from [172.30.20.202] (helo=mx.sourceforge.net)
- by sfs-ml-1.v29.lw.sourceforge.com with esmtps
+ by sfs-ml-2.v29.lw.sourceforge.com with esmtps
  (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
- (envelope-from <willy@infradead.org>) id 1kGWHv-0006HP-Ad
+ (envelope-from <willy@infradead.org>) id 1kGWHv-0001Q9-CU
  for jfs-discussion@lists.sourceforge.net; Thu, 10 Sep 2020 23:47:35 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=sourceforge.net; s=x; h=Content-Transfer-Encoding:MIME-Version:References:
@@ -19,9 +19,9 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
  Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=vqqJRR6FGWwEroRGJxb8U5uLILmsH4BqITcpCA5DevA=; b=jPvtlrDdFiIA6+zE3MkApDY68y
- qPuqVHeR/1ljpxxJBYu8GVuuoeb82xS7aDZDuFCZFgaPkOh93UAd4VUKnbeIRtTUhdOOMXYAWZbxp
- ZJm53l+l7y37sUzJOBbXnF0nikjwoZrnaSz90OnMwev4aZUOQY40gLzeok0ZueDbejZg=;
+ bh=HcWQtDNuseBKEWHIB6Uw1jNXoqcHNymiL5aD/zPafZk=; b=N0IvI4FFEuxbmolquWe1x8Ku4/
+ tIKb2Y4OSocsTarqjYONEsujXYor636qcouewio5Dw9v56thLx74xgUkh3ZtfT+Rojvn6/m0rHo7v
+ wbSrEBqVpGTC+pgEHQlAHwQch5nAmMVmrpu3nVzL6l3O0lb8RLO2wtdd7kKhwog9Gk6U=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
  h=Content-Transfer-Encoding:MIME-Version:References:In-Reply-To:Message-Id:
@@ -29,31 +29,31 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
  :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
  List-Post:List-Owner:List-Archive;
- bh=vqqJRR6FGWwEroRGJxb8U5uLILmsH4BqITcpCA5DevA=; b=eabLlzOO8YHG6biVAM28BmWOZj
- QSVBzB26Ri8rOZxEngfmTBCCOQgu+BwNwT7C37qFhbvYzPqOnl5ljQIplMXTPVDUdF0nCwWVq7ez8
- +lARZaQ6ySVx+e6sbkxvGLHzUdUlnNyEi4sUnMOJ5E5wVMJG0WZkw35AKspeI6rlPwSk=;
+ bh=HcWQtDNuseBKEWHIB6Uw1jNXoqcHNymiL5aD/zPafZk=; b=IgUj+OTVY2mB8eMhttLNfPPSGr
+ czC0zrMaHGRkt4QyWLhicJf/P5IMiLcw61baxYJmjnLDYR3kb6kSdRmKbH+wt6VCRpjcn9hzH0aiZ
+ apAGEKEzrbwG+i3Vl/HYk9rfxFLoEhZxY+R7g4+0s3jXT3UIXlp8tLVduzaKgEtgq9Rk=;
 Received: from casper.infradead.org ([90.155.50.34])
- by sfi-mx-1.v28.lw.sourceforge.com with esmtps
+ by sfi-mx-3.v28.lw.sourceforge.com with esmtps
  (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.92.2)
- id 1kGWHt-0037JZ-6k
+ id 1kGWHr-002tzV-7k
  for jfs-discussion@lists.sourceforge.net; Thu, 10 Sep 2020 23:47:35 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=infradead.org; s=casper.20170209; h=Content-Transfer-Encoding:MIME-Version:
  References:In-Reply-To:Message-Id:Date:Subject:Cc:To:From:Sender:Reply-To:
  Content-Type:Content-ID:Content-Description;
- bh=vqqJRR6FGWwEroRGJxb8U5uLILmsH4BqITcpCA5DevA=; b=U05AqtgaCYnJ76YXpy5uvatIUO
- 4gsJez3Lmv2YIHzqVvkH55hL0T9ou3I8kpp/oXTKy6kU1LlqgfWtHRftn7h0ITzie7TKczKs6kbWQ
- YP0Ujt1BCeF7KJJYHCKP29QBx8qH9MCaMOf2Na/DsB4Uz4hqDdRr0fC03NbJKrHuLy09HQgm++d9P
- uj6bkjm7lAJLFlIl/0HwAO0ZAKXaMbsVmts0U2ukubGjV00JVuq5yaV12E/6TLK3TRb/gkeN0VXUK
- Ynfmlt15Gc/vj++h8kBVnQvlbnr/B1w4L+ZZsfluR9264QpjbfAzdI6f1BFlfY+8XiJfjJqDdf/hF
- 4CPSdwHQ==;
+ bh=HcWQtDNuseBKEWHIB6Uw1jNXoqcHNymiL5aD/zPafZk=; b=VV3H4J1NcWISSb8Gj9bpB7KZ6x
+ jROScpbYWM8FBiBkHpnbuW6RnoNokwGNMKvy8nG602I4Y/OSTEn+fVAF9EBYKK5wysZUkwIb1uRO/
+ w76Z1rEakOIjhRdyqHNLU3YrZPkgolm2QJYu+/DWWSF15DggGjDBYEYFoT3gjAxIfWq0nxPwDuXJd
+ ZWQym3yLmzApbBmpEXi8bRxJEvJbnPseeLZMtjGeuQZyaIWXCIk8SaT+JQvzBYf1e9xs4uTemj3qw
+ ntOYk5pnUGkaQgqW0Pz7agmge0QrN9xiMF4N7l3inJewKsVac6aN7lKma0B2xHtNooOGy4RCv5IVC
+ vezUor+g==;
 Received: from willy by casper.infradead.org with local (Exim 4.92.3 #3 (Red
- Hat Linux)) id 1kGWHV-0001Rh-Pn; Thu, 10 Sep 2020 23:47:10 +0000
+ Hat Linux)) id 1kGWHW-0001Rm-E4; Thu, 10 Sep 2020 23:47:10 +0000
 From: "Matthew Wilcox (Oracle)" <willy@infradead.org>
 To: linux-xfs@vger.kernel.org,
 	linux-fsdevel@vger.kernel.org
-Date: Fri, 11 Sep 2020 00:47:01 +0100
-Message-Id: <20200910234707.5504-4-willy@infradead.org>
+Date: Fri, 11 Sep 2020 00:47:02 +0100
+Message-Id: <20200910234707.5504-5-willy@infradead.org>
 X-Mailer: git-send-email 2.21.3
 In-Reply-To: <20200910234707.5504-1-willy@infradead.org>
 References: <20200910234707.5504-1-willy@infradead.org>
@@ -72,9 +72,9 @@ X-Spam-Report: Spam Filtering performed by mx.sourceforge.net.
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature,
  not necessarily valid
-X-Headers-End: 1kGWHt-0037JZ-6k
-Subject: [Jfs-discussion] [PATCH v2 3/9] iomap: Use kzalloc to allocate
- iomap_page
+X-Headers-End: 1kGWHr-002tzV-7k
+Subject: [Jfs-discussion] [PATCH v2 4/9] iomap: Use bitmap ops to set
+ uptodate bits
 X-BeenThere: jfs-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -96,40 +96,42 @@ Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Errors-To: jfs-discussion-bounces@lists.sourceforge.net
 
-We can skip most of the initialisation, although spinlocks still
-need explicit initialisation as architectures may use a non-zero
-value to indicate unlocked.  The comment is no longer useful as
-attach_page_private() handles the refcount now.
+Now that the bitmap is protected by a spinlock, we can use the
+more efficient bitmap ops instead of individual test/set bit ops.
 
 Signed-off-by: Matthew Wilcox (Oracle) <willy@infradead.org>
 Reviewed-by: Christoph Hellwig <hch@lst.de>
 Reviewed-by: Dave Chinner <dchinner@redhat.com>
 Reviewed-by: Darrick J. Wong <darrick.wong@oracle.com>
 ---
- fs/iomap/buffered-io.c | 10 +---------
- 1 file changed, 1 insertion(+), 9 deletions(-)
+ fs/iomap/buffered-io.c | 12 ++----------
+ 1 file changed, 2 insertions(+), 10 deletions(-)
 
 diff --git a/fs/iomap/buffered-io.c b/fs/iomap/buffered-io.c
-index 330f86b825d7..58a1fd83f2a4 100644
+index 58a1fd83f2a4..7fc0e02d27b0 100644
 --- a/fs/iomap/buffered-io.c
 +++ b/fs/iomap/buffered-io.c
-@@ -49,16 +49,8 @@ iomap_page_create(struct inode *inode, struct page *page)
- 	if (iop || i_blocks_per_page(inode, page) <= 1)
- 		return iop;
+@@ -134,19 +134,11 @@ iomap_iop_set_range_uptodate(struct page *page, unsigned off, unsigned len)
+ 	struct inode *inode = page->mapping->host;
+ 	unsigned first = off >> inode->i_blkbits;
+ 	unsigned last = (off + len - 1) >> inode->i_blkbits;
+-	bool uptodate = true;
+ 	unsigned long flags;
+-	unsigned int i;
  
--	iop = kmalloc(sizeof(*iop), GFP_NOFS | __GFP_NOFAIL);
--	atomic_set(&iop->read_count, 0);
--	atomic_set(&iop->write_count, 0);
-+	iop = kzalloc(sizeof(*iop), GFP_NOFS | __GFP_NOFAIL);
- 	spin_lock_init(&iop->uptodate_lock);
--	bitmap_zero(iop->uptodate, PAGE_SIZE / SECTOR_SIZE);
+ 	spin_lock_irqsave(&iop->uptodate_lock, flags);
+-	for (i = 0; i < i_blocks_per_page(inode, page); i++) {
+-		if (i >= first && i <= last)
+-			set_bit(i, iop->uptodate);
+-		else if (!test_bit(i, iop->uptodate))
+-			uptodate = false;
+-	}
 -
--	/*
--	 * migrate_page_move_mapping() assumes that pages with private data have
--	 * their count elevated by 1.
--	 */
- 	attach_page_private(page, iop);
- 	return iop;
+-	if (uptodate)
++	bitmap_set(iop->uptodate, first, last - first + 1);
++	if (bitmap_full(iop->uptodate, i_blocks_per_page(inode, page)))
+ 		SetPageUptodate(page);
+ 	spin_unlock_irqrestore(&iop->uptodate_lock, flags);
  }
 -- 
 2.28.0
