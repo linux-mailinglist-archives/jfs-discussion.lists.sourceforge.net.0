@@ -2,16 +2,16 @@ Return-Path: <jfs-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+jfs-discussion@lfdr.de
 Delivered-To: lists+jfs-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3DFE72655BA
-	for <lists+jfs-discussion@lfdr.de>; Fri, 11 Sep 2020 01:48:04 +0200 (CEST)
-Received: from [127.0.0.1] (helo=sfs-ml-4.v29.lw.sourceforge.com)
-	by sfs-ml-4.v29.lw.sourceforge.com with esmtp (Exim 4.90_1)
+	by mail.lfdr.de (Postfix) with ESMTPS id B1D3E2655BC
+	for <lists+jfs-discussion@lfdr.de>; Fri, 11 Sep 2020 01:48:05 +0200 (CEST)
+Received: from [127.0.0.1] (helo=sfs-ml-1.v29.lw.sourceforge.com)
+	by sfs-ml-1.v29.lw.sourceforge.com with esmtp (Exim 4.90_1)
 	(envelope-from <jfs-discussion-bounces@lists.sourceforge.net>)
-	id 1kGWHv-0007B2-Uf; Thu, 10 Sep 2020 23:47:35 +0000
+	id 1kGWI9-0006Iy-Sw; Thu, 10 Sep 2020 23:47:49 +0000
 Received: from [172.30.20.202] (helo=mx.sourceforge.net)
- by sfs-ml-4.v29.lw.sourceforge.com with esmtps
+ by sfs-ml-1.v29.lw.sourceforge.com with esmtps
  (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
- (envelope-from <willy@infradead.org>) id 1kGWHv-0007Ad-6J
+ (envelope-from <willy@infradead.org>) id 1kGWHv-0006HP-Ad
  for jfs-discussion@lists.sourceforge.net; Thu, 10 Sep 2020 23:47:35 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=sourceforge.net; s=x; h=Content-Transfer-Encoding:MIME-Version:References:
@@ -19,9 +19,9 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
  Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=TvHq+ozrS3RU346WhpVscGddUaMK0kivrdCStwjOLJM=; b=PGvBmF/mW1cqZn6utjA8QDe+F8
- jAoC74lIKFmlz3ZhLwMPXmPAoI16coNBReDlfjXan5JKtF5RXCD5M1qWtFnaclLJloSTtq1WGwErD
- Qtjqw+9D36cGnzEiUh2J3G84eAOFopkMomPb1noo+1vgTYeAlk/b5qZaDRenPCIaI270=;
+ bh=vqqJRR6FGWwEroRGJxb8U5uLILmsH4BqITcpCA5DevA=; b=jPvtlrDdFiIA6+zE3MkApDY68y
+ qPuqVHeR/1ljpxxJBYu8GVuuoeb82xS7aDZDuFCZFgaPkOh93UAd4VUKnbeIRtTUhdOOMXYAWZbxp
+ ZJm53l+l7y37sUzJOBbXnF0nikjwoZrnaSz90OnMwev4aZUOQY40gLzeok0ZueDbejZg=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
  h=Content-Transfer-Encoding:MIME-Version:References:In-Reply-To:Message-Id:
@@ -29,31 +29,31 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
  :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
  List-Post:List-Owner:List-Archive;
- bh=TvHq+ozrS3RU346WhpVscGddUaMK0kivrdCStwjOLJM=; b=Xa09Cngj8OLKrzdKZBUSXHtDt1
- +31uRLu8ZcOv93urclrWqossSyPNPaf1+XJ897s4Auvh48f5wOzavQlpMgorwOZkq7z0LsHdlw3pM
- eOtucCiwxQzDYLYwewwacxCABFKwLH9iAWhssynsUmCDJcQXRLDDsrdu3i4ZwphWvse8=;
+ bh=vqqJRR6FGWwEroRGJxb8U5uLILmsH4BqITcpCA5DevA=; b=eabLlzOO8YHG6biVAM28BmWOZj
+ QSVBzB26Ri8rOZxEngfmTBCCOQgu+BwNwT7C37qFhbvYzPqOnl5ljQIplMXTPVDUdF0nCwWVq7ez8
+ +lARZaQ6ySVx+e6sbkxvGLHzUdUlnNyEi4sUnMOJ5E5wVMJG0WZkw35AKspeI6rlPwSk=;
 Received: from casper.infradead.org ([90.155.50.34])
  by sfi-mx-1.v28.lw.sourceforge.com with esmtps
  (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.92.2)
- id 1kGWHs-0037JL-64
+ id 1kGWHt-0037JZ-6k
  for jfs-discussion@lists.sourceforge.net; Thu, 10 Sep 2020 23:47:35 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=infradead.org; s=casper.20170209; h=Content-Transfer-Encoding:MIME-Version:
  References:In-Reply-To:Message-Id:Date:Subject:Cc:To:From:Sender:Reply-To:
  Content-Type:Content-ID:Content-Description;
- bh=TvHq+ozrS3RU346WhpVscGddUaMK0kivrdCStwjOLJM=; b=Ic7UgdZEoZWANOhKnQsQypu4GU
- F5Fj25TLedAt5hLgJ9IaNdYv29nhquBxUg2fU744YZ3vPgLo92GV9EdtbY2GclLq8zb2qWNHSrtn+
- bGApUEGYpD0W7B9HOHkBQfrOBm10tLON9reFJJ8DEqoOn8lv0VpKCA5Sc/k/oS0202W56TxrsPxEb
- wAPTNdCC1h/aHFt1kPgx/BefBbBTknuw0AP4ezYYYVdiu7GAoeQliLixzHGodnU5CBnyvrIyW21o/
- 0/ia8rMFipeonO1oghaByVlz5sbXS2ts+nD5LxvBSjiNXcAClD/vcl6iAXwzPM3nUjzIZT/zShekR
- 4gfrispQ==;
+ bh=vqqJRR6FGWwEroRGJxb8U5uLILmsH4BqITcpCA5DevA=; b=U05AqtgaCYnJ76YXpy5uvatIUO
+ 4gsJez3Lmv2YIHzqVvkH55hL0T9ou3I8kpp/oXTKy6kU1LlqgfWtHRftn7h0ITzie7TKczKs6kbWQ
+ YP0Ujt1BCeF7KJJYHCKP29QBx8qH9MCaMOf2Na/DsB4Uz4hqDdRr0fC03NbJKrHuLy09HQgm++d9P
+ uj6bkjm7lAJLFlIl/0HwAO0ZAKXaMbsVmts0U2ukubGjV00JVuq5yaV12E/6TLK3TRb/gkeN0VXUK
+ Ynfmlt15Gc/vj++h8kBVnQvlbnr/B1w4L+ZZsfluR9264QpjbfAzdI6f1BFlfY+8XiJfjJqDdf/hF
+ 4CPSdwHQ==;
 Received: from willy by casper.infradead.org with local (Exim 4.92.3 #3 (Red
- Hat Linux)) id 1kGWHV-0001Rd-DS; Thu, 10 Sep 2020 23:47:09 +0000
+ Hat Linux)) id 1kGWHV-0001Rh-Pn; Thu, 10 Sep 2020 23:47:10 +0000
 From: "Matthew Wilcox (Oracle)" <willy@infradead.org>
 To: linux-xfs@vger.kernel.org,
 	linux-fsdevel@vger.kernel.org
-Date: Fri, 11 Sep 2020 00:47:00 +0100
-Message-Id: <20200910234707.5504-3-willy@infradead.org>
+Date: Fri, 11 Sep 2020 00:47:01 +0100
+Message-Id: <20200910234707.5504-4-willy@infradead.org>
 X-Mailer: git-send-email 2.21.3
 In-Reply-To: <20200910234707.5504-1-willy@infradead.org>
 References: <20200910234707.5504-1-willy@infradead.org>
@@ -72,8 +72,9 @@ X-Spam-Report: Spam Filtering performed by mx.sourceforge.net.
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature,
  not necessarily valid
-X-Headers-End: 1kGWHs-0037JL-64
-Subject: [Jfs-discussion] [PATCH v2 2/9] fs: Introduce i_blocks_per_page
+X-Headers-End: 1kGWHt-0037JZ-6k
+Subject: [Jfs-discussion] [PATCH v2 3/9] iomap: Use kzalloc to allocate
+ iomap_page
 X-BeenThere: jfs-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -95,112 +96,41 @@ Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Errors-To: jfs-discussion-bounces@lists.sourceforge.net
 
-This helper is useful for both THPs and for supporting block size larger
-than page size.  Convert all users that I could find (we have a few
-different ways of writing this idiom, and I may have missed some).
+We can skip most of the initialisation, although spinlocks still
+need explicit initialisation as architectures may use a non-zero
+value to indicate unlocked.  The comment is no longer useful as
+attach_page_private() handles the refcount now.
 
 Signed-off-by: Matthew Wilcox (Oracle) <willy@infradead.org>
 Reviewed-by: Christoph Hellwig <hch@lst.de>
 Reviewed-by: Dave Chinner <dchinner@redhat.com>
 Reviewed-by: Darrick J. Wong <darrick.wong@oracle.com>
 ---
- fs/iomap/buffered-io.c  |  8 ++++----
- fs/jfs/jfs_metapage.c   |  2 +-
- fs/xfs/xfs_aops.c       |  2 +-
- include/linux/pagemap.h | 16 ++++++++++++++++
- 4 files changed, 22 insertions(+), 6 deletions(-)
+ fs/iomap/buffered-io.c | 10 +---------
+ 1 file changed, 1 insertion(+), 9 deletions(-)
 
 diff --git a/fs/iomap/buffered-io.c b/fs/iomap/buffered-io.c
-index d81a9a86c5aa..330f86b825d7 100644
+index 330f86b825d7..58a1fd83f2a4 100644
 --- a/fs/iomap/buffered-io.c
 +++ b/fs/iomap/buffered-io.c
-@@ -46,7 +46,7 @@ iomap_page_create(struct inode *inode, struct page *page)
- {
- 	struct iomap_page *iop = to_iomap_page(page);
- 
--	if (iop || i_blocksize(inode) == PAGE_SIZE)
-+	if (iop || i_blocks_per_page(inode, page) <= 1)
+@@ -49,16 +49,8 @@ iomap_page_create(struct inode *inode, struct page *page)
+ 	if (iop || i_blocks_per_page(inode, page) <= 1)
  		return iop;
  
- 	iop = kmalloc(sizeof(*iop), GFP_NOFS | __GFP_NOFAIL);
-@@ -147,7 +147,7 @@ iomap_iop_set_range_uptodate(struct page *page, unsigned off, unsigned len)
- 	unsigned int i;
- 
- 	spin_lock_irqsave(&iop->uptodate_lock, flags);
--	for (i = 0; i < PAGE_SIZE / i_blocksize(inode); i++) {
-+	for (i = 0; i < i_blocks_per_page(inode, page); i++) {
- 		if (i >= first && i <= last)
- 			set_bit(i, iop->uptodate);
- 		else if (!test_bit(i, iop->uptodate))
-@@ -1077,7 +1077,7 @@ iomap_finish_page_writeback(struct inode *inode, struct page *page,
- 		mapping_set_error(inode->i_mapping, -EIO);
- 	}
- 
--	WARN_ON_ONCE(i_blocksize(inode) < PAGE_SIZE && !iop);
-+	WARN_ON_ONCE(i_blocks_per_page(inode, page) > 1 && !iop);
- 	WARN_ON_ONCE(iop && atomic_read(&iop->write_count) <= 0);
- 
- 	if (!iop || atomic_dec_and_test(&iop->write_count))
-@@ -1373,7 +1373,7 @@ iomap_writepage_map(struct iomap_writepage_ctx *wpc,
- 	int error = 0, count = 0, i;
- 	LIST_HEAD(submit_list);
- 
--	WARN_ON_ONCE(i_blocksize(inode) < PAGE_SIZE && !iop);
-+	WARN_ON_ONCE(i_blocks_per_page(inode, page) > 1 && !iop);
- 	WARN_ON_ONCE(iop && atomic_read(&iop->write_count) != 0);
- 
- 	/*
-diff --git a/fs/jfs/jfs_metapage.c b/fs/jfs/jfs_metapage.c
-index a2f5338a5ea1..176580f54af9 100644
---- a/fs/jfs/jfs_metapage.c
-+++ b/fs/jfs/jfs_metapage.c
-@@ -473,7 +473,7 @@ static int metapage_readpage(struct file *fp, struct page *page)
- 	struct inode *inode = page->mapping->host;
- 	struct bio *bio = NULL;
- 	int block_offset;
--	int blocks_per_page = PAGE_SIZE >> inode->i_blkbits;
-+	int blocks_per_page = i_blocks_per_page(inode, page);
- 	sector_t page_start;	/* address of page in fs blocks */
- 	sector_t pblock;
- 	int xlen;
-diff --git a/fs/xfs/xfs_aops.c b/fs/xfs/xfs_aops.c
-index b35611882ff9..55d126d4e096 100644
---- a/fs/xfs/xfs_aops.c
-+++ b/fs/xfs/xfs_aops.c
-@@ -544,7 +544,7 @@ xfs_discard_page(
- 			page, ip->i_ino, offset);
- 
- 	error = xfs_bmap_punch_delalloc_range(ip, start_fsb,
--			PAGE_SIZE / i_blocksize(inode));
-+			i_blocks_per_page(inode, page));
- 	if (error && !XFS_FORCED_SHUTDOWN(mp))
- 		xfs_alert(mp, "page discard unable to remove delalloc mapping.");
- out_invalidate:
-diff --git a/include/linux/pagemap.h b/include/linux/pagemap.h
-index 50d2c39b47ab..f7f602040913 100644
---- a/include/linux/pagemap.h
-+++ b/include/linux/pagemap.h
-@@ -975,4 +975,20 @@ static inline int page_mkwrite_check_truncate(struct page *page,
- 	return offset;
+-	iop = kmalloc(sizeof(*iop), GFP_NOFS | __GFP_NOFAIL);
+-	atomic_set(&iop->read_count, 0);
+-	atomic_set(&iop->write_count, 0);
++	iop = kzalloc(sizeof(*iop), GFP_NOFS | __GFP_NOFAIL);
+ 	spin_lock_init(&iop->uptodate_lock);
+-	bitmap_zero(iop->uptodate, PAGE_SIZE / SECTOR_SIZE);
+-
+-	/*
+-	 * migrate_page_move_mapping() assumes that pages with private data have
+-	 * their count elevated by 1.
+-	 */
+ 	attach_page_private(page, iop);
+ 	return iop;
  }
- 
-+/**
-+ * i_blocks_per_page - How many blocks fit in this page.
-+ * @inode: The inode which contains the blocks.
-+ * @page: The page (head page if the page is a THP).
-+ *
-+ * If the block size is larger than the size of this page, return zero.
-+ *
-+ * Context: The caller should hold a refcount on the page to prevent it
-+ * from being split.
-+ * Return: The number of filesystem blocks covered by this page.
-+ */
-+static inline
-+unsigned int i_blocks_per_page(struct inode *inode, struct page *page)
-+{
-+	return thp_size(page) >> inode->i_blkbits;
-+}
- #endif /* _LINUX_PAGEMAP_H */
 -- 
 2.28.0
 
