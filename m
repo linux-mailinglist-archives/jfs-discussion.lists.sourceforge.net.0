@@ -2,16 +2,16 @@ Return-Path: <jfs-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+jfs-discussion@lfdr.de
 Delivered-To: lists+jfs-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id AE97D2655B8
-	for <lists+jfs-discussion@lfdr.de>; Fri, 11 Sep 2020 01:48:03 +0200 (CEST)
-Received: from [127.0.0.1] (helo=sfs-ml-1.v29.lw.sourceforge.com)
-	by sfs-ml-1.v29.lw.sourceforge.com with esmtp (Exim 4.90_1)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1F2372655B1
+	for <lists+jfs-discussion@lfdr.de>; Fri, 11 Sep 2020 01:47:58 +0200 (CEST)
+Received: from [127.0.0.1] (helo=sfs-ml-4.v29.lw.sourceforge.com)
+	by sfs-ml-4.v29.lw.sourceforge.com with esmtp (Exim 4.90_1)
 	(envelope-from <jfs-discussion-bounces@lists.sourceforge.net>)
-	id 1kGWI9-0006J6-VH; Thu, 10 Sep 2020 23:47:49 +0000
+	id 1kGWHx-0007BB-Mu; Thu, 10 Sep 2020 23:47:37 +0000
 Received: from [172.30.20.202] (helo=mx.sourceforge.net)
- by sfs-ml-1.v29.lw.sourceforge.com with esmtps
+ by sfs-ml-4.v29.lw.sourceforge.com with esmtps
  (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
- (envelope-from <willy@infradead.org>) id 1kGWHv-0006HV-CO
+ (envelope-from <willy@infradead.org>) id 1kGWHv-0007Ao-AE
  for jfs-discussion@lists.sourceforge.net; Thu, 10 Sep 2020 23:47:35 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=sourceforge.net; s=x; h=Content-Transfer-Encoding:MIME-Version:References:
@@ -19,9 +19,9 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
  Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=ldPCHrf1j5mleYrfsHCzGqCm1zQB/iX5hoqH8XIbE8U=; b=dNFkB37Ef9nOwnNz1zoxCg5nzR
- N/qShkriID4VZBgEm9OTZN+KpcqUkyQZ6mes9j9DI5FCRhf02WLPnQl4HrRnfRoh2DuXiAr1YbxPB
- iLfNWPEZvWj7R0iVaKxKgcHI9XD1O8G7ih1QwM2XfzoR4pE7ZKNpA2uxkyFt24e9lZfE=;
+ bh=yKigblpa2tyh1XESl254L9Rtb9cYGPhr3cjlXKAZqDM=; b=aQg9YgIDP27X2h3HTN7r4/EUWU
+ LaGbZERa/U/a6pAyawcXZB015uNhj5od7mEKFJudp6y2kuXLOzO9w7G1v9JI3M7HJVPem+1F1Ho7D
+ SCiPeUcJLgMjOYdPqfjNYcJT7089vTVauFE+t3O4DgI9SqwAZiMDk6DLQqwr4QjKklyE=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
  h=Content-Transfer-Encoding:MIME-Version:References:In-Reply-To:Message-Id:
@@ -29,31 +29,31 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
  :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
  List-Post:List-Owner:List-Archive;
- bh=ldPCHrf1j5mleYrfsHCzGqCm1zQB/iX5hoqH8XIbE8U=; b=aDZt1JmjSG1a0wGcsieWVCIWnT
- qJSzb5xyvvB+INN3IoVKLsRGUDFaRhSsIho0eyKsisLyVSfviQC2yxLmZ1eKFXp2+S5zL2he+bCMu
- l34dYPVIyrlSBnTDSH2/jxkSLb9EfoVBlwvTYhGjooU0RS54swjDz7xvFo+Wgz6eKw9U=;
+ bh=yKigblpa2tyh1XESl254L9Rtb9cYGPhr3cjlXKAZqDM=; b=DybqYHjnMnxsh5JdxPYXw+hHwZ
+ oE/I9lYZap7yywmhiPhjZjkHhEmKIyRWeOR3DFBur3aUAcW114b5rDFz5jTR+N9VS44ty32k2GS6v
+ BeVM8sgOvGSJDZt5rFHBkkf5kZkeH6h0CCy42c/6LO8wS6f4AHIViAIOzsWjvHzDzkn0=;
 Received: from casper.infradead.org ([90.155.50.34])
  by sfi-mx-1.v28.lw.sourceforge.com with esmtps
  (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.92.2)
- id 1kGWHp-0037H7-Hh
+ id 1kGWHp-0037H9-IT
  for jfs-discussion@lists.sourceforge.net; Thu, 10 Sep 2020 23:47:35 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=infradead.org; s=casper.20170209; h=Content-Transfer-Encoding:MIME-Version:
  References:In-Reply-To:Message-Id:Date:Subject:Cc:To:From:Sender:Reply-To:
  Content-Type:Content-ID:Content-Description;
- bh=ldPCHrf1j5mleYrfsHCzGqCm1zQB/iX5hoqH8XIbE8U=; b=IgXVRZE2DYIOQuzM9HNd431Z4E
- ZY/7B3nvSrPnIiW67vgG8bRk+caYifYshuqnW/zTEMcL8sTwU6dSyOtU2IctEI1Jf2mQu0LWItEDu
- i6BymYHp/YZcjuEH+QIZQTf8bfeAiMcYUyQYyy9JmPePYcO0NDy9LjuDyHQzjRG/a2gLJo31wBfqh
- hspM/mScCQNXwr/EYroURtlNv2wzwSMRmamePhn9UxOpHJcaozir0P//EQ1wnVtN6QQ+w/ckE8+cH
- 4KMsRyY3Z02xE3uJh/AdIuCbLmzptYzZtlT2/tAJl4WZtBlFnus9UlCyCmx+NkaTIyhgnLnTtKY7i
- F6yTcn0Q==;
+ bh=yKigblpa2tyh1XESl254L9Rtb9cYGPhr3cjlXKAZqDM=; b=WHRNrx/UBTKK/QG4MTHPirwoJL
+ djjona+4O24Bf8m/PosZtRAUBGTVYSGbBr74yGFLOkFVHzJzYlZ9ZYrQuTsHFGVIritUlTGIOOQwu
+ oGJLAjacaGUyoOXr8P/XUi5JgOfl50pzh4ASFzj4uMl3p9+owYJS+zG+ctEnuvAAt4GeP65RcJBt5
+ 7UKNsZp0JrEGyTZkNrQ0CSuvIeY9JPrtF2ZCpiG9c4z/2nKaCnztxET6tuwFRNjb5Dg4tt+QBevgM
+ +INj4d1+CyvEwR3kzPm2FAXIkQh7Z+QMSM6tsyjpClail2bGpAY6bOJwkuwh7Uf2GhXshOHZbKYYX
+ 3fR37KLQ==;
 Received: from willy by casper.infradead.org with local (Exim 4.92.3 #3 (Red
- Hat Linux)) id 1kGWHW-0001S7-W2; Thu, 10 Sep 2020 23:47:11 +0000
+ Hat Linux)) id 1kGWHX-0001SN-C1; Thu, 10 Sep 2020 23:47:11 +0000
 From: "Matthew Wilcox (Oracle)" <willy@infradead.org>
 To: linux-xfs@vger.kernel.org,
 	linux-fsdevel@vger.kernel.org
-Date: Fri, 11 Sep 2020 00:47:03 +0100
-Message-Id: <20200910234707.5504-6-willy@infradead.org>
+Date: Fri, 11 Sep 2020 00:47:04 +0100
+Message-Id: <20200910234707.5504-7-willy@infradead.org>
 X-Mailer: git-send-email 2.21.3
 In-Reply-To: <20200910234707.5504-1-willy@infradead.org>
 References: <20200910234707.5504-1-willy@infradead.org>
@@ -72,9 +72,9 @@ X-Spam-Report: Spam Filtering performed by mx.sourceforge.net.
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature,
  not necessarily valid
-X-Headers-End: 1kGWHp-0037H7-Hh
-Subject: [Jfs-discussion] [PATCH v2 5/9] iomap: Support arbitrarily many
- blocks per page
+X-Headers-End: 1kGWHp-0037H9-IT
+Subject: [Jfs-discussion] [PATCH v2 6/9] iomap: Convert read_count to
+ read_bytes_pending
 X-BeenThere: jfs-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -90,86 +90,105 @@ Cc: Dave Kleikamp <shaggy@kernel.org>, jfs-discussion@lists.sourceforge.net,
  linux-nvdimm@lists.01.org, "Darrick J . Wong" <darrick.wong@oracle.com>,
  linux-kernel@vger.kernel.org,
  "Matthew Wilcox \(Oracle\)" <willy@infradead.org>,
- Christoph Hellwig <hch@infradead.org>, Dave Chinner <dchinner@redhat.com>
+ Christoph Hellwig <hch@infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Errors-To: jfs-discussion-bounces@lists.sourceforge.net
 
-Size the uptodate array dynamically to support larger pages in the
-page cache.  With a 64kB page, we're only saving 8 bytes per page today,
-but with a 2MB maximum page size, we'd have to allocate more than 4kB
-per page.  Add a few debugging assertions.
+Instead of counting bio segments, count the number of bytes submitted.
+This insulates us from the block layer's definition of what a 'same page'
+is, which is not necessarily clear once THPs are involved.
 
 Signed-off-by: Matthew Wilcox (Oracle) <willy@infradead.org>
-Reviewed-by: Dave Chinner <dchinner@redhat.com>
 ---
- fs/iomap/buffered-io.c | 22 +++++++++++++++++-----
- 1 file changed, 17 insertions(+), 5 deletions(-)
+ fs/iomap/buffered-io.c | 41 ++++++++++++-----------------------------
+ 1 file changed, 12 insertions(+), 29 deletions(-)
 
 diff --git a/fs/iomap/buffered-io.c b/fs/iomap/buffered-io.c
-index 7fc0e02d27b0..9670c096b83e 100644
+index 9670c096b83e..1cf976a8e55c 100644
 --- a/fs/iomap/buffered-io.c
 +++ b/fs/iomap/buffered-io.c
-@@ -22,18 +22,25 @@
- #include "../internal.h"
- 
- /*
-- * Structure allocated for each page when block size < PAGE_SIZE to track
-- * sub-page uptodate status and I/O completions.
-+ * Structure allocated for each page or THP when block size < page size
-+ * to track sub-page uptodate status and I/O completions.
+@@ -26,7 +26,7 @@
+  * to track sub-page uptodate status and I/O completions.
   */
  struct iomap_page {
- 	atomic_t		read_count;
+-	atomic_t		read_count;
++	atomic_t		read_bytes_pending;
  	atomic_t		write_count;
  	spinlock_t		uptodate_lock;
--	DECLARE_BITMAP(uptodate, PAGE_SIZE / 512);
-+	unsigned long		uptodate[];
- };
- 
- static inline struct iomap_page *to_iomap_page(struct page *page)
- {
-+	/*
-+	 * per-block data is stored in the head page.  Callers should
-+	 * not be dealing with tail pages (and if they are, they can
-+	 * call thp_head() first.
-+	 */
-+	VM_BUG_ON_PGFLAGS(PageTail(page), page);
-+
- 	if (page_has_private(page))
- 		return (struct iomap_page *)page_private(page);
- 	return NULL;
-@@ -45,11 +52,13 @@ static struct iomap_page *
- iomap_page_create(struct inode *inode, struct page *page)
- {
- 	struct iomap_page *iop = to_iomap_page(page);
-+	unsigned int nr_blocks = i_blocks_per_page(inode, page);
- 
--	if (iop || i_blocks_per_page(inode, page) <= 1)
-+	if (iop || nr_blocks <= 1)
- 		return iop;
- 
--	iop = kzalloc(sizeof(*iop), GFP_NOFS | __GFP_NOFAIL);
-+	iop = kzalloc(struct_size(iop, uptodate, BITS_TO_LONGS(nr_blocks)),
-+			GFP_NOFS | __GFP_NOFAIL);
- 	spin_lock_init(&iop->uptodate_lock);
- 	attach_page_private(page, iop);
- 	return iop;
-@@ -59,11 +68,14 @@ static void
- iomap_page_release(struct page *page)
- {
- 	struct iomap_page *iop = detach_page_private(page);
-+	unsigned int nr_blocks = i_blocks_per_page(page->mapping->host, page);
+ 	unsigned long		uptodate[];
+@@ -72,7 +72,7 @@ iomap_page_release(struct page *page)
  
  	if (!iop)
  		return;
- 	WARN_ON_ONCE(atomic_read(&iop->read_count));
+-	WARN_ON_ONCE(atomic_read(&iop->read_count));
++	WARN_ON_ONCE(atomic_read(&iop->read_bytes_pending));
  	WARN_ON_ONCE(atomic_read(&iop->write_count));
-+	WARN_ON_ONCE(bitmap_full(iop->uptodate, nr_blocks) !=
-+			PageUptodate(page));
- 	kfree(iop);
+ 	WARN_ON_ONCE(bitmap_full(iop->uptodate, nr_blocks) !=
+ 			PageUptodate(page));
+@@ -167,13 +167,6 @@ iomap_set_range_uptodate(struct page *page, unsigned off, unsigned len)
+ 		SetPageUptodate(page);
  }
  
+-static void
+-iomap_read_finish(struct iomap_page *iop, struct page *page)
+-{
+-	if (!iop || atomic_dec_and_test(&iop->read_count))
+-		unlock_page(page);
+-}
+-
+ static void
+ iomap_read_page_end_io(struct bio_vec *bvec, int error)
+ {
+@@ -187,7 +180,8 @@ iomap_read_page_end_io(struct bio_vec *bvec, int error)
+ 		iomap_set_range_uptodate(page, bvec->bv_offset, bvec->bv_len);
+ 	}
+ 
+-	iomap_read_finish(iop, page);
++	if (!iop || atomic_sub_and_test(bvec->bv_len, &iop->read_bytes_pending))
++		unlock_page(page);
+ }
+ 
+ static void
+@@ -267,30 +261,19 @@ iomap_readpage_actor(struct inode *inode, loff_t pos, loff_t length, void *data,
+ 	}
+ 
+ 	ctx->cur_page_in_bio = true;
++	if (iop)
++		atomic_add(plen, &iop->read_bytes_pending);
+ 
+-	/*
+-	 * Try to merge into a previous segment if we can.
+-	 */
++	/* Try to merge into a previous segment if we can */
+ 	sector = iomap_sector(iomap, pos);
+-	if (ctx->bio && bio_end_sector(ctx->bio) == sector)
++	if (ctx->bio && bio_end_sector(ctx->bio) == sector) {
++		if (__bio_try_merge_page(ctx->bio, page, plen, poff,
++				&same_page))
++			goto done;
+ 		is_contig = true;
+-
+-	if (is_contig &&
+-	    __bio_try_merge_page(ctx->bio, page, plen, poff, &same_page)) {
+-		if (!same_page && iop)
+-			atomic_inc(&iop->read_count);
+-		goto done;
+ 	}
+ 
+-	/*
+-	 * If we start a new segment we need to increase the read count, and we
+-	 * need to do so before submitting any previous full bio to make sure
+-	 * that we don't prematurely unlock the page.
+-	 */
+-	if (iop)
+-		atomic_inc(&iop->read_count);
+-
+-	if (!ctx->bio || !is_contig || bio_full(ctx->bio, plen)) {
++	if (!is_contig || bio_full(ctx->bio, plen)) {
+ 		gfp_t gfp = mapping_gfp_constraint(page->mapping, GFP_KERNEL);
+ 		gfp_t orig_gfp = gfp;
+ 		int nr_vecs = (length + PAGE_SIZE - 1) >> PAGE_SHIFT;
 -- 
 2.28.0
 
