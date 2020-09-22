@@ -2,64 +2,96 @@ Return-Path: <jfs-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+jfs-discussion@lfdr.de
 Delivered-To: lists+jfs-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8AF01272945
-	for <lists+jfs-discussion@lfdr.de>; Mon, 21 Sep 2020 16:59:07 +0200 (CEST)
-Received: from [127.0.0.1] (helo=sfs-ml-1.v29.lw.sourceforge.com)
-	by sfs-ml-1.v29.lw.sourceforge.com with esmtp (Exim 4.90_1)
+	by mail.lfdr.de (Postfix) with ESMTPS id E454A27472C
+	for <lists+jfs-discussion@lfdr.de>; Tue, 22 Sep 2020 19:03:56 +0200 (CEST)
+Received: from [127.0.0.1] (helo=sfs-ml-2.v29.lw.sourceforge.com)
+	by sfs-ml-2.v29.lw.sourceforge.com with esmtp (Exim 4.90_1)
 	(envelope-from <jfs-discussion-bounces@lists.sourceforge.net>)
-	id 1kKNH6-0007Ot-PL; Mon, 21 Sep 2020 14:58:40 +0000
+	id 1kKlhX-0001gB-8J; Tue, 22 Sep 2020 17:03:35 +0000
 Received: from [172.30.20.202] (helo=mx.sourceforge.net)
- by sfs-ml-1.v29.lw.sourceforge.com with esmtps
+ by sfs-ml-2.v29.lw.sourceforge.com with esmtps
  (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
- (envelope-from <hdanton@sina.com>) id 1kKNH5-0007OY-Mb
- for jfs-discussion@lists.sourceforge.net; Mon, 21 Sep 2020 14:58:39 +0000
+ (envelope-from <cai@redhat.com>) id 1kKl5S-00086z-TW
+ for jfs-discussion@lists.sourceforge.net; Tue, 22 Sep 2020 16:24:14 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=sourceforge.net; s=x; h=Content-Transfer-Encoding:MIME-Version:References:
- In-Reply-To:Message-Id:Date:Subject:Cc:To:From:Sender:Reply-To:Content-Type:
+ d=sourceforge.net; s=x; h=Content-Transfer-Encoding:Mime-Version:Content-Type
+ :References:In-Reply-To:Date:Cc:To:From:Subject:Message-ID:Sender:Reply-To:
  Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
  Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=Qlco4G9RE4A0pQ3WzXGGad+sVOPjWgDah0IOrh14lQg=; b=H6elb5raoxgLSnMKosB68fzHIU
- QonHxwORZx/c1OlbqorqsgRdjIckjV2LWZog/q8Rle6sSWAT7Mxu3sRBN9xOAIHMAaefHbT1wqTr7
- ABo9Wy4CCvVSK8s7FNSFtG3/g3QTKqMCOEXpLg8IoLY/5iQ5vZV1JzeGlFkD8gvS0Vhs=;
+ bh=lcIO481qDJ9vuNJ4CyHr3flfzsNXYKz7f6xPpe0hVIQ=; b=cZpLDUHd1ep4fh7rrDOAnX+X9O
+ NRmRiApWAMYvn17AnQ0Ux3fh1haTksQgySirfABGGDIo4EimccOFj8SK1pPBFMzPnH4NxonBfOWcQ
+ F25ny0oYmfsqCJiDQgnHd6HFTAPmbelf5vLp1SNtPm1OV4YshpxUpzKy3tnFz43Fkv2Q=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
- h=Content-Transfer-Encoding:MIME-Version:References:In-Reply-To:Message-Id:
- Date:Subject:Cc:To:From:Sender:Reply-To:Content-Type:Content-ID:
+ h=Content-Transfer-Encoding:Mime-Version:Content-Type:References:
+ In-Reply-To:Date:Cc:To:From:Subject:Message-ID:Sender:Reply-To:Content-ID:
  Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
  :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
  List-Post:List-Owner:List-Archive;
- bh=Qlco4G9RE4A0pQ3WzXGGad+sVOPjWgDah0IOrh14lQg=; b=XWG01GJP+cnnzzL3kRpFldWkIT
- +/dhafjKgIMoyukCqHyZimM3behdFICl6T+/HGULHQfKwkM/WXph/QDYKOj/SqGDDbHJrZBnn6ysG
- cZvav4j5hy/zKX3uWher2WTVt0Xm/WbX7qNUffwdzdeizI4AEIVAcCYQLqteZ3VYxQbk=;
-Received: from r3-25.sinamail.sina.com.cn ([202.108.3.25])
- by sfi-mx-3.v28.lw.sourceforge.com with smtp (Exim 4.92.2)
- id 1kKNGq-000Ku0-OX
- for jfs-discussion@lists.sourceforge.net; Mon, 21 Sep 2020 14:58:39 +0000
-Received: from unknown (HELO localhost.localdomain)([222.131.67.153])
- by sina.com with ESMTP
- id 5F68BF7C00021BB3; Mon, 21 Sep 2020 22:58:06 +0800 (CST)
-X-Sender: hdanton@sina.com
-X-Auth-ID: hdanton@sina.com
-X-SMAIL-MID: 62117354919638
-From: Hillf Danton <hdanton@sina.com>
-To: syzbot <syzbot+5d2008bd1f1b722ba94e@syzkaller.appspotmail.com>
-Date: Mon, 21 Sep 2020 22:57:54 +0800
-Message-Id: <20200921145754.9316-1-hdanton@sina.com>
-In-Reply-To: <0000000000005b805d05afcf6ab8@google.com>
-References: <0000000000005b805d05afcf6ab8@google.com>
-MIME-Version: 1.0
-X-Spam-Score: 0.0 (/)
+ bh=lcIO481qDJ9vuNJ4CyHr3flfzsNXYKz7f6xPpe0hVIQ=; b=CmmYpUeMSMdLMQqF4Bvk6VZgkf
+ RkfK8PZbPDGDFumktaxKbFTQS3nHYHd6LA172srB3UlKWBCdZxRjmGzNO5rS4igISpDPOgrYf8xa0
+ vPZMtkz6Ajy47MQRKVm8TJU/XG718fg3k3P/kIk7b0twT41Tj21E27FBLMz5yv/6mxA0=;
+Received: from us-smtp-1.mimecast.com ([207.211.31.81]
+ helo=us-smtp-delivery-1.mimecast.com)
+ by sfi-mx-3.v28.lw.sourceforge.com with esmtps
+ (TLSv1.2:ECDHE-RSA-AES256-SHA384:256) (Exim 4.92.2)
+ id 1kKl5M-001UuO-Ep
+ for jfs-discussion@lists.sourceforge.net; Tue, 22 Sep 2020 16:24:14 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
+ s=mimecast20190719; t=1600791833;
+ h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+ to:to:cc:cc:mime-version:mime-version:content-type:content-type:
+ content-transfer-encoding:content-transfer-encoding:
+ in-reply-to:in-reply-to:references:references;
+ bh=lcIO481qDJ9vuNJ4CyHr3flfzsNXYKz7f6xPpe0hVIQ=;
+ b=NEk/xvX0wmMreVZRcPXXxUjEBD7m3UgIOYKfE+5SftBQFlw+MRipzqv4Q2+X5GDrgKQQDo
+ zyc6CDsZ39Dme1F/tr1v+nm/3k4C6CppYBA62QFs1Udw73fRpG3ohBEWjxd9Lgi/UvbBJq
+ VvDw/WinBgRzaqAPkEWzlXUCbOeFyfc=
+Received: from mimecast-mx01.redhat.com (mimecast-mx01.redhat.com
+ [209.132.183.4]) (Using TLS) by relay.mimecast.com with ESMTP id
+ us-mta-421-MlgWAuc3Numqqo876HbTpg-1; Tue, 22 Sep 2020 12:23:49 -0400
+X-MC-Unique: MlgWAuc3Numqqo876HbTpg-1
+Received: from smtp.corp.redhat.com (int-mx01.intmail.prod.int.phx2.redhat.com
+ [10.5.11.11])
+ (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
+ (No client certificate requested)
+ by mimecast-mx01.redhat.com (Postfix) with ESMTPS id 59B7D1005E5E;
+ Tue, 22 Sep 2020 16:23:47 +0000 (UTC)
+Received: from ovpn-66-35.rdu2.redhat.com (unknown [10.10.67.35])
+ by smtp.corp.redhat.com (Postfix) with ESMTP id D5B307882A;
+ Tue, 22 Sep 2020 16:23:45 +0000 (UTC)
+Message-ID: <163f852ba12fd9de5dec7c4a2d6b6c7cdb379ebc.camel@redhat.com>
+From: Qian Cai <cai@redhat.com>
+To: "Matthew Wilcox (Oracle)" <willy@infradead.org>, 
+ linux-xfs@vger.kernel.org, linux-fsdevel@vger.kernel.org
+Date: Tue, 22 Sep 2020 12:23:45 -0400
+In-Reply-To: <20200910234707.5504-6-willy@infradead.org>
+References: <20200910234707.5504-1-willy@infradead.org>
+ <20200910234707.5504-6-willy@infradead.org>
+Mime-Version: 1.0
+X-Scanned-By: MIMEDefang 2.79 on 10.5.11.11
+X-Spam-Score: -1.6 (-)
 X-Spam-Report: Spam Filtering performed by mx.sourceforge.net.
  See http://spamassassin.org/tag/ for more details.
- 0.0 FREEMAIL_FROM Sender email is commonly abused enduser mail provider
- (hdanton[at]sina.com)
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [202.108.3.25 listed in wl.mailspike.net]
+ 0.0 URIBL_BLOCKED ADMINISTRATOR NOTICE: The query to URIBL was blocked.
+ See
+ http://wiki.apache.org/spamassassin/DnsBlocklists#dnsbl-block
+ for more information. [URIs: infradead.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/, no
+ trust [207.211.31.81 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
-X-Headers-End: 1kKNGq-000Ku0-OX
-Subject: Re: [Jfs-discussion] KASAN: use-after-free Read in lbmIODone
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_AU Message has a valid DKIM or DK signature from author's
+ domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature,
+ not necessarily valid
+ -1.5 DKIMWL_WL_HIGH         DKIMwl.org - High trust sender
+X-Headers-End: 1kKl5M-001UuO-Ep
+X-Mailman-Approved-At: Tue, 22 Sep 2020 17:03:34 +0000
+Subject: Re: [Jfs-discussion] [PATCH v2 5/9] iomap: Support arbitrarily many
+ blocks per page
 X-BeenThere: jfs-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -71,216 +103,154 @@ List-Post: <mailto:jfs-discussion@lists.sourceforge.net>
 List-Help: <mailto:jfs-discussion-request@lists.sourceforge.net?subject=help>
 List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/jfs-discussion>, 
  <mailto:jfs-discussion-request@lists.sourceforge.net?subject=subscribe>
-Cc: shaggy@kernel.org, jfs-discussion@lists.sourceforge.net,
- syzkaller-bugs@googlegroups.com, linux-kernel@vger.kernel.org,
- Hillf Danton <hdanton@sina.com>
+Cc: Dave Kleikamp <shaggy@kernel.org>, jfs-discussion@lists.sourceforge.net,
+ linux-nvdimm@lists.01.org, "Darrick J . Wong" <darrick.wong@oracle.com>,
+ linux-kernel@vger.kernel.org, Christoph Hellwig <hch@infradead.org>,
+ linux-next@vger.kernel.org, Dave Chinner <dchinner@redhat.com>,
+ Stephen Rothwell <sfr@canb.auug.org.au>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Errors-To: jfs-discussion-bounces@lists.sourceforge.net
 
+On Fri, 2020-09-11 at 00:47 +0100, Matthew Wilcox (Oracle) wrote:
+> Size the uptodate array dynamically to support larger pages in the
+> page cache.  With a 64kB page, we're only saving 8 bytes per page today,
+> but with a 2MB maximum page size, we'd have to allocate more than 4kB
+> per page.  Add a few debugging assertions.
+> 
+> Signed-off-by: Matthew Wilcox (Oracle) <willy@infradead.org>
+> Reviewed-by: Dave Chinner <dchinner@redhat.com>
 
-On Mon, 21 Sep 2020 02:24:21 -0700
-> syzbot found the following issue on:
-> 
-> HEAD commit:    ba4f184e Linux 5.9-rc6
-> git tree:       upstream
-> console output: https://syzkaller.appspot.com/x/log.txt?x=173946c5900000
-> kernel config:  https://syzkaller.appspot.com/x/.config?x=5f4c828c9e3cef97
-> dashboard link: https://syzkaller.appspot.com/bug?extid=5d2008bd1f1b722ba94e
-> compiler:       gcc (GCC) 10.1.0-syz 20200507
-> 
-> Unfortunately, I don't have any reproducer for this issue yet.
-> 
-> IMPORTANT: if you fix the issue, please add the following tag to the commit:
-> Reported-by: syzbot+5d2008bd1f1b722ba94e@syzkaller.appspotmail.com
-> 
-> ==================================================================
-> BUG: KASAN: use-after-free in lbmIODone+0xcd4/0xf60 fs/jfs/jfs_logmgr.c:2193
-> Read of size 4 at addr ffff88808b37ab08 by task ksoftirqd/1/16
-> 
-> CPU: 1 PID: 16 Comm: ksoftirqd/1 Not tainted 5.9.0-rc6-syzkaller #0
-> Hardware name: Google Google Compute Engine/Google Compute Engine, BIOS Google 01/01/2011
-> Call Trace:
->  __dump_stack lib/dump_stack.c:77 [inline]
->  dump_stack+0x198/0x1fd lib/dump_stack.c:118
->  print_address_description.constprop.0.cold+0xae/0x497 mm/kasan/report.c:383
->  __kasan_report mm/kasan/report.c:513 [inline]
->  kasan_report.cold+0x1f/0x37 mm/kasan/report.c:530
->  lbmIODone+0xcd4/0xf60 fs/jfs/jfs_logmgr.c:2193
->  bio_endio+0x3cf/0x7f0 block/bio.c:1449
->  req_bio_endio block/blk-core.c:259 [inline]
->  blk_update_request+0x68f/0x1500 block/blk-core.c:1577
->  blk_mq_end_request+0x4c/0x510 block/blk-mq.c:562
->  lo_complete_rq+0x20d/0x2d0 drivers/block/loop.c:500
->  blk_done_softirq+0x33c/0x4d0 block/blk-mq.c:586
->  __do_softirq+0x1f8/0xb23 kernel/softirq.c:298
->  run_ksoftirqd kernel/softirq.c:652 [inline]
->  run_ksoftirqd+0xcf/0x170 kernel/softirq.c:644
->  smpboot_thread_fn+0x655/0x9e0 kernel/smpboot.c:165
->  kthread+0x3b5/0x4a0 kernel/kthread.c:292
->  ret_from_fork+0x1f/0x30 arch/x86/entry/entry_64.S:294
-> 
-> Allocated by task 29777:
->  kasan_save_stack+0x1b/0x40 mm/kasan/common.c:48
->  kasan_set_track mm/kasan/common.c:56 [inline]
->  __kasan_kmalloc.constprop.0+0xbf/0xd0 mm/kasan/common.c:461
->  kmem_cache_alloc_trace+0x174/0x300 mm/slab.c:3550
->  kmalloc include/linux/slab.h:554 [inline]
->  lbmLogInit fs/jfs/jfs_logmgr.c:1829 [inline]
->  lmLogInit+0x30b/0x1400 fs/jfs/jfs_logmgr.c:1278
->  open_inline_log fs/jfs/jfs_logmgr.c:1183 [inline]
->  lmLogOpen+0x726/0x11f0 fs/jfs/jfs_logmgr.c:1077
->  jfs_mount_rw+0x286/0x4b0 fs/jfs/jfs_mount.c:259
->  jfs_fill_super+0x860/0xbc0 fs/jfs/super.c:571
->  mount_bdev+0x32e/0x3f0 fs/super.c:1417
->  legacy_get_tree+0x105/0x220 fs/fs_context.c:592
->  vfs_get_tree+0x89/0x2f0 fs/super.c:1547
->  do_new_mount fs/namespace.c:2875 [inline]
->  path_mount+0x1387/0x20a0 fs/namespace.c:3192
->  do_mount fs/namespace.c:3205 [inline]
->  __do_sys_mount fs/namespace.c:3413 [inline]
->  __se_sys_mount fs/namespace.c:3390 [inline]
->  __x64_sys_mount+0x27f/0x300 fs/namespace.c:3390
->  do_syscall_64+0x2d/0x70 arch/x86/entry/common.c:46
->  entry_SYSCALL_64_after_hwframe+0x44/0xa9
-> 
-> Freed by task 6891:
->  kasan_save_stack+0x1b/0x40 mm/kasan/common.c:48
->  kasan_set_track+0x1c/0x30 mm/kasan/common.c:56
->  kasan_set_free_info+0x1b/0x30 mm/kasan/generic.c:355
->  __kasan_slab_free+0xd8/0x120 mm/kasan/common.c:422
->  __cache_free mm/slab.c:3418 [inline]
->  kfree+0x10e/0x2b0 mm/slab.c:3756
->  lbmLogShutdown fs/jfs/jfs_logmgr.c:1872 [inline]
->  lmLogShutdown+0x2c6/0x580 fs/jfs/jfs_logmgr.c:1691
->  lmLogClose+0x4ae/0x620 fs/jfs/jfs_logmgr.c:1467
->  jfs_umount+0x26f/0x320 fs/jfs/jfs_umount.c:116
->  jfs_put_super+0x61/0x140 fs/jfs/super.c:194
->  generic_shutdown_super+0x144/0x370 fs/super.c:464
->  kill_block_super+0x97/0xf0 fs/super.c:1444
->  deactivate_locked_super+0x94/0x160 fs/super.c:335
->  deactivate_super+0xad/0xd0 fs/super.c:366
->  cleanup_mnt+0x3a3/0x530 fs/namespace.c:1118
->  task_work_run+0xdd/0x190 kernel/task_work.c:141
->  tracehook_notify_resume include/linux/tracehook.h:188 [inline]
->  exit_to_user_mode_loop kernel/entry/common.c:165 [inline]
->  exit_to_user_mode_prepare+0x1e1/0x200 kernel/entry/common.c:192
->  syscall_exit_to_user_mode+0x7e/0x2e0 kernel/entry/common.c:267
->  entry_SYSCALL_64_after_hwframe+0x44/0xa9
-> 
-> The buggy address belongs to the object at ffff88808b37ab00
->  which belongs to the cache kmalloc-192 of size 192
-> The buggy address is located 8 bytes inside of
->  192-byte region [ffff88808b37ab00, ffff88808b37abc0)
-> The buggy address belongs to the page:
-> page:00000000dc0ca20a refcount:1 mapcount:0 mapping:0000000000000000 index:0xffff88808b37ac00 pfn:0x8b37a
-> flags: 0xfffe0000000200(slab)
-> raw: 00fffe0000000200 ffffea0002a56b48 ffffea00025a3088 ffff8880aa040000
-> raw: ffff88808b37ac00 ffff88808b37a000 000000010000000a 0000000000000000
-> page dumped because: kasan: bad access detected
-> 
-> Memory state around the buggy address:
->  ffff88808b37aa00: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
->  ffff88808b37aa80: 00 00 00 fc fc fc fc fc fc fc fc fc fc fc fc fc
-> >ffff88808b37ab00: fa fb fb fb fb fb fb fb fb fb fb fb fb fb fb fb
->                       ^
->  ffff88808b37ab80: fb fb fb fb fb fb fb fb fc fc fc fc fc fc fc fc
->  ffff88808b37ac00: fb fb fb fb fb fb fb fb fb fb fb fb fb fb fb fb
-> ==================================================================
+Some syscall fuzzing will trigger this on powerpc:
 
+.config: https://gitlab.com/cailca/linux-mm/-/blob/master/powerpc.config
 
-Fix uaf by waiting for IO to complete. To that end, add counter of
-IO submitted in struct jfs_log, and wait queue as well.
+[ 8805.895344][T445431] WARNING: CPU: 61 PID: 445431 at fs/iomap/buffered-io.c:78 iomap_page_release+0x250/0x270
+[ 8805.895376][T445431] Modules linked in: vfio_pci vfio_virqfd vfio_iommu_spapr_tce vfio vfio_spapr_eeh loop kvm_hv kvm ip_tables x_tables sd_mod bnx2x tg3 ahci libahci mdio libphy firmware_class libata dm_mirror dm_region_hash dm_log dm_mod
+[ 8805.895521][T445431] CPU: 61 PID: 445431 Comm: trinity-c61 Not tainted 5.9.0-rc6-next-20200922 #3
+[ 8805.895551][T445431] NIP:  c0000000004734a0 LR: c00000000047335c CTR: 0000000000000000
+[ 8805.895571][T445431] REGS: c000001fe5427620 TRAP: 0700   Not tainted  (5.9.0-rc6-next-20200922)
+[ 8805.895609][T445431] MSR:  9000000000029033 <SF,HV,EE,ME,IR,DR,RI,LE>  CR: 44002244  XER: 20040000
+[ 8805.895671][T445431] CFAR: c000000000473394 IRQMASK: 0 
+[ 8805.895671][T445431] GPR00: c00000000029b698 c000001fe54278b0 c000000005687e00 0000000000000000 
+[ 8805.895671][T445431] GPR04: 0000000000000000 0000000000000000 0000000000000000 0000000000000000 
+[ 8805.895671][T445431] GPR08: c00c000002c4b5c7 007fff8000000015 0000000000000001 c000000005f5e028 
+[ 8805.895671][T445431] GPR12: 0000000000002000 c000001ffffc0580 0000000010037be0 00000000109ec8e0 
+[ 8805.895671][T445431] GPR16: 00000000109eccb0 c000001fe54279c0 c000001fe5427a40 0000000000000000 
+[ 8805.895671][T445431] GPR20: c000000000a4aa80 0000000000000008 0000000000000000 000000000000000f 
+[ 8805.895671][T445431] GPR24: ffffffffffffffff c000001fe54279b8 c000001fe5427940 0000000000000001 
+[ 8805.895671][T445431] GPR28: 0000000000000001 c0000014dd4f9128 0000000000000000 c00c000006273a80 
+[ 8805.895989][T445431] NIP [c0000000004734a0] iomap_page_release+0x250/0x270
+[ 8805.896016][T445431] LR [c00000000047335c] iomap_page_release+0x10c/0x270
+[ 8805.896041][T445431] Call Trace:
+[ 8805.896065][T445431] [c000001fe54278b0] [c000001fe5427940] 0xc000001fe5427940 (unreliable)
+[ 8805.896101][T445431] [c000001fe54278f0] [c00000000029b698] truncate_cleanup_page+0x188/0x2e0
+[ 8805.896144][T445431] [c000001fe5427920] [c00000000029c61c] truncate_inode_pages_range+0x23c/0x9f0
+[ 8805.896187][T445431] [c000001fe5427b40] [c00000000029ceec] truncate_pagecache+0x5c/0x90
+[ 8805.896229][T445431] [c000001fe5427b80] [c000000000569858] xfs_setattr_size+0xb8/0x5d0
+[ 8805.896270][T445431] [c000001fe5427c10] [c00000000056a26c] xfs_vn_setattr+0x8c/0x130
+[ 8805.896321][T445431] [c000001fe5427c60] [c0000000003dbe60] notify_change+0x390/0x5b0
+[ 8805.896372][T445431] [c000001fe5427cd0] [c0000000003a5294] do_truncate+0x94/0x130
+[ 8805.896412][T445431] [c000001fe5427d60] [c0000000003a57a8] do_sys_ftruncate+0xe8/0x160
+[ 8805.896455][T445431] [c000001fe5427dc0] [c00000000002a458] system_call_exception+0xf8/0x1d0
+[ 8805.896496][T445431] [c000001fe5427e20] [c00000000000d0a8] system_call_common+0xe8/0x218
+[ 8805.896544][T445431] Instruction dump:
+[ 8805.896569][T445431] 3c82fb3a 388490c8 4be65be1 60000000 0fe00000 60000000 60000000 60000000 
+[ 8805.896623][T445431] 0fe00000 4bfffea8 60000000 60000000 <0fe00000> 4bfffef4 60000000 60000000 
+[ 8805.896678][T445431] CPU: 61 PID: 445431 Comm: trinity-c61 Not tainted 5.9.0-rc6-next-20200922 #3
+[ 8805.896716][T445431] Call Trace:
+[ 8805.896750][T445431] [c000001fe5427410] [c0000000006440e8] dump_stack+0xec/0x144 (unreliable)
+[ 8805.896796][T445431] [c000001fe5427450] [c0000000000b0a24] __warn+0xc4/0x144
+[ 8805.896837][T445431] [c000001fe54274e0] [c000000000642cf8] report_bug+0x108/0x1f0
+[ 8805.896878][T445431] [c000001fe5427580] [c000000000021714] program_check_exception+0x104/0x2e0
+[ 8805.896922][T445431] [c000001fe54275b0] [c000000000009664] program_check_common_virt+0x2c4/0x310
+[ 8805.896965][T445431] --- interrupt: 700 at iomap_page_release+0x250/0x270
+[ 8805.896965][T445431]     LR = iomap_page_release+0x10c/0x270
+[ 8805.897018][T445431] [c000001fe54278b0] [c000001fe5427940] 0xc000001fe5427940 (unreliable)
+[ 8805.897053][T445431] [c000001fe54278f0] [c00000000029b698] truncate_cleanup_page+0x188/0x2e0
+[ 8805.897104][T445431] [c000001fe5427920] [c00000000029c61c] truncate_inode_pages_range+0x23c/0x9f0
+[ 8805.897146][T445431] [c000001fe5427b40] [c00000000029ceec] truncate_pagecache+0x5c/0x90
+[ 8805.897186][T445431] [c000001fe5427b80] [c000000000569858] xfs_setattr_size+0xb8/0x5d0
+[ 8805.897226][T445431] [c000001fe5427c10] [c00000000056a26c] xfs_vn_setattr+0x8c/0x130
+[ 8805.897266][T445431] [c000001fe5427c60] [c0000000003dbe60] notify_change+0x390/0x5b0
+[ 8805.897307][T445431] [c000001fe5427cd0] [c0000000003a5294] do_truncate+0x94/0x130
+[ 8805.897329][T445431] [c000001fe5427d60] [c0000000003a57a8] do_sys_ftruncate+0xe8/0x160
+[ 8805.897369][T445431] [c000001fe5427dc0] [c00000000002a458] system_call_exception+0xf8/0x1d0
+[ 8805.897410][T445431] [c000001fe5427e20] [c00000000000d0a8] system_call_common+0xe8/0x218
+[ 8805.897448][T445431] irq event stamp: 360936
+[ 8805.897475][T445431] hardirqs last  enabled at (360935): [<c0000000002bd5b8>] dec_zone_page_state+0x78/0xb0
+[ 8805.897515][T445431] hardirqs last disabled at (360936): [<c00000000000965c>] program_check_common_virt+0x2bc/0x310
+[ 8805.897556][T445431] softirqs last  enabled at (342438): [<c0000000008d3d38>] __do_softirq+0x378/0x6e4
+[ 8805.897597][T445431] softirqs last disabled at (342433): [<c0000000000bc838>] irq_exit+0x118/0x140
 
---- a/fs/jfs/jfs_logmgr.h
-+++ b/fs/jfs/jfs_logmgr.h
-@@ -400,6 +400,8 @@ struct jfs_log {
- 	uuid_t uuid;		/* 16: 128-bit uuid of log device */
- 
- 	int no_integrity;	/* 3: flag to disable journaling to disk */
-+	atomic_t  io_inflight;
-+	wait_queue_head_t  io_waitq;
- };
- 
- /*
---- a/fs/jfs/jfs_logmgr.c
-+++ b/fs/jfs/jfs_logmgr.c
-@@ -1101,6 +1101,7 @@ int lmLogOpen(struct super_block *sb)
- 	}
- 	INIT_LIST_HEAD(&log->sb_list);
- 	init_waitqueue_head(&log->syncwait);
-+	init_waitqueue_head(&log->io_waitq);
- 
- 	/*
- 	 *	external log as separate logical volume
-@@ -1864,6 +1865,7 @@ static void lbmLogShutdown(struct jfs_lo
- 	struct lbuf *lbuf;
- 
- 	jfs_info("lbmLogShutdown: log:0x%p", log);
-+	wait_event(log->io_waitq, !atomic_read(&log->io_inflight));
- 
- 	lbuf = log->lbuf_free;
- 	while (lbuf) {
-@@ -1990,6 +1992,8 @@ static int lbmRead(struct jfs_log * log,
- 	bio->bi_end_io = lbmIODone;
- 	bio->bi_private = bp;
- 	bio->bi_opf = REQ_OP_READ;
-+
-+	atomic_inc(&log->io_inflight);
- 	/*check if journaling to disk has been disabled*/
- 	if (log->no_integrity) {
- 		bio->bi_iter.bi_size = 0;
-@@ -2135,6 +2139,7 @@ static void lbmStartIO(struct lbuf * bp)
- 	bio->bi_private = bp;
- 	bio->bi_opf = REQ_OP_WRITE | REQ_SYNC;
- 
-+	atomic_inc(&log->io_inflight);
- 	/* check if journaling to disk has been disabled */
- 	if (log->no_integrity) {
- 		bio->bi_iter.bi_size = 0;
-@@ -2199,6 +2204,7 @@ static void lbmIODone(struct bio *bio)
- 	}
- 
- 	bio_put(bio);
-+	log = bp->l_log;
- 
- 	/*
- 	 *	pagein completion
-@@ -2210,8 +2216,7 @@ static void lbmIODone(struct bio *bio)
- 
- 		/* wakeup I/O initiator */
- 		LCACHE_WAKEUP(&bp->l_ioevent);
--
--		return;
-+		goto out;
- 	}
- 
- 	/*
-@@ -2230,13 +2235,12 @@ static void lbmIODone(struct bio *bio)
- 	INCREMENT(lmStat.pagedone);
- 
- 	/* update committed lsn */
--	log = bp->l_log;
- 	log->clsn = (bp->l_pn << L2LOGPSIZE) + bp->l_ceor;
- 
- 	if (bp->l_flag & lbmDIRECT) {
- 		LCACHE_WAKEUP(&bp->l_ioevent);
- 		LCACHE_UNLOCK(flags);
--		return;
-+		goto out;
- 	}
- 
- 	tail = log->wqueue;
-@@ -2315,6 +2319,9 @@ static void lbmIODone(struct bio *bio)
- 
- 		LCACHE_UNLOCK(flags);	/* unlock+enable */
- 	}
-+out:
-+	if (atomic_dec_and_test(&log->io_inflight))
-+		wake_up(&log->io_waitq);
- }
- 
- int jfsIOWait(void *arg)
+> ---
+>  fs/iomap/buffered-io.c | 22 +++++++++++++++++-----
+>  1 file changed, 17 insertions(+), 5 deletions(-)
+> 
+> diff --git a/fs/iomap/buffered-io.c b/fs/iomap/buffered-io.c
+> index 7fc0e02d27b0..9670c096b83e 100644
+> --- a/fs/iomap/buffered-io.c
+> +++ b/fs/iomap/buffered-io.c
+> @@ -22,18 +22,25 @@
+>  #include "../internal.h"
+>  
+>  /*
+> - * Structure allocated for each page when block size < PAGE_SIZE to track
+> - * sub-page uptodate status and I/O completions.
+> + * Structure allocated for each page or THP when block size < page size
+> + * to track sub-page uptodate status and I/O completions.
+>   */
+>  struct iomap_page {
+>  	atomic_t		read_count;
+>  	atomic_t		write_count;
+>  	spinlock_t		uptodate_lock;
+> -	DECLARE_BITMAP(uptodate, PAGE_SIZE / 512);
+> +	unsigned long		uptodate[];
+>  };
+>  
+>  static inline struct iomap_page *to_iomap_page(struct page *page)
+>  {
+> +	/*
+> +	 * per-block data is stored in the head page.  Callers should
+> +	 * not be dealing with tail pages (and if they are, they can
+> +	 * call thp_head() first.
+> +	 */
+> +	VM_BUG_ON_PGFLAGS(PageTail(page), page);
+> +
+>  	if (page_has_private(page))
+>  		return (struct iomap_page *)page_private(page);
+>  	return NULL;
+> @@ -45,11 +52,13 @@ static struct iomap_page *
+>  iomap_page_create(struct inode *inode, struct page *page)
+>  {
+>  	struct iomap_page *iop = to_iomap_page(page);
+> +	unsigned int nr_blocks = i_blocks_per_page(inode, page);
+>  
+> -	if (iop || i_blocks_per_page(inode, page) <= 1)
+> +	if (iop || nr_blocks <= 1)
+>  		return iop;
+>  
+> -	iop = kzalloc(sizeof(*iop), GFP_NOFS | __GFP_NOFAIL);
+> +	iop = kzalloc(struct_size(iop, uptodate, BITS_TO_LONGS(nr_blocks)),
+> +			GFP_NOFS | __GFP_NOFAIL);
+>  	spin_lock_init(&iop->uptodate_lock);
+>  	attach_page_private(page, iop);
+>  	return iop;
+> @@ -59,11 +68,14 @@ static void
+>  iomap_page_release(struct page *page)
+>  {
+>  	struct iomap_page *iop = detach_page_private(page);
+> +	unsigned int nr_blocks = i_blocks_per_page(page->mapping->host, page);
+>  
+>  	if (!iop)
+>  		return;
+>  	WARN_ON_ONCE(atomic_read(&iop->read_count));
+>  	WARN_ON_ONCE(atomic_read(&iop->write_count));
+> +	WARN_ON_ONCE(bitmap_full(iop->uptodate, nr_blocks) !=
+> +			PageUptodate(page));
+>  	kfree(iop);
+>  }
+>  
 
 
 
