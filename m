@@ -2,96 +2,80 @@ Return-Path: <jfs-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+jfs-discussion@lfdr.de
 Delivered-To: lists+jfs-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id A9252274E22
-	for <lists+jfs-discussion@lfdr.de>; Wed, 23 Sep 2020 03:07:04 +0200 (CEST)
-Received: from [127.0.0.1] (helo=sfs-ml-1.v29.lw.sourceforge.com)
-	by sfs-ml-1.v29.lw.sourceforge.com with esmtp (Exim 4.90_1)
+	by mail.lfdr.de (Postfix) with ESMTPS id ACAAB274F43
+	for <lists+jfs-discussion@lfdr.de>; Wed, 23 Sep 2020 04:49:47 +0200 (CEST)
+Received: from [127.0.0.1] (helo=sfs-ml-4.v29.lw.sourceforge.com)
+	by sfs-ml-4.v29.lw.sourceforge.com with esmtp (Exim 4.90_1)
 	(envelope-from <jfs-discussion-bounces@lists.sourceforge.net>)
-	id 1kKtF1-0001Kb-Fk; Wed, 23 Sep 2020 01:06:39 +0000
+	id 1kKuqU-0006GP-2a; Wed, 23 Sep 2020 02:49:26 +0000
 Received: from [172.30.20.202] (helo=mx.sourceforge.net)
- by sfs-ml-1.v29.lw.sourceforge.com with esmtps
+ by sfs-ml-4.v29.lw.sourceforge.com with esmtps
  (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
- (envelope-from <cai@redhat.com>) id 1kKtEz-0001KK-Ps
- for jfs-discussion@lists.sourceforge.net; Wed, 23 Sep 2020 01:06:37 +0000
+ (envelope-from <willy@infradead.org>) id 1kKuqR-0006GB-VL
+ for jfs-discussion@lists.sourceforge.net; Wed, 23 Sep 2020 02:49:23 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=sourceforge.net; s=x; h=Content-Transfer-Encoding:Mime-Version:Content-Type
- :References:In-Reply-To:Date:Cc:To:From:Subject:Message-ID:Sender:Reply-To:
+ d=sourceforge.net; s=x; h=In-Reply-To:Content-Type:MIME-Version:References:
+ Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:Content-Transfer-Encoding:
  Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
  Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=HWJcac1QdW9dsyQKtkyOkOZ4w1weaZOAZAMFMC95DE4=; b=UCH5vpLga14loO78xini6B8OTT
- 8+B+kXuThGGVQ61huVFfOWUTZjTKSYQrbdPVWxvDAoNTYL8r/ggUNpqYwnHlIF2wxSzlY8Tj+dJOj
- vuo8O0LAU3Utsg6SBo+m4n8iAxoPHMWNIgtq0c9WJ6lH00fx4BsuN2BULC+JtJV/6DcE=;
+ bh=+tm3L9Qdu9Qa27/TXUn0VZXyFl0wWgXIWdk1uWUmYXo=; b=VXDH7C0sDrzsh4HOcE6D/YH3lx
+ L32hvBuXeCUCqu1drABWmnVHdNA7d7NLWdR1QqzIHONEzOmcSlwIny7UOFjBJPJPDu31vcXd/euLX
+ XKDxuwa/lBlT9E50lfC0Xk1n12zFutFf+XzU6FltR9HlMnRTxPkd75QvNSqmCthrPYdM=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
- h=Content-Transfer-Encoding:Mime-Version:Content-Type:References:
- In-Reply-To:Date:Cc:To:From:Subject:Message-ID:Sender:Reply-To:Content-ID:
+ h=In-Reply-To:Content-Type:MIME-Version:References:Message-ID:Subject:Cc:To
+ :From:Date:Sender:Reply-To:Content-Transfer-Encoding:Content-ID:
  Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
  :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
  List-Post:List-Owner:List-Archive;
- bh=HWJcac1QdW9dsyQKtkyOkOZ4w1weaZOAZAMFMC95DE4=; b=McU+59u99aHweZcyDBaoleKv6u
- eASGe937IlDnewphiheMaRQjLsuBei5gcumtDYDJ+0ap9laCCExKwjHUxvgD7iIRl3Dn14ZibzYsg
- ve18ilDw3g+NauACboTbq2eKKUDBqxMazYhHg6Az8lnvuna8WmvBNp7JffN30+YnJ95A=;
-Received: from us-smtp-delivery-124.mimecast.com ([216.205.24.124])
- by sfi-mx-1.v28.lw.sourceforge.com with esmtps
- (TLSv1.2:ECDHE-RSA-AES256-SHA384:256) (Exim 4.92.2)
- id 1kKtEm-003r5L-FO
- for jfs-discussion@lists.sourceforge.net; Wed, 23 Sep 2020 01:06:37 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
- s=mimecast20190719; t=1600823171;
- h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
- to:to:cc:cc:mime-version:mime-version:content-type:content-type:
- content-transfer-encoding:content-transfer-encoding:
- in-reply-to:in-reply-to:references:references;
- bh=HWJcac1QdW9dsyQKtkyOkOZ4w1weaZOAZAMFMC95DE4=;
- b=YAfXPmarN47tMfkgq+2QZiQLJvazI9RADBsvKKXAn4GcKqu8chzRFVYUzcaaaa0rOq9x05
- T70vKF3+1AJZ4ayMVoeECYQ33+uHvocdnAnXV7dLkTsyMnFkNFJZLUjGfTvFUKLVl9hvxj
- bUNnlMryhMEGRp5sRl8BaE29bPvRbXA=
-Received: from mimecast-mx01.redhat.com (mimecast-mx01.redhat.com
- [209.132.183.4]) (Using TLS) by relay.mimecast.com with ESMTP id
- us-mta-321-VnKzYDtLOJ6489vL7AfGag-1; Tue, 22 Sep 2020 21:06:07 -0400
-X-MC-Unique: VnKzYDtLOJ6489vL7AfGag-1
-Received: from smtp.corp.redhat.com (int-mx03.intmail.prod.int.phx2.redhat.com
- [10.5.11.13])
- (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
- (No client certificate requested)
- by mimecast-mx01.redhat.com (Postfix) with ESMTPS id 4509881CBF1;
- Wed, 23 Sep 2020 01:06:05 +0000 (UTC)
-Received: from ovpn-66-35.rdu2.redhat.com (unknown [10.10.67.35])
- by smtp.corp.redhat.com (Postfix) with ESMTP id F2FD17368D;
- Wed, 23 Sep 2020 01:06:03 +0000 (UTC)
-Message-ID: <95bd1230f2fcf01f690770eb77696862b8fb607b.camel@redhat.com>
-From: Qian Cai <cai@redhat.com>
-To: Matthew Wilcox <willy@infradead.org>
-Date: Tue, 22 Sep 2020 21:06:03 -0400
-In-Reply-To: <20200922170526.GK32101@casper.infradead.org>
+ bh=+tm3L9Qdu9Qa27/TXUn0VZXyFl0wWgXIWdk1uWUmYXo=; b=mcNkfmzBHMevrNVwUMq1kscRh5
+ YRt8py76g+5Z/SoKEMEuBQ5zrQgR3Se4N3YdY5WEL8gW3T1/xmik5QUEflN+BT2x7YEuwjV68No88
+ JfR4WLme+VGZUXF0pbZEnePEy1xAWWvOdMRwtsJjgnZMrF2PfA15nId8IuWrKG21GsaU=;
+Received: from casper.infradead.org ([90.155.50.34])
+ by sfi-mx-3.v28.lw.sourceforge.com with esmtps
+ (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.92.2)
+ id 1kKuqK-001xwn-Qt
+ for jfs-discussion@lists.sourceforge.net; Wed, 23 Sep 2020 02:49:23 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=infradead.org; s=casper.20170209; h=In-Reply-To:Content-Type:MIME-Version:
+ References:Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:
+ Content-Transfer-Encoding:Content-ID:Content-Description;
+ bh=+tm3L9Qdu9Qa27/TXUn0VZXyFl0wWgXIWdk1uWUmYXo=; b=bro9h2a+1VJMD+WRmif02SxOCd
+ V6iYwofbx8Scioi6syigtzG1nhgPfDNbKD+0AWCloYcoCtuGqizghQ+7957ITN7duW0ad3Y5qa8VB
+ ihRdtXr+JyqzpvML6OtwnnNFi7N//U0P0vnT9u30mG5Rim8975d7CazXnklVXf3CEerJaHJoGFIz9
+ 4bAUYyK+H0hxgkSUl+ojUHYKyXOM0gcJpmUlOTvCob9VH08ZAXjhQFntUbdjqyBJJLNWrbVYtRIHC
+ OodUmoJ9hZSATDquWRrgE+cTS0iPMrQgoPY77FgQMh9bNrJbF4LdjWkjTbbI5hNKEdsJTwkzAeM1R
+ P9U1wjcA==;
+Received: from willy by casper.infradead.org with local (Exim 4.92.3 #3 (Red
+ Hat Linux)) id 1kKuq4-0000Po-1g; Wed, 23 Sep 2020 02:49:00 +0000
+Date: Wed, 23 Sep 2020 03:48:59 +0100
+From: Matthew Wilcox <willy@infradead.org>
+To: Qian Cai <cai@redhat.com>
+Message-ID: <20200923024859.GM32101@casper.infradead.org>
 References: <20200910234707.5504-1-willy@infradead.org>
  <20200910234707.5504-6-willy@infradead.org>
  <163f852ba12fd9de5dec7c4a2d6b6c7cdb379ebc.camel@redhat.com>
  <20200922170526.GK32101@casper.infradead.org>
-Mime-Version: 1.0
-X-Scanned-By: MIMEDefang 2.79 on 10.5.11.13
-X-Spam-Score: -1.6 (-)
+ <95bd1230f2fcf01f690770eb77696862b8fb607b.camel@redhat.com>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <95bd1230f2fcf01f690770eb77696862b8fb607b.camel@redhat.com>
+X-Spam-Score: -0.1 (/)
 X-Spam-Report: Spam Filtering performed by mx.sourceforge.net.
  See http://spamassassin.org/tag/ for more details.
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/, no
- trust [216.205.24.124 listed in list.dnswl.org]
- 0.0 RCVD_IN_MSPIKE_H5      RBL: Excellent reputation (+5)
- [216.205.24.124 listed in wl.mailspike.net]
  0.0 URIBL_BLOCKED ADMINISTRATOR NOTICE: The query to URIBL was blocked.
  See
  http://wiki.apache.org/spamassassin/DnsBlocklists#dnsbl-block
  for more information. [URIs: infradead.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_AU Message has a valid DKIM or DK signature from author's
  domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature,
  not necessarily valid
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
- -1.5 DKIMWL_WL_HIGH         DKIMwl.org - High trust sender
-X-Headers-End: 1kKtEm-003r5L-FO
+X-Headers-End: 1kKuqK-001xwn-Qt
 Subject: Re: [Jfs-discussion] [PATCH v2 5/9] iomap: Support arbitrarily many
  blocks per page
 X-BeenThere: jfs-discussion@lists.sourceforge.net
@@ -106,8 +90,8 @@ List-Help: <mailto:jfs-discussion-request@lists.sourceforge.net?subject=help>
 List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/jfs-discussion>, 
  <mailto:jfs-discussion-request@lists.sourceforge.net?subject=subscribe>
 Cc: Christoph Hellwig <hch@infradead.org>, jfs-discussion@lists.sourceforge.net,
- linux-nvdimm@lists.01.org, Dave Kleikamp <shaggy@kernel.org>, "Darrick J .
- Wong" <darrick.wong@oracle.com>, linux-kernel@vger.kernel.org,
+ linux-nvdimm@lists.01.org, Dave Kleikamp <shaggy@kernel.org>,
+ "Darrick J . Wong" <darrick.wong@oracle.com>, linux-kernel@vger.kernel.org,
  linux-xfs@vger.kernel.org, linux-next@vger.kernel.org,
  Dave Chinner <dchinner@redhat.com>, linux-fsdevel@vger.kernel.org,
  Stephen Rothwell <sfr@canb.auug.org.au>
@@ -115,69 +99,102 @@ Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Errors-To: jfs-discussion-bounces@lists.sourceforge.net
 
-On Tue, 2020-09-22 at 18:05 +0100, Matthew Wilcox wrote:
-> On Tue, Sep 22, 2020 at 12:23:45PM -0400, Qian Cai wrote:
-> > On Fri, 2020-09-11 at 00:47 +0100, Matthew Wilcox (Oracle) wrote:
-> > > Size the uptodate array dynamically to support larger pages in the
-> > > page cache.  With a 64kB page, we're only saving 8 bytes per page today,
-> > > but with a 2MB maximum page size, we'd have to allocate more than 4kB
-> > > per page.  Add a few debugging assertions.
+On Tue, Sep 22, 2020 at 09:06:03PM -0400, Qian Cai wrote:
+> On Tue, 2020-09-22 at 18:05 +0100, Matthew Wilcox wrote:
+> > On Tue, Sep 22, 2020 at 12:23:45PM -0400, Qian Cai wrote:
+> > > On Fri, 2020-09-11 at 00:47 +0100, Matthew Wilcox (Oracle) wrote:
+> > > > Size the uptodate array dynamically to support larger pages in the
+> > > > page cache.  With a 64kB page, we're only saving 8 bytes per page today,
+> > > > but with a 2MB maximum page size, we'd have to allocate more than 4kB
+> > > > per page.  Add a few debugging assertions.
+> > > > 
+> > > > Signed-off-by: Matthew Wilcox (Oracle) <willy@infradead.org>
+> > > > Reviewed-by: Dave Chinner <dchinner@redhat.com>
 > > > 
-> > > Signed-off-by: Matthew Wilcox (Oracle) <willy@infradead.org>
-> > > Reviewed-by: Dave Chinner <dchinner@redhat.com>
+> > > Some syscall fuzzing will trigger this on powerpc:
+> > > 
+> > > .config: https://gitlab.com/cailca/linux-mm/-/blob/master/powerpc.config
+> > > 
+> > > [ 8805.895344][T445431] WARNING: CPU: 61 PID: 445431 at fs/iomap/buffered-
+> > > io.c:78 iomap_page_release+0x250/0x270
 > > 
-> > Some syscall fuzzing will trigger this on powerpc:
+> > Well, I'm glad it triggered.  That warning is:
+> >         WARN_ON_ONCE(bitmap_full(iop->uptodate, nr_blocks) !=
+> >                         PageUptodate(page));
+> > so there was definitely a problem of some kind.
 > > 
-> > .config: https://gitlab.com/cailca/linux-mm/-/blob/master/powerpc.config
+> > truncate_cleanup_page() calls
+> > do_invalidatepage() calls
+> > iomap_invalidatepage() calls
+> > iomap_page_release()
 > > 
-> > [ 8805.895344][T445431] WARNING: CPU: 61 PID: 445431 at fs/iomap/buffered-
-> > io.c:78 iomap_page_release+0x250/0x270
+> > Is this the first warning?  I'm wondering if maybe there was an I/O error
+> > earlier which caused PageUptodate to get cleared again.  If it's easy to
+> > reproduce, perhaps you could try something like this?
+> > 
+> > +void dump_iomap_page(struct page *page, const char *reason)
+> > +{
+> > +       struct iomap_page *iop = to_iomap_page(page);
+> > +       unsigned int nr_blocks = i_blocks_per_page(page->mapping->host, page);
+> > +
+> > +       dump_page(page, reason);
+> > +       if (iop)
+> > +               printk("iop:reads %d writes %d uptodate %*pb\n",
+> > +                               atomic_read(&iop->read_bytes_pending),
+> > +                               atomic_read(&iop->write_bytes_pending),
+> > +                               nr_blocks, iop->uptodate);
+> > +       else
+> > +               printk("iop:none\n");
+> > +}
+> > 
+> > and then do something like:
+> > 
+> > 	if (bitmap_full(iop->uptodate, nr_blocks) != PageUptodate(page))
+> > 		dump_iomap_page(page, NULL);
 > 
-> Well, I'm glad it triggered.  That warning is:
->         WARN_ON_ONCE(bitmap_full(iop->uptodate, nr_blocks) !=
->                         PageUptodate(page));
-> so there was definitely a problem of some kind.
+> This:
 > 
-> truncate_cleanup_page() calls
-> do_invalidatepage() calls
-> iomap_invalidatepage() calls
-> iomap_page_release()
-> 
-> Is this the first warning?  I'm wondering if maybe there was an I/O error
-> earlier which caused PageUptodate to get cleared again.  If it's easy to
-> reproduce, perhaps you could try something like this?
-> 
-> +void dump_iomap_page(struct page *page, const char *reason)
-> +{
-> +       struct iomap_page *iop = to_iomap_page(page);
-> +       unsigned int nr_blocks = i_blocks_per_page(page->mapping->host, page);
-> +
-> +       dump_page(page, reason);
-> +       if (iop)
-> +               printk("iop:reads %d writes %d uptodate %*pb\n",
-> +                               atomic_read(&iop->read_bytes_pending),
-> +                               atomic_read(&iop->write_bytes_pending),
-> +                               nr_blocks, iop->uptodate);
-> +       else
-> +               printk("iop:none\n");
-> +}
-> 
-> and then do something like:
-> 
-> 	if (bitmap_full(iop->uptodate, nr_blocks) != PageUptodate(page))
-> 		dump_iomap_page(page, NULL);
+> [ 1683.158254][T164965] page:000000004a6c16cd refcount:2 mapcount:0 mapping:00000000ea017dc5 index:0x2 pfn:0xc365c
+> [ 1683.158311][T164965] aops:xfs_address_space_operations ino:417b7e7 dentry name:"trinity-testfile2"
+> [ 1683.158354][T164965] flags: 0x7fff8000000015(locked|uptodate|lru)
+> [ 1683.158392][T164965] raw: 007fff8000000015 c00c0000019c4b08 c00c0000019a53c8 c000201c8362c1e8
+> [ 1683.158430][T164965] raw: 0000000000000002 0000000000000000 00000002ffffffff c000201c54db4000
+> [ 1683.158470][T164965] page->mem_cgroup:c000201c54db4000
+> [ 1683.158506][T164965] iop:none
 
-This:
+Oh, I'm a fool.  This is after the call to detach_page_private() so
+page->private is NULL and we don't get the iop dumped.
 
-[ 1683.158254][T164965] page:000000004a6c16cd refcount:2 mapcount:0 mapping:00000000ea017dc5 index:0x2 pfn:0xc365c
-[ 1683.158311][T164965] aops:xfs_address_space_operations ino:417b7e7 dentry name:"trinity-testfile2"
-[ 1683.158354][T164965] flags: 0x7fff8000000015(locked|uptodate|lru)
-[ 1683.158392][T164965] raw: 007fff8000000015 c00c0000019c4b08 c00c0000019a53c8 c000201c8362c1e8
-[ 1683.158430][T164965] raw: 0000000000000002 0000000000000000 00000002ffffffff c000201c54db4000
-[ 1683.158470][T164965] page->mem_cgroup:c000201c54db4000
-[ 1683.158506][T164965] iop:none
+Nevertheless, this is interesting.  Somehow, the page is marked Uptodate,
+but the bitmap is deemed not full.  There are three places where we set
+an iomap page Uptodate:
 
+1.      if (bitmap_full(iop->uptodate, i_blocks_per_page(inode, page)))
+                SetPageUptodate(page);
 
+2.      if (page_has_private(page))
+                iomap_iop_set_range_uptodate(page, off, len);
+        else
+                SetPageUptodate(page);
+
+3.      BUG_ON(page->index);
+...
+        SetPageUptodate(page);
+
+It can't be #2 because the page has an iop.  It can't be #3 because the
+page->index is not 0.  So at some point in the past, the bitmap was full.
+
+I don't think it's possible for inode->i_blksize to change, and you
+aren't running with THPs, so it's definitely not possible for thp_size()
+to change.  So i_blocks_per_page() isn't going to change.
+
+We seem to have allocated enough memory for ->iop because that's also
+based on i_blocks_per_page().
+
+I'm out of ideas.  Maybe I'll wake up with a better idea in the morning.
+I've been trying to reproduce this on x86 with a 1kB block size
+filesystem, and haven't been able to yet.  Maybe I'll try to setup a
+powerpc cross-compilation environment tomorrow.
 
 
 _______________________________________________
