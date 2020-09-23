@@ -2,119 +2,94 @@ Return-Path: <jfs-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+jfs-discussion@lfdr.de
 Delivered-To: lists+jfs-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id EEAEB275029
-	for <lists+jfs-discussion@lfdr.de>; Wed, 23 Sep 2020 07:01:05 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BF1C5275E06
+	for <lists+jfs-discussion@lfdr.de>; Wed, 23 Sep 2020 18:55:42 +0200 (CEST)
 Received: from [127.0.0.1] (helo=sfs-ml-4.v29.lw.sourceforge.com)
 	by sfs-ml-4.v29.lw.sourceforge.com with esmtp (Exim 4.90_1)
 	(envelope-from <jfs-discussion-bounces@lists.sourceforge.net>)
-	id 1kKwta-0003YX-J0; Wed, 23 Sep 2020 05:00:46 +0000
+	id 1kL835-0003qp-G5; Wed, 23 Sep 2020 16:55:19 +0000
 Received: from [172.30.20.202] (helo=mx.sourceforge.net)
  by sfs-ml-4.v29.lw.sourceforge.com with esmtps
  (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
- (envelope-from <darrick.wong@oracle.com>) id 1kKwtZ-0003YP-3g
- for jfs-discussion@lists.sourceforge.net; Wed, 23 Sep 2020 05:00:45 +0000
+ (envelope-from <cai@redhat.com>) id 1kL833-0003qi-Nv
+ for jfs-discussion@lists.sourceforge.net; Wed, 23 Sep 2020 16:55:17 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=sourceforge.net; s=x; h=In-Reply-To:Content-Type:MIME-Version:References:
- Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:Content-Transfer-Encoding:
+ d=sourceforge.net; s=x; h=Content-Transfer-Encoding:Mime-Version:Content-Type
+ :References:In-Reply-To:Date:Cc:To:From:Subject:Message-ID:Sender:Reply-To:
  Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
  Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=y7KcEv0cH2wcXQfqZi8DVT/Kis2ijpSFtePEekaqdn0=; b=C47+Sw6qN7Uq12aNuVX1b9evMJ
- JG/aWFwbilrhQIYr+FrZJD3MIPvfHsVdxoVwmHLYD/dl6sS3KHNi9Mt4ZGqoKl63+VeGdA1cv5Y3e
- 0rHTI8d9paG7yorBXTtQkxjhsfyDRpR9nFcw9kw7pc3wxzGdxwABYsgtzOgI4VHFVcOE=;
+ bh=FUSm6Jd9kppSRElqFCFSMQvc3MYe1vIAEmLYr4crmdc=; b=CZSO8MW2c+AeyrbbX5gWu4YRjk
+ 8/YLwBYN5dnNtLH0axHqAPsjwc2YHX3lUOS393W1RphGfqvj+0uLGS83cOiWsJIt+tdBHqIjMuqi+
+ Hk4y3JzeJvnrnU7XQbnMIfiKYdntOcxGZ8h1994Fk01jdZz2NIDiryvo5ZpIFEDaFBxo=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
- h=In-Reply-To:Content-Type:MIME-Version:References:Message-ID:Subject:Cc:To
- :From:Date:Sender:Reply-To:Content-Transfer-Encoding:Content-ID:
+ h=Content-Transfer-Encoding:Mime-Version:Content-Type:References:
+ In-Reply-To:Date:Cc:To:From:Subject:Message-ID:Sender:Reply-To:Content-ID:
  Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
  :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
  List-Post:List-Owner:List-Archive;
- bh=y7KcEv0cH2wcXQfqZi8DVT/Kis2ijpSFtePEekaqdn0=; b=E8AtMlEkS44npiTS0uv+nLJTlj
- 5RNNOdhmlMBFVSxlp51/E0PSN2eDx2GmNpzjq2sEA9/KgjYlD5dF7A4/lB78LfIJDLJBz/GKGt1i2
- kp9adKisHYA2p1I67+myEckpOqJBfZ8WRq6L2DmUzYuyUx7YhDFQKa5xOPZ8WkczkCLA=;
-Received: from aserp2130.oracle.com ([141.146.126.79])
+ bh=FUSm6Jd9kppSRElqFCFSMQvc3MYe1vIAEmLYr4crmdc=; b=Q8EcX+VHBa/PhJFtRjQmtaryfW
+ 1xbzLmp8C3+KdwljumZSXhg69PyOV6G68szQ3iQxxwbuogLjyj8xKhK8d4Yn2a8x1M4K6fsuD5OHa
+ Se0YIcJwGmNeK48Sht1fhzO5Al9km0GWsWdsmuGXKGxOfOr3Shb+VMUynkrznGnnD5XU=;
+Received: from us-smtp-delivery-124.mimecast.com ([63.128.21.124])
  by sfi-mx-3.v28.lw.sourceforge.com with esmtps
- (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.92.2)
- id 1kKwtT-0023Bg-Er
- for jfs-discussion@lists.sourceforge.net; Wed, 23 Sep 2020 05:00:44 +0000
-Received: from pps.filterd (aserp2130.oracle.com [127.0.0.1])
- by aserp2130.oracle.com (8.16.0.42/8.16.0.42) with SMTP id 08N50B5Y102299;
- Wed, 23 Sep 2020 05:00:11 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=oracle.com;
- h=date : from : to : cc
- : subject : message-id : references : mime-version : content-type :
- in-reply-to; s=corp-2020-01-29;
- bh=y7KcEv0cH2wcXQfqZi8DVT/Kis2ijpSFtePEekaqdn0=;
- b=ovwcldhHfVKucVYCJd2vN1Fbfe6WoW53QXU879Cu1Rgu573PEqJgipAl/U7jJpVFGrQ4
- MEng3+DWWWBWvC7BzRxicAFVBzkV6EWjcc/F/GMfskogXQHOLLdAK/6rOSoah3m1GfEB
- mWrigoUD0c6eVmMJeqWXfIxmJihpPkWKcijjv+aOuBKTC3PmWNmn2KAmzuKmBF/0AzFU
- Mq9Y4P7GyJlKppJ0Yvd92IzepZ0DQN0ZVRRwmUKYirYJx4+/6jxgWFlNXBL8paqf6qo3
- f+DRI5KpvnxyngyBTg91o3TXO4OVDGN8TvzWkTYkrNyvj0lZhgL04TT+kFaRRrrfiR8u HQ== 
-Received: from userp3020.oracle.com (userp3020.oracle.com [156.151.31.79])
- by aserp2130.oracle.com with ESMTP id 33qcptw4yj-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=FAIL);
- Wed, 23 Sep 2020 05:00:11 +0000
-Received: from pps.filterd (userp3020.oracle.com [127.0.0.1])
- by userp3020.oracle.com (8.16.0.42/8.16.0.42) with SMTP id 08N4uOxi070114;
- Wed, 23 Sep 2020 05:00:10 GMT
-Received: from userv0121.oracle.com (userv0121.oracle.com [156.151.31.72])
- by userp3020.oracle.com with ESMTP id 33nuru241f-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
- Wed, 23 Sep 2020 05:00:10 +0000
-Received: from abhmp0018.oracle.com (abhmp0018.oracle.com [141.146.116.24])
- by userv0121.oracle.com (8.14.4/8.13.8) with ESMTP id 08N503p5025876;
- Wed, 23 Sep 2020 05:00:03 GMT
-Received: from localhost (/10.159.235.171)
- by default (Oracle Beehive Gateway v4.0)
- with ESMTP ; Tue, 22 Sep 2020 22:00:03 -0700
-Date: Tue, 22 Sep 2020 22:00:01 -0700
-From: "Darrick J. Wong" <darrick.wong@oracle.com>
+ (TLSv1.2:ECDHE-RSA-AES256-SHA384:256) (Exim 4.92.2)
+ id 1kL830-002nJc-Ul
+ for jfs-discussion@lists.sourceforge.net; Wed, 23 Sep 2020 16:55:17 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
+ s=mimecast20190719; t=1600880109;
+ h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+ to:to:cc:cc:mime-version:mime-version:content-type:content-type:
+ content-transfer-encoding:content-transfer-encoding:
+ in-reply-to:in-reply-to:references:references;
+ bh=FUSm6Jd9kppSRElqFCFSMQvc3MYe1vIAEmLYr4crmdc=;
+ b=ELcMngBHPT+lcEDaIAYbWY0KmSw4kNg9AhwRAwi6KeDqR3Hhd2ipo1yOf1hCa0CFDYrB6U
+ siLH4ZSDqFsLkqa0F9yTGT7ZAIDxDlwMSZTR2XS4m0DKSRAIiLrSNexDNieWL1C+6Za02P
+ ntl1szzFNwZ7zH2OCK+rQy7UywoN8gk=
+Received: from mimecast-mx01.redhat.com (mimecast-mx01.redhat.com
+ [209.132.183.4]) (Using TLS) by relay.mimecast.com with ESMTP id
+ us-mta-136-F9xQiLQkO7iC0xbWG9znvg-1; Wed, 23 Sep 2020 12:55:05 -0400
+X-MC-Unique: F9xQiLQkO7iC0xbWG9znvg-1
+Received: from smtp.corp.redhat.com (int-mx07.intmail.prod.int.phx2.redhat.com
+ [10.5.11.22])
+ (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
+ (No client certificate requested)
+ by mimecast-mx01.redhat.com (Postfix) with ESMTPS id 003F4801F9A;
+ Wed, 23 Sep 2020 16:55:03 +0000 (UTC)
+Received: from ovpn-66-35.rdu2.redhat.com (unknown [10.10.67.35])
+ by smtp.corp.redhat.com (Postfix) with ESMTP id A380E1002C04;
+ Wed, 23 Sep 2020 16:55:00 +0000 (UTC)
+Message-ID: <ff8f882fe320e53f5f429fc9a9d4ed85410d7972.camel@redhat.com>
+From: Qian Cai <cai@redhat.com>
 To: Matthew Wilcox <willy@infradead.org>
-Message-ID: <20200923050001.GE7949@magnolia>
+Date: Wed, 23 Sep 2020 12:55:00 -0400
+In-Reply-To: <20200923024859.GM32101@casper.infradead.org>
 References: <20200910234707.5504-1-willy@infradead.org>
  <20200910234707.5504-6-willy@infradead.org>
  <163f852ba12fd9de5dec7c4a2d6b6c7cdb379ebc.camel@redhat.com>
  <20200922170526.GK32101@casper.infradead.org>
  <95bd1230f2fcf01f690770eb77696862b8fb607b.camel@redhat.com>
  <20200923024859.GM32101@casper.infradead.org>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200923024859.GM32101@casper.infradead.org>
-X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9752
- signatures=668679
-X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 adultscore=0
- malwarescore=0
- phishscore=0 mlxlogscore=999 bulkscore=0 mlxscore=0 suspectscore=0
- spamscore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.12.0-2006250000 definitions=main-2009230037
-X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9752
- signatures=668679
-X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 suspectscore=0
- mlxlogscore=999
- adultscore=0 bulkscore=0 mlxscore=0 lowpriorityscore=0 priorityscore=1501
- phishscore=0 spamscore=0 malwarescore=0 clxscore=1011 impostorscore=0
- classifier=spam adjust=0 reason=mlx scancount=1 engine=8.12.0-2006250000
- definitions=main-2009230038
+Mime-Version: 1.0
+X-Scanned-By: MIMEDefang 2.84 on 10.5.11.22
 X-Spam-Score: -1.3 (-)
 X-Spam-Report: Spam Filtering performed by mx.sourceforge.net.
  See http://spamassassin.org/tag/ for more details.
- 0.0 URIBL_BLOCKED ADMINISTRATOR NOTICE: The query to URIBL was blocked.
- See
- http://wiki.apache.org/spamassassin/DnsBlocklists#dnsbl-block
- for more information. [URIs: infradead.org]
- 0.0 RCVD_IN_MSPIKE_H4      RBL: Very Good reputation (+4)
- [141.146.126.79 listed in wl.mailspike.net]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/, no
+ trust [63.128.21.124 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_AU Message has a valid DKIM or DK signature from author's
  domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature,
  not necessarily valid
+ 0.0 RCVD_IN_MSPIKE_H5      RBL: Excellent reputation (+5)
+ [63.128.21.124 listed in wl.mailspike.net]
  0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
- 0.0 UNPARSEABLE_RELAY Informational: message has unparseable relay lines
  -1.2 DKIMWL_WL_HIGH         DKIMwl.org - High trust sender
-X-Headers-End: 1kKwtT-0023Bg-Er
+X-Headers-End: 1kL830-002nJc-Ul
 Subject: Re: [Jfs-discussion] [PATCH v2 5/9] iomap: Support arbitrarily many
  blocks per page
 X-BeenThere: jfs-discussion@lists.sourceforge.net
@@ -128,138 +103,82 @@ List-Post: <mailto:jfs-discussion@lists.sourceforge.net>
 List-Help: <mailto:jfs-discussion-request@lists.sourceforge.net?subject=help>
 List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/jfs-discussion>, 
  <mailto:jfs-discussion-request@lists.sourceforge.net?subject=subscribe>
-Cc: Christoph Hellwig <hch@infradead.org>, Dave Kleikamp <shaggy@kernel.org>,
- linux-nvdimm@lists.01.org, Qian Cai <cai@redhat.com>,
- linux-kernel@vger.kernel.org, linux-xfs@vger.kernel.org,
- linux-next@vger.kernel.org, Dave Chinner <dchinner@redhat.com>,
- linux-fsdevel@vger.kernel.org, Stephen Rothwell <sfr@canb.auug.org.au>,
- jfs-discussion@lists.sourceforge.net
+Cc: Christoph Hellwig <hch@infradead.org>, jfs-discussion@lists.sourceforge.net,
+ linux-nvdimm@lists.01.org, Dave Kleikamp <shaggy@kernel.org>, "Darrick J .
+ Wong" <darrick.wong@oracle.com>, linux-kernel@vger.kernel.org,
+ linux-xfs@vger.kernel.org, linux-next@vger.kernel.org,
+ Dave Chinner <dchinner@redhat.com>, linux-fsdevel@vger.kernel.org,
+ Stephen Rothwell <sfr@canb.auug.org.au>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Errors-To: jfs-discussion-bounces@lists.sourceforge.net
 
-On Wed, Sep 23, 2020 at 03:48:59AM +0100, Matthew Wilcox wrote:
-> On Tue, Sep 22, 2020 at 09:06:03PM -0400, Qian Cai wrote:
-> > On Tue, 2020-09-22 at 18:05 +0100, Matthew Wilcox wrote:
-> > > On Tue, Sep 22, 2020 at 12:23:45PM -0400, Qian Cai wrote:
-> > > > On Fri, 2020-09-11 at 00:47 +0100, Matthew Wilcox (Oracle) wrote:
-> > > > > Size the uptodate array dynamically to support larger pages in the
-> > > > > page cache.  With a 64kB page, we're only saving 8 bytes per page today,
-> > > > > but with a 2MB maximum page size, we'd have to allocate more than 4kB
-> > > > > per page.  Add a few debugging assertions.
-> > > > > 
-> > > > > Signed-off-by: Matthew Wilcox (Oracle) <willy@infradead.org>
-> > > > > Reviewed-by: Dave Chinner <dchinner@redhat.com>
-> > > > 
-> > > > Some syscall fuzzing will trigger this on powerpc:
-> > > > 
-> > > > .config: https://gitlab.com/cailca/linux-mm/-/blob/master/powerpc.config
-> > > > 
-> > > > [ 8805.895344][T445431] WARNING: CPU: 61 PID: 445431 at fs/iomap/buffered-
-> > > > io.c:78 iomap_page_release+0x250/0x270
-> > > 
-> > > Well, I'm glad it triggered.  That warning is:
-> > >         WARN_ON_ONCE(bitmap_full(iop->uptodate, nr_blocks) !=
-> > >                         PageUptodate(page));
-> > > so there was definitely a problem of some kind.
-> > > 
-> > > truncate_cleanup_page() calls
-> > > do_invalidatepage() calls
-> > > iomap_invalidatepage() calls
-> > > iomap_page_release()
-> > > 
-> > > Is this the first warning?  I'm wondering if maybe there was an I/O error
-> > > earlier which caused PageUptodate to get cleared again.  If it's easy to
-> > > reproduce, perhaps you could try something like this?
-> > > 
-> > > +void dump_iomap_page(struct page *page, const char *reason)
-> > > +{
-> > > +       struct iomap_page *iop = to_iomap_page(page);
-> > > +       unsigned int nr_blocks = i_blocks_per_page(page->mapping->host, page);
-> > > +
-> > > +       dump_page(page, reason);
-> > > +       if (iop)
-> > > +               printk("iop:reads %d writes %d uptodate %*pb\n",
-> > > +                               atomic_read(&iop->read_bytes_pending),
-> > > +                               atomic_read(&iop->write_bytes_pending),
-> > > +                               nr_blocks, iop->uptodate);
-> > > +       else
-> > > +               printk("iop:none\n");
-> > > +}
-> > > 
-> > > and then do something like:
-> > > 
-> > > 	if (bitmap_full(iop->uptodate, nr_blocks) != PageUptodate(page))
-> > > 		dump_iomap_page(page, NULL);
-> > 
-> > This:
-> > 
-> > [ 1683.158254][T164965] page:000000004a6c16cd refcount:2 mapcount:0 mapping:00000000ea017dc5 index:0x2 pfn:0xc365c
-> > [ 1683.158311][T164965] aops:xfs_address_space_operations ino:417b7e7 dentry name:"trinity-testfile2"
-> > [ 1683.158354][T164965] flags: 0x7fff8000000015(locked|uptodate|lru)
-> > [ 1683.158392][T164965] raw: 007fff8000000015 c00c0000019c4b08 c00c0000019a53c8 c000201c8362c1e8
-> > [ 1683.158430][T164965] raw: 0000000000000002 0000000000000000 00000002ffffffff c000201c54db4000
-> > [ 1683.158470][T164965] page->mem_cgroup:c000201c54db4000
-> > [ 1683.158506][T164965] iop:none
-> 
-> Oh, I'm a fool.  This is after the call to detach_page_private() so
-> page->private is NULL and we don't get the iop dumped.
-> 
-> Nevertheless, this is interesting.  Somehow, the page is marked Uptodate,
-> but the bitmap is deemed not full.  There are three places where we set
-> an iomap page Uptodate:
-> 
-> 1.      if (bitmap_full(iop->uptodate, i_blocks_per_page(inode, page)))
->                 SetPageUptodate(page);
-> 
-> 2.      if (page_has_private(page))
->                 iomap_iop_set_range_uptodate(page, off, len);
->         else
->                 SetPageUptodate(page);
-> 
-> 3.      BUG_ON(page->index);
-> ...
->         SetPageUptodate(page);
-> 
-> It can't be #2 because the page has an iop.  It can't be #3 because the
-> page->index is not 0.  So at some point in the past, the bitmap was full.
-> 
-> I don't think it's possible for inode->i_blksize to change, and you
-> aren't running with THPs, so it's definitely not possible for thp_size()
-> to change.  So i_blocks_per_page() isn't going to change.
-> 
-> We seem to have allocated enough memory for ->iop because that's also
-> based on i_blocks_per_page().
-> 
+On Wed, 2020-09-23 at 03:48 +0100, Matthew Wilcox wrote:
 > I'm out of ideas.  Maybe I'll wake up with a better idea in the morning.
 > I've been trying to reproduce this on x86 with a 1kB block size
 > filesystem, and haven't been able to yet.  Maybe I'll try to setup a
 > powerpc cross-compilation environment tomorrow.
 
-FWIW I managed to reproduce it with the following fstests configuration
-on a 1k block size fs on a x86 machinE:
+Another data point is that this can be reproduced on both arm64 and powerpc
+(both have 64k-size pages) by running this LTP test case:
 
-SECTION      -- -no-sections-
-FSTYP        -- xfs
-MKFS_OPTIONS --  -m reflink=1,rmapbt=1 -i sparse=1 -b size=1024
-MOUNT_OPTIONS --  -o usrquota,grpquota,prjquota
-HOST_OPTIONS -- local.config
-CHECK_OPTIONS -- -g auto
-XFS_MKFS_OPTIONS -- -bsize=4096
-TIME_FACTOR  -- 1
-LOAD_FACTOR  -- 1
-TEST_DIR     -- /mnt
-TEST_DEV     -- /dev/sde
-SCRATCH_DEV  -- /dev/sdd
-SCRATCH_MNT  -- /opt
-OVL_UPPER    -- ovl-upper
-OVL_LOWER    -- ovl-lower
-OVL_WORK     -- ovl-work
-KERNEL       -- 5.9.0-rc4-djw
+https://github.com/linux-test-project/ltp/blob/master/testcases/kernel/syscalls/preadv2/preadv203.c
 
-The kernel is more or less iomap-for-next.
+[ 2397.723289] preadv203 (80525): drop_caches: 3
+[ 2400.796402] XFS (loop0): Unmounting Filesystem
+[ 2401.431293] ------------[ cut here ]------------
+[ 2401.431411] WARNING: CPU: 0 PID: 80501 at fs/iomap/buffered-io.c:78 iomap_page_release+0x250/0x270
+[ 2401.431435] Modules linked in: vfio_pci vfio_virqfd vfio_iommu_spapr_tce vfio vfio_spapr_eeh loop kvm_hv kvm ip_tables x_tables sd_mod bnx2x mdio ahci libahci tg3 libphy libata firmware_class dm_mirror dm_reg
+ion_hash dm_log dm_mod
+[ 2401.431534] CPU: 0 PID: 80501 Comm: preadv203 Not tainted 5.9.0-rc6-next-20200923+ #4
+[ 2401.431567] NIP:  c000000000473b30 LR: c0000000004739ec CTR: c000000000473e80
+[ 2401.431590] REGS: c0000011a7bbf7a0 TRAP: 0700   Not tainted  (5.9.0-rc6-next-20200923+)
+[ 2401.431613] MSR:  9000000000029033 <SF,HV,EE,ME,IR,DR,RI,LE>  CR: 44000244  XER: 20040000
+[ 2401.431655] CFAR: c000000000473a24 IRQMASK: 0 
+               GPR00: c00000000029b6a8 c0000011a7bbfa30 c000000007e87e00 0000000000000005 
+               GPR04: 0000000000000000 0000000000000005 0000000000000005 0000000000000000 
+               GPR08: c00c000806f1f587 087fff8000000037 0000000000000001 c00000000875e028 
+               GPR12: c000000000473e80 c00000000c180000 0000000000000000 0000000000000000 
+               GPR16: 0000000000000000 c0000011a7bbfbb0 c0000011a7bbfbc0 0000000000000000 
+               GPR20: c000000000a4aad8 0000000000000000 0000000000000000 000000000000000f 
+               GPR24: ffffffffffffffff c0000011a7bbfb38 c0000011a7bbfac0 0000000000000000 
+               GPR28: 0000000000000001 c000000ea4fe0a28 0000000000000000 c00c0008071b46c0 
+[ 2401.431856] NIP [c000000000473b30] iomap_page_release+0x250/0x270
+[ 2401.431878] LR [c0000000004739ec] iomap_page_release+0x10c/0x270
+[ 2401.431899] Call Trace:
+[ 2401.431926] [c0000011a7bbfa30] [c0000011a7bbfac0] 0xc0000011a7bbfac0 (unreliable)
+[ 2401.431962] [c0000011a7bbfa70] [c00000000029b6a8] truncate_cleanup_page+0x188/0x2e0
+[ 2401.431987] [c0000011a7bbfaa0] [c00000000029c62c] truncate_inode_pages_range+0x23c/0x9f0
+[ 2401.432023] [c0000011a7bbfcc0] [c0000000003d9588] evict+0x1e8/0x200
+[ 2401.432055] [c0000011a7bbfd00] [c0000000003c64b0] do_unlinkat+0x2d0/0x3a0
+[ 2401.432081] [c0000011a7bbfdc0] [c00000000002a458] system_call_exception+0xf8/0x1d0
+[ 2401.432097] [c0000011a7bbfe20] [c00000000000d0a8] system_call_common+0xe8/0x218
+[ 2401.432120] Instruction dump:
+[ 2401.432140] 3c82f8ba 388490b8 4be655b1 60000000 0fe00000 60000000 60000000 60000000 
+[ 2401.432176] 0fe00000 4bfffea8 60000000 60000000 <0fe00000> 4bfffef4 60000000 60000000 
+[ 2401.432213] CPU: 0 PID: 80501 Comm: preadv203 Not tainted 5.9.0-rc6-next-20200923+ #4
+[ 2401.432245] Call Trace:
+[ 2401.432255] [c0000011a7bbf590] [c000000000644778] dump_stack+0xec/0x144 (unreliable)
+[ 2401.432284] [c0000011a7bbf5d0] [c0000000000b0a24] __warn+0xc4/0x144
+[ 2401.432298] [c0000011a7bbf660] [c000000000643388] report_bug+0x108/0x1f0
+[ 2401.432331] [c0000011a7bbf700] [c000000000021714] program_check_exception+0x104/0x2e0
+[ 2401.432359] [c0000011a7bbf730] [c000000000009664] program_check_common_virt+0x2c4/0x310
+[ 2401.432385] --- interrupt: 700 at iomap_page_release+0x250/0x270
+                   LR = iomap_page_release+0x10c/0x270
+[ 2401.432420] [c0000011a7bbfa30] [c0000011a7bbfac0] 0xc0000011a7bbfac0 (unreliable)
+[ 2401.432446] [c0000011a7bbfa70] [c00000000029b6a8] truncate_cleanup_page+0x188/0x2e0
+[ 2401.432470] [c0000011a7bbfaa0] [c00000000029c62c] truncate_inode_pages_range+0x23c/0x9f0
+[ 2401.432505] [c0000011a7bbfcc0] [c0000000003d9588] evict+0x1e8/0x200
+[ 2401.432528] [c0000011a7bbfd00] [c0000000003c64b0] do_unlinkat+0x2d0/0x3a0
+[ 2401.432552] [c0000011a7bbfdc0] [c00000000002a458] system_call_exception+0xf8/0x1d0
+[ 2401.432576] [c0000011a7bbfe20] [c00000000000d0a8] system_call_common+0xe8/0x218
+[ 2401.432599] irq event stamp: 210662
+[ 2401.432619] hardirqs last  enabled at (210661): [<c0000000008d32bc>] _raw_spin_unlock_irq+0x3c/0x70
+[ 2401.432652] hardirqs last disabled at (210662): [<c00000000000965c>] program_check_common_virt+0x2bc/0x310
+[ 2401.432688] softirqs last  enabled at (210280): [<c000000000547de4>] xfs_buf_find.isra.31+0xb54/0x1060
+[ 2401.432722] softirqs last disabled at (210278): [<c0000000005476fc>] xfs_buf_find.isra.31+0x46c/0x1060
 
---D
+
 
 
 _______________________________________________
