@@ -2,26 +2,26 @@ Return-Path: <jfs-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+jfs-discussion@lfdr.de
 Delivered-To: lists+jfs-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id E2E1927476C
-	for <lists+jfs-discussion@lfdr.de>; Tue, 22 Sep 2020 19:26:45 +0200 (CEST)
-Received: from [127.0.0.1] (helo=sfs-ml-4.v29.lw.sourceforge.com)
-	by sfs-ml-4.v29.lw.sourceforge.com with esmtp (Exim 4.90_1)
+	by mail.lfdr.de (Postfix) with ESMTPS id A9252274E22
+	for <lists+jfs-discussion@lfdr.de>; Wed, 23 Sep 2020 03:07:04 +0200 (CEST)
+Received: from [127.0.0.1] (helo=sfs-ml-1.v29.lw.sourceforge.com)
+	by sfs-ml-1.v29.lw.sourceforge.com with esmtp (Exim 4.90_1)
 	(envelope-from <jfs-discussion-bounces@lists.sourceforge.net>)
-	id 1kKm3Y-0006tY-OY; Tue, 22 Sep 2020 17:26:20 +0000
+	id 1kKtF1-0001Kb-Fk; Wed, 23 Sep 2020 01:06:39 +0000
 Received: from [172.30.20.202] (helo=mx.sourceforge.net)
- by sfs-ml-4.v29.lw.sourceforge.com with esmtps
+ by sfs-ml-1.v29.lw.sourceforge.com with esmtps
  (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
- (envelope-from <cai@redhat.com>) id 1kKm3X-0006tR-6C
- for jfs-discussion@lists.sourceforge.net; Tue, 22 Sep 2020 17:26:19 +0000
+ (envelope-from <cai@redhat.com>) id 1kKtEz-0001KK-Ps
+ for jfs-discussion@lists.sourceforge.net; Wed, 23 Sep 2020 01:06:37 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=sourceforge.net; s=x; h=Content-Transfer-Encoding:Mime-Version:Content-Type
  :References:In-Reply-To:Date:Cc:To:From:Subject:Message-ID:Sender:Reply-To:
  Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
  Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=KZmFKoK2MR7ChNH+SzztUzepcIAB3ilvtz5u7xppUU8=; b=ST27Pavr/Y0uZOQDjx7BCGnLQi
- 6iTDZAHv6MBdJsLwOrOO+YYsH+IXU9/rCCeFjk0lxGCDDzRpK10Qcqkuf8+muNcRqiBL8ZTMonSYx
- GNUH4ZDYTrw//bjuMeKDa1qSpbq0ixcegCVJz6NqkC0YPpdNtMp1tr8D6dsB4s9ezzLw=;
+ bh=HWJcac1QdW9dsyQKtkyOkOZ4w1weaZOAZAMFMC95DE4=; b=UCH5vpLga14loO78xini6B8OTT
+ 8+B+kXuThGGVQ61huVFfOWUTZjTKSYQrbdPVWxvDAoNTYL8r/ggUNpqYwnHlIF2wxSzlY8Tj+dJOj
+ vuo8O0LAU3Utsg6SBo+m4n8iAxoPHMWNIgtq0c9WJ6lH00fx4BsuN2BULC+JtJV/6DcE=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
  h=Content-Transfer-Encoding:Mime-Version:Content-Type:References:
@@ -29,58 +29,59 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
  :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
  List-Post:List-Owner:List-Archive;
- bh=KZmFKoK2MR7ChNH+SzztUzepcIAB3ilvtz5u7xppUU8=; b=NZCVYlGHcxfBa4SoXj5qNAbLd7
- EVJWQRIJ1oEn5L9h0cggXicCnYqPn6rn/6JirBETHEvFTCm24mlY197LRuBXAEBClpwcAyP7EGWO0
- HtKV+0tNBmtnKhlsioPH0+5Svfxgf0NxbYHrHm8JQ0Wj9pn5nbQypW41f6nH93zrUVt0=;
-Received: from us-smtp-2.mimecast.com ([207.211.31.81]
- helo=us-smtp-delivery-1.mimecast.com)
+ bh=HWJcac1QdW9dsyQKtkyOkOZ4w1weaZOAZAMFMC95DE4=; b=McU+59u99aHweZcyDBaoleKv6u
+ eASGe937IlDnewphiheMaRQjLsuBei5gcumtDYDJ+0ap9laCCExKwjHUxvgD7iIRl3Dn14ZibzYsg
+ ve18ilDw3g+NauACboTbq2eKKUDBqxMazYhHg6Az8lnvuna8WmvBNp7JffN30+YnJ95A=;
+Received: from us-smtp-delivery-124.mimecast.com ([216.205.24.124])
  by sfi-mx-1.v28.lw.sourceforge.com with esmtps
  (TLSv1.2:ECDHE-RSA-AES256-SHA384:256) (Exim 4.92.2)
- id 1kKm3I-003S4Z-9G
- for jfs-discussion@lists.sourceforge.net; Tue, 22 Sep 2020 17:26:19 +0000
+ id 1kKtEm-003r5L-FO
+ for jfs-discussion@lists.sourceforge.net; Wed, 23 Sep 2020 01:06:37 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
- s=mimecast20190719; t=1600795551;
+ s=mimecast20190719; t=1600823171;
  h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
  to:to:cc:cc:mime-version:mime-version:content-type:content-type:
  content-transfer-encoding:content-transfer-encoding:
  in-reply-to:in-reply-to:references:references;
- bh=KZmFKoK2MR7ChNH+SzztUzepcIAB3ilvtz5u7xppUU8=;
- b=Sp3jWxDg6Vl2hLmdR95gTDlEFTdZNaWmkm+6JuYX/OCpyI3DenTMbNZpVHwknoPGd+MNCu
- o918R7igDv+cdl/i5x7jarPpj6d3wexaZOxV1uh0leBCt+CW1wBTLXFHLh5UPhtcjjRSgI
- vISv9zC5c0elfGHXSp21mRrdjXqoq2Q=
+ bh=HWJcac1QdW9dsyQKtkyOkOZ4w1weaZOAZAMFMC95DE4=;
+ b=YAfXPmarN47tMfkgq+2QZiQLJvazI9RADBsvKKXAn4GcKqu8chzRFVYUzcaaaa0rOq9x05
+ T70vKF3+1AJZ4ayMVoeECYQ33+uHvocdnAnXV7dLkTsyMnFkNFJZLUjGfTvFUKLVl9hvxj
+ bUNnlMryhMEGRp5sRl8BaE29bPvRbXA=
 Received: from mimecast-mx01.redhat.com (mimecast-mx01.redhat.com
  [209.132.183.4]) (Using TLS) by relay.mimecast.com with ESMTP id
- us-mta-463-mvCMT2fhNdqivAS76rFhIg-1; Tue, 22 Sep 2020 13:25:46 -0400
-X-MC-Unique: mvCMT2fhNdqivAS76rFhIg-1
-Received: from smtp.corp.redhat.com (int-mx07.intmail.prod.int.phx2.redhat.com
- [10.5.11.22])
+ us-mta-321-VnKzYDtLOJ6489vL7AfGag-1; Tue, 22 Sep 2020 21:06:07 -0400
+X-MC-Unique: VnKzYDtLOJ6489vL7AfGag-1
+Received: from smtp.corp.redhat.com (int-mx03.intmail.prod.int.phx2.redhat.com
+ [10.5.11.13])
  (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
  (No client certificate requested)
- by mimecast-mx01.redhat.com (Postfix) with ESMTPS id EBC1D80EF8B;
- Tue, 22 Sep 2020 17:25:44 +0000 (UTC)
+ by mimecast-mx01.redhat.com (Postfix) with ESMTPS id 4509881CBF1;
+ Wed, 23 Sep 2020 01:06:05 +0000 (UTC)
 Received: from ovpn-66-35.rdu2.redhat.com (unknown [10.10.67.35])
- by smtp.corp.redhat.com (Postfix) with ESMTP id 606C310013D7;
- Tue, 22 Sep 2020 17:25:43 +0000 (UTC)
-Message-ID: <c804f9ec9e15daa4e82483c546558599c662f53c.camel@redhat.com>
+ by smtp.corp.redhat.com (Postfix) with ESMTP id F2FD17368D;
+ Wed, 23 Sep 2020 01:06:03 +0000 (UTC)
+Message-ID: <95bd1230f2fcf01f690770eb77696862b8fb607b.camel@redhat.com>
 From: Qian Cai <cai@redhat.com>
 To: Matthew Wilcox <willy@infradead.org>
-Date: Tue, 22 Sep 2020 13:25:42 -0400
+Date: Tue, 22 Sep 2020 21:06:03 -0400
 In-Reply-To: <20200922170526.GK32101@casper.infradead.org>
 References: <20200910234707.5504-1-willy@infradead.org>
  <20200910234707.5504-6-willy@infradead.org>
  <163f852ba12fd9de5dec7c4a2d6b6c7cdb379ebc.camel@redhat.com>
  <20200922170526.GK32101@casper.infradead.org>
 Mime-Version: 1.0
-X-Scanned-By: MIMEDefang 2.84 on 10.5.11.22
+X-Scanned-By: MIMEDefang 2.79 on 10.5.11.13
 X-Spam-Score: -1.6 (-)
 X-Spam-Report: Spam Filtering performed by mx.sourceforge.net.
  See http://spamassassin.org/tag/ for more details.
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/, no
+ trust [216.205.24.124 listed in list.dnswl.org]
+ 0.0 RCVD_IN_MSPIKE_H5      RBL: Excellent reputation (+5)
+ [216.205.24.124 listed in wl.mailspike.net]
  0.0 URIBL_BLOCKED ADMINISTRATOR NOTICE: The query to URIBL was blocked.
  See
  http://wiki.apache.org/spamassassin/DnsBlocklists#dnsbl-block
- for more information. [URIs: gitlab.com]
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/, no
- trust [207.211.31.81 listed in list.dnswl.org]
+ for more information. [URIs: infradead.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_AU Message has a valid DKIM or DK signature from author's
@@ -88,8 +89,9 @@ X-Spam-Report: Spam Filtering performed by mx.sourceforge.net.
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature,
  not necessarily valid
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
  -1.5 DKIMWL_WL_HIGH         DKIMwl.org - High trust sender
-X-Headers-End: 1kKm3I-003S4Z-9G
+X-Headers-End: 1kKtEm-003r5L-FO
 Subject: Re: [Jfs-discussion] [PATCH v2 5/9] iomap: Support arbitrarily many
  blocks per page
 X-BeenThere: jfs-discussion@lists.sourceforge.net
@@ -144,11 +146,6 @@ On Tue, 2020-09-22 at 18:05 +0100, Matthew Wilcox wrote:
 > Is this the first warning?  I'm wondering if maybe there was an I/O error
 > earlier which caused PageUptodate to get cleared again.  If it's easy to
 > reproduce, perhaps you could try something like this?
-
-Yes, this is the first warning. BTW, I did run the reproducer of a805c111650c
-("iomap: fix WARN_ON_ONCE() from unprivileged users") earlier, so I am wondering
-if this is just another victim WARN_ON_ONCE() from it.
-
 > 
 > +void dump_iomap_page(struct page *page, const char *reason)
 > +{
@@ -169,7 +166,17 @@ if this is just another victim WARN_ON_ONCE() from it.
 > 
 > 	if (bitmap_full(iop->uptodate, nr_blocks) != PageUptodate(page))
 > 		dump_iomap_page(page, NULL);
-> 
+
+This:
+
+[ 1683.158254][T164965] page:000000004a6c16cd refcount:2 mapcount:0 mapping:00000000ea017dc5 index:0x2 pfn:0xc365c
+[ 1683.158311][T164965] aops:xfs_address_space_operations ino:417b7e7 dentry name:"trinity-testfile2"
+[ 1683.158354][T164965] flags: 0x7fff8000000015(locked|uptodate|lru)
+[ 1683.158392][T164965] raw: 007fff8000000015 c00c0000019c4b08 c00c0000019a53c8 c000201c8362c1e8
+[ 1683.158430][T164965] raw: 0000000000000002 0000000000000000 00000002ffffffff c000201c54db4000
+[ 1683.158470][T164965] page->mem_cgroup:c000201c54db4000
+[ 1683.158506][T164965] iop:none
+
 
 
 
