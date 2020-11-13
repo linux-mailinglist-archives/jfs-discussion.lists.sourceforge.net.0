@@ -2,26 +2,26 @@ Return-Path: <jfs-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+jfs-discussion@lfdr.de
 Delivered-To: lists+jfs-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id 337FD28E0EE
-	for <lists+jfs-discussion@lfdr.de>; Wed, 14 Oct 2020 15:00:12 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6AAE52B28B4
+	for <lists+jfs-discussion@lfdr.de>; Fri, 13 Nov 2020 23:42:55 +0100 (CET)
 Received: from [127.0.0.1] (helo=sfs-ml-1.v29.lw.sourceforge.com)
 	by sfs-ml-1.v29.lw.sourceforge.com with esmtp (Exim 4.90_1)
 	(envelope-from <jfs-discussion-bounces@lists.sourceforge.net>)
-	id 1kSgNd-0001uy-Q0; Wed, 14 Oct 2020 12:59:45 +0000
+	id 1kdhm3-00070n-Is; Fri, 13 Nov 2020 22:42:31 +0000
 Received: from [172.30.20.202] (helo=mx.sourceforge.net)
  by sfs-ml-1.v29.lw.sourceforge.com with esmtps
  (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
- (envelope-from <dave.kleikamp@oracle.com>) id 1kSgNc-0001uj-N3
- for jfs-discussion@lists.sourceforge.net; Wed, 14 Oct 2020 12:59:44 +0000
+ (envelope-from <dave.kleikamp@oracle.com>) id 1kdgQw-0005gY-7R
+ for jfs-discussion@lists.sourceforge.net; Fri, 13 Nov 2020 21:16:38 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=sourceforge.net; s=x; h=Content-Transfer-Encoding:Content-Type:In-Reply-To:
  MIME-Version:Date:Message-ID:From:References:Cc:To:Subject:Sender:Reply-To:
  Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
  Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=C/PUDi0na8aZ0QhaupLQVbWj+qIdkzp5Gj0rHSffkNY=; b=i3F8rzlhUDoj1e17ywJp2pJmw+
- zdWJYPgmVsIJAchQjWMvf5FDUz6OQ9NhoMWvAHQT7H4dlzkY37Z57AI8pIWxVoAZuopj5FYk2Butl
- A06AEsKbdfXUcfhRG8jXrHFTsS3e9SaI7IqQJLONl1W59y/v2jxVqkk8NN46UlKZ6/gA=;
+ bh=yiQW3xIbuJ/MXtrfniRQcRELAFNJ1wL+nY/XFo7u7WM=; b=TyUoOoSs9oGhrwOFgms/VxJOpQ
+ z71F8+0sGxO+YxGePwyUoXM7LuUSfcaQW6QE9IsfD4run9LoIdQmm0IueDKEITEqzhGBL2S9WoWCs
+ LhvqTVCebNTB4l9n6itcvrnX0vvPr4fWaCKesVyZOyKT7t+JMrcxrU+ifjaaOC+EmHyY=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
  h=Content-Transfer-Encoding:Content-Type:In-Reply-To:MIME-Version:Date:
@@ -29,47 +29,46 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
  :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
  List-Post:List-Owner:List-Archive;
- bh=C/PUDi0na8aZ0QhaupLQVbWj+qIdkzp5Gj0rHSffkNY=; b=XKUS/47N2l6kyXdOPkH2PvA6Nb
- cAlLme8hkUIM2Gg4bnQSA+8R8tegUmytAX0KRCgAA9/p36VfvloEpduGP8pso6wJUpnPRnPQY3hy6
- kvjUTcTRT44Ay5nfGDdy7Fzfobn0ZtJzbsOxVAjXA5fa3xJP95LNloIQaBl08/IOtWiI=;
+ bh=yiQW3xIbuJ/MXtrfniRQcRELAFNJ1wL+nY/XFo7u7WM=; b=MGR08csnSYcY0dRe23nyEtgpDl
+ HGf840/kj5xFi9dHpAi4zO4zo5IFWDJp6DmvsMDdJHdknOuit3K9FrTayS16ic2kiIk/BD+bl4u7Q
+ qbr/BTrU8LbHhxGjLqBy2VmiyobpMHFaHWk2h3QyCG4B5lo9LhITiCZCkfds30xHGvtg=;
 Received: from aserp2120.oracle.com ([141.146.126.78])
  by sfi-mx-3.v28.lw.sourceforge.com with esmtps
  (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.92.2)
- id 1kSgNY-00AFyC-HB
- for jfs-discussion@lists.sourceforge.net; Wed, 14 Oct 2020 12:59:44 +0000
+ id 1kdgQh-00Asrh-HL
+ for jfs-discussion@lists.sourceforge.net; Fri, 13 Nov 2020 21:16:37 +0000
 Received: from pps.filterd (aserp2120.oracle.com [127.0.0.1])
- by aserp2120.oracle.com (8.16.0.42/8.16.0.42) with SMTP id 09ECsMdw044230;
- Wed, 14 Oct 2020 12:59:21 GMT
+ by aserp2120.oracle.com (8.16.0.42/8.16.0.42) with SMTP id 0ADLEpkJ018836;
+ Fri, 13 Nov 2020 21:16:05 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=oracle.com;
  h=subject : to : cc :
  references : from : message-id : date : mime-version : in-reply-to :
  content-type : content-transfer-encoding; s=corp-2020-01-29;
- bh=C/PUDi0na8aZ0QhaupLQVbWj+qIdkzp5Gj0rHSffkNY=;
- b=dh1VdOyuXPpT90BVvVnFyR8DBn2rRVgzYDsc0/nVaxMqhLo6jANrVwFzZDCKuEQX9oBJ
- zW1Vj+bQ5wZDPKheWdWMcdvsp5rFKF2LRtcOy2fJK5h1/P1Pqorsn2JiXVd/fKNs8HOR
- 1s7bLfGyu9IpJnEXMWIi00dBNQAy/mVNE1CUm8Q4WSsaMhEWCrkmOOL1wtTVWCA5aYOH
- JAlYnr/V9DEWTuBVDiaBie5yebauBzQygWfv/p9CNgSw7iSL5AwFbHmkC9b22bxjF2J1
- 1xSn1KYJR4ry3AlkLnOyFCTu5gtpn2YY9Ce//4FCTwcw7dhfawEdK5UAF3PVGBuN+p3o BA== 
-Received: from aserp3020.oracle.com (aserp3020.oracle.com [141.146.126.70])
- by aserp2120.oracle.com with ESMTP id 3434wkq9mt-1
+ bh=yiQW3xIbuJ/MXtrfniRQcRELAFNJ1wL+nY/XFo7u7WM=;
+ b=iNuxfsMLzHuGdBn377/eKwnmHOjPQkH1u9o/cQKLJwV7gZvqIWlwXT2xQqGO44yqQw4H
+ SRGtR+0HGvJ9Aspn0nvvTbaIWetPnyJ7GDhDcsHwrG2CtX7UIIQ542vKU36Q8Qq8SVey
+ JzTisEO85NTDAylWiiFd4yexBYVkr6+h7qCpOR2utqkZ7YsiBjE1fy2yLMtsOb8SW0zt
+ Y4LKfg4bsaCUi/+YfJfssD79D7rKoXbyVy9Glg2E9XtTFzs7V1M2wQtvmtz1kSqMIeCV
+ WWL1z4T/EZi70vNGwegev2lSJrnEr1yiZAGKzyrEnZ8kCv9ako8Z+PgjqDTS0JIuud7t Vg== 
+Received: from userp3030.oracle.com (userp3030.oracle.com [156.151.31.80])
+ by aserp2120.oracle.com with ESMTP id 34nkhmcabh-1
  (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=FAIL);
- Wed, 14 Oct 2020 12:59:20 +0000
-Received: from pps.filterd (aserp3020.oracle.com [127.0.0.1])
- by aserp3020.oracle.com (8.16.0.42/8.16.0.42) with SMTP id 09ECpF3h111868;
- Wed, 14 Oct 2020 12:57:20 GMT
-Received: from userv0121.oracle.com (userv0121.oracle.com [156.151.31.72])
- by aserp3020.oracle.com with ESMTP id 343pv091ru-1
+ Fri, 13 Nov 2020 21:16:05 +0000
+Received: from pps.filterd (userp3030.oracle.com [127.0.0.1])
+ by userp3030.oracle.com (8.16.0.42/8.16.0.42) with SMTP id 0ADLAOn3075937;
+ Fri, 13 Nov 2020 21:16:04 GMT
+Received: from aserv0121.oracle.com (aserv0121.oracle.com [141.146.126.235])
+ by userp3030.oracle.com with ESMTP id 34rtku9xsx-1
  (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
- Wed, 14 Oct 2020 12:57:20 +0000
-Received: from abhmp0019.oracle.com (abhmp0019.oracle.com [141.146.116.25])
- by userv0121.oracle.com (8.14.4/8.13.8) with ESMTP id 09ECvGRq025995;
- Wed, 14 Oct 2020 12:57:16 GMT
+ Fri, 13 Nov 2020 21:16:04 +0000
+Received: from abhmp0004.oracle.com (abhmp0004.oracle.com [141.146.116.10])
+ by aserv0121.oracle.com (8.14.4/8.13.8) with ESMTP id 0ADLG3oZ021649;
+ Fri, 13 Nov 2020 21:16:03 GMT
 Received: from [192.168.0.190] (/68.201.65.98)
  by default (Oracle Beehive Gateway v4.0)
- with ESMTP ; Wed, 14 Oct 2020 05:57:16 -0700
-To: Randy Dunlap <rdunlap@infradead.org>, linux-kernel@vger.kernel.org
-References: <20200720001353.26200-1-rdunlap@infradead.org>
- <0329314c-c139-68a9-38c2-0163ebd304b8@infradead.org>
+ with ESMTP ; Fri, 13 Nov 2020 13:16:03 -0800
+To: butt3rflyh4ck <butterflyhuangxx@gmail.com>
+References: <CAFcO6XN=cd=_K_2AY9OL7f+HWsazY-nJ81Ufrw4azvkjj-Mpng@mail.gmail.com>
 From: Dave Kleikamp <dave.kleikamp@oracle.com>
 Autocrypt: addr=dave.kleikamp@oracle.com; prefer-encrypt=mutual; keydata=
  mQINBE7VCEMBEAC3kywrdIxxL/I9maTCxaWTBiHZFNhT5K8QZGLUfW3uFrW89PdAtloSEc1W
@@ -114,35 +113,31 @@ Autocrypt: addr=dave.kleikamp@oracle.com; prefer-encrypt=mutual; keydata=
  9YJoKXbnOlKuzjsm9lZIwVwqw07Qi1uFmzJopHW0H3P6zUlujM0buDmaio+Q8znJchizOrQ3
  58pn7BNKx3mmswoyZlDtukab9QGF7BZBMjwmafn1RuEVGdlSB52F8TShLgKUM+0dkFmI2yf/
  rnNNL3zBkwD3nWcTxFnX
-Message-ID: <09a4135a-de15-2c1d-5356-c55c77d6f3c0@oracle.com>
-Date: Wed, 14 Oct 2020 07:57:15 -0500
+Message-ID: <e8c8ef27-1f09-40b5-e5e4-facfcc9956dd@oracle.com>
+Date: Fri, 13 Nov 2020 15:16:02 -0600
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
  Thunderbird/68.12.0
 MIME-Version: 1.0
-In-Reply-To: <0329314c-c139-68a9-38c2-0163ebd304b8@infradead.org>
+In-Reply-To: <CAFcO6XN=cd=_K_2AY9OL7f+HWsazY-nJ81Ufrw4azvkjj-Mpng@mail.gmail.com>
 Content-Language: en-US
-X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9773
- signatures=668681
-X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 mlxlogscore=999
- mlxscore=0 spamscore=0
- adultscore=0 suspectscore=0 phishscore=0 bulkscore=0 malwarescore=0
+X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9804
+ signatures=668682
+X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 spamscore=0
+ mlxscore=0 phishscore=0
+ suspectscore=0 bulkscore=0 malwarescore=0 mlxlogscore=999 adultscore=0
  classifier=spam adjust=0 reason=mlx scancount=1 engine=8.12.0-2009150000
- definitions=main-2010140093
-X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9773
- signatures=668681
-X-Proofpoint-Spam-Details: rule=notspam policy=default score=0
- lowpriorityscore=0 mlxscore=0
- malwarescore=0 phishscore=0 suspectscore=0 impostorscore=0 clxscore=1011
- spamscore=0 priorityscore=1501 bulkscore=0 adultscore=0 mlxlogscore=999
+ definitions=main-2011130134
+X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9804
+ signatures=668682
+X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 phishscore=0
+ priorityscore=1501
+ mlxscore=0 suspectscore=0 mlxlogscore=999 lowpriorityscore=0 spamscore=0
+ malwarescore=0 adultscore=0 clxscore=1011 bulkscore=0 impostorscore=0
  classifier=spam adjust=0 reason=mlx scancount=1 engine=8.12.0-2009150000
- definitions=main-2010140093
+ definitions=main-2011130135
 X-Spam-Score: -0.1 (/)
 X-Spam-Report: Spam Filtering performed by mx.sourceforge.net.
  See http://spamassassin.org/tag/ for more details.
- 0.0 URIBL_BLOCKED ADMINISTRATOR NOTICE: The query to URIBL was blocked.
- See
- http://wiki.apache.org/spamassassin/DnsBlocklists#dnsbl-block
- for more information. [URIs: infradead.org]
  -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
  [141.146.126.78 listed in wl.mailspike.net]
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
@@ -154,9 +149,8 @@ X-Spam-Report: Spam Filtering performed by mx.sourceforge.net.
  not necessarily valid
  -0.0 NICE_REPLY_A           Looks like a legit reply (A)
  -0.0 DKIMWL_WL_HIGH         DKIMwl.org - High trust sender
-X-Headers-End: 1kSgNY-00AFyC-HB
-Subject: Re: [Jfs-discussion] [PATCH] jfs: delete duplicated words in header
- files
+X-Headers-End: 1kdgQh-00Asrh-HL
+Subject: Re: [Jfs-discussion] UBSAN: array-index-out-of-bounds in dbAdjTree
 X-BeenThere: jfs-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -168,55 +162,68 @@ List-Post: <mailto:jfs-discussion@lists.sourceforge.net>
 List-Help: <mailto:jfs-discussion-request@lists.sourceforge.net?subject=help>
 List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/jfs-discussion>, 
  <mailto:jfs-discussion-request@lists.sourceforge.net?subject=subscribe>
-Cc: jfs-discussion@lists.sourceforge.net
+Cc: jfs-discussion@lists.sourceforge.net,
+ syzkaller-bugs <syzkaller-bugs@googlegroups.com>, linux-kernel@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Errors-To: jfs-discussion-bounces@lists.sourceforge.net
 
-Sorry. I've neglected JFS lately. I'll review and merge these today or
-tomorrow, along with some others in my queue.
+On 10/8/20 12:00 PM, butt3rflyh4ck wrote:
+> I report a array-index-out-of-bounds bug (in linux-5.9.0-rc6) found by
+> kernel fuzz.
+> 
+> kernel config: https://github.com/butterflyhack/syzkaller-fuzz/blob/master/v5.9.0-rc6-config
+> 
+> and can reproduce.
+> 
+> the dmtree_t is that
+> typedef union dmtree {
+> struct dmaptree t1;
+> struct dmapctl t2;
+> } dmtree_t;
+> 
+> the dmaptree is that
+> struct dmaptree {
+> __le32 nleafs; /* 4: number of tree leafs */
+> __le32 l2nleafs; /* 4: l2 number of tree leafs */
+> __le32 leafidx; /* 4: index of first tree leaf */
+> __le32 height; /* 4: height of the tree */
+> s8 budmin; /* 1: min l2 tree leaf value to combine */
+> s8 stree[TREESIZE]; /* TREESIZE: tree */
+> u8 pad[2]; /* 2: pad to word boundary */
+> };
+> the TREESIZE is totally 341, but the leafidx type is __le32.
 
-Shaggy
+Does this patch fix the problem?
 
-On 10/14/20 12:29 AM, Randy Dunlap wrote:
-> ping.
-> 
-> On 7/19/20 5:13 PM, Randy Dunlap wrote:
->> Drop the repeated words "allocation" and "if" in comments.
->>
->> Signed-off-by: Randy Dunlap <rdunlap@infradead.org>
->> Cc: Dave Kleikamp <shaggy@kernel.org>
->> Cc: jfs-discussion@lists.sourceforge.net
->> ---
->>  fs/jfs/jfs_extent.h |    2 +-
->>  fs/jfs/jfs_logmgr.h |    2 +-
->>  2 files changed, 2 insertions(+), 2 deletions(-)
->>
->> --- linux-next-20200717.orig/fs/jfs/jfs_extent.h
->> +++ linux-next-20200717/fs/jfs/jfs_extent.h
->> @@ -5,7 +5,7 @@
->>  #ifndef	_H_JFS_EXTENT
->>  #define _H_JFS_EXTENT
->>  
->> -/*  get block allocation allocation hint as location of disk inode */
->> +/*  get block allocation hint as location of disk inode */
->>  #define	INOHINT(ip)	\
->>  	(addressPXD(&(JFS_IP(ip)->ixpxd)) + lengthPXD(&(JFS_IP(ip)->ixpxd)) - 1)
->>  
->> --- linux-next-20200717.orig/fs/jfs/jfs_logmgr.h
->> +++ linux-next-20200717/fs/jfs/jfs_logmgr.h
->> @@ -132,7 +132,7 @@ struct logpage {
->>   * (this comment should be rewritten !)
->>   * jfs uses only "after" log records (only a single writer is allowed
->>   * in a page, pages are written to temporary paging space if
->> - * if they must be written to disk before commit, and i/o is
->> + * they must be written to disk before commit, and i/o is
->>   * scheduled for modified pages to their home location after
->>   * the log records containing the after values and the commit
->>   * record is written to the log on disk, undo discards the copy
->>
-> 
-> 
+jfs: Fix array index bounds check in dbAdjTree
+
+Bounds checking tools can flag a bug in dbAdjTree() for an array index
+out of bounds in dmt_stree. Since dmt_stree can refer to the stree in
+both structures dmaptree and dmapctl, use the larger array to eliminate
+the false positive.
+
+Signed-off-by: Dave Kleikamp <dave.kleikamp@oracle.com>
+---
+ fs/jfs/jfs_dmap.h | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/fs/jfs/jfs_dmap.h b/fs/jfs/jfs_dmap.h
+index 29891fad3f09..aa03a904d5ab 100644
+--- a/fs/jfs/jfs_dmap.h
++++ b/fs/jfs/jfs_dmap.h
+@@ -183,7 +183,7 @@ typedef union dmtree {
+ #define	dmt_leafidx	t1.leafidx
+ #define	dmt_height	t1.height
+ #define	dmt_budmin	t1.budmin
+-#define	dmt_stree	t1.stree
++#define	dmt_stree	t2.stree
+ 
+ /*
+  *	on-disk aggregate disk allocation map descriptor.
+-- 
+2.29.2
+
 
 
 _______________________________________________
