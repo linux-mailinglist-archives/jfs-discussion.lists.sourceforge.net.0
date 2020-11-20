@@ -2,159 +2,88 @@ Return-Path: <jfs-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+jfs-discussion@lfdr.de
 Delivered-To: lists+jfs-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id 64C3B2BAC53
-	for <lists+jfs-discussion@lfdr.de>; Fri, 20 Nov 2020 16:02:05 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id E88D12BAECB
+	for <lists+jfs-discussion@lfdr.de>; Fri, 20 Nov 2020 16:24:24 +0100 (CET)
 Received: from [127.0.0.1] (helo=sfs-ml-1.v29.lw.sourceforge.com)
 	by sfs-ml-1.v29.lw.sourceforge.com with esmtp (Exim 4.90_1)
 	(envelope-from <jfs-discussion-bounces@lists.sourceforge.net>)
-	id 1kg7uy-0001Z4-US; Fri, 20 Nov 2020 15:01:44 +0000
+	id 1kg8Gh-0006Rn-4l; Fri, 20 Nov 2020 15:24:11 +0000
 Received: from [172.30.20.202] (helo=mx.sourceforge.net)
- by sfs-ml-1.v29.lw.sourceforge.com with esmtps
+ by sfs-ml-2.v29.lw.sourceforge.com with esmtps
  (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
- (envelope-from <dave.kleikamp@oracle.com>) id 1kg7ux-0001Yi-KB
- for jfs-discussion@lists.sourceforge.net; Fri, 20 Nov 2020 15:01:43 +0000
+ (envelope-from
+ <3iN23XwkbACcVbcNDOOHUDSSLG.JRRJOHXVHUFRQWHQW.FRP@M3KW2WVRGUFZ5GODRSRYTGD7.apphosting.bounces.google.com>)
+ id 1kg88H-0002ro-Rd
+ for jfs-discussion@lists.sourceforge.net; Fri, 20 Nov 2020 15:15:29 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=sourceforge.net; s=x; h=Content-Transfer-Encoding:Content-Type:In-Reply-To:
- MIME-Version:Date:Message-ID:From:References:Cc:To:Subject:Sender:Reply-To:
- Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
- Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
+ d=sourceforge.net; s=x; h=Content-Type:To:From:Subject:Message-ID:Date:
+ MIME-Version:Sender:Reply-To:Cc:Content-Transfer-Encoding:Content-ID:
+ Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+ :Resent-Message-ID:In-Reply-To:References:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=QwpstCPsXlBXDe+rIaz9sOJvfwScNHisu2+dNaCkmRo=; b=HwFAQrQv+RhLq+gr9/MfGiJXEQ
- 35/v0kNSlw0hAtnAJZcIVpfx/iiac4LxAZE/SqgOpmKl9TGNvwfpDYdrJnIvSW9aw/bLXJcegX5W4
- nuHlifY0gKND77nW4qS0w6KS2iaDlc+ZrQ0TZrFT8vJbU62QN+mu2BLRevpf9be8iIH4=;
+ bh=OF6CiG/SEA3+wIoWj8RIQVN5WsLF1TtgPhPsr1W6Mv8=; b=Kzkvd6a5KTa6WmjYcVvMqVy1aV
+ 2qD7+CYn+Dqd/TFtN93umHXa2GDSLrsg0y0+3I5W4RJoLN8F2Lv0+JuZNfMbvP/LhrHCykdyeEH3q
+ EUOLW5gKHsZ/KWbWWcVlMFQAKeI+AWiU5rhxzW8NfF0y0TCmdM18zRwApdip3KSU+CT4=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
- h=Content-Transfer-Encoding:Content-Type:In-Reply-To:MIME-Version:Date:
- Message-ID:From:References:Cc:To:Subject:Sender:Reply-To:Content-ID:
- Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
- :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
- List-Post:List-Owner:List-Archive;
- bh=QwpstCPsXlBXDe+rIaz9sOJvfwScNHisu2+dNaCkmRo=; b=Mw/5wCJo7mr4/oGCAeoJ9O2Kg6
- PYAPn3Tuse+0c+6qd6TlKu8/xyhFfE3OTP1XK2wcqJBNJF7+QbR9QLRH04XHIDKq9qxiyEC8g/d2d
- thvp5PFl9ShquMxYSJzZZuo31wT8KPlYjTRUB3dLgwhx4QV+BAJ5IcpxiOXVUQsFybmE=;
-Received: from aserp2120.oracle.com ([141.146.126.78])
- by sfi-mx-3.v28.lw.sourceforge.com with esmtps
- (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.92.2)
- id 1kg7uv-00AbZQ-7y
- for jfs-discussion@lists.sourceforge.net; Fri, 20 Nov 2020 15:01:43 +0000
-Received: from pps.filterd (aserp2120.oracle.com [127.0.0.1])
- by aserp2120.oracle.com (8.16.0.42/8.16.0.42) with SMTP id 0AKF0JOP124812;
- Fri, 20 Nov 2020 15:01:31 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=oracle.com;
- h=subject : to : cc :
- references : from : message-id : date : mime-version : in-reply-to :
- content-type : content-transfer-encoding; s=corp-2020-01-29;
- bh=QwpstCPsXlBXDe+rIaz9sOJvfwScNHisu2+dNaCkmRo=;
- b=M1xNjVT5k1R0N53zhuDAJg6EKpR8wM+JIeDx0Z/Wifp8ePGv7TL4mIORGIiQsh+4H64b
- 7RIuU1QQPK8n35DgkTnx5gU4RfiduhtIntSWZMWlDfYyDYDSnrpQCwXvDqOxlHBMyEQG
- +b6l3/lLtNn+pHuFSu0xEWLfqQqGGr70l5K5fz3RfFM5jxLr7FxqnO5wd3ue7IPUf2hb
- 6hfBQkhVe/YCrKyxkLjJXlMRShYS9FbkuGlsNGpryk4RYKVbif+cih2ElGR66P72dRQ6
- iKdyYSd7Tr2uenqHN7T0pjLAqOg4lPJMI9gUcDgYGyyFQUbJlxUALIuu7xnQQP7NybSO xA== 
-Received: from aserp3030.oracle.com (aserp3030.oracle.com [141.146.126.71])
- by aserp2120.oracle.com with ESMTP id 34t76mb2k8-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=FAIL);
- Fri, 20 Nov 2020 15:01:31 +0000
-Received: from pps.filterd (aserp3030.oracle.com [127.0.0.1])
- by aserp3030.oracle.com (8.16.0.42/8.16.0.42) with SMTP id 0AKEtksW036552;
- Fri, 20 Nov 2020 14:59:31 GMT
-Received: from aserv0122.oracle.com (aserv0122.oracle.com [141.146.126.236])
- by aserp3030.oracle.com with ESMTP id 34uspxr969-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
- Fri, 20 Nov 2020 14:59:31 +0000
-Received: from abhmp0014.oracle.com (abhmp0014.oracle.com [141.146.116.20])
- by aserv0122.oracle.com (8.14.4/8.14.4) with ESMTP id 0AKExUl3014078;
- Fri, 20 Nov 2020 14:59:30 GMT
-Received: from [192.168.0.190] (/68.201.65.98)
- by default (Oracle Beehive Gateway v4.0)
- with ESMTP ; Fri, 20 Nov 2020 06:59:30 -0800
-To: butt3rflyh4ck <butterflyhuangxx@gmail.com>
-References: <CAFcO6XN=cd=_K_2AY9OL7f+HWsazY-nJ81Ufrw4azvkjj-Mpng@mail.gmail.com>
- <e8c8ef27-1f09-40b5-e5e4-facfcc9956dd@oracle.com>
- <CAFcO6XMhrhJXWjRymKUWgFUov6OV7fTk-Nu9Tq=kOyPTMRnTug@mail.gmail.com>
- <298485e2-01de-048d-5515-44ac254167e4@oracle.com>
- <CAFcO6XOvx2W1EvN7PORomgYj4U7kcyzjBC=OiQp9bfRZ33gBMg@mail.gmail.com>
-From: Dave Kleikamp <dave.kleikamp@oracle.com>
-Autocrypt: addr=dave.kleikamp@oracle.com; prefer-encrypt=mutual; keydata=
- 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
- rnNNL3zBkwD3nWcTxFnX
-Message-ID: <225bea89-73ed-5227-3ca1-d74fc86e986f@oracle.com>
-Date: Fri, 20 Nov 2020 08:59:29 -0600
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.12.0
+ h=Content-Type:To:From:Subject:Message-ID:Date:MIME-Version:Sender:Reply-To
+ :Cc:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+ Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+ References:List-Id:List-Help:List-Unsubscribe:List-Subscribe:List-Post:
+ List-Owner:List-Archive; bh=OF6CiG/SEA3+wIoWj8RIQVN5WsLF1TtgPhPsr1W6Mv8=; b=J
+ 45V1AKXtLrmdLAT5g4NNeOCJ2Frs3c8yrHmda/LM8wnfU4Zg+++WwkefYulH0kqxi9Iuure+O2S7+
+ RYtSR4APZdVW0YtBw/bqiKidcAI7XiCmVSIEu8K2G8BMmwBfOawz1roIWwH3B3iw9JBqpCVC+l4BS
+ Ri9kv4KOhIKzUoPA=;
+Received: from mail-io1-f70.google.com ([209.85.166.70])
+ by sfi-mx-1.v28.lw.sourceforge.com with esmtps
+ (TLSv1.2:ECDHE-RSA-AES128-GCM-SHA256:128) (Exim 4.92.2)
+ id 1kg88E-003C5g-JR
+ for jfs-discussion@lists.sourceforge.net; Fri, 20 Nov 2020 15:15:29 +0000
+Received: by mail-io1-f70.google.com with SMTP id v15so7642587ioq.16
+ for <jfs-discussion@lists.sourceforge.net>;
+ Fri, 20 Nov 2020 07:15:26 -0800 (PST)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:date:message-id:subject:from:to;
+ bh=OF6CiG/SEA3+wIoWj8RIQVN5WsLF1TtgPhPsr1W6Mv8=;
+ b=F73UpxK1MwnBqpEbDGnDjiI225A8gOSBQcEdnRBxN7TBA6BYXaYYZyuY7xscoHYCsb
+ IavsJEmYNAsLhjEiR9H/+mkTQA+gtQshE4LXY3rrZBqaLSKWFpDmW4A0pyXBX9Bx/eRy
+ ZNewPykJF1bc5U7kdd/pnq39okyBThM+Tbxm68wunyNzSXh1Gz97puFxQrqmCE8VspFC
+ icVWa1sYfFbDcPKBS/mxaHBsbRwlxIJu54pQ7nLu3QAmItAbTx5jx5ZH0Lmv+WYxrOKB
+ WxfuIt0oz1LtLaq8kgY5FO7JJjDJOZW38QBIWaKd3vWEIXKMop+fA7Dtzzz9z+9gngVF
+ mT2w==
+X-Gm-Message-State: AOAM530CJ+zpfpacTnyA6VZiP7zAw9La1x1eag8HTIwHnzxZc0C4jqWF
+ O+eFC7cH0GXV9b9Z2T7Kt5nnfiI0xwG2wbVzH9gDANXP5svn
+X-Google-Smtp-Source: ABdhPJx12JrSVAVPAQQFWy+FWCXh+eEQKGbT2F9NBEefXtNUuGYl3APQZzstxDao66GEVac1ufo7IX3SsgN80cI57AGvL2aHdgTC
 MIME-Version: 1.0
-In-Reply-To: <CAFcO6XOvx2W1EvN7PORomgYj4U7kcyzjBC=OiQp9bfRZ33gBMg@mail.gmail.com>
-Content-Language: en-US
-X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9810
- signatures=668682
-X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 mlxlogscore=999
- malwarescore=0
- mlxscore=0 bulkscore=0 suspectscore=0 adultscore=0 spamscore=0
- phishscore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.12.0-2009150000 definitions=main-2011200103
-X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9810
- signatures=668682
-X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 suspectscore=0
- phishscore=0
- adultscore=0 priorityscore=1501 bulkscore=0 clxscore=1015 mlxlogscore=999
- malwarescore=0 mlxscore=0 spamscore=0 lowpriorityscore=0 impostorscore=0
- classifier=spam adjust=0 reason=mlx scancount=1 engine=8.12.0-2009150000
- definitions=main-2011200103
-X-Spam-Score: -0.1 (/)
+X-Received: by 2002:a92:ae0e:: with SMTP id s14mr23832161ilh.94.1605885320838; 
+ Fri, 20 Nov 2020 07:15:20 -0800 (PST)
+Date: Fri, 20 Nov 2020 07:15:20 -0800
+X-Google-Appengine-App-Id: s~syzkaller
+X-Google-Appengine-App-Id-Alias: syzkaller
+Message-ID: <00000000000019465505b48b50d1@google.com>
+From: syzbot <syzbot+aa12d6106ea4ca1b6aae@syzkaller.appspotmail.com>
+To: jfs-discussion@lists.sourceforge.net, linux-kernel@vger.kernel.org, 
+ shaggy@kernel.org, syzkaller-bugs@googlegroups.com
+X-Spam-Score: 0.6 (/)
 X-Spam-Report: Spam Filtering performed by mx.sourceforge.net.
  See http://spamassassin.org/tag/ for more details.
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ 0.0 URIBL_BLOCKED ADMINISTRATOR NOTICE: The query to URIBL was blocked.
+ See
+ http://wiki.apache.org/spamassassin/DnsBlocklists#dnsbl-block
+ for more information. [URIs: googlegroups.com]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/, no
+ trust [209.85.166.70 listed in list.dnswl.org]
+ 0.3 FROM_LOCAL_HEX         From: localpart has long hexadecimal sequence
  -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [141.146.126.78 listed in wl.mailspike.net]
- -0.1 DKIM_VALID_AU Message has a valid DKIM or DK signature from author's
- domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature,
- not necessarily valid
- -0.0 NICE_REPLY_A           Looks like a legit reply (A)
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - High trust sender
-X-Headers-End: 1kg7uv-00AbZQ-7y
-Subject: Re: [Jfs-discussion] UBSAN: array-index-out-of-bounds in dbAdjTree
+ [209.85.166.70 listed in wl.mailspike.net]
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level mail
+ domains are different
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+X-Headers-End: 1kg88E-003C5g-JR
+X-Mailman-Approved-At: Fri, 20 Nov 2020 15:24:10 +0000
+Subject: [Jfs-discussion] memory leak in new_inode
 X-BeenThere: jfs-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -166,94 +95,65 @@ List-Post: <mailto:jfs-discussion@lists.sourceforge.net>
 List-Help: <mailto:jfs-discussion-request@lists.sourceforge.net?subject=help>
 List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/jfs-discussion>, 
  <mailto:jfs-discussion-request@lists.sourceforge.net?subject=subscribe>
-Cc: jfs-discussion@lists.sourceforge.net,
- syzkaller-bugs <syzkaller-bugs@googlegroups.com>, linux-kernel@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Errors-To: jfs-discussion-bounces@lists.sourceforge.net
 
-On 11/20/20 3:52 AM, butt3rflyh4ck wrote:
-> You are welcome and have you submitted the patch to linux upstream ?
-> If you have no time do that and I can do it.
+Hello,
 
-Yes, it's in linux-next now. I'll push it to upstream in the v5.11 window.
+syzbot found the following issue on:
 
-Shaggy
+HEAD commit:    c2e7554e Merge tag 'gfs2-v5.10-rc4-fixes' of git://git.ker..
+git tree:       upstream
+console output: https://syzkaller.appspot.com/x/log.txt?x=1362415a500000
+kernel config:  https://syzkaller.appspot.com/x/.config?x=dc8ee843c1fc6693
+dashboard link: https://syzkaller.appspot.com/bug?extid=aa12d6106ea4ca1b6aae
+compiler:       gcc (GCC) 10.1.0-syz 20200507
+syz repro:      https://syzkaller.appspot.com/x/repro.syz?x=13a79ea6500000
+C reproducer:   https://syzkaller.appspot.com/x/repro.c?x=15b62d72500000
 
-> 
-> Regard,
->  butt3rflyh4ck.
-> 
-> On Sun, Nov 15, 2020 at 12:17 AM Dave Kleikamp <dave.kleikamp@oracle.com> wrote:
->>
->> Thanks for reporting and testing this!
->>
->> Shaggy
->>
->> On 11/14/20 7:55 AM, butt3rflyh4ck wrote:
->>> Yes, I have tested the patch, it seem to fix the problem.
->>>
->>> Regard,
->>>  butt3rflyh4ck.
->>>
->>> On Sat, Nov 14, 2020 at 5:16 AM Dave Kleikamp <dave.kleikamp@oracle.com> wrote:
->>>>
->>>> On 10/8/20 12:00 PM, butt3rflyh4ck wrote:
->>>>> I report a array-index-out-of-bounds bug (in linux-5.9.0-rc6) found by
->>>>> kernel fuzz.
->>>>>
->>>>> kernel config: https://github.com/butterflyhack/syzkaller-fuzz/blob/master/v5.9.0-rc6-config
->>>>>
->>>>> and can reproduce.
->>>>>
->>>>> the dmtree_t is that
->>>>> typedef union dmtree {
->>>>> struct dmaptree t1;
->>>>> struct dmapctl t2;
->>>>> } dmtree_t;
->>>>>
->>>>> the dmaptree is that
->>>>> struct dmaptree {
->>>>> __le32 nleafs; /* 4: number of tree leafs */
->>>>> __le32 l2nleafs; /* 4: l2 number of tree leafs */
->>>>> __le32 leafidx; /* 4: index of first tree leaf */
->>>>> __le32 height; /* 4: height of the tree */
->>>>> s8 budmin; /* 1: min l2 tree leaf value to combine */
->>>>> s8 stree[TREESIZE]; /* TREESIZE: tree */
->>>>> u8 pad[2]; /* 2: pad to word boundary */
->>>>> };
->>>>> the TREESIZE is totally 341, but the leafidx type is __le32.
->>>>
->>>> Does this patch fix the problem?
->>>>
->>>> jfs: Fix array index bounds check in dbAdjTree
->>>>
->>>> Bounds checking tools can flag a bug in dbAdjTree() for an array index
->>>> out of bounds in dmt_stree. Since dmt_stree can refer to the stree in
->>>> both structures dmaptree and dmapctl, use the larger array to eliminate
->>>> the false positive.
->>>>
->>>> Signed-off-by: Dave Kleikamp <dave.kleikamp@oracle.com>
->>>> ---
->>>>  fs/jfs/jfs_dmap.h | 2 +-
->>>>  1 file changed, 1 insertion(+), 1 deletion(-)
->>>>
->>>> diff --git a/fs/jfs/jfs_dmap.h b/fs/jfs/jfs_dmap.h
->>>> index 29891fad3f09..aa03a904d5ab 100644
->>>> --- a/fs/jfs/jfs_dmap.h
->>>> +++ b/fs/jfs/jfs_dmap.h
->>>> @@ -183,7 +183,7 @@ typedef union dmtree {
->>>>  #define        dmt_leafidx     t1.leafidx
->>>>  #define        dmt_height      t1.height
->>>>  #define        dmt_budmin      t1.budmin
->>>> -#define        dmt_stree       t1.stree
->>>> +#define        dmt_stree       t2.stree
->>>>
->>>>  /*
->>>>   *     on-disk aggregate disk allocation map descriptor.
->>>> --
->>>> 2.29.2
->>>>
+IMPORTANT: if you fix the issue, please add the following tag to the commit:
+Reported-by: syzbot+aa12d6106ea4ca1b6aae@syzkaller.appspotmail.com
+
+executing program
+executing program
+BUG: memory leak
+unreferenced object 0xffff88810ecc2a80 (size 1280):
+  comm "syz-executor002", pid 8495, jiffies 4294947195 (age 8.020s)
+  hex dump (first 32 bytes):
+    00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+    00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+  backtrace:
+    [<00000000c920fbb4>] jfs_alloc_inode+0x18/0x60 fs/jfs/super.c:105
+    [<00000000c664943b>] alloc_inode+0x27/0x100 fs/inode.c:234
+    [<0000000072a6900b>] new_inode_pseudo fs/inode.c:930 [inline]
+    [<0000000072a6900b>] new_inode+0x23/0x100 fs/inode.c:959
+    [<0000000022579323>] diReadSpecial+0x28/0x1e0 fs/jfs/jfs_imap.c:424
+    [<0000000035d6f1c1>] jfs_mount+0xa7/0x280 fs/jfs/jfs_mount.c:107
+    [<00000000db4745f5>] jfs_fill_super+0x1ad/0x3a0 fs/jfs/super.c:562
+    [<00000000deb24c86>] mount_bdev+0x223/0x260 fs/super.c:1419
+    [<00000000355bbcf1>] legacy_get_tree+0x2b/0x90 fs/fs_context.c:592
+    [<00000000b4778640>] vfs_get_tree+0x28/0x100 fs/super.c:1549
+    [<00000000661148dd>] do_new_mount fs/namespace.c:2875 [inline]
+    [<00000000661148dd>] path_mount+0xc5e/0x1170 fs/namespace.c:3205
+    [<00000000184bf2c6>] do_mount fs/namespace.c:3218 [inline]
+    [<00000000184bf2c6>] __do_sys_mount fs/namespace.c:3426 [inline]
+    [<00000000184bf2c6>] __se_sys_mount fs/namespace.c:3403 [inline]
+    [<00000000184bf2c6>] __x64_sys_mount+0x18e/0x1d0 fs/namespace.c:3403
+    [<000000004af9fc85>] do_syscall_64+0x2d/0x70 arch/x86/entry/common.c:46
+    [<000000004cba2559>] entry_SYSCALL_64_after_hwframe+0x44/0xa9
+
+
+
+---
+This report is generated by a bot. It may contain errors.
+See https://goo.gl/tpsmEJ for more information about syzbot.
+syzbot engineers can be reached at syzkaller@googlegroups.com.
+
+syzbot will keep track of this issue. See:
+https://goo.gl/tpsmEJ#status for how to communicate with syzbot.
+syzbot can test patches for this issue, for details see:
+https://goo.gl/tpsmEJ#testing-patches
 
 
 _______________________________________________
