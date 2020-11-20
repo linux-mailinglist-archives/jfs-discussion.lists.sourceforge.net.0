@@ -2,26 +2,26 @@ Return-Path: <jfs-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+jfs-discussion@lfdr.de
 Delivered-To: lists+jfs-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3CD362BA68A
-	for <lists+jfs-discussion@lfdr.de>; Fri, 20 Nov 2020 10:51:17 +0100 (CET)
-Received: from [127.0.0.1] (helo=sfs-ml-1.v29.lw.sourceforge.com)
-	by sfs-ml-1.v29.lw.sourceforge.com with esmtp (Exim 4.90_1)
+	by mail.lfdr.de (Postfix) with ESMTPS id 91E852BA693
+	for <lists+jfs-discussion@lfdr.de>; Fri, 20 Nov 2020 10:53:24 +0100 (CET)
+Received: from [127.0.0.1] (helo=sfs-ml-2.v29.lw.sourceforge.com)
+	by sfs-ml-2.v29.lw.sourceforge.com with esmtp (Exim 4.90_1)
 	(envelope-from <jfs-discussion-bounces@lists.sourceforge.net>)
-	id 1kg34B-0006db-0G; Fri, 20 Nov 2020 09:50:55 +0000
+	id 1kg36J-0004SO-Om; Fri, 20 Nov 2020 09:53:07 +0000
 Received: from [172.30.20.202] (helo=mx.sourceforge.net)
- by sfs-ml-1.v29.lw.sourceforge.com with esmtps
+ by sfs-ml-2.v29.lw.sourceforge.com with esmtps
  (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
- (envelope-from <butterflyhuangxx@gmail.com>) id 1kg349-0006dB-6l
- for jfs-discussion@lists.sourceforge.net; Fri, 20 Nov 2020 09:50:53 +0000
+ (envelope-from <butterflyhuangxx@gmail.com>) id 1kg36I-0004SH-Jq
+ for jfs-discussion@lists.sourceforge.net; Fri, 20 Nov 2020 09:53:06 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=sourceforge.net; s=x; h=Content-Type:Cc:To:Subject:Message-ID:Date:From:
  In-Reply-To:References:MIME-Version:Sender:Reply-To:Content-Transfer-Encoding
  :Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
  Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=v+lvM0oe2csxAdgkijCshZJQ9aSiN+9+WmHYhC9WJtA=; b=FEpIth8IELJb28lFbiZGda+Job
- RRDTg+z34GCl9mSgjpc3nhI6HSjF3ZTcwq6GJpN7HhLlfssADylaMI+HoTtWLIJkHDdXtDnvUFYtA
- Syd3XaICL8KaoFTUJVY+OLfR5ofc/5cqHJ14G9M8w9dXzyukj/HB2YT4pVwrdDOttBeY=;
+ bh=PBTsmNKv8vadYJg1/1024EHHBUem4NxR3vymSZL1jbg=; b=RjjGdxQT4XE3kTW5AJH5J18Izr
+ JVsKTnkepviECKaRcWFnzzyaf5pX1S5otYhJUpQqD0SP90XhuNii3RsDAUTN9vrTzJr2dHlsK2c35
+ QZl+9rx7eeo9ynrAIowwMNn0ftYEBWQoqJSWYc6RCzPjzOlke2m9Wex9MRP+KVp0JjU8=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
  h=Content-Type:Cc:To:Subject:Message-ID:Date:From:In-Reply-To:References:
@@ -29,42 +29,42 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
  :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
  List-Post:List-Owner:List-Archive;
- bh=v+lvM0oe2csxAdgkijCshZJQ9aSiN+9+WmHYhC9WJtA=; b=S0dOqEDrWg188K5x7rOayN4miR
- bj3p4vaLcpWxUuTjDhlMSXQU0OitVo4iAzRHBIPth7cBlbmharIPMAJvBdFWJuHO7jHPJ1sRETzQc
- g6H0OWf5IPvg5V/1LWUBytcK/2Y38DzNxflJ/QkbjMNyzmvqTrBFkJ23p9APxlDtVWAk=;
-Received: from mail-lj1-f195.google.com ([209.85.208.195])
+ bh=PBTsmNKv8vadYJg1/1024EHHBUem4NxR3vymSZL1jbg=; b=VCfA37wPc9NpGLWftHTkR/OYN/
+ hPtT1Lz/N35Ej7vaA4sVGwEuAZkXoH9+qyXFZmTPcUnIJ5rT5VSmTxccv2qIdC0nk/IeAxMMCu2jO
+ Ww3+3w0Yd9xR5ayDZNQRzSWVrKVAXYeYJA0gY/kpQ3SpsU/EeRh0LfoEtUHhQGWOYBKA=;
+Received: from mail-lf1-f66.google.com ([209.85.167.66])
  by sfi-mx-1.v28.lw.sourceforge.com with esmtps
  (TLSv1.2:ECDHE-RSA-AES128-GCM-SHA256:128) (Exim 4.92.2)
- id 1kg345-002ZC1-Hm
- for jfs-discussion@lists.sourceforge.net; Fri, 20 Nov 2020 09:50:53 +0000
-Received: by mail-lj1-f195.google.com with SMTP id r17so9405810ljg.5
+ id 1kg36D-002ZW2-Bz
+ for jfs-discussion@lists.sourceforge.net; Fri, 20 Nov 2020 09:53:06 +0000
+Received: by mail-lf1-f66.google.com with SMTP id j205so12564591lfj.6
  for <jfs-discussion@lists.sourceforge.net>;
- Fri, 20 Nov 2020 01:50:49 -0800 (PST)
+ Fri, 20 Nov 2020 01:53:01 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=v+lvM0oe2csxAdgkijCshZJQ9aSiN+9+WmHYhC9WJtA=;
- b=qtMggYAdJf1aw4+cMpfp/iom82fLnRQp6EBvBByIIavdGTqYBTerpCmF6Bkn0HlXfy
- 9ODbKv0z1uWs0g8Wzcdkeqwe7Jq3wFv132D0+fgkw4T1YT3EC6b2DlsouJ6Fah7uvBoz
- WqYY2Z58ts/+lxxErpcIkuSSVOq6HfrCNYAio+odE6ORDsrSqUgtp8fPuIulyzCzDcXw
- kuHBBeAOw3kKoh7Ui8H25NTALqb+cMWmPHq2+zRLQ21IavnzdLcK3X9ANSq/14ymK30L
- MeycMwP6XNdd1ZJiTEwnuAxdek8Qvdpnjwv3GJvJ4Cc622BUBeh7Srfbrw5KuRZZUupJ
- Lo/g==
+ :cc; bh=PBTsmNKv8vadYJg1/1024EHHBUem4NxR3vymSZL1jbg=;
+ b=fisWQZXUBIbv24FaTk612Nxy3lgfUzxISMMVSOnsg25d+wmMusuLXY/3ULelqap4nK
+ MEhR3Z7RnJFBv2j/bEMM3jnT8HBZZA4uIH0Mpu6TyHuB+xLBbcubXs8zc/dzq7L31p4P
+ UuWZEe4GlOdeSdWbVN0CGE/VvSjXdpMcfMG4cmYwwb/XCj8q7ae9F/IQBk/GTujSrHqt
+ xC6K0mTcaO3wNH2fAKRseLo2MPLJYWATL16BtbKB6d5Ikrc5JtbVz94CKNoaBkbhVQae
+ +tLzSA72EC5LUegS+sno/1Bi7lm4ql72ydNSZXgjmRpbaWns9gxxjvtU3aWyBRJX50jy
+ LLgg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=v+lvM0oe2csxAdgkijCshZJQ9aSiN+9+WmHYhC9WJtA=;
- b=mOKtcqwslxaz7qnW2JQc0g9xx8alcweyS+1Mv/YSPhkKrtjE+dnuULyV4W8+3XDKU6
- S9Ey7mMVIltNizO7eMJMkxAuPlGEjnA1Feiq/x/CgXls2Pkiggqe3iX7UBd2TWkUANS3
- JozP7oiQh2dMBDPSyNNovp7yXl0/XEigqE+wEhuBI1joHPZwTUYXNRNN3rSEMQ3J7WOL
- whajpEO0F5NjmeXT+KZYVnTHFS8NuYhK5P7oicegq7tyY0SzllpVGSyWJNeJn32e/bnN
- CPJTMi1zH2wPS+0DhL+5DQFnc5yKyRrBUzUJUfdQ5tNI2lfyZQXU8945117kCejDyh6L
- Vo9Q==
-X-Gm-Message-State: AOAM531dwiWtU6kdDllRVyCPSTu1AGjZle4zITgKEi8pDDlfDnsmgUOH
- FRKozBlpTp9slzTNnFOdrsnFVZi6HE6e0FCeytdddSczOE8=
-X-Google-Smtp-Source: ABdhPJyW/LZr4X9CYLjbuFt8en5R66Y7CjYyYmY9uPKecVPFtsgX++l7o3f2yu2M+CANSzxoxSzmK25HTlnKLb9HLvs=
-X-Received: by 2002:a2e:54e:: with SMTP id 75mr7390121ljf.381.1605865835824;
- Fri, 20 Nov 2020 01:50:35 -0800 (PST)
+ bh=PBTsmNKv8vadYJg1/1024EHHBUem4NxR3vymSZL1jbg=;
+ b=t4vWy4D7GBRSzN9zNPr16HgFaEAaBV+Y2FcDEUEd6aYf32QLLfA+TTUllRQ9oNG9XG
+ wtz23SbGHjOYFVk5F8HbMiBr+YQydHL9fOXAdSB0CB1bhgh7PrY89YS1r+FeYxMsP53V
+ T2MyBuOCBQE6t874AS+ptL2RsTHXD6/e/fXwH2rmrCOrxhM/8S0NfyPQgOyb06hISLqT
+ GNgWNWR4VuRRXIJHW30BetId5F2/phsKcc7CJRvdsv1rt5GZI1s6g3QZVECpwwuWme0l
+ rc77sp+ZNrv0r6LJfAqQ4sbcMI8m17nD8+UQikSy0RPFOR33oXUvxt33lQ1g691OConO
+ bj7A==
+X-Gm-Message-State: AOAM532X/9nqV2i/bL4r1PeKXqwLDHMZD3hqomGJ04ryDZ+S48gDzCWF
+ ppfOcO9jZgplGb3Mb+c4cyiP9GMf3f8yWtEgWiw=
+X-Google-Smtp-Source: ABdhPJx7IrNUc4/8BSBYVjO06wUwht/PU30NkY5hhoJJbLJ/3l7pec9BERrOd2eA/gC17gHvg8MGafFJO4cnYsgJpRU=
+X-Received: by 2002:a19:6e4c:: with SMTP id q12mr7149047lfk.162.1605865967567; 
+ Fri, 20 Nov 2020 01:52:47 -0800 (PST)
 MIME-Version: 1.0
 References: <CAFcO6XN=cd=_K_2AY9OL7f+HWsazY-nJ81Ufrw4azvkjj-Mpng@mail.gmail.com>
  <e8c8ef27-1f09-40b5-e5e4-facfcc9956dd@oracle.com>
@@ -72,8 +72,8 @@ References: <CAFcO6XN=cd=_K_2AY9OL7f+HWsazY-nJ81Ufrw4azvkjj-Mpng@mail.gmail.com>
  <298485e2-01de-048d-5515-44ac254167e4@oracle.com>
 In-Reply-To: <298485e2-01de-048d-5515-44ac254167e4@oracle.com>
 From: butt3rflyh4ck <butterflyhuangxx@gmail.com>
-Date: Fri, 20 Nov 2020 17:50:24 +0800
-Message-ID: <CAFcO6XOOOCLwdcK3enSV3Ap-PZmY8RTu2ifgKRJX+pdmhaq5uA@mail.gmail.com>
+Date: Fri, 20 Nov 2020 17:52:36 +0800
+Message-ID: <CAFcO6XOvx2W1EvN7PORomgYj4U7kcyzjBC=OiQp9bfRZ33gBMg@mail.gmail.com>
 To: Dave Kleikamp <dave.kleikamp@oracle.com>
 X-Spam-Score: -0.1 (/)
 X-Spam-Report: Spam Filtering performed by mx.sourceforge.net.
@@ -81,17 +81,16 @@ X-Spam-Report: Spam Filtering performed by mx.sourceforge.net.
  0.0 FREEMAIL_FROM Sender email is commonly abused enduser mail provider
  (butterflyhuangxx[at]gmail.com)
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/, no
- trust [209.85.208.195 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ trust [209.85.167.66 listed in list.dnswl.org]
  -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.208.195 listed in wl.mailspike.net]
+ [209.85.167.66 listed in wl.mailspike.net]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_AU Message has a valid DKIM or DK signature from author's
  domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature,
  not necessarily valid
-X-Headers-End: 1kg345-002ZC1-Hm
+X-Headers-End: 1kg36D-002ZW2-Bz
 Subject: Re: [Jfs-discussion] UBSAN: array-index-out-of-bounds in dbAdjTree
 X-BeenThere: jfs-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
@@ -112,6 +111,9 @@ Errors-To: jfs-discussion-bounces@lists.sourceforge.net
 
 You are welcome and have you submitted the patch to linux upstream ?
 If you have no time do that and I can do it.
+
+Regard,
+ butt3rflyh4ck.
 
 On Sun, Nov 15, 2020 at 12:17 AM Dave Kleikamp <dave.kleikamp@oracle.com> wrote:
 >
