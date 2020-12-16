@@ -2,94 +2,67 @@ Return-Path: <jfs-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+jfs-discussion@lfdr.de
 Delivered-To: lists+jfs-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4F7092D9E83
-	for <lists+jfs-discussion@lfdr.de>; Mon, 14 Dec 2020 19:09:06 +0100 (CET)
-Received: from [127.0.0.1] (helo=sfs-ml-2.v29.lw.sourceforge.com)
-	by sfs-ml-2.v29.lw.sourceforge.com with esmtp (Exim 4.90_1)
+	by mail.lfdr.de (Postfix) with ESMTPS id 211AA2DB9B7
+	for <lists+jfs-discussion@lfdr.de>; Wed, 16 Dec 2020 04:44:54 +0100 (CET)
+Received: from [127.0.0.1] (helo=sfs-ml-4.v29.lw.sourceforge.com)
+	by sfs-ml-4.v29.lw.sourceforge.com with esmtp (Exim 4.90_1)
 	(envelope-from <jfs-discussion-bounces@lists.sourceforge.net>)
-	id 1kosGt-0001EI-5Z; Mon, 14 Dec 2020 18:08:31 +0000
+	id 1kpNjq-0003Xv-Ed; Wed, 16 Dec 2020 03:44:30 +0000
 Received: from [172.30.20.202] (helo=mx.sourceforge.net)
- by sfs-ml-2.v29.lw.sourceforge.com with esmtps
+ by sfs-ml-4.v29.lw.sourceforge.com with esmtps
  (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
- (envelope-from <dkleikamp@gmail.com>) id 1kosGb-0001DW-Jc
- for jfs-discussion@lists.sourceforge.net; Mon, 14 Dec 2020 18:08:13 +0000
+ (envelope-from <pr-tracker-bot@kernel.org>) id 1kpNjo-0003Xn-OZ
+ for jfs-discussion@lists.sourceforge.net; Wed, 16 Dec 2020 03:44:28 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=sourceforge.net; s=x; h=Content-Transfer-Encoding:Content-Type:MIME-Version
- :Date:Message-ID:Subject:From:To:Sender:Reply-To:Cc:Content-ID:
- Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
- :Resent-Message-ID:In-Reply-To:References:List-Id:List-Help:List-Unsubscribe:
+ d=sourceforge.net; s=x; h=Cc:To:Date:Message-Id:References:In-Reply-To:From:
+ Subject:Sender:Reply-To:MIME-Version:Content-Type:Content-Transfer-Encoding:
+ Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
+ Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=hqM1QqKek5Stjrm2s9QbhrJb51ijk6id9KDJs8a9Grs=; b=IA5pZ53cX0kjZovBnmZUfa/Rli
- jXWaFtQRW/FtAlmR7e2G/FyhB7zkLpYD6Fyg0JyDo6uT9vV5HmLIZeKOZ4+3YQAMK9en6bnZNC7dq
- /eA9aeY9DGpuFLi4aTKljy2/DBcDFYGchNjtbmk9A5+9wpsePCyXg4ipTEfOOZESIcRk=;
+ bh=EvMmvBNEf44vTrG4V7WIECItOrzR9jQBcXxy5dtnfkc=; b=JoHhqobkY/bEUVIx31kSIHip0j
+ lQgImegADADyudDARr9+C3YI0VG3t3p1fU1045PT5oAm0PG/hy4OvEUdwc1cZAYHY8hGtAxKtGJ68
+ Gacsw61KLC9wkXIs+RClawzpJfJStBndNv/6mryMVrbnK15+kPDbVoqh5RWGy2uMFUZE=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
- h=Content-Transfer-Encoding:Content-Type:MIME-Version:Date:Message-ID:
- Subject:From:To:Sender:Reply-To:Cc:Content-ID:Content-Description:Resent-Date
- :Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
- References:List-Id:List-Help:List-Unsubscribe:List-Subscribe:List-Post:
- List-Owner:List-Archive; bh=hqM1QqKek5Stjrm2s9QbhrJb51ijk6id9KDJs8a9Grs=; b=j
- slsi0aQFsYyNsmLzk3ovRcdhyHRz6p6Mi+jlHbkCjaWzuyd65P88r5SZBbSHEFrgKkGZkPt06nXCH
- Et9oIXoYS2RA0Q694IToBfvCCTs1hiitSnwqcSt38UEQ+816Qv73AuCNCIKKtH/m/SqqOYl4Wxe8o
- IuD7jXc807eDh+IA=;
-Received: from mail-oi1-f196.google.com ([209.85.167.196])
- by sfi-mx-1.v28.lw.sourceforge.com with esmtps
- (TLSv1.2:ECDHE-RSA-AES128-GCM-SHA256:128) (Exim 4.92.2)
- id 1kosGN-00CqFv-6g
- for jfs-discussion@lists.sourceforge.net; Mon, 14 Dec 2020 18:08:13 +0000
-Received: by mail-oi1-f196.google.com with SMTP id s2so20171271oij.2
- for <jfs-discussion@lists.sourceforge.net>;
- Mon, 14 Dec 2020 10:07:59 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=to:from:subject:message-id:date:user-agent:mime-version
- :content-language:content-transfer-encoding;
- bh=hqM1QqKek5Stjrm2s9QbhrJb51ijk6id9KDJs8a9Grs=;
- b=WZoEYA4q9rA3kw5q0YftWLtidKXiJF09Hrz1wT557UKnRUwiMwz7S2TNSNCXNZoDzv
- ViwJHL4siuujNgH+OD+AIRVskJvpd4kWl0gum8zl4GmN5/9SHl6ps9HKf/M9B8JsmtWq
- 9CVPRLmk8p6ah6+hOVzzg47IjmPJIPBSE4H6hAN+A4DzU9eYFwjfZNStZl5ZIeM7+iyc
- JRmo44diyTFTc63qWxhBa4cjU3E1V9oqRnphuSYNTH0avwqsnZrANk9OK7sp7ZWnQtQ0
- IGcoi2hA5jvisz4Bb6IdQDOZ+nyaNswjnuOhoS59X8ghjHzALyYmzTGn6g+pw7H7nw+7
- hVrA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:to:from:subject:message-id:date:user-agent
- :mime-version:content-language:content-transfer-encoding;
- bh=hqM1QqKek5Stjrm2s9QbhrJb51ijk6id9KDJs8a9Grs=;
- b=bEZtZgAXmh/a84SIkcfMKmv+gCAUs+kLmyn1mpLiPJJWRgC2e83I3MOMvhH/+UOatv
- KpzvLdzn6s8tOK+LGdcs9ltZUfLkJ2EmOQWDfBxfKsI/VcsKtXEW7FplAhkUeHD2MEuc
- qGQp4mTIZfA+YlAQRC/bPk1oYnZG72Me0JsaEDarI5hxsTVxReVxjc03gOG9GSvA0TM3
- V418KFKVNu1ZZzKZSCQM9YnyMdrxbIz86xYpb7WdyTh+P049cKHI5UFg5/Dr+uV9a9mN
- mJHNuPwsl552zvUnlypjB7x0tIr9HEEprUe2+MUj2gwHZ6ISHN04aTdN/jQbV6uNGK2m
- 5D7g==
-X-Gm-Message-State: AOAM533nnNRy2tX96Qm95zRGbbknCGSTXY4djFZSO/ghwPogqOwXgqJx
- 44V0rY0BuX9Xb1Uv/pMzr7Vn4KSm95YZMQ==
-X-Google-Smtp-Source: ABdhPJzfSiqe6ltdpwfO5/Va5dTpFhXc03Wu3o1LM44aH+KJMLScTSXpZOKYNIWBuLRTkXGCgw0wdQ==
-X-Received: by 2002:aca:e007:: with SMTP id x7mr2338911oig.8.1607969273153;
- Mon, 14 Dec 2020 10:07:53 -0800 (PST)
-Received: from [192.168.0.190] (cpe-68-201-65-98.stx.res.rr.com.
- [68.201.65.98])
- by smtp.googlemail.com with ESMTPSA id o6sm4056123oon.7.2020.12.14.10.07.51
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Mon, 14 Dec 2020 10:07:51 -0800 (PST)
-To: Linus Torvalds <torvalds@linux-foundation.org>,
- LKML <linux-kernel@vger.kernel.org>,
- "jfs-discussion@lists.sourceforge.net" <jfs-discussion@lists.sourceforge.net>
-From: Dave Kleikamp <dkleikamp@gmail.com>
-Message-ID: <819c9249-ee95-7d67-0577-b9b1f7c09832@gmail.com>
-Date: Mon, 14 Dec 2020 12:07:50 -0600
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:78.0) Gecko/20100101
- Thunderbird/78.4.3
-MIME-Version: 1.0
-Content-Language: en-US
+ h=Cc:To:Date:Message-Id:References:In-Reply-To:From:Subject:Sender:Reply-To
+ :MIME-Version:Content-Type:Content-Transfer-Encoding:Content-ID:
+ Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+ :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
+ List-Post:List-Owner:List-Archive;
+ bh=EvMmvBNEf44vTrG4V7WIECItOrzR9jQBcXxy5dtnfkc=; b=AhaDcmCPnmx2/ITCe1Ekg1qJbf
+ n9t8f9ZkwgEE2ED3wsKUM6CyZ7fSqfR14tnIMDGpAkMxcWe9gaFiqzZMCXUAmG54ItRF72Jf5Lotk
+ cXWDV7S1OIy1Bw8GXDIdObe7UJThOI/wnqsV0alV/Ul9JPPL7fDfdAfUouB14Tld1yGE=;
+Received: from mail.kernel.org ([198.145.29.99])
+ by sfi-mx-3.v28.lw.sourceforge.com with esmtps
+ (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.92.2)
+ id 1kpNjb-00FyBs-W6
+ for jfs-discussion@lists.sourceforge.net; Wed, 16 Dec 2020 03:44:28 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=k20201202; t=1608090250;
+ bh=0vMZbc838Z2+PRYqILASr0ORQPRMUSm2pHdwiVFzahc=;
+ h=From:In-Reply-To:References:Date:To:Cc:From;
+ b=FkKcgVu0h/c4z7g2OhvHJyzk2XDjaQJfdKu9LxfXL93g4GN4B2WMuNQP7Eqe3xmj2
+ jds8Y5WqcCnWWFUoHaeEA9YGhTkwgkHgD6izBUxppIj/zRqgdTyKl0MarBX+xBSw+G
+ iDZ6sl+T4/zJN8FepAvQ8/kyLU7Uk/vi0dxYUTbKLN2DkAdrCRFoRtTa2+bNtTWw8A
+ L0iPDwB/Fk92fwt/l8njnmHZL2ArdNaTxvDsFIyMZrPe7SpsOez0D0b9kFIrOflf/+
+ 28P02bTgN0wurIfhC91rn0effcD3T3xJfhM0Oe9tWblhKlin1OMK/J47jdW9cfA1Gz
+ VattIVejEhkUQ==
+From: pr-tracker-bot@kernel.org
+In-Reply-To: <819c9249-ee95-7d67-0577-b9b1f7c09832@gmail.com>
+References: <819c9249-ee95-7d67-0577-b9b1f7c09832@gmail.com>
+X-PR-Tracked-List-Id: <linux-kernel.vger.kernel.org>
+X-PR-Tracked-Message-Id: <819c9249-ee95-7d67-0577-b9b1f7c09832@gmail.com>
+X-PR-Tracked-Remote: git://github.com/kleikamp/linux-shaggy.git tags/jfs-5.11
+X-PR-Tracked-Commit-Id: c61b3e4839007668360ed8b87d7da96d2e59fc6c
+X-PR-Merge-Tree: torvalds/linux.git
+X-PR-Merge-Refname: refs/heads/master
+X-PR-Merge-Commit-Id: 9867cb1fd510187d8f828540bdb48f78fceb70b3
+Message-Id: <160809025049.9893.2284380491965731001.pr-tracker-bot@kernel.org>
+Date: Wed, 16 Dec 2020 03:44:10 +0000
+To: Dave Kleikamp <dkleikamp@gmail.com>
 X-Spam-Score: -0.1 (/)
 X-Spam-Report: Spam Filtering performed by mx.sourceforge.net.
  See http://spamassassin.org/tag/ for more details.
- 0.0 FREEMAIL_FROM Sender email is commonly abused enduser mail provider
- (dkleikamp[at]gmail.com)
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/, no
- trust [209.85.167.196 listed in list.dnswl.org]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.167.196 listed in wl.mailspike.net]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_AU Message has a valid DKIM or DK signature from author's
@@ -97,8 +70,9 @@ X-Spam-Report: Spam Filtering performed by mx.sourceforge.net.
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature,
  not necessarily valid
-X-Headers-End: 1kosGN-00CqFv-6g
-Subject: [Jfs-discussion] [GIT PULL] jfs updates for 5.11
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - High trust sender
+X-Headers-End: 1kpNjb-00FyBs-W6
+Subject: Re: [Jfs-discussion] [GIT PULL] jfs updates for 5.11
 X-BeenThere: jfs-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -110,43 +84,27 @@ List-Post: <mailto:jfs-discussion@lists.sourceforge.net>
 List-Help: <mailto:jfs-discussion-request@lists.sourceforge.net?subject=help>
 List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/jfs-discussion>, 
  <mailto:jfs-discussion-request@lists.sourceforge.net?subject=subscribe>
+Cc: "jfs-discussion@lists.sourceforge.net"
+ <jfs-discussion@lists.sourceforge.net>,
+ Linus Torvalds <torvalds@linux-foundation.org>,
+ LKML <linux-kernel@vger.kernel.org>
+MIME-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Errors-To: jfs-discussion-bounces@lists.sourceforge.net
 
-The following changes since commit 585e5b17b92dead8a3aca4e3c9876fbca5f7e0ba:
+The pull request you sent on Mon, 14 Dec 2020 12:07:50 -0600:
 
-   Merge tag 'fscrypt-for-linus' of git://git.kernel.org/pub/scm/fs/fscrypt/fscrypt (2020-11-12 16:39:58 -0800)
+> git://github.com/kleikamp/linux-shaggy.git tags/jfs-5.11
 
-are available in the Git repository at:
+has been merged into torvalds/linux.git:
+https://git.kernel.org/torvalds/c/9867cb1fd510187d8f828540bdb48f78fceb70b3
 
-   git://github.com/kleikamp/linux-shaggy.git tags/jfs-5.11
+Thank you!
 
-for you to fetch changes up to c61b3e4839007668360ed8b87d7da96d2e59fc6c:
-
-   jfs: Fix array index bounds check in dbAdjTree (2020-11-13 16:03:07 -0600)
-
-----------------------------------------------------------------
-A few jfs fixes
-
-----------------------------------------------------------------
-Dave Kleikamp (1):
-       jfs: Fix array index bounds check in dbAdjTree
-
-Dinghao Liu (1):
-       jfs: Fix memleak in dbAdjCtl
-
-Randy Dunlap (1):
-       jfs: delete duplicated words + other fixes
-
-  fs/jfs/jfs_dmap.c   | 10 +++++++---
-  fs/jfs/jfs_dmap.h   |  2 +-
-  fs/jfs/jfs_extent.c |  2 +-
-  fs/jfs/jfs_extent.h |  2 +-
-  fs/jfs/jfs_logmgr.h |  2 +-
-  fs/jfs/jfs_txnmgr.c |  2 +-
-  fs/jfs/jfs_xtree.c  |  2 +-
-  7 files changed, 13 insertions(+), 9 deletions(-)
+-- 
+Deet-doot-dot, I am a bot.
+https://korg.docs.kernel.org/prtracker.html
 
 
 _______________________________________________
