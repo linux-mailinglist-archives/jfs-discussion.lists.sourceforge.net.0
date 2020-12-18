@@ -2,65 +2,60 @@ Return-Path: <jfs-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+jfs-discussion@lfdr.de
 Delivered-To: lists+jfs-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3A2932DEA0A
-	for <lists+jfs-discussion@lfdr.de>; Fri, 18 Dec 2020 21:15:02 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3821D2DEA14
+	for <lists+jfs-discussion@lfdr.de>; Fri, 18 Dec 2020 21:17:58 +0100 (CET)
 Received: from [127.0.0.1] (helo=sfs-ml-2.v29.lw.sourceforge.com)
 	by sfs-ml-2.v29.lw.sourceforge.com with esmtp (Exim 4.90_1)
 	(envelope-from <jfs-discussion-bounces@lists.sourceforge.net>)
-	id 1kqM98-0000gN-Th; Fri, 18 Dec 2020 20:14:38 +0000
+	id 1kqMC6-0000nn-6r; Fri, 18 Dec 2020 20:17:42 +0000
 Received: from [172.30.20.202] (helo=mx.sourceforge.net)
  by sfs-ml-2.v29.lw.sourceforge.com with esmtps
  (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
- (envelope-from <rdunlap@infradead.org>) id 1kqM97-0000gF-2v
- for jfs-discussion@lists.sourceforge.net; Fri, 18 Dec 2020 20:14:37 +0000
+ (envelope-from <rdunlap@infradead.org>) id 1kqMC4-0000ng-An
+ for jfs-discussion@lists.sourceforge.net; Fri, 18 Dec 2020 20:17:40 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=sourceforge.net; s=x; h=Content-Transfer-Encoding:Content-Type:In-Reply-To:
- MIME-Version:Date:Message-ID:From:References:Cc:To:Subject:Sender:Reply-To:
- Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
- Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
+ d=sourceforge.net; s=x; h=Content-Transfer-Encoding:MIME-Version:Message-Id:
+ Date:Subject:Cc:To:From:Sender:Reply-To:Content-Type:Content-ID:
+ Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+ :Resent-Message-ID:In-Reply-To:References:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=tsFXi74Czj02JDF9/OuTcw7Z9zt3ff2QLJVrYO5uDG4=; b=XcGC3M2//Hp2D7fezRHZDj1ggU
- c72G8ePsdcJjpx4XchCn9bPbN0F2oH6ZENypO1OpEu/Fd4gxJuoKSZjf3VgHRSkGGq72YQsB3dHka
- pLKY5ubGH/69iFeNi+ZRelTXn/s/nukYxWfwMRlRlRG5HX8Xfu2YohXHb8UbVNe2NJjo=;
+ bh=eJib/lfunlqDGDElxLTwFVNpeshIlXQoF4/zK8GXcVc=; b=Ol6icWQjT+Zce/uY9gPlK3APtr
+ ENchdFP1P0AZIAogKc4uY/YDGJf8Xpg5gzi8g/xHsYvTrK92Jk71ggF2/RPmLOZOFG+nc0TvZsZp3
+ 8F6k83AZKllXl1uOqumHe5uMUed8ksm4H+afDhjI8YYw37JyaMmfN9lTL3DrWeiSG2S0=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
- h=Content-Transfer-Encoding:Content-Type:In-Reply-To:MIME-Version:Date:
- Message-ID:From:References:Cc:To:Subject:Sender:Reply-To:Content-ID:
- Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
- :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
- List-Post:List-Owner:List-Archive;
- bh=tsFXi74Czj02JDF9/OuTcw7Z9zt3ff2QLJVrYO5uDG4=; b=IMnZ9n+6JkOA3FBZqUN9cS2UM/
- 5M1feUBUCGSAF6J/2TBiCX+Ed9GBTYYX4cO3s67u1NDcLDhL/X9YcIxX9UlK2fCJgCG5Ytf7acyy3
- 7b8B7hmTGgEcK6NqTtML0p+Rh4LISFwl/WuD6ENW2AQn5a5bj5+uuh+CfGjjLukzFPeE=;
+ h=Content-Transfer-Encoding:MIME-Version:Message-Id:Date:Subject:Cc:To:From
+ :Sender:Reply-To:Content-Type:Content-ID:Content-Description:Resent-Date:
+ Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+ References:List-Id:List-Help:List-Unsubscribe:List-Subscribe:List-Post:
+ List-Owner:List-Archive; bh=eJib/lfunlqDGDElxLTwFVNpeshIlXQoF4/zK8GXcVc=; b=M
+ x9VuXmO85er/HKudLJlSL2GOH7F/zHbY+EyQ+j+Zsq1wOrKIQsAz9UHR/aDEneRIg4uPjQr+PAdAv
+ fs6NNHZlgC+PsPQDd2lhhq8hLAh8p/WxrV6TVBBsj/HyW5Ed5NTpUi8xOGtdbBZhz5mDuCwpHgmRR
+ 6R93EDOeh4d0IDc8=;
 Received: from merlin.infradead.org ([205.233.59.134])
- by sfi-mx-1.v28.lw.sourceforge.com with esmtps
+ by sfi-mx-3.v28.lw.sourceforge.com with esmtps
  (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.92.2)
- id 1kqM90-001s9O-DY
- for jfs-discussion@lists.sourceforge.net; Fri, 18 Dec 2020 20:14:37 +0000
+ id 1kqMBv-001hZ8-CE
+ for jfs-discussion@lists.sourceforge.net; Fri, 18 Dec 2020 20:17:40 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=infradead.org; s=merlin.20170209; h=Content-Transfer-Encoding:Content-Type:
- In-Reply-To:MIME-Version:Date:Message-ID:From:References:Cc:To:Subject:Sender
- :Reply-To:Content-ID:Content-Description;
- bh=tsFXi74Czj02JDF9/OuTcw7Z9zt3ff2QLJVrYO5uDG4=; b=jszN6HtG83b0un0SVKOh6aX60G
- BeI5zZ3g0lMPofZBfaMzd2GPSYpO4+KYnQFk4pqPQtMNnDlzm+0EPWRJiJ9xUvPcxeAQT8nsweMtz
- hQY1skK/ro43KugfxAc51sKxsbHkBaBsNBcxnraDEh7j9oExvLmdwju5w4YXGwXSVQsl+ubvD77Sj
- 4uqQkD/7mXPPqSB8YXxAmAEnlab7UMnGcU5ZSF3e/A/yIMBgSZonn6RceOkRxaM2W7g5u2JIVdvEf
- yH7MzhGrkVv7jbKBebUwOa9ZcZXoAFuClge+xMVYXpM2/TaI+uYGN8wOxpcViAMKJO/BVFO5PBDR+
- w0iGQqbA==;
-Received: from [2601:1c0:6280:3f0::64ea]
+ d=infradead.org; s=merlin.20170209; h=Content-Transfer-Encoding:MIME-Version:
+ Message-Id:Date:Subject:Cc:To:From:Sender:Reply-To:Content-Type:Content-ID:
+ Content-Description:In-Reply-To:References;
+ bh=eJib/lfunlqDGDElxLTwFVNpeshIlXQoF4/zK8GXcVc=; b=Er7F3MrM0cu5xDqDahUPteSZM6
+ Q1hdwH2kT6CVU+LDVoQZX2OSSIw2sVD+H8WHWm5DdMqcOwaLkZ8knVvtTAulPIbdnNDH5EVqG/Vyr
+ I7dMooy+h/d6bRmdSrCtCYuDEEEavaAVa29oGQ5JO7x8+0hevGXVyYRq7C/3lsT3t3QhtTlLzyWk/
+ rlpUD4YBDe4bL9Kn3mz07+HvjjVYrV0U23nXZN7JNMFEZwupGBgb4nklH+WM7Y6C87SL1t9Bw21my
+ lb7wnyJlBU/fC5Zo15CeY/PFTuns31H+jyB6F+i7Y1ExAi0k9wX6kmZ90wX0NqZqI/NDih67MDqmU
+ j3gqgomQ==;
+Received: from [2601:1c0:6280:3f0::64ea] (helo=smtpauth.infradead.org)
  by merlin.infradead.org with esmtpsa (Exim 4.92.3 #3 (Red Hat Linux))
- id 1kqM8p-0001Cd-VP; Fri, 18 Dec 2020 20:14:20 +0000
-To: kernel test robot <lkp@intel.com>, linux-kernel@vger.kernel.org
-References: <20201218051920.6229-1-rdunlap@infradead.org>
- <202012181528.QLtx4Ix4-lkp@intel.com>
+ id 1kqMBl-0001X7-WB; Fri, 18 Dec 2020 20:17:22 +0000
 From: Randy Dunlap <rdunlap@infradead.org>
-Message-ID: <b0133786-91d2-1d7e-3ebb-00ee63b62eb6@infradead.org>
-Date: Fri, 18 Dec 2020 12:14:15 -0800
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:78.0) Gecko/20100101
- Thunderbird/78.4.0
+To: linux-kernel@vger.kernel.org
+Date: Fri, 18 Dec 2020 12:17:16 -0800
+Message-Id: <20201218201716.26613-1-rdunlap@infradead.org>
+X-Mailer: git-send-email 2.26.2
 MIME-Version: 1.0
-In-Reply-To: <202012181528.QLtx4Ix4-lkp@intel.com>
-Content-Language: en-US
 X-Spam-Score: -0.1 (/)
 X-Spam-Report: Spam Filtering performed by mx.sourceforge.net.
  See http://spamassassin.org/tag/ for more details.
@@ -78,9 +73,8 @@ X-Spam-Report: Spam Filtering performed by mx.sourceforge.net.
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature,
  not necessarily valid
  0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
- -0.0 NICE_REPLY_A           Looks like a legit reply (A)
-X-Headers-End: 1kqM90-001s9O-DY
-Subject: Re: [Jfs-discussion] [PATCH] JFS: more checks for invalid superblock
+X-Headers-End: 1kqMBv-001hZ8-CE
+Subject: [Jfs-discussion] [PATCH v2] JFS: more checks for invalid superblock
 X-BeenThere: jfs-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -92,51 +86,88 @@ List-Post: <mailto:jfs-discussion@lists.sourceforge.net>
 List-Help: <mailto:jfs-discussion-request@lists.sourceforge.net?subject=help>
 List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/jfs-discussion>, 
  <mailto:jfs-discussion-request@lists.sourceforge.net?subject=subscribe>
-Cc: syzbot+36315852ece4132ec193@syzkaller.appspotmail.com,
- jfs-discussion@lists.sourceforge.net, kbuild-all@lists.01.org,
- Dave Kleikamp <shaggy@kernel.org>
+Cc: Dave Kleikamp <shaggy@kernel.org>, jfs-discussion@lists.sourceforge.net,
+ Randy Dunlap <rdunlap@infradead.org>,
+ syzbot+36315852ece4132ec193@syzkaller.appspotmail.com,
+ kernel test robot <lkp@intel.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Errors-To: jfs-discussion-bounces@lists.sourceforge.net
 
-On 12/17/20 11:23 PM, kernel test robot wrote:
-> Hi Randy,
-> 
-> Thank you for the patch! Perhaps something to improve:
-> 
-> [auto build test WARNING on shaggy/jfs-next]
-> [also build test WARNING on linux/master linus/master v5.10 next-20201217]
-> [If your patch is applied to the wrong git tree, kindly drop us a note.
-> And when submitting patch, we suggest to use '--base' as documented in
-> https://git-scm.com/docs/git-format-patch]
-> 
-> url:    https://github.com/0day-ci/linux/commits/Randy-Dunlap/JFS-more-checks-for-invalid-superblock/20201218-132143
-> base:   https://github.com/kleikamp/linux-shaggy jfs-next
-> config: i386-randconfig-s002-20201217 (attached as .config)
-> compiler: gcc-9 (Debian 9.3.0-15) 9.3.0
-> reproduce:
->         # apt-get install sparse
->         # sparse version: v0.6.3-184-g1b896707-dirty
->         # https://github.com/0day-ci/linux/commit/11cb0575aca69504da8b7984fc7f3e439b1a2331
->         git remote add linux-review https://github.com/0day-ci/linux
->         git fetch --no-tags linux-review Randy-Dunlap/JFS-more-checks-for-invalid-superblock/20201218-132143
->         git checkout 11cb0575aca69504da8b7984fc7f3e439b1a2331
->         # save the attached .config to linux build tree
->         make W=1 C=1 CF='-fdiagnostic-prefix -D__CHECK_ENDIAN__' ARCH=i386 
-> 
-> If you fix the issue, kindly add following tag as appropriate
-> Reported-by: kernel test robot <lkp@intel.com>
-> 
-> 
-> "sparse warnings: (new ones prefixed by >>)"
->>> fs/jfs/jfs_mount.c:373:17: sparse: sparse: restricted __le32 degrades to integer
-> 
+syzbot is feeding invalid superblock data to JFS for mount testing.
+JFS does not check several of the fields -- just assumes that they
+are good since the JFS_MAGIC and version fields are good.
 
-Thank you. I have fixed that.
+In this case (syzbot reproducer), we have s_l2bsize == 0xda0c,
+pad == 0xf045, and s_state == 0x50, all of which are invalid IMO.
+Having s_l2bsize == 0xda0c causes this UBSAN warning:
+  UBSAN: shift-out-of-bounds in fs/jfs/jfs_mount.c:373:25
+  shift exponent -9716 is negative
 
--- 
-~Randy
+s_l2bsize can be tested for correctness. pad can be tested for non-0
+and punted. s_state can be tested for its valid values and punted.
 
+Do those 3 tests and if any of them fails, report the superblock as
+invalid/corrupt and let fsck handle it.
+
+With this patch, chkSuper() says this when JFS_DEBUG is enabled:
+  jfs_mount: Mount Failure: superblock is corrupt!
+  Mount JFS Failure: -22
+  jfs_mount failed w/return code = -22
+
+The obvious problem with this method is that next week there could
+be another syzbot test that uses different fields for invalid values,
+this making this like a game of whack-a-mole.
+
+syzkaller link: https://syzkaller.appspot.com/bug?extid=36315852ece4132ec193
+
+Reported-by: syzbot+36315852ece4132ec193@syzkaller.appspotmail.com
+Reported-by: kernel test robot <lkp@intel.com> # v2
+Signed-off-by: Randy Dunlap <rdunlap@infradead.org>
+Cc: Dave Kleikamp <shaggy@kernel.org>
+Cc: jfs-discussion@lists.sourceforge.net
+---
+v2: fix sparse __le32 warning (lkp robot)
+
+ fs/jfs/jfs_filsys.h |    1 +
+ fs/jfs/jfs_mount.c  |   10 ++++++++++
+ 2 files changed, 11 insertions(+)
+
+--- lnx-510.orig/fs/jfs/jfs_mount.c
++++ lnx-510/fs/jfs/jfs_mount.c
+@@ -37,6 +37,7 @@
+ #include <linux/fs.h>
+ #include <linux/buffer_head.h>
+ #include <linux/blkdev.h>
++#include <linux/log2.h>
+ 
+ #include "jfs_incore.h"
+ #include "jfs_filsys.h"
+@@ -366,6 +367,15 @@ static int chkSuper(struct super_block *
+ 	sbi->bsize = bsize;
+ 	sbi->l2bsize = le16_to_cpu(j_sb->s_l2bsize);
+ 
++	/* check some fields for possible corruption */
++	if (sbi->l2bsize != ilog2((u32)bsize) ||
++	    j_sb->pad != 0 ||
++	    le32_to_cpu(j_sb->s_state) > FM_STATE_MAX) {
++		rc = -EINVAL;
++		jfs_err("jfs_mount: Mount Failure: superblock is corrupt!");
++		goto out;
++	}
++
+ 	/*
+ 	 * For now, ignore s_pbsize, l2bfactor.  All I/O going through buffer
+ 	 * cache.
+--- lnx-510.orig/fs/jfs/jfs_filsys.h
++++ lnx-510/fs/jfs/jfs_filsys.h
+@@ -268,5 +268,6 @@
+ 				 * fsck() must be run to repair
+ 				 */
+ #define	FM_EXTENDFS 0x00000008	/* file system extendfs() in progress */
++#define	FM_STATE_MAX 0x0000000f	/* max value of s_state */
+ 
+ #endif				/* _H_JFS_FILSYS */
 
 
 _______________________________________________
