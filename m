@@ -2,89 +2,79 @@ Return-Path: <jfs-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+jfs-discussion@lfdr.de
 Delivered-To: lists+jfs-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id D074A2DC24A
-	for <lists+jfs-discussion@lfdr.de>; Wed, 16 Dec 2020 15:34:42 +0100 (CET)
-Received: from [127.0.0.1] (helo=sfs-ml-3.v29.lw.sourceforge.com)
-	by sfs-ml-3.v29.lw.sourceforge.com with esmtp (Exim 4.90_1)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9B8392DDDCB
+	for <lists+jfs-discussion@lfdr.de>; Fri, 18 Dec 2020 06:20:29 +0100 (CET)
+Received: from [127.0.0.1] (helo=sfs-ml-4.v29.lw.sourceforge.com)
+	by sfs-ml-4.v29.lw.sourceforge.com with esmtp (Exim 4.90_1)
 	(envelope-from <jfs-discussion-bounces@lists.sourceforge.net>)
-	id 1kpXsh-0004zG-Su; Wed, 16 Dec 2020 14:34:19 +0000
+	id 1kq8BL-0000N2-Em; Fri, 18 Dec 2020 05:19:59 +0000
 Received: from [172.30.20.202] (helo=mx.sourceforge.net)
- by sfs-ml-1.v29.lw.sourceforge.com with esmtps
+ by sfs-ml-4.v29.lw.sourceforge.com with esmtps
  (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
- (envelope-from
- <3MhbaXwkbAMs9FG1r22v8r66zu.x55x2vB9v8t54Av4A.t53@M3KW2WVRGUFZ5GODRSRYTGD7.apphosting.bounces.google.com>)
- id 1kpXZb-0005Di-L9
- for jfs-discussion@lists.sourceforge.net; Wed, 16 Dec 2020 14:14:35 +0000
+ (envelope-from <rdunlap@infradead.org>) id 1kq8BK-0000Mv-6Y
+ for jfs-discussion@lists.sourceforge.net; Fri, 18 Dec 2020 05:19:58 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=sourceforge.net; s=x; h=Content-Type:To:From:Subject:Message-ID:Date:
- MIME-Version:Sender:Reply-To:Cc:Content-Transfer-Encoding:Content-ID:
+ d=sourceforge.net; s=x; h=Content-Transfer-Encoding:MIME-Version:Message-Id:
+ Date:Subject:Cc:To:From:Sender:Reply-To:Content-Type:Content-ID:
  Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
  :Resent-Message-ID:In-Reply-To:References:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=7cwq94/LndwHW8nMgne9GJXd2g5Vmy0CxkQ/gRkScDg=; b=d1DBX1UW0/4Azlv147iOmP7a5L
- BS/c+fpPauPtepHEt9lnf2gyRcI4gwWwBy5MAqzWXwsqGY/QN9VZDho784b6Xx5uYMCqb6rbr6Qdv
- 6Q9trh1DZL5XVc4/IJ0QVxuJ+FA7flTe7gSLfTp14TanP4FZtEdOJ+6nYo832WJ0qzKU=;
+ bh=oZuF6ObLw2MhepsfeO7KviO77+kjHkMk2gYyhSP9s8E=; b=UHL3gKzDiI9+4rORiOCK+jFhYX
+ mfpErvUWNhSUmmp0OEDKsAHmanT6yUeCJr1ekVvJddBV3uzKKtH5ZtNi+J7BgO1JiGqAkvIy8XTvP
+ 4bpoe5rBE3gFO6YaDP1Sym32hesFjuw101vz6FyMcAgS5m0PXG6Za1cQc28d3bPB6K60=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
- h=Content-Type:To:From:Subject:Message-ID:Date:MIME-Version:Sender:Reply-To
- :Cc:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+ h=Content-Transfer-Encoding:MIME-Version:Message-Id:Date:Subject:Cc:To:From
+ :Sender:Reply-To:Content-Type:Content-ID:Content-Description:Resent-Date:
  Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
  References:List-Id:List-Help:List-Unsubscribe:List-Subscribe:List-Post:
- List-Owner:List-Archive; bh=7cwq94/LndwHW8nMgne9GJXd2g5Vmy0CxkQ/gRkScDg=; b=W
- SVGKbmF0o+aZ03NiFS9hVtDogJkbQWT7/r24t2Xkbx2Pj/IYH9V2TQo6WgU9Bc9q/dfk8pqbvbqXd
- BJA39Yn043RllO6keKtdcwLvG94lKDaIIwGtx5C6xHjScK+ixtdhXi2OPQCKckt7BPpxA7mEeXxVt
- FiwNxIkP2O25tXa8=;
-Received: from mail-il1-f197.google.com ([209.85.166.197])
+ List-Owner:List-Archive; bh=oZuF6ObLw2MhepsfeO7KviO77+kjHkMk2gYyhSP9s8E=; b=Z
+ Q6mxHH/NGNbfbUqtMGIjvQBu9EKiBdMy2pKCF1wFeAGvIh96RLHYn2Agx/99YREuiCLEquYov+wu/
+ +Jenf/SPJXxskcvSn8VpwFRONJUBqEMShnJiyVqNFEbxfYCkJu2Sq7dR7b3B6uptZLLbZW0Yw7gMh
+ kxrOhWKypmTDePks=;
+Received: from merlin.infradead.org ([205.233.59.134])
  by sfi-mx-3.v28.lw.sourceforge.com with esmtps
- (TLSv1.2:ECDHE-RSA-AES128-GCM-SHA256:128) (Exim 4.92.2)
- id 1kpXZP-00GSQ5-3L
- for jfs-discussion@lists.sourceforge.net; Wed, 16 Dec 2020 14:14:35 +0000
-Received: by mail-il1-f197.google.com with SMTP id 1so23127231ilg.18
- for <jfs-discussion@lists.sourceforge.net>;
- Wed, 16 Dec 2020 06:14:23 -0800 (PST)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:date:message-id:subject:from:to;
- bh=7cwq94/LndwHW8nMgne9GJXd2g5Vmy0CxkQ/gRkScDg=;
- b=mTYqg3EJQJcrL5366VpjhsDciNkS8iVSy4ZeJ25XqXCO5H4ScL+/WDLXnWtY3Tq4wl
- Mse2KyNSFVNrg4cIaQbwuP2O6YjAzoNEukabYmWLDNNH8Jt8NDcGE8pC9N/sMSxALAj7
- G3P0f5F7JDYSVwS/pxcyOgGf3ZQksl1ClY8j+dnCZRnYeg/1MY+b2+XJ7fFrTaXZnga7
- tOvVRXwYZuWNyO/jWFOtqE7Q6O33Bjkr4+7dJth9nrvPLjVFIc/PbGs/4ALqWPergjFi
- UKSTHVmm81owVLG6AZiC4izdMfuQRWoXcRZmCVWs7VglEqGDIABudO0ofIDSNTWWf6sb
- YY2Q==
-X-Gm-Message-State: AOAM532Iu/E1mAtvYAuy1EnvQkQytcaMTbJvHSYT+uNr/A37YsMVpVwq
- DdPKEbGTYhQN2MUQpU5I7/u2CKLGN7rTFRRvGpiOAX4qkImy
-X-Google-Smtp-Source: ABdhPJwCJsMcKgMjEpUgnxwHNawPsxdwEGX0vSGarCQjWqcs6hdNv7C/jSa4wOsbVqVRiESqZrqU4P/g2PrzNxfvgAiR8X8Euc8z
+ (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.92.2)
+ id 1kq8B9-000x6e-QC
+ for jfs-discussion@lists.sourceforge.net; Fri, 18 Dec 2020 05:19:58 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=infradead.org; s=merlin.20170209; h=Content-Transfer-Encoding:MIME-Version:
+ Message-Id:Date:Subject:Cc:To:From:Sender:Reply-To:Content-Type:Content-ID:
+ Content-Description:In-Reply-To:References;
+ bh=oZuF6ObLw2MhepsfeO7KviO77+kjHkMk2gYyhSP9s8E=; b=ismFjqs4KR+eixVDEwUkDCT89B
+ Rz4b+lVUNrDUvnKbXrW032F+JoK7govK3ZFfasiEUl0TUUzFf8d2zpFPxb2gZNfFDPKX5owjNhQKy
+ M1Y+qOAqI71PDiCYQWBoscx5+yEVJP2sEd0YmzBBiHwr3k52prXQadxXntpJD7gbi2YjxBEpki2NS
+ 5sVKOFzHIXhc/Ve5dXKj0g2fnyPUp38ho3EvYMuWLhQagqZQDiERyhL618m3Z/mwwFdH+Lbn52nXx
+ gpRQgMxGdNBaY+bLaL/9kSoo+iaXLxCWaAG7HyFPhAHEcKezUN5M8pzjuPYO8Rho5m59AbHcPopGI
+ 02DlTw/g==;
+Received: from [2601:1c0:6280:3f0::64ea] (helo=smtpauth.infradead.org)
+ by merlin.infradead.org with esmtpsa (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1kq8Ap-0003Kf-Q5; Fri, 18 Dec 2020 05:19:28 +0000
+From: Randy Dunlap <rdunlap@infradead.org>
+To: linux-kernel@vger.kernel.org
+Date: Thu, 17 Dec 2020 21:19:20 -0800
+Message-Id: <20201218051920.6229-1-rdunlap@infradead.org>
+X-Mailer: git-send-email 2.26.2
 MIME-Version: 1.0
-X-Received: by 2002:a05:6e02:cb:: with SMTP id
- r11mr46640578ilq.11.1608128050414; 
- Wed, 16 Dec 2020 06:14:10 -0800 (PST)
-Date: Wed, 16 Dec 2020 06:14:10 -0800
-X-Google-Appengine-App-Id: s~syzkaller
-X-Google-Appengine-App-Id-Alias: syzkaller
-Message-ID: <00000000000032cbc605b6957df0@google.com>
-From: syzbot <syzbot+36315852ece4132ec193@syzkaller.appspotmail.com>
-To: jfs-discussion@lists.sourceforge.net, linux-kernel@vger.kernel.org, 
- shaggy@kernel.org, syzkaller-bugs@googlegroups.com
-X-Spam-Score: 0.6 (/)
+X-Spam-Score: -0.1 (/)
 X-Spam-Report: Spam Filtering performed by mx.sourceforge.net.
  See http://spamassassin.org/tag/ for more details.
  0.0 URIBL_BLOCKED ADMINISTRATOR NOTICE: The query to URIBL was blocked.
  See
  http://wiki.apache.org/spamassassin/DnsBlocklists#dnsbl-block
- for more information. [URIs: googlegroups.com]
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/, no
- trust [209.85.166.197 listed in list.dnswl.org]
- 0.3 FROM_LOCAL_HEX         From: localpart has long hexadecimal sequence
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level mail
- domains are different
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.166.197 listed in wl.mailspike.net]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ for more information. [URIs: syzkaller.appspot.com]
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [205.233.59.134 listed in wl.mailspike.net]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
-X-Headers-End: 1kpXZP-00GSQ5-3L
-X-Mailman-Approved-At: Wed, 16 Dec 2020 14:34:19 +0000
-Subject: [Jfs-discussion] UBSAN: shift-out-of-bounds in chkSuper
+ -0.1 DKIM_VALID_AU Message has a valid DKIM or DK signature from author's
+ domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature,
+ not necessarily valid
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+X-Headers-End: 1kq8B9-000x6e-QC
+Subject: [Jfs-discussion] [PATCH] JFS: more checks for invalid superblock
 X-BeenThere: jfs-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -96,71 +86,84 @@ List-Post: <mailto:jfs-discussion@lists.sourceforge.net>
 List-Help: <mailto:jfs-discussion-request@lists.sourceforge.net?subject=help>
 List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/jfs-discussion>, 
  <mailto:jfs-discussion-request@lists.sourceforge.net?subject=subscribe>
+Cc: Dave Kleikamp <shaggy@kernel.org>, jfs-discussion@lists.sourceforge.net,
+ Randy Dunlap <rdunlap@infradead.org>,
+ syzbot+36315852ece4132ec193@syzkaller.appspotmail.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Errors-To: jfs-discussion-bounces@lists.sourceforge.net
 
-Hello,
+syzbot is feeding invalid superblock data to JFS for mount testing.
+JFS does not check several of the fields -- just assumes that they
+are good since the JFS_MAGIC and version fields are good.
 
-syzbot found the following issue on:
+In this case (syzbot reproducer), we have s_l2bsize == 0xda0c,
+pad == 0xf045, and s_state == 0x50, all of which are invalid IMO.
+Having s_l2bsize == 0xda0c causes this UBSAN warning:
+  UBSAN: shift-out-of-bounds in fs/jfs/jfs_mount.c:373:25
+  shift exponent -9716 is negative
 
-HEAD commit:    14240d4c Add linux-next specific files for 20201210
-git tree:       linux-next
-console output: https://syzkaller.appspot.com/x/log.txt?x=13457c5b500000
-kernel config:  https://syzkaller.appspot.com/x/.config?x=6dbe20fdaa5aaebe
-dashboard link: https://syzkaller.appspot.com/bug?extid=36315852ece4132ec193
-compiler:       gcc (GCC) 10.1.0-syz 20200507
-syz repro:      https://syzkaller.appspot.com/x/repro.syz?x=1172cef3500000
-C reproducer:   https://syzkaller.appspot.com/x/repro.c?x=15b1845b500000
+s_l2bsize can be tested for correctness. pad can be tested for non-0
+and punted. s_state can be tested for its valid values and punted.
 
-IMPORTANT: if you fix the issue, please add the following tag to the commit:
+Do those 3 tests and if any of them fails, report the superblock as
+invalid/corrupt and let fsck handle it.
+
+With this patch, chkSuper() says this when JFS_DEBUG is enabled:
+  jfs_mount: Mount Failure: superblock is corrupt!
+  Mount JFS Failure: -22
+  jfs_mount failed w/return code = -22
+
+The obvious problem with this method is that next week there could
+be another syzbot test that uses different fields for invalid values,
+this making this like a game of whack-a-mole.
+
+syzkaller link: https://syzkaller.appspot.com/bug?extid=36315852ece4132ec193
+
 Reported-by: syzbot+36315852ece4132ec193@syzkaller.appspotmail.com
-
-loop0: detected capacity change from 128 to 0
-================================================================================
-UBSAN: shift-out-of-bounds in fs/jfs/jfs_mount.c:373:25
-shift exponent -9716 is negative
-CPU: 0 PID: 8511 Comm: syz-executor446 Not tainted 5.10.0-rc7-next-20201210-syzkaller #0
-Hardware name: Google Google Compute Engine/Google Compute Engine, BIOS Google 01/01/2011
-Call Trace:
- __dump_stack lib/dump_stack.c:79 [inline]
- dump_stack+0x107/0x163 lib/dump_stack.c:120
- ubsan_epilogue+0xb/0x5a lib/ubsan.c:148
- __ubsan_handle_shift_out_of_bounds.cold+0xb1/0x181 lib/ubsan.c:395
- chkSuper.cold+0x1e/0x8b fs/jfs/jfs_mount.c:373
- jfs_mount+0x47/0x3d0 fs/jfs/jfs_mount.c:82
- jfs_fill_super+0x5b1/0xbc0 fs/jfs/super.c:562
- mount_bdev+0x34d/0x410 fs/super.c:1366
- legacy_get_tree+0x105/0x220 fs/fs_context.c:592
- vfs_get_tree+0x89/0x2f0 fs/super.c:1496
- do_new_mount fs/namespace.c:2896 [inline]
- path_mount+0x12ae/0x1e70 fs/namespace.c:3227
- do_mount fs/namespace.c:3240 [inline]
- __do_sys_mount fs/namespace.c:3448 [inline]
- __se_sys_mount fs/namespace.c:3425 [inline]
- __x64_sys_mount+0x27f/0x300 fs/namespace.c:3425
- do_syscall_64+0x2d/0x70 arch/x86/entry/common.c:46
- entry_SYSCALL_64_after_hwframe+0x44/0xa9
-RIP: 0033:0x446d5a
-Code: b8 08 00 00 00 0f 05 48 3d 01 f0 ff ff 0f 83 fd ad fb ff c3 66 2e 0f 1f 84 00 00 00 00 00 66 90 49 89 ca b8 a5 00 00 00 0f 05 <48> 3d 01 f0 ff ff 0f 83 da ad fb ff c3 66 0f 1f 84 00 00 00 00 00
-RSP: 002b:00007fff49981e98 EFLAGS: 00000283 ORIG_RAX: 00000000000000a5
-RAX: ffffffffffffffda RBX: 00007fff49981ee0 RCX: 0000000000446d5a
-RDX: 0000000020000000 RSI: 0000000020000080 RDI: 00007fff49981ea0
-RBP: 00007fff49981ea0 R08: 00007fff49981ee0 R09: 6f6f6c2f7665642f
-R10: 0000000000000001 R11: 0000000000000283 R12: 0000000000000004
-R13: 0000000000000003 R14: 0000000000000003 R15: 0000000000000001
-================================================================================
-
-
+Signed-off-by: Randy Dunlap <rdunlap@infradead.org>
+Cc: Dave Kleikamp <shaggy@kernel.org>
+Cc: jfs-discussion@lists.sourceforge.net
 ---
-This report is generated by a bot. It may contain errors.
-See https://goo.gl/tpsmEJ for more information about syzbot.
-syzbot engineers can be reached at syzkaller@googlegroups.com.
+ fs/jfs/jfs_filsys.h |    1 +
+ fs/jfs/jfs_mount.c  |   10 ++++++++++
+ 2 files changed, 11 insertions(+)
 
-syzbot will keep track of this issue. See:
-https://goo.gl/tpsmEJ#status for how to communicate with syzbot.
-syzbot can test patches for this issue, for details see:
-https://goo.gl/tpsmEJ#testing-patches
+--- lnx-510.orig/fs/jfs/jfs_mount.c
++++ lnx-510/fs/jfs/jfs_mount.c
+@@ -37,6 +37,7 @@
+ #include <linux/fs.h>
+ #include <linux/buffer_head.h>
+ #include <linux/blkdev.h>
++#include <linux/log2.h>
+ 
+ #include "jfs_incore.h"
+ #include "jfs_filsys.h"
+@@ -366,6 +367,15 @@ static int chkSuper(struct super_block *
+ 	sbi->bsize = bsize;
+ 	sbi->l2bsize = le16_to_cpu(j_sb->s_l2bsize);
+ 
++	/* check some fields for possible corruption */
++	if (sbi->l2bsize != ilog2((u32)bsize) ||
++	    j_sb->pad != 0 ||
++	    j_sb->s_state > FM_STATE_MAX) {
++		rc = -EINVAL;
++		jfs_err("jfs_mount: Mount Failure: superblock is corrupt!");
++		goto out;
++	}
++
+ 	/*
+ 	 * For now, ignore s_pbsize, l2bfactor.  All I/O going through buffer
+ 	 * cache.
+--- lnx-510.orig/fs/jfs/jfs_filsys.h
++++ lnx-510/fs/jfs/jfs_filsys.h
+@@ -268,5 +268,6 @@
+ 				 * fsck() must be run to repair
+ 				 */
+ #define	FM_EXTENDFS 0x00000008	/* file system extendfs() in progress */
++#define	FM_STATE_MAX 0x0000000f	/* max value of s_state */
+ 
+ #endif				/* _H_JFS_FILSYS */
 
 
 _______________________________________________
