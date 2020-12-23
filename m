@@ -2,26 +2,26 @@ Return-Path: <jfs-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+jfs-discussion@lfdr.de
 Delivered-To: lists+jfs-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id 52E062E11EE
-	for <lists+jfs-discussion@lfdr.de>; Wed, 23 Dec 2020 03:19:33 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id A6F2A2E1256
+	for <lists+jfs-discussion@lfdr.de>; Wed, 23 Dec 2020 03:22:02 +0100 (CET)
 Received: from [127.0.0.1] (helo=sfs-ml-4.v29.lw.sourceforge.com)
 	by sfs-ml-4.v29.lw.sourceforge.com with esmtp (Exim 4.90_1)
 	(envelope-from <jfs-discussion-bounces@lists.sourceforge.net>)
-	id 1krtkE-0001NE-7A; Wed, 23 Dec 2020 02:19:18 +0000
+	id 1krtmb-0001Sq-GG; Wed, 23 Dec 2020 02:21:45 +0000
 Received: from [172.30.20.202] (helo=mx.sourceforge.net)
  by sfs-ml-4.v29.lw.sourceforge.com with esmtps
  (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
- (envelope-from <sashal@kernel.org>) id 1krtk8-0001Mu-FZ
- for jfs-discussion@lists.sourceforge.net; Wed, 23 Dec 2020 02:19:12 +0000
+ (envelope-from <sashal@kernel.org>) id 1krtma-0001Sj-7q
+ for jfs-discussion@lists.sourceforge.net; Wed, 23 Dec 2020 02:21:44 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=sourceforge.net; s=x; h=Content-Transfer-Encoding:MIME-Version:References:
  In-Reply-To:Message-Id:Date:Subject:Cc:To:From:Sender:Reply-To:Content-Type:
  Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
  Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=P3QVwo9J7NWMPY93PH6FBoEs84teA7YesBtF4Swr1Mo=; b=VA3NlWIdRvo5WZGZkrVIMuoLUo
- l731N6GWbiN3m8FMjyuFW5LYYaIRXwTMp7tSJElqdgKTIdHj93eTunU20qk0fMRGA+S8OCiwXwZT4
- 03MQuslokb7qyDT77p2lX/JaYrT2e0WwCkeP8PSJjRc3q7zaSAUtHr4aANoO9tV/feF0=;
+ bh=9j++ONSHVueFHV439CTIWP5pWPNoEjuYxjYPuQ2FnNU=; b=KqgthttF1eFcwV6GRssr7t2uxN
+ OY/nM+FFJJMNLraDq57JnBt1NG77O9RCr7ZrmteIJnlWJ0hb0UyuMSf0jXhdRxw0djUlhrjMCDkrL
+ qkzVWA0VUjuagDkJwc40VQqj/xhPOiZsrS56XuLxbz518Lgl4VgvtsvSqanQ97PruXe0=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
  h=Content-Transfer-Encoding:MIME-Version:References:In-Reply-To:Message-Id:
@@ -29,34 +29,34 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
  :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
  List-Post:List-Owner:List-Archive;
- bh=P3QVwo9J7NWMPY93PH6FBoEs84teA7YesBtF4Swr1Mo=; b=WNJ7Q0kpEQDE4gEcpmFYLp3NnT
- BWNu9R0jym5LefuPhcg3OM7mNZaJvO9nyn+NE+Isn3W7sdnypCLJY7t/98oxJ0LX4jnP7BknND7rj
- 6tU47V+ILMw/OpmaQUZDP6kAladKhF1slFr0otkGEjVgZ7QBuPZd6iSBS48efFy2pAA8=;
+ bh=9j++ONSHVueFHV439CTIWP5pWPNoEjuYxjYPuQ2FnNU=; b=kHoDfIMGdvmGD8dxnVyUnnXGf0
+ 7OXewhsYJTPeuddBaulndl2IFDZHW2o2W5E7FXDvLLq3Sp85cOKhq6DXYkxHH1ro7Tw9Ux5YM4DO4
+ FW+hgs1d119WK+jplxXwBsw4/KPDWsgQA7zMtudH1Vh66ii1CndxwbYRkErtg0hNZwRc=;
 Received: from mail.kernel.org ([198.145.29.99])
  by sfi-mx-3.v28.lw.sourceforge.com with esmtps
  (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.92.2)
- id 1krtk0-005YhO-Hp
- for jfs-discussion@lists.sourceforge.net; Wed, 23 Dec 2020 02:19:12 +0000
-Received: by mail.kernel.org (Postfix) with ESMTPSA id 79107206EC;
- Wed, 23 Dec 2020 02:18:58 +0000 (UTC)
+ id 1krtmW-005Ysq-8O
+ for jfs-discussion@lists.sourceforge.net; Wed, 23 Dec 2020 02:21:44 +0000
+Received: by mail.kernel.org (Postfix) with ESMTPSA id 299CF2313F;
+ Wed, 23 Dec 2020 02:21:34 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=k20201202; t=1608689939;
- bh=RtqJsKm5KDbxgsapWnnxMcKyIwnfwCzHQepqTKGp/0E=;
+ s=k20201202; t=1608690094;
+ bh=ReuyCYVYKWAqyVzRSmyl1FHgpc+TAGr/5KNCJDAivjo=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=k+Ha4qujhKtL78BfBbckxubv18MA7taVYEKJVAWGAep9z9ic9PiiCoKSBqYOlseY/
- e+QCdqHJosefkbymwWGqZTw7IHHf0RjnuD2qfN/0V7YcWL0b1ODz7O3rzRvfSL27Ym
- 1ztJ0+qUFoCJouQv1ILWrKFFnlEfhLrM1i89GGyzV+HP17QsnFD6uHhsYFuJSGkq48
- ciRsxLimyjdXA/oezwi81Dyu014WUfIAQEZcQCAH9HJ3s10MV2GSHpxPBp0iMAMIZ0
- GtpafRNr/CX7QCzt/e3fX4s2Gbjv0QtC0ublKwa0Hxv6fC88ltKqY9hXSY25m5tav/
- ik5B59RektkKg==
+ b=kZlKE9mRo/VeFkISipAV+Ov6eAisbUmU08GlLel4JvBaLZs5RI/wOi3lGB4Giijhn
+ Xc19/cSJrsgokOSmudpCPbH2PNSip38iODbChx5912KrHtJpW7gOoC3PZfPOTq3XQ6
+ v8U+rLFVI9kRggCva7kqGGDUbcpPGZLs3uuqxI1inrv7m89kIy9a1HCEcysfNcx9Sr
+ yoWNLxXBRD/wXWKGnqt/NqqZ3RYI/vdP2zMXhWrTSNQQmgMMPb4gmuWjYdjg9R1ELP
+ gJg+PFHoJltWtzdUlICuZN9gW5zYzfBSIeIMb3jv1viaI5R56at7L2HsfWiXATBy5T
+ cM2TtbwgHby/Q==
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Date: Tue, 22 Dec 2020 21:16:38 -0500
-Message-Id: <20201223021813.2791612-35-sashal@kernel.org>
+Date: Tue, 22 Dec 2020 21:20:01 -0500
+Message-Id: <20201223022103.2792705-25-sashal@kernel.org>
 X-Mailer: git-send-email 2.27.0
-In-Reply-To: <20201223021813.2791612-1-sashal@kernel.org>
-References: <20201223021813.2791612-1-sashal@kernel.org>
+In-Reply-To: <20201223022103.2792705-1-sashal@kernel.org>
+References: <20201223022103.2792705-1-sashal@kernel.org>
 MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
@@ -71,8 +71,8 @@ X-Spam-Report: Spam Filtering performed by mx.sourceforge.net.
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature,
  not necessarily valid
  -0.0 DKIMWL_WL_HIGH         DKIMwl.org - High trust sender
-X-Headers-End: 1krtk0-005YhO-Hp
-Subject: [Jfs-discussion] [PATCH AUTOSEL 5.4 035/130] jfs: Fix memleak in
+X-Headers-End: 1krtmW-005Ysq-8O
+Subject: [Jfs-discussion] [PATCH AUTOSEL 4.19 25/87] jfs: Fix memleak in
  dbAdjCtl
 X-BeenThere: jfs-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
@@ -106,10 +106,10 @@ Signed-off-by: Sasha Levin <sashal@kernel.org>
  1 file changed, 6 insertions(+), 2 deletions(-)
 
 diff --git a/fs/jfs/jfs_dmap.c b/fs/jfs/jfs_dmap.c
-index caade185e568d..51b2c8f6ef35d 100644
+index 49263e220dbcf..071abfc8e3e50 100644
 --- a/fs/jfs/jfs_dmap.c
 +++ b/fs/jfs/jfs_dmap.c
-@@ -2549,15 +2549,19 @@ dbAdjCtl(struct bmap * bmp, s64 blkno, int newval, int alloc, int level)
+@@ -2562,15 +2562,19 @@ dbAdjCtl(struct bmap * bmp, s64 blkno, int newval, int alloc, int level)
  		 */
  		if (oldval == NOFREE) {
  			rc = dbBackSplit((dmtree_t *) dcp, leafno);
