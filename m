@@ -2,26 +2,26 @@ Return-Path: <jfs-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+jfs-discussion@lfdr.de
 Delivered-To: lists+jfs-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id 31B4C2E1272
-	for <lists+jfs-discussion@lfdr.de>; Wed, 23 Dec 2020 03:25:05 +0100 (CET)
-Received: from [127.0.0.1] (helo=sfs-ml-2.v29.lw.sourceforge.com)
-	by sfs-ml-2.v29.lw.sourceforge.com with esmtp (Exim 4.90_1)
+	by mail.lfdr.de (Postfix) with ESMTPS id CB56C2E127B
+	for <lists+jfs-discussion@lfdr.de>; Wed, 23 Dec 2020 03:26:00 +0100 (CET)
+Received: from [127.0.0.1] (helo=sfs-ml-4.v29.lw.sourceforge.com)
+	by sfs-ml-4.v29.lw.sourceforge.com with esmtp (Exim 4.90_1)
 	(envelope-from <jfs-discussion-bounces@lists.sourceforge.net>)
-	id 1krtpb-0005Jn-Jq; Wed, 23 Dec 2020 02:24:51 +0000
+	id 1krtqV-0001hg-S0; Wed, 23 Dec 2020 02:25:47 +0000
 Received: from [172.30.20.202] (helo=mx.sourceforge.net)
- by sfs-ml-2.v29.lw.sourceforge.com with esmtps
+ by sfs-ml-4.v29.lw.sourceforge.com with esmtps
  (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
- (envelope-from <sashal@kernel.org>) id 1krtpa-0005Jf-71
- for jfs-discussion@lists.sourceforge.net; Wed, 23 Dec 2020 02:24:50 +0000
+ (envelope-from <sashal@kernel.org>) id 1krtqV-0001hY-9i
+ for jfs-discussion@lists.sourceforge.net; Wed, 23 Dec 2020 02:25:47 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=sourceforge.net; s=x; h=Content-Transfer-Encoding:MIME-Version:References:
  In-Reply-To:Message-Id:Date:Subject:Cc:To:From:Sender:Reply-To:Content-Type:
  Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
  Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=IF5LfmZvYmtKb8XIKhCyw+4iJ0GLjxTS7JgAujjcyRY=; b=aF1yPHO1VxVBgWJ8QB5q9f/ACC
- cIsqH0yUGlYXVBq6eY8NB6fqZx0dHO0BIjSWR3al9EWg9XTKW8WhpxbPwgCgekSN5l+3ciBy08dx6
- yyILf0TvveUJFU1IPznYF2M8CZxdMp/hBLX7hj2zEicplcRDxRTa25sNc94TDElEj3zU=;
+ bh=IF5LfmZvYmtKb8XIKhCyw+4iJ0GLjxTS7JgAujjcyRY=; b=D/FTbzkyKItxLE5gfJM3crWrS7
+ jgm6JmYf+66CpXDHdVulRus72OocLKnDJplG111Clh+QAvSDdouzJ0mVXOmAlKUpnoXChJUVGn2S3
+ bfMdhWJhfnRkcUHGsa0MPWjrKvfo3YbFyISV2u99RxseQwnNF+HB/IWfHhbTn5HFoahI=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
  h=Content-Transfer-Encoding:MIME-Version:References:In-Reply-To:Message-Id:
@@ -29,34 +29,34 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
  :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
  List-Post:List-Owner:List-Archive;
- bh=IF5LfmZvYmtKb8XIKhCyw+4iJ0GLjxTS7JgAujjcyRY=; b=BlRp6k8kEa4SOGLX7Z7K4xFN1t
- RIlCLOIj51hbi2v7AWjAWkMi2aU+W8qk+J4OLA/jwlXjTaXm4v42vjoiV0teglYleQOtTJIoFjMyB
- yVtNm5eawbniixXlxTkEyaNeNeZma7eyvXgbaplhxYW9iCVUomV7GkwdAb4A6CGKXGg8=;
+ bh=IF5LfmZvYmtKb8XIKhCyw+4iJ0GLjxTS7JgAujjcyRY=; b=CUBLloRZOxqB2hWQM5Q3CsT47v
+ /g4fGKvABj2F0+6wqP8160QukROn95Rz3BLGmDK0RMjem+rUKZdHVluo0YL2AFd8JEqcm9O3vBAxC
+ Obj4AW5f3X0TWmjBXKz8f4mxdNcWAJ8+wOcZESdPzU1mGN0AjUMUTImdL93M1WuKFi1w=;
 Received: from mail.kernel.org ([198.145.29.99])
  by sfi-mx-1.v28.lw.sourceforge.com with esmtps
  (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.92.2)
- id 1krtpQ-0077AI-EI
- for jfs-discussion@lists.sourceforge.net; Wed, 23 Dec 2020 02:24:50 +0000
-Received: by mail.kernel.org (Postfix) with ESMTPSA id 5E80A229CA;
- Wed, 23 Dec 2020 02:24:34 +0000 (UTC)
+ id 1krtqN-0077Cn-W5
+ for jfs-discussion@lists.sourceforge.net; Wed, 23 Dec 2020 02:25:47 +0000
+Received: by mail.kernel.org (Postfix) with ESMTPSA id CDAE8225AB;
+ Wed, 23 Dec 2020 02:25:33 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=k20201202; t=1608690275;
+ s=k20201202; t=1608690334;
  bh=YrbTY5JpEvTtuhqP3HWPxAhzZ0+tfCCafdmz15WdEwE=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=VxLpMN/5e6BoXdM4dJKJNbDgN0OKJefubQWRbmNdpW9XPKKD6Vjv6HcESPOM15uQS
- NMl4MAh6kElYDCHRS3YpAoUR384z9tdiOgBTHAbooXfYQzT9fvdYO1eA8azv8vUltT
- yrnicZpARKBnYEwea9bHubEOZZwqLdSr36JBhGhrSabHRQ6T7KeqStQqAymNQKMhaH
- gM6dwsgFWjCASTbCv9jj5hZJIUbLexSE+nrI9UdanDFkaZCdtq+jKXtSQ2UbcKK/fH
- w8XlbULUr3vmHDVErU9wiaBAOcH4TDM6sOvLJncSaCwfQsGNJlCU7ALj9P/VP8NKBI
- Ohz6Z3FN/XiMg==
+ b=IkouofAoTpY5CuGiRw2mzUgtW45OGucAI1y84XepBIdgT5Ma/3tYVsfJ8gWx4raLl
+ bJT7ZFZJLslkPMNLcGtN0/YNqmgsfkC6RllB87K3qQQr04bh5gyijDOzOSeaWpf0dE
+ 4S59VDFCsreE5xJpVQV1+uQ00y0Tby0CPmhx5L9JyZ5nJe6b6K3e7MeOqQoNnZlH5k
+ ugkcVuCYHOJ8gE053SSjrvAgjLeaTLXr32nGZXhBthc/Wy6JrzHgzsD8v06y428frq
+ 9gircOkk5D0/5o4KXgI5JEKU4l4nVeYDgXTK24RxxPx0uKZyUNH8d6kEYdJS5W4ptm
+ iyRxMTHxfo0Sw==
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Date: Tue, 22 Dec 2020 21:23:43 -0500
-Message-Id: <20201223022417.2794032-15-sashal@kernel.org>
+Date: Tue, 22 Dec 2020 21:24:52 -0500
+Message-Id: <20201223022516.2794471-14-sashal@kernel.org>
 X-Mailer: git-send-email 2.27.0
-In-Reply-To: <20201223022417.2794032-1-sashal@kernel.org>
-References: <20201223022417.2794032-1-sashal@kernel.org>
+In-Reply-To: <20201223022516.2794471-1-sashal@kernel.org>
+References: <20201223022516.2794471-1-sashal@kernel.org>
 MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
@@ -71,8 +71,8 @@ X-Spam-Report: Spam Filtering performed by mx.sourceforge.net.
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature,
  not necessarily valid
  -0.0 DKIMWL_WL_HIGH         DKIMwl.org - High trust sender
-X-Headers-End: 1krtpQ-0077AI-EI
-Subject: [Jfs-discussion] [PATCH AUTOSEL 4.9 15/48] jfs: Fix memleak in
+X-Headers-End: 1krtqN-0077Cn-W5
+Subject: [Jfs-discussion] [PATCH AUTOSEL 4.4 14/38] jfs: Fix memleak in
  dbAdjCtl
 X-BeenThere: jfs-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
