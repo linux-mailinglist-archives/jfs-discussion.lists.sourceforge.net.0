@@ -2,26 +2,26 @@ Return-Path: <jfs-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+jfs-discussion@lfdr.de
 Delivered-To: lists+jfs-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id AE5E42E11E3
-	for <lists+jfs-discussion@lfdr.de>; Wed, 23 Dec 2020 03:18:45 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 52E062E11EE
+	for <lists+jfs-discussion@lfdr.de>; Wed, 23 Dec 2020 03:19:33 +0100 (CET)
 Received: from [127.0.0.1] (helo=sfs-ml-4.v29.lw.sourceforge.com)
 	by sfs-ml-4.v29.lw.sourceforge.com with esmtp (Exim 4.90_1)
 	(envelope-from <jfs-discussion-bounces@lists.sourceforge.net>)
-	id 1krtjH-0001Kr-3E; Wed, 23 Dec 2020 02:18:19 +0000
+	id 1krtkE-0001NE-7A; Wed, 23 Dec 2020 02:19:18 +0000
 Received: from [172.30.20.202] (helo=mx.sourceforge.net)
  by sfs-ml-4.v29.lw.sourceforge.com with esmtps
  (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
- (envelope-from <sashal@kernel.org>) id 1krtjF-0001Kk-Mk
- for jfs-discussion@lists.sourceforge.net; Wed, 23 Dec 2020 02:18:17 +0000
+ (envelope-from <sashal@kernel.org>) id 1krtk8-0001Mu-FZ
+ for jfs-discussion@lists.sourceforge.net; Wed, 23 Dec 2020 02:19:12 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=sourceforge.net; s=x; h=Content-Transfer-Encoding:MIME-Version:References:
  In-Reply-To:Message-Id:Date:Subject:Cc:To:From:Sender:Reply-To:Content-Type:
  Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
  Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=q3/GLxs1IfoAYOlp+DSccrNjNqY/WhyU7UrndMvZb84=; b=kV/Jf3lxyWRPhjTqqb2uCpjEEa
- D372SVlj7yIy+m7uwZQjpmzEC4rjzWcg8xPuUyl7HbdrYM2cIYUgCSnhZYT2pcQK35nd7mcBf3j0X
- rVYMwaq5ESHcechMkDEx7MGNmWqwVIePm5EQ1Aj4kRMkYWgRLcKq1G15KqAF/3iwXbn8=;
+ bh=P3QVwo9J7NWMPY93PH6FBoEs84teA7YesBtF4Swr1Mo=; b=VA3NlWIdRvo5WZGZkrVIMuoLUo
+ l731N6GWbiN3m8FMjyuFW5LYYaIRXwTMp7tSJElqdgKTIdHj93eTunU20qk0fMRGA+S8OCiwXwZT4
+ 03MQuslokb7qyDT77p2lX/JaYrT2e0WwCkeP8PSJjRc3q7zaSAUtHr4aANoO9tV/feF0=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
  h=Content-Transfer-Encoding:MIME-Version:References:In-Reply-To:Message-Id:
@@ -29,34 +29,34 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
  :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
  List-Post:List-Owner:List-Archive;
- bh=q3/GLxs1IfoAYOlp+DSccrNjNqY/WhyU7UrndMvZb84=; b=h74+HxsD7DjxTjgITaS056HIZ3
- RKLFMvAXbz0YBi2tLt6Qp2LzSb87GoH6ip66W7+bf3vnIGKGt513lPoOg/BueSiFqQXKSA4oG9iv1
- u5TN3f44os40yfGXy+VotKveV/ke5bYlSUtx3TyAcvRc0e9ijHgk5i+A9DF2q2XZjqNg=;
+ bh=P3QVwo9J7NWMPY93PH6FBoEs84teA7YesBtF4Swr1Mo=; b=WNJ7Q0kpEQDE4gEcpmFYLp3NnT
+ BWNu9R0jym5LefuPhcg3OM7mNZaJvO9nyn+NE+Isn3W7sdnypCLJY7t/98oxJ0LX4jnP7BknND7rj
+ 6tU47V+ILMw/OpmaQUZDP6kAladKhF1slFr0otkGEjVgZ7QBuPZd6iSBS48efFy2pAA8=;
 Received: from mail.kernel.org ([198.145.29.99])
  by sfi-mx-3.v28.lw.sourceforge.com with esmtps
  (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.92.2)
- id 1krtjB-005Ycl-LA
- for jfs-discussion@lists.sourceforge.net; Wed, 23 Dec 2020 02:18:17 +0000
-Received: by mail.kernel.org (Postfix) with ESMTPSA id 6FED423435;
- Wed, 23 Dec 2020 02:18:07 +0000 (UTC)
+ id 1krtk0-005YhO-Hp
+ for jfs-discussion@lists.sourceforge.net; Wed, 23 Dec 2020 02:19:12 +0000
+Received: by mail.kernel.org (Postfix) with ESMTPSA id 79107206EC;
+ Wed, 23 Dec 2020 02:18:58 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=k20201202; t=1608689888;
- bh=1uP2c0+XEwO4wOTOior9AIKviSft5M0m/TbEzlHj4Qw=;
+ s=k20201202; t=1608689939;
+ bh=RtqJsKm5KDbxgsapWnnxMcKyIwnfwCzHQepqTKGp/0E=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=eLaFLtg5YAlm62Cs4hQ7gQ55aBplotx43N6YcWWq96XxaU44BDEQecWcyIwDel3HK
- k7I+oQcZ7Wpek1PnxRGYAsrF04rhrSlk3WZxdecf86K1ZU89GYSfAt1ig9W2D4yV5b
- yH8bqnlCWnxZUWNXXU5LOf8Dvee8wP4l4rbJgH/irZe4iv0Cyxl3FTY9ADSUyOuMFP
- MZs+I06moJeiRuPvIk0AepdVu+q4vEMGQuZ/PCO5J4ac1YosnxL17GJ1mBoef6KE0o
- 5CfAFKDIwtvzZ06T0wG5FqChZTNU/VKsvSuWI2BwvIcucW7Gu+/wCkiF4w8cw+gu+D
- edI9uNbpMgj1Q==
+ b=k+Ha4qujhKtL78BfBbckxubv18MA7taVYEKJVAWGAep9z9ic9PiiCoKSBqYOlseY/
+ e+QCdqHJosefkbymwWGqZTw7IHHf0RjnuD2qfN/0V7YcWL0b1ODz7O3rzRvfSL27Ym
+ 1ztJ0+qUFoCJouQv1ILWrKFFnlEfhLrM1i89GGyzV+HP17QsnFD6uHhsYFuJSGkq48
+ ciRsxLimyjdXA/oezwi81Dyu014WUfIAQEZcQCAH9HJ3s10MV2GSHpxPBp0iMAMIZ0
+ GtpafRNr/CX7QCzt/e3fX4s2Gbjv0QtC0ublKwa0Hxv6fC88ltKqY9hXSY25m5tav/
+ ik5B59RektkKg==
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Date: Tue, 22 Dec 2020 21:14:05 -0500
-Message-Id: <20201223021626.2790791-76-sashal@kernel.org>
+Date: Tue, 22 Dec 2020 21:16:38 -0500
+Message-Id: <20201223021813.2791612-35-sashal@kernel.org>
 X-Mailer: git-send-email 2.27.0
-In-Reply-To: <20201223021626.2790791-1-sashal@kernel.org>
-References: <20201223021626.2790791-1-sashal@kernel.org>
+In-Reply-To: <20201223021813.2791612-1-sashal@kernel.org>
+References: <20201223021813.2791612-1-sashal@kernel.org>
 MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
@@ -71,8 +71,8 @@ X-Spam-Report: Spam Filtering performed by mx.sourceforge.net.
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature,
  not necessarily valid
  -0.0 DKIMWL_WL_HIGH         DKIMwl.org - High trust sender
-X-Headers-End: 1krtjB-005Ycl-LA
-Subject: [Jfs-discussion] [PATCH AUTOSEL 5.10 076/217] jfs: Fix memleak in
+X-Headers-End: 1krtk0-005YhO-Hp
+Subject: [Jfs-discussion] [PATCH AUTOSEL 5.4 035/130] jfs: Fix memleak in
  dbAdjCtl
 X-BeenThere: jfs-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
@@ -106,7 +106,7 @@ Signed-off-by: Sasha Levin <sashal@kernel.org>
  1 file changed, 6 insertions(+), 2 deletions(-)
 
 diff --git a/fs/jfs/jfs_dmap.c b/fs/jfs/jfs_dmap.c
-index 7dfcab2a2da68..619deeeb3d8b4 100644
+index caade185e568d..51b2c8f6ef35d 100644
 --- a/fs/jfs/jfs_dmap.c
 +++ b/fs/jfs/jfs_dmap.c
 @@ -2549,15 +2549,19 @@ dbAdjCtl(struct bmap * bmp, s64 blkno, int newval, int alloc, int level)
