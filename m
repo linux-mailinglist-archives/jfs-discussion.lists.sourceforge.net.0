@@ -2,78 +2,85 @@ Return-Path: <jfs-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+jfs-discussion@lfdr.de
 Delivered-To: lists+jfs-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id CB56C2E127B
-	for <lists+jfs-discussion@lfdr.de>; Wed, 23 Dec 2020 03:26:00 +0100 (CET)
-Received: from [127.0.0.1] (helo=sfs-ml-4.v29.lw.sourceforge.com)
-	by sfs-ml-4.v29.lw.sourceforge.com with esmtp (Exim 4.90_1)
+	by mail.lfdr.de (Postfix) with ESMTPS id 965E82EAD2C
+	for <lists+jfs-discussion@lfdr.de>; Tue,  5 Jan 2021 15:13:46 +0100 (CET)
+Received: from [127.0.0.1] (helo=sfs-ml-2.v29.lw.sourceforge.com)
+	by sfs-ml-2.v29.lw.sourceforge.com with esmtp (Exim 4.90_1)
 	(envelope-from <jfs-discussion-bounces@lists.sourceforge.net>)
-	id 1krtqV-0001hg-S0; Wed, 23 Dec 2020 02:25:47 +0000
+	id 1kwn5P-00037m-0k; Tue, 05 Jan 2021 14:13:23 +0000
 Received: from [172.30.20.202] (helo=mx.sourceforge.net)
  by sfs-ml-4.v29.lw.sourceforge.com with esmtps
  (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
- (envelope-from <sashal@kernel.org>) id 1krtqV-0001hY-9i
- for jfs-discussion@lists.sourceforge.net; Wed, 23 Dec 2020 02:25:47 +0000
+ (envelope-from
+ <3HWP0XwkbALox34pfqqjwfuuni.lttlqjzxjwhtsyjsy.htr@M3KW2WVRGUFZ5GODRSRYTGD7.apphosting.bounces.google.com>)
+ id 1kwlxn-0007J4-Li
+ for jfs-discussion@lists.sourceforge.net; Tue, 05 Jan 2021 13:01:27 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=sourceforge.net; s=x; h=Content-Transfer-Encoding:MIME-Version:References:
- In-Reply-To:Message-Id:Date:Subject:Cc:To:From:Sender:Reply-To:Content-Type:
- Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
- Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
+ d=sourceforge.net; s=x; h=Content-Type:To:From:Subject:Message-ID:Date:
+ MIME-Version:Sender:Reply-To:Cc:Content-Transfer-Encoding:Content-ID:
+ Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+ :Resent-Message-ID:In-Reply-To:References:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=IF5LfmZvYmtKb8XIKhCyw+4iJ0GLjxTS7JgAujjcyRY=; b=D/FTbzkyKItxLE5gfJM3crWrS7
- jgm6JmYf+66CpXDHdVulRus72OocLKnDJplG111Clh+QAvSDdouzJ0mVXOmAlKUpnoXChJUVGn2S3
- bfMdhWJhfnRkcUHGsa0MPWjrKvfo3YbFyISV2u99RxseQwnNF+HB/IWfHhbTn5HFoahI=;
+ bh=/MLmxfO00kG8Vz2FD5GixYYD/MCQqiaRhG+GjRUx0dw=; b=IMsPuVrXaMtNRsdtXVprBhZnDp
+ os2m8FmkXAQxtQv5jw+T07TG9K4VO2Aj2MWOr5+W9kJUA29tJwby/tJuvo6sv3zBt61xP2SSrAMbp
+ ijAAuIt+AN/3PM7lRLYoRffUuNXNXfsz5xlsrkVXTg7OFM7ZJjjk6dAGtoBKTFVtFEcE=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
- h=Content-Transfer-Encoding:MIME-Version:References:In-Reply-To:Message-Id:
- Date:Subject:Cc:To:From:Sender:Reply-To:Content-Type:Content-ID:
- Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
- :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
- List-Post:List-Owner:List-Archive;
- bh=IF5LfmZvYmtKb8XIKhCyw+4iJ0GLjxTS7JgAujjcyRY=; b=CUBLloRZOxqB2hWQM5Q3CsT47v
- /g4fGKvABj2F0+6wqP8160QukROn95Rz3BLGmDK0RMjem+rUKZdHVluo0YL2AFd8JEqcm9O3vBAxC
- Obj4AW5f3X0TWmjBXKz8f4mxdNcWAJ8+wOcZESdPzU1mGN0AjUMUTImdL93M1WuKFi1w=;
-Received: from mail.kernel.org ([198.145.29.99])
+ h=Content-Type:To:From:Subject:Message-ID:Date:MIME-Version:Sender:Reply-To
+ :Cc:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+ Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+ References:List-Id:List-Help:List-Unsubscribe:List-Subscribe:List-Post:
+ List-Owner:List-Archive; bh=/MLmxfO00kG8Vz2FD5GixYYD/MCQqiaRhG+GjRUx0dw=; b=d
+ Bo/EyQunl09Vg9tgiRtp+B+zCZcpE86m2TDzYClTVWmTu8TXlBSL5tOEWWZ7XKucPrbppcV4q54pN
+ EWuSwB4VQ515q4wDt65px6xZurgAMPqQKgFNAyuItuRfTawhRTBnLrLBJOToAz16sUe5Y1+WUg6Pq
+ 9LMo+Fdqks+XFAzg=;
+Received: from mail-io1-f70.google.com ([209.85.166.70])
  by sfi-mx-1.v28.lw.sourceforge.com with esmtps
- (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.92.2)
- id 1krtqN-0077Cn-W5
- for jfs-discussion@lists.sourceforge.net; Wed, 23 Dec 2020 02:25:47 +0000
-Received: by mail.kernel.org (Postfix) with ESMTPSA id CDAE8225AB;
- Wed, 23 Dec 2020 02:25:33 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=k20201202; t=1608690334;
- bh=YrbTY5JpEvTtuhqP3HWPxAhzZ0+tfCCafdmz15WdEwE=;
- h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=IkouofAoTpY5CuGiRw2mzUgtW45OGucAI1y84XepBIdgT5Ma/3tYVsfJ8gWx4raLl
- bJT7ZFZJLslkPMNLcGtN0/YNqmgsfkC6RllB87K3qQQr04bh5gyijDOzOSeaWpf0dE
- 4S59VDFCsreE5xJpVQV1+uQ00y0Tby0CPmhx5L9JyZ5nJe6b6K3e7MeOqQoNnZlH5k
- ugkcVuCYHOJ8gE053SSjrvAgjLeaTLXr32nGZXhBthc/Wy6JrzHgzsD8v06y428frq
- 9gircOkk5D0/5o4KXgI5JEKU4l4nVeYDgXTK24RxxPx0uKZyUNH8d6kEYdJS5W4ptm
- iyRxMTHxfo0Sw==
-From: Sasha Levin <sashal@kernel.org>
-To: linux-kernel@vger.kernel.org,
-	stable@vger.kernel.org
-Date: Tue, 22 Dec 2020 21:24:52 -0500
-Message-Id: <20201223022516.2794471-14-sashal@kernel.org>
-X-Mailer: git-send-email 2.27.0
-In-Reply-To: <20201223022516.2794471-1-sashal@kernel.org>
-References: <20201223022516.2794471-1-sashal@kernel.org>
+ (TLSv1.2:ECDHE-RSA-AES128-GCM-SHA256:128) (Exim 4.92.2)
+ id 1kwlxi-00G9Ov-Ip
+ for jfs-discussion@lists.sourceforge.net; Tue, 05 Jan 2021 13:01:27 +0000
+Received: by mail-io1-f70.google.com with SMTP id q140so13856851iod.5
+ for <jfs-discussion@lists.sourceforge.net>;
+ Tue, 05 Jan 2021 05:01:22 -0800 (PST)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:date:message-id:subject:from:to;
+ bh=/MLmxfO00kG8Vz2FD5GixYYD/MCQqiaRhG+GjRUx0dw=;
+ b=K6HPurjFvNuJb1flv8BbH2fb3wmul3pH360Ja/0P5liRSREMbOO+u2ZpQQolhL7YKg
+ ZxruD6PDhCRN8Zf1JgOav7xATrTsSBtYhVJd0PX79cGgo3uNltoDLKNpWLka480Hri5W
+ Y4kGlYb1ix4I9Bro02/OZyhduYheKsmOl2mv3E+OkNOXBIymRC1vffzW/xFOkT1dhpf9
+ ZmRgOHIdWot/ypWP5VF/1BuVkJEfStFwhHzZi9gEPQMMB/l52fIRcLyTOGvFVhY92Dft
+ 3oflulXY57euE508ZBpGdcMT9YAxDCPChLk5s8Oc6LTmAywBVRjWfoujQ/lgXoqbFRb8
+ ggEg==
+X-Gm-Message-State: AOAM532+3bw63uBjGXwQZMZBaJMQVSi1JF+1lRD7Gb6hnT0j2yAw6vtE
+ w4nJnuB1db4aMYTSfRLrW8+Yr8ymtOFKwgaINmikHsNRQZmd
+X-Google-Smtp-Source: ABdhPJzpMzaz8sKKDn0AV8QoU1thqcOD4lAoiN7+cFrTHp8FA1YDc4R7RpHY4Ve/jJo2U4M6liMyQtKT9aa9OeRvcPrcqqGz2qHx
 MIME-Version: 1.0
-X-stable: review
-X-Patchwork-Hint: Ignore
-X-Spam-Score: -0.1 (/)
+X-Received: by 2002:a6b:920b:: with SMTP id u11mr62715438iod.191.1609851677004; 
+ Tue, 05 Jan 2021 05:01:17 -0800 (PST)
+Date: Tue, 05 Jan 2021 05:01:16 -0800
+X-Google-Appengine-App-Id: s~syzkaller
+X-Google-Appengine-App-Id-Alias: syzkaller
+Message-ID: <00000000000059589a05b826cdad@google.com>
+From: syzbot <syzbot+d0d8d1bfd19a85de7703@syzkaller.appspotmail.com>
+To: jfs-discussion@lists.sourceforge.net, linux-kernel@vger.kernel.org, 
+ shaggy@kernel.org, syzkaller-bugs@googlegroups.com
+X-Spam-Score: 2.6 (++)
 X-Spam-Report: Spam Filtering performed by mx.sourceforge.net.
  See http://spamassassin.org/tag/ for more details.
+ 0.3 FROM_LOCAL_HEX         From: localpart has long hexadecimal sequence
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level mail
+ domains are different
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.166.70 listed in wl.mailspike.net]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/, no
+ trust [209.85.166.70 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_AU Message has a valid DKIM or DK signature from author's
- domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature,
- not necessarily valid
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - High trust sender
-X-Headers-End: 1krtqN-0077Cn-W5
-Subject: [Jfs-discussion] [PATCH AUTOSEL 4.4 14/38] jfs: Fix memleak in
- dbAdjCtl
+ 2.0 SHORT_SHORTNER Short body with little more than a link to a shortener
+X-Headers-End: 1kwlxi-00G9Ov-Ip
+X-Mailman-Approved-At: Tue, 05 Jan 2021 14:13:21 +0000
+Subject: [Jfs-discussion] UBSAN: shift-out-of-bounds in diReadSpecial
 X-BeenThere: jfs-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -85,55 +92,68 @@ List-Post: <mailto:jfs-discussion@lists.sourceforge.net>
 List-Help: <mailto:jfs-discussion-request@lists.sourceforge.net?subject=help>
 List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/jfs-discussion>, 
  <mailto:jfs-discussion-request@lists.sourceforge.net?subject=subscribe>
-Cc: Sasha Levin <sashal@kernel.org>, jfs-discussion@lists.sourceforge.net,
- Dinghao Liu <dinghao.liu@zju.edu.cn>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Errors-To: jfs-discussion-bounces@lists.sourceforge.net
 
-From: Dinghao Liu <dinghao.liu@zju.edu.cn>
+Hello,
 
-[ Upstream commit 751341b4d7841e2b76e78eec382c2e119165497f ]
+syzbot found the following issue on:
 
-When dbBackSplit() fails, mp should be released to
-prevent memleak. It's the same when dbJoin() fails.
+HEAD commit:    614cb589 Merge tag 'acpi-5.11-rc1-2' of git://git.kernel.o..
+git tree:       upstream
+console output: https://syzkaller.appspot.com/x/log.txt?x=10e4ffbd500000
+kernel config:  https://syzkaller.appspot.com/x/.config?x=bf519e1e96191576
+dashboard link: https://syzkaller.appspot.com/bug?extid=d0d8d1bfd19a85de7703
+compiler:       gcc (GCC) 10.1.0-syz 20200507
 
-Signed-off-by: Dinghao Liu <dinghao.liu@zju.edu.cn>
-Signed-off-by: Dave Kleikamp <dave.kleikamp@oracle.com>
-Signed-off-by: Sasha Levin <sashal@kernel.org>
+Unfortunately, I don't have any reproducer for this issue yet.
+
+IMPORTANT: if you fix the issue, please add the following tag to the commit:
+Reported-by: syzbot+d0d8d1bfd19a85de7703@syzkaller.appspotmail.com
+
+================================================================================
+UBSAN: shift-out-of-bounds in fs/jfs/jfs_imap.c:445:7
+shift exponent -19 is negative
+CPU: 0 PID: 11254 Comm: syz-executor.2 Not tainted 5.10.0-syzkaller #0
+Hardware name: Google Google Compute Engine/Google Compute Engine, BIOS Google 01/01/2011
+Call Trace:
+ __dump_stack lib/dump_stack.c:79 [inline]
+ dump_stack+0x107/0x163 lib/dump_stack.c:120
+ ubsan_epilogue+0xb/0x5a lib/ubsan.c:148
+ __ubsan_handle_shift_out_of_bounds.cold+0xb1/0x181 lib/ubsan.c:395
+ diReadSpecial.cold+0x1b/0x3e fs/jfs/jfs_imap.c:445
+ jfs_mount+0x83/0x3d0 fs/jfs/jfs_mount.c:86
+ jfs_fill_super+0x5b1/0xbc0 fs/jfs/super.c:562
+ mount_bdev+0x34d/0x410 fs/super.c:1366
+ legacy_get_tree+0x105/0x220 fs/fs_context.c:592
+ vfs_get_tree+0x89/0x2f0 fs/super.c:1496
+ do_new_mount fs/namespace.c:2875 [inline]
+ path_mount+0x13ad/0x20c0 fs/namespace.c:3205
+ do_mount fs/namespace.c:3218 [inline]
+ __do_sys_mount fs/namespace.c:3426 [inline]
+ __se_sys_mount fs/namespace.c:3403 [inline]
+ __x64_sys_mount+0x27f/0x300 fs/namespace.c:3403
+ do_syscall_64+0x2d/0x70 arch/x86/entry/common.c:46
+ entry_SYSCALL_64_after_hwframe+0x44/0xa9
+RIP: 0033:0x460b9a
+Code: b8 a6 00 00 00 0f 05 48 3d 01 f0 ff ff 0f 83 ad 89 fb ff c3 66 2e 0f 1f 84 00 00 00 00 00 66 90 49 89 ca b8 a5 00 00 00 0f 05 <48> 3d 01 f0 ff ff 0f 83 8a 89 fb ff c3 66 0f 1f 84 00 00 00 00 00
+RSP: 002b:00007f2ed35f4a78 EFLAGS: 00000202 ORIG_RAX: 00000000000000a5
+RAX: ffffffffffffffda RBX: 00007f2ed35f4b10 RCX: 0000000000460b9a
+RDX: 0000000020000000 RSI: 0000000020000100 RDI: 00007f2ed35f4ad0
+RBP: 00007f2ed35f4ad0 R08: 00007f2ed35f4b10 R09: 0000000020000000
+R10: 0000000000000000 R11: 0000000000000202 R12: 0000000020000000
+R13: 0000000020000100 R14: 0000000020000200 R15: 000000002006d200
+================================================================================
+
+
 ---
- fs/jfs/jfs_dmap.c | 8 ++++++--
- 1 file changed, 6 insertions(+), 2 deletions(-)
+This report is generated by a bot. It may contain errors.
+See https://goo.gl/tpsmEJ for more information about syzbot.
+syzbot engineers can be reached at syzkaller@googlegroups.com.
 
-diff --git a/fs/jfs/jfs_dmap.c b/fs/jfs/jfs_dmap.c
-index 2d514c7affc2a..fa14a01950853 100644
---- a/fs/jfs/jfs_dmap.c
-+++ b/fs/jfs/jfs_dmap.c
-@@ -2562,15 +2562,19 @@ dbAdjCtl(struct bmap * bmp, s64 blkno, int newval, int alloc, int level)
- 		 */
- 		if (oldval == NOFREE) {
- 			rc = dbBackSplit((dmtree_t *) dcp, leafno);
--			if (rc)
-+			if (rc) {
-+				release_metapage(mp);
- 				return rc;
-+			}
- 			oldval = dcp->stree[ti];
- 		}
- 		dbSplit((dmtree_t *) dcp, leafno, dcp->budmin, newval);
- 	} else {
- 		rc = dbJoin((dmtree_t *) dcp, leafno, newval);
--		if (rc)
-+		if (rc) {
-+			release_metapage(mp);
- 			return rc;
-+		}
- 	}
- 
- 	/* check if the root of the current dmap control page changed due
--- 
-2.27.0
-
+syzbot will keep track of this issue. See:
+https://goo.gl/tpsmEJ#status for how to communicate with syzbot.
 
 
 _______________________________________________
