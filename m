@@ -2,27 +2,27 @@ Return-Path: <jfs-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+jfs-discussion@lfdr.de
 Delivered-To: lists+jfs-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4C1EB2FB6A7
-	for <lists+jfs-discussion@lfdr.de>; Tue, 19 Jan 2021 15:07:12 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 08EF92FB69C
+	for <lists+jfs-discussion@lfdr.de>; Tue, 19 Jan 2021 15:07:07 +0100 (CET)
 Received: from [127.0.0.1] (helo=sfs-ml-2.v29.lw.sourceforge.com)
 	by sfs-ml-2.v29.lw.sourceforge.com with esmtp (Exim 4.90_1)
 	(envelope-from <jfs-discussion-bounces@lists.sourceforge.net>)
-	id 1l1reT-0000Oa-K6; Tue, 19 Jan 2021 14:06:33 +0000
+	id 1l1reT-0000Oy-Qz; Tue, 19 Jan 2021 14:06:33 +0000
 Received: from [172.30.20.202] (helo=mx.sourceforge.net)
- by sfs-ml-1.v29.lw.sourceforge.com with esmtps
+ by sfs-ml-2.v29.lw.sourceforge.com with esmtps
  (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
  (envelope-from <prvs=646552d04=chaitanya.kulkarni@wdc.com>)
- id 1l1jUs-0000Ls-BQ
- for jfs-discussion@lists.sourceforge.net; Tue, 19 Jan 2021 05:24:06 +0000
+ id 1l1jVG-0007HT-13
+ for jfs-discussion@lists.sourceforge.net; Tue, 19 Jan 2021 05:24:30 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=sourceforge.net; s=x; h=Content-Transfer-Encoding:MIME-Version:References:
  In-Reply-To:Message-Id:Date:Subject:Cc:To:From:Sender:Reply-To:Content-Type:
  Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
  Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=bDInU+lozFpbY9cR08LENuwUC+xb2lOsAAgGUV1f1fw=; b=EK01FVcF4xhOW19szCqqeosp9+
- Tu3z+YACfEAHN3zCnw6DduIJW84j2o9Xp2Q/bUTRPqBUpiguAyIgK5HBUyV26oJHoKzcDULbzpK9F
- wSB5til+wXq0Bm3bhe2jjQOCfH3ImSRo18zGcL3TvqIg9cXcWO6PP6Gx2i7gfv1DEfKM=;
+ bh=LjjoFTYLn+SHXYNdfS4694D76VT22af69E+1Y7xGa14=; b=TK+A+iiqJ7gwqGRmhzrsvy0DxW
+ 1PPOBPm95RAun4kDGQNv8DKgRyQ30jBq+FXo0LmXdSHDjMnHZGsDn08AVCLA3etdrX3Q46c837cNm
+ Y7mW2VgUXbtR3MTIZIfyFXW0UuMUEFALGu5k/hSRfjRkJMxSQLJHnBiABcZKoWrdeo2k=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
  h=Content-Transfer-Encoding:MIME-Version:References:In-Reply-To:Message-Id:
@@ -30,51 +30,51 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
  :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
  List-Post:List-Owner:List-Archive;
- bh=bDInU+lozFpbY9cR08LENuwUC+xb2lOsAAgGUV1f1fw=; b=Qk6RZLzBxUImoECOd/35+yd6WA
- tu5XxC+xU6ddTMToS6LeuQa6fL6/BUGumqIt98AnSVSWEqxnxyd6LVV5QrbY9tj9mWgJgStY/q7kV
- y4Qys7/W/MxeJkx6JFtkz39j5gI5hs0xbL9EGlNUCebTNRM7Dxiaf7k82CzYPb3tDVu8=;
-Received: from esa1.hgst.iphmx.com ([68.232.141.245])
- by sfi-mx-3.v28.lw.sourceforge.com with esmtps
+ bh=LjjoFTYLn+SHXYNdfS4694D76VT22af69E+1Y7xGa14=; b=ZztzwwD30a1RPFXRPvFGSBm2Hi
+ qt7QPPLNR4lCaVfnQW4PT38GRXH53CDa4nOCc07Aw2U3OVKBREI0Hty6XVBeePcSX/JJD6e63Om4d
+ hWROus1Bj8y8n8lPHmU/tMRqW9hvfK1tBbhlAhbJMQnN4oGHEoon3fvI8x23qLW8kEkE=;
+Received: from esa4.hgst.iphmx.com ([216.71.154.42])
+ by sfi-mx-1.v28.lw.sourceforge.com with esmtps
  (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.92.2)
- id 1l1jUl-00DzYa-4o
- for jfs-discussion@lists.sourceforge.net; Tue, 19 Jan 2021 05:24:06 +0000
+ id 1l1jV8-006vpU-PE
+ for jfs-discussion@lists.sourceforge.net; Tue, 19 Jan 2021 05:24:29 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple;
  d=wdc.com; i=@wdc.com; q=dns/txt; s=dkim.wdc.com;
- t=1611033839; x=1642569839;
+ t=1611033862; x=1642569862;
  h=from:to:cc:subject:date:message-id:in-reply-to:
  references:mime-version:content-transfer-encoding;
- bh=7b7Ba/mkSpgZ58joyvKPrAaGG8qz0lkQcstbC0iRpPI=;
- b=qkVGk353ec0hpqFZyBTPEcx2dmDc4u4krc7Lkh+pypQrByTVU8m4C+nB
- hMflzCWeeZu8QwxcTo5YQxZbQk3iWsfStUzFN5M+Fha0JZF6XT4aLozbv
- durrMQ19+1ZtXVBd9B/nbzLANvwytTWHDkefb6vSKg5uFihn+f6iTaHxR
- g1MjnA12a4IXoyEfjiRv+ohr1uMyFkitJgFS8W9FBzNMtLYcNxs1qFOlj
- dhWrhThGKv7l989uct/Ec07qt16L0XLjsOqu8zs91TyNhzN3WBvZgruZL
- pAgnGrrw+Z6Id63rKKxpnbGa3iJcNW57incQFe4jkDJttutqkunTdOB2p w==;
-IronPort-SDR: qdxFRTF3n5qyGRG7viWfepPoPZwwFM6rR0SXZUnPd5Mwj3URncrm7LTdsfCxll+Nds7IJ0z9Jr
- XP7d2Vjf5BsSXVyaJG8aPIngMcWSPQ0LkZSMr1UGaA4o9y78oz14Hx7B5zy5rAEteJnil16lAX
- 6zmjE+FNSC9hPnzVJl5Thl2A2SUzeJaQ0RMhbXwTdqnigCDukvmxW725AvFaVBwanjyAjGSpwn
- Fk7wgzmTfB4CW8DUk3GnWzETf4iQzAZTYnma+6TEnm63sa9s++LbCp/BXh3+2s+ivMRZDxmGhj
- 4JQ=
-X-IronPort-AV: E=Sophos;i="5.79,357,1602518400"; d="scan'208";a="268081043"
-Received: from h199-255-45-14.hgst.com (HELO uls-op-cesaep01.wdc.com)
+ bh=UJI+K9IAfdXiGgzdG/XtuzZQkA1HDrbS/80BpuWpCHY=;
+ b=N3gbBNgMkeskYzhD/nMdRVm8wPTnM3V0Lo/ITgDiooTOB+z6apyrQj7i
+ RvDGQgZOUR/G6Kx+KH+zv7psO9KXb5upEPlMaoYTBD6wmS5wCNGYASeGZ
+ yn8q1izEAdfxDaQ0tWyIze1fXzKzBZVpvKxAV/qhfqkdgxICVjSM35/uM
+ e2q6pnQ2EyiJir1sFQ2rHutKP2JagLOMWf+uLr72MzGZ9DkmdV6FiqBGn
+ TAsZ19SYg4xPLrn1kZ/DoO34SVoAYuoYTCWzzF2V2pmkMSVxCjmIV89hA
+ vAXIxQVWVReP2nFMRml5LZnndBCdd4EYEftjAT1n7GtrpZ1EzE73hLb28 Q==;
+IronPort-SDR: 4pSV1BdPkxzX+PwskQlYlvQhfWa3dLzkoH4VQbZdwMbwG49snR5F9qHisCqmzJSe60NRAuYA2f
+ oUJXpEdyjjKZaAfplKTIbYQYqY1mIHshaOWtST4z7QdxnMTQJzLbzrYmSEoSfMfY1nTA/G5SCA
+ FeGgeUT53H7ITOSTcpml3+pzGFfrCpbfo1gkorpvyr3msR3Xptvr6R54g+QGCx51H922VYCtus
+ fdOSGN/dleGtssbMx2CAJCZrzSx0/AQPxhNjJ/mZBc//01mDbsl5DgkmhBbAwGt85AdQ284uVm
+ poE=
+X-IronPort-AV: E=Sophos;i="5.79,357,1602518400"; d="scan'208";a="157763920"
+Received: from uls-op-cesaip01.wdc.com (HELO uls-op-cesaep01.wdc.com)
  ([199.255.45.14])
- by ob1.hgst.iphmx.com with ESMTP; 19 Jan 2021 13:08:30 +0800
-IronPort-SDR: TgbwjJRFeX4k6uU6Zfz1avtsC/6XiskdrPmvrq5XALCW5IajuYHHI6/FQOPI5BkcRubsHbvGOn
- /872+3OV267yW+9ZWtTu2c66VdVxK+7YWBFsm4bh6zIsA0NF46qlAOwwMcgEzPrHFVmjzeaC2Y
- wOb39dm17C9bElEn6tsA4sEluFgclf4VJGlSaB9jF3JVQk5drwEh9b8utLRkl9kSAljzk+NDoj
- Dy9bmou8t+bv+wOZH463ypzxAjPVYjCjfPPbBbzVddO5BlysyRtGaYyneJAF/3wkezNAVlSatx
- nPOaQRsP3xr6sGE0W0X8TlXg
+ by ob1.hgst.iphmx.com with ESMTP; 19 Jan 2021 13:08:37 +0800
+IronPort-SDR: b7/aD8MG3nxbMrSAB/GMw979dkF/0auSuwkAM/yoOMN/V3v1riTf60aJ92N4xBo0D+PijN7FVD
+ AJIheRqmoxX5jOQXoG+wt/TfhgUyCre2CGHGLheLFZFMMjo5SRYNNsBFhuqYfLNc8aY8NM0bLU
+ xQVguRbEM0ogVyihJjUKddsKXwnnWz7vb77rnJ6+J5OCLSyVJUF0Amtx8mRyZg+1flfV3e6icq
+ DjduikCD5G8vgtzQudkfwxCZ9yhqnIaNi2RLOVfIDC7oC66qRsXZaxPvO1L7LX3Yv3fESmPNDq
+ ROernyXPWODKBUENkf8bOAyT
 Received: from uls-op-cesaip02.wdc.com ([10.248.3.37])
  by uls-op-cesaep01.wdc.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384;
- 18 Jan 2021 20:53:07 -0800
-IronPort-SDR: P5c68+r5a8DOSQsRGC/PLvFBWof3CYBSZ78/AjZxxbqEhqAxt84O9ZWicHnuz+rOOqV7roKTgj
- twniYUPk2fiAD8Xe2xt0+bCng/kmhe4tRAPsXmMChVmLYeVESDqX1Ch12ppq+swuJrohwMf670
- nW4oFOXw5mZvfoBvM6DRJldmElTkBvSEiHsn4Z6Lj6HNC6nwKfOy7ls60P38dBSPu32aUdCyrJ
- 9Xni8CwHGVPZR+TCQgcaFbT87hN7DOlLc38PrOokHP4ypmvZX5OCF+2Q9DRTOOHIgCBKFlVNcC
- QQI=
+ 18 Jan 2021 20:53:15 -0800
+IronPort-SDR: JlGfCHshT1mK+XacVyirUo0rFyjPWt2f31VZ3z2J1Z+1bAsxbYaQqDfkpztEmemcjkFKSqFtBW
+ eEHx4MKVO6uhGP44oLoJjur9xUH9E+nf+FFdLDlrYS2WxbXcD7sJerBxjAL9tpVS6iMx+k6Ygk
+ O6RIIA/q4UYqrDznEz4/cneeqCBOoZihS6qjthtpQtFPN4aYc3uvtGPOTbAR+UEONOX62l4CZO
+ swheoC8AcejSmyN7MaD5wpht27eshQMMdBz4TnpekpmQcRnvSAFWabxuH6D+W4HdmuEhyRgLHS
+ mSA=
 WDCIronportException: Internal
 Received: from vm.labspan.wdc.com (HELO vm.sc.wdc.com) ([10.6.137.102])
- by uls-op-cesaip02.wdc.com with ESMTP; 18 Jan 2021 21:08:30 -0800
+ by uls-op-cesaip02.wdc.com with ESMTP; 18 Jan 2021 21:08:37 -0800
 From: Chaitanya Kulkarni <chaitanya.kulkarni@wdc.com>
 To: linux-block@vger.kernel.org, linux-xfs@vger.kernel.org,
  linux-fsdevel@vger.kernel.org, linux-kernel@vger.kernel.org,
@@ -83,8 +83,8 @@ To: linux-block@vger.kernel.org, linux-xfs@vger.kernel.org,
  linux-scsi@vger.kernel.org, target-devel@vger.kernel.org,
  linux-btrfs@vger.kernel.org, linux-ext4@vger.kernel.org,
  cluster-devel@redhat.com
-Date: Mon, 18 Jan 2021 21:06:10 -0800
-Message-Id: <20210119050631.57073-17-chaitanya.kulkarni@wdc.com>
+Date: Mon, 18 Jan 2021 21:06:11 -0800
+Message-Id: <20210119050631.57073-18-chaitanya.kulkarni@wdc.com>
 X-Mailer: git-send-email 2.22.1
 In-Reply-To: <20210119050631.57073-1-chaitanya.kulkarni@wdc.com>
 References: <20210119050631.57073-1-chaitanya.kulkarni@wdc.com>
@@ -92,8 +92,6 @@ MIME-Version: 1.0
 X-Spam-Score: -0.1 (/)
 X-Spam-Report: Spam Filtering performed by mx.sourceforge.net.
  See http://spamassassin.org/tag/ for more details.
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/, no
- trust [68.232.141.245 listed in list.dnswl.org]
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_AU Message has a valid DKIM or DK signature from author's
@@ -101,9 +99,9 @@ X-Spam-Report: Spam Filtering performed by mx.sourceforge.net.
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature,
  not necessarily valid
-X-Headers-End: 1l1jUl-00DzYa-4o
+X-Headers-End: 1l1jV8-006vpU-PE
 X-Mailman-Approved-At: Tue, 19 Jan 2021 14:06:28 +0000
-Subject: [Jfs-discussion] [RFC PATCH 16/37] floppy: use bio_init_fields
+Subject: [Jfs-discussion] [RFC PATCH 17/37] pktcdvd: use bio_init_fields
 X-BeenThere: jfs-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -132,28 +130,39 @@ Errors-To: jfs-discussion-bounces@lists.sourceforge.net
 
 Signed-off-by: Chaitanya Kulkarni <chaitanya.kulkarni@wdc.com>
 ---
- drivers/block/floppy.c | 5 +----
- 1 file changed, 1 insertion(+), 4 deletions(-)
+ drivers/block/pktcdvd.c | 12 ++++--------
+ 1 file changed, 4 insertions(+), 8 deletions(-)
 
-diff --git a/drivers/block/floppy.c b/drivers/block/floppy.c
-index dfe1dfc901cc..1237b64bb37b 100644
---- a/drivers/block/floppy.c
-+++ b/drivers/block/floppy.c
-@@ -4219,13 +4219,10 @@ static int __floppy_read_block_0(struct block_device *bdev, int drive)
- 	cbdata.drive = drive;
+diff --git a/drivers/block/pktcdvd.c b/drivers/block/pktcdvd.c
+index b8bb8ec7538d..47eb4e0bd4c3 100644
+--- a/drivers/block/pktcdvd.c
++++ b/drivers/block/pktcdvd.c
+@@ -1028,10 +1028,8 @@ static void pkt_gather_data(struct pktcdvd_device *pd, struct packet_data *pkt)
  
- 	bio_init(&bio, &bio_vec, 1);
--	bio_set_dev(&bio, bdev);
-+	bio_init_fields(&bio, bdev, 0, &cbdata, floppy_rb0_cb, 0, 0);
- 	bio_add_page(&bio, page, block_size(bdev), 0);
+ 		bio = pkt->r_bios[f];
+ 		bio_reset(bio);
+-		bio->bi_iter.bi_sector = pkt->sector + f * (CD_FRAMESIZE >> 9);
+-		bio_set_dev(bio, pd->bdev);
+-		bio->bi_end_io = pkt_end_io_read;
+-		bio->bi_private = pkt;
++		bio_init_fields(bio, pd->bdev, pkt->sector + f * (CD_FRAMESIZE >> 9), pkt,
++				pkt_end_io_read, 0, 0);
  
--	bio.bi_iter.bi_sector = 0;
- 	bio.bi_flags |= (1 << BIO_QUIET);
--	bio.bi_private = &cbdata;
--	bio.bi_end_io = floppy_rb0_cb;
- 	bio_set_op_attrs(&bio, REQ_OP_READ, 0);
+ 		p = (f * CD_FRAMESIZE) / PAGE_SIZE;
+ 		offset = (f * CD_FRAMESIZE) % PAGE_SIZE;
+@@ -1208,10 +1206,8 @@ static void pkt_start_write(struct pktcdvd_device *pd, struct packet_data *pkt)
+ 	int f;
  
- 	init_completion(&cbdata.complete);
+ 	bio_reset(pkt->w_bio);
+-	pkt->w_bio->bi_iter.bi_sector = pkt->sector;
+-	bio_set_dev(pkt->w_bio, pd->bdev);
+-	pkt->w_bio->bi_end_io = pkt_end_io_packet_write;
+-	pkt->w_bio->bi_private = pkt;
++	bio_init_fields(pkt->w_bio, pd->bdev, pkt->sector, pkt,
++			pkt_end_io_packet_write, 0, 0);
+ 
+ 	/* XXX: locking? */
+ 	for (f = 0; f < pkt->frames; f++) {
 -- 
 2.22.1
 
