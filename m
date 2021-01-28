@@ -2,27 +2,27 @@ Return-Path: <jfs-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+jfs-discussion@lfdr.de
 Delivered-To: lists+jfs-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id 77FE03075FF
-	for <lists+jfs-discussion@lfdr.de>; Thu, 28 Jan 2021 13:28:23 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id C5A3C307620
+	for <lists+jfs-discussion@lfdr.de>; Thu, 28 Jan 2021 13:28:46 +0100 (CET)
 Received: from [127.0.0.1] (helo=sfs-ml-1.v29.lw.sourceforge.com)
 	by sfs-ml-1.v29.lw.sourceforge.com with esmtp (Exim 4.90_1)
 	(envelope-from <jfs-discussion-bounces@lists.sourceforge.net>)
-	id 1l56Or-0000Rn-Ug; Thu, 28 Jan 2021 12:27:49 +0000
+	id 1l56Os-0000SD-7N; Thu, 28 Jan 2021 12:27:50 +0000
 Received: from [172.30.20.202] (helo=mx.sourceforge.net)
- by sfs-ml-1.v29.lw.sourceforge.com with esmtps
+ by sfs-ml-2.v29.lw.sourceforge.com with esmtps
  (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
  (envelope-from <prvs=655a99766=chaitanya.kulkarni@wdc.com>)
- id 1l51VA-0007vJ-4w
- for jfs-discussion@lists.sourceforge.net; Thu, 28 Jan 2021 07:14:00 +0000
+ id 1l51VJ-0002Y4-Cd
+ for jfs-discussion@lists.sourceforge.net; Thu, 28 Jan 2021 07:14:09 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=sourceforge.net; s=x; h=Content-Transfer-Encoding:MIME-Version:References:
  In-Reply-To:Message-Id:Date:Subject:Cc:To:From:Sender:Reply-To:Content-Type:
  Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
  Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=yrj1XsQHwUPq3DtHDN7MlkC4uMzBnKkbIZZVhyQS3p0=; b=L2f/iwBohqQCQ6L0zaBmnzsCtT
- W5WAndQCVwiwoPuEiFRrJqcCCVfwTIKugapHWrF32g0bUasBTuqL3xbcqbwMEg63U9M++bhP34iFR
- RqaqtdNCngcWu02eF+hx43vlLeOSwD1k+bHvPN9KniOoUkV6Mv4haZ3EwEjr4DWhLE94=;
+ bh=op7v6nvJVjd3jQjn5hbBOUkOhf76RIPcf/2tXAk1w0I=; b=EyHYpPT8rb07RFsJKCn3O+QT3w
+ +Ng9fgbNShv06lMBKeL3uFWDx2eDbLr1VcD6t18KCOrxpWZdvc0q1X0X7tAA4qSyTZswnn7+zX92w
+ RH2842rS/tF6tjuyQdR02Ke4rslFHrXzSMR+RCefQty88LAkNan/9/rtoquDbje8umV8=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
  h=Content-Transfer-Encoding:MIME-Version:References:In-Reply-To:Message-Id:
@@ -30,51 +30,51 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
  :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
  List-Post:List-Owner:List-Archive;
- bh=yrj1XsQHwUPq3DtHDN7MlkC4uMzBnKkbIZZVhyQS3p0=; b=bBPTwYlGCGVo2v564MabPj7sKF
- APWyT6hsbhiRvlVspT/419giQTrPblC5feiKsCbKq4dHDKdz4okqxlHO7we/kWv4vTNo8i4AHwYne
- ILUMrHQAlh8swLQCd4sNVP8iaEEPRFVlhrrEZn5nfQnhBP2GX1qdMYKCYjdPcAbK6mWY=;
-Received: from esa2.hgst.iphmx.com ([68.232.143.124])
- by sfi-mx-2.v28.lw.sourceforge.com with esmtps
- (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.92.3)
- id 1l51V1-0000Sb-OD
- for jfs-discussion@lists.sourceforge.net; Thu, 28 Jan 2021 07:13:56 +0000
+ bh=op7v6nvJVjd3jQjn5hbBOUkOhf76RIPcf/2tXAk1w0I=; b=lRqwRBDQ7ecLkNscOm9C9PKUlO
+ 9fAG6R0XT7sM48ZwrUntjLQrU9LlAuPVo7yiWaPsR5ebhsRvaMpaJ+2wLzq4eQMFOGMq6WLFdU1T5
+ 5SqpeNBIR0gjGg7PL2oHVxhTiHvhp1N5Kev4P+di9eUb7MXob2YSEGLzU7iswllancjQ=;
+Received: from esa4.hgst.iphmx.com ([216.71.154.42])
+ by sfi-mx-1.v28.lw.sourceforge.com with esmtps
+ (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.92.2)
+ id 1l51VA-00DWJf-2h
+ for jfs-discussion@lists.sourceforge.net; Thu, 28 Jan 2021 07:14:09 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple;
  d=wdc.com; i=@wdc.com; q=dns/txt; s=dkim.wdc.com;
- t=1611818161; x=1643354161;
+ t=1611818039; x=1643354039;
  h=from:to:cc:subject:date:message-id:in-reply-to:
  references:mime-version:content-transfer-encoding;
- bh=ph9rmwEURyYiJjcGgT3e2aApJZNJOSNpUoZqKSV1dx8=;
- b=RmWbfnj9SzPbRQgiTKvTd2xWGOL8G0FMYQCkuEG4sq33qfPKH9zlUJ2R
- fFO+QHqvmaHAwjvNBtuekFzUrnmfhoK3VFkZpo1YwCq6tPRmSS4wk2oTx
- dRYgm2+0v7akWKKmhw3fWBSRZkM/xF6FSjffK73KCBkFGVf2ma2LHvQKX
- yhgyyHzKIK5DXgMICcEJReYUKY1vDH+7t73ObEl4b8DC3q83Qrb7gcLcJ
- 6mtruz6rjYZ3OUdVNOv3hcqKiloKdX4VUSwrrc6TepFZQJJ8Ie94N3zoZ
- Z50Wfmog/kf7VjCygrrF/HiKfaFZZ+II+aNtF3pjRv1Dq2PIuWdSxQ7/P A==;
-IronPort-SDR: RjvUbP89qoQ6sb2RNYT42A34j8afb+IotzBLpwh31ImGCoEQ3QHVyMZAjFZuUdRMXk9POJhodf
- xqiz7PInH8f7G06llcDnnbIEGyvnsF43oFkxCQygvbbRK06GlJ9uGxt3wbWoNp6BR0uc+R259p
- H65/BUAaTB47pLUZybAlQ4GjP7jwjVJMXu6qQ9qMeWCDh+55fIHMO7tR+6P9QCaFPXX5WE7Rjp
- Ry9a9HYxLsXeCQFM+YjQuAoN8wjS8E8ph99n4IZhXBKKv3DMY1r/jb69QQytY1yvf3v/1jRf63
- YEk=
-X-IronPort-AV: E=Sophos;i="5.79,381,1602518400"; d="scan'208";a="262549024"
+ bh=wUwjN0vBouMAu1m5itQWMc9ceGIiyWjYqyXKNeHEsnQ=;
+ b=UMR4u6W+HedQkH7xQ/3/xdjSBzmjHwrLcQaqz+egjJ5Eiqf9mAzrPiOv
+ kr4eK+PMwwzNro9KOfAQEkuOxTx9DFqDTU2pcPUtKCZzKsP5b2LADC+KU
+ kT5W0EJMmeLGxLr8ivZ9CTAGsADkZt7l4pe58rSq7gVynXjG9S0x6wMMH
+ XLHCPqpYkZrOmPI7yY7aDbnoFphU1zYVoFysGEx4z90JZhoLpSJi7PLfJ
+ ElRBO1rUD5q2e4s2uAnBuIOrWes6ZloD4iL50u7cU5pQfSkilBfm+nuMu
+ /Pgo2gkx/85yiouc1+nLjn8luWJHOYG8UCNcp+WhNOspMw2SOcxybhYIn g==;
+IronPort-SDR: 2jAk2V6y64PGJjVCHHg3kSGp1wkb2KrJohmGeWy5vUr3lmj4Juiz4eQlvLgROM7e5U7iq5a6/l
+ zL4ZuyrIztq1Qe7SZRb8/xfoJNeF14yOm8yscjUrmxXRj5wuB4/jbDUvp44ePb4gTRTnbvE9hB
+ hI3AjSC9U5YyGDvQx9Dveg++z4WpAJ/p3Kqq0ejFuQQmZVMwtG3tOVgEJkKRQuMyWCrca4d+Lp
+ Ewg0LUjKOOlrZm+ge9IEwRcXbHfoh9fMEKI9UJppWh9teXwIOV6fub87Eie7gU+KQIx6qdw/HB
+ LVw=
+X-IronPort-AV: E=Sophos;i="5.79,381,1602518400"; d="scan'208";a="158517379"
 Received: from uls-op-cesaip01.wdc.com (HELO uls-op-cesaep01.wdc.com)
  ([199.255.45.14])
- by ob1.hgst.iphmx.com with ESMTP; 28 Jan 2021 15:15:53 +0800
-IronPort-SDR: lkq11iTxEzoJXmvOp51kyPbMpaloXyDZ7HlSfOel6L6RiHXQMr9THE70q1B4CALDibYyOpQv5s
- bioC9NPD06y+PLoYcRUC8raCs0Lp0QiLp9gUbZOcIMFV4jMH53mlOPEE6/7a6AITZob25bIbTr
- 83BQ2TZttSC7MSMM5QZqMcjkVu6rxUZBTKM1Zs688Bgl4jVYLponUo7K+aJNV8+t2PH9SYi3L/
- RS3Phv/c8+3fAbFn/KGhnnCP/k5dKVVTqiVmqbFIR876cawQitWH7GgAytvpfedqNeteQBNXif
- 1IeHxiK/WJ+qacrQYtZA4v2s
+ by ob1.hgst.iphmx.com with ESMTP; 28 Jan 2021 15:13:54 +0800
+IronPort-SDR: V9/bvWojVMyiWWZFhWxszxZ5qDwA4knvezI5JSRtxlx6QYsX8GxleGC4RhNEWTH1SY3ERN5B2g
+ 6KWgevic6vUV1Spn1YUsCRhVzOuEqO7hGIQ0lUwavFAWC/+wHpql+jdXRfq6De1NWsN/7LCTGy
+ d7eDulDYiOO8TsCnLmQIL3ouaBx9M91b8ljfoz3Phwl7VWeZI+mxwtb1aOcWULS7wc4m0dZi/s
+ TVULl4uGQu4c9sv2u9y0xcgWMMEIeybZc8epux7y83JHjgBreMehxvmeDaVr6oAsZpyWRbCrPM
+ qaHpnGKtCdaoBJsWmf/oc4Nj
 Received: from uls-op-cesaip02.wdc.com ([10.248.3.37])
  by uls-op-cesaep01.wdc.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384;
- 27 Jan 2021 22:58:06 -0800
-IronPort-SDR: 2qgPwD8neR80/SdtH4pRH50bxmDr7msnaiMmu0nET+XLf24Atsm9LH9w2S7p7pMRphnBeo5pVx
- VOFkyyTuzt5tWdOljMzaLRlQ/2Y+vBgbMl5P6BLyAgHROT8V3ajdo6WQ+YwR34TObygZuUERZX
- rfU+sPmHgGS1V+3dgxOeo8REERCKgWHIYxzhiuWRBtY6dBheQaeAr6VP4LTAPeLl+kd1iFUoyd
- mqKwU7dlwbyE4M8F7GURh/yglDYKxcs47wr8oitkT1bgU4EtSPSZoGcLrNM5tqqKQP8I79UW3Y
- S3E=
+ 27 Jan 2021 22:58:14 -0800
+IronPort-SDR: pB2cXSth9j9iO8qI9kro9aUnzxe7uC+CM4R5ezhi5mkNe3QJ3MeSZh+GGUOxW9ROBr/hgtgk35
+ 3kQYC2KUTB+4qbQnoUg89GyqXiUICL6Lbb6/fLgPHrp+IuvY60iwR3VPtR6IrHib1STZYvjFII
+ G0U9LFUNwbOn5ju9S5MOKHMAKhFoQxnYNKdJKA68HgaqnFN4j9YRc5HgIY3H1XVVcQBHwY13od
+ d8yfo6WXgScVxvO/+aDCj5bBUi8Qq8LHMuAKgJFuukK9k/tSzy9sPaWEv7Xl8jluo8DC44HSzF
+ bXE=
 WDCIronportException: Internal
 Received: from vm.labspan.wdc.com (HELO vm.sc.wdc.com) ([10.6.137.102])
- by uls-op-cesaip02.wdc.com with ESMTP; 27 Jan 2021 23:13:46 -0800
+ by uls-op-cesaip02.wdc.com with ESMTP; 27 Jan 2021 23:13:54 -0800
 From: Chaitanya Kulkarni <chaitanya.kulkarni@wdc.com>
 To: linux-xfs@vger.kernel.org, linux-fsdevel@vger.kernel.org,
  dm-devel@redhat.com, linux-block@vger.kernel.org,
@@ -84,8 +84,8 @@ To: linux-xfs@vger.kernel.org, linux-fsdevel@vger.kernel.org,
  linux-fscrypt@vger.kernel.org, jfs-discussion@lists.sourceforge.net,
  linux-nilfs@vger.kernel.org, ocfs2-devel@oss.oracle.com,
  linux-pm@vger.kernel.org, linux-mm@kvack.org
-Date: Wed, 27 Jan 2021 23:11:13 -0800
-Message-Id: <20210128071133.60335-15-chaitanya.kulkarni@wdc.com>
+Date: Wed, 27 Jan 2021 23:11:14 -0800
+Message-Id: <20210128071133.60335-16-chaitanya.kulkarni@wdc.com>
 X-Mailer: git-send-email 2.22.1
 In-Reply-To: <20210128071133.60335-1-chaitanya.kulkarni@wdc.com>
 References: <20210128071133.60335-1-chaitanya.kulkarni@wdc.com>
@@ -97,6 +97,8 @@ X-Spam-Report: Spam Filtering performed by mx.sourceforge.net.
  See
  http://wiki.apache.org/spamassassin/DnsBlocklists#dnsbl-block
  for more information. [URIs: wdc.com]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/, no
+ trust [216.71.154.42 listed in list.dnswl.org]
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_AU Message has a valid DKIM or DK signature from author's
@@ -104,10 +106,10 @@ X-Spam-Report: Spam Filtering performed by mx.sourceforge.net.
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature,
  not necessarily valid
-X-Headers-End: 1l51V1-0000Sb-OD
-X-Mailman-Approved-At: Thu, 28 Jan 2021 12:27:43 +0000
-Subject: [Jfs-discussion] [RFC PATCH 14/34] fs/buffer: use bio_new in
- submit_bh_wbc
+X-Headers-End: 1l51VA-00DWJf-2h
+X-Mailman-Approved-At: Thu, 28 Jan 2021 12:27:44 +0000
+Subject: [Jfs-discussion] [RFC PATCH 15/34] fscrypt: use bio_new in
+ fscrypt_zeroout_range
 X-BeenThere: jfs-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -138,46 +140,28 @@ Errors-To: jfs-discussion-bounces@lists.sourceforge.net
 
 Signed-off-by: Chaitanya Kulkarni <chaitanya.kulkarni@wdc.com>
 ---
- fs/buffer.c | 16 +++++++---------
- 1 file changed, 7 insertions(+), 9 deletions(-)
+ fs/crypto/bio.c | 5 ++---
+ 1 file changed, 2 insertions(+), 3 deletions(-)
 
-diff --git a/fs/buffer.c b/fs/buffer.c
-index 32647d2011df..fcbea667fa04 100644
---- a/fs/buffer.c
-+++ b/fs/buffer.c
-@@ -3023,12 +3023,16 @@ static int submit_bh_wbc(int op, int op_flags, struct buffer_head *bh,
- 	if (test_set_buffer_req(bh) && (op == REQ_OP_WRITE))
- 		clear_buffer_write_io_error(bh);
+diff --git a/fs/crypto/bio.c b/fs/crypto/bio.c
+index b048a0e38516..20dab9bdf098 100644
+--- a/fs/crypto/bio.c
++++ b/fs/crypto/bio.c
+@@ -148,12 +148,11 @@ int fscrypt_zeroout_range(const struct inode *inode, pgoff_t lblk,
+ 		return -EINVAL;
  
--	bio = bio_alloc(GFP_NOIO, 1);
-+	if (buffer_meta(bh))
-+		op_flags |= REQ_META;
-+	if (buffer_prio(bh))
-+		op_flags |= REQ_PRIO;
-+
-+	bio = bio_new(bh->b_bdev,  bh->b_blocknr * (bh->b_size >> 9), op,
-+		      op_flags, GFP_NOIO, 1);
+ 	/* This always succeeds since __GFP_DIRECT_RECLAIM is set. */
+-	bio = bio_alloc(GFP_NOFS, nr_pages);
++	bio = bio_alloc(inode->i_sb->s_bdev, 0, REQ_OP_WRITE, 0, nr_pages,
++			GFP_NOFS);
  
- 	fscrypt_set_bio_crypt_ctx_bh(bio, bh, GFP_NOIO);
+ 	do {
+-		bio_set_dev(bio, inode->i_sb->s_bdev);
+ 		bio->bi_iter.bi_sector = pblk << (blockbits - 9);
+-		bio_set_op_attrs(bio, REQ_OP_WRITE, 0);
  
--	bio->bi_iter.bi_sector = bh->b_blocknr * (bh->b_size >> 9);
--	bio_set_dev(bio, bh->b_bdev);
- 	bio->bi_write_hint = write_hint;
- 
- 	bio_add_page(bio, bh->b_page, bh->b_size, bh_offset(bh));
-@@ -3037,12 +3041,6 @@ static int submit_bh_wbc(int op, int op_flags, struct buffer_head *bh,
- 	bio->bi_end_io = end_bio_bh_io_sync;
- 	bio->bi_private = bh;
- 
--	if (buffer_meta(bh))
--		op_flags |= REQ_META;
--	if (buffer_prio(bh))
--		op_flags |= REQ_PRIO;
--	bio_set_op_attrs(bio, op, op_flags);
--
- 	/* Take care of bh's that straddle the end of the device */
- 	guard_bio_eod(bio);
- 
+ 		i = 0;
+ 		offset = 0;
 -- 
 2.22.1
 
