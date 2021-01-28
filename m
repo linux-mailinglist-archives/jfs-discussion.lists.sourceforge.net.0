@@ -2,93 +2,82 @@ Return-Path: <jfs-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+jfs-discussion@lfdr.de
 Delivered-To: lists+jfs-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id EDA3030761C
-	for <lists+jfs-discussion@lfdr.de>; Thu, 28 Jan 2021 13:28:43 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 06C0F307613
+	for <lists+jfs-discussion@lfdr.de>; Thu, 28 Jan 2021 13:28:38 +0100 (CET)
 Received: from [127.0.0.1] (helo=sfs-ml-1.v29.lw.sourceforge.com)
 	by sfs-ml-1.v29.lw.sourceforge.com with esmtp (Exim 4.90_1)
 	(envelope-from <jfs-discussion-bounces@lists.sourceforge.net>)
-	id 1l56Ou-0000ZK-NJ; Thu, 28 Jan 2021 12:27:52 +0000
+	id 1l56Ou-0000Zf-SK; Thu, 28 Jan 2021 12:27:52 +0000
 Received: from [172.30.20.202] (helo=mx.sourceforge.net)
  by sfs-ml-2.v29.lw.sourceforge.com with esmtps
  (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
- (envelope-from <rjwysocki@gmail.com>) id 1l54RF-0002TU-Jq
- for jfs-discussion@lists.sourceforge.net; Thu, 28 Jan 2021 10:22:09 +0000
+ (envelope-from <joseph.qi@linux.alibaba.com>) id 1l56IF-0007hg-TZ
+ for jfs-discussion@lists.sourceforge.net; Thu, 28 Jan 2021 12:20:59 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=sourceforge.net; s=x; h=Content-Type:Cc:To:Subject:Message-ID:Date:From:
- In-Reply-To:References:MIME-Version:Sender:Reply-To:Content-Transfer-Encoding
- :Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
+ d=sourceforge.net; s=x; h=Content-Transfer-Encoding:Content-Type:In-Reply-To:
+ MIME-Version:Date:Message-ID:From:References:Cc:To:Subject:Sender:Reply-To:
+ Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
  Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=HDfQ7EgSz4He6IVrUzqy89nGy356H19n/4Ap6Knawyw=; b=P5IzsONqsGPycETSXaZua28zGO
- PhovX4HORZzjEPBODbQNYgFoXxETpXuKwgL45Y5Q3wjkHhJv7IBy4J5IKwcLMwPgHu/0tyBKj9h0J
- TueDtGhoQVt9KQ0C8UNH7Q7VrX+Q4Ytb3bJWGWxWBskVwPJJ1lvejblxFq5ULJO7kyiM=;
+ bh=5in6UHIP+b9oOLRoI9b3+EgNtRyQp3bhxOoPFSmJOBo=; b=P6Gvq3MWnB/URTQa6icMe0nYNO
+ 2MZHyrH64cKsl0vgTQcBbHBHF/GCXE8Wq5JPy0puhyH6epnEChEEcxEpo9STvbLxCCWcEC6gkwYVl
+ vsbCqX6Ij4xGy83KEJ5agDTWMLkFyUcaXMC1tshnVI7f31MlLkrkZoqeJ4zrZXXHj8AE=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
- h=Content-Type:Cc:To:Subject:Message-ID:Date:From:In-Reply-To:References:
- MIME-Version:Sender:Reply-To:Content-Transfer-Encoding:Content-ID:
+ h=Content-Transfer-Encoding:Content-Type:In-Reply-To:MIME-Version:Date:
+ Message-ID:From:References:Cc:To:Subject:Sender:Reply-To:Content-ID:
  Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
  :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
  List-Post:List-Owner:List-Archive;
- bh=HDfQ7EgSz4He6IVrUzqy89nGy356H19n/4Ap6Knawyw=; b=eFMdP1ibUhztA4CvlQvJA8KCk3
- j5fAuC31CMf0D1SRx8rlZT6hyUfsLt1oyF/UT+zFaQ8ubzybtblbLs+Jf4mzSWtupz1UOJu4/YII6
- 9+oXvBosJWdKY7pEvOzZzrRTAL5Z/ja5SqKzY6kwUghviALRhV+YJX6sE6UpOOpc7LjA=;
-Received: from mail-ot1-f48.google.com ([209.85.210.48])
+ bh=5in6UHIP+b9oOLRoI9b3+EgNtRyQp3bhxOoPFSmJOBo=; b=jqWwEDxpQt3+YrpZ4XY8npSEkE
+ ajpfGgqOZZ+jUtIWnIBmxK4FQqwfzn064Gf+dowHs6NhZgdbS67Th/LIaSu7nU5745pQCtFhhMhgT
+ AJCoKvLTzHr3hPlg5FH7Vz1GZpy89YQGFvZJTMKeJcjhguwurH0DEsPrlXhm8+4EaUA0=;
+Received: from out30-56.freemail.mail.aliyun.com ([115.124.30.56])
  by sfi-mx-3.v28.lw.sourceforge.com with esmtps
- (TLSv1.2:ECDHE-RSA-AES128-GCM-SHA256:128) (Exim 4.92.2)
- id 1l54R0-00H7dx-QV
- for jfs-discussion@lists.sourceforge.net; Thu, 28 Jan 2021 10:22:08 +0000
-Received: by mail-ot1-f48.google.com with SMTP id 63so4696616oty.0
- for <jfs-discussion@lists.sourceforge.net>;
- Thu, 28 Jan 2021 02:21:54 -0800 (PST)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=HDfQ7EgSz4He6IVrUzqy89nGy356H19n/4Ap6Knawyw=;
- b=gWXv2tpxAQWj2bjsYzzsThQKGM04RGb2umdhuqYEXT3lHfDACE1D09Ga2RlQiJ51Fi
- Uc1yFzoMHgAlxnBA/tMOCWaP7Kct1tF7KwsiA2xnyoCNEe6OjKt9bNugvU6qvDO/AiY7
- QEtBeMn/Fk5WiBHO3izPcHdrVrEqkRyK/XRZuG+4WBIM1PbtBDCvbIDukVmXWxS2iV9+
- 2JmOLy8zrtm/4E6JaEn9FrNvq+T1gVn0uH+H0SNLT9Qbo8lSvrMOB8wRvpahhB57W6II
- RMl7698Q2anG9QKT0P+TVK0btRo+i71qqmH68x5QmwVw/eqRRv5cDPdxxV4nXgWklU4P
- iksQ==
-X-Gm-Message-State: AOAM530wnQWgz1YmiCQDnF8p5tsA2SqCqE3SzjRlYAv4qC5qfQdK29Oa
- t9t4ayOOZXvAyYBS3UhtbGgGEMz0YqMG6MjGwJk=
-X-Google-Smtp-Source: ABdhPJwJviHVEMHN6dwg9pHl9sFzPeOTWi/Tyw7MUMRzUkqGbWVHXybuLc31QSYFbmu849bxozre+7WWIBRJddZRpNc=
-X-Received: by 2002:a05:6830:2313:: with SMTP id
- u19mr11117098ote.321.1611829309173; 
- Thu, 28 Jan 2021 02:21:49 -0800 (PST)
-MIME-Version: 1.0
+ (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.92.2)
+ id 1l56BA-00HZ0I-Rn
+ for jfs-discussion@lists.sourceforge.net; Thu, 28 Jan 2021 12:14:02 +0000
+X-Alimail-AntiSpam: AC=PASS; BC=-1|-1; BR=01201311R261e4; CH=green; DM=||false|;
+ DS=||; FP=0|-1|-1|-1|0|-1|-1|-1; HT=e01e04357; MF=joseph.qi@linux.alibaba.com;
+ NM=1; PH=DS; RN=56; SR=0; TI=SMTPD_---0UN8ZMkY_1611836008; 
+Received: from B-D1K7ML85-0059.local(mailfrom:joseph.qi@linux.alibaba.com
+ fp:SMTPD_---0UN8ZMkY_1611836008) by smtp.aliyun-inc.com(127.0.0.1);
+ Thu, 28 Jan 2021 20:13:29 +0800
+To: Chaitanya Kulkarni <chaitanya.kulkarni@wdc.com>,
+ linux-xfs@vger.kernel.org, linux-fsdevel@vger.kernel.org,
+ dm-devel@redhat.com, linux-block@vger.kernel.org,
+ linux-kernel@vger.kernel.org, drbd-dev@lists.linbit.com,
+ xen-devel@lists.xenproject.org, linux-nvme@lists.infradead.org,
+ linux-scsi@vger.kernel.org, target-devel@vger.kernel.org,
+ linux-fscrypt@vger.kernel.org, jfs-discussion@lists.sourceforge.net,
+ linux-nilfs@vger.kernel.org, ocfs2-devel@oss.oracle.com,
+ linux-pm@vger.kernel.org, linux-mm@kvack.org
 References: <20210128071133.60335-1-chaitanya.kulkarni@wdc.com>
- <20210128071133.60335-30-chaitanya.kulkarni@wdc.com>
-In-Reply-To: <20210128071133.60335-30-chaitanya.kulkarni@wdc.com>
-From: "Rafael J. Wysocki" <rafael@kernel.org>
-Date: Thu, 28 Jan 2021 11:21:36 +0100
-Message-ID: <CAJZ5v0h01e4LgV0c5FxLorcc6iFW2LVzC=hJcd7LNAJ6D0E8jg@mail.gmail.com>
-To: Chaitanya Kulkarni <chaitanya.kulkarni@wdc.com>
-X-Spam-Score: 0.5 (/)
+ <20210128071133.60335-26-chaitanya.kulkarni@wdc.com>
+From: Joseph Qi <joseph.qi@linux.alibaba.com>
+Message-ID: <8ba2c461-6042-757d-a3c1-0490932e749e@linux.alibaba.com>
+Date: Thu, 28 Jan 2021 20:13:28 +0800
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:78.0)
+ Gecko/20100101 Thunderbird/78.6.1
+MIME-Version: 1.0
+In-Reply-To: <20210128071133.60335-26-chaitanya.kulkarni@wdc.com>
+Content-Language: en-US
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: Spam Filtering performed by mx.sourceforge.net.
  See http://spamassassin.org/tag/ for more details.
- 0.0 FREEMAIL_FROM Sender email is commonly abused enduser mail provider
- (rjwysocki[at]gmail.com)
  0.0 URIBL_BLOCKED ADMINISTRATOR NOTICE: The query to URIBL was blocked.
  See
  http://wiki.apache.org/spamassassin/DnsBlocklists#dnsbl-block
  for more information. [URIs: wdc.com]
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [209.85.210.48 listed in wl.mailspike.net]
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/, no
- trust [209.85.210.48 listed in list.dnswl.org]
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level mail
- domains are different
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ trust [115.124.30.56 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and EnvelopeFrom
- freemail headers are different
-X-Headers-End: 1l54R0-00H7dx-QV
+ 0.0 UNPARSEABLE_RELAY Informational: message has unparseable relay lines
+ -0.0 NICE_REPLY_A           Looks like a legit reply (A)
+X-Headers-End: 1l56BA-00HZ0I-Rn
 X-Mailman-Approved-At: Thu, 28 Jan 2021 12:27:47 +0000
-Subject: Re: [Jfs-discussion] [RFC PATCH 29/34] power/swap: use bio_new in
- hib_submit_io
+Subject: Re: [Jfs-discussion] [RFC PATCH 25/34] ocfs/cluster: use bio_new in
+ dm-log-writes
 X-BeenThere: jfs-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -100,78 +89,65 @@ List-Post: <mailto:jfs-discussion@lists.sourceforge.net>
 List-Help: <mailto:jfs-discussion-request@lists.sourceforge.net?subject=help>
 List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/jfs-discussion>, 
  <mailto:jfs-discussion-request@lists.sourceforge.net?subject=subscribe>
-Cc: shaggy@kernel.org, jfs-discussion@lists.sourceforge.net,
- "Gustavo A. R. Silva" <gustavoars@kernel.org>,
- Sergey Senozhatsky <sergey.senozhatsky.work@gmail.com>,
- Mike Snitzer <snitzer@redhat.com>, Takashi Iwai <tiwai@suse.de>,
- djwong@kernel.org, linux-nvme <linux-nvme@lists.infradead.org>,
- Philipp Reisner <philipp.reisner@linbit.com>,
- Linux Memory Management List <linux-mm@kvack.org>, dm-devel@redhat.com,
- target-devel@vger.kernel.org, Pavel Machek <pavel@ucw.cz>,
- Alex Shi <alex.shi@linux.alibaba.com>, Christoph Hellwig <hch@lst.de>,
- Alasdair Kergon <agk@redhat.com>, drbd-dev@lists.linbit.com,
- naohiro.aota@wdc.com, linux-nilfs@vger.kernel.org,
- Sagi Grimberg <sagi@grimberg.me>,
- "open list:TARGET SUBSYSTEM" <linux-scsi@vger.kernel.org>,
- Mark Fasheh <mark@fasheh.com>, Konrad Rzeszutek Wilk <konrad.wilk@oracle.com>,
- osandov@fb.com, Eric Biggers <ebiggers@kernel.org>,
- xen-devel@lists.xenproject.org, ngupta@vflare.org,
- Len Brown <len.brown@intel.com>, Linux PM <linux-pm@vger.kernel.org>,
- Hannes Reinecke <hare@suse.de>, Ming Lei <ming.lei@redhat.com>,
- linux-block@vger.kernel.org, Tejun Heo <tj@kernel.org>,
- linux-fscrypt@vger.kernel.org, Al Viro <viro@zeniv.linux.org.uk>,
- jefflexu@linux.alibaba.com, jaegeuk@kernel.org,
- Joel Becker <jlbec@evilplan.org>, konishi.ryusuke@gmail.com,
- Bart Van Assche <bvanassche@acm.org>, Jens Axboe <axboe@kernel.dk>,
- damien.lemoal@wdc.com, Ted Ts'o <tytso@mit.edu>,
- Andrew Morton <akpm@linux-foundation.org>,
- "Martin K. Petersen" <martin.petersen@oracle.com>,
- Joseph Qi <joseph.qi@linux.alibaba.com>,
- "Rafael J. Wysocki" <rjw@rjwysocki.net>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- linux-xfs@vger.kernel.org, Minchan Kim <minchan@kernel.org>,
- linux-fsdevel@vger.kernel.org, Lars Ellenberg <lars.ellenberg@linbit.com>,
- jth@kernel.org, asml.silence@gmail.com, ocfs2-devel@oss.oracle.com,
- roger.pau@citrix.com
+Cc: shaggy@kernel.org, sergey.senozhatsky.work@gmail.com, snitzer@redhat.com,
+ tiwai@suse.de, djwong@kernel.org, gustavoars@kernel.org, pavel@ucw.cz,
+ alex.shi@linux.alibaba.com, hch@lst.de, agk@redhat.com, naohiro.aota@wdc.com,
+ sagi@grimberg.me, mark@fasheh.com, osandov@fb.com, ebiggers@kernel.org,
+ ngupta@vflare.org, len.brown@intel.com, konrad.wilk@oracle.com, hare@suse.de,
+ ming.lei@redhat.com, viro@zeniv.linux.org.uk, jefflexu@linux.alibaba.com,
+ jaegeuk@kernel.org, konishi.ryusuke@gmail.com, bvanassche@acm.org,
+ axboe@kernel.dk, damien.lemoal@wdc.com, jth@kernel.org, tytso@mit.edu,
+ akpm@linux-foundation.org, martin.petersen@oracle.com, rjw@rjwysocki.net,
+ philipp.reisner@linbit.com, minchan@kernel.org, tj@kernel.org,
+ lars.ellenberg@linbit.com, roger.pau@citrix.com, asml.silence@gmail.com,
+ jlbec@evilplan.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Errors-To: jfs-discussion-bounces@lists.sourceforge.net
 
-On Thu, Jan 28, 2021 at 8:21 AM Chaitanya Kulkarni
-<chaitanya.kulkarni@wdc.com> wrote:
->
+I think you send a wrong subject by mistake.
 
-Please explain in the changelog why making this change is a good idea.
+Thanks,
+Joseph
 
+On 1/28/21 3:11 PM, Chaitanya Kulkarni wrote:
 > Signed-off-by: Chaitanya Kulkarni <chaitanya.kulkarni@wdc.com>
 > ---
->  kernel/power/swap.c | 7 +++----
->  1 file changed, 3 insertions(+), 4 deletions(-)
->
-> diff --git a/kernel/power/swap.c b/kernel/power/swap.c
-> index c73f2e295167..e92e36c053a6 100644
-> --- a/kernel/power/swap.c
-> +++ b/kernel/power/swap.c
-> @@ -271,13 +271,12 @@ static int hib_submit_io(int op, int op_flags, pgoff_t page_off, void *addr,
->                 struct hib_bio_batch *hb)
->  {
->         struct page *page = virt_to_page(addr);
-> +       sector_t sect = page_off * (PAGE_SIZE >> 9);
->         struct bio *bio;
->         int error = 0;
->
-> -       bio = bio_alloc(GFP_NOIO | __GFP_HIGH, 1);
-> -       bio->bi_iter.bi_sector = page_off * (PAGE_SIZE >> 9);
-> -       bio_set_dev(bio, hib_resume_bdev);
-> -       bio_set_op_attrs(bio, op, op_flags);
-> +       bio = bio_new(hib_resume_bdev, sect, op, op_flags, 1,
-> +                     GFP_NOIO | __GFP_HIGH);
->
->         if (bio_add_page(bio, page, PAGE_SIZE, 0) < PAGE_SIZE) {
->                 pr_err("Adding page to bio failed at %llu\n",
-> --
-> 2.22.1
->
+>  fs/ocfs2/cluster/heartbeat.c | 6 ++----
+>  1 file changed, 2 insertions(+), 4 deletions(-)
+> 
+> diff --git a/fs/ocfs2/cluster/heartbeat.c b/fs/ocfs2/cluster/heartbeat.c
+> index 0179a73a3fa2..b34518036446 100644
+> --- a/fs/ocfs2/cluster/heartbeat.c
+> +++ b/fs/ocfs2/cluster/heartbeat.c
+> @@ -515,12 +515,13 @@ static struct bio *o2hb_setup_one_bio(struct o2hb_region *reg,
+>  	unsigned int cs = *current_slot;
+>  	struct bio *bio;
+>  	struct page *page;
+> +	sector_t sect = (reg->hr_start_block + cs) << (bits - 9);
+>  
+>  	/* Testing has shown this allocation to take long enough under
+>  	 * GFP_KERNEL that the local node can get fenced. It would be
+>  	 * nicest if we could pre-allocate these bios and avoid this
+>  	 * all together. */
+> -	bio = bio_alloc(GFP_ATOMIC, 16);
+> +	bio = bio_new(reg->hr_bdev, sect, op, op_flags, 16, GFP_ATOMIC);
+>  	if (!bio) {
+>  		mlog(ML_ERROR, "Could not alloc slots BIO!\n");
+>  		bio = ERR_PTR(-ENOMEM);
+> @@ -528,11 +529,8 @@ static struct bio *o2hb_setup_one_bio(struct o2hb_region *reg,
+>  	}
+>  
+>  	/* Must put everything in 512 byte sectors for the bio... */
+> -	bio->bi_iter.bi_sector = (reg->hr_start_block + cs) << (bits - 9);
+> -	bio_set_dev(bio, reg->hr_bdev);
+>  	bio->bi_private = wc;
+>  	bio->bi_end_io = o2hb_bio_end_io;
+> -	bio_set_op_attrs(bio, op, op_flags);
+>  
+>  	vec_start = (cs << bits) % PAGE_SIZE;
+>  	while(cs < max_slots) {
+> 
 
 
 _______________________________________________
