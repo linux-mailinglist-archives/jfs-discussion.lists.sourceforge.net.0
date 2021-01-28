@@ -2,26 +2,26 @@ Return-Path: <jfs-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+jfs-discussion@lfdr.de
 Delivered-To: lists+jfs-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0CC3D307BDF
-	for <lists+jfs-discussion@lfdr.de>; Thu, 28 Jan 2021 18:13:47 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 153AF307C84
+	for <lists+jfs-discussion@lfdr.de>; Thu, 28 Jan 2021 18:32:33 +0100 (CET)
 Received: from [127.0.0.1] (helo=sfs-ml-1.v29.lw.sourceforge.com)
 	by sfs-ml-1.v29.lw.sourceforge.com with esmtp (Exim 4.90_1)
 	(envelope-from <jfs-discussion-bounces@lists.sourceforge.net>)
-	id 1l5ArH-0001HV-3Y; Thu, 28 Jan 2021 17:13:27 +0000
+	id 1l5B9U-0004Sr-DZ; Thu, 28 Jan 2021 17:32:16 +0000
 Received: from [172.30.20.202] (helo=mx.sourceforge.net)
  by sfs-ml-2.v29.lw.sourceforge.com with esmtps
  (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
- (envelope-from <djwong@kernel.org>) id 1l5AeK-0004AK-3e
- for jfs-discussion@lists.sourceforge.net; Thu, 28 Jan 2021 17:00:04 +0000
+ (envelope-from <djwong@kernel.org>) id 1l5AzX-0005A9-UJ
+ for jfs-discussion@lists.sourceforge.net; Thu, 28 Jan 2021 17:21:59 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=sourceforge.net; s=x; h=In-Reply-To:Content-Type:MIME-Version:References:
  Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:Content-Transfer-Encoding:
  Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
  Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=wmoYC4mCnjuGPGie7eHejSYMgylLnhkCDiwCuS9fxdY=; b=Pyz7Bd8KWdTIL9I5qPqFcRef1M
- S+Teji3d+3dJpuOXPUoA2K8ITYFKx9H8T3yxihE6FIMKX2t4CE/muLkckjpoHHEZ2yOEpNpEyxPli
- 3mEi3cymiHhHbA7IFWzx/kwnBcgkFVK8MQvRa4CoiiLvDceRRLIYbxPXMYQFroQ93PSg=;
+ bh=S0H2BmiKh1pF2iQjZvNnXwsTUMjukuW2oRWhkUBg/fU=; b=KTouEqST53sitq3hDJKEMw7y4c
+ z/mOhww1DNCFPwF6kY3MlBlqId4VqJixfINYFNwTd329+TA5ooTsAU/qPXFnbkAOaBgV2648VJjLm
+ lO+hKJ7+/z9ShGafHMOiL45DOi5u/pwgKJBO39V5QZkZhUiORINDuK1k6tB2/2XkP4lY=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
  h=In-Reply-To:Content-Type:MIME-Version:References:Message-ID:Subject:Cc:To
@@ -29,54 +29,53 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
  :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
  List-Post:List-Owner:List-Archive;
- bh=wmoYC4mCnjuGPGie7eHejSYMgylLnhkCDiwCuS9fxdY=; b=JlTKpdbOHwcX3fKT4f78P2E0N+
- Vn+7Hg5p/3bhBfvKf4fx1zq5MgnaFz4FtHxCsZu4wFXzTo4PXgFx7Lyh8XNm9iU5o4333X6lEd5AG
- eMs1VARR27zY9d0yJv1NXP2XBqyTsWRoWDOWu8uhTPiXftfnP6OID3V+6+oeWFqP+jjw=;
+ bh=S0H2BmiKh1pF2iQjZvNnXwsTUMjukuW2oRWhkUBg/fU=; b=MQAclL38SW0R//gWoR+Fkaq4Ak
+ HHhH0uS3dPdSYvRajc3IKSjj+TqYG7ivfw3s0BQdz73Pur32kskeMnyovIM5WsnojdghZc9MsyeMz
+ ltUXJSpEeuW0IjM/sNNYmbAh9Gc7lmK6X98HV45V5FdhQA3voSYxxw+xqEt3XeiPWjUE=;
 Received: from mail.kernel.org ([198.145.29.99])
- by sfi-mx-3.v28.lw.sourceforge.com with esmtps
+ by sfi-mx-1.v28.lw.sourceforge.com with esmtps
  (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.92.2)
- id 1l5Ae8-000t3X-KT
- for jfs-discussion@lists.sourceforge.net; Thu, 28 Jan 2021 17:00:02 +0000
-Received: by mail.kernel.org (Postfix) with ESMTPSA id 0EEE564E0E;
- Thu, 28 Jan 2021 16:59:47 +0000 (UTC)
+ id 1l5AzC-00G0Gs-Fi
+ for jfs-discussion@lists.sourceforge.net; Thu, 28 Jan 2021 17:21:59 +0000
+Received: by mail.kernel.org (Postfix) with ESMTPSA id C458764DED;
+ Thu, 28 Jan 2021 17:21:32 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=k20201202; t=1611853187;
- bh=f6FDYR+2fbZ3ZjuVDKmJrkeFHlqyA4P3vGdmoyOPa1M=;
+ s=k20201202; t=1611854492;
+ bh=wN/vYbjN9dGjcLcGdnyPwaVCaPorwnyIWndgrJa+c0Q=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=Rzag2xxRHgFBGSJ365/QUldWd9CTCZVGt3cs71rJutBhKs94QB4O0wVHJ78U0xIF9
- n96V7cXtAmPsB9hu9gUYvKXwcH1SXtYNdkFw15Hr/lW1MQ6ApKzq4voIl5psE+u1SS
- oIYlBt3CEfmzYKr/W9GKeV1ES9XtHwmC1KiXTL4cmN2/9EoY9kXCbDD71u9sIp+Nfr
- FbyyfdHM+E5ZA+F8801PzzCElIq3kyLXwweF8LRAnfmH79wwG+57YuSijr3uE7kbk9
- /DpcS6Ckt3f1RwDjmwI1QhKt/MkNHods9aX+BJj1ComGJOXJH3o25qnvlVltgShwCo
- r/bA/dJbtb2Sw==
-Date: Thu, 28 Jan 2021 08:59:46 -0800
+ b=h4Jj9WXKrn+6FaWHbaqLTTirarAYDVXXbmjKm43Pwyv9CvWF/FCcMNgRPgrx3ByMo
+ 28fxrNXlVVTo5g3juSTT+7sNpMpJgqbGb4DuHZ8KF3an7+1BY6+nbU2z1+n7iGhwih
+ wkXCxISTeJgnl/ygSyJKGjvjcoECGRGnzVlWu3E9jKtn6wt5VP3JuKjRalNmzU1hCy
+ 4OORtBiU8sk9BK43/E82eZ6NyUeC5IBPMIffBmVCBQkowGnqLXw2BEreMWAztT9vas
+ UyeabZv1xy0SE+hBOV4TAGEolTup4mRCss8y10V/Fh7qEXQ2ropSARSls0wsWRnCVn
+ 9DTzlrlwSUtJA==
+Date: Thu, 28 Jan 2021 09:21:32 -0800
 From: "Darrick J. Wong" <djwong@kernel.org>
 To: Chaitanya Kulkarni <chaitanya.kulkarni@wdc.com>
-Message-ID: <20210128165946.GL7698@magnolia>
+Message-ID: <20210128172132.GM7698@magnolia>
 References: <20210128071133.60335-1-chaitanya.kulkarni@wdc.com>
- <20210128071133.60335-18-chaitanya.kulkarni@wdc.com>
+ <20210128071133.60335-27-chaitanya.kulkarni@wdc.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20210128071133.60335-18-chaitanya.kulkarni@wdc.com>
-X-Spam-Score: -0.4 (/)
+In-Reply-To: <20210128071133.60335-27-chaitanya.kulkarni@wdc.com>
+X-Spam-Score: -0.1 (/)
 X-Spam-Report: Spam Filtering performed by mx.sourceforge.net.
  See http://spamassassin.org/tag/ for more details.
  0.0 URIBL_BLOCKED ADMINISTRATOR NOTICE: The query to URIBL was blocked.
  See
  http://wiki.apache.org/spamassassin/DnsBlocklists#dnsbl-block
  for more information. [URIs: wdc.com]
- -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_AU Message has a valid DKIM or DK signature from author's
  domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature,
  not necessarily valid
- -0.3 DKIMWL_WL_HIGH         DKIMwl.org - High trust sender
-X-Headers-End: 1l5Ae8-000t3X-KT
-X-Mailman-Approved-At: Thu, 28 Jan 2021 17:13:25 +0000
-Subject: Re: [Jfs-discussion] [RFC PATCH 17/34] iomap: use bio_new in
- iomap_dio_zero
+ 0.0 TIME_LIMIT_EXCEEDED    Exceeded time limit / deadline
+X-Headers-End: 1l5AzC-00G0Gs-Fi
+X-Mailman-Approved-At: Thu, 28 Jan 2021 17:28:17 +0000
+Subject: Re: [Jfs-discussion] [RFC PATCH 26/34] xfs: use bio_new in
+ xfs_rw_bdev
 X-BeenThere: jfs-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -111,40 +110,36 @@ Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Errors-To: jfs-discussion-bounces@lists.sourceforge.net
 
-On Wed, Jan 27, 2021 at 11:11:16PM -0800, Chaitanya Kulkarni wrote:
+On Wed, Jan 27, 2021 at 11:11:25PM -0800, Chaitanya Kulkarni wrote:
 > Signed-off-by: Chaitanya Kulkarni <chaitanya.kulkarni@wdc.com>
 
-Looks ok to me,
+Seems fine to me...
 Reviewed-by: Darrick J. Wong <djwong@kernel.org>
 
 --D
 
 > ---
->  fs/iomap/direct-io.c | 6 ++----
->  1 file changed, 2 insertions(+), 4 deletions(-)
+>  fs/xfs/xfs_bio_io.c | 7 ++-----
+>  1 file changed, 2 insertions(+), 5 deletions(-)
 > 
-> diff --git a/fs/iomap/direct-io.c b/fs/iomap/direct-io.c
-> index ea1e8f696076..f6c557a1bd25 100644
-> --- a/fs/iomap/direct-io.c
-> +++ b/fs/iomap/direct-io.c
-> @@ -189,15 +189,13 @@ iomap_dio_zero(struct iomap_dio *dio, struct iomap *iomap, loff_t pos,
->  	int flags = REQ_SYNC | REQ_IDLE;
->  	struct bio *bio;
+> diff --git a/fs/xfs/xfs_bio_io.c b/fs/xfs/xfs_bio_io.c
+> index e2148f2d5d6b..e4644f22ebe6 100644
+> --- a/fs/xfs/xfs_bio_io.c
+> +++ b/fs/xfs/xfs_bio_io.c
+> @@ -26,11 +26,8 @@ xfs_rw_bdev(
+>  	if (is_vmalloc && op == REQ_OP_WRITE)
+>  		flush_kernel_vmap_range(data, count);
 >  
-> -	bio = bio_alloc(GFP_KERNEL, 1);
-> -	bio_set_dev(bio, iomap->bdev);
-> -	bio->bi_iter.bi_sector = iomap_sector(iomap, pos);
-> +	bio = bio_new(iomap->bdev, iomap_sector(iomap, pos), REQ_OP_WRITE,
-> +		      flags, 1, GFP_KERNEL);
->  	bio->bi_private = dio;
->  	bio->bi_end_io = iomap_dio_bio_end_io;
->  
->  	get_page(page);
->  	__bio_add_page(bio, page, len, 0);
-> -	bio_set_op_attrs(bio, REQ_OP_WRITE, flags);
->  	iomap_dio_submit_bio(dio, iomap, bio, pos);
->  }
->  
+> -	bio = bio_alloc(GFP_KERNEL, bio_max_vecs(left));
+> -	bio_set_dev(bio, bdev);
+> -	bio->bi_iter.bi_sector = sector;
+> -	bio->bi_opf = op | REQ_META | REQ_SYNC;
+> -
+> +	bio = bio_new(bdev, sector, op, REQ_META | REQ_SYNC, bio_max_vecs(left),
+> +		      GFP_KERNEL);
+>  	do {
+>  		struct page	*page = kmem_to_page(data);
+>  		unsigned int	off = offset_in_page(data);
 > -- 
 > 2.22.1
 > 
