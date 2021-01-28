@@ -2,206 +2,83 @@ Return-Path: <jfs-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+jfs-discussion@lfdr.de
 Delivered-To: lists+jfs-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3EBBE307646
-	for <lists+jfs-discussion@lfdr.de>; Thu, 28 Jan 2021 13:45:56 +0100 (CET)
-Received: from [127.0.0.1] (helo=sfs-ml-4.v29.lw.sourceforge.com)
-	by sfs-ml-4.v29.lw.sourceforge.com with esmtp (Exim 4.90_1)
+	by mail.lfdr.de (Postfix) with ESMTPS id 74CBA307BE1
+	for <lists+jfs-discussion@lfdr.de>; Thu, 28 Jan 2021 18:13:51 +0100 (CET)
+Received: from [127.0.0.1] (helo=sfs-ml-1.v29.lw.sourceforge.com)
+	by sfs-ml-1.v29.lw.sourceforge.com with esmtp (Exim 4.90_1)
 	(envelope-from <jfs-discussion-bounces@lists.sourceforge.net>)
-	id 1l56g5-0005Z2-HL; Thu, 28 Jan 2021 12:45:37 +0000
+	id 1l5ArH-0001HO-2L; Thu, 28 Jan 2021 17:13:27 +0000
 Received: from [172.30.20.202] (helo=mx.sourceforge.net)
- by sfs-ml-1.v29.lw.sourceforge.com with esmtps
+ by sfs-ml-2.v29.lw.sourceforge.com with esmtps
  (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
- (envelope-from <dave.kleikamp@oracle.com>) id 1l56ev-0003iU-PE
- for jfs-discussion@lists.sourceforge.net; Thu, 28 Jan 2021 12:44:25 +0000
+ (envelope-from <willy@infradead.org>) id 1l5ASw-0003gX-W5
+ for jfs-discussion@lists.sourceforge.net; Thu, 28 Jan 2021 16:48:19 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=sourceforge.net; s=x; h=MIME-Version:Content-Transfer-Encoding:Content-Type
- :In-Reply-To:Date:Message-ID:From:References:Cc:To:Subject:Sender:Reply-To:
+ d=sourceforge.net; s=x; h=In-Reply-To:Content-Type:MIME-Version:References:
+ Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:Content-Transfer-Encoding:
  Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
  Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=4s6f1Z4X6xFsF2Ee1gAGevBW8HhU6VhaeckNt9jWQHc=; b=XJGq5tyNcJrn5ivfIaTNhuGy7+
- tpsxyCFjqUXGMPEtJrITtdHMcFKEPFVwK27FkACvW4lFZmLMR8/KrSuNmir2+OwBSqpuIU7xyclDu
- a36YiB3PIpUZRBhbMoh4k46bZHH+JSogf0/0gdjbXTZoA+f0xvVmpquWu/wvZgnrhW8k=;
+ bh=ok1YlK16MaIquA7ZYUHxK/CMaFxxxwNWazaMAgFieLU=; b=U0EO25dKrCcos4eub+xXwuvV+e
+ JqzyRNoHaQlHkdYKRpKjQG7J9/8e5Gp9jmZGryTHoqt75nwu3wnCWZ4pzv/a+s2i2HEb7Tad1r4tF
+ ouwb+J3H6FWA3q3Vbi7xJX2aMKrGrvG1bXHHoW4I1o0vouXQ9xUWx6CAkfl1aDCvopoI=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
- h=MIME-Version:Content-Transfer-Encoding:Content-Type:In-Reply-To:Date:
- Message-ID:From:References:Cc:To:Subject:Sender:Reply-To:Content-ID:
+ h=In-Reply-To:Content-Type:MIME-Version:References:Message-ID:Subject:Cc:To
+ :From:Date:Sender:Reply-To:Content-Transfer-Encoding:Content-ID:
  Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
  :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
  List-Post:List-Owner:List-Archive;
- bh=4s6f1Z4X6xFsF2Ee1gAGevBW8HhU6VhaeckNt9jWQHc=; b=P+h4RTiGC+JL8gkNQTLC5T19cD
- 4IATPcLrdFq+nba6GAaGot/bdMa7ueXrFMZqGtgdjvO/s1JmYJP3ifYztHxDALlcuyitL1eqb9Loz
- eG2Rxa5WnE6ciw3OPEeEuMoc+FT6syDaaD5V68QKifTDzWL0CuUYPoUeCAdZVxkz+NT4=;
-Received: from userp2130.oracle.com ([156.151.31.86])
- by sfi-mx-1.v28.lw.sourceforge.com with esmtps
+ bh=ok1YlK16MaIquA7ZYUHxK/CMaFxxxwNWazaMAgFieLU=; b=Bb371xEGOJM6vn8BdreEB+fHmj
+ Hf1PbBma0s54TEWTvr2hR9y43PhWNDRgliXVPajaFxUsfHwtHHKP1Ig9fg51jdxBnV/L/uCeOZpI4
+ gUSAs9xjCPUAtDANTDtBIplOJ0ytD6CvEtctKib5QrUqg4jhqYtyqsIxAotVOnU43Nh8=;
+Received: from casper.infradead.org ([90.155.50.34])
+ by sfi-mx-3.v28.lw.sourceforge.com with esmtps
  (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.92.2)
- id 1l56ej-00F5Cv-6T
- for jfs-discussion@lists.sourceforge.net; Thu, 28 Jan 2021 12:44:25 +0000
-Received: from pps.filterd (userp2130.oracle.com [127.0.0.1])
- by userp2130.oracle.com (8.16.0.42/8.16.0.42) with SMTP id 10SCYAiu192248;
- Thu, 28 Jan 2021 12:43:16 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=oracle.com;
- h=subject : to : cc :
- references : from : message-id : date : in-reply-to : content-type :
- content-transfer-encoding : mime-version; s=corp-2020-01-29;
- bh=4s6f1Z4X6xFsF2Ee1gAGevBW8HhU6VhaeckNt9jWQHc=;
- b=kX6Rlr0au8sY4I6yUJwn2LXmhSeVCZE3jKgLuqO1QhpGfaIM4g2+Ig07nc+VWL7SzJVg
- Bj72iFAcU9Za8alm5F6IopQUt9S9FRLVjgKOzpkdupcC+hpfJjJHBLB/bmz88hbIhmKm
- R5V6ChjnvtAW/+gc2yOzLGfoJTVsrsbY+kr8JgLDbWqNF4+R6cbKMt3a3s7X48K4271x
- CDkPKyy97rdwx0sWjQDA2+7KudY+HrQldnAORaUtHWSSe5HKI9gYe3WuYasENMKo4H26
- YZHYf/IJQe1vowSGdXaismmdrzSvukfzxgZgsVxZUPtuzVPDomuh8lDLOEXGRn0omBFg Fg== 
-Received: from aserp3030.oracle.com (aserp3030.oracle.com [141.146.126.71])
- by userp2130.oracle.com with ESMTP id 368b7r3xs7-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
- Thu, 28 Jan 2021 12:43:16 +0000
-Received: from pps.filterd (aserp3030.oracle.com [127.0.0.1])
- by aserp3030.oracle.com (8.16.0.42/8.16.0.42) with SMTP id 10SCbobd047153;
- Thu, 28 Jan 2021 12:43:15 GMT
-Received: from nam11-co1-obe.outbound.protection.outlook.com
- (mail-co1nam11lp2172.outbound.protection.outlook.com [104.47.56.172])
- by aserp3030.oracle.com with ESMTP id 368wcqmysx-2
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
- Thu, 28 Jan 2021 12:43:15 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=RKa1PHQx+4vPhBbaBxaJjVKGURsFjvvn2W6lC/iFdn9bkxeVzsvtftX1xuRA2u84IGmDemjkbsOwoFCwOvg9NKLHBcEzufwP4kH1tdGx+H9eQX62kkQICCwZp9KJr5vKd1yHCr3APlfB1zM2KLBJ03e+r9Vcf7FZypAoO/lXq1OSRCFA/4kvSijmF2tXHX7Zyj1YSIdRqMhnZEekXkq3qsHnU8jRHsFVM9RqQz2AjXAmdLnbA11IsEL7gMZs/9lPCj/aPVW20Y+pji7OPD41ujvylPOxbe1JX1m4boJpM9Qvhr0FETkYNwB3/eepMUZflx48FJ6UX1cwUPN+utuiTg==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=4s6f1Z4X6xFsF2Ee1gAGevBW8HhU6VhaeckNt9jWQHc=;
- b=eye7cqB5+rQXahNo3YEXGO/r0wrAgfNmXyOfChG/HMWPvXF4nqWaeLetDNEHYAxEXke5tVmaQzJLisX8as5R65JK8SE0agPGBN38fiNX9bnfY0FmIsuTW7JnCvs4NLUHTz4zsQFevpAPO9l4+CZ0HZSS6wMOpxU8UU37D5536AznjCYNCpXpR7CRgQ7P1FTShRVo+ukLXm6LHKuKOsIFFW1d/9QiJEwOwwfMQKtjySz3EAOsroLmoDCYVZCrSOhEK0RKD57Il4yxnwNpBrArsGxShbQZIPXT4nuL6SUxgqHJRGqLZZqKXAigJ8degYRY8pPhfRMTK9tUQH5hPL9MkA==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=oracle.com; dmarc=pass action=none header.from=oracle.com;
- dkim=pass header.d=oracle.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=oracle.onmicrosoft.com; s=selector2-oracle-onmicrosoft-com;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=4s6f1Z4X6xFsF2Ee1gAGevBW8HhU6VhaeckNt9jWQHc=;
- b=Mr0nOt0UdZbc4cbI+3mzml8n5Q2KLA4MNetq2+yWthAXAn2HGggfFVZFDPIA5a75lWpBuhsz6jb+7Hv4R+QLC6SnfehG7z67W5eJYq42XFUyMZ/Wqub2sQs6r+KdZ2HwpgSqYLe4paKq0Af/xnNbc+FBBI7IKZugdF6TcuEkdt4=
-Authentication-Results: linux.alibaba.com; dkim=none (message not signed)
- header.d=none;linux.alibaba.com; dmarc=none action=none
- header.from=oracle.com;
-Received: from CH2PR10MB4118.namprd10.prod.outlook.com (2603:10b6:610:a4::8)
- by CH2PR10MB3941.namprd10.prod.outlook.com (2603:10b6:610:4::19) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.3784.15; Thu, 28 Jan
- 2021 12:43:11 +0000
-Received: from CH2PR10MB4118.namprd10.prod.outlook.com
- ([fe80::2cd3:dc36:f8d4:ea2a]) by CH2PR10MB4118.namprd10.prod.outlook.com
- ([fe80::2cd3:dc36:f8d4:ea2a%8]) with mapi id 15.20.3784.019; Thu, 28 Jan 2021
- 12:43:11 +0000
-To: Chaitanya Kulkarni <chaitanya.kulkarni@wdc.com>, linux-xfs@vger.kernel.org,
- linux-fsdevel@vger.kernel.org, dm-devel@redhat.com,
- linux-block@vger.kernel.org, linux-kernel@vger.kernel.org,
- drbd-dev@lists.linbit.com, xen-devel@lists.xenproject.org,
- linux-nvme@lists.infradead.org, linux-scsi@vger.kernel.org,
- target-devel@vger.kernel.org, linux-fscrypt@vger.kernel.org,
- jfs-discussion@lists.sourceforge.net, linux-nilfs@vger.kernel.org,
- ocfs2-devel@oss.oracle.com, linux-pm@vger.kernel.org, linux-mm@kvack.org
+ id 1l5ASg-000sIh-7H
+ for jfs-discussion@lists.sourceforge.net; Thu, 28 Jan 2021 16:48:17 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=infradead.org; s=casper.20170209; h=In-Reply-To:Content-Type:MIME-Version:
+ References:Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:
+ Content-Transfer-Encoding:Content-ID:Content-Description;
+ bh=ok1YlK16MaIquA7ZYUHxK/CMaFxxxwNWazaMAgFieLU=; b=vuOaMGbyB7/+Dg91fNUqvgBiBD
+ 4apxS7jU5nU9b/DveQFuS18fYHTQPOpBZxMrv3tCqxWOuQg228bSNlkmvJ1gQneLnOfM3WL1ObNGi
+ MTuz8xXL3LKzE+DH7errCMxepgPQ3Thh2HpLy2Nat9DQOLy35B1FC3UkIZuvmKmdZzwX86t+WV5Mk
+ /pCa23DxPP5a3Rlkwfqrn59vty95NQBRWyuZpKNZRkjNLQlQ2KJrMub6IYLsf3IL2tz3nuZRbVWe7
+ TKvbqzYB3UBc6MLrjn2HVQGE6rKRMshHOwu50Myfj/erONbRzfW9chvly9np7Q4o+a4JR4iRTNdIG
+ 5mKhGc+Q==;
+Received: from willy by casper.infradead.org with local (Exim 4.94 #2 (Red Hat
+ Linux)) id 1l5ARp-008hlF-CH; Thu, 28 Jan 2021 16:47:23 +0000
+Date: Thu, 28 Jan 2021 16:47:09 +0000
+From: Matthew Wilcox <willy@infradead.org>
+To: Chaitanya Kulkarni <Chaitanya.Kulkarni@wdc.com>
+Message-ID: <20210128164709.GZ308988@casper.infradead.org>
 References: <20210128071133.60335-1-chaitanya.kulkarni@wdc.com>
- <20210128071133.60335-20-chaitanya.kulkarni@wdc.com>
-From: Dave Kleikamp <dave.kleikamp@oracle.com>
-Message-ID: <8d3f7e70-1c7a-567a-0e60-97bac846bf13@oracle.com>
-Date: Thu, 28 Jan 2021 06:43:03 -0600
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:78.0) Gecko/20100101
- Thunderbird/78.6.1
-In-Reply-To: <20210128071133.60335-20-chaitanya.kulkarni@wdc.com>
-Content-Language: en-US
-X-Originating-IP: [68.201.65.98]
-X-ClientProxiedBy: SN4PR0501CA0077.namprd05.prod.outlook.com
- (2603:10b6:803:22::15) To CH2PR10MB4118.namprd10.prod.outlook.com
- (2603:10b6:610:a4::8)
+ <20210128071133.60335-3-chaitanya.kulkarni@wdc.com>
+ <BL0PR04MB6514C554B4AC96866BC1B16FE7BA9@BL0PR04MB6514.namprd04.prod.outlook.com>
+ <DM6PR04MB4972DA86892CF4531440064F86BA9@DM6PR04MB4972.namprd04.prod.outlook.com>
 MIME-Version: 1.0
-X-MS-Exchange-MessageSentRepresentingType: 1
-Received: from [192.168.0.190] (68.201.65.98) by
- SN4PR0501CA0077.namprd05.prod.outlook.com (2603:10b6:803:22::15) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.3825.8 via Frontend
- Transport; Thu, 28 Jan 2021 12:43:07 +0000
-X-MS-PublicTrafficType: Email
-X-MS-Office365-Filtering-Correlation-Id: 0e01d42d-3bc2-4bab-28da-08d8c38a4555
-X-MS-TrafficTypeDiagnostic: CH2PR10MB3941:
-X-MS-Exchange-Transport-Forked: True
-X-Microsoft-Antispam-PRVS: <CH2PR10MB39411E0FD376FAA86E74219987BA9@CH2PR10MB3941.namprd10.prod.outlook.com>
-X-MS-Oob-TLC-OOBClassifiers: OLM:260;
-X-MS-Exchange-SenderADCheck: 1
-X-Microsoft-Antispam: BCL:0;
-X-Microsoft-Antispam-Message-Info: pJ5ccHGdfMIuYnzx8aq0wBe7CGK5hELGkFwmW+UbSGKkOVpfgd4YBi0vrc+er51UtFKESCZAyt1Tp5H5X6cEG9b1EeQrBf4RSEyzl3baouUCAYXgXHVFR0/RrNoIj7y0HIIMRk7rAHMY0vw04eZ0KN1Rg0nSmRbIXxfIzHm/+llfg5vXr7mz+bpOE+7sfq/1lFfhHLxDCXXWejvvBjnCeOxXqgBDiOXdG5T5s0+D4oxdxJZFuttUOavuECY7bCePtreJrvjchJOPXhU1BoOiRU4gVcpEp8gkj+VeGWMkfFRlm0cCmZbfS3BfDuXDIT7v3vdL8Q9W39+CtghNyBZ4KaMGtxayQFhOQ6Po0F1ZVyaiiuZ85rlA4rjv24EJRBq6/z02CElTZrxJeLOHNl1EFko6t5wnFfQCXczxRrfrpdXumXasRKoJ/+16Gw0rrPZY85eRY7PEoxjxU7PLkD4+F17RBlIaAnKfg+aLMDxGkkoSN9BOBtMlkavxKTCf8ofiLHhjadTYZo2E3Uz0awpIg+XtnZwMJu+yQJg5YabAYiD3ogLMFP/9xSg9wyCqCxIWb2px3qKIgj4zJ8SqXI+ievvKAKlegmf0tVnNgoQvfibMDk1NTpx5Py49FzNeNngt
-X-Forefront-Antispam-Report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
- IPV:NLI; SFV:NSPM; H:CH2PR10MB4118.namprd10.prod.outlook.com; PTR:; CAT:NONE;
- SFS:(346002)(396003)(136003)(39860400002)(366004)(376002)(7366002)(6486002)(36756003)(2616005)(66556008)(83380400001)(2906002)(921005)(16526019)(5660300002)(8676002)(66476007)(7406005)(478600001)(7416002)(86362001)(186003)(6666004)(316002)(16576012)(31696002)(66946007)(8936002)(53546011)(956004)(4326008)(26005)(31686004)(44832011)(45980500001)(43740500002);
- DIR:OUT; SFP:1101; 
-X-MS-Exchange-AntiSpam-MessageData: =?utf-8?B?Vm4rTktBWm5uc09iM3FnVVBkdjNUVHBpdWs5Q0ZDTkk5R0E3ODRnYUZMMktU?=
- =?utf-8?B?RG56Y1hFZjFxaXJGM1N2TnlIN0ZCOFJCa2FKYmpJMEZDTGJIcU81MkkvWUN5?=
- =?utf-8?B?TFd0TUV5cERHM1RvKytObUVJd0NXSmpZa1NRZk5iRGhldTRMSlVvajhDTlhR?=
- =?utf-8?B?T0txelh4S3RUTDRrN20rSjFIZzBwdk1OOFRtMHBOUTdjMUhHby9mcWVJWFBm?=
- =?utf-8?B?bndkYzh1dWM1NVZXRk9pTEFmbG9Mcnl2N1h1YzhDVTVSdWdjczNKMFk1LzM5?=
- =?utf-8?B?STBkVWthUEIzamRkOTlvS0xNUHdFNFhkbVRxQXEvKzdEODZhdmlMSDRjbU9T?=
- =?utf-8?B?aENkbks2SEo1ZzNJanV3Z2pHVW1pUFF6eXdlRVkyTVBrRE42a2FjbWIwWkpl?=
- =?utf-8?B?TDdURFBoVFVSMnh4U0VLcjFTTUJrM2JXbXBSY3J3T3pQb3E0eHFTSWdZcXNX?=
- =?utf-8?B?cm9INjZLZG9QQ0dJR2JXZS9LNUtGeVZhTDlmTXV3SHVlczBrbldTWHFGdjhI?=
- =?utf-8?B?YlFTR2pCalVGQWo0aTUxblpoR1h3RjZKd3J3R2FCZDlNc0RVSUdtUFMyODht?=
- =?utf-8?B?Qi9pd1NrdlJoL243S2U1eUsyVEtJZ3FYckRmMFRmUllPcW1leFZnSnVEY2R3?=
- =?utf-8?B?Z2hDdUx4R3FyRjJqVEZ2WkRBWWJOdy9iY3JsUXFtSzhBYmhOZlp1MEZmMW1J?=
- =?utf-8?B?RU1udXJkREFRS0lFMUU0dlNRazZ4Vmw5UGlrTnExV3RKdzBodnZseFFKQTVz?=
- =?utf-8?B?Uy9FdkhyUjJtVU85aklWcXkzd0g4a0FMYllNR01TUFl5dkQ3ZkpJdUJDMksx?=
- =?utf-8?B?VjMvUWVUVnFpNzd0ZE1PZEtMaElncUlFYjYvNFBQZ3hVeXBrVDNVOXhORTA3?=
- =?utf-8?B?azNUa1FVUXZzTXZxQWIxeXUvdjlvbHRrR3ZTbEpwRUZpOVc5ZUZvWWVjWGFM?=
- =?utf-8?B?dGh5MTFxYVdobnA3dDZtckhsallCWHU1SXBwYkxXNHFNb2dLR3BMQ3BEWEFt?=
- =?utf-8?B?K2tRNnZ0eU9EZHF3TmVycGZzY0RSWHJibHlOcnYvamJCZEZmSzk0cnN1NXRR?=
- =?utf-8?B?RjBrd0I1eGVTSWlUb3RPbjNVUnhLMGxqeko1Vk41emRZMWxjRlZmNE5yRkxD?=
- =?utf-8?B?Ri9ITS8vQ3c4dDVYbnlHbU8zU0RqS09wK0NXaFRaWnkxd3JDL2thTSttS1lv?=
- =?utf-8?B?VnR3MlVIdjRlSy85QTdCS1FhekYvbnZyTjZlZTJtcU85NmtER3o5S0RDV3JL?=
- =?utf-8?B?cTJiTEFPUlJDWksyeS81NzVueSt5QmdieUYwVHd2bGRZZzdUYlB4QzhLNUtQ?=
- =?utf-8?B?Rjk0eGVMVGV0aFF4WS8zUG8xbGQ2NG9jUzZzbWNYTXBvRTZsUDVRSTV5ZXB6?=
- =?utf-8?B?VTRKOTgvaTZIb0dDR2pPQzNnM3V6Z3kvMUd3azhpYnRoTFdhbEg0N2hlb21t?=
- =?utf-8?Q?xgW5/je/?=
-X-OriginatorOrg: oracle.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 0e01d42d-3bc2-4bab-28da-08d8c38a4555
-X-MS-Exchange-CrossTenant-AuthSource: CH2PR10MB4118.namprd10.prod.outlook.com
-X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 28 Jan 2021 12:43:11.2780 (UTC)
-X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
-X-MS-Exchange-CrossTenant-Id: 4e2c6054-71cb-48f1-bd6c-3a9705aca71b
-X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: tFBedDYhghl7XP3cZN2/McX0JwxYw4Cu7FZ5NDxZqDAklfqhu0dMXnszrFIG3H4zPpJnTe1yGk1iM6Mt6c63XUXi/NVyG5gbxkRVEUnPYnc=
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: CH2PR10MB3941
-X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=9877
- signatures=668683
-X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 adultscore=0
- mlxscore=0 suspectscore=0
- phishscore=0 mlxlogscore=999 bulkscore=0 malwarescore=0 spamscore=0
- classifier=spam adjust=0 reason=mlx scancount=1 engine=8.12.0-2009150000
- definitions=main-2101280064
-X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=9877
- signatures=668683
-X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 suspectscore=0
- spamscore=0 phishscore=0
- adultscore=0 impostorscore=0 malwarescore=0 lowpriorityscore=0 bulkscore=0
- priorityscore=1501 mlxscore=0 clxscore=1011 mlxlogscore=999
- classifier=spam adjust=0 reason=mlx scancount=1 engine=8.12.0-2009150000
- definitions=main-2101280064
+Content-Disposition: inline
+In-Reply-To: <DM6PR04MB4972DA86892CF4531440064F86BA9@DM6PR04MB4972.namprd04.prod.outlook.com>
 X-Spam-Score: -0.1 (/)
 X-Spam-Report: Spam Filtering performed by mx.sourceforge.net.
  See http://spamassassin.org/tag/ for more details.
- 0.0 URIBL_BLOCKED ADMINISTRATOR NOTICE: The query to URIBL was blocked.
- See
- http://wiki.apache.org/spamassassin/DnsBlocklists#dnsbl-block
- for more information. [URIs: wdc.com]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [156.151.31.86 listed in wl.mailspike.net]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_AU Message has a valid DKIM or DK signature from author's
  domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature,
  not necessarily valid
- 0.0 MSGID_FROM_MTA_HEADER  Message-Id was added by a relay
- -0.0 NICE_REPLY_A           Looks like a legit reply (A)
-X-Headers-End: 1l56ej-00F5Cv-6T
-X-Mailman-Approved-At: Thu, 28 Jan 2021 12:45:19 +0000
-Subject: Re: [Jfs-discussion] [RFC PATCH 19/34] fs/jfs/jfs_logmgr.c: use
- bio_new in lbmRead
+ 0.0 URIBL_BLOCKED ADMINISTRATOR NOTICE: The query to URIBL was blocked.
+ See
+ http://wiki.apache.org/spamassassin/DnsBlocklists#dnsbl-block
+ for more information. [URIs: wdc.com]
+ 0.0 TIME_LIMIT_EXCEEDED    Exceeded time limit / deadline
+X-Headers-End: 1l5ASg-000sIh-7H
+X-Mailman-Approved-At: Thu, 28 Jan 2021 17:13:25 +0000
+Subject: Re: [Jfs-discussion] [Ocfs2-devel] [RFC PATCH 02/34] block:
+ introduce and use bio_new
 X-BeenThere: jfs-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -213,59 +90,167 @@ List-Post: <mailto:jfs-discussion@lists.sourceforge.net>
 List-Help: <mailto:jfs-discussion-request@lists.sourceforge.net?subject=help>
 List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/jfs-discussion>, 
  <mailto:jfs-discussion-request@lists.sourceforge.net?subject=subscribe>
-Cc: shaggy@kernel.org, sergey.senozhatsky.work@gmail.com, snitzer@redhat.com,
- tiwai@suse.de, djwong@kernel.org, gustavoars@kernel.org,
- joseph.qi@linux.alibaba.com, pavel@ucw.cz, alex.shi@linux.alibaba.com,
- hch@lst.de, agk@redhat.com, naohiro.aota@wdc.com, sagi@grimberg.me,
- mark@fasheh.com, osandov@fb.com, ebiggers@kernel.org, ngupta@vflare.org,
- len.brown@intel.com, konrad.wilk@oracle.com, hare@suse.de, ming.lei@redhat.com,
- viro@zeniv.linux.org.uk, jefflexu@linux.alibaba.com, jaegeuk@kernel.org,
- konishi.ryusuke@gmail.com, bvanassche@acm.org, axboe@kernel.dk,
- damien.lemoal@wdc.com, jth@kernel.org, tytso@mit.edu,
- akpm@linux-foundation.org, martin.petersen@oracle.com, rjw@rjwysocki.net,
- philipp.reisner@linbit.com, minchan@kernel.org, tj@kernel.org,
- lars.ellenberg@linbit.com, roger.pau@citrix.com, asml.silence@gmail.com,
- jlbec@evilplan.org
+Cc: "shaggy@kernel.org" <shaggy@kernel.org>,
+ "jfs-discussion@lists.sourceforge.net"
+ <jfs-discussion@lists.sourceforge.net>,
+ "sergey.senozhatsky.work@gmail.com" <sergey.senozhatsky.work@gmail.com>,
+ "snitzer@redhat.com" <snitzer@redhat.com>, "tiwai@suse.de" <tiwai@suse.de>,
+ "djwong@kernel.org" <djwong@kernel.org>,
+ "linux-nvme@lists.infradead.org" <linux-nvme@lists.infradead.org>,
+ "gustavoars@kernel.org" <gustavoars@kernel.org>,
+ "linux-mm@kvack.org" <linux-mm@kvack.org>,
+ "dm-devel@redhat.com" <dm-devel@redhat.com>,
+ "target-devel@vger.kernel.org" <target-devel@vger.kernel.org>,
+ "pavel@ucw.cz" <pavel@ucw.cz>,
+ "alex.shi@linux.alibaba.com" <alex.shi@linux.alibaba.com>,
+ "osandov@fb.com" <osandov@fb.com>, "agk@redhat.com" <agk@redhat.com>,
+ "drbd-dev@lists.linbit.com" <drbd-dev@lists.linbit.com>,
+ Naohiro Aota <Naohiro.Aota@wdc.com>,
+ "linux-nilfs@vger.kernel.org" <linux-nilfs@vger.kernel.org>,
+ "sagi@grimberg.me" <sagi@grimberg.me>,
+ "linux-scsi@vger.kernel.org" <linux-scsi@vger.kernel.org>,
+ "konrad.wilk@oracle.com" <konrad.wilk@oracle.com>,
+ "roger.pau@citrix.com" <roger.pau@citrix.com>,
+ "ebiggers@kernel.org" <ebiggers@kernel.org>,
+ "xen-devel@lists.xenproject.org" <xen-devel@lists.xenproject.org>,
+ "philipp.reisner@linbit.com" <philipp.reisner@linbit.com>,
+ "ngupta@vflare.org" <ngupta@vflare.org>,
+ "len.brown@intel.com" <len.brown@intel.com>,
+ "linux-pm@vger.kernel.org" <linux-pm@vger.kernel.org>,
+ "ming.lei@redhat.com" <ming.lei@redhat.com>,
+ "linux-block@vger.kernel.org" <linux-block@vger.kernel.org>,
+ "tj@kernel.org" <tj@kernel.org>,
+ "linux-fscrypt@vger.kernel.org" <linux-fscrypt@vger.kernel.org>,
+ "hare@suse.de" <hare@suse.de>,
+ "jefflexu@linux.alibaba.com" <jefflexu@linux.alibaba.com>,
+ "jaegeuk@kernel.org" <jaegeuk@kernel.org>,
+ "konishi.ryusuke@gmail.com" <konishi.ryusuke@gmail.com>,
+ "bvanassche@acm.org" <bvanassche@acm.org>, "axboe@kernel.dk" <axboe@kernel.dk>,
+ Damien Le Moal <Damien.LeMoal@wdc.com>, "tytso@mit.edu" <tytso@mit.edu>,
+ "rjw@rjwysocki.net" <rjw@rjwysocki.net>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "linux-xfs@vger.kernel.org" <linux-xfs@vger.kernel.org>,
+ "minchan@kernel.org" <minchan@kernel.org>,
+ "linux-fsdevel@vger.kernel.org" <linux-fsdevel@vger.kernel.org>,
+ "lars.ellenberg@linbit.com" <lars.ellenberg@linbit.com>,
+ "jth@kernel.org" <jth@kernel.org>,
+ "asml.silence@gmail.com" <asml.silence@gmail.com>,
+ "ocfs2-devel@oss.oracle.com" <ocfs2-devel@oss.oracle.com>,
+ "viro@zeniv.linux.org.uk" <viro@zeniv.linux.org.uk>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Errors-To: jfs-discussion-bounces@lists.sourceforge.net
 
-You probably don't need 4 patches to fs/jfs/. These can be combined into 
-a single patch.
 
-Dave
+FYI your email is completely unreadable to those not using html.
+I can't tell what you wrote and what Damien wrote.
 
-On 1/28/21 1:11 AM, Chaitanya Kulkarni wrote:
-> Signed-off-by: Chaitanya Kulkarni <chaitanya.kulkarni@wdc.com>
+On Thu, Jan 28, 2021 at 08:33:10AM +0000, Chaitanya Kulkarni wrote:
+> On 1/27/21 11:21 PM, Damien Le Moal wrote:
+> 
+> On 2021/01/28 16:12, Chaitanya Kulkarni wrote:
+> 
+> 
+> Introduce bio_new() helper and use it in blk-lib.c to allocate and
+> initialize various non-optional or semi-optional members of the bio
+> along with bio allocation done with bio_alloc(). Here we also calmp the
+> max_bvecs for bio with BIO_MAX_PAGES before we pass to bio_alloc().
+> 
+> Signed-off-by: Chaitanya Kulkarni <chaitanya.kulkarni@wdc.com><mailto:chaitanya.kulkarni@wdc.com>
 > ---
->   fs/jfs/jfs_logmgr.c | 7 ++-----
->   1 file changed, 2 insertions(+), 5 deletions(-)
+>  block/blk-lib.c     |  6 +-----
+>  include/linux/bio.h | 25 +++++++++++++++++++++++++
+>  2 files changed, 26 insertions(+), 5 deletions(-)
 > 
-> diff --git a/fs/jfs/jfs_logmgr.c b/fs/jfs/jfs_logmgr.c
-> index 9330eff210e0..4481f3e33a3f 100644
-> --- a/fs/jfs/jfs_logmgr.c
-> +++ b/fs/jfs/jfs_logmgr.c
-> @@ -1979,17 +1979,14 @@ static int lbmRead(struct jfs_log * log, int pn, struct lbuf ** bpp)
->   
->   	bp->l_flag |= lbmREAD;
->   
-> -	bio = bio_alloc(GFP_NOFS, 1);
+> diff --git a/block/blk-lib.c b/block/blk-lib.c
+> index fb486a0bdb58..ec29415f00dd 100644
+> --- a/block/blk-lib.c
+> +++ b/block/blk-lib.c
+> @@ -14,17 +14,13 @@ struct bio *blk_next_bio(struct bio *bio, struct block_device *bdev,
+>                         sector_t sect, unsigned op, unsigned opf,
+>                         unsigned int nr_pages, gfp_t gfp)
+>  {
+> -       struct bio *new = bio_alloc(gfp, nr_pages);
+> +       struct bio *new = bio_new(bdev, sect, op, opf, gfp, nr_pages);
+> 
+>         if (bio) {
+>                 bio_chain(bio, new);
+>                 submit_bio(bio);
+>         }
+> 
+> -       new->bi_iter.bi_sector = sect;
+> -       bio_set_dev(new, bdev);
+> -       bio_set_op_attrs(new, op, opf);
 > -
-> -	bio->bi_iter.bi_sector = bp->l_blkno << (log->l2bsize - 9);
-> -	bio_set_dev(bio, log->bdev);
-> +	bio = bio_new(log->bdev, bp->l_blkno << (log->l2bsize - 9),
-> +			REQ_OP_READ, 0, 1, GFP_NOFS);
->   
->   	bio_add_page(bio, bp->l_page, LOGPSIZE, bp->l_offset);
->   	BUG_ON(bio->bi_iter.bi_size != LOGPSIZE);
->   
->   	bio->bi_end_io = lbmIODone;
->   	bio->bi_private = bp;
-> -	bio->bi_opf = REQ_OP_READ;
->   	/*check if journaling to disk has been disabled*/
->   	if (log->no_integrity) {
->   		bio->bi_iter.bi_size = 0;
+>         return new;
+>  }
 > 
+> diff --git a/include/linux/bio.h b/include/linux/bio.h
+> index c74857cf1252..2a09ba100546 100644
+> --- a/include/linux/bio.h
+> +++ b/include/linux/bio.h
+> @@ -826,5 +826,30 @@ static inline void bio_set_polled(struct bio *bio, struct kiocb *kiocb)
+>         if (!is_sync_kiocb(kiocb))
+>                 bio->bi_opf |= REQ_NOWAIT;
+>  }
+> +/**
+> + * bio_new -   allcate and initialize new bio
+> + * @bdev:      blockdev to issue discard for
+> + * @sector:    start sector
+> + * @op:                REQ_OP_XXX from enum req_opf
+> + * @op_flags:  REQ_XXX from enum req_flag_bits
+> + * @max_bvecs: maximum bvec to be allocated for this bio
+> + * @gfp_mask:  memory allocation flags (for bio_alloc)
+> + *
+> + * Description:
+> + *    Allocates, initializes common members, and returns a new bio.
+> + */
+> +static inline struct bio *bio_new(struct block_device *bdev, sector_t sector,
+> +                                 unsigned int op, unsigned int op_flags,
+> +                                 unsigned int max_bvecs, gfp_t gfp_mask)
+> +{
+> +       unsigned nr_bvec = clamp_t(unsigned int, max_bvecs, 0, BIO_MAX_PAGES);
+> +       struct bio *bio = bio_alloc(gfp_mask, nr_bvec);
+> 
+> 
+> I think that depending on the gfp_mask passed, bio can be NULL. So this should
+> be checked.
+> 
+> 
+> true, I'll add that check.
+> 
+> 
+> 
+> 
+> +
+> +       bio_set_dev(bio, bdev);
+> +       bio->bi_iter.bi_sector = sector;
+> +       bio_set_op_attrs(bio, op, op_flags);
+> 
+> 
+> This function is obsolete. Open code this.
+> 
+> 
+> true, will do.
+> 
+> 
+> 
+> 
+> +
+> +       return bio;
+> +}
+> 
+>  #endif /* __LINUX_BIO_H */
+> 
+> 
+> 
+> Thanks for the comments Damien.
+
+> _______________________________________________
+> Ocfs2-devel mailing list
+> Ocfs2-devel@oss.oracle.com
+> https://oss.oracle.com/mailman/listinfo/ocfs2-devel
+
 
 
 _______________________________________________
