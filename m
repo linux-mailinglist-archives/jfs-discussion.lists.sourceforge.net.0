@@ -2,26 +2,26 @@ Return-Path: <jfs-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+jfs-discussion@lfdr.de
 Delivered-To: lists+jfs-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id A1919312570
-	for <lists+jfs-discussion@lfdr.de>; Sun,  7 Feb 2021 16:39:53 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id B748631256F
+	for <lists+jfs-discussion@lfdr.de>; Sun,  7 Feb 2021 16:39:52 +0100 (CET)
 Received: from [127.0.0.1] (helo=sfs-ml-3.v29.lw.sourceforge.com)
 	by sfs-ml-3.v29.lw.sourceforge.com with esmtp (Exim 4.90_1)
 	(envelope-from <jfs-discussion-bounces@lists.sourceforge.net>)
-	id 1l8m9q-0003S4-0k; Sun, 07 Feb 2021 15:39:30 +0000
+	id 1l8m9q-0003SB-2Y; Sun, 07 Feb 2021 15:39:30 +0000
 Received: from [172.30.20.202] (helo=mx.sourceforge.net)
- by sfs-ml-2.v29.lw.sourceforge.com with esmtps
+ by sfs-ml-1.v29.lw.sourceforge.com with esmtps
  (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
- (envelope-from <lkp@intel.com>) id 1l8el6-0000e3-4D
- for jfs-discussion@lists.sourceforge.net; Sun, 07 Feb 2021 07:45:28 +0000
+ (envelope-from <lkp@intel.com>) id 1l8fJv-0007YQ-P7
+ for jfs-discussion@lists.sourceforge.net; Sun, 07 Feb 2021 08:21:27 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=sourceforge.net; s=x; h=In-Reply-To:Content-Type:MIME-Version:References:
  Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:Content-Transfer-Encoding:
  Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
  Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=300zeXkdrrCpRuERfULl2IqzMmAjxi0XPV9s1om+78s=; b=eVjbtiHBA223q/DzvMswCnWCQ4
- Syti9y9jvWR2DcRKKGBAen0wI4fdW1S5YLnwUiiUmOI06WETYGAk0Irgdh8c6wu5/kRjnNHzEci2d
- ijMr2Md+8HUCshL19X8tEXdRzg/owf8HSjCaVTnYOD6eCG8+gOM0OCCiz+78ArNST4EQ=;
+ bh=z1qXofAmU8vtuFZK3k+CFJ5ER9jSA8z+oEtiftTGXKY=; b=SjllrWt3R/S55RE+hGFtOUcNfg
+ 5K0bbIio7j3PRM/sX/B81+HSdymuWHgY72UsPa39M3H3Pc+TB+Nx0fJPl059NkKObFG+1CGqxPZnP
+ eBZbyCKsNsehaPIZaUgizptnS7GEwLr3BNNH6fBlRRk5gxiKD0XAh8xNe9+IMXov8d4I=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
  h=In-Reply-To:Content-Type:MIME-Version:References:Message-ID:Subject:Cc:To
@@ -29,39 +29,39 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
  :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
  List-Post:List-Owner:List-Archive;
- bh=300zeXkdrrCpRuERfULl2IqzMmAjxi0XPV9s1om+78s=; b=iCueNzfkaiG7tdjmzRcZNmijvq
- YsbUoTEJbfiQv+sx3tsyx/s28UKQTgU0lPZXi5322a/jmmTKNZkzUEq9L+AsCYkQYvmgMahyjPMCW
- qXVlaR2gJ/YJCKrzAP8gSzZqCtAhBUyI5OS+O2dhv6vdfRvtEyDVi7DJ8TZqCduikNns=;
-Received: from mga12.intel.com ([192.55.52.136])
- by sfi-mx-2.v28.lw.sourceforge.com with esmtps
- (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.92.3)
- id 1l8eky-0005jW-DN
- for jfs-discussion@lists.sourceforge.net; Sun, 07 Feb 2021 07:45:27 +0000
-IronPort-SDR: e6Ev1JRgnWjpKAjF0+47lpU/gse/fgUDKBaBYOpEC0soDD5XSvQjwVI1kf4py7E2z+5JNASBJn
- TlC7c7Huhiig==
-X-IronPort-AV: E=McAfee;i="6000,8403,9887"; a="160746393"
+ bh=z1qXofAmU8vtuFZK3k+CFJ5ER9jSA8z+oEtiftTGXKY=; b=ISrc5WjRatw2a2YeMlFTd93iT5
+ pDq7pzmmJpuKRBFPBj4+NUHOf1vT4QKOXL4SdOh4buEdS5mi42CJ+GU+FiqQKsguETfEa0GmhxX6o
+ GbEpH9uHIoZ4zwMfIsVnGUfvfUMUdwSfBMzNQtwxdnQE7xdVqqk2atiGSxuBydRPHxXw=;
+Received: from mga09.intel.com ([134.134.136.24])
+ by sfi-mx-1.v28.lw.sourceforge.com with esmtps
+ (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.92.2)
+ id 1l8fJq-00CwGC-7R
+ for jfs-discussion@lists.sourceforge.net; Sun, 07 Feb 2021 08:21:27 +0000
+IronPort-SDR: vkjIJ9Vi90q1JPzUQctuGRxATeD2/eSuvmfBWrsTc2QsNqz1W/ew+Q5xFy1WJbHeXRxTbGVyCE
+ 7xa/rafm97HA==
+X-IronPort-AV: E=McAfee;i="6000,8403,9887"; a="181738851"
 X-IronPort-AV: E=Sophos;i="5.81,159,1610438400"; 
- d="gz'50?scan'50,208,50";a="160746393"
-Received: from fmsmga002.fm.intel.com ([10.253.24.26])
- by fmsmga106.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384;
- 06 Feb 2021 23:45:14 -0800
-IronPort-SDR: Dc4tkg90wyJJMeVeD4tSP/TakR0ebj/rgKgrcPt/wTAcYq3WfSKSlwSPp6R0mDngL/tmD2/QAg
- tzOvFUm8yPOQ==
+ d="gz'50?scan'50,208,50";a="181738851"
+Received: from fmsmga007.fm.intel.com ([10.253.24.52])
+ by orsmga102.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384;
+ 07 Feb 2021 00:21:16 -0800
+IronPort-SDR: EcEMwSpUHFQYk/IURCJ7UD721eZyuOPdCXFaGlW2fn0vYyJkqe7AQq0br+wKPLyZuNVup7evo8
+ Foo8CoSDW54Q==
 X-ExtLoop1: 1
 X-IronPort-AV: E=Sophos;i="5.81,159,1610438400"; 
- d="gz'50?scan'50,208,50";a="418137808"
+ d="gz'50?scan'50,208,50";a="359439253"
 Received: from lkp-server02.sh.intel.com (HELO 8b832f01bb9c) ([10.239.97.151])
- by fmsmga002.fm.intel.com with ESMTP; 06 Feb 2021 23:45:12 -0800
+ by fmsmga007.fm.intel.com with ESMTP; 07 Feb 2021 00:21:14 -0800
 Received: from kbuild by 8b832f01bb9c with local (Exim 4.92)
  (envelope-from <lkp@intel.com>)
- id 1l8ekq-0002nr-1E; Sun, 07 Feb 2021 07:45:12 +0000
-Date: Sun, 7 Feb 2021 15:44:12 +0800
+ id 1l8fJh-0002oL-Cv; Sun, 07 Feb 2021 08:21:13 +0000
+Date: Sun, 7 Feb 2021 16:20:30 +0800
 From: kernel test robot <lkp@intel.com>
 To: Yang Li <yang.lee@linux.alibaba.com>, shaggy@kernel.org
-Message-ID: <202102071518.tkDgzNeX-lkp@intel.com>
+Message-ID: <202102071620.wkojM1cW-lkp@intel.com>
 References: <1612679820-35163-1-git-send-email-yang.lee@linux.alibaba.com>
 MIME-Version: 1.0
-Content-Type: multipart/mixed; boundary="cWoXeonUoKmBZSoM"
+Content-Type: multipart/mixed; boundary="J/dobhs11T7y2rNN"
 Content-Disposition: inline
 In-Reply-To: <1612679820-35163-1-git-send-email-yang.lee@linux.alibaba.com>
 User-Agent: Mutt/1.10.1 (2018-07-13)
@@ -71,10 +71,13 @@ X-Spam-Report: Spam Filtering performed by mx.sourceforge.net.
  0.0 URIBL_BLOCKED ADMINISTRATOR NOTICE: The query to URIBL was blocked.
  See
  http://wiki.apache.org/spamassassin/DnsBlocklists#dnsbl-block
- for more information. [URIs: git-scm.com]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ for more information. [URIs: intel.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
-X-Headers-End: 1l8eky-0005jW-DN
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [134.134.136.24 listed in wl.mailspike.net]
+ -0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+X-Headers-End: 1l8fJq-00CwGC-7R
 X-Mailman-Approved-At: Sun, 07 Feb 2021 15:39:27 +0000
 Subject: Re: [Jfs-discussion] [PATCH] jfs: turn diLog(),
  dataLog() and txLog() into void functions
@@ -94,16 +97,16 @@ Cc: Yang Li <yang.lee@linux.alibaba.com>, jfs-discussion@lists.sourceforge.net,
 Errors-To: jfs-discussion-bounces@lists.sourceforge.net
 
 
---cWoXeonUoKmBZSoM
+--J/dobhs11T7y2rNN
 Content-Type: text/plain; charset=us-ascii
 Content-Disposition: inline
 
 Hi Yang,
 
-Thank you for the patch! Perhaps something to improve:
+Thank you for the patch! Yet something to improve:
 
-[auto build test WARNING on shaggy/jfs-next]
-[also build test WARNING on v5.11-rc6 next-20210125]
+[auto build test ERROR on shaggy/jfs-next]
+[also build test ERROR on v5.11-rc6 next-20210125]
 [If your patch is applied to the wrong git tree, kindly drop us a note.
 And when submitting patch, we suggest to use '--base' as documented in
 https://git-scm.com/docs/git-format-patch]
@@ -123,33 +126,33 @@ reproduce (this is a W=1 build):
 If you fix the issue, kindly add following tag as appropriate
 Reported-by: kernel test robot <lkp@intel.com>
 
-All warnings (new ones prefixed by >>):
+All errors (new ones prefixed by >>):
 
-   fs/jfs/jfs_txnmgr.c:1368:13: error: conflicting types for 'txLog'
+>> fs/jfs/jfs_txnmgr.c:1368:13: error: conflicting types for 'txLog'
     1368 | static void txLog(struct jfs_log *log, struct tblock *tblk, struct commit *cd)
          |             ^~~~~
    fs/jfs/jfs_txnmgr.c:162:12: note: previous declaration of 'txLog' was here
      162 | static int txLog(struct jfs_log * log, struct tblock * tblk,
          |            ^~~~~
-   fs/jfs/jfs_txnmgr.c:1424:13: error: conflicting types for 'diLog'
+>> fs/jfs/jfs_txnmgr.c:1424:13: error: conflicting types for 'diLog'
     1424 | static void diLog(struct jfs_log *log, struct tblock *tblk, struct lrd *lrd,
          |             ^~~~~
    fs/jfs/jfs_txnmgr.c:151:12: note: previous declaration of 'diLog' was here
      151 | static int diLog(struct jfs_log * log, struct tblock * tblk, struct lrd * lrd,
          |            ^~~~~
-   fs/jfs/jfs_txnmgr.c:1536:13: error: conflicting types for 'dataLog'
+>> fs/jfs/jfs_txnmgr.c:1536:13: error: conflicting types for 'dataLog'
     1536 | static void dataLog(struct jfs_log *log, struct tblock *tblk, struct lrd *lrd,
          |             ^~~~~~~
    fs/jfs/jfs_txnmgr.c:153:12: note: previous declaration of 'dataLog' was here
      153 | static int dataLog(struct jfs_log * log, struct tblock * tblk, struct lrd * lrd,
          |            ^~~~~~~
->> fs/jfs/jfs_txnmgr.c:151:12: warning: 'diLog' used but never defined
+   fs/jfs/jfs_txnmgr.c:151:12: warning: 'diLog' used but never defined
      151 | static int diLog(struct jfs_log * log, struct tblock * tblk, struct lrd * lrd,
          |            ^~~~~
->> fs/jfs/jfs_txnmgr.c:153:12: warning: 'dataLog' used but never defined
+   fs/jfs/jfs_txnmgr.c:153:12: warning: 'dataLog' used but never defined
      153 | static int dataLog(struct jfs_log * log, struct tblock * tblk, struct lrd * lrd,
          |            ^~~~~~~
->> fs/jfs/jfs_txnmgr.c:162:12: warning: 'txLog' used but never defined
+   fs/jfs/jfs_txnmgr.c:162:12: warning: 'txLog' used but never defined
      162 | static int txLog(struct jfs_log * log, struct tblock * tblk,
          |            ^~~~~
    fs/jfs/jfs_txnmgr.c:1536:13: warning: 'dataLog' defined but not used [-Wunused-function]
@@ -163,42 +166,240 @@ All warnings (new ones prefixed by >>):
          |             ^~~~~
 
 
-vim +/diLog +151 fs/jfs/jfs_txnmgr.c
+vim +/txLog +1368 fs/jfs/jfs_txnmgr.c
 
-^1da177e4c3f41 Linus Torvalds 2005-04-16  147  
-^1da177e4c3f41 Linus Torvalds 2005-04-16  148  /*
-^1da177e4c3f41 Linus Torvalds 2005-04-16  149   * forward references
-^1da177e4c3f41 Linus Torvalds 2005-04-16  150   */
-^1da177e4c3f41 Linus Torvalds 2005-04-16 @151  static int diLog(struct jfs_log * log, struct tblock * tblk, struct lrd * lrd,
-^1da177e4c3f41 Linus Torvalds 2005-04-16  152  		struct tlock * tlck, struct commit * cd);
-^1da177e4c3f41 Linus Torvalds 2005-04-16 @153  static int dataLog(struct jfs_log * log, struct tblock * tblk, struct lrd * lrd,
-^1da177e4c3f41 Linus Torvalds 2005-04-16  154  		struct tlock * tlck);
-^1da177e4c3f41 Linus Torvalds 2005-04-16  155  static void dtLog(struct jfs_log * log, struct tblock * tblk, struct lrd * lrd,
-^1da177e4c3f41 Linus Torvalds 2005-04-16  156  		struct tlock * tlck);
-^1da177e4c3f41 Linus Torvalds 2005-04-16  157  static void mapLog(struct jfs_log * log, struct tblock * tblk, struct lrd * lrd,
-^1da177e4c3f41 Linus Torvalds 2005-04-16  158  		struct tlock * tlck);
-^1da177e4c3f41 Linus Torvalds 2005-04-16  159  static void txAllocPMap(struct inode *ip, struct maplock * maplock,
-^1da177e4c3f41 Linus Torvalds 2005-04-16  160  		struct tblock * tblk);
-^1da177e4c3f41 Linus Torvalds 2005-04-16  161  static void txForce(struct tblock * tblk);
-^1da177e4c3f41 Linus Torvalds 2005-04-16 @162  static int txLog(struct jfs_log * log, struct tblock * tblk,
-^1da177e4c3f41 Linus Torvalds 2005-04-16  163  		struct commit * cd);
-^1da177e4c3f41 Linus Torvalds 2005-04-16  164  static void txUpdateMap(struct tblock * tblk);
-^1da177e4c3f41 Linus Torvalds 2005-04-16  165  static void txRelease(struct tblock * tblk);
-^1da177e4c3f41 Linus Torvalds 2005-04-16  166  static void xtLog(struct jfs_log * log, struct tblock * tblk, struct lrd * lrd,
-^1da177e4c3f41 Linus Torvalds 2005-04-16  167  	   struct tlock * tlck);
-^1da177e4c3f41 Linus Torvalds 2005-04-16  168  static void LogSyncRelease(struct metapage * mp);
-^1da177e4c3f41 Linus Torvalds 2005-04-16  169  
+  1356	
+  1357	/*
+  1358	 * NAME:	txLog()
+  1359	 *
+  1360	 * FUNCTION:	Writes AFTER log records for all lines modified
+  1361	 *		by tid for segments specified by inodes in comdata.
+  1362	 *		Code assumes only WRITELOCKS are recorded in lockwords.
+  1363	 *
+  1364	 * PARAMETERS:
+  1365	 *
+  1366	 * RETURN :
+  1367	 */
+> 1368	static void txLog(struct jfs_log *log, struct tblock *tblk, struct commit *cd)
+  1369	{
+  1370		struct inode *ip;
+  1371		lid_t lid;
+  1372		struct tlock *tlck;
+  1373		struct lrd *lrd = &cd->lrd;
+  1374	
+  1375		/*
+  1376		 * write log record(s) for each tlock of transaction,
+  1377		 */
+  1378		for (lid = tblk->next; lid; lid = tlck->next) {
+  1379			tlck = lid_to_tlock(lid);
+  1380	
+  1381			tlck->flag |= tlckLOG;
+  1382	
+  1383			/* initialize lrd common */
+  1384			ip = tlck->ip;
+  1385			lrd->aggregate = cpu_to_le32(JFS_SBI(ip->i_sb)->aggregate);
+  1386			lrd->log.redopage.fileset = cpu_to_le32(JFS_IP(ip)->fileset);
+  1387			lrd->log.redopage.inode = cpu_to_le32(ip->i_ino);
+  1388	
+  1389			/* write log record of page from the tlock */
+  1390			switch (tlck->type & tlckTYPE) {
+  1391			case tlckXTREE:
+  1392				xtLog(log, tblk, lrd, tlck);
+  1393				break;
+  1394	
+  1395			case tlckDTREE:
+  1396				dtLog(log, tblk, lrd, tlck);
+  1397				break;
+  1398	
+  1399			case tlckINODE:
+  1400				diLog(log, tblk, lrd, tlck, cd);
+  1401				break;
+  1402	
+  1403			case tlckMAP:
+  1404				mapLog(log, tblk, lrd, tlck);
+  1405				break;
+  1406	
+  1407			case tlckDATA:
+  1408				dataLog(log, tblk, lrd, tlck);
+  1409				break;
+  1410	
+  1411			default:
+  1412				jfs_err("UFO tlock:0x%p", tlck);
+  1413			}
+  1414		}
+  1415	
+  1416		return;
+  1417	}
+  1418	
+  1419	/*
+  1420	 *	diLog()
+  1421	 *
+  1422	 * function:	log inode tlock and format maplock to update bmap;
+  1423	 */
+> 1424	static void diLog(struct jfs_log *log, struct tblock *tblk, struct lrd *lrd,
+  1425			 struct tlock *tlck, struct commit *cd)
+  1426	{
+  1427		struct metapage *mp;
+  1428		pxd_t *pxd;
+  1429		struct pxd_lock *pxdlock;
+  1430	
+  1431		mp = tlck->mp;
+  1432	
+  1433		/* initialize as REDOPAGE record format */
+  1434		lrd->log.redopage.type = cpu_to_le16(LOG_INODE);
+  1435		lrd->log.redopage.l2linesize = cpu_to_le16(L2INODESLOTSIZE);
+  1436	
+  1437		pxd = &lrd->log.redopage.pxd;
+  1438	
+  1439		/*
+  1440		 *	inode after image
+  1441		 */
+  1442		if (tlck->type & tlckENTRY) {
+  1443			/* log after-image for logredo(): */
+  1444			lrd->type = cpu_to_le16(LOG_REDOPAGE);
+  1445			PXDaddress(pxd, mp->index);
+  1446			PXDlength(pxd,
+  1447				  mp->logical_size >> tblk->sb->s_blocksize_bits);
+  1448			lrd->backchain = cpu_to_le32(lmLog(log, tblk, lrd, tlck));
+  1449	
+  1450			/* mark page as homeward bound */
+  1451			tlck->flag |= tlckWRITEPAGE;
+  1452		} else if (tlck->type & tlckFREE) {
+  1453			/*
+  1454			 *	free inode extent
+  1455			 *
+  1456			 * (pages of the freed inode extent have been invalidated and
+  1457			 * a maplock for free of the extent has been formatted at
+  1458			 * txLock() time);
+  1459			 *
+  1460			 * the tlock had been acquired on the inode allocation map page
+  1461			 * (iag) that specifies the freed extent, even though the map
+  1462			 * page is not itself logged, to prevent pageout of the map
+  1463			 * page before the log;
+  1464			 */
+  1465	
+  1466			/* log LOG_NOREDOINOEXT of the freed inode extent for
+  1467			 * logredo() to start NoRedoPage filters, and to update
+  1468			 * imap and bmap for free of the extent;
+  1469			 */
+  1470			lrd->type = cpu_to_le16(LOG_NOREDOINOEXT);
+  1471			/*
+  1472			 * For the LOG_NOREDOINOEXT record, we need
+  1473			 * to pass the IAG number and inode extent
+  1474			 * index (within that IAG) from which the
+  1475			 * extent is being released.  These have been
+  1476			 * passed to us in the iplist[1] and iplist[2].
+  1477			 */
+  1478			lrd->log.noredoinoext.iagnum =
+  1479			    cpu_to_le32((u32) (size_t) cd->iplist[1]);
+  1480			lrd->log.noredoinoext.inoext_idx =
+  1481			    cpu_to_le32((u32) (size_t) cd->iplist[2]);
+  1482	
+  1483			pxdlock = (struct pxd_lock *) & tlck->lock;
+  1484			*pxd = pxdlock->pxd;
+  1485			lrd->backchain = cpu_to_le32(lmLog(log, tblk, lrd, NULL));
+  1486	
+  1487			/* update bmap */
+  1488			tlck->flag |= tlckUPDATEMAP;
+  1489	
+  1490			/* mark page as homeward bound */
+  1491			tlck->flag |= tlckWRITEPAGE;
+  1492		} else
+  1493			jfs_err("diLog: UFO type tlck:0x%p", tlck);
+  1494	#ifdef  _JFS_WIP
+  1495		/*
+  1496		 *	alloc/free external EA extent
+  1497		 *
+  1498		 * a maplock for txUpdateMap() to update bPWMAP for alloc/free
+  1499		 * of the extent has been formatted at txLock() time;
+  1500		 */
+  1501		else {
+  1502			assert(tlck->type & tlckEA);
+  1503	
+  1504			/* log LOG_UPDATEMAP for logredo() to update bmap for
+  1505			 * alloc of new (and free of old) external EA extent;
+  1506			 */
+  1507			lrd->type = cpu_to_le16(LOG_UPDATEMAP);
+  1508			pxdlock = (struct pxd_lock *) & tlck->lock;
+  1509			nlock = pxdlock->index;
+  1510			for (i = 0; i < nlock; i++, pxdlock++) {
+  1511				if (pxdlock->flag & mlckALLOCPXD)
+  1512					lrd->log.updatemap.type =
+  1513					    cpu_to_le16(LOG_ALLOCPXD);
+  1514				else
+  1515					lrd->log.updatemap.type =
+  1516					    cpu_to_le16(LOG_FREEPXD);
+  1517				lrd->log.updatemap.nxd = cpu_to_le16(1);
+  1518				lrd->log.updatemap.pxd = pxdlock->pxd;
+  1519				lrd->backchain =
+  1520				    cpu_to_le32(lmLog(log, tblk, lrd, NULL));
+  1521			}
+  1522	
+  1523			/* update bmap */
+  1524			tlck->flag |= tlckUPDATEMAP;
+  1525		}
+  1526	#endif				/* _JFS_WIP */
+  1527	
+  1528		return;
+  1529	}
+  1530	
+  1531	/*
+  1532	 *	dataLog()
+  1533	 *
+  1534	 * function:	log data tlock
+  1535	 */
+> 1536	static void dataLog(struct jfs_log *log, struct tblock *tblk, struct lrd *lrd,
+  1537		    struct tlock *tlck)
+  1538	{
+  1539		struct metapage *mp;
+  1540		pxd_t *pxd;
+  1541	
+  1542		mp = tlck->mp;
+  1543	
+  1544		/* initialize as REDOPAGE record format */
+  1545		lrd->log.redopage.type = cpu_to_le16(LOG_DATA);
+  1546		lrd->log.redopage.l2linesize = cpu_to_le16(L2DATASLOTSIZE);
+  1547	
+  1548		pxd = &lrd->log.redopage.pxd;
+  1549	
+  1550		/* log after-image for logredo(): */
+  1551		lrd->type = cpu_to_le16(LOG_REDOPAGE);
+  1552	
+  1553		if (jfs_dirtable_inline(tlck->ip)) {
+  1554			/*
+  1555			 * The table has been truncated, we've must have deleted
+  1556			 * the last entry, so don't bother logging this
+  1557			 */
+  1558			mp->lid = 0;
+  1559			grab_metapage(mp);
+  1560			metapage_homeok(mp);
+  1561			discard_metapage(mp);
+  1562			tlck->mp = NULL;
+  1563			return;
+  1564		}
+  1565	
+  1566		PXDaddress(pxd, mp->index);
+  1567		PXDlength(pxd, mp->logical_size >> tblk->sb->s_blocksize_bits);
+  1568	
+  1569		lrd->backchain = cpu_to_le32(lmLog(log, tblk, lrd, tlck));
+  1570	
+  1571		/* mark page as homeward bound */
+  1572		tlck->flag |= tlckWRITEPAGE;
+  1573	
+  1574		return;
+  1575	}
+  1576	
 
 ---
 0-DAY CI Kernel Test Service, Intel Corporation
 https://lists.01.org/hyperkitty/list/kbuild-all@lists.01.org
 
---cWoXeonUoKmBZSoM
+--J/dobhs11T7y2rNN
 Content-Type: application/gzip
 Content-Disposition: attachment; filename=".config.gz"
 Content-Transfer-Encoding: base64
 
-H4sICKGQH2AAAy5jb25maWcAjBzJdtw28p6v6OdckkM8WmzFefN0AEmQjTRB0ADY6tYFT5Hb
+H4sICIKaH2AAAy5jb25maWcAjBzJdtw28p6v6OdckkM8WmzFefN0AEmQjTRB0ADY6tYFT5Hb
 Hr3YkkfLJP77qQK4ACDYTg6xWFUobIXaUOgff/hxRV6eH77cPN/d3nz+/G316XB/eLx5PnxY
 fbz7fPj3qhCrRugVLZh+DcT13f3L3/+6O393sXr7+vTk9clqc3i8P3xe5Q/3H+8+vUDTu4f7
 H378IRdNySqT52ZLpWKiMZru9OWrT7e3v/y2+qk4/HF3c7/67fX565NfTt/+7P565TVjylR5
@@ -909,14 +1110,14 @@ DgS/Bbywssse8rUjaukw9uJUVhJgxeCo0LF8xboresC21Yr/zWw07ky1feHt6eUMTQjaffzt
 39Pz7b11qxkDss4vEnxW43zwi13Xh5SlR1mRvq4mVJaoQSTMUReBq5lveFMQH2cJ+CYqpDE1
 ycCMy2uzBitnrtckuHEghCZB0AbiHEkSuJ+6uyFr/np8zO721T5eJEbJocR/zyDSXhNXAgA=
 
---cWoXeonUoKmBZSoM
+--J/dobhs11T7y2rNN
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
 Content-Disposition: inline
 
 
---cWoXeonUoKmBZSoM
+--J/dobhs11T7y2rNN
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -927,5 +1128,5 @@ Jfs-discussion mailing list
 Jfs-discussion@lists.sourceforge.net
 https://lists.sourceforge.net/lists/listinfo/jfs-discussion
 
---cWoXeonUoKmBZSoM--
+--J/dobhs11T7y2rNN--
 
