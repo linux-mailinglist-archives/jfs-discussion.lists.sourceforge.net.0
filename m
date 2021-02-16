@@ -2,192 +2,87 @@ Return-Path: <jfs-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+jfs-discussion@lfdr.de
 Delivered-To: lists+jfs-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id AABBD31BE8F
-	for <lists+jfs-discussion@lfdr.de>; Mon, 15 Feb 2021 17:14:40 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0C96731CC80
+	for <lists+jfs-discussion@lfdr.de>; Tue, 16 Feb 2021 15:56:18 +0100 (CET)
 Received: from [127.0.0.1] (helo=sfs-ml-2.v29.lw.sourceforge.com)
 	by sfs-ml-2.v29.lw.sourceforge.com with esmtp (Exim 4.90_1)
 	(envelope-from <jfs-discussion-bounces@lists.sourceforge.net>)
-	id 1lBgVr-0002xc-5k; Mon, 15 Feb 2021 16:14:15 +0000
+	id 1lC1lW-0004jj-Kz; Tue, 16 Feb 2021 14:55:50 +0000
 Received: from [172.30.20.202] (helo=mx.sourceforge.net)
  by sfs-ml-2.v29.lw.sourceforge.com with esmtps
  (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
- (envelope-from <dave.kleikamp@oracle.com>) id 1lBgO8-0002bQ-AJ
- for jfs-discussion@lists.sourceforge.net; Mon, 15 Feb 2021 16:06:16 +0000
+ (envelope-from
+ <3w84rYAkbABgGMN8y992FyDD61.4CC492IG2F0CBH2BH.0CA@M3KW2WVRGUFZ5GODRSRYTGD7.apphosting.bounces.google.com>)
+ id 1lC0p8-0001u7-Tx
+ for jfs-discussion@lists.sourceforge.net; Tue, 16 Feb 2021 13:55:30 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=sourceforge.net; s=x; h=MIME-Version:Content-Transfer-Encoding:Content-Type
- :Date:Message-ID:From:Subject:Cc:To:Sender:Reply-To:Content-ID:
+ d=sourceforge.net; s=x; h=Content-Type:To:From:Subject:Message-ID:In-Reply-To
+ :Date:MIME-Version:Sender:Reply-To:Cc:Content-Transfer-Encoding:Content-ID:
  Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
- :Resent-Message-ID:In-Reply-To:References:List-Id:List-Help:List-Unsubscribe:
+ :Resent-Message-ID:References:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=W9l0GEKOrqcQMLP7SSohcgV5ej71N0BUPvDhvOlwiBs=; b=cQvbpJnE7ErjQJZgNbm2TZs1Y/
- PsC6mFIDSLep7LhjUUcvOY4QIcnqSCaMYVaRm9Znc7EeNn5bzklG9iO3fO8tR+hJV6Yd0QgC830uP
- s8Edo1lTxRbqYZgw777AnVIWLoEjqgiIh1zKaoRArJp504gdBZ7SSPQekwG+vu7jpYHI=;
+ bh=k4S8eFdQa50p/tNPWyAGeojY7fwTY9KS9wse53t0UEg=; b=ilD0UGYx3mB3PVXbaK4HjuG9EI
+ viONqwKF/W+o+FGKKRTDKfcDuVQuJFR+YrE57Hcua3YMtiwz51tPZ9A+KUXDlkJTKk1ahHMFhUH4f
+ XIMg193EFmV+C3OyruJaT3v0ehJ1mG5eQe8DZXM8wZLp05qUbR5DoNliOmwuQVXkrDHg=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
- h=MIME-Version:Content-Transfer-Encoding:Content-Type:Date:Message-ID:From:
- Subject:Cc:To:Sender:Reply-To:Content-ID:Content-Description:Resent-Date:
- Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+ h=Content-Type:To:From:Subject:Message-ID:In-Reply-To:Date:MIME-Version:
+ Sender:Reply-To:Cc:Content-Transfer-Encoding:Content-ID:Content-Description:
+ Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
  References:List-Id:List-Help:List-Unsubscribe:List-Subscribe:List-Post:
- List-Owner:List-Archive; bh=W9l0GEKOrqcQMLP7SSohcgV5ej71N0BUPvDhvOlwiBs=; b=l
- Pd3vbURQnET5gcLCh9gvYeMrVDlBxeNl2Zol56aKjwPjCMpdVw/U3zFHRoQ1CPAOx4/OFyth9ZZ8H
- 3tpKRoP0SE53hUbi21yd0qcd5qbJdQoIDAMlsK17uHD7Nh40oRD8kHWnCtXU0YV5GXEgWO/wqawm/
- lV45TDNFADX1JwFM=;
-Received: from userp2130.oracle.com ([156.151.31.86])
- by sfi-mx-1.v28.lw.sourceforge.com with esmtps
- (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.92.2)
- id 1lBgNi-009pV9-UT
- for jfs-discussion@lists.sourceforge.net; Mon, 15 Feb 2021 16:06:15 +0000
-Received: from pps.filterd (userp2130.oracle.com [127.0.0.1])
- by userp2130.oracle.com (8.16.0.42/8.16.0.42) with SMTP id 11FFmstb014890;
- Mon, 15 Feb 2021 16:05:41 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=oracle.com;
- h=to : cc : subject :
- from : message-id : date : content-type : content-transfer-encoding :
- mime-version; s=corp-2020-01-29;
- bh=W9l0GEKOrqcQMLP7SSohcgV5ej71N0BUPvDhvOlwiBs=;
- b=zYXRVqotnNlBIY2b+Ilb7vad4HBxeIVwVgMNPHLXL1dznqS09lJR5W0N009qA82d3QYj
- tSeXkw+YWuhVIogyxGf5nLLPXp6yAp+JpkAXI8hzT8BhNlkoQuvpCjqrLf/0Fdl02Jbs
- xrjQGiw9p7uhfnpZSjpGX9KsqIp23Y7o31X3yk9iiWk9kxk/VH7sQMmKSj94iwnWid7H
- 53vkiPTpwPECT2Qs5Ic16fDLStAdZ/39HVpHli7ufKUR1q04mWr+9l6cvVFtTQ4U5vOp
- Dg5kuSLLrpUUS9vWgpIh6sYkOZ3//HAP97dHKTDgEGldcw3bxYvpacNNEPmraDEx3E0d wg== 
-Received: from userp3020.oracle.com (userp3020.oracle.com [156.151.31.79])
- by userp2130.oracle.com with ESMTP id 36p66qvfx5-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
- Mon, 15 Feb 2021 16:05:41 +0000
-Received: from pps.filterd (userp3020.oracle.com [127.0.0.1])
- by userp3020.oracle.com (8.16.0.42/8.16.0.42) with SMTP id 11FFpSR0063493;
- Mon, 15 Feb 2021 16:05:41 GMT
-Received: from nam04-bn8-obe.outbound.protection.outlook.com
- (mail-bn8nam08lp2047.outbound.protection.outlook.com [104.47.74.47])
- by userp3020.oracle.com with ESMTP id 36prhqhk43-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
- Mon, 15 Feb 2021 16:05:40 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=SvMR2PPWReQMEMqDmoTuXPRNiZdR/NBqTpGB3r9VdT9UyYJdXjicdLeXgGkWhHFhE6b8pIixpSGg9tfHrMuCs1TKnKC3bGDdE4fOv/EYQq+sygZ41hGVkiOTavxWjxuKX+AGn3ckZ3Wq4sDAnk5p74KE82YCkS7kCpnvUGkZJaRE4DKZdNox2wi5zGX/FsO8PZIiy+Fj98mDklcOAOHcTkuG/j5Uh/W6ShWXC6Zro66v95ovJq0heE3f7j8xlvhAjua2Am8w/ahEPNMngVwlrr8ZYSGnwfpIcU8B5DYvz3D2dRKu/UgbFl2G4uT7WGYc3nX05tH6DyO2XcSO4e3wjw==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=W9l0GEKOrqcQMLP7SSohcgV5ej71N0BUPvDhvOlwiBs=;
- b=VolbabaYXKmMNaWn67Y9+Y9Xloa30s7sxBOWV/NwI50jS3omCvzhrdJ9x1KeaGeFNcy4U+li2oole7yOrPuTd3I2W416oGe5p0ekFJtohVFUGLWQ5vZQL6sY65qY5J+8UuVDTPdym3KM77db2+wahsrpEFG0e3TTI1HhV+Wt3N8pCt0ZDXtQ1sRbQ9PVvu4sWhn5KyHBOvDug7WFYM6B9cRf0Co35z/g0ka3R9Gt3sIuEIx9GORBAMun58yLDJ3WE/qmZTctwL8gdziaYOn0CiYp6mANZzxnfDXAiQxtLE2IuDLTqqkZV+jWo9kU9NRXo6h8X8fm1FINr9wF+lGELg==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=oracle.com; dmarc=pass action=none header.from=oracle.com;
- dkim=pass header.d=oracle.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=oracle.onmicrosoft.com; s=selector2-oracle-onmicrosoft-com;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=W9l0GEKOrqcQMLP7SSohcgV5ej71N0BUPvDhvOlwiBs=;
- b=fawH6gS/RzYnfLs3sey/e3fCZ0Sfp7kw7FUkW3PWjvppJ9F60VK2CogiM8XOftswAIaI4s85EibCuC96szGV+LKSfHl78v8qSyi+85ZKpvtrh7KgCmCBhHp8fVQINEgFkVKIXwu/0shdT97t8++CmgeC+JudGDbr754VPO15iHY=
-Authentication-Results: lists.sourceforge.net; dkim=none (message not signed)
- header.d=none; lists.sourceforge.net;
- dmarc=none action=none header.from=oracle.com;
-Received: from CH2PR10MB4118.namprd10.prod.outlook.com (2603:10b6:610:a4::8)
- by CH0PR10MB5098.namprd10.prod.outlook.com (2603:10b6:610:da::18) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.3846.25; Mon, 15 Feb
- 2021 16:05:35 +0000
-Received: from CH2PR10MB4118.namprd10.prod.outlook.com
- ([fe80::b4f8:316f:3a25:faac]) by CH2PR10MB4118.namprd10.prod.outlook.com
- ([fe80::b4f8:316f:3a25:faac%7]) with mapi id 15.20.3846.039; Mon, 15 Feb 2021
- 16:05:35 +0000
-To: Linus Torvalds <torvalds@linux-foundation.org>
-From: Dave Kleikamp <dave.kleikamp@oracle.com>
-Message-ID: <4605002a-b275-1190-c56d-7d888aa770a0@oracle.com>
-Date: Mon, 15 Feb 2021 10:05:32 -0600
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:78.0) Gecko/20100101
- Thunderbird/78.7.1
-Content-Language: en-US
-X-Originating-IP: [68.201.65.98]
-X-ClientProxiedBy: SA0PR11CA0019.namprd11.prod.outlook.com
- (2603:10b6:806:d3::24) To CH2PR10MB4118.namprd10.prod.outlook.com
- (2603:10b6:610:a4::8)
+ List-Owner:List-Archive; bh=k4S8eFdQa50p/tNPWyAGeojY7fwTY9KS9wse53t0UEg=; b=W
+ F/UaA7+TTRoi3Gtc80IB4CzP+UeGtCfr2HTnW+zqI2DH1lF6WtPki3tdyOJsUBClM3zA+CY5tliiQ
+ fC+8VEYyKVysKiwQeLyqsK8wARv4rGPGF+d4mW5uEkLo4F6pUkhQNBxXoUXvq7UO/WpEjjrq5H5+t
+ OBwDMhpbXVBLtOO8=;
+Received: from mail-il1-f198.google.com ([209.85.166.198])
+ by sfi-mx-2.v28.lw.sourceforge.com with esmtps
+ (TLSv1.2:ECDHE-RSA-AES128-GCM-SHA256:128) (Exim 4.92.3)
+ id 1lC0oy-00087n-Vq
+ for jfs-discussion@lists.sourceforge.net; Tue, 16 Feb 2021 13:55:30 +0000
+Received: by mail-il1-f198.google.com with SMTP id b4so7859864ilj.10
+ for <jfs-discussion@lists.sourceforge.net>;
+ Tue, 16 Feb 2021 05:55:20 -0800 (PST)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:date:in-reply-to:message-id:subject
+ :from:to;
+ bh=k4S8eFdQa50p/tNPWyAGeojY7fwTY9KS9wse53t0UEg=;
+ b=egPWpB2WoNvat6Y6JNRpoGvKw6D9sTB8MwWd7ZGhg2P0b1v8APKlGbXmO3jrwg7PyK
+ 1GOq60kadqqrltps3u340PXA6yRZpan9bZZGwihvbJQza9LRpDYsgAIigEtH9ypVzK7+
+ ORue6ZLToHwrCwuR27PsZt4f7FKErtlOT4i0r2Koi7QZnWw0nqOfUSY9EJFOWtH76TgJ
+ BdurHknL2vEaGinMAxF1gvScL4PtR5w+YyTysx+83pPA050r6CNTbw6kF/HJONb0iYdc
+ gVsVKvownp2BNTs79tfI0NiaxGb5QW53poCGSX1Bl3yH+8ScrWKnEhxfGW93/dhzYqq8
+ UYzA==
+X-Gm-Message-State: AOAM531AfXpDS70deubs/a77U2anv7rMVATF/TSJ3BOYVfuV3OOX8Uzn
+ kaoterUzsXC4ZXQHsGVHiKSqVQEM+AO0HzE+pz/BjchG1fr3
+X-Google-Smtp-Source: ABdhPJwfp2E+kjiYL7muPFvP0R47FdFuDt60+Yo2IeZtbAs4txeKhsonVyaBhUny325dAW+bzKNEjttCItaPvvqM1GaBGW4FyGMK
 MIME-Version: 1.0
-X-MS-Exchange-MessageSentRepresentingType: 1
-Received: from [192.168.0.190] (68.201.65.98) by
- SA0PR11CA0019.namprd11.prod.outlook.com (2603:10b6:806:d3::24) with Microsoft
- SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.3846.25 via Frontend Transport; Mon, 15 Feb 2021 16:05:34 +0000
-X-MS-PublicTrafficType: Email
-X-MS-Office365-Filtering-Correlation-Id: 1a968300-a127-4ef0-f301-08d8d1cb8741
-X-MS-TrafficTypeDiagnostic: CH0PR10MB5098:
-X-Microsoft-Antispam-PRVS: <CH0PR10MB50985844649E7512D0C55ABD87889@CH0PR10MB5098.namprd10.prod.outlook.com>
-X-MS-Oob-TLC-OOBClassifiers: OLM:393;
-X-MS-Exchange-SenderADCheck: 1
-X-Microsoft-Antispam: BCL:0;
-X-Microsoft-Antispam-Message-Info: l2W4cOjpfc225FyLdyz8CQISfER0xfkvZEH7xtwk0WAyy54UxeOrfduX2JmFpLr5mvyQkgrwdSwphEqi1Pxu6FR45lo1kQJGbYgAqxyKk9v4/G0gqz46cV05VraGJgKla7JPeM13irqKxTQFT7xnBaWfapAr8ikaKSt8it+XI9WJRy+R+ef6kJiTTv4Dnvx+ghsmKYcxZZngYLgf+M+Yl4hzSRbO34zfNfRhnOpyWgH9KzkrcqKHpP2J8QyWsB3FBo8v0NCusRrqkM5UlThkJqfQ7NdW+w/yrgqnktEOp5hg62QHi+prjTGKNoDfx1dIL0NvgwoB67aqK+oIv+88TgC5h8yYd3GGCd0/YYYpDd6TlEOa8tT+9Whi5rOYdkKORLlzznUnLLJGIXXA5h0vNzFh19Xt3GA5xPd98mecLJYwqoD376Mr29TnJAzqBLPqZvW3z7MyhRRVrLSXhin0U0c9VtI5Ai884aL+5ceRf7xzuU0xSoqyhlGufCNWDZg5GZhB/dqq5MH+gHR/LSiVhZ56AbbhFwT0GIUDk4N/cQzCXX51XEbgPRDe5IoC2H8rFiOx3euh0Bl3zq4vmnVLQKfKKQQjwu0OjQfhF+fIPe0=
-X-Forefront-Antispam-Report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
- IPV:NLI; SFV:NSPM; H:CH2PR10MB4118.namprd10.prod.outlook.com; PTR:; CAT:NONE;
- SFS:(39860400002)(366004)(346002)(376002)(136003)(396003)(66946007)(4326008)(8676002)(36756003)(4744005)(31686004)(5660300002)(66556008)(66476007)(83380400001)(16526019)(8936002)(4001150100001)(26005)(316002)(478600001)(6486002)(2616005)(956004)(2906002)(31696002)(186003)(44832011)(6916009)(86362001)(16576012)(43740500002)(45980500001);
- DIR:OUT; SFP:1101; 
-X-MS-Exchange-AntiSpam-MessageData: =?utf-8?B?TkkxNEllUzlPVnRWY2VhSlJ5SDlwZTRLQ2JMUDVLYWxqMlllUzdwVTZqeVFK?=
- =?utf-8?B?U1ZQTExDZEk0K1BNK1BaeGhyUEM1Z1pqUXpNeHdOYnhvL1BJaU1EU2xta0l3?=
- =?utf-8?B?Q1JyaytlV3FIdDAzMitiQkU2aTdrS0crY0p3NGdZNjVPcnhiNkZPa29wSzRr?=
- =?utf-8?B?MTcyVjdEMGJ0bFZ6OTJQNU5xd05EWHFLdCtUOVh4Qm5jWTVIckk1RERXKzZ0?=
- =?utf-8?B?ck12VDJiQ2NMOFZqS3pSOXZLWERKcWxlL256OVd0MUNINlFMU0V1VElUSEJo?=
- =?utf-8?B?ZThjc09pelpVMVVIckZqTUNlMU1ZMnZmME9FYU5Xdmx6cTd3RUJHeDRrTjZq?=
- =?utf-8?B?WGZwTWovR3pGVkcrbnVJZVJNMVFVNkZNVWRBUkp4ckZSOE5hQ052WGRsUUFr?=
- =?utf-8?B?WXA4b0QvMmoyKzFibiswQlJhSHRTd2xZUTRiaWhoc1JoNUI0VkxsVW5CTytk?=
- =?utf-8?B?SEZhdUt4QlZ2cTFCVCtlYzFxR0xFZGtSazZDeVNBMWd5dmtCa1huUkdKL0Qw?=
- =?utf-8?B?TlBROGx5NzhXZjZZaEcycXlEZmo1WEhaZndtSDJRYzNBWk9VV28rOStDUjhQ?=
- =?utf-8?B?cmxMVFNGbVB6V01qVHMzSUptRDdpRGc0aHlRcGxTT3NUU1VSeW1Tdmw4S3FO?=
- =?utf-8?B?bDcwcEtmYkZnSEFhVHhOT3I4c29HVlJmbkpUQlJQV3lmVEJsWE54MVpYWmdR?=
- =?utf-8?B?NUVvbmIrdGdhZzhlZEVxY2J4Ynp4UW5XVWtCbWFPeWk5QjF5bEFCZHNIc0Vl?=
- =?utf-8?B?SUVnbHdUYTRMM2duMzY0enZkRnNxU2NnRlh1c3pGelZ4SWtTYkRaZnRIandZ?=
- =?utf-8?B?YzAwc1BMTTBUcndXaURoU3RFbjkyTjIyLzhDQkRnYWJ6ZE96NkpYeDVLVi9P?=
- =?utf-8?B?eW5VZHhqTGxUWW5aSzNaWEo5ajJlbDF0STFHemNGbWpRcVRPRUJiUlpJYnNX?=
- =?utf-8?B?MWpxOUIvcDFNUTM4czhtRnplWC9zSVdhSEc4TWRkaFpmVVkxdXFVNTlJYlJG?=
- =?utf-8?B?dFlKVVNpLzIzaEFJdHpBZHhLV3BWYm05NUh5ZUlRUW5vd0UxRlFqYkxBM2kw?=
- =?utf-8?B?TDM1REo4MzZCK0tWTFlORVhBNVFIUnN1ZnJSTUlKUXF1ZW9OWVNndVNmLzhE?=
- =?utf-8?B?RDllOWxqUXEzZ0hsVXJTWUlpODcyZkhjdTNFV1cvaXR1dDNMSFJteGRqakk2?=
- =?utf-8?B?aHVuOXJrM1JrR1VpUG1TWEUrZmsvVjNJYW1KSEp0dDJ1S29Ucm1JMnZZblkz?=
- =?utf-8?B?d3ZSZlhERDlOQjJ0NHBjVEtLbkVCSlBMelI3a2pZNmhaRVBodWQ4TEdXeFV4?=
- =?utf-8?B?ZDFkZzJ5VU40MEJOM0RqNUpvMUVQWmEvMEhVZGJFQWlyZDdKRUlrNkNuUWlt?=
- =?utf-8?B?MndiY0Y0YnkzTks3dk5Ra2g1dFNNRjlFNVV5NkI1akVlNFpsOVBlR2doQUNl?=
- =?utf-8?B?czU5VTR2eVBBK2tVR2VIM0NuK0RkWmtpaHEydUtKcVFNd0hTMUZmZXlQaW1T?=
- =?utf-8?B?ZnRMT2dzNll3TjVRS2tWUHZ3TUR6SGM4aUJTZnFpVVBiYU9BY2hmWDBHdDdP?=
- =?utf-8?B?RnBSZTgvSnc2dzYraVYyNTZKREtwTlJNNGJSQWd0YjNEQ3ZadUlPNTdhSGc2?=
- =?utf-8?B?NXJvbTl5aWE5ZDI3ejEyZ0krUk94c1BXWVRkaWthWjNWZ2Jjd2h2VGQ0MEp5?=
- =?utf-8?B?aVJoWDQ3M3VDMGxqZGwxRjVIcWZQNFQwcGxFVmcwcFd0aXVhS2RDS3FwVVdP?=
- =?utf-8?Q?MoIFU/IaCb4mpvCXPgi/cDX/5iJIHNhyWLUs8Ml?=
-X-OriginatorOrg: oracle.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 1a968300-a127-4ef0-f301-08d8d1cb8741
-X-MS-Exchange-CrossTenant-AuthSource: CH2PR10MB4118.namprd10.prod.outlook.com
-X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 15 Feb 2021 16:05:35.2141 (UTC)
-X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
-X-MS-Exchange-CrossTenant-Id: 4e2c6054-71cb-48f1-bd6c-3a9705aca71b
-X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: fj8ZmZP2y9AwNl8gO5JQJ/xxBiWEUNdtgFlS/P5iGgbpvOFDxvPKeMls3XmJjFvu73PLtr1kvyk1EJAcXQa8q9zPuzzGze6tRZBm7UL/hfM=
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: CH0PR10MB5098
-X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=9896
- signatures=668683
-X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 mlxlogscore=954
- adultscore=0 mlxscore=0
- bulkscore=0 suspectscore=0 malwarescore=0 spamscore=0 phishscore=0
- classifier=spam adjust=0 reason=mlx scancount=1 engine=8.12.0-2009150000
- definitions=main-2102150125
-X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=9896
- signatures=668683
-X-Proofpoint-Spam-Details: rule=notspam policy=default score=0
- lowpriorityscore=0 suspectscore=0
- impostorscore=0 priorityscore=1501 clxscore=1011 spamscore=0 mlxscore=0
- phishscore=0 malwarescore=0 bulkscore=0 adultscore=0 mlxlogscore=999
- classifier=spam adjust=0 reason=mlx scancount=1 engine=8.12.0-2009150000
- definitions=main-2102150125
-X-Spam-Score: -0.1 (/)
+X-Received: by 2002:a6b:f406:: with SMTP id i6mr17070854iog.121.1613483715421; 
+ Tue, 16 Feb 2021 05:55:15 -0800 (PST)
+Date: Tue, 16 Feb 2021 05:55:15 -0800
+In-Reply-To: <0000000000005b805d05afcf6ab8@google.com>
+X-Google-Appengine-App-Id: s~syzkaller
+X-Google-Appengine-App-Id-Alias: syzkaller
+Message-ID: <000000000000b567ca05bb7473c0@google.com>
+From: syzbot <syzbot+5d2008bd1f1b722ba94e@syzkaller.appspotmail.com>
+To: hdanton@sina.com, jfs-discussion@lists.sourceforge.net, 
+ linux-kernel@vger.kernel.org, shaggy@kernel.org, 
+ syzkaller-bugs@googlegroups.com
+X-Spam-Score: 0.6 (/)
 X-Spam-Report: Spam Filtering performed by mx.sourceforge.net.
  See http://spamassassin.org/tag/ for more details.
+ 0.3 FROM_LOCAL_HEX         From: localpart has long hexadecimal sequence
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/, no
+ trust [209.85.166.198 listed in list.dnswl.org]
  -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [156.151.31.86 listed in wl.mailspike.net]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- -0.1 DKIM_VALID_AU Message has a valid DKIM or DK signature from author's
- domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature,
- not necessarily valid
- 0.0 TIME_LIMIT_EXCEEDED    Exceeded time limit / deadline
-X-Headers-End: 1lBgNi-009pV9-UT
-Subject: [Jfs-discussion] [GIT PULL] jfs updates for 5.12
+ [209.85.166.198 listed in wl.mailspike.net]
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level mail
+ domains are different
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+X-Headers-End: 1lC0oy-00087n-Vq
+X-Mailman-Approved-At: Tue, 16 Feb 2021 14:55:48 +0000
+Subject: Re: [Jfs-discussion] KASAN: use-after-free Read in lbmIODone
 X-BeenThere: jfs-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -199,42 +94,163 @@ List-Post: <mailto:jfs-discussion@lists.sourceforge.net>
 List-Help: <mailto:jfs-discussion-request@lists.sourceforge.net?subject=help>
 List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/jfs-discussion>, 
  <mailto:jfs-discussion-request@lists.sourceforge.net?subject=subscribe>
-Cc: "jfs-discussion@lists.sourceforge.net"
- <jfs-discussion@lists.sourceforge.net>, linux-kernel@vger.kernel.org
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Errors-To: jfs-discussion-bounces@lists.sourceforge.net
 
-The following changes since commit a0b96314870f7eff6d15a242cb162dfc46b3c284:
+syzbot has found a reproducer for the following issue on:
 
-   Merge tag 'xfs-5.11-merge-4' of git://git.kernel.org/pub/scm/fs/xfs/xfs-linux (2020-12-18 12:50:18 -0800)
+HEAD commit:    f40ddce8 Linux 5.11
+git tree:       upstream
+console output: https://syzkaller.appspot.com/x/log.txt?x=12d2b614d00000
+kernel config:  https://syzkaller.appspot.com/x/.config?x=e53d04227c52a0df
+dashboard link: https://syzkaller.appspot.com/bug?extid=5d2008bd1f1b722ba94e
+syz repro:      https://syzkaller.appspot.com/x/repro.syz?x=13e7f498d00000
 
-are available in the Git repository at:
+IMPORTANT: if you fix the issue, please add the following tag to the commit:
+Reported-by: syzbot+5d2008bd1f1b722ba94e@syzkaller.appspotmail.com
 
-   git://github.com/kleikamp/linux-shaggy.git tags/jfs-5.12
+==================================================================
+BUG: KASAN: use-after-free in __lock_acquire+0x3db6/0x54f0 kernel/locking/lockdep.c:4702
+Read of size 8 at addr ffff88803d834368 by task ksoftirqd/1/18
 
-for you to fetch changes up to 4208c398aae4c2290864ba15c3dab7111f32bec1:
+CPU: 1 PID: 18 Comm: ksoftirqd/1 Not tainted 5.11.0-syzkaller #0
+Hardware name: Google Google Compute Engine/Google Compute Engine, BIOS Google 01/01/2011
+Call Trace:
+ __dump_stack lib/dump_stack.c:79 [inline]
+ dump_stack+0x107/0x163 lib/dump_stack.c:120
+ print_address_description.constprop.0.cold+0x5b/0x2f8 mm/kasan/report.c:230
+ __kasan_report mm/kasan/report.c:396 [inline]
+ kasan_report.cold+0x79/0xd5 mm/kasan/report.c:413
+ __lock_acquire+0x3db6/0x54f0 kernel/locking/lockdep.c:4702
+ lock_acquire kernel/locking/lockdep.c:5442 [inline]
+ lock_acquire+0x1a8/0x720 kernel/locking/lockdep.c:5407
+ __raw_spin_lock_irqsave include/linux/spinlock_api_smp.h:110 [inline]
+ _raw_spin_lock_irqsave+0x39/0x50 kernel/locking/spinlock.c:159
+ __wake_up_common_lock+0xb4/0x130 kernel/sched/wait.c:137
+ lbmIODone+0x44b/0xf60 fs/jfs/jfs_logmgr.c:2294
+ bio_endio+0x3cd/0x790 block/bio.c:1450
+ req_bio_endio block/blk-core.c:264 [inline]
+ blk_update_request+0x68b/0x1480 block/blk-core.c:1462
+ blk_mq_end_request+0x4c/0x510 block/blk-mq.c:564
+ lo_complete_rq+0x20d/0x2d0 drivers/block/loop.c:497
+ blk_done_softirq+0x294/0x3e0 block/blk-mq.c:588
+ __do_softirq+0x29b/0x9f6 kernel/softirq.c:343
+ run_ksoftirqd kernel/softirq.c:650 [inline]
+ run_ksoftirqd+0x2d/0x50 kernel/softirq.c:642
+ smpboot_thread_fn+0x655/0x9e0 kernel/smpboot.c:165
+ kthread+0x3b1/0x4a0 kernel/kthread.c:292
+ ret_from_fork+0x1f/0x30 arch/x86/entry/entry_64.S:296
 
-   fs/jfs: fix potential integer overflow on shift of a int (2021-02-11 11:25:54 -0600)
+Allocated by task 9974:
+ kasan_save_stack+0x1b/0x40 mm/kasan/common.c:38
+ kasan_set_track mm/kasan/common.c:46 [inline]
+ set_alloc_info mm/kasan/common.c:401 [inline]
+ ____kasan_kmalloc.constprop.0+0x82/0xa0 mm/kasan/common.c:429
+ kmalloc include/linux/slab.h:552 [inline]
+ lbmLogInit fs/jfs/jfs_logmgr.c:1829 [inline]
+ lmLogInit+0x30b/0x1420 fs/jfs/jfs_logmgr.c:1278
+ open_inline_log fs/jfs/jfs_logmgr.c:1183 [inline]
+ lmLogOpen+0x759/0x1250 fs/jfs/jfs_logmgr.c:1077
+ jfs_mount_rw+0x286/0x4c0 fs/jfs/jfs_mount.c:259
+ jfs_fill_super+0x860/0xbc0 fs/jfs/super.c:571
+ mount_bdev+0x34d/0x410 fs/super.c:1366
+ legacy_get_tree+0x105/0x220 fs/fs_context.c:592
+ vfs_get_tree+0x89/0x2f0 fs/super.c:1496
+ do_new_mount fs/namespace.c:2881 [inline]
+ path_mount+0x13ad/0x20c0 fs/namespace.c:3211
+ do_mount fs/namespace.c:3224 [inline]
+ __do_sys_mount fs/namespace.c:3432 [inline]
+ __se_sys_mount fs/namespace.c:3409 [inline]
+ __x64_sys_mount+0x27f/0x300 fs/namespace.c:3409
+ do_syscall_64+0x2d/0x70 arch/x86/entry/common.c:46
+ entry_SYSCALL_64_after_hwframe+0x44/0xa9
 
-----------------------------------------------------------------
-A few jfs fixes
+Freed by task 9974:
+ kasan_save_stack+0x1b/0x40 mm/kasan/common.c:38
+ kasan_set_track+0x1c/0x30 mm/kasan/common.c:46
+ kasan_set_free_info+0x20/0x30 mm/kasan/generic.c:356
+ ____kasan_slab_free+0xe1/0x110 mm/kasan/common.c:362
+ kasan_slab_free include/linux/kasan.h:192 [inline]
+ slab_free_hook mm/slub.c:1547 [inline]
+ slab_free_freelist_hook+0x5d/0x150 mm/slub.c:1580
+ slab_free mm/slub.c:3143 [inline]
+ kfree+0xdb/0x3b0 mm/slub.c:4139
+ lbmLogShutdown fs/jfs/jfs_logmgr.c:1872 [inline]
+ lmLogInit+0x94a/0x1420 fs/jfs/jfs_logmgr.c:1423
+ open_inline_log fs/jfs/jfs_logmgr.c:1183 [inline]
+ lmLogOpen+0x759/0x1250 fs/jfs/jfs_logmgr.c:1077
+ jfs_mount_rw+0x286/0x4c0 fs/jfs/jfs_mount.c:259
+ jfs_fill_super+0x860/0xbc0 fs/jfs/super.c:571
+ mount_bdev+0x34d/0x410 fs/super.c:1366
+ legacy_get_tree+0x105/0x220 fs/fs_context.c:592
+ vfs_get_tree+0x89/0x2f0 fs/super.c:1496
+ do_new_mount fs/namespace.c:2881 [inline]
+ path_mount+0x13ad/0x20c0 fs/namespace.c:3211
+ do_mount fs/namespace.c:3224 [inline]
+ __do_sys_mount fs/namespace.c:3432 [inline]
+ __se_sys_mount fs/namespace.c:3409 [inline]
+ __x64_sys_mount+0x27f/0x300 fs/namespace.c:3409
+ do_syscall_64+0x2d/0x70 arch/x86/entry/common.c:46
+ entry_SYSCALL_64_after_hwframe+0x44/0xa9
 
-----------------------------------------------------------------
-Colin Ian King (1):
-       fs/jfs: fix potential integer overflow on shift of a int
+Last potentially related work creation:
+ kasan_save_stack+0x1b/0x40 mm/kasan/common.c:38
+ kasan_record_aux_stack+0xc5/0xf0 mm/kasan/generic.c:344
+ insert_work+0x48/0x370 kernel/workqueue.c:1331
+ __queue_work+0x5c1/0xf00 kernel/workqueue.c:1497
+ queue_work_on+0xc7/0xd0 kernel/workqueue.c:1524
+ queue_work include/linux/workqueue.h:507 [inline]
+ call_usermodehelper_exec+0x1f0/0x4c0 kernel/umh.c:433
+ kobject_uevent_env+0xf9f/0x1680 lib/kobject_uevent.c:617
+ rx_queue_add_kobject net/core/net-sysfs.c:980 [inline]
+ net_rx_queue_update_kobjects+0xee/0x450 net/core/net-sysfs.c:1020
+ register_queue_kobjects net/core/net-sysfs.c:1695 [inline]
+ netdev_register_kobject+0x275/0x430 net/core/net-sysfs.c:1943
+ register_netdevice+0xd6d/0x1770 net/core/dev.c:10058
+ nsim_create+0x245/0x2f0 drivers/net/netdevsim/netdev.c:317
+ __nsim_dev_port_add+0x270/0x4c0 drivers/net/netdevsim/dev.c:941
+ nsim_dev_port_add_all drivers/net/netdevsim/dev.c:990 [inline]
+ nsim_dev_probe+0xc42/0x1070 drivers/net/netdevsim/dev.c:1119
+ really_probe+0x291/0xe60 drivers/base/dd.c:554
+ driver_probe_device+0x26b/0x3d0 drivers/base/dd.c:740
+ __device_attach_driver+0x1d1/0x290 drivers/base/dd.c:846
+ bus_for_each_drv+0x15f/0x1e0 drivers/base/bus.c:431
+ __device_attach+0x228/0x4a0 drivers/base/dd.c:914
+ bus_probe_device+0x1e4/0x290 drivers/base/bus.c:491
+ device_add+0xbc4/0x1d90 drivers/base/core.c:3109
+ nsim_bus_dev_new drivers/net/netdevsim/bus.c:336 [inline]
+ new_device_store+0x374/0x5c0 drivers/net/netdevsim/bus.c:215
+ bus_attr_store+0x72/0xa0 drivers/base/bus.c:122
+ sysfs_kf_write+0x110/0x160 fs/sysfs/file.c:139
+ kernfs_fop_write_iter+0x342/0x500 fs/kernfs/file.c:296
+ call_write_iter include/linux/fs.h:1901 [inline]
+ new_sync_write+0x426/0x650 fs/read_write.c:518
+ vfs_write+0x791/0xa30 fs/read_write.c:605
+ ksys_write+0x12d/0x250 fs/read_write.c:658
+ do_syscall_64+0x2d/0x70 arch/x86/entry/common.c:46
+ entry_SYSCALL_64_after_hwframe+0x44/0xa9
 
-Randy Dunlap (1):
-       JFS: more checks for invalid superblock
+The buggy address belongs to the object at ffff88803d834300
+ which belongs to the cache kmalloc-192 of size 192
+The buggy address is located 104 bytes inside of
+ 192-byte region [ffff88803d834300, ffff88803d8343c0)
+The buggy address belongs to the page:
+page:00000000650479c7 refcount:1 mapcount:0 mapping:0000000000000000 index:0x0 pfn:0x3d834
+flags: 0xfff00000000200(slab)
+raw: 00fff00000000200 ffffea0000f4c180 0000000300000003 ffff888010c41500
+raw: 0000000000000000 0000000080100010 00000001ffffffff 0000000000000000
+page dumped because: kasan: bad access detected
 
-Yang Li (1):
-       jfs: turn diLog(), dataLog() and txLog() into void functions
+Memory state around the buggy address:
+ ffff88803d834200: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+ ffff88803d834280: 00 00 00 fc fc fc fc fc fc fc fc fc fc fc fc fc
+>ffff88803d834300: fa fb fb fb fb fb fb fb fb fb fb fb fb fb fb fb
+                                                          ^
+ ffff88803d834380: fb fb fb fb fb fb fb fb fc fc fc fc fc fc fc fc
+ ffff88803d834400: fb fb fb fb fb fb fb fb fb fb fb fb fb fb fb fb
+==================================================================
 
-  fs/jfs/jfs_dmap.c   |  2 +-
-  fs/jfs/jfs_filsys.h |  1 +
-  fs/jfs/jfs_mount.c  | 10 ++++++++++
-  fs/jfs/jfs_txnmgr.c | 35 ++++++++++++++++-------------------
-  4 files changed, 28 insertions(+), 20 deletions(-)
 
 
 _______________________________________________
