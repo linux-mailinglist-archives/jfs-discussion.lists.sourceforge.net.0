@@ -2,57 +2,57 @@ Return-Path: <jfs-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+jfs-discussion@lfdr.de
 Delivered-To: lists+jfs-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id D18DA32D557
-	for <lists+jfs-discussion@lfdr.de>; Thu,  4 Mar 2021 15:34:50 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id AE57632D558
+	for <lists+jfs-discussion@lfdr.de>; Thu,  4 Mar 2021 15:34:54 +0100 (CET)
 Received: from [127.0.0.1] (helo=sfs-ml-2.v29.lw.sourceforge.com)
 	by sfs-ml-2.v29.lw.sourceforge.com with esmtp (Exim 4.90_1)
 	(envelope-from <jfs-discussion-bounces@lists.sourceforge.net>)
-	id 1lHp3Y-0006si-RS; Thu, 04 Mar 2021 14:34:24 +0000
+	id 1lHp3m-0006u5-TE; Thu, 04 Mar 2021 14:34:38 +0000
 Received: from [172.30.20.202] (helo=mx.sourceforge.net)
  by sfs-ml-2.v29.lw.sourceforge.com with esmtps
  (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
  (envelope-from <SRS0=9jyl=IC=linuxfoundation.org=gregkh@kernel.org>)
- id 1lHp3X-0006sV-5R
- for jfs-discussion@lists.sourceforge.net; Thu, 04 Mar 2021 14:34:23 +0000
+ id 1lHp3l-0006tQ-GC
+ for jfs-discussion@lists.sourceforge.net; Thu, 04 Mar 2021 14:34:37 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=sourceforge.net; s=x; h=Content-Transfer-Encoding:Content-Type:MIME-Version
  :Message-ID:Date:From:Cc:To:Subject:Sender:Reply-To:Content-ID:
  Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
  :Resent-Message-ID:In-Reply-To:References:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=/SeYSntl5e1A5oqwpEjhJZjQNh90E9J/HjIoXyBSZw0=; b=CR/tkPYc+wY5fU3PgdeP0jxS87
- YihVe6ktqG0NTKP1JX9uTiuRHal9XD5z5z8VGfFBOkxSNxye6/tpVDQ5HApHMjeT8wpNjYJawG9zj
- Z5xIwULEhb7YibAH+5/xZFWcjOoHua3I+yTW9RVdokzr7lTxxvu/OTdergbawMAkBizI=;
+ bh=MzU/P1xAPIk+H1jOhoir1jfyUKem6KxVaZxH5mEWP2M=; b=ZRSPM6klbp9TuUtEvNehhntnXh
+ aIHWLBUwPPbnkFGWNHkoNFTk+e83Yyxr+RZ907MjYcKHMJxhSGZDx7crvP5Xco+3YsbqTNc86wEci
+ bESlT+kjTNIlW8jLlcxg3xwfGy8qs9LB/8baGc4VgZPNJdWF1srPWIhiCL82z63jhyN4=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
  h=Content-Transfer-Encoding:Content-Type:MIME-Version:Message-ID:Date:From:
  Cc:To:Subject:Sender:Reply-To:Content-ID:Content-Description:Resent-Date:
  Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
  References:List-Id:List-Help:List-Unsubscribe:List-Subscribe:List-Post:
- List-Owner:List-Archive; bh=/SeYSntl5e1A5oqwpEjhJZjQNh90E9J/HjIoXyBSZw0=; b=I
- WjwYYm7DQPVmR0/UtE9oZIfrTFdleWEtg4JS/+mTCi+uSrP23Q8XNHZNxN+KhLbx1XcNH2Hm6HvST
- YkhmGFUM11t/vJtqMaRcsvSdIjor5vU1PlLVDn1Oyl8eaKsubmNkqj1fxtjevyP7dBszhsloRhfQR
- Anh+7SZQWZmcCvNM=;
+ List-Owner:List-Archive; bh=MzU/P1xAPIk+H1jOhoir1jfyUKem6KxVaZxH5mEWP2M=; b=L
+ EMrqo11Iao50igU0yJwV+5euuuv41oN/RrAV8lBEOzrzpZ4RiJmLmiBapuCG6DvNU+lANPQ8YEeKg
+ cbgYe43zkUN9ePJd8KbQZKj/Df5qpS9H9rmROv3NkXpMknayoU/AVaZw8EbjhhkLoA44DKutgli/1
+ urglUqb1GCpFgpnE=;
 Received: from mail.kernel.org ([198.145.29.99])
  by sfi-mx-2.v28.lw.sourceforge.com with esmtps
  (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.92.3)
- id 1lHp3L-0002se-Qz
- for jfs-discussion@lists.sourceforge.net; Thu, 04 Mar 2021 14:34:23 +0000
-Received: by mail.kernel.org (Postfix) with ESMTPSA id E428C64F43;
- Thu,  4 Mar 2021 14:34:05 +0000 (UTC)
+ id 1lHp3c-0002st-Bj
+ for jfs-discussion@lists.sourceforge.net; Thu, 04 Mar 2021 14:34:36 +0000
+Received: by mail.kernel.org (Postfix) with ESMTPSA id 7020264F4A;
+ Thu,  4 Mar 2021 14:34:22 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=linuxfoundation.org;
- s=korg; t=1614868446;
- bh=Yl5jPFdhutvGJO647GDs/RAYTU83qn4rtpldPakEsYE=;
+ s=korg; t=1614868462;
+ bh=JzfihY2RGtAYH+5vYLRyKDfcR6UXyPZ/Yiro4A5VbY8=;
  h=Subject:To:Cc:From:Date:From;
- b=ytbNj3FrzvbAy9CkOXUL1Q3wmpQM60EjrpJki5uJG8LtMMfmNIQf3y1SsqIOIUSZ8
- tCVVAfSwGXdFTKAgJHVbVEFRfdFJNgQmIupQlWjr5k2Zkz1+GmXWjnQgLfzGRQyYJN
- 0bbvpjYbd1Uo9WUbE7emF0HXFrwl/kUcqfKsjzZA=
+ b=sJonW2IOgBftMTk50lD5caUec9+t1IZZ4ZsgTLJkJVzXwuEmN/sX0lOH5A1xFrMRi
+ R4tKUok16Nhe+D4TGQKuxuiBU2clzn6GYshQmanonkjxD0P2aAqObPdBgNCZ3ZcH6B
+ /45vS1LgNpXtmc3DwlES53QjGZLaO1wvs+76xUAg=
 To: dave.kleikamp@oracle.com, gregkh@linuxfoundation.org,
  jfs-discussion@lists.sourceforge.net, lkp@intel.com, rdunlap@infradead.org,
  syzbot+36315852ece4132ec193@syzkaller.appspotmail.com
 From: <gregkh@linuxfoundation.org>
-Date: Thu, 04 Mar 2021 15:34:04 +0100
-Message-ID: <161486844481233@kroah.com>
+Date: Thu, 04 Mar 2021 15:34:20 +0100
+Message-ID: <16148684601204@kroah.com>
 MIME-Version: 1.0
 X-stable: commit
 X-Patchwork-Hint: ignore 
@@ -62,7 +62,7 @@ X-Spam-Report: Spam Filtering performed by mx.sourceforge.net.
  0.0 URIBL_BLOCKED ADMINISTRATOR NOTICE: The query to URIBL was blocked.
  See
  http://wiki.apache.org/spamassassin/DnsBlocklists#dnsbl-block
- for more information. [URIs: syzkaller.appspot.com]
+ for more information. [URIs: infradead.org]
  0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level mail
  domains are different
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -73,9 +73,9 @@ X-Spam-Report: Spam Filtering performed by mx.sourceforge.net.
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature,
  not necessarily valid
  -0.0 DKIMWL_WL_HIGH         DKIMwl.org - High trust sender
-X-Headers-End: 1lHp3L-0002se-Qz
+X-Headers-End: 1lHp3c-0002st-Bj
 Subject: [Jfs-discussion] Patch "JFS: more checks for invalid superblock"
- has been added to the 4.9-stable tree
+ has been added to the 4.14-stable tree
 X-BeenThere: jfs-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -97,12 +97,12 @@ This is a note to let you know that I've just added the patch titled
 
     JFS: more checks for invalid superblock
 
-to the 4.9-stable tree which can be found at:
+to the 4.14-stable tree which can be found at:
     http://www.kernel.org/git/?p=linux/kernel/git/stable/stable-queue.git;a=summary
 
 The filename of the patch is:
      jfs-more-checks-for-invalid-superblock.patch
-and it can be found in the queue-4.9 subdirectory.
+and it can be found in the queue-4.14 subdirectory.
 
 If you, or anyone else, feels it should not be added to the stable tree,
 please let <stable@vger.kernel.org> know about it.
@@ -194,7 +194,7 @@ Signed-off-by: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
 
 Patches currently in stable-queue which might be from rdunlap@infradead.org are
 
-queue-4.9/jfs-more-checks-for-invalid-superblock.patch
+queue-4.14/jfs-more-checks-for-invalid-superblock.patch
 
 
 _______________________________________________
