@@ -2,71 +2,69 @@ Return-Path: <jfs-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+jfs-discussion@lfdr.de
 Delivered-To: lists+jfs-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id C0D09323C3E
-	for <lists+jfs-discussion@lfdr.de>; Wed, 24 Feb 2021 13:53:04 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id B962932D551
+	for <lists+jfs-discussion@lfdr.de>; Thu,  4 Mar 2021 15:34:25 +0100 (CET)
 Received: from [127.0.0.1] (helo=sfs-ml-2.v29.lw.sourceforge.com)
 	by sfs-ml-2.v29.lw.sourceforge.com with esmtp (Exim 4.90_1)
 	(envelope-from <jfs-discussion-bounces@lists.sourceforge.net>)
-	id 1lEtet-0001Re-UB; Wed, 24 Feb 2021 12:52:51 +0000
+	id 1lHp39-0006qo-Ed; Thu, 04 Mar 2021 14:33:59 +0000
 Received: from [172.30.20.202] (helo=mx.sourceforge.net)
  by sfs-ml-2.v29.lw.sourceforge.com with esmtps
  (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
- (envelope-from <sashal@kernel.org>) id 1lEtes-0001RM-8u
- for jfs-discussion@lists.sourceforge.net; Wed, 24 Feb 2021 12:52:50 +0000
+ (envelope-from <SRS0=9jyl=IC=linuxfoundation.org=gregkh@kernel.org>)
+ id 1lHp38-0006qg-Bm
+ for jfs-discussion@lists.sourceforge.net; Thu, 04 Mar 2021 14:33:58 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=sourceforge.net; s=x; h=Content-Transfer-Encoding:MIME-Version:References:
- In-Reply-To:Message-Id:Date:Subject:Cc:To:From:Sender:Reply-To:Content-Type:
- Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
- Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
+ d=sourceforge.net; s=x; h=Content-Transfer-Encoding:Content-Type:MIME-Version
+ :Message-ID:Date:From:Cc:To:Subject:Sender:Reply-To:Content-ID:
+ Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+ :Resent-Message-ID:In-Reply-To:References:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=kDjR+jJ+Fus+Dl4dCzUlsMzfhFqhbdc+DSt/3+BDnHo=; b=D8dROePaOL2O2/VPwSAa8TCKRH
- Ojvc8NZaOE5aQ+n6/ar0DxYpWnfVHKj78anjY6YwNUQTnxmPgnJ9atXFlIOBfpfYhHzJR6fxiL8uo
- OpPgQdl7ndLUS7bIKVrDxEQgqSnHNRg0B7hyJ7p8XfHubiQkD/sp9wuy7sCUmIpLibn8=;
+ bh=UQwZJSxaomExBthhhO359PqlQwu4QpYZEobUzbICu5M=; b=Ke4WIzThOSbfavhOe5H65uydw8
+ kJglfuHu821ExcRW8DPBZ138bkbB+Z8Kqb05CfK0IiXGYI7lJiOSP0y94qLcRC+oArznvMMC7wu9Y
+ 500D0GBuVLNLnkCEHxXeU1x2i2TgHkiINqNeP0unwbWY5nX/F3cOVOiR5wqmvNOLDC80=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
- h=Content-Transfer-Encoding:MIME-Version:References:In-Reply-To:Message-Id:
- Date:Subject:Cc:To:From:Sender:Reply-To:Content-Type:Content-ID:
- Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
- :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
- List-Post:List-Owner:List-Archive;
- bh=kDjR+jJ+Fus+Dl4dCzUlsMzfhFqhbdc+DSt/3+BDnHo=; b=gyYlCBbn3cH2zHGhHjjseUTd/u
- G2c2YWTyGkd94cEG8zjLbFTziggBoKAgqS+CKsdR7ppCIVxgTQ9L55lRe9Q2yPF+iwVz36TzLfXEP
- tczIKptFgn+e6ZDdChSqh7+1g89TuHA7XBHfMePrMONptpuwfULwo0IVXIfmIp4301uQ=;
+ h=Content-Transfer-Encoding:Content-Type:MIME-Version:Message-ID:Date:From:
+ Cc:To:Subject:Sender:Reply-To:Content-ID:Content-Description:Resent-Date:
+ Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+ References:List-Id:List-Help:List-Unsubscribe:List-Subscribe:List-Post:
+ List-Owner:List-Archive; bh=UQwZJSxaomExBthhhO359PqlQwu4QpYZEobUzbICu5M=; b=E
+ nG4kndFO2qZe8oYbNBbT392klCGuztdwaWnSFpTRuuaXym+m67cSqxqlvVyTlf7rMXrBbIb0pJiGt
+ k5DSSgKWqwhTLyCiztXmPh++jFA/e0bbg1yAMIPwGwwIc+UBG1t/Et6D4l1YUJFD4MBf8hdqMB0eD
+ XYD/WELU4LgUpAgQ=;
 Received: from mail.kernel.org ([198.145.29.99])
  by sfi-mx-1.v28.lw.sourceforge.com with esmtps
  (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.92.2)
- id 1lEteo-003gQb-MR
- for jfs-discussion@lists.sourceforge.net; Wed, 24 Feb 2021 12:52:50 +0000
-Received: by mail.kernel.org (Postfix) with ESMTPSA id 3AA9C64F42;
- Wed, 24 Feb 2021 12:52:40 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=k20201202; t=1614171161;
- bh=uyV4Fsd/5vmg6wt4KA9Es4ZqNqkil7DPubeM55oQoRA=;
- h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=tSwG5Kh32smG2BaVIDg7N5UF2N8eJJm30iQF7VTTm2+7qGyZdVvnr/FBUDtdkuqVL
- VJEZK3BS7on+bBh59mrCPm84CylCwDUwi4flqKOn8tjgE0kv47m82fwYzzEsO0jMwH
- Bm40DS5CIGDmALYQU5Sa6AcScnjBbFvKkwEjLtKJNuhjlhIamF7D6xUHB89yPXDt4e
- /nI4QUEmovXZWPUitTUr/Jv5Ib47ubOluTAeL8nKqNn8Y1TimveoDEhqHEawsE1Agm
- F4B+znNXGfJgyVsiDCvi1W15mA5JPM2C0aQtqyfK2nlpti3Ml6p/lsxRkMUykc6ESN
- 5ncy737m9JgxQ==
-From: Sasha Levin <sashal@kernel.org>
-To: linux-kernel@vger.kernel.org,
-	stable@vger.kernel.org
-Date: Wed, 24 Feb 2021 07:51:37 -0500
-Message-Id: <20210224125212.482485-21-sashal@kernel.org>
-X-Mailer: git-send-email 2.27.0
-In-Reply-To: <20210224125212.482485-1-sashal@kernel.org>
-References: <20210224125212.482485-1-sashal@kernel.org>
+ id 1lHp2y-00DtII-Ft
+ for jfs-discussion@lists.sourceforge.net; Thu, 04 Mar 2021 14:33:58 +0000
+Received: by mail.kernel.org (Postfix) with ESMTPSA id 7FBDD64F2C;
+ Thu,  4 Mar 2021 14:33:42 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=linuxfoundation.org;
+ s=korg; t=1614868423;
+ bh=cs5YJoZbklCQscvJs1YcJD6jKNjJwi76fcP3SsqkbCQ=;
+ h=Subject:To:Cc:From:Date:From;
+ b=nz1BWvWkpHdsVg3SQM+mtPnJpiVi1rcO8ezcVU6aSPX3Iul3WE3ODunvJOwdQB/de
+ ePFdNOTeW8YGNhrAHSyaE1IlbeJaw0Q0wQVxHIbofDjogyqNv/zgGVCcH6qWpfbD9N
+ 4XVfpcxS3paLWGUT7Czcv2iobJW0VD/K7RK5eszc=
+To: dave.kleikamp@oracle.com, gregkh@linuxfoundation.org,
+ jfs-discussion@lists.sourceforge.net, lkp@intel.com, rdunlap@infradead.org,
+ syzbot+36315852ece4132ec193@syzkaller.appspotmail.com
+From: <gregkh@linuxfoundation.org>
+Date: Thu, 04 Mar 2021 15:33:40 +0100
+Message-ID: <16148684205983@kroah.com>
 MIME-Version: 1.0
-X-stable: review
-X-Patchwork-Hint: Ignore
-X-Spam-Score: -0.1 (/)
+X-stable: commit
+X-Patchwork-Hint: ignore 
+X-Spam-Score: 0.1 (/)
 X-Spam-Report: Spam Filtering performed by mx.sourceforge.net.
  See http://spamassassin.org/tag/ for more details.
  0.0 URIBL_BLOCKED ADMINISTRATOR NOTICE: The query to URIBL was blocked.
  See
  http://wiki.apache.org/spamassassin/DnsBlocklists#dnsbl-block
  for more information. [URIs: appspotmail.com]
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level mail
+ domains are different
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_AU Message has a valid DKIM or DK signature from author's
@@ -75,9 +73,9 @@ X-Spam-Report: Spam Filtering performed by mx.sourceforge.net.
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature,
  not necessarily valid
  -0.0 DKIMWL_WL_HIGH         DKIMwl.org - High trust sender
-X-Headers-End: 1lEteo-003gQb-MR
-Subject: [Jfs-discussion] [PATCH AUTOSEL 5.10 21/56] JFS: more checks for
- invalid superblock
+X-Headers-End: 1lHp2y-00DtII-Ft
+Subject: [Jfs-discussion] Patch "JFS: more checks for invalid superblock"
+ has been added to the 4.4-stable tree
 X-BeenThere: jfs-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -89,16 +87,35 @@ List-Post: <mailto:jfs-discussion@lists.sourceforge.net>
 List-Help: <mailto:jfs-discussion-request@lists.sourceforge.net?subject=help>
 List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/jfs-discussion>, 
  <mailto:jfs-discussion-request@lists.sourceforge.net?subject=subscribe>
-Cc: Sasha Levin <sashal@kernel.org>, jfs-discussion@lists.sourceforge.net,
- kernel test robot <lkp@intel.com>, Randy Dunlap <rdunlap@infradead.org>,
- syzbot+36315852ece4132ec193@syzkaller.appspotmail.com
+Cc: stable-commits@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Errors-To: jfs-discussion-bounces@lists.sourceforge.net
 
+
+This is a note to let you know that I've just added the patch titled
+
+    JFS: more checks for invalid superblock
+
+to the 4.4-stable tree which can be found at:
+    http://www.kernel.org/git/?p=linux/kernel/git/stable/stable-queue.git;a=summary
+
+The filename of the patch is:
+     jfs-more-checks-for-invalid-superblock.patch
+and it can be found in the queue-4.4 subdirectory.
+
+If you, or anyone else, feels it should not be added to the stable tree,
+please let <stable@vger.kernel.org> know about it.
+
+
+From 3bef198f1b17d1bb89260bad947ef084c0a2d1a6 Mon Sep 17 00:00:00 2001
+From: Randy Dunlap <rdunlap@infradead.org>
+Date: Fri, 18 Dec 2020 12:17:16 -0800
+Subject: JFS: more checks for invalid superblock
+
 From: Randy Dunlap <rdunlap@infradead.org>
 
-[ Upstream commit 3bef198f1b17d1bb89260bad947ef084c0a2d1a6 ]
+commit 3bef198f1b17d1bb89260bad947ef084c0a2d1a6 upstream.
 
 syzbot is feeding invalid superblock data to JFS for mount testing.
 JFS does not check several of the fields -- just assumes that they
@@ -132,36 +149,32 @@ Reported-by: kernel test robot <lkp@intel.com> # v2
 Signed-off-by: Randy Dunlap <rdunlap@infradead.org>
 Signed-off-by: Dave Kleikamp <dave.kleikamp@oracle.com>
 Cc: jfs-discussion@lists.sourceforge.net
-Signed-off-by: Sasha Levin <sashal@kernel.org>
+Signed-off-by: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
 ---
- fs/jfs/jfs_filsys.h |  1 +
- fs/jfs/jfs_mount.c  | 10 ++++++++++
+ fs/jfs/jfs_filsys.h |    1 +
+ fs/jfs/jfs_mount.c  |   10 ++++++++++
  2 files changed, 11 insertions(+)
 
-diff --git a/fs/jfs/jfs_filsys.h b/fs/jfs/jfs_filsys.h
-index 1e899298f7f00..b5d702df7111a 100644
 --- a/fs/jfs/jfs_filsys.h
 +++ b/fs/jfs/jfs_filsys.h
-@@ -268,5 +268,6 @@
+@@ -281,5 +281,6 @@
  				 * fsck() must be run to repair
  				 */
  #define	FM_EXTENDFS 0x00000008	/* file system extendfs() in progress */
 +#define	FM_STATE_MAX 0x0000000f	/* max value of s_state */
  
  #endif				/* _H_JFS_FILSYS */
-diff --git a/fs/jfs/jfs_mount.c b/fs/jfs/jfs_mount.c
-index 2935d4c776ec7..5d7d7170c03c0 100644
 --- a/fs/jfs/jfs_mount.c
 +++ b/fs/jfs/jfs_mount.c
-@@ -37,6 +37,7 @@
+@@ -49,6 +49,7 @@
+ 
  #include <linux/fs.h>
  #include <linux/buffer_head.h>
- #include <linux/blkdev.h>
 +#include <linux/log2.h>
  
  #include "jfs_incore.h"
  #include "jfs_filsys.h"
-@@ -366,6 +367,15 @@ static int chkSuper(struct super_block *sb)
+@@ -378,6 +379,15 @@ static int chkSuper(struct super_block *
  	sbi->bsize = bsize;
  	sbi->l2bsize = le16_to_cpu(j_sb->s_l2bsize);
  
@@ -177,9 +190,11 @@ index 2935d4c776ec7..5d7d7170c03c0 100644
  	/*
  	 * For now, ignore s_pbsize, l2bfactor.  All I/O going through buffer
  	 * cache.
--- 
-2.27.0
 
+
+Patches currently in stable-queue which might be from rdunlap@infradead.org are
+
+queue-4.4/jfs-more-checks-for-invalid-superblock.patch
 
 
 _______________________________________________
