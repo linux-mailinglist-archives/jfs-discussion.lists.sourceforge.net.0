@@ -2,27 +2,27 @@ Return-Path: <jfs-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+jfs-discussion@lfdr.de
 Delivered-To: lists+jfs-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5ED3732E99B
-	for <lists+jfs-discussion@lfdr.de>; Fri,  5 Mar 2021 13:34:19 +0100 (CET)
-Received: from [127.0.0.1] (helo=sfs-ml-4.v29.lw.sourceforge.com)
-	by sfs-ml-4.v29.lw.sourceforge.com with esmtp (Exim 4.90_1)
+	by mail.lfdr.de (Postfix) with ESMTPS id C48CF32EA04
+	for <lists+jfs-discussion@lfdr.de>; Fri,  5 Mar 2021 13:36:54 +0100 (CET)
+Received: from [127.0.0.1] (helo=sfs-ml-2.v29.lw.sourceforge.com)
+	by sfs-ml-2.v29.lw.sourceforge.com with esmtp (Exim 4.90_1)
 	(envelope-from <jfs-discussion-bounces@lists.sourceforge.net>)
-	id 1lI9ef-0004D1-B3; Fri, 05 Mar 2021 12:34:05 +0000
+	id 1lI9h7-0007WO-R5; Fri, 05 Mar 2021 12:36:37 +0000
 Received: from [172.30.20.202] (helo=mx.sourceforge.net)
- by sfs-ml-4.v29.lw.sourceforge.com with esmtps
+ by sfs-ml-2.v29.lw.sourceforge.com with esmtps
  (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
  (envelope-from <SRS0=B6TO=ID=linuxfoundation.org=gregkh@kernel.org>)
- id 1lI9ed-0004Ct-E5
- for jfs-discussion@lists.sourceforge.net; Fri, 05 Mar 2021 12:34:03 +0000
+ id 1lI9h3-0007WE-QZ
+ for jfs-discussion@lists.sourceforge.net; Fri, 05 Mar 2021 12:36:33 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=sourceforge.net; s=x; h=Content-Transfer-Encoding:Content-Type:MIME-Version
  :References:In-Reply-To:Message-Id:Date:Subject:Cc:To:From:Sender:Reply-To:
  Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
  Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=C24l4BdIaFOrVp/Gs4OxMZDdiW6S0NoB36z5k+2XV4c=; b=JpeMFNJpTgklwUJ5QlwffD4fbI
- eires8IVmwTNVp3XqoMiAHzjN3DumyZtYa7pvNN/EAMA3KLwuDleG0K+KkuKS9h7esembsEYKC49g
- 0sQDsxnl1AaNHBGPl2TzeEVPDKRMGp8uqyhBHnluRS3JpJHdMTWuqkpFxBZQ1NjtovBk=;
+ bh=lEoVAGnz1MfiK2qgHkotUWhgWe4oahRuV+qF75tftv4=; b=P/jmkNnTCsZHSdAausLzqQgAad
+ Z0mL41iu5S/UdlwXyS9JYebqboNkB/OiS5xbXm3pDh8RKhCZvHheBGchUL907C01DJs3129VWFDmF
+ Dz31Ty6+fZOD6QpBswhraq8p+Vltnoi94KlTZMA4T6gvrwK74s9u0kkl7PRPRejuysiI=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
  h=Content-Transfer-Encoding:Content-Type:MIME-Version:References:
@@ -30,30 +30,30 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
  :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
  List-Post:List-Owner:List-Archive;
- bh=C24l4BdIaFOrVp/Gs4OxMZDdiW6S0NoB36z5k+2XV4c=; b=kntXx7C+JERH22bExdUPdqqqq2
- D9OnZ3+lvN1LxB1+jLY27n2S/XvVs5+AvUqigAxd7RsWxGC1plr5z26GiJntuf7EAT0TaxsYinPdt
- 4oZBSnYLBGTBufuidY/Cqsvj7z+9PKMuelne1rI34bUCHtReEjA/bCbrpAgSEmNARIQ4=;
+ bh=lEoVAGnz1MfiK2qgHkotUWhgWe4oahRuV+qF75tftv4=; b=Ad7+kIqZdKMJVv0YdNYNnuic+z
+ rjswrlznBQkmhRF0tDPNe6K7whF+nRrbEY31Z6oE8ocH5oFMoJE5AruEWP/4Sl91/+26XLeSbJfyx
+ ZpI9gnbpYVjDnO98jtj9O790jJ9gT60xhSo5gMAVMQ+EKwPGq0Au76oc4tYvJSiOwy8c=;
 Received: from mail.kernel.org ([198.145.29.99])
- by sfi-mx-1.v28.lw.sourceforge.com with esmtps
- (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.92.2)
- id 1lI9eT-00Ez9I-TE
- for jfs-discussion@lists.sourceforge.net; Fri, 05 Mar 2021 12:34:03 +0000
-Received: by mail.kernel.org (Postfix) with ESMTPSA id F170465004;
- Fri,  5 Mar 2021 12:33:47 +0000 (UTC)
+ by sfi-mx-2.v28.lw.sourceforge.com with esmtps
+ (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.92.3)
+ id 1lI9gy-0002mB-FJ
+ for jfs-discussion@lists.sourceforge.net; Fri, 05 Mar 2021 12:36:33 +0000
+Received: by mail.kernel.org (Postfix) with ESMTPSA id 716A865014;
+ Fri,  5 Mar 2021 12:36:22 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=linuxfoundation.org;
- s=korg; t=1614947628;
- bh=4CgwHuUXHbjaJ1tcVEVsLFIfm+G2M+11iHmp3wU+JPw=;
+ s=korg; t=1614947783;
+ bh=Mqw/Xi4CtknF9CnDt+xfZR2WJq/GQJJN7ERbesdt2Zo=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=QLbN5jt0hSkenlgKak4lHGX9DpO46sndtVeES+FRd+a0Ve00Ik/3lqZ61CuZDEhuo
- uk5rIlYFgkjozgSUxHqZXDO6ZDPJLaursBXmMJYvOCUrEdUOxtzK11R0wPbshZPB4B
- N6HW1MPyOIhGwcyiA6S67vcfLOQmJXTtZiRfFDok=
+ b=KCj4p1XKqiB4kadLH0Q0mwmrvDT2pCoiMMf8RZrZ1y3E2S2ohtABaJBVFyhYjTcDz
+ k+dAbARx8EIKGFjGODtrWXhnZRldhPEaUEsx00qv+oOb5aKYRbhKeb7iiIXURfhV08
+ f9jPQohVYiPzfTQNbsaw5yzY8NWOMXXjbBJliJhM=
 From: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
 To: linux-kernel@vger.kernel.org
-Date: Fri,  5 Mar 2021 13:21:09 +0100
-Message-Id: <20210305120857.704783536@linuxfoundation.org>
+Date: Fri,  5 Mar 2021 13:21:41 +0100
+Message-Id: <20210305120854.169806432@linuxfoundation.org>
 X-Mailer: git-send-email 2.30.1
-In-Reply-To: <20210305120857.341630346@linuxfoundation.org>
-References: <20210305120857.341630346@linuxfoundation.org>
+In-Reply-To: <20210305120853.659441428@linuxfoundation.org>
+References: <20210305120853.659441428@linuxfoundation.org>
 User-Agent: quilt/0.66
 MIME-Version: 1.0
 X-Spam-Score: 0.1 (/)
@@ -73,8 +73,8 @@ X-Spam-Report: Spam Filtering performed by mx.sourceforge.net.
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature,
  not necessarily valid
  -0.0 DKIMWL_WL_HIGH         DKIMwl.org - High trust sender
-X-Headers-End: 1lI9eT-00Ez9I-TE
-Subject: [Jfs-discussion] [PATCH 5.4 07/72] JFS: more checks for invalid
+X-Headers-End: 1lI9gy-0002mB-FJ
+Subject: [Jfs-discussion] [PATCH 4.19 10/52] JFS: more checks for invalid
  superblock
 X-BeenThere: jfs-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
@@ -139,7 +139,7 @@ Signed-off-by: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
 
 --- a/fs/jfs/jfs_filsys.h
 +++ b/fs/jfs/jfs_filsys.h
-@@ -268,5 +268,6 @@
+@@ -281,5 +281,6 @@
  				 * fsck() must be run to repair
  				 */
  #define	FM_EXTENDFS 0x00000008	/* file system extendfs() in progress */
@@ -148,7 +148,7 @@ Signed-off-by: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
  #endif				/* _H_JFS_FILSYS */
 --- a/fs/jfs/jfs_mount.c
 +++ b/fs/jfs/jfs_mount.c
-@@ -36,6 +36,7 @@
+@@ -49,6 +49,7 @@
  
  #include <linux/fs.h>
  #include <linux/buffer_head.h>
@@ -156,7 +156,7 @@ Signed-off-by: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
  
  #include "jfs_incore.h"
  #include "jfs_filsys.h"
-@@ -365,6 +366,15 @@ static int chkSuper(struct super_block *
+@@ -378,6 +379,15 @@ static int chkSuper(struct super_block *
  	sbi->bsize = bsize;
  	sbi->l2bsize = le16_to_cpu(j_sb->s_l2bsize);
  
