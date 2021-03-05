@@ -2,27 +2,27 @@ Return-Path: <jfs-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+jfs-discussion@lfdr.de
 Delivered-To: lists+jfs-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id F1C9432EA71
-	for <lists+jfs-discussion@lfdr.de>; Fri,  5 Mar 2021 13:39:32 +0100 (CET)
-Received: from [127.0.0.1] (helo=sfs-ml-4.v29.lw.sourceforge.com)
-	by sfs-ml-4.v29.lw.sourceforge.com with esmtp (Exim 4.90_1)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3B56C32EAF5
+	for <lists+jfs-discussion@lfdr.de>; Fri,  5 Mar 2021 13:42:55 +0100 (CET)
+Received: from [127.0.0.1] (helo=sfs-ml-1.v29.lw.sourceforge.com)
+	by sfs-ml-1.v29.lw.sourceforge.com with esmtp (Exim 4.90_1)
 	(envelope-from <jfs-discussion-bounces@lists.sourceforge.net>)
-	id 1lI9jj-0004Ux-Eh; Fri, 05 Mar 2021 12:39:19 +0000
+	id 1lI9mz-00020y-6n; Fri, 05 Mar 2021 12:42:41 +0000
 Received: from [172.30.20.202] (helo=mx.sourceforge.net)
- by sfs-ml-4.v29.lw.sourceforge.com with esmtps
+ by sfs-ml-1.v29.lw.sourceforge.com with esmtps
  (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
  (envelope-from <SRS0=B6TO=ID=linuxfoundation.org=gregkh@kernel.org>)
- id 1lI9jg-0004Un-TH
- for jfs-discussion@lists.sourceforge.net; Fri, 05 Mar 2021 12:39:16 +0000
+ id 1lI9my-00020R-09
+ for jfs-discussion@lists.sourceforge.net; Fri, 05 Mar 2021 12:42:40 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=sourceforge.net; s=x; h=Content-Transfer-Encoding:Content-Type:MIME-Version
  :References:In-Reply-To:Message-Id:Date:Subject:Cc:To:From:Sender:Reply-To:
  Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
  Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=lEoVAGnz1MfiK2qgHkotUWhgWe4oahRuV+qF75tftv4=; b=kCvXbfudvAp9qEdqStyf9Fi7dI
- 4Bqi9DUVc33yEynw4jqG3g/TWBcEiUFJ6FbcJRjvEQQhJBGMd4sTQdHpM+RrSFFmtrcOpR3OAHee/
- evfj8NW85BdZhyGCm4ZZ4ehGpmKM2BkcRSwaa8P4HzisOzLaRngdfxhJPnA0EGeEdjR8=;
+ bh=lEoVAGnz1MfiK2qgHkotUWhgWe4oahRuV+qF75tftv4=; b=PZnn+PexHmZVqST7hh6dCp8JhB
+ CzjxDhPGi7J6TyZbFy4IooniqwJXDuwd78wbmbzZyjg+2tuBqfv8LTDhvRsPI3h2oovc2Snct1FLp
+ B9ra+DirGWVpcHPR26R3PYbLa3JH422LHOedsvAekKqMEkZnIgRmi6n5VE1rHOUcLwVk=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
  h=Content-Transfer-Encoding:Content-Type:MIME-Version:References:
@@ -30,30 +30,30 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
  :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
  List-Post:List-Owner:List-Archive;
- bh=lEoVAGnz1MfiK2qgHkotUWhgWe4oahRuV+qF75tftv4=; b=CqmR0lc2ECr/DLhV40epq0N6FB
- ga/Gq5OhMlppJXn0d9TwVeFoxccu6jjMaxnVwZxYXAh/QnOmr+3DKuO+Uv8iIk4xqKeVy6ZzdIyt+
- 0uq8J/YknZYl1bdMlI2ykxU1WPjHBbFuu7MtUF/aiW6dUoUQ/XQIrTFQKeF6k05RmvKs=;
+ bh=lEoVAGnz1MfiK2qgHkotUWhgWe4oahRuV+qF75tftv4=; b=hLc7UJildGIDOFX5/B2MOjhbk4
+ BRIx650Jtm1tdnBJ+PCn4HVk9qeP6JABKm3I7giHnzlY0dUF+XHM0qrVVuJzgLVKhDSGnD2HxH7e5
+ hgpY1EuQbxvp4D/u+5nV0VtRnuAG1yViQl9tZEOA1HCTX84eUTmeJW9Qy3mQErokIMWY=;
 Received: from mail.kernel.org ([198.145.29.99])
- by sfi-mx-2.v28.lw.sourceforge.com with esmtps
- (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.92.3)
- id 1lI9jV-0002qg-8h
- for jfs-discussion@lists.sourceforge.net; Fri, 05 Mar 2021 12:39:16 +0000
-Received: by mail.kernel.org (Postfix) with ESMTPSA id 7096764EE8;
- Fri,  5 Mar 2021 12:38:54 +0000 (UTC)
+ by sfi-mx-1.v28.lw.sourceforge.com with esmtps
+ (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.92.2)
+ id 1lI9mr-00EznV-79
+ for jfs-discussion@lists.sourceforge.net; Fri, 05 Mar 2021 12:42:39 +0000
+Received: by mail.kernel.org (Postfix) with ESMTPSA id 60C016501C;
+ Fri,  5 Mar 2021 12:42:27 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=linuxfoundation.org;
- s=korg; t=1614947935;
+ s=korg; t=1614948147;
  bh=Mqw/Xi4CtknF9CnDt+xfZR2WJq/GQJJN7ERbesdt2Zo=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=JxT1TYdKpitFWGB2iD1w90A0eJBqTxU5BPizGz5dujTcWSFqsad9veEKbbY1YDNeq
- H19Q1PLn2WlH7x1HVSpwCTvZbkV4r7K3hqTQPgDiXJSpJ/tnO//6lyP4q5fPATNKuq
- lp+eq1zrVWd05SJVkAGaPIKrWSBf2u+wiA7Q44bU=
+ b=ZXCqQHN0OXVcNE9gnDUPRDG/b/dDYCgRTG7JU5xV1gb7PvM1mPfouGFP67nTjtwpf
+ fap4W+vaxvhs/EVvQA8bo1BchHH4L6L29xhGVb4E4QDjQRRq5Dvkcd2ZoNNHbc1HFT
+ ELUSOZzVOeYWTMjknfalkqkKTmnECBLMwexSR06w=
 From: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
 To: linux-kernel@vger.kernel.org
-Date: Fri,  5 Mar 2021 13:22:10 +0100
-Message-Id: <20210305120852.329317492@linuxfoundation.org>
+Date: Fri,  5 Mar 2021 13:22:25 +0100
+Message-Id: <20210305120852.182320874@linuxfoundation.org>
 X-Mailer: git-send-email 2.30.1
-In-Reply-To: <20210305120851.751937389@linuxfoundation.org>
-References: <20210305120851.751937389@linuxfoundation.org>
+In-Reply-To: <20210305120851.255002428@linuxfoundation.org>
+References: <20210305120851.255002428@linuxfoundation.org>
 User-Agent: quilt/0.66
 MIME-Version: 1.0
 X-Spam-Score: 0.1 (/)
@@ -62,7 +62,7 @@ X-Spam-Report: Spam Filtering performed by mx.sourceforge.net.
  0.0 URIBL_BLOCKED ADMINISTRATOR NOTICE: The query to URIBL was blocked.
  See
  http://wiki.apache.org/spamassassin/DnsBlocklists#dnsbl-block
- for more information. [URIs: infradead.org]
+ for more information. [URIs: appspotmail.com]
  0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level mail
  domains are different
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -73,8 +73,8 @@ X-Spam-Report: Spam Filtering performed by mx.sourceforge.net.
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature,
  not necessarily valid
  -0.0 DKIMWL_WL_HIGH         DKIMwl.org - High trust sender
-X-Headers-End: 1lI9jV-0002qg-8h
-Subject: [Jfs-discussion] [PATCH 4.14 11/39] JFS: more checks for invalid
+X-Headers-End: 1lI9mr-00EznV-79
+Subject: [Jfs-discussion] [PATCH 4.9 18/41] JFS: more checks for invalid
  superblock
 X-BeenThere: jfs-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
