@@ -2,69 +2,77 @@ Return-Path: <jfs-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+jfs-discussion@lfdr.de
 Delivered-To: lists+jfs-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1B1D732EB46
-	for <lists+jfs-discussion@lfdr.de>; Fri,  5 Mar 2021 13:44:15 +0100 (CET)
-Received: from [127.0.0.1] (helo=sfs-ml-1.v29.lw.sourceforge.com)
-	by sfs-ml-1.v29.lw.sourceforge.com with esmtp (Exim 4.90_1)
+	by mail.lfdr.de (Postfix) with ESMTPS id C313E33C7FA
+	for <lists+jfs-discussion@lfdr.de>; Mon, 15 Mar 2021 21:47:28 +0100 (CET)
+Received: from [127.0.0.1] (helo=sfs-ml-4.v29.lw.sourceforge.com)
+	by sfs-ml-4.v29.lw.sourceforge.com with esmtp (Exim 4.90_1)
 	(envelope-from <jfs-discussion-bounces@lists.sourceforge.net>)
-	id 1lI9oH-0002Eg-K1; Fri, 05 Mar 2021 12:44:01 +0000
+	id 1lLu7J-0008UN-K6; Mon, 15 Mar 2021 20:47:09 +0000
 Received: from [172.30.20.202] (helo=mx.sourceforge.net)
  by sfs-ml-1.v29.lw.sourceforge.com with esmtps
  (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
- (envelope-from <SRS0=B6TO=ID=linuxfoundation.org=gregkh@kernel.org>)
- id 1lI9oG-0002EF-EN
- for jfs-discussion@lists.sourceforge.net; Fri, 05 Mar 2021 12:44:00 +0000
+ (envelope-from <mail@anirudhrb.com>) id 1lLsoA-0001sj-0T
+ for jfs-discussion@lists.sourceforge.net; Mon, 15 Mar 2021 19:23:18 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=sourceforge.net; s=x; h=Content-Transfer-Encoding:Content-Type:MIME-Version
- :References:In-Reply-To:Message-Id:Date:Subject:Cc:To:From:Sender:Reply-To:
- Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
- Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
+ d=sourceforge.net; s=x; h=Content-Type:Content-Transfer-Encoding:MIME-Version
+ :Date:Subject:Message-ID:Cc:To:From:Sender:Reply-To:Content-ID:
+ Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+ :Resent-Message-ID:In-Reply-To:References:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=lEoVAGnz1MfiK2qgHkotUWhgWe4oahRuV+qF75tftv4=; b=cA3vAX7s/hU70KH58WQtOT6cvI
- JJ7syBVsB6Oele4NxBb7ErnGDyj6ThwS2C1AYX5uGB7SxDcUm3fsXX56KR1V5J7kXSzwKaOqTndjK
- K+xT8Czp3aop7WWkuiBXFMddItpZKrtN3Nnxf6zTzhjtdzRQRZi01h4BX0h2aYlZCmlE=;
+ bh=qXkPKXLIdi3YS2QxskiB00F5rS0qkdSxQYzMcJTjnMo=; b=XAkEQoDC+eKWfYtp+E5C7FRrWI
+ 5Wix6Wkv4LIJvP6Q9BGaynTRjGTe8xI7MCKYkn5rPmCBnXtTwKkf8qHh08x4M4xiXrfCx1UOehiV+
+ RDmwORyyVBFJB7uKzeCGW4CtrIf8H/Qo37eH4jJDcyUI9OQa/SxDYzjzMfUjm9LPyMlw=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
- h=Content-Transfer-Encoding:Content-Type:MIME-Version:References:
- In-Reply-To:Message-Id:Date:Subject:Cc:To:From:Sender:Reply-To:Content-ID:
- Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
- :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
+ h=Content-Type:Content-Transfer-Encoding:MIME-Version:Date:Subject:
+ Message-ID:Cc:To:From:Sender:Reply-To:Content-ID:Content-Description:
+ Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+ In-Reply-To:References:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
  List-Post:List-Owner:List-Archive;
- bh=lEoVAGnz1MfiK2qgHkotUWhgWe4oahRuV+qF75tftv4=; b=NsmM1kmJnPG4KrfpI9X+YmdtAC
- THUuW1+hd2hTr9bumwFB7Rpm57tx0XshS1MBEoouvk3G4hM9emB4dd5H7UvNPq588JGp+lT7H1DZp
- lDKrPJ5jcJx9dAzva0xW/BA8428IR0fjlTDyEM6uwctCVTNVBy35jE2lcSlG2qmtoupM=;
-Received: from mail.kernel.org ([198.145.29.99])
+ bh=qXkPKXLIdi3YS2QxskiB00F5rS0qkdSxQYzMcJTjnMo=; b=aJEN8AHn9jzNgyIClBICoXychD
+ JsgXGyI+TozX27zzGbNklGirSM/rRbStFFctaSZTvf86iO9iJgFtjJu9oCTqb3YuqRsdmdXL1OECs
+ /6O3YBn/eiP1UVRDdESvqYk4m26PxtNFgpXA/qeIj309xVZJUEpRuPno5onoK0nJXvh0=;
+Received: from sender4-of-o53.zoho.com ([136.143.188.53])
  by sfi-mx-2.v28.lw.sourceforge.com with esmtps
  (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.92.3)
- id 1lI9o4-0003C6-7P
- for jfs-discussion@lists.sourceforge.net; Fri, 05 Mar 2021 12:44:00 +0000
-Received: by mail.kernel.org (Postfix) with ESMTPSA id 4DBA164F23;
- Fri,  5 Mar 2021 12:43:42 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=linuxfoundation.org;
- s=korg; t=1614948222;
- bh=Mqw/Xi4CtknF9CnDt+xfZR2WJq/GQJJN7ERbesdt2Zo=;
- h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=HRViM7pDx3c4DAfQQOW50CEnQmodawAQfhaF3zKx6BwLORbYRfNsRrL7LNxyDlGyo
- xXQQrKNOnk2wSBlGy97w5S4zijrNEX1Y+veJq1V334ISZMB+Sv3SyHiuN/F0IaI/RU
- n/F4uorA6zvx+p/SpXy1Kyu405I373W/Mt2ngl7c=
-From: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
-To: linux-kernel@vger.kernel.org
-Date: Fri,  5 Mar 2021 13:22:37 +0100
-Message-Id: <20210305120849.801773883@linuxfoundation.org>
-X-Mailer: git-send-email 2.30.1
-In-Reply-To: <20210305120849.381261651@linuxfoundation.org>
-References: <20210305120849.381261651@linuxfoundation.org>
-User-Agent: quilt/0.66
+ id 1lLso0-0001mD-Jb
+ for jfs-discussion@lists.sourceforge.net; Mon, 15 Mar 2021 19:23:17 +0000
+ARC-Seal: i=1; a=rsa-sha256; t=1615835255; cv=none; 
+ d=zohomail.com; s=zohoarc; 
+ b=HAkH51heumbQwdNzsjPdBupsUuBZUhiZBqEOPY9qjCTw0h+jT6qDKTSl5cPPyG9mfzGKEzm9envje0R/hXnWr2zeNVOt2kIT/H1IMfEJqYOEO8Eycu9QZ4RypLZo/y+5iRbyP/B+RBoqe3atbwH2efqHbaHNfxw8QRBcpO5QtD4=
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=zohomail.com;
+ s=zohoarc; t=1615835255;
+ h=Content-Type:Content-Transfer-Encoding:Cc:Date:From:MIME-Version:Message-ID:Subject:To;
+ bh=qXkPKXLIdi3YS2QxskiB00F5rS0qkdSxQYzMcJTjnMo=; 
+ b=VskweQsyJ0O92QukL95je+EvRd84ESYR5M1oeDmMdFr0gYywAJP2jep1VQ5xQnqsLVMu0JQ7mI/uGRCv+x99rt/94FsmQeTZ7uqlg74pDPWGwFiteH0H8+M5AvrdXfUAVnvIOWIGYTj7rA8MrDhhe3b3vCzjHlSNSRY5I/oR6oY=
+ARC-Authentication-Results: i=1; mx.zohomail.com;
+ dkim=pass  header.i=anirudhrb.com;
+ spf=pass  smtp.mailfrom=mail@anirudhrb.com;
+ dmarc=pass header.from=<mail@anirudhrb.com> header.from=<mail@anirudhrb.com>
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; t=1615835255; 
+ s=zoho; d=anirudhrb.com; i=mail@anirudhrb.com;
+ h=From:To:Cc:Message-ID:Subject:Date:MIME-Version:Content-Transfer-Encoding:Content-Type;
+ bh=qXkPKXLIdi3YS2QxskiB00F5rS0qkdSxQYzMcJTjnMo=;
+ b=ZePJWn+dogfxbUGEc8UgaRZdlIKn2mO6hobca/LZYecW6nM2vzotDxQpe/9Gxf//
+ d+WJ4E2nPmcAwjDeFyTu3QRo+fEx+sW6euZHBvKeRP3lAtIo5rQH42gLxzBABZAJ2iq
+ QfE+YdK30/JEhdcD20QzMMI3pX2fJXz2QNFH8+pk=
+Received: from localhost.localdomain (106.51.111.227 [106.51.111.227]) by
+ mx.zohomail.com with SMTPS id 1615835252947113.0549001989333;
+ Mon, 15 Mar 2021 12:07:32 -0700 (PDT)
+From: Anirudh Rayabharam <mail@anirudhrb.com>
+To: shaggy@kernel.org
+Message-ID: <20210315190727.21576-1-mail@anirudhrb.com>
+Date: Tue, 16 Mar 2021 00:37:27 +0530
+X-Mailer: git-send-email 2.26.2
 MIME-Version: 1.0
-X-Spam-Score: 0.1 (/)
+X-ZohoMailClient: External
+X-Spam-Score: -0.1 (/)
 X-Spam-Report: Spam Filtering performed by mx.sourceforge.net.
  See http://spamassassin.org/tag/ for more details.
- 0.0 URIBL_BLOCKED ADMINISTRATOR NOTICE: The query to URIBL was blocked.
- See
- http://wiki.apache.org/spamassassin/DnsBlocklists#dnsbl-block
- for more information. [URIs: appspotmail.com]
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level mail
- domains are different
+ 0.0 RCVD_IN_MSPIKE_H4      RBL: Very Good reputation (+4)
+ [136.143.188.53 listed in wl.mailspike.net]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/, no
+ trust [136.143.188.53 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_AU Message has a valid DKIM or DK signature from author's
@@ -72,10 +80,10 @@ X-Spam-Report: Spam Filtering performed by mx.sourceforge.net.
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature,
  not necessarily valid
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - High trust sender
-X-Headers-End: 1lI9o4-0003C6-7P
-Subject: [Jfs-discussion] [PATCH 4.4 08/30] JFS: more checks for invalid
- superblock
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+X-Headers-End: 1lLso0-0001mD-Jb
+X-Mailman-Approved-At: Mon, 15 Mar 2021 20:47:09 +0000
+Subject: [Jfs-discussion] [PATCH] jfs: fix use-after-free in lbmIODone
 X-BeenThere: jfs-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -87,91 +95,125 @@ List-Post: <mailto:jfs-discussion@lists.sourceforge.net>
 List-Help: <mailto:jfs-discussion-request@lists.sourceforge.net?subject=help>
 List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/jfs-discussion>, 
  <mailto:jfs-discussion-request@lists.sourceforge.net?subject=subscribe>
-Cc: jfs-discussion@lists.sourceforge.net, kernel test robot <lkp@intel.com>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Randy Dunlap <rdunlap@infradead.org>, stable@vger.kernel.org,
- syzbot+36315852ece4132ec193@syzkaller.appspotmail.com
+Cc: jfs-discussion@lists.sourceforge.net,
+ syzbot+5d2008bd1f1b722ba94e@syzkaller.appspotmail.com,
+ linux-kernel@vger.kernel.org, hdanton@sina.com,
+ Anirudh Rayabharam <mail@anirudhrb.com>,
+ linux-kernel-mentees@lists.linuxfoundation.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Errors-To: jfs-discussion-bounces@lists.sourceforge.net
 
-From: Randy Dunlap <rdunlap@infradead.org>
+Fix use-after-free by waiting for ongoing IO to complete before freeing
+lbufs in lbmLogShutdown. Add a counter in struct jfs_log to keep track
+of the number of in-flight IO operations and a wait queue to wait on for
+the IO operations to complete.
 
-commit 3bef198f1b17d1bb89260bad947ef084c0a2d1a6 upstream.
-
-syzbot is feeding invalid superblock data to JFS for mount testing.
-JFS does not check several of the fields -- just assumes that they
-are good since the JFS_MAGIC and version fields are good.
-
-In this case (syzbot reproducer), we have s_l2bsize == 0xda0c,
-pad == 0xf045, and s_state == 0x50, all of which are invalid IMO.
-Having s_l2bsize == 0xda0c causes this UBSAN warning:
-  UBSAN: shift-out-of-bounds in fs/jfs/jfs_mount.c:373:25
-  shift exponent -9716 is negative
-
-s_l2bsize can be tested for correctness. pad can be tested for non-0
-and punted. s_state can be tested for its valid values and punted.
-
-Do those 3 tests and if any of them fails, report the superblock as
-invalid/corrupt and let fsck handle it.
-
-With this patch, chkSuper() says this when JFS_DEBUG is enabled:
-  jfs_mount: Mount Failure: superblock is corrupt!
-  Mount JFS Failure: -22
-  jfs_mount failed w/return code = -22
-
-The obvious problem with this method is that next week there could
-be another syzbot test that uses different fields for invalid values,
-this making this like a game of whack-a-mole.
-
-syzkaller link: https://syzkaller.appspot.com/bug?extid=36315852ece4132ec193
-
-Reported-by: syzbot+36315852ece4132ec193@syzkaller.appspotmail.com
-Reported-by: kernel test robot <lkp@intel.com> # v2
-Signed-off-by: Randy Dunlap <rdunlap@infradead.org>
-Signed-off-by: Dave Kleikamp <dave.kleikamp@oracle.com>
-Cc: jfs-discussion@lists.sourceforge.net
-Signed-off-by: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
+Reported-by: syzbot+5d2008bd1f1b722ba94e@syzkaller.appspotmail.com
+Suggested-by: Hillf Danton <hdanton@sina.com>
+Signed-off-by: Anirudh Rayabharam <mail@anirudhrb.com>
 ---
- fs/jfs/jfs_filsys.h |    1 +
- fs/jfs/jfs_mount.c  |   10 ++++++++++
- 2 files changed, 11 insertions(+)
+ fs/jfs/jfs_logmgr.c | 17 ++++++++++++++---
+ fs/jfs/jfs_logmgr.h |  2 ++
+ 2 files changed, 16 insertions(+), 3 deletions(-)
 
---- a/fs/jfs/jfs_filsys.h
-+++ b/fs/jfs/jfs_filsys.h
-@@ -281,5 +281,6 @@
- 				 * fsck() must be run to repair
- 				 */
- #define	FM_EXTENDFS 0x00000008	/* file system extendfs() in progress */
-+#define	FM_STATE_MAX 0x0000000f	/* max value of s_state */
+diff --git a/fs/jfs/jfs_logmgr.c b/fs/jfs/jfs_logmgr.c
+index 9330eff210e0..82d20c4687aa 100644
+--- a/fs/jfs/jfs_logmgr.c
++++ b/fs/jfs/jfs_logmgr.c
+@@ -1815,6 +1815,8 @@ static int lbmLogInit(struct jfs_log * log)
+ 	 */
+ 	init_waitqueue_head(&log->free_wait);
  
- #endif				/* _H_JFS_FILSYS */
---- a/fs/jfs/jfs_mount.c
-+++ b/fs/jfs/jfs_mount.c
-@@ -49,6 +49,7 @@
++	init_waitqueue_head(&log->io_waitq);
++
+ 	log->lbuf_free = NULL;
  
- #include <linux/fs.h>
- #include <linux/buffer_head.h>
-+#include <linux/log2.h>
+ 	for (i = 0; i < LOGPAGES;) {
+@@ -1864,6 +1866,7 @@ static void lbmLogShutdown(struct jfs_log * log)
+ 	struct lbuf *lbuf;
  
- #include "jfs_incore.h"
- #include "jfs_filsys.h"
-@@ -378,6 +379,15 @@ static int chkSuper(struct super_block *
- 	sbi->bsize = bsize;
- 	sbi->l2bsize = le16_to_cpu(j_sb->s_l2bsize);
+ 	jfs_info("lbmLogShutdown: log:0x%p", log);
++	wait_event(log->io_waitq, !atomic_read(&log->io_inflight));
  
-+	/* check some fields for possible corruption */
-+	if (sbi->l2bsize != ilog2((u32)bsize) ||
-+	    j_sb->pad != 0 ||
-+	    le32_to_cpu(j_sb->s_state) > FM_STATE_MAX) {
-+		rc = -EINVAL;
-+		jfs_err("jfs_mount: Mount Failure: superblock is corrupt!");
-+		goto out;
-+	}
+ 	lbuf = log->lbuf_free;
+ 	while (lbuf) {
+@@ -1990,6 +1993,8 @@ static int lbmRead(struct jfs_log * log, int pn, struct lbuf ** bpp)
+ 	bio->bi_end_io = lbmIODone;
+ 	bio->bi_private = bp;
+ 	bio->bi_opf = REQ_OP_READ;
++
++	atomic_inc(&log->io_inflight);
+ 	/*check if journaling to disk has been disabled*/
+ 	if (log->no_integrity) {
+ 		bio->bi_iter.bi_size = 0;
+@@ -2135,6 +2140,7 @@ static void lbmStartIO(struct lbuf * bp)
+ 	bio->bi_private = bp;
+ 	bio->bi_opf = REQ_OP_WRITE | REQ_SYNC;
+ 
++	atomic_inc(&log->io_inflight);
+ 	/* check if journaling to disk has been disabled */
+ 	if (log->no_integrity) {
+ 		bio->bi_iter.bi_size = 0;
+@@ -2200,6 +2206,8 @@ static void lbmIODone(struct bio *bio)
+ 
+ 	bio_put(bio);
+ 
++	log = bp->l_log;
 +
  	/*
- 	 * For now, ignore s_pbsize, l2bfactor.  All I/O going through buffer
- 	 * cache.
+ 	 *	pagein completion
+ 	 */
+@@ -2211,7 +2219,7 @@ static void lbmIODone(struct bio *bio)
+ 		/* wakeup I/O initiator */
+ 		LCACHE_WAKEUP(&bp->l_ioevent);
+ 
+-		return;
++		goto out;
+ 	}
+ 
+ 	/*
+@@ -2230,13 +2238,12 @@ static void lbmIODone(struct bio *bio)
+ 	INCREMENT(lmStat.pagedone);
+ 
+ 	/* update committed lsn */
+-	log = bp->l_log;
+ 	log->clsn = (bp->l_pn << L2LOGPSIZE) + bp->l_ceor;
+ 
+ 	if (bp->l_flag & lbmDIRECT) {
+ 		LCACHE_WAKEUP(&bp->l_ioevent);
+ 		LCACHE_UNLOCK(flags);
+-		return;
++		goto out;
+ 	}
+ 
+ 	tail = log->wqueue;
+@@ -2315,6 +2322,10 @@ static void lbmIODone(struct bio *bio)
+ 
+ 		LCACHE_UNLOCK(flags);	/* unlock+enable */
+ 	}
++
++out:
++	if (atomic_dec_and_test(&log->io_inflight))
++		wake_up(&log->io_waitq);
+ }
+ 
+ int jfsIOWait(void *arg)
+diff --git a/fs/jfs/jfs_logmgr.h b/fs/jfs/jfs_logmgr.h
+index 805877ce5020..3e92fe251f28 100644
+--- a/fs/jfs/jfs_logmgr.h
++++ b/fs/jfs/jfs_logmgr.h
+@@ -400,6 +400,8 @@ struct jfs_log {
+ 	uuid_t uuid;		/* 16: 128-bit uuid of log device */
+ 
+ 	int no_integrity;	/* 3: flag to disable journaling to disk */
++	atomic_t io_inflight;
++	wait_queue_head_t io_waitq;
+ };
+ 
+ /*
+-- 
+2.26.2
 
 
 
