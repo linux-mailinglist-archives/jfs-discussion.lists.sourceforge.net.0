@@ -2,81 +2,107 @@ Return-Path: <jfs-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+jfs-discussion@lfdr.de
 Delivered-To: lists+jfs-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7E0D63C2FFB
-	for <lists+jfs-discussion@lfdr.de>; Sat, 10 Jul 2021 04:40:10 +0200 (CEST)
-Received: from [127.0.0.1] (helo=sfs-ml-4.v29.lw.sourceforge.com)
-	by sfs-ml-4.v29.lw.sourceforge.com with esmtp (Exim 4.90_1)
+	by mail.lfdr.de (Postfix) with ESMTPS id 95BAF3DCD06
+	for <lists+jfs-discussion@lfdr.de>; Sun,  1 Aug 2021 19:57:32 +0200 (CEST)
+Received: from [127.0.0.1] (helo=sfs-ml-2.v29.lw.sourceforge.com)
+	by sfs-ml-2.v29.lw.sourceforge.com with esmtp (Exim 4.92.3)
 	(envelope-from <jfs-discussion-bounces@lists.sourceforge.net>)
-	id 1m22uN-0001w5-9u; Sat, 10 Jul 2021 02:39:59 +0000
+	id 1mAFi4-0003o3-Lx; Sun, 01 Aug 2021 17:57:12 +0000
 Received: from [172.30.20.202] (helo=mx.sourceforge.net)
- by sfs-ml-4.v29.lw.sourceforge.com with esmtps
- (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
- (envelope-from <sashal@kernel.org>) id 1m22uL-0001vy-HC
- for jfs-discussion@lists.sourceforge.net; Sat, 10 Jul 2021 02:39:57 +0000
+ by sfs-ml-2.v29.lw.sourceforge.com with esmtps
+ (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.92.3)
+ (envelope-from <islituo@gmail.com>) id 1m9iWd-0004Sz-3V
+ for jfs-discussion@lists.sourceforge.net; Sat, 31 Jul 2021 06:31:11 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=sourceforge.net; s=x; h=Content-Transfer-Encoding:MIME-Version:References:
- In-Reply-To:Message-Id:Date:Subject:Cc:To:From:Sender:Reply-To:Content-Type:
- Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
- Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
+ d=sourceforge.net; s=x; h=Content-Transfer-Encoding:Content-Type:MIME-Version
+ :Date:Message-ID:Subject:From:Cc:To:Sender:Reply-To:Content-ID:
+ Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+ :Resent-Message-ID:In-Reply-To:References:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=80dN2Mu8qippkkEZxzrECvud/P7t6HUeKhwx3kHEqRg=; b=RhutGB4IcGnWI00ecKyF02bnA2
- JPKnQj9bunYuwYJ9D7iTMTN+MKmfYiCIoN0yN7sVkSxpcCRXDxDxRziQ43wACuzQIedGBE92TEdVm
- 9GShksqBNLRdsMJZ9KXTTmIVtMAkXnoGAiQ1Ts47dyBcPRhQuMzpxj28K31qJakKGaYM=;
+ bh=qIjbr+bB3b2M/mjNyixbaPxC5u6C27XmhB1R4YVuR4A=; b=DmFRgOe795wmQtjYwpNchIP2Qq
+ FIpU8q530NHlZDnwEf/pTbcqMGP9THzRvV8B9jooKL3Ww/HoUkq1U6NBQacHOvJDI2TZ22V52xEya
+ hcraOQqjOx/D2OjuDsZnOUctAOnkddDPsPDA1LFXHoF0ya7DZ2/USwTcsqRHF+88pglg=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
- h=Content-Transfer-Encoding:MIME-Version:References:In-Reply-To:Message-Id:
- Date:Subject:Cc:To:From:Sender:Reply-To:Content-Type:Content-ID:
- Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
- :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
- List-Post:List-Owner:List-Archive;
- bh=80dN2Mu8qippkkEZxzrECvud/P7t6HUeKhwx3kHEqRg=; b=U29GuvWbiPQJPSt0CEufrbIgTh
- m45j/kymSXwofxeUaR8WeO58zTPeVfgUZqUcI8yfRdCVurCr5WS7tEVFacG76F6Jut18obQ4a/1rx
- YVrkKqO0wx3oFfnUrKGhUPhu1ohLvo0vZ/kHYCDAs2fefEZXzT6V/XNYEvXNbuh660cw=;
-Received: from mail.kernel.org ([198.145.29.99])
- by sfi-mx-2.v28.lw.sourceforge.com with esmtps
- (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.92.3)
- id 1m22uF-0005lR-3c
- for jfs-discussion@lists.sourceforge.net; Sat, 10 Jul 2021 02:39:57 +0000
-Received: by mail.kernel.org (Postfix) with ESMTPSA id E79D06141D;
- Sat, 10 Jul 2021 02:39:44 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=k20201202; t=1625884785;
- bh=J63qNQ5wbp4Y3iHsK/XG9gvi5r6sP9RqpPWd3wMQybE=;
- h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=gL/thfnZQD+6RSyz9JYzoFF7lNmhlykbyUEmUm7FsyHumJAY12aLSoQxzUAsmyw4t
- 2NtqjBT13Y8thFajRcOVCxR9lnWPuOXk7mAnaZE7WChQ23zcCPHcDWJ/XZsfkdV+hP
- B0pUvM82JOgqi7gOLtVVGolxw69Exnzlo/xO8Rd8DeVC+zdcY7UntBCu1nwuMWPLBv
- mxJOd8ugz/IfFf0h2LfqIjw1g32yQRLY8yTk/K32XfFOPT/2YKDZBkkFDmj/WBmrY1
- aOTgdXrm3ZYLYS5TazcWf9tjNP+TBZwrYAteo03+IBWroQWUyxNZ4CKQ1AFt6GqE8v
- LRMbNddFu2Wxw==
-From: Sasha Levin <sashal@kernel.org>
-To: linux-kernel@vger.kernel.org,
-	stable@vger.kernel.org
-Date: Fri,  9 Jul 2021 22:39:11 -0400
-Message-Id: <20210710023912.3172972-22-sashal@kernel.org>
-X-Mailer: git-send-email 2.30.2
-In-Reply-To: <20210710023912.3172972-1-sashal@kernel.org>
-References: <20210710023912.3172972-1-sashal@kernel.org>
+ h=Content-Transfer-Encoding:Content-Type:MIME-Version:Date:Message-ID:
+ Subject:From:Cc:To:Sender:Reply-To:Content-ID:Content-Description:Resent-Date
+ :Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+ References:List-Id:List-Help:List-Unsubscribe:List-Subscribe:List-Post:
+ List-Owner:List-Archive; bh=qIjbr+bB3b2M/mjNyixbaPxC5u6C27XmhB1R4YVuR4A=; b=P
+ DxlIWFOmuQejQEBhIURAgnki+0PDVn21cIk8jNHcoqaiV858eYdUlhsaBVZB7Q7NkWQmwO/O8aKkx
+ aMnvR9ih4brHMLrvr4Hdejv2rUPIbyBr6KvdFKqgbqtsu72BpYQmWpUHLO8gHwUa3ukw8U9CUYVCr
+ wTz5hf5bpd4IPl60=;
+Received: from mail-pl1-f175.google.com ([209.85.214.175])
+ by sfi-mx-1.v28.lw.sourceforge.com with esmtps
+ (TLSv1.2:ECDHE-RSA-AES128-GCM-SHA256:128) (Exim 4.92.3)
+ id 1m9iWb-008PQm-Ri
+ for jfs-discussion@lists.sourceforge.net; Sat, 31 Jul 2021 06:31:11 +0000
+Received: by mail-pl1-f175.google.com with SMTP id q2so13632249plr.11
+ for <jfs-discussion@lists.sourceforge.net>;
+ Fri, 30 Jul 2021 23:31:09 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=to:cc:from:subject:message-id:date:user-agent:mime-version
+ :content-transfer-encoding:content-language;
+ bh=qIjbr+bB3b2M/mjNyixbaPxC5u6C27XmhB1R4YVuR4A=;
+ b=sMj5HuKPgFyPTo4c3LC5MzvgaL4cUri7Ek8+Fxf1TRLjqOt8nxke5Nv/FbO209pTX4
+ jtnROqrwCSzaThBSaiyq3KOI/rRDJAmu8kKS7wJ46wO9nd1VsGWpwv6kFg1a8U24v2tJ
+ J01c2c+oVkh6uwE8O3lIJswOh/lfbyipccBsFYXsOakHE8Ea6fJ+JKpwq9ZsfdCB+QYw
+ NTAWfKCOq9Ve1IrMsHbGX6XUQAkvVMZGQWoq5KQ7+TLt1z9+WP7ljklA91Sn6uWAgKaA
+ 6CNVfrxE7LEpBfX13FPGU/0u2V7jS2xvB+OBNYWQtZoiRhm7nHdTcoBQun+NsgKCDFOU
+ q/1g==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:to:cc:from:subject:message-id:date:user-agent
+ :mime-version:content-transfer-encoding:content-language;
+ bh=qIjbr+bB3b2M/mjNyixbaPxC5u6C27XmhB1R4YVuR4A=;
+ b=HaSTpgYZQr3Nc88XS23nFTJsGTOOnTbSd8SI5n/kpq+JD563C3hBnnTwVq+qMMtCeE
+ 2L7ZBYFyZUHNVyYnpKeY9LFGKvaXF9dNBm7g/0onRr+QAgvngRHNlzkIYB//YwBhAImm
+ NDFaB/W/0wxtD74eNyYawNIRaRunzl4zpkKh4gp6b+PbqFCwB49V1r/uH6owc+LRSPW3
+ D5Uf0l+AqwSz8657uj2WnV/oFGjaKHUT+vXyjew01fbTGxQ8b/130DmfedSpsQwMSEK+
+ cqEzqdFMCD1Iq2HIQhvqy4MWYQ/o8wDJ+rUQEx9F4NsL4PZcLiIbbeghOHSbX9D24pMM
+ 6/sA==
+X-Gm-Message-State: AOAM532FrmMAzNpMxHa+ukfMP+RlIAbeyg8thmtx93hTLNFYJjebdACR
+ ZTzq6zkX6UAvlWeI21MfD043jgemC0LkRQ==
+X-Google-Smtp-Source: ABdhPJwc2rieJ6CRVUVfh9qjZkUSX/FqySfbO7siHkND9wdIQtdcsqX52axifxcVqDVmRZQtTYwaVw==
+X-Received: by 2002:a63:6c5:: with SMTP id 188mr2329643pgg.39.1627713064378;
+ Fri, 30 Jul 2021 23:31:04 -0700 (PDT)
+Received: from [10.106.0.50] ([45.135.186.29])
+ by smtp.gmail.com with ESMTPSA id n17sm5263572pgj.93.2021.07.30.23.31.02
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Fri, 30 Jul 2021 23:31:04 -0700 (PDT)
+To: shaggy@kernel.org
+From: Li Tuo <islituo@gmail.com>
+Message-ID: <6b3b3a56-b77c-aff7-c9f1-94a99d4929d2@gmail.com>
+Date: Sat, 31 Jul 2021 14:31:02 +0800
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:78.0) Gecko/20100101
+ Thunderbird/78.12.0
 MIME-Version: 1.0
-X-stable: review
-X-Patchwork-Hint: Ignore
-X-Spam-Score: -0.5 (/)
+Content-Language: en-US
+X-Spam-Score: -0.1 (/)
 X-Spam-Report: Spam Filtering performed by mx.sourceforge.net.
  See http://spamassassin.org/tag/ for more details.
  0.0 URIBL_BLOCKED ADMINISTRATOR NOTICE: The query to URIBL was blocked.
  See
  http://wiki.apache.org/spamassassin/DnsBlocklists#dnsbl-block
- for more information. [URIs: appspotmail.com]
+ for more information. [URIs: tsinghua.edu.cn]
+ 0.0 FREEMAIL_FROM Sender email is commonly abused enduser mail provider
+ (islituo[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.214.175 listed in wl.mailspike.net]
  -0.1 DKIM_VALID_AU Message has a valid DKIM or DK signature from author's
  domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature,
  not necessarily valid
- -0.5 DKIMWL_WL_HIGH         DKIMwl.org - High trust sender
-X-Headers-End: 1m22uF-0005lR-3c
-Subject: [Jfs-discussion] [PATCH AUTOSEL 4.4 22/23] jfs: fix GPF in diFree
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/, no
+ trust [209.85.214.175 listed in list.dnswl.org]
+ 0.0 AWL AWL: Adjusted score from AWL reputation of From: address
+X-Headers-End: 1m9iWb-008PQm-Ri
+X-Mailman-Approved-At: Sun, 01 Aug 2021 17:57:11 +0000
+Subject: [Jfs-discussion] [BUG] jfs: possible uninitialized-variable access
+ in xtSplitUp()
 X-BeenThere: jfs-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -88,62 +114,25 @@ List-Post: <mailto:jfs-discussion@lists.sourceforge.net>
 List-Help: <mailto:jfs-discussion-request@lists.sourceforge.net?subject=help>
 List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/jfs-discussion>, 
  <mailto:jfs-discussion-request@lists.sourceforge.net?subject=subscribe>
-Cc: Sasha Levin <sashal@kernel.org>, Pavel Skripkin <paskripkin@gmail.com>,
- jfs-discussion@lists.sourceforge.net,
- syzbot+0a89a7b56db04c21a656@syzkaller.appspotmail.com
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: jfs-discussion@lists.sourceforge.net, baijiaju1990@gmail.com,
+ linux-kernel@vger.kernel.org
+Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="utf-8"; Format="flowed"
 Errors-To: jfs-discussion-bounces@lists.sourceforge.net
 
-From: Pavel Skripkin <paskripkin@gmail.com>
-
-[ Upstream commit 9d574f985fe33efd6911f4d752de6f485a1ea732 ]
-
-Avoid passing inode with
-JFS_SBI(inode->i_sb)->ipimap == NULL to
-diFree()[1]. GFP will appear:
-
-	struct inode *ipimap = JFS_SBI(ip->i_sb)->ipimap;
-	struct inomap *imap = JFS_IP(ipimap)->i_imap;
-
-JFS_IP() will return invalid pointer when ipimap == NULL
-
-Call Trace:
- diFree+0x13d/0x2dc0 fs/jfs/jfs_imap.c:853 [1]
- jfs_evict_inode+0x2c9/0x370 fs/jfs/inode.c:154
- evict+0x2ed/0x750 fs/inode.c:578
- iput_final fs/inode.c:1654 [inline]
- iput.part.0+0x3fe/0x820 fs/inode.c:1680
- iput+0x58/0x70 fs/inode.c:1670
-
-Reported-and-tested-by: syzbot+0a89a7b56db04c21a656@syzkaller.appspotmail.com
-Signed-off-by: Pavel Skripkin <paskripkin@gmail.com>
-Signed-off-by: Dave Kleikamp <dave.kleikamp@oracle.com>
-Signed-off-by: Sasha Levin <sashal@kernel.org>
----
- fs/jfs/inode.c | 3 ++-
- 1 file changed, 2 insertions(+), 1 deletion(-)
-
-diff --git a/fs/jfs/inode.c b/fs/jfs/inode.c
-index 41aa3ca6a6a4..b318732a8562 100644
---- a/fs/jfs/inode.c
-+++ b/fs/jfs/inode.c
-@@ -160,7 +160,8 @@ void jfs_evict_inode(struct inode *inode)
- 			if (test_cflag(COMMIT_Freewmap, inode))
- 				jfs_free_zero_link(inode);
- 
--			diFree(inode);
-+			if (JFS_SBI(inode->i_sb)->ipimap)
-+				diFree(inode);
- 
- 			/*
- 			 * Free the inode from the quota allocation.
--- 
-2.30.2
-
-
-
-_______________________________________________
-Jfs-discussion mailing list
-Jfs-discussion@lists.sourceforge.net
-https://lists.sourceforge.net/lists/listinfo/jfs-discussion
+SGVsbG8sCgpPdXIgc3RhdGljIGFuYWx5c2lzIHRvb2wgZmluZHMgYSBwb3NzaWJsZSB1bmluaXRp
+YWxpemVkLXZhcmlhYmxlIGFjY2VzcyAKaW4gdGhlIGpmcyBkcml2ZXIgaW4gTGludXggNS4xNC4w
+LXJjMzoKCkF0IHRoZSBiZWdpbm5pbmcgb2YgdGhlIGZ1bmN0aW9uIHh0U3BsaXRVcCgpLCB0aGUg
+dmFyaWFibGUgcmJuIGlzIG5vdCAKaW5pdGlhbGl6ZWQuCklmIHNwLT5oZWFkZXIuZmxhZyAmIEJU
+X1JPT1QgaXMgdHJ1ZSwKNzgwOsKgwqDCoCByYyA9IChzcC0+aGVhZGVyLmZsYWcgJiBCVF9ST09U
+KSA/IHh0U3BsaXRSb290KHRpZCwgaXAsIHNwbGl0LCAKJnJtcCkgOiB4dFNwbGl0UGFnZSh0aWQs
+IGlwLCBzcGxpdCwgJnJtcCwgJnJibik7Cgp0aGUgdmFyaWFsYmUgcmJuIHdpbGwgcmVtYWluIHVu
+aW5pdGlhbGl6ZWQuCkhvd2V2ZXIsIGl0IGlzIGFjY2Vzc2VkIHRocm91Z2g6CjgxNDrCoMKgwqAg
+cmNibiA9IHJibjsKCkkgYW0gbm90IHF1aXRlIHN1cmUgd2hldGhlciB0aGlzIHBvc3NpYmxlIHVu
+aW5pdGlhbGl6ZWQtdmFyaWFibGUgYWNjZXNzIAppcyByZWFsIGFuZCBob3cgdG8gZml4IGl0IGlm
+IGl0IGlzIHJlYWwuCkFueSBmZWVkYmFjayB3b3VsZCBiZSBhcHByZWNpYXRlZCwgdGhhbmtzIQoK
+UmVwb3J0ZWQtYnk6IFRPVEUgUm9ib3QgPG9zbGFiQHRzaW5naHVhLmVkdS5jbj4KCkJlc3Qgd2lz
+aGVzLApUdW8gTGkKCgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fXwpKZnMtZGlzY3Vzc2lvbiBtYWlsaW5nIGxpc3QKSmZzLWRpc2N1c3Npb25AbGlzdHMuc291
+cmNlZm9yZ2UubmV0Cmh0dHBzOi8vbGlzdHMuc291cmNlZm9yZ2UubmV0L2xpc3RzL2xpc3RpbmZv
+L2pmcy1kaXNjdXNzaW9uCg==
