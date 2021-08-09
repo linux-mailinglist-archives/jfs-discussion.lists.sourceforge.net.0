@@ -2,104 +2,102 @@ Return-Path: <jfs-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+jfs-discussion@lfdr.de
 Delivered-To: lists+jfs-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id C93363E4BBA
-	for <lists+jfs-discussion@lfdr.de>; Mon,  9 Aug 2021 20:01:10 +0200 (CEST)
-Received: from [127.0.0.1] (helo=sfs-ml-2.v29.lw.sourceforge.com)
-	by sfs-ml-2.v29.lw.sourceforge.com with esmtp (Exim 4.92.3)
+	by mail.lfdr.de (Postfix) with ESMTPS id A754A3E4E4C
+	for <lists+jfs-discussion@lfdr.de>; Mon,  9 Aug 2021 23:14:59 +0200 (CEST)
+Received: from [127.0.0.1] (helo=sfs-ml-3.v29.lw.sourceforge.com)
+	by sfs-ml-3.v29.lw.sourceforge.com with esmtp (Exim 4.94.2)
 	(envelope-from <jfs-discussion-bounces@lists.sourceforge.net>)
-	id 1mD9a3-0005ZM-La; Mon, 09 Aug 2021 18:00:55 +0000
+	id 1mDCba-0008UT-MX; Mon, 09 Aug 2021 21:14:42 +0000
 Received: from [172.30.20.202] (helo=mx.sourceforge.net)
- by sfs-ml-2.v29.lw.sourceforge.com with esmtps
- (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.92.3)
- (envelope-from <slava@dubeyko.com>) id 1mD9Zs-0005Yz-3Z
- for jfs-discussion@lists.sourceforge.net; Mon, 09 Aug 2021 18:00:44 +0000
+ by sfs-ml-1.v29.lw.sourceforge.com with esmtps
+ (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
+ (envelope-from <kari.argillander@gmail.com>)
+ id 1mDCDE-0000c3-Ji; Mon, 09 Aug 2021 20:49:32 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=sourceforge.net; s=x; h=To:References:Message-Id:Content-Transfer-Encoding:
- Cc:Date:In-Reply-To:From:Subject:Mime-Version:Content-Type:Sender:Reply-To:
+ d=sourceforge.net; s=x; h=In-Reply-To:Content-Transfer-Encoding:Content-Type:
+ MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:
  Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
  Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=AAhrsJC66Dx61Rd+R0En9xSeyn+Y7a3fdKNMwl3SmV8=; b=SuhE8W4EbxwwBruESoQ7MUMLjy
- mQmeIJOhzxJLbKDJ4q5y3peyn4dAZFUzmvpuPL5epX2zOAL+B/Snjg0pFZG87MbhmAKAuX65+rZgr
- 4HBobOdrJKjbVxdQytely0jsqAt3NdYwYlpjpmRAax8OFsakdiDKY863CVyiEv+KCDWU=;
+ bh=xkmU2JA6zfghnyY/Y5tK7LzUc0w134KqplhtslWkECA=; b=aQ86QECOK3AnxSlpgaKw1aLREb
+ wKPY0xYrfJsWSud/Wla77p2ADf1xLkRrwP+IlnyBRoeUbFUZM1bANtIT6sIbm6Eg0IWzNtYwh7bA6
+ 0wcbRH2JpNIhQWFA8sCwXt9KwFx/H4yJirAiEgh7Y5/K+L5Wii3HKUw9icvFHywcBQ1o=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
- h=To:References:Message-Id:Content-Transfer-Encoding:Cc:Date:In-Reply-To:
- From:Subject:Mime-Version:Content-Type:Sender:Reply-To:Content-ID:
+ h=In-Reply-To:Content-Transfer-Encoding:Content-Type:MIME-Version:
+ References:Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:Content-ID:
  Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
  :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
  List-Post:List-Owner:List-Archive;
- bh=AAhrsJC66Dx61Rd+R0En9xSeyn+Y7a3fdKNMwl3SmV8=; b=dQhWRQH93QYKRUqWGx6qJsTymm
- Nudl1fa0Pz6wGsogcC7uKu5yg6hejZqDMrINOjsjuFOFYUkXqomUdPx/wG73+oPZk+L8yP9Gz3j9n
- dZhK4YrYfUcQavcgHsw4vEuuwvQ1Pjtt5A9oinQmUbFs7hFGIvHckhoR5KRiMjcodcJw=;
-Received: from mail-qt1-f169.google.com ([209.85.160.169])
+ bh=xkmU2JA6zfghnyY/Y5tK7LzUc0w134KqplhtslWkECA=; b=BD2DnfVOiEtjJFYmpgacDwvKHU
+ BdxkN8mTeX20XX0FWSKoTxmjgoO3LnkIzdaBtgtNX9sdFG6ONGQa7ziSvO2bJC/7toW6JdQ/mTtRO
+ zoeigLBoz4ztKjtkYDrZW82/cP+Ol9Xp+qCxVO+jkEccl680m/ASncTtQnMqsb1+9hSI=;
+Received: from mail-lf1-f44.google.com ([209.85.167.44])
  by sfi-mx-1.v28.lw.sourceforge.com with esmtps
  (TLSv1.2:ECDHE-RSA-AES128-GCM-SHA256:128) (Exim 4.92.3)
- id 1mD9Zq-000s7w-8z
- for jfs-discussion@lists.sourceforge.net; Mon, 09 Aug 2021 18:00:44 +0000
-Received: by mail-qt1-f169.google.com with SMTP id h10so3480072qtj.11
- for <jfs-discussion@lists.sourceforge.net>;
- Mon, 09 Aug 2021 11:00:42 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=dubeyko-com.20150623.gappssmtp.com; s=20150623;
- h=mime-version:subject:from:in-reply-to:date:cc
- :content-transfer-encoding:message-id:references:to;
- bh=AAhrsJC66Dx61Rd+R0En9xSeyn+Y7a3fdKNMwl3SmV8=;
- b=C0z7fOVtv7xwyNq2ULxDTWBgiDiksaU5+3HrkSSE0+YAMfOwDGb3z2QxgMzpBwRhPv
- IJIv8Jcn2zdkSUNM5svDTPmzFJom/BDy2o4AuFQLhDPHTF6I15WVw/dSxJoqsVOSZ1Cb
- W4oQq3okSZ+c6t9/tXu1mtxGEjfyOfLs5PO3JPTOAzr1aESarTGuxT4PlJIfCs78j5tf
- EJr6/POmRH4eknj1regIdXrAR5fCHCeWaaDHnTNfXNqLroOKMPWZWQrn4b1SAFksBLPj
- 3ozwqoWMzQNUQaaWHVTFNsV2eGVzErWUtSvwp7srUzrIDAjM/UP1OEZMwfJ6NvEMbgyW
- 6e0A==
+ id 1mDCDC-0013yY-Hg; Mon, 09 Aug 2021 20:49:32 +0000
+Received: by mail-lf1-f44.google.com with SMTP id w20so10026116lfu.7;
+ Mon, 09 Aug 2021 13:49:30 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:content-transfer-encoding:in-reply-to;
+ bh=xkmU2JA6zfghnyY/Y5tK7LzUc0w134KqplhtslWkECA=;
+ b=mZ4Sa4Cy9nZtqeAfq7Jkmya1uATv8yy7EhGkJDk80lfWc+kfkFvZ+WSdNqlGqWU81q
+ zkpYWkyu5QIVhZd7MQA4fN7PEP9wrJtENPvxVQ4TL21YYUoQMD//o1aRzQ6Kw8Zrrlh7
+ YcCHQFvDgfJQcMl7AeVcYtcikwVth+OjoiE2l64jnhD6eAcnFIHyF/8cI5Spd9P4TtTZ
+ kfU2dysvfQmgG6RYX+Q6eaxVBMjYRqK1WQVEU6tUZ6OZeetbA0ATyJaw0uBHWPkjbBkg
+ /8e3eKj72qySizLS6C0zqsnXZR2aUdI+JSlw9gs2XExPzIZmPbXdTE3zslzjZ+vNTrZV
+ 4r6g==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:subject:from:in-reply-to:date:cc
- :content-transfer-encoding:message-id:references:to;
- bh=AAhrsJC66Dx61Rd+R0En9xSeyn+Y7a3fdKNMwl3SmV8=;
- b=mTrVkkKky1O/VpVakGM9XW9lOuC+zAT4RDgKxxQyOIzcQWI/UJvsHwn27tJL3F1ni2
- VKPB58NtweAIsY9n5qKGzmLueLTLVAplLeARuRqsLPr70upbJMoyewEcpCM3fyo7S9m1
- Y3NEcCKkH+3MQEHi2websmnDO3v5eksGuBr5MeAQ0uB6HkA5jme9VpHzXqbBufhZK+A7
- ccBhEatr29sC2rMZ83RYVCSlKqY1RIhG7GYyEdjKf5y8W6W0cKH13mBv5eQ49Pn/l2pd
- PlNDwwc3x5iZYUkCtcFvunsRppzjiXlygOFR1C5v79e5CRPgxTgLAJhDJ7n37mNoS850
- 37Cw==
-X-Gm-Message-State: AOAM532Oifc8L+bv58a+uAZx1S7K7m1Ik+3NS/TmCfODAStLrkstmVJK
- muxRtnkrqvP3oPZS0tb0hsOIFA==
-X-Google-Smtp-Source: ABdhPJzBGaMUF7I+EqzTqVqs/l3Cby4L23FljkyG1TqQehnViMfTh5LhLZoOh/mvaEH+yytNB+IJ1g==
-X-Received: by 2002:a05:622a:243:: with SMTP id
- c3mr10162127qtx.61.1628532033991; 
- Mon, 09 Aug 2021 11:00:33 -0700 (PDT)
-Received: from smtpclient.apple ([2600:1700:42f0:6600:615b:6e84:29a:3bc6])
- by smtp.gmail.com with ESMTPSA id m188sm9658536qkc.99.2021.08.09.11.00.31
- (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
- Mon, 09 Aug 2021 11:00:33 -0700 (PDT)
-Mime-Version: 1.0 (Mac OS X Mail 14.0 \(3654.120.0.1.13\))
-From: Viacheslav Dubeyko <slava@dubeyko.com>
-In-Reply-To: <YRFnz6kn1UbSCN/S@casper.infradead.org>
-Date: Mon, 9 Aug 2021 11:00:29 -0700
-Message-Id: <E85E6FF7-AA14-4FA6-82AA-859D93BD0069@dubeyko.com>
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:content-transfer-encoding
+ :in-reply-to;
+ bh=xkmU2JA6zfghnyY/Y5tK7LzUc0w134KqplhtslWkECA=;
+ b=dtyDHRox1s9vaRKXCpS/kzB9WIAfxPBXDm/oqDoNr6g/nvBVGgVuIdOeOwH2G4+gls
+ GxQtxRQpUgWrV8SGPi3+GzoKNvPHlf9cvt5h1v3NU2TlUGwl+2CdwrGUPlVoKwlaZN05
+ m6GfQlyG8MST9X2Cql00Yafe2ng1VBGIh0Br1SdSpLH2X+4wXjEq8YVGL7lt7NxSVliJ
+ 1m61eAVmIVx8eWbTkMbEbh8tKbPcTgV3AGsTz7Hu2FdgB9XwVfaMuTLtDraiDYflg8m+
+ 0IGEiY3q66bSzLxFAiTBVQImfdAJ3KJxqgG61qjJfne16QTkanYvwymxGiIDEWBjZkGE
+ Mlgw==
+X-Gm-Message-State: AOAM5306uRi4JnDbKxse/WsGwwtdkbq7IFQzDlg5/q5uWoRxKNMAa9qE
+ PaGBkpv04ZhwAhggjHMoWzA=
+X-Google-Smtp-Source: ABdhPJxDrhRAL27eit/VPKKI/hfTq1DZqCIZJjVrBY/8+bt4lqWFglWjlHsmgCisMCi3e3gqdpd18A==
+X-Received: by 2002:a19:6403:: with SMTP id y3mr4789111lfb.120.1628542164006; 
+ Mon, 09 Aug 2021 13:49:24 -0700 (PDT)
+Received: from kari-VirtualBox (85-23-89-224.bb.dnainternet.fi. [85.23.89.224])
+ by smtp.gmail.com with ESMTPSA id h18sm297957lfu.180.2021.08.09.13.49.22
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Mon, 09 Aug 2021 13:49:23 -0700 (PDT)
+Date: Mon, 9 Aug 2021 23:49:21 +0300
+From: Kari Argillander <kari.argillander@gmail.com>
+To: Pali =?utf-8?B?Um9ow6Fy?= <pali@kernel.org>
+Message-ID: <20210809204921.3ovrnbtzywsui4pt@kari-VirtualBox>
 References: <20210808162453.1653-1-pali@kernel.org>
- <20210808162453.1653-12-pali@kernel.org>
- <D0302F93-BAE5-48F0-87D0-B68B10D7757B@dubeyko.com>
- <YRFnz6kn1UbSCN/S@casper.infradead.org>
-To: Matthew Wilcox <willy@infradead.org>
-X-Mailer: Apple Mail (2.3654.120.0.1.13)
-X-Spam-Score: 0.0 (/)
+ <20210808162453.1653-3-pali@kernel.org>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20210808162453.1653-3-pali@kernel.org>
+X-Spam-Score: -0.1 (/)
 X-Spam-Report: Spam Filtering performed by mx.sourceforge.net.
  See http://spamassassin.org/tag/ for more details.
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [209.85.160.169 listed in wl.mailspike.net]
+ 0.0 FREEMAIL_FROM Sender email is commonly abused enduser mail provider
+ (kari.argillander[at]gmail.com)
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.167.44 listed in wl.mailspike.net]
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/, no
- trust [209.85.160.169 listed in list.dnswl.org]
+ trust [209.85.167.44 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_AU Message has a valid DKIM or DK signature from author's
+ domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature,
  not necessarily valid
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
- -0.0 AWL AWL: Adjusted score from AWL reputation of From: address
-X-Headers-End: 1mD9Zq-000s7w-8z
-Subject: Re: [Jfs-discussion] [RFC PATCH 11/20] hfs: Explicitly set
- hsb->nls_disk when hsb->nls_io is set
+X-Headers-End: 1mDCDC-0013yY-Hg
+X-Mailman-Approved-At: Mon, 09 Aug 2021 21:14:40 +0000
+Subject: Re: [Jfs-discussion] [RFC PATCH 02/20] hfsplus: Add iocharset=
+ mount option as alias for nls=
 X-BeenThere: jfs-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -114,53 +112,28 @@ List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/jfs-discussion>,
 Cc: linux-cifs@vger.kernel.org, jfs-discussion@lists.sourceforge.net,
  Jan Kara <jack@suse.cz>, Luis de Bethencourt <luisbg@kernel.org>,
  Dave Kleikamp <shaggy@kernel.org>, linux-ntfs-dev@lists.sourceforge.net,
- Salah Triki <salah.triki@gmail.com>, LKML <linux-kernel@vger.kernel.org>,
- Anton Altaparmakov <anton@tuxera.com>, Christoph Hellwig <hch@infradead.org>,
+ linux-kernel@vger.kernel.org, Anton Altaparmakov <anton@tuxera.com>,
+ Christoph Hellwig <hch@infradead.org>,
  Alexander Viro <viro@zeniv.linux.org.uk>, Pavel Machek <pavel@ucw.cz>,
- Linux FS Devel <linux-fsdevel@vger.kernel.org>,
- "Theodore Y . Ts'o" <tytso@mit.edu>, Andrew Morton <akpm@linux-foundation.org>,
- =?utf-8?Q?Marek_Beh=C3=BAn?= <marek.behun@nic.cz>,
- =?utf-8?Q?Pali_Roh=C3=A1r?= <pali@kernel.org>,
+ linux-fsdevel@vger.kernel.org, "Theodore Y . Ts'o" <tytso@mit.edu>,
+ Andrew Morton <akpm@linux-foundation.org>,
+ Marek =?utf-8?B?QmVow7pu?= <marek.behun@nic.cz>,
+ Salah Triki <salah.triki@gmail.com>,
  OGAWA Hirofumi <hirofumi@mail.parknet.co.jp>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
 Errors-To: jfs-discussion-bounces@lists.sourceforge.net
 
-Cgo+IE9uIEF1ZyA5LCAyMDIxLCBhdCAxMDozNyBBTSwgTWF0dGhldyBXaWxjb3ggPHdpbGx5QGlu
-ZnJhZGVhZC5vcmc+IHdyb3RlOgo+IAo+IE9uIE1vbiwgQXVnIDA5LCAyMDIxIGF0IDEwOjMxOjU1
-QU0gLTA3MDAsIFZpYWNoZXNsYXYgRHViZXlrbyB3cm90ZToKPj4+IE9uIEF1ZyA4LCAyMDIxLCBh
-dCA5OjI0IEFNLCBQYWxpIFJvaMOhciA8cGFsaUBrZXJuZWwub3JnPiB3cm90ZToKPj4+IAo+Pj4g
-SXQgZG9lcyBub3QgbWFrZSBhbnkgc2Vuc2UgdG8gc2V0IGhzYi0+bmxzX2lvIChOTFMgaW9jaGFy
-c2V0IHVzZWQgYmV0d2Vlbgo+Pj4gVkZTIGFuZCBoZnMgZHJpdmVyKSB3aGVuIGhzYi0+bmxzX2Rp
-c2sgKE5MUyBjb2RlcGFnZSB1c2VkIGJldHdlZW4gaGZzCj4+PiBkcml2ZXIgYW5kIGRpc2spIGlz
-IG5vdCBzZXQuCj4+PiAKPj4+IFJldmVyc2UgZW5naW5lZXJpbmcgZHJpdmVyIGNvZGUgc2hvd24g
-d2hhdCBpcyBkb2luZyBpbiB0aGlzIHNwZWNpYWwgY2FzZToKPj4+IAo+Pj4gICBXaGVuIGNvZGVw
-YWdlIHdhcyBub3QgZGVmaW5lZCBidXQgaW9jaGFyc2V0IHdhcyB0aGVuCj4+PiAgIGhmcyBkcml2
-ZXIgY29waWVkIDhiaXQgY2hhcmFjdGVyIGZyb20gZGlzayBkaXJlY3RseSB0bwo+Pj4gICAxNmJp
-dCB1bmljb2RlIHdjaGFyX3QgdHlwZS4gV2hpY2ggbWVhbnMgaXQgZGlkIGNvbnZlcnNpb24KPj4+
-ICAgZnJvbSBMYXRpbjEgKElTTy04ODU5LTEpIHRvIFVuaWNvZGUgYmVjYXVzZSBmaXJzdCAyNTYK
-Pj4+ICAgVW5pY29kZSBjb2RlIHBvaW50cyBtYXRjaGVzIDhiaXQgSVNPLTg4NTktMSBjb2RlcGFn
-ZSB0YWJsZS4KPj4+ICAgU28gd2hlbiBpb2NoYXJzZXQgd2FzIHNwZWNpZmllZCBhbmQgY29kZXBh
-Z2Ugbm90LCB0aGVuCj4+PiAgIGNvZGVwYWdlIHVzZWQgaW1wbGljaXQgdmFsdWUgImlzbzg4NTkt
-MSIuCj4+PiAKPj4+IFNvIHdoZW4gaHNiLT5ubHNfZGlzayBpcyBub3Qgc2V0IGFuZCBoc2ItPm5s
-c19pbyBpcyB0aGVuIGV4cGxpY2l0bHkgc2V0Cj4+PiBoc2ItPm5sc19kaXNrIHRvICJpc284ODU5
-LTEiLgo+Pj4gCj4+PiBTdWNoIHNldHVwIGlzIG9idmlvdXNseSBpbmNvbXBhdGlibGUgd2l0aCBN
-YWMgT1Mgc3lzdGVtcyBhcyB0aGV5IGRvIG5vdAo+Pj4gc3VwcG9ydCBpc284ODU5LTEgZW5jb2Rp
-bmcgZm9yIGhmcy4gU28gcHJpbnQgd2FybmluZyBpbnRvIGRtZXNnIGFib3V0IHRoaXMKPj4+IGZh
-Y3QuCj4+PiAKPj4+IEFmdGVyIHRoaXMgY2hhbmdlIGhzYi0+bmxzX2Rpc2sgaXMgYWx3YXlzIHNl
-dCwgc28gcmVtb3ZlIGNvZGUgcGF0aHMgZm9yCj4+PiBjYXNlIHdoZW4gaHNiLT5ubHNfZGlzayB3
-YXMgbm90IHNldCBhcyB0aGV5IGFyZSBub3QgbmVlZGVkIGFueW1vcmUuCj4+IAo+PiAKPj4gU291
-bmRzIHJlYXNvbmFibGUuIEJ1dCBpdCB3aWxsIGJlIGdyZWF0IHRvIGtub3cgdGhhdCB0aGUgY2hh
-bmdlIGhhcyBiZWVuIHRlc3RlZCByZWFzb25hYmx5IHdlbGwuCj4gCj4gSSBkb24ndCB0aGluayBp
-dCdzIHJlYXNvbmFibGUgdG8gYXNrIFBhbGkgdG8gdGVzdCBldmVyeSBzaW5nbGUgZmlsZXN5c3Rl
-bS4KPiBUaGF0J3Mgc29tZXRoaW5nIHRoZSBtYWludGFpbmVyIHNob3VsZCBkbywgYXMgeW91J3Jl
-IG1vcmUgbGlrZWx5IHRvIGhhdmUKPiB0aGUgaW5mcmFzdHJ1Y3R1cmUgYWxyZWFkeSBzZXQgdXAg
-dG8gZG8gdGVzdGluZyBvZiB5b3VyIGZpbGVzeXN0ZW0gYW5kCj4gYmUgYXdhcmUgb2YgZnVuIGNv
-cm5lciBjYXNlcyBhbmQgdXNlIGNhc2VzIHRoYW4gc29tZW9uZSB3aG8ncyB3b3JraW5nCj4gYWNy
-b3NzIGFsbCBmaWxlc3lzdGVtcy4KCkkgc2VlIHRoZSBwb2ludC4gQnV0IHRoZSB3aG9sZSBhcHBy
-b2FjaCBuZWVkcyB0byBiZSB0ZXN0ZWQgYXMgbWluaW11bSBmb3Igb25lIHBhcnRpY3VsYXIgZmls
-ZSBzeXN0ZW0uIDopIEFuZCBpdCBjb3VsZCBiZSBhbnkgZmF2b3JpdGUgb25lLgoKVGhhbmtzLApT
-bGF2YS4KCgoKCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-Ckpmcy1kaXNjdXNzaW9uIG1haWxpbmcgbGlzdApKZnMtZGlzY3Vzc2lvbkBsaXN0cy5zb3VyY2Vm
-b3JnZS5uZXQKaHR0cHM6Ly9saXN0cy5zb3VyY2Vmb3JnZS5uZXQvbGlzdHMvbGlzdGluZm8vamZz
-LWRpc2N1c3Npb24K
+On Sun, Aug 08, 2021 at 06:24:35PM +0200, Pali Roh=E1r wrote:
+> Other fs drivers are using iocharset=3D mount option for specifying chars=
+et.
+> So add it also for hfsplus and mark old nls=3D mount option as deprecated.
+
+It would be good to also update Documentation/filesystems/hfsplus.rst.
+
+
+
+_______________________________________________
+Jfs-discussion mailing list
+Jfs-discussion@lists.sourceforge.net
+https://lists.sourceforge.net/lists/listinfo/jfs-discussion
