@@ -2,81 +2,114 @@ Return-Path: <jfs-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+jfs-discussion@lfdr.de
 Delivered-To: lists+jfs-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id 945BB3ED909
-	for <lists+jfs-discussion@lfdr.de>; Mon, 16 Aug 2021 16:37:58 +0200 (CEST)
-Received: from [127.0.0.1] (helo=sfs-ml-4.v29.lw.sourceforge.com)
-	by sfs-ml-4.v29.lw.sourceforge.com with esmtp (Exim 4.90_1)
+	by mail.lfdr.de (Postfix) with ESMTPS id DC7683F05C9
+	for <lists+jfs-discussion@lfdr.de>; Wed, 18 Aug 2021 16:09:17 +0200 (CEST)
+Received: from [127.0.0.1] (helo=sfs-ml-1.v29.lw.sourceforge.com)
+	by sfs-ml-1.v29.lw.sourceforge.com with esmtp (Exim 4.90_1)
 	(envelope-from <jfs-discussion-bounces@lists.sourceforge.net>)
-	id 1mFdk8-0000Mv-SU; Mon, 16 Aug 2021 14:37:36 +0000
+	id 1mGMFW-0005jN-LL; Wed, 18 Aug 2021 14:08:58 +0000
 Received: from [172.30.20.202] (helo=mx.sourceforge.net)
  by sfs-ml-2.v29.lw.sourceforge.com with esmtps
  (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.92.3)
- (envelope-from <hirofumi@parknet.co.jp>)
- id 1mFEEZ-00052E-1q; Sun, 15 Aug 2021 11:23:19 +0000
+ (envelope-from <mudongliangabcd@gmail.com>) id 1mGImN-0000iV-2e
+ for jfs-discussion@lists.sourceforge.net; Wed, 18 Aug 2021 10:26:39 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=sourceforge.net; s=x; h=Content-Transfer-Encoding:Content-Type:MIME-Version
- :Message-ID:In-Reply-To:Date:References:Subject:Cc:To:From:Sender:Reply-To:
- Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
- Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
+ d=sourceforge.net; s=x; h=Content-Transfer-Encoding:MIME-Version:Message-Id:
+ Date:Subject:Cc:To:From:Sender:Reply-To:Content-Type:Content-ID:
+ Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+ :Resent-Message-ID:In-Reply-To:References:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=OnP11bPDlpAEVsIIjq6VI522If5hydJfUQBX4AyP084=; b=iRw0fNRZ32sC9yHSz4cuNl9clo
- ZenU1bE4cZMkM3Fr2Dy2wtPZqPAWoc7E+Nv1cDRvxSNrQDaphJNRkYxAtkEXyIR9K+uKoBUcu4z+H
- 3VnGXhk295L3vUUNLmvARsuJvRM8rrqetN19Qnt8uTRnDtLFbl7IWK4NNuW1pU/QIAmo=;
+ bh=CIWpHyvhjM0v5hQGy4X7aU8xDXyHu3qVpUT347taFHQ=; b=hwplSYg5Id6Y9fZyrd6FKyDsS6
+ ubNXFy4PqKhJI77KZiqRmOuUF4HwIfCjm3Xq2UFfF7s2JRbRfnM8ZfiMxUxaC3ZCkB9PJ4CpsnLUv
+ 6SoN/6mwWCoQnyI//q8YLHoeYMsIzm8WTF7LmrrH9RQvTbvutz2zEHqEXnRbMLDuYyjY=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
- h=Content-Transfer-Encoding:Content-Type:MIME-Version:Message-ID:
- In-Reply-To:Date:References:Subject:Cc:To:From:Sender:Reply-To:Content-ID:
- Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
- :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
- List-Post:List-Owner:List-Archive;
- bh=OnP11bPDlpAEVsIIjq6VI522If5hydJfUQBX4AyP084=; b=Bpo8APXVhZm2znw5LpdhPpqw0m
- Az3lzoyHIO3Q2a7Jk51xJvV0eCBsH3tu7TsCF4hOUkQe9DTcS5vabnyl98QgGnwXRs88nlQ3Cdnyx
- dw2bnBywLZlJRRZI+zjdRk7ZaG8PbvgAfHQvYyEdDrPvvvPzs8efcb5WHxbx9YtA4WMA=;
-Received: from mail.parknet.co.jp ([210.171.160.6])
- by sfi-mx-1.v28.lw.sourceforge.com with esmtp (Exim 4.92.3)
- id 1mFEEV-0079T0-IT; Sun, 15 Aug 2021 11:23:18 +0000
-Received: from ibmpc.myhome.or.jp (server.parknet.ne.jp [210.171.168.39])
- by mail.parknet.co.jp (Postfix) with ESMTPSA id D641815F93A;
- Sun, 15 Aug 2021 20:23:09 +0900 (JST)
-Received: from devron.myhome.or.jp (foobar@devron.myhome.or.jp [192.168.0.3])
- by ibmpc.myhome.or.jp (8.15.2/8.15.2/Debian-22) with ESMTPS id
- 17FBN8lj265086
- (version=TLSv1.3 cipher=TLS_AES_256_GCM_SHA384 bits=256 verify=NOT);
- Sun, 15 Aug 2021 20:23:09 +0900
-Received: from devron.myhome.or.jp (foobar@localhost [127.0.0.1])
- by devron.myhome.or.jp (8.15.2/8.15.2/Debian-22) with ESMTPS id
- 17FBN8Jk1660981
- (version=TLSv1.3 cipher=TLS_AES_256_GCM_SHA384 bits=256 verify=NOT);
- Sun, 15 Aug 2021 20:23:08 +0900
-Received: (from hirofumi@localhost)
- by devron.myhome.or.jp (8.15.2/8.15.2/Submit) id 17FBN6An1660978;
- Sun, 15 Aug 2021 20:23:06 +0900
-From: OGAWA Hirofumi <hirofumi@mail.parknet.co.jp>
-To: Pali =?iso-8859-1?Q?Roh=E1r?= <pali@kernel.org>
-References: <20210808162453.1653-1-pali@kernel.org>
- <20210808162453.1653-2-pali@kernel.org>
- <87h7frtlu0.fsf@mail.parknet.co.jp>
- <20210815094224.dswbjywnhvajvzjv@pali>
-Date: Sun, 15 Aug 2021 20:23:06 +0900
-In-Reply-To: <20210815094224.dswbjywnhvajvzjv@pali> ("Pali
- =?iso-8859-1?Q?Roh=E1r=22's?= message of
- "Sun, 15 Aug 2021 11:42:24 +0200")
-Message-ID: <871r6vt0it.fsf@mail.parknet.co.jp>
-User-Agent: Gnus/5.13 (Gnus v5.13) Emacs/28.0.50 (gnu/linux)
+ h=Content-Transfer-Encoding:MIME-Version:Message-Id:Date:Subject:Cc:To:From
+ :Sender:Reply-To:Content-Type:Content-ID:Content-Description:Resent-Date:
+ Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+ References:List-Id:List-Help:List-Unsubscribe:List-Subscribe:List-Post:
+ List-Owner:List-Archive; bh=CIWpHyvhjM0v5hQGy4X7aU8xDXyHu3qVpUT347taFHQ=; b=f
+ opa/GSdMih+Xm/7ZSQ3/G7khcoxmPOxJfJyaLErMmVlyaFXiW3a5myJVzbdi+ftV5ZpUK1ZSaXWhH
+ 49IbxNE6HSB+qGivl81TfLp59k1uBSELgNBCaudiFlcPizmOMzqZEC7JdmtZDyqLae9VEg1hoa8Jg
+ 4dTNRQDyD3Jom9oM=;
+Received: from mail-pf1-f181.google.com ([209.85.210.181])
+ by sfi-mx-1.v28.lw.sourceforge.com with esmtps
+ (TLSv1.2:ECDHE-RSA-AES128-GCM-SHA256:128) (Exim 4.92.3)
+ id 1mGImL-00AMNc-B0
+ for jfs-discussion@lists.sourceforge.net; Wed, 18 Aug 2021 10:26:39 +0000
+Received: by mail-pf1-f181.google.com with SMTP id 7so1654661pfl.10
+ for <jfs-discussion@lists.sourceforge.net>;
+ Wed, 18 Aug 2021 03:26:37 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=CIWpHyvhjM0v5hQGy4X7aU8xDXyHu3qVpUT347taFHQ=;
+ b=EXvhJ9Nu2nrBbZ6Kanq7eyBFqYWQXpGM8xkALu2XfED/27p+Qdi133Et62KZ/DzHRb
+ TqwgZhrIttVm/05nWTZ6rB+8vnGrIi+rgaG3nwStlHVoJdOSIN2ZpfAh8TB6ASZq3sJw
+ hQJX1LdAz/RgcgVaor/da3Or9X33Nkt8BU9uRiYpHJOQ6e/BKcoOm9BLAibYFkAYgqIG
+ K38BAVmotQm4KpKIgnJo2faCP5Dlu/Y5drsLnA4jCNFbg9WNUUf54j79XrUdtSHukh+q
+ WRDEegQijaTjtJ/77c+JdA6zlYmAmhHC4B9F8hhfdgNGPv0FJFw7WdxQ/yCY4N4NAtJN
+ 0nng==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=CIWpHyvhjM0v5hQGy4X7aU8xDXyHu3qVpUT347taFHQ=;
+ b=PDraZlQPUMhUTd4Y8QtmDKxImok45iiZOIFQCGu1gof+RZBYxG+6JCqRYOb3iPdfMR
+ on1TxHzEAui0ohFP1+uUJ0Q9UJsaiYpCX0QIBPzNboNHlxkDhpnovRu2WHIrbdFPElBi
+ z05SnQ3/TT706yDP72ltCX0GQpYmOlMOghhK6O9MyYAK8Wz4SvOkRXRT4o7mi5a+yabA
+ 3M6j+7mFaQ1z6nmpaX9HpUtlj46GRAvhBhMVhD5eZMHkEFFyET0kzRLHJYEBlxTBxyAU
+ GaK+BEUmWAopr/mQ7Tr+DBySXYM8sHy6XXRE+lwzIfvsxYG/hRBu+Y5KV4Km8k4C+T26
+ Lcaw==
+X-Gm-Message-State: AOAM530VCa+ZF0mkjBAqgB9/8jKvZu5NVh4uUn4XNavOChd1zBZ+oPMF
+ xR3uXZAPjDjJOg4Me4/Arl4=
+X-Google-Smtp-Source: ABdhPJyelo8/aD3dOcCAmMFcIhm2DX/Do78AVsOE0x/pYJKj7o2q1NfZJcGkIEYuIPxBErdd4ZTe7g==
+X-Received: by 2002:a62:65c7:0:b029:3c3:4eff:1b26 with SMTP id
+ z190-20020a6265c70000b02903c34eff1b26mr8345347pfb.48.1629282391731; 
+ Wed, 18 Aug 2021 03:26:31 -0700 (PDT)
+Received: from localhost.localdomain ([154.16.166.182])
+ by smtp.gmail.com with ESMTPSA id c12sm5396258pfl.56.2021.08.18.03.26.29
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Wed, 18 Aug 2021 03:26:31 -0700 (PDT)
+From: Dongliang Mu <mudongliangabcd@gmail.com>
+To: Dave Kleikamp <shaggy@kernel.org>
+Date: Wed, 18 Aug 2021 18:25:58 +0800
+Message-Id: <20210818102612.864127-1-mudongliangabcd@gmail.com>
+X-Mailer: git-send-email 2.25.1
 MIME-Version: 1.0
-X-Spam-Score: 0.0 (/)
-X-Spam-Report: Spam Filtering performed by mx.sourceforge.net.
- See http://spamassassin.org/tag/ for more details.
- 0.0 URIBL_BLOCKED ADMINISTRATOR NOTICE: The query to URIBL was blocked.
- See
- http://wiki.apache.org/spamassassin/DnsBlocklists#dnsbl-block
- for more information. [URIs: tuxera.com]
+X-Spam-Score: -0.2 (/)
+X-Spam-Report: Spam detection software,
+ running on the system "util-spamd-1.v13.lw.sourceforge.com", 
+ has NOT identified this incoming email as spam.  The original
+ message has been attached to this so you can view it or label
+ similar future email.  If you have any questions, see
+ the administrator of that system for details.
+ Content preview:  In jfs_mount, when diMount(ipaimap2) fails,
+ it goes to errout35.
+ However, the following code does not free ipaimap2 allocated by diReadSpecial.
+ Fix this by refactoring the error handling code of jfs_mount. To be specific, 
+ modify the lable name and free ipaimap2 when the above error ocurrs. 
+ Content analysis details:   (-0.2 points, 6.0 required)
+ pts rule name              description
+ ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.210.181 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
-X-Headers-End: 1mFEEV-0079T0-IT
-X-Mailman-Approved-At: Mon, 16 Aug 2021 14:37:35 +0000
-Subject: Re: [Jfs-discussion] [RFC PATCH 01/20] fat: Fix iocharset=utf8
- mount option
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [mudongliangabcd[at]gmail.com]
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [209.85.210.181 listed in wl.mailspike.net]
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+X-Headers-End: 1mGImL-00AMNc-B0
+X-Mailman-Approved-At: Wed, 18 Aug 2021 14:08:55 +0000
+Subject: [Jfs-discussion] [PATCH] JFS: fix memleak in jfs_mount
 X-BeenThere: jfs-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -88,100 +121,159 @@ List-Post: <mailto:jfs-discussion@lists.sourceforge.net>
 List-Help: <mailto:jfs-discussion-request@lists.sourceforge.net?subject=help>
 List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/jfs-discussion>, 
  <mailto:jfs-discussion-request@lists.sourceforge.net?subject=subscribe>
-Cc: linux-cifs@vger.kernel.org, jfs-discussion@lists.sourceforge.net,
- Jan Kara <jack@suse.cz>, Luis de Bethencourt <luisbg@kernel.org>,
- Dave Kleikamp <shaggy@kernel.org>, linux-ntfs-dev@lists.sourceforge.net,
- linux-kernel@vger.kernel.org,
- Marek =?iso-8859-1?Q?Beh=FAn?= <marek.behun@nic.cz>,
- Christoph Hellwig <hch@infradead.org>,
- Alexander Viro <viro@zeniv.linux.org.uk>, Pavel Machek <pavel@ucw.cz>,
- linux-fsdevel@vger.kernel.org, "Theodore Y . Ts'o" <tytso@mit.edu>,
- Andrew Morton <akpm@linux-foundation.org>, Salah Triki <salah.triki@gmail.com>,
- Anton Altaparmakov <anton@tuxera.com>
-Content-Type: text/plain; charset="iso-8859-1"
-Content-Transfer-Encoding: quoted-printable
+Cc: jfs-discussion@lists.sourceforge.net,
+ Dongliang Mu <mudongliangabcd@gmail.com>, linux-kernel@vger.kernel.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Errors-To: jfs-discussion-bounces@lists.sourceforge.net
 
-To: Pali Roh=E1r <pali@kernel.org>
-Cc: linux-fsdevel@vger.kernel.org,  linux-ntfs-dev@lists.sourceforge.net,  =
-linux-cifs@vger.kernel.org,  jfs-discussion@lists.sourceforge.net,  linux-k=
-ernel@vger.kernel.org,  Alexander Viro <viro@zeniv.linux.org.uk>,  Jan Kara=
- <jack@suse.cz>,  "Theodore Y . Ts'o" <tytso@mit.edu>,  Luis de Bethencourt=
- <luisbg@kernel.org>,  Salah Triki <salah.triki@gmail.com>,  Andrew Morton =
-<akpm@linux-foundation.org>,  Dave Kleikamp <shaggy@kernel.org>,  Anton Alt=
-aparmakov <anton@tuxera.com>,  Pavel Machek <pavel@ucw.cz>,  Marek Beh=FAn =
-<marek.behun@nic.cz>,  Christoph Hellwig <hch@infradead.org>
-Subject: Re: [RFC PATCH 01/20] fat: Fix iocharset=3Dutf8 mount option
-From: OGAWA Hirofumi <hirofumi@mail.parknet.co.jp>
-Gcc: nnimap+ibmpc.myhome.or.jp:Sent
---text follows this line--
-To: Pali Roh=E1r <pali@kernel.org>
-Cc: linux-fsdevel@vger.kernel.org,  linux-ntfs-dev@lists.sourceforge.net,  =
-linux-cifs@vger.kernel.org,  jfs-discussion@lists.sourceforge.net,  linux-k=
-ernel@vger.kernel.org,  Alexander Viro <viro@zeniv.linux.org.uk>,  Jan Kara=
- <jack@suse.cz>,  "Theodore Y . Ts'o" <tytso@mit.edu>,  Luis de Bethencourt=
- <luisbg@kernel.org>,  Salah Triki <salah.triki@gmail.com>,  Andrew Morton =
-<akpm@linux-foundation.org>,  Dave Kleikamp <shaggy@kernel.org>,  Anton Alt=
-aparmakov <anton@tuxera.com>,  Pavel Machek <pavel@ucw.cz>,  Marek Beh=FAn =
-<marek.behun@nic.cz>,  Christoph Hellwig <hch@infradead.org>
-Subject: Re: [RFC PATCH 01/20] fat: Fix iocharset=3Dutf8 mount option
-From: OGAWA Hirofumi <hirofumi@mail.parknet.co.jp>
-Gcc: nnimap+ibmpc.myhome.or.jp:Sent
---text follows this line--
-Pali Roh=E1r <pali@kernel.org> writes:
+In jfs_mount, when diMount(ipaimap2) fails, it goes to errout35. However,
+the following code does not free ipaimap2 allocated by diReadSpecial.
 
->> This change is not equivalent to utf8=3D1. In the case of utf8=3D1, vfat
->> uses iocharset's conversion table and it can handle more than ascii.
->> =
+Fix this by refactoring the error handling code of jfs_mount. To be
+specific, modify the lable name and free ipaimap2 when the above error
+ocurrs.
 
->> So this patch is incompatible changes, and handles less chars than
->> utf8=3D1. So I think this is clean though, but this would be regression
->> for user of utf8=3D1.
->
-> I do not think so... But please correct me, as this code around is mess.
->
-> Without this change when utf8=3D1 is set then iocharset=3D encoding is us=
-ed
-> for case-insensitivity implementation (toupper / tolower conversion).
-> For all other parts are use correct utf8* conversion functions.
->
-> But you use touppper / tolower functions from iocharset=3D encoding on
-> stream of utf8 bytes then you either get identity or some unpredictable
-> garbage in utf8. So when comparing two (different) non-ASCII filenames
-> via this method you in most cases get that filenames are different.
-> Because converting their utf8 bytes via toupper / tolower functions from
-> iocharset=3D encoding results in two different byte sequences in most
-> cases. Even for two utf8 case-insensitive same strings.
->
-> But you can play with it and I guess it is possible to find two
-> different utf8 strings which after toupper / tolower conversion from
-> some iocharset=3D encoding would lead to same byte sequence.
->
-> This patch uses for utf8 tolower / touppser function simple 7-bit
-> tolower / toupper ascii function. And so for 7-bit ascii file names
-> there is no change.
->
-> So this patch changes behavior when comparing non 7-bit ascii file
-> names, but only in cases when previously two different file names were
-> marked as same. As now they are marked correctly as different. So this
-> is changed behavior, but I guess it is bug fix which is needed.
-> If you want I can put this change into separate patch.
->
-> Issue that two case-insensitive same files are marked as different is
-> not changed by this patch and therefore this issue stay here.
+Fixes: 1da177e4c3f4 ("Linux-2.6.12-rc2")
+Signed-off-by: Dongliang Mu <mudongliangabcd@gmail.com>
+---
+ fs/jfs/jfs_mount.c | 53 +++++++++++++++++++---------------------------
+ 1 file changed, 22 insertions(+), 31 deletions(-)
 
-OK, sure. utf8 looks like broken than I was thinking (although user can
-use iocharset=3Dascii and utf8=3D1 for this). The code might be better to
-clean up a bit more though, looks like good basically.
+diff --git a/fs/jfs/jfs_mount.c b/fs/jfs/jfs_mount.c
+index 5d7d7170c03c..638a4ecc4069 100644
+--- a/fs/jfs/jfs_mount.c
++++ b/fs/jfs/jfs_mount.c
+@@ -81,14 +81,14 @@ int jfs_mount(struct super_block *sb)
+ 	 * (initialize mount inode from the superblock)
+ 	 */
+ 	if ((rc = chkSuper(sb))) {
+-		goto errout20;
++		return rc;
+ 	}
+ 
+ 	ipaimap = diReadSpecial(sb, AGGREGATE_I, 0);
+ 	if (ipaimap == NULL) {
+ 		jfs_err("jfs_mount: Failed to read AGGREGATE_I");
+ 		rc = -EIO;
+-		goto errout20;
++		goto out;
+ 	}
+ 	sbi->ipaimap = ipaimap;
+ 
+@@ -99,7 +99,7 @@ int jfs_mount(struct super_block *sb)
+ 	 */
+ 	if ((rc = diMount(ipaimap))) {
+ 		jfs_err("jfs_mount: diMount(ipaimap) failed w/rc = %d", rc);
+-		goto errout21;
++		goto err_ipaimap;
+ 	}
+ 
+ 	/*
+@@ -108,7 +108,7 @@ int jfs_mount(struct super_block *sb)
+ 	ipbmap = diReadSpecial(sb, BMAP_I, 0);
+ 	if (ipbmap == NULL) {
+ 		rc = -EIO;
+-		goto errout22;
++		goto err_umount_ipaimap;
+ 	}
+ 
+ 	jfs_info("jfs_mount: ipbmap:0x%p", ipbmap);
+@@ -120,7 +120,7 @@ int jfs_mount(struct super_block *sb)
+ 	 */
+ 	if ((rc = dbMount(ipbmap))) {
+ 		jfs_err("jfs_mount: dbMount failed w/rc = %d", rc);
+-		goto errout22;
++		goto err_ipbmap;
+ 	}
+ 
+ 	/*
+@@ -139,7 +139,7 @@ int jfs_mount(struct super_block *sb)
+ 		if (!ipaimap2) {
+ 			jfs_err("jfs_mount: Failed to read AGGREGATE_I");
+ 			rc = -EIO;
+-			goto errout35;
++			goto err_umount_ipbmap;
+ 		}
+ 		sbi->ipaimap2 = ipaimap2;
+ 
+@@ -151,7 +151,7 @@ int jfs_mount(struct super_block *sb)
+ 		if ((rc = diMount(ipaimap2))) {
+ 			jfs_err("jfs_mount: diMount(ipaimap2) failed, rc = %d",
+ 				rc);
+-			goto errout35;
++			goto err_ipaimap2;
+ 		}
+ 	} else
+ 		/* Secondary aggregate inode table is not valid */
+@@ -168,7 +168,7 @@ int jfs_mount(struct super_block *sb)
+ 		jfs_err("jfs_mount: Failed to read FILESYSTEM_I");
+ 		/* open fileset secondary inode allocation map */
+ 		rc = -EIO;
+-		goto errout40;
++		goto err_umount_ipaimap2;
+ 	}
+ 	jfs_info("jfs_mount: ipimap:0x%p", ipimap);
+ 
+@@ -178,41 +178,32 @@ int jfs_mount(struct super_block *sb)
+ 	/* initialize fileset inode allocation map */
+ 	if ((rc = diMount(ipimap))) {
+ 		jfs_err("jfs_mount: diMount failed w/rc = %d", rc);
+-		goto errout41;
++		goto err_ipimap;
+ 	}
+ 
+-	goto out;
++	return rc;
+ 
+ 	/*
+ 	 *	unwind on error
+ 	 */
+-      errout41:		/* close fileset inode allocation map inode */
++err_ipimap:
++	/* close fileset inode allocation map inode */
+ 	diFreeSpecial(ipimap);
+-
+-      errout40:		/* fileset closed */
+-
++err_umount_ipaimap2:
+ 	/* close secondary aggregate inode allocation map */
+-	if (ipaimap2) {
+-		diUnmount(ipaimap2, 1);
+-		diFreeSpecial(ipaimap2);
+-	}
+-
+-      errout35:
+-
+-	/* close aggregate block allocation map */
++	if (ipaimap2) diUnmount(ipaimap2, 1);
++err_ipaimap2:
++	/* close aggregate inodes */
++	if (ipaimap2) diFreeSpecial(ipaimap2);
++err_umount_ipbmap:	/* close aggregate block allocation map */
+ 	dbUnmount(ipbmap, 1);
++err_ipbmap:		/* close aggregate inodes */
+ 	diFreeSpecial(ipbmap);
+-
+-      errout22:		/* close aggregate inode allocation map */
+-
++err_umount_ipaimap:	/* close aggregate inode allocation map */
+ 	diUnmount(ipaimap, 1);
+-
+-      errout21:		/* close aggregate inodes */
++err_ipaimap:		/* close aggregate inodes */
+ 	diFreeSpecial(ipaimap);
+-      errout20:		/* aggregate closed */
+-
+-      out:
+-
++out:
+ 	if (rc)
+ 		jfs_err("Mount JFS Failure: %d", rc);
+ 
+-- 
+2.25.1
 
-One thing, please update FAT_DEFAULT_IOCHARSET help in Kconfig and
-Documentation/filesystems/vfat.rst (with new warning about iocharset=3Dutf8=
-).
-
-Thanks.
--- =
-
-OGAWA Hirofumi <hirofumi@mail.parknet.co.jp>
 
 
 _______________________________________________
