@@ -2,26 +2,26 @@ Return-Path: <jfs-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+jfs-discussion@lfdr.de
 Delivered-To: lists+jfs-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id 86F343F173F
-	for <lists+jfs-discussion@lfdr.de>; Thu, 19 Aug 2021 12:26:19 +0200 (CEST)
-Received: from [127.0.0.1] (helo=sfs-ml-4.v29.lw.sourceforge.com)
-	by sfs-ml-4.v29.lw.sourceforge.com with esmtp (Exim 4.90_1)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8F8553F176A
+	for <lists+jfs-discussion@lfdr.de>; Thu, 19 Aug 2021 12:41:48 +0200 (CEST)
+Received: from [127.0.0.1] (helo=sfs-ml-2.v29.lw.sourceforge.com)
+	by sfs-ml-2.v29.lw.sourceforge.com with esmtp (Exim 4.92.3)
 	(envelope-from <jfs-discussion-bounces@lists.sourceforge.net>)
-	id 1mGfDG-0006jA-3H; Thu, 19 Aug 2021 10:23:54 +0000
+	id 1mGfUH-0007TJ-8b; Thu, 19 Aug 2021 10:41:29 +0000
 Received: from [172.30.20.202] (helo=mx.sourceforge.net)
- by sfs-ml-4.v29.lw.sourceforge.com with esmtps
- (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
- (envelope-from <kari.argillander@gmail.com>)
- id 1mGfDE-0006j1-G8; Thu, 19 Aug 2021 10:23:52 +0000
+ by sfs-ml-2.v29.lw.sourceforge.com with esmtps
+ (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.92.3)
+ (envelope-from <jack@suse.cz>)
+ id 1mGfUE-0007T8-Cw; Thu, 19 Aug 2021 10:41:26 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=sourceforge.net; s=x; h=In-Reply-To:Content-Transfer-Encoding:Content-Type:
  MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:
  Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
  Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=s7gzHcAvUGRal7zGjfCj1tvyGgqr2i8nXDn4Q3sKzQk=; b=hfC4gce9LRQHoWjy8t3XTn0lXt
- eqG7POeCj2QNflUqvREg6RNrZK/BiID5CHDiuHXqVBD1ckY/GjO9qr91mX3IimEWtXNvgmxeCBANX
- 3l5jhwOTOoam/lm2CT4w3vh9+yg7mS2IUNaNg6WT9EqJ0QCqDRla6/IGogB5nXKBNNwI=;
+ bh=rYCiuaaVE837hJmVPqNGfQdo0C78s0ZEZthPtB8IJws=; b=AdWxu4aEnqlqgHGJgXyWq/kblr
+ eZFQ6p5N0KWfQ2LdhmjA0VOkytjwNZLIaQcD4TdmhdfgH8/46CSFsxuzqwaDMxTJPitj8Judl23Nl
+ CxJHYa5eLVPIgu8h/8IUQOvR7bPJn4P5oVP2zDP/xJSlMVhqDjpkovDCfJLl/fsYLz54=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
  h=In-Reply-To:Content-Transfer-Encoding:Content-Type:MIME-Version:
@@ -29,91 +29,69 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
  :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
  List-Post:List-Owner:List-Archive;
- bh=s7gzHcAvUGRal7zGjfCj1tvyGgqr2i8nXDn4Q3sKzQk=; b=DehLkPYP8Svnbrr5/sEv5ujbhg
- MwW2UJtVv1OTUhvHsnLdv4Z8DhSeuf6ZJkn3iWdh4RxU4QcN6JfniIOIKSOctFxyrAtib68o1n5bj
- LA4hVs6nPAZRQ9OjQ2GDrgItGbuZ02sLYs+q7ynG6guBxHZv6uauv56sl3W0ukJamdJs=;
-Received: from mail-lj1-f175.google.com ([209.85.208.175])
- by sfi-mx-1.v28.lw.sourceforge.com with esmtps
+ bh=rYCiuaaVE837hJmVPqNGfQdo0C78s0ZEZthPtB8IJws=; b=etbIut4Qq6qn9Gfh2bexQmzVpP
+ c+lY2IZFQgdQkrayO1zi/y9flcESqVaghsAOcwOGb193oxognYAmOi86SwEqFTGCLFS9Prw9Nrwo7
+ yPWnt4Ngyyesdjom/zet1H+uqmCT7YIFd9jtI6DvGTOFn98jNsHhCFDwuxugAvP2qQ8s=;
+Received: from smtp-out1.suse.de ([195.135.220.28])
+ by sfi-mx-2.v28.lw.sourceforge.com with esmtps
  (TLSv1.2:ECDHE-RSA-AES128-GCM-SHA256:128) (Exim 4.92.3)
- id 1mGfDD-00BQSs-Sn; Thu, 19 Aug 2021 10:23:52 +0000
-Received: by mail-lj1-f175.google.com with SMTP id n7so10753592ljq.0;
- Thu, 19 Aug 2021 03:23:51 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:content-transfer-encoding:in-reply-to;
- bh=s7gzHcAvUGRal7zGjfCj1tvyGgqr2i8nXDn4Q3sKzQk=;
- b=Mfyx9RZf49s53j40JmyfZM1lJWT/tSB5dUUVPbPQyL1z9vJPwL8wxRbIWIw1ek9N3P
- FCdsucQWgjUO4i8U/uWO19zPjJzxYSv3B0ps89+KpLOFQzlQyZ6Q7gYJ2o5hH9x7boZK
- 0hHxub5elRpkprNhLwVf8Z35OTkvNjcpWTknPnUzIBddpJWPGpp3zCNq/CF6jdEH4/1D
- csNUXhEd/S70aZEY370wZybpR4RAhznZFB5p5DHOjaZ2WPdH7bCuyDoZ+Tfjryp/J9k9
- jYZ0Z5Ysn3Bx4t7gZi58GygFNtApzoSEW/Ha01maSBtlbczhdiMyi5YMIFmIRLeiyk2A
- QqNQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:content-transfer-encoding
- :in-reply-to;
- bh=s7gzHcAvUGRal7zGjfCj1tvyGgqr2i8nXDn4Q3sKzQk=;
- b=EADyGU5q1okl+EUf6WZg6btmSblyqy2b1AWcJ2+hGkpMpQM0mf5oZCjUJx0baJ7cIN
- 7X76PY1F2bCssgli4DVyJaV2UDljDiNeo5TqL7ZHVtPSmypaegESseNnuuADLLiODqVE
- qZVyvJ1lIgNWP5V9DF9VeN0UuJo7ctJut0odAPQXhskZfoSPdrSROojHmCkkcys0Wiv8
- djqnXVBK5vXQdp9gYdFwsyjnXqc/aqP5si9lg/SO49HRl3XWqwEzRcKZiodvUHbGns7w
- a51olpC4Xf3sZ/7HlTkU+re7/Okkn8hNLPqY9kXqMi865uv31lfSaOX9AtbxLgmAg+Cd
- NKew==
-X-Gm-Message-State: AOAM5326AZlEiuJXl+PcrCaEL62bvk2sL7xzF9b9SOD2fkRATOMCLA7x
- gganPnRIP7Xzrod0dr6zg+0=
-X-Google-Smtp-Source: ABdhPJwBC3AtCQaaRJLeMqncG4o7h0yRkRo3Vd0w10HmGYffhLah81Cfn2ICXXTq/oY9pVnTwY2K2Q==
-X-Received: by 2002:a2e:2f1c:: with SMTP id v28mr11179313ljv.476.1629368625379; 
- Thu, 19 Aug 2021 03:23:45 -0700 (PDT)
-Received: from kari-VirtualBox (85-23-89-224.bb.dnainternet.fi. [85.23.89.224])
- by smtp.gmail.com with ESMTPSA id i21sm262452lfc.92.2021.08.19.03.23.44
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 19 Aug 2021 03:23:44 -0700 (PDT)
-Date: Thu, 19 Aug 2021 13:23:42 +0300
-From: Kari Argillander <kari.argillander@gmail.com>
-To: Pali =?utf-8?B?Um9ow6Fy?= <pali@kernel.org>
-Message-ID: <20210819102342.6ps7lowpuomyqcdk@kari-VirtualBox>
+ id 1mGfUA-00015e-Ne; Thu, 19 Aug 2021 10:41:26 +0000
+Received: from relay2.suse.de (relay2.suse.de [149.44.160.134])
+ by smtp-out1.suse.de (Postfix) with ESMTP id 614ED220A2;
+ Thu, 19 Aug 2021 10:41:12 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=suse.cz; s=susede2_rsa;
+ t=1629369672; h=from:from:reply-to:date:date:message-id:message-id:to:to:cc:cc:
+ mime-version:mime-version:content-type:content-type:
+ content-transfer-encoding:content-transfer-encoding:
+ in-reply-to:in-reply-to:references:references;
+ bh=rYCiuaaVE837hJmVPqNGfQdo0C78s0ZEZthPtB8IJws=;
+ b=QHaOmtrPYFKY/ECa0Oh3D3wOcmiAL2JIpqDvMQlYI8BpjqLWJt/mUSCQ2vcjBliEoI4vxA
+ SYRH4Cp+inhlt3V0CmPecdnxJE3Epw2H+midOIK0+xTMDInKdu3RequJsEUPyMp2pqyIQw
+ CijlpHlUEd3Hub7F+wyUGJuZ/cSF75w=
+DKIM-Signature: v=1; a=ed25519-sha256; c=relaxed/relaxed; d=suse.cz;
+ s=susede2_ed25519; t=1629369672;
+ h=from:from:reply-to:date:date:message-id:message-id:to:to:cc:cc:
+ mime-version:mime-version:content-type:content-type:
+ content-transfer-encoding:content-transfer-encoding:
+ in-reply-to:in-reply-to:references:references;
+ bh=rYCiuaaVE837hJmVPqNGfQdo0C78s0ZEZthPtB8IJws=;
+ b=Gru6Sh+lMbjFw9se8RNLXjS6xr6bYz+hcdqsCoSCBrJKyJSzbka4LCg8dAxA8ab7QDTvHb
+ tSzoTxy76e1B4yCA==
+Received: from quack2.suse.cz (unknown [10.100.224.230])
+ by relay2.suse.de (Postfix) with ESMTP id 66AC1A3B9A;
+ Thu, 19 Aug 2021 10:40:54 +0000 (UTC)
+Received: by quack2.suse.cz (Postfix, from userid 1000)
+ id B8FF31E0679; Thu, 19 Aug 2021 12:41:11 +0200 (CEST)
+Date: Thu, 19 Aug 2021 12:41:11 +0200
+From: Jan Kara <jack@suse.cz>
+To: Pali =?iso-8859-1?Q?Roh=E1r?= <pali@kernel.org>
+Message-ID: <20210819104111.GC32435@quack2.suse.cz>
 References: <20210808162453.1653-1-pali@kernel.org>
- <20210808162453.1653-6-pali@kernel.org>
- <20210819012108.3isqi4t6rmd5fd5x@kari-VirtualBox>
- <20210819081222.vnvxfrtqctfev6xu@pali>
+ <20210808162453.1653-4-pali@kernel.org>
+ <20210812141736.GE14675@quack2.suse.cz>
+ <20210812155134.g67ncugjvruos3cy@pali>
+ <20210813134822.GF11955@quack2.suse.cz>
+ <20210819083432.yy36hrbxzmbasvwd@pali>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20210819081222.vnvxfrtqctfev6xu@pali>
-X-Spam-Score: -0.2 (/)
-X-Spam-Report: Spam detection software, running on the system "util-spamd-1.v13.lw.sourceforge.com",
- has NOT identified this incoming email as spam.  The original
- message has been attached to this so you can view it or label
- similar future email.  If you have any questions, see
- the administrator of that system for details.
- 
- Content preview:  On Thu, Aug 19, 2021 at 10:12:22AM +0200, Pali Rohár wrote:
-    > On Thursday 19 August 2021 04:21:08 Kari Argillander wrote: > > On Sun,
-    Aug 08, 2021 at 06:24:38PM +0200, Pali Rohár wrote: > > > Other fs [...] 
- 
- Content analysis details:   (-0.2 points, 6.0 required)
- 
-  pts rule name              description
- ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
-                              no trust
-                             [209.85.208.175 listed in list.dnswl.org]
+In-Reply-To: <20210819083432.yy36hrbxzmbasvwd@pali>
+User-Agent: Mutt/1.10.1 (2018-07-13)
+X-Spam-Score: -0.1 (/)
+X-Spam-Report: Spam Filtering performed by mx.sourceforge.net.
+ See http://spamassassin.org/tag/ for more details.
+ 0.0 URIBL_BLOCKED ADMINISTRATOR NOTICE: The query to URIBL was blocked.
+ See
+ http://wiki.apache.org/spamassassin/DnsBlocklists#dnsbl-block
+ for more information. [URIs: suse.cz]
  -0.0 SPF_PASS               SPF: sender matches SPF record
-  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
-  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
-                             provider
-                             [kari.argillander[at]gmail.com]
- -0.1 DKIM_VALID             Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
-                             envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
-                             author's domain
-  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
-                             valid
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
-                             [209.85.208.175 listed in wl.mailspike.net]
-X-Headers-End: 1mGfDD-00BQSs-Sn
-Subject: Re: [Jfs-discussion] [RFC PATCH 05/20] ntfs: Undeprecate iocharset=
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_AU Message has a valid DKIM or DK signature from author's
+ domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature,
+ not necessarily valid
+X-Headers-End: 1mGfUA-00015e-Ne
+Subject: Re: [Jfs-discussion] [RFC PATCH 03/20] udf: Fix iocharset=utf8
  mount option
 X-BeenThere: jfs-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
@@ -134,44 +112,74 @@ Cc: linux-cifs@vger.kernel.org, jfs-discussion@lists.sourceforge.net,
  Alexander Viro <viro@zeniv.linux.org.uk>, Pavel Machek <pavel@ucw.cz>,
  linux-fsdevel@vger.kernel.org, "Theodore Y . Ts'o" <tytso@mit.edu>,
  Andrew Morton <akpm@linux-foundation.org>,
- Marek =?utf-8?B?QmVow7pu?= <marek.behun@nic.cz>,
+ Marek =?iso-8859-1?Q?Beh=FAn?= <marek.behun@nic.cz>,
  Salah Triki <salah.triki@gmail.com>,
  OGAWA Hirofumi <hirofumi@mail.parknet.co.jp>
 Content-Type: text/plain; charset="iso-8859-1"
 Content-Transfer-Encoding: quoted-printable
 Errors-To: jfs-discussion-bounces@lists.sourceforge.net
 
-On Thu, Aug 19, 2021 at 10:12:22AM +0200, Pali Roh=E1r wrote:
-> On Thursday 19 August 2021 04:21:08 Kari Argillander wrote:
-> > On Sun, Aug 08, 2021 at 06:24:38PM +0200, Pali Roh=E1r wrote:
-> > > Other fs drivers are using iocharset=3D mount option for specifying c=
-harset.
-> > > So mark iocharset=3D mount option as preferred and deprecate nls=3D m=
-ount
-> > > option.
-> >  =
+On Thu 19-08-21 10:34:32, Pali Roh=E1r wrote:
+> On Friday 13 August 2021 15:48:22 Jan Kara wrote:
+> > On Thu 12-08-21 17:51:34, Pali Roh=E1r wrote:
+> > > On Thursday 12 August 2021 16:17:36 Jan Kara wrote:
+> > > > On Sun 08-08-21 18:24:36, Pali Roh=E1r wrote:
+> > > > > Currently iocharset=3Dutf8 mount option is broken. To use UTF-8 a=
+s iocharset,
+> > > > > it is required to use utf8 mount option.
+> > > > > =
 
-> > One idea is also make this change to fs/fc_parser.c and then when we
-> > want we can drop support from all filesystem same time. This way we
-> > can get more deprecated code off the fs drivers. Draw back is that
-> > then every filesstem has this deprecated nls=3D option if it support
-> > iocharsets option. But that should imo be ok.
+> > > > > Fix iocharset=3Dutf8 mount option to use be equivalent to the utf=
+8 mount
+> > > > > option.
+> > > > > =
+
+> > > > > If UTF-8 as iocharset is used then s_nls_map is set to NULL. So s=
+implify
+> > > > > code around, remove UDF_FLAG_NLS_MAP and UDF_FLAG_UTF8 flags as to
+> > > > > distinguish between UTF-8 and non-UTF-8 it is needed just to chec=
+k if
+> > > > > s_nls_map set to NULL or not.
+> > > > > =
+
+> > > > > Signed-off-by: Pali Roh=E1r <pali@kernel.org>
+> > > > =
+
+> > > > Thanks for the cleanup. It looks good. Feel free to add:
+> > > > =
+
+> > > > Reviewed-by: Jan Kara <jack@suse.cz>
+> > > > =
+
+> > > > Or should I take this patch through my tree?
+> > > =
+
+> > > Hello! Patches are just RFC, mostly untested and not ready for mergin=
+g.
+> > > I will wait for feedback and then I do more testing nad prepare new
+> > > patch series.
+> > =
+
+> > OK, FWIW I've also tested the UDF and isofs patches.
 > =
 
-> Beware that iocharset=3D is required only for fs which store filenames in
-> some specific encoding (in this case extension to UTF-16). For fs which
-> store filenames in raw bytes this option should not be parsed at all.
+> Well, if you have already done tests, patches are correct and these fs
+> driver are working fine then fell free to take it through your tree.
+> =
 
-Yeah of course. I was thinking that what we do is that if key is nls=3D
-we change key to iocharset, print deprecated and then send it to driver
-parser as usual. This way driver parser will never know that user
-specifie nls=3D because it just get iocharset. But this is probebly too
-fancy way to think simple problem. Just idea. =
+> I just wanted to warn people that patches in this RFC are mostly
+> untested to prevent some issues. But if somebody else was faster than
+> me, did testing + reviewing and there was no issue, I do not see any
+> problem with including them. Just I cannot put my own Tested-by (yet) :-)
 
+OK, I've pulled the udf and isofs fixes to my tree.
 
-> Therefore I'm not sure if this parsing should be in global
-> fs/fc_parser.c file...
+								Honza
 
+-- =
+
+Jan Kara <jack@suse.com>
+SUSE Labs, CR
 
 
 _______________________________________________
