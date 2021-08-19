@@ -2,26 +2,26 @@ Return-Path: <jfs-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+jfs-discussion@lfdr.de
 Delivered-To: lists+jfs-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9CC823F0FF0
-	for <lists+jfs-discussion@lfdr.de>; Thu, 19 Aug 2021 03:21:40 +0200 (CEST)
-Received: from [127.0.0.1] (helo=sfs-ml-4.v29.lw.sourceforge.com)
-	by sfs-ml-4.v29.lw.sourceforge.com with esmtp (Exim 4.90_1)
+	by mail.lfdr.de (Postfix) with ESMTPS id A09BC3F14F0
+	for <lists+jfs-discussion@lfdr.de>; Thu, 19 Aug 2021 10:12:51 +0200 (CEST)
+Received: from [127.0.0.1] (helo=sfs-ml-2.v29.lw.sourceforge.com)
+	by sfs-ml-2.v29.lw.sourceforge.com with esmtp (Exim 4.92.3)
 	(envelope-from <jfs-discussion-bounces@lists.sourceforge.net>)
-	id 1mGWkF-0004Dl-90; Thu, 19 Aug 2021 01:21:23 +0000
+	id 1mGdA9-0001yk-4T; Thu, 19 Aug 2021 08:12:33 +0000
 Received: from [172.30.20.202] (helo=mx.sourceforge.net)
- by sfs-ml-4.v29.lw.sourceforge.com with esmtps
- (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
- (envelope-from <kari.argillander@gmail.com>)
- id 1mGWkD-0004Dc-7X; Thu, 19 Aug 2021 01:21:21 +0000
+ by sfs-ml-2.v29.lw.sourceforge.com with esmtps
+ (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.92.3)
+ (envelope-from <pali@kernel.org>)
+ id 1mGdA7-0001ya-GU; Thu, 19 Aug 2021 08:12:31 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=sourceforge.net; s=x; h=In-Reply-To:Content-Transfer-Encoding:Content-Type:
  MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:
  Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
  Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=SJuvwza4i3euGFKnNsOSq5UE2l7kBSIoFPXhirEE3R4=; b=BLRbt+DGDaYIrRgnaAGbmwL+ui
- 2YCenvL9trBL9KRcStSTZq40Hue9XBwcrfs+Wf+Epqo/NbLzFMmImHAEftIxSXJL/N0hZN92j/v12
- 33ZXSmOTKztHvbhZjvE3x7AIf8okQ73q6Y/TzgUHzGWLalNAHnnGWQt2zn7pfl8S1FO4=;
+ bh=t1vqcC40E7+S9J27CU2mLhd6z+QTe8mzCl4bE+XvYv0=; b=Hv56z14uRqIfN76WeT4EBUQtCr
+ FegkGjIqAq+LV8ygzAviKMhyV/P+zleWCiD3dpKOvgLqaK1XYWcXx/ZnVZGfY1u1XF3QvtRQY3PdB
+ lswJM1kWlXnmTVyAUYwVu4oS7vzgOwUdl6G9MWbPBVQT5z0gHYjW0iHjACCtrxW+PBrE=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
  h=In-Reply-To:Content-Transfer-Encoding:Content-Type:MIME-Version:
@@ -29,64 +29,41 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
  :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
  List-Post:List-Owner:List-Archive;
- bh=SJuvwza4i3euGFKnNsOSq5UE2l7kBSIoFPXhirEE3R4=; b=LBOKdcbBXn1Hyyu+Rz++8CKRdl
- /KpnqCiOs1NwKSCPAMNainnXFRMzSjmt1fk8r9wwpvpArfrT2dSrI0kgE9Krn8yrvrwCn225eKJTY
- I93MnVOY/rHMG6gQtl7i1Cc0jGinoOaTCTyiIZB6gSWe5uKQfapzSGMfvdvFYPhcg4Gk=;
-Received: from mail-lf1-f50.google.com ([209.85.167.50])
+ bh=t1vqcC40E7+S9J27CU2mLhd6z+QTe8mzCl4bE+XvYv0=; b=GsipJ+ucKaxTvT6x1bIUexmSju
+ zlR4HWce1SddRhDGQAcaT6GxodiOAygvqy/xCLxxG+0qv+ksZAv47T9XnYucahBdquNVYP2sNpB9J
+ IbLmnhwul49/fkVJboZf+AvRtj7ZWM0Ctc2jloeJ5gYEq7SpkO8JWYONmvaH5DZpxISE=;
+Received: from mail.kernel.org ([198.145.29.99])
  by sfi-mx-2.v28.lw.sourceforge.com with esmtps
- (TLSv1.2:ECDHE-RSA-AES128-GCM-SHA256:128) (Exim 4.92.3)
- id 1mGWk9-0007pv-On; Thu, 19 Aug 2021 01:21:21 +0000
-Received: by mail-lf1-f50.google.com with SMTP id w20so8868110lfu.7;
- Wed, 18 Aug 2021 18:21:17 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:content-transfer-encoding:in-reply-to;
- bh=SJuvwza4i3euGFKnNsOSq5UE2l7kBSIoFPXhirEE3R4=;
- b=fxKyYxPdHn19y1zWIJctQyf02Cp5BGh+iXmRYyxGsHjzqVwZ28VBRWJ4ovpTkA0OpW
- 7fRNbiUErN6HeIrTCsFh8vUDYXQ9BBAkpzzuBP+Xys1jrVAcWqWXy4S384e/U35Qh00m
- BcXnkq+FlEm+WVrtUHfbtnwu9oBE9V2+Oj495lXZNHXn5UtCT85FzqvMvZobRbJ3Lg+k
- 4/O1d9BcepeOCNoy3b0rfSHJLXU1gqed0RkIl1eygr4nghgbMn82FHAB/nGOvrWViZEh
- 1EzCbkXQ3qygEk0UqGtscvSrQzF2Y1pSqSqOIdxX9j/kN/SYja/ZXXipVZdgStPyrMUC
- ElsQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:content-transfer-encoding
- :in-reply-to;
- bh=SJuvwza4i3euGFKnNsOSq5UE2l7kBSIoFPXhirEE3R4=;
- b=CbzgFvxG3LAFAMvoHIoOgrjzP10xLDYBWbaeXO9PZrz24SP6oZPHoNnbR+ZVg4RfGv
- iNK/nWv31X0uHU6J9PUov/E6ZAauu17jJ7bWaBDcm26ars0FBrlUF9nA5/Wb8IunH1j1
- 9VehoT6g/Aa3wi7Zag8zyInArEn0ACcjNfrEhcbvfu5SEBz2oclUZWpERT5nIuHwMkIH
- FldJUFEIo4A4f8NXu3vIIIhmHz7ixgq7ase/Y3WmOV+NbjLXuL1BXPZLQ8ZUjkED22WD
- M2a4gqHKrR6DzhBivWkgiNKClAyJpKSk5i7FA6O3PLWFMSuw7H0ntqPnHcCgLsRO3h/B
- rfiw==
-X-Gm-Message-State: AOAM532uxoQ0+JeHni6sXmoStZdTp4cYCcNQfNMACVujuBuXruSZZvY7
- sY78U7T6CnPXX1P5deBwsLE=
-X-Google-Smtp-Source: ABdhPJxUSdb/TSThZOC0vW4s1x5WY/iq6HsaI5MpPqZA8s1xJqhodoM4fRPhgnAeb9XSAPuwLQqFGg==
-X-Received: by 2002:ac2:4884:: with SMTP id x4mr539877lfc.650.1629336071117;
- Wed, 18 Aug 2021 18:21:11 -0700 (PDT)
-Received: from kari-VirtualBox (85-23-89-224.bb.dnainternet.fi. [85.23.89.224])
- by smtp.gmail.com with ESMTPSA id bt25sm131947lfb.282.2021.08.18.18.21.09
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 18 Aug 2021 18:21:10 -0700 (PDT)
-Date: Thu, 19 Aug 2021 04:21:08 +0300
-From: Kari Argillander <kari.argillander@gmail.com>
-To: Pali =?utf-8?B?Um9ow6Fy?= <pali@kernel.org>
-Message-ID: <20210819012108.3isqi4t6rmd5fd5x@kari-VirtualBox>
+ (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.92.3)
+ id 1mGdA6-0000mP-CX; Thu, 19 Aug 2021 08:12:31 +0000
+Received: by mail.kernel.org (Postfix) with ESMTPSA id D0D1A61131;
+ Thu, 19 Aug 2021 08:12:24 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=k20201202; t=1629360745;
+ bh=GOCGkI4khodlS6ZkJJHgdEHRUQUkLqQWLt51fbZhqag=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=ImP54DbDs6Ze/pjeJpxZIXIxsHwZxhPCVYEj1FQ58Pk8MQu0YgBPPHVt2QyUrWWOo
+ F+7xVtg+xAy7FRjbe1EDJHizPC/0f/+6YwEFfR5N4NeTc9Emy2+fr9qITRH7x6la1+
+ hCoKeGQqcKtWUd31f3zvr+9Afmvbea3bQHeAPiMQbPMWP2TOn6PTse/9stQ5OEP3SZ
+ JTYkH0+aLr1DP5o6LkC0JuhqRDq62f+H5i2uiAFs3/pjZM9v7Hz9dS2sVFhpuvLxJE
+ HuqJuEhjdyzIEfkvibVqGVld2ul4ViExKk1iPge2+38neIx/AdSziIQW7tMIsNbDhk
+ G+ZkXmRCjJf3Q==
+Received: by pali.im (Postfix)
+ id 571FC7EA; Thu, 19 Aug 2021 10:12:22 +0200 (CEST)
+Date: Thu, 19 Aug 2021 10:12:22 +0200
+From: Pali =?utf-8?B?Um9ow6Fy?= <pali@kernel.org>
+To: Kari Argillander <kari.argillander@gmail.com>
+Message-ID: <20210819081222.vnvxfrtqctfev6xu@pali>
 References: <20210808162453.1653-1-pali@kernel.org>
  <20210808162453.1653-6-pali@kernel.org>
+ <20210819012108.3isqi4t6rmd5fd5x@kari-VirtualBox>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20210808162453.1653-6-pali@kernel.org>
-X-Spam-Score: -0.1 (/)
+In-Reply-To: <20210819012108.3isqi4t6rmd5fd5x@kari-VirtualBox>
+User-Agent: NeoMutt/20180716
+X-Spam-Score: -0.8 (/)
 X-Spam-Report: Spam Filtering performed by mx.sourceforge.net.
  See http://spamassassin.org/tag/ for more details.
- 0.0 FREEMAIL_FROM Sender email is commonly abused enduser mail provider
- (kari.argillander[at]gmail.com)
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.167.50 listed in wl.mailspike.net]
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/, no
- trust [209.85.167.50 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_AU Message has a valid DKIM or DK signature from author's
@@ -94,7 +71,8 @@ X-Spam-Report: Spam Filtering performed by mx.sourceforge.net.
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature,
  not necessarily valid
-X-Headers-End: 1mGWk9-0007pv-On
+ -0.7 DKIMWL_WL_HIGH         DKIMwl.org - High trust sender
+X-Headers-End: 1mGdA6-0000mP-CX
 Subject: Re: [Jfs-discussion] [RFC PATCH 05/20] ntfs: Undeprecate iocharset=
  mount option
 X-BeenThere: jfs-discussion@lists.sourceforge.net
@@ -119,26 +97,27 @@ Cc: linux-cifs@vger.kernel.org, jfs-discussion@lists.sourceforge.net,
  Marek =?utf-8?B?QmVow7pu?= <marek.behun@nic.cz>,
  Salah Triki <salah.triki@gmail.com>,
  OGAWA Hirofumi <hirofumi@mail.parknet.co.jp>
-Content-Type: text/plain; charset="iso-8859-1"
-Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Errors-To: jfs-discussion-bounces@lists.sourceforge.net
 
-On Sun, Aug 08, 2021 at 06:24:38PM +0200, Pali Roh=E1r wrote:
-> Other fs drivers are using iocharset=3D mount option for specifying chars=
-et.
-> So mark iocharset=3D mount option as preferred and deprecate nls=3D mount
-> option.
- =
-
-One idea is also make this change to fs/fc_parser.c and then when we
-want we can drop support from all filesystem same time. This way we
-can get more deprecated code off the fs drivers. Draw back is that
-then every filesstem has this deprecated nls=3D option if it support
-iocharsets option. But that should imo be ok.
-
-
-
-_______________________________________________
-Jfs-discussion mailing list
-Jfs-discussion@lists.sourceforge.net
-https://lists.sourceforge.net/lists/listinfo/jfs-discussion
+T24gVGh1cnNkYXkgMTkgQXVndXN0IDIwMjEgMDQ6MjE6MDggS2FyaSBBcmdpbGxhbmRlciB3cm90
+ZToKPiBPbiBTdW4sIEF1ZyAwOCwgMjAyMSBhdCAwNjoyNDozOFBNICswMjAwLCBQYWxpIFJvaMOh
+ciB3cm90ZToKPiA+IE90aGVyIGZzIGRyaXZlcnMgYXJlIHVzaW5nIGlvY2hhcnNldD0gbW91bnQg
+b3B0aW9uIGZvciBzcGVjaWZ5aW5nIGNoYXJzZXQuCj4gPiBTbyBtYXJrIGlvY2hhcnNldD0gbW91
+bnQgb3B0aW9uIGFzIHByZWZlcnJlZCBhbmQgZGVwcmVjYXRlIG5scz0gbW91bnQKPiA+IG9wdGlv
+bi4KPiAgCj4gT25lIGlkZWEgaXMgYWxzbyBtYWtlIHRoaXMgY2hhbmdlIHRvIGZzL2ZjX3BhcnNl
+ci5jIGFuZCB0aGVuIHdoZW4gd2UKPiB3YW50IHdlIGNhbiBkcm9wIHN1cHBvcnQgZnJvbSBhbGwg
+ZmlsZXN5c3RlbSBzYW1lIHRpbWUuIFRoaXMgd2F5IHdlCj4gY2FuIGdldCBtb3JlIGRlcHJlY2F0
+ZWQgY29kZSBvZmYgdGhlIGZzIGRyaXZlcnMuIERyYXcgYmFjayBpcyB0aGF0Cj4gdGhlbiBldmVy
+eSBmaWxlc3N0ZW0gaGFzIHRoaXMgZGVwcmVjYXRlZCBubHM9IG9wdGlvbiBpZiBpdCBzdXBwb3J0
+Cj4gaW9jaGFyc2V0cyBvcHRpb24uIEJ1dCB0aGF0IHNob3VsZCBpbW8gYmUgb2suCgpCZXdhcmUg
+dGhhdCBpb2NoYXJzZXQ9IGlzIHJlcXVpcmVkIG9ubHkgZm9yIGZzIHdoaWNoIHN0b3JlIGZpbGVu
+YW1lcyBpbgpzb21lIHNwZWNpZmljIGVuY29kaW5nIChpbiB0aGlzIGNhc2UgZXh0ZW5zaW9uIHRv
+IFVURi0xNikuIEZvciBmcyB3aGljaApzdG9yZSBmaWxlbmFtZXMgaW4gcmF3IGJ5dGVzIHRoaXMg
+b3B0aW9uIHNob3VsZCBub3QgYmUgcGFyc2VkIGF0IGFsbC4KClRoZXJlZm9yZSBJJ20gbm90IHN1
+cmUgaWYgdGhpcyBwYXJzaW5nIHNob3VsZCBiZSBpbiBnbG9iYWwKZnMvZmNfcGFyc2VyLmMgZmls
+ZS4uLgoKCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCkpm
+cy1kaXNjdXNzaW9uIG1haWxpbmcgbGlzdApKZnMtZGlzY3Vzc2lvbkBsaXN0cy5zb3VyY2Vmb3Jn
+ZS5uZXQKaHR0cHM6Ly9saXN0cy5zb3VyY2Vmb3JnZS5uZXQvbGlzdHMvbGlzdGluZm8vamZzLWRp
+c2N1c3Npb24K
