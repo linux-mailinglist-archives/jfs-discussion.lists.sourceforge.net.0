@@ -2,70 +2,95 @@ Return-Path: <jfs-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+jfs-discussion@lfdr.de
 Delivered-To: lists+jfs-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id 23F7B3F89D5
-	for <lists+jfs-discussion@lfdr.de>; Thu, 26 Aug 2021 16:09:59 +0200 (CEST)
-Received: from [127.0.0.1] (helo=sfs-ml-3.v29.lw.sourceforge.com)
-	by sfs-ml-3.v29.lw.sourceforge.com with esmtp (Exim 4.94.2)
+	by mail.lfdr.de (Postfix) with ESMTPS id 247E63FB24B
+	for <lists+jfs-discussion@lfdr.de>; Mon, 30 Aug 2021 10:16:08 +0200 (CEST)
+Received: from [127.0.0.1] (helo=sfs-ml-1.v29.lw.sourceforge.com)
+	by sfs-ml-1.v29.lw.sourceforge.com with esmtp (Exim 4.90_1)
 	(envelope-from <jfs-discussion-bounces@lists.sourceforge.net>)
-	id 1mJG4Z-0006Oh-EB; Thu, 26 Aug 2021 14:09:38 +0000
+	id 1mKcSG-0001Oo-QG; Mon, 30 Aug 2021 08:15:44 +0000
 Received: from [172.30.20.202] (helo=mx.sourceforge.net)
- by sfs-ml-2.v29.lw.sourceforge.com with esmtps
- (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.92.3)
- (envelope-from <wanghai38@huawei.com>) id 1mJDNW-0003Oc-2I
- for jfs-discussion@lists.sourceforge.net; Thu, 26 Aug 2021 11:17:02 +0000
+ by sfs-ml-1.v29.lw.sourceforge.com with esmtps
+ (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
+ (envelope-from <mudongliangabcd@gmail.com>) id 1mKcSE-0001OX-U4
+ for jfs-discussion@lists.sourceforge.net; Mon, 30 Aug 2021 08:15:42 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=sourceforge.net; s=x; h=Content-Type:Content-Transfer-Encoding:MIME-Version
- :Message-ID:Date:Subject:CC:To:From:Sender:Reply-To:Content-ID:
- Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
- :Resent-Message-ID:In-Reply-To:References:List-Id:List-Help:List-Unsubscribe:
+ d=sourceforge.net; s=x; h=Content-Type:Cc:To:Subject:Message-ID:Date:From:
+ In-Reply-To:References:MIME-Version:Sender:Reply-To:Content-Transfer-Encoding
+ :Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
+ Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=LYhC7TX1JE2YcW4CArcHQv3/tTFTJZa8Gbcrue3ZeeQ=; b=TQ1d7M9OsqtNlB0WA19/msRzCt
- 9h9iWvzOQ+RWKU5DWHUBLyLowpv9RElOK9lf8EOV1AeVQu5pjA09rFAdlFrUjOPyJeGlmtemeGyyS
- Ct/JLa2BDJUr8MXpn4UrbtmTiptLeODmAoJrpf92CcmRtEhzQxr+smwbn1Dq+om7bc/o=;
+ bh=PULVD8Tt/i1F2Zu50bq8VYUQ0dJK4dOLAdcFqlBPDxM=; b=lByB4/r7xzmChQOTmFR0YR+ol6
+ /4/hyp0I1oBY0K6klrqzIyWueoBuuU/7DaYyCZh845UDksByOUrx2UHoVYYs0vMA9yCGG38+gkBfm
+ H9AgCX9lExfVrCi6OoxxyCzdnCxdgniEZ5C7YqoGsjctcivAQ5Pkqu50SdfKZ5yYHGqQ=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
- h=Content-Type:Content-Transfer-Encoding:MIME-Version:Message-ID:Date:
- Subject:CC:To:From:Sender:Reply-To:Content-ID:Content-Description:Resent-Date
- :Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
- References:List-Id:List-Help:List-Unsubscribe:List-Subscribe:List-Post:
- List-Owner:List-Archive; bh=LYhC7TX1JE2YcW4CArcHQv3/tTFTJZa8Gbcrue3ZeeQ=; b=P
- A7IjWjkGl+nMnn+9L4ZNHbR8EDCpo91pBzV8Ed/rODaRyXmunJ+jXls5L1RTyuJy+3upkH2jZybS4
- WXXBeRJkxs43TyhO4CHRgOYBgtRelIZa2HiQpMc/uGP8WAotXzsoQKlu9ePiZaoH40QnPVR4Fbi9i
- LK8IjsLkgxu18bt8=;
-Received: from szxga08-in.huawei.com ([45.249.212.255])
+ h=Content-Type:Cc:To:Subject:Message-ID:Date:From:In-Reply-To:References:
+ MIME-Version:Sender:Reply-To:Content-Transfer-Encoding:Content-ID:
+ Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+ :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
+ List-Post:List-Owner:List-Archive;
+ bh=PULVD8Tt/i1F2Zu50bq8VYUQ0dJK4dOLAdcFqlBPDxM=; b=NcJHgErYDV42cWgx6OIEyrZdom
+ UsIToedV8M7beptkFc/GMHBpAqQXH4BMEpgVn5cu1895j8PraRzq72a318iaIAEbVmujGDdvv2azG
+ /FQu2yW3xFZzzXTTGm0GYy/HSGvz/K8df/dv2mph0Uw2SWcBgZY1965bTkI9lyX2kAbk=;
+Received: from mail-ed1-f49.google.com ([209.85.208.49])
  by sfi-mx-2.v28.lw.sourceforge.com with esmtps
- (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.92.3)
- id 1mJDNT-0000VI-Tc
- for jfs-discussion@lists.sourceforge.net; Thu, 26 Aug 2021 11:17:01 +0000
-Received: from dggeme766-chm.china.huawei.com (unknown [172.30.72.56])
- by szxga08-in.huawei.com (SkyGuard) with ESMTP id 4GwKzM5hGwz19Vkw;
- Thu, 26 Aug 2021 19:16:15 +0800 (CST)
-Received: from huawei.com (10.175.104.82) by dggeme766-chm.china.huawei.com
- (10.3.19.112) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.2308.8; Thu, 26
- Aug 2021 19:16:49 +0800
-From: Wang Hai <wanghai38@huawei.com>
-To: <shaggy@kernel.org>
-Date: Thu, 26 Aug 2021 19:16:09 +0800
-Message-ID: <20210826111609.2982685-1-wanghai38@huawei.com>
-X-Mailer: git-send-email 2.25.1
+ (TLSv1.2:ECDHE-RSA-AES128-GCM-SHA256:128) (Exim 4.92.3)
+ id 1mKcSA-00082q-4d
+ for jfs-discussion@lists.sourceforge.net; Mon, 30 Aug 2021 08:15:42 +0000
+Received: by mail-ed1-f49.google.com with SMTP id g22so20331239edy.12
+ for <jfs-discussion@lists.sourceforge.net>;
+ Mon, 30 Aug 2021 01:15:38 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=PULVD8Tt/i1F2Zu50bq8VYUQ0dJK4dOLAdcFqlBPDxM=;
+ b=Bm2659KE37r3KLmF5KXzNzVgCMphfHBJ4AeM4UEHLCfKRPtyqlp277y+Cd/zwVThis
+ QKWU2s+hDCRpLAkRSIrV+qMTqKJKbqUg0+6Re5wlWxubRAXK0XoAzgJK7FdbudpZJOFp
+ ntSnU75MSeK566FnGjFw8pt8T2Wq6n5owWONTAMWnaUpvZoa2vMwTVhDL6rf71TGeTkH
+ h6N631M0VCAaMNlNo1cN6TevdkhVI2yxLC58Xw7Usx5e/mt6mG/a6oo0SKp49K1BPpFH
+ Bw9GoJhsUZqlXIstlKFLuyq4JRfsRgYILL7l/Ri4x+VB4VL09OQMX2OpnE6sLwBeqQZm
+ MB9A==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=PULVD8Tt/i1F2Zu50bq8VYUQ0dJK4dOLAdcFqlBPDxM=;
+ b=CQ+jl6Qgca3BxITU4qQVaTl5GzKKW6aflo5KB/kzChLI2F9qycdhkbVIbs1JEKPsY7
+ 1klP8YKaC7fpz3ITi4ODmiyNZfxwRa2BfDRpQmb1e79jYCRn4IESDlFa3M0amazOXQwx
+ /YObcaRTH/IuJkJogxxqhJFj97j9+xE3BGMu2QX+Vq9kWTr8S3ZUIsoOu0hyqj4YH5Lv
+ O8rzNi+axOWaPPvOrT4BS3k58Dq9Wq47cq3KH0bSuKNh9omKRi3YtoofI4yU5JUDyqFp
+ mqGXyip2EcoV7Oushb/T5Xbmq/Lf3BXfXbsoIAf+iJ9ctrXQB4INc+zZSNGv7Sr92m+/
+ ylAg==
+X-Gm-Message-State: AOAM530GMxtpoySqX6ZGOZcx2dbUYP5/v2A5yfuINnrU9vLFnxiFlZtb
+ Sr8eEEf8E7yOHpFEkN8ElpY/LrEcHjHH29ttU3M=
+X-Google-Smtp-Source: ABdhPJyYDZGYZSNfbAWTuOL+qZ9is47kppZD33wj9EyK9D6ofHPz3x0/QBFlb/K4tvwggtTHJSXZAqiEWvWm7du2+eU=
+X-Received: by 2002:aa7:c88e:: with SMTP id p14mr23257354eds.174.1630311331667; 
+ Mon, 30 Aug 2021 01:15:31 -0700 (PDT)
 MIME-Version: 1.0
-X-Originating-IP: [10.175.104.82]
-X-ClientProxiedBy: dggems706-chm.china.huawei.com (10.3.19.183) To
- dggeme766-chm.china.huawei.com (10.3.19.112)
-X-CFilter-Loop: Reflected
-X-Spam-Score: 0.0 (/)
+References: <20210818102612.864127-1-mudongliangabcd@gmail.com>
+In-Reply-To: <20210818102612.864127-1-mudongliangabcd@gmail.com>
+From: Dongliang Mu <mudongliangabcd@gmail.com>
+Date: Mon, 30 Aug 2021 16:15:05 +0800
+Message-ID: <CAD-N9QUQ1p_Zu1zdL3ZOtxmyw3z4CR3K3VL2FkLP=aJYhT8cUQ@mail.gmail.com>
+To: Dave Kleikamp <shaggy@kernel.org>
+X-Spam-Score: -0.1 (/)
 X-Spam-Report: Spam Filtering performed by mx.sourceforge.net.
  See http://spamassassin.org/tag/ for more details.
- 0.0 URIBL_BLOCKED ADMINISTRATOR NOTICE: The query to URIBL was blocked.
- See
- http://wiki.apache.org/spamassassin/DnsBlocklists#dnsbl-block
- for more information. [URIs: huawei.com]
+ 0.0 FREEMAIL_FROM Sender email is commonly abused enduser mail provider
+ (mudongliangabcd[at]gmail.com)
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/, no
+ trust [209.85.208.49 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
-X-Headers-End: 1mJDNT-0000VI-Tc
-X-Mailman-Approved-At: Thu, 26 Aug 2021 14:09:37 +0000
-Subject: [Jfs-discussion] [PATCH] jfs: Fix NULL pointer dereference in diFree
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.208.49 listed in wl.mailspike.net]
+ -0.1 DKIM_VALID_AU Message has a valid DKIM or DK signature from author's
+ domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature,
+ not necessarily valid
+ -0.0 AWL AWL: Adjusted score from AWL reputation of From: address
+X-Headers-End: 1mKcSA-00082q-4d
+Subject: Re: [Jfs-discussion] [PATCH] JFS: fix memleak in jfs_mount
 X-BeenThere: jfs-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -77,82 +102,166 @@ List-Post: <mailto:jfs-discussion@lists.sourceforge.net>
 List-Help: <mailto:jfs-discussion-request@lists.sourceforge.net?subject=help>
 List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/jfs-discussion>, 
  <mailto:jfs-discussion-request@lists.sourceforge.net?subject=subscribe>
-Cc: jfs-discussion@lists.sourceforge.net, linux-kernel@vger.kernel.org
+Cc: jfs-discussion@lists.sourceforge.net,
+ linux-kernel <linux-kernel@vger.kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Errors-To: jfs-discussion-bounces@lists.sourceforge.net
 
-I got a NULL pointer dereference report when doing fuzz test:
+On Wed, Aug 18, 2021 at 6:26 PM Dongliang Mu <mudongliangabcd@gmail.com> wrote:
+>
+> In jfs_mount, when diMount(ipaimap2) fails, it goes to errout35. However,
+> the following code does not free ipaimap2 allocated by diReadSpecial.
+>
+> Fix this by refactoring the error handling code of jfs_mount. To be
+> specific, modify the lable name and free ipaimap2 when the above error
+> ocurrs.
+>
 
- jfs_mount: diMount failed w/rc = -5
- BUG: kernel NULL pointer dereference, address: 0000000000000004
- [...]
- RIP: 0010:diFree+0x5d/0xc70
- [...]
- jfs_evict_inode+0x136/0x180
- jfs_write_inode+0xc0/0xc0
- evict+0x102/0x1f0
- iput+0x220/0x2e0
- diFreeSpecial+0x44/0x70
- jfs_mount+0x1b1/0x460
- jfs_fill_super+0x1a5/0x460
- mount_bdev+0x1d7/0x220
- jfs_do_mount+0x39/0x50
- legacy_get_tree+0x2f/0x80
- vfs_get_tree+0x2f/0x100
- path_mount+0x8e8/0xc7
- do_mount+0x9e/0xc0
- __x64_sys_mount+0xc5/0x140
- do_syscall_64+0x34/0xb0
- entry_SYSCALL_64_after_hwframe+0x44/0xae
+Hi maintainers,
 
-Similar to commit 9d574f985fe3 ("jfs: fix GPF in diFree"),
-diFreeSpecial(ipimap)->..->diFree() will be called if diMount(ipimap)
-fails in jfs_mount(). This will result in a null pointer reference in
-diFree() because the imap is not allocated in diFreeSpecial().
+any comment on this patch?
 
-int diFree(struct inode *ip)
-{
-	...
-	struct inomap *imap = JFS_IP(ipimap)->i_imap; // imap == NULL
-	...
-	if (iagno >= imap->im_nextiag) { // null pointer reference
-	...
-}
-
-If diFreeSpecial(ipimap) in jfs_mount() fails, there is no need to
-call diFree(), because diAlloc() is not called in the mount process.
-
-Fixes: 1da177e4c3f4 ("Linux-2.6.12-rc2")
-Reported-by: Hulk Robot <hulkci@huawei.com>
-Signed-off-by: Wang Hai <wanghai38@huawei.com>
----
- fs/jfs/inode.c | 4 +++-
- 1 file changed, 3 insertions(+), 1 deletion(-)
-
-diff --git a/fs/jfs/inode.c b/fs/jfs/inode.c
-index 57ab424c05ff..e8303d47a4a4 100644
---- a/fs/jfs/inode.c
-+++ b/fs/jfs/inode.c
-@@ -146,12 +146,14 @@ void jfs_evict_inode(struct inode *inode)
- 		dquot_initialize(inode);
- 
- 		if (JFS_IP(inode)->fileset == FILESYSTEM_I) {
-+			struct inode *ipimap = JFS_SBI(inode->i_sb)->ipimap;
-+
- 			truncate_inode_pages_final(&inode->i_data);
- 
- 			if (test_cflag(COMMIT_Freewmap, inode))
- 				jfs_free_zero_link(inode);
- 
--			if (JFS_SBI(inode->i_sb)->ipimap)
-+			if (ipimap && JFS_IP(ipimap)->i_imap)
- 				diFree(inode);
- 
- 			/*
--- 
-2.17.1
-
+> Fixes: 1da177e4c3f4 ("Linux-2.6.12-rc2")
+> Signed-off-by: Dongliang Mu <mudongliangabcd@gmail.com>
+> ---
+>  fs/jfs/jfs_mount.c | 53 +++++++++++++++++++---------------------------
+>  1 file changed, 22 insertions(+), 31 deletions(-)
+>
+> diff --git a/fs/jfs/jfs_mount.c b/fs/jfs/jfs_mount.c
+> index 5d7d7170c03c..638a4ecc4069 100644
+> --- a/fs/jfs/jfs_mount.c
+> +++ b/fs/jfs/jfs_mount.c
+> @@ -81,14 +81,14 @@ int jfs_mount(struct super_block *sb)
+>          * (initialize mount inode from the superblock)
+>          */
+>         if ((rc = chkSuper(sb))) {
+> -               goto errout20;
+> +               return rc;
+>         }
+>
+>         ipaimap = diReadSpecial(sb, AGGREGATE_I, 0);
+>         if (ipaimap == NULL) {
+>                 jfs_err("jfs_mount: Failed to read AGGREGATE_I");
+>                 rc = -EIO;
+> -               goto errout20;
+> +               goto out;
+>         }
+>         sbi->ipaimap = ipaimap;
+>
+> @@ -99,7 +99,7 @@ int jfs_mount(struct super_block *sb)
+>          */
+>         if ((rc = diMount(ipaimap))) {
+>                 jfs_err("jfs_mount: diMount(ipaimap) failed w/rc = %d", rc);
+> -               goto errout21;
+> +               goto err_ipaimap;
+>         }
+>
+>         /*
+> @@ -108,7 +108,7 @@ int jfs_mount(struct super_block *sb)
+>         ipbmap = diReadSpecial(sb, BMAP_I, 0);
+>         if (ipbmap == NULL) {
+>                 rc = -EIO;
+> -               goto errout22;
+> +               goto err_umount_ipaimap;
+>         }
+>
+>         jfs_info("jfs_mount: ipbmap:0x%p", ipbmap);
+> @@ -120,7 +120,7 @@ int jfs_mount(struct super_block *sb)
+>          */
+>         if ((rc = dbMount(ipbmap))) {
+>                 jfs_err("jfs_mount: dbMount failed w/rc = %d", rc);
+> -               goto errout22;
+> +               goto err_ipbmap;
+>         }
+>
+>         /*
+> @@ -139,7 +139,7 @@ int jfs_mount(struct super_block *sb)
+>                 if (!ipaimap2) {
+>                         jfs_err("jfs_mount: Failed to read AGGREGATE_I");
+>                         rc = -EIO;
+> -                       goto errout35;
+> +                       goto err_umount_ipbmap;
+>                 }
+>                 sbi->ipaimap2 = ipaimap2;
+>
+> @@ -151,7 +151,7 @@ int jfs_mount(struct super_block *sb)
+>                 if ((rc = diMount(ipaimap2))) {
+>                         jfs_err("jfs_mount: diMount(ipaimap2) failed, rc = %d",
+>                                 rc);
+> -                       goto errout35;
+> +                       goto err_ipaimap2;
+>                 }
+>         } else
+>                 /* Secondary aggregate inode table is not valid */
+> @@ -168,7 +168,7 @@ int jfs_mount(struct super_block *sb)
+>                 jfs_err("jfs_mount: Failed to read FILESYSTEM_I");
+>                 /* open fileset secondary inode allocation map */
+>                 rc = -EIO;
+> -               goto errout40;
+> +               goto err_umount_ipaimap2;
+>         }
+>         jfs_info("jfs_mount: ipimap:0x%p", ipimap);
+>
+> @@ -178,41 +178,32 @@ int jfs_mount(struct super_block *sb)
+>         /* initialize fileset inode allocation map */
+>         if ((rc = diMount(ipimap))) {
+>                 jfs_err("jfs_mount: diMount failed w/rc = %d", rc);
+> -               goto errout41;
+> +               goto err_ipimap;
+>         }
+>
+> -       goto out;
+> +       return rc;
+>
+>         /*
+>          *      unwind on error
+>          */
+> -      errout41:                /* close fileset inode allocation map inode */
+> +err_ipimap:
+> +       /* close fileset inode allocation map inode */
+>         diFreeSpecial(ipimap);
+> -
+> -      errout40:                /* fileset closed */
+> -
+> +err_umount_ipaimap2:
+>         /* close secondary aggregate inode allocation map */
+> -       if (ipaimap2) {
+> -               diUnmount(ipaimap2, 1);
+> -               diFreeSpecial(ipaimap2);
+> -       }
+> -
+> -      errout35:
+> -
+> -       /* close aggregate block allocation map */
+> +       if (ipaimap2) diUnmount(ipaimap2, 1);
+> +err_ipaimap2:
+> +       /* close aggregate inodes */
+> +       if (ipaimap2) diFreeSpecial(ipaimap2);
+> +err_umount_ipbmap:     /* close aggregate block allocation map */
+>         dbUnmount(ipbmap, 1);
+> +err_ipbmap:            /* close aggregate inodes */
+>         diFreeSpecial(ipbmap);
+> -
+> -      errout22:                /* close aggregate inode allocation map */
+> -
+> +err_umount_ipaimap:    /* close aggregate inode allocation map */
+>         diUnmount(ipaimap, 1);
+> -
+> -      errout21:                /* close aggregate inodes */
+> +err_ipaimap:           /* close aggregate inodes */
+>         diFreeSpecial(ipaimap);
+> -      errout20:                /* aggregate closed */
+> -
+> -      out:
+> -
+> +out:
+>         if (rc)
+>                 jfs_err("Mount JFS Failure: %d", rc);
+>
+> --
+> 2.25.1
+>
 
 
 _______________________________________________
