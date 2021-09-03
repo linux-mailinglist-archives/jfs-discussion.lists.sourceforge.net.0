@@ -2,95 +2,214 @@ Return-Path: <jfs-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+jfs-discussion@lfdr.de
 Delivered-To: lists+jfs-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5580140077E
-	for <lists+jfs-discussion@lfdr.de>; Fri,  3 Sep 2021 23:37:42 +0200 (CEST)
-Received: from [127.0.0.1] (helo=sfs-ml-1.v29.lw.sourceforge.com)
-	by sfs-ml-1.v29.lw.sourceforge.com with esmtp (Exim 4.90_1)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2A6E8400798
+	for <lists+jfs-discussion@lfdr.de>; Fri,  3 Sep 2021 23:51:57 +0200 (CEST)
+Received: from [127.0.0.1] (helo=sfs-ml-4.v29.lw.sourceforge.com)
+	by sfs-ml-4.v29.lw.sourceforge.com with esmtp (Exim 4.90_1)
 	(envelope-from <jfs-discussion-bounces@lists.sourceforge.net>)
-	id 1mMGsJ-00086Q-GZ; Fri, 03 Sep 2021 21:37:27 +0000
+	id 1mMH65-0002gj-F4; Fri, 03 Sep 2021 21:51:41 +0000
 Received: from [172.30.20.202] (helo=mx.sourceforge.net)
- by sfs-ml-1.v29.lw.sourceforge.com with esmtps
+ by sfs-ml-4.v29.lw.sourceforge.com with esmtps
  (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
- (envelope-from <pali@kernel.org>)
- id 1mMGsH-000868-N8; Fri, 03 Sep 2021 21:37:25 +0000
+ (envelope-from <dave.kleikamp@oracle.com>) id 1mMH60-0002gY-Ha
+ for jfs-discussion@lists.sourceforge.net; Fri, 03 Sep 2021 21:51:36 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=sourceforge.net; s=x; h=In-Reply-To:Content-Transfer-Encoding:Content-Type:
- MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:
+ d=sourceforge.net; s=x; h=MIME-Version:Content-Transfer-Encoding:Content-Type
+ :In-Reply-To:Date:Message-ID:From:References:Cc:To:Subject:Sender:Reply-To:
  Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
  Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=+6xqJC6gt8A48ew/awwwozt8E/k6gHAvzo9yeEa7rZ4=; b=CIXtx4xCGLYt+owISW4e4u5cRz
- 5sgKpzEPh8MotQBKPnrneZ+96Lo/eWzyLQT4Bw6mixYtdL1ZNs9ZRYm/42/FRxsP399gGCyfiPN5/
- d7fePKxKUECxzzAy0LWQscZhCKqlv3/DkOO9R1rSqfNK28EDuYpn48BqkD8Xf5t2w3Nk=;
+ bh=nkqRa25wbZl2vC2dhgFFK2GqSE2+X5cBEdwWFnexsg4=; b=Mik4NemAPn06QmYFzKIvwO1Qpw
+ QSE466k3REHXsZA9tAGg6HlBZEWaDxBZ9OPZUH4MZUh1VKEGCscxrezPMEFgUoxJ7C4+Io7YYnrBX
+ mj8i2iB55rFrxUxjFwo/ycENhQLeP0YcZmOwvQlCPjr/lQ+n3uxjIO7LWbgWr/z/xe8w=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
- h=In-Reply-To:Content-Transfer-Encoding:Content-Type:MIME-Version:
- References:Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:Content-ID:
+ h=MIME-Version:Content-Transfer-Encoding:Content-Type:In-Reply-To:Date:
+ Message-ID:From:References:Cc:To:Subject:Sender:Reply-To:Content-ID:
  Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
  :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
  List-Post:List-Owner:List-Archive;
- bh=+6xqJC6gt8A48ew/awwwozt8E/k6gHAvzo9yeEa7rZ4=; b=mdBk99nm7KEH34QWQVDkbL4ajh
- gDnywTXOsZkEDQ+ARELzxAKTVozzbiB0aWcfM1EKR8p5lcySQgKqwEKxjl1u9TLCuJTypNqj0dH3X
- A2npkBodNeG3Cmcw1bvUFl3mpcv0Fy1jnfjrvnQ44kGLokgkeMnt+cUBuH/zTu8zNh9Y=;
-Received: from mail.kernel.org ([198.145.29.99])
+ bh=nkqRa25wbZl2vC2dhgFFK2GqSE2+X5cBEdwWFnexsg4=; b=EnV3V96GUPXBnmfMUVEhiFtBHs
+ 3x5uBB/xuLTLZmtQJbL2xm3xbyEb3Fs/wfQ6feda6gWPQwqvKGnIVk95d9bIiPjc73hdbxCmKnfGc
+ oFvNHQlN3yVAf4TwiW3a1XQ1l/sO0P5e2fpjfjqELU0/2KotmUN9TGtrt3c6O7TVdJbs=;
+Received: from mx0b-00069f02.pphosted.com ([205.220.177.32])
  by sfi-mx-1.v28.lw.sourceforge.com with esmtps
  (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.92.3)
- id 1mMGsG-00DbJR-Rg; Fri, 03 Sep 2021 21:37:25 +0000
-Received: by mail.kernel.org (Postfix) with ESMTPSA id 567F160F21;
- Fri,  3 Sep 2021 21:37:05 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=k20201202; t=1630705025;
- bh=ysWHeMqbDEvsn5l8zRqxKz3HmCgf/gvL2ecLQgzUgGI=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=aSiHeZKjhDq+ztl6o0f8wJxJmLw4zLul3iGSDB0Jqs0IMlXRUHoxhXWYzjIO0MzPC
- 1Hj//2eBpuNjxzEzmLcG+hxJy2hDEPNA2RO3akE+OcW7sL+9CcI14cpqflptRh/04n
- GToXqM4S5SSc8/iwtbhsTk8rCGcVV2gDHv+jtOOlKiLU6C7dCK7qV5MsON8njssnSU
- iu8dYTz8MbyrD+zryeE9eP5/TKU9JMIJc2y2wIXJ31zSquZW0laOYBVIgrPBo1R7m9
- /OkMY4URXIIQWKvX8k//xjd3ldXNcS4KXMJuUHemCKv8+xZWXUx5hZMNvUeZSD6NER
- 34BYeYwAEYt+A==
-Received: by pali.im (Postfix)
- id 39FF877C; Fri,  3 Sep 2021 23:37:03 +0200 (CEST)
-Date: Fri, 3 Sep 2021 23:37:03 +0200
-From: Pali =?utf-8?B?Um9ow6Fy?= <pali@kernel.org>
-To: Kari Argillander <kari.argillander@gmail.com>
-Message-ID: <20210903213703.s5y5iobmdrlmzfek@pali>
-References: <20210808162453.1653-1-pali@kernel.org>
- <20210903212616.xbi5tz5ier5xcpas@kari-VirtualBox>
+ id 1mMH5z-00DcSS-6Y
+ for jfs-discussion@lists.sourceforge.net; Fri, 03 Sep 2021 21:51:36 +0000
+Received: from pps.filterd (m0246631.ppops.net [127.0.0.1])
+ by mx0b-00069f02.pphosted.com (8.16.1.2/8.16.1.2) with SMTP id 183IwwAZ017863; 
+ Fri, 3 Sep 2021 21:51:24 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=oracle.com;
+ h=subject : to : cc :
+ references : from : message-id : date : in-reply-to : content-type :
+ content-transfer-encoding : mime-version; s=corp-2021-07-09;
+ bh=nkqRa25wbZl2vC2dhgFFK2GqSE2+X5cBEdwWFnexsg4=;
+ b=UOiduFMB56y97VI8WSwOk7v5DSddQxTmAGL7zru2yok4i+RFn2BZu4ESiPiNfl2U6/rs
+ 8UNq9fIA3cv6p0xqc1uzW5C590KaOgZueIub5CJgIDQvF3Jo8GAtBY3jaeMdDqI9ZEm4
+ a1tj/ky7OuKx0c8nqvbuTxcswsYujKS3DqU5t9m6XT44rfc104CxabloOoopoqRubBUC
+ xWIk2CK4zK/CBc7iVmEiSELMmpfartHn8JYESvkdscFNW0RuVgpvlfK/GmpjS5Ahd5wv
+ tTiAt3U6fweOoJWMWSdQfSO6NUIa5Z1wnaXL4fn88OGp0s7yq3UMqNBXT24QyaUvsVJP kA== 
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=oracle.com;
+ h=subject : to : cc :
+ references : from : message-id : date : in-reply-to : content-type :
+ content-transfer-encoding : mime-version; s=corp-2020-01-29;
+ bh=nkqRa25wbZl2vC2dhgFFK2GqSE2+X5cBEdwWFnexsg4=;
+ b=ZbVrB2gEC2OxUXwcDY1OubG+oz2eJqOl18LVB5M1Gm52hzWhO+JBTScB8z6CWREnxRtM
+ 8RePMzNqav442VDKujlKygT/LHK0Klg4ZZAXxItLsWxmOb9IIiAZ7s86b57unawBEDTm
+ 5fPRUvgexp7YIUczvdHYjem+67rBkix+gSNX/hSyhTgR0sH+BUCupX98qfQiyKvzDY8J
+ 5LYpR5PtEnONcCYTuUulnVeYpbM1ogXAIPLe7Mmb6LgEbQifzqtzD7Pg5jddETiWw66l
+ 2iMstawsyN4fc9rs8CaPXhw7PT8okw0NNpGb6Yy7Cgg28qAdeyYGQVK1tQO/tGMtx8Qd Vw== 
+Received: from userp3020.oracle.com (userp3020.oracle.com [156.151.31.79])
+ by mx0b-00069f02.pphosted.com with ESMTP id 3aufj7a5rp-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
+ Fri, 03 Sep 2021 21:51:24 +0000
+Received: from pps.filterd (userp3020.oracle.com [127.0.0.1])
+ by userp3020.oracle.com (8.16.0.42/8.16.0.42) with SMTP id 183Lo1Pb009938;
+ Fri, 3 Sep 2021 21:51:23 GMT
+Received: from nam04-mw2-obe.outbound.protection.outlook.com
+ (mail-mw2nam08lp2175.outbound.protection.outlook.com [104.47.73.175])
+ by userp3020.oracle.com with ESMTP id 3ate023xm8-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
+ Fri, 03 Sep 2021 21:51:23 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=FNM5tI78I1qU9wPEvDgFis+k0nYGvzsaLahQWNJJm9cAX2sdxVmVW2w9GL323zgy5lFIikp2hyWehFdLBO3vWEm7iN61pJTAaVuR3HIM0/qWggXzE5VevM4UagmHiGgSzTOOPm6A4otjude6U1y4Fn4PzaulQDL41BQxyxlwAeQGg2KFy48nnHzn6rlQ3qSyyfeZHVbnYr+swyb8NK6ah8zHmIpA1qs1FkFiHebDggIKcJ9w4gtDYANYHFx5WuQ/rZEhHsOZS5wMRTRpCp9DKNAEMjPEloRzCwkRvbmPTB9awJFXajeiOgvD7TQFZeeu2V/EJGzbuzGW08U6W096Gg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version; 
+ bh=nkqRa25wbZl2vC2dhgFFK2GqSE2+X5cBEdwWFnexsg4=;
+ b=oL9InCDpVR3SL8M7FYe++UDjmK78wPWKKlkEmeLi/hAPqX3ZhNHzQZsfvR4l/hO9+8BSLKr3OB9Ik1d6IVFi8+l8rO0weafG3tnkmS8Z0/f1m59z1Lw5owxfi8BPq4pJQTTh/tFpfErcH8Zgxu6SyUZroxBGm1jSslBdzz7T4Z46R+R7p4uLZauXHNtQzLSKt+cLWdljNwkPHU12ZvgDp09Wc3D9eZs4S2U19IN8ZmHj3AzS7uMomn2ffrhWEz8fAxwM68eaOk3RmMZtAXl18gNDVdfyt0AJa2nIqnQygVdeZtPgL+Lf5SMaXQDKkmSujOb0LJusX2csJ41uMum7EQ==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=oracle.com; dmarc=pass action=none header.from=oracle.com;
+ dkim=pass header.d=oracle.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=oracle.onmicrosoft.com; s=selector2-oracle-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=nkqRa25wbZl2vC2dhgFFK2GqSE2+X5cBEdwWFnexsg4=;
+ b=JHgCkmBVwtEwg4W17LiA5i5AfoT6U9zhcFoooRV/d3P0KLYccn/ix7d4JgYxaGXo0zh7CchhfFHVDpCZAl+fLeJCGEnEm9ZTg9DhSg06H2tmA1ghuyJnpWcChixVjdwUYhp17ixYcijK+E5HyExFwC9pwl5Z8P71P5rjDFUmKmA=
+Authentication-Results: vger.kernel.org; dkim=none (message not signed)
+ header.d=none; vger.kernel.org; dmarc=none action=none header.from=oracle.com; 
+Received: from SA2PR10MB4665.namprd10.prod.outlook.com (2603:10b6:806:fb::17)
+ by SA2PR10MB4793.namprd10.prod.outlook.com (2603:10b6:806:110::24)
+ with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.4478.21; Fri, 3 Sep
+ 2021 21:51:21 +0000
+Received: from SA2PR10MB4665.namprd10.prod.outlook.com
+ ([fe80::c12a:cfad:520a:2c94]) by SA2PR10MB4665.namprd10.prod.outlook.com
+ ([fe80::c12a:cfad:520a:2c94%3]) with mapi id 15.20.4478.022; Fri, 3 Sep 2021
+ 21:51:21 +0000
+To: Dongliang Mu <mudongliangabcd@gmail.com>
+References: <20210818102612.864127-1-mudongliangabcd@gmail.com>
+From: Dave Kleikamp <dave.kleikamp@oracle.com>
+Message-ID: <fc1dae76-eac1-e6f4-2ba6-f49e15ad0b46@oracle.com>
+Date: Fri, 3 Sep 2021 16:51:18 -0500
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:78.0) Gecko/20100101
+ Thunderbird/78.13.0
+In-Reply-To: <20210818102612.864127-1-mudongliangabcd@gmail.com>
+Content-Language: en-US
+X-ClientProxiedBy: SN4PR0801CA0013.namprd08.prod.outlook.com
+ (2603:10b6:803:29::23) To SA2PR10MB4665.namprd10.prod.outlook.com
+ (2603:10b6:806:fb::17)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20210903212616.xbi5tz5ier5xcpas@kari-VirtualBox>
-User-Agent: NeoMutt/20180716
-X-Spam-Score: -5.9 (-----)
-X-Spam-Report: Spam detection software, running on the system "util-spamd-1.v13.lw.sourceforge.com",
+Received: from [192.168.0.190] (68.201.65.98) by
+ SN4PR0801CA0013.namprd08.prod.outlook.com (2603:10b6:803:29::23) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.4478.19 via Frontend
+ Transport; Fri, 3 Sep 2021 21:51:20 +0000
+X-MS-PublicTrafficType: Email
+X-MS-Office365-Filtering-Correlation-Id: e0c8d097-66d2-4158-702b-08d96f24f74c
+X-MS-TrafficTypeDiagnostic: SA2PR10MB4793:
+X-Microsoft-Antispam-PRVS: <SA2PR10MB47936EA982F781B4C7AE12D487CF9@SA2PR10MB4793.namprd10.prod.outlook.com>
+X-MS-Oob-TLC-OOBClassifiers: OLM:8882;
+X-MS-Exchange-SenderADCheck: 1
+X-MS-Exchange-AntiSpam-Relay: 0
+X-Microsoft-Antispam: BCL:0;
+X-Microsoft-Antispam-Message-Info: GMIOVrVLHdy07zOLAeMJAo1BdhRtlPLNaJoItGa6II7UE7nVHC54FXEo4NZ1gGTpH4+WcYTiEYCDNUXUKbm0FfZiTL/Eg95RROm6DAXXsyDViMCjdLaCtA9MCKTDYLSplJYvykvKH6uPnN0ZmqOLm8EBe5xmisypIsGkP98VHXVsckgAqrRwdg9kETyamDS2AoxtOhd8fmLJFnxGFCjgKBS5MgSJlRlSg/qwmw80UEUdQ4GLkrdP2FG0mgVhbZ8gxButaaTxjgfNMFppgEdsqbKWLWLmkfKNYKFfRpr8THUOXNgoT384cxJuqCf9UcnTa7Wzr4hh6RYki24s7dg9LrGToONZxxtuCv8wLT+/Rc8LBKvdCZrsPdshWLUwhKH9T1YACqt1O1wP7rpdf1UQZJWnnWUynwUH2vlHQIo4DQtR3Lqr9J42X9kbroDuA8XOKFbpI08viIWlYxN4oGOrzlNKqvq3MY3GmymhNLOdFF69ny+6JBDcNwudIqyGVhWEJHGE7/gPqP2xr26deOBb/NA3P5tGO8iwy0zV9D51nbKgAGOk6HSJ3gkQwg1KJJC0L2t2tuUVxcIIVt8eNYkdhg6gWjRalpV7B6Ej/G046R9m6AJ51F79x5CMfqzpGBIsku/whsmSS7x7LMNcC2V5Rrz9MSCniB5AwGakwQKp14I6ytzbJR0i7t0u/l6Ebm3wd+XnBZsIuXvqRhbUsvmSMcVT/4k4/UrUhKxRPaAyy7s=
+X-Forefront-Antispam-Report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
+ IPV:NLI; SFV:NSPM; H:SA2PR10MB4665.namprd10.prod.outlook.com; PTR:; CAT:NONE;
+ SFS:(376002)(396003)(136003)(346002)(39860400002)(366004)(31696002)(44832011)(6486002)(2906002)(36756003)(66476007)(86362001)(8676002)(66556008)(26005)(53546011)(2616005)(6916009)(66946007)(5660300002)(16576012)(316002)(956004)(8936002)(4326008)(31686004)(38100700002)(186003)(83380400001)(478600001)(45980500001)(43740500002);
+ DIR:OUT; SFP:1101; 
+X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
+X-MS-Exchange-AntiSpam-MessageData-0: =?utf-8?B?Z0dnUTg5VjF6c1BvNkcvWkFWaU5NQUpaS28vUHl6SUMxN0xTWEl4WFFZZmhl?=
+ =?utf-8?B?eXhsNEpHZGRpL2N6dGJSSHZ4NzYxN09IakdoSzNGcS9VMGY0TGN0Z1RHSVlJ?=
+ =?utf-8?B?akVBdGZVWk9RQzNpYmlMMWw5TzUwRXlFL3Iydld2b2ZjZ2I3V0VFT3YzTUQx?=
+ =?utf-8?B?eEp5TkcwNno1TVlpOGRLTm8xWmZVR2VvZGJJU0hDN3lVQ1hCWTRLWGlDVS8r?=
+ =?utf-8?B?NEtQSFNwSnI4TDdiQU14clBHeVBvZWdIZDlPL0hsMWdhaVRpTVExMmdXSUlH?=
+ =?utf-8?B?T3Q5U0hvOWl4N1F1R3dMYURlSCsvL1JaS0drVDREU29PRlF2RGUySUtLSGZ4?=
+ =?utf-8?B?RTZoS0FmYVp4clVVcWZxcjd2dU1HYzh1RVZSWmFtb0ptMndYNkJuSmx5elhE?=
+ =?utf-8?B?Y1pQdWVPZDU3U004RDRIdU5PaGFOQlR3OEdpSTJ0NGFYVWdzaEN2VkdIcGJX?=
+ =?utf-8?B?anN5cmlhL3JLU1dvWnc0TjBSYTlXdHowUkxZWVh0S3lCM2QySkg2UnArN0hM?=
+ =?utf-8?B?S3oySjZRZ1JIbElmK09lUEd5c0Q1ajN5dkRucmRodFU4MjcrZzNJWjNzcEVw?=
+ =?utf-8?B?QmJBRmlMbUhBS3RJYi9mVUxXdDJpOFBKejVpaDExRUdVUlFkZnpsOWFOWU1a?=
+ =?utf-8?B?Qm5lNWk3WWxzcTRzOGdYRkVtR1ZORUFmcnA1eE9ZNE5US1JQb21ZcnlxN0pH?=
+ =?utf-8?B?ZkxjOHlYZzA4aXFLRzIxUHdCUjMzam4waVp1QTVyTEhmV3FqKzlRRTlUQVRn?=
+ =?utf-8?B?TFMwdjBEUVJ1blhTdGdvNDlUblM2aDNZVThlKzZ2WkNlamNWbFA0L3dEOXZI?=
+ =?utf-8?B?Z21aQzlTV25LOE9ZN1JocFE4WVlOMm9ZVXRyUWlqSjRZMXV3aTdkWkxib3NG?=
+ =?utf-8?B?WTNwd2gvMVJkaFdLaVlxbFBmMWFuWGNaSUo4ay94bTBiRW5LZHN6RFpORERP?=
+ =?utf-8?B?MG12UnlxVGFlcldYbC81eFFZdXAyQUlFaTlEL3RTcktZMS9xbDhDWTRhZW9j?=
+ =?utf-8?B?bTAxaWV5U2pGU2RaZnBSRktnVTZBS0RoaUF0dU9aK2t0SkxXK1ZXazlkRFp0?=
+ =?utf-8?B?aDZaMUNLQWxXZFRNQ2hNYWp6ckJlaXI5UUg0ZFVoQ2RRTk9SYTIzcFdVdGdm?=
+ =?utf-8?B?OWxaRjdyZFEwekRaeDFkVDhLZktZbkNBZHNZdmlsQVR6T3I2TjM2VXR5OXM2?=
+ =?utf-8?B?WGE3cDhDU3Eyb3JjUkprVTBtQTZid2R4elE4OG9DUXo2aytpaVhtTHJXb3gw?=
+ =?utf-8?B?cWVOUDFUZTRzYm1QMjNnanZ6T0I4cForZTdXU1hZaTk3bFgzUGZqR0xlM1NH?=
+ =?utf-8?B?UWJvUVM5ODZ4dVMvRjlHU0VxZkZFSTUvWVh1TkhoSHV4NEtXbWRaVVVxWXd2?=
+ =?utf-8?B?WFZIVHpmTU9EU0tzemZqNVViM01TcVdXYzEwV0lGcUhMMktOaTlwOGJqbU8x?=
+ =?utf-8?B?NXZaT1ZTSmtkakZDN1RjVldBQ2RNYUNjQk1yWmIxOVFqTjdFU3c4WU1iTzFa?=
+ =?utf-8?B?ZVpPUzRjY25DT2Faano3M1dpc1h1RThSc0R6NEMxYUt0ckg0OElYZC9BeGhO?=
+ =?utf-8?B?aDhqQ2xzelpEdXllTkxaQ1N3TVQzcjg3QjRzS0VZb3E2ZjlnbzF2ZC9kWnNW?=
+ =?utf-8?B?MVN1VEJtMDQyQ2FzR3dmOTNXU0MrUExVYkN0QTRvZUtxczNKWjJkc002MDNZ?=
+ =?utf-8?B?KzNPNmp1UTVnUXh3V0trK2hEc0J2ZkRMaWJQd3Y1MHdOV05wdjBzdUprRGg4?=
+ =?utf-8?Q?dxg3fSqJdsRWXBtBAeV8/ZchLhYLl6EdyIAALc+?=
+X-OriginatorOrg: oracle.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: e0c8d097-66d2-4158-702b-08d96f24f74c
+X-MS-Exchange-CrossTenant-AuthSource: SA2PR10MB4665.namprd10.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 03 Sep 2021 21:51:20.9537 (UTC)
+X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
+X-MS-Exchange-CrossTenant-Id: 4e2c6054-71cb-48f1-bd6c-3a9705aca71b
+X-MS-Exchange-CrossTenant-MailboxType: HOSTED
+X-MS-Exchange-CrossTenant-UserPrincipalName: AfkDC0E6/m5z6bVqTiwl8Ckv6YU1cvhk12MbKNrWO9N7eUeyxdLYGREG9bitqLSBzwAk0DWcpJcus2i6Gs7wdruYnHkbUzpY4Pw2Ow0DjZM=
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: SA2PR10MB4793
+X-Proofpoint-Virus-Version: vendor=nai engine=6300 definitions=10096
+ signatures=668682
+X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 adultscore=0
+ bulkscore=0
+ mlxlogscore=999 mlxscore=0 suspectscore=0 spamscore=0 phishscore=0
+ malwarescore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.12.0-2108310000 definitions=main-2109030128
+X-Proofpoint-ORIG-GUID: D8P4Wt3L-Emq0kl_4d_o54pYJZ2hKHfk
+X-Proofpoint-GUID: D8P4Wt3L-Emq0kl_4d_o54pYJZ2hKHfk
+X-Spam-Score: -2.9 (--)
+X-Spam-Report: Spam detection software,
+ running on the system "util-spamd-1.v13.lw.sourceforge.com", 
  has NOT identified this incoming email as spam.  The original
  message has been attached to this so you can view it or label
  similar future email.  If you have any questions, see
  the administrator of that system for details.
- 
- Content preview:  On Saturday 04 September 2021 00:26:16 Kari Argillander wrote:
-    > On Sun, Aug 08, 2021 at 06:24:33PM +0200, Pali Rohár wrote: > > Module
-    nls_utf8 is broken in several ways. It does not support (full) [...] 
- 
- Content analysis details:   (-5.9 points, 6.0 required)
- 
-  pts rule name              description
+ Content preview:  Thanks for waiting. I have just a couple comments, but this
+ looks good. I appreciate the clean up. On 8/18/21 5:25 AM, Dongliang Mu wrote:
+ > In jfs_mount, when diMount(ipaimap2) fails, it goes to errout35. However,
+ > the following code does not free ipaimap2 allocated by diReadSpecial. >
+ > Fix this [...] 
+ Content analysis details:   (-2.9 points, 6.0 required)
+ pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [205.220.177.32 listed in list.dnswl.org]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [205.220.177.32 listed in wl.mailspike.net]
  -0.0 SPF_PASS               SPF: sender matches SPF record
-  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
-                             high trust
-                             [198.145.29.99 listed in list.dnswl.org]
- -0.1 DKIM_VALID             Message has at least one valid DKIM or DK signature
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
-                             envelope-from domain
+ envelope-from domain
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
-                             author's domain
-  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
-                             valid
- -0.7 DKIMWL_WL_HIGH         DKIMwl.org - High trust sender
-X-Headers-End: 1mMGsG-00DbJR-Rg
-Subject: Re: [Jfs-discussion] [RFC PATCH 00/20] fs: Remove usage of broken
- nls_utf8 and drop it
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid 0.0 MSGID_FROM_MTA_HEADER  Message-Id was added by a relay
+ -2.0 NICE_REPLY_A           Looks like a legit reply (A)
+X-Headers-End: 1mMH5z-00DcSS-6Y
+Subject: Re: [Jfs-discussion] [PATCH] JFS: fix memleak in jfs_mount
 X-BeenThere: jfs-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -102,137 +221,183 @@ List-Post: <mailto:jfs-discussion@lists.sourceforge.net>
 List-Help: <mailto:jfs-discussion-request@lists.sourceforge.net?subject=help>
 List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/jfs-discussion>, 
  <mailto:jfs-discussion-request@lists.sourceforge.net?subject=subscribe>
-Cc: linux-cifs@vger.kernel.org, jfs-discussion@lists.sourceforge.net,
- Jan Kara <jack@suse.cz>, Luis de Bethencourt <luisbg@kernel.org>,
- Dave Kleikamp <shaggy@kernel.org>, linux-ntfs-dev@lists.sourceforge.net,
- linux-kernel@vger.kernel.org, Anton Altaparmakov <anton@tuxera.com>,
- Christoph Hellwig <hch@infradead.org>,
- Alexander Viro <viro@zeniv.linux.org.uk>, Pavel Machek <pavel@ucw.cz>,
- linux-fsdevel@vger.kernel.org, "Theodore Y . Ts'o" <tytso@mit.edu>,
- Andrew Morton <akpm@linux-foundation.org>,
- Marek =?utf-8?B?QmVow7pu?= <marek.behun@nic.cz>,
- Salah Triki <salah.triki@gmail.com>,
- OGAWA Hirofumi <hirofumi@mail.parknet.co.jp>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: jfs-discussion@lists.sourceforge.net, linux-kernel@vger.kernel.org
+Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Errors-To: jfs-discussion-bounces@lists.sourceforge.net
 
-T24gU2F0dXJkYXkgMDQgU2VwdGVtYmVyIDIwMjEgMDA6MjY6MTYgS2FyaSBBcmdpbGxhbmRlciB3
-cm90ZToKPiBPbiBTdW4sIEF1ZyAwOCwgMjAyMSBhdCAwNjoyNDozM1BNICswMjAwLCBQYWxpIFJv
-aMOhciB3cm90ZToKPiA+IE1vZHVsZSBubHNfdXRmOCBpcyBicm9rZW4gaW4gc2V2ZXJhbCB3YXlz
-LiBJdCBkb2VzIG5vdCBzdXBwb3J0IChmdWxsKQo+ID4gVVRGLTgsIGRlc3BpdGUgaXRzIG5hbWUu
-IEl0IGNhbm5vdCBoYW5kbGUgNC1ieXRlIFVURi04IHNlcXVlbmNlcyBhbmQKPiA+IHRvbG93ZXIv
-dG91cHBlciB0YWJsZSBpcyBub3QgaW1wbGVtZW50ZWQgYXQgYWxsLiBXaGljaCBtZWFucyB0aGF0
-IGl0IGlzCj4gPiBub3Qgc3VpdGFibGUgZm9yIHVzYWdlIGluIGNhc2UtaW5zZW5zaXRpdmUgZmls
-ZXN5c3RlbXMgb3IgVVRGLTE2Cj4gPiBmaWxlc3lzdGVtcyAoYmVjYXVzZSBvZiBlLmcuIG1pc3Np
-bmcgVVRGLTE2IHN1cnJvZ2F0ZSBwYWlycyBwcm9jZXNzaW5nKS4KPiA+IAo+ID4gVGhpcyBpcyBS
-RkMgcGF0Y2ggc2VyaWVzIHdoaWNoIHVuaWZ5IGFuZCBmaXggaW9jaGFyc2V0PXV0ZjggbW91bnQK
-PiA+IG9wdGlvbiBpbiBhbGwgZnMgZHJpdmVycyBhbmQgY29udmVydHMgYWxsIHJlbWFpbmluZyBm
-cyBkcml2ZXJzIHRvIHVzZQo+ID4gdXRmOHNfdG9fdXRmMTZzKCksIHV0ZjE2c190b191dGY4cygp
-LCB1dGY4X3RvX3V0ZjMyKCksIHV0ZjMyX3RvX3V0ZjgKPiA+IGZ1bmN0aW9ucyBmb3IgaW1wbGVt
-ZW50aW5nIFVURi04IHN1cHBvcnQgaW5zdGVhZCBvZiBubHNfdXRmOC4KPiA+IAo+ID4gU28gYXQg
-dGhlIGVuZCBpdCBhbGxvd3MgdG8gY29tcGxldGVseSBkcm9wIHRoaXMgYnJva2VuIG5sc191dGY4
-IG1vZHVsZS4KPiAKPiBOb3cgdGhhdCBldmVyeSBmaWxlc3lzdGVtIHdpbGwgc3VwcG9ydCBubHM9
-TlVMTC4gSXMgaXQgcG9zc2libGUgdG8ganVzdAo+IGRyb3AgZGVmYXVsdF90YWJsZSBjb21wbGV0
-bHk/IFRoZW4gZGVmYXVsdCBoYXMgdG8gYmUgdXRmOCwgYnV0IGlzIGl0IGEKPiBwcm9ibGVtPwoK
-Q3VycmVudGx5IChkZWZhdWx0KSBmYWxsYmFjayBubHMgdGFibGUgaXMgaXNvODg1OS0xLiBJIHdh
-cyBwbGFubmluZyB0bwptZXJnZSBmYWxsYmFjayBubHMgdGFibGUgYW5kIGV4dGVybmFsIGlzbzg4
-NTktMSB0YWJsZSBpbnRvIG9uZSwgdG8KZGVjcmVhc2UgY29kZSBkdXBsaWNhdGlvbi4KClRoZXJl
-IGlzIGFsc28gY29uZmlnIG9wdGlvbiBmb3IgZGVmYXVsdCB0YWJsZS4gSSBkbyBub3QgdGhpbmsg
-aXQgaXMgYQpnb29kIGlkZWEgdG8gZHJvcCBjb25maWcgb3B0aW9uIGZvciBkZWZhdWx0IHRhYmxl
-IGFzIG1vcmUgcGVvcGxlIGFyZQp1c2luZyBzb21lIGlzbzg4NTktWCBhcyBkZWZhdWx0IGVuY29k
-aW5nLgoKPiBUaGVuIEkgd2FzIGFsc28gdGhpbmtpbmcgdGhhdCBldmVyeSBubHMgImNvZGVwYWdl
-IG1vZHVsZSIgY2FuIGhhdmUgaW4KPiBLY29uZmlnCj4gCXNlbGVjdCBIQVZFX05MUwo+IAo+IEhB
-VkVfTkxTIHdpbGwgdGVsbCBpZiB3ZSBjYW4gZ2V0IGFueXRoaW5nIG90aGVyIHRoYW4gbmxzPU5V
-TEwuIFRoaXMgd2F5Cj4gZnMgY2FuIGRyb3Agc29tZSBmdW5jdGlvbnMgaWYgdGhleSB3YW50ZWQg
-dG8uICBJdCB3b3VsZCBiZSBuaWNlIHRvIGFsc28KPiBtYWtlIG5scyBtb2R1bGUgYXMgc21hbGwg
-YXMgcG9zc2libGUgYmVjYXVzZSBhbHNvIGFjcGksIHBjaSBhbmQgdXNiCj4gc2VsZWN0cyBpdC4g
-QWxzbyBtYW55IG90aGVyIGRyaXZlciBzZWVtcyB0byBkZXBlbmQgb24gaXQgYW5kIHRoZXkgZG8g
-bm90Cj4gZXZlbiBzZWVtIHRvIHNlbGVjdCBpdC4gQWxsIG90aGVyIHRoYW4gZmlsZXN5c3RlbXMg
-c2VlbXMgdG8ganVzdCBuZWVkCj4gdXRmIGNvbnZlcnNpb25zLiBBdCBsZWFzdCBmb3IgcXVpY2sg
-ZXllLiAgT3RoZXIgb3B0aW9uIGlzIHRvIHNlcGVyYXRlCj4gbmxzIGFuZCB1dGYsIGJ1dCBJJ20g
-bm90IGZhbiB0aGlzIGlkZWEganVzdCB5ZXQgYXQgbGVhc3QuCgpubHMgdGFibGVzIGNhbiBiZSBh
-bHJlYWR5IGNvbXBpbGVkIGFzIG1vZHVsZXMuIFRoZXJlIGFyZSBhbHNvCmluZWZmaWNpZW50IGlt
-cGxlbWVudGF0aW9ucyBvZiBzb21lIG5scyB0YWJsZXMgKGUuZy4gYXNjaWkgb3IKaXNvODg1OS0x
-KS4gU28gdGhlcmUgYXJlIGFscmVhZHkgcGxhY2VzIGZvciBkZWNyZWFzaW5nIHNpemUgb2Ygbmxz
-CmNvZGUgd2l0aG91dCBsb29zaW5nIGFueSBmdW5jdGlvbmFsaXR5LgoKPiBXaG9sZSBwb2ludCBp
-cyB0byBoZWxwIGxpdHRsZSBiaXQgc21hbGwgTGludXggYW5kIGVtYmVkZGVkIGRldmljZXMuIEkn
-bQo+IGhhcHB5IHRvIGRvIHRoaXMsIGJ1dCBhbGwgcmVhbGx5IGRlcGVucyBvbiBpZiB1dGY4IGNh
-biBiZSBkZWZhdWx0IGFuZAo+IHRoYXQgd2Ugc3VyZSBjYW4gdGhpbmsgYmVmb3JlIGhhbmQuIAoK
-SSBhZ3JlZSB0aGF0IG9uIG1vZGVybiBlbWJlZGRlZCBzeXN0ZW1zIHRoZXJlIGlzIG5vIHJlYXNv
-biB0byB1c2UKbm9uLXV0ZjggZW5jb2RpbmcgaWYgeW91IGFyZSBub3QgdGFyZ2V0aW5nIHNvbWUg
-bGVnYWN5IHVzZXJzcGFjZS4KClNvIGFsbG93aW5nIHRvIGNvbXBpbGUgZmlsZXN5c3RlbXMgYWxz
-byB3aXRob3V0IG5scyBjb2RlIChpbiB3aGljaCBjYXNlCnRoZXkgd291bGQgdXNlIG9ubHkgdXRm
-LTgpIG1ha2VzIHNlbnNlLgoKPiAgIEFyZ2lsbGFuZGVyCj4gCj4gPiBGb3IgbW9yZSBkZXRhaWxz
-IGxvb2sgYXQgZW1haWwgdGhyZWFkIHdoZXJlIHdhcyBkaXNjdXNzZWQgZnMgdW5pZmljYXRpb246
-Cj4gPiBodHRwczovL2xvcmUua2VybmVsLm9yZy9saW51eC1mc2RldmVsLzIwMjAwMTAyMjExODU1
-LmdnNjJyN2pzaHA3NDJkNmlAcGFsaS90LyN1Cj4gPiAKPiA+IFRoaXMgcGF0Y2ggc2VyaWVzIGlz
-IG1vc3RseSB1bnRlc3RlZCBhbmQgcHJlc2VudGVkIGFzIFJGQy4gUGxlYXNlIGxldCBtZQo+ID4g
-a25vdyB3aGF0IGRvIHlvdSB0aGluayBhYm91dCBpdCBhbmQgaWYgaXMgdGhlIGNvcnJlY3Qgd2F5
-IGhvdyB0byBmaXgKPiA+IGJyb2tlbiBVVEYtOCBzdXBwb3J0IGluIGZzIGRyaXZlcnMuIEFzIGV4
-cGxhaW5lZCBpbiBhYm92ZSBlbWFpbCB0aHJlYWQgSQo+ID4gdGhpbmsgaXQgZG9lcyBub3QgbWFr
-ZSBzZW5zZSB0byB0cnkgZml4aW5nIHdob2xlIE5MUyBmcmFtZXdvcmsgYW5kIGl0IGlzCj4gPiBl
-YXNpZXIgdG8ganVzdCBkcm9wIHRoaXMgbmxzX3V0ZjggbW9kdWxlLgo+ID4gCj4gPiBOb3RlOiB0
-aGlzIHBhdGNoIHNlcmllcyBkb2VzIG5vdCBhZGRyZXNzIFVURi04IGZhdCBjYXNlLXNlbnNpdGl2
-aXR5IGlzc3VlOgo+ID4gaHR0cHM6Ly9sb3JlLmtlcm5lbC5vcmcvbGludXgtZnNkZXZlbC8yMDIw
-MDExOTIyMTQ1NS5iYWM3ZGM1NWc1NnEybDRyQHBhbGkvCj4gPiAKPiA+IFBhbGkgUm9ow6FyICgy
-MCk6Cj4gPiAgIGZhdDogRml4IGlvY2hhcnNldD11dGY4IG1vdW50IG9wdGlvbgo+ID4gICBoZnNw
-bHVzOiBBZGQgaW9jaGFyc2V0PSBtb3VudCBvcHRpb24gYXMgYWxpYXMgZm9yIG5scz0KPiA+ICAg
-dWRmOiBGaXggaW9jaGFyc2V0PXV0ZjggbW91bnQgb3B0aW9uCj4gPiAgIGlzb2ZzOiBqb2xpZXQ6
-IEZpeCBpb2NoYXJzZXQ9dXRmOCBtb3VudCBvcHRpb24KPiA+ICAgbnRmczogVW5kZXByZWNhdGUg
-aW9jaGFyc2V0PSBtb3VudCBvcHRpb24KPiA+ICAgbnRmczogRml4IGVycm9yIHByb2Nlc3Npbmcg
-d2hlbiBsb2FkX25scygpIGZhaWxzCj4gPiAgIGJlZnM6IEZpeCBwcmludGluZyBpb2NoYXJzZXQ9
-IG1vdW50IG9wdGlvbgo+ID4gICBiZWZzOiBSZW5hbWUgZW51bSB2YWx1ZSBPcHRfY2hhcnNldCB0
-byBPcHRfaW9jaGFyc2V0IHRvIG1hdGNoIG1vdW50Cj4gPiAgICAgb3B0aW9uCj4gPiAgIGJlZnM6
-IEZpeCBlcnJvciBwcm9jZXNzaW5nIHdoZW4gbG9hZF9ubHMoKSBmYWlscwo+ID4gICBiZWZzOiBB
-bGxvdyB0byB1c2UgbmF0aXZlIFVURi04IG1vZGUKPiA+ICAgaGZzOiBFeHBsaWNpdGx5IHNldCBo
-c2ItPm5sc19kaXNrIHdoZW4gaHNiLT5ubHNfaW8gaXMgc2V0Cj4gPiAgIGhmczogRG8gbm90IHVz
-ZSBicm9rZW4gdXRmOCBOTFMgdGFibGUgZm9yIGlvY2hhcnNldD11dGY4IG1vdW50IG9wdGlvbgo+
-ID4gICBoZnNwbHVzOiBEbyBub3QgdXNlIGJyb2tlbiB1dGY4IE5MUyB0YWJsZSBmb3IgaW9jaGFy
-c2V0PXV0ZjggbW91bnQKPiA+ICAgICBvcHRpb24KPiA+ICAgamZzOiBSZW1vdmUgY3VzdG9tIGlz
-bzg4NTktMSBpbXBsZW1lbnRhdGlvbgo+ID4gICBqZnM6IEZpeCBidWZmZXIgb3ZlcmZsb3cgaW4g
-amZzX3N0cmZyb21VQ1NfbGUoKSBmdW5jdGlvbgo+ID4gICBqZnM6IERvIG5vdCB1c2UgYnJva2Vu
-IHV0ZjggTkxTIHRhYmxlIGZvciBpb2NoYXJzZXQ9dXRmOCBtb3VudCBvcHRpb24KPiA+ICAgbnRm
-czogRG8gbm90IHVzZSBicm9rZW4gdXRmOCBOTFMgdGFibGUgZm9yIGlvY2hhcnNldD11dGY4IG1v
-dW50IG9wdGlvbgo+ID4gICBjaWZzOiBEbyBub3QgdXNlIGJyb2tlbiB1dGY4IE5MUyB0YWJsZSBm
-b3IgaW9jaGFyc2V0PXV0ZjggbW91bnQgb3B0aW9uCj4gPiAgIGNpZnM6IFJlbW92ZSB1c2FnZSBv
-ZiBsb2FkX25sc19kZWZhdWx0KCkgY2FsbHMKPiA+ICAgbmxzOiBEcm9wIGJyb2tlbiBubHNfdXRm
-OCBtb2R1bGUKPiA+IAo+ID4gIGZzL2JlZnMvbGludXh2ZnMuYyAgICAgICAgICB8ICAyMiArKysr
-LS0tCj4gPiAgZnMvY2lmcy9jaWZzX3VuaWNvZGUuYyAgICAgIHwgMTI4ICsrKysrKysrKysrKysr
-KysrKysrKysrLS0tLS0tLS0tLS0tLQo+ID4gIGZzL2NpZnMvY2lmc191bmljb2RlLmggICAgICB8
-ICAgMiArLQo+ID4gIGZzL2NpZnMvY2lmc2ZzLmMgICAgICAgICAgICB8ICAgMiArCj4gPiAgZnMv
-Y2lmcy9jaWZzc21iLmMgICAgICAgICAgIHwgICA4ICstLQo+ID4gIGZzL2NpZnMvY29ubmVjdC5j
-ICAgICAgICAgICB8ICAgOCArKy0KPiA+ICBmcy9jaWZzL2Rmc19jYWNoZS5jICAgICAgICAgfCAg
-MjQgKysrLS0tLQo+ID4gIGZzL2NpZnMvZGlyLmMgICAgICAgICAgICAgICB8ICAyOCArKysrKyst
-LQo+ID4gIGZzL2NpZnMvc21iMnBkdS5jICAgICAgICAgICB8ICAxNyArKy0tLQo+ID4gIGZzL2Np
-ZnMvd2ludWNhc2UuYyAgICAgICAgICB8ICAxNCArKy0tCj4gPiAgZnMvZmF0L0tjb25maWcgICAg
-ICAgICAgICAgIHwgIDE1IC0tLS0tCj4gPiAgZnMvZmF0L2Rpci5jICAgICAgICAgICAgICAgIHwg
-IDE3ICsrLS0tCj4gPiAgZnMvZmF0L2ZhdC5oICAgICAgICAgICAgICAgIHwgIDIyICsrKysrKysK
-PiA+ICBmcy9mYXQvaW5vZGUuYyAgICAgICAgICAgICAgfCAgMjggKysrKy0tLS0KPiA+ICBmcy9m
-YXQvbmFtZWlfdmZhdC5jICAgICAgICAgfCAgMjYgKysrKysrLS0KPiA+ICBmcy9oZnMvc3VwZXIu
-YyAgICAgICAgICAgICAgfCAgNjIgKysrKysrKysrKysrKystLS0KPiA+ICBmcy9oZnMvdHJhbnMu
-YyAgICAgICAgICAgICAgfCAgNjIgKysrKysrKysrLS0tLS0tLS0KPiA+ICBmcy9oZnNwbHVzL2Rp
-ci5jICAgICAgICAgICAgfCAgIDYgKy0KPiA+ICBmcy9oZnNwbHVzL29wdGlvbnMuYyAgICAgICAg
-fCAgMzkgKysrKysrLS0tLS0KPiA+ICBmcy9oZnNwbHVzL3N1cGVyLmMgICAgICAgICAgfCAgIDcg
-Ky0KPiA+ICBmcy9oZnNwbHVzL3VuaWNvZGUuYyAgICAgICAgfCAgMzEgKysrKysrKystCj4gPiAg
-ZnMvaGZzcGx1cy94YXR0ci5jICAgICAgICAgIHwgIDE0ICsrLS0KPiA+ICBmcy9oZnNwbHVzL3hh
-dHRyX3NlY3VyaXR5LmMgfCAgIDMgKy0KPiA+ICBmcy9pc29mcy9pbm9kZS5jICAgICAgICAgICAg
-fCAgMjcgKysrKy0tLS0KPiA+ICBmcy9pc29mcy9pc29mcy5oICAgICAgICAgICAgfCAgIDEgLQo+
-ID4gIGZzL2lzb2ZzL2pvbGlldC5jICAgICAgICAgICB8ICAgNCArLQo+ID4gIGZzL2pmcy9qZnNf
-ZHRyZWUuYyAgICAgICAgICB8ICAxMyArKystCj4gPiAgZnMvamZzL2pmc191bmljb2RlLmMgICAg
-ICAgIHwgIDM1ICsrKysrLS0tLS0KPiA+ICBmcy9qZnMvamZzX3VuaWNvZGUuaCAgICAgICAgfCAg
-IDIgKy0KPiA+ICBmcy9qZnMvc3VwZXIuYyAgICAgICAgICAgICAgfCAgMjkgKysrKysrLS0KPiA+
-ICBmcy9ubHMvS2NvbmZpZyAgICAgICAgICAgICAgfCAgIDkgLS0tCj4gPiAgZnMvbmxzL01ha2Vm
-aWxlICAgICAgICAgICAgIHwgICAxIC0KPiA+ICBmcy9ubHMvbmxzX3V0ZjguYyAgICAgICAgICAg
-fCAgNjcgLS0tLS0tLS0tLS0tLS0tLS0tLQo+ID4gIGZzL250ZnMvZGlyLmMgICAgICAgICAgICAg
-ICB8ICAgNiArLQo+ID4gIGZzL250ZnMvaW5vZGUuYyAgICAgICAgICAgICB8ICAgNSArLQo+ID4g
-IGZzL250ZnMvc3VwZXIuYyAgICAgICAgICAgICB8ICA2MCArKysrKysrKy0tLS0tLS0tLQo+ID4g
-IGZzL250ZnMvdW5pc3RyLmMgICAgICAgICAgICB8ICAyOCArKysrKysrLQo+ID4gIGZzL3VkZi9z
-dXBlci5jICAgICAgICAgICAgICB8ICA1MCArKysrKystLS0tLS0tLQo+ID4gIGZzL3VkZi91ZGZf
-c2IuaCAgICAgICAgICAgICB8ICAgMiAtCj4gPiAgZnMvdWRmL3VuaWNvZGUuYyAgICAgICAgICAg
-IHwgICA0ICstCj4gPiAgNDAgZmlsZXMgY2hhbmdlZCwgNTEwIGluc2VydGlvbnMoKyksIDQxOCBk
-ZWxldGlvbnMoLSkKPiA+ICBkZWxldGUgbW9kZSAxMDA2NDQgZnMvbmxzL25sc191dGY4LmMKPiA+
-IAo+ID4gLS0gCj4gPiAyLjIwLjEKPiA+IAoKCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fCkpmcy1kaXNjdXNzaW9uIG1haWxpbmcgbGlzdApKZnMtZGlzY3Vz
-c2lvbkBsaXN0cy5zb3VyY2Vmb3JnZS5uZXQKaHR0cHM6Ly9saXN0cy5zb3VyY2Vmb3JnZS5uZXQv
-bGlzdHMvbGlzdGluZm8vamZzLWRpc2N1c3Npb24K
+Thanks for waiting. I have just a couple comments, but this looks good. 
+I appreciate the clean up.
+
+On 8/18/21 5:25 AM, Dongliang Mu wrote:
+> In jfs_mount, when diMount(ipaimap2) fails, it goes to errout35. However,
+> the following code does not free ipaimap2 allocated by diReadSpecial.
+> 
+> Fix this by refactoring the error handling code of jfs_mount. To be
+> specific, modify the lable name and free ipaimap2 when the above error
+> ocurrs.
+> 
+> Fixes: 1da177e4c3f4 ("Linux-2.6.12-rc2")
+> Signed-off-by: Dongliang Mu <mudongliangabcd@gmail.com>
+> ---
+>   fs/jfs/jfs_mount.c | 53 +++++++++++++++++++---------------------------
+>   1 file changed, 22 insertions(+), 31 deletions(-)
+> 
+> diff --git a/fs/jfs/jfs_mount.c b/fs/jfs/jfs_mount.c
+> index 5d7d7170c03c..638a4ecc4069 100644
+> --- a/fs/jfs/jfs_mount.c
+> +++ b/fs/jfs/jfs_mount.c
+> @@ -81,14 +81,14 @@ int jfs_mount(struct super_block *sb)
+>   	 * (initialize mount inode from the superblock)
+>   	 */
+>   	if ((rc = chkSuper(sb))) {
+> -		goto errout20;
+> +		return rc;
+
+This may have been intentional, but it isn't mentioned in the patch header.
+
+If chkSuper fails, we will no longer call
+	jfs_err("Mount JFS Failure: %d", rc);
+
+I don't necessarily see this as a bad thing. In many cases, chkSuper 
+prints a more helpful message. In the case where it silently fails, it's 
+not even recognizing the superblock as a supported version of JFS and 
+this message isn't particularly helpful. In fact this jfs_err() 
+statement might be best deleted in its entirety.
+
+>   	}
+>   
+>   	ipaimap = diReadSpecial(sb, AGGREGATE_I, 0);
+>   	if (ipaimap == NULL) {
+>   		jfs_err("jfs_mount: Failed to read AGGREGATE_I");
+>   		rc = -EIO;
+> -		goto errout20;
+> +		goto out;
+>   	}
+>   	sbi->ipaimap = ipaimap;
+>   
+> @@ -99,7 +99,7 @@ int jfs_mount(struct super_block *sb)
+>   	 */
+>   	if ((rc = diMount(ipaimap))) {
+>   		jfs_err("jfs_mount: diMount(ipaimap) failed w/rc = %d", rc);
+> -		goto errout21;
+> +		goto err_ipaimap;
+>   	}
+>   
+>   	/*
+> @@ -108,7 +108,7 @@ int jfs_mount(struct super_block *sb)
+>   	ipbmap = diReadSpecial(sb, BMAP_I, 0);
+>   	if (ipbmap == NULL) {
+>   		rc = -EIO;
+> -		goto errout22;
+> +		goto err_umount_ipaimap;
+>   	}
+>   
+>   	jfs_info("jfs_mount: ipbmap:0x%p", ipbmap);
+> @@ -120,7 +120,7 @@ int jfs_mount(struct super_block *sb)
+>   	 */
+>   	if ((rc = dbMount(ipbmap))) {
+>   		jfs_err("jfs_mount: dbMount failed w/rc = %d", rc);
+> -		goto errout22;
+> +		goto err_ipbmap;
+>   	}
+>   
+>   	/*
+> @@ -139,7 +139,7 @@ int jfs_mount(struct super_block *sb)
+>   		if (!ipaimap2) {
+>   			jfs_err("jfs_mount: Failed to read AGGREGATE_I");
+>   			rc = -EIO;
+> -			goto errout35;
+> +			goto err_umount_ipbmap;
+>   		}
+>   		sbi->ipaimap2 = ipaimap2;
+>   
+> @@ -151,7 +151,7 @@ int jfs_mount(struct super_block *sb)
+>   		if ((rc = diMount(ipaimap2))) {
+>   			jfs_err("jfs_mount: diMount(ipaimap2) failed, rc = %d",
+>   				rc);
+> -			goto errout35;
+> +			goto err_ipaimap2;
+>   		}
+>   	} else
+>   		/* Secondary aggregate inode table is not valid */
+> @@ -168,7 +168,7 @@ int jfs_mount(struct super_block *sb)
+>   		jfs_err("jfs_mount: Failed to read FILESYSTEM_I");
+>   		/* open fileset secondary inode allocation map */
+>   		rc = -EIO;
+> -		goto errout40;
+> +		goto err_umount_ipaimap2;
+>   	}
+>   	jfs_info("jfs_mount: ipimap:0x%p", ipimap);
+>   
+> @@ -178,41 +178,32 @@ int jfs_mount(struct super_block *sb)
+>   	/* initialize fileset inode allocation map */
+>   	if ((rc = diMount(ipimap))) {
+>   		jfs_err("jfs_mount: diMount failed w/rc = %d", rc);
+> -		goto errout41;
+> +		goto err_ipimap;
+>   	}
+>   
+> -	goto out;
+> +	return rc;
+>   
+>   	/*
+>   	 *	unwind on error
+>   	 */
+> -      errout41:		/* close fileset inode allocation map inode */
+> +err_ipimap:
+> +	/* close fileset inode allocation map inode */
+>   	diFreeSpecial(ipimap);
+> -
+> -      errout40:		/* fileset closed */
+> -
+> +err_umount_ipaimap2:
+>   	/* close secondary aggregate inode allocation map */
+> -	if (ipaimap2) {
+> -		diUnmount(ipaimap2, 1);
+> -		diFreeSpecial(ipaimap2);
+> -	}
+> -
+> -      errout35:
+> -
+> -	/* close aggregate block allocation map */
+> +	if (ipaimap2) diUnmount(ipaimap2, 1);
+
+Coding style: this should be split between two lines:
+	if (ipaimap2)
+		diUnmount(ipaimap2, 1);
+
+> +err_ipaimap2:
+> +	/* close aggregate inodes */
+> +	if (ipaimap2) diFreeSpecial(ipaimap2);
+
+Same here.
+
+> +err_umount_ipbmap:	/* close aggregate block allocation map */
+>   	dbUnmount(ipbmap, 1);
+> +err_ipbmap:		/* close aggregate inodes */
+>   	diFreeSpecial(ipbmap);
+> -
+> -      errout22:		/* close aggregate inode allocation map */
+> -
+> +err_umount_ipaimap:	/* close aggregate inode allocation map */
+>   	diUnmount(ipaimap, 1);
+> -
+> -      errout21:		/* close aggregate inodes */
+> +err_ipaimap:		/* close aggregate inodes */
+>   	diFreeSpecial(ipaimap);
+> -      errout20:		/* aggregate closed */
+> -
+> -      out:
+> -
+> +out:
+>   	if (rc)
+>   		jfs_err("Mount JFS Failure: %d", rc);
+>   
+> 
+
+
+_______________________________________________
+Jfs-discussion mailing list
+Jfs-discussion@lists.sourceforge.net
+https://lists.sourceforge.net/lists/listinfo/jfs-discussion
