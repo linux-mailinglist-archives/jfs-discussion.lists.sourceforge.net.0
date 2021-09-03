@@ -2,214 +2,103 @@ Return-Path: <jfs-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+jfs-discussion@lfdr.de
 Delivered-To: lists+jfs-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2A6E8400798
-	for <lists+jfs-discussion@lfdr.de>; Fri,  3 Sep 2021 23:51:57 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9F32B4007C8
+	for <lists+jfs-discussion@lfdr.de>; Sat,  4 Sep 2021 00:07:33 +0200 (CEST)
 Received: from [127.0.0.1] (helo=sfs-ml-4.v29.lw.sourceforge.com)
 	by sfs-ml-4.v29.lw.sourceforge.com with esmtp (Exim 4.90_1)
 	(envelope-from <jfs-discussion-bounces@lists.sourceforge.net>)
-	id 1mMH65-0002gj-F4; Fri, 03 Sep 2021 21:51:41 +0000
+	id 1mMHL7-00035e-Ru; Fri, 03 Sep 2021 22:07:13 +0000
 Received: from [172.30.20.202] (helo=mx.sourceforge.net)
  by sfs-ml-4.v29.lw.sourceforge.com with esmtps
  (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
- (envelope-from <dave.kleikamp@oracle.com>) id 1mMH60-0002gY-Ha
- for jfs-discussion@lists.sourceforge.net; Fri, 03 Sep 2021 21:51:36 +0000
+ (envelope-from <kari.argillander@gmail.com>)
+ id 1mMHL5-00035U-A3; Fri, 03 Sep 2021 22:07:11 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=sourceforge.net; s=x; h=MIME-Version:Content-Transfer-Encoding:Content-Type
- :In-Reply-To:Date:Message-ID:From:References:Cc:To:Subject:Sender:Reply-To:
+ d=sourceforge.net; s=x; h=In-Reply-To:Content-Transfer-Encoding:Content-Type:
+ MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:
  Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
  Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=nkqRa25wbZl2vC2dhgFFK2GqSE2+X5cBEdwWFnexsg4=; b=Mik4NemAPn06QmYFzKIvwO1Qpw
- QSE466k3REHXsZA9tAGg6HlBZEWaDxBZ9OPZUH4MZUh1VKEGCscxrezPMEFgUoxJ7C4+Io7YYnrBX
- mj8i2iB55rFrxUxjFwo/ycENhQLeP0YcZmOwvQlCPjr/lQ+n3uxjIO7LWbgWr/z/xe8w=;
+ bh=n3+SAT+wUh+y12YwwSXLSGu91HRrwMiAwD6Udu242w4=; b=R6o7dks3GFXWcG8lp2kPPc0rt8
+ QEuZhjMb9erd4ovZYFYQFVWQMbTAyjBofiOUuEZYx/4wb0LSzPJaZR6I35EPeZHweGCTb+d1DRPZy
+ VRabwxexZxNJ1KPYo0P51pg3sOcNfmVUptt6aJfoPrFGDkHxTbRHMqMa0NFBWIFVLv/M=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
- h=MIME-Version:Content-Transfer-Encoding:Content-Type:In-Reply-To:Date:
- Message-ID:From:References:Cc:To:Subject:Sender:Reply-To:Content-ID:
+ h=In-Reply-To:Content-Transfer-Encoding:Content-Type:MIME-Version:
+ References:Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:Content-ID:
  Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
  :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
  List-Post:List-Owner:List-Archive;
- bh=nkqRa25wbZl2vC2dhgFFK2GqSE2+X5cBEdwWFnexsg4=; b=EnV3V96GUPXBnmfMUVEhiFtBHs
- 3x5uBB/xuLTLZmtQJbL2xm3xbyEb3Fs/wfQ6feda6gWPQwqvKGnIVk95d9bIiPjc73hdbxCmKnfGc
- oFvNHQlN3yVAf4TwiW3a1XQ1l/sO0P5e2fpjfjqELU0/2KotmUN9TGtrt3c6O7TVdJbs=;
-Received: from mx0b-00069f02.pphosted.com ([205.220.177.32])
- by sfi-mx-1.v28.lw.sourceforge.com with esmtps
- (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.92.3)
- id 1mMH5z-00DcSS-6Y
- for jfs-discussion@lists.sourceforge.net; Fri, 03 Sep 2021 21:51:36 +0000
-Received: from pps.filterd (m0246631.ppops.net [127.0.0.1])
- by mx0b-00069f02.pphosted.com (8.16.1.2/8.16.1.2) with SMTP id 183IwwAZ017863; 
- Fri, 3 Sep 2021 21:51:24 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=oracle.com;
- h=subject : to : cc :
- references : from : message-id : date : in-reply-to : content-type :
- content-transfer-encoding : mime-version; s=corp-2021-07-09;
- bh=nkqRa25wbZl2vC2dhgFFK2GqSE2+X5cBEdwWFnexsg4=;
- b=UOiduFMB56y97VI8WSwOk7v5DSddQxTmAGL7zru2yok4i+RFn2BZu4ESiPiNfl2U6/rs
- 8UNq9fIA3cv6p0xqc1uzW5C590KaOgZueIub5CJgIDQvF3Jo8GAtBY3jaeMdDqI9ZEm4
- a1tj/ky7OuKx0c8nqvbuTxcswsYujKS3DqU5t9m6XT44rfc104CxabloOoopoqRubBUC
- xWIk2CK4zK/CBc7iVmEiSELMmpfartHn8JYESvkdscFNW0RuVgpvlfK/GmpjS5Ahd5wv
- tTiAt3U6fweOoJWMWSdQfSO6NUIa5Z1wnaXL4fn88OGp0s7yq3UMqNBXT24QyaUvsVJP kA== 
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=oracle.com;
- h=subject : to : cc :
- references : from : message-id : date : in-reply-to : content-type :
- content-transfer-encoding : mime-version; s=corp-2020-01-29;
- bh=nkqRa25wbZl2vC2dhgFFK2GqSE2+X5cBEdwWFnexsg4=;
- b=ZbVrB2gEC2OxUXwcDY1OubG+oz2eJqOl18LVB5M1Gm52hzWhO+JBTScB8z6CWREnxRtM
- 8RePMzNqav442VDKujlKygT/LHK0Klg4ZZAXxItLsWxmOb9IIiAZ7s86b57unawBEDTm
- 5fPRUvgexp7YIUczvdHYjem+67rBkix+gSNX/hSyhTgR0sH+BUCupX98qfQiyKvzDY8J
- 5LYpR5PtEnONcCYTuUulnVeYpbM1ogXAIPLe7Mmb6LgEbQifzqtzD7Pg5jddETiWw66l
- 2iMstawsyN4fc9rs8CaPXhw7PT8okw0NNpGb6Yy7Cgg28qAdeyYGQVK1tQO/tGMtx8Qd Vw== 
-Received: from userp3020.oracle.com (userp3020.oracle.com [156.151.31.79])
- by mx0b-00069f02.pphosted.com with ESMTP id 3aufj7a5rp-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
- Fri, 03 Sep 2021 21:51:24 +0000
-Received: from pps.filterd (userp3020.oracle.com [127.0.0.1])
- by userp3020.oracle.com (8.16.0.42/8.16.0.42) with SMTP id 183Lo1Pb009938;
- Fri, 3 Sep 2021 21:51:23 GMT
-Received: from nam04-mw2-obe.outbound.protection.outlook.com
- (mail-mw2nam08lp2175.outbound.protection.outlook.com [104.47.73.175])
- by userp3020.oracle.com with ESMTP id 3ate023xm8-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
- Fri, 03 Sep 2021 21:51:23 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=FNM5tI78I1qU9wPEvDgFis+k0nYGvzsaLahQWNJJm9cAX2sdxVmVW2w9GL323zgy5lFIikp2hyWehFdLBO3vWEm7iN61pJTAaVuR3HIM0/qWggXzE5VevM4UagmHiGgSzTOOPm6A4otjude6U1y4Fn4PzaulQDL41BQxyxlwAeQGg2KFy48nnHzn6rlQ3qSyyfeZHVbnYr+swyb8NK6ah8zHmIpA1qs1FkFiHebDggIKcJ9w4gtDYANYHFx5WuQ/rZEhHsOZS5wMRTRpCp9DKNAEMjPEloRzCwkRvbmPTB9awJFXajeiOgvD7TQFZeeu2V/EJGzbuzGW08U6W096Gg==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version; 
- bh=nkqRa25wbZl2vC2dhgFFK2GqSE2+X5cBEdwWFnexsg4=;
- b=oL9InCDpVR3SL8M7FYe++UDjmK78wPWKKlkEmeLi/hAPqX3ZhNHzQZsfvR4l/hO9+8BSLKr3OB9Ik1d6IVFi8+l8rO0weafG3tnkmS8Z0/f1m59z1Lw5owxfi8BPq4pJQTTh/tFpfErcH8Zgxu6SyUZroxBGm1jSslBdzz7T4Z46R+R7p4uLZauXHNtQzLSKt+cLWdljNwkPHU12ZvgDp09Wc3D9eZs4S2U19IN8ZmHj3AzS7uMomn2ffrhWEz8fAxwM68eaOk3RmMZtAXl18gNDVdfyt0AJa2nIqnQygVdeZtPgL+Lf5SMaXQDKkmSujOb0LJusX2csJ41uMum7EQ==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=oracle.com; dmarc=pass action=none header.from=oracle.com;
- dkim=pass header.d=oracle.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=oracle.onmicrosoft.com; s=selector2-oracle-onmicrosoft-com;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=nkqRa25wbZl2vC2dhgFFK2GqSE2+X5cBEdwWFnexsg4=;
- b=JHgCkmBVwtEwg4W17LiA5i5AfoT6U9zhcFoooRV/d3P0KLYccn/ix7d4JgYxaGXo0zh7CchhfFHVDpCZAl+fLeJCGEnEm9ZTg9DhSg06H2tmA1ghuyJnpWcChixVjdwUYhp17ixYcijK+E5HyExFwC9pwl5Z8P71P5rjDFUmKmA=
-Authentication-Results: vger.kernel.org; dkim=none (message not signed)
- header.d=none; vger.kernel.org; dmarc=none action=none header.from=oracle.com; 
-Received: from SA2PR10MB4665.namprd10.prod.outlook.com (2603:10b6:806:fb::17)
- by SA2PR10MB4793.namprd10.prod.outlook.com (2603:10b6:806:110::24)
- with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.4478.21; Fri, 3 Sep
- 2021 21:51:21 +0000
-Received: from SA2PR10MB4665.namprd10.prod.outlook.com
- ([fe80::c12a:cfad:520a:2c94]) by SA2PR10MB4665.namprd10.prod.outlook.com
- ([fe80::c12a:cfad:520a:2c94%3]) with mapi id 15.20.4478.022; Fri, 3 Sep 2021
- 21:51:21 +0000
-To: Dongliang Mu <mudongliangabcd@gmail.com>
-References: <20210818102612.864127-1-mudongliangabcd@gmail.com>
-From: Dave Kleikamp <dave.kleikamp@oracle.com>
-Message-ID: <fc1dae76-eac1-e6f4-2ba6-f49e15ad0b46@oracle.com>
-Date: Fri, 3 Sep 2021 16:51:18 -0500
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:78.0) Gecko/20100101
- Thunderbird/78.13.0
-In-Reply-To: <20210818102612.864127-1-mudongliangabcd@gmail.com>
-Content-Language: en-US
-X-ClientProxiedBy: SN4PR0801CA0013.namprd08.prod.outlook.com
- (2603:10b6:803:29::23) To SA2PR10MB4665.namprd10.prod.outlook.com
- (2603:10b6:806:fb::17)
+ bh=n3+SAT+wUh+y12YwwSXLSGu91HRrwMiAwD6Udu242w4=; b=irWidiQ35HGXt/pUxdazD3etl2
+ bYHCHoMNGlLOeqjZwZjpQFxiiK3Jggm1tcUYmB6kYWKfz8mJKEYXXPRZFYoFee7SchtiX8Lsny7QQ
+ VHlsI9bF02XY+byW0/tcl+Da+24ClxzZnZWnKw4ZAmi30YE/SaIs7CXZEhSTz7WwZqBs=;
+Received: from mail-lj1-f177.google.com ([209.85.208.177])
+ by sfi-mx-2.v28.lw.sourceforge.com with esmtps
+ (TLSv1.2:ECDHE-RSA-AES128-GCM-SHA256:128) (Exim 4.92.3)
+ id 1mMHKz-0006xA-Un; Fri, 03 Sep 2021 22:07:11 +0000
+Received: by mail-lj1-f177.google.com with SMTP id w4so917569ljh.13;
+ Fri, 03 Sep 2021 15:07:05 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20210112;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:content-transfer-encoding:in-reply-to;
+ bh=n3+SAT+wUh+y12YwwSXLSGu91HRrwMiAwD6Udu242w4=;
+ b=gnrPJAMYQJs2kE0+sucg41Ur7PZsuL+E2NG/axKrXloJKX3d7HdqkqwWcjpBPMi5IP
+ 0d3DIKyoVeHfpBuWx4v0JJh8watQU+jszTZjJOQsUqoWzWlJjCc4l/rRv8z6gJdgZtvV
+ raC/VkiSW4QAaoEKlTryivsJcysBW7mqsf+cupT7ypHUuNAK52Fdkdz+FpNvcgvjOmMJ
+ q4OLzqJIUKy33DFBQh6zuo/kbf+JUbB8zJd8zF2sdA/N+v5KhmaB/tG5RyaBgMepwJ6M
+ VCSMRa2MCjGzy/+RJgOc1/p27uvH+hweLEAqfNt5FmWcIDl7lvBBkIP6EXIgzHxdWUyE
+ 0QIg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:content-transfer-encoding
+ :in-reply-to;
+ bh=n3+SAT+wUh+y12YwwSXLSGu91HRrwMiAwD6Udu242w4=;
+ b=e0BFJw2gtdo2mLa26bcMLcCQdUWAJj40lQDPQeKIZJ9Gkuf/Q6KKvlqD/F6GcgnLJA
+ 7y6HClkqxkVBEpfUjoYG9XGz3YhBM2FYUzhxI+XwY1n2WX7sjXPlLKbiGroAsXySv+s0
+ rcNrlotrhYDgmoDHbyt+8XZZk58Iubk3WSg0Zoa4XHquQklM0iphiHeAPjGIf23spYoB
+ wsZqrQZ9/SKe7w+XTNvjnRHcIEySVXWefvh3P2C18QJtHmqXpTY/y6ehU0fIyIuunN5B
+ 2KgTUHaiFAup7iUNiH4Qcqabzn7mDcl86NmuSuNCZoxUhocIfibw4n1FJ0OofHr0olIi
+ yBZQ==
+X-Gm-Message-State: AOAM530LzcXZcCun2J7F0HdZIhZW9m3z2v/TCQF1LEmiVuOzd3gLqy19
+ 1SBHBVt3Clk2xR/Qul4tUkcB3RVh9BjBlQ==
+X-Google-Smtp-Source: ABdhPJxrlnDahomjgjCeNeYPGaX5uaNHim/FoQcXEF7HvuWmzlWePT8brF8QIvetravlYRoje6IDCw==
+X-Received: by 2002:a2e:7d17:: with SMTP id y23mr806578ljc.392.1630706819322; 
+ Fri, 03 Sep 2021 15:06:59 -0700 (PDT)
+Received: from kari-VirtualBox (85-23-89-224.bb.dnainternet.fi. [85.23.89.224])
+ by smtp.gmail.com with ESMTPSA id y23sm61666lfg.277.2021.09.03.15.06.57
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Fri, 03 Sep 2021 15:06:58 -0700 (PDT)
+Date: Sat, 4 Sep 2021 01:06:56 +0300
+From: Kari Argillander <kari.argillander@gmail.com>
+To: Pali =?utf-8?B?Um9ow6Fy?= <pali@kernel.org>
+Message-ID: <20210903220656.f4mmp6mdyzryui4f@kari-VirtualBox>
+References: <20210808162453.1653-1-pali@kernel.org>
+ <20210903212616.xbi5tz5ier5xcpas@kari-VirtualBox>
+ <20210903213703.s5y5iobmdrlmzfek@pali>
 MIME-Version: 1.0
-Received: from [192.168.0.190] (68.201.65.98) by
- SN4PR0801CA0013.namprd08.prod.outlook.com (2603:10b6:803:29::23) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.4478.19 via Frontend
- Transport; Fri, 3 Sep 2021 21:51:20 +0000
-X-MS-PublicTrafficType: Email
-X-MS-Office365-Filtering-Correlation-Id: e0c8d097-66d2-4158-702b-08d96f24f74c
-X-MS-TrafficTypeDiagnostic: SA2PR10MB4793:
-X-Microsoft-Antispam-PRVS: <SA2PR10MB47936EA982F781B4C7AE12D487CF9@SA2PR10MB4793.namprd10.prod.outlook.com>
-X-MS-Oob-TLC-OOBClassifiers: OLM:8882;
-X-MS-Exchange-SenderADCheck: 1
-X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;
-X-Microsoft-Antispam-Message-Info: GMIOVrVLHdy07zOLAeMJAo1BdhRtlPLNaJoItGa6II7UE7nVHC54FXEo4NZ1gGTpH4+WcYTiEYCDNUXUKbm0FfZiTL/Eg95RROm6DAXXsyDViMCjdLaCtA9MCKTDYLSplJYvykvKH6uPnN0ZmqOLm8EBe5xmisypIsGkP98VHXVsckgAqrRwdg9kETyamDS2AoxtOhd8fmLJFnxGFCjgKBS5MgSJlRlSg/qwmw80UEUdQ4GLkrdP2FG0mgVhbZ8gxButaaTxjgfNMFppgEdsqbKWLWLmkfKNYKFfRpr8THUOXNgoT384cxJuqCf9UcnTa7Wzr4hh6RYki24s7dg9LrGToONZxxtuCv8wLT+/Rc8LBKvdCZrsPdshWLUwhKH9T1YACqt1O1wP7rpdf1UQZJWnnWUynwUH2vlHQIo4DQtR3Lqr9J42X9kbroDuA8XOKFbpI08viIWlYxN4oGOrzlNKqvq3MY3GmymhNLOdFF69ny+6JBDcNwudIqyGVhWEJHGE7/gPqP2xr26deOBb/NA3P5tGO8iwy0zV9D51nbKgAGOk6HSJ3gkQwg1KJJC0L2t2tuUVxcIIVt8eNYkdhg6gWjRalpV7B6Ej/G046R9m6AJ51F79x5CMfqzpGBIsku/whsmSS7x7LMNcC2V5Rrz9MSCniB5AwGakwQKp14I6ytzbJR0i7t0u/l6Ebm3wd+XnBZsIuXvqRhbUsvmSMcVT/4k4/UrUhKxRPaAyy7s=
-X-Forefront-Antispam-Report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
- IPV:NLI; SFV:NSPM; H:SA2PR10MB4665.namprd10.prod.outlook.com; PTR:; CAT:NONE;
- SFS:(376002)(396003)(136003)(346002)(39860400002)(366004)(31696002)(44832011)(6486002)(2906002)(36756003)(66476007)(86362001)(8676002)(66556008)(26005)(53546011)(2616005)(6916009)(66946007)(5660300002)(16576012)(316002)(956004)(8936002)(4326008)(31686004)(38100700002)(186003)(83380400001)(478600001)(45980500001)(43740500002);
- DIR:OUT; SFP:1101; 
-X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: =?utf-8?B?Z0dnUTg5VjF6c1BvNkcvWkFWaU5NQUpaS28vUHl6SUMxN0xTWEl4WFFZZmhl?=
- =?utf-8?B?eXhsNEpHZGRpL2N6dGJSSHZ4NzYxN09IakdoSzNGcS9VMGY0TGN0Z1RHSVlJ?=
- =?utf-8?B?akVBdGZVWk9RQzNpYmlMMWw5TzUwRXlFL3Iydld2b2ZjZ2I3V0VFT3YzTUQx?=
- =?utf-8?B?eEp5TkcwNno1TVlpOGRLTm8xWmZVR2VvZGJJU0hDN3lVQ1hCWTRLWGlDVS8r?=
- =?utf-8?B?NEtQSFNwSnI4TDdiQU14clBHeVBvZWdIZDlPL0hsMWdhaVRpTVExMmdXSUlH?=
- =?utf-8?B?T3Q5U0hvOWl4N1F1R3dMYURlSCsvL1JaS0drVDREU29PRlF2RGUySUtLSGZ4?=
- =?utf-8?B?RTZoS0FmYVp4clVVcWZxcjd2dU1HYzh1RVZSWmFtb0ptMndYNkJuSmx5elhE?=
- =?utf-8?B?Y1pQdWVPZDU3U004RDRIdU5PaGFOQlR3OEdpSTJ0NGFYVWdzaEN2VkdIcGJX?=
- =?utf-8?B?anN5cmlhL3JLU1dvWnc0TjBSYTlXdHowUkxZWVh0S3lCM2QySkg2UnArN0hM?=
- =?utf-8?B?S3oySjZRZ1JIbElmK09lUEd5c0Q1ajN5dkRucmRodFU4MjcrZzNJWjNzcEVw?=
- =?utf-8?B?QmJBRmlMbUhBS3RJYi9mVUxXdDJpOFBKejVpaDExRUdVUlFkZnpsOWFOWU1a?=
- =?utf-8?B?Qm5lNWk3WWxzcTRzOGdYRkVtR1ZORUFmcnA1eE9ZNE5US1JQb21ZcnlxN0pH?=
- =?utf-8?B?ZkxjOHlYZzA4aXFLRzIxUHdCUjMzam4waVp1QTVyTEhmV3FqKzlRRTlUQVRn?=
- =?utf-8?B?TFMwdjBEUVJ1blhTdGdvNDlUblM2aDNZVThlKzZ2WkNlamNWbFA0L3dEOXZI?=
- =?utf-8?B?Z21aQzlTV25LOE9ZN1JocFE4WVlOMm9ZVXRyUWlqSjRZMXV3aTdkWkxib3NG?=
- =?utf-8?B?WTNwd2gvMVJkaFdLaVlxbFBmMWFuWGNaSUo4ay94bTBiRW5LZHN6RFpORERP?=
- =?utf-8?B?MG12UnlxVGFlcldYbC81eFFZdXAyQUlFaTlEL3RTcktZMS9xbDhDWTRhZW9j?=
- =?utf-8?B?bTAxaWV5U2pGU2RaZnBSRktnVTZBS0RoaUF0dU9aK2t0SkxXK1ZXazlkRFp0?=
- =?utf-8?B?aDZaMUNLQWxXZFRNQ2hNYWp6ckJlaXI5UUg0ZFVoQ2RRTk9SYTIzcFdVdGdm?=
- =?utf-8?B?OWxaRjdyZFEwekRaeDFkVDhLZktZbkNBZHNZdmlsQVR6T3I2TjM2VXR5OXM2?=
- =?utf-8?B?WGE3cDhDU3Eyb3JjUkprVTBtQTZid2R4elE4OG9DUXo2aytpaVhtTHJXb3gw?=
- =?utf-8?B?cWVOUDFUZTRzYm1QMjNnanZ6T0I4cForZTdXU1hZaTk3bFgzUGZqR0xlM1NH?=
- =?utf-8?B?UWJvUVM5ODZ4dVMvRjlHU0VxZkZFSTUvWVh1TkhoSHV4NEtXbWRaVVVxWXd2?=
- =?utf-8?B?WFZIVHpmTU9EU0tzemZqNVViM01TcVdXYzEwV0lGcUhMMktOaTlwOGJqbU8x?=
- =?utf-8?B?NXZaT1ZTSmtkakZDN1RjVldBQ2RNYUNjQk1yWmIxOVFqTjdFU3c4WU1iTzFa?=
- =?utf-8?B?ZVpPUzRjY25DT2Faano3M1dpc1h1RThSc0R6NEMxYUt0ckg0OElYZC9BeGhO?=
- =?utf-8?B?aDhqQ2xzelpEdXllTkxaQ1N3TVQzcjg3QjRzS0VZb3E2ZjlnbzF2ZC9kWnNW?=
- =?utf-8?B?MVN1VEJtMDQyQ2FzR3dmOTNXU0MrUExVYkN0QTRvZUtxczNKWjJkc002MDNZ?=
- =?utf-8?B?KzNPNmp1UTVnUXh3V0trK2hEc0J2ZkRMaWJQd3Y1MHdOV05wdjBzdUprRGg4?=
- =?utf-8?Q?dxg3fSqJdsRWXBtBAeV8/ZchLhYLl6EdyIAALc+?=
-X-OriginatorOrg: oracle.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: e0c8d097-66d2-4158-702b-08d96f24f74c
-X-MS-Exchange-CrossTenant-AuthSource: SA2PR10MB4665.namprd10.prod.outlook.com
-X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 03 Sep 2021 21:51:20.9537 (UTC)
-X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
-X-MS-Exchange-CrossTenant-Id: 4e2c6054-71cb-48f1-bd6c-3a9705aca71b
-X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: AfkDC0E6/m5z6bVqTiwl8Ckv6YU1cvhk12MbKNrWO9N7eUeyxdLYGREG9bitqLSBzwAk0DWcpJcus2i6Gs7wdruYnHkbUzpY4Pw2Ow0DjZM=
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: SA2PR10MB4793
-X-Proofpoint-Virus-Version: vendor=nai engine=6300 definitions=10096
- signatures=668682
-X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 adultscore=0
- bulkscore=0
- mlxlogscore=999 mlxscore=0 suspectscore=0 spamscore=0 phishscore=0
- malwarescore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.12.0-2108310000 definitions=main-2109030128
-X-Proofpoint-ORIG-GUID: D8P4Wt3L-Emq0kl_4d_o54pYJZ2hKHfk
-X-Proofpoint-GUID: D8P4Wt3L-Emq0kl_4d_o54pYJZ2hKHfk
-X-Spam-Score: -2.9 (--)
-X-Spam-Report: Spam detection software,
- running on the system "util-spamd-1.v13.lw.sourceforge.com", 
- has NOT identified this incoming email as spam.  The original
- message has been attached to this so you can view it or label
- similar future email.  If you have any questions, see
- the administrator of that system for details.
- Content preview:  Thanks for waiting. I have just a couple comments, but this
- looks good. I appreciate the clean up. On 8/18/21 5:25 AM, Dongliang Mu wrote:
- > In jfs_mount, when diMount(ipaimap2) fails, it goes to errout35. However,
- > the following code does not free ipaimap2 allocated by diReadSpecial. >
- > Fix this [...] 
- Content analysis details:   (-2.9 points, 6.0 required)
- pts rule name              description
- ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [205.220.177.32 listed in list.dnswl.org]
+Content-Disposition: inline
+In-Reply-To: <20210903213703.s5y5iobmdrlmzfek@pali>
+X-Spam-Score: 0.4 (/)
+X-Spam-Report: Spam Filtering performed by mx.sourceforge.net.
+ See http://spamassassin.org/tag/ for more details.
+ 0.0 FREEMAIL_FROM Sender email is commonly abused enduser mail provider
+ (kari.argillander[at]gmail.com)
  -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [205.220.177.32 listed in wl.mailspike.net]
+ [209.85.208.177 listed in wl.mailspike.net]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/, no
+ trust [209.85.208.177 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_AU Message has a valid DKIM or DK signature from author's
+ domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid 0.0 MSGID_FROM_MTA_HEADER  Message-Id was added by a relay
- -2.0 NICE_REPLY_A           Looks like a legit reply (A)
-X-Headers-End: 1mMH5z-00DcSS-6Y
-Subject: Re: [Jfs-discussion] [PATCH] JFS: fix memleak in jfs_mount
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature,
+ not necessarily valid
+ 0.5 AWL AWL: Adjusted score from AWL reputation of From: address
+X-Headers-End: 1mMHKz-0006xA-Un
+Subject: Re: [Jfs-discussion] [RFC PATCH 00/20] fs: Remove usage of broken
+ nls_utf8 and drop it
 X-BeenThere: jfs-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -221,180 +110,216 @@ List-Post: <mailto:jfs-discussion@lists.sourceforge.net>
 List-Help: <mailto:jfs-discussion-request@lists.sourceforge.net?subject=help>
 List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/jfs-discussion>, 
  <mailto:jfs-discussion-request@lists.sourceforge.net?subject=subscribe>
-Cc: jfs-discussion@lists.sourceforge.net, linux-kernel@vger.kernel.org
-Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
+Cc: linux-cifs@vger.kernel.org, jfs-discussion@lists.sourceforge.net,
+ Jan Kara <jack@suse.cz>, Luis de Bethencourt <luisbg@kernel.org>,
+ Dave Kleikamp <shaggy@kernel.org>, linux-ntfs-dev@lists.sourceforge.net,
+ linux-kernel@vger.kernel.org, Anton Altaparmakov <anton@tuxera.com>,
+ Christoph Hellwig <hch@infradead.org>,
+ Alexander Viro <viro@zeniv.linux.org.uk>, Pavel Machek <pavel@ucw.cz>,
+ linux-fsdevel@vger.kernel.org, "Theodore Y . Ts'o" <tytso@mit.edu>,
+ Andrew Morton <akpm@linux-foundation.org>,
+ Marek =?utf-8?B?QmVow7pu?= <marek.behun@nic.cz>,
+ Salah Triki <salah.triki@gmail.com>,
+ OGAWA Hirofumi <hirofumi@mail.parknet.co.jp>
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
 Errors-To: jfs-discussion-bounces@lists.sourceforge.net
 
-Thanks for waiting. I have just a couple comments, but this looks good. 
-I appreciate the clean up.
+On Fri, Sep 03, 2021 at 11:37:03PM +0200, Pali Roh=E1r wrote:
+> On Saturday 04 September 2021 00:26:16 Kari Argillander wrote:
+> > On Sun, Aug 08, 2021 at 06:24:33PM +0200, Pali Roh=E1r wrote:
+> > > Module nls_utf8 is broken in several ways. It does not support (full)
+> > > UTF-8, despite its name. It cannot handle 4-byte UTF-8 sequences and
+> > > tolower/toupper table is not implemented at all. Which means that it =
+is
+> > > not suitable for usage in case-insensitive filesystems or UTF-16
+> > > filesystems (because of e.g. missing UTF-16 surrogate pairs processin=
+g).
+> > > =
 
-On 8/18/21 5:25 AM, Dongliang Mu wrote:
-> In jfs_mount, when diMount(ipaimap2) fails, it goes to errout35. However,
-> the following code does not free ipaimap2 allocated by diReadSpecial.
-> 
-> Fix this by refactoring the error handling code of jfs_mount. To be
-> specific, modify the lable name and free ipaimap2 when the above error
-> ocurrs.
-> 
-> Fixes: 1da177e4c3f4 ("Linux-2.6.12-rc2")
-> Signed-off-by: Dongliang Mu <mudongliangabcd@gmail.com>
-> ---
->   fs/jfs/jfs_mount.c | 53 +++++++++++++++++++---------------------------
->   1 file changed, 22 insertions(+), 31 deletions(-)
-> 
-> diff --git a/fs/jfs/jfs_mount.c b/fs/jfs/jfs_mount.c
-> index 5d7d7170c03c..638a4ecc4069 100644
-> --- a/fs/jfs/jfs_mount.c
-> +++ b/fs/jfs/jfs_mount.c
-> @@ -81,14 +81,14 @@ int jfs_mount(struct super_block *sb)
->   	 * (initialize mount inode from the superblock)
->   	 */
->   	if ((rc = chkSuper(sb))) {
-> -		goto errout20;
-> +		return rc;
+> > > This is RFC patch series which unify and fix iocharset=3Dutf8 mount
+> > > option in all fs drivers and converts all remaining fs drivers to use
+> > > utf8s_to_utf16s(), utf16s_to_utf8s(), utf8_to_utf32(), utf32_to_utf8
+> > > functions for implementing UTF-8 support instead of nls_utf8.
+> > > =
 
-This may have been intentional, but it isn't mentioned in the patch header.
+> > > So at the end it allows to completely drop this broken nls_utf8 modul=
+e.
+> > =
 
-If chkSuper fails, we will no longer call
-	jfs_err("Mount JFS Failure: %d", rc);
+> > Now that every filesystem will support nls=3DNULL. Is it possible to ju=
+st
+> > drop default_table completly? Then default has to be utf8, but is it a
+> > problem?
+> =
 
-I don't necessarily see this as a bad thing. In many cases, chkSuper 
-prints a more helpful message. In the case where it silently fails, it's 
-not even recognizing the superblock as a supported version of JFS and 
-this message isn't particularly helpful. In fact this jfs_err() 
-statement might be best deleted in its entirety.
+> Currently (default) fallback nls table is iso8859-1. I was planning to
+> merge fallback nls table and external iso8859-1 table into one, to
+> decrease code duplication.
+> =
 
->   	}
->   
->   	ipaimap = diReadSpecial(sb, AGGREGATE_I, 0);
->   	if (ipaimap == NULL) {
->   		jfs_err("jfs_mount: Failed to read AGGREGATE_I");
->   		rc = -EIO;
-> -		goto errout20;
-> +		goto out;
->   	}
->   	sbi->ipaimap = ipaimap;
->   
-> @@ -99,7 +99,7 @@ int jfs_mount(struct super_block *sb)
->   	 */
->   	if ((rc = diMount(ipaimap))) {
->   		jfs_err("jfs_mount: diMount(ipaimap) failed w/rc = %d", rc);
-> -		goto errout21;
-> +		goto err_ipaimap;
->   	}
->   
->   	/*
-> @@ -108,7 +108,7 @@ int jfs_mount(struct super_block *sb)
->   	ipbmap = diReadSpecial(sb, BMAP_I, 0);
->   	if (ipbmap == NULL) {
->   		rc = -EIO;
-> -		goto errout22;
-> +		goto err_umount_ipaimap;
->   	}
->   
->   	jfs_info("jfs_mount: ipbmap:0x%p", ipbmap);
-> @@ -120,7 +120,7 @@ int jfs_mount(struct super_block *sb)
->   	 */
->   	if ((rc = dbMount(ipbmap))) {
->   		jfs_err("jfs_mount: dbMount failed w/rc = %d", rc);
-> -		goto errout22;
-> +		goto err_ipbmap;
->   	}
->   
->   	/*
-> @@ -139,7 +139,7 @@ int jfs_mount(struct super_block *sb)
->   		if (!ipaimap2) {
->   			jfs_err("jfs_mount: Failed to read AGGREGATE_I");
->   			rc = -EIO;
-> -			goto errout35;
-> +			goto err_umount_ipbmap;
->   		}
->   		sbi->ipaimap2 = ipaimap2;
->   
-> @@ -151,7 +151,7 @@ int jfs_mount(struct super_block *sb)
->   		if ((rc = diMount(ipaimap2))) {
->   			jfs_err("jfs_mount: diMount(ipaimap2) failed, rc = %d",
->   				rc);
-> -			goto errout35;
-> +			goto err_ipaimap2;
->   		}
->   	} else
->   		/* Secondary aggregate inode table is not valid */
-> @@ -168,7 +168,7 @@ int jfs_mount(struct super_block *sb)
->   		jfs_err("jfs_mount: Failed to read FILESYSTEM_I");
->   		/* open fileset secondary inode allocation map */
->   		rc = -EIO;
-> -		goto errout40;
-> +		goto err_umount_ipaimap2;
->   	}
->   	jfs_info("jfs_mount: ipimap:0x%p", ipimap);
->   
-> @@ -178,41 +178,32 @@ int jfs_mount(struct super_block *sb)
->   	/* initialize fileset inode allocation map */
->   	if ((rc = diMount(ipimap))) {
->   		jfs_err("jfs_mount: diMount failed w/rc = %d", rc);
-> -		goto errout41;
-> +		goto err_ipimap;
->   	}
->   
-> -	goto out;
-> +	return rc;
->   
->   	/*
->   	 *	unwind on error
->   	 */
-> -      errout41:		/* close fileset inode allocation map inode */
-> +err_ipimap:
-> +	/* close fileset inode allocation map inode */
->   	diFreeSpecial(ipimap);
-> -
-> -      errout40:		/* fileset closed */
-> -
-> +err_umount_ipaimap2:
->   	/* close secondary aggregate inode allocation map */
-> -	if (ipaimap2) {
-> -		diUnmount(ipaimap2, 1);
-> -		diFreeSpecial(ipaimap2);
-> -	}
-> -
-> -      errout35:
-> -
-> -	/* close aggregate block allocation map */
-> +	if (ipaimap2) diUnmount(ipaimap2, 1);
+> There is also config option for default table. I do not think it is a
+> good idea to drop config option for default table as more people are
+> using some iso8859-X as default encoding.
 
-Coding style: this should be split between two lines:
-	if (ipaimap2)
-		diUnmount(ipaimap2, 1);
+I'm not suggesting that we drop default config option. I just suggest we
+make fallback default to utf8. So load_nls_default() will just return
+NULL and it will be ok because every fs can handle that situation after
+some tweaks at least. This way we can drop default_table (iso8859-1 as
+you said) from nls_base. =
 
-> +err_ipaimap2:
-> +	/* close aggregate inodes */
-> +	if (ipaimap2) diFreeSpecial(ipaimap2);
 
-Same here.
+> > Then I was also thinking that every nls "codepage module" can have in
+> > Kconfig
+> > 	select HAVE_NLS
+> > =
 
-> +err_umount_ipbmap:	/* close aggregate block allocation map */
->   	dbUnmount(ipbmap, 1);
-> +err_ipbmap:		/* close aggregate inodes */
->   	diFreeSpecial(ipbmap);
-> -
-> -      errout22:		/* close aggregate inode allocation map */
-> -
-> +err_umount_ipaimap:	/* close aggregate inode allocation map */
->   	diUnmount(ipaimap, 1);
-> -
-> -      errout21:		/* close aggregate inodes */
-> +err_ipaimap:		/* close aggregate inodes */
->   	diFreeSpecial(ipaimap);
-> -      errout20:		/* aggregate closed */
-> -
-> -      out:
-> -
-> +out:
->   	if (rc)
->   		jfs_err("Mount JFS Failure: %d", rc);
->   
-> 
+> > HAVE_NLS will tell if we can get anything other than nls=3DNULL. This w=
+ay
+> > fs can drop some functions if they wanted to.  It would be nice to also
+> > make nls module as small as possible because also acpi, pci and usb
+> > selects it. Also many other driver seems to depend on it and they do not
+> > even seem to select it. All other than filesystems seems to just need
+> > utf conversions. At least for quick eye.  Other option is to seperate
+> > nls and utf, but I'm not fan this idea just yet at least.
+> =
+
+> nls tables can be already compiled as modules. There are also
+> inefficient implementations of some nls tables (e.g. ascii or
+> iso8859-1). So there are already places for decreasing size of nls
+> code without loosing any functionality.
+
+There will still be default_table in and many times we won't need it as
+we only be using utf conversion.
+
+> =
+
+> > Whole point is to help little bit small Linux and embedded devices. I'm
+> > happy to do this, but all really depens on if utf8 can be default and
+> > that we sure can think before hand. =
+
+> =
+
+> I agree that on modern embedded systems there is no reason to use
+> non-utf8 encoding if you are not targeting some legacy userspace.
+> =
+
+> So allowing to compile filesystems also without nls code (in which case
+> they would use only utf-8) makes sense.
+
+Now I have looked code little more and it kinda makes sense to even just
+seperate nls and utf. Only filesystems will need nls and rest can do
+with just utf so kinda makes sense here. Also utf stuff probably has no
+need to be module because usually when something selects it (pci, acpi,
+usb) they cannot be modules. But I'm not expert in what the drawbacks
+are here.
+
+> =
+
+> >   Argillander
+> > =
+
+> > > For more details look at email thread where was discussed fs unificat=
+ion:
+> > > https://lore.kernel.org/linux-fsdevel/20200102211855.gg62r7jshp742d6i=
+@pali/t/#u
+> > > =
+
+> > > This patch series is mostly untested and presented as RFC. Please let=
+ me
+> > > know what do you think about it and if is the correct way how to fix
+> > > broken UTF-8 support in fs drivers. As explained in above email threa=
+d I
+> > > think it does not make sense to try fixing whole NLS framework and it=
+ is
+> > > easier to just drop this nls_utf8 module.
+> > > =
+
+> > > Note: this patch series does not address UTF-8 fat case-sensitivity i=
+ssue:
+> > > https://lore.kernel.org/linux-fsdevel/20200119221455.bac7dc55g56q2l4r=
+@pali/
+> > > =
+
+> > > Pali Roh=E1r (20):
+> > >   fat: Fix iocharset=3Dutf8 mount option
+> > >   hfsplus: Add iocharset=3D mount option as alias for nls=3D
+> > >   udf: Fix iocharset=3Dutf8 mount option
+> > >   isofs: joliet: Fix iocharset=3Dutf8 mount option
+> > >   ntfs: Undeprecate iocharset=3D mount option
+> > >   ntfs: Fix error processing when load_nls() fails
+> > >   befs: Fix printing iocharset=3D mount option
+> > >   befs: Rename enum value Opt_charset to Opt_iocharset to match mount
+> > >     option
+> > >   befs: Fix error processing when load_nls() fails
+> > >   befs: Allow to use native UTF-8 mode
+> > >   hfs: Explicitly set hsb->nls_disk when hsb->nls_io is set
+> > >   hfs: Do not use broken utf8 NLS table for iocharset=3Dutf8 mount op=
+tion
+> > >   hfsplus: Do not use broken utf8 NLS table for iocharset=3Dutf8 mount
+> > >     option
+> > >   jfs: Remove custom iso8859-1 implementation
+> > >   jfs: Fix buffer overflow in jfs_strfromUCS_le() function
+> > >   jfs: Do not use broken utf8 NLS table for iocharset=3Dutf8 mount op=
+tion
+> > >   ntfs: Do not use broken utf8 NLS table for iocharset=3Dutf8 mount o=
+ption
+> > >   cifs: Do not use broken utf8 NLS table for iocharset=3Dutf8 mount o=
+ption
+> > >   cifs: Remove usage of load_nls_default() calls
+> > >   nls: Drop broken nls_utf8 module
+> > > =
+
+> > >  fs/befs/linuxvfs.c          |  22 ++++---
+> > >  fs/cifs/cifs_unicode.c      | 128 +++++++++++++++++++++++-----------=
+--
+> > >  fs/cifs/cifs_unicode.h      |   2 +-
+> > >  fs/cifs/cifsfs.c            |   2 +
+> > >  fs/cifs/cifssmb.c           |   8 +--
+> > >  fs/cifs/connect.c           |   8 ++-
+> > >  fs/cifs/dfs_cache.c         |  24 +++----
+> > >  fs/cifs/dir.c               |  28 ++++++--
+> > >  fs/cifs/smb2pdu.c           |  17 ++---
+> > >  fs/cifs/winucase.c          |  14 ++--
+> > >  fs/fat/Kconfig              |  15 -----
+> > >  fs/fat/dir.c                |  17 ++---
+> > >  fs/fat/fat.h                |  22 +++++++
+> > >  fs/fat/inode.c              |  28 ++++----
+> > >  fs/fat/namei_vfat.c         |  26 ++++++--
+> > >  fs/hfs/super.c              |  62 ++++++++++++++---
+> > >  fs/hfs/trans.c              |  62 +++++++++--------
+> > >  fs/hfsplus/dir.c            |   6 +-
+> > >  fs/hfsplus/options.c        |  39 ++++++-----
+> > >  fs/hfsplus/super.c          |   7 +-
+> > >  fs/hfsplus/unicode.c        |  31 ++++++++-
+> > >  fs/hfsplus/xattr.c          |  14 ++--
+> > >  fs/hfsplus/xattr_security.c |   3 +-
+> > >  fs/isofs/inode.c            |  27 ++++----
+> > >  fs/isofs/isofs.h            |   1 -
+> > >  fs/isofs/joliet.c           |   4 +-
+> > >  fs/jfs/jfs_dtree.c          |  13 +++-
+> > >  fs/jfs/jfs_unicode.c        |  35 +++++-----
+> > >  fs/jfs/jfs_unicode.h        |   2 +-
+> > >  fs/jfs/super.c              |  29 ++++++--
+> > >  fs/nls/Kconfig              |   9 ---
+> > >  fs/nls/Makefile             |   1 -
+> > >  fs/nls/nls_utf8.c           |  67 -------------------
+> > >  fs/ntfs/dir.c               |   6 +-
+> > >  fs/ntfs/inode.c             |   5 +-
+> > >  fs/ntfs/super.c             |  60 ++++++++---------
+> > >  fs/ntfs/unistr.c            |  28 +++++++-
+> > >  fs/udf/super.c              |  50 ++++++--------
+> > >  fs/udf/udf_sb.h             |   2 -
+> > >  fs/udf/unicode.c            |   4 +-
+> > >  40 files changed, 510 insertions(+), 418 deletions(-)
+> > >  delete mode 100644 fs/nls/nls_utf8.c
+> > > =
+
+> > > -- =
+
+> > > 2.20.1
+> > > =
+
 
 
 _______________________________________________
