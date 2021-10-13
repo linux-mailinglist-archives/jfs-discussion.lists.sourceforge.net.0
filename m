@@ -2,27 +2,27 @@ Return-Path: <jfs-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+jfs-discussion@lfdr.de
 Delivered-To: lists+jfs-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id 734A842C23D
-	for <lists+jfs-discussion@lfdr.de>; Wed, 13 Oct 2021 16:09:11 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9D49542C24A
+	for <lists+jfs-discussion@lfdr.de>; Wed, 13 Oct 2021 16:09:15 +0200 (CEST)
 Received: from [127.0.0.1] (helo=sfs-ml-2.v29.lw.sourceforge.com)
 	by sfs-ml-2.v29.lw.sourceforge.com with esmtp (Exim 4.92.3)
 	(envelope-from <jfs-discussion-bounces@lists.sourceforge.net>)
-	id 1maevx-0000iJ-TD; Wed, 13 Oct 2021 14:08:41 +0000
+	id 1maevy-0000ic-3L; Wed, 13 Oct 2021 14:08:42 +0000
 Received: from [172.30.20.202] (helo=mx.sourceforge.net)
- by sfs-ml-1.v29.lw.sourceforge.com with esmtps
+ by sfs-ml-4.v29.lw.sourceforge.com with esmtps
  (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
  (envelope-from
  <BATV+5200d22377f13f7bc369+6625+infradead.org+hch@casper.srs.infradead.org>)
- id 1maWuH-0007UF-5L; Wed, 13 Oct 2021 05:34:25 +0000
+ id 1maWw1-0004YH-2f; Wed, 13 Oct 2021 05:36:13 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=sourceforge.net; s=x; h=Content-Transfer-Encoding:MIME-Version:References:
  In-Reply-To:Message-Id:Date:Subject:Cc:To:From:Sender:Reply-To:Content-Type:
  Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
  Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=39HaYm26ck1Q/qs4DL8qNMVTN9Lr6ailLQ9qlOsD13M=; b=hEBTjHHEBAVGvG44KOyZCSCpXP
- yDT5m7qfsZ7NCiFEKs2x2F7JGINLRBpnVPQfpPCD+ObQPSvR7aKoX51aEGLHcQjXX7leGW4fe7zCK
- +ahLgBPEQAvsDwnqxdXdT18ugMENUq9O8eV05+cQdXCRdWEW9xEEEJIYOvy/gImMVB6k=;
+ bh=b/1WtCR7MZhJba3BS3poCWIl5wb8PwibdCVDGtUMTIg=; b=GrmucABVMAWIxU9cPj8GpVSUhH
+ /J1e2Ro9dP9J0s5SmyodH1w9s3juh/0vXw6yRH+Fe4sqszrtHcJ0s0qzWsSO+2MQh6+ubeZkH27B5
+ 1fI77Yi57LZ0wD6u4JJpAGH0QmOEyG3xfVN29RHm9IwGB4QyYIqSUMR1d91LBhuUHvzk=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
  h=Content-Transfer-Encoding:MIME-Version:References:In-Reply-To:Message-Id:
@@ -30,31 +30,31 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
  :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
  List-Post:List-Owner:List-Archive;
- bh=39HaYm26ck1Q/qs4DL8qNMVTN9Lr6ailLQ9qlOsD13M=; b=aMVItpNFt6Ik/fD/SsYBN0z6MN
- KHmp+ix6NTVdogBhLcAznKDmvsdzrQYY0040sKYYw6DpW3WtoRUFiT0MvDgyoDuGpS18Q1yHovFbA
- WQ5X3gMcQvDr2/gYFXgmsXuHvbU9AeqU4Ddf+6FBuNvS7M9mbvcuymWDk10+VF9tlyGM=;
+ bh=b/1WtCR7MZhJba3BS3poCWIl5wb8PwibdCVDGtUMTIg=; b=P4yvzz6YRnDnHDlEDOtzbd9nJZ
+ IYpS3mtershi/s4AKv5/jkUhrnmpaOONAPvVTmIdTCIFG7ET+MQPvFwKRM7Ke45UVWcMlIlfqpf5X
+ ackci0es5P/Zr1OXtgLz8/OZpCHRws3geVTguCxe+XL4lUrnIR/uP0bJKnHF4rSh9wTI=;
 Received: from casper.infradead.org ([90.155.50.34])
  by sfi-mx-1.v28.lw.sourceforge.com with esmtps
  (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.92.3)
- id 1maWuG-007Ezg-LO; Wed, 13 Oct 2021 05:34:25 +0000
+ id 1maWw0-007FIa-Gy; Wed, 13 Oct 2021 05:36:13 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=infradead.org; s=casper.20170209; h=Content-Transfer-Encoding:MIME-Version:
  References:In-Reply-To:Message-Id:Date:Subject:Cc:To:From:Sender:Reply-To:
  Content-Type:Content-ID:Content-Description;
- bh=39HaYm26ck1Q/qs4DL8qNMVTN9Lr6ailLQ9qlOsD13M=; b=aHtBe1dA8jDL6nkYC2gqw40U9v
- J2fj1CwwPytuisPEPT+QqIPqcQL8qeP8ILip+Ab7OKF8Cx1l6cNtRM/EKOEIlwVPeU2yAnCydCn02
- 5u1wUYf1tItlO+Foc4rbLhqVkm8H5CK71rLqliO7JH8trcJ02f6RyBGKMz31rFqWdXkW1y9L+sahA
- XT3nV+TPR5tCHZkQ1sh73RyDt4oqzC4ySRvveksjUfsWkiF3PDnWxnnnZEAmJmGo7foAgtHOJFrc0
- 9y30dbLL2dRtoiGyPWTr1JTuXiPxu5Toub70OO8IJovwwh2Mk+WsF1BpUNv2XXzXuIZ3LugovSGBs
- QWI9O5nQ==;
+ bh=b/1WtCR7MZhJba3BS3poCWIl5wb8PwibdCVDGtUMTIg=; b=AibyI63hxlP0PaVEtM1IB45vue
+ B2Qp9sl1L0sVZCSdVPNP2iqBhSzPbqm6ldKWMyav2yvdMQ8khXEtRJDK2V9zGHlPUMeKa8c8v4s4E
+ hTRbUpkJ5IfZ1QXJr94uVSBQLjDMG1t+3M/ofV8sFHUaAtQSYoPoQsKWFIiX0cVrr8xgrr9ZfEvYU
+ VSxfoBUL4jMnlFdTu2kCpc9Pi2uWPogBS9qNnRhqO3RXf9uBkRWfNVq1ab8AfJFIv7CqvsjupDBKJ
+ 8pOAEhN8lIBVRjgAwbzXc7/iEd8mafeISKsRwX+b8XdVb8I+dz+5xaXlAxETrLmdZEU0hlvvnr1wv
+ uQt5wmrg==;
 Received: from 089144212063.atnat0021.highway.a1.net ([89.144.212.63]
  helo=localhost)
  by casper.infradead.org with esmtpsa (Exim 4.94.2 #2 (Red Hat Linux))
- id 1maWpv-0077O7-6w; Wed, 13 Oct 2021 05:30:20 +0000
+ id 1maWrI-0077W8-Sa; Wed, 13 Oct 2021 05:31:47 +0000
 From: Christoph Hellwig <hch@lst.de>
 To: Jens Axboe <axboe@kernel.dk>
-Date: Wed, 13 Oct 2021 07:10:30 +0200
-Message-Id: <20211013051042.1065752-18-hch@lst.de>
+Date: Wed, 13 Oct 2021 07:10:31 +0200
+Message-Id: <20211013051042.1065752-19-hch@lst.de>
 X-Mailer: git-send-email 2.30.2
 In-Reply-To: <20211013051042.1065752-1-hch@lst.de>
 References: <20211013051042.1065752-1-hch@lst.de>
@@ -70,11 +70,9 @@ X-Spam-Report: Spam detection software,
  the administrator of that system for details.
  Content preview: Use the proper helper to read the block device size.
  Signed-off-by:
- Christoph Hellwig <hch@lst.de> --- fs/nfs/blocklayout/dev.c | 4 ++-- 1 file
- changed, 2 insertions(+), 2 deletions(-) diff --git a/fs/nfs/blocklayout/dev.c
- b/fs/nfs/blocklayout/dev.c index acb1d22907daf..42772985cb43e 100644 ---
- a/fs/nfs/blocklayout/dev.c +++ b/fs/nfs/blocklayout/dev.c @@ -252,7 +252,7
- @@ bl_parse_si [...] 
+ Christoph Hellwig <hch@lst.de> --- fs/nilfs2/ioctl.c | 2 +- fs/nilfs2/super.c
+ | 2 +- fs/nilfs2/the_nilfs.c | 3 ++- 3 files changed, 4 insertions(+), 3
+ deletions(-) 
  Content analysis details:   (0.2 points, 6.0 required)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
@@ -91,10 +89,10 @@ X-Spam-Report: Spam detection software,
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
-X-Headers-End: 1maWuG-007Ezg-LO
+X-Headers-End: 1maWw0-007FIa-Gy
 X-Mailman-Approved-At: Wed, 13 Oct 2021 14:08:35 +0000
-Subject: [Jfs-discussion] [PATCH 17/29] nfs/blocklayout: use bdev_nr_sectors
- instead of open coding it
+Subject: [Jfs-discussion] [PATCH 18/29] nilfs2: use bdev_nr_sectors instead
+ of open coding it
 X-BeenThere: jfs-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -130,31 +128,51 @@ Use the proper helper to read the block device size.
 
 Signed-off-by: Christoph Hellwig <hch@lst.de>
 ---
- fs/nfs/blocklayout/dev.c | 4 ++--
- 1 file changed, 2 insertions(+), 2 deletions(-)
+ fs/nilfs2/ioctl.c     | 2 +-
+ fs/nilfs2/super.c     | 2 +-
+ fs/nilfs2/the_nilfs.c | 3 ++-
+ 3 files changed, 4 insertions(+), 3 deletions(-)
 
-diff --git a/fs/nfs/blocklayout/dev.c b/fs/nfs/blocklayout/dev.c
-index acb1d22907daf..42772985cb43e 100644
---- a/fs/nfs/blocklayout/dev.c
-+++ b/fs/nfs/blocklayout/dev.c
-@@ -252,7 +252,7 @@ bl_parse_simple(struct nfs_server *server, struct pnfs_block_dev *d,
- 	d->bdev = bdev;
+diff --git a/fs/nilfs2/ioctl.c b/fs/nilfs2/ioctl.c
+index 640ac8fe891e6..4c12cc0e265e1 100644
+--- a/fs/nilfs2/ioctl.c
++++ b/fs/nilfs2/ioctl.c
+@@ -1107,7 +1107,7 @@ static int nilfs_ioctl_set_alloc_range(struct inode *inode, void __user *argp)
+ 		goto out;
  
+ 	ret = -ERANGE;
+-	if (range[1] > i_size_read(inode->i_sb->s_bdev->bd_inode))
++	if (range[1] > (bdev_nr_sectors(inode->i_sb->s_bdev) << SECTOR_SHIFT))
+ 		goto out;
  
--	d->len = i_size_read(d->bdev->bd_inode);
-+	d->len = bdev_nr_sectors(d->bdev) << SECTOR_SHIFT;
- 	d->map = bl_map_simple;
+ 	segbytes = nilfs->ns_blocks_per_segment * nilfs->ns_blocksize;
+diff --git a/fs/nilfs2/super.c b/fs/nilfs2/super.c
+index f6b2d280aab5a..1842663339acc 100644
+--- a/fs/nilfs2/super.c
++++ b/fs/nilfs2/super.c
+@@ -403,7 +403,7 @@ int nilfs_resize_fs(struct super_block *sb, __u64 newsize)
+ 	int ret;
  
- 	printk(KERN_INFO "pNFS: using block device %s\n",
-@@ -367,7 +367,7 @@ bl_parse_scsi(struct nfs_server *server, struct pnfs_block_dev *d,
- 		return PTR_ERR(bdev);
- 	d->bdev = bdev;
+ 	ret = -ERANGE;
+-	devsize = i_size_read(sb->s_bdev->bd_inode);
++	devsize = bdev_nr_sectors(sb->s_bdev) << SECTOR_SHIFT;
+ 	if (newsize > devsize)
+ 		goto out;
  
--	d->len = i_size_read(d->bdev->bd_inode);
-+	d->len = bdev_nr_sectors(d->bdev) << SECTOR_SHIFT;
- 	d->map = bl_map_simple;
- 	d->pr_key = v->scsi.pr_key;
+diff --git a/fs/nilfs2/the_nilfs.c b/fs/nilfs2/the_nilfs.c
+index c8bfc01da5d71..d68df998213e9 100644
+--- a/fs/nilfs2/the_nilfs.c
++++ b/fs/nilfs2/the_nilfs.c
+@@ -489,7 +489,8 @@ static int nilfs_load_super_block(struct the_nilfs *nilfs,
+ {
+ 	struct nilfs_super_block **sbp = nilfs->ns_sbp;
+ 	struct buffer_head **sbh = nilfs->ns_sbh;
+-	u64 sb2off = NILFS_SB2_OFFSET_BYTES(nilfs->ns_bdev->bd_inode->i_size);
++	loff_t size = bdev_nr_sectors(nilfs->ns_bdev) << SECTOR_SHIFT;
++	u64 sb2off = NILFS_SB2_OFFSET_BYTES(size);
+ 	int valid[2], swp = 0;
  
+ 	sbp[0] = nilfs_read_super_block(sb, NILFS_SB_OFFSET_BYTES, blocksize,
 -- 
 2.30.2
 
