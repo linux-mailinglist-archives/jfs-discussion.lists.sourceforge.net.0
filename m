@@ -2,106 +2,93 @@ Return-Path: <jfs-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+jfs-discussion@lfdr.de
 Delivered-To: lists+jfs-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id 22D254284D3
-	for <lists+jfs-discussion@lfdr.de>; Mon, 11 Oct 2021 03:44:50 +0200 (CEST)
-Received: from [127.0.0.1] (helo=sfs-ml-1.v29.lw.sourceforge.com)
-	by sfs-ml-1.v29.lw.sourceforge.com with esmtp (Exim 4.90_1)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9265A42C22E
+	for <lists+jfs-discussion@lfdr.de>; Wed, 13 Oct 2021 16:08:58 +0200 (CEST)
+Received: from [127.0.0.1] (helo=sfs-ml-2.v29.lw.sourceforge.com)
+	by sfs-ml-2.v29.lw.sourceforge.com with esmtp (Exim 4.92.3)
 	(envelope-from <jfs-discussion-bounces@lists.sourceforge.net>)
-	id 1mZkMf-0008GY-8u; Mon, 11 Oct 2021 01:44:29 +0000
+	id 1maevt-0000cu-Jr; Wed, 13 Oct 2021 14:08:37 +0000
 Received: from [172.30.20.202] (helo=mx.sourceforge.net)
- by sfs-ml-1.v29.lw.sourceforge.com with esmtps
+ by sfs-ml-4.v29.lw.sourceforge.com with esmtps
  (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
- (envelope-from <sunhao.th@gmail.com>) id 1mZkMe-0008GO-DY
- for jfs-discussion@lists.sourceforge.net; Mon, 11 Oct 2021 01:44:28 +0000
+ (envelope-from
+ <BATV+5200d22377f13f7bc369+6625+infradead.org+hch@casper.srs.infradead.org>)
+ id 1maWaP-00047L-SB; Wed, 13 Oct 2021 05:13:53 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=sourceforge.net; s=x; h=Content-Type:Cc:To:Subject:Message-ID:Date:From:
- MIME-Version:Sender:Reply-To:Content-Transfer-Encoding:Content-ID:
+ d=sourceforge.net; s=x; h=Content-Transfer-Encoding:MIME-Version:Message-Id:
+ Date:Subject:Cc:To:From:Sender:Reply-To:Content-Type:Content-ID:
  Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
  :Resent-Message-ID:In-Reply-To:References:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=XHhGuz+XprWcRZlX2mia8Y6kjwxUAUx+3iJusRDWyfg=; b=AJNoWMZ0UbpRIYSAm7OnGmFNz3
- 5YCPweEkI3qfDrNgN3BB1oYE2E+8xLxM39pU5qsJobcaARc4bnOYko76IkgwB/t6N18QaoGtvguD0
- lV7qZKEXPA1BwrBceqZZ+0gM7qauL15WeboGdiWUMPWE4u2RhZe2BFxvQpNzBA+Uv/gU=;
+ bh=ocvXC+DvSauKdmmvS3p+BxJi5u95doUk5KlK23wKtqo=; b=MQSx3Ydr1+uP3qikZ2i0+rLWSE
+ 8URjyELu1UurmTF339+s6SnNnJgCxDd6O6h5ieR/he8S8zzsyYvLNyh+FPCMPerVNh6ujpEbJi6at
+ 5DzJFgnzshd/4ebzKS702j6DH2gzMfbKgU0R1E/M1xFVpOMhUZmoGVvirWQXTgAQtJbY=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
- h=Content-Type:Cc:To:Subject:Message-ID:Date:From:MIME-Version:Sender:
- Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
- :Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+ h=Content-Transfer-Encoding:MIME-Version:Message-Id:Date:Subject:Cc:To:From
+ :Sender:Reply-To:Content-Type:Content-ID:Content-Description:Resent-Date:
+ Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
  References:List-Id:List-Help:List-Unsubscribe:List-Subscribe:List-Post:
- List-Owner:List-Archive; bh=XHhGuz+XprWcRZlX2mia8Y6kjwxUAUx+3iJusRDWyfg=; b=F
- 8yELIpHiN9hl0xuaRM0OrWhn8sMe89Gaa1eVQOn9YokDNtV0QDyRVb3zlwRWTa4k2QGkTBjefzRDD
- QPUIoR1LQJjuXI5qadwTcMbLiEQEe7utYQA4YO+KVG0nIxcVGlc9HmsDT/cud/7Tandy5i8sCEKvS
- RsfTcINUiZfNZQfA=;
-Received: from mail-pj1-f41.google.com ([209.85.216.41])
- by sfi-mx-1.v28.lw.sourceforge.com with esmtps
- (TLSv1.2:ECDHE-RSA-AES128-GCM-SHA256:128) (Exim 4.92.3)
- id 1mZkMd-001YLP-Oy
- for jfs-discussion@lists.sourceforge.net; Mon, 11 Oct 2021 01:44:28 +0000
-Received: by mail-pj1-f41.google.com with SMTP id k23so12086738pji.0
- for <jfs-discussion@lists.sourceforge.net>;
- Sun, 10 Oct 2021 18:44:27 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20210112;
- h=mime-version:from:date:message-id:subject:to:cc;
- bh=XHhGuz+XprWcRZlX2mia8Y6kjwxUAUx+3iJusRDWyfg=;
- b=hac24URoTl5lw7ZUyU/t5U8m74C4Qni855om3yf4J2+QCP+OjmyC9KC3NAOR/XfPgo
- 3QbeXH37eqpwShP5+7kZw1FtZn7hJ/R7EbtiAxQ/QpfIGGHnOrS9s9dk5AlymEJGrYBY
- JihGdkNsPF41x3i0U8xcry4OQWdYAnaWc2/d97GATppo+N2TeAzxPJiSZs1tcJDsCYgS
- 8cFf/ZvxfEGWsyiD70Z19N5fbh1hr6zq5EZQlJOjBVfF7G2cg6yCRFRqDP6N2nz3tZAx
- FaC4vQOuAa1ZtD/Q/bKBGK2PkL/q8d205AfFK/JyxUVIagBXgdIVwSa6CX9WT3EORx7Y
- IwGA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20210112;
- h=x-gm-message-state:mime-version:from:date:message-id:subject:to:cc;
- bh=XHhGuz+XprWcRZlX2mia8Y6kjwxUAUx+3iJusRDWyfg=;
- b=IxD3/UjT55SA060fquK7FOm0shScAJkrLlMHH4gBNNDjGqb/WLPhCmpxlU1nLKsNYg
- YArZiuv3ILfRiUmwBg3e8rt6H1tne4XSpep1Pll0bPK6A3jgOh8R8VISSb2b623X1Gle
- JtINnYsWTfARi8snh7k0Sk4xXtG2K58B0zX9A+wk2aAs4JHH7lrjvozJFBii99W3RlTI
- VenN3dxiqt6xtgkf4EDg7yJiVwwtTKv7UkpLFTRJYT5tSKq8BY32eoIfRmD2x5hYZqpi
- qlt/mGha0EEhM+fypa/vmgZkRmVsjzA0rXKMFRjHA8T3K3V53NXcmF0gYXY2RIa+7fST
- XHkA==
-X-Gm-Message-State: AOAM5331TJXpwHjJEd0jxprFnBXDHurC6be0Q4MVHIvSanWFFRaoh5Lf
- DO05o9SMcDZy8c4Z5CfvrS7XsbQMRzL4erGSdg==
-X-Google-Smtp-Source: ABdhPJwoPyl/vws4WDbd76yyRcCCa83VSVOCjTGZp7jj2tOM8W7CVSREIu5ltxZoYLWBrgK0LhlMMdoZ/FID64aRiYI=
-X-Received: by 2002:a17:902:7b84:b0:13b:90a7:e270 with SMTP id
- w4-20020a1709027b8400b0013b90a7e270mr21910103pll.21.1633916661767; Sun, 10
- Oct 2021 18:44:21 -0700 (PDT)
+ List-Owner:List-Archive; bh=ocvXC+DvSauKdmmvS3p+BxJi5u95doUk5KlK23wKtqo=; b=R
+ OUPXRc19nU/bYAtbWGevNxbV0Gy/jAXj1HRG/AJzVmi1k5XPcd0+I+r1nKy59wgImdTVq9pfQ9xWc
+ KCFgAwvjlJ2lhNDNfA2RqeSiJZv/eG+1RTrRfRFAcCDnZrSD9cdhJeFQRIoZYHcex8XrNG0K2t6h7
+ IKkeNgAx67MeXJIw=;
+Received: from casper.infradead.org ([90.155.50.34])
+ by sfi-mx-2.v28.lw.sourceforge.com with esmtps
+ (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.92.3)
+ id 1maWaL-0001Qr-7a; Wed, 13 Oct 2021 05:13:52 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=infradead.org; s=casper.20170209; h=Content-Transfer-Encoding:MIME-Version:
+ Message-Id:Date:Subject:Cc:To:From:Sender:Reply-To:Content-Type:Content-ID:
+ Content-Description:In-Reply-To:References;
+ bh=ocvXC+DvSauKdmmvS3p+BxJi5u95doUk5KlK23wKtqo=; b=lKRpM4ZXjdzEAs+vZHMan9ZhwK
+ q3qA9dd5QajFA+KsuGdVyTH2p+oZZPEv/z2NSgSxTwIMMwqmktOR+s0Mrd19t1c1Y/TakGT40A9Wj
+ fXHJiNb6NQJwkxlZ/5iLycWCBNdMTLXRP1g8wuFiwK5UhTbY4DE7tpL0AHanppMBRE/m1Ine/XAEK
+ um2dw0LVt4/UjLCyOHoVNjJK0jpXEaLw+w3Q6MwnUfqPKIR8hZ7XIOjLGS/AwhJhnrAzptzhgIYv3
+ k508G2hmAkGrCbErzCtBLkTxM5WVEpuUuduXQQzcasviJArvc73oNwcMB0CSLN98PutjOV+1MzU1W
+ 3RwzUyhQ==;
+Received: from 089144212063.atnat0021.highway.a1.net ([89.144.212.63]
+ helo=localhost)
+ by casper.infradead.org with esmtpsa (Exim 4.94.2 #2 (Red Hat Linux))
+ id 1maWXM-0075tt-3G; Wed, 13 Oct 2021 05:10:57 +0000
+From: Christoph Hellwig <hch@lst.de>
+To: Jens Axboe <axboe@kernel.dk>
+Date: Wed, 13 Oct 2021 07:10:13 +0200
+Message-Id: <20211013051042.1065752-1-hch@lst.de>
+X-Mailer: git-send-email 2.30.2
 MIME-Version: 1.0
-From: Hao Sun <sunhao.th@gmail.com>
-Date: Mon, 11 Oct 2021 09:44:11 +0800
-Message-ID: <CACkBjsZ5cRX5t0wCr2MfjBp4=-Utn43MzZD4uEyzznvWuUz05A@mail.gmail.com>
-To: shaggy@kernel.org, jfs-discussion@lists.sourceforge.net
-X-Spam-Score: -0.2 (/)
+X-SRS-Rewrite: SMTP reverse-path rewritten from <hch@infradead.org> by
+ casper.infradead.org. See http://www.infradead.org/rpr.html
+X-Spam-Score: 0.2 (/)
 X-Spam-Report: Spam detection software,
  running on the system "util-spamd-1.v13.lw.sourceforge.com", 
  has NOT identified this incoming email as spam.  The original
  message has been attached to this so you can view it or label
  similar future email.  If you have any questions, see
  the administrator of that system for details.
- Content preview:  Hello, When using Healer to fuzz the latest Linux kernel,
- the following crash was triggered. HEAD commit: 60a9483534ed Merge tag
- 'warning-fixes-20211005' git tree: upstream console output:
- https://drive.google.com/file/d/1IM13hIeSrriEEkaACcmQaVYfOJ85xKZQ/view?usp=sharing
- kernel config: https: [...] 
- Content analysis details:   (-0.2 points, 6.0 required)
+ Content preview:  Hi Jens, various drivers currently poke directy at the block
+ device inode, which is a bit of a mess. This series cleans up the places
+ that read the block device size to use the proper helpers. I have separate
+ [...] Content analysis details:   (0.2 points, 6.0 required)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.216.41 listed in list.dnswl.org]
+ 0.0 URIBL_BLOCKED          ADMINISTRATOR NOTICE: The query to URIBL was
+ blocked.  See
+ http://wiki.apache.org/spamassassin/DnsBlocklists#dnsbl-block
+ for more information. [URIs: infradead.org]
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [sunhao.th[at]gmail.com]
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [209.85.216.41 listed in wl.mailspike.net]
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
-X-Headers-End: 1mZkMd-001YLP-Oy
-Subject: [Jfs-discussion] UBSAN: shift-out-of-bounds in extAlloc
+ valid
+X-Headers-End: 1maWaL-0001Qr-7a
+X-Mailman-Approved-At: Wed, 13 Oct 2021 14:08:33 +0000
+Subject: [Jfs-discussion] don't use ->bd_inode to access the block device
+ size
 X-BeenThere: jfs-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -113,65 +100,97 @@ List-Post: <mailto:jfs-discussion@lists.sourceforge.net>
 List-Help: <mailto:jfs-discussion-request@lists.sourceforge.net?subject=help>
 List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/jfs-discussion>, 
  <mailto:jfs-discussion-request@lists.sourceforge.net?subject=subscribe>
-Cc: Linux Kernel Mailing List <linux-kernel@vger.kernel.org>
+Cc: Dave Kleikamp <shaggy@kernel.org>, jfs-discussion@lists.sourceforge.net,
+ Mike Snitzer <snitzer@redhat.com>, linux-nvme@lists.infradead.org,
+ Konstantin Komarov <almaz.alexandrovich@paragon-software.com>,
+ Song Liu <song@kernel.org>, dm-devel@redhat.com, target-devel@vger.kernel.org,
+ linux-mtd@lists.infradead.org, reiserfs-devel@vger.kernel.org,
+ drbd-dev@lists.linbit.com, linux-nilfs@vger.kernel.org,
+ linux-scsi@vger.kernel.org, OGAWA Hirofumi <hirofumi@mail.parknet.co.jp>,
+ linux-ext4@vger.kernel.org, Kees Cook <keescook@chromium.org>,
+ Josef Bacik <josef@toxicpanda.com>, Coly Li <colyli@suse.de>,
+ linux-raid@vger.kernel.org, linux-bcache@vger.kernel.org,
+ David Sterba <dsterba@suse.com>, Ryusuke Konishi <konishi.ryusuke@gmail.com>,
+ Anton Altaparmakov <anton@tuxera.com>, linux-block@vger.kernel.org,
+ linux-nfs@vger.kernel.org, Theodore Ts'o <tytso@mit.edu>,
+ linux-ntfs-dev@lists.sourceforge.net, Jan Kara <jack@suse.com>,
+ linux-fsdevel@vger.kernel.org, Phillip Lougher <phillip@squashfs.org.uk>,
+ ntfs3@lists.linux.dev, linux-btrfs@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Errors-To: jfs-discussion-bounces@lists.sourceforge.net
 
-Hello,
+Hi Jens,
 
-When using Healer to fuzz the latest Linux kernel, the following crash
-was triggered.
+various drivers currently poke directy at the block device inode, which
+is a bit of a mess.  This series cleans up the places that read the
+block device size to use the proper helpers.  I have separate patches
+for many of the other bd_inode uses, but this series is already big
+enough as-is,
 
-HEAD commit: 60a9483534ed Merge tag 'warning-fixes-20211005'
-git tree: upstream
-console output:
-https://drive.google.com/file/d/1IM13hIeSrriEEkaACcmQaVYfOJ85xKZQ/view?usp=sharing
-kernel config: https://drive.google.com/file/d/1u-ncYGLkq3xqdlNQYJz8-G6Fhf3H-moP/view?usp=sharing
+I wondered about adding a helper for looking at the size in byte units
+to avoid the SECTOR_SHIFT shifts in various places.  But given that
+I could not come up with a good name and block devices fundamentally
+work in sector size granularity I decided against that.
 
-Sorry, I don't have a reproducer for this crash, hope the symbolized
-report can help.
-If you fix this issue, please add the following tag to the commit:
-Reported-by: Hao Sun <sunhao.th@gmail.com>
-
-loop9: detected capacity change from 0 to 65534
-================================================================================
-UBSAN: shift-out-of-bounds in fs/jfs/jfs_extent.c:511:16
-shift exponent -1 is negative
-CPU: 0 PID: 12367 Comm: syz-executor Not tainted 5.15.0-rc4+ #22
-Hardware name: QEMU Standard PC (i440FX + PIIX, 1996), BIOS
-rel-1.12.0-59-gc9ba5276e321-prebuilt.qemu.org 04/01/2014
-Call Trace:
- __dump_stack lib/dump_stack.c:88 [inline]
- dump_stack_lvl+0x8d/0xcf lib/dump_stack.c:106
- ubsan_epilogue+0xa/0x4e lib/ubsan.c:151
- __ubsan_handle_shift_out_of_bounds+0x161/0x182 lib/ubsan.c:330
- extBalloc fs/jfs/jfs_extent.c:511 [inline]
- extAlloc+0x699/0x6c0 fs/jfs/jfs_extent.c:125
- jfs_get_block+0x290/0x3f0 fs/jfs/inode.c:257
- nobh_write_begin+0x29d/0x990 fs/buffer.c:2648
- jfs_write_begin+0x37/0x80 fs/jfs/inode.c:321
- generic_perform_write+0xce/0x220 mm/filemap.c:3770
- __generic_file_write_iter+0x20d/0x240 mm/filemap.c:3897
- generic_file_write_iter+0x6d/0xd0 mm/filemap.c:3929
- call_write_iter include/linux/fs.h:2163 [inline]
- new_sync_write+0x18d/0x260 fs/read_write.c:507
- vfs_write+0x43b/0x4a0 fs/read_write.c:594
- ksys_write+0xd2/0x120 fs/read_write.c:647
- do_syscall_x64 arch/x86/entry/common.c:50 [inline]
- do_syscall_64+0x34/0xb0 arch/x86/entry/common.c:80
- entry_SYSCALL_64_after_hwframe+0x44/0xae
-RIP: 0033:0x46ae99
-Code: f7 d8 64 89 02 b8 ff ff ff ff c3 66 0f 1f 44 00 00 48 89 f8 48
-89 f7 48 89 d6 48 89 ca 4d 89 c2 4d 89 c8 4c 8b 4c 24 08 0f 05 <48> 3d
-01 f0 ff ff 73 01 c3 48 c7 c1 bc ff ff ff f7 d8 64 89 01 48
-RSP: 002b:00007f58ac19fc48 EFLAGS: 00000246 ORIG_RAX: 0000000000000001
-RAX: ffffffffffffffda RBX: 000000000078c0a0 RCX: 000000000046ae99
-RDX: 00000000ffffff6a RSI: 0000000020043440 RDI: 000000000000000a
-RBP: 00000000004e4809 R08: 0000000000000000 R09: 0000000000000000
-R10: 0000000000000000 R11: 0000000000000246 R12: 000000000078c0a0
-R13: 0000000000000000 R14: 000000000078c0a0 R15: 00007ffdbff36e60
-================================================================================
+Diffstat:
+ block/fops.c                        |    2 +-
+ drivers/block/drbd/drbd_int.h       |    3 +--
+ drivers/md/bcache/super.c           |    2 +-
+ drivers/md/bcache/util.h            |    4 ----
+ drivers/md/bcache/writeback.c       |    2 +-
+ drivers/md/dm-bufio.c               |    2 +-
+ drivers/md/dm-cache-metadata.c      |    2 +-
+ drivers/md/dm-cache-target.c        |    2 +-
+ drivers/md/dm-clone-target.c        |    2 +-
+ drivers/md/dm-dust.c                |    5 ++---
+ drivers/md/dm-ebs-target.c          |    2 +-
+ drivers/md/dm-era-target.c          |    2 +-
+ drivers/md/dm-exception-store.h     |    2 +-
+ drivers/md/dm-flakey.c              |    3 +--
+ drivers/md/dm-integrity.c           |    6 +++---
+ drivers/md/dm-linear.c              |    3 +--
+ drivers/md/dm-log-writes.c          |    4 ++--
+ drivers/md/dm-log.c                 |    2 +-
+ drivers/md/dm-mpath.c               |    2 +-
+ drivers/md/dm-raid.c                |    6 +++---
+ drivers/md/dm-switch.c              |    2 +-
+ drivers/md/dm-table.c               |    3 +--
+ drivers/md/dm-thin-metadata.c       |    2 +-
+ drivers/md/dm-thin.c                |    2 +-
+ drivers/md/dm-verity-target.c       |    3 +--
+ drivers/md/dm-writecache.c          |    2 +-
+ drivers/md/dm-zoned-target.c        |    2 +-
+ drivers/md/md.c                     |   26 +++++++++++---------------
+ drivers/mtd/devices/block2mtd.c     |    5 +++--
+ drivers/nvme/target/io-cmd-bdev.c   |    4 ++--
+ drivers/target/target_core_iblock.c |    5 +++--
+ fs/affs/super.c                     |    2 +-
+ fs/btrfs/dev-replace.c              |    2 +-
+ fs/btrfs/disk-io.c                  |    3 ++-
+ fs/btrfs/ioctl.c                    |    4 ++--
+ fs/btrfs/volumes.c                  |    7 ++++---
+ fs/buffer.c                         |    4 ++--
+ fs/cramfs/inode.c                   |    2 +-
+ fs/ext4/super.c                     |    2 +-
+ fs/fat/inode.c                      |    5 +----
+ fs/hfs/mdb.c                        |    2 +-
+ fs/hfsplus/wrapper.c                |    2 +-
+ fs/jfs/resize.c                     |    5 ++---
+ fs/jfs/super.c                      |    5 ++---
+ fs/nfs/blocklayout/dev.c            |    4 ++--
+ fs/nilfs2/ioctl.c                   |    2 +-
+ fs/nilfs2/super.c                   |    2 +-
+ fs/nilfs2/the_nilfs.c               |    3 ++-
+ fs/ntfs/super.c                     |    8 +++-----
+ fs/ntfs3/super.c                    |    3 +--
+ fs/pstore/blk.c                     |    4 ++--
+ fs/reiserfs/super.c                 |    7 ++-----
+ fs/squashfs/super.c                 |    5 +++--
+ fs/udf/lowlevel.c                   |    5 ++---
+ fs/udf/super.c                      |    9 +++------
+ include/linux/genhd.h               |    6 ++++++
+ 56 files changed, 100 insertions(+), 117 deletions(-)
 
 
 _______________________________________________
