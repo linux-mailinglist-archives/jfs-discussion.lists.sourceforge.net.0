@@ -2,27 +2,27 @@ Return-Path: <jfs-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+jfs-discussion@lfdr.de
 Delivered-To: lists+jfs-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id CD10D42C234
-	for <lists+jfs-discussion@lfdr.de>; Wed, 13 Oct 2021 16:08:59 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5424D42C235
+	for <lists+jfs-discussion@lfdr.de>; Wed, 13 Oct 2021 16:09:00 +0200 (CEST)
 Received: from [127.0.0.1] (helo=sfs-ml-2.v29.lw.sourceforge.com)
 	by sfs-ml-2.v29.lw.sourceforge.com with esmtp (Exim 4.92.3)
 	(envelope-from <jfs-discussion-bounces@lists.sourceforge.net>)
-	id 1maevv-0000es-Mn; Wed, 13 Oct 2021 14:08:39 +0000
+	id 1maevw-0000f2-9b; Wed, 13 Oct 2021 14:08:40 +0000
 Received: from [172.30.20.202] (helo=mx.sourceforge.net)
- by sfs-ml-1.v29.lw.sourceforge.com with esmtps
+ by sfs-ml-4.v29.lw.sourceforge.com with esmtps
  (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
  (envelope-from
  <BATV+5200d22377f13f7bc369+6625+infradead.org+hch@casper.srs.infradead.org>)
- id 1maWim-00066T-5x; Wed, 13 Oct 2021 05:22:32 +0000
+ id 1maWkU-0004JF-Ji; Wed, 13 Oct 2021 05:24:18 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=sourceforge.net; s=x; h=Content-Transfer-Encoding:MIME-Version:References:
  In-Reply-To:Message-Id:Date:Subject:Cc:To:From:Sender:Reply-To:Content-Type:
  Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
  Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=2DQz2WV/6nrwiR72242gRkqq8vUi4whhUhfjcP1bIOA=; b=CUHx4NVpCRIZaZp93A6rh/dfZe
- VYff/cP7FuekbWMCdNhMusqsfCu47FcvNRx0DUPJu70QKP1vJLF3jlRqBkZezct6wEwzXoilUuDA5
- +WXJPl9NMlZUK2q1D+zh1f2tiEMpXyLr0m6q89VPMrd3zsri019fKvG8BsJnnNmNF6N0=;
+ bh=TaHNzTEbIlyf8VXszJ+3gUpeBMoLxyPeY6M0WbLeJoE=; b=cVmo6IuYe+lKRnEod1nYItqA9c
+ FanRKBpyaIH5nbdDuBKR9r8fJEy/37bb6yOkRSP5IVdFhquBb4L3vWFN3qiHxTkx+PkgwoM/lqUs3
+ Gb8ETn+TX/AokvozRc6fry/mTknkhbHDuhBV7SbODqHXGUcVi0YJDvk7v99fAmPrOMNA=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
  h=Content-Transfer-Encoding:MIME-Version:References:In-Reply-To:Message-Id:
@@ -30,31 +30,31 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
  :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
  List-Post:List-Owner:List-Archive;
- bh=2DQz2WV/6nrwiR72242gRkqq8vUi4whhUhfjcP1bIOA=; b=SHaQwAlLuV3NIiy1I/0/yAWgTQ
- PoOi37gp7DWnEzIRsjq94x4LBuCUy6PoCHnCTvZxriJmMfvLHrK3PnMjJM08Tq/Z6Dp3kxcsg9TTn
- 4xp8+ZJAU923FpecEA+euDsDXRKUBGn/x7rb66zpMj0gQosiix31sGAyOO3fnJ1Rs9Hs=;
+ bh=TaHNzTEbIlyf8VXszJ+3gUpeBMoLxyPeY6M0WbLeJoE=; b=MYYFSWdujPKnjY0bAjcAKI+DXV
+ I/GU9fHvoYrWnPRkUN98M4Xm+leLqxBzNNLMAwQaG/Kk3pBHhQcrLk836w7TKAD4GPwQyCqeC0+wu
+ LwhwpGTwp8wMeozewfmDwUns0QkFJEOsx5Ifiei9CYqlgH5rhGpupf7g6Kg69f1PDIw0=;
 Received: from casper.infradead.org ([90.155.50.34])
  by sfi-mx-2.v28.lw.sourceforge.com with esmtps
  (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.92.3)
- id 1maWil-0002fF-CV; Wed, 13 Oct 2021 05:22:31 +0000
+ id 1maWkU-0002sj-3V; Wed, 13 Oct 2021 05:24:18 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=infradead.org; s=casper.20170209; h=Content-Transfer-Encoding:MIME-Version:
  References:In-Reply-To:Message-Id:Date:Subject:Cc:To:From:Sender:Reply-To:
  Content-Type:Content-ID:Content-Description;
- bh=2DQz2WV/6nrwiR72242gRkqq8vUi4whhUhfjcP1bIOA=; b=Xa7GvbJUMqzfvYueWwVUK3Ux0y
- yeuPdYMbBAsv9epgGKu1vVzGX5AB9rd3WONNmNoS6gf48CEj/PVW94BBUJX37asekH4NgbraHAxgt
- WFbcI0BRgTaJDdjCqpms7HMs5C8IrEAXCvDE3EtdqraUh37FzwbfyoXL8GMrpEuNmvxXHABcddDQj
- moa/NVUObti9FIhR2tmwTqQ9CsQE6vspnROJ/w7q712HU1YfTb1JyVgsUDPAlJjCQuTqpVjblOKfa
- d1LJSuZJXvLyYiS+rDzxGbQbtLoGp+8OE0X2NKJLWnwHbMtue0DP5hxKAu9iTrDO6aiD7Uy0tXmC+
- 90afCgmw==;
+ bh=TaHNzTEbIlyf8VXszJ+3gUpeBMoLxyPeY6M0WbLeJoE=; b=E+78EEJ2GHUy8Hk4P4DcOEjmwX
+ HIQ2kNmA3WYxpDbTzgmiYyRL2xWCpSEifFW8boMSUF/sGaztAh3FbTDSkpa8miOFEZFNArrh9A/Ki
+ peiQ6gNWuohYoOYEJ2aeJhiJkXX+ruL0fTrfijH7xWchqQ4kexPkIoSShXoyh6yHu37hoO2fDKYzY
+ +yS55l1rIobhbkKzjv6H80Q2JgO7oc8Y8RPhkmll4qN72NgoDdwUDfEOxrfgtQZOXfF2S8EnoANXq
+ 9aLLxZ52YRtDKUJr7TbTHvQ6wCqBdpgppsBYsyqry+UY++1dQpz1Bq7l0+coY3Sl5L/KV8yTCbJYt
+ jIiTKAGQ==;
 Received: from 089144212063.atnat0021.highway.a1.net ([89.144.212.63]
  helo=localhost)
  by casper.infradead.org with esmtpsa (Exim 4.94.2 #2 (Red Hat Linux))
- id 1maWdg-0076G9-GA; Wed, 13 Oct 2021 05:17:32 +0000
+ id 1maWek-0076NJ-T3; Wed, 13 Oct 2021 05:18:53 +0000
 From: Christoph Hellwig <hch@lst.de>
 To: Jens Axboe <axboe@kernel.dk>
-Date: Wed, 13 Oct 2021 07:10:20 +0200
-Message-Id: <20211013051042.1065752-8-hch@lst.de>
+Date: Wed, 13 Oct 2021 07:10:21 +0200
+Message-Id: <20211013051042.1065752-9-hch@lst.de>
 X-Mailer: git-send-email 2.30.2
 In-Reply-To: <20211013051042.1065752-1-hch@lst.de>
 References: <20211013051042.1065752-1-hch@lst.de>
@@ -70,12 +70,14 @@ X-Spam-Report: Spam detection software,
  the administrator of that system for details.
  Content preview: Use the proper helper to read the block device size.
  Signed-off-by:
- Christoph Hellwig <hch@lst.de> --- drivers/target/target_core_iblock.c |
- 5 +++-- 1 file changed, 3 insertions(+),
- 2 deletions(-) diff --git a/drivers/target/target_core_iblock.c
- b/drivers/target/target_core_iblock.c index 31df20abe141f..ab7f5678ebc44
- 100644 --- a/drivers/target/target_core_iblock.c +++ b/drivers/target/target_c
- [...] Content analysis details:   (0.2 points, 6.0 required)
+ Christoph Hellwig <hch@lst.de> --- fs/buffer.c | 2 +- 1 file changed,
+ 1 insertion(+), 
+ 1 deletion(-) diff --git a/fs/buffer.c b/fs/buffer.c index
+ c615387aedcae..3fb9c5b457ab6
+ 100644 --- a/fs/buffer.c +++ b/fs/buffer.c @@ -878, 7 +878,
+ 7 @@ link_dev_buffers(struct
+ page *page, struct buffer_head *head) s [...] 
+ Content analysis details:   (0.2 points, 6.0 required)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  0.0 URIBL_BLOCKED          ADMINISTRATOR NOTICE: The query to URIBL was
@@ -91,10 +93,10 @@ X-Spam-Report: Spam detection software,
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
-X-Headers-End: 1maWil-0002fF-CV
+X-Headers-End: 1maWkU-0002sj-3V
 X-Mailman-Approved-At: Wed, 13 Oct 2021 14:08:34 +0000
-Subject: [Jfs-discussion] [PATCH 07/29] target/iblock: use bdev_nr_sectors
- instead of open coding it
+Subject: [Jfs-discussion] [PATCH 08/29] fs: use bdev_nr_sectors instead of
+ open coding it in blkdev_max_block
 X-BeenThere: jfs-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -130,25 +132,22 @@ Use the proper helper to read the block device size.
 
 Signed-off-by: Christoph Hellwig <hch@lst.de>
 ---
- drivers/target/target_core_iblock.c | 5 +++--
- 1 file changed, 3 insertions(+), 2 deletions(-)
+ fs/buffer.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
-diff --git a/drivers/target/target_core_iblock.c b/drivers/target/target_core_iblock.c
-index 31df20abe141f..ab7f5678ebc44 100644
---- a/drivers/target/target_core_iblock.c
-+++ b/drivers/target/target_core_iblock.c
-@@ -232,8 +232,9 @@ static unsigned long long iblock_emulate_read_cap_with_block_size(
- 	struct block_device *bd,
- 	struct request_queue *q)
+diff --git a/fs/buffer.c b/fs/buffer.c
+index c615387aedcae..3fb9c5b457ab6 100644
+--- a/fs/buffer.c
++++ b/fs/buffer.c
+@@ -878,7 +878,7 @@ link_dev_buffers(struct page *page, struct buffer_head *head)
+ static sector_t blkdev_max_block(struct block_device *bdev, unsigned int size)
  {
--	unsigned long long blocks_long = (div_u64(i_size_read(bd->bd_inode),
--					bdev_logical_block_size(bd)) - 1);
-+	loff_t size = bdev_nr_sectors(bd) << SECTOR_SHIFT;
-+	unsigned long long blocks_long =
-+		div_u64(size, bdev_logical_block_size(bd)) - 1;
- 	u32 block_size = bdev_logical_block_size(bd);
+ 	sector_t retval = ~((sector_t)0);
+-	loff_t sz = i_size_read(bdev->bd_inode);
++	loff_t sz = bdev_nr_sectors(bdev) << SECTOR_SHIFT;
  
- 	if (block_size == dev->dev_attrib.block_size)
+ 	if (sz) {
+ 		unsigned int sizebits = blksize_bits(size);
 -- 
 2.30.2
 
