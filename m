@@ -2,94 +2,116 @@ Return-Path: <jfs-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+jfs-discussion@lfdr.de
 Delivered-To: lists+jfs-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id 414D142C268
-	for <lists+jfs-discussion@lfdr.de>; Wed, 13 Oct 2021 16:10:03 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A2A2C42C22D
+	for <lists+jfs-discussion@lfdr.de>; Wed, 13 Oct 2021 16:08:57 +0200 (CEST)
 Received: from [127.0.0.1] (helo=sfs-ml-2.v29.lw.sourceforge.com)
 	by sfs-ml-2.v29.lw.sourceforge.com with esmtp (Exim 4.92.3)
 	(envelope-from <jfs-discussion-bounces@lists.sourceforge.net>)
-	id 1maew0-0000mq-7j; Wed, 13 Oct 2021 14:08:44 +0000
+	id 1maevv-0000ej-Fi; Wed, 13 Oct 2021 14:08:39 +0000
 Received: from [172.30.20.202] (helo=mx.sourceforge.net)
- by sfs-ml-4.v29.lw.sourceforge.com with esmtps
- (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
- (envelope-from
- <BATV+5200d22377f13f7bc369+6625+infradead.org+hch@casper.srs.infradead.org>)
- id 1maXCe-0004wI-2A; Wed, 13 Oct 2021 05:53:24 +0000
+ by sfs-ml-2.v29.lw.sourceforge.com with esmtps
+ (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.92.3)
+ (envelope-from <colyli@suse.de>)
+ id 1maWhz-000540-RV; Wed, 13 Oct 2021 05:21:43 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=sourceforge.net; s=x; h=Content-Transfer-Encoding:MIME-Version:References:
- In-Reply-To:Message-Id:Date:Subject:Cc:To:From:Sender:Reply-To:Content-Type:
+ d=sourceforge.net; s=x; h=Content-Transfer-Encoding:Content-Type:In-Reply-To:
+ MIME-Version:Date:Message-ID:From:References:Cc:To:Subject:Sender:Reply-To:
  Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
  Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=TLmI0Wv2QuwTWKBKyulZhpN/vG7+mutYGLwxwgtoXSU=; b=Yt+sGwt1y+EWLcgh06+8do6QOE
- ooIUiqR7JsdMVQqiYyaUDIMc7qGjq5ifAgaW+teDRnNubcYmTmb+zpXgZXw1i6z9cNgxN6/etgRta
- HNcS2CNHRiEYRGOHdd6dbEmMwjbuHYmJPZKyOU63pjWWBayowjf381sBRcNaWANJbAXo=;
+ bh=ILLm2pe17/wADifWsNez+bTJrwsc+lrviMwLK7kUvDI=; b=iQ2vOCG5aMMKOscxrOVINa5ef5
+ 3Ulba0ZVnSKqp2UurP8K/0EdLh+MEhL7P9iIW4WcicUDlohjfXiaH4fj2HaPjvf1TTL8Q/etPov/X
+ 5oJap1UQXnzJuxvf/6HLTVk0ganaoPg2Mp7PP/pOeG26ixsulQVM50nmLySfLuWjkG2k=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
- h=Content-Transfer-Encoding:MIME-Version:References:In-Reply-To:Message-Id:
- Date:Subject:Cc:To:From:Sender:Reply-To:Content-Type:Content-ID:
+ h=Content-Transfer-Encoding:Content-Type:In-Reply-To:MIME-Version:Date:
+ Message-ID:From:References:Cc:To:Subject:Sender:Reply-To:Content-ID:
  Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
  :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
  List-Post:List-Owner:List-Archive;
- bh=TLmI0Wv2QuwTWKBKyulZhpN/vG7+mutYGLwxwgtoXSU=; b=RqUQKZLKjVTzsnseMY6lsVXkUC
- 6Bx86qAdDnm60uRTbohgptflvEVMTQAPgrDIcF48KB7KV0vbojPTFDzLRJ2xgtqfV1GFVvNRxjUyQ
- xvF3WAHxvGin/MC7Hye2R8dBesz46C+X+yS6lSzq+79KDuwp1qcFBYYS7LA8xNW/cNys=;
-Received: from casper.infradead.org ([90.155.50.34])
- by sfi-mx-1.v28.lw.sourceforge.com with esmtps
- (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.92.3)
- id 1maXCc-007HEu-BO; Wed, 13 Oct 2021 05:53:22 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=infradead.org; s=casper.20170209; h=Content-Transfer-Encoding:MIME-Version:
- References:In-Reply-To:Message-Id:Date:Subject:Cc:To:From:Sender:Reply-To:
- Content-Type:Content-ID:Content-Description;
- bh=TLmI0Wv2QuwTWKBKyulZhpN/vG7+mutYGLwxwgtoXSU=; b=WG8Sbg76bIW/yFBrJU86scHxmB
- tj+o1s5xOwVjUkYsXQFA8NmHfhnJwwaWJwjP+r1wXVQx214Bu5mkSO0cnUvyTy7E6klSuqDUN5PnX
- x2skyeaIa4Zny3ZhUi4dsqV7v/AEXhtmmy9TqFuy6SaNhye8NE4GJpnf/1LIrNUgZsGsJCAcJ+Qkb
- at3Q9xMyln1HuzfuN1yoPpTaOv97nku/4U0s7pvsASpFrwPn0fmvo5SckwMXBxbSnzLWfsjd2LPUt
- y8N6iG7/cisaWdsG1ZZS+Gkq0w1DlP57EQoNcgAt+I5E6TJ46kikGMDRB6WHLi29xlzECjDxbkxA0
- QrBrh9Nw==;
-Received: from 089144212063.atnat0021.highway.a1.net ([89.144.212.63]
- helo=localhost)
- by casper.infradead.org with esmtpsa (Exim 4.94.2 #2 (Red Hat Linux))
- id 1maX6U-0078dh-AI; Wed, 13 Oct 2021 05:47:37 +0000
-From: Christoph Hellwig <hch@lst.de>
-To: Jens Axboe <axboe@kernel.dk>
-Date: Wed, 13 Oct 2021 07:10:42 +0200
-Message-Id: <20211013051042.1065752-30-hch@lst.de>
-X-Mailer: git-send-email 2.30.2
-In-Reply-To: <20211013051042.1065752-1-hch@lst.de>
+ bh=ILLm2pe17/wADifWsNez+bTJrwsc+lrviMwLK7kUvDI=; b=e1AZSUVhl1/SMqiHsrBICk8pZK
+ TBVdQu2P8monMPqZjpmo1brLgWEjEJE4SLR+VDuvUD26JY+RbeFMn252FhKfbwHtOv1CVcU0KMJov
+ 6AFNtM9+cmRMGZHRohbbwODPKMeXVcxryvhI9cuRtyZNTEhQu6oKYbjarRezRG+htcAU=;
+Received: from smtp-out2.suse.de ([195.135.220.29])
+ by sfi-mx-2.v28.lw.sourceforge.com with esmtps
+ (TLSv1.2:ECDHE-RSA-AES128-GCM-SHA256:128) (Exim 4.92.3)
+ id 1maWhw-0002Yk-I3; Wed, 13 Oct 2021 05:21:43 +0000
+Received: from imap2.suse-dmz.suse.de (imap2.suse-dmz.suse.de [192.168.254.74])
+ (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+ key-exchange X25519 server-signature ECDSA (P-521) server-digest SHA512)
+ (No client certificate requested)
+ by smtp-out2.suse.de (Postfix) with ESMTPS id 5E2BE1FF87;
+ Wed, 13 Oct 2021 05:21:33 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=suse.de; s=susede2_rsa;
+ t=1634102493; h=from:from:reply-to:date:date:message-id:message-id:to:to:cc:cc:
+ mime-version:mime-version:content-type:content-type:
+ content-transfer-encoding:content-transfer-encoding:
+ in-reply-to:in-reply-to:references:references;
+ bh=ILLm2pe17/wADifWsNez+bTJrwsc+lrviMwLK7kUvDI=;
+ b=bvKId0oH3n+XWRAa8k+X7S4sSfCSq6r7k6wkqvducj0gvOulmoiit7vAXJt7/Fugc4ApBB
+ +eyuMKl31qjAEJWuSCiR357fXwBwkLJzIMHJmLSrbkPgZIeBcwzOpezb3tR0358vd8V0Yu
+ v4i5Ls9qoC9uBvhPFPVe6ERT85hRkzU=
+DKIM-Signature: v=1; a=ed25519-sha256; c=relaxed/relaxed; d=suse.de;
+ s=susede2_ed25519; t=1634102493;
+ h=from:from:reply-to:date:date:message-id:message-id:to:to:cc:cc:
+ mime-version:mime-version:content-type:content-type:
+ content-transfer-encoding:content-transfer-encoding:
+ in-reply-to:in-reply-to:references:references;
+ bh=ILLm2pe17/wADifWsNez+bTJrwsc+lrviMwLK7kUvDI=;
+ b=7QNd9vO2OGh2y9jVTVQKK6beKgduFwgxo0TkSLgWMuvnfJFmYXqVQMfqyW0QcEDOD1zLDp
+ Em1u+x09Gi2O+KBA==
+Received: from imap2.suse-dmz.suse.de (imap2.suse-dmz.suse.de [192.168.254.74])
+ (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+ key-exchange X25519 server-signature ECDSA (P-521) server-digest SHA512)
+ (No client certificate requested)
+ by imap2.suse-dmz.suse.de (Postfix) with ESMTPS id B800113CAE;
+ Wed, 13 Oct 2021 05:21:24 +0000 (UTC)
+Received: from dovecot-director2.suse.de ([192.168.254.65])
+ by imap2.suse-dmz.suse.de with ESMTPSA id rI5FINRsZmEARAAAMHmgww
+ (envelope-from <colyli@suse.de>); Wed, 13 Oct 2021 05:21:24 +0000
+To: Christoph Hellwig <hch@lst.de>, Jens Axboe <axboe@kernel.dk>
 References: <20211013051042.1065752-1-hch@lst.de>
+ <20211013051042.1065752-2-hch@lst.de>
+From: Coly Li <colyli@suse.de>
+Message-ID: <cd1b2185-9682-1d97-9789-96f833007f62@suse.de>
+Date: Wed, 13 Oct 2021 13:21:22 +0800
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:78.0)
+ Gecko/20100101 Thunderbird/78.14.0
 MIME-Version: 1.0
-X-SRS-Rewrite: SMTP reverse-path rewritten from <hch@infradead.org> by
- casper.infradead.org. See http://www.infradead.org/rpr.html
-X-Spam-Score: 0.2 (/)
+In-Reply-To: <20211013051042.1065752-2-hch@lst.de>
+Content-Language: en-US
+X-Spam-Score: -4.5 (----)
 X-Spam-Report: Spam detection software,
  running on the system "util-spamd-1.v13.lw.sourceforge.com", 
  has NOT identified this incoming email as spam.  The original
  message has been attached to this so you can view it or label
  similar future email.  If you have any questions, see
  the administrator of that system for details.
- Content preview: Use the sb_bdev_nr_blocks helper instead of open coding it.
- Signed-off-by: Christoph Hellwig <hch@lst.de> --- fs/udf/lowlevel.c | 5 ++---
- fs/udf/super.c | 9 +++------ 2 files changed, 5 insertions(+), 9 deletions(-)
- Content analysis details:   (0.2 points, 6.0 required)
+ Content preview:  On 10/13/21 1:10 PM,
+ Christoph Hellwig wrote: > Use the equivalent
+ block layer helper instead. > > Signed-off-by: Christoph Hellwig <hch@lst.de>
+ Acked-by: Coly Li <colyli@suse.de> Thanks. 
+ Content analysis details:   (-4.5 points, 6.0 required)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [195.135.220.29 listed in list.dnswl.org]
  0.0 URIBL_BLOCKED          ADMINISTRATOR NOTICE: The query to URIBL was
  blocked.  See
  http://wiki.apache.org/spamassassin/DnsBlocklists#dnsbl-block
- for more information. [URIs: infradead.org]
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
+ for more information. [URIs: suse.de]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
-X-Headers-End: 1maXCc-007HEu-BO
-X-Mailman-Approved-At: Wed, 13 Oct 2021 14:08:36 +0000
-Subject: [Jfs-discussion] [PATCH 29/29] udf: use sb_bdev_nr_blocks
+ valid -2.0 NICE_REPLY_A           Looks like a legit reply (A)
+X-Headers-End: 1maWhw-0002Yk-I3
+X-Mailman-Approved-At: Wed, 13 Oct 2021 14:08:33 +0000
+Subject: Re: [Jfs-discussion] [PATCH 01/29] bcache: remove bdev_sectors
 X-BeenThere: jfs-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -105,89 +127,78 @@ Cc: Dave Kleikamp <shaggy@kernel.org>, jfs-discussion@lists.sourceforge.net,
  Mike Snitzer <snitzer@redhat.com>, linux-nvme@lists.infradead.org,
  Konstantin Komarov <almaz.alexandrovich@paragon-software.com>,
  Song Liu <song@kernel.org>, dm-devel@redhat.com, target-devel@vger.kernel.org,
- linux-mtd@lists.infradead.org, reiserfs-devel@vger.kernel.org,
- drbd-dev@lists.linbit.com, linux-nilfs@vger.kernel.org,
- linux-scsi@vger.kernel.org, OGAWA Hirofumi <hirofumi@mail.parknet.co.jp>,
- linux-ext4@vger.kernel.org, Kees Cook <keescook@chromium.org>,
- Josef Bacik <josef@toxicpanda.com>, Coly Li <colyli@suse.de>,
- linux-raid@vger.kernel.org, linux-bcache@vger.kernel.org,
- David Sterba <dsterba@suse.com>, Ryusuke Konishi <konishi.ryusuke@gmail.com>,
+ linux-mtd@lists.infradead.org, drbd-dev@lists.linbit.com,
+ linux-nilfs@vger.kernel.org, linux-scsi@vger.kernel.org,
+ OGAWA Hirofumi <hirofumi@mail.parknet.co.jp>, linux-ext4@vger.kernel.org,
+ Kees Cook <keescook@chromium.org>, Josef Bacik <josef@toxicpanda.com>,
+ reiserfs-devel@vger.kernel.org, linux-raid@vger.kernel.org,
+ linux-bcache@vger.kernel.org, David Sterba <dsterba@suse.com>,
+ Ryusuke Konishi <konishi.ryusuke@gmail.com>,
  Anton Altaparmakov <anton@tuxera.com>, linux-block@vger.kernel.org,
  linux-nfs@vger.kernel.org, Theodore Ts'o <tytso@mit.edu>,
  linux-ntfs-dev@lists.sourceforge.net, Jan Kara <jack@suse.com>,
  linux-fsdevel@vger.kernel.org, Phillip Lougher <phillip@squashfs.org.uk>,
  ntfs3@lists.linux.dev, linux-btrfs@vger.kernel.org
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Errors-To: jfs-discussion-bounces@lists.sourceforge.net
 
-Use the sb_bdev_nr_blocks helper instead of open coding it.
+On 10/13/21 1:10 PM, Christoph Hellwig wrote:
+> Use the equivalent block layer helper instead.
+>
+> Signed-off-by: Christoph Hellwig <hch@lst.de>
 
-Signed-off-by: Christoph Hellwig <hch@lst.de>
----
- fs/udf/lowlevel.c | 5 ++---
- fs/udf/super.c    | 9 +++------
- 2 files changed, 5 insertions(+), 9 deletions(-)
+Acked-by: Coly Li <colyli@suse.de>
 
-diff --git a/fs/udf/lowlevel.c b/fs/udf/lowlevel.c
-index f1094cdcd6cde..46d6971721975 100644
---- a/fs/udf/lowlevel.c
-+++ b/fs/udf/lowlevel.c
-@@ -47,8 +47,7 @@ unsigned int udf_get_last_session(struct super_block *sb)
- 
- unsigned long udf_get_last_block(struct super_block *sb)
- {
--	struct block_device *bdev = sb->s_bdev;
--	struct cdrom_device_info *cdi = disk_to_cdi(bdev->bd_disk);
-+	struct cdrom_device_info *cdi = disk_to_cdi(sb->s_bdev->bd_disk);
- 	unsigned long lblock = 0;
- 
- 	/*
-@@ -56,7 +55,7 @@ unsigned long udf_get_last_block(struct super_block *sb)
- 	 * Try using the device size...
- 	 */
- 	if (!cdi || cdrom_get_last_written(cdi, &lblock) || lblock == 0)
--		lblock = i_size_read(bdev->bd_inode) >> sb->s_blocksize_bits;
-+		lblock = sb_bdev_nr_blocks(sb);
- 
- 	if (lblock)
- 		return lblock - 1;
-diff --git a/fs/udf/super.c b/fs/udf/super.c
-index b2d7c57d06881..34247fba6df91 100644
---- a/fs/udf/super.c
-+++ b/fs/udf/super.c
-@@ -1175,8 +1175,7 @@ static int udf_load_vat(struct super_block *sb, int p_index, int type1_index)
- 	struct udf_inode_info *vati;
- 	uint32_t pos;
- 	struct virtualAllocationTable20 *vat20;
--	sector_t blocks = i_size_read(sb->s_bdev->bd_inode) >>
--			  sb->s_blocksize_bits;
-+	sector_t blocks = sb_bdev_nr_blocks(sb);
- 
- 	udf_find_vat_block(sb, p_index, type1_index, sbi->s_last_block);
- 	if (!sbi->s_vat_inode &&
-@@ -1838,8 +1837,7 @@ static int udf_check_anchor_block(struct super_block *sb, sector_t block,
- 	int ret;
- 
- 	if (UDF_QUERY_FLAG(sb, UDF_FLAG_VARCONV) &&
--	    udf_fixed_to_variable(block) >=
--	    i_size_read(sb->s_bdev->bd_inode) >> sb->s_blocksize_bits)
-+	    udf_fixed_to_variable(block) >= sb_bdev_nr_blocks(sb))
- 		return -EAGAIN;
- 
- 	bh = udf_read_tagged(sb, block, block, &ident);
-@@ -1901,8 +1899,7 @@ static int udf_scan_anchors(struct super_block *sb, sector_t *lastblock,
- 		last[last_count++] = *lastblock - 152;
- 
- 	for (i = 0; i < last_count; i++) {
--		if (last[i] >= i_size_read(sb->s_bdev->bd_inode) >>
--				sb->s_blocksize_bits)
-+		if (last[i] >= sb_bdev_nr_blocks(sb))
- 			continue;
- 		ret = udf_check_anchor_block(sb, last[i], fileset);
- 		if (ret != -EAGAIN) {
--- 
-2.30.2
+Thanks.
+
+Coly Li
+
+> ---
+>   drivers/md/bcache/super.c     | 2 +-
+>   drivers/md/bcache/util.h      | 4 ----
+>   drivers/md/bcache/writeback.c | 2 +-
+>   3 files changed, 2 insertions(+), 6 deletions(-)
+>
+> diff --git a/drivers/md/bcache/super.c b/drivers/md/bcache/super.c
+> index f2874c77ff797..4f89985abe4b7 100644
+> --- a/drivers/md/bcache/super.c
+> +++ b/drivers/md/bcache/super.c
+> @@ -1002,7 +1002,7 @@ static void calc_cached_dev_sectors(struct cache_set *c)
+>   	struct cached_dev *dc;
+>   
+>   	list_for_each_entry(dc, &c->cached_devs, list)
+> -		sectors += bdev_sectors(dc->bdev);
+> +		sectors += bdev_nr_sectors(dc->bdev);
+>   
+>   	c->cached_dev_sectors = sectors;
+>   }
+> diff --git a/drivers/md/bcache/util.h b/drivers/md/bcache/util.h
+> index b64460a762677..a7da7930a7fda 100644
+> --- a/drivers/md/bcache/util.h
+> +++ b/drivers/md/bcache/util.h
+> @@ -584,8 +584,4 @@ static inline unsigned int fract_exp_two(unsigned int x,
+>   void bch_bio_map(struct bio *bio, void *base);
+>   int bch_bio_alloc_pages(struct bio *bio, gfp_t gfp_mask);
+>   
+> -static inline sector_t bdev_sectors(struct block_device *bdev)
+> -{
+> -	return bdev->bd_inode->i_size >> 9;
+> -}
+>   #endif /* _BCACHE_UTIL_H */
+> diff --git a/drivers/md/bcache/writeback.c b/drivers/md/bcache/writeback.c
+> index 8120da278161e..c7560f66dca88 100644
+> --- a/drivers/md/bcache/writeback.c
+> +++ b/drivers/md/bcache/writeback.c
+> @@ -45,7 +45,7 @@ static uint64_t __calc_target_rate(struct cached_dev *dc)
+>   	 * backing volume uses about 2% of the cache for dirty data.
+>   	 */
+>   	uint32_t bdev_share =
+> -		div64_u64(bdev_sectors(dc->bdev) << WRITEBACK_SHARE_SHIFT,
+> +		div64_u64(bdev_nr_sectors(dc->bdev) << WRITEBACK_SHARE_SHIFT,
+>   				c->cached_dev_sectors);
+>   
+>   	uint64_t cache_dirty_target =
 
 
 
