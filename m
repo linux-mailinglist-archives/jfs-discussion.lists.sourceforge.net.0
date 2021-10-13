@@ -2,190 +2,104 @@ Return-Path: <jfs-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+jfs-discussion@lfdr.de
 Delivered-To: lists+jfs-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0B61442C25B
-	for <lists+jfs-discussion@lfdr.de>; Wed, 13 Oct 2021 16:09:29 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BE36A42C24D
+	for <lists+jfs-discussion@lfdr.de>; Wed, 13 Oct 2021 16:09:18 +0200 (CEST)
 Received: from [127.0.0.1] (helo=sfs-ml-2.v29.lw.sourceforge.com)
 	by sfs-ml-2.v29.lw.sourceforge.com with esmtp (Exim 4.92.3)
 	(envelope-from <jfs-discussion-bounces@lists.sourceforge.net>)
-	id 1maew6-0000z5-CW; Wed, 13 Oct 2021 14:08:50 +0000
+	id 1maew6-0000zo-Nq; Wed, 13 Oct 2021 14:08:50 +0000
 Received: from [172.30.20.202] (helo=mx.sourceforge.net)
- by sfs-ml-4.v29.lw.sourceforge.com with esmtps
- (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
- (envelope-from <anand.jain@oracle.com>)
- id 1maYU7-0006eh-8D; Wed, 13 Oct 2021 07:15:31 +0000
+ by sfs-ml-2.v29.lw.sourceforge.com with esmtps
+ (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.92.3)
+ (envelope-from <bostroesser@gmail.com>)
+ id 1maabZ-0005rU-2N; Wed, 13 Oct 2021 09:31:21 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=sourceforge.net; s=x; h=MIME-Version:Content-Transfer-Encoding:Content-Type
- :In-Reply-To:Date:Message-ID:From:References:Cc:To:Subject:Sender:Reply-To:
+ d=sourceforge.net; s=x; h=Content-Transfer-Encoding:Content-Type:In-Reply-To:
+ MIME-Version:Date:Message-ID:From:References:Cc:To:Subject:Sender:Reply-To:
  Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
  Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=tw7w8HaA6+b3R9ce+G4pr9Q+e3Aor6MTcRv59KVHYqc=; b=cBcIF8Xecu/hADporwboXXKmM0
- nZMj3/5lNdnWANmUDNP1+dbns7Og7dlEeigAuKHAGGcuUd8TWyQqQnkrGiNz2PStcxW+x3ZTXrYzy
- B93BLUeeKj0uPTQ/FOeiwZ4cAJJ6C/+x9TN2fQmfN+BqNNI8xyn/ejWKQddxeKlGXF8Q=;
+ bh=jSDv3nCwYvRWF60PFzYmVFtCqi6n+8kG/qLGRQcEwXY=; b=JFBILxyRcwqQoAUs//56xo8q5p
+ 0laXgjNJZ9isU6zsQDubkwPS/5gJoxxH59ArGR4x0f+9H58fWncb+6KhzrTbiHXXFDJZwLIjory+W
+ 3hETXNLqfvjFjtpTn4xGT6beyJBW1wDaHN2f6N4z0y+mmeEDsxLTNi/xBOXy06Yu9cog=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
- h=MIME-Version:Content-Transfer-Encoding:Content-Type:In-Reply-To:Date:
+ h=Content-Transfer-Encoding:Content-Type:In-Reply-To:MIME-Version:Date:
  Message-ID:From:References:Cc:To:Subject:Sender:Reply-To:Content-ID:
  Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
  :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
  List-Post:List-Owner:List-Archive;
- bh=tw7w8HaA6+b3R9ce+G4pr9Q+e3Aor6MTcRv59KVHYqc=; b=FXJKojqyjxaoR3eEm5w1XUjsjl
- bs5m3IPYU4irjiWS1Ecb6hydHatS+sq/mZ6fM9E8oxFhLejcYha4sejaI8mrZA9+vwzR/J+/mLV5G
- oSUUy7b+t2yqgqJdTlhCzdi+fMUP25SxdnhvsKtKJ1XmqI26gpYwsiSQsYLSAdQeayME=;
-Received: from mx0b-00069f02.pphosted.com ([205.220.177.32])
+ bh=jSDv3nCwYvRWF60PFzYmVFtCqi6n+8kG/qLGRQcEwXY=; b=HVcZyeLyUycQxC0uegrMxt4UpU
+ qXJLIs155HOKfk/dIFrJjfurXOPvREmmoifbWt7Wuw8/bpyKIj4XIFCibE76IbqsWCG/S3PxcJtgB
+ 2ceAC97dSzMI6sKan6rHcw/8CJsR0tV7iBLm+HM/KNZ8tP6u9zEPfUaHcX6WVTh1P+vQ=;
+Received: from mail-ed1-f46.google.com ([209.85.208.46])
  by sfi-mx-1.v28.lw.sourceforge.com with esmtps
- (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.92.3)
- id 1maYU2-007QnO-BC; Wed, 13 Oct 2021 07:15:31 +0000
-Received: from pps.filterd (m0246632.ppops.net [127.0.0.1])
- by mx0b-00069f02.pphosted.com (8.16.1.2/8.16.1.2) with SMTP id 19D6wJUt004221; 
- Wed, 13 Oct 2021 07:15:13 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=oracle.com;
- h=subject : to : cc :
- references : from : message-id : date : in-reply-to : content-type :
- content-transfer-encoding : mime-version; s=corp-2021-07-09;
- bh=tw7w8HaA6+b3R9ce+G4pr9Q+e3Aor6MTcRv59KVHYqc=;
- b=t1G2ukmQPvUbrQ6WaL+XxNwsfxufdOJelwM0tMIX/LkupVmQbe8bW0sm0IJKg65ljTqJ
- 2petZcdXTNS1sNzJ2M3YNYqGvLDs4DPpn9i+G6FYC3Z2vVhFOi3LIKqD/T99Fuce8H2A
- SU6DJfqKIJ9WB0y761L5JaSpPDhe5+LZI+26S1Gwe65Std1kR6RJdZfMgApku/FhaBB0
- B28dWZE8qZyExX5CDCDwNHz3Hx+24H02rxf0+Z5+C3n8W1jpbtqwDkXd1b3yQypJPKxa
- IqNG5ykf+T/+NG/h9ZZiqgMwirxMDI8GRA0FIcrvEABvx2THKY0jzUjx2+t4fCz9UVlB sQ== 
-Received: from aserp3030.oracle.com (aserp3030.oracle.com [141.146.126.71])
- by mx0b-00069f02.pphosted.com with ESMTP id 3bnkbu9wxy-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
- Wed, 13 Oct 2021 07:15:12 +0000
-Received: from pps.filterd (aserp3030.oracle.com [127.0.0.1])
- by aserp3030.oracle.com (8.16.1.2/8.16.1.2) with SMTP id 19D7AR6U004087;
- Wed, 13 Oct 2021 07:15:11 GMT
-Received: from nam04-dm6-obe.outbound.protection.outlook.com
- (mail-dm6nam08lp2046.outbound.protection.outlook.com [104.47.73.46])
- by aserp3030.oracle.com with ESMTP id 3bkyxt07x7-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
- Wed, 13 Oct 2021 07:15:11 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=Vm69urWqOoaPVVI4gyU0Bbemf4ukvXCke5HIJ+rpKxUrlF5D9q3J7jjU4jvPfE9SirkJHGNmix3hFdvn6lGppoOSZU39Hyzcl3x9yuD8FnUkJzP7Rb1eQGYW5ZAqbe4NuCigqPgJ/B62Mx6qfv3C2JoFXDT00ZT1VgCcNmJKiygeFkmVlUCS/Hu5hId2xvuMAv13JDm7dYJEn82neOXaMH2Mr0lhB3+FETMW1+JpXDtbzlofwcgGQwD3sUftucBLE7b5DC340J25FFtbPdwxd+Zrie/P7RAui/KmCTEhu42k7aGDStzuqFMvoK+XsDgN6xoy0JYL8jWsgwSkLhbS0Q==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=tw7w8HaA6+b3R9ce+G4pr9Q+e3Aor6MTcRv59KVHYqc=;
- b=j0LaEij9c/X10P6IPj0vsdKeX18wjD7d28yUiqj4LWQhNSsN/PCgoBRSSduUwF1WZdUyyt+dNro9IpawTs7GPyTvjP13WQ2QSQ+Yu1ofmKwil9Bg+yb5xLi6thQ1nhWFFOIAJ75xGz/XcO2QU6/2dbfuw86q1inXG0U/ci7fT6idA/2rcZxh11SAgNVqf1w7ARq6naGlUqhCPkiA0p88l6TJeZHpJyUfkQnlJ4L9bcWWe1443wyFxChglgNt3Q4HjFclIP8WPbJAy4XaDuaI5I7ekmJhTjWUWNX14sdZmfoAffU8YSuub8NEoFl/TnVvUKHcMUsPvO4vDgb9PK8ZLQ==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=oracle.com; dmarc=pass action=none header.from=oracle.com;
- dkim=pass header.d=oracle.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=oracle.onmicrosoft.com; s=selector2-oracle-onmicrosoft-com;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=tw7w8HaA6+b3R9ce+G4pr9Q+e3Aor6MTcRv59KVHYqc=;
- b=Um+Qs0fPjbYJf+adG21vf2cGKDogXwAv1GE+9qe3lM1AzTKluhFhoozG9l/Dd2FtHMcwr0VTuzM6SvSbiuzRIBZYg6zL1T74RQpteUEWL6594r4A6NzPEELyO0fbDTvypRz+DBSf2jeHgPbPjo5e7jijXN49eKkcKsQW2b2OKT4=
-Authentication-Results: vger.kernel.org; dkim=none (message not signed)
- header.d=none; vger.kernel.org; dmarc=none action=none header.from=oracle.com; 
-Received: from MN2PR10MB4128.namprd10.prod.outlook.com (2603:10b6:208:1d2::24)
- by BLAPR10MB4930.namprd10.prod.outlook.com (2603:10b6:208:323::24)
- with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.4587.19; Wed, 13 Oct
- 2021 07:15:09 +0000
-Received: from MN2PR10MB4128.namprd10.prod.outlook.com
- ([fe80::49a5:5188:b83d:b6c9]) by MN2PR10MB4128.namprd10.prod.outlook.com
- ([fe80::49a5:5188:b83d:b6c9%8]) with mapi id 15.20.4587.026; Wed, 13 Oct 2021
- 07:15:09 +0000
+ (TLSv1.2:ECDHE-RSA-AES128-GCM-SHA256:128) (Exim 4.92.3)
+ id 1maabY-007j20-GP; Wed, 13 Oct 2021 09:31:20 +0000
+Received: by mail-ed1-f46.google.com with SMTP id z20so7383779edc.13;
+ Wed, 13 Oct 2021 02:31:20 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20210112;
+ h=subject:to:cc:references:from:message-id:date:user-agent
+ :mime-version:in-reply-to:content-language:content-transfer-encoding;
+ bh=jSDv3nCwYvRWF60PFzYmVFtCqi6n+8kG/qLGRQcEwXY=;
+ b=XDrKXspyEQaSQYdqJnWhS/O0wblIXJrWl9pE6svv7KjgrDGVXul7dxFR95SMikNbI8
+ dPBwNGXnMZrq9ECfkN9qd8qudIplcKbKQ02+dvBybldEqKgGTDn4o+Q+1yZvLDbQTpxH
+ j0F3JAFmKpiVLRpHTHEBPzaDyzHphlM3B0d+/j7Ro7xiITFiea8XjX1E/h70+j8E07xJ
+ iueofrb4NiJyC6FBpvAD+REiiIZXBpKUegBHgRICkLNGzc50RGa+mMfC0qBppipcUZ0O
+ 0MOGnuc/w5sEpIO1qpW0KnLTEIw6dv//T71InSxwu/1xkmLMW6ESgvB/ttIEAHR+9lRU
+ du6Q==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20210112;
+ h=x-gm-message-state:subject:to:cc:references:from:message-id:date
+ :user-agent:mime-version:in-reply-to:content-language
+ :content-transfer-encoding;
+ bh=jSDv3nCwYvRWF60PFzYmVFtCqi6n+8kG/qLGRQcEwXY=;
+ b=C8ulWX52fP4P9B3vKp/vvlvtjhkTX4n1OuJyF3m3WR6mayHSE25ekVvJTsGgvdvtAK
+ B0XgKThlNbFzv/7zo0INofsW6bxS+PE43YCkks3fXU4/DTxEiTnTNZSNaA5/J+G8cOr/
+ gKGBSL4lVb06UbfEq8lEYEsMY+8/gNmcJ8CozsNB/uuFcP6UQwtzoTo+FZxl09Ak/muO
+ Qgh2oyt8A255u6bnm1f5OOJ67TcfUHqSmRCDQQd8cjGDNgwDFIxLvv9DVYF0gPtXF5QG
+ LUjeuUDA1bYYxGN3/G4pLEPgCrBXN3qREeXnhjVUCWnAEEUmyZH8R2bwMqxmgUESv1Zz
+ V0AA==
+X-Gm-Message-State: AOAM533iN7gGefzCpTKUpG0B7FLLIty1NagsZgxyEsLyIM+ItYtgv6X6
+ pqae8rD1kQsAhWW/CMTeYSI=
+X-Google-Smtp-Source: ABdhPJzWnNPujm70ssX25zhSqx1K1lXHECTOGOjBrmNCExix4poiHSM5QToDrvQz8D7ttpAXJOx3mg==
+X-Received: by 2002:a05:6402:51d0:: with SMTP id
+ r16mr7954872edd.353.1634117473882; 
+ Wed, 13 Oct 2021 02:31:13 -0700 (PDT)
+Received: from [192.168.178.40] (ipbcc061e7.dynamic.kabel-deutschland.de.
+ [188.192.97.231])
+ by smtp.gmail.com with ESMTPSA id p7sm7639013edr.6.2021.10.13.02.31.12
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Wed, 13 Oct 2021 02:31:13 -0700 (PDT)
 To: Christoph Hellwig <hch@lst.de>, Jens Axboe <axboe@kernel.dk>
 References: <20211013051042.1065752-1-hch@lst.de>
-From: Anand Jain <anand.jain@oracle.com>
-Message-ID: <6d96d52b-3a19-8e00-4089-c2483a4cdbcc@oracle.com>
-Date: Wed, 13 Oct 2021 15:14:55 +0800
-User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:78.0) Gecko/20100101
- Thunderbird/78.14.0
-In-Reply-To: <20211013051042.1065752-1-hch@lst.de>
-Content-Language: en-US
-X-ClientProxiedBy: SG2PR01CA0184.apcprd01.prod.exchangelabs.com
- (2603:1096:4:189::9) To MN2PR10MB4128.namprd10.prod.outlook.com
- (2603:10b6:208:1d2::24)
+ <20211013051042.1065752-8-hch@lst.de>
+From: Bodo Stroesser <bostroesser@gmail.com>
+Message-ID: <3babe7ca-cf08-fd19-6793-39f6d78bca12@gmail.com>
+Date: Wed, 13 Oct 2021 11:31:11 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:78.0) Gecko/20100101
+ Thunderbird/78.13.0
 MIME-Version: 1.0
-Received: from [192.168.10.100] (39.109.140.76) by
- SG2PR01CA0184.apcprd01.prod.exchangelabs.com (2603:1096:4:189::9) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.4587.25 via Frontend
- Transport; Wed, 13 Oct 2021 07:15:01 +0000
-X-MS-PublicTrafficType: Email
-X-MS-Office365-Filtering-Correlation-Id: f30bcbbc-36c0-430b-cd55-08d98e19309e
-X-MS-TrafficTypeDiagnostic: BLAPR10MB4930:
-X-Microsoft-Antispam-PRVS: <BLAPR10MB4930DC93C1A403C940038713E5B79@BLAPR10MB4930.namprd10.prod.outlook.com>
-X-MS-Oob-TLC-OOBClassifiers: OLM:7691;
-X-MS-Exchange-SenderADCheck: 1
-X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;
-X-Microsoft-Antispam-Message-Info: z+KE6WazsV9XDqG9BT+q2/qU36Z+18zQy2SA9oN2fEr6gb4wMWGKzvLKTfMH6ERK+sZq3IXVRF7Apqz9rovdnQL2fZ6CHqm8KnkG1TuOkZHvMmCTUAarGi7H+JEVnSOcs+p2BOPnyWyZ9Ww1httDD1x0dy+rxhRzu7EQnva0jAzoevBMEiJPMaMYE4kQkoroKa/cJILwmKRm3Qvch9pB2OjGeEhaBvz+t5b4jOqa9UV0+jLlUGW26SOucBiv+pL0R1OSPhvamq3TL3Dp/OLYbRdRrwl90gb4ijk06DZrc2O+v6ol3WU5TWmle9SjpKeQ3GieFENj8pdw6jhN+7nXWU5QoSfrFkZ1gZF2d7kIGxOv2NgWgU3kE2b3ziqgMyGapAH8UfulECqrsxTNlTW7J+/7VbeUyspVgoNE8lss9CzcHdpshjSYlLIqm7d+ygkQum6qnsYgdcV0rJraSLgEfLCoo7I10Fqal2AipI1K6BSA9qHqBlpF7yqAhOMe8ufRpjEm3571SaZyaNDBCHt+nXV7p+Do8neHAG9XQZxAVW/7dI6Zb6TvEGtAv/cA58oL6MSwhj/C/kDb5Qbn3oORzB3N+ZWUn+q9Vzg9Mdeu2IvrOysWi07WJjMQ8H2KEpTEtCzSBgIdkp60edGykQDkzjzJkaT/02jLqMHhgR1L7M+3ezYWQxFkHHXTDBygpkAhWSvHLvwtXgFlyyasN3KG0A==
-X-Forefront-Antispam-Report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
- IPV:NLI; SFV:NSPM; H:MN2PR10MB4128.namprd10.prod.outlook.com; PTR:; CAT:NONE;
- SFS:(366004)(8936002)(16576012)(316002)(7406005)(53546011)(26005)(186003)(83380400001)(6666004)(86362001)(7416002)(6486002)(110136005)(31686004)(66476007)(2906002)(54906003)(44832011)(66946007)(66556008)(4326008)(8676002)(2616005)(31696002)(508600001)(36756003)(956004)(38100700002)(5660300002)(43740500002);
- DIR:OUT; SFP:1101; 
-X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: =?utf-8?B?SGF6TTB3WUlZaGJjcldma1Jsd1JJUjI1bWdBSHZaVU5NT2lnUURyeTBRdk5X?=
- =?utf-8?B?SXZ2MGpkQ2U2R2Q5d0hzQmxSL2dnM2ZVb2l3UHczcmZxS1lxaTBwbHNCOUJw?=
- =?utf-8?B?WVpHQUxpQ212Uk1MUTRuZTlDYmJackx2TmZCSERxZi9nUUxUTE8rRDB6cmlP?=
- =?utf-8?B?dWJBRDhZYVlXWjhZSjFwaGc1b1FVSE4wbGlnNGlLUWczbWN1ZTZlY0tCVW1w?=
- =?utf-8?B?Z3RrdVJ1ZGtOWFJjS2dKdHZOQnMxMXM5b2k1U3BTUGZhWURBRmdETHo3aE11?=
- =?utf-8?B?V3pvcWRhWngwcWdScEtqa3lSM2JTdmRobUJnZXVRZnBqcW1UdzNSNUd4ckxD?=
- =?utf-8?B?eWNvcmRVSTZMOFJabnhtcGRHVXlvMmxNRXYvL0htZlYvbXhxWCs0TUx3a0tx?=
- =?utf-8?B?VVZCOW5QTm9SSVBTZ1FiNDNtUUk2aHdmRDRtYWtaYkJWSW9zTDU3R1pwenkw?=
- =?utf-8?B?WlhEc1FjeklFSEc1NndUemVUOHhObG1WZWVnUXVjM2lzekxLRGVRZC9yQWV4?=
- =?utf-8?B?R3pENHdJMU9kVmRnckpmeHlDdXRWMFhyU2hnckFhVE9ETGxhMy9Pd0hqVkl4?=
- =?utf-8?B?bVQ4dHFVY1l4Qmh3SGVteHMyRHp6TXN5VlJvNm12Y1Q2WTh3ZWw2bHlvYXg1?=
- =?utf-8?B?dlhOcktxSjZ0MzY4dVVaVTlDa08wazBPNm1qaXZNRmdpcXlGSW9ZejlqSHp4?=
- =?utf-8?B?dDlVTUhjS1pYNDdiSFErTG14V2d5UThPZHNWMnRUZXRaejVKa1NPREk4YTlR?=
- =?utf-8?B?K2pSU21LYU01STlEazJ2WmJiMTUwSFYwMUN6QXNSWW1FeVBtNGhDR1BhVER3?=
- =?utf-8?B?aG9Cancxem9tdU5NYzUzUGs0TkovdE9EaXhmdy9vNUFNUDRTTzk4aWlITk05?=
- =?utf-8?B?TitGaU1XTUtQYjVIcy84dXNoYnpmS21wYVpLVzhvMXlHVlpjQXNKZk43QlRu?=
- =?utf-8?B?RjdmOUFkZmE0dUQwQUlzSWhwWW5FOGZzKzF5R0IxRldqMkhqZ2lqd1lNQ3lk?=
- =?utf-8?B?ek1jYVUxaG0zOVAxamU2MlpEMmIwblBSWG8yWFR5UFpRa2NON1VERDRWODhS?=
- =?utf-8?B?QXk2UEN5YmhmeFR2UmVGQTZONEU4SWJnczVDd2ZrVTRJNE5jWk5uLzlOTDhn?=
- =?utf-8?B?Yjl6Z1MrakFWdjlIbFprV2o1Sm0xZ3NrMng0aTFjaVM0c1RDS01BQUJkWGFr?=
- =?utf-8?B?ZEtiT2pvVmNxdVdyK0ZIMmxIOER5MVZhb0lVdnNnZm1CanJoc21MTmZ6UUt5?=
- =?utf-8?B?VTlMcDRERy9oVnhYWTErY0xMK0U3Uk05UHk3NStGbXlSZTIzaTRnT2NuYjYw?=
- =?utf-8?B?SWRnTG9ySVdUUXhyU1V5MW8ybXRtY2krdmQ4aUpiL3FPOGhKL29wdE8vQ3p4?=
- =?utf-8?B?dTZYNVVKNnpFUndVYndhQ0RFWG1zUkdDMkFvZnJ3RThrVWZwVks4UjVPUjRZ?=
- =?utf-8?B?amhrNWtoTnlnMys2aDRZdmtlaXVUZjliOHlrRC9ETXdrdzBJYjV5N21mMDc4?=
- =?utf-8?B?QnNYK3dyekFHeTVjRE5sMzc3Q3lRV3ZJZEJOU1dWM0pFdzZPVGt3OW91WE5j?=
- =?utf-8?B?RWZjTVFid0x3T3BVMkpScGE2MnVWMFVPaDl1NDhnczJjcmY2SStDYVpCdmVI?=
- =?utf-8?B?VU5lNVB6SXY1N2pOaHVCZnRNdy9NS0hvMFUzZjRyMENkTys5UmRkUGx3MW93?=
- =?utf-8?B?ZnVLV0FyaFVONEFlMDdLL2o5V1J2RWlGM1I3VHg3alk5TDVlakpkdy9pOVli?=
- =?utf-8?Q?5+B3IR/RPvIO/H2kakRaigFHgD7Mu7yuNYawBNM?=
-X-OriginatorOrg: oracle.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: f30bcbbc-36c0-430b-cd55-08d98e19309e
-X-MS-Exchange-CrossTenant-AuthSource: MN2PR10MB4128.namprd10.prod.outlook.com
-X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 13 Oct 2021 07:15:09.4041 (UTC)
-X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
-X-MS-Exchange-CrossTenant-Id: 4e2c6054-71cb-48f1-bd6c-3a9705aca71b
-X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: ta6Y/rNXjzX1YifmtoWxWokP2JfcRJXm/Xf2OjoeUnj84dXH1Ha2NhQKfH4WmmrDhNt5JaTqidtdNWO+NRVwGw==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: BLAPR10MB4930
-X-Proofpoint-Virus-Version: vendor=nai engine=6300 definitions=10135
- signatures=668683
-X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 spamscore=0
- phishscore=0 suspectscore=0
- mlxlogscore=999 mlxscore=0 bulkscore=0 adultscore=0 malwarescore=0
- classifier=spam adjust=0 reason=mlx scancount=1 engine=8.12.0-2109230001
- definitions=main-2110130048
-X-Proofpoint-ORIG-GUID: yJCjeNSJm0gO30MkGIKqHW5dZGGKitrr
-X-Proofpoint-GUID: yJCjeNSJm0gO30MkGIKqHW5dZGGKitrr
-X-Spam-Score: -2.9 (--)
+In-Reply-To: <20211013051042.1065752-8-hch@lst.de>
+Content-Language: en-US
+X-Spam-Score: -2.2 (--)
 X-Spam-Report: Spam detection software,
  running on the system "util-spamd-1.v13.lw.sourceforge.com", 
  has NOT identified this incoming email as spam.  The original
  message has been attached to this so you can view it or label
  similar future email.  If you have any questions, see
  the administrator of that system for details.
- Content preview:  On 13/10/2021 13:10, Christoph Hellwig wrote: > Hi Jens, >
- > various drivers currently poke directy at the block device inode, which
- > is a bit of a mess. This series cleans up the places that read th [...]
- Content analysis details:   (-2.9 points, 6.0 required)
+ Content preview:  On 13.10.21 07:10, Christoph Hellwig wrote: > Use the proper
+ helper to read the block device size. > > Signed-off-by: Christoph Hellwig
+ > --- > drivers/target/target_core_iblock.c | 5 +++-- > 1 file [...] 
+ Content analysis details:   (-2.2 points, 6.0 required)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [205.220.177.32 listed in list.dnswl.org]
- 0.0 RCVD_IN_MSPIKE_L3      RBL: Low reputation (-3)
- [205.220.177.32 listed in bl.mailspike.net]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.208.46 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [bostroesser[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
@@ -193,13 +107,13 @@ X-Spam-Report: Spam detection software,
  envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid 0.0 MSGID_FROM_MTA_HEADER  Message-Id was added by a relay
- 0.0 RCVD_IN_MSPIKE_BL      Mailspike blacklisted
+ valid -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.208.46 listed in wl.mailspike.net]
  -2.0 NICE_REPLY_A           Looks like a legit reply (A)
-X-Headers-End: 1maYU2-007QnO-BC
-X-Mailman-Approved-At: Wed, 13 Oct 2021 14:08:33 +0000
-Subject: Re: [Jfs-discussion] don't use ->bd_inode to access the block
- device size
+X-Headers-End: 1maabY-007j20-GP
+X-Mailman-Approved-At: Wed, 13 Oct 2021 14:08:36 +0000
+Subject: Re: [Jfs-discussion] [PATCH 07/29] target/iblock: use
+ bdev_nr_sectors instead of open coding it
 X-BeenThere: jfs-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -231,89 +145,36 @@ Content-Transfer-Encoding: 7bit
 Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Errors-To: jfs-discussion-bounces@lists.sourceforge.net
 
-On 13/10/2021 13:10, Christoph Hellwig wrote:
-> Hi Jens,
+On 13.10.21 07:10, Christoph Hellwig wrote:
+> Use the proper helper to read the block device size.
 > 
-> various drivers currently poke directy at the block device inode, which
-> is a bit of a mess.  This series cleans up the places that read the
-> block device size to use the proper helpers.  I have separate patches
-> for many of the other bd_inode uses, but this series is already big
-> enough as-is,
+> Signed-off-by: Christoph Hellwig <hch@lst.de>
+> ---
+>   drivers/target/target_core_iblock.c | 5 +++--
+>   1 file changed, 3 insertions(+), 2 deletions(-)
 > 
-> I wondered about adding a helper for looking at the size in byte units
-> to avoid the SECTOR_SHIFT shifts in various places.  But given that
-> I could not come up with a good name and 
+> diff --git a/drivers/target/target_core_iblock.c b/drivers/target/target_core_iblock.c
+> index 31df20abe141f..ab7f5678ebc44 100644
+> --- a/drivers/target/target_core_iblock.c
+> +++ b/drivers/target/target_core_iblock.c
+> @@ -232,8 +232,9 @@ static unsigned long long iblock_emulate_read_cap_with_block_size(
+>   	struct block_device *bd,
+>   	struct request_queue *q)
+>   {
+> -	unsigned long long blocks_long = (div_u64(i_size_read(bd->bd_inode),
+> -					bdev_logical_block_size(bd)) - 1);
+> +	loff_t size = bdev_nr_sectors(bd) << SECTOR_SHIFT;
+> +	unsigned long long blocks_long =
+> +		div_u64(size, bdev_logical_block_size(bd)) - 1;
+>   	u32 block_size = bdev_logical_block_size(bd);
 
+To enhance readability, would it make sense to shift the new lines
+behind "u32 block_size = ...", so block_size can be used in div_u64
+instead of using bdev_logical_block_size twice?
 
-> block devices fundamentally
-> work in sector size granularity I decided against that.
-
-Yes.  However,  POV of its usage outside the block-layer, a wrapper 
-helper is a lot better. No.? If you agree, how about naming it bdev_size()?
-
-Thanks, Anand
-
+>   
+>   	if (block_size == dev->dev_attrib.block_size)
 > 
-> Diffstat:
->   block/fops.c                        |    2 +-
->   drivers/block/drbd/drbd_int.h       |    3 +--
->   drivers/md/bcache/super.c           |    2 +-
->   drivers/md/bcache/util.h            |    4 ----
->   drivers/md/bcache/writeback.c       |    2 +-
->   drivers/md/dm-bufio.c               |    2 +-
->   drivers/md/dm-cache-metadata.c      |    2 +-
->   drivers/md/dm-cache-target.c        |    2 +-
->   drivers/md/dm-clone-target.c        |    2 +-
->   drivers/md/dm-dust.c                |    5 ++---
->   drivers/md/dm-ebs-target.c          |    2 +-
->   drivers/md/dm-era-target.c          |    2 +-
->   drivers/md/dm-exception-store.h     |    2 +-
->   drivers/md/dm-flakey.c              |    3 +--
->   drivers/md/dm-integrity.c           |    6 +++---
->   drivers/md/dm-linear.c              |    3 +--
->   drivers/md/dm-log-writes.c          |    4 ++--
->   drivers/md/dm-log.c                 |    2 +-
->   drivers/md/dm-mpath.c               |    2 +-
->   drivers/md/dm-raid.c                |    6 +++---
->   drivers/md/dm-switch.c              |    2 +-
->   drivers/md/dm-table.c               |    3 +--
->   drivers/md/dm-thin-metadata.c       |    2 +-
->   drivers/md/dm-thin.c                |    2 +-
->   drivers/md/dm-verity-target.c       |    3 +--
->   drivers/md/dm-writecache.c          |    2 +-
->   drivers/md/dm-zoned-target.c        |    2 +-
->   drivers/md/md.c                     |   26 +++++++++++---------------
->   drivers/mtd/devices/block2mtd.c     |    5 +++--
->   drivers/nvme/target/io-cmd-bdev.c   |    4 ++--
->   drivers/target/target_core_iblock.c |    5 +++--
->   fs/affs/super.c                     |    2 +-
->   fs/btrfs/dev-replace.c              |    2 +-
->   fs/btrfs/disk-io.c                  |    3 ++-
->   fs/btrfs/ioctl.c                    |    4 ++--
->   fs/btrfs/volumes.c                  |    7 ++++---
->   fs/buffer.c                         |    4 ++--
->   fs/cramfs/inode.c                   |    2 +-
->   fs/ext4/super.c                     |    2 +-
->   fs/fat/inode.c                      |    5 +----
->   fs/hfs/mdb.c                        |    2 +-
->   fs/hfsplus/wrapper.c                |    2 +-
->   fs/jfs/resize.c                     |    5 ++---
->   fs/jfs/super.c                      |    5 ++---
->   fs/nfs/blocklayout/dev.c            |    4 ++--
->   fs/nilfs2/ioctl.c                   |    2 +-
->   fs/nilfs2/super.c                   |    2 +-
->   fs/nilfs2/the_nilfs.c               |    3 ++-
->   fs/ntfs/super.c                     |    8 +++-----
->   fs/ntfs3/super.c                    |    3 +--
->   fs/pstore/blk.c                     |    4 ++--
->   fs/reiserfs/super.c                 |    7 ++-----
->   fs/squashfs/super.c                 |    5 +++--
->   fs/udf/lowlevel.c                   |    5 ++---
->   fs/udf/super.c                      |    9 +++------
->   include/linux/genhd.h               |    6 ++++++
->   56 files changed, 100 insertions(+), 117 deletions(-)
-> 
-
 
 
 _______________________________________________
