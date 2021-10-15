@@ -2,26 +2,26 @@ Return-Path: <jfs-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+jfs-discussion@lfdr.de
 Delivered-To: lists+jfs-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id AC55542F96D
-	for <lists+jfs-discussion@lfdr.de>; Fri, 15 Oct 2021 18:58:34 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1E61942F968
+	for <lists+jfs-discussion@lfdr.de>; Fri, 15 Oct 2021 18:58:25 +0200 (CEST)
 Received: from [127.0.0.1] (helo=sfs-ml-2.v29.lw.sourceforge.com)
 	by sfs-ml-2.v29.lw.sourceforge.com with esmtp (Exim 4.92.3)
 	(envelope-from <jfs-discussion-bounces@lists.sourceforge.net>)
-	id 1mbQX4-0001oC-Ox; Fri, 15 Oct 2021 16:58:10 +0000
+	id 1mbQX5-0001oN-16; Fri, 15 Oct 2021 16:58:11 +0000
 Received: from [172.30.20.202] (helo=mx.sourceforge.net)
  by sfs-ml-2.v29.lw.sourceforge.com with esmtps
  (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.92.3)
- (envelope-from <keescook@chromium.org>) id 1mbQTl-0001gi-Gh
- for jfs-discussion@lists.sourceforge.net; Fri, 15 Oct 2021 16:54:45 +0000
+ (envelope-from <keescook@chromium.org>) id 1mbQU5-0001hy-De
+ for jfs-discussion@lists.sourceforge.net; Fri, 15 Oct 2021 16:55:05 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=sourceforge.net; s=x; h=In-Reply-To:Content-Type:MIME-Version:References:
  Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:Content-Transfer-Encoding:
  Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
  Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=++j3EKFYagTjYpVDRmVtpilprtSSGPZNL/U6+y1BFYU=; b=O3/oUeul4Id5bJS0957KolXpN9
- FSl5Ta1DFBpQSIqS/IZc0IZpSnAwHXUJUQjGV66wHggXFUUuf4V+8xZB/FZ7+gtWwd1aY0ISARF4C
- 0pql5SSUZOpRFg5AcuBDNv4GLjNtfoeP7SGmDLqPT38GE/kLnHxBwz09vr0TXmvFtiKw=;
+ bh=SGOpzYQsZVxiJYbDiHH5De0/7WPNstxhmFZjyDhxXSM=; b=Kxxj/qNOtlq1gZIIm+6R3514eu
+ CTJf5X1ku8Et/tEV26IYCiT58zEHmYuDktS1v/CuJ2rmMJ05z8+3q1C6Zi/4Uy1mpRJKXkL/UTsfh
+ CxHPxZxMAPv1yHnlXLKDHMdhcN1H6NnTbcpDMa7kN8zjQM3NbY6cptGM1SKTLl7fGmnE=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
  h=In-Reply-To:Content-Type:MIME-Version:References:Message-ID:Subject:Cc:To
@@ -29,54 +29,54 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
  :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
  List-Post:List-Owner:List-Archive;
- bh=++j3EKFYagTjYpVDRmVtpilprtSSGPZNL/U6+y1BFYU=; b=lTc56Sd4U4BOOEzg7HI12ElSj3
- yd7uCcvqAWlycDEIIYx71tBwnvSX+czSxmtcyjnWZ3GQknvFiY31la2UfNujSogSBeAIAFBaluxiR
- PFAMnTXLrJG0E4eQoEkScbCJhlMUErfKoDtcdqKxZbrZzGncqxeSMQHZPUCdiW6G51bA=;
-Received: from mail-pl1-f182.google.com ([209.85.214.182])
- by sfi-mx-2.v28.lw.sourceforge.com with esmtps
+ bh=SGOpzYQsZVxiJYbDiHH5De0/7WPNstxhmFZjyDhxXSM=; b=ZqFHbGi0/9XUGQFFkf9nUhn4fY
+ EWc6SuzjcDe5/BT3vvB7nCt+52c400RUFXY4R/yyrgeuGXGzFuG11Mue2Q6cXcN6QqVcO64JAglFu
+ JI4b7Ez1eIAZ2+OH3q6FXkKv5OkQmd91ufYE2WUJGkg1xLK2W0YAVqUhDbWtq4Jvn/QQ=;
+Received: from mail-pg1-f170.google.com ([209.85.215.170])
+ by sfi-mx-1.v28.lw.sourceforge.com with esmtps
  (TLSv1.2:ECDHE-RSA-AES128-GCM-SHA256:128) (Exim 4.92.3)
- id 1mbQTk-0001kL-Ur
- for jfs-discussion@lists.sourceforge.net; Fri, 15 Oct 2021 16:54:45 +0000
-Received: by mail-pl1-f182.google.com with SMTP id e10so1871420plh.8
+ id 1mbQU1-00Ew0g-LW
+ for jfs-discussion@lists.sourceforge.net; Fri, 15 Oct 2021 16:55:05 +0000
+Received: by mail-pg1-f170.google.com with SMTP id g184so9112124pgc.6
  for <jfs-discussion@lists.sourceforge.net>;
- Fri, 15 Oct 2021 09:54:44 -0700 (PDT)
+ Fri, 15 Oct 2021 09:55:01 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
  h=date:from:to:cc:subject:message-id:references:mime-version
  :content-disposition:in-reply-to;
- bh=++j3EKFYagTjYpVDRmVtpilprtSSGPZNL/U6+y1BFYU=;
- b=PGVMrxoIP54zTy3fYRiGwM3tLAZD1Sg5qwTZ/1sUpFUKPeoK4gaEUh4gDn9vmINL5R
- K6Diz6OFYGVqe3eH+J4BPfR7/r8fI1+hdPS73Dcjh+YNC+lZ5T7DwLWnu9B82X3frAPd
- N9HCX5/hrMJFRwzEMhEqi5qndMOp+CdKnJFuY=
+ bh=SGOpzYQsZVxiJYbDiHH5De0/7WPNstxhmFZjyDhxXSM=;
+ b=fs2nTqRo7F1ZHnAQpHrc4ABoCfv10ucgSRl5XyF5Dl0EU+kq5CLj40RrhqmGKfYBdE
+ srWd8WSfQrAgtx4IytED1edJOCHp8619TxpM3AEsBF+FDwK3nXgnkT7wtVpp+hLrbcJ8
+ Rg3NqIIsXlTg4ynBFyVvaBOq2w7XptVlu38kk=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20210112;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
  :mime-version:content-disposition:in-reply-to;
- bh=++j3EKFYagTjYpVDRmVtpilprtSSGPZNL/U6+y1BFYU=;
- b=BaReC4+AoTFZvbm3cMr7nvTLi73BhZSIwjA4KsqljDPortA7fincdWPg+aj14yeWh0
- Cyfoiznt9zIY1q9G6xIgh5Rl0vdwus4au1u6iUJWa58j61sVNuvenI91Jq09ahxA3aWo
- l8G4Cl2AINSYuEjVKV3t0/gnW+kwmrJieWkkta4YjS0lFm6YBIDfkLgKUt8IiakYI9G1
- PIHLoVI/ceBxkbK6Sgys9mO1EIdHGatDrBA8pUSeXSm+z1YwssL1YEz6Q5kYV8ChlE50
- BsUhQQZxOa0nJ/bKYDKAo8ogTWafuwJIW/uKcbKzoLyfuX7LY5sI4p+CkNpYMVIIZc7K
- sqeg==
-X-Gm-Message-State: AOAM531qEkLze8ubzFdatHMAyPu+Cf2B2WTMfh7EEhs0pTBGrVqLEh9t
- pMVozClNeMvVrLlHJ7GRbM48Ew==
-X-Google-Smtp-Source: ABdhPJxiUcnkoooEgdTHhZSK5QlfnfikulhFK8mfbnmCN2PXzxc7k6fawv/6LA10hComZoogNKw4PQ==
-X-Received: by 2002:a17:903:3092:b0:13f:663d:f008 with SMTP id
- u18-20020a170903309200b0013f663df008mr11973339plc.13.1634316876253; 
- Fri, 15 Oct 2021 09:54:36 -0700 (PDT)
+ bh=SGOpzYQsZVxiJYbDiHH5De0/7WPNstxhmFZjyDhxXSM=;
+ b=zwa7Z7b/VzbJ12b5ovVbsB+wrM7UuAp/gEyyZ6C7F/kFAITK1zNLUZW8k6BIRAqJYx
+ rO1QY4UokWHs1ohlUqONlfOlsqc37Ht9OZY55F12Ng6EquPAWBVymqh5hcK2OwW9qx7x
+ eAgEovQHtQBjwy8CSu5bIN9Gs7Qpoi2TruBYCepmerBqQmIGuOQApz08L1LrKKF9NXhm
+ 7lXzAiJVKzU1Rsqfmh0VPyszjyPciKQyIm5N7sXgUmUx5DM0z9hfjGBzzvwdS+opWd/W
+ fZquDzaYrf3uImP+sQ1R6G8766r2Ob0SgJzK5KrK9vHdzKaPitIPW9JYJdNLmV6n38A/
+ TaTQ==
+X-Gm-Message-State: AOAM5310sNPBdfjVG+oxfz5MXnebBBhzVMBpRoG+a5G3teirHJRqJHkC
+ XTpb6PYmFggrTfZnp1tO5D3Ohg==
+X-Google-Smtp-Source: ABdhPJyWeQQaxN3OVR9dpjDI7bcixMoFds0uTAEJpzN0+vwQj4qrWqnY4m/W/UbgYRyhJ3miirXMyQ==
+X-Received: by 2002:a62:1596:0:b0:44c:f7b3:df74 with SMTP id
+ 144-20020a621596000000b0044cf7b3df74mr12889236pfv.60.1634316896184; 
+ Fri, 15 Oct 2021 09:54:56 -0700 (PDT)
 Received: from www.outflux.net (smtp.outflux.net. [198.145.64.163])
- by smtp.gmail.com with ESMTPSA id t126sm5505715pfc.80.2021.10.15.09.54.35
+ by smtp.gmail.com with ESMTPSA id h3sm6042497pfv.166.2021.10.15.09.54.55
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Fri, 15 Oct 2021 09:54:35 -0700 (PDT)
-Date: Fri, 15 Oct 2021 09:54:35 -0700
+ Fri, 15 Oct 2021 09:54:55 -0700 (PDT)
+Date: Fri, 15 Oct 2021 09:54:55 -0700
 From: Kees Cook <keescook@chromium.org>
 To: Christoph Hellwig <hch@lst.de>
-Message-ID: <202110150954.45A4DFA79@keescook>
+Message-ID: <202110150954.FE37F8CF00@keescook>
 References: <20211015132643.1621913-1-hch@lst.de>
- <20211015132643.1621913-20-hch@lst.de>
+ <20211015132643.1621913-21-hch@lst.de>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20211015132643.1621913-20-hch@lst.de>
+In-Reply-To: <20211015132643.1621913-21-hch@lst.de>
 X-Spam-Score: -0.9 (/)
 X-Spam-Report: Spam detection software,
  running on the system "util-spamd-1.v13.lw.sourceforge.com", 
@@ -84,17 +84,13 @@ X-Spam-Report: Spam detection software,
  message has been attached to this so you can view it or label
  similar future email.  If you have any questions, see
  the administrator of that system for details.
- Content preview:  On Fri, Oct 15, 2021 at 03:26:32PM +0200, Christoph Hellwig
+ Content preview:  On Fri, Oct 15, 2021 at 03:26:33PM +0200, Christoph Hellwig
  wrote: > Use the proper helper to read the block device size. > >
  Signed-off-by:
  Christoph Hellwig <hch@lst.de> Reviewed-by: Kees Cook <keescook@chromium.org>
  Content analysis details:   (-0.9 points, 6.0 required)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 URIBL_BLOCKED          ADMINISTRATOR NOTICE: The query to URIBL was
- blocked.  See
- http://wiki.apache.org/spamassassin/DnsBlocklists#dnsbl-block
- for more information. [URIs: chromium.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -103,16 +99,21 @@ X-Spam-Report: Spam detection software,
  envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [209.85.214.182 listed in wl.mailspike.net]
+ valid
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.214.182 listed in list.dnswl.org]
+ no trust [209.85.215.170 listed in list.dnswl.org]
+ 0.0 URIBL_BLOCKED          ADMINISTRATOR NOTICE: The query to URIBL was
+ blocked.  See
+ http://wiki.apache.org/spamassassin/DnsBlocklists#dnsbl-block
+ for more information. [URIs: chromium.org]
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [209.85.215.170 listed in wl.mailspike.net]
  0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
  -0.7 DKIMWL_WL_HIGH         DKIMwl.org - High trust sender
-X-Headers-End: 1mbQTk-0001kL-Ur
+X-Headers-End: 1mbQU1-00Ew0g-LW
 X-Mailman-Approved-At: Fri, 15 Oct 2021 16:58:08 +0000
-Subject: Re: [Jfs-discussion] [PATCH 19/30] nilfs2: use bdev_nr_bytes
- instead of open coding it
+Subject: Re: [Jfs-discussion] [PATCH 20/30] ntfs3: use bdev_nr_bytes instead
+ of open coding it
 X-BeenThere: jfs-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -144,7 +145,7 @@ Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Errors-To: jfs-discussion-bounces@lists.sourceforge.net
 
-On Fri, Oct 15, 2021 at 03:26:32PM +0200, Christoph Hellwig wrote:
+On Fri, Oct 15, 2021 at 03:26:33PM +0200, Christoph Hellwig wrote:
 > Use the proper helper to read the block device size.
 > 
 > Signed-off-by: Christoph Hellwig <hch@lst.de>
