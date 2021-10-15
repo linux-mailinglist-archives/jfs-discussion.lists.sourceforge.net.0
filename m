@@ -2,27 +2,27 @@ Return-Path: <jfs-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+jfs-discussion@lfdr.de
 Delivered-To: lists+jfs-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5FE9D42F4BA
-	for <lists+jfs-discussion@lfdr.de>; Fri, 15 Oct 2021 16:05:33 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 280D242F4BB
+	for <lists+jfs-discussion@lfdr.de>; Fri, 15 Oct 2021 16:05:34 +0200 (CEST)
 Received: from [127.0.0.1] (helo=sfs-ml-3.v29.lw.sourceforge.com)
 	by sfs-ml-3.v29.lw.sourceforge.com with esmtp (Exim 4.94.2)
 	(envelope-from <jfs-discussion-bounces@lists.sourceforge.net>)
-	id 1mbNpa-00082Z-Im; Fri, 15 Oct 2021 14:05:06 +0000
+	id 1mbNpY-00081g-Te; Fri, 15 Oct 2021 14:05:04 +0000
 Received: from [172.30.20.202] (helo=mx.sourceforge.net)
- by sfs-ml-4.v29.lw.sourceforge.com with esmtps
- (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
+ by sfs-ml-2.v29.lw.sourceforge.com with esmtps
+ (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.92.3)
  (envelope-from
  <BATV+717e4f5ff9d7c10515bf+6627+infradead.org+hch@bombadil.srs.infradead.org>)
- id 1mbNdc-0005Fj-55; Fri, 15 Oct 2021 13:52:44 +0000
+ id 1mbNda-00026U-W0; Fri, 15 Oct 2021 13:52:43 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=sourceforge.net; s=x; h=Content-Transfer-Encoding:MIME-Version:References:
  In-Reply-To:Message-Id:Date:Subject:Cc:To:From:Sender:Reply-To:Content-Type:
  Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
  Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=79IfCL0cwBZyl3TQ005uMyV6UFeBUdi+0xEOD4Xebrg=; b=SKzVz8bwjUXVpqCooLcBxfhStm
- yXq0w0CYfvkCCVDUbg4Wzvn0+4/M43sJsgyAEZjJngGKvUodFRbV40ML2t4MMUycToZR6Wy90i3I5
- wVdo9RtC5SwQqS9AuUlez6CZexdoATvv36gZkUZuSBDdbFl96bg4L6EIEi4bQ+Lsx5UI=;
+ bh=7vy0+8EI8WhVCxcCPpT3E3xZPAv/h7863mIj0HITKC4=; b=O3dxUgfPtUlr1MmQGGK8oZ/cCN
+ ILJAzrpr9fxptSB2ZuMbxLO2wqGpGV7OwOaG+fBuwR6DoVsac2AcON/PwKSxmqOaO6OwLdf2p02pX
+ ZOaTePGILvmILcq/KIkjmrlDEr68rg9IwCaBxrkDOcrdte0EGVhPMFX1OnihGPhTvHMU=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
  h=Content-Transfer-Encoding:MIME-Version:References:In-Reply-To:Message-Id:
@@ -30,30 +30,30 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
  :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
  List-Post:List-Owner:List-Archive;
- bh=79IfCL0cwBZyl3TQ005uMyV6UFeBUdi+0xEOD4Xebrg=; b=mmegaK2Ys89xXTFPCQqOk5kn0L
- o/K0/SorvpLjuWd/T6Ge5YjnlUkE4PM3CNv3G5mHzPJB0PvHwDcBugqnqxDlCS1iTkfFevoPJXZvS
- 26esvUe5Q8oJ+aizt4NBHI6l2EH81v3LUQ2PhRR2DnNbm53+D85ciNMjf/keesqmbQ1M=;
+ bh=7vy0+8EI8WhVCxcCPpT3E3xZPAv/h7863mIj0HITKC4=; b=DmIrGyN/5I+Yh5e7kxSlEtzX1l
+ A7+SYU2PlwDD3jWPKuGrSscPKruPQ6mZLSSPKwl24gkge2gBPdKK46V6StRcja9jst4j8z0eGsMQM
+ SzFX6oBpWEOTSmIzYLD7u8AuBWMUEZ8kXrhO9DKtuj8wWx+zQyv7O4oRv5l1ATvCEAXo=;
 Received: from bombadil.infradead.org ([198.137.202.133])
- by sfi-mx-1.v28.lw.sourceforge.com with esmtps
+ by sfi-mx-2.v28.lw.sourceforge.com with esmtps
  (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.92.3)
- id 1mbNdb-00EXOj-LG; Fri, 15 Oct 2021 13:52:44 +0000
+ id 1mbNda-0002JL-GH; Fri, 15 Oct 2021 13:52:42 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=infradead.org; s=bombadil.20210309; h=Content-Transfer-Encoding:
  MIME-Version:References:In-Reply-To:Message-Id:Date:Subject:Cc:To:From:Sender
  :Reply-To:Content-Type:Content-ID:Content-Description;
- bh=79IfCL0cwBZyl3TQ005uMyV6UFeBUdi+0xEOD4Xebrg=; b=484wuo5ApXYHJ1gwVkbfmaWvz0
- Psc3ElysSbrWt3zDOEnzImuxkoRsCZi+k7KdvirlXuxk3kYtIzBGIRiCVQDNq4qFi6wH207IhosnU
- TODkbz2vxD0rg9jjrkgDJG/zPZAV/1eGwDzlDjli6KEeRQtBCM7/pf/M/PYlq9SiRTIlbRpr9SceV
- n2ZblPKQ0vvPIPNkfWMAToJq2ahTA8qnMUg77IxuZKyIbWw47aFK9+EZstiD6ZFb4/uqP3965SSkF
- TOplTd77vyoEt068L0rP0zmi0mU0fQ1o+LDGesDwE7a9qSyur0k7qqt1sv1T/4uL1oSdK5oBtoxMs
- 5mLeYUiQ==;
+ bh=7vy0+8EI8WhVCxcCPpT3E3xZPAv/h7863mIj0HITKC4=; b=xmxZRfmuHz0VqdbUt2oT7Bevb7
+ o4CxF77k0oZ/rzw6OpdJBPS9aNjql5VKLH61Ct4+Yt2AwCG9Jx1/flLXuMKMifBBrYJEUsR3a3fWo
+ B7GgHgzInH6ck+PsWqLyxhKxpsoA7oJm+IkApWIK+2n/B11ik1ZAwOeWyZ+W7My6FzsNx6yCXjDsq
+ WokCivh+P43Uf5GvNl5Jx72fqF06MBW34ChI9M77fHda72O4TYZYenz2y3vZhHHuSCndcxv7KTqfF
+ UOGDQMh4qkLEPZM/+G2Q0iCwlTWD8HrZ5I7oxXkmeQNSJGjTZWeE6ViTYA/CkqLpdtpO7s3ysge5I
+ Nmi3hQXA==;
 Received: from [2001:4bb8:199:73c5:ddfe:9587:819b:83b0] (helo=localhost)
  by bombadil.infradead.org with esmtpsa (Exim 4.94.2 #2 (Red Hat Linux))
- id 1mbNFH-007DOn-Bg; Fri, 15 Oct 2021 13:27:35 +0000
+ id 1mbNFJ-007DRi-Uj; Fri, 15 Oct 2021 13:27:38 +0000
 From: Christoph Hellwig <hch@lst.de>
 To: Jens Axboe <axboe@kernel.dk>
-Date: Fri, 15 Oct 2021 15:26:32 +0200
-Message-Id: <20211015132643.1621913-20-hch@lst.de>
+Date: Fri, 15 Oct 2021 15:26:33 +0200
+Message-Id: <20211015132643.1621913-21-hch@lst.de>
 X-Mailer: git-send-email 2.30.2
 In-Reply-To: <20211015132643.1621913-1-hch@lst.de>
 References: <20211015132643.1621913-1-hch@lst.de>
@@ -69,9 +69,11 @@ X-Spam-Report: Spam detection software,
  the administrator of that system for details.
  Content preview: Use the proper helper to read the block device size.
  Signed-off-by:
- Christoph Hellwig <hch@lst.de> --- fs/nilfs2/ioctl.c | 2 +- fs/nilfs2/super.c
- | 2 +- fs/nilfs2/the_nilfs.c | 2 +- 3 files changed, 3 insertions(+),
- 3 deletions(-)
+ Christoph Hellwig <hch@lst.de> --- fs/ntfs3/super.c | 3 +-- 1 file changed,
+ 1 insertion(+), 2 deletions(-) diff --git a/fs/ntfs3/super.c b/fs/ntfs3/super.c
+ index 55bbc9200a10e..7ed2cb5e8b1d9 100644 --- a/fs/ntfs3/super.c +++
+ b/fs/ntfs3/super.c
+ @@ -918,7 +918,6 @@ static int ntfs_fill_super(struct super_blo [...] 
  Content analysis details:   (-2.1 points, 6.0 required)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
@@ -90,9 +92,9 @@ X-Spam-Report: Spam detection software,
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
-X-Headers-End: 1mbNdb-00EXOj-LG
+X-Headers-End: 1mbNda-0002JL-GH
 X-Mailman-Approved-At: Fri, 15 Oct 2021 14:04:59 +0000
-Subject: [Jfs-discussion] [PATCH 19/30] nilfs2: use bdev_nr_bytes instead of
+Subject: [Jfs-discussion] [PATCH 20/30] ntfs3: use bdev_nr_bytes instead of
  open coding it
 X-BeenThere: jfs-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
@@ -129,50 +131,30 @@ Use the proper helper to read the block device size.
 
 Signed-off-by: Christoph Hellwig <hch@lst.de>
 ---
- fs/nilfs2/ioctl.c     | 2 +-
- fs/nilfs2/super.c     | 2 +-
- fs/nilfs2/the_nilfs.c | 2 +-
- 3 files changed, 3 insertions(+), 3 deletions(-)
+ fs/ntfs3/super.c | 3 +--
+ 1 file changed, 1 insertion(+), 2 deletions(-)
 
-diff --git a/fs/nilfs2/ioctl.c b/fs/nilfs2/ioctl.c
-index 640ac8fe891e6..1d0583cfd9701 100644
---- a/fs/nilfs2/ioctl.c
-+++ b/fs/nilfs2/ioctl.c
-@@ -1107,7 +1107,7 @@ static int nilfs_ioctl_set_alloc_range(struct inode *inode, void __user *argp)
+diff --git a/fs/ntfs3/super.c b/fs/ntfs3/super.c
+index 55bbc9200a10e..7ed2cb5e8b1d9 100644
+--- a/fs/ntfs3/super.c
++++ b/fs/ntfs3/super.c
+@@ -918,7 +918,6 @@ static int ntfs_fill_super(struct super_block *sb, void *data, int silent)
+ 	int err;
+ 	struct ntfs_sb_info *sbi;
+ 	struct block_device *bdev = sb->s_bdev;
+-	struct inode *bd_inode = bdev->bd_inode;
+ 	struct request_queue *rq = bdev_get_queue(bdev);
+ 	struct inode *inode = NULL;
+ 	struct ntfs_inode *ni;
+@@ -967,7 +966,7 @@ static int ntfs_fill_super(struct super_block *sb, void *data, int silent)
+ 
+ 	/* Parse boot. */
+ 	err = ntfs_init_from_boot(sb, rq ? queue_logical_block_size(rq) : 512,
+-				  bd_inode->i_size);
++				  bdev_nr_bytes(bdev));
+ 	if (err)
  		goto out;
  
- 	ret = -ERANGE;
--	if (range[1] > i_size_read(inode->i_sb->s_bdev->bd_inode))
-+	if (range[1] > bdev_nr_bytes(inode->i_sb->s_bdev))
- 		goto out;
- 
- 	segbytes = nilfs->ns_blocks_per_segment * nilfs->ns_blocksize;
-diff --git a/fs/nilfs2/super.c b/fs/nilfs2/super.c
-index f6b2d280aab5a..3134c0e42fd46 100644
---- a/fs/nilfs2/super.c
-+++ b/fs/nilfs2/super.c
-@@ -403,7 +403,7 @@ int nilfs_resize_fs(struct super_block *sb, __u64 newsize)
- 	int ret;
- 
- 	ret = -ERANGE;
--	devsize = i_size_read(sb->s_bdev->bd_inode);
-+	devsize = bdev_nr_bytes(sb->s_bdev);
- 	if (newsize > devsize)
- 		goto out;
- 
-diff --git a/fs/nilfs2/the_nilfs.c b/fs/nilfs2/the_nilfs.c
-index c8bfc01da5d71..1bfcb5d3ea480 100644
---- a/fs/nilfs2/the_nilfs.c
-+++ b/fs/nilfs2/the_nilfs.c
-@@ -489,7 +489,7 @@ static int nilfs_load_super_block(struct the_nilfs *nilfs,
- {
- 	struct nilfs_super_block **sbp = nilfs->ns_sbp;
- 	struct buffer_head **sbh = nilfs->ns_sbh;
--	u64 sb2off = NILFS_SB2_OFFSET_BYTES(nilfs->ns_bdev->bd_inode->i_size);
-+	u64 sb2off = NILFS_SB2_OFFSET_BYTES(bdev_nr_bytes(nilfs->ns_bdev));
- 	int valid[2], swp = 0;
- 
- 	sbp[0] = nilfs_read_super_block(sb, NILFS_SB_OFFSET_BYTES, blocksize,
 -- 
 2.30.2
 
