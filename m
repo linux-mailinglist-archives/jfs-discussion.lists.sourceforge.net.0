@@ -2,27 +2,27 @@ Return-Path: <jfs-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+jfs-discussion@lfdr.de
 Delivered-To: lists+jfs-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id A73DC42F4CD
-	for <lists+jfs-discussion@lfdr.de>; Fri, 15 Oct 2021 16:06:05 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 31FCB42F4C3
+	for <lists+jfs-discussion@lfdr.de>; Fri, 15 Oct 2021 16:05:46 +0200 (CEST)
 Received: from [127.0.0.1] (helo=sfs-ml-3.v29.lw.sourceforge.com)
 	by sfs-ml-3.v29.lw.sourceforge.com with esmtp (Exim 4.94.2)
 	(envelope-from <jfs-discussion-bounces@lists.sourceforge.net>)
-	id 1mbNpd-00089H-U3; Fri, 15 Oct 2021 14:05:09 +0000
+	id 1mbNpd-00086E-6j; Fri, 15 Oct 2021 14:05:08 +0000
 Received: from [172.30.20.202] (helo=mx.sourceforge.net)
- by sfs-ml-1.v29.lw.sourceforge.com with esmtps
+ by sfs-ml-4.v29.lw.sourceforge.com with esmtps
  (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
  (envelope-from
  <BATV+717e4f5ff9d7c10515bf+6627+infradead.org+hch@bombadil.srs.infradead.org>)
- id 1mbNkJ-00025Q-Iz; Fri, 15 Oct 2021 13:59:39 +0000
+ id 1mbNhi-0005PL-H5; Fri, 15 Oct 2021 13:56:58 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=sourceforge.net; s=x; h=Content-Transfer-Encoding:MIME-Version:References:
  In-Reply-To:Message-Id:Date:Subject:Cc:To:From:Sender:Reply-To:Content-Type:
  Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
  Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=GrMAkYzXypftu2Q93j+7zCry2NCsZMMZP71gZdhVD6M=; b=EeSJ/lg+RAGhbjv41nD45+YzWl
- Z4Q6+flzJqMA2SwIYq8VrHRMaktxyJw7WdOQamDJX1lCaOMiX4rtm9brryfoW+Nkpoggmwm/S798F
- WI8m73i53rVRkKob9Gu+KB/5aHQm48quDio6/n0o/GOzirKex4OX3LbFP3ga0hqrQZeU=;
+ bh=3V9fbTJuZDj71a+9mtkBQXQRRqP9hAgnu+ZIhkaADhI=; b=T/VNP2y9AMFdXW3NCX0Jlio/Jy
+ S/Lt9adH57OoU8+DN472DbpLaci3FMGyNy4+lDDpnemnGibu06cEkt2h3eV6Q9CliXF9GOAhXpZUN
+ oZoM2hfToC7LDeA0rpzZp2iH3AamInRh6gu9HoSb/kMtixEzoDaSq9nNPeXvmBv9SeR0=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
  h=Content-Transfer-Encoding:MIME-Version:References:In-Reply-To:Message-Id:
@@ -30,30 +30,30 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
  :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
  List-Post:List-Owner:List-Archive;
- bh=GrMAkYzXypftu2Q93j+7zCry2NCsZMMZP71gZdhVD6M=; b=S4e/MDgeLuTbqqJ6FdU0LlCgC9
- k+P2K/TrflnM1cHh0WkwvzyiTXHNtjt3HQLVjPhTPD/XnuLl/FAALIt8U2YZhO5XuAvT6y1NcqUsP
- TozjWb1C3LkN43BFPWl7894D7j0spLxK+pVYkxzgng43k8TEBfP+LHWMyv4XOc3l1rPY=;
+ bh=3V9fbTJuZDj71a+9mtkBQXQRRqP9hAgnu+ZIhkaADhI=; b=gQJkwMP2aCTjCTUqb1C8BQOQ15
+ Z/0o2bePfELqCHNH35L80ZDRb9LpMpWBceYJgZUNTIcY0nzvt317Jm8RM3f+rLFqjWokAMRsyBqr7
+ 8ekaJ8fFxS9/I0YSygTZZof/dgxfDLzYCD30nksMJkqLxpjxaePmcHuISVTJE5zaiUZM=;
 Received: from bombadil.infradead.org ([198.137.202.133])
- by sfi-mx-2.v28.lw.sourceforge.com with esmtps
+ by sfi-mx-1.v28.lw.sourceforge.com with esmtps
  (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.92.3)
- id 1mbNkJ-0003HT-1A; Fri, 15 Oct 2021 13:59:39 +0000
+ id 1mbNhi-00EXuS-1c; Fri, 15 Oct 2021 13:56:58 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=infradead.org; s=bombadil.20210309; h=Content-Transfer-Encoding:
  MIME-Version:References:In-Reply-To:Message-Id:Date:Subject:Cc:To:From:Sender
  :Reply-To:Content-Type:Content-ID:Content-Description;
- bh=GrMAkYzXypftu2Q93j+7zCry2NCsZMMZP71gZdhVD6M=; b=u0Jh/pk//vKTObitfYlxlIGC4J
- NliEBUrfu8nRvsuQqfa0JdudddIgT4cUPUUQhhD1H73tpwx2VJ3xZKmlBURkgE0Wlwlj5sC9k38A4
- Jlulwzv9b+pm5R7pWDiKTLnasKDPcPonGfj+WoDLUsvjVXgS6O9ZPJPNY80acEExcRozq9ODkVYoU
- cBI8mRHR3nwjqo8o+yLJAkhg4oxrz4AanNeNGgBQGOEB96Mhoi/robn53SwHYX1l6Ozdhd6Bf1imN
- l3cTw2JImqG5tWyrDjeMpk9nDeFErssO0HV37CTbED9wzNn+MLmDMzWTsxQB0LjQmWxrn+3mG/Bgf
- rD4cqhcg==;
+ bh=3V9fbTJuZDj71a+9mtkBQXQRRqP9hAgnu+ZIhkaADhI=; b=zDXL/abHH8Hy7DpCzkgiW3Aiv1
+ vdacyZ7SPKBEIXUCbyEsKC0gp64D671n5SCRSmVJigriIQMAA10dYY9IOAlC7vM1GfXcnLtwdsD3O
+ ypu7eCKX1Owu87zR+xuv8SalJND4PppRsawt0gD2aew4jQMKNPsnqvr4GENtTgKm0dkfWS0Ry8Bt9
+ GNrrcHN5Mql2SnbjOZ9yBDofBiARYHY8gUio35POxOUeg1jnPPUYIsTgg/6hrrCyoMGTWjkIExSb3
+ Icg7BYK/HVmnjML6lPWBo2ViaJXsJ4mE7gIS4UnwvqqbKAdg/c4HqbuEOV4byXXt0MBzfo2aXWJOP
+ +y/4a+bA==;
 Received: from [2001:4bb8:199:73c5:ddfe:9587:819b:83b0] (helo=localhost)
  by bombadil.infradead.org with esmtpsa (Exim 4.94.2 #2 (Red Hat Linux))
- id 1mbNEW-007CcF-HX; Fri, 15 Oct 2021 13:26:48 +0000
+ id 1mbNEZ-007Ce6-3w; Fri, 15 Oct 2021 13:26:51 +0000
 From: Christoph Hellwig <hch@lst.de>
 To: Jens Axboe <axboe@kernel.dk>
-Date: Fri, 15 Oct 2021 15:26:14 +0200
-Message-Id: <20211015132643.1621913-2-hch@lst.de>
+Date: Fri, 15 Oct 2021 15:26:15 +0200
+Message-Id: <20211015132643.1621913-3-hch@lst.de>
 X-Mailer: git-send-email 2.30.2
 In-Reply-To: <20211015132643.1621913-1-hch@lst.de>
 References: <20211015132643.1621913-1-hch@lst.de>
@@ -67,11 +67,10 @@ X-Spam-Report: Spam detection software,
  message has been attached to this so you can view it or label
  similar future email.  If you have any questions, see
  the administrator of that system for details.
- Content preview: Ensure these are always available for inlines in the various
- block layer headers. Signed-off-by: Christoph Hellwig <hch@lst.de> ---
- include/linux/blk_types.h
- | 17 +++++++++++++++++ include/linux/blkdev.h | 17 2 files changed,
- 17 insertions(+), 17 deletions(-) 
+ Content preview:  Add a helpe to query the size of a block device in bytes.
+ This will be used to remove open coded access to ->bd_inode. Signed-off-by:
+ Christoph Hellwig <hch@lst.de> --- include/linux/genhd.h | 7 ++++++- 1 file
+ changed, 6 insertions(+), 1 deletion(-) 
  Content analysis details:   (-2.1 points, 6.0 required)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
@@ -90,10 +89,9 @@ X-Spam-Report: Spam detection software,
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
-X-Headers-End: 1mbNkJ-0003HT-1A
+X-Headers-End: 1mbNhi-00EXuS-1c
 X-Mailman-Approved-At: Fri, 15 Oct 2021 14:05:00 +0000
-Subject: [Jfs-discussion] [PATCH 01/30] block: move the SECTOR_SIZE related
- definitions to blk_types.h
+Subject: [Jfs-discussion] [PATCH 02/30] block: add a bdev_nr_bytes helper
 X-BeenThere: jfs-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -125,71 +123,34 @@ Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Errors-To: jfs-discussion-bounces@lists.sourceforge.net
 
-Ensure these are always available for inlines in the various block layer
-headers.
+Add a helpe to query the size of a block device in bytes.  This
+will be used to remove open coded access to ->bd_inode.
 
 Signed-off-by: Christoph Hellwig <hch@lst.de>
 ---
- include/linux/blk_types.h | 17 +++++++++++++++++
- include/linux/blkdev.h    | 17 -----------------
- 2 files changed, 17 insertions(+), 17 deletions(-)
+ include/linux/genhd.h | 7 ++++++-
+ 1 file changed, 6 insertions(+), 1 deletion(-)
 
-diff --git a/include/linux/blk_types.h b/include/linux/blk_types.h
-index 3b967053e9f5a..dc8da0c7fa09b 100644
---- a/include/linux/blk_types.h
-+++ b/include/linux/blk_types.h
-@@ -20,6 +20,23 @@ struct cgroup_subsys_state;
- typedef void (bio_end_io_t) (struct bio *);
- struct bio_crypt_ctx;
- 
-+/*
-+ * The basic unit of block I/O is a sector. It is used in a number of contexts
-+ * in Linux (blk, bio, genhd). The size of one sector is 512 = 2**9
-+ * bytes. Variables of type sector_t represent an offset or size that is a
-+ * multiple of 512 bytes. Hence these two constants.
-+ */
-+#ifndef SECTOR_SHIFT
-+#define SECTOR_SHIFT 9
-+#endif
-+#ifndef SECTOR_SIZE
-+#define SECTOR_SIZE (1 << SECTOR_SHIFT)
-+#endif
-+
-+#define PAGE_SECTORS_SHIFT	(PAGE_SHIFT - SECTOR_SHIFT)
-+#define PAGE_SECTORS		(1 << PAGE_SECTORS_SHIFT)
-+#define SECTOR_MASK		(PAGE_SECTORS - 1)
-+
- struct block_device {
- 	sector_t		bd_start_sect;
- 	struct disk_stats __percpu *bd_stats;
-diff --git a/include/linux/blkdev.h b/include/linux/blkdev.h
-index 17705c970d7e1..161496d1aced0 100644
---- a/include/linux/blkdev.h
-+++ b/include/linux/blkdev.h
-@@ -571,23 +571,6 @@ static inline struct request_queue *bdev_get_queue(struct block_device *bdev)
- 	return bdev->bd_disk->queue;	/* this is never NULL */
+diff --git a/include/linux/genhd.h b/include/linux/genhd.h
+index 082a3e5fd8fa1..f67db3c5a04b3 100644
+--- a/include/linux/genhd.h
++++ b/include/linux/genhd.h
+@@ -235,9 +235,14 @@ static inline sector_t get_start_sect(struct block_device *bdev)
+ 	return bdev->bd_start_sect;
  }
  
--/*
-- * The basic unit of block I/O is a sector. It is used in a number of contexts
-- * in Linux (blk, bio, genhd). The size of one sector is 512 = 2**9
-- * bytes. Variables of type sector_t represent an offset or size that is a
-- * multiple of 512 bytes. Hence these two constants.
-- */
--#ifndef SECTOR_SHIFT
--#define SECTOR_SHIFT 9
--#endif
--#ifndef SECTOR_SIZE
--#define SECTOR_SIZE (1 << SECTOR_SHIFT)
--#endif
--
--#define PAGE_SECTORS_SHIFT	(PAGE_SHIFT - SECTOR_SHIFT)
--#define PAGE_SECTORS		(1 << PAGE_SECTORS_SHIFT)
--#define SECTOR_MASK		(PAGE_SECTORS - 1)
--
- #ifdef CONFIG_BLK_DEV_ZONED
++static inline sector_t bdev_nr_bytes(struct block_device *bdev)
++{
++	return i_size_read(bdev->bd_inode);
++}
++
+ static inline sector_t bdev_nr_sectors(struct block_device *bdev)
+ {
+-	return i_size_read(bdev->bd_inode) >> 9;
++	return bdev_nr_bytes(bdev) >> SECTOR_SHIFT;
+ }
  
- /* Helper to convert BLK_ZONE_ZONE_XXX to its string format XXX */
+ static inline sector_t get_capacity(struct gendisk *disk)
 -- 
 2.30.2
 
