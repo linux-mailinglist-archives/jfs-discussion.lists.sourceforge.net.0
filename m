@@ -2,27 +2,27 @@ Return-Path: <jfs-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+jfs-discussion@lfdr.de
 Delivered-To: lists+jfs-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1DD5042F4CE
-	for <lists+jfs-discussion@lfdr.de>; Fri, 15 Oct 2021 16:06:07 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8C6A342F4B5
+	for <lists+jfs-discussion@lfdr.de>; Fri, 15 Oct 2021 16:05:32 +0200 (CEST)
 Received: from [127.0.0.1] (helo=sfs-ml-3.v29.lw.sourceforge.com)
 	by sfs-ml-3.v29.lw.sourceforge.com with esmtp (Exim 4.94.2)
 	(envelope-from <jfs-discussion-bounces@lists.sourceforge.net>)
-	id 1mbNpY-00080s-Em; Fri, 15 Oct 2021 14:05:03 +0000
+	id 1mbNpY-00081K-Hy; Fri, 15 Oct 2021 14:05:04 +0000
 Received: from [172.30.20.202] (helo=mx.sourceforge.net)
- by sfs-ml-2.v29.lw.sourceforge.com with esmtps
- (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.92.3)
+ by sfs-ml-1.v29.lw.sourceforge.com with esmtps
+ (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
  (envelope-from
  <BATV+717e4f5ff9d7c10515bf+6627+infradead.org+hch@bombadil.srs.infradead.org>)
- id 1mbNc8-00021s-GS; Fri, 15 Oct 2021 13:51:12 +0000
+ id 1mbNc9-0000HV-7C; Fri, 15 Oct 2021 13:51:13 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=sourceforge.net; s=x; h=Content-Transfer-Encoding:MIME-Version:References:
  In-Reply-To:Message-Id:Date:Subject:Cc:To:From:Sender:Reply-To:Content-Type:
  Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
  Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=Ce/xbUkNVs/DL/PvHdluKHxtvXGNzoHJMZpOCdwn74E=; b=bYFJnIYq2da8STN0gekpv8kQZa
- Qv7ZGSNGEkTbOkCOe+SrTh4l5WkqAQbG84ZcwsRY795s70w2FoNL5xaSFY4lomMDHzfRAnT56mAgl
- 77TlMs47zwwQBG+ObFtQLtq2sVHlcpokrLwNvS2SDEBMEJnSlamgVH05Qu7/hnvFBwGg=;
+ bh=2BXnVjh6IVLffeTtOJ/9VaVUkXZDs6MfXdXoGWHxD+Q=; b=jX/loH35Z/vdO/XhyokRU6cbzK
+ C2Ysf5dTUde1IMZYoflTBlROhEpC14/tfNvI4zFfrfbNdC3yaNAWfb//J0cSrHk7NNHhngEkk5OJT
+ lmM6B5t0QSgK8/WRmhxTEK0Zxe1q66+bYXCq5wATDE7WtRvgnqAoAROAthSWX7Oj77oc=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
  h=Content-Transfer-Encoding:MIME-Version:References:In-Reply-To:Message-Id:
@@ -30,30 +30,30 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
  :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
  List-Post:List-Owner:List-Archive;
- bh=Ce/xbUkNVs/DL/PvHdluKHxtvXGNzoHJMZpOCdwn74E=; b=CFC8YGQEOuKNLpAnyXJSwlD6uh
- cmM6EzXbGcsahnXRpWw4zvqswsxYm0IPCcM1M2G7zj8DZF837FxGJ8opcRPH/UQOoq9+FKXM83KaT
- hEdYrBZQKACcqcTiQ5pWrA9UV5lNZ8hUAGLI9jjekjF9TrSM4pVnl7UyerfAQbggrlDo=;
+ bh=2BXnVjh6IVLffeTtOJ/9VaVUkXZDs6MfXdXoGWHxD+Q=; b=ls4e/gCgwWn0RonkH5pPHsmpIu
+ EWD3iAGD1bO785lTtcBMqKd5UguNByFxLUd4kKq4Kc3At2Nc+do0sfKtdE5Y1OZb7T9cIX6yvvB84
+ z89JdVYgYzNJYeQZTbad24rxqedec8mMrk/7vzv5qqricr4NcQyEyqm+/F7+qaR6yMhA=;
 Received: from bombadil.infradead.org ([198.137.202.133])
- by sfi-mx-2.v28.lw.sourceforge.com with esmtps
+ by sfi-mx-1.v28.lw.sourceforge.com with esmtps
  (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.92.3)
- id 1mbNc7-00026m-T5; Fri, 15 Oct 2021 13:51:12 +0000
+ id 1mbNc8-00EXCD-Nc; Fri, 15 Oct 2021 13:51:13 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=infradead.org; s=bombadil.20210309; h=Content-Transfer-Encoding:
  MIME-Version:References:In-Reply-To:Message-Id:Date:Subject:Cc:To:From:Sender
  :Reply-To:Content-Type:Content-ID:Content-Description;
- bh=Ce/xbUkNVs/DL/PvHdluKHxtvXGNzoHJMZpOCdwn74E=; b=r/QHR/F6RJsJcfLIVRGjeC5TYi
- 5vsdVf6ApaX1IQECl5wxhGgOynF/Aqp4gEFihxuCKRT2s2aoKg3SDG/LPXP0bGeV+glcs4kj+3Zgq
- vCHQ77R0gaRd8gPCg3LXCWdFi8b/DgIdfgQprpQHhUT55MbVXSj7vccFpDppmJwX6cAVJCsnuUNyx
- KawwFXaAxCMSPbAj7bUYyWV1BnqpcYo6SMbBzSiuxZhuLtdUVp2aXUipo78/Nk1bzSV3Qsn5E42V2
- v5r/BUecEti/NhnmdbhCf0FSHSoSh4DhIpUX5IgHCbWePlBgWfyWJuU/iPatQeIeJ5TsKaDntuWbc
- J6PmFpPw==;
+ bh=2BXnVjh6IVLffeTtOJ/9VaVUkXZDs6MfXdXoGWHxD+Q=; b=FOn1MgJkWXo7QC8G1ka61gN6Mm
+ f7uNc6GhW6+z4RtlEvC+bcnOy09Lj5c1hgUyq7n7VPEirRdBdirTf1a+0EDGTrFXdd7dSkPCaicPh
+ BM8hdCUoqQWuNZ3X8WqroQYbaSS63d4nVEpz9et1HlzUgVmM+jbXyRYdctoAuOOfUfTjaMY3hmYDp
+ SksQ5ltEbeQLwvi0EhmIb5hIbtmzqBB+X9TlmSiN0890t0yF1fOoJS8ZSMtC97CF4OavuVBE+DV9D
+ x9J3v5oWlzasgOINidBrFKdwb7dkVu1uRXrI8VXV4ZVSW7h0S6tzf9dx3kLQw9vzr0FVgwiZoPbom
+ ifLLrULA==;
 Received: from [2001:4bb8:199:73c5:ddfe:9587:819b:83b0] (helo=localhost)
  by bombadil.infradead.org with esmtpsa (Exim 4.94.2 #2 (Red Hat Linux))
- id 1mbNFR-007DZR-Me; Fri, 15 Oct 2021 13:27:46 +0000
+ id 1mbNFU-007Dcz-9h; Fri, 15 Oct 2021 13:27:48 +0000
 From: Christoph Hellwig <hch@lst.de>
 To: Jens Axboe <axboe@kernel.dk>
-Date: Fri, 15 Oct 2021 15:26:36 +0200
-Message-Id: <20211015132643.1621913-24-hch@lst.de>
+Date: Fri, 15 Oct 2021 15:26:37 +0200
+Message-Id: <20211015132643.1621913-25-hch@lst.de>
 X-Mailer: git-send-email 2.30.2
 In-Reply-To: <20211015132643.1621913-1-hch@lst.de>
 References: <20211015132643.1621913-1-hch@lst.de>
@@ -69,10 +69,10 @@ X-Spam-Report: Spam detection software,
  the administrator of that system for details.
  Content preview: Use the proper helper to read the block device size.
  Signed-off-by:
- Christoph Hellwig <hch@lst.de> Acked-by: Phillip Lougher
- <phillip@squashfs.org.uk>
- --- fs/squashfs/super.c | 5 +++-- 1 file changed, 3 insertions(+),
- 2 deletions(-)
+ Christoph Hellwig <hch@lst.de> Reviewed-by: Jan Kara <jack@suse.cz>
+ Reviewed-by:
+ Chaitanya Kulkarni <kch@nvidia.com> --- block/fops.c | 2 +- 1 file changed,
+ 1 insertion(+), 1 deletion(- [...] 
  Content analysis details:   (-2.1 points, 6.0 required)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
@@ -91,10 +91,10 @@ X-Spam-Report: Spam detection software,
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
-X-Headers-End: 1mbNc7-00026m-T5
-X-Mailman-Approved-At: Fri, 15 Oct 2021 14:04:59 +0000
-Subject: [Jfs-discussion] [PATCH 23/30] squashfs: use bdev_nr_bytes instead
- of open coding it
+X-Headers-End: 1mbNc8-00EXCD-Nc
+X-Mailman-Approved-At: Fri, 15 Oct 2021 14:04:58 +0000
+Subject: [Jfs-discussion] [PATCH 24/30] block: use bdev_nr_bytes instead of
+ open coding it in blkdev_fallocate
 X-BeenThere: jfs-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -107,16 +107,17 @@ List-Help: <mailto:jfs-discussion-request@lists.sourceforge.net?subject=help>
 List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/jfs-discussion>, 
  <mailto:jfs-discussion-request@lists.sourceforge.net?subject=subscribe>
 Cc: Dave Kleikamp <shaggy@kernel.org>, jfs-discussion@lists.sourceforge.net,
- Mike Snitzer <snitzer@redhat.com>, linux-nvme@lists.infradead.org,
+ Jan Kara <jack@suse.cz>, Mike Snitzer <snitzer@redhat.com>,
+ linux-nvme@lists.infradead.org,
  Konstantin Komarov <almaz.alexandrovich@paragon-software.com>,
  Song Liu <song@kernel.org>, dm-devel@redhat.com, target-devel@vger.kernel.org,
  reiserfs-devel@vger.kernel.org, drbd-dev@lists.linbit.com,
  linux-nilfs@vger.kernel.org, linux-scsi@vger.kernel.org,
  OGAWA Hirofumi <hirofumi@mail.parknet.co.jp>, linux-ext4@vger.kernel.org,
- Kees Cook <keescook@chromium.org>, Josef Bacik <josef@toxicpanda.com>,
- Coly Li <colyli@suse.de>, linux-raid@vger.kernel.org,
- linux-bcache@vger.kernel.org, David Sterba <dsterba@suse.com>,
- Ryusuke Konishi <konishi.ryusuke@gmail.com>,
+ Chaitanya Kulkarni <kch@nvidia.com>, Kees Cook <keescook@chromium.org>,
+ Josef Bacik <josef@toxicpanda.com>, Coly Li <colyli@suse.de>,
+ linux-raid@vger.kernel.org, linux-bcache@vger.kernel.org,
+ David Sterba <dsterba@suse.com>, Ryusuke Konishi <konishi.ryusuke@gmail.com>,
  Anton Altaparmakov <anton@tuxera.com>, linux-block@vger.kernel.org,
  linux-nfs@vger.kernel.org, Theodore Ts'o <tytso@mit.edu>,
  linux-ntfs-dev@lists.sourceforge.net, Jan Kara <jack@suse.com>,
@@ -129,34 +130,25 @@ Errors-To: jfs-discussion-bounces@lists.sourceforge.net
 Use the proper helper to read the block device size.
 
 Signed-off-by: Christoph Hellwig <hch@lst.de>
-Acked-by: Phillip Lougher <phillip@squashfs.org.uk>
+Reviewed-by: Jan Kara <jack@suse.cz>
+Reviewed-by: Chaitanya Kulkarni <kch@nvidia.com>
 ---
- fs/squashfs/super.c | 5 +++--
- 1 file changed, 3 insertions(+), 2 deletions(-)
+ block/fops.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
-diff --git a/fs/squashfs/super.c b/fs/squashfs/super.c
-index 60d6951915f44..bb44ff4c5cc67 100644
---- a/fs/squashfs/super.c
-+++ b/fs/squashfs/super.c
-@@ -16,6 +16,7 @@
+diff --git a/block/fops.c b/block/fops.c
+index 7bb9581a146cf..a6a4d412720cd 100644
+--- a/block/fops.c
++++ b/block/fops.c
+@@ -548,7 +548,7 @@ static long blkdev_fallocate(struct file *file, int mode, loff_t start,
+ 		return -EOPNOTSUPP;
  
- #define pr_fmt(fmt) KBUILD_MODNAME ": " fmt
- 
-+#include <linux/blkdev.h>
- #include <linux/fs.h>
- #include <linux/fs_context.h>
- #include <linux/fs_parser.h>
-@@ -179,8 +180,8 @@ static int squashfs_fill_super(struct super_block *sb, struct fs_context *fc)
- 	/* Check the filesystem does not extend beyond the end of the
- 	   block device */
- 	msblk->bytes_used = le64_to_cpu(sblk->bytes_used);
--	if (msblk->bytes_used < 0 || msblk->bytes_used >
--			i_size_read(sb->s_bdev->bd_inode))
-+	if (msblk->bytes_used < 0 ||
-+	    msblk->bytes_used > bdev_nr_bytes(sb->s_bdev))
- 		goto failed_mount;
- 
- 	/* Check block size for sanity */
+ 	/* Don't go off the end of the device. */
+-	isize = i_size_read(bdev->bd_inode);
++	isize = bdev_nr_bytes(bdev);
+ 	if (start >= isize)
+ 		return -EINVAL;
+ 	if (end >= isize) {
 -- 
 2.30.2
 
