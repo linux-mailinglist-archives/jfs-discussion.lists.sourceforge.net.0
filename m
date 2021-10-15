@@ -2,59 +2,61 @@ Return-Path: <jfs-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+jfs-discussion@lfdr.de
 Delivered-To: lists+jfs-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1898B42F51D
-	for <lists+jfs-discussion@lfdr.de>; Fri, 15 Oct 2021 16:19:02 +0200 (CEST)
-Received: from [127.0.0.1] (helo=sfs-ml-4.v29.lw.sourceforge.com)
-	by sfs-ml-4.v29.lw.sourceforge.com with esmtp (Exim 4.90_1)
+	by mail.lfdr.de (Postfix) with ESMTPS id A73DC42F4CD
+	for <lists+jfs-discussion@lfdr.de>; Fri, 15 Oct 2021 16:06:05 +0200 (CEST)
+Received: from [127.0.0.1] (helo=sfs-ml-3.v29.lw.sourceforge.com)
+	by sfs-ml-3.v29.lw.sourceforge.com with esmtp (Exim 4.94.2)
 	(envelope-from <jfs-discussion-bounces@lists.sourceforge.net>)
-	id 1mbO2r-0005wP-3w; Fri, 15 Oct 2021 14:18:49 +0000
+	id 1mbNpd-00089H-U3; Fri, 15 Oct 2021 14:05:09 +0000
 Received: from [172.30.20.202] (helo=mx.sourceforge.net)
- by sfs-ml-2.v29.lw.sourceforge.com with esmtps
- (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.92.3)
+ by sfs-ml-1.v29.lw.sourceforge.com with esmtps
+ (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
  (envelope-from
  <BATV+717e4f5ff9d7c10515bf+6627+infradead.org+hch@bombadil.srs.infradead.org>)
- id 1mbO29-0003CV-Ih; Fri, 15 Oct 2021 14:18:05 +0000
+ id 1mbNkJ-00025Q-Iz; Fri, 15 Oct 2021 13:59:39 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=sourceforge.net; s=x; h=Content-Transfer-Encoding:MIME-Version:Message-Id:
- Date:Subject:Cc:To:From:Sender:Reply-To:Content-Type:Content-ID:
- Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
- :Resent-Message-ID:In-Reply-To:References:List-Id:List-Help:List-Unsubscribe:
+ d=sourceforge.net; s=x; h=Content-Transfer-Encoding:MIME-Version:References:
+ In-Reply-To:Message-Id:Date:Subject:Cc:To:From:Sender:Reply-To:Content-Type:
+ Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
+ Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=m11Dq4cW6FA9xt6yZiLfFZy28M5hrrDxv9fMOoQKfEw=; b=ajCqCYx1CyJ9IetDMufVacTisi
- D/pTnhFvF5QjJLPV2wTB+nngS8lS6a67gkNJqSw4qjfW1Za/+bi0Aj7dyE/6e0HnD11x6vIsmV675
- vja1wtZDM1WWXp5PLNhW/jUMekDqD3oUMf0P8R6Wck9EqgD0cDAQgvbVDDse3ee8RmiI=;
+ bh=GrMAkYzXypftu2Q93j+7zCry2NCsZMMZP71gZdhVD6M=; b=EeSJ/lg+RAGhbjv41nD45+YzWl
+ Z4Q6+flzJqMA2SwIYq8VrHRMaktxyJw7WdOQamDJX1lCaOMiX4rtm9brryfoW+Nkpoggmwm/S798F
+ WI8m73i53rVRkKob9Gu+KB/5aHQm48quDio6/n0o/GOzirKex4OX3LbFP3ga0hqrQZeU=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
- h=Content-Transfer-Encoding:MIME-Version:Message-Id:Date:Subject:Cc:To:From
- :Sender:Reply-To:Content-Type:Content-ID:Content-Description:Resent-Date:
- Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
- References:List-Id:List-Help:List-Unsubscribe:List-Subscribe:List-Post:
- List-Owner:List-Archive; bh=m11Dq4cW6FA9xt6yZiLfFZy28M5hrrDxv9fMOoQKfEw=; b=X
- zw10pylyfNOYOY1+nCBx9BxZw0C58KXamAqWi0E9yYL68WelmQacktZYiPt+VKEiSXSexKWhMmbCb
- xBkN10nt/UKEzNymOVyEAZyAlfbVFy0x1XO0tfYE6KH4mT0lteAagc1HA8sJcpgJ8NQGHcCeQ7CYv
- bGgaeDtvq3Rl2tJY=;
+ h=Content-Transfer-Encoding:MIME-Version:References:In-Reply-To:Message-Id:
+ Date:Subject:Cc:To:From:Sender:Reply-To:Content-Type:Content-ID:
+ Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+ :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
+ List-Post:List-Owner:List-Archive;
+ bh=GrMAkYzXypftu2Q93j+7zCry2NCsZMMZP71gZdhVD6M=; b=S4e/MDgeLuTbqqJ6FdU0LlCgC9
+ k+P2K/TrflnM1cHh0WkwvzyiTXHNtjt3HQLVjPhTPD/XnuLl/FAALIt8U2YZhO5XuAvT6y1NcqUsP
+ TozjWb1C3LkN43BFPWl7894D7j0spLxK+pVYkxzgng43k8TEBfP+LHWMyv4XOc3l1rPY=;
 Received: from bombadil.infradead.org ([198.137.202.133])
- by sfi-mx-1.v28.lw.sourceforge.com with esmtps
+ by sfi-mx-2.v28.lw.sourceforge.com with esmtps
  (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.92.3)
- id 1mbO27-00Eaxw-6r; Fri, 15 Oct 2021 14:18:05 +0000
+ id 1mbNkJ-0003HT-1A; Fri, 15 Oct 2021 13:59:39 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=infradead.org; s=bombadil.20210309; h=Content-Transfer-Encoding:
- MIME-Version:Message-Id:Date:Subject:Cc:To:From:Sender:Reply-To:Content-Type:
- Content-ID:Content-Description:In-Reply-To:References;
- bh=m11Dq4cW6FA9xt6yZiLfFZy28M5hrrDxv9fMOoQKfEw=; b=uCUSRnMNJ6iAkq7Ql9eS8UB78r
- ZUKu0FwbuHM5gwIZZ5C6rzyInrghQOiMBN0Wt3ZVp4tRWfHLI5lsRPuzzNF2xoArcp7I595KhvRFq
- J8hdGD7Ai4d9Bhpx05mHeTY3p1xGxNOTGGkExIDDMTQPOwgHYOpPwe/auNS6cVLV4a2+PbLpdpdfk
- Ee5rDwTmGI3bQP+5U/IbzpGmiq8b7nlDL/YgM8KZ9/cQwCPGJWuv5jQtAUcL6AP8jfSfn2reujKLl
- SvjqEAx/nwvdXb6q0aVC2dt9aDl7DjF0HLTA2VxvJoK5OtlM5V6Iu9bvv4rwIW3QQjr+k7HfdvPMD
- GpsHUkvw==;
+ MIME-Version:References:In-Reply-To:Message-Id:Date:Subject:Cc:To:From:Sender
+ :Reply-To:Content-Type:Content-ID:Content-Description;
+ bh=GrMAkYzXypftu2Q93j+7zCry2NCsZMMZP71gZdhVD6M=; b=u0Jh/pk//vKTObitfYlxlIGC4J
+ NliEBUrfu8nRvsuQqfa0JdudddIgT4cUPUUQhhD1H73tpwx2VJ3xZKmlBURkgE0Wlwlj5sC9k38A4
+ Jlulwzv9b+pm5R7pWDiKTLnasKDPcPonGfj+WoDLUsvjVXgS6O9ZPJPNY80acEExcRozq9ODkVYoU
+ cBI8mRHR3nwjqo8o+yLJAkhg4oxrz4AanNeNGgBQGOEB96Mhoi/robn53SwHYX1l6Ozdhd6Bf1imN
+ l3cTw2JImqG5tWyrDjeMpk9nDeFErssO0HV37CTbED9wzNn+MLmDMzWTsxQB0LjQmWxrn+3mG/Bgf
+ rD4cqhcg==;
 Received: from [2001:4bb8:199:73c5:ddfe:9587:819b:83b0] (helo=localhost)
  by bombadil.infradead.org with esmtpsa (Exim 4.94.2 #2 (Red Hat Linux))
- id 1mbNET-007CaP-Um; Fri, 15 Oct 2021 13:26:46 +0000
+ id 1mbNEW-007CcF-HX; Fri, 15 Oct 2021 13:26:48 +0000
 From: Christoph Hellwig <hch@lst.de>
 To: Jens Axboe <axboe@kernel.dk>
-Date: Fri, 15 Oct 2021 15:26:13 +0200
-Message-Id: <20211015132643.1621913-1-hch@lst.de>
+Date: Fri, 15 Oct 2021 15:26:14 +0200
+Message-Id: <20211015132643.1621913-2-hch@lst.de>
 X-Mailer: git-send-email 2.30.2
+In-Reply-To: <20211015132643.1621913-1-hch@lst.de>
+References: <20211015132643.1621913-1-hch@lst.de>
 MIME-Version: 1.0
 X-SRS-Rewrite: SMTP reverse-path rewritten from <hch@infradead.org> by
  bombadil.infradead.org. See http://www.infradead.org/rpr.html
@@ -65,18 +67,20 @@ X-Spam-Report: Spam detection software,
  message has been attached to this so you can view it or label
  similar future email.  If you have any questions, see
  the administrator of that system for details.
- Content preview:  Hi Jens, various drivers currently poke directy at the block
- device inode, which is a bit of a mess. This series cleans up the places
- that read the block device size to use the proper helpers. I have separate
- [...] Content analysis details:   (-2.1 points, 6.0 required)
+ Content preview: Ensure these are always available for inlines in the various
+ block layer headers. Signed-off-by: Christoph Hellwig <hch@lst.de> ---
+ include/linux/blk_types.h
+ | 17 +++++++++++++++++ include/linux/blkdev.h | 17 2 files changed,
+ 17 insertions(+), 17 deletions(-) 
+ Content analysis details:   (-2.1 points, 6.0 required)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [198.137.202.133 listed in list.dnswl.org]
  0.0 URIBL_BLOCKED          ADMINISTRATOR NOTICE: The query to URIBL was
  blocked.  See
  http://wiki.apache.org/spamassassin/DnsBlocklists#dnsbl-block
  for more information. [URIs: infradead.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [198.137.202.133 listed in list.dnswl.org]
  0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
  mail domains are different
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -86,10 +90,10 @@ X-Spam-Report: Spam detection software,
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
-X-Headers-End: 1mbO27-00Eaxw-6r
-X-Mailman-Approved-At: Fri, 15 Oct 2021 14:18:48 +0000
-Subject: [Jfs-discussion] don't use ->bd_inode to access the block device
- size v2
+X-Headers-End: 1mbNkJ-0003HT-1A
+X-Mailman-Approved-At: Fri, 15 Oct 2021 14:05:00 +0000
+Subject: [Jfs-discussion] [PATCH 01/30] block: move the SECTOR_SIZE related
+ definitions to blk_types.h
 X-BeenThere: jfs-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -121,80 +125,74 @@ Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Errors-To: jfs-discussion-bounces@lists.sourceforge.net
 
-Hi Jens,
+Ensure these are always available for inlines in the various block layer
+headers.
 
-various drivers currently poke directy at the block device inode, which
-is a bit of a mess.  This series cleans up the places that read the
-block device size to use the proper helpers.  I have separate patches
-for many of the other bd_inode uses, but this series is already big
-enough as-is,
+Signed-off-by: Christoph Hellwig <hch@lst.de>
+---
+ include/linux/blk_types.h | 17 +++++++++++++++++
+ include/linux/blkdev.h    | 17 -----------------
+ 2 files changed, 17 insertions(+), 17 deletions(-)
 
-Changes since v1:
- - move SECTOR_SIZE & co
- - use SECTOR_SHIFT in sb_bdev_nr_blocks
- - add a bdev_nr_bytes helper
- - reuse a variable in the SCSI target code
- - drop the block2mtd patch, a bigger rewrite for that code is pending
+diff --git a/include/linux/blk_types.h b/include/linux/blk_types.h
+index 3b967053e9f5a..dc8da0c7fa09b 100644
+--- a/include/linux/blk_types.h
++++ b/include/linux/blk_types.h
+@@ -20,6 +20,23 @@ struct cgroup_subsys_state;
+ typedef void (bio_end_io_t) (struct bio *);
+ struct bio_crypt_ctx;
+ 
++/*
++ * The basic unit of block I/O is a sector. It is used in a number of contexts
++ * in Linux (blk, bio, genhd). The size of one sector is 512 = 2**9
++ * bytes. Variables of type sector_t represent an offset or size that is a
++ * multiple of 512 bytes. Hence these two constants.
++ */
++#ifndef SECTOR_SHIFT
++#define SECTOR_SHIFT 9
++#endif
++#ifndef SECTOR_SIZE
++#define SECTOR_SIZE (1 << SECTOR_SHIFT)
++#endif
++
++#define PAGE_SECTORS_SHIFT	(PAGE_SHIFT - SECTOR_SHIFT)
++#define PAGE_SECTORS		(1 << PAGE_SECTORS_SHIFT)
++#define SECTOR_MASK		(PAGE_SECTORS - 1)
++
+ struct block_device {
+ 	sector_t		bd_start_sect;
+ 	struct disk_stats __percpu *bd_stats;
+diff --git a/include/linux/blkdev.h b/include/linux/blkdev.h
+index 17705c970d7e1..161496d1aced0 100644
+--- a/include/linux/blkdev.h
++++ b/include/linux/blkdev.h
+@@ -571,23 +571,6 @@ static inline struct request_queue *bdev_get_queue(struct block_device *bdev)
+ 	return bdev->bd_disk->queue;	/* this is never NULL */
+ }
+ 
+-/*
+- * The basic unit of block I/O is a sector. It is used in a number of contexts
+- * in Linux (blk, bio, genhd). The size of one sector is 512 = 2**9
+- * bytes. Variables of type sector_t represent an offset or size that is a
+- * multiple of 512 bytes. Hence these two constants.
+- */
+-#ifndef SECTOR_SHIFT
+-#define SECTOR_SHIFT 9
+-#endif
+-#ifndef SECTOR_SIZE
+-#define SECTOR_SIZE (1 << SECTOR_SHIFT)
+-#endif
+-
+-#define PAGE_SECTORS_SHIFT	(PAGE_SHIFT - SECTOR_SHIFT)
+-#define PAGE_SECTORS		(1 << PAGE_SECTORS_SHIFT)
+-#define SECTOR_MASK		(PAGE_SECTORS - 1)
+-
+ #ifdef CONFIG_BLK_DEV_ZONED
+ 
+ /* Helper to convert BLK_ZONE_ZONE_XXX to its string format XXX */
+-- 
+2.30.2
 
-Diffstat:
- block/fops.c                        |    2 +-
- drivers/block/drbd/drbd_int.h       |    3 +--
- drivers/md/bcache/super.c           |    2 +-
- drivers/md/bcache/util.h            |    4 ----
- drivers/md/bcache/writeback.c       |    2 +-
- drivers/md/dm-bufio.c               |    2 +-
- drivers/md/dm-cache-metadata.c      |    2 +-
- drivers/md/dm-cache-target.c        |    2 +-
- drivers/md/dm-clone-target.c        |    2 +-
- drivers/md/dm-dust.c                |    5 ++---
- drivers/md/dm-ebs-target.c          |    2 +-
- drivers/md/dm-era-target.c          |    2 +-
- drivers/md/dm-exception-store.h     |    2 +-
- drivers/md/dm-flakey.c              |    3 +--
- drivers/md/dm-integrity.c           |    6 +++---
- drivers/md/dm-linear.c              |    3 +--
- drivers/md/dm-log-writes.c          |    4 ++--
- drivers/md/dm-log.c                 |    2 +-
- drivers/md/dm-mpath.c               |    2 +-
- drivers/md/dm-raid.c                |    6 +++---
- drivers/md/dm-switch.c              |    2 +-
- drivers/md/dm-table.c               |    3 +--
- drivers/md/dm-thin-metadata.c       |    2 +-
- drivers/md/dm-thin.c                |    2 +-
- drivers/md/dm-verity-target.c       |    3 +--
- drivers/md/dm-writecache.c          |    2 +-
- drivers/md/dm-zoned-target.c        |    2 +-
- drivers/md/md.c                     |   26 +++++++++++---------------
- drivers/nvme/target/io-cmd-bdev.c   |    4 ++--
- drivers/target/target_core_iblock.c |    4 ++--
- fs/affs/super.c                     |    2 +-
- fs/btrfs/dev-replace.c              |    3 +--
- fs/btrfs/disk-io.c                  |    2 +-
- fs/btrfs/ioctl.c                    |    4 ++--
- fs/btrfs/volumes.c                  |    8 ++++----
- fs/buffer.c                         |    4 ++--
- fs/cramfs/inode.c                   |    2 +-
- fs/ext4/super.c                     |    2 +-
- fs/fat/inode.c                      |    5 +----
- fs/hfs/mdb.c                        |    2 +-
- fs/hfsplus/wrapper.c                |    2 +-
- fs/jfs/resize.c                     |    5 ++---
- fs/jfs/super.c                      |    5 ++---
- fs/nfs/blocklayout/dev.c            |    4 ++--
- fs/nilfs2/ioctl.c                   |    2 +-
- fs/nilfs2/super.c                   |    2 +-
- fs/nilfs2/the_nilfs.c               |    2 +-
- fs/ntfs/super.c                     |    8 +++-----
- fs/ntfs3/super.c                    |    3 +--
- fs/pstore/blk.c                     |    8 +++-----
- fs/reiserfs/super.c                 |    8 ++------
- fs/squashfs/super.c                 |    5 +++--
- fs/udf/lowlevel.c                   |    5 ++---
- fs/udf/super.c                      |    9 +++------
- include/linux/blk_types.h           |   17 +++++++++++++++++
- include/linux/blkdev.h              |   17 -----------------
- include/linux/genhd.h               |   13 ++++++++++++-
- 57 files changed, 118 insertions(+), 139 deletions(-)
 
 
 _______________________________________________
