@@ -2,27 +2,27 @@ Return-Path: <jfs-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+jfs-discussion@lfdr.de
 Delivered-To: lists+jfs-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6C52F431B9A
+	by mail.lfdr.de (Postfix) with ESMTPS id 781AA431B9C
 	for <lists+jfs-discussion@lfdr.de>; Mon, 18 Oct 2021 15:31:58 +0200 (CEST)
 Received: from [127.0.0.1] (helo=sfs-ml-2.v29.lw.sourceforge.com)
 	by sfs-ml-2.v29.lw.sourceforge.com with esmtp (Exim 4.92.3)
 	(envelope-from <jfs-discussion-bounces@lists.sourceforge.net>)
-	id 1mcSji-0002FQ-HX; Mon, 18 Oct 2021 13:31:30 +0000
+	id 1mcSji-0002Fu-Sn; Mon, 18 Oct 2021 13:31:30 +0000
 Received: from [172.30.20.202] (helo=mx.sourceforge.net)
- by sfs-ml-4.v29.lw.sourceforge.com with esmtps
- (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
+ by sfs-ml-2.v29.lw.sourceforge.com with esmtps
+ (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.92.3)
  (envelope-from
  <BATV+653fb0268b18c2e086a8+6630+infradead.org+hch@bombadil.srs.infradead.org>)
- id 1mcPdO-0004Ba-7L; Mon, 18 Oct 2021 10:12:46 +0000
+ id 1mcPdR-00032A-6O; Mon, 18 Oct 2021 10:12:49 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=sourceforge.net; s=x; h=Content-Transfer-Encoding:MIME-Version:References:
  In-Reply-To:Message-Id:Date:Subject:Cc:To:From:Sender:Reply-To:Content-Type:
  Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
  Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=7vy0+8EI8WhVCxcCPpT3E3xZPAv/h7863mIj0HITKC4=; b=Ud96KOHeJx1r142OqQMjMJG5Iz
- 0D1bDBzdd/wkZhv1KUNZCWXMSHjzQ26K4MAzLfpqGjTY+wIFKV3/s6kwXFl1F/6wr101R0Ycjwfzf
- SGN5zOnYOLhjrr2sSSyQC0ePX1Z56BH8fgtBc9QSsks2TNgl2AwcsMoTKpVFLDxkPo+Y=;
+ bh=OtkCPV+Fhjutx3CncSj5AK/1XKnCr941YaNIR+S0yec=; b=ZJfTLJ4QJGPab8CstkfaTvpkTz
+ 3+mhQhzS2fq+bEGz+nFYscrRIG9muX8oNBs1+UZEZEr9900A8G/XP28/dLAfEjgZBvAVa3hItYTJO
+ GI4Koyw+mUu5/cmRWZw5WjWWJUEHookNN85gsSS+xoZLD9vFeblvT5DIn3gECNRotf6s=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
  h=Content-Transfer-Encoding:MIME-Version:References:In-Reply-To:Message-Id:
@@ -30,30 +30,30 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
  :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
  List-Post:List-Owner:List-Archive;
- bh=7vy0+8EI8WhVCxcCPpT3E3xZPAv/h7863mIj0HITKC4=; b=QdmbZ2VT3PSzyCl9/GP9UeVkgX
- cK/v5y+/+AY7dc84BbWnAqOusmt6DaaZtOKzs+R3NeQfUwn0Hf6nO8yI+GS9JiSyG1q3A+L+e5qo3
- YjJrkNzYRWmSxTnDwDw9WLG33FpY8qsUsFvHHmIsB9Q3+1BtMj9XuDiBWyCD6GSWUIX4=;
+ bh=OtkCPV+Fhjutx3CncSj5AK/1XKnCr941YaNIR+S0yec=; b=U+pQLHm5RRkscsEp5E/9/U0cq0
+ Q6PN/98NA3vaEmtSmHKPvFcGHqNDaZUnQ0aoWHo4Ka3pxQ7a7FBDQFPuywgoWkNPRB8QdgzKlZrGT
+ evyys2Rn+gJO2tc/ZDHZH1YWXc7shE2XT6a2uE1gImfqXg9auU0Y3mBHH6UfK0ogJfyw=;
 Received: from bombadil.infradead.org ([198.137.202.133])
- by sfi-mx-1.v28.lw.sourceforge.com with esmtps
+ by sfi-mx-2.v28.lw.sourceforge.com with esmtps
  (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.92.3)
- id 1mcPdN-004BIl-Oa; Mon, 18 Oct 2021 10:12:46 +0000
+ id 1mcPdQ-00032K-M4; Mon, 18 Oct 2021 10:12:49 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=infradead.org; s=bombadil.20210309; h=Content-Transfer-Encoding:
  MIME-Version:References:In-Reply-To:Message-Id:Date:Subject:Cc:To:From:Sender
  :Reply-To:Content-Type:Content-ID:Content-Description;
- bh=7vy0+8EI8WhVCxcCPpT3E3xZPAv/h7863mIj0HITKC4=; b=dSgrFBalcG5IC5gy8leFi0/QUI
- 8jbCvHeQvsAMp2Vc8XaJNgaFomPjUZxHYyC0Lr8ip+cEGSd3e9dOsE9BLDAOXLiIxKskzuJNVL/fJ
- 9/vz7wC6aJeWCOa866cMrDClVUyh/nPJwEgGnkT7aSULX7H/Rx0e6fz/pzjosefYz2bVFgXRlecrl
- OK92p3ALP6pCTMlkZ3qBMnoKoRHEVAF7nq96GJlCV7bX4ForSv41tAleJNCMrpQJckjzxO/kA47Wn
- OAc86dc6jd8RmrmIqLhJBcqnOCCDYnNAaZzrQ6Qs4EG0Do8+0MqgT7yVBLcb6ir4m1vlBzJoKJsMs
- +PeH0mvg==;
+ bh=OtkCPV+Fhjutx3CncSj5AK/1XKnCr941YaNIR+S0yec=; b=Bng/VPZF7A2X7e+l/odmdmFVsR
+ uZaNxs+4xbvAT0ZVHiP9vMKeWRfl0OhUA97nondabmgiu+HAT0cluWpFQMyhLwSu6BHF3zxAV3ADa
+ bgB+rkBNn/fQgFa2DeznsvEBkxundC7d4+sOqSI9j9lA10fztmCiObDmHpn6DJCe7XrF63hbEkZhS
+ nlBbH+GPx81ZxZHCJrsdlFlO8XJO5vSC7DwxB5/uxxFym2IIjZOaDMvif0g+DzHjX7UoTW9daOw0P
+ HVQPKAp4ObdoMgVdu+JOZ5a1JHX1Vothqq5X0qhQF3UTM2wdCr+Cm0lynMlc3lB7wgbEKD5aDah/C
+ IPQ0uCDg==;
 Received: from [2001:4bb8:199:73c5:c70:4a89:bc61:2] (helo=localhost)
  by bombadil.infradead.org with esmtpsa (Exim 4.94.2 #2 (Red Hat Linux))
- id 1mcPd4-00Eubv-MF; Mon, 18 Oct 2021 10:12:27 +0000
+ id 1mcPd7-00EufA-9w; Mon, 18 Oct 2021 10:12:29 +0000
 From: Christoph Hellwig <hch@lst.de>
 To: Jens Axboe <axboe@kernel.dk>
-Date: Mon, 18 Oct 2021 12:11:20 +0200
-Message-Id: <20211018101130.1838532-21-hch@lst.de>
+Date: Mon, 18 Oct 2021 12:11:21 +0200
+Message-Id: <20211018101130.1838532-22-hch@lst.de>
 X-Mailer: git-send-email 2.30.2
 In-Reply-To: <20211018101130.1838532-1-hch@lst.de>
 References: <20211018101130.1838532-1-hch@lst.de>
@@ -69,11 +69,9 @@ X-Spam-Report: Spam detection software,
  the administrator of that system for details.
  Content preview: Use the proper helper to read the block device size.
  Signed-off-by:
- Christoph Hellwig <hch@lst.de> --- fs/ntfs3/super.c | 3 +-- 1 file changed,
- 1 insertion(+), 2 deletions(-) diff --git a/fs/ntfs3/super.c b/fs/ntfs3/super.c
- index 55bbc9200a10e..7ed2cb5e8b1d9 100644 --- a/fs/ntfs3/super.c +++
- b/fs/ntfs3/super.c
- @@ -918,7 +918,6 @@ static int ntfs_fill_super(struct super_blo [...] 
+ Christoph Hellwig <hch@lst.de> Acked-by: Kees Cook <keescook@chromium.org>
+ --- fs/pstore/blk.c | 8 +++----- 1 file changed, 3 insertions(+),
+ 5 deletions(-)
  Content analysis details:   (-2.1 points, 6.0 required)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
@@ -88,10 +86,10 @@ X-Spam-Report: Spam detection software,
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
-X-Headers-End: 1mcPdN-004BIl-Oa
-X-Mailman-Approved-At: Mon, 18 Oct 2021 13:31:22 +0000
-Subject: [Jfs-discussion] [PATCH 20/30] ntfs3: use bdev_nr_bytes instead of
- open coding it
+X-Headers-End: 1mcPdQ-00032K-M4
+X-Mailman-Approved-At: Mon, 18 Oct 2021 13:31:23 +0000
+Subject: [Jfs-discussion] [PATCH 21/30] pstore/blk: use bdev_nr_bytes
+ instead of open coding it
 X-BeenThere: jfs-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -126,31 +124,41 @@ Errors-To: jfs-discussion-bounces@lists.sourceforge.net
 Use the proper helper to read the block device size.
 
 Signed-off-by: Christoph Hellwig <hch@lst.de>
+Acked-by: Kees Cook <keescook@chromium.org>
 ---
- fs/ntfs3/super.c | 3 +--
- 1 file changed, 1 insertion(+), 2 deletions(-)
+ fs/pstore/blk.c | 8 +++-----
+ 1 file changed, 3 insertions(+), 5 deletions(-)
 
-diff --git a/fs/ntfs3/super.c b/fs/ntfs3/super.c
-index 55bbc9200a10e..7ed2cb5e8b1d9 100644
---- a/fs/ntfs3/super.c
-+++ b/fs/ntfs3/super.c
-@@ -918,7 +918,6 @@ static int ntfs_fill_super(struct super_block *sb, void *data, int silent)
- 	int err;
- 	struct ntfs_sb_info *sbi;
- 	struct block_device *bdev = sb->s_bdev;
--	struct inode *bd_inode = bdev->bd_inode;
- 	struct request_queue *rq = bdev_get_queue(bdev);
- 	struct inode *inode = NULL;
- 	struct ntfs_inode *ni;
-@@ -967,7 +966,7 @@ static int ntfs_fill_super(struct super_block *sb, void *data, int silent)
+diff --git a/fs/pstore/blk.c b/fs/pstore/blk.c
+index 04ce58c939a0b..5d1fbaffd66a1 100644
+--- a/fs/pstore/blk.c
++++ b/fs/pstore/blk.c
+@@ -205,7 +205,6 @@ static ssize_t psblk_generic_blk_write(const char *buf, size_t bytes,
+ static int __register_pstore_blk(struct pstore_device_info *dev,
+ 				 const char *devpath)
+ {
+-	struct inode *inode;
+ 	int ret = -ENODEV;
  
- 	/* Parse boot. */
- 	err = ntfs_init_from_boot(sb, rq ? queue_logical_block_size(rq) : 512,
--				  bd_inode->i_size);
-+				  bdev_nr_bytes(bdev));
- 	if (err)
- 		goto out;
+ 	lockdep_assert_held(&pstore_blk_lock);
+@@ -217,14 +216,13 @@ static int __register_pstore_blk(struct pstore_device_info *dev,
+ 		goto err;
+ 	}
  
+-	inode = file_inode(psblk_file);
+-	if (!S_ISBLK(inode->i_mode)) {
++	if (!S_ISBLK(file_inode(psblk_file)->i_mode)) {
+ 		pr_err("'%s' is not block device!\n", devpath);
+ 		goto err_fput;
+ 	}
+ 
+-	inode = I_BDEV(psblk_file->f_mapping->host)->bd_inode;
+-	dev->zone.total_size = i_size_read(inode);
++	dev->zone.total_size =
++		bdev_nr_bytes(I_BDEV(psblk_file->f_mapping->host));
+ 
+ 	ret = __register_pstore_device(dev);
+ 	if (ret)
 -- 
 2.30.2
 
