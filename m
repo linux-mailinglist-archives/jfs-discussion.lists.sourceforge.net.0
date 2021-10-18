@@ -2,27 +2,27 @@ Return-Path: <jfs-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+jfs-discussion@lfdr.de
 Delivered-To: lists+jfs-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id A1215431B78
-	for <lists+jfs-discussion@lfdr.de>; Mon, 18 Oct 2021 15:31:48 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2A416431B7D
+	for <lists+jfs-discussion@lfdr.de>; Mon, 18 Oct 2021 15:31:49 +0200 (CEST)
 Received: from [127.0.0.1] (helo=sfs-ml-2.v29.lw.sourceforge.com)
 	by sfs-ml-2.v29.lw.sourceforge.com with esmtp (Exim 4.92.3)
 	(envelope-from <jfs-discussion-bounces@lists.sourceforge.net>)
-	id 1mcSjk-0002Jb-MW; Mon, 18 Oct 2021 13:31:32 +0000
+	id 1mcSjk-0002Jr-Qx; Mon, 18 Oct 2021 13:31:32 +0000
 Received: from [172.30.20.202] (helo=mx.sourceforge.net)
- by sfs-ml-4.v29.lw.sourceforge.com with esmtps
- (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
+ by sfs-ml-2.v29.lw.sourceforge.com with esmtps
+ (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.92.3)
  (envelope-from
  <BATV+653fb0268b18c2e086a8+6630+infradead.org+hch@bombadil.srs.infradead.org>)
- id 1mcPdm-0004DN-CN; Mon, 18 Oct 2021 10:13:10 +0000
+ id 1mcPdp-000341-7k; Mon, 18 Oct 2021 10:13:13 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=sourceforge.net; s=x; h=Content-Transfer-Encoding:MIME-Version:References:
  In-Reply-To:Message-Id:Date:Subject:Cc:To:From:Sender:Reply-To:Content-Type:
  Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
  Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=JRUJFkyjxq71rT2gSHQzVSwiRN9DYj/nxSJqzQ3gbXo=; b=Kf0fxgJNXDCcL/3IPfvvkwVtQl
- gbx4j6q3ntDoaDHOybHcEgb8L9BTfUUYqiBgRkp9Heo/xwmkXG8ErwTcqYVKYMIEquJB4guIDlNM6
- lDlg32NmbuZ8REHbco0UEBZid6qdOJj0/u8bwJ1ISB3am/jlTY3k45tX3O+bimVs1Hbg=;
+ bh=sSdphJbx9SQw+wN4za3/OjMw3p4iKMeSjeY0No/E5ck=; b=Hi5XH2tzh/x1UVSshSyrGg+agK
+ ggoM5cp1jjFTF4PgilpY/R4nj9p+l6b8w/GwkM40/r6gljIqXKK/eud5OvwYRx9or9GmmRcek8wDB
+ 6n59UKWlV1q05urgZRtcMcTF3utDDMvo9PqWyQXB/ovddc1W0MBkGOaeskNmy0BQD/U8=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
  h=Content-Transfer-Encoding:MIME-Version:References:In-Reply-To:Message-Id:
@@ -30,30 +30,30 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
  :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
  List-Post:List-Owner:List-Archive;
- bh=JRUJFkyjxq71rT2gSHQzVSwiRN9DYj/nxSJqzQ3gbXo=; b=ZoPbj9XrqpCmAmyWXXBJmhrp8Y
- um4V7sFi4M6m0blfX85kMeuIQ3EUDADb3h0f2jvXuz/kWBsco52oN8bJ779VCo9klOYqqqqxZqhAt
- bh/wPC/ZtmPP7BxU5SES/+fdPOEUbdPiKzE45IayMQGKXtvj9o7Jgf894+EwOyyNqlZQ=;
+ bh=sSdphJbx9SQw+wN4za3/OjMw3p4iKMeSjeY0No/E5ck=; b=j39ts3cQONKCKE2cSeN+iYaT/z
+ lMyc3GaBYNrNUgtdZkMwKE2YNySObxxvl1dqPO0wb8l2EP6Cj68GtJSyynJd2/TFe51P0cQ9pHjfm
+ sugiQLTPBa+t1+bh+yUM6aNXBPxZzu1otEoRraFZWBVxgGyMiIP/ztbfIgqdgdYSzR+g=;
 Received: from bombadil.infradead.org ([198.137.202.133])
  by sfi-mx-1.v28.lw.sourceforge.com with esmtps
  (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.92.3)
- id 1mcPdl-004BLL-8F; Mon, 18 Oct 2021 10:13:09 +0000
+ id 1mcPdo-004BLe-KD; Mon, 18 Oct 2021 10:13:13 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=infradead.org; s=bombadil.20210309; h=Content-Transfer-Encoding:
  MIME-Version:References:In-Reply-To:Message-Id:Date:Subject:Cc:To:From:Sender
  :Reply-To:Content-Type:Content-ID:Content-Description;
- bh=JRUJFkyjxq71rT2gSHQzVSwiRN9DYj/nxSJqzQ3gbXo=; b=2c9bfNEown0FxgUx76waa6dAJ1
- juGx4WEEb/2GYDwpo+2kWiNfb8mKj5wCudCfTMRRMuDONK4SdfxFXckn+v+TLDxVRWdfkaV9yQxBP
- CeiUc9hNu0ZQ0EcD3fU+rzmkOw2TuegmWB04g3cKaSlzQR4Yr8rX5tzt9jj1QRYpSMNPezpVp7vjh
- 2MK4teyEFHqjQbsCXAu8XrDi9HVCvmll2LLHLianu/zvRrFDKq8MFNKl0SvhAEu+WxcnXmkihzOze
- cT8rIbjlB19tAR3qaalJhymWcwHvZBpHkTkDqsd3vyjenWs4un+mcMVdEXfaGN6ckOHQjeipxzo7K
- TTShH9mQ==;
+ bh=sSdphJbx9SQw+wN4za3/OjMw3p4iKMeSjeY0No/E5ck=; b=bo+nrVZXl6TTYRQlQ0bto+MepF
+ SigFpnQpZERr9BHx9SPKM5M3oF1djjIgorehkbOAGiSEoKAClU9hAJOhLvQopHL+7ngHbjCp0GYh5
+ HxtbySe0C4GiywWjnxtAHb3ZnvMCNabnqmvTxDGUWVlieN6Rb0q+S5b77qYYfN1Bx6ax5iCz6AGrH
+ 9ON2Uwy2yvzZ25ow0GUORw9zUlxRz69RVpLcvbrHTrQMiaF4iHAu1HNZdwtKFs1xQfJ1CQGhdbHTu
+ v3N4NlM4aG9KmvpSER+/Mp3Yql6EAXAHbXbfbCK+GXf7UFAgNzR4TOZtkJ5cVyxvD1MufFJzB6JqD
+ 6aD8LsrA==;
 Received: from [2001:4bb8:199:73c5:c70:4a89:bc61:2] (helo=localhost)
  by bombadil.infradead.org with esmtpsa (Exim 4.94.2 #2 (Red Hat Linux))
- id 1mcPdS-00Ev2p-Si; Mon, 18 Oct 2021 10:12:51 +0000
+ id 1mcPdV-00Ev58-I3; Mon, 18 Oct 2021 10:12:53 +0000
 From: Christoph Hellwig <hch@lst.de>
 To: Jens Axboe <axboe@kernel.dk>
-Date: Mon, 18 Oct 2021 12:11:29 +0200
-Message-Id: <20211018101130.1838532-30-hch@lst.de>
+Date: Mon, 18 Oct 2021 12:11:30 +0200
+Message-Id: <20211018101130.1838532-31-hch@lst.de>
 X-Mailer: git-send-email 2.30.2
 In-Reply-To: <20211018101130.1838532-1-hch@lst.de>
 References: <20211018101130.1838532-1-hch@lst.de>
@@ -70,8 +70,8 @@ X-Spam-Report: Spam detection software,
  Content preview: Use the sb_bdev_nr_blocks helper instead of open coding it.
  Signed-off-by: Christoph Hellwig <hch@lst.de> Reviewed-by: Kees Cook
  <keescook@chromium.org>
- Reviewed-by: Jan Kara <jack@suse.cz> --- fs/reiserfs/super.c | 4 +--- 1 file
- changed, 1 insertion(+), 3 del [...] 
+ Reviewed-by: Jan Kara <jack@suse.cz> --- fs/udf/lowlevel.c | 5 ++---
+ fs/udf/super.c | 9 +++------ 2 files c [...] 
  Content analysis details:   (-2.1 points, 6.0 required)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
@@ -86,9 +86,9 @@ X-Spam-Report: Spam detection software,
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
-X-Headers-End: 1mcPdl-004BLL-8F
+X-Headers-End: 1mcPdo-004BLe-KD
 X-Mailman-Approved-At: Mon, 18 Oct 2021 13:31:23 +0000
-Subject: [Jfs-discussion] [PATCH 29/30] reiserfs: use sb_bdev_nr_blocks
+Subject: [Jfs-discussion] [PATCH 30/30] udf: use sb_bdev_nr_blocks
 X-BeenThere: jfs-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -127,24 +127,67 @@ Signed-off-by: Christoph Hellwig <hch@lst.de>
 Reviewed-by: Kees Cook <keescook@chromium.org>
 Reviewed-by: Jan Kara <jack@suse.cz>
 ---
- fs/reiserfs/super.c | 4 +---
- 1 file changed, 1 insertion(+), 3 deletions(-)
+ fs/udf/lowlevel.c | 5 ++---
+ fs/udf/super.c    | 9 +++------
+ 2 files changed, 5 insertions(+), 9 deletions(-)
 
-diff --git a/fs/reiserfs/super.c b/fs/reiserfs/super.c
-index 8647a00434ea4..076f9ab943060 100644
---- a/fs/reiserfs/super.c
-+++ b/fs/reiserfs/super.c
-@@ -1199,9 +1199,7 @@ static int reiserfs_parse_options(struct super_block *s,
+diff --git a/fs/udf/lowlevel.c b/fs/udf/lowlevel.c
+index f1094cdcd6cde..46d6971721975 100644
+--- a/fs/udf/lowlevel.c
++++ b/fs/udf/lowlevel.c
+@@ -47,8 +47,7 @@ unsigned int udf_get_last_session(struct super_block *sb)
  
- 			if (!strcmp(arg, "auto")) {
- 				/* From JFS code, to auto-get the size. */
--				*blocks =
--				    i_size_read(s->s_bdev->bd_inode) >> s->
--				    s_blocksize_bits;
-+				*blocks = sb_bdev_nr_blocks(s);
- 			} else {
- 				*blocks = simple_strtoul(arg, &p, 0);
- 				if (*p != '\0') {
+ unsigned long udf_get_last_block(struct super_block *sb)
+ {
+-	struct block_device *bdev = sb->s_bdev;
+-	struct cdrom_device_info *cdi = disk_to_cdi(bdev->bd_disk);
++	struct cdrom_device_info *cdi = disk_to_cdi(sb->s_bdev->bd_disk);
+ 	unsigned long lblock = 0;
+ 
+ 	/*
+@@ -56,7 +55,7 @@ unsigned long udf_get_last_block(struct super_block *sb)
+ 	 * Try using the device size...
+ 	 */
+ 	if (!cdi || cdrom_get_last_written(cdi, &lblock) || lblock == 0)
+-		lblock = i_size_read(bdev->bd_inode) >> sb->s_blocksize_bits;
++		lblock = sb_bdev_nr_blocks(sb);
+ 
+ 	if (lblock)
+ 		return lblock - 1;
+diff --git a/fs/udf/super.c b/fs/udf/super.c
+index b2d7c57d06881..34247fba6df91 100644
+--- a/fs/udf/super.c
++++ b/fs/udf/super.c
+@@ -1175,8 +1175,7 @@ static int udf_load_vat(struct super_block *sb, int p_index, int type1_index)
+ 	struct udf_inode_info *vati;
+ 	uint32_t pos;
+ 	struct virtualAllocationTable20 *vat20;
+-	sector_t blocks = i_size_read(sb->s_bdev->bd_inode) >>
+-			  sb->s_blocksize_bits;
++	sector_t blocks = sb_bdev_nr_blocks(sb);
+ 
+ 	udf_find_vat_block(sb, p_index, type1_index, sbi->s_last_block);
+ 	if (!sbi->s_vat_inode &&
+@@ -1838,8 +1837,7 @@ static int udf_check_anchor_block(struct super_block *sb, sector_t block,
+ 	int ret;
+ 
+ 	if (UDF_QUERY_FLAG(sb, UDF_FLAG_VARCONV) &&
+-	    udf_fixed_to_variable(block) >=
+-	    i_size_read(sb->s_bdev->bd_inode) >> sb->s_blocksize_bits)
++	    udf_fixed_to_variable(block) >= sb_bdev_nr_blocks(sb))
+ 		return -EAGAIN;
+ 
+ 	bh = udf_read_tagged(sb, block, block, &ident);
+@@ -1901,8 +1899,7 @@ static int udf_scan_anchors(struct super_block *sb, sector_t *lastblock,
+ 		last[last_count++] = *lastblock - 152;
+ 
+ 	for (i = 0; i < last_count; i++) {
+-		if (last[i] >= i_size_read(sb->s_bdev->bd_inode) >>
+-				sb->s_blocksize_bits)
++		if (last[i] >= sb_bdev_nr_blocks(sb))
+ 			continue;
+ 		ret = udf_check_anchor_block(sb, last[i], fileset);
+ 		if (ret != -EAGAIN) {
 -- 
 2.30.2
 
