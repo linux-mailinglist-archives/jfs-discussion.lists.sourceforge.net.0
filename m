@@ -2,27 +2,27 @@ Return-Path: <jfs-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+jfs-discussion@lfdr.de
 Delivered-To: lists+jfs-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id BF1A4431B70
-	for <lists+jfs-discussion@lfdr.de>; Mon, 18 Oct 2021 15:31:45 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0B38A431B7C
+	for <lists+jfs-discussion@lfdr.de>; Mon, 18 Oct 2021 15:31:49 +0200 (CEST)
 Received: from [127.0.0.1] (helo=sfs-ml-2.v29.lw.sourceforge.com)
 	by sfs-ml-2.v29.lw.sourceforge.com with esmtp (Exim 4.92.3)
 	(envelope-from <jfs-discussion-bounces@lists.sourceforge.net>)
-	id 1mcSjg-0002B0-Bs; Mon, 18 Oct 2021 13:31:28 +0000
+	id 1mcSjg-0002Bg-QS; Mon, 18 Oct 2021 13:31:28 +0000
 Received: from [172.30.20.202] (helo=mx.sourceforge.net)
  by sfs-ml-4.v29.lw.sourceforge.com with esmtps
  (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
  (envelope-from
  <BATV+653fb0268b18c2e086a8+6630+infradead.org+hch@bombadil.srs.infradead.org>)
- id 1mcPcp-00049R-Qc; Mon, 18 Oct 2021 10:12:11 +0000
+ id 1mcPcs-00049b-2V; Mon, 18 Oct 2021 10:12:14 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=sourceforge.net; s=x; h=Content-Transfer-Encoding:MIME-Version:References:
  In-Reply-To:Message-Id:Date:Subject:Cc:To:From:Sender:Reply-To:Content-Type:
  Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
  Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=fFiyZJBuziQrITu6AwTrNzk8Coj3yxtnkFBgzy+4utY=; b=OzS1m+KhipYYtz+2tkj6KXpRjG
- 0LU00hRkRXtFzma1e2ldCjdJAi0+Tdt6oWUepiMAQzzN5z/zc8GIgdk6REDShW7Y2R2LyM7CmASPc
- QfE5p1tgXuGckSTh8o9CuE4X4eSJmhuUviZRg/RQngAzQ5zmc67OCIm+MwhCbvJFXwSQ=;
+ bh=crZRJgOkjYi3EiJOxDBxffWr9S5JpN7jYdBxf7e+8rk=; b=T/lOMds+1jXjHepxgDF6/nASWO
+ 6Dz6RbhcYkRSqBSsr4yHESsnrfuBF3keH6f5absH/bkEG2DxoOE+prC8MUHZ4g6wJrnE2ZV6OViEO
+ nJLE0QkdrFhLwHMX0fMBFLYTGpI7E+YEo5rPo7uqDp5l1/T/uFx3K8YdBnV2irXHt55Y=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
  h=Content-Transfer-Encoding:MIME-Version:References:In-Reply-To:Message-Id:
@@ -30,30 +30,30 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
  :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
  List-Post:List-Owner:List-Archive;
- bh=fFiyZJBuziQrITu6AwTrNzk8Coj3yxtnkFBgzy+4utY=; b=gVjrBwF1WpCrpUefG4DKmoDDaf
- FK641BtZzsKaJh8cjPD7T+Mi92uuwI4a14aQ0HrYfOfGPpB9LT/Hw3vNAQTHeW5qYQIXKvUV0RGBx
- q8Tk6/ZesihXeh80bd3P0vo7CT3EVUtoXlx7Ro6fh9bUqbHwyyzop/Qyo7LSFtMhb1eA=;
+ bh=crZRJgOkjYi3EiJOxDBxffWr9S5JpN7jYdBxf7e+8rk=; b=Uuf4i6J3MyETu3v4Ul2VrFrDtF
+ VplNR4jqWG1CSviEzBma2oJa0xLHieQQK1kJy7Izk2R/B7DNCec6S6zDbcRzbG9BHRgfFlrlN/7/X
+ qu2g96pPuqprfM8pqN4iaFAljoK4qVQs+vMekzOIOe+MNsKlpTBAda/O1HUOB6ABR5P8=;
 Received: from bombadil.infradead.org ([198.137.202.133])
- by sfi-mx-2.v28.lw.sourceforge.com with esmtps
+ by sfi-mx-1.v28.lw.sourceforge.com with esmtps
  (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.92.3)
- id 1mcPcp-0002x6-4D; Mon, 18 Oct 2021 10:12:11 +0000
+ id 1mcPcr-004BF0-J7; Mon, 18 Oct 2021 10:12:14 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=infradead.org; s=bombadil.20210309; h=Content-Transfer-Encoding:
  MIME-Version:References:In-Reply-To:Message-Id:Date:Subject:Cc:To:From:Sender
  :Reply-To:Content-Type:Content-ID:Content-Description;
- bh=fFiyZJBuziQrITu6AwTrNzk8Coj3yxtnkFBgzy+4utY=; b=f1ZTns0vT6m845qkA0baYXk2PG
- ByKkbnJ+m6x5JEcOlt7OJK30pWXcBBAY2xcc1oOX/GlP+t0jufCSgL5H/v+FL2ep0WYs4CjBQ1ZvD
- lQG5Q7+G38xvKKRPiacPni83/F9CmBbksfoCmOynDY23d+ddtPSvZOtRc/6cK3nk51j7atKYi19r6
- Kag73b5r1mpakcbI/gVx0eS5fxTuecjZwPlCdUJUHarqJZdEd5rQWMGiN5zJahL6UlgGggT0wn6rZ
- vPA0cQ+2G72skx+/d7YG1mcJHEgaG8vk2XDNYrEfowDDgHBQKzmj5azhf7DDo48pGaGARYpawN4ej
- JsMT/KGQ==;
+ bh=crZRJgOkjYi3EiJOxDBxffWr9S5JpN7jYdBxf7e+8rk=; b=q1iE2U/IN6DUytyaoPoTRWSqqN
+ J/T3DM4ZSaUqv5rJ64pwyg9yr/ueaTqqYbZl06RoDtO0QHPluu7am3nEilxVlZnowkzWoaIO9L2Wz
+ PNPokgYKufDr9BiLDRe1WNiWr9RwJ+moR/qadDbEQUSwBIaw8trzizlOwDXOCF3bcO9M5+NABZwnD
+ UmGoDoihgZysn2/KyEqrR+hPGk/TbxHkBR2mrDPh8WgEMY5CNEErZipaqbY8S/Jb/FIIQThDhQvFo
+ tdR02dADl2w4DxQyevFObIwycQOd3lWdn3RbEfLOoFErtNi+0aHb/FQE10f7/ELbpgYavCqaWWmrI
+ H8ImIXoQ==;
 Received: from [2001:4bb8:199:73c5:c70:4a89:bc61:2] (helo=localhost)
  by bombadil.infradead.org with esmtpsa (Exim 4.94.2 #2 (Red Hat Linux))
- id 1mcPcV-00Eu56-U0; Mon, 18 Oct 2021 10:11:52 +0000
+ id 1mcPcY-00Eu6p-Hz; Mon, 18 Oct 2021 10:11:54 +0000
 From: Christoph Hellwig <hch@lst.de>
 To: Jens Axboe <axboe@kernel.dk>
-Date: Mon, 18 Oct 2021 12:11:07 +0200
-Message-Id: <20211018101130.1838532-8-hch@lst.de>
+Date: Mon, 18 Oct 2021 12:11:08 +0200
+Message-Id: <20211018101130.1838532-9-hch@lst.de>
 X-Mailer: git-send-email 2.30.2
 In-Reply-To: <20211018101130.1838532-1-hch@lst.de>
 References: <20211018101130.1838532-1-hch@lst.de>
@@ -71,7 +71,7 @@ X-Spam-Report: Spam detection software,
  Signed-off-by:
  Christoph Hellwig <hch@lst.de> Reviewed-by: Kees Cook <keescook@chromium.org>
  Reviewed-by: Chaitanya Kulkarni <kch@nvidia.com> ---
- drivers/nvme/target/io-cmd-bdev.c | 4 ++-- 1 file chan [...] 
+ drivers/target/target_core_iblock.c | 4 ++-- 1 file ch [...] 
  Content analysis details:   (-2.1 points, 6.0 required)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
@@ -86,10 +86,10 @@ X-Spam-Report: Spam detection software,
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
-X-Headers-End: 1mcPcp-0002x6-4D
+X-Headers-End: 1mcPcr-004BF0-J7
 X-Mailman-Approved-At: Mon, 18 Oct 2021 13:31:19 +0000
-Subject: [Jfs-discussion] [PATCH 07/30] nvmet: use bdev_nr_bytes instead of
- open coding it
+Subject: [Jfs-discussion] [PATCH 08/30] target/iblock: use bdev_nr_bytes
+ instead of open coding it
 X-BeenThere: jfs-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -127,31 +127,25 @@ Signed-off-by: Christoph Hellwig <hch@lst.de>
 Reviewed-by: Kees Cook <keescook@chromium.org>
 Reviewed-by: Chaitanya Kulkarni <kch@nvidia.com>
 ---
- drivers/nvme/target/io-cmd-bdev.c | 4 ++--
+ drivers/target/target_core_iblock.c | 4 ++--
  1 file changed, 2 insertions(+), 2 deletions(-)
 
-diff --git a/drivers/nvme/target/io-cmd-bdev.c b/drivers/nvme/target/io-cmd-bdev.c
-index 6139e1de50a66..70ca9dfc1771a 100644
---- a/drivers/nvme/target/io-cmd-bdev.c
-+++ b/drivers/nvme/target/io-cmd-bdev.c
-@@ -87,7 +87,7 @@ int nvmet_bdev_ns_enable(struct nvmet_ns *ns)
- 		ns->bdev = NULL;
- 		return ret;
- 	}
--	ns->size = i_size_read(ns->bdev->bd_inode);
-+	ns->size = bdev_nr_bytes(ns->bdev);
- 	ns->blksize_shift = blksize_bits(bdev_logical_block_size(ns->bdev));
- 
- 	ns->pi_type = 0;
-@@ -108,7 +108,7 @@ int nvmet_bdev_ns_enable(struct nvmet_ns *ns)
- 
- void nvmet_bdev_ns_revalidate(struct nvmet_ns *ns)
+diff --git a/drivers/target/target_core_iblock.c b/drivers/target/target_core_iblock.c
+index 31df20abe141f..b1ef041cacd81 100644
+--- a/drivers/target/target_core_iblock.c
++++ b/drivers/target/target_core_iblock.c
+@@ -232,9 +232,9 @@ static unsigned long long iblock_emulate_read_cap_with_block_size(
+ 	struct block_device *bd,
+ 	struct request_queue *q)
  {
--	ns->size = i_size_read(ns->bdev->bd_inode);
-+	ns->size = bdev_nr_bytes(ns->bdev);
- }
+-	unsigned long long blocks_long = (div_u64(i_size_read(bd->bd_inode),
+-					bdev_logical_block_size(bd)) - 1);
+ 	u32 block_size = bdev_logical_block_size(bd);
++	unsigned long long blocks_long =
++		div_u64(bdev_nr_bytes(bd), block_size) - 1;
  
- u16 blk_to_nvme_status(struct nvmet_req *req, blk_status_t blk_sts)
+ 	if (block_size == dev->dev_attrib.block_size)
+ 		return blocks_long;
 -- 
 2.30.2
 
