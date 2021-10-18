@@ -2,27 +2,27 @@ Return-Path: <jfs-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+jfs-discussion@lfdr.de
 Delivered-To: lists+jfs-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id 86FB2431B9E
-	for <lists+jfs-discussion@lfdr.de>; Mon, 18 Oct 2021 15:31:58 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 356A6431B94
+	for <lists+jfs-discussion@lfdr.de>; Mon, 18 Oct 2021 15:31:57 +0200 (CEST)
 Received: from [127.0.0.1] (helo=sfs-ml-2.v29.lw.sourceforge.com)
 	by sfs-ml-2.v29.lw.sourceforge.com with esmtp (Exim 4.92.3)
 	(envelope-from <jfs-discussion-bounces@lists.sourceforge.net>)
-	id 1mcSji-0002Ev-8W; Mon, 18 Oct 2021 13:31:30 +0000
+	id 1mcSji-0002Ed-4h; Mon, 18 Oct 2021 13:31:30 +0000
 Received: from [172.30.20.202] (helo=mx.sourceforge.net)
- by sfs-ml-1.v29.lw.sourceforge.com with esmtps
- (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
+ by sfs-ml-2.v29.lw.sourceforge.com with esmtps
+ (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.92.3)
  (envelope-from
  <BATV+653fb0268b18c2e086a8+6630+infradead.org+hch@bombadil.srs.infradead.org>)
- id 1mcPdG-0007S6-PO; Mon, 18 Oct 2021 10:12:38 +0000
+ id 1mcPdG-00031M-NK; Mon, 18 Oct 2021 10:12:38 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=sourceforge.net; s=x; h=Content-Transfer-Encoding:MIME-Version:References:
  In-Reply-To:Message-Id:Date:Subject:Cc:To:From:Sender:Reply-To:Content-Type:
  Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
  Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=Ss3ilUyKMuPfHBXzBJ88Vs1wtib02SxYRpGnTBbPDiA=; b=Cfa/x0D9X1dOvKeB0vxz+ARqQU
- AY8FL3gU0tjJE0RJJt9N6hJcjcHDtu+0jpgRZcjI6Q8r4N5sCkD9I/bFK0BSyOebqqjJQL4mtHa1c
- ls9dUp4ynizzU0qdCUHus38+ZxgPscm/B26H0mN9SbNeXYSALSyJWPLHZQzsYfFjQQ0Q=;
+ bh=osxw+vfeTnGlEsqH7zjz3v2g+MYYgjLX6YEKTd2gUSw=; b=nIQhBAH/E0fPmiCIAyqm+jF1tf
+ CEUxVKENapDSG8MWtg4sLk/6iw4/UxtYgXlwiCsof+R0GtIEDy3l5JbKvTM/coQ2NO85nfPGwY+Yb
+ 93ls10y+FHMldo79U9VCe9AFG6JNaSOjKA4hP1b18mOd2/L5fXU3w4lccoc5CKbXhnSk=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
  h=Content-Transfer-Encoding:MIME-Version:References:In-Reply-To:Message-Id:
@@ -30,30 +30,30 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
  :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
  List-Post:List-Owner:List-Archive;
- bh=Ss3ilUyKMuPfHBXzBJ88Vs1wtib02SxYRpGnTBbPDiA=; b=KDBA1Dbl3KdCBRBa+haLo4ExXB
- qzNcKZ0zD+Boswp9juOIJT1kvwFqbTWkJ62ytJmIgQ9XcYCIESIKNtrIwLmQIzagU/XP9wCAueS1S
- QxasMK7KZb3OvvnRQ29ItKHsVj4UEOelc3RMx1pgctvo3fbssjBRSf28QEd5X5L/El4Y=;
+ bh=osxw+vfeTnGlEsqH7zjz3v2g+MYYgjLX6YEKTd2gUSw=; b=CrRS9/vN92d8YAWXw2KIH4WY3b
+ fSV+wBgjDSVEL/vyueCCN1ZvML63KSIrcAtNCIkmkZ4Bwv97iduX+RS2lY7K6rOtL+t/S5tfX5+pC
+ +9xtQVAvKTHVEsqzMAfDoTjTsSqYN75SFjBkcvSmyH79fowezR0vmjNF/AHLa7HHmqSs=;
 Received: from bombadil.infradead.org ([198.137.202.133])
- by sfi-mx-2.v28.lw.sourceforge.com with esmtps
+ by sfi-mx-1.v28.lw.sourceforge.com with esmtps
  (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.92.3)
- id 1mcPdG-00030w-8J; Mon, 18 Oct 2021 10:12:38 +0000
+ id 1mcPdG-004BHq-8L; Mon, 18 Oct 2021 10:12:38 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=infradead.org; s=bombadil.20210309; h=Content-Transfer-Encoding:
  MIME-Version:References:In-Reply-To:Message-Id:Date:Subject:Cc:To:From:Sender
  :Reply-To:Content-Type:Content-ID:Content-Description;
- bh=Ss3ilUyKMuPfHBXzBJ88Vs1wtib02SxYRpGnTBbPDiA=; b=oAbnRWg/YW/pvh0a/EKd2He+y8
- nhRS61TBq4K/396NBlUVJPiq7U8gOjdM+JVuY0sA6KWIwYTIUOcl5EeE57s1AY7f06lIYlW9O/j4o
- UMAhvrYBojy6l7jxkCXMVIhDsqhCiPdKDdRXdynprKLz3bF+wOqvzPYluC8tglrc6VSUQTwiLQCOD
- veucZd4xDpI/b9hqSeZnZr0mHV4dXMogd8BlQMVoXYmdd/TJDxSvjMaWeO+8WO+iqmTPtMrkF6CjB
- IMmu5I08e32bMALy0zhps5vW3RO4HSUhmaaU8lydFjNoKUiwc2Z2qyuCR8orEZbLXBcDro8LkzLsC
- HQ2vwtRQ==;
+ bh=osxw+vfeTnGlEsqH7zjz3v2g+MYYgjLX6YEKTd2gUSw=; b=dlkKT5CDwYhKpw3HO05O5ueVEs
+ tPF01dQcBxy6UOjZkARq5q410PLnD4OYyHYK26f8HCUTvw+qev6XG1teUbqOBTY3oiPoD7wGKgyaZ
+ I1poZwCw62UaIuseuiYbfCGvJwOXSEcTdw11lvi2V84/tFWY4B2iATcJCg8n3GApD/2OdVVVqqKWC
+ KEAEFArDSd767/i9m0mkrvP73sRApUHo+Vt9+L0oYPQESq91baIa/kJK5OID9vPZ6yuhsMz748Oeg
+ FQzopBTaYIpkPGNfHvVDwIxlbbNHyFzq6EtUcTUkpWI7l8X3IgHB+q/z0jl0JOzWQd2/Ugu4sb2+T
+ eTx5yDtA==;
 Received: from [2001:4bb8:199:73c5:c70:4a89:bc61:2] (helo=localhost)
  by bombadil.infradead.org with esmtpsa (Exim 4.94.2 #2 (Red Hat Linux))
- id 1mcPcw-00EuTH-R5; Mon, 18 Oct 2021 10:12:19 +0000
+ id 1mcPcz-00EuUT-EY; Mon, 18 Oct 2021 10:12:21 +0000
 From: Christoph Hellwig <hch@lst.de>
 To: Jens Axboe <axboe@kernel.dk>
-Date: Mon, 18 Oct 2021 12:11:17 +0200
-Message-Id: <20211018101130.1838532-18-hch@lst.de>
+Date: Mon, 18 Oct 2021 12:11:18 +0200
+Message-Id: <20211018101130.1838532-19-hch@lst.de>
 X-Mailer: git-send-email 2.30.2
 In-Reply-To: <20211018101130.1838532-1-hch@lst.de>
 References: <20211018101130.1838532-1-hch@lst.de>
@@ -70,8 +70,8 @@ X-Spam-Report: Spam detection software,
  Content preview: Use the proper helper to read the block device size.
  Signed-off-by:
  Christoph Hellwig <hch@lst.de> Reviewed-by: Kees Cook <keescook@chromium.org>
- Acked-by: Dave Kleikamp <dave.kleikamp@oracle.com> --- fs/jfs/resize.c |
- 2 +- fs/jfs/super.c | 2 +- 2 files [...] 
+ --- fs/nfs/blocklayout/dev.c | 4 ++-- 1 file changed, 2 insertions(+), 2
+ deletions(-) 
  Content analysis details:   (-2.1 points, 6.0 required)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
@@ -86,10 +86,10 @@ X-Spam-Report: Spam detection software,
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
-X-Headers-End: 1mcPdG-00030w-8J
-X-Mailman-Approved-At: Mon, 18 Oct 2021 13:31:20 +0000
-Subject: [Jfs-discussion] [PATCH 17/30] jfs: use bdev_nr_bytes instead of
- open coding it
+X-Headers-End: 1mcPdG-004BHq-8L
+X-Mailman-Approved-At: Mon, 18 Oct 2021 13:31:22 +0000
+Subject: [Jfs-discussion] [PATCH 18/30] nfs/blocklayout: use bdev_nr_bytes
+ instead of open coding it
 X-BeenThere: jfs-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -125,38 +125,32 @@ Use the proper helper to read the block device size.
 
 Signed-off-by: Christoph Hellwig <hch@lst.de>
 Reviewed-by: Kees Cook <keescook@chromium.org>
-Acked-by: Dave Kleikamp <dave.kleikamp@oracle.com>
 ---
- fs/jfs/resize.c | 2 +-
- fs/jfs/super.c  | 2 +-
- 2 files changed, 2 insertions(+), 2 deletions(-)
+ fs/nfs/blocklayout/dev.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
 
-diff --git a/fs/jfs/resize.c b/fs/jfs/resize.c
-index bde787c354fcc..a42dbb0d3d28a 100644
---- a/fs/jfs/resize.c
-+++ b/fs/jfs/resize.c
-@@ -199,7 +199,7 @@ int jfs_extendfs(struct super_block *sb, s64 newLVSize, int newLogSize)
- 	txQuiesce(sb);
+diff --git a/fs/nfs/blocklayout/dev.c b/fs/nfs/blocklayout/dev.c
+index acb1d22907daf..5e56da748b2ab 100644
+--- a/fs/nfs/blocklayout/dev.c
++++ b/fs/nfs/blocklayout/dev.c
+@@ -252,7 +252,7 @@ bl_parse_simple(struct nfs_server *server, struct pnfs_block_dev *d,
+ 	d->bdev = bdev;
  
- 	/* Reset size of direct inode */
--	sbi->direct_inode->i_size =  i_size_read(sb->s_bdev->bd_inode);
-+	sbi->direct_inode->i_size = bdev_nr_bytes(sb->s_bdev);
  
- 	if (sbi->mntflag & JFS_INLINELOG) {
- 		/*
-diff --git a/fs/jfs/super.c b/fs/jfs/super.c
-index 9030aeaf0f886..9241caa161163 100644
---- a/fs/jfs/super.c
-+++ b/fs/jfs/super.c
-@@ -551,7 +551,7 @@ static int jfs_fill_super(struct super_block *sb, void *data, int silent)
- 		ret = -ENOMEM;
- 		goto out_unload;
- 	}
--	inode->i_size = i_size_read(sb->s_bdev->bd_inode);
-+	inode->i_size = bdev_nr_bytes(sb->s_bdev);
- 	inode->i_mapping->a_ops = &jfs_metapage_aops;
- 	inode_fake_hash(inode);
- 	mapping_set_gfp_mask(inode->i_mapping, GFP_NOFS);
+-	d->len = i_size_read(d->bdev->bd_inode);
++	d->len = bdev_nr_bytes(d->bdev);
+ 	d->map = bl_map_simple;
+ 
+ 	printk(KERN_INFO "pNFS: using block device %s\n",
+@@ -367,7 +367,7 @@ bl_parse_scsi(struct nfs_server *server, struct pnfs_block_dev *d,
+ 		return PTR_ERR(bdev);
+ 	d->bdev = bdev;
+ 
+-	d->len = i_size_read(d->bdev->bd_inode);
++	d->len = bdev_nr_bytes(d->bdev);
+ 	d->map = bl_map_simple;
+ 	d->pr_key = v->scsi.pr_key;
+ 
 -- 
 2.30.2
 
