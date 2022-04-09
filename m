@@ -2,26 +2,26 @@ Return-Path: <jfs-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+jfs-discussion@lfdr.de
 Delivered-To: lists+jfs-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3778D4FA3D1
-	for <lists+jfs-discussion@lfdr.de>; Sat,  9 Apr 2022 06:53:02 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 00A514FAA0F
+	for <lists+jfs-discussion@lfdr.de>; Sat,  9 Apr 2022 20:00:31 +0200 (CEST)
 Received: from [127.0.0.1] (helo=sfs-ml-1.v29.lw.sourceforge.com)
 	by sfs-ml-1.v29.lw.sourceforge.com with esmtp (Exim 4.94.2)
 	(envelope-from <jfs-discussion-bounces@lists.sourceforge.net>)
-	id 1nd35e-0002m3-Sv; Sat, 09 Apr 2022 04:52:50 +0000
+	id 1ndFNI-0002CU-ND; Sat, 09 Apr 2022 17:59:51 +0000
 Received: from [172.30.20.202] (helo=mx.sourceforge.net)
  by sfs-ml-1.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
  TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (Exim 4.94.2) (envelope-from
  <BATV+43fc5532e856fea764d1+6803+infradead.org+hch@bombadil.srs.infradead.org>)
- id 1nd35c-0002ku-JT; Sat, 09 Apr 2022 04:52:47 +0000
+ id 1nd34d-0002H3-62; Sat, 09 Apr 2022 04:51:46 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=sourceforge.net; s=x; h=Content-Transfer-Encoding:MIME-Version:References:
  In-Reply-To:Message-Id:Date:Subject:Cc:To:From:Sender:Reply-To:Content-Type:
  Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
  Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=eypoqjBCbHteIGJMjEE77faduCfiNIsAQ0ydQeu7OQ0=; b=jiWjYCQ0MhgS9Rq78KGNsy5PHw
- 7I5LMQau5FtV+H5tlkesINywfPnWEja3MFfqlVAaTJekoJ9KeILWKpo9nYRW97lwDCPmOMdhS8Mmq
- x5X89sefh1ezXjr/TSsuMgeOz6oy6pHyeEe6lxKX59WUYgb0vJgde1SDm3U4RqP2ICZc=;
+ bh=HrgNfnZXHjI7+oEfFDB5J5Uuocj6xy8pedsh1Yy5WG4=; b=KCebIxbodiMxr+PzWyeaxoq3KX
+ x2bgZmJXVbzWYPwRMTIeDpeUKHEbSAsxYepCPotpwZus7zjRE4lnvJ+frG9FXqqClm2Jd9vpsWEyK
+ SmGraEDElJHSCu98Xqbxa5JQXdcFqhUoD4Q9ZiT2wH896JZFZpy/wj6+n+M0NXZPHsyk=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
  h=Content-Transfer-Encoding:MIME-Version:References:In-Reply-To:Message-Id:
@@ -29,31 +29,31 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
  :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
  List-Post:List-Owner:List-Archive;
- bh=eypoqjBCbHteIGJMjEE77faduCfiNIsAQ0ydQeu7OQ0=; b=g8eKMT5wla8ZK2Hk0ULobTGqey
- zkiW3vFBJTq+R4lgbrrg62Od1xWJBu4dVIjHjXKVEShcNb6RwO/Jn0vqTws8NBGePpEPSvzgjS0Vt
- Wjd18ayWvpTOzMP1W/8SFpRUEZsY0p/cBnjK6NuBIRf7WISRrXcsVQEfO3ig2CEs2MnE=;
+ bh=HrgNfnZXHjI7+oEfFDB5J5Uuocj6xy8pedsh1Yy5WG4=; b=G8OyjT8FpsgfZ6RXff/Kg9JNjC
+ sc5NNgw7Kdj1LPlNJ729kcf0TsQrIOHXRRsUOUOzqcD54GuzCrNSGwk7XtyVeNUAfEzsyAwoIrJyi
+ BUxKsdO9+kHkS5GHi3Gpc8pYG6cuAiZGfIfb0GgK25ps4VW+MRsR3IOFWoHpYFZfXZ4o=;
 Received: from bombadil.infradead.org ([198.137.202.133])
- by sfi-mx-1.v28.lw.sourceforge.com with esmtps
+ by sfi-mx-2.v28.lw.sourceforge.com with esmtps
  (TLS1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.94.2)
- id 1nd35a-00APey-Ts; Sat, 09 Apr 2022 04:52:47 +0000
+ id 1nd34b-00017t-9X; Sat, 09 Apr 2022 04:51:46 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=infradead.org; s=bombadil.20210309; h=Content-Transfer-Encoding:
  MIME-Version:References:In-Reply-To:Message-Id:Date:Subject:Cc:To:From:Sender
  :Reply-To:Content-Type:Content-ID:Content-Description;
- bh=eypoqjBCbHteIGJMjEE77faduCfiNIsAQ0ydQeu7OQ0=; b=nqH1nBV8lOr2r5wyOjol3g7s8X
- NGopilIp147x4XNnQqzR5o2YWkY6IO58VVUojmV/ASvSDXVzRQHv+BqUNN8ISkIuVH5Huq+5W/+g6
- Fx9NKN7nsNjG6IaaR01B6x8gfqb84JVGaMt2Mch/XsNqmw38mh/kWIOczl1+aSfojYjwvPWnkVT0z
- zeBYxWSj02o09fDuqh1c1ftABUKI9QxyXU2GCBR2V2aNbgjbyvKcSUL75+QEIgn+hIxNaN3b6eMN+
- HQ75AhIB7YFYQ9KIFGF2dUiaHQ4ZLNQzEzLlTd1WzYc4Lz5oFphMfcUxRdKyObtKnqHpozib+pvzE
- Et/uKlCg==;
+ bh=HrgNfnZXHjI7+oEfFDB5J5Uuocj6xy8pedsh1Yy5WG4=; b=JZn3/ma9EZNU+0AUx4JUCbkUtN
+ 1gVYrPS6nGU/IPVNAsMIwQdRVonqngYyJd/5mhM6maNoNh8obBvlUsS7xZb+5IUtAzAckVAhB18lZ
+ +hrt4X59ZUCzvTl8qWpsGsw7hVsJEekVtl3RSG9SEZSyM3Dc6qTHcoJlxPY/bwd5cgRNy3jh2HOzR
+ p+IuIpokNAkYT5clDeS8cbdmw/Ihai/S5xZiBqxQ1pZvQuDgw8Fcl5/kNcDb1PCUpcqc7zMLa6+0C
+ d2fURrC8Mx6BC4ojaSxAuzEcsPTExC6oj9FsjDDX8JgFsv800gQEvMZCYj+50CSJny3gvo3JzP0lv
+ 0Zpon8ww==;
 Received: from 213-147-167-116.nat.highway.webapn.at ([213.147.167.116]
  helo=localhost)
  by bombadil.infradead.org with esmtpsa (Exim 4.94.2 #2 (Red Hat Linux))
- id 1nd35G-0021rI-Lh; Sat, 09 Apr 2022 04:52:27 +0000
+ id 1nd34E-0020oX-PD; Sat, 09 Apr 2022 04:51:23 +0000
 From: Christoph Hellwig <hch@lst.de>
 To: Jens Axboe <axboe@kernel.dk>
-Date: Sat,  9 Apr 2022 06:50:43 +0200
-Message-Id: <20220409045043.23593-28-hch@lst.de>
+Date: Sat,  9 Apr 2022 06:50:27 +0200
+Message-Id: <20220409045043.23593-12-hch@lst.de>
 X-Mailer: git-send-email 2.30.2
 In-Reply-To: <20220409045043.23593-1-hch@lst.de>
 References: <20220409045043.23593-1-hch@lst.de>
@@ -67,10 +67,14 @@ X-Spam-Report: Spam detection software,
  message has been attached to this so you can view it or label
  similar future email.  If you have any questions, see
  the administrator of that system for details.
- Content preview: Randomly poking into block device internals for manual
- prefetches
- isn't exactly a very maintainable thing to do. And none of the performance
- criticil direct I/O implementations still use this library [...] 
+ Content preview: Add a helper to check the nonrot flag based on the
+ block_device
+ instead of having to poke into the block layer internal request_queue.
+ Signed-off-by:
+ Christoph Hellwig <hch@lst.de> Reviewed-by: Martin K. Petersen
+ <martin.petersen@oracle.com>
+ Acked-by: David Sterba <dsterba@suse.com> [btrfs] --- block/ioctl.c | 2 +-
+ drivers/block/loop [...] 
  Content analysis details:   (-2.2 points, 6.0 required)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
@@ -86,8 +90,9 @@ X-Spam-Report: Spam detection software,
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.0 T_SCC_BODY_TEXT_LINE   No description available.
-X-Headers-End: 1nd35a-00APey-Ts
-Subject: [Jfs-discussion] [PATCH 27/27] direct-io: remove random prefetches
+X-Headers-End: 1nd34b-00017t-9X
+X-Mailman-Approved-At: Sat, 09 Apr 2022 17:59:49 +0000
+Subject: [Jfs-discussion] [PATCH 11/27] block: add a bdev_nonrot helper
 X-BeenThere: jfs-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -108,7 +113,8 @@ Cc: jfs-discussion@lists.sourceforge.net, linux-nvme@lists.infradead.org,
  xen-devel@lists.xenproject.org, linux-ext4@vger.kernel.org,
  linux-um@lists.infradead.org, nbd@other.debian.org,
  linux-block@vger.kernel.org, linux-bcache@vger.kernel.org,
- ceph-devel@vger.kernel.org, linux-raid@vger.kernel.org,
+ David Sterba <dsterba@suse.com>, ceph-devel@vger.kernel.org,
+ linux-raid@vger.kernel.org, "Martin K . Petersen" <martin.petersen@oracle.com>,
  linux-mmc@vger.kernel.org, linux-f2fs-devel@lists.sourceforge.net,
  linux-xfs@vger.kernel.org, ocfs2-devel@oss.oracle.com,
  linux-fsdevel@vger.kernel.org, ntfs3@lists.linux.dev,
@@ -117,66 +123,229 @@ Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Errors-To: jfs-discussion-bounces@lists.sourceforge.net
 
-Randomly poking into block device internals for manual prefetches isn't
-exactly a very maintainable thing to do.  And none of the performance
-criticil direct I/O implementations still use this library function
-anyway, so just drop it.
+Add a helper to check the nonrot flag based on the block_device instead
+of having to poke into the block layer internal request_queue.
 
 Signed-off-by: Christoph Hellwig <hch@lst.de>
+Reviewed-by: Martin K. Petersen <martin.petersen@oracle.com>
+Acked-by: David Sterba <dsterba@suse.com> [btrfs]
 ---
- fs/direct-io.c | 32 ++++----------------------------
- 1 file changed, 4 insertions(+), 28 deletions(-)
+ block/ioctl.c                       | 2 +-
+ drivers/block/loop.c                | 2 +-
+ drivers/md/dm-table.c               | 4 +---
+ drivers/md/md.c                     | 3 +--
+ drivers/md/raid1.c                  | 2 +-
+ drivers/md/raid10.c                 | 2 +-
+ drivers/md/raid5.c                  | 2 +-
+ drivers/target/target_core_file.c   | 3 +--
+ drivers/target/target_core_iblock.c | 2 +-
+ fs/btrfs/volumes.c                  | 4 ++--
+ fs/ext4/mballoc.c                   | 2 +-
+ include/linux/blkdev.h              | 5 +++++
+ mm/swapfile.c                       | 4 ++--
+ 13 files changed, 19 insertions(+), 18 deletions(-)
 
-diff --git a/fs/direct-io.c b/fs/direct-io.c
-index aef06e607b405..840752006f601 100644
---- a/fs/direct-io.c
-+++ b/fs/direct-io.c
-@@ -1115,11 +1115,10 @@ static inline int drop_refcount(struct dio *dio)
-  * individual fields and will generate much worse code. This is important
-  * for the whole file.
-  */
--static inline ssize_t
--do_blockdev_direct_IO(struct kiocb *iocb, struct inode *inode,
--		      struct block_device *bdev, struct iov_iter *iter,
--		      get_block_t get_block, dio_iodone_t end_io,
--		      dio_submit_t submit_io, int flags)
-+ssize_t __blockdev_direct_IO(struct kiocb *iocb, struct inode *inode,
-+		struct block_device *bdev, struct iov_iter *iter,
-+		get_block_t get_block, dio_iodone_t end_io,
-+		dio_submit_t submit_io, int flags)
- {
- 	unsigned i_blkbits = READ_ONCE(inode->i_blkbits);
- 	unsigned blkbits = i_blkbits;
-@@ -1334,29 +1333,6 @@ do_blockdev_direct_IO(struct kiocb *iocb, struct inode *inode,
- 	kmem_cache_free(dio_cache, dio);
- 	return retval;
- }
--
--ssize_t __blockdev_direct_IO(struct kiocb *iocb, struct inode *inode,
--			     struct block_device *bdev, struct iov_iter *iter,
--			     get_block_t get_block,
--			     dio_iodone_t end_io, dio_submit_t submit_io,
--			     int flags)
--{
--	/*
--	 * The block device state is needed in the end to finally
--	 * submit everything.  Since it's likely to be cache cold
--	 * prefetch it here as first thing to hide some of the
--	 * latency.
--	 *
--	 * Attempt to prefetch the pieces we likely need later.
--	 */
--	prefetch(&bdev->bd_disk->part_tbl);
--	prefetch(bdev->bd_disk->queue);
--	prefetch((char *)bdev->bd_disk->queue + SMP_CACHE_BYTES);
--
--	return do_blockdev_direct_IO(iocb, inode, bdev, iter, get_block,
--				     end_io, submit_io, flags);
--}
--
- EXPORT_SYMBOL(__blockdev_direct_IO);
+diff --git a/block/ioctl.c b/block/ioctl.c
+index 4a86340133e46..ad3771b268b81 100644
+--- a/block/ioctl.c
++++ b/block/ioctl.c
+@@ -489,7 +489,7 @@ static int blkdev_common_ioctl(struct block_device *bdev, fmode_t mode,
+ 				    queue_max_sectors(bdev_get_queue(bdev)));
+ 		return put_ushort(argp, max_sectors);
+ 	case BLKROTATIONAL:
+-		return put_ushort(argp, !blk_queue_nonrot(bdev_get_queue(bdev)));
++		return put_ushort(argp, !bdev_nonrot(bdev));
+ 	case BLKRASET:
+ 	case BLKFRASET:
+ 		if(!capable(CAP_SYS_ADMIN))
+diff --git a/drivers/block/loop.c b/drivers/block/loop.c
+index a58595f5ee2c8..8d800d46e4985 100644
+--- a/drivers/block/loop.c
++++ b/drivers/block/loop.c
+@@ -903,7 +903,7 @@ static void loop_update_rotational(struct loop_device *lo)
  
- static __init int dio_init(void)
+ 	/* not all filesystems (e.g. tmpfs) have a sb->s_bdev */
+ 	if (file_bdev)
+-		nonrot = blk_queue_nonrot(bdev_get_queue(file_bdev));
++		nonrot = bdev_nonrot(file_bdev);
+ 
+ 	if (nonrot)
+ 		blk_queue_flag_set(QUEUE_FLAG_NONROT, q);
+diff --git a/drivers/md/dm-table.c b/drivers/md/dm-table.c
+index 03541cfc2317c..5e38d0dd009d5 100644
+--- a/drivers/md/dm-table.c
++++ b/drivers/md/dm-table.c
+@@ -1820,9 +1820,7 @@ static int device_dax_write_cache_enabled(struct dm_target *ti,
+ static int device_is_rotational(struct dm_target *ti, struct dm_dev *dev,
+ 				sector_t start, sector_t len, void *data)
+ {
+-	struct request_queue *q = bdev_get_queue(dev->bdev);
+-
+-	return !blk_queue_nonrot(q);
++	return !bdev_nonrot(dev->bdev);
+ }
+ 
+ static int device_is_not_random(struct dm_target *ti, struct dm_dev *dev,
+diff --git a/drivers/md/md.c b/drivers/md/md.c
+index 309b3af906ad3..19636c2f2cda4 100644
+--- a/drivers/md/md.c
++++ b/drivers/md/md.c
+@@ -5991,8 +5991,7 @@ int md_run(struct mddev *mddev)
+ 		bool nonrot = true;
+ 
+ 		rdev_for_each(rdev, mddev) {
+-			if (rdev->raid_disk >= 0 &&
+-			    !blk_queue_nonrot(bdev_get_queue(rdev->bdev))) {
++			if (rdev->raid_disk >= 0 && !bdev_nonrot(rdev->bdev)) {
+ 				nonrot = false;
+ 				break;
+ 			}
+diff --git a/drivers/md/raid1.c b/drivers/md/raid1.c
+index 99d5464a51f81..d81b896855f9f 100644
+--- a/drivers/md/raid1.c
++++ b/drivers/md/raid1.c
+@@ -704,7 +704,7 @@ static int read_balance(struct r1conf *conf, struct r1bio *r1_bio, int *max_sect
+ 			/* At least two disks to choose from so failfast is OK */
+ 			set_bit(R1BIO_FailFast, &r1_bio->state);
+ 
+-		nonrot = blk_queue_nonrot(bdev_get_queue(rdev->bdev));
++		nonrot = bdev_nonrot(rdev->bdev);
+ 		has_nonrot_disk |= nonrot;
+ 		pending = atomic_read(&rdev->nr_pending);
+ 		dist = abs(this_sector - conf->mirrors[disk].head_position);
+diff --git a/drivers/md/raid10.c b/drivers/md/raid10.c
+index dfe7d62d3fbdd..7816c8b2e8087 100644
+--- a/drivers/md/raid10.c
++++ b/drivers/md/raid10.c
+@@ -796,7 +796,7 @@ static struct md_rdev *read_balance(struct r10conf *conf,
+ 		if (!do_balance)
+ 			break;
+ 
+-		nonrot = blk_queue_nonrot(bdev_get_queue(rdev->bdev));
++		nonrot = bdev_nonrot(rdev->bdev);
+ 		has_nonrot_disk |= nonrot;
+ 		pending = atomic_read(&rdev->nr_pending);
+ 		if (min_pending > pending && nonrot) {
+diff --git a/drivers/md/raid5.c b/drivers/md/raid5.c
+index 351d341a1ffa4..0bbae0e638666 100644
+--- a/drivers/md/raid5.c
++++ b/drivers/md/raid5.c
+@@ -7242,7 +7242,7 @@ static struct r5conf *setup_conf(struct mddev *mddev)
+ 	rdev_for_each(rdev, mddev) {
+ 		if (test_bit(Journal, &rdev->flags))
+ 			continue;
+-		if (blk_queue_nonrot(bdev_get_queue(rdev->bdev))) {
++		if (bdev_nonrot(rdev->bdev)) {
+ 			conf->batch_bio_dispatch = false;
+ 			break;
+ 		}
+diff --git a/drivers/target/target_core_file.c b/drivers/target/target_core_file.c
+index 8d191fdc33217..b6ba582b06775 100644
+--- a/drivers/target/target_core_file.c
++++ b/drivers/target/target_core_file.c
+@@ -135,7 +135,6 @@ static int fd_configure_device(struct se_device *dev)
+ 	inode = file->f_mapping->host;
+ 	if (S_ISBLK(inode->i_mode)) {
+ 		struct block_device *bdev = I_BDEV(inode);
+-		struct request_queue *q = bdev_get_queue(bdev);
+ 		unsigned long long dev_size;
+ 
+ 		fd_dev->fd_block_size = bdev_logical_block_size(bdev);
+@@ -160,7 +159,7 @@ static int fd_configure_device(struct se_device *dev)
+ 		 */
+ 		dev->dev_attrib.max_write_same_len = 0xFFFF;
+ 
+-		if (blk_queue_nonrot(q))
++		if (bdev_nonrot(bdev))
+ 			dev->dev_attrib.is_nonrot = 1;
+ 	} else {
+ 		if (!(fd_dev->fbd_flags & FBDF_HAS_SIZE)) {
+diff --git a/drivers/target/target_core_iblock.c b/drivers/target/target_core_iblock.c
+index b886ce1770bfd..b41ee5c3b5b82 100644
+--- a/drivers/target/target_core_iblock.c
++++ b/drivers/target/target_core_iblock.c
+@@ -133,7 +133,7 @@ static int iblock_configure_device(struct se_device *dev)
+ 	else
+ 		dev->dev_attrib.max_write_same_len = 0xFFFF;
+ 
+-	if (blk_queue_nonrot(q))
++	if (bdev_nonrot(bd))
+ 		dev->dev_attrib.is_nonrot = 1;
+ 
+ 	bi = bdev_get_integrity(bd);
+diff --git a/fs/btrfs/volumes.c b/fs/btrfs/volumes.c
+index 2cfbc74a3b4ee..77f1a5696842b 100644
+--- a/fs/btrfs/volumes.c
++++ b/fs/btrfs/volumes.c
+@@ -643,7 +643,7 @@ static int btrfs_open_one_device(struct btrfs_fs_devices *fs_devices,
+ 			set_bit(BTRFS_DEV_STATE_WRITEABLE, &device->dev_state);
+ 	}
+ 
+-	if (!blk_queue_nonrot(bdev_get_queue(bdev)))
++	if (!bdev_nonrot(bdev))
+ 		fs_devices->rotating = true;
+ 
+ 	device->bdev = bdev;
+@@ -2706,7 +2706,7 @@ int btrfs_init_new_device(struct btrfs_fs_info *fs_info, const char *device_path
+ 
+ 	atomic64_add(device->total_bytes, &fs_info->free_chunk_space);
+ 
+-	if (!blk_queue_nonrot(bdev_get_queue(bdev)))
++	if (!bdev_nonrot(bdev))
+ 		fs_devices->rotating = true;
+ 
+ 	orig_super_total_bytes = btrfs_super_total_bytes(fs_info->super_copy);
+diff --git a/fs/ext4/mballoc.c b/fs/ext4/mballoc.c
+index 252c168454c7f..c3668c977cd99 100644
+--- a/fs/ext4/mballoc.c
++++ b/fs/ext4/mballoc.c
+@@ -3498,7 +3498,7 @@ int ext4_mb_init(struct super_block *sb)
+ 		spin_lock_init(&lg->lg_prealloc_lock);
+ 	}
+ 
+-	if (blk_queue_nonrot(bdev_get_queue(sb->s_bdev)))
++	if (bdev_nonrot(sb->s_bdev))
+ 		sbi->s_mb_max_linear_groups = 0;
+ 	else
+ 		sbi->s_mb_max_linear_groups = MB_DEFAULT_LINEAR_LIMIT;
+diff --git a/include/linux/blkdev.h b/include/linux/blkdev.h
+index 60d0161389971..3a9578e14a6b0 100644
+--- a/include/linux/blkdev.h
++++ b/include/linux/blkdev.h
+@@ -1326,6 +1326,11 @@ static inline unsigned int bdev_write_zeroes_sectors(struct block_device *bdev)
+ 	return 0;
+ }
+ 
++static inline bool bdev_nonrot(struct block_device *bdev)
++{
++	return blk_queue_nonrot(bdev_get_queue(bdev));
++}
++
+ static inline enum blk_zoned_model bdev_zoned_model(struct block_device *bdev)
+ {
+ 	struct request_queue *q = bdev_get_queue(bdev);
+diff --git a/mm/swapfile.c b/mm/swapfile.c
+index 4c7537162af5e..d5ab7ec4d92ca 100644
+--- a/mm/swapfile.c
++++ b/mm/swapfile.c
+@@ -2466,7 +2466,7 @@ SYSCALL_DEFINE1(swapoff, const char __user *, specialfile)
+ 	if (p->flags & SWP_CONTINUED)
+ 		free_swap_count_continuations(p);
+ 
+-	if (!p->bdev || !blk_queue_nonrot(bdev_get_queue(p->bdev)))
++	if (!p->bdev || !bdev_nonrot(p->bdev))
+ 		atomic_dec(&nr_rotate_swap);
+ 
+ 	mutex_lock(&swapon_mutex);
+@@ -3071,7 +3071,7 @@ SYSCALL_DEFINE2(swapon, const char __user *, specialfile, int, swap_flags)
+ 	if (p->bdev && p->bdev->bd_disk->fops->rw_page)
+ 		p->flags |= SWP_SYNCHRONOUS_IO;
+ 
+-	if (p->bdev && blk_queue_nonrot(bdev_get_queue(p->bdev))) {
++	if (p->bdev && bdev_nonrot(p->bdev)) {
+ 		int cpu;
+ 		unsigned long ci, nr_cluster;
+ 
 -- 
 2.30.2
 
