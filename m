@@ -2,26 +2,26 @@ Return-Path: <jfs-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+jfs-discussion@lfdr.de
 Delivered-To: lists+jfs-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id AA0C25021D7
-	for <lists+jfs-discussion@lfdr.de>; Fri, 15 Apr 2022 06:54:43 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C3B2D5021DE
+	for <lists+jfs-discussion@lfdr.de>; Fri, 15 Apr 2022 06:54:52 +0200 (CEST)
 Received: from [127.0.0.1] (helo=sfs-ml-2.v29.lw.sourceforge.com)
 	by sfs-ml-2.v29.lw.sourceforge.com with esmtp (Exim 4.94.2)
 	(envelope-from <jfs-discussion-bounces@lists.sourceforge.net>)
-	id 1nfDyY-0002uh-Gx; Fri, 15 Apr 2022 04:54:31 +0000
+	id 1nfDyh-00033l-Jb; Fri, 15 Apr 2022 04:54:40 +0000
 Received: from [172.30.20.202] (helo=mx.sourceforge.net)
  by sfs-ml-2.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
  TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (Exim 4.94.2) (envelope-from
  <BATV+2d633663de0085320ac7+6809+infradead.org+hch@bombadil.srs.infradead.org>)
- id 1nfDyW-0002s7-1V; Fri, 15 Apr 2022 04:54:29 +0000
+ id 1nfDyg-00032r-LA; Fri, 15 Apr 2022 04:54:39 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=sourceforge.net; s=x; h=Content-Transfer-Encoding:MIME-Version:References:
  In-Reply-To:Message-Id:Date:Subject:Cc:To:From:Sender:Reply-To:Content-Type:
  Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
  Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=6r328luNCDNaFOT33dRflffYOj2Ig+snh5CgwFTaxcw=; b=Sb5uYxDJD2V0RvAqypHaTV+96D
- xloRhTEtqee+DR8GN/Z7yt6EcCGWd7NNm8jBqC9mIpFtIlnGoXs+SiASscDMy677b0Q4AIe2gKk8R
- 6Vt6Jr+VedwXZwk29WqG2oEqfbCnKj/6aKSNeteUup6QPywfflostXmTIjg/kUFqyFfw=;
+ bh=eypoqjBCbHteIGJMjEE77faduCfiNIsAQ0ydQeu7OQ0=; b=NfL+kOO4TEMaZLRc3AWqoeRaY8
+ Ea8IGl9YQF0eU4QTmCThCSQQYAQI0WqjHjomGbg9N5/d8axe+DN+LcIddTtj11o5Nt+KIpCZHX16E
+ skKMIhqi6AEOFbwUV8tmYEXjsQqr5OtC9PAvghkO6QEUswAWPPH+egAUG/t7jvg+CwPs=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
  h=Content-Transfer-Encoding:MIME-Version:References:In-Reply-To:Message-Id:
@@ -29,30 +29,30 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
  :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
  List-Post:List-Owner:List-Archive;
- bh=6r328luNCDNaFOT33dRflffYOj2Ig+snh5CgwFTaxcw=; b=eaFWwP//oAEghUwbw9OqkwewnM
- eJzmMbR2IkFaxvbdRA+IbY/RyMEMuFWHGpFsK6wdpu7voMQqC7PgqhpZuf5dn8eXF6u4sYo0a74/p
- YCd+0BHHwz0P/XLj8eP1lvh8CiYldQcFrvuyvaJ5Jzz3F6elt3r62o3kCkCxpxjrgkig=;
+ bh=eypoqjBCbHteIGJMjEE77faduCfiNIsAQ0ydQeu7OQ0=; b=iVar3ICwSWCjCdPLPtzMP3Z6EG
+ zwpsHuFm9MW+Efw5QVdbfvqgEzjkkhBwD89+0t7zcOT1RpgXnYo3BWxBjbSSNfOaxNRt3kGjQEG4W
+ bnAsIs9x0JveIsSi02oFyts7MOh1etW/hcPblYO3acM7R869iC4DG/PwRC5Px8jpfaOw=;
 Received: from bombadil.infradead.org ([198.137.202.133])
- by sfi-mx-2.v28.lw.sourceforge.com with esmtps
+ by sfi-mx-1.v28.lw.sourceforge.com with esmtps
  (TLS1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.94.2)
- id 1nfDyW-0001sg-At; Fri, 15 Apr 2022 04:54:28 +0000
+ id 1nfDyh-00087j-04; Fri, 15 Apr 2022 04:54:39 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=infradead.org; s=bombadil.20210309; h=Content-Transfer-Encoding:
  MIME-Version:References:In-Reply-To:Message-Id:Date:Subject:Cc:To:From:Sender
  :Reply-To:Content-Type:Content-ID:Content-Description;
- bh=6r328luNCDNaFOT33dRflffYOj2Ig+snh5CgwFTaxcw=; b=mNuFiFjSDLbldIX31eYOuSlRR9
- 8563S/h8LrxYIHowjJfVJZ76RAtIHUbU8W+hFh4MWU8WMYfdB6LyJh2COdvD/iZqFmSUWNE+zj3n8
- TjDK1RADFF2jHuhjgFvsFPr2iNfo2ZxzGPd6/D7n8+r4+csvAbreOAgnv7mb2shTRUMZRApT5F90K
- NcXEn1pmSIjxsyXRt1Q5Fpafq+pdIcKs6RGb6uD0qSORONp8YiTBWhXw1jJiMd9DQ1XNtZR7AS8Rn
- LRWZ13064QQZdYqJpwxZzURW2pQw6Vjn+9nq/BjlV+QBzJ7qa6lBovEI7n8jqfejDLm+YrLORSOW6
- 48XX9zTw==;
+ bh=eypoqjBCbHteIGJMjEE77faduCfiNIsAQ0ydQeu7OQ0=; b=yel/I7wJHKQGgU++DGlNr4s6By
+ PhYVQZj76IsIJmZMeImq5Q6B2/aQRkMD3ug5dWOU3Jeh5aspjbtIuEjPut08JeM1WmCeQvYQ+tJ0f
+ U696Xi8dd1qtuDaSpjLkD+EO876944juvaQn7mqYu4AmZhVRFKFIBWZURNzhkvK80mkS4SdYE8ghg
+ 5kwkeIFA+dIpz0sffz1xoP4BK6LoTUtTMKLOpm6yB1H7oV7nfL4grqbNBsJP5+jCEy6k9Hq/bQASA
+ 9dlkqzozrnkdCC5ckIaWKU5KZigzG6TnQjnKvn/KI4zIY9eR4oRyKCNwIxfdzpwno3WYuY2QxxbuI
+ z9ygJJXA==;
 Received: from [2a02:1205:504b:4280:f5dd:42a4:896c:d877] (helo=localhost)
  by bombadil.infradead.org with esmtpsa (Exim 4.94.2 #2 (Red Hat Linux))
- id 1nfDyB-008PbH-KB; Fri, 15 Apr 2022 04:54:07 +0000
+ id 1nfDyR-008Ptb-2k; Fri, 15 Apr 2022 04:54:23 +0000
 From: Christoph Hellwig <hch@lst.de>
 To: Jens Axboe <axboe@kernel.dk>
-Date: Fri, 15 Apr 2022 06:52:52 +0200
-Message-Id: <20220415045258.199825-22-hch@lst.de>
+Date: Fri, 15 Apr 2022 06:52:58 +0200
+Message-Id: <20220415045258.199825-28-hch@lst.de>
 X-Mailer: git-send-email 2.30.2
 In-Reply-To: <20220415045258.199825-1-hch@lst.de>
 References: <20220415045258.199825-1-hch@lst.de>
@@ -66,12 +66,10 @@ X-Spam-Report: Spam detection software,
  message has been attached to this so you can view it or label
  similar future email.  If you have any questions, see
  the administrator of that system for details.
- Content preview: No need to inline these fairly larger helpers. Also fix the
- return value to be unsigned, just like the field in struct queue_limits.
- Signed-off-by: Christoph Hellwig <hch@lst.de> Reviewed-by: Martin K. Petersen
- <martin.petersen@oracle.com> --- block/blk-settings.c | 35
- +++++++++++++++++++++++++++++++++++
- include/linux/blkdev.h | 34 [...] 
+ Content preview: Randomly poking into block device internals for manual
+ prefetches
+ isn't exactly a very maintainable thing to do. And none of the performance
+ criticil direct I/O implementations still use this library [...] 
  Content analysis details:   (-2.2 points, 6.0 required)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
@@ -87,9 +85,8 @@ X-Spam-Report: Spam detection software,
  envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.0 T_SCC_BODY_TEXT_LINE   No description available.
-X-Headers-End: 1nfDyW-0001sg-At
-Subject: [Jfs-discussion] [PATCH 21/27] block: move {bdev,
- queue_limit}_discard_alignment out of line
+X-Headers-End: 1nfDyh-00087j-04
+Subject: [Jfs-discussion] [PATCH 27/27] direct-io: remove random prefetches
 X-BeenThere: jfs-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -111,119 +108,74 @@ Cc: jfs-discussion@lists.sourceforge.net, linux-nvme@lists.infradead.org,
  linux-um@lists.infradead.org, nbd@other.debian.org,
  linux-block@vger.kernel.org, linux-bcache@vger.kernel.org,
  ceph-devel@vger.kernel.org, linux-raid@vger.kernel.org,
- "Martin K . Petersen" <martin.petersen@oracle.com>, linux-mmc@vger.kernel.org,
- linux-f2fs-devel@lists.sourceforge.net, linux-xfs@vger.kernel.org,
- ocfs2-devel@oss.oracle.com, linux-fsdevel@vger.kernel.org,
- ntfs3@lists.linux.dev, linux-btrfs@vger.kernel.org
+ linux-mmc@vger.kernel.org, linux-f2fs-devel@lists.sourceforge.net,
+ linux-xfs@vger.kernel.org, ocfs2-devel@oss.oracle.com,
+ linux-fsdevel@vger.kernel.org, ntfs3@lists.linux.dev,
+ linux-btrfs@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Errors-To: jfs-discussion-bounces@lists.sourceforge.net
 
-No need to inline these fairly larger helpers.  Also fix the return value
-to be unsigned, just like the field in struct queue_limits.
+Randomly poking into block device internals for manual prefetches isn't
+exactly a very maintainable thing to do.  And none of the performance
+criticil direct I/O implementations still use this library function
+anyway, so just drop it.
 
 Signed-off-by: Christoph Hellwig <hch@lst.de>
-Reviewed-by: Martin K. Petersen <martin.petersen@oracle.com>
 ---
- block/blk-settings.c   | 35 +++++++++++++++++++++++++++++++++++
- include/linux/blkdev.h | 34 +---------------------------------
- 2 files changed, 36 insertions(+), 33 deletions(-)
+ fs/direct-io.c | 32 ++++----------------------------
+ 1 file changed, 4 insertions(+), 28 deletions(-)
 
-diff --git a/block/blk-settings.c b/block/blk-settings.c
-index 94410a13c0dee..fd83d674afd0a 100644
---- a/block/blk-settings.c
-+++ b/block/blk-settings.c
-@@ -478,6 +478,30 @@ static int queue_limit_alignment_offset(struct queue_limits *lim,
- 	return (granularity + lim->alignment_offset - alignment) % granularity;
- }
- 
-+static unsigned int queue_limit_discard_alignment(struct queue_limits *lim,
-+		sector_t sector)
-+{
-+	unsigned int alignment, granularity, offset;
-+
-+	if (!lim->max_discard_sectors)
-+		return 0;
-+
-+	/* Why are these in bytes, not sectors? */
-+	alignment = lim->discard_alignment >> SECTOR_SHIFT;
-+	granularity = lim->discard_granularity >> SECTOR_SHIFT;
-+	if (!granularity)
-+		return 0;
-+
-+	/* Offset of the partition start in 'granularity' sectors */
-+	offset = sector_div(sector, granularity);
-+
-+	/* And why do we do this modulus *again* in blkdev_issue_discard()? */
-+	offset = (granularity + alignment - offset) % granularity;
-+
-+	/* Turn it back into bytes, gaah */
-+	return offset << SECTOR_SHIFT;
-+}
-+
- static unsigned int blk_round_down_sectors(unsigned int sectors, unsigned int lbs)
+diff --git a/fs/direct-io.c b/fs/direct-io.c
+index aef06e607b405..840752006f601 100644
+--- a/fs/direct-io.c
++++ b/fs/direct-io.c
+@@ -1115,11 +1115,10 @@ static inline int drop_refcount(struct dio *dio)
+  * individual fields and will generate much worse code. This is important
+  * for the whole file.
+  */
+-static inline ssize_t
+-do_blockdev_direct_IO(struct kiocb *iocb, struct inode *inode,
+-		      struct block_device *bdev, struct iov_iter *iter,
+-		      get_block_t get_block, dio_iodone_t end_io,
+-		      dio_submit_t submit_io, int flags)
++ssize_t __blockdev_direct_IO(struct kiocb *iocb, struct inode *inode,
++		struct block_device *bdev, struct iov_iter *iter,
++		get_block_t get_block, dio_iodone_t end_io,
++		dio_submit_t submit_io, int flags)
  {
- 	sectors = round_down(sectors, lbs >> SECTOR_SHIFT);
-@@ -924,3 +948,14 @@ int bdev_alignment_offset(struct block_device *bdev)
- 	return q->limits.alignment_offset;
+ 	unsigned i_blkbits = READ_ONCE(inode->i_blkbits);
+ 	unsigned blkbits = i_blkbits;
+@@ -1334,29 +1333,6 @@ do_blockdev_direct_IO(struct kiocb *iocb, struct inode *inode,
+ 	kmem_cache_free(dio_cache, dio);
+ 	return retval;
  }
- EXPORT_SYMBOL_GPL(bdev_alignment_offset);
-+
-+unsigned int bdev_discard_alignment(struct block_device *bdev)
-+{
-+	struct request_queue *q = bdev_get_queue(bdev);
-+
-+	if (bdev_is_partition(bdev))
-+		return queue_limit_discard_alignment(&q->limits,
-+				bdev->bd_start_sect);
-+	return q->limits.discard_alignment;
-+}
-+EXPORT_SYMBOL_GPL(bdev_discard_alignment);
-diff --git a/include/linux/blkdev.h b/include/linux/blkdev.h
-index 5a9b7aeda010b..34b1cfd067421 100644
---- a/include/linux/blkdev.h
-+++ b/include/linux/blkdev.h
-@@ -1252,39 +1252,7 @@ bdev_zone_write_granularity(struct block_device *bdev)
- }
- 
- int bdev_alignment_offset(struct block_device *bdev);
 -
--static inline int queue_limit_discard_alignment(struct queue_limits *lim, sector_t sector)
+-ssize_t __blockdev_direct_IO(struct kiocb *iocb, struct inode *inode,
+-			     struct block_device *bdev, struct iov_iter *iter,
+-			     get_block_t get_block,
+-			     dio_iodone_t end_io, dio_submit_t submit_io,
+-			     int flags)
 -{
--	unsigned int alignment, granularity, offset;
+-	/*
+-	 * The block device state is needed in the end to finally
+-	 * submit everything.  Since it's likely to be cache cold
+-	 * prefetch it here as first thing to hide some of the
+-	 * latency.
+-	 *
+-	 * Attempt to prefetch the pieces we likely need later.
+-	 */
+-	prefetch(&bdev->bd_disk->part_tbl);
+-	prefetch(bdev->bd_disk->queue);
+-	prefetch((char *)bdev->bd_disk->queue + SMP_CACHE_BYTES);
 -
--	if (!lim->max_discard_sectors)
--		return 0;
--
--	/* Why are these in bytes, not sectors? */
--	alignment = lim->discard_alignment >> SECTOR_SHIFT;
--	granularity = lim->discard_granularity >> SECTOR_SHIFT;
--	if (!granularity)
--		return 0;
--
--	/* Offset of the partition start in 'granularity' sectors */
--	offset = sector_div(sector, granularity);
--
--	/* And why do we do this modulus *again* in blkdev_issue_discard()? */
--	offset = (granularity + alignment - offset) % granularity;
--
--	/* Turn it back into bytes, gaah */
--	return offset << SECTOR_SHIFT;
+-	return do_blockdev_direct_IO(iocb, inode, bdev, iter, get_block,
+-				     end_io, submit_io, flags);
 -}
 -
--static inline int bdev_discard_alignment(struct block_device *bdev)
--{
--	struct request_queue *q = bdev_get_queue(bdev);
--
--	if (bdev_is_partition(bdev))
--		return queue_limit_discard_alignment(&q->limits,
--				bdev->bd_start_sect);
--	return q->limits.discard_alignment;
--}
-+unsigned int bdev_discard_alignment(struct block_device *bdev);
+ EXPORT_SYMBOL(__blockdev_direct_IO);
  
- static inline unsigned int bdev_write_zeroes_sectors(struct block_device *bdev)
- {
+ static __init int dio_init(void)
 -- 
 2.30.2
 
