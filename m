@@ -2,140 +2,175 @@ Return-Path: <jfs-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+jfs-discussion@lfdr.de
 Delivered-To: lists+jfs-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5DAD95023D7
-	for <lists+jfs-discussion@lfdr.de>; Fri, 15 Apr 2022 07:25:40 +0200 (CEST)
-Received: from [127.0.0.1] (helo=sfs-ml-4.v29.lw.sourceforge.com)
-	by sfs-ml-4.v29.lw.sourceforge.com with esmtp (Exim 4.94.2)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8386D50273B
+	for <lists+jfs-discussion@lfdr.de>; Fri, 15 Apr 2022 11:13:55 +0200 (CEST)
+Received: from [127.0.0.1] (helo=sfs-ml-2.v29.lw.sourceforge.com)
+	by sfs-ml-2.v29.lw.sourceforge.com with esmtp (Exim 4.94.2)
 	(envelope-from <jfs-discussion-bounces@lists.sourceforge.net>)
-	id 1nfEST-0001xa-ON; Fri, 15 Apr 2022 05:25:24 +0000
+	id 1nfI1E-0001Q3-On; Fri, 15 Apr 2022 09:13:33 +0000
 Received: from [172.30.20.202] (helo=mx.sourceforge.net)
- by sfs-ml-4.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
+ by sfs-ml-2.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
  TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (Exim 4.94.2)
- (envelope-from <prvs=0972008b0=damien.lemoal@opensource.wdc.com>)
- id 1nfESS-0001xT-3D
- for jfs-discussion@lists.sourceforge.net; Fri, 15 Apr 2022 05:25:22 +0000
+ (envelope-from <chaitanyak@nvidia.com>)
+ id 1nfI12-0001Pa-MH; Fri, 15 Apr 2022 09:13:21 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=sourceforge.net; s=x; h=Content-Transfer-Encoding:Content-Type:In-Reply-To:
- From:References:Cc:To:Subject:MIME-Version:Date:Message-ID:Sender:Reply-To:
- Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
- Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
+ d=sourceforge.net; s=x; h=MIME-Version:Content-Transfer-Encoding:Content-ID:
+ Content-Type:In-Reply-To:References:Message-ID:Date:Subject:CC:To:From:Sender
+ :Reply-To:Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To
+ :Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=rwvsmsnne7SnULh2hbKByo2WuoxQie2Xsqxi/Bxqgj8=; b=OYg+PRmtVdEjQEONkCZwn3Ito3
- xs3iuD1ZqEw5QoVWASWjfL61R9JEIp9XQhtX9mxKCbeIzsfDRCC1aScsqnIH4fue1kMNqi+0TITFs
- I3eFvcSJrgdnBxwa6FUQ9q6HxMR+jFDA8srumhXa7ckMm4lTT87AQjoI/WbeLoP9NnjU=;
+ bh=9xPbQGHhQ4OpqliAE2ppXjst3khmyYefsmdMvrf0gYE=; b=lwtisJwXnMmsG1DHmU08Vd6c3G
+ D8pE5jEayQKxnlUFBRxSE7Yaa6TG6Fuf48F3GYb8t03F6JkHLEMS2xGKnG4ZLdEz62Qm29hCnWTvC
+ YS7GAqROhQcbPtJ9pQCFh9xNtNmudXfLtxJFa45u05E9IrhNtIoEO+Fgi1LLesiGjNiI=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
- h=Content-Transfer-Encoding:Content-Type:In-Reply-To:From:References:Cc:To:
- Subject:MIME-Version:Date:Message-ID:Sender:Reply-To:Content-ID:
+ h=MIME-Version:Content-Transfer-Encoding:Content-ID:Content-Type:
+ In-Reply-To:References:Message-ID:Date:Subject:CC:To:From:Sender:Reply-To:
  Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
  :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
  List-Post:List-Owner:List-Archive;
- bh=rwvsmsnne7SnULh2hbKByo2WuoxQie2Xsqxi/Bxqgj8=; b=nOTamDyRNTzi1P8uxP3o4qPgQh
- wEwRuTyGCLCwl9afFpGlwhrZDqFKWarOFyX9HtDYEO+YVC9pk2ImjMov71+1DAgwbGqShzx/LNegp
- cbHL9u0BZL2Vj7rdfOpC5mhwLUunyfgCd/UfuuiR2Uvy7+K4vze/ILYG4meZXa3sMIi0=;
-Received: from esa6.hgst.iphmx.com ([216.71.154.45])
- by sfi-mx-1.v28.lw.sourceforge.com with esmtps
+ bh=9xPbQGHhQ4OpqliAE2ppXjst3khmyYefsmdMvrf0gYE=; b=jYtjmVqa2cXuynHGm9ZDV/KFcN
+ gwGeMmumYC0o6PG3ICBXc8Ty4MJn+2BaNXCtsFwo+/tB4NfNEM3QlH9f5H/Vd7to3lRKXzyTeF6Rc
+ PrENOQSM285OcKQ4ZcPrflK9BIrwkf4KhvuCrc5pHOm1g9815m6NEoVPrI323n9kT+i4=;
+Received: from mail-mw2nam10on2081.outbound.protection.outlook.com
+ ([40.107.94.81] helo=NAM10-MW2-obe.outbound.protection.outlook.com)
+ by sfi-mx-2.v28.lw.sourceforge.com with esmtps
  (TLS1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.94.2)
- id 1nfESP-0009dA-HE
- for jfs-discussion@lists.sourceforge.net; Fri, 15 Apr 2022 05:25:22 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple;
- d=wdc.com; i=@wdc.com; q=dns/txt; s=dkim.wdc.com;
- t=1650000322; x=1681536322;
- h=message-id:date:mime-version:subject:to:cc:references:
- from:in-reply-to:content-transfer-encoding;
- bh=wC6/PVYH+J9es8aT7sK5ZaGwsGnDQHOFu7y4PW6r0NI=;
- b=PoQsyeRbSgPi+VOqVlQoWYv/Em/CsiaChf7gAGl1MsP+HLjrcNwh44xA
- CLMdNndU856wdzNQMsk3TZ7xGFP6StoV5U0Ce5wjBlLxuR9D0DGJiNFQH
- YgqSc5nflbllSIovw22CzO+7+Jo9LSzzN3bfuUypV8SgvqdDuYcJ1TMDZ
- 2phTUXYLiNHKuVWBgw4cik7b/Zj6wVb4PK1Pc5wIwh2kXJU5Byh+6Zjyu
- +qAk+nUw/4dP/Z8EYD9vgN2Qy0P9s4HRm/6R5Fj1o7/E9GYkX4oQ2EyN9
- U7q1g4W3SJ+VYpkZFujujosaQhf5WRlvgIJCmPKjCuYPXjIwc6lckyFjy Q==;
-X-IronPort-AV: E=Sophos;i="5.90,261,1643644800"; d="scan'208";a="198866632"
-Received: from uls-op-cesaip02.wdc.com (HELO uls-op-cesaep02.wdc.com)
- ([199.255.45.15])
- by ob1.hgst.iphmx.com with ESMTP; 15 Apr 2022 13:09:49 +0800
-IronPort-SDR: QYR/6hqR00ke/myvXYsOl03earhNkej/Xh+FlFBAfS1Y8M2XzWNXYGO9kQ9N5L4pTwpHBkpjNP
- U5Z75OBTHIcXqRNT2JXacNxob2t2QzWxhrItRwFNb93wyww2m3rANCabOMDGX6L6JgRx1dKpTl
- cajOklcyHbla90o+SkYn4p8VQiLKvNU1nRZZiGYQvbmtTZj19N5pVZOuRhJmyUH39LBDUnTW8q
- QsNGucJ68w+P3afxcnGVux17/KwU96jEUDAjG9Oa9JgrGT4X5b7Sz9h9cmNxDc9XubY//Zxzhf
- 6Vb4LYsbTkPz0/jh0AG4kJ3t
-Received: from uls-op-cesaip02.wdc.com ([10.248.3.37])
- by uls-op-cesaep02.wdc.com with ESMTP/TLS/ECDHE-RSA-AES128-GCM-SHA256;
- 14 Apr 2022 21:40:13 -0700
-IronPort-SDR: uGXcrMycK0gSz7Whos7+sFso2Fl6ygf4PYTULlPPW+N7wudA+9AG+6n0n4jr3w77888uFQoSLL
- ufkplA+Lm4zs85JjXV0pNONvUY/npotfnd8jb7IziLxtUaTtrCedfbFhmprz2T4q9eXbZEtvc+
- /ivgp6GMMsl1E6ZaPUSrJxhcZT3cEoaDi20nnVTPdNzzYOLAyY4RRWo6fD7NrCbL/FSo9vKeBe
- Cehl9/npiY7FNAYCRDyWAwz4NC0TypTWOQBfTCXrST13QiFd84PCM2OItL4ltfOU5LiYn3GHKI
- wnQ=
-WDCIronportException: Internal
-Received: from usg-ed-osssrv.wdc.com ([10.3.10.180])
- by uls-op-cesaip02.wdc.com with ESMTP/TLS/ECDHE-RSA-AES128-GCM-SHA256;
- 14 Apr 2022 22:09:49 -0700
-Received: from usg-ed-osssrv.wdc.com (usg-ed-osssrv.wdc.com [127.0.0.1])
- by usg-ed-osssrv.wdc.com (Postfix) with ESMTP id 4KfksS0tCxz1SVp0
- for <jfs-discussion@lists.sourceforge.net>;
- Thu, 14 Apr 2022 22:09:48 -0700 (PDT)
-Authentication-Results: usg-ed-osssrv.wdc.com (amavisd-new); dkim=pass
- reason="pass (just generated, assumed good)"
- header.d=opensource.wdc.com
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=
- opensource.wdc.com; h=content-transfer-encoding:content-type
- :in-reply-to:organization:from:references:to:content-language
- :subject:user-agent:mime-version:date:message-id; s=dkim; t=
- 1649999387; x=1652591388; bh=wC6/PVYH+J9es8aT7sK5ZaGwsGnDQHOFu7y
- 4PW6r0NI=; b=A2KBgHYSLIEiloAT36KBlSnrdHo/5oKL9FrIFynJT5WRtSMAWFY
- bOfFXbV9aPU/SW14KWhWGoxgvZNpDxlNmySfQsvY8YKVzB0GPsCqMriDKUnvzDGe
- gxI79wWgz9d4ps/B6Xlf+gQiJxT1WJ1ZvXg2qG+PSKztllpdqubmLYAwOO/nz5St
- h4S8KA8vLEE0CNTHJjAA8Hcfkt3KCfxgWm/synsXo5jFqWGlKXVMBpl0q6F/zUl8
- QMkInWk2S7O06U7jACfYKTCYPrMyVz97bbnYwKLXgej41iNgxlqjzLyt5sjDI1Lg
- BUEAK+PEVHrx0bfVbsoqkvKO8/sBQvwsP4Q==
-X-Virus-Scanned: amavisd-new at usg-ed-osssrv.wdc.com
-Received: from usg-ed-osssrv.wdc.com ([127.0.0.1])
- by usg-ed-osssrv.wdc.com (usg-ed-osssrv.wdc.com [127.0.0.1]) (amavisd-new,
- port 10026)
- with ESMTP id mIRvArX0-Ckh for <jfs-discussion@lists.sourceforge.net>;
- Thu, 14 Apr 2022 22:09:47 -0700 (PDT)
-Received: from [10.225.163.9] (unknown [10.225.163.9])
- by usg-ed-osssrv.wdc.com (Postfix) with ESMTPSA id 4KfksM3c9Fz1Rvlx;
- Thu, 14 Apr 2022 22:09:43 -0700 (PDT)
-Message-ID: <62ebc311-e5ef-cea5-5236-0c83d1a3eb64@opensource.wdc.com>
-Date: Fri, 15 Apr 2022 14:09:42 +0900
-MIME-Version: 1.0
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:91.0) Gecko/20100101
- Thunderbird/91.7.0
-Content-Language: en-US
+ id 1nfI0u-0004SK-1W; Fri, 15 Apr 2022 09:13:15 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=f58Bsro6zu7Ss8dNVaTKQE+FQHwhPGehVpnj9W4B+slHL9fwI48rREnURxApH08AFOS6tetZWGpdhCs0aDbTMGYJzPElJ4+c81Me7S3iU0LalnON3f/MwnyeA4tzHtXmLMA/I2XIouVy2NxRb61XuGueE9VFwfToPkMr9xDxdzH17j9rK9J85AzlWpuDmGHh/I9oQxR7rfvI6JFIfE5CCc1ZrSa39xJjoWt1EcwYpRf2e+EXohU6ImQeF2oNZ66sVVKSvuGQYAxTWlR5bfT/fBoDrUhYcH8XOHU/WrWfdE0nNxLJxA2rb3Pg+hJH/x8TRvVCFdJLWenpTMw1yu9KWQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=9xPbQGHhQ4OpqliAE2ppXjst3khmyYefsmdMvrf0gYE=;
+ b=jjOzoE+Vm/qlQokwddIlSUm8ecBKDholeBySBcVSLkkbCG6Hh3ZOr9CsALbekzKvEbtyNHWqFctTTgvkbiXVvtBB5d/PwNRe2+dceM1ubhtxP0NJpjH+YDmrlyv4rpkio3++V207NVXQ28d+r00G34PPi/vMyWfJbNslJNlrC1TS6/scheNPzT/3p3eo7XCfMAfusElPYz2XSjueoHOuQAqyqOwxYj0V6qX60d5Y7emoAdUhQQesmYJITbHdORrpIMQDk1+LdrH9LGEp69MrdSQFWlHD/ykfpSZftzMX4OlsMYJpkwBxUVwNzPQ//Sbz4ETDknpEVnpQuZm3zQb7vg==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=nvidia.com; dmarc=pass action=none header.from=nvidia.com;
+ dkim=pass header.d=nvidia.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=Nvidia.com;
+ s=selector2;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=9xPbQGHhQ4OpqliAE2ppXjst3khmyYefsmdMvrf0gYE=;
+ b=jm6qn2n01mei+/os+xEVde2HSiJOmUg3q2UrHEN9LjaywMdGQwJFt77WfC70RrylqIfeYNwzM3TMGodHOlZkAvg4lYloMyZ1DpLg869ufX2Y5nXmupQYG4w9ZvAK9mZlkd1+0lndelrlNYigERJuS01UMGYPMxdei2NImPnA7vKA1bz6Sm5r4C+crImloG6Ba2xeBfe8WqxpMFN8iAOZs9zr8x9oAuNvOOt/yRwOPLHtLe+IsLkTaS+LwmdWGwtfuGnOTPuhKv/4Kfu5EC0YHUxh5DDCLvJ/TUPmku9oaurCrlU+EyFlVLn4TA8SDJSgK9IyIMWA3cOO9m08nHQbXQ==
+Received: from MW2PR12MB4667.namprd12.prod.outlook.com (2603:10b6:302:12::28)
+ by CY4PR12MB1815.namprd12.prod.outlook.com (2603:10b6:903:122::21)
+ with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.5144.29; Fri, 15 Apr
+ 2022 05:40:52 +0000
+Received: from MW2PR12MB4667.namprd12.prod.outlook.com
+ ([fe80::a90b:9df2:370c:e76b]) by MW2PR12MB4667.namprd12.prod.outlook.com
+ ([fe80::a90b:9df2:370c:e76b%3]) with mapi id 15.20.5144.030; Fri, 15 Apr 2022
+ 05:40:52 +0000
 To: Christoph Hellwig <hch@lst.de>, Jens Axboe <axboe@kernel.dk>
+Thread-Topic: [PATCH 10/27] mm: use bdev_is_zoned in claim_swapfile
+Thread-Index: AQHYUITaaZIEEJsgKUC+wO3WwWQ60azwdbIA
+Date: Fri, 15 Apr 2022 05:40:52 +0000
+Message-ID: <0da96aad-412b-9afa-c42d-92ca2a650d1e@nvidia.com>
 References: <20220415045258.199825-1-hch@lst.de>
  <20220415045258.199825-11-hch@lst.de>
-Organization: Western Digital Research
 In-Reply-To: <20220415045258.199825-11-hch@lst.de>
-X-Spam-Score: -5.0 (-----)
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+user-agent: Mozilla/5.0 (X11; Linux x86_64; rv:91.0) Gecko/20100101
+ Thunderbird/91.7.0
+authentication-results: dkim=none (message not signed)
+ header.d=none;dmarc=none action=none header.from=nvidia.com;
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-correlation-id: aea663ee-d1f2-4514-a72a-08da1ea28110
+x-ms-traffictypediagnostic: CY4PR12MB1815:EE_
+x-microsoft-antispam-prvs: <CY4PR12MB18159DA5D8FC0199C25F222EA3EE9@CY4PR12MB1815.namprd12.prod.outlook.com>
+x-ms-exchange-senderadcheck: 1
+x-ms-exchange-antispam-relay: 0
+x-microsoft-antispam: BCL:0;
+x-microsoft-antispam-message-info: M34dFIzT0LV588aq6aIAGcgbjFXRluuYfXVQM6iNXvjdMwoeKeFBKBg1bghEe7k9t8y6Z5AyNBw/oD320Tio0S1m8PgrMXdIhntJtODQdLBnIhKAP28tJkRREQtszuGfbWFxqsBpClX5b2CNwWfFcyZOV9iU1D/FDauDeXl45/gWrS6a4h16M6rbfnLLgI4wBd7UwkvXcP1DTEPisunfwUMy4+wCC3eFpvjkbARACjDrUJTgMZFs5TZokIc6JnZnMKzIupFEqnhD0hcHJBAwuu4ucObPeA7ecyuz4+4sEG74G+2F036CTLI3jKSw7bGTOTJCwzzuZO9U2uwikGT7hbW77Dta8N6jnvi6E5eZVARMdmJO5CD8pvslNQvIcAte5bqUZzg+j6SHYsvaxhM/Zzv8pK8jbup781PwaxLUuGeVChY22kcWzr3RBW2x0g5ZRh7Nh0ipfISoWUnD/hRIU8LP9ftilHK4Oyib3ov5IjNleB9l17sxDKoEZ1iNpdf+UK5spUg5UA67pmlowjfw2IaOWzLbcrsQpuSy2gM5fQ2jPiG2CcXZi6RgmNoMsvXeWwmbP2uGJTlDhNWSflSWcOBe/1gX5IZU/hZGYfCwiJETf2A7vLRzSUCxSzIiTsWu3J3zSqXmTlN7p/QdH0bmT4GNBdyJOtdsp0a7Z07Og+b+Wy0yNNubVjqJAv6islzQqCPzpMffELFiAH3SFUjlpVM3o3SYWA4Zptgo86P/qGFflXN2rtVGKcZevr3CvF9Us9LApcqQqt8taqJvFLfk8Q==
+x-forefront-antispam-report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
+ IPV:NLI; SFV:NSPM; H:MW2PR12MB4667.namprd12.prod.outlook.com; PTR:; CAT:NONE;
+ SFS:(13230001)(4636009)(366004)(7416002)(8936002)(2906002)(91956017)(5660300002)(4326008)(66556008)(86362001)(31686004)(508600001)(38070700005)(6512007)(2616005)(186003)(53546011)(6506007)(558084003)(36756003)(66946007)(66476007)(54906003)(110136005)(71200400001)(76116006)(6486002)(38100700002)(64756008)(66446008)(122000001)(8676002)(31696002)(316002)(43740500002)(45980500001);
+ DIR:OUT; SFP:1101; 
+x-ms-exchange-antispam-messagedata-chunkcount: 1
+x-ms-exchange-antispam-messagedata-0: =?utf-8?B?REtnQjB2b2dibWFRdnVXaDF4OXJNTDVZaGFnQzd1ZHp3azVzbUZKL1JDdG5N?=
+ =?utf-8?B?TGg3V05zc0dYUGJTSWNnZVNaSVFwK2JhSC9GNlMzQkVvenZZaWdFK2I5ay8w?=
+ =?utf-8?B?dDl4V3U2dm5qQ1BTRlpQeVBRWVhFRjcyeFBheWVITk5nRklPNDhDcDhZRll5?=
+ =?utf-8?B?cVRzQVVSeWZiY3dvdFBUaWtVOUU0UmhUY3dOZkpCTHB2S2M2NmkzVnc3U0V2?=
+ =?utf-8?B?d1lUMmRRdnVKS3p4UUVDaDJtSFYrNlBkT1RFZVJZU0h2K09SM2paQUdJSGpl?=
+ =?utf-8?B?aGxDZGF1ekJ5Z1pZVjBoM0tGdmJtcko2NWlBd1JDZXNSYlJCY3hWMlBVZ0lu?=
+ =?utf-8?B?eldoK2xmK1NhZkR3THpQUHNOd3MwdmJROTVSSXlqNWFJRnNFdGNDRENCRFBN?=
+ =?utf-8?B?aDRTazUxbUVEM3EvUmU1RG0wUGhadU1pdWFpWFppZXBBZ3RFYjNWZTl3bFRY?=
+ =?utf-8?B?eDZDMjEyYVh1WlZRQUpkSllRMmttKzVxTyszYWR2bFcwTlppbXJBd25weUtH?=
+ =?utf-8?B?UHVKdTBmbUlVRE1QZk1XSlpURUQ0UWtVY1RsSzh3N0k2S2czZkgwYlJ5cERa?=
+ =?utf-8?B?RldrellCR2hCV2cyL1dMeDJkRE9tdUpSdUV0ZnY4enlBSVdTZTVIb3NkUHlU?=
+ =?utf-8?B?L0dNU2dIOFlBTEc2K1RyRkxaQnVOTUpFQVNxNkQ2bXFBbGhkMVB5bnQyc2ln?=
+ =?utf-8?B?UnI0Vkx1MFFNOWp5eEdlWnk1V0EzK1FGZHlVV3RJeXNpMDI1aWl4Ulc5US82?=
+ =?utf-8?B?WFZXbWxaSXdPdk1keFBWMEcxUHpWb2s0MGx4TWtTdUoxOTRLMWI3RUEyUGFP?=
+ =?utf-8?B?dmEySHh0bjdqNjNIVjlNMXFnL0d2ZWhZaDBMNzZCV2NNdDJtSURCbXIrZVVl?=
+ =?utf-8?B?Y01RNndva3phZ3dRSU1LR1pkRlhVNW11Vk9tYnM2cGZOcHN4L0RXdC94VDBw?=
+ =?utf-8?B?K09zNlhVRUY4TW12dUZlNU9QQTZwOTZ3YVhieWdkbkFjUHJ3dHJMK0ZsWjV4?=
+ =?utf-8?B?MDJDY2ZUUmV5ZUVwRTlrZittdWdDMXU0Mks5SnZiSFFNellQZTFFVDNGejBZ?=
+ =?utf-8?B?RTMybExHSXMwUXkrRmhIdXdmYXN6YmlhQmJxNThweWJhRFZSTUgxOVpCd0ln?=
+ =?utf-8?B?R2RMZVFEK3QwQlg3MjRGTjk2Z3VMSC9Mem5Sbkg0SHVucklQWWE1aFQxc2I3?=
+ =?utf-8?B?emJyakE3dHRmQ0FaUjJaTU9TUzIwVllKUlRKN3RKNFlzSXBUd1l0ak9RZUp1?=
+ =?utf-8?B?Vm1CZFdoTmVGN1orYnRzZ04zMXhZMHFOdTdkWXJkbmh5YndZakZHc0VURWoy?=
+ =?utf-8?B?RXhxclpvZ2N1Nk1tTFM0c0RsclJBTjVSdXBoYW1WdmdtdlNjbEpDK3BqWk5F?=
+ =?utf-8?B?NFpYWWo5cUM3ZDVzZDh5L3B1WDhoTi9sbm9SK29Ma3FOUEpWd1crelMrQngx?=
+ =?utf-8?B?YWtGblNiem9uVll1N2NtaXlaMVpLTHdWd3piUUpKZTEzbTlqTFordlJhSWdM?=
+ =?utf-8?B?RThIQ3RzZW1FOUs0SGVaRkVPaDRkTU8vUnB6cktqY3Qra09MYUVoWHJlTzNI?=
+ =?utf-8?B?ZVR0Q0tXRFFYemVGcXI3bGoyZThnSzdBSDM0K3dHcFNNUXZqbGZyYWpkcDhy?=
+ =?utf-8?B?QllKQXRCZ05FbjV3MTNqV1BXZzg0VmkyeS9UZ2tYdlRSODRrL1BrRXBzV3hW?=
+ =?utf-8?B?V2dQTkJKM2hzRlNLZkNHUUgwOFhZZ01HVW5nOUxnYTh3UWErMFNwZmFIWnds?=
+ =?utf-8?B?b0xGM0NOUEEybmRNWGlXdWJLRS9PMEhmL3lPV0Rsd3laZE91clVlRm5MNkJp?=
+ =?utf-8?B?ZmRDV2ExeGw2bkhFc1A0Y25CMUZ4ejhOOFhqeFV1TzJBUDlSWGZIamtsV2JW?=
+ =?utf-8?B?a0NLU1RlSEQ1NW43TzVkM1piOHdvdjMxVm90V0RhLzEwK0pKcndYNTU3cFk3?=
+ =?utf-8?B?TzBEYXhKbEpXVlNkcXVtcThOSFdwbTYvTTJWdGVPaUpzV1NYRjVVSkx4aWZu?=
+ =?utf-8?B?QXBRbVA0SitHQ2s0c1AzdEZQK29BUURISmIzZWtSNjlFOW53THo3TkwyRGNR?=
+ =?utf-8?B?MGRPYytuM3JPTUUwbWZSamxxZFpEVE02aGxLM3JSK1diTGRzN0QrclBoeWIr?=
+ =?utf-8?B?S2VtWWtXMnRnRCtaTFM0blV1bDlHWG5GU0hYODFmeFU1ZG9YRmNaeW9vVUdF?=
+ =?utf-8?B?QnQ3eDJlZk5WelYvcGU2VUlROGoxMGE5RDk2OVZvWHVGVVRnbnB2bWJmQ0Fz?=
+ =?utf-8?B?R215U0tORSs1ZXVSS0Vjd09ySzRSNXM2Y0M2OW9OVEZFcXJRYU80cXhWcEVL?=
+ =?utf-8?B?YVlSS0JRcWRhNi9lREtiT0Z3TEw4Q1lTUkk4RjRvOU94NlZYUFJqNDBud09j?=
+ =?utf-8?Q?fNzSH1XXej3O0JvI=3D?=
+Content-ID: <807FABDDF8F92345AAFE5DF5D2053FEC@namprd12.prod.outlook.com>
+MIME-Version: 1.0
+X-OriginatorOrg: Nvidia.com
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-AuthSource: MW2PR12MB4667.namprd12.prod.outlook.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: aea663ee-d1f2-4514-a72a-08da1ea28110
+X-MS-Exchange-CrossTenant-originalarrivaltime: 15 Apr 2022 05:40:52.3984 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 43083d15-7273-40c1-b7db-39efd9ccc17a
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: aRHw2otjvuGwsDds8CNzFbeFzIULc5OPanDRop/gKBwt/QQI0D4jISCjUFC3clY67udtv5Wb1eK47vFOJyX3/g==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: CY4PR12MB1815
+X-Spam-Score: -4.1 (----)
 X-Spam-Report: Spam detection software,
  running on the system "util-spamd-2.v13.lw.sourceforge.com", 
  has NOT identified this incoming email as spam.  The original
  message has been attached to this so you can view it or label
  similar future email.  If you have any questions, see
  the administrator of that system for details.
- Content preview:  On 4/15/22 13:52, Christoph Hellwig wrote: > Use the bdev
+ Content preview:  On 4/14/22 21:52, Christoph Hellwig wrote: > Use the bdev
  based helper instead of poking into the queue. > > Signed-off-by: Christoph
- Hellwig <hch@lst.de> > --- > mm/swapfile.c | 2 +- > 1 file changed [...] 
- Content analysis details:   (-5.0 points, 6.0 required)
+ Hellwig <hch@lst.de> > --- Looks good. Reviewed-by: Chaitanya Kulkarni
+ <kch@nvidia.com>
+ Content analysis details:   (-4.1 points, 6.0 required)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [216.71.154.45 listed in list.dnswl.org]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [40.107.94.81 listed in wl.mailspike.net]
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.0 T_SCC_BODY_TEXT_LINE   No description available.
- -2.5 NICE_REPLY_A           Looks like a legit reply (A)
-X-Headers-End: 1nfESP-0009dA-HE
+ -3.9 NICE_REPLY_A           Looks like a legit reply (A)
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - High trust sender
+X-Headers-End: 1nfI0u-0004SK-1W
 Subject: Re: [Jfs-discussion] [PATCH 10/27] mm: use bdev_is_zoned in
  claim_swapfile
 X-BeenThere: jfs-discussion@lists.sourceforge.net
@@ -149,55 +184,55 @@ List-Post: <mailto:jfs-discussion@lists.sourceforge.net>
 List-Help: <mailto:jfs-discussion-request@lists.sourceforge.net?subject=help>
 List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/jfs-discussion>, 
  <mailto:jfs-discussion-request@lists.sourceforge.net?subject=subscribe>
-From: Damien Le Moal via Jfs-discussion <jfs-discussion@lists.sourceforge.net>
-Reply-To: Damien Le Moal <damien.lemoal@opensource.wdc.com>
-Cc: jfs-discussion@lists.sourceforge.net, linux-nvme@lists.infradead.org,
- virtualization@lists.linux-foundation.org, linux-mm@kvack.org,
- dm-devel@redhat.com, target-devel@vger.kernel.org,
- linux-mtd@lists.infradead.org, drbd-dev@lists.linbit.com,
- linux-s390@vger.kernel.org, linux-nilfs@vger.kernel.org,
- linux-scsi@vger.kernel.org, cluster-devel@redhat.com,
- xen-devel@lists.xenproject.org, linux-ext4@vger.kernel.org,
- linux-um@lists.infradead.org, nbd@other.debian.org,
- linux-block@vger.kernel.org, linux-bcache@vger.kernel.org,
- ceph-devel@vger.kernel.org, linux-raid@vger.kernel.org,
- linux-mmc@vger.kernel.org, linux-f2fs-devel@lists.sourceforge.net,
- linux-xfs@vger.kernel.org, ocfs2-devel@oss.oracle.com,
- linux-fsdevel@vger.kernel.org, ntfs3@lists.linux.dev,
- linux-btrfs@vger.kernel.org
+From: Chaitanya Kulkarni via Jfs-discussion
+ <jfs-discussion@lists.sourceforge.net>
+Reply-To: Chaitanya Kulkarni <chaitanyak@nvidia.com>
+Cc: "jfs-discussion@lists.sourceforge.net"
+ <jfs-discussion@lists.sourceforge.net>,
+ "linux-nvme@lists.infradead.org" <linux-nvme@lists.infradead.org>,
+ "virtualization@lists.linux-foundation.org"
+ <virtualization@lists.linux-foundation.org>,
+ "linux-mm@kvack.org" <linux-mm@kvack.org>,
+ "dm-devel@redhat.com" <dm-devel@redhat.com>,
+ "target-devel@vger.kernel.org" <target-devel@vger.kernel.org>,
+ "linux-mtd@lists.infradead.org" <linux-mtd@lists.infradead.org>,
+ "drbd-dev@lists.linbit.com" <drbd-dev@lists.linbit.com>,
+ "linux-s390@vger.kernel.org" <linux-s390@vger.kernel.org>,
+ "linux-nilfs@vger.kernel.org" <linux-nilfs@vger.kernel.org>,
+ "linux-scsi@vger.kernel.org" <linux-scsi@vger.kernel.org>,
+ "cluster-devel@redhat.com" <cluster-devel@redhat.com>,
+ "xen-devel@lists.xenproject.org" <xen-devel@lists.xenproject.org>,
+ "linux-ext4@vger.kernel.org" <linux-ext4@vger.kernel.org>,
+ "linux-um@lists.infradead.org" <linux-um@lists.infradead.org>,
+ "nbd@other.debian.org" <nbd@other.debian.org>,
+ "linux-block@vger.kernel.org" <linux-block@vger.kernel.org>,
+ "linux-bcache@vger.kernel.org" <linux-bcache@vger.kernel.org>,
+ "ceph-devel@vger.kernel.org" <ceph-devel@vger.kernel.org>,
+ "linux-raid@vger.kernel.org" <linux-raid@vger.kernel.org>,
+ "linux-mmc@vger.kernel.org" <linux-mmc@vger.kernel.org>,
+ "linux-f2fs-devel@lists.sourceforge.net"
+ <linux-f2fs-devel@lists.sourceforge.net>,
+ "linux-xfs@vger.kernel.org" <linux-xfs@vger.kernel.org>,
+ "ocfs2-devel@oss.oracle.com" <ocfs2-devel@oss.oracle.com>,
+ "linux-fsdevel@vger.kernel.org" <linux-fsdevel@vger.kernel.org>,
+ "ntfs3@lists.linux.dev" <ntfs3@lists.linux.dev>,
+ "linux-btrfs@vger.kernel.org" <linux-btrfs@vger.kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Errors-To: jfs-discussion-bounces@lists.sourceforge.net
 
-On 4/15/22 13:52, Christoph Hellwig wrote:
+On 4/14/22 21:52, Christoph Hellwig wrote:
 > Use the bdev based helper instead of poking into the queue.
 > 
 > Signed-off-by: Christoph Hellwig <hch@lst.de>
 > ---
->  mm/swapfile.c | 2 +-
->  1 file changed, 1 insertion(+), 1 deletion(-)
-> 
-> diff --git a/mm/swapfile.c b/mm/swapfile.c
-> index 63c61f8b26118..4c7537162af5e 100644
-> --- a/mm/swapfile.c
-> +++ b/mm/swapfile.c
-> @@ -2761,7 +2761,7 @@ static int claim_swapfile(struct swap_info_struct *p, struct inode *inode)
->  		 * write only restriction.  Hence zoned block devices are not
->  		 * suitable for swapping.  Disallow them here.
->  		 */
-> -		if (blk_queue_is_zoned(p->bdev->bd_disk->queue))
-> +		if (bdev_is_zoned(p->bdev))
->  			return -EINVAL;
->  		p->flags |= SWP_BLKDEV;
->  	} else if (S_ISREG(inode->i_mode)) {
 
 Looks good.
 
-Reviewed-by: Damien Le Moal <damien.lemoal@opensource.wdc.com>
+Reviewed-by: Chaitanya Kulkarni <kch@nvidia.com>
 
--- 
-Damien Le Moal
-Western Digital Research
+-ck
+
 
 
 _______________________________________________
