@@ -2,27 +2,27 @@ Return-Path: <jfs-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+jfs-discussion@lfdr.de
 Delivered-To: lists+jfs-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4F4A55023D2
-	for <lists+jfs-discussion@lfdr.de>; Fri, 15 Apr 2022 07:24:35 +0200 (CEST)
-Received: from [127.0.0.1] (helo=sfs-ml-1.v29.lw.sourceforge.com)
-	by sfs-ml-1.v29.lw.sourceforge.com with esmtp (Exim 4.94.2)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5DAD95023D7
+	for <lists+jfs-discussion@lfdr.de>; Fri, 15 Apr 2022 07:25:40 +0200 (CEST)
+Received: from [127.0.0.1] (helo=sfs-ml-4.v29.lw.sourceforge.com)
+	by sfs-ml-4.v29.lw.sourceforge.com with esmtp (Exim 4.94.2)
 	(envelope-from <jfs-discussion-bounces@lists.sourceforge.net>)
-	id 1nfERN-0004Hz-QW; Fri, 15 Apr 2022 05:24:17 +0000
+	id 1nfEST-0001xa-ON; Fri, 15 Apr 2022 05:25:24 +0000
 Received: from [172.30.20.202] (helo=mx.sourceforge.net)
- by sfs-ml-1.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
+ by sfs-ml-4.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
  TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (Exim 4.94.2)
  (envelope-from <prvs=0972008b0=damien.lemoal@opensource.wdc.com>)
- id 1nfERM-0004Ht-6L
- for jfs-discussion@lists.sourceforge.net; Fri, 15 Apr 2022 05:24:15 +0000
+ id 1nfESS-0001xT-3D
+ for jfs-discussion@lists.sourceforge.net; Fri, 15 Apr 2022 05:25:22 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=sourceforge.net; s=x; h=Content-Transfer-Encoding:Content-Type:In-Reply-To:
  From:References:Cc:To:Subject:MIME-Version:Date:Message-ID:Sender:Reply-To:
  Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
  Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=vKRwgfC4ED3wBU2n2i2ZES29ZkioKhUCaYEzFIzNAoM=; b=fcv6hhypEqrGYXKW0fcztP35ZR
- 81xGICF5l2gd6HalvSvp/Mlcnudj5l1In0gOK85iVkGzOAm5xbCJ9Jnnuo3Bf5YBIku3r3nDRXlZx
- 0XVV5OOf6ov9CoAEvwx/cI2F//RnCYHZVaw3mLN6/fmvxngTfTvDD6eZXDAoUqWUXmvk=;
+ bh=rwvsmsnne7SnULh2hbKByo2WuoxQie2Xsqxi/Bxqgj8=; b=OYg+PRmtVdEjQEONkCZwn3Ito3
+ xs3iuD1ZqEw5QoVWASWjfL61R9JEIp9XQhtX9mxKCbeIzsfDRCC1aScsqnIH4fue1kMNqi+0TITFs
+ I3eFvcSJrgdnBxwa6FUQ9q6HxMR+jFDA8srumhXa7ckMm4lTT87AQjoI/WbeLoP9NnjU=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
  h=Content-Transfer-Encoding:Content-Type:In-Reply-To:From:References:Cc:To:
@@ -30,51 +30,51 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
  :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
  List-Post:List-Owner:List-Archive;
- bh=vKRwgfC4ED3wBU2n2i2ZES29ZkioKhUCaYEzFIzNAoM=; b=ZVALLBoSKrQ8gxxlvlI9REs4xR
- 2wr0N2PSZ2cDhGMCQIW0Eu5nte5Oc8UVmycdnxm6J4jS+qw9RezlxTN4IC0qhI3sHD5HiNPl2NUq+
- qoygseeORPkvAACiWl0VLywTuSugma2zLZe0hP4nUdXqEU6ZGyZdb+hRsnE3kYToltWI=;
-Received: from esa4.hgst.iphmx.com ([216.71.154.42])
- by sfi-mx-2.v28.lw.sourceforge.com with esmtps
+ bh=rwvsmsnne7SnULh2hbKByo2WuoxQie2Xsqxi/Bxqgj8=; b=nOTamDyRNTzi1P8uxP3o4qPgQh
+ wEwRuTyGCLCwl9afFpGlwhrZDqFKWarOFyX9HtDYEO+YVC9pk2ImjMov71+1DAgwbGqShzx/LNegp
+ cbHL9u0BZL2Vj7rdfOpC5mhwLUunyfgCd/UfuuiR2Uvy7+K4vze/ILYG4meZXa3sMIi0=;
+Received: from esa6.hgst.iphmx.com ([216.71.154.45])
+ by sfi-mx-1.v28.lw.sourceforge.com with esmtps
  (TLS1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.94.2)
- id 1nfERF-0003QP-68
- for jfs-discussion@lists.sourceforge.net; Fri, 15 Apr 2022 05:24:15 +0000
+ id 1nfESP-0009dA-HE
+ for jfs-discussion@lists.sourceforge.net; Fri, 15 Apr 2022 05:25:22 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple;
  d=wdc.com; i=@wdc.com; q=dns/txt; s=dkim.wdc.com;
- t=1650000248; x=1681536248;
+ t=1650000322; x=1681536322;
  h=message-id:date:mime-version:subject:to:cc:references:
  from:in-reply-to:content-transfer-encoding;
- bh=Fza98p6Hk/Oo3R5YjAQC2Nws92s1JhenlM6js5zQuBI=;
- b=f6qTjtZjLb2XJHBSxuLPtfW2WSZ7uBl6X3qJoyoAupZWRPX3lJeRd42e
- mmK1gF44V1wGmq8vYveHurJmRiLgFKYJZIWWY/B2SB3stzIVeZO6f8jig
- uqZJDvuVEtXeBfEiRQ/kLQMhypCHq+3mKmIhru3B6hsoeOQCTRWc0MqKt
- Xxa/BnJTRpiz8xlaPhyoAW4yC/ZXaSUYRWwF2ibLaFfOfLCDNDkIrIplq
- VYWbF3hkxOcaLnrYcJi1Oe4TYSn1sh6d9qCsd1wilNZz8GhP2UFaQMot2
- rC/+/1QGukMjbRytdNtnG0BLo0a09mbkZreuXfUyC5IdHeCsMNkXHSTZP g==;
-X-IronPort-AV: E=Sophos;i="5.90,261,1643644800"; d="scan'208";a="196832495"
-Received: from uls-op-cesaip01.wdc.com (HELO uls-op-cesaep01.wdc.com)
- ([199.255.45.14])
- by ob1.hgst.iphmx.com with ESMTP; 15 Apr 2022 13:08:27 +0800
-IronPort-SDR: MLu9c04LnsT7Ey2QFDapE4jLVAbaORUm+x+gw62E0opaaVptfUjO1z4Qg+HDnZxXQIieDGjGsI
- kBoc5iY7PPh5BUBlBsxlbLzQyfOpKfEm9FkUNZUGUfX9TNGKzB6xAbstaWXojiZPABq2eTft+r
- BtgcjLtvVyatrgulI0PdO+uva725YlhAnjDXus0JMB+RFr9ZggnO6lt+wKXPsY2ZXsrf3vfIkp
- fqF+NgkJPqjxi4YBqi1dfL9gZBwPr+MqjGD2Vd19ZY+KYJtzSWr5T6GfaBxFJxlF2SND51qLHC
- +3nlkbxHN/JgKDM/XA530fzS
+ bh=wC6/PVYH+J9es8aT7sK5ZaGwsGnDQHOFu7y4PW6r0NI=;
+ b=PoQsyeRbSgPi+VOqVlQoWYv/Em/CsiaChf7gAGl1MsP+HLjrcNwh44xA
+ CLMdNndU856wdzNQMsk3TZ7xGFP6StoV5U0Ce5wjBlLxuR9D0DGJiNFQH
+ YgqSc5nflbllSIovw22CzO+7+Jo9LSzzN3bfuUypV8SgvqdDuYcJ1TMDZ
+ 2phTUXYLiNHKuVWBgw4cik7b/Zj6wVb4PK1Pc5wIwh2kXJU5Byh+6Zjyu
+ +qAk+nUw/4dP/Z8EYD9vgN2Qy0P9s4HRm/6R5Fj1o7/E9GYkX4oQ2EyN9
+ U7q1g4W3SJ+VYpkZFujujosaQhf5WRlvgIJCmPKjCuYPXjIwc6lckyFjy Q==;
+X-IronPort-AV: E=Sophos;i="5.90,261,1643644800"; d="scan'208";a="198866632"
+Received: from uls-op-cesaip02.wdc.com (HELO uls-op-cesaep02.wdc.com)
+ ([199.255.45.15])
+ by ob1.hgst.iphmx.com with ESMTP; 15 Apr 2022 13:09:49 +0800
+IronPort-SDR: QYR/6hqR00ke/myvXYsOl03earhNkej/Xh+FlFBAfS1Y8M2XzWNXYGO9kQ9N5L4pTwpHBkpjNP
+ U5Z75OBTHIcXqRNT2JXacNxob2t2QzWxhrItRwFNb93wyww2m3rANCabOMDGX6L6JgRx1dKpTl
+ cajOklcyHbla90o+SkYn4p8VQiLKvNU1nRZZiGYQvbmtTZj19N5pVZOuRhJmyUH39LBDUnTW8q
+ QsNGucJ68w+P3afxcnGVux17/KwU96jEUDAjG9Oa9JgrGT4X5b7Sz9h9cmNxDc9XubY//Zxzhf
+ 6Vb4LYsbTkPz0/jh0AG4kJ3t
 Received: from uls-op-cesaip02.wdc.com ([10.248.3.37])
- by uls-op-cesaep01.wdc.com with ESMTP/TLS/ECDHE-RSA-AES128-GCM-SHA256;
- 14 Apr 2022 21:39:39 -0700
-IronPort-SDR: ngrFSZ4ywXOWyaRm0vBM/2JBoAFehtRLgrqQlvHtkAapRltzbhG5Tu3LfKEsiu7Qx12KS1k0q7
- yCEQ2LlnUrGPTBaQTyWJL8No4KtoAViq2XrLKIn555XywdOecBD2fKTm0wR/9hvNsQwBlkFXuv
- QB1eCJ27hAOs5blaVVxnywXBzlIVQ0tuxKuKzmDgsg6SIkP9ZW+nXsLWPUO7NykVr37tz21LPZ
- vVc2PgomY7GQTfoPV7Fl3uRUxQ7oNFC5AY4F4b8BGSh7bhQaunhcaboCypHi3OopLHmgPixFWd
- ZWA=
+ by uls-op-cesaep02.wdc.com with ESMTP/TLS/ECDHE-RSA-AES128-GCM-SHA256;
+ 14 Apr 2022 21:40:13 -0700
+IronPort-SDR: uGXcrMycK0gSz7Whos7+sFso2Fl6ygf4PYTULlPPW+N7wudA+9AG+6n0n4jr3w77888uFQoSLL
+ ufkplA+Lm4zs85JjXV0pNONvUY/npotfnd8jb7IziLxtUaTtrCedfbFhmprz2T4q9eXbZEtvc+
+ /ivgp6GMMsl1E6ZaPUSrJxhcZT3cEoaDi20nnVTPdNzzYOLAyY4RRWo6fD7NrCbL/FSo9vKeBe
+ Cehl9/npiY7FNAYCRDyWAwz4NC0TypTWOQBfTCXrST13QiFd84PCM2OItL4ltfOU5LiYn3GHKI
+ wnQ=
 WDCIronportException: Internal
 Received: from usg-ed-osssrv.wdc.com ([10.3.10.180])
  by uls-op-cesaip02.wdc.com with ESMTP/TLS/ECDHE-RSA-AES128-GCM-SHA256;
- 14 Apr 2022 22:08:28 -0700
+ 14 Apr 2022 22:09:49 -0700
 Received: from usg-ed-osssrv.wdc.com (usg-ed-osssrv.wdc.com [127.0.0.1])
- by usg-ed-osssrv.wdc.com (Postfix) with ESMTP id 4Kfkqt5G4xz1SVp3
+ by usg-ed-osssrv.wdc.com (Postfix) with ESMTP id 4KfksS0tCxz1SVp0
  for <jfs-discussion@lists.sourceforge.net>;
- Thu, 14 Apr 2022 22:08:26 -0700 (PDT)
+ Thu, 14 Apr 2022 22:09:48 -0700 (PDT)
 Authentication-Results: usg-ed-osssrv.wdc.com (amavisd-new); dkim=pass
  reason="pass (just generated, assumed good)"
  header.d=opensource.wdc.com
@@ -82,33 +82,33 @@ DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=
  opensource.wdc.com; h=content-transfer-encoding:content-type
  :in-reply-to:organization:from:references:to:content-language
  :subject:user-agent:mime-version:date:message-id; s=dkim; t=
- 1649999306; x=1652591307; bh=Fza98p6Hk/Oo3R5YjAQC2Nws92s1JhenlM6
- js5zQuBI=; b=ImgmXK0ljefxmjcwwGCZe/P1ZAiYRfxiStEm0q2wFeKQMvkTL85
- MoEiv1WWngR6yiDdywhy6m6c7CHetStsP2KPL7aGmRBSEDoQ0BBkWf7uSl7GctxX
- seFLiVHTqharLpAbcplk3yzDBSQpNNHnyTWqCGnT6SDEQPGGz4njOldB2JpZjV0c
- Fn1jBi13ZsAeHMQyLgImvLHIeNwH3xSreGo+kohOYlio/FQU9mPmWWTRsJd3G6Vg
- s7uGQ1kCv0yoS1gOWClHM7ArPs0jj6m4kJVcJWYcgsITqalXpkzGP3XvQ+R3owbL
- r+qmM2ogk4tvzMNidepDhru5fT38QuGd/Yg==
+ 1649999387; x=1652591388; bh=wC6/PVYH+J9es8aT7sK5ZaGwsGnDQHOFu7y
+ 4PW6r0NI=; b=A2KBgHYSLIEiloAT36KBlSnrdHo/5oKL9FrIFynJT5WRtSMAWFY
+ bOfFXbV9aPU/SW14KWhWGoxgvZNpDxlNmySfQsvY8YKVzB0GPsCqMriDKUnvzDGe
+ gxI79wWgz9d4ps/B6Xlf+gQiJxT1WJ1ZvXg2qG+PSKztllpdqubmLYAwOO/nz5St
+ h4S8KA8vLEE0CNTHJjAA8Hcfkt3KCfxgWm/synsXo5jFqWGlKXVMBpl0q6F/zUl8
+ QMkInWk2S7O06U7jACfYKTCYPrMyVz97bbnYwKLXgej41iNgxlqjzLyt5sjDI1Lg
+ BUEAK+PEVHrx0bfVbsoqkvKO8/sBQvwsP4Q==
 X-Virus-Scanned: amavisd-new at usg-ed-osssrv.wdc.com
 Received: from usg-ed-osssrv.wdc.com ([127.0.0.1])
  by usg-ed-osssrv.wdc.com (usg-ed-osssrv.wdc.com [127.0.0.1]) (amavisd-new,
  port 10026)
- with ESMTP id VBY7Vt1clBmW for <jfs-discussion@lists.sourceforge.net>;
- Thu, 14 Apr 2022 22:08:26 -0700 (PDT)
+ with ESMTP id mIRvArX0-Ckh for <jfs-discussion@lists.sourceforge.net>;
+ Thu, 14 Apr 2022 22:09:47 -0700 (PDT)
 Received: from [10.225.163.9] (unknown [10.225.163.9])
- by usg-ed-osssrv.wdc.com (Postfix) with ESMTPSA id 4Kfkqn6sCZz1Rvlx;
- Thu, 14 Apr 2022 22:08:21 -0700 (PDT)
-Message-ID: <d7a39cfc-9b28-f0d6-bf62-4351c55daec2@opensource.wdc.com>
-Date: Fri, 15 Apr 2022 14:08:20 +0900
+ by usg-ed-osssrv.wdc.com (Postfix) with ESMTPSA id 4KfksM3c9Fz1Rvlx;
+ Thu, 14 Apr 2022 22:09:43 -0700 (PDT)
+Message-ID: <62ebc311-e5ef-cea5-5236-0c83d1a3eb64@opensource.wdc.com>
+Date: Fri, 15 Apr 2022 14:09:42 +0900
 MIME-Version: 1.0
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:91.0) Gecko/20100101
  Thunderbird/91.7.0
 Content-Language: en-US
 To: Christoph Hellwig <hch@lst.de>, Jens Axboe <axboe@kernel.dk>
 References: <20220415045258.199825-1-hch@lst.de>
- <20220415045258.199825-28-hch@lst.de>
+ <20220415045258.199825-11-hch@lst.de>
 Organization: Western Digital Research
-In-Reply-To: <20220415045258.199825-28-hch@lst.de>
+In-Reply-To: <20220415045258.199825-11-hch@lst.de>
 X-Spam-Score: -5.0 (-----)
 X-Spam-Report: Spam detection software,
  running on the system "util-spamd-2.v13.lw.sourceforge.com", 
@@ -116,14 +116,14 @@ X-Spam-Report: Spam detection software,
  message has been attached to this so you can view it or label
  similar future email.  If you have any questions, see
  the administrator of that system for details.
- Content preview:  On 4/15/22 13:52, Christoph Hellwig wrote: > Randomly poking
- into block device internals for manual prefetches isn't > exactly a very
- maintainable thing to do. And none of the performance > criticil d [...] 
+ Content preview:  On 4/15/22 13:52, Christoph Hellwig wrote: > Use the bdev
+ based helper instead of poking into the queue. > > Signed-off-by: Christoph
+ Hellwig <hch@lst.de> > --- > mm/swapfile.c | 2 +- > 1 file changed [...] 
  Content analysis details:   (-5.0 points, 6.0 required)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [216.71.154.42 listed in list.dnswl.org]
+ medium trust [216.71.154.45 listed in list.dnswl.org]
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -135,9 +135,9 @@ X-Spam-Report: Spam detection software,
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.0 T_SCC_BODY_TEXT_LINE   No description available.
  -2.5 NICE_REPLY_A           Looks like a legit reply (A)
-X-Headers-End: 1nfERF-0003QP-68
-Subject: Re: [Jfs-discussion] [PATCH 27/27] direct-io: remove random
- prefetches
+X-Headers-End: 1nfESP-0009dA-HE
+Subject: Re: [Jfs-discussion] [PATCH 10/27] mm: use bdev_is_zoned in
+ claim_swapfile
 X-BeenThere: jfs-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -170,20 +170,30 @@ Content-Transfer-Encoding: 7bit
 Errors-To: jfs-discussion-bounces@lists.sourceforge.net
 
 On 4/15/22 13:52, Christoph Hellwig wrote:
-> Randomly poking into block device internals for manual prefetches isn't
-> exactly a very maintainable thing to do.  And none of the performance
-> criticil direct I/O implementations still use this library function
-
-s/criticil/critical
-
-> anyway, so just drop it.
+> Use the bdev based helper instead of poking into the queue.
 > 
 > Signed-off-by: Christoph Hellwig <hch@lst.de>
+> ---
+>  mm/swapfile.c | 2 +-
+>  1 file changed, 1 insertion(+), 1 deletion(-)
+> 
+> diff --git a/mm/swapfile.c b/mm/swapfile.c
+> index 63c61f8b26118..4c7537162af5e 100644
+> --- a/mm/swapfile.c
+> +++ b/mm/swapfile.c
+> @@ -2761,7 +2761,7 @@ static int claim_swapfile(struct swap_info_struct *p, struct inode *inode)
+>  		 * write only restriction.  Hence zoned block devices are not
+>  		 * suitable for swapping.  Disallow them here.
+>  		 */
+> -		if (blk_queue_is_zoned(p->bdev->bd_disk->queue))
+> +		if (bdev_is_zoned(p->bdev))
+>  			return -EINVAL;
+>  		p->flags |= SWP_BLKDEV;
+>  	} else if (S_ISREG(inode->i_mode)) {
 
-Looks good to me.
+Looks good.
 
 Reviewed-by: Damien Le Moal <damien.lemoal@opensource.wdc.com>
-
 
 -- 
 Damien Le Moal
