@@ -2,208 +2,86 @@ Return-Path: <jfs-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+jfs-discussion@lfdr.de
 Delivered-To: lists+jfs-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id 27ADA50E690
-	for <lists+jfs-discussion@lfdr.de>; Mon, 25 Apr 2022 19:09:27 +0200 (CEST)
-Received: from [127.0.0.1] (helo=sfs-ml-2.v29.lw.sourceforge.com)
-	by sfs-ml-2.v29.lw.sourceforge.com with esmtp (Exim 4.94.2)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0BAC452DDEA
+	for <lists+jfs-discussion@lfdr.de>; Thu, 19 May 2022 21:45:25 +0200 (CEST)
+Received: from [127.0.0.1] (helo=sfs-ml-1.v29.lw.sourceforge.com)
+	by sfs-ml-1.v29.lw.sourceforge.com with esmtp (Exim 4.94.2)
 	(envelope-from <jfs-discussion-bounces@lists.sourceforge.net>)
-	id 1nj2Cu-0000TT-91; Mon, 25 Apr 2022 17:09:05 +0000
+	id 1nrm4w-0007yk-Sp; Thu, 19 May 2022 19:44:59 +0000
 Received: from [172.30.20.202] (helo=mx.sourceforge.net)
- by sfs-ml-2.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
+ by sfs-ml-1.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
  TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (Exim 4.94.2)
- (envelope-from <dave.kleikamp@oracle.com>) id 1nj2Ct-0000TM-I5
- for jfs-discussion@lists.sourceforge.net; Mon, 25 Apr 2022 17:09:04 +0000
+ (envelope-from <willy@infradead.org>) id 1nrm4v-0007ye-9k
+ for jfs-discussion@lists.sourceforge.net; Thu, 19 May 2022 19:44:58 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=sourceforge.net; s=x; h=MIME-Version:Content-Transfer-Encoding:Content-Type
- :In-Reply-To:From:References:Cc:To:Subject:Date:Message-ID:Sender:Reply-To:
- Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
- Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
+ d=sourceforge.net; s=x; h=Content-Transfer-Encoding:MIME-Version:Message-Id:
+ Date:Subject:Cc:To:From:Sender:Reply-To:Content-Type:Content-ID:
+ Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+ :Resent-Message-ID:In-Reply-To:References:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=OWoAXkQ1o/co5i4I1ZOvPzjt5wD0lLqbeg22l1+W/F0=; b=O7jc0sDSpc3uChShT7rMZjhBq0
- 8jSTcJO25gGTbrZvDI13SbqIdTJ/BrqNe+1fYq/P0/F60VKKsFR3MspkhyMQ14jFVsrGy27CpKOkW
- 69ytQqvTAzUTRp4aoYb+omJ7oIJUxd1VxJc2FGt6WWpEa5GemD2gzKTpk0J6p8X7Up1s=;
+ bh=lsqGn3eyK2DrcqkGnGxhUNX0KbccC55iqHUDsH+ISxQ=; b=M4EDElATwvrE1qUDhp3YYWdI8j
+ 6+5OFONswUiXpO8f28CCZ7HpcwsOOACrwZoR15HEHjm5o9j7EX08eLbjqiiR8imSOiXszkBngbUBR
+ OCG2YneR/D84sM7O8zaI9jPN2ASQGMLL59AhLKDrdvUOyGGWuJBjAwcqORW0cMZfz2IQ=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
- h=MIME-Version:Content-Transfer-Encoding:Content-Type:In-Reply-To:From:
- References:Cc:To:Subject:Date:Message-ID:Sender:Reply-To:Content-ID:
- Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
- :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
- List-Post:List-Owner:List-Archive;
- bh=OWoAXkQ1o/co5i4I1ZOvPzjt5wD0lLqbeg22l1+W/F0=; b=VJM/sLzRBCHlIDciDgIQ5e78OI
- BhhMeoz6pdPil1OLKtyuGr+yodu/NEaIA/yZ79WR/jku+9sSWkkDl9TIn9OHU40u60OQuoTMhQV2m
- U5B3DxejAUmnwHnsMvR78uW0IPo7ePhCB3ygU7+SCFI4SldKvgn+Tyv4WlvfiYBhOcXc=;
-Received: from mx0b-00069f02.pphosted.com ([205.220.177.32])
- by sfi-mx-2.v28.lw.sourceforge.com with esmtps
+ h=Content-Transfer-Encoding:MIME-Version:Message-Id:Date:Subject:Cc:To:From
+ :Sender:Reply-To:Content-Type:Content-ID:Content-Description:Resent-Date:
+ Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+ References:List-Id:List-Help:List-Unsubscribe:List-Subscribe:List-Post:
+ List-Owner:List-Archive; bh=lsqGn3eyK2DrcqkGnGxhUNX0KbccC55iqHUDsH+ISxQ=; b=f
+ jRn4PGcD0zyzbzzCndYg2CeWy4elEknMneBUol11kbLkCxIMXEkUAhEZw57mpenVDLFD0fRm4O9aR
+ up1+oiClVHZETVuLnA2EFHN7L2zj1PAtkAdEkKg9a3PXj9UrH8slfbA9ei1xjcoYPerB0WbLlk1gf
+ M8I9cpJ/rfTAl+KU=;
+Received: from casper.infradead.org ([90.155.50.34])
+ by sfi-mx-1.v28.lw.sourceforge.com with esmtps
  (TLS1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.94.2)
- id 1nj2Cm-0004Mu-9H
- for jfs-discussion@lists.sourceforge.net; Mon, 25 Apr 2022 17:09:04 +0000
-Received: from pps.filterd (m0246631.ppops.net [127.0.0.1])
- by mx0b-00069f02.pphosted.com (8.17.1.5/8.17.1.5) with ESMTP id 23PFQPJJ031495;
- Mon, 25 Apr 2022 17:08:50 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=oracle.com;
- h=message-id : date :
- subject : to : cc : references : from : in-reply-to : content-type :
- content-transfer-encoding : mime-version; s=corp-2021-07-09;
- bh=OWoAXkQ1o/co5i4I1ZOvPzjt5wD0lLqbeg22l1+W/F0=;
- b=CpH743ahCvfmxHPn+cHbQrxtQqW20E6rnxkMwwWKWemRHR1ycpXL5HNr65uHFuMRI0vr
- 2+UIWTk0n/i5J8z5e4mKV8ZvABVo5glLe8oK0tP/N8rq6GUdaswqSL9kqGR6PXbHZFxa
- EuP/yaA9TsKsK+VOTqDNXYrDIss+iri3K4jcVwuMXLq8u6dFB/r+HrTCcv7qrbys7jw+
- dE6+DB+uvD6T+YCBbm1oGM1abJzH44yk7jwJgyr/W+19epaac+zcPtj7+1NvivloVUL4
- b9OpDRvvVNumO17W7BkwP9qum/np7HCa2GSd+SiEQpR1Xznk/gRuxoJipyDff8CCzFtV /g== 
-Received: from phxpaimrmta01.imrmtpd1.prodappphxaev1.oraclevcn.com
- (phxpaimrmta01.appoci.oracle.com [138.1.114.2])
- by mx0b-00069f02.pphosted.com (PPS) with ESMTPS id 3fmb5juwsw-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
- Mon, 25 Apr 2022 17:08:50 +0000
-Received: from pps.filterd
- (phxpaimrmta01.imrmtpd1.prodappphxaev1.oraclevcn.com [127.0.0.1])
- by phxpaimrmta01.imrmtpd1.prodappphxaev1.oraclevcn.com (8.16.1.2/8.16.1.2)
- with SMTP id 23PH0TZ8015011; Mon, 25 Apr 2022 17:08:49 GMT
-Received: from nam04-mw2-obe.outbound.protection.outlook.com
- (mail-mw2nam08lp2173.outbound.protection.outlook.com [104.47.73.173])
- by phxpaimrmta01.imrmtpd1.prodappphxaev1.oraclevcn.com with ESMTP id
- 3fm7w1wmg7-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
- Mon, 25 Apr 2022 17:08:49 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=Keyi1HnAHYpqtZ2vOQwhqTmvGgc/Xx8uJCz4FJlfqyM/U9jOIGodSt1EWwKo39JsXCWSwQ1VQi8p2RHksNex0oD7JrZGHf+MOgZ9BkNGynqOnJBbZkJaN2qtDO1MHTtDjaBhudbj/qdrfUdp1+TCpPDKavfTNWe7sSO/OVYQ0URY1TYJ+ue8SQhKhlIni7FbEd4HWf48kfg3Mn7lvlxYnWjLoi6ajx5ahw6FZRUPm04TG1RhBO1PbpnKQ8uvKKE4FyvKraEbADVLg6RwQj7FAM/ZtCrag5EctVKIQmZi4zOKcPqSB0dvf4nTc17CCJnK0a48RR+JV7hjPumT0ekGJg==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=OWoAXkQ1o/co5i4I1ZOvPzjt5wD0lLqbeg22l1+W/F0=;
- b=C+LslsjK6V5UQN86ZXiCenttY6U0M42pBvRCp35oyRBd1LcPoTA56oaTIQaacTg/AtGfBy0BntqeBR9AK1/u1LCvXTQ4jb0ciUjOYGKPqCnEp53R7HQlTd3ffmc53z2JPY9l90ZQ3M9JGrKS1SxD/Y7MVncptfN4Coe0Z8P/AF7WpmNqUiVdQHAXSnT/EYGihdzKSjB+/Z8jn6hFF+9Ow8ThoBiuzgUc14LzoP1/5JqomIhAzZn7JiY/6xCGjAOUw7PF2nbL6zD23oiVXh/9Uj1f+ofxcub/5oHDlKe6KEjhNxIswVlYSQg3DQaGA5Zm1bNtF3qgKJnzCZGUHFinYg==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=oracle.com; dmarc=pass action=none header.from=oracle.com;
- dkim=pass header.d=oracle.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=oracle.onmicrosoft.com; s=selector2-oracle-onmicrosoft-com;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=OWoAXkQ1o/co5i4I1ZOvPzjt5wD0lLqbeg22l1+W/F0=;
- b=nxN5S3R6MzJ80FCGWigRLpHakru6tul8/POgvlcr+seSzttalcob/2zp4taQAjnXLmG0n5HkhWmaf6Ix1YkRte1SXR3I9FMGgm82VZh9l9s18zZqnTyfTOh9lkAnE5vPbamEiGsmYlWovK4AtgYhBMxXwMVvPvmSQnmX0XTcoFE=
-Received: from MW5PR10MB5738.namprd10.prod.outlook.com (2603:10b6:303:19b::14)
- by CO1PR10MB4611.namprd10.prod.outlook.com (2603:10b6:303:92::20)
- with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.5186.13; Mon, 25 Apr
- 2022 17:08:47 +0000
-Received: from MW5PR10MB5738.namprd10.prod.outlook.com
- ([fe80::f481:9785:f002:1dad]) by MW5PR10MB5738.namprd10.prod.outlook.com
- ([fe80::f481:9785:f002:1dad%9]) with mapi id 15.20.5186.021; Mon, 25 Apr 2022
- 17:08:47 +0000
-Message-ID: <64ef5a2f-4421-3509-4919-b9c2173a5f17@oracle.com>
-Date: Mon, 25 Apr 2022 12:08:45 -0500
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:91.0) Gecko/20100101
- Thunderbird/91.8.1
-Content-Language: en-US
-To: Dan Carpenter <dan.carpenter@oracle.com>,
- Colin Ian King <colin.i.king@gmail.com>
-References: <20220424161330.1360068-1-colin.i.king@gmail.com>
- <20220425144804.GP2462@kadam>
-From: Dave Kleikamp <dave.kleikamp@oracle.com>
-In-Reply-To: <20220425144804.GP2462@kadam>
-X-ClientProxiedBy: SN7PR04CA0167.namprd04.prod.outlook.com
- (2603:10b6:806:125::22) To MW5PR10MB5738.namprd10.prod.outlook.com
- (2603:10b6:303:19b::14)
+ id 1nrm4q-00AIDj-EW
+ for jfs-discussion@lists.sourceforge.net; Thu, 19 May 2022 19:44:57 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=infradead.org; s=casper.20170209; h=Content-Transfer-Encoding:MIME-Version:
+ Message-Id:Date:Subject:Cc:To:From:Sender:Reply-To:Content-Type:Content-ID:
+ Content-Description:In-Reply-To:References;
+ bh=lsqGn3eyK2DrcqkGnGxhUNX0KbccC55iqHUDsH+ISxQ=; b=m3krLVnnv6dE0c0ZuTMUF3caxM
+ yHZVlcnaml88CSGkYPGUYgSQL6o7KbXO+kHJRWnrwNqoa7ukkg4o8k7UwqHfcuIFjRHMs9VRznhjF
+ faiVC4q71JfZLFRVTefy9vnjG8Neqco1uDPDMlF1VvZ6I716ZUveWQKwCluJQNy1AMmba48qpJ2Vw
+ a/6TLzbnRRmk1npTlySlFXRrcmcSHxLaNc24axP9tLlzjvRMUdeIvJbJ0CN54FhjyOKlfClafkxV4
+ dsAwwiIAZHJvAf1mmRePQ5XJJ9ergenfPddR/qJpidQzJ4+MWNNpJ0uJp2cNDWsly/GispnHCNSIl
+ Krfq+OhQ==;
+Received: from willy by casper.infradead.org with local (Exim 4.94.2 #2 (Red
+ Hat Linux)) id 1nrm4a-00D3FG-Ea; Thu, 19 May 2022 19:44:36 +0000
+From: "Matthew Wilcox (Oracle)" <willy@infradead.org>
+To: Dave Kleikamp <shaggy@kernel.org>, jfs-discussion@lists.sourceforge.net,
+ linux-fsdevel@vger.kernel.org
+Date: Thu, 19 May 2022 20:44:35 +0100
+Message-Id: <20220519194435.3110635-1-willy@infradead.org>
+X-Mailer: git-send-email 2.31.1
 MIME-Version: 1.0
-X-MS-PublicTrafficType: Email
-X-MS-Office365-Filtering-Correlation-Id: fb7fcd84-7172-43b5-269c-08da26de42e4
-X-MS-TrafficTypeDiagnostic: CO1PR10MB4611:EE_
-X-Microsoft-Antispam-PRVS: <CO1PR10MB46113F44BD3DD2B8D5F4239C87F89@CO1PR10MB4611.namprd10.prod.outlook.com>
-X-MS-Exchange-SenderADCheck: 1
-X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;
-X-Microsoft-Antispam-Message-Info: NT8E/IrB0nZiJoV1FZT/kFb8ijRXutsN86jPUh3SopfW3PZzeFO0/8Qmgc6n+VuZQB+k7I6Igprv8Za1R05C9zELH7HivkLXg9+Ageil+kIJzqKvWyZnsBYVZFSDeisZJOe9hwHKpMDNxgCigS2Ya6gSQLa0yP1Y2zsbRNiU30+lOj9o1IOaJ2TCNTkuqEE84wCTeCJiHRV9WkZhx6FE83ts8+hG8ptalBneUXGKcfQOItpWDB6cmVIFap+fdW2/T+4iZbPTFWKs7YDDVuxYkMDLF2NSqH3yu/IjLIQopPWByz1o/XhE7c0Qiu4fiBqq0CVZlP8Dd8c18jX0eWuN4pp3nmFAdgBg6iGyLf8wTdpP+KqXvJfi1dYBbNyAcCvW02QmmVDAt42YJfwC9PIZ6aR6g5qE0H9Fz8DOkiCby56cmG4/MY98gBdSxg6zbGYu4B0qs0KyldJNfPBlsfqrmbKkUnh89qpUJNylTcjO2Tl9HTjUdDs61dTsbPzMbqdMpgiCjSOpbEWPUqIS7Q040W9M675pEXF6hoxZ+Na1oYiY9Tzljkpt2V61jY2B969B+eKsehDrNIN5BHCbcfODgy3uOehn5KrFoNiGAuo/Yr8E6WvU9UmKXv3mwN1s/JVr0n9TYUKPIAEEAHbIvJNSneLGCY6zRo8I1u4UmsGb8vv/YUhCAvOGMPoEUNfYjd52DzCpVa1kH1LSeZ1hw/YKzA6JFC2mVfQmJrXPW5bBk+8=
-X-Forefront-Antispam-Report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
- IPV:NLI; SFV:NSPM; H:MW5PR10MB5738.namprd10.prod.outlook.com; PTR:; CAT:NONE;
- SFS:(13230001)(366004)(66556008)(2616005)(31696002)(83380400001)(44832011)(86362001)(6506007)(2906002)(8676002)(110136005)(4326008)(316002)(26005)(66946007)(66476007)(6512007)(8936002)(186003)(508600001)(6486002)(5660300002)(36756003)(31686004)(38100700002)(45980500001)(43740500002);
- DIR:OUT; SFP:1101; 
-X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: =?utf-8?B?eitsS09laHlYS0lwMklic0RZN1JGTHN4bzRZRG5wNDFHUXR3QitORGVjYlZn?=
- =?utf-8?B?TlBPanpha0I4RHVBcFFBRTJnQVhyK053Z0I3all6VkxhM0U2WURMcmRXVTdp?=
- =?utf-8?B?dlZyQVM3NTNkZDRQV2Qrd05ZZ1Eyc0RTdGQ5eXd6ZWtHcjVlQUQrWkExWk51?=
- =?utf-8?B?SzF5dStlRnFYdGl0S2I1VTIvNlNDTW43R3RkeDdvTCtnOGlOYUZ3WlV3eHhk?=
- =?utf-8?B?VnhJNURTZnliZ2hhSzM2eUVyRVZzOTFqcE51VEkvei91SFpjMmR3bUViZEJP?=
- =?utf-8?B?MFpMUksvcnFIUXhyMlFNNWNoVnYrd2UxVnRnaEtkNEYyN1hUd3FPMFdjWENN?=
- =?utf-8?B?RDJXU21Ka25DcExaeVZCQU9kKzdWSDlqRDJWQ3NoYXA1NXE4V1JGMlMrMFN2?=
- =?utf-8?B?RnZoTnFzMHcwQTd2U1VBM3A3NW12bFFOKzdQMm53TVV6UzFUMThxN1ZkWGNU?=
- =?utf-8?B?RmZvZE42RDQ2aXdJQ0QvSEZ6RTNhL3B3NGR5VTV0WWNmMHRXZ1A4K2NWTXZ6?=
- =?utf-8?B?cGcxS01MTTRiK3NxQ2VZS1NBM1dZemNpRGwrdTBhL1B3cHM4MlJwd3JvNCtz?=
- =?utf-8?B?K3FwSzdZUWtTR0dQQm92dW1palFqdVB4VFJlbWduUU9CRVMweFhZOWZFVTl0?=
- =?utf-8?B?L255a2o2eG9sSmRXcHo5ejExWTRhVjJSeU1UMkpjeHFHOHhIeitIMDM5K1R3?=
- =?utf-8?B?M1RtUVNMdlZ1STYrdGh2cFIzN1hmSkhxVWxYRHJnblhyTU43czFzbDQ4eHZj?=
- =?utf-8?B?N2owL2NRY3hhR1hEUWNZN2QzMVE0dlN6bjdyZ2lHQm1UVlh2UFR2SGlsL2Zq?=
- =?utf-8?B?NlNZYTgrWk8zaDBvakE3cUtUelhPOUQ3Zk5yODRiUzRMbjRwcFpZRXVYbi9n?=
- =?utf-8?B?cFBDak0xMzFjUk9GMjZtditPUUt4MGV6Z2tsZnh2aUlaR2phbXp2ZFVTcXJZ?=
- =?utf-8?B?Nm9teXVpYXd4VmhuRGczM0Zna0lVUU45cjVmaTZ0L0QybUhKUDcyOHFnSnJi?=
- =?utf-8?B?WUdUR1lRZHdnRGUvK2Nxa1dJNEh2OHFNRFZnaG00UzBicGhOTzhVU09TUVlj?=
- =?utf-8?B?dnBtdWJDVms1c1ZUNzl5TUMrZDZzUzhmN3hEV1JYRkk4Wms2YWtsWDdWaUE0?=
- =?utf-8?B?SXUxTitoRnBDblVpd0xYWTZwd1JUbW5BeWtnbG9sdS9aUUQ2T0dtWE9EdHVq?=
- =?utf-8?B?Y0R0YUtGRkhNK0RNZEFBU1g2aWlud2d0UWd6TlJ1bnFKSkhwWDdRREpJZ25o?=
- =?utf-8?B?c1JqNW5XWXY2K2Y4K1VMbllRQ3ZYWFlHc29pMkJaaS9tMlloNjVvYVpZMHdR?=
- =?utf-8?B?Q09LSm1JZWwrRXU0VXBCNzRWY3FkRld4UGd0blFnSXpud3RkVDJmV2VtSEhP?=
- =?utf-8?B?Sitnc2d3b1ozSmVYS0lWMHpubnFTc2lMRTNKNkRpeVdpMlpVTmpYNlFQRm1k?=
- =?utf-8?B?bSsycDZKZDF4czdCSGM0ZVlZM1Vxc1dVenZOVXlQRHNlUzNTdFNJU0huU0JV?=
- =?utf-8?B?bVM5d0owU3RSdlRnd2ZWQWkxOUNBWXVPYitlTlVFQ1FuV09GMVpHQ09JSVVs?=
- =?utf-8?B?b05QSGRSdFIxaGd3aG11K1p6d05ncS9XTldud2NZQ2MrWWp0Y2dXWVpRa2dX?=
- =?utf-8?B?eWo3TmZ5cmRyUXpKRkZnQk5FcWtrMTdTcTBFM3FJQllmbno4L2lPb29zUGQ1?=
- =?utf-8?B?eFVmb2oxcjdxM0JncUZLaHpCdjRnNmxvODRhYVhabE1SaGZGK25sRWNJR2FT?=
- =?utf-8?B?WUJDTnM2UjVvcU1Ma1NRVnVZQ0dsc2RzdmtLY2s4Nkp4SDhrUVh6cm5SdUxU?=
- =?utf-8?B?Ykh5blVFeHM3cUJCdmswQVdHblkzVm9hS3RZZEJrWU1tbzlIYVhyd3RJRXR0?=
- =?utf-8?B?bFB6OTlGTU9SZkh0L2RicmVMY24ydnR1K3QxTHo3MUdJZkV2cHBaSmUxMmw4?=
- =?utf-8?B?aURNRXE2SWVRaGNEbVBnUGRFbUEydTAxTmtKS2NFeW05QVRpcmlDbjNHclda?=
- =?utf-8?B?Z0xIZEdFOHJLMU9tV3BGTnZFcnZVZGx0VWxQU3lndGw0anh2RnZWWld2dzJj?=
- =?utf-8?B?WVYrTUxDT3VTZUV6bFB4QlRmV1ZLTFJFL1NranFaUEw0L2hHY1F5R0JoczJM?=
- =?utf-8?B?bFppbkZWNW5LUHVIazVHQXpsa2Q1bHRzS2RJSGs1VkkyRDJJb2xmVWRiaFJQ?=
- =?utf-8?B?VTJGbWZRQk5VNzRnQVhnTFg2aTVuLzJpcHNoQU9ZMjYyVm9zazJhWkVNaVVC?=
- =?utf-8?B?QThJVktRd3VXRG8zRFNLL2FiUFI3VFJTckIzQnMxMUhReEdXVExvM2U4eGNv?=
- =?utf-8?B?cU9xOE81S0hlcnJRbFpNRGxoSCtwRXVCc2JsQjVwMG1kbXhJL3c5aXE5a2Ez?=
- =?utf-8?Q?uMSfks5gYWRZPIpY=3D?=
-X-OriginatorOrg: oracle.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: fb7fcd84-7172-43b5-269c-08da26de42e4
-X-MS-Exchange-CrossTenant-AuthSource: MW5PR10MB5738.namprd10.prod.outlook.com
-X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 25 Apr 2022 17:08:47.5532 (UTC)
-X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
-X-MS-Exchange-CrossTenant-Id: 4e2c6054-71cb-48f1-bd6c-3a9705aca71b
-X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: dX/AHr5XhjfZq2r+aK8sY/T61c/tKrqA2IcdT7B80hb3rY1yve+Dz2nt5kGKNkiJANC+/83yvAyTHeIOi8CITJG+ZO6Wd1j7aBkhSvOMKNc=
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: CO1PR10MB4611
-X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.486, 18.0.858
- definitions=2022-04-25_07:2022-04-25,
- 2022-04-25 signatures=0
-X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 mlxscore=0
- suspectscore=0
- malwarescore=0 spamscore=0 phishscore=0 bulkscore=0 mlxlogscore=848
- adultscore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.12.0-2202240000 definitions=main-2204250076
-X-Proofpoint-GUID: jocHWTm0M1Znzx0NJzdUnLy9rvatDSps
-X-Proofpoint-ORIG-GUID: jocHWTm0M1Znzx0NJzdUnLy9rvatDSps
-X-Spam-Score: -2.8 (--)
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: Spam detection software,
- running on the system "util-spamd-2.v13.lw.sourceforge.com", 
+ running on the system "util-spamd-1.v13.lw.sourceforge.com", 
  has NOT identified this incoming email as spam.  The original
  message has been attached to this so you can view it or label
  similar future email.  If you have any questions, see
  the administrator of that system for details.
- Content preview:  On 4/25/22 9:48AM, Dan Carpenter wrote: > On Sun, Apr 24,
- 2022 at 05:13:30PM +0100, Colin Ian King wrote: >> The pointer tlbk is not
- used, it is redundant and can be removed. >> Cleans up cppcheck war [...]
- Content analysis details:   (-2.8 points, 6.0 required)
+ Content preview:  This isn't going to apply to your tree;
+ it will apply to today's
+ -next though. Happy to take this on top of my current pagecache patch set
+ with appropriate acks. Maybe it's the wrong fix; I haven't sp [...] 
+ Content analysis details:   (-0.2 points, 6.0 required)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [205.220.177.32 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
- -1.9 NICE_REPLY_A           Looks like a legit reply (A)
-X-Headers-End: 1nj2Cm-0004Mu-9H
-Subject: Re: [Jfs-discussion] [PATCH] jfs: remove unused pointer tblk
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+X-Headers-End: 1nrm4q-00AIDj-EW
+Subject: [Jfs-discussion] [PATCH] jfs: Release even dirty metapages on
+ invalidate
 X-BeenThere: jfs-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -215,51 +93,93 @@ List-Post: <mailto:jfs-discussion@lists.sourceforge.net>
 List-Help: <mailto:jfs-discussion-request@lists.sourceforge.net?subject=help>
 List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/jfs-discussion>, 
  <mailto:jfs-discussion-request@lists.sourceforge.net?subject=subscribe>
-Cc: jfs-discussion@lists.sourceforge.net, kernel-janitors@vger.kernel.org,
- linux-kernel@vger.kernel.org
+Cc: "Matthew Wilcox \(Oracle\)" <willy@infradead.org>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Errors-To: jfs-discussion-bounces@lists.sourceforge.net
 
-On 4/25/22 9:48AM, Dan Carpenter wrote:
-> On Sun, Apr 24, 2022 at 05:13:30PM +0100, Colin Ian King wrote:
->> The pointer tlbk is not used, it is redundant and can be removed.
->> Cleans up cppcheck warning:
->>
->> linux/fs/jfs/jfs_xtree.c:2551:17: style: Unused variable: tblk [unusedVariable]
->>
->> Signed-off-by: Colin Ian King <colin.i.king@gmail.com>
->> ---
->>   fs/jfs/jfs_xtree.c | 1 -
->>   1 file changed, 1 deletion(-)
->>
->> diff --git a/fs/jfs/jfs_xtree.c b/fs/jfs/jfs_xtree.c
->> index 3148e9b35f3b..d29979d0a6aa 100644
->> --- a/fs/jfs/jfs_xtree.c
->> +++ b/fs/jfs/jfs_xtree.c
->> @@ -2548,7 +2548,6 @@ xtRelocate(tid_t tid, struct inode * ip, xad_t * oxad,	/* old XAD */
->>   	   int xtype)
->>   {				/* extent type: XTPAGE or DATAEXT */
->>   	int rc = 0;
->> -	struct tblock *tblk;
-> 
-> This would have caused a build error if it weren't ifdeffed out.
-> 
-> #ifdef _STILL_TO_PORT
-> 
-> JFS is an IBM filesystem from OS/2.  Apparently, this stuff never got
-> ported?  Probably we could just delete the dead code.
+This isn't going to apply to your tree; it will apply to today's -next
+though.  Happy to take this on top of my current pagecache patch set
+with appropriate acks.  Maybe it's the wrong fix; I haven't spent very
+long trying to understand what all the parts of mp mean ... maybe it
+should only override the META_Dirty check and it needs to do something
+else for the other two checks?
 
-Yeah. Once, long ago, I had dreams of enhancing JFS with shiny new 
-function like defragmentation. I think it's safe to say that isn't going 
-to happen.
+--- 8< ---
 
-Shaggy
+For ->release_folio(), we can fail to release the metapage if, for
+example, it's dirty.  For ->invalidate_folio(), we must release the
+metapage as the page is being removed and will be freed.  Failing to
+release the metapage results in xfstests generic/537 hitting BUG reports
+like this:
 
-> 
-> regards,
-> dan carpenter
-> 
+BUG: Bad page state in process umount  pfn:12b03a
+page:000000000c3e2db5 refcount:0 mapcount:0 mapping:0000000000000000 index:0x10 pfn:0x12b03a
+flags: 0x8000000000002004(uptodate|private|zone=2)
+raw: 8000000000002004 ffffea000417a5c8 ffff88810a41bbe0 0000000000000000
+raw: 0000000000000010 ffff888124e12680 00000000ffffffff 0000000000000000
+page dumped because: PAGE_FLAGS_CHECK_AT_FREE flag(s) set
+
+as the page allocator checks that the page no longer has private data.
+
+Add a bool argument to inform the release routine whether to override
+the checks and release the metapage anyway.
+
+Signed-off-by: Matthew Wilcox (Oracle) <willy@infradead.org>
+---
+ fs/jfs/jfs_metapage.c | 15 +++++++++++----
+ 1 file changed, 11 insertions(+), 4 deletions(-)
+
+diff --git a/fs/jfs/jfs_metapage.c b/fs/jfs/jfs_metapage.c
+index 2e8461ce74de..5b4f0cd8d276 100644
+--- a/fs/jfs/jfs_metapage.c
++++ b/fs/jfs/jfs_metapage.c
+@@ -524,7 +524,8 @@ static int metapage_read_folio(struct file *fp, struct folio *folio)
+ 	return -EIO;
+ }
+ 
+-static bool metapage_release_folio(struct folio *folio, gfp_t gfp_mask)
++static bool __metapage_release_folio(struct folio *folio, gfp_t gfp_mask,
++		bool force)
+ {
+ 	struct metapage *mp;
+ 	bool ret = true;
+@@ -537,8 +538,9 @@ static bool metapage_release_folio(struct folio *folio, gfp_t gfp_mask)
+ 			continue;
+ 
+ 		jfs_info("metapage_release_folio: mp = 0x%p", mp);
+-		if (mp->count || mp->nohomeok ||
+-		    test_bit(META_dirty, &mp->flag)) {
++		if (!force &&
++		    (mp->count || mp->nohomeok ||
++		     test_bit(META_dirty, &mp->flag))) {
+ 			jfs_info("count = %ld, nohomeok = %d", mp->count,
+ 				 mp->nohomeok);
+ 			ret = false;
+@@ -553,6 +555,11 @@ static bool metapage_release_folio(struct folio *folio, gfp_t gfp_mask)
+ 	return ret;
+ }
+ 
++static bool metapage_release_folio(struct folio *folio, gfp_t gfp)
++{
++	return __metapage_release_folio(folio, gfp, false);
++}
++
+ static void metapage_invalidate_folio(struct folio *folio, size_t offset,
+ 				    size_t length)
+ {
+@@ -560,7 +567,7 @@ static void metapage_invalidate_folio(struct folio *folio, size_t offset,
+ 
+ 	BUG_ON(folio_test_writeback(folio));
+ 
+-	metapage_release_folio(folio, 0);
++	__metapage_release_folio(folio, 0, true);
+ }
+ 
+ const struct address_space_operations jfs_metapage_aops = {
+-- 
+2.34.1
+
 
 
 _______________________________________________
