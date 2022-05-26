@@ -2,26 +2,26 @@ Return-Path: <jfs-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+jfs-discussion@lfdr.de
 Delivered-To: lists+jfs-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5D8965353FE
-	for <lists+jfs-discussion@lfdr.de>; Thu, 26 May 2022 21:30:03 +0200 (CEST)
-Received: from [127.0.0.1] (helo=sfs-ml-2.v29.lw.sourceforge.com)
-	by sfs-ml-2.v29.lw.sourceforge.com with esmtp (Exim 4.94.2)
+	by mail.lfdr.de (Postfix) with ESMTPS id 654985353F9
+	for <lists+jfs-discussion@lfdr.de>; Thu, 26 May 2022 21:30:01 +0200 (CEST)
+Received: from [127.0.0.1] (helo=sfs-ml-4.v29.lw.sourceforge.com)
+	by sfs-ml-4.v29.lw.sourceforge.com with esmtp (Exim 4.94.2)
 	(envelope-from <jfs-discussion-bounces@lists.sourceforge.net>)
-	id 1nuJAx-0005sg-5z; Thu, 26 May 2022 19:29:38 +0000
+	id 1nuJAz-0002pY-CD; Thu, 26 May 2022 19:29:39 +0000
 Received: from [172.30.20.202] (helo=mx.sourceforge.net)
- by sfs-ml-2.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
+ by sfs-ml-4.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
  TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (Exim 4.94.2)
- (envelope-from <willy@infradead.org>) id 1nuJAw-0005sa-19
- for jfs-discussion@lists.sourceforge.net; Thu, 26 May 2022 19:29:37 +0000
+ (envelope-from <willy@infradead.org>) id 1nuJAx-0002ov-Pn
+ for jfs-discussion@lists.sourceforge.net; Thu, 26 May 2022 19:29:38 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=sourceforge.net; s=x; h=Content-Transfer-Encoding:MIME-Version:References:
  In-Reply-To:Message-Id:Date:Subject:Cc:To:From:Sender:Reply-To:Content-Type:
  Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
  Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=ph6yrsMi6MgeXQ6bRsFN0xtbtdvaj4M9b9YlpQeI3wg=; b=jnQb4EtDkztxSiQwzdUA+dos1p
- BZlxifw3eSGpgor9I84616TTcYUjvSzEbZDWt+XnoNu1JTDkH5PbJHloBeYqr7PXXaOAqY5ILm5Nk
- biyKFocpUJbCl+GUFKpgN1uFvMY4NpGixVOBmKE3pmnaTsSNQiZLotYNPWqKu3FgZ7Q0=;
+ bh=Tw57enbumz2FqWsQdoAMcuYQfaSu50lDHkdYyxdjVvc=; b=KoMJoewC8XSAOs8EKC/YPwPNoj
+ uUT2V7FZFrYj6CdtWSWffRNKKEYnnFTB6lyvqYS7GHj+rsCKwFcwr8LXq8Iv1eIO665pg9NSpb1nb
+ B/UwQteMsW5zgvsMeEgxWYZM1BFbcMbWz7A9lEXxG7MTqWZJbFpe9X3hfQ3TMZp+3f84=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
  h=Content-Transfer-Encoding:MIME-Version:References:In-Reply-To:Message-Id:
@@ -29,49 +29,49 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
  :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
  List-Post:List-Owner:List-Archive;
- bh=ph6yrsMi6MgeXQ6bRsFN0xtbtdvaj4M9b9YlpQeI3wg=; b=cbWZJYYDwKx5RbAZNZcDL1lUBZ
- zGAyTqSjfUtUXik0CPfsVUQdypJVgNXLLEAKFUBwz0AbOpzG2+AJ3bLQdLanwt34+e+1KTJGIdmwI
- 0GH16yecaiMKPmMeKKM8Amsoo8uC+XTmTg18UxUn7TFimGQnVZ9v94Q+Fhqf6hKyEGwM=;
-Received: from [90.155.50.34] (helo=casper.infradead.org)
- by sfi-mx-1.v28.lw.sourceforge.com with esmtps
+ bh=Tw57enbumz2FqWsQdoAMcuYQfaSu50lDHkdYyxdjVvc=; b=TIdEPGwmt2jUZ2NPcgj78zwHU0
+ BW5ZRz8icS6hpvAbWAvM7vA/Pww0qcEqzbEr81kUU1lpI+DvgLhYkfu28u8U1coTpNJcAfAQAj8Eo
+ E5bSZolWUGkuLfb1vJ8c4UtQjVCi6a67R5flDpVwW8yqKRrzLRhVpEUwTdRwfJQwPcww=;
+Received: from casper.infradead.org ([90.155.50.34])
+ by sfi-mx-2.v28.lw.sourceforge.com with esmtps
  (TLS1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.94.2)
- id 1nuJAr-002uYe-Qi
- for jfs-discussion@lists.sourceforge.net; Thu, 26 May 2022 19:29:36 +0000
+ id 1nuJAr-0000tE-Ep
+ for jfs-discussion@lists.sourceforge.net; Thu, 26 May 2022 19:29:38 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=infradead.org; s=casper.20170209; h=Content-Transfer-Encoding:MIME-Version:
  References:In-Reply-To:Message-Id:Date:Subject:Cc:To:From:Sender:Reply-To:
  Content-Type:Content-ID:Content-Description;
- bh=ph6yrsMi6MgeXQ6bRsFN0xtbtdvaj4M9b9YlpQeI3wg=; b=ky2cmbr8PrJ/f18gC/mHTNuDNX
- wsmLWMAFjDyItY5VpEtQoNnW5OTdYd7SVpZJFz7vkVHS0OXYP/yDwqQHVRUEffvMuUdyBftcZFETv
- NrGjY4pgTv8SCQexgTq9bTanfXoiftoT0Lai1QoCd9wqKkoL+4wBDHV2dc72dbhmcGFYxlSPXESlb
- SD6Hf+RNfgb/eNT+yU0Xisf4rwV318XKohgYYUUSQ1wTqNtH/QN5mzE+n6OPSFzueu0BxcbJM0JXZ
- wpXPmGMdaRH8OWzNA06Nsjv1g2dVpfPy721TLBU5MyYNi0nILs3kdMh960Gts2OIF5Z5d7VSAcnxx
- n6oL3bkw==;
+ bh=Tw57enbumz2FqWsQdoAMcuYQfaSu50lDHkdYyxdjVvc=; b=mZkwFP1W1F/ieBE7sEmtWtJ3C0
+ w0nJNDnxeKp2HzI7Cv/e9gK23H5h4BVxnlb6+CRgTp8RKSjE6qF88TJURwhiGIBYn01Rg18XZOjn8
+ HOb/n3k/1+r/wfjIyVfrvnX/HIJmihq/ptYU2hsIQyn7TReD7H54NP42N4nVcsPexzrIX5j8hh10u
+ gaXgWBiO3gKgx6w2439KRi/2wZQ8hwh54cEidhA0Yec11/1oZit/P7aBhfYBRkhwqWzdCwMU2KdHF
+ 3rQ9drTfCA+T4VdntjuGv2gUml9uGFdEa7fBc4XPx3uvV6fkvXophgxNlDGuuFu6s4VVOl2TUQfZ8
+ yl9L8JpQ==;
 Received: from willy by casper.infradead.org with local (Exim 4.94.2 #2 (Red
- Hat Linux)) id 1nuJAb-001Uul-8r; Thu, 26 May 2022 19:29:17 +0000
+ Hat Linux)) id 1nuJAb-001Uur-C0; Thu, 26 May 2022 19:29:17 +0000
 From: "Matthew Wilcox (Oracle)" <willy@infradead.org>
 To: jfs-discussion@lists.sourceforge.net,
 	linux-fsdevel@vger.kernel.org
-Date: Thu, 26 May 2022 20:29:08 +0100
-Message-Id: <20220526192910.357055-8-willy@infradead.org>
+Date: Thu, 26 May 2022 20:29:09 +0100
+Message-Id: <20220526192910.357055-9-willy@infradead.org>
 X-Mailer: git-send-email 2.31.1
 In-Reply-To: <20220526192910.357055-1-willy@infradead.org>
 References: <20220526192910.357055-1-willy@infradead.org>
 MIME-Version: 1.0
-X-Spam-Score: 1.1 (+)
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: Spam detection software,
  running on the system "util-spamd-1.v13.lw.sourceforge.com", 
  has NOT identified this incoming email as spam.  The original
  message has been attached to this so you can view it or label
  similar future email.  If you have any questions, see
  the administrator of that system for details.
- Content preview:  The comment above jfs_quota_read() is stale; sb_bread() will
- use the page cache, so we may as well use the page cache directly and avoid
- using jfs_get_block(). Signed-off-by: Matthew Wilcox (Oracle)
- <willy@infradead.org>
- --- fs/jfs/super.c | 54 ++++++++++++++++++++ 1 file changed, 21 insertions(+), 
- 33 deletions(-) 
- Content analysis details:   (1.1 points, 6.0 required)
+ Content preview: Remove call to jfs_get_block() and use the page cache
+ directly
+ instead of wrapping it in a buffer_head. Signed-off-by: Matthew Wilcox
+ (Oracle)
+ <willy@infradead.org> --- fs/jfs/super.c | 71 ++++++++++++++++++++++++++
+ 1 file changed, 37 insertions(+), 34 deletions(-) 
+ Content analysis details:   (-0.2 points, 6.0 required)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -83,9 +83,8 @@ X-Spam-Report: Spam detection software,
  valid
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
- 1.3 RDNS_NONE Delivered to internal network by a host with no rDNS
-X-Headers-End: 1nuJAr-002uYe-Qi
-Subject: [Jfs-discussion] [RFC PATCH 7/9] jfs: Read quota through the page
+X-Headers-End: 1nuJAr-0000tE-Ep
+Subject: [Jfs-discussion] [RFC PATCH 8/9] jfs: Write quota through the page
  cache
 X-BeenThere: jfs-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
@@ -105,92 +104,118 @@ Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Errors-To: jfs-discussion-bounces@lists.sourceforge.net
 
-The comment above jfs_quota_read() is stale; sb_bread() will use the
-page cache, so we may as well use the page cache directly and avoid
-using jfs_get_block().
+Remove call to jfs_get_block() and use the page cache directly instead
+of wrapping it in a buffer_head.
 
 Signed-off-by: Matthew Wilcox (Oracle) <willy@infradead.org>
 ---
- fs/jfs/super.c | 54 ++++++++++++++++++++------------------------------
- 1 file changed, 21 insertions(+), 33 deletions(-)
+ fs/jfs/super.c | 71 ++++++++++++++++++++++++++------------------------
+ 1 file changed, 37 insertions(+), 34 deletions(-)
 
 diff --git a/fs/jfs/super.c b/fs/jfs/super.c
-index 85d4f44f2ac4..1e7d117b555d 100644
+index 1e7d117b555d..151c62e2a08f 100644
 --- a/fs/jfs/super.c
 +++ b/fs/jfs/super.c
-@@ -721,51 +721,39 @@ static int jfs_show_options(struct seq_file *seq, struct dentry *root)
- }
+@@ -14,7 +14,6 @@
+ #include <linux/moduleparam.h>
+ #include <linux/kthread.h>
+ #include <linux/posix_acl.h>
+-#include <linux/buffer_head.h>
+ #include <linux/exportfs.h>
+ #include <linux/crc32.h>
+ #include <linux/slab.h>
+@@ -760,54 +759,58 @@ static ssize_t jfs_quota_read(struct super_block *sb, int type, char *data,
  
- #ifdef CONFIG_QUOTA
--
--/* Read data from quotafile - avoid pagecache and such because we cannot afford
-- * acquiring the locks... As quota files are never truncated and quota code
-- * itself serializes the operations (and no one else should touch the files)
-- * we don't have to be afraid of races */
- static ssize_t jfs_quota_read(struct super_block *sb, int type, char *data,
--			      size_t len, loff_t off)
-+			      size_t len, loff_t pos)
+ /* Write to quotafile */
+ static ssize_t jfs_quota_write(struct super_block *sb, int type,
+-			       const char *data, size_t len, loff_t off)
++			       const char *data, size_t len, loff_t pos)
  {
  	struct inode *inode = sb_dqopt(sb)->files[type];
 -	sector_t blk = off >> sb->s_blocksize_bits;
--	int err = 0;
++	struct address_space *mapping = inode->i_mapping;
+ 	int err = 0;
 -	int offset = off & (sb->s_blocksize - 1);
 -	int tocopy;
-+	struct address_space *mapping = inode->i_mapping;
- 	size_t toread;
+ 	size_t towrite = len;
 -	struct buffer_head tmp_bh;
 -	struct buffer_head *bh;
-+	pgoff_t index;
- 	loff_t i_size = i_size_read(inode);
  
--	if (off > i_size)
-+	if (pos > i_size)
- 		return 0;
--	if (off+len > i_size)
--		len = i_size-off;
-+	if (pos + len > i_size)
-+		len = i_size - pos;
- 	toread = len;
-+	index = pos / PAGE_SIZE;
-+
- 	while (toread > 0) {
--		tocopy = sb->s_blocksize - offset < toread ?
--				sb->s_blocksize - offset : toread;
-+		struct folio *folio = read_mapping_folio(mapping, index, NULL);
-+		size_t tocopy = PAGE_SIZE - offset_in_page(pos);
-+		void *src;
-+
-+		if (IS_ERR(folio))
-+			return PTR_ERR(folio);
-+
-+		src = kmap_local_folio(folio, offset_in_folio(folio, pos));
-+		memcpy(data, src, tocopy);
-+		kunmap_local(src);
-+		folio_put(folio);
- 
+ 	inode_lock(inode);
+ 	while (towrite > 0) {
+-		tocopy = sb->s_blocksize - offset < towrite ?
+-				sb->s_blocksize - offset : towrite;
+-
 -		tmp_bh.b_state = 0;
 -		tmp_bh.b_size = i_blocksize(inode);
--		err = jfs_get_block(inode, blk, &tmp_bh, 0);
+-		err = jfs_get_block(inode, blk, &tmp_bh, 1);
 -		if (err)
--			return err;
--		if (!buffer_mapped(&tmp_bh))	/* A hole? */
--			memset(data, 0, tocopy);
--		else {
+-			goto out;
+-		if (offset || tocopy != sb->s_blocksize)
 -			bh = sb_bread(sb, tmp_bh.b_blocknr);
--			if (!bh)
--				return -EIO;
--			memcpy(data, bh->b_data+offset, tocopy);
--			brelse(bh);
--		}
+-		else
+-			bh = sb_getblk(sb, tmp_bh.b_blocknr);
+-		if (!bh) {
+-			err = -EIO;
+-			goto out;
++		pgoff_t index = pos / PAGE_SIZE;
++		size_t tocopy = min(PAGE_SIZE - offset_in_page(pos), towrite);
++		struct folio *folio;
++		void *dst;
++
++		if (offset_in_page(pos) ||
++		    (towrite < PAGE_SIZE && (pos + towrite < inode->i_size))) {
++			folio = read_mapping_folio(mapping, index, NULL);
++			if (IS_ERR(folio)) {
++				err = PTR_ERR(folio);
++				break;
++			}
++		} else {
++			folio = __filemap_get_folio(mapping, index,
++					FGP_CREAT|FGP_WRITE, GFP_KERNEL);
++			if (!folio) {
++				err = -ENOMEM;
++				break;
++			}
+ 		}
+-		lock_buffer(bh);
+-		memcpy(bh->b_data+offset, data, tocopy);
+-		flush_dcache_page(bh->b_page);
+-		set_buffer_uptodate(bh);
+-		mark_buffer_dirty(bh);
+-		unlock_buffer(bh);
+-		brelse(bh);
 -		offset = 0;
- 		toread -= tocopy;
++
++		folio_lock(folio);
++		dst = kmap_local_folio(folio, offset_in_folio(folio, pos));
++		memcpy(dst, data, tocopy);
+ 		towrite -= tocopy;
  		data += tocopy;
 -		blk++;
 +		pos += tocopy;
-+		index++;
++		if (!towrite && pos >= inode->i_size)
++			memset(dst + tocopy, 0, PAGE_SIZE - tocopy);
++		kunmap_local(dst);
++
++		folio_mark_uptodate(folio);
++		folio_mark_dirty(folio);
++		folio_unlock(folio);
++		folio_put(folio);
  	}
- 	return len;
- }
+-out:
++
+ 	if (len == towrite) {
+ 		inode_unlock(inode);
+ 		return err;
+ 	}
+-	if (inode->i_size < off+len-towrite)
+-		i_size_write(inode, off+len-towrite);
++	if (inode->i_size < pos + len - towrite)
++		i_size_write(inode, pos + len - towrite);
+ 	inode->i_mtime = inode->i_ctime = current_time(inode);
+ 	mark_inode_dirty(inode);
+ 	inode_unlock(inode);
 -- 
 2.34.1
 
