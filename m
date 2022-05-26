@@ -2,16 +2,16 @@ Return-Path: <jfs-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+jfs-discussion@lfdr.de
 Delivered-To: lists+jfs-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id 71823535400
-	for <lists+jfs-discussion@lfdr.de>; Thu, 26 May 2022 21:30:05 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8CAD65353FB
+	for <lists+jfs-discussion@lfdr.de>; Thu, 26 May 2022 21:30:02 +0200 (CEST)
 Received: from [127.0.0.1] (helo=sfs-ml-2.v29.lw.sourceforge.com)
 	by sfs-ml-2.v29.lw.sourceforge.com with esmtp (Exim 4.94.2)
 	(envelope-from <jfs-discussion-bounces@lists.sourceforge.net>)
-	id 1nuJB1-0005tR-Mk; Thu, 26 May 2022 19:29:42 +0000
+	id 1nuJB1-0005tb-QO; Thu, 26 May 2022 19:29:42 +0000
 Received: from [172.30.20.202] (helo=mx.sourceforge.net)
  by sfs-ml-2.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
  TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (Exim 4.94.2)
- (envelope-from <willy@infradead.org>) id 1nuJAy-0005st-Ek
+ (envelope-from <willy@infradead.org>) id 1nuJAy-0005su-Ep
  for jfs-discussion@lists.sourceforge.net; Thu, 26 May 2022 19:29:39 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=sourceforge.net; s=x; h=Content-Transfer-Encoding:MIME-Version:References:
@@ -19,9 +19,9 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
  Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=x+uWnv9eHPm+ndPDGZ6NXBV5ZLTnCGexee2oZ9N0PrI=; b=eWG4CcN4qvQhrJLYaQHSldakHf
- iKuPj6PaJal1LvgH4oz2iL4N6d3R3r4zjgXPHyO4XMX7kAAlg3rvmJiZW14qKM74LIBfyITN9e2J5
- fFFhPZ+KA7uABEGvIfW9XVhJ+WooZkbnJx5fPzhro316uiiHh0j5Q6zwmfbZFZSmhKVk=;
+ bh=wSd+lbnlA77fblK457Iy6DahZ3A7HH6ZJjKfKRHg/4w=; b=LUhqJgDJG21wzTqv6NU8EtR7vB
+ tBc11XEN6vQzAj0ltbmrT+8vjXHBBsVfVhjrQdtAG9fQRtanzejYNatfvWC5VuhGJXUcTHSIfXXiB
+ fUNT1nzO8/9T/Z6sBOnAcqRwTz3Xy1Ti/woB1fSMO1lwg5ZdHDXjdG4lGdj6altMWFh0=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
  h=Content-Transfer-Encoding:MIME-Version:References:In-Reply-To:Message-Id:
@@ -29,31 +29,31 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
  :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
  List-Post:List-Owner:List-Archive;
- bh=x+uWnv9eHPm+ndPDGZ6NXBV5ZLTnCGexee2oZ9N0PrI=; b=baToXTLzy3+3FFtoaNQp8oS9id
- EuZL3ytVJwW63eUGF/yzHkCUQNp1/DO4BIxHq3ISFwo6OzQiktSv4XklkxlMmpyg23apIewGwrn4s
- rQ6j8yg43P7e5hQXu3j6iNImomGC0bgZlSJ1WnIsLUqWz3Y8Vc58s9Fd/cdl/2+5BTzA=;
+ bh=wSd+lbnlA77fblK457Iy6DahZ3A7HH6ZJjKfKRHg/4w=; b=kE84u4mz3YIGjJU3mPAF60OCWM
+ ixlAvgLucMUEud6ItXgDDgIP7FwCxe2z5CpGH/Xp3wVVtEhHR6BVRHE79rNpZyYcp/xbbQRMyyO3z
+ cdKFd/dOCDB/Y1VszRRRWQecWu/8FomR1ikS/E9JpSAgAlpKncQ3GYUtM5m7Gf4bbRik=;
 Received: from [90.155.50.34] (helo=casper.infradead.org)
  by sfi-mx-1.v28.lw.sourceforge.com with esmtps
  (TLS1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.94.2)
- id 1nuJAr-002uYW-4f
+ id 1nuJAr-002uYX-7s
  for jfs-discussion@lists.sourceforge.net; Thu, 26 May 2022 19:29:38 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=infradead.org; s=casper.20170209; h=Content-Transfer-Encoding:MIME-Version:
  References:In-Reply-To:Message-Id:Date:Subject:Cc:To:From:Sender:Reply-To:
  Content-Type:Content-ID:Content-Description;
- bh=x+uWnv9eHPm+ndPDGZ6NXBV5ZLTnCGexee2oZ9N0PrI=; b=QNr+rf7eqh/VvcxHMxywyXQix2
- duGO7r5M5FEMCOy1SknG1fFeKYkML5/kTWw1/rGOQyzJ228MMiOE241BvT5tj1fdp9jfqoRlUnA1H
- omWibmX2FUg+JBRCXLN/1wNa89AUM48ST82lX8BEA81R9PDo3NrDIPRJjDI5lAZM7NRHDqPGmP4Im
- WKq+cL97wCbZefSGfH7VPNNwSvDC3IviDakdf/8MG88RD1LSMhjKD7nGnoS1wFBhoJOBlRM8FL3hY
- NmiMEosyUkrfu0rnVym/I8tJM7UbzaGMesiGdPxZeC+0MBdixSVfgTvvqaR018FxOJ7fo0tNBorbK
- EWvt1CIA==;
+ bh=wSd+lbnlA77fblK457Iy6DahZ3A7HH6ZJjKfKRHg/4w=; b=IMklrt3JsXu5P8PYMJ2VHj6iow
+ 2KCDqmdQX6lM7B64t6uefOpxbY40sh00H/XfxWj9ogi2Buh0umpyO8SZgftp8IPprO1hh8d1WtNEK
+ vWuX6IVQVpbnWHYVoQ2le2F4baEn3XXgCJ5+/AY/NpMOUm1r0w0QsuZCUqeT65tQz1leeYbSNOY4l
+ 8BUWeTydaJsOnxGugC7jAcipHfMtx03CON/0xDwWXiYHHjbPC3DZoOB3Eqse34uWFmUJhY1ybKdxg
+ GXO5JiCmXYpcCjNzcDyDSixYDWeqI+w37Rr6/OTCJHLBM15HhG+7KCBx041/dqn5PmuQyLgVjzrPF
+ lF1HAJEw==;
 Received: from willy by casper.infradead.org with local (Exim 4.94.2 #2 (Red
- Hat Linux)) id 1nuJAa-001UuE-Il; Thu, 26 May 2022 19:29:16 +0000
+ Hat Linux)) id 1nuJAa-001UuN-Mt; Thu, 26 May 2022 19:29:16 +0000
 From: "Matthew Wilcox (Oracle)" <willy@infradead.org>
 To: jfs-discussion@lists.sourceforge.net,
 	linux-fsdevel@vger.kernel.org
-Date: Thu, 26 May 2022 20:29:03 +0100
-Message-Id: <20220526192910.357055-3-willy@infradead.org>
+Date: Thu, 26 May 2022 20:29:04 +0100
+Message-Id: <20220526192910.357055-4-willy@infradead.org>
 X-Mailer: git-send-email 2.31.1
 In-Reply-To: <20220526192910.357055-1-willy@infradead.org>
 References: <20220526192910.357055-1-willy@infradead.org>
@@ -65,9 +65,12 @@ X-Spam-Report: Spam detection software,
  message has been attached to this so you can view it or label
  similar future email.  If you have any questions, see
  the administrator of that system for details.
- Content preview: Turn jfs_get_block() into a wrapper around jfs_iomap_begin().
- This fixes a latent bug where JFS was not setting b_size when it encountered
- a hole. At least mpage_readahead() does not look at b_size wh [...] 
+ Content preview: Use the new iomap support to handle direct IO reads.
+ Signed-off-by:
+ Matthew Wilcox (Oracle) <willy@infradead.org> --- fs/jfs/file.c | 20
+ ++++++++++++++++++--
+ fs/jfs/inode.c | 4 ++++ fs/jfs/jfs_inode.h | 1 + 3 files changed,
+ 23 insertions(+), 2 deletions [...] 
  Content analysis details:   (1.1 points, 6.0 required)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
@@ -82,8 +85,9 @@ X-Spam-Report: Spam detection software,
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.0 T_SCC_BODY_TEXT_LINE   No description available.
  1.3 RDNS_NONE Delivered to internal network by a host with no rDNS
-X-Headers-End: 1nuJAr-002uYW-4f
-Subject: [Jfs-discussion] [RFC PATCH 2/9] jfs: Add jfs_iomap_begin()
+X-Headers-End: 1nuJAr-002uYX-7s
+Subject: [Jfs-discussion] [RFC PATCH 3/9] jfs: Convert direct_IO read
+ support to use iomap
 X-BeenThere: jfs-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -102,147 +106,90 @@ Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Errors-To: jfs-discussion-bounces@lists.sourceforge.net
 
-Turn jfs_get_block() into a wrapper around jfs_iomap_begin().  This fixes
-a latent bug where JFS was not setting b_size when it encountered a hole.
-At least mpage_readahead() does not look at b_size when the buffer is
-unmapped, but iomap will care whether iomap->length is set correctly,
-and so we may as well set b_size correctly as well.
+Use the new iomap support to handle direct IO reads.
 
 Signed-off-by: Matthew Wilcox (Oracle) <willy@infradead.org>
 ---
- fs/jfs/inode.c | 67 +++++++++++++++++++++++++++++++++++++-------------
- 1 file changed, 50 insertions(+), 17 deletions(-)
+ fs/jfs/file.c      | 20 ++++++++++++++++++--
+ fs/jfs/inode.c     |  4 ++++
+ fs/jfs/jfs_inode.h |  1 +
+ 3 files changed, 23 insertions(+), 2 deletions(-)
 
-diff --git a/fs/jfs/inode.c b/fs/jfs/inode.c
-index a5dd7e53754a..1a5bdaf35e9b 100644
---- a/fs/jfs/inode.c
-+++ b/fs/jfs/inode.c
-@@ -5,6 +5,7 @@
+diff --git a/fs/jfs/file.c b/fs/jfs/file.c
+index 1d732fd223d4..0d074a9e0f77 100644
+--- a/fs/jfs/file.c
++++ b/fs/jfs/file.c
+@@ -4,10 +4,12 @@
+  *   Portions Copyright (C) Christoph Hellwig, 2001-2002
   */
  
+-#include <linux/mm.h>
  #include <linux/fs.h>
 +#include <linux/iomap.h>
- #include <linux/mpage.h>
- #include <linux/buffer_head.h>
- #include <linux/pagemap.h>
-@@ -196,15 +197,21 @@ void jfs_dirty_inode(struct inode *inode, int flags)
- 	set_cflag(COMMIT_Dirty, inode);
++#include <linux/mm.h>
+ #include <linux/posix_acl.h>
+ #include <linux/quotaops.h>
++#include <linux/uio.h>
+ #include "jfs_incore.h"
+ #include "jfs_inode.h"
+ #include "jfs_dmap.h"
+@@ -70,6 +72,20 @@ static int jfs_open(struct inode *inode, struct file *file)
+ 
+ 	return 0;
  }
- 
--int jfs_get_block(struct inode *ip, sector_t lblock,
--		  struct buffer_head *bh_result, int create)
-+int jfs_iomap_begin(struct inode *ip, loff_t pos, loff_t length,
-+		unsigned flags, struct iomap *iomap, struct iomap *srcmap)
- {
--	s64 lblock64 = lblock;
-+	s64 lblock64 = pos >> ip->i_blkbits;
-+	int create = flags & IOMAP_WRITE;
- 	int rc = 0;
- 	xad_t xad;
- 	s64 xaddr;
- 	int xflag;
--	s32 xlen = bh_result->b_size >> ip->i_blkbits;
-+	s32 xlen;
 +
-+	xlen = DIV_ROUND_UP(pos + length - (lblock64 << ip->i_blkbits),
-+			    i_blocksize(ip));
-+	if (xlen < 0)
-+		xlen = INT_MAX;
- 
- 	/*
- 	 * Take appropriate lock on inode
-@@ -214,8 +221,8 @@ int jfs_get_block(struct inode *ip, sector_t lblock,
- 	else
- 		IREAD_LOCK(ip, RDWRLOCK_NORMAL);
- 
--	if (((lblock64 << ip->i_sb->s_blocksize_bits) < ip->i_size) &&
--	    (!xtLookup(ip, lblock64, xlen, &xflag, &xaddr, &xlen, 0)) &&
-+	if (pos < ip->i_size &&
-+	    !xtLookup(ip, lblock64, xlen, &xflag, &xaddr, &xlen, 0) &&
- 	    xaddr) {
- 		if (xflag & XAD_NOTRECORDED) {
- 			if (!create)
-@@ -238,13 +245,11 @@ int jfs_get_block(struct inode *ip, sector_t lblock,
- #endif				/* _JFS_4K */
- 			rc = extRecord(ip, &xad);
- 			if (rc)
--				goto unlock;
--			set_buffer_new(bh_result);
-+				goto err;
-+			iomap->flags |= IOMAP_F_NEW;
- 		}
- 
--		map_bh(bh_result, ip->i_sb, xaddr);
--		bh_result->b_size = xlen << ip->i_blkbits;
--		goto unlock;
-+		goto map;
- 	}
- 	if (!create)
- 		goto unlock;
-@@ -254,14 +259,14 @@ int jfs_get_block(struct inode *ip, sector_t lblock,
- 	 */
- #ifdef _JFS_4K
- 	if ((rc = extHint(ip, lblock64 << ip->i_sb->s_blocksize_bits, &xad)))
--		goto unlock;
-+		goto err;
- 	rc = extAlloc(ip, xlen, lblock64, &xad, false);
- 	if (rc)
--		goto unlock;
-+		goto err;
- 
--	set_buffer_new(bh_result);
--	map_bh(bh_result, ip->i_sb, addressXAD(&xad));
--	bh_result->b_size = lengthXAD(&xad) << ip->i_blkbits;
-+	xaddr = addressXAD(&xad);
-+	xlen = lengthXAD(&xad);
-+	iomap->flags |= IOMAP_F_NEW;
- 
- #else				/* _JFS_4K */
- 	/*
-@@ -271,7 +276,14 @@ int jfs_get_block(struct inode *ip, sector_t lblock,
- 	BUG();
- #endif				/* _JFS_4K */
- 
--      unlock:
-+map:
-+	iomap->addr = xaddr << ip->i_blkbits;
-+	iomap->bdev = ip->i_sb->s_bdev;
-+	iomap->type = IOMAP_MAPPED;
-+unlock:
-+	iomap->offset = lblock64 << ip->i_blkbits;
-+	iomap->length = xlen << ip->i_blkbits;
-+err:
- 	/*
- 	 * Release lock on inode
- 	 */
-@@ -282,6 +294,27 @@ int jfs_get_block(struct inode *ip, sector_t lblock,
++static ssize_t jfs_read_iter(struct kiocb *iocb, struct iov_iter *to)
++{
++	if (!iov_iter_count(to))
++		return 0; /* skip atime */
++
++	if (iocb->ki_flags & IOCB_DIRECT) {
++		file_accessed(iocb->ki_filp);
++		return iomap_dio_rw(iocb, to, &jfs_iomap_ops, NULL, 0, NULL, 0);
++	}
++
++	return generic_file_read_iter(iocb, to);
++}
++
+ static int jfs_release(struct inode *inode, struct file *file)
+ {
+ 	struct jfs_inode_info *ji = JFS_IP(inode);
+@@ -141,7 +157,7 @@ const struct inode_operations jfs_file_inode_operations = {
+ const struct file_operations jfs_file_operations = {
+ 	.open		= jfs_open,
+ 	.llseek		= generic_file_llseek,
+-	.read_iter	= generic_file_read_iter,
++	.read_iter	= jfs_read_iter,
+ 	.write_iter	= generic_file_write_iter,
+ 	.mmap		= generic_file_mmap,
+ 	.splice_read	= generic_file_splice_read,
+diff --git a/fs/jfs/inode.c b/fs/jfs/inode.c
+index 1a5bdaf35e9b..22e8a5612fdc 100644
+--- a/fs/jfs/inode.c
++++ b/fs/jfs/inode.c
+@@ -294,6 +294,10 @@ int jfs_iomap_begin(struct inode *ip, loff_t pos, loff_t length,
  	return rc;
  }
  
-+int jfs_get_block(struct inode *ip, sector_t lblock,
-+		  struct buffer_head *bh_result, int create)
-+{
-+	struct iomap iomap = { };
-+	int ret;
++const struct iomap_ops jfs_iomap_ops = {
++	.iomap_begin =  jfs_iomap_begin,
++};
 +
-+	ret = jfs_iomap_begin(ip, lblock << ip->i_blkbits, bh_result->b_size,
-+			create ? IOMAP_WRITE : 0, &iomap, NULL);
-+	if (ret)
-+		return ret;
-+
-+	bh_result->b_size = iomap.length;
-+	if (iomap.type == IOMAP_HOLE)
-+		return 0;
-+
-+	map_bh(bh_result, ip->i_sb, iomap.addr >> ip->i_blkbits);
-+	if (iomap.flags & IOMAP_F_NEW)
-+		set_buffer_new(bh_result);
-+	return 0;
-+}
-+
- static int jfs_writepage(struct page *page, struct writeback_control *wbc)
+ int jfs_get_block(struct inode *ip, sector_t lblock,
+ 		  struct buffer_head *bh_result, int create)
  {
- 	return block_write_full_page(page, jfs_get_block, wbc);
+diff --git a/fs/jfs/jfs_inode.h b/fs/jfs/jfs_inode.h
+index 7de961a81862..afd12de3c341 100644
+--- a/fs/jfs/jfs_inode.h
++++ b/fs/jfs/jfs_inode.h
+@@ -30,6 +30,7 @@ extern void jfs_set_inode_flags(struct inode *);
+ extern int jfs_get_block(struct inode *, sector_t, struct buffer_head *, int);
+ extern int jfs_setattr(struct user_namespace *, struct dentry *, struct iattr *);
+ 
++extern const struct iomap_ops jfs_iomap_ops;
+ extern const struct address_space_operations jfs_aops;
+ extern const struct inode_operations jfs_dir_inode_operations;
+ extern const struct file_operations jfs_dir_operations;
 -- 
 2.34.1
 
