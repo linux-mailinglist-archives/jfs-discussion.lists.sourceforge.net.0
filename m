@@ -2,27 +2,26 @@ Return-Path: <jfs-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+jfs-discussion@lfdr.de
 Delivered-To: lists+jfs-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7A0E25358DF
-	for <lists+jfs-discussion@lfdr.de>; Fri, 27 May 2022 07:46:48 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C5C31536348
+	for <lists+jfs-discussion@lfdr.de>; Fri, 27 May 2022 15:21:19 +0200 (CEST)
 Received: from [127.0.0.1] (helo=sfs-ml-1.v29.lw.sourceforge.com)
 	by sfs-ml-1.v29.lw.sourceforge.com with esmtp (Exim 4.94.2)
 	(envelope-from <jfs-discussion-bounces@lists.sourceforge.net>)
-	id 1nuSnr-0002VW-GB; Fri, 27 May 2022 05:46:27 +0000
+	id 1nuZtf-0008I2-RG; Fri, 27 May 2022 13:20:56 +0000
 Received: from [172.30.20.202] (helo=mx.sourceforge.net)
  by sfs-ml-1.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
- TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (Exim 4.94.2) (envelope-from
- <BATV+4b38f75a90640a87185b+6851+infradead.org+hch@bombadil.srs.infradead.org>)
- id 1nuSnp-0002VP-LO
- for jfs-discussion@lists.sourceforge.net; Fri, 27 May 2022 05:46:26 +0000
+ TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (Exim 4.94.2)
+ (envelope-from <willy@infradead.org>) id 1nuZtd-0008Hi-Eb
+ for jfs-discussion@lists.sourceforge.net; Fri, 27 May 2022 13:20:53 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=sourceforge.net; s=x; h=In-Reply-To:Content-Type:MIME-Version:References:
  Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:Content-Transfer-Encoding:
  Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
  Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=VDmChBWljedoEkok5R0TCyduHzHyVq8JxgfKEHTfMDU=; b=DJbbptRQXoFebNGOcPha/NT5J9
- jJUo8pazfBa5LHxZEgKsKbneg09i9BSKIXB3en2G7dCjM8LKC86SoZMkzxlDc/wuf74ueb+rBLDiA
- aSWUKDLR94mH7Sqcq7jtXKKhnflFhkOYtW8CSwFaLQUmoSaOZwgpVFYVtiDxABOhHEBU=;
+ bh=++iGzJ5RyvCbarxonRdx9rs9lIBzvUwOZefKETchJ40=; b=RtbVjIdC9wJmPuwNGI/nyU7lQ8
+ J4ZbH/euNVEQrOUu3N11Ad69vxCqZXn7pTCWQzH8mlNRH2ZRPkeejqZ9yh3NrRL/eiQ/wTDk50KBd
+ /ESDpiLvZS+g+DhRrEaiCUhkItzy5CmrzAFtcKzZ7cHCXxzmdk+txVcwVEjRWPzsiJCA=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
  h=In-Reply-To:Content-Type:MIME-Version:References:Message-ID:Subject:Cc:To
@@ -30,67 +29,62 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
  :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
  List-Post:List-Owner:List-Archive;
- bh=VDmChBWljedoEkok5R0TCyduHzHyVq8JxgfKEHTfMDU=; b=Q4ck9iS6RMFwNrVZccLTfxqjDk
- bVRR6e3i5hTfCcqnB8BOpgUfLRn79frc2IjXALweXbao4a7yTpRnPsfI72TBHEvtN3uovMFnroyhH
- sVzRy5cbIODhaQoHEYqNDEvKKJzFBeD9lS24fBfrx6h+Zl75sBQO1e4iQJiWgodYeqvo=;
-Received: from bombadil.infradead.org ([198.137.202.133])
+ bh=++iGzJ5RyvCbarxonRdx9rs9lIBzvUwOZefKETchJ40=; b=UgrPPDO4V8qRCfS4nthG0IxfNG
+ 3AFdxw2gM6W4ea0T66u4Qs1xqVO16sxw0ruRPxCVp+YnG0Hy6J9BEN8GyNKhlE5E78FamXKbfnxSy
+ kSZHoFdtf4FwQk6ulZpgTCMAhqIx9Ld/tqKZWCt40g6EJTRmXq3l/f0joJn7Ubrxv6tM=;
+Received: from casper.infradead.org ([90.155.50.34])
  by sfi-mx-2.v28.lw.sourceforge.com with esmtps
  (TLS1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.94.2)
- id 1nuSno-0007c1-1U
- for jfs-discussion@lists.sourceforge.net; Fri, 27 May 2022 05:46:25 +0000
+ id 1nuZtY-0003g4-I0
+ for jfs-discussion@lists.sourceforge.net; Fri, 27 May 2022 13:20:53 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=infradead.org; s=bombadil.20210309; h=In-Reply-To:Content-Type:MIME-Version
- :References:Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:
+ d=infradead.org; s=casper.20170209; h=In-Reply-To:Content-Type:MIME-Version:
+ References:Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:
  Content-Transfer-Encoding:Content-ID:Content-Description;
- bh=VDmChBWljedoEkok5R0TCyduHzHyVq8JxgfKEHTfMDU=; b=Ba72R98mKRQz3+YlxvTHsh9Gd9
- OgbsEJiZ3v+xWXfPrBc3S0v/CgbZsMdn/HkK49qZmODsi1xIPmQPyZd7b6noR+T5lNkQIzPUgTQN3
- RbeQGSXCj365K+RWZzcjqO6k7DA5z01Mi5nipbD1WCfFplsnIl0GCiuP7CmMNt73/9jWflBdCLiFG
- 8u8jBscvrDlxTrDBTJGWHO2qZZxpL1I5oj57C8Q023xxT581nt6wbBO7f2Yd+kjIR+vQYL0ycO5NJ
- KpIb+HqRGw7AVBo4uXoOX6BmgIfCGMfJQ9d0V3HspUBSld6Wxo+2kj8pMN0Ofb5M/f8D5RTy1N2i3
- QZu3NfQw==;
-Received: from hch by bombadil.infradead.org with local (Exim 4.94.2 #2 (Red
- Hat Linux)) id 1nuSnj-00GhRg-Ro; Fri, 27 May 2022 05:46:19 +0000
-Date: Thu, 26 May 2022 22:46:19 -0700
-From: Christoph Hellwig <hch@infradead.org>
-To: "Matthew Wilcox (Oracle)" <willy@infradead.org>
-Message-ID: <YpBlq+Tvp9dFuK5d@infradead.org>
+ bh=++iGzJ5RyvCbarxonRdx9rs9lIBzvUwOZefKETchJ40=; b=L3b1HkZaxV5cgJNX0whAu3mIuD
+ 8p2YSC1GscNuTrJCq0H+Ssizimd3yYjyTi6gJCD0TRReIu2YJbyckoCNF6Cs3g6os+1zUfMpLrx8J
+ ju3SGciLp3phKIj7M8ascMnJ7QSHQQFhMQRv+PWDJi/B2kVJ8RlgSMAaHF24oOa5yG851Oxav4K5i
+ 5FKTXqvXSKcpIL+XRbgEnu4Vrgw8JhIwMfVU96m8Ega4o4OuV2SeTXMXBLSKAGxs7+STTTFD94D3c
+ n/kHNzUoWoC8S1yusS6fcLUjBHNKPOfKf8moPpUEMk/Rm//8/+s+XDMNhQ8BZF6yPK7Nvho+N4qfc
+ Huy03Wjw==;
+Received: from willy by casper.infradead.org with local (Exim 4.94.2 #2 (Red
+ Hat Linux)) id 1nuZtL-0027O1-LM; Fri, 27 May 2022 13:20:35 +0000
+Date: Fri, 27 May 2022 14:20:35 +0100
+From: Matthew Wilcox <willy@infradead.org>
+To: Christoph Hellwig <hch@infradead.org>
+Message-ID: <YpDQI3366vH9Ux2i@casper.infradead.org>
 References: <20220526192910.357055-1-willy@infradead.org>
- <20220526192910.357055-9-willy@infradead.org>
+ <20220526192910.357055-2-willy@infradead.org>
+ <YpBjD4Y7su+GVSkX@infradead.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20220526192910.357055-9-willy@infradead.org>
-X-SRS-Rewrite: SMTP reverse-path rewritten from <hch@infradead.org> by
- bombadil.infradead.org. See http://www.infradead.org/rpr.html
-X-Spam-Score: -2.5 (--)
+In-Reply-To: <YpBjD4Y7su+GVSkX@infradead.org>
+X-Spam-Score: 0.3 (/)
 X-Spam-Report: Spam detection software,
- running on the system "util-spamd-1.v13.lw.sourceforge.com", 
+ running on the system "util-spamd-2.v13.lw.sourceforge.com", 
  has NOT identified this incoming email as spam.  The original
  message has been attached to this so you can view it or label
  similar future email.  If you have any questions, see
  the administrator of that system for details.
- Content preview:  On Thu, May 26, 2022 at 08:29:09PM +0100,
- Matthew Wilcox (Oracle)
- wrote: > + folio = __filemap_get_folio(mapping, index, > + FGP_CREAT|FGP_WRITE,
- GFP_KERNEL); missing spaces. > + folio_lock(folio);
- > + dst = kmap_local_folio(folio,
- offset_in_folio(folio, pos)); > + memcpy(dst, data, tocopy); 
- Content analysis details:   (-2.5 points, 6.0 required)
+ Content preview:  On Thu, May 26, 2022 at 10:35:11PM -0700, Christoph Hellwig
+ wrote: > On Thu, May 26, 2022 at 08:29:02PM +0100, Matthew Wilcox (Oracle)
+ wrote: > > Al's patch. > > > > Signed-off-by: Matthew Wilcox (Ora [...] 
+ Content analysis details:   (0.3 points, 6.0 required)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [198.137.202.133 listed in list.dnswl.org]
+ 0.5 SUBJ_ALL_CAPS          Subject is all capitals
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
-X-Headers-End: 1nuSno-0007c1-1U
-Subject: Re: [Jfs-discussion] [RFC PATCH 8/9] jfs: Write quota through the
- page cache
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 T_SCC_BODY_TEXT_LINE   No description available.
+X-Headers-End: 1nuZtY-0003g4-I0
+Subject: Re: [Jfs-discussion] [RFC PATCH 1/9] IOMAP_DIO_NOSYNC
 X-BeenThere: jfs-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -102,27 +96,40 @@ List-Post: <mailto:jfs-discussion@lists.sourceforge.net>
 List-Help: <mailto:jfs-discussion-request@lists.sourceforge.net?subject=help>
 List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/jfs-discussion>, 
  <mailto:jfs-discussion-request@lists.sourceforge.net?subject=subscribe>
-Cc: linux-fsdevel@vger.kernel.org, Christoph Hellwig <hch@infradead.org>,
- jfs-discussion@lists.sourceforge.net, "Darrick J . Wong" <djwong@kernel.org>
+Cc: linux-fsdevel@vger.kernel.org, "Darrick J . Wong" <djwong@kernel.org>,
+ jfs-discussion@lists.sourceforge.net
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Errors-To: jfs-discussion-bounces@lists.sourceforge.net
 
-On Thu, May 26, 2022 at 08:29:09PM +0100, Matthew Wilcox (Oracle) wrote:
-> +			folio = __filemap_get_folio(mapping, index,
-> +					FGP_CREAT|FGP_WRITE, GFP_KERNEL);
+On Thu, May 26, 2022 at 10:35:11PM -0700, Christoph Hellwig wrote:
+> On Thu, May 26, 2022 at 08:29:02PM +0100, Matthew Wilcox (Oracle) wrote:
+> > Al's patch.
+> > 
+> > Signed-off-by: Matthew Wilcox (Oracle) <willy@infradead.org>
+> 
+> Hmm, that is a bit of a weird changelog..
 
-missing spaces.
+I took parts of
+https://git.kernel.org/pub/scm/linux/kernel/git/viro/vfs.git/commit/?h=new.iov_iter&id=447262443a4dbf88ae5b21de5c77197f084cdca4
 
-> +		folio_lock(folio);
-> +		dst = kmap_local_folio(folio, offset_in_folio(folio, pos));
-> +		memcpy(dst, data, tocopy);
+and fixed it up a bit but dropped the btrfs parts.
 
-mecpy_to_folio would be nice here.
+> >  		/* for data sync or sync, we need sync completion processing */
+> > -		if (iocb->ki_flags & IOCB_DSYNC)
+> > +		if (iocb->ki_flags & IOCB_DSYNC &&
+> > +		    !(dio_flags & IOMAP_DIO_NOSYNC))
+> >  			dio->flags |= IOMAP_DIO_NEED_SYNC;
+> >  
+> >  		/*
+> 
+> I think we also need to skip the setting of IOMAP_DIO_WRITE_FUA below
+> (or find a way to communicate back to the that FUA was used, which
+> seems way more complicated)
 
-And gain the helper seems generic, but unlike the read side modern
-file system often want some kind of journaling.  Not sure if it is worth
-sharing it just for ext2 and jfs.
+Probably ... I was just looking to avoid the deadlock.  Patch not for
+upstream in this form; I'm expecting Al to submit a fixed version before
+the JFS code is ready for upstream.
 
 
 _______________________________________________
