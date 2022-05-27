@@ -2,26 +2,26 @@ Return-Path: <jfs-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+jfs-discussion@lfdr.de
 Delivered-To: lists+jfs-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id 10C9D53636D
-	for <lists+jfs-discussion@lfdr.de>; Fri, 27 May 2022 15:45:54 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5039A53639D
+	for <lists+jfs-discussion@lfdr.de>; Fri, 27 May 2022 15:57:18 +0200 (CEST)
 Received: from [127.0.0.1] (helo=sfs-ml-2.v29.lw.sourceforge.com)
 	by sfs-ml-2.v29.lw.sourceforge.com with esmtp (Exim 4.94.2)
 	(envelope-from <jfs-discussion-bounces@lists.sourceforge.net>)
-	id 1nuaHV-0000Q5-8H; Fri, 27 May 2022 13:45:32 +0000
+	id 1nuaSc-000119-Cp; Fri, 27 May 2022 13:57:01 +0000
 Received: from [172.30.20.202] (helo=mx.sourceforge.net)
  by sfs-ml-2.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
  TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (Exim 4.94.2)
- (envelope-from <willy@infradead.org>) id 1nuaHR-0000Pv-R4
- for jfs-discussion@lists.sourceforge.net; Fri, 27 May 2022 13:45:28 +0000
+ (envelope-from <willy@infradead.org>) id 1nuaSa-00010w-MH
+ for jfs-discussion@lists.sourceforge.net; Fri, 27 May 2022 13:56:59 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=sourceforge.net; s=x; h=In-Reply-To:Content-Type:MIME-Version:References:
  Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:Content-Transfer-Encoding:
  Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
  Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=kRAMak/QMX+Vy1vstuhkTyCxrdSHGLmOpRl1L9RhyIk=; b=h3a3OtQNHglPAYEdu/64Pis1LM
- OOLzm1Kz3UlseaSbWVaiUxT2EdJ8dzKDAKHKIeqRQLzwAo+Ex5oARWjjh+9ArBdv6GYLe536kL87D
- rL1aXbd+NXsTVJC4nC29atiAd4v+c7a7hZtPmAWZHkoD0e9Ax9NKclgLjJDxTdTVtdxk=;
+ bh=rVGNfA2KOKMMKQxHMw7Bl8sMDqhn/iAj5Rbvd+jGcrE=; b=H9cpuw4kVQGOvPeElXisANB0zc
+ ZPDJ+gbQHg5tDTJ8CFmCfSmWjWmypcL3uMM+XWU4tXNMobKOWh96fK2DietWFjYODk6u2BuH3ao5w
+ UMP4EJX/VYGfRgLcFVi9Ha8gwP3OT64XdKRNPh7q261b2Ym7tkLuvMlkpNU/knKTEkE8=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
  h=In-Reply-To:Content-Type:MIME-Version:References:Message-ID:Subject:Cc:To
@@ -29,36 +29,36 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
  :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
  List-Post:List-Owner:List-Archive;
- bh=kRAMak/QMX+Vy1vstuhkTyCxrdSHGLmOpRl1L9RhyIk=; b=YDmpGNzuyJe5bbgwYhmskk78xg
- gDPPHnPO5PXOpI4fr/TeRV8GU/ixl6Sy9CmxdoQJcjUI4vn1ZZa7A/b31K9XaJGBAtTzqG8siRxoh
- YWPaArv5cNTUWU26b8je20WtKY4WvpUEMLgsfPhcSVAQeJ0zy+LCxNhd36/oXh/eqg9s=;
+ bh=rVGNfA2KOKMMKQxHMw7Bl8sMDqhn/iAj5Rbvd+jGcrE=; b=L5YMI58WHF7f036f91Y7CSC8AC
+ IjpF+ZCo78CBi+qC2QZMYG8uEHB3cZJKeaIYy5pafM/4qZtqdsc4Q9TRmFp3qlVor/rRBpqTa6Lb8
+ dmobLSQw++gFpYZapKiUr2312+3FoaZdLzrtv7xxBidyKoe59tIWiBKJPgwzCAIGt12Y=;
 Received: from casper.infradead.org ([90.155.50.34])
  by sfi-mx-1.v28.lw.sourceforge.com with esmtps
  (TLS1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.94.2)
- id 1nuaHN-004K8R-Gx
- for jfs-discussion@lists.sourceforge.net; Fri, 27 May 2022 13:45:28 +0000
+ id 1nuaSZ-004KnA-0g
+ for jfs-discussion@lists.sourceforge.net; Fri, 27 May 2022 13:56:59 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=infradead.org; s=casper.20170209; h=In-Reply-To:Content-Type:MIME-Version:
  References:Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:
  Content-Transfer-Encoding:Content-ID:Content-Description;
- bh=kRAMak/QMX+Vy1vstuhkTyCxrdSHGLmOpRl1L9RhyIk=; b=IBVCMTh4DSp8VWNHxHqBtbgpEK
- GqoBHOYOA5U1NpQqYxp6XkELquuFW/y3sefcr3VgxPu/TQJw0qq4lK+y9rWc2ZQ5DAso7ziUT9jjs
- TCrzq93jiPI+5fFIPCCqCHDsG8FXruErDDTwYN0LdzLaaa6KhGxHAceWspCb9rVolLTUBnXEV/9CM
- tU4NtzNzVhY3+I/2C7Y4v8H3OD/K3qkpuiMAwz7BIYzW+WfQ4vYc+rt2mtBdThvingPLo+POPIsJ3
- LMSdczqXhqtY8wSEfJvzkwZ47DaxGo3R3YMS3wcoGbucKSDDuAhZQaNtvFeboC+sZarWRD76ZAfMk
- QZk29+wQ==;
+ bh=rVGNfA2KOKMMKQxHMw7Bl8sMDqhn/iAj5Rbvd+jGcrE=; b=UYhm/b1bVNzPzhbsD47JkMo1vj
+ R5iqplgtUNxUSuNc+pCWlQRknQg17DiyAyzTKgQWdU3R6RGllaC1pyYS4ateLvZU5YSXOHH1HC5gu
+ UGd+BkkskdbS/2rPIufl5w2djB7D+W92CYmDUFJ60GgSgr0MASrIXe663xZ/AN1cScISusM4bugEx
+ yDTrKexJJmI2JUNMCLE7LQY0F0dHGT1rZJyomzkOOUx+3LzbqkVzm8c/H2Mx++M0+EIY90urJsSMm
+ jEvHf/6r8ebgeocVmxbFla/lJrpu07EKNZ9LDWevVKuZdGUcQskISEAqywwB5nPH8r/Z1DJgVEn6n
+ cW7ceybQ==;
 Received: from willy by casper.infradead.org with local (Exim 4.94.2 #2 (Red
- Hat Linux)) id 1nuaHA-0028JT-S6; Fri, 27 May 2022 13:45:12 +0000
-Date: Fri, 27 May 2022 14:45:12 +0100
+ Hat Linux)) id 1nuaSS-0028gs-Fh; Fri, 27 May 2022 13:56:52 +0000
+Date: Fri, 27 May 2022 14:56:52 +0100
 From: Matthew Wilcox <willy@infradead.org>
 To: Christoph Hellwig <hch@infradead.org>
-Message-ID: <YpDV6NPBefdYRywi@casper.infradead.org>
+Message-ID: <YpDYpHG0cZM9E5lD@casper.infradead.org>
 References: <20220526192910.357055-1-willy@infradead.org>
- <20220526192910.357055-3-willy@infradead.org>
- <YpBkiy4zvIcEXihd@infradead.org>
+ <20220526192910.357055-8-willy@infradead.org>
+ <YpBlF2xbfL2yY98n@infradead.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <YpBkiy4zvIcEXihd@infradead.org>
+In-Reply-To: <YpBlF2xbfL2yY98n@infradead.org>
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: Spam detection software,
  running on the system "util-spamd-2.v13.lw.sourceforge.com", 
@@ -66,10 +66,9 @@ X-Spam-Report: Spam detection software,
  message has been attached to this so you can view it or label
  similar future email.  If you have any questions, see
  the administrator of that system for details.
- Content preview:  On Thu, May 26, 2022 at 10:41:31PM -0700, Christoph Hellwig
- wrote: > I suspect this might be where your problems lies: > >
- blockdev_direct_IO
- calls __blockdev_direct_IO with DIO_SKIP_HOLES set. > DIO_ [...] 
+ Content preview:  On Thu, May 26, 2022 at 10:43:51PM -0700, Christoph Hellwig
+ wrote: > > static ssize_t jfs_quota_read(struct super_block *sb, int type,
+ char *data, > > + size_t len, loff_t pos) > > { > > struct inode [...] 
  Content analysis details:   (-0.2 points, 6.0 required)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
@@ -83,8 +82,9 @@ X-Spam-Report: Spam detection software,
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.0 T_SCC_BODY_TEXT_LINE   No description available.
-X-Headers-End: 1nuaHN-004K8R-Gx
-Subject: Re: [Jfs-discussion] [RFC PATCH 2/9] jfs: Add jfs_iomap_begin()
+X-Headers-End: 1nuaSZ-004KnA-0g
+Subject: Re: [Jfs-discussion] [RFC PATCH 7/9] jfs: Read quota through the
+ page cache
 X-BeenThere: jfs-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -102,24 +102,55 @@ Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Errors-To: jfs-discussion-bounces@lists.sourceforge.net
 
-On Thu, May 26, 2022 at 10:41:31PM -0700, Christoph Hellwig wrote:
-> I suspect this might be where your problems lies:
+On Thu, May 26, 2022 at 10:43:51PM -0700, Christoph Hellwig wrote:
+> >  static ssize_t jfs_quota_read(struct super_block *sb, int type, char *data,
+> > +			      size_t len, loff_t pos)
+> >  {
+> >  	struct inode *inode = sb_dqopt(sb)->files[type];
+> > +	struct address_space *mapping = inode->i_mapping;
+> >  	size_t toread;
+> > +	pgoff_t index;
+> >  	loff_t i_size = i_size_read(inode);
+> >  
+> > +	if (pos > i_size)
+> >  		return 0;
+> > +	if (pos + len > i_size)
+> > +		len = i_size - pos;
+> >  	toread = len;
+> > +	index = pos / PAGE_SIZE;
+> > +
+> >  	while (toread > 0) {
+> > +		struct folio *folio = read_mapping_folio(mapping, index, NULL);
+> > +		size_t tocopy = PAGE_SIZE - offset_in_page(pos);
+> > +		void *src;
+> > +
+> > +		if (IS_ERR(folio))
+> > +			return PTR_ERR(folio);
+> > +
+> > +		src = kmap_local_folio(folio, offset_in_folio(folio, pos));
+> > +		memcpy(data, src, tocopy);
+> > +		kunmap_local(src);
 > 
-> blockdev_direct_IO calls __blockdev_direct_IO with DIO_SKIP_HOLES set.
-> DIO_SKIP_HOLES causes get_more_blocks to never set the create bit
-> to get_block except for writes beyond i_size.  If we want to replicate
-> that behavior with iomap, ->iomap_begin needs to return -ENOTBLK
-> when it encounters a hole for writing.  To properly supporting writing
-> to holes we'd need unwritten extents, which jfs does not support.
-> gfs2 might be a place to look for how to implement this.
+> It would be great to have a memcpy_from_folio like the existing
+> memcpy_from_page for this.
 
-I think JFS does support unwritten extents,
-fs/jfs/jfs_xtree.h:#define XAD_NOTRECORDED 0x08 /* allocated but not recorded */
+Yes, I agree.  It could copy more than a single page like
+zero_user_segments() does.
 
-However, we always pass 'false' to extAlloc() today, so I think it
-hasn't been tested in a while?  I'm not sure I want to be the one to
-start using new features on JFS for something that's supposed to be
-a relatively quick cleanup.
+> > +		folio_put(folio);
+> >  
+> >  		toread -= tocopy;
+> >  		data += tocopy;
+> > +		pos += tocopy;
+> > +		index++;
+> >  	}
+> >  	return len;
+> 
+> And this whole helper is generic now.  It might be worth to move it
+> into fs/quota/dquot.c as generic_quota_read.
+
+I was thinking it was filemap_read_kernel(inode, pos, dst, len)
+but perhaps both of these things ...
 
 
 _______________________________________________
