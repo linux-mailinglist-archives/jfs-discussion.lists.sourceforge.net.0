@@ -2,72 +2,70 @@ Return-Path: <jfs-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+jfs-discussion@lfdr.de
 Delivered-To: lists+jfs-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6B7C353A752
-	for <lists+jfs-discussion@lfdr.de>; Wed,  1 Jun 2022 16:00:55 +0200 (CEST)
-Received: from [127.0.0.1] (helo=sfs-ml-4.v29.lw.sourceforge.com)
-	by sfs-ml-4.v29.lw.sourceforge.com with esmtp (Exim 4.94.2)
+	by mail.lfdr.de (Postfix) with ESMTPS id 82B9D53A756
+	for <lists+jfs-discussion@lfdr.de>; Wed,  1 Jun 2022 16:01:36 +0200 (CEST)
+Received: from [127.0.0.1] (helo=sfs-ml-2.v29.lw.sourceforge.com)
+	by sfs-ml-2.v29.lw.sourceforge.com with esmtp (Exim 4.94.2)
 	(envelope-from <jfs-discussion-bounces@lists.sourceforge.net>)
-	id 1nwOtt-0005mi-3z; Wed, 01 Jun 2022 14:00:39 +0000
+	id 1nwOuU-0003K2-EM; Wed, 01 Jun 2022 14:01:19 +0000
 Received: from [172.30.20.202] (helo=mx.sourceforge.net)
- by sfs-ml-4.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
+ by sfs-ml-2.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
  TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (Exim 4.94.2)
- (envelope-from <sashal@kernel.org>) id 1nwOtr-0005mY-N1
- for jfs-discussion@lists.sourceforge.net; Wed, 01 Jun 2022 14:00:38 +0000
+ (envelope-from <sashal@kernel.org>) id 1nwOuP-0003Jq-Qh
+ for jfs-discussion@lists.sourceforge.net; Wed, 01 Jun 2022 14:01:15 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=sourceforge.net; s=x; h=Content-Transfer-Encoding:MIME-Version:References:
- In-Reply-To:Message-Id:Date:Subject:Cc:To:From:Sender:Reply-To:Content-Type:
- Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
- Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
- List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=5AOcHA8Mt8Aqt7MmEzwBBgYUt1NMFxIdv9xfUrewv8g=; b=KIMWqUpw7lS3Q81ULhdlK8lyuq
- 7ZXlteLg+JfCTQD/Vx4AMEklhQQQle4YHCn6zrNP/V8I+qUowGa8bi/02kEobLVaNjy9Fcwz+zBri
- UWuwfiNE4ZJSXGOkpA9ccnUHj5KAE8f5YSLfRWnc53Dc1A4zCRI6rQidoJ64yq99Mcfg=;
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
- ;
- h=Content-Transfer-Encoding:MIME-Version:References:In-Reply-To:Message-Id:
+ d=sourceforge.net; s=x; h=Content-Transfer-Encoding:MIME-Version:Message-Id:
  Date:Subject:Cc:To:From:Sender:Reply-To:Content-Type:Content-ID:
  Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
- :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
- List-Post:List-Owner:List-Archive;
- bh=5AOcHA8Mt8Aqt7MmEzwBBgYUt1NMFxIdv9xfUrewv8g=; b=g3duri3hRoL/bmR2a69u5bTsJT
- WQ0DVpWu8IkzLEnKePlzhJjogmkO/9Hsd9O+hCRonpeXXWMTW4jy4mKHcDYk5jKBJ4G6NvnXqCsA2
- ajSqd7v8Yc5iSdy83YrEXQOGMBmWlyitkeYFPXUwpepxdUbRCXUw4y5cDsVYoI6/JHf8=;
+ :Resent-Message-ID:In-Reply-To:References:List-Id:List-Help:List-Unsubscribe:
+ List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=5AOcHA8Mt8Aqt7MmEzwBBgYUt1NMFxIdv9xfUrewv8g=; b=b8pntxfu/XtwDvd25lPjY8MFFO
+ ntmapJ/HIHv8obEsSOmpJPnujPzn5urQIgaoBqXMBMCtWRI+wXTyuf9yes/YnivbK8Y0id3qoxeq6
+ 98Nz+CwZEcKNqtV6PVgY9T65WoDJwD3rWO0PNQyYwMtgRgK0wGKHdCauzEOdaVVXVvTU=;
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
+ ;
+ h=Content-Transfer-Encoding:MIME-Version:Message-Id:Date:Subject:Cc:To:From
+ :Sender:Reply-To:Content-Type:Content-ID:Content-Description:Resent-Date:
+ Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+ References:List-Id:List-Help:List-Unsubscribe:List-Subscribe:List-Post:
+ List-Owner:List-Archive; bh=5AOcHA8Mt8Aqt7MmEzwBBgYUt1NMFxIdv9xfUrewv8g=; b=Q
+ hgy6rio+waxzouDBqkkxlJ0Y81FojJTDZ9ubYl0QIwAANvOsUqLc6DapadXIbouN/wBuKpvd3tj5G
+ tHoARNeQVdJIuGDBLsEnVRMBfKS2oE6UYXgaE66K1V6p5FrZEbIdy1jO8ZMhJr6GbE9NAA1hNK9MQ
+ lnI68aWR4SkmNXAg=;
 Received: from dfw.source.kernel.org ([139.178.84.217])
- by sfi-mx-2.v28.lw.sourceforge.com with esmtps
+ by sfi-mx-1.v28.lw.sourceforge.com with esmtps
  (TLS1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.94.2)
- id 1nwOto-0006zN-D5
- for jfs-discussion@lists.sourceforge.net; Wed, 01 Jun 2022 14:00:38 +0000
+ id 1nwOuM-00H96p-6W
+ for jfs-discussion@lists.sourceforge.net; Wed, 01 Jun 2022 14:01:14 +0000
 Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by dfw.source.kernel.org (Postfix) with ESMTPS id 5EFE5615BF;
- Wed,  1 Jun 2022 14:00:32 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id E32F2C3411F;
- Wed,  1 Jun 2022 14:00:30 +0000 (UTC)
+ by dfw.source.kernel.org (Postfix) with ESMTPS id 0C8616149F;
+ Wed,  1 Jun 2022 14:01:04 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 7368AC385A5;
+ Wed,  1 Jun 2022 14:01:02 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=k20201202; t=1654092031;
+ s=k20201202; t=1654092063;
  bh=LZSVzGm+eApsXK45dI2BFu9jzJnYL96WdCNobNzk1qI=;
- h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=chim8bWMuEbiJ7g+npKyillla5LpcwDLlqNxu1BcADjLtDa3shKECmXZT0MtDxwVq
- XgxFWM4u6r8rXlwiaGxixfqPl3ezLds/DG4oRv9sNCUfsOZw9KXMN281DfC3S1QFCE
- eYTd1W+ueBO/I1obnSnQV/nYjTHMeMKCaLA643ciBA/7NKGEQu/hMsiD4Q+hvBtMzY
- dCRl6jQCNDdrp8littVkCv3tCnj6/84tsDrcFT7ue81w7GgXmUkdzyyMyi3g+F75RU
- 9/Cg1IHXLusRHfRwV9+LE6PxzlZ9u3nD3VuNqTpX5mZwMmQhf/qZ+WmQ8u2ESM6Bi4
- HSRHFQqoXHs4g==
+ h=From:To:Cc:Subject:Date:From;
+ b=DmVt2KgdLDzTBOBEltgu0qcN9lXQCBXIzW581N9PB2DiS8ngZOpIncmwvaSFJCBeg
+ FbWwVhkFCKsNLQGOjWemQWNAInWbzcC8YW+yXAzlcTbCJQDE+4A/2ZQeMhUQMxNWax
+ Q8/nXHyE5Od7CZgjw7Zbt8KL1FJG0KTiF6pFrJesyVaX6Sh1I1ICpTu58L3q6kUOtE
+ PO8ToD4iaZvQHW69j5rTHtdRpLiKYS/ArjqpRhJOK7uncvTVTAv2uZBSJgDaAJnUH4
+ RE2/gdkz5MjIs31Odm8nXJ+ZzyLpwZS09liWQSaVKMe5Z4nyqwOxiadmZ+Lg/gv+qd
+ LosWNNQZf/Yhg==
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Date: Wed,  1 Jun 2022 10:00:15 -0400
-Message-Id: <20220601140027.2005280-2-sashal@kernel.org>
+Date: Wed,  1 Jun 2022 10:00:50 -0400
+Message-Id: <20220601140100.2005469-1-sashal@kernel.org>
 X-Mailer: git-send-email 2.35.1
-In-Reply-To: <20220601140027.2005280-1-sashal@kernel.org>
-References: <20220601140027.2005280-1-sashal@kernel.org>
 MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
-X-Spam-Score: -5.8 (-----)
+X-Spam-Score: -5.9 (-----)
 X-Spam-Report: Spam detection software,
- running on the system "util-spamd-2.v13.lw.sourceforge.com", 
+ running on the system "util-spamd-1.v13.lw.sourceforge.com", 
  has NOT identified this incoming email as spam.  The original
  message has been attached to this so you can view it or label
  similar future email.  If you have any questions, see
@@ -77,23 +75,23 @@ X-Spam-Report: Spam detection software,
  ] In our fault-injection testing, the variable "nblocks" in dbFree() can
  be zero when kmalloc_array() fails in dtSearch(). In this case, the variable
  "mp" in dbFree() would be NULL and then it is derefe [...] 
- Content analysis details:   (-5.8 points, 6.0 required)
+ Content analysis details:   (-5.9 points, 6.0 required)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
  high trust [139.178.84.217 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid -0.0 T_SCC_BODY_TEXT_LINE   No description available.
- -0.6 DKIMWL_WL_HIGH         DKIMwl.org - High trust sender
-X-Headers-End: 1nwOto-0006zN-D5
-Subject: [Jfs-discussion] [PATCH AUTOSEL 4.14 02/14] fs: jfs: fix possible
+ -0.7 DKIMWL_WL_HIGH         DKIMwl.org - High trust sender
+X-Headers-End: 1nwOuM-00H96p-6W
+Subject: [Jfs-discussion] [PATCH AUTOSEL 4.9 01/11] fs: jfs: fix possible
  NULL pointer dereference in dbFree()
 X-BeenThere: jfs-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
