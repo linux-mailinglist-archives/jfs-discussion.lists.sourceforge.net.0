@@ -2,26 +2,26 @@ Return-Path: <jfs-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+jfs-discussion@lfdr.de
 Delivered-To: lists+jfs-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8476053A750
-	for <lists+jfs-discussion@lfdr.de>; Wed,  1 Jun 2022 16:00:33 +0200 (CEST)
-Received: from [127.0.0.1] (helo=sfs-ml-2.v29.lw.sourceforge.com)
-	by sfs-ml-2.v29.lw.sourceforge.com with esmtp (Exim 4.94.2)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6B7C353A752
+	for <lists+jfs-discussion@lfdr.de>; Wed,  1 Jun 2022 16:00:55 +0200 (CEST)
+Received: from [127.0.0.1] (helo=sfs-ml-4.v29.lw.sourceforge.com)
+	by sfs-ml-4.v29.lw.sourceforge.com with esmtp (Exim 4.94.2)
 	(envelope-from <jfs-discussion-bounces@lists.sourceforge.net>)
-	id 1nwOtP-0003HR-Uz; Wed, 01 Jun 2022 14:00:12 +0000
+	id 1nwOtt-0005mi-3z; Wed, 01 Jun 2022 14:00:39 +0000
 Received: from [172.30.20.202] (helo=mx.sourceforge.net)
- by sfs-ml-2.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
+ by sfs-ml-4.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
  TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (Exim 4.94.2)
- (envelope-from <sashal@kernel.org>) id 1nwOtP-0003HF-35
- for jfs-discussion@lists.sourceforge.net; Wed, 01 Jun 2022 14:00:11 +0000
+ (envelope-from <sashal@kernel.org>) id 1nwOtr-0005mY-N1
+ for jfs-discussion@lists.sourceforge.net; Wed, 01 Jun 2022 14:00:38 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=sourceforge.net; s=x; h=Content-Transfer-Encoding:MIME-Version:References:
  In-Reply-To:Message-Id:Date:Subject:Cc:To:From:Sender:Reply-To:Content-Type:
  Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
  Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=0qlnlg7fyw8cj9enHBVBKHPja7pIADrZcFXAQwLdmPE=; b=LWFl6WfCGfzZ5/V4IGD1wXtUfN
- PP92OK7bTKT+byLi75WVJbHi2fiYn7uuN00JRd2lSSfc7dhDVAgpIFpqgl8Z3VbZq0xpzA/bQ4DB8
- Q+4JXGZzUkmMZv/TEVGUI4pcnK65tec0zWwz1uVJOjJbocdsLRXTzPfR34XjwCUTmDm8=;
+ bh=5AOcHA8Mt8Aqt7MmEzwBBgYUt1NMFxIdv9xfUrewv8g=; b=KIMWqUpw7lS3Q81ULhdlK8lyuq
+ 7ZXlteLg+JfCTQD/Vx4AMEklhQQQle4YHCn6zrNP/V8I+qUowGa8bi/02kEobLVaNjy9Fcwz+zBri
+ UWuwfiNE4ZJSXGOkpA9ccnUHj5KAE8f5YSLfRWnc53Dc1A4zCRI6rQidoJ64yq99Mcfg=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
  h=Content-Transfer-Encoding:MIME-Version:References:In-Reply-To:Message-Id:
@@ -29,39 +29,39 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
  :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
  List-Post:List-Owner:List-Archive;
- bh=0qlnlg7fyw8cj9enHBVBKHPja7pIADrZcFXAQwLdmPE=; b=F1qhD7trIFvH8V7i8jp8cMBiR9
- fxyXkapVzhM7py7NgBf0MPajE0sjoJtPMOcuY2o1UPk1Hh10hMuff5apBPy4Ne5QgSQj2klq2YAOn
- v8WafiToF3ruemy/NrZBhehoZKtnANVUYZ14SAcK9lZ8msNrNx9cAOd42s1i0dy0gcjg=;
+ bh=5AOcHA8Mt8Aqt7MmEzwBBgYUt1NMFxIdv9xfUrewv8g=; b=g3duri3hRoL/bmR2a69u5bTsJT
+ WQ0DVpWu8IkzLEnKePlzhJjogmkO/9Hsd9O+hCRonpeXXWMTW4jy4mKHcDYk5jKBJ4G6NvnXqCsA2
+ ajSqd7v8Yc5iSdy83YrEXQOGMBmWlyitkeYFPXUwpepxdUbRCXUw4y5cDsVYoI6/JHf8=;
 Received: from dfw.source.kernel.org ([139.178.84.217])
  by sfi-mx-2.v28.lw.sourceforge.com with esmtps
  (TLS1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.94.2)
- id 1nwOtJ-0006s3-9a
- for jfs-discussion@lists.sourceforge.net; Wed, 01 Jun 2022 14:00:11 +0000
+ id 1nwOto-0006zN-D5
+ for jfs-discussion@lists.sourceforge.net; Wed, 01 Jun 2022 14:00:38 +0000
 Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by dfw.source.kernel.org (Postfix) with ESMTPS id 31E8F615C2;
- Wed,  1 Jun 2022 13:59:57 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 07E45C34119;
- Wed,  1 Jun 2022 13:59:55 +0000 (UTC)
+ by dfw.source.kernel.org (Postfix) with ESMTPS id 5EFE5615BF;
+ Wed,  1 Jun 2022 14:00:32 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id E32F2C3411F;
+ Wed,  1 Jun 2022 14:00:30 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=k20201202; t=1654091997;
- bh=+N1svJ9b7dBVizj/wNX2p9bgXZls3aWC/w3Ff93xYv0=;
+ s=k20201202; t=1654092031;
+ bh=LZSVzGm+eApsXK45dI2BFu9jzJnYL96WdCNobNzk1qI=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=Xb6aaJydx1BFArasLwe7Gf1CqCeuOv//GzhyQU3WyKuZG0/qMttebV8YPRbfoKXYe
- /pPCcCm3XRj0ipQYLDR7hveTSMHgf9sYHm4urYlnfJLVfR14dJnlyEkqnCzBmvuq18
- hbjPM8j1C7XFGpXeD+Df/o0G3IOW2R04pJ4tttHLuIWSerrObMdCaWG+xosmoIRwZe
- /lmErUywv6QDZMPPL4d6cXfUb9/ZCgHbemCl5rYvmk6fFumROGpt0gDpkQz/7p1FdL
- 5B9M5KI0LI2fY6qdnzvWuP85r9jAHd5nJ8BmIjyNym/6h+Xrzu1GiW3PV5E/GarrsI
- UX1+C2fzYerEw==
+ b=chim8bWMuEbiJ7g+npKyillla5LpcwDLlqNxu1BcADjLtDa3shKECmXZT0MtDxwVq
+ XgxFWM4u6r8rXlwiaGxixfqPl3ezLds/DG4oRv9sNCUfsOZw9KXMN281DfC3S1QFCE
+ eYTd1W+ueBO/I1obnSnQV/nYjTHMeMKCaLA643ciBA/7NKGEQu/hMsiD4Q+hvBtMzY
+ dCRl6jQCNDdrp8littVkCv3tCnj6/84tsDrcFT7ue81w7GgXmUkdzyyMyi3g+F75RU
+ 9/Cg1IHXLusRHfRwV9+LE6PxzlZ9u3nD3VuNqTpX5mZwMmQhf/qZ+WmQ8u2ESM6Bi4
+ HSRHFQqoXHs4g==
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Date: Wed,  1 Jun 2022 09:59:38 -0400
-Message-Id: <20220601135951.2005085-3-sashal@kernel.org>
+Date: Wed,  1 Jun 2022 10:00:15 -0400
+Message-Id: <20220601140027.2005280-2-sashal@kernel.org>
 X-Mailer: git-send-email 2.35.1
-In-Reply-To: <20220601135951.2005085-1-sashal@kernel.org>
-References: <20220601135951.2005085-1-sashal@kernel.org>
+In-Reply-To: <20220601140027.2005280-1-sashal@kernel.org>
+References: <20220601140027.2005280-1-sashal@kernel.org>
 MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
@@ -92,8 +92,8 @@ X-Spam-Report: Spam detection software,
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid -0.0 T_SCC_BODY_TEXT_LINE   No description available.
  -0.6 DKIMWL_WL_HIGH         DKIMwl.org - High trust sender
-X-Headers-End: 1nwOtJ-0006s3-9a
-Subject: [Jfs-discussion] [PATCH AUTOSEL 4.19 03/15] fs: jfs: fix possible
+X-Headers-End: 1nwOto-0006zN-D5
+Subject: [Jfs-discussion] [PATCH AUTOSEL 4.14 02/14] fs: jfs: fix possible
  NULL pointer dereference in dbFree()
 X-BeenThere: jfs-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
@@ -151,7 +151,7 @@ Signed-off-by: Sasha Levin <sashal@kernel.org>
  1 file changed, 2 insertions(+), 1 deletion(-)
 
 diff --git a/fs/jfs/jfs_dmap.c b/fs/jfs/jfs_dmap.c
-index f05805a10a50..1014f2a24697 100644
+index 6dac48e29d28..a07fbb60ac3c 100644
 --- a/fs/jfs/jfs_dmap.c
 +++ b/fs/jfs/jfs_dmap.c
 @@ -398,7 +398,8 @@ int dbFree(struct inode *ip, s64 blkno, s64 nblocks)
