@@ -2,27 +2,27 @@ Return-Path: <jfs-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+jfs-discussion@lfdr.de
 Delivered-To: lists+jfs-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id A0B78543605
+	by mail.lfdr.de (Postfix) with ESMTPS id D582C543606
 	for <lists+jfs-discussion@lfdr.de>; Wed,  8 Jun 2022 17:05:40 +0200 (CEST)
-Received: from [127.0.0.1] (helo=sfs-ml-1.v29.lw.sourceforge.com)
-	by sfs-ml-1.v29.lw.sourceforge.com with esmtp (Exim 4.94.2)
+Received: from [127.0.0.1] (helo=sfs-ml-4.v29.lw.sourceforge.com)
+	by sfs-ml-4.v29.lw.sourceforge.com with esmtp (Exim 4.94.2)
 	(envelope-from <jfs-discussion-bounces@lists.sourceforge.net>)
-	id 1nyxFF-0004tI-DY; Wed, 08 Jun 2022 15:05:17 +0000
+	id 1nyxFK-0003iY-RW; Wed, 08 Jun 2022 15:05:21 +0000
 Received: from [172.30.20.202] (helo=mx.sourceforge.net)
- by sfs-ml-1.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
+ by sfs-ml-4.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
  TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (Exim 4.94.2) (envelope-from
  <BATV+ba9ae8ab3d8ecaf97ba4+6863+infradead.org+hch@bombadil.srs.infradead.org>)
- id 1nyxFD-0004t3-LN
- for jfs-discussion@lists.sourceforge.net; Wed, 08 Jun 2022 15:05:16 +0000
+ id 1nyxFI-0003iR-4f
+ for jfs-discussion@lists.sourceforge.net; Wed, 08 Jun 2022 15:05:19 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=sourceforge.net; s=x; h=Content-Transfer-Encoding:MIME-Version:References:
  In-Reply-To:Message-Id:Date:Subject:To:From:Sender:Reply-To:Cc:Content-Type:
  Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
  Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=jzoV3AnK2fsNnbJRncSvjaIHF3aG5tq1fo+ZadvTHRc=; b=ReCXHOJj6oqwdrzVzj04NMZKBh
- 4Fr45HofD/SgTEKRgjwT1XAiFAPKacQPWoFGARIayiNd15JLMq5TBLCv3Es0wBKxb1iI4ntKAO8s0
- p4hwyrvAT/EfE+qTYODDylMuf/+MzLyp6GqpnIpdnP+b4g4NNBdcUbT+ip1iq5asU46M=;
+ bh=+wB/nqOESlmBKGsPGGPvPk+1JR7GdqX/FHAB3WXgdkI=; b=AmCv7SjSST5vUs8GrAiYBmfU/2
+ hCOHr4MjD3p8anEq59pj2k/5EX+cQFzz71egbRO1e+cFxlS81cArMm5FY81lCqwyp7f9CuFbnBVMQ
+ 9bLGAU+WVN98GqzuLIx91bukTcSv6fEXa1jdByQkVnZISr0dFnmwgA3lmog1+4kjjPW8=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
  h=Content-Transfer-Encoding:MIME-Version:References:In-Reply-To:Message-Id:
@@ -30,34 +30,34 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
  :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
  List-Post:List-Owner:List-Archive;
- bh=jzoV3AnK2fsNnbJRncSvjaIHF3aG5tq1fo+ZadvTHRc=; b=i6NYIBM2mGgGXcvZBWuupj1SmM
- UFhRXrpJabAIRlTsewYuE1mmd8ARdw3T2x3GK3TxbVoDB+ndY/iKBl2QwFugyNOmOCrWWdbjQ3FQY
- oURbwohdDfar0hPmUJLHeY3VOBg31uI9RmufIDqrHpkCoQHQKM7ic71po9Rc4RbBuEFA=;
+ bh=+wB/nqOESlmBKGsPGGPvPk+1JR7GdqX/FHAB3WXgdkI=; b=UyQ7HxxoZ+sl19S2jMtWvky+IB
+ PEjVoOiLC6uWcInItYaZA8zzv6UwM150STzSmWnV875UINdZAhJ1q5buMBivtKNJCYfvKqTuuEU1A
+ VT3HVoL1GQFGh2TDrZivGnsIsU/o94TkyOQrm2+Ww6+rD6Lk1UEr9failJwl/OD1wbLA=;
 Received: from bombadil.infradead.org ([198.137.202.133])
- by sfi-mx-1.v28.lw.sourceforge.com with esmtps
+ by sfi-mx-2.v28.lw.sourceforge.com with esmtps
  (TLS1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.94.2)
- id 1nyxFA-009y6j-4Q
- for jfs-discussion@lists.sourceforge.net; Wed, 08 Jun 2022 15:05:15 +0000
+ id 1nyxFB-0005Nb-Na
+ for jfs-discussion@lists.sourceforge.net; Wed, 08 Jun 2022 15:05:18 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=infradead.org; s=bombadil.20210309; h=Content-Transfer-Encoding:
  MIME-Version:References:In-Reply-To:Message-Id:Date:Subject:To:From:Sender:
  Reply-To:Cc:Content-Type:Content-ID:Content-Description;
- bh=jzoV3AnK2fsNnbJRncSvjaIHF3aG5tq1fo+ZadvTHRc=; b=GOagneG1+Wo3cG6evZ+rQZ6GTg
- GCcdSI6bTJdPEWjd1c8w++JpTS7JPzPWf40YTop6QwSwFCC1uHME+629VFnv5+mCkBOvinSuBRavz
- IwLeo6/Zg1oi09iEEEBUEHQgNarUXAW+WythKaMjCDmqf7a2jM6j3nCEGP8Szlt14zbuPrL6HFb1o
- r5QLbbOJjel1132G5XHmaadD6eL3+c09DQCCMVGacqoEs2Bc3Ss8pWyfalWEO931GlqUzlqIBlfpi
- plWlb7b6dQd8p4Rx48r5ZGlYhn6j7r/iEMckFcAsfouXTa7v6oM7LpoxDKAese50+NiF8xZ0NVJR+
- 3uDf3mHA==;
+ bh=+wB/nqOESlmBKGsPGGPvPk+1JR7GdqX/FHAB3WXgdkI=; b=RNFSUCreMEUz8c9RdJFErzY9Oq
+ EKV47HQd1TVXLX0ekY7V6SwObNC7KGrbTOousoXYSZDcH2dMldeK+cVGzqvmLl3TqgY3+/WoiiQeG
+ NhHbQw8iawjh1njiisBBaWAK4tFuAcYRs0WE0rungjaQqcICzYIE+aXMXEGW1ojCLD0TxsvJyBpgX
+ JGgMIkng/FB3p8d8uDWIUqZDKR0EO1CLYOBg799oqrwJ5+1nxI+O9kabupy9IfMWMbS6kOoJ41Gl/
+ 7AwH2qxEWH7TL3S+rf3YHCJmnfU1peJMtru9bn6Kiscb1WP4uQ7Xmy0uWWJHioThqLRXwVvC94WLc
+ EOLZk+ww==;
 Received: from [2001:4bb8:190:726c:66c4:f635:4b37:bdda] (helo=localhost)
  by bombadil.infradead.org with esmtpsa (Exim 4.94.2 #2 (Red Hat Linux))
- id 1nyxEv-00DtGg-3t; Wed, 08 Jun 2022 15:04:57 +0000
+ id 1nyxEy-00DtIM-Cn; Wed, 08 Jun 2022 15:05:00 +0000
 From: Christoph Hellwig <hch@lst.de>
 To: Matthew Wilcox <willy@infradead.org>, Jan Kara <jack@suse.com>,
  Dave Kleikamp <shaggy@kernel.org>, linux-ext4@vger.kernel.org,
  linux-fsdevel@vger.kernel.org, linux-kernel@vger.kernel.org,
  jfs-discussion@lists.sourceforge.net
-Date: Wed,  8 Jun 2022 17:04:47 +0200
-Message-Id: <20220608150451.1432388-2-hch@lst.de>
+Date: Wed,  8 Jun 2022 17:04:48 +0200
+Message-Id: <20220608150451.1432388-3-hch@lst.de>
 X-Mailer: git-send-email 2.30.2
 In-Reply-To: <20220608150451.1432388-1-hch@lst.de>
 References: <20220608150451.1432388-1-hch@lst.de>
@@ -74,11 +74,7 @@ X-Spam-Report: Spam detection software,
  Content preview: The nobh mode is an obscure feature to save lowlevel for
  large
  memory 32-bit configurations while trading for much slower performance and
- has been long obsolete. Remove it. Signed-off-by: Christoph Hellwig
- <hch@lst.de>
- --- Documentation/filesystems/ext2.rst | 2 -- fs/ext2/ext2.h | 1 -
- fs/ext2/inode.c
- | 51 ++ fs/ext2/namei.c | 10 ++---- fs/ext2 [...] 
+ has been long obsolete. Switch to the regular buffer head base [...] 
  Content analysis details:   (-2.1 points, 6.0 required)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
@@ -93,8 +89,8 @@ X-Spam-Report: Spam detection software,
  envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
-X-Headers-End: 1nyxFA-009y6j-4Q
-Subject: [Jfs-discussion] [PATCH 1/5] ext2: remove nobh support
+X-Headers-End: 1nyxFB-0005Nb-Na
+Subject: [Jfs-discussion] [PATCH 2/5] jfs: stop using the nobh helper
 X-BeenThere: jfs-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -112,194 +108,63 @@ Errors-To: jfs-discussion-bounces@lists.sourceforge.net
 
 The nobh mode is an obscure feature to save lowlevel for large memory
 32-bit configurations while trading for much slower performance and
-has been long obsolete.  Remove it.
+has been long obsolete.  Switch to the regular buffer head based helpers
+instead.
 
 Signed-off-by: Christoph Hellwig <hch@lst.de>
 ---
- Documentation/filesystems/ext2.rst |  2 --
- fs/ext2/ext2.h                     |  1 -
- fs/ext2/inode.c                    | 51 ++----------------------------
- fs/ext2/namei.c                    | 10 ++----
- fs/ext2/super.c                    |  6 ++--
- 5 files changed, 7 insertions(+), 63 deletions(-)
+ fs/jfs/inode.c | 18 +++++++++++++++---
+ 1 file changed, 15 insertions(+), 3 deletions(-)
 
-diff --git a/Documentation/filesystems/ext2.rst b/Documentation/filesystems/ext2.rst
-index 154101cf0e4f5..92aae683e16a7 100644
---- a/Documentation/filesystems/ext2.rst
-+++ b/Documentation/filesystems/ext2.rst
-@@ -59,8 +59,6 @@ acl				Enable POSIX Access Control Lists support
- 				(requires CONFIG_EXT2_FS_POSIX_ACL).
- noacl				Don't support POSIX ACLs.
+diff --git a/fs/jfs/inode.c b/fs/jfs/inode.c
+index 259326556ada6..d1ec920aa030a 100644
+--- a/fs/jfs/inode.c
++++ b/fs/jfs/inode.c
+@@ -301,13 +301,25 @@ static int jfs_write_begin(struct file *file, struct address_space *mapping,
+ {
+ 	int ret;
  
--nobh				Do not attach buffer_heads to file pagecache.
--
- quota, usrquota			Enable user disk quota support
- 				(requires CONFIG_QUOTA).
+-	ret = nobh_write_begin(mapping, pos, len, pagep, fsdata, jfs_get_block);
++	ret = block_write_begin(mapping, pos, len, pagep, jfs_get_block);
+ 	if (unlikely(ret))
+ 		jfs_write_failed(mapping, pos + len);
  
-diff --git a/fs/ext2/ext2.h b/fs/ext2/ext2.h
-index d4f306aa5aceb..28de11a22e5f6 100644
---- a/fs/ext2/ext2.h
-+++ b/fs/ext2/ext2.h
-@@ -795,7 +795,6 @@ extern const struct file_operations ext2_file_operations;
- /* inode.c */
- extern void ext2_set_file_ops(struct inode *inode);
- extern const struct address_space_operations ext2_aops;
--extern const struct address_space_operations ext2_nobh_aops;
- extern const struct iomap_ops ext2_iomap_ops;
- 
- /* namei.c */
-diff --git a/fs/ext2/inode.c b/fs/ext2/inode.c
-index 84570c6265aae..2001e784fee11 100644
---- a/fs/ext2/inode.c
-+++ b/fs/ext2/inode.c
-@@ -908,25 +908,6 @@ static int ext2_write_end(struct file *file, struct address_space *mapping,
  	return ret;
  }
  
--static int
--ext2_nobh_write_begin(struct file *file, struct address_space *mapping,
--		loff_t pos, unsigned len, struct page **pagep, void **fsdata)
--{
--	int ret;
--
--	ret = nobh_write_begin(mapping, pos, len, pagep, fsdata,
--			       ext2_get_block);
--	if (ret < 0)
--		ext2_write_failed(mapping, pos + len);
--	return ret;
--}
--
--static int ext2_nobh_writepage(struct page *page,
--			struct writeback_control *wbc)
--{
--	return nobh_writepage(page, ext2_get_block, wbc);
--}
--
- static sector_t ext2_bmap(struct address_space *mapping, sector_t block)
++static int jfs_write_end(struct file *file, struct address_space *mapping,
++		loff_t pos, unsigned len, unsigned copied, struct page *page,
++		void *fsdata)
++{
++	int ret;
++
++	ret = generic_write_end(file, mapping, pos, len, copied, page, fsdata);
++	if (ret < len)
++		jfs_write_failed(mapping, pos + len);
++	return ret;
++}
++
+ static sector_t jfs_bmap(struct address_space *mapping, sector_t block)
  {
- 	return generic_block_bmap(mapping,block,ext2_get_block);
-@@ -978,21 +959,6 @@ const struct address_space_operations ext2_aops = {
- 	.error_remove_page	= generic_error_remove_page,
+ 	return generic_block_bmap(mapping, block, jfs_get_block);
+@@ -346,7 +358,7 @@ const struct address_space_operations jfs_aops = {
+ 	.writepage	= jfs_writepage,
+ 	.writepages	= jfs_writepages,
+ 	.write_begin	= jfs_write_begin,
+-	.write_end	= nobh_write_end,
++	.write_end	= jfs_write_end,
+ 	.bmap		= jfs_bmap,
+ 	.direct_IO	= jfs_direct_IO,
  };
+@@ -399,7 +411,7 @@ void jfs_truncate(struct inode *ip)
+ {
+ 	jfs_info("jfs_truncate: size = 0x%lx", (ulong) ip->i_size);
  
--const struct address_space_operations ext2_nobh_aops = {
--	.dirty_folio		= block_dirty_folio,
--	.invalidate_folio	= block_invalidate_folio,
--	.read_folio		= ext2_read_folio,
--	.readahead		= ext2_readahead,
--	.writepage		= ext2_nobh_writepage,
--	.write_begin		= ext2_nobh_write_begin,
--	.write_end		= nobh_write_end,
--	.bmap			= ext2_bmap,
--	.direct_IO		= ext2_direct_IO,
--	.writepages		= ext2_writepages,
--	.migrate_folio		= buffer_migrate_folio,
--	.error_remove_page	= generic_error_remove_page,
--};
--
- static const struct address_space_operations ext2_dax_aops = {
- 	.writepages		= ext2_dax_writepages,
- 	.direct_IO		= noop_direct_IO,
-@@ -1298,13 +1264,10 @@ static int ext2_setsize(struct inode *inode, loff_t newsize)
+-	nobh_truncate_page(ip->i_mapping, ip->i_size, jfs_get_block);
++	block_truncate_page(ip->i_mapping, ip->i_size, jfs_get_block);
  
- 	inode_dio_wait(inode);
- 
--	if (IS_DAX(inode)) {
-+	if (IS_DAX(inode))
- 		error = dax_zero_range(inode, newsize,
- 				       PAGE_ALIGN(newsize) - newsize, NULL,
- 				       &ext2_iomap_ops);
--	} else if (test_opt(inode->i_sb, NOBH))
--		error = nobh_truncate_page(inode->i_mapping,
--				newsize, ext2_get_block);
- 	else
- 		error = block_truncate_page(inode->i_mapping,
- 				newsize, ext2_get_block);
-@@ -1396,8 +1359,6 @@ void ext2_set_file_ops(struct inode *inode)
- 	inode->i_fop = &ext2_file_operations;
- 	if (IS_DAX(inode))
- 		inode->i_mapping->a_ops = &ext2_dax_aops;
--	else if (test_opt(inode->i_sb, NOBH))
--		inode->i_mapping->a_ops = &ext2_nobh_aops;
- 	else
- 		inode->i_mapping->a_ops = &ext2_aops;
- }
-@@ -1497,10 +1458,7 @@ struct inode *ext2_iget (struct super_block *sb, unsigned long ino)
- 	} else if (S_ISDIR(inode->i_mode)) {
- 		inode->i_op = &ext2_dir_inode_operations;
- 		inode->i_fop = &ext2_dir_operations;
--		if (test_opt(inode->i_sb, NOBH))
--			inode->i_mapping->a_ops = &ext2_nobh_aops;
--		else
--			inode->i_mapping->a_ops = &ext2_aops;
-+		inode->i_mapping->a_ops = &ext2_aops;
- 	} else if (S_ISLNK(inode->i_mode)) {
- 		if (ext2_inode_is_fast_symlink(inode)) {
- 			inode->i_link = (char *)ei->i_data;
-@@ -1510,10 +1468,7 @@ struct inode *ext2_iget (struct super_block *sb, unsigned long ino)
- 		} else {
- 			inode->i_op = &ext2_symlink_inode_operations;
- 			inode_nohighmem(inode);
--			if (test_opt(inode->i_sb, NOBH))
--				inode->i_mapping->a_ops = &ext2_nobh_aops;
--			else
--				inode->i_mapping->a_ops = &ext2_aops;
-+			inode->i_mapping->a_ops = &ext2_aops;
- 		}
- 	} else {
- 		inode->i_op = &ext2_special_inode_operations;
-diff --git a/fs/ext2/namei.c b/fs/ext2/namei.c
-index 5f6b7560eb3f3..5fd9a22d2b70c 100644
---- a/fs/ext2/namei.c
-+++ b/fs/ext2/namei.c
-@@ -178,10 +178,7 @@ static int ext2_symlink (struct user_namespace * mnt_userns, struct inode * dir,
- 		/* slow symlink */
- 		inode->i_op = &ext2_symlink_inode_operations;
- 		inode_nohighmem(inode);
--		if (test_opt(inode->i_sb, NOBH))
--			inode->i_mapping->a_ops = &ext2_nobh_aops;
--		else
--			inode->i_mapping->a_ops = &ext2_aops;
-+		inode->i_mapping->a_ops = &ext2_aops;
- 		err = page_symlink(inode, symname, l);
- 		if (err)
- 			goto out_fail;
-@@ -247,10 +244,7 @@ static int ext2_mkdir(struct user_namespace * mnt_userns,
- 
- 	inode->i_op = &ext2_dir_inode_operations;
- 	inode->i_fop = &ext2_dir_operations;
--	if (test_opt(inode->i_sb, NOBH))
--		inode->i_mapping->a_ops = &ext2_nobh_aops;
--	else
--		inode->i_mapping->a_ops = &ext2_aops;
-+	inode->i_mapping->a_ops = &ext2_aops;
- 
- 	inode_inc_link_count(inode);
- 
-diff --git a/fs/ext2/super.c b/fs/ext2/super.c
-index f6a19f6d9f6d5..a1c1263c07ab3 100644
---- a/fs/ext2/super.c
-+++ b/fs/ext2/super.c
-@@ -296,9 +296,6 @@ static int ext2_show_options(struct seq_file *seq, struct dentry *root)
- 		seq_puts(seq, ",noacl");
- #endif
- 
--	if (test_opt(sb, NOBH))
--		seq_puts(seq, ",nobh");
--
- 	if (test_opt(sb, USRQUOTA))
- 		seq_puts(seq, ",usrquota");
- 
-@@ -551,7 +548,8 @@ static int parse_options(char *options, struct super_block *sb,
- 			clear_opt (opts->s_mount_opt, OLDALLOC);
- 			break;
- 		case Opt_nobh:
--			set_opt (opts->s_mount_opt, NOBH);
-+			ext2_msg(sb, KERN_INFO,
-+				"nobh option not supported");
- 			break;
- #ifdef CONFIG_EXT2_FS_XATTR
- 		case Opt_user_xattr:
+ 	IWRITE_LOCK(ip, RDWRLOCK_NORMAL);
+ 	jfs_truncate_nolock(ip, ip->i_size);
 -- 
 2.30.2
 
