@@ -2,27 +2,27 @@ Return-Path: <jfs-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+jfs-discussion@lfdr.de
 Delivered-To: lists+jfs-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id D6856547F0D
-	for <lists+jfs-discussion@lfdr.de>; Mon, 13 Jun 2022 07:38:17 +0200 (CEST)
-Received: from [127.0.0.1] (helo=sfs-ml-2.v29.lw.sourceforge.com)
-	by sfs-ml-2.v29.lw.sourceforge.com with esmtp (Exim 4.94.2)
+	by mail.lfdr.de (Postfix) with ESMTPS id AEB8A547F0C
+	for <lists+jfs-discussion@lfdr.de>; Mon, 13 Jun 2022 07:38:16 +0200 (CEST)
+Received: from [127.0.0.1] (helo=sfs-ml-1.v29.lw.sourceforge.com)
+	by sfs-ml-1.v29.lw.sourceforge.com with esmtp (Exim 4.94.2)
 	(envelope-from <jfs-discussion-bounces@lists.sourceforge.net>)
-	id 1o0cm3-0000t7-1d; Mon, 13 Jun 2022 05:38:03 +0000
+	id 1o0cm2-0001nw-Qg; Mon, 13 Jun 2022 05:38:03 +0000
 Received: from [172.30.20.202] (helo=mx.sourceforge.net)
- by sfs-ml-2.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
+ by sfs-ml-1.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
  TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (Exim 4.94.2) (envelope-from
  <BATV+6ef1cfbcd5439e194ca7+6868+infradead.org+hch@bombadil.srs.infradead.org>)
- id 1o0clp-0000sM-2A
- for jfs-discussion@lists.sourceforge.net; Mon, 13 Jun 2022 05:37:50 +0000
+ id 1o0clt-0001ls-2V
+ for jfs-discussion@lists.sourceforge.net; Mon, 13 Jun 2022 05:37:53 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=sourceforge.net; s=x; h=Content-Transfer-Encoding:MIME-Version:References:
  In-Reply-To:Message-Id:Date:Subject:Cc:To:From:Sender:Reply-To:Content-Type:
  Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
  Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=yp9JrU6zBzJaajQeIlP0lIblv6A5iD96YhS/6T2BaJk=; b=CJsSStwZJxepX1mNZXmisw3oqH
- c3b0/oAtJWYFdXECPCbk7bD/0DqJaz95r5EW6SYbEX5MVDLZhMugAF79DOCj45R/CpbciUg/PSUQD
- TCqDdUMYnE3pxHIjOIJWY0yGja/i4oPUQcKmZgGvwxmeSjSEh69E3M7dMvHWfEtFrdKg=;
+ bh=Zp2A2WsdHhKodTSMNz93mFV0bupP5ggkN3XKeFjb+k0=; b=eToFQ3kMy6P38rbMR1HDVOsYQg
+ e+FAaEBaR7VQfInUm8dejPlk4aHZh2mepXluztzypCbPeE/K8c0ZGhyPQZAvh2q9BH8duT0CAdgks
+ +Bv/CZBKn2VSrf4GNAOqZutC9MnvEpDRhwkIz3lJmgybtoNBTpLrHn8RcJ8DDHbYecXo=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
  h=Content-Transfer-Encoding:MIME-Version:References:In-Reply-To:Message-Id:
@@ -30,33 +30,33 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
  :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
  List-Post:List-Owner:List-Archive;
- bh=yp9JrU6zBzJaajQeIlP0lIblv6A5iD96YhS/6T2BaJk=; b=k9Yxi4B1jaR4I0iOO6b3Jt9naF
- ZeW5pd+f8Yd+J8eGhx3lDAfeBMHaGnBNGXJINPH2kS93QfRyRtn2zSZxbQYrZy3L6rEW2NHh4fYlL
- pyE0DxE4wBK3iUkj+B7EhYSB0DQCG3LJcIvYBaeyGBw6HL6Besr+QuONxo9cqahbuNuo=;
+ bh=Zp2A2WsdHhKodTSMNz93mFV0bupP5ggkN3XKeFjb+k0=; b=diyqBb+PKfA2Q+E40oY23W60ni
+ nxioKJesjUmiwYbC2IX+CJrqGWHDz+1NL32oubr0hBqy1OPFNjvV5HfqUgTEj8enUor/AqfaqXaOy
+ 0zMmEn2Ng7xu4IU7/7W1xOIjHK1kLwjDfO0nvipqQnRVHkiwGFC6FNqRtT6hDiCGugxg=;
 Received: from bombadil.infradead.org ([198.137.202.133])
  by sfi-mx-2.v28.lw.sourceforge.com with esmtps
  (TLS1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.94.2)
- id 1o0clh-00027m-E5
- for jfs-discussion@lists.sourceforge.net; Mon, 13 Jun 2022 05:37:44 +0000
+ id 1o0clk-00028t-4L
+ for jfs-discussion@lists.sourceforge.net; Mon, 13 Jun 2022 05:37:50 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=infradead.org; s=bombadil.20210309; h=Content-Transfer-Encoding:
  MIME-Version:References:In-Reply-To:Message-Id:Date:Subject:Cc:To:From:Sender
  :Reply-To:Content-Type:Content-ID:Content-Description;
- bh=yp9JrU6zBzJaajQeIlP0lIblv6A5iD96YhS/6T2BaJk=; b=Y/73mhRjxh+61P5DLuz7lHovuq
- M1/hC+K2lvahuhqkr8BptlKW2A+SI1Y8T3ZNEopswkuOV+Wt+ZlpkKSS3DJtCIm1mFUOnu1BwcFIf
- LdKEB2IQ0KC/Js87SKRnBky++ypliWGmpIXhfO2qF7aF586BTl9Pl98CjUs+VxEn9UvLjrikEnxbL
- AV6uhep3+E8hgHTmCYl9KMNkULkv4vGti7/qF9lD62v6KktovyOpPW3QwoK4SWW8HDVfefoxBXGWB
- MQwh0eUHnpEN8fNeNRN80eLYB1/EjMrE/VL414q54BRa24sjkbaiAqEkqOCmukvBYyA6Urw1CLH/P
- GwBe1V3A==;
+ bh=Zp2A2WsdHhKodTSMNz93mFV0bupP5ggkN3XKeFjb+k0=; b=TkFyl6H75fM8c9tKEtfeL1KjsG
+ CaJ7Oa0Qby+KbEh93MbSGeNt6+Hb0Lsv4whlxvXNFQru8rZdWgVQPCWbmlNxFDK/doxGYWpgCjkIL
+ FLoWBjKj8yg5+LWJwsn1xbEpvaKsIcE/n//P51Nh0sVCcD74niLAOC9BL7tfa+CpEE4KGhniOxYlu
+ korHNvCyxqqp1We7PbToGW9NGxeC6/ymAX43zRsxTYdeEX4ESxpkpstlYzG5NSojl0Ndkcmjojn6h
+ 1yVZl0stpkYwXy3332y+rRPyZmpO8UQu0QDJCe7Ldx6GgbaIjPwdXs3UPLTipev2ydkLedaXeggZl
+ ss3HGNUA==;
 Received: from [2001:4bb8:180:36f6:f125:c38b:d3d6:ae6c] (helo=localhost)
  by bombadil.infradead.org with esmtpsa (Exim 4.94.2 #2 (Red Hat Linux))
- id 1o0clY-001V5w-1n; Mon, 13 Jun 2022 05:37:32 +0000
+ id 1o0cla-001V6O-Kt; Mon, 13 Jun 2022 05:37:35 +0000
 From: Christoph Hellwig <hch@lst.de>
 To: Matthew Wilcox <willy@infradead.org>, Jan Kara <jack@suse.com>,
  Dave Kleikamp <shaggy@kernel.org>,
  Konstantin Komarov <almaz.alexandrovich@paragon-software.com>
-Date: Mon, 13 Jun 2022 07:37:14 +0200
-Message-Id: <20220613053715.2394147-6-hch@lst.de>
+Date: Mon, 13 Jun 2022 07:37:15 +0200
+Message-Id: <20220613053715.2394147-7-hch@lst.de>
 X-Mailer: git-send-email 2.30.2
 In-Reply-To: <20220613053715.2394147-1-hch@lst.de>
 References: <20220613053715.2394147-1-hch@lst.de>
@@ -70,10 +70,9 @@ X-Spam-Report: Spam detection software,
  message has been attached to this so you can view it or label
  similar future email.  If you have any questions, see
  the administrator of that system for details.
- Content preview: All callers of mpage_writepage use block_write_full_page as
- their ->writepage implementation when called from mpage_writepages (although
- for ntfs3 this is obsfucated a bit). Just call block_write_full_page directly
- instead of going through the ->writepage indirection. 
+ Content preview: No one calls mpage_writepages with a NULL get_block paramter,
+ so remove support for that case. Signed-off-by: Christoph Hellwig <hch@lst.de>
+ --- fs/mpage.c | 22 ++++++ 1 file changed, 6 insertions(+), 16 deletions(-)
  Content analysis details:   (-2.2 points, 6.0 required)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
@@ -89,9 +88,9 @@ X-Spam-Report: Spam detection software,
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.0 T_SCC_BODY_TEXT_LINE   No description available.
-X-Headers-End: 1o0clh-00027m-E5
-Subject: [Jfs-discussion] [PATCH 5/6] fs: don't call ->writepage from
- __mpage_writepage
+X-Headers-End: 1o0clk-00028t-4L
+Subject: [Jfs-discussion] [PATCH 6/6] fs: remove the NULL get_block case in
+ mpage_writepages
 X-BeenThere: jfs-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -110,31 +109,58 @@ Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Errors-To: jfs-discussion-bounces@lists.sourceforge.net
 
-All callers of mpage_writepage use block_write_full_page as their
-->writepage implementation when called from mpage_writepages
-(although for ntfs3 this is obsfucated a bit).
-
-Just call block_write_full_page directly instead of going through
-the ->writepage indirection.
+No one calls mpage_writepages with a NULL get_block paramter, so remove
+support for that case.
 
 Signed-off-by: Christoph Hellwig <hch@lst.de>
 ---
- fs/mpage.c | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+ fs/mpage.c | 22 ++++++----------------
+ 1 file changed, 6 insertions(+), 16 deletions(-)
 
 diff --git a/fs/mpage.c b/fs/mpage.c
-index 31a97a0acf5f5..a354ef2b4b4eb 100644
+index a354ef2b4b4eb..e4cf881634a6a 100644
 --- a/fs/mpage.c
 +++ b/fs/mpage.c
-@@ -624,7 +624,7 @@ static int __mpage_writepage(struct page *page, struct writeback_control *wbc,
- 	/*
- 	 * The caller has a ref on the inode, so *mapping is stable
- 	 */
--	ret = mapping->a_ops->writepage(page, wbc);
-+	ret = block_write_full_page(page, mpd->get_block, wbc);
- 	mapping_set_error(mapping, ret);
- out:
- 	mpd->bio = bio;
+@@ -636,8 +636,6 @@ static int __mpage_writepage(struct page *page, struct writeback_control *wbc,
+  * @mapping: address space structure to write
+  * @wbc: subtract the number of written pages from *@wbc->nr_to_write
+  * @get_block: the filesystem's block mapper function.
+- *             If this is NULL then use a_ops->writepage.  Otherwise, go
+- *             direct-to-BIO.
+  *
+  * This is a library function, which implements the writepages()
+  * address_space_operation.
+@@ -654,24 +652,16 @@ int
+ mpage_writepages(struct address_space *mapping,
+ 		struct writeback_control *wbc, get_block_t get_block)
+ {
++	struct mpage_data mpd = {
++		.get_block	= get_block,
++	};
+ 	struct blk_plug plug;
+ 	int ret;
+ 
+ 	blk_start_plug(&plug);
+-
+-	if (!get_block)
+-		ret = generic_writepages(mapping, wbc);
+-	else {
+-		struct mpage_data mpd = {
+-			.bio = NULL,
+-			.last_block_in_bio = 0,
+-			.get_block = get_block,
+-		};
+-
+-		ret = write_cache_pages(mapping, wbc, __mpage_writepage, &mpd);
+-		if (mpd.bio)
+-			mpage_bio_submit(mpd.bio);
+-	}
++	ret = write_cache_pages(mapping, wbc, __mpage_writepage, &mpd);
++	if (mpd.bio)
++		mpage_bio_submit(mpd.bio);
+ 	blk_finish_plug(&plug);
+ 	return ret;
+ }
 -- 
 2.30.2
 
