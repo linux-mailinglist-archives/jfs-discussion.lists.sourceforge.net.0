@@ -2,26 +2,26 @@ Return-Path: <jfs-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+jfs-discussion@lfdr.de
 Delivered-To: lists+jfs-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8C82954849E
-	for <lists+jfs-discussion@lfdr.de>; Mon, 13 Jun 2022 12:54:03 +0200 (CEST)
-Received: from [127.0.0.1] (helo=sfs-ml-4.v29.lw.sourceforge.com)
-	by sfs-ml-4.v29.lw.sourceforge.com with esmtp (Exim 4.94.2)
+	by mail.lfdr.de (Postfix) with ESMTPS id 61365550BE9
+	for <lists+jfs-discussion@lfdr.de>; Sun, 19 Jun 2022 17:47:11 +0200 (CEST)
+Received: from [127.0.0.1] (helo=sfs-ml-1.v29.lw.sourceforge.com)
+	by sfs-ml-1.v29.lw.sourceforge.com with esmtp (Exim 4.94.2)
 	(envelope-from <jfs-discussion-bounces@lists.sourceforge.net>)
-	id 1o0hhd-0001Go-PS; Mon, 13 Jun 2022 10:53:48 +0000
+	id 1o2x8M-0001R2-Ip; Sun, 19 Jun 2022 15:46:43 +0000
 Received: from [172.30.20.202] (helo=mx.sourceforge.net)
- by sfs-ml-4.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
+ by sfs-ml-1.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
  TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (Exim 4.94.2)
- (envelope-from <jack@suse.cz>) id 1o0hhc-0001Gi-7T
- for jfs-discussion@lists.sourceforge.net; Mon, 13 Jun 2022 10:53:47 +0000
+ (envelope-from <willy@infradead.org>) id 1o2x8K-0001Qv-Gf
+ for jfs-discussion@lists.sourceforge.net; Sun, 19 Jun 2022 15:46:41 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=sourceforge.net; s=x; h=In-Reply-To:Content-Type:MIME-Version:References:
  Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:Content-Transfer-Encoding:
  Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
  Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=SFH6QqZIOI9s+Mj8/zkFHLSyGhk8xsqPs0kVQb84l4k=; b=L5DlloZkxq9Wa67uNt4TRH0az2
- Xp3Bfn4LppUMxhW3dpMtsUh80eQB/A3AQmHoxPjolKuX2XplHQtLCdW4SAoO+Abz1CYbb2Z+f+WiM
- esNXu5FyKWIWC4oqrFLFYiWRUQU3TctLl8w1/ICp/eIjECkSraCqNFLm9SQ1pA4AbI04=;
+ bh=MxPhQC0Fi/1DMOZlvyotEXGMygrfYcYmw9BH/R1+BPA=; b=FZfBsCCoWr12N6SBQjE3zXCkvH
+ QMEKzXJp+tBIWSEuixbb/wjVw0S/XMzvCOE7zRqKvx1mWrdeK4h199DJttYdTHc/mHEOg7cYDUzns
+ oRZ7HADtHtChwdxSHlZbGC6dmC7fMCOO1NzhLgLjooOLQWgUvBmkQgncJSeJIpqGll30=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
  h=In-Reply-To:Content-Type:MIME-Version:References:Message-ID:Subject:Cc:To
@@ -29,77 +29,60 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
  :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
  List-Post:List-Owner:List-Archive;
- bh=SFH6QqZIOI9s+Mj8/zkFHLSyGhk8xsqPs0kVQb84l4k=; b=eS7Vy0Mvk+t4kD9cIKKoqma6AO
- gIILhC4N7aIHtwcBp7i9Asy0yXxXK280+VFYhHAvKRX+3MytvmZqUPuObOVphCOASnE1tLJyCc/e6
- Jti6+GhO+zdkoXrRclLhTw5EpScf6mDLPgZX3s2z6FppdJjbM/Vo/3cgT3w8D0YW8yXk=;
-Received: from smtp-out1.suse.de ([195.135.220.28])
+ bh=MxPhQC0Fi/1DMOZlvyotEXGMygrfYcYmw9BH/R1+BPA=; b=dp8LHN5L0R0xh6lg8Sz2KO7suY
+ 2yp2F+3GLg489/b6XG05WkcOeqJa5gg6cDe0suOt/fj+yEs062cELLRAtjj2U8q0yCyuAQc85Dj++
+ VdEFetSS745CwhbJ3udhXyOPRhw6gGM7q/ecGkiwLQqcOdujdtSB1qBYktxq8etYit0U=;
+Received: from [90.155.50.34] (helo=casper.infradead.org)
  by sfi-mx-1.v28.lw.sourceforge.com with esmtps
- (TLS1.2:ECDHE-RSA-AES128-GCM-SHA256:128) (Exim 4.94.2)
- id 1o0hhW-0001SG-RV
- for jfs-discussion@lists.sourceforge.net; Mon, 13 Jun 2022 10:53:46 +0000
-Received: from relay2.suse.de (relay2.suse.de [149.44.160.134])
- by smtp-out1.suse.de (Postfix) with ESMTP id 9359221CB6;
- Mon, 13 Jun 2022 10:53:36 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=suse.cz; s=susede2_rsa;
- t=1655117616; h=from:from:reply-to:date:date:message-id:message-id:to:to:cc:cc:
- mime-version:mime-version:content-type:content-type:
- in-reply-to:in-reply-to:references:references;
- bh=SFH6QqZIOI9s+Mj8/zkFHLSyGhk8xsqPs0kVQb84l4k=;
- b=fFHe5pXKIIyFXvVsWeA/5WwBk+JfSkvwsgCSRADe8dDe5Ku4q3TD/oasfVz4ymT/ybJgCj
- h5xIHw1yUvIV1YfrXPfQRKgs3q+0jQkQGo87/mz4Dewh2tv2Is0uDhmp1+lH3DHk+mGcIQ
- eHELgFs8EmLVc80PVcIRxowjqs7Wv+U=
-DKIM-Signature: v=1; a=ed25519-sha256; c=relaxed/relaxed; d=suse.cz;
- s=susede2_ed25519; t=1655117616;
- h=from:from:reply-to:date:date:message-id:message-id:to:to:cc:cc:
- mime-version:mime-version:content-type:content-type:
- in-reply-to:in-reply-to:references:references;
- bh=SFH6QqZIOI9s+Mj8/zkFHLSyGhk8xsqPs0kVQb84l4k=;
- b=zFN63R7DlhvmT+8mWOPnSKzEGh9Hlk6jWAyjUdLUjI2EU9tTrCyM6k2lnTj14xtxLpBF2c
- 0skkcWCRQPx1+TDQ==
-Received: from quack3.suse.cz (unknown [10.163.28.18])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by relay2.suse.de (Postfix) with ESMTPS id 819EE2C141;
- Mon, 13 Jun 2022 10:53:36 +0000 (UTC)
-Received: by quack3.suse.cz (Postfix, from userid 1000)
- id 4431BA0634; Mon, 13 Jun 2022 12:53:36 +0200 (CEST)
-Date: Mon, 13 Jun 2022 12:53:36 +0200
-From: Jan Kara <jack@suse.cz>
+ (TLS1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.94.2)
+ id 1o2x8H-007RNB-7U
+ for jfs-discussion@lists.sourceforge.net; Sun, 19 Jun 2022 15:46:40 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=infradead.org; s=casper.20170209; h=In-Reply-To:Content-Type:MIME-Version:
+ References:Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:
+ Content-Transfer-Encoding:Content-ID:Content-Description;
+ bh=MxPhQC0Fi/1DMOZlvyotEXGMygrfYcYmw9BH/R1+BPA=; b=QxUVrca29bq4c4uLb+7FFVLG2P
+ Wmb/5slT/qsVwGVkMPjkMDNMBEuUHLJWSjs5RmO+hqGaA7EIBqCDB6SEuHb2JEExze92T9tDpajFP
+ N5NTd9C0ZN3PMXSUtOC4c6RnqZ2538DT+n+Q3egZDdZEJqQmQpaAyDjnqpZKVZy71Gy87pc3x3Ksi
+ LsXw1WvDfjTKhr9e9mILVsy2C6LT7Wg54NqRURIhsU4nz9G4gWG2Iv8AcVocwPPabuxciOTaWSYEa
+ coHrqTqoEeEJ6/yOAiayxV8QFPzMaMe5G8TyuCfLO9Xsn+MirVbHJfuUBARLa+C+HMSszkQd13xDS
+ 1XKZW8sw==;
+Received: from willy by casper.infradead.org with local (Exim 4.94.2 #2 (Red
+ Hat Linux)) id 1o2x7u-004S1a-9R; Sun, 19 Jun 2022 15:46:14 +0000
+Date: Sun, 19 Jun 2022 16:46:14 +0100
+From: Matthew Wilcox <willy@infradead.org>
 To: Christoph Hellwig <hch@lst.de>
-Message-ID: <20220613105336.dnqraf7tmxhdphyf@quack3.lan>
+Message-ID: <Yq9ExtTRAx1fqORt@casper.infradead.org>
 References: <20220613053715.2394147-1-hch@lst.de>
- <20220613053715.2394147-7-hch@lst.de>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20220613053715.2394147-7-hch@lst.de>
-X-Spam-Score: -2.5 (--)
+In-Reply-To: <20220613053715.2394147-1-hch@lst.de>
+X-Spam-Score: 1.1 (+)
 X-Spam-Report: Spam detection software,
  running on the system "util-spamd-2.v13.lw.sourceforge.com", 
  has NOT identified this incoming email as spam.  The original
  message has been attached to this so you can view it or label
  similar future email.  If you have any questions, see
  the administrator of that system for details.
- Content preview:  On Mon 13-06-22 07:37:15, Christoph Hellwig wrote: > No one
- calls mpage_writepages with a NULL get_block paramter, so remove > support
- for that case. > > Signed-off-by: Christoph Hellwig <hch@lst.de> 
- Content analysis details:   (-2.5 points, 6.0 required)
+ Content preview:  On Mon, Jun 13, 2022 at 07:37:09AM +0200, Christoph Hellwig
+ wrote: > this series (against the pagecache for-next branch) removes the
+ nobh > helpers which are a variant of the "normal" buffer head help [...] 
+ Content analysis details:   (1.1 points, 6.0 required)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [195.135.220.28 listed in list.dnswl.org]
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.0 T_SCC_BODY_TEXT_LINE   No description available.
-X-Headers-End: 1o0hhW-0001SG-RV
-Subject: Re: [Jfs-discussion] [PATCH 6/6] fs: remove the NULL get_block case
- in mpage_writepages
+ 1.3 RDNS_NONE Delivered to internal network by a host with no rDNS
+X-Headers-End: 1o2x8H-007RNB-7U
+Subject: Re: [Jfs-discussion] remove the nobh helpers v2
 X-BeenThere: jfs-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -113,7 +96,6 @@ List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/jfs-discussion>,
  <mailto:jfs-discussion-request@lists.sourceforge.net?subject=subscribe>
 Cc: Dave Kleikamp <shaggy@kernel.org>, jfs-discussion@lists.sourceforge.net,
  ntfs3@lists.linux.dev, linux-kernel@vger.kernel.org,
- Matthew Wilcox <willy@infradead.org>,
  Konstantin Komarov <almaz.alexandrovich@paragon-software.com>,
  Jan Kara <jack@suse.com>, linux-fsdevel@vger.kernel.org,
  linux-ext4@vger.kernel.org
@@ -121,72 +103,14 @@ Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Errors-To: jfs-discussion-bounces@lists.sourceforge.net
 
-On Mon 13-06-22 07:37:15, Christoph Hellwig wrote:
-> No one calls mpage_writepages with a NULL get_block paramter, so remove
-> support for that case.
-> 
-> Signed-off-by: Christoph Hellwig <hch@lst.de>
+On Mon, Jun 13, 2022 at 07:37:09AM +0200, Christoph Hellwig wrote:
+> this series (against the pagecache for-next branch) removes the nobh
+> helpers which are a variant of the "normal" buffer head helpers with
+> special tradeoffs for machines with a lot of highmem, and thus rather
+> obsolete.  They pass xfstests, or in case of jfs at least get as far
+> as the baseline.
 
-Looks good. Feel free to add:
-
-Reviewed-by: Jan Kara <jack@suse.cz>
-
-								Honza
-
-> ---
->  fs/mpage.c | 22 ++++++----------------
->  1 file changed, 6 insertions(+), 16 deletions(-)
-> 
-> diff --git a/fs/mpage.c b/fs/mpage.c
-> index a354ef2b4b4eb..e4cf881634a6a 100644
-> --- a/fs/mpage.c
-> +++ b/fs/mpage.c
-> @@ -636,8 +636,6 @@ static int __mpage_writepage(struct page *page, struct writeback_control *wbc,
->   * @mapping: address space structure to write
->   * @wbc: subtract the number of written pages from *@wbc->nr_to_write
->   * @get_block: the filesystem's block mapper function.
-> - *             If this is NULL then use a_ops->writepage.  Otherwise, go
-> - *             direct-to-BIO.
->   *
->   * This is a library function, which implements the writepages()
->   * address_space_operation.
-> @@ -654,24 +652,16 @@ int
->  mpage_writepages(struct address_space *mapping,
->  		struct writeback_control *wbc, get_block_t get_block)
->  {
-> +	struct mpage_data mpd = {
-> +		.get_block	= get_block,
-> +	};
->  	struct blk_plug plug;
->  	int ret;
->  
->  	blk_start_plug(&plug);
-> -
-> -	if (!get_block)
-> -		ret = generic_writepages(mapping, wbc);
-> -	else {
-> -		struct mpage_data mpd = {
-> -			.bio = NULL,
-> -			.last_block_in_bio = 0,
-> -			.get_block = get_block,
-> -		};
-> -
-> -		ret = write_cache_pages(mapping, wbc, __mpage_writepage, &mpd);
-> -		if (mpd.bio)
-> -			mpage_bio_submit(mpd.bio);
-> -	}
-> +	ret = write_cache_pages(mapping, wbc, __mpage_writepage, &mpd);
-> +	if (mpd.bio)
-> +		mpage_bio_submit(mpd.bio);
->  	blk_finish_plug(&plug);
->  	return ret;
->  }
-> -- 
-> 2.30.2
-> 
--- 
-Jan Kara <jack@suse.com>
-SUSE Labs, CR
+Thanks, applied & pushed out to the for-next branch.
 
 
 _______________________________________________
