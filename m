@@ -2,100 +2,90 @@ Return-Path: <jfs-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+jfs-discussion@lfdr.de
 Delivered-To: lists+jfs-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id B058F5769D2
-	for <lists+jfs-discussion@lfdr.de>; Sat, 16 Jul 2022 00:23:00 +0200 (CEST)
-Received: from [127.0.0.1] (helo=sfs-ml-2.v29.lw.sourceforge.com)
-	by sfs-ml-2.v29.lw.sourceforge.com with esmtp (Exim 4.94.2)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0BB6859633D
+	for <lists+jfs-discussion@lfdr.de>; Tue, 16 Aug 2022 21:36:50 +0200 (CEST)
+Received: from [127.0.0.1] (helo=sfs-ml-1.v29.lw.sourceforge.com)
+	by sfs-ml-1.v29.lw.sourceforge.com with esmtp (Exim 4.95)
 	(envelope-from <jfs-discussion-bounces@lists.sourceforge.net>)
-	id 1oCTha-00034o-Mg; Fri, 15 Jul 2022 22:22:27 +0000
+	id 1oO2MS-0007ZU-Oo;
+	Tue, 16 Aug 2022 19:36:24 +0000
 Received: from [172.30.20.202] (helo=mx.sourceforge.net)
- by sfs-ml-2.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
- TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (Exim 4.94.2)
- (envelope-from <13667453960@163.com>) id 1oBpHk-00044h-Uw
- for jfs-discussion@lists.sourceforge.net; Thu, 14 Jul 2022 03:13:05 +0000
+ by sfs-ml-1.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
+ TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (Exim 4.95)
+ (envelope-from <willy@infradead.org>) id 1oO2MP-0007ZO-3G
+ for jfs-discussion@lists.sourceforge.net;
+ Tue, 16 Aug 2022 19:36:23 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=sourceforge.net; s=x; h=Content-Transfer-Encoding:MIME-Version:Message-Id:
- Date:Subject:Cc:To:From:Sender:Reply-To:Content-Type:Content-ID:
- Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
- :Resent-Message-ID:In-Reply-To:References:List-Id:List-Help:List-Unsubscribe:
+ d=sourceforge.net; s=x; h=In-Reply-To:Content-Type:MIME-Version:References:
+ Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:Content-Transfer-Encoding:
+ Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
+ Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=npQPiA96mmh8pN2HAtBmFsXOD7TFeizPkB3sUnXQWW4=; b=WIGCdgnJsxfCunaaJUukg34V2T
- J4FU1ZeSdKU1Bj6eh5pVOfDdVwXigdv2Yz5I4zW8YoXtmck0wySa44gJUvjEHlZCrc/kZJ6lv3DRd
- FNXQaHN7xrSka+gV1H5KNc7bMsxoqqyhN6Sb+YEmIcXRsQI+YUS9WhkuzKSmsJExgdJE=;
+ bh=j3XcZj58ibAYo7JZ+DBGHbio8/+pmx+vaIAoYTPhszo=; b=b4f2sJktObsFzvpSivrspCJjQ1
+ IIgaudPR/nEbbzZ5BrWLmTC+humDXukqo42NYnXkV8eTvbUTYnt3Bl105njxuyjOR+CKAlNrwle3d
+ kYR6ZSQXq7UPMkzuoS6zeKe8EUacBOrE5zBv2HzoanMnRgRmvNub9CQ69tSLWpIVMJyY=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
- h=Content-Transfer-Encoding:MIME-Version:Message-Id:Date:Subject:Cc:To:From
- :Sender:Reply-To:Content-Type:Content-ID:Content-Description:Resent-Date:
- Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
- References:List-Id:List-Help:List-Unsubscribe:List-Subscribe:List-Post:
- List-Owner:List-Archive; bh=npQPiA96mmh8pN2HAtBmFsXOD7TFeizPkB3sUnXQWW4=; b=k
- xE4z4EExZdKJWKqT8fYKPVX2mT5BIow1wgIqGwZe6B0JinQzgHPkAonyFgbCg7Fci9scMQi3zrw4+
- dAMDyonB5nDcw4MLlz1VV+lCuQsjvP9WmgsPigRmdw/b06rcZUaaDXLBddQebrF93BOW4iYMIxfM1
- I5bsyrGTXmVwsOoc=;
-Received: from m12-11.163.com ([220.181.12.11])
- by sfi-mx-2.v28.lw.sourceforge.com with esmtp (Exim 4.94.2)
- id 1oBpHk-0006J8-7z
- for jfs-discussion@lists.sourceforge.net; Thu, 14 Jul 2022 03:13:05 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=163.com;
- s=s110527; h=From:Subject:Date:Message-Id:MIME-Version; bh=npQPi
- A96mmh8pN2HAtBmFsXOD7TFeizPkB3sUnXQWW4=; b=bQIN9eAzmIYLr8wsVe5KG
- KJEU6io86oErv6NrY/c7L+t1bp+ZokgdIifVWg4KXA5vKScES+RG/NSTjvcArA3E
- VQbW6cY27I3LIwaq39xHfmSclxswsOmqJAwcmA2ZXWog4dXP3TrnQ0qxp7ZD3o2q
- Aks8Pzftk7a4MYCD/3/0OU=
-Received: from localhost.localdomain (unknown [111.48.58.12])
- by smtp7 (Coremail) with SMTP id C8CowAAHg6kDhs9iLvqQNQ--.56871S2;
- Thu, 14 Jul 2022 10:57:17 +0800 (CST)
-From: Jiangshan Yi <13667453960@163.com>
-To: shaggy@kernel.org
-Date: Thu, 14 Jul 2022 10:56:56 +0800
-Message-Id: <20220714025656.1685439-1-13667453960@163.com>
-X-Mailer: git-send-email 2.25.1
+ h=In-Reply-To:Content-Type:MIME-Version:References:Message-ID:Subject:Cc:To
+ :From:Date:Sender:Reply-To:Content-Transfer-Encoding:Content-ID:
+ Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+ :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
+ List-Post:List-Owner:List-Archive;
+ bh=j3XcZj58ibAYo7JZ+DBGHbio8/+pmx+vaIAoYTPhszo=; b=JMfXN90AP0aG1svCb7hZr111At
+ ZizaO+IM9v6375nIkM9z1AIgmVQOeRHSeqxprZfww0fh/MMohTWqqZ515otLtGK0efR3G9awfJ+2e
+ JNib/kLxBVeCOoOQJn44LvNCLu9lJWAuyGSfAML18CtqksuvcqkIXEACRoVdinvq2BJg=;
+Received: from [90.155.50.34] (helo=casper.infradead.org)
+ by sfi-mx-2.v28.lw.sourceforge.com with esmtps
+ (TLS1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.95)
+ id 1oO2M2-0001UU-W1 for jfs-discussion@lists.sourceforge.net;
+ Tue, 16 Aug 2022 19:36:09 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=infradead.org; s=casper.20170209; h=In-Reply-To:Content-Type:MIME-Version:
+ References:Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:
+ Content-Transfer-Encoding:Content-ID:Content-Description;
+ bh=j3XcZj58ibAYo7JZ+DBGHbio8/+pmx+vaIAoYTPhszo=; b=C3ggZZuTRiGe+co72VGz5WtuLJ
+ dEtZCyVzUM/eFKokG1H5+2fq5HnCQW1/XI3EnYPaBS8QQO9lxUZ1VUrcCmag9//Qh8vNBLfpz1mMI
+ wPIz1JuLFLurE6ZIBrsfqaJgC46BC+tsi/iCNppteb7Iq1x5WwTqSgflaHVjt80Oo7N5zxT3TE7ME
+ D47v+hXMewesjsDdRS0l90YMCI+ctr26b2bcQMrDuMV6Ik31zqsKLqtPZE7xiBkUAxOrYhr8aM+3U
+ v9TQa3ty7tM2bpDblyqo+kJk2VdOjZI+nsGlYX6risKRNaTbeuVXpiySdoN5yJ2RptQrlEc7NFx1l
+ ZR3SyIng==;
+Received: from willy by casper.infradead.org with local (Exim 4.94.2 #2 (Red
+ Hat Linux)) id 1oO1yO-007GSa-01; Tue, 16 Aug 2022 19:11:32 +0000
+Date: Tue, 16 Aug 2022 20:11:31 +0100
+From: Matthew Wilcox <willy@infradead.org>
+To: Linus Torvalds <torvalds@linux-foundation.org>
+Message-ID: <Yvvr447B+mqbZAoe@casper.infradead.org>
+References: <YvvBs+7YUcrzwV1a@ZenIV>
+ <CAHk-=wgkNwDikLfEkqLxCWR=pLi1rbPZ5eyE8FbfmXP2=r3qcw@mail.gmail.com>
 MIME-Version: 1.0
-X-CM-TRANSID: C8CowAAHg6kDhs9iLvqQNQ--.56871S2
-X-Coremail-Antispam: 1Uf129KBjvJXoW7Cr1fWr4kWw1xXr48ur47CFg_yoW8Gr4fpF
- ykCr4fGF95Gr1UX3Z7Wr4kX3WIga4vyayIqrW8Zr12vr9Yqw1ftF13tFyYgayFvF4xX3yj
- qF4DuryfXr1DJr7anT9S1TB71UUUUUUqnTZGkaVYY2UrUUUUjbIjqfuFe4nvWSU5nxnvy2
- 9KBjDUYxBIdaVFxhVjvjDU0xZFpf9x07js6p9UUUUU=
-X-Originating-IP: [111.48.58.12]
-X-CM-SenderInfo: bprtllyxuvjmiwq6il2tof0z/xtbBAg4++2B0Ij99lgAAsr
-X-Spam-Score: 0.4 (/)
+Content-Disposition: inline
+In-Reply-To: <CAHk-=wgkNwDikLfEkqLxCWR=pLi1rbPZ5eyE8FbfmXP2=r3qcw@mail.gmail.com>
+X-Spam-Score: 1.1 (+)
 X-Spam-Report: Spam detection software,
- running on the system "util-spamd-2.v13.lw.sourceforge.com", 
+ running on the system "util-spamd-1.v13.lw.sourceforge.com", 
  has NOT identified this incoming email as spam.  The original
  message has been attached to this so you can view it or label
  similar future email.  If you have any questions, see
  the administrator of that system for details.
- Content preview: From: Jiangshan Yi Fix the following coccicheck warning:
- fs/jfs/super.c:748:
- WARNING opportunity for min(). fs/jfs/super.c:788: WARNING opportunity for
- min(). Content analysis details:   (0.4 points, 6.0 required)
+ Content preview:  On Tue, Aug 16, 2022 at 11:58:36AM -0700,
+ Linus Torvalds wrote:
+ > That said, our filldir code is still confusing as hell. And I would > really
+ like to see that "shared vs non-shared" iterator thing go [...] 
+ Content analysis details:   (1.1 points, 6.0 required)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 FROM_LOCAL_DIGITS      From: localpart has long digit sequence
- 0.3 FROM_LOCAL_HEX         From: localpart has long hexadecimal sequence
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [220.181.12.11 listed in list.dnswl.org]
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [220.181.12.11 listed in wl.mailspike.net]
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit [13667453960[at]163.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [13667453960[at]163.com]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
- -0.0 T_SCC_BODY_TEXT_LINE   No description available.
-X-Headers-End: 1oBpHk-0006J8-7z
-X-Mailman-Approved-At: Fri, 15 Jul 2022 22:22:26 +0000
-Subject: [Jfs-discussion] [PATCH] fs/jfs: replace ternary operator with
- min_t()
+ 1.3 RDNS_NONE Delivered to internal network by a host with no rDNS
+X-Headers-End: 1oO2M2-0001UU-W1
+Subject: [Jfs-discussion] Switching to iterate_shared
 X-BeenThere: jfs-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -107,55 +97,88 @@ List-Post: <mailto:jfs-discussion@lists.sourceforge.net>
 List-Help: <mailto:jfs-discussion-request@lists.sourceforge.net?subject=help>
 List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/jfs-discussion>, 
  <mailto:jfs-discussion-request@lists.sourceforge.net?subject=subscribe>
-Cc: jfs-discussion@lists.sourceforge.net, linux-kernel@vger.kernel.org,
- Jiangshan Yi <yijiangshan@kylinos.cn>
+Cc: jfs-discussion@lists.sourceforge.net, Hans de Goede <hdegoede@redhat.com>,
+ devel@lists.orangefs.org, apparmor@lists.ubuntu.com,
+ linux-unionfs@vger.kernel.org, codalist@coda.cs.cmu.edu, coda@cs.cmu.edu,
+ linux-security-module@vger.kernel.org, Al Viro <viro@zeniv.linux.org.uk>,
+ linux-fsdevel@vger.kernel.org, ceph-devel@vger.kernel.org,
+ Sungjong Seo <sj1557.seo@samsung.com>, Namjae Jeon <linkinjeon@kernel.org>,
+ ocfs2-devel@oss.oracle.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Errors-To: jfs-discussion-bounces@lists.sourceforge.net
 
-From: Jiangshan Yi <yijiangshan@kylinos.cn>
+On Tue, Aug 16, 2022 at 11:58:36AM -0700, Linus Torvalds wrote:
+> That said, our filldir code is still confusing as hell. And I would
+> really like to see that "shared vs non-shared" iterator thing go away,
+> with everybody using the shared one - and filesystems that can't deal
+> with it using their own lock.
+> 
+> But that's a completely independent wart in our complicated filldir saga.
+> 
+> But if somebody were to look at that iterate-vs-iterate_shared, that
+> would be lovely. A quick grep shows that we don't have *that* many of
+> the non-shared cases left:
+> 
+>       git grep '\.iterate\>.*='
+> 
+> seems to imply that converting them to a "use my own load" wouldn't be
+> _too_ bad.
+> 
+> And some of them might actually be perfectly ok with the shared
+> semantics (ie inode->i_rwsem held just for reading) and they just were
+> never converted originally.
 
-Fix the following coccicheck warning:
+What's depressing is that some of these are newly added.  It'd be
+great if we could attach something _like_ __deprecated to things
+that checkpatch could pick up on.
 
-fs/jfs/super.c:748: WARNING opportunity for min().
-fs/jfs/super.c:788: WARNING opportunity for min().
+fs/adfs/dir_f.c:        .iterate        = adfs_f_iterate,
+fs/adfs/dir_fplus.c:    .iterate        = adfs_fplus_iterate,
 
-min_t() macro is defined in include/linux/minmax.h. It avoids
-multiple evaluations of the arguments when non-constant and performs
-strict type-checking.
+ADFS is read-only, so must be safe?
 
-Signed-off-by: Jiangshan Yi <yijiangshan@kylinos.cn>
----
- fs/jfs/super.c | 6 ++----
- 1 file changed, 2 insertions(+), 4 deletions(-)
+fs/ceph/dir.c:  .iterate = ceph_readdir,
+fs/ceph/dir.c:  .iterate = ceph_readdir,
 
-diff --git a/fs/jfs/super.c b/fs/jfs/super.c
-index 85d4f44f2ac4..d2f82cb7db1b 100644
---- a/fs/jfs/super.c
-+++ b/fs/jfs/super.c
-@@ -745,8 +745,7 @@ static ssize_t jfs_quota_read(struct super_block *sb, int type, char *data,
- 		len = i_size-off;
- 	toread = len;
- 	while (toread > 0) {
--		tocopy = sb->s_blocksize - offset < toread ?
--				sb->s_blocksize - offset : toread;
-+		tocopy = min_t(size_t, sb->s_blocksize - offset, toread);
- 
- 		tmp_bh.b_state = 0;
- 		tmp_bh.b_size = i_blocksize(inode);
-@@ -785,8 +784,7 @@ static ssize_t jfs_quota_write(struct super_block *sb, int type,
- 
- 	inode_lock(inode);
- 	while (towrite > 0) {
--		tocopy = sb->s_blocksize - offset < towrite ?
--				sb->s_blocksize - offset : towrite;
-+		tocopy = min_t(size_t, sb->s_blocksize - offset, towrite);
- 
- 		tmp_bh.b_state = 0;
- 		tmp_bh.b_size = i_blocksize(inode);
--- 
-2.25.1
+At least CEPH has active maintainers, cc'd
 
+fs/coda/dir.c:  .iterate        = coda_readdir,
+
+Would anyone notice if we broke CODA?  Maintainers cc'd anyway.
+
+fs/exfat/dir.c: .iterate        = exfat_iterate,
+
+Exfat is a new addition, but has active maintainers.
+
+fs/jfs/namei.c: .iterate        = jfs_readdir,
+
+Maintainer cc'd
+
+fs/ntfs/dir.c:  .iterate        = ntfs_readdir,         /* Read directory contents. */
+
+Maybe we can get rid of ntfs soon.
+
+fs/ocfs2/file.c:        .iterate        = ocfs2_readdir,
+fs/ocfs2/file.c:        .iterate        = ocfs2_readdir,
+
+maintainers cc'd
+
+fs/orangefs/dir.c:      .iterate = orangefs_dir_iterate,
+
+New; maintainer cc'd
+
+fs/overlayfs/readdir.c: .iterate        = ovl_iterate,
+
+Active maintainer, cc'd
+
+fs/proc/base.c: .iterate        = proc_##LSM##_attr_dir_iterate, \
+
+Hmm.  We need both SMACK and Apparmor to agree to this ... cc's added.
+
+fs/vboxsf/dir.c:        .iterate = vboxsf_dir_iterate,
+
+Also newly added.  Maintainer cc'd.
 
 
 _______________________________________________
