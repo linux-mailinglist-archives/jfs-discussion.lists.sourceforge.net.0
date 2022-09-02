@@ -2,105 +2,98 @@ Return-Path: <jfs-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+jfs-discussion@lfdr.de
 Delivered-To: lists+jfs-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id F16AE5988DE
-	for <lists+jfs-discussion@lfdr.de>; Thu, 18 Aug 2022 18:30:06 +0200 (CEST)
-Received: from [127.0.0.1] (helo=sfs-ml-2.v29.lw.sourceforge.com)
-	by sfs-ml-2.v29.lw.sourceforge.com with esmtp (Exim 4.95)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5AF465AB2FA
+	for <lists+jfs-discussion@lfdr.de>; Fri,  2 Sep 2022 16:06:55 +0200 (CEST)
+Received: from [127.0.0.1] (helo=sfs-ml-3.v29.lw.sourceforge.com)
+	by sfs-ml-3.v29.lw.sourceforge.com with esmtp (Exim 4.95)
 	(envelope-from <jfs-discussion-bounces@lists.sourceforge.net>)
-	id 1oOiOt-00011Y-W5;
-	Thu, 18 Aug 2022 16:29:44 +0000
+	id 1oU7JA-0006i7-1H;
+	Fri, 02 Sep 2022 14:06:08 +0000
 Received: from [172.30.20.202] (helo=mx.sourceforge.net)
  by sfs-ml-2.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
  TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (Exim 4.95)
- (envelope-from <john.johansen@canonical.com>) id 1oOiA6-0000bh-Be
+ (envelope-from <13667453960@163.com>) id 1oU2RX-0001hX-LR
  for jfs-discussion@lists.sourceforge.net;
- Thu, 18 Aug 2022 16:14:26 +0000
+ Fri, 02 Sep 2022 08:54:27 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=sourceforge.net; s=x; h=Content-Transfer-Encoding:Content-Type:In-Reply-To:
- From:References:Cc:To:Subject:MIME-Version:Date:Message-ID:Sender:Reply-To:
- Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
- Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
+ d=sourceforge.net; s=x; h=Content-Transfer-Encoding:MIME-Version:Message-Id:
+ Date:Subject:Cc:To:From:Sender:Reply-To:Content-Type:Content-ID:
+ Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+ :Resent-Message-ID:In-Reply-To:References:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=YZZSkhT+TTALwtfUjy6aWTR//Rq9MQ2cQ72rzDjTaGo=; b=ILjNvPSaGq/VT6JYLcqlUFR9jj
- 6lyruxRHt5Ia0LwEFZGPLei8YYtTv0RoyCe7cde3WAA8Vcu1/GLZhmrDVnomdNAcHgIx0XKwBZjnu
- OMhQv5SBQyLN2YG5Aok+hzh2hSl9muTaTPrZ7YR/4Isi9hDd613MySMvd2a1kghH3vzo=;
+ bh=pqcppUH4uIpCV/sY/RwJOUDwY1HHs3lcJjMzAP+wqjY=; b=Drnm555O3bKakGqA3d6GE/LvlC
+ slnX6OGM5P0d8gBm8N+bqrB0DgZTwtR8MOhHIvV9LDKoDM92scESXAM346qgwkTDSMaK+yznnpb1z
+ yaADn7sDin0bNGpQkYdpL81Hn8/RvhmIH856K4dbXWQKR2tRF2SFcm5hg9hPkgrh5cP0=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
- h=Content-Transfer-Encoding:Content-Type:In-Reply-To:From:References:Cc:To:
- Subject:MIME-Version:Date:Message-ID:Sender:Reply-To:Content-ID:
- Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
- :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
- List-Post:List-Owner:List-Archive;
- bh=YZZSkhT+TTALwtfUjy6aWTR//Rq9MQ2cQ72rzDjTaGo=; b=QUgpsIzRYApe/mGrOzTSvooPAz
- FN3OXYIz+mUDl5q1bZevJOrmOafGNuG6DVQf/uOMzfYBuBKiuyW9H2fqewmBio7g8xiH8HQoCdT/n
- XN3muUm6pWQ6SBPrwUwgKSEwQjKmqbnyhAfNfhRNGHuMKXZC0nMPVMsZd8pEG6/5uoS4=;
-Received: from smtp-relay-canonical-0.canonical.com ([185.125.188.120])
- by sfi-mx-2.v28.lw.sourceforge.com with esmtps
- (TLS1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.95)
- id 1oOiA5-0008Ir-7r for jfs-discussion@lists.sourceforge.net;
- Thu, 18 Aug 2022 16:14:26 +0000
-Received: from [10.0.0.100]
- (cpe5896308f56e8-cm5896308f56e6.cpe.net.cable.rogers.com [99.255.30.7])
- (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
- key-exchange X25519 server-signature RSA-PSS (2048 bits) server-digest SHA256)
- (No client certificate requested)
- by smtp-relay-canonical-0.canonical.com (Postfix) with ESMTPSA id 104733F127; 
- Thu, 18 Aug 2022 16:14:14 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=canonical.com;
- s=20210705; t=1660839256;
- bh=YZZSkhT+TTALwtfUjy6aWTR//Rq9MQ2cQ72rzDjTaGo=;
- h=Message-ID:Date:MIME-Version:Subject:To:Cc:References:From:
- In-Reply-To:Content-Type;
- b=eKZn0EnaLQ3LPA55KId1jrSyN9QJDFoGajfUjb4kCVLZw+GJfPoyEZk5YsBGY9MBs
- BD5uhH5otcM+iD4WwVifrNr5NL1BUfcSMeQnhx/CHDs9NWQTtQwx1gGwhuoQTCfKMQ
- uST4xRWXm8MKtsgcqv+2mfMMUaoVq3HafCDVAbqHwknm58OvYYcZd9zEcvuHOCriAW
- 5f5enAoNjxCzorVuGXsIE8HVJabgP9KqXKSRwJtYh0VtfpPArngeXisaJpK+yDOAEe
- WaTsYv22CXUAmrDXOQbGO1R7EFcMRumQCCw3nOo7oiJ1DQDXooj3VDnRI/oZGvfm7y
- iW9MAUvGRwJEw==
-Message-ID: <dc966283-d0b9-b411-0792-c8553b948c2e@canonical.com>
-Date: Thu, 18 Aug 2022 09:14:13 -0700
+ h=Content-Transfer-Encoding:MIME-Version:Message-Id:Date:Subject:Cc:To:From
+ :Sender:Reply-To:Content-Type:Content-ID:Content-Description:Resent-Date:
+ Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+ References:List-Id:List-Help:List-Unsubscribe:List-Subscribe:List-Post:
+ List-Owner:List-Archive; bh=pqcppUH4uIpCV/sY/RwJOUDwY1HHs3lcJjMzAP+wqjY=; b=M
+ Cw3E6gwTpe+bZ9Fd+KVd8M8vL5bXsEeEdo7C2alDIGfylCakOdFq1uM2ahY3KDDeFiEI83BV3q7Vz
+ Gd13LvuArATs0qgimbrRqjJRqlJM1OAY2KVvyueROVUeJc9L60DiqLNWrl8DpTbmsrw1VeH5oQW3h
+ BlUIOhEczK8TD9gs=;
+Received: from mail-m973.mail.163.com ([123.126.97.3])
+ by sfi-mx-1.v28.lw.sourceforge.com with esmtp (Exim 4.95)
+ id 1oU2RW-00B8la-GZ for jfs-discussion@lists.sourceforge.net;
+ Fri, 02 Sep 2022 08:54:27 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=163.com;
+ s=s110527; h=From:Subject:Date:Message-Id:MIME-Version; bh=pqcpp
+ UH4uIpCV/sY/RwJOUDwY1HHs3lcJjMzAP+wqjY=; b=Sb5eGe4yQOzoyFyHtn0ta
+ bwvb5vvF9JtxodVZ1pPfF5bGapXqhGzw5RwnpIUbaGHhnKXKaUusQEEg+cSBaD1c
+ YyfKjcFhaaV2GlxlhMq9K44hSCYeWyF+hwed6iIKgHMrMJ/JdTSuMMZpD8yvOKGZ
+ 8S83T1oc5C14hP+deuQPzA=
+Received: from localhost.localdomain (unknown [116.128.244.169])
+ by smtp3 (Coremail) with SMTP id G9xpCgBXAYOpxBFjm625aA--.7112S2;
+ Fri, 02 Sep 2022 16:54:05 +0800 (CST)
+From: Jiangshan Yi <13667453960@163.com>
+To: shaggy@kernel.org
+Date: Fri,  2 Sep 2022 16:53:38 +0800
+Message-Id: <20220902085338.2536017-1-13667453960@163.com>
+X-Mailer: git-send-email 2.25.1
 MIME-Version: 1.0
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:91.0) Gecko/20100101
- Thunderbird/91.11.0
-Content-Language: en-US
-To: Matthew Wilcox <willy@infradead.org>,
- Linus Torvalds <torvalds@linux-foundation.org>
-References: <YvvBs+7YUcrzwV1a@ZenIV>
- <CAHk-=wgkNwDikLfEkqLxCWR=pLi1rbPZ5eyE8FbfmXP2=r3qcw@mail.gmail.com>
- <Yvvr447B+mqbZAoe@casper.infradead.org>
-From: John Johansen <john.johansen@canonical.com>
-Organization: Canonical
-In-Reply-To: <Yvvr447B+mqbZAoe@casper.infradead.org>
-X-Spam-Score: -2.5 (--)
+X-CM-TRANSID: G9xpCgBXAYOpxBFjm625aA--.7112S2
+X-Coremail-Antispam: 1Uf129KBjvdXoWrury7Jr47ZFy5GF17Xw1kXwb_yoW3ArcE9a
+ 1IvF4v93yUtF4Fvr1UZFZakFyY9r4UKrWDtr4UAFsYyw1Uta9xJa95JrWIkrnxGr4qgFsY
+ gwn3Gry3W34qgjkaLaAFLSUrUUUUUb8apTn2vfkv8UJUUUU8Yxn0WfASr-VFAUDa7-sFnT
+ 9fnUUvcSsGvfC2KfnxnUUI43ZEXa7IU1GNtDUUUUU==
+X-Originating-IP: [116.128.244.169]
+X-CM-SenderInfo: bprtllyxuvjmiwq6il2tof0z/1tbizRxw+1c7N-N5ygABsA
+X-Spam-Score: 0.4 (/)
 X-Spam-Report: Spam detection software,
- running on the system "util-spamd-2.v13.lw.sourceforge.com", 
+ running on the system "util-spamd-1.v13.lw.sourceforge.com", 
  has NOT identified this incoming email as spam.  The original
  message has been attached to this so you can view it or label
  similar future email.  If you have any questions, see
  the administrator of that system for details.
- Content preview:  On 8/16/22 12:11, Matthew Wilcox wrote: > On Tue, Aug 16,
- 2022 at 11:58:36AM -0700, Linus Torvalds wrote: >> That said, our filldir
- code is still confusing as hell. And I would >> really like to see t [...]
- Content analysis details:   (-2.5 points, 6.0 required)
+ Content preview: From: Jiangshan Yi Fix spelling typo in comment. Reported-by:
+ k2ci Signed-off-by: Jiangshan Yi --- fs/jfs/jfs_xattr.h | 2 +- 1 file changed, 
+ 1 insertion(+), 1 deletion(-) 
+ Content analysis details:   (0.4 points, 6.0 required)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [185.125.188.120 listed in list.dnswl.org]
+ 0.3 FROM_LOCAL_HEX         From: localpart has long hexadecimal sequence
+ 0.0 FROM_LOCAL_DIGITS      From: localpart has long digit sequence
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [13667453960[at]163.com]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [123.126.97.3 listed in list.dnswl.org]
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit [13667453960[at]163.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
- -0.0 T_SCC_BODY_TEXT_LINE   No description available.
- -0.0 NICE_REPLY_A           Looks like a legit reply (A)
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - High trust sender
-X-Headers-End: 1oOiA5-0008Ir-7r
-X-Mailman-Approved-At: Thu, 18 Aug 2022 16:29:42 +0000
-Subject: Re: [Jfs-discussion] [apparmor] Switching to iterate_shared
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+X-Headers-End: 1oU2RW-00B8la-GZ
+X-Mailman-Approved-At: Fri, 02 Sep 2022 14:06:02 +0000
+Subject: [Jfs-discussion] [PATCH] fs/jfs/jfs_xattr.h: Fix spelling typo in
+ comment
 X-BeenThere: jfs-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -112,94 +105,42 @@ List-Post: <mailto:jfs-discussion@lists.sourceforge.net>
 List-Help: <mailto:jfs-discussion-request@lists.sourceforge.net?subject=help>
 List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/jfs-discussion>, 
  <mailto:jfs-discussion-request@lists.sourceforge.net?subject=subscribe>
-Cc: jfs-discussion@lists.sourceforge.net, coda@cs.cmu.edu,
- apparmor@lists.ubuntu.com, linux-unionfs@vger.kernel.org,
- codalist@coda.cs.cmu.edu, Hans de Goede <hdegoede@redhat.com>,
- linux-security-module@vger.kernel.org, ocfs2-devel@oss.oracle.com,
- Al Viro <viro@zeniv.linux.org.uk>, linux-fsdevel@vger.kernel.org,
- ceph-devel@vger.kernel.org, Sungjong Seo <sj1557.seo@samsung.com>,
- Namjae Jeon <linkinjeon@kernel.org>, devel@lists.orangefs.org
+Cc: jfs-discussion@lists.sourceforge.net, linux-kernel@vger.kernel.org,
+ viro@zeniv.linux.org.uk, akpm@linux-foundation.org,
+ k2ci <kernel-bot@kylinos.cn>, Jiangshan Yi <yijiangshan@kylinos.cn>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Errors-To: jfs-discussion-bounces@lists.sourceforge.net
 
-On 8/16/22 12:11, Matthew Wilcox wrote:
-> On Tue, Aug 16, 2022 at 11:58:36AM -0700, Linus Torvalds wrote:
->> That said, our filldir code is still confusing as hell. And I would
->> really like to see that "shared vs non-shared" iterator thing go away,
->> with everybody using the shared one - and filesystems that can't deal
->> with it using their own lock.
->>
->> But that's a completely independent wart in our complicated filldir saga.
->>
->> But if somebody were to look at that iterate-vs-iterate_shared, that
->> would be lovely. A quick grep shows that we don't have *that* many of
->> the non-shared cases left:
->>
->>        git grep '\.iterate\>.*='
->>
->> seems to imply that converting them to a "use my own load" wouldn't be
->> _too_ bad.
->>
->> And some of them might actually be perfectly ok with the shared
->> semantics (ie inode->i_rwsem held just for reading) and they just were
->> never converted originally.
-> 
-> What's depressing is that some of these are newly added.  It'd be
-> great if we could attach something _like_ __deprecated to things
-> that checkpatch could pick up on.
-> 
-> fs/adfs/dir_f.c:        .iterate        = adfs_f_iterate,
-> fs/adfs/dir_fplus.c:    .iterate        = adfs_fplus_iterate,
-> 
-> ADFS is read-only, so must be safe?
-> 
-> fs/ceph/dir.c:  .iterate = ceph_readdir,
-> fs/ceph/dir.c:  .iterate = ceph_readdir,
-> 
-> At least CEPH has active maintainers, cc'd
-> 
-> fs/coda/dir.c:  .iterate        = coda_readdir,
-> 
-> Would anyone notice if we broke CODA?  Maintainers cc'd anyway.
-> 
-> fs/exfat/dir.c: .iterate        = exfat_iterate,
-> 
-> Exfat is a new addition, but has active maintainers.
-> 
-> fs/jfs/namei.c: .iterate        = jfs_readdir,
-> 
-> Maintainer cc'd
-> 
-> fs/ntfs/dir.c:  .iterate        = ntfs_readdir,         /* Read directory contents. */
-> 
-> Maybe we can get rid of ntfs soon.
-> 
-> fs/ocfs2/file.c:        .iterate        = ocfs2_readdir,
-> fs/ocfs2/file.c:        .iterate        = ocfs2_readdir,
-> 
-> maintainers cc'd
-> 
-> fs/orangefs/dir.c:      .iterate = orangefs_dir_iterate,
-> 
-> New; maintainer cc'd
-> 
-> fs/overlayfs/readdir.c: .iterate        = ovl_iterate,
-> 
-> Active maintainer, cc'd
-> 
-> fs/proc/base.c: .iterate        = proc_##LSM##_attr_dir_iterate, \
-> 
-> Hmm.  We need both SMACK and Apparmor to agree to this ... cc's added.
+From: Jiangshan Yi <yijiangshan@kylinos.cn>
 
-This is fine for AppArmor
+Fix spelling typo in comment.
+
+Reported-by: k2ci <kernel-bot@kylinos.cn>
+Signed-off-by: Jiangshan Yi <yijiangshan@kylinos.cn>
+---
+ fs/jfs/jfs_xattr.h | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/fs/jfs/jfs_xattr.h b/fs/jfs/jfs_xattr.h
+index c50167a7bc50..0d33816d251d 100644
+--- a/fs/jfs/jfs_xattr.h
++++ b/fs/jfs/jfs_xattr.h
+@@ -25,7 +25,7 @@ struct jfs_ea_list {
+ 	struct jfs_ea ea[];	/* Variable length list */
+ };
+ 
+-/* Macros for defining maxiumum number of bytes supported for EAs */
++/* Macros for defining maximum number of bytes supported for EAs */
+ #define MAXEASIZE	65535
+ #define MAXEALISTSIZE	MAXEASIZE
+ 
+-- 
+2.25.1
 
 
-> 
-> fs/vboxsf/dir.c:        .iterate = vboxsf_dir_iterate,
-> 
-> Also newly added.  Maintainer cc'd.
-> 
+No virus found
+		Checked by Hillstone Network AntiVirus
 
 
 
