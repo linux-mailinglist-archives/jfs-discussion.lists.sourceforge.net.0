@@ -2,103 +2,100 @@ Return-Path: <jfs-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+jfs-discussion@lfdr.de
 Delivered-To: lists+jfs-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id ADECC5E92FF
-	for <lists+jfs-discussion@lfdr.de>; Sun, 25 Sep 2022 14:12:41 +0200 (CEST)
-Received: from [127.0.0.1] (helo=sfs-ml-4.v29.lw.sourceforge.com)
-	by sfs-ml-4.v29.lw.sourceforge.com with esmtp (Exim 4.95)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3A94A5EA6FE
+	for <lists+jfs-discussion@lfdr.de>; Mon, 26 Sep 2022 15:21:41 +0200 (CEST)
+Received: from [127.0.0.1] (helo=sfs-ml-3.v29.lw.sourceforge.com)
+	by sfs-ml-3.v29.lw.sourceforge.com with esmtp (Exim 4.95)
 	(envelope-from <jfs-discussion-bounces@lists.sourceforge.net>)
-	id 1ocQUS-00018w-NI;
-	Sun, 25 Sep 2022 12:12:21 +0000
+	id 1oco2t-0000gj-UI;
+	Mon, 26 Sep 2022 13:21:16 +0000
 Received: from [172.30.20.202] (helo=mx.sourceforge.net)
- by sfs-ml-4.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
- TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (Exim 4.95)
- (envelope-from <pali@kernel.org>) id 1ocQUN-00018D-Um;
- Sun, 25 Sep 2022 12:12:16 +0000
+ by sfs-ml-2.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
+ TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (Exim 4.95) (envelope-from
+ <3yHEwYwkbAI09FG1r22v8r66zu.x55x2vB9v8t54Av4A.t53@M3KW2WVRGUFZ5GODRSRYTGD7.apphosting.bounces.google.com>)
+ id 1ocTR4-0004DI-5v for jfs-discussion@lists.sourceforge.net;
+ Sun, 25 Sep 2022 15:20:50 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=sourceforge.net; s=x; h=In-Reply-To:Content-Transfer-Encoding:Content-Type:
- MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:
- Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
- Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
+ d=sourceforge.net; s=x; h=Content-Type:To:From:Subject:Message-ID:Date:
+ MIME-Version:Sender:Reply-To:Cc:Content-Transfer-Encoding:Content-ID:
+ Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+ :Resent-Message-ID:In-Reply-To:References:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=/fmnK2/tmvpdHabPH/kK5+7maqrKX2iMBCepm8uXBc8=; b=HqbkqbSdafEkHVRboDL37Nl4IH
- g/+3sANTCYGiJ0iZEkOyTNds6O8TKpkxUIThcLLMMN1/AGK4hlkmqrqp9j8x4+6ej7nVJH1i/unhw
- Ah1fOG3YAtJM+HiwSunHDYJ3oTW91XAOXnkL3FgVIH96nMmbslSuYtQAqn0/b70dXYqU=;
+ bh=t0lUMFX9oC3wl68MfBTkH1VNOpT4E6xfVlDfAYgErEU=; b=d1d5HkpsM+upXYz1NjLDu5QyaF
+ WytWjd/Hzx+ANjcmaPTivq1D1qUn+fnN2NTNzf3Sl4NkHy/YfiBy/9/eWviGs8HLCKS658O3dc1nR
+ O/b0NG7UVFKqaeV7DrzEfSxIDw7l0XmCZSl8DiOR6E9lLE8wk/6Vr+knZ6hV2ooHKZU4=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
- h=In-Reply-To:Content-Transfer-Encoding:Content-Type:MIME-Version:
- References:Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:Content-ID:
- Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
- :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
- List-Post:List-Owner:List-Archive;
- bh=/fmnK2/tmvpdHabPH/kK5+7maqrKX2iMBCepm8uXBc8=; b=OAX4s3tkjduNVtw15xyCrV+/RR
- RUU67HaKsOkwJWhFu4bVVzIeJyenjysIWwB/WBTHe0qey40BUnbTHRAbb5blkhztqo5/JyzOK4YX3
- AGr8BJI+mzClFmL0UUiA2HgoltCF1mwJyqXC/1ghiqL2aBoO3ZddDuP+pXSXjcRkUETc=;
-Received: from dfw.source.kernel.org ([139.178.84.217])
- by sfi-mx-1.v28.lw.sourceforge.com with esmtps
- (TLS1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.95)
- id 1ocQUZ-002Gnb-RT; Sun, 25 Sep 2022 12:12:16 +0000
-Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by dfw.source.kernel.org (Postfix) with ESMTPS id 7423460DD4;
- Sun, 25 Sep 2022 12:12:10 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 7AEDCC433C1;
- Sun, 25 Sep 2022 12:12:09 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=k20201202; t=1664107929;
- bh=3QpOnBvdxL0+AZ41OUJ8Z8CAtbcfHcNF9j/3kuh7UJk=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=lz9HACjWXnyFes4+TEG3Arf2V68bAcMUyphkg4Llv+pb+zp36wX9Rz5y7xi5jtDZz
- Qv9rYHiYGWufdfv65edKRBRMnsHuPrpBUIwalal9lh9I5n9ybpKOtQ1Q8IK8Fxwei/
- N952N2z2tVxyr5EMlW24Qw7wBYvWhXJsfSAgj9IXe6Zqd4J8MIhWoQeFAKo/jTnlE9
- Da9uhOaJaV0NU3ZM8S0974OyiRFq6/ZCqQwlF+j9tED7MSsYzhGAuPvWAjBsD1dn3k
- Xy136JBposGdTKPbBeyGC4Mj43/VJftoEKb2VlqnFUKp0XRcoJi7hNo9go+w78z4Pc
- KS9xTt0Voa8vQ==
-Received: by pali.im (Postfix)
- id C06F2EE2; Sun, 25 Sep 2022 14:12:06 +0200 (CEST)
-Date: Sun, 25 Sep 2022 14:12:06 +0200
-From: Pali =?utf-8?B?Um9ow6Fy?= <pali@kernel.org>
-To: Viacheslav Dubeyko <slava@dubeyko.com>
-Message-ID: <20220925121206.glqeuptele746qsp@pali>
-References: <20210808162453.1653-1-pali@kernel.org>
- <20210808162453.1653-14-pali@kernel.org>
- <4D2445C9-7D4D-438A-964C-5B8F46BC15B5@dubeyko.com>
+ h=Content-Type:To:From:Subject:Message-ID:Date:MIME-Version:Sender:Reply-To
+ :Cc:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+ Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+ References:List-Id:List-Help:List-Unsubscribe:List-Subscribe:List-Post:
+ List-Owner:List-Archive; bh=t0lUMFX9oC3wl68MfBTkH1VNOpT4E6xfVlDfAYgErEU=; b=B
+ fR1rGc97jp9HBD8or/LuAJ4TWSItpxzr/QRgiip6FC2EoD1IIv5pf+XgrWYwiyr7z2KTfrhHmd8ea
+ ZbErpQc/2Gobm0bZqIngQbCC5JuE3oCxhYS2v/fJToUVlmVQ3LyooYdUwVp9K/wlJLE3O2F8ufee8
+ f/HYPQsjTAImcmPI=;
+Received: from mail-io1-f72.google.com ([209.85.166.72])
+ by sfi-mx-2.v28.lw.sourceforge.com with esmtps
+ (TLS1.2:ECDHE-RSA-AES128-GCM-SHA256:128) (Exim 4.95)
+ id 1ocTR0-0003j2-57 for jfs-discussion@lists.sourceforge.net;
+ Sun, 25 Sep 2022 15:20:49 +0000
+Received: by mail-io1-f72.google.com with SMTP id
+ 5-20020a5d9c05000000b006a44709a638so2543931ioe.11
+ for <jfs-discussion@lists.sourceforge.net>;
+ Sun, 25 Sep 2022 08:20:46 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20210112;
+ h=to:from:subject:message-id:date:mime-version:x-gm-message-state
+ :from:to:cc:subject:date;
+ bh=t0lUMFX9oC3wl68MfBTkH1VNOpT4E6xfVlDfAYgErEU=;
+ b=XgpQEDxpTy0jHlgRvhE0lOYaymeLaib14VfYDLweiIsjae4ExRSqFeO+7pbQdODUBF
+ pNr8mwkHnOa2yMGhfL/++V1JqaBtKScET/cvxKaH8puOUuvZHqVZc/8La/8cgz0Cl7sj
+ uVtBecVrxSKIeyIlBVXKnt4NrEmJovHss8ErhYDp9wR343RsCrqlIuSmAFWxcQmjsqnC
+ mILur0fppQzEPHAOjGg+p7wTkilMkM5w1lC7PIjdyCqt+ablguENxjRiDANrl9rX9MDX
+ S57QDX8wT4BRCNH4oRQLM8wYAxiX2SlUmRT6+kSpm9R9yJondMRaRpC0P3WDo79GPtq2
+ 41fA==
+X-Gm-Message-State: ACrzQf0IQryTVBusvC74HC1xaJ5kIwLC8W5L5Haa8tLNgQ1glMRQc+BO
+ ktkG/JZuhqbaycqzwJtEGbLMZo6DU0NdR6tWfESTMh2k872i
+X-Google-Smtp-Source: AMsMyM5B7TT3rEDbbPfVZtYaJkFhHaKcZ8ovjmyEe/RPmYlojblq2Q1lDBWSWW6+RUaRHUrK88JOWDg0vV6Pm7mS8pFptQ3/e1Ru
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <4D2445C9-7D4D-438A-964C-5B8F46BC15B5@dubeyko.com>
-User-Agent: NeoMutt/20180716
-X-Spam-Score: -5.3 (-----)
-X-Spam-Report: Spam detection software, running on the system "util-spamd-2.v13.lw.sourceforge.com",
+X-Received: by 2002:a6b:3e87:0:b0:6a1:ac62:c8db with SMTP id
+ l129-20020a6b3e87000000b006a1ac62c8dbmr8003013ioa.160.1664119240597; Sun, 25
+ Sep 2022 08:20:40 -0700 (PDT)
+Date: Sun, 25 Sep 2022 08:20:40 -0700
+X-Google-Appengine-App-Id: s~syzkaller
+X-Google-Appengine-App-Id-Alias: syzkaller
+Message-ID: <000000000000332a2505e981f474@google.com>
+From: syzbot <syzbot+9924e2a08d9ba0fd4ce2@syzkaller.appspotmail.com>
+To: jfs-discussion@lists.sourceforge.net, linux-kernel@vger.kernel.org, 
+ shaggy@kernel.org, syzkaller-bugs@googlegroups.com
+X-Spam-Score: 0.6 (/)
+X-Spam-Report: Spam detection software,
+ running on the system "util-spamd-2.v13.lw.sourceforge.com", 
  has NOT identified this incoming email as spam.  The original
  message has been attached to this so you can view it or label
  similar future email.  If you have any questions, see
  the administrator of that system for details.
- 
- Content preview:  Hello! On Monday 09 August 2021 10:42:02 Viacheslav Dubeyko
-    wrote: > > On Aug 8, 2021, at 9:24 AM, Pali Rohár <pali@kernel.org> wrote:
-    > > > > NLS table for utf8 is broken and cannot be fixed. > > > > So in [...]
-    
- 
- Content analysis details:   (-5.3 points, 6.0 required)
- 
-  pts rule name              description
+ Content preview:  Hello,
+ syzbot found the following issue on: HEAD commit: 1a61b828566f
+ Merge tag 'char-misc-6.0-rc7' of git://git.ke.. git tree: upstream
+ console+strace:
+ https://syzkaller.appspot.com/x/log.txt?x=145e5098880000 kernel config:
+ https://syzkaller.a [...] 
+ Content analysis details:   (0.6 points, 6.0 required)
+ pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ 0.3 FROM_LOCAL_HEX         From: localpart has long hexadecimal sequence
  -0.0 SPF_PASS               SPF: sender matches SPF record
-  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
-                             high trust
-                             [139.178.84.217 listed in list.dnswl.org]
-  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
-                             valid
- -0.1 DKIM_VALID             Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
-                             envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
-                             author's domain
- -0.1 DKIMWL_WL_HIGH         DKIMwl.org - High trust sender
-X-Headers-End: 1ocQUZ-002Gnb-RT
-Subject: Re: [Jfs-discussion] [RFC PATCH 13/20] hfsplus: Do not use broken
- utf8 NLS table for iocharset=utf8 mount option
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.166.72 listed in list.dnswl.org]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.166.72 listed in wl.mailspike.net]
+X-Headers-End: 1ocTR0-0003j2-57
+X-Mailman-Approved-At: Mon, 26 Sep 2022 13:21:15 +0000
+Subject: [Jfs-discussion] [syzbot] KASAN: slab-out-of-bounds Read in dtSearch
 X-BeenThere: jfs-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -110,110 +107,181 @@ List-Post: <mailto:jfs-discussion@lists.sourceforge.net>
 List-Help: <mailto:jfs-discussion-request@lists.sourceforge.net?subject=help>
 List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/jfs-discussion>, 
  <mailto:jfs-discussion-request@lists.sourceforge.net?subject=subscribe>
-Cc: linux-cifs@vger.kernel.org, jfs-discussion@lists.sourceforge.net,
- Jan Kara <jack@suse.cz>, Luis de Bethencourt <luisbg@kernel.org>,
- Dave Kleikamp <shaggy@kernel.org>, linux-ntfs-dev@lists.sourceforge.net,
- linux-kernel@vger.kernel.org, Anton Altaparmakov <anton@tuxera.com>,
- Christoph Hellwig <hch@infradead.org>,
- Alexander Viro <viro@zeniv.linux.org.uk>, Pavel Machek <pavel@ucw.cz>,
- Linux FS Devel <linux-fsdevel@vger.kernel.org>,
- "Theodore Y . Ts'o" <tytso@mit.edu>, Andrew Morton <akpm@linux-foundation.org>,
- Marek =?utf-8?B?QmVow7pu?= <marek.behun@nic.cz>,
- Salah Triki <salah.triki@gmail.com>,
- OGAWA Hirofumi <hirofumi@mail.parknet.co.jp>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Errors-To: jfs-discussion-bounces@lists.sourceforge.net
 
-SGVsbG8hCgpPbiBNb25kYXkgMDkgQXVndXN0IDIwMjEgMTA6NDI6MDIgVmlhY2hlc2xhdiBEdWJl
-eWtvIHdyb3RlOgo+ID4gT24gQXVnIDgsIDIwMjEsIGF0IDk6MjQgQU0sIFBhbGkgUm9ow6FyIDxw
-YWxpQGtlcm5lbC5vcmc+IHdyb3RlOgo+ID4gCj4gPiBOTFMgdGFibGUgZm9yIHV0ZjggaXMgYnJv
-a2VuIGFuZCBjYW5ub3QgYmUgZml4ZWQuCj4gPiAKPiA+IFNvIGluc3RlYWQgb2YgYnJva2VuIHV0
-ZjggbmxzIGZ1bmN0aW9ucyBjaGFyMnVuaSgpIGFuZCB1bmkyY2hhcigpIHVzZQo+ID4gZnVuY3Rp
-b25zIHV0ZjhfdG9fdXRmMzIoKSBhbmQgdXRmMzJfdG9fdXRmOCgpIHdoaWNoIGltcGxlbWVudHMg
-Y29ycmVjdAo+ID4gZW5jb2RpbmcgYW5kIGRlY29kaW5nIGJldHdlZW4gVW5pY29kZSBjb2RlIHBv
-aW50cyBhbmQgVVRGLTggc2VxdWVuY2UuCj4gPiAKPiA+IE5vdGUgdGhhdCB0aGlzIGZzIGRyaXZl
-ciBkb2VzIG5vdCBzdXBwb3J0IGZ1bGwgVW5pY29kZSByYW5nZSwgc3BlY2lhbGx5Cj4gPiBVVEYt
-MTYgc3Vycm9nYXRlIHBhaXJzIGFyZSB1bnN1cHBvcnRlZC4gVGhpcyBwYXRjaCBkb2VzIG5vdCBj
-aGFuZ2UgdGhpcwo+ID4gbGltaXRhdGlvbiBhbmQgc3VwcG9ydCBmb3IgVVRGLTE2IHN1cnJvZ2F0
-ZSBwYWlycyBzdGF5IHVuaW1wbGVtZW50ZWQuCj4gPiAKPiA+IFdoZW4gaW9jaGF0c2V0PXV0Zjgg
-aXMgdXNlZCB0aGVuIHNldCBzYmktPm5scyB0byBOVUxMIGFuZCB1c2UgaXQgZm9yCj4gPiBkaXN0
-aW5ndWlzaCBiZXR3ZWVuIHRoZSBmYWN0IGlmIE5MUyB0YWJsZSBvciBuYXRpdmUgVVRGLTggZnVu
-Y3Rpb25zIHNob3VsZAo+ID4gYmUgdXNlZC4KPiA+IAo+ID4gU2lnbmVkLW9mZi1ieTogUGFsaSBS
-b2jDoXIgPHBhbGlAa2VybmVsLm9yZz4KPiA+IC0tLQo+ID4gZnMvaGZzcGx1cy9kaXIuYyAgICAg
-ICAgICAgIHwgIDYgKysrKy0tCj4gPiBmcy9oZnNwbHVzL29wdGlvbnMuYyAgICAgICAgfCAzMiAr
-KysrKysrKysrKysrKysrKystLS0tLS0tLS0tLS0tLQo+ID4gZnMvaGZzcGx1cy9zdXBlci5jICAg
-ICAgICAgIHwgIDcgKy0tLS0tLQo+ID4gZnMvaGZzcGx1cy91bmljb2RlLmMgICAgICAgIHwgMzEg
-KysrKysrKysrKysrKysrKysrKysrKysrKysrKy0tLQo+ID4gZnMvaGZzcGx1cy94YXR0ci5jICAg
-ICAgICAgIHwgMTQgKysrKysrKysrLS0tLS0KPiA+IGZzL2hmc3BsdXMveGF0dHJfc2VjdXJpdHku
-YyB8ICAzICsrLQo+ID4gNiBmaWxlcyBjaGFuZ2VkLCA2MiBpbnNlcnRpb25zKCspLCAzMSBkZWxl
-dGlvbnMoLSkKPiA+IAo+ID4gZGlmZiAtLWdpdCBhL2ZzL2hmc3BsdXMvZGlyLmMgYi9mcy9oZnNw
-bHVzL2Rpci5jCj4gPiBpbmRleCA4NDcxNGJiY2NjMTIuLjJjYWYwY2Q4MjIyMSAxMDA2NDQKPiA+
-IC0tLSBhL2ZzL2hmc3BsdXMvZGlyLmMKPiA+ICsrKyBiL2ZzL2hmc3BsdXMvZGlyLmMKPiA+IEBA
-IC0xNDQsNyArMTQ0LDggQEAgc3RhdGljIGludCBoZnNwbHVzX3JlYWRkaXIoc3RydWN0IGZpbGUg
-KmZpbGUsIHN0cnVjdCBkaXJfY29udGV4dCAqY3R4KQo+ID4gCWVyciA9IGhmc19maW5kX2luaXQo
-SEZTUExVU19TQihzYiktPmNhdF90cmVlLCAmZmQpOwo+ID4gCWlmIChlcnIpCj4gPiAJCXJldHVy
-biBlcnI7Cj4gPiAtCXN0cmJ1ZiA9IGttYWxsb2MoTkxTX01BWF9DSEFSU0VUX1NJWkUgKiBIRlNQ
-TFVTX01BWF9TVFJMRU4gKyAxLCBHRlBfS0VSTkVMKTsKPiA+ICsJc3RyYnVmID0ga21hbGxvYygo
-SEZTUExVU19TQihzYiktPm5scyA/IE5MU19NQVhfQ0hBUlNFVF9TSVpFIDogNCkgKgo+ID4gKwkJ
-CUhGU1BMVVNfTUFYX1NUUkxFTiArIDEsIEdGUF9LRVJORUwpOwo+IAo+IE1heWJlLCBpbnRyb2R1
-Y2Ugc29tZSB2YXJpYWJsZSB0aGF0IHdpbGwgY29udGFpbiB0aGUgbGVuZ3RoIGNhbGN1bGF0aW9u
-PwoKT2shIEkgY2FuIGludHJvZHVjZSB2YXJpYWJsZSB3aXRoIGNhbGN1bGF0ZWQgbGVuZ3RoIGlu
-dG8gYWxsIHBsYWNlcy4KCj4gPiAJaWYgKCFzdHJidWYpIHsKPiA+IAkJZXJyID0gLUVOT01FTTsK
-PiA+IAkJZ290byBvdXQ7Cj4gPiBAQCAtMjAzLDcgKzIwNCw4IEBAIHN0YXRpYyBpbnQgaGZzcGx1
-c19yZWFkZGlyKHN0cnVjdCBmaWxlICpmaWxlLCBzdHJ1Y3QgZGlyX2NvbnRleHQgKmN0eCkKPiA+
-IAkJaGZzX2Jub2RlX3JlYWQoZmQuYm5vZGUsICZlbnRyeSwgZmQuZW50cnlvZmZzZXQsCj4gPiAJ
-CQlmZC5lbnRyeWxlbmd0aCk7Cj4gPiAJCXR5cGUgPSBiZTE2X3RvX2NwdShlbnRyeS50eXBlKTsK
-PiA+IC0JCWxlbiA9IE5MU19NQVhfQ0hBUlNFVF9TSVpFICogSEZTUExVU19NQVhfU1RSTEVOOwo+
-ID4gKwkJbGVuID0gKEhGU1BMVVNfU0Ioc2IpLT5ubHMgPyBOTFNfTUFYX0NIQVJTRVRfU0laRSA6
-IDQpICoKPiA+ICsJCSAgICAgIEhGU1BMVVNfTUFYX1NUUkxFTjsKPiA+IAkJZXJyID0gaGZzcGx1
-c191bmkyYXNjKHNiLCAmZmQua2V5LT5jYXQubmFtZSwgc3RyYnVmLCAmbGVuKTsKPiA+IAkJaWYg
-KGVycikKPiA+IAkJCWdvdG8gb3V0Owo+ID4gZGlmZiAtLWdpdCBhL2ZzL2hmc3BsdXMvb3B0aW9u
-cy5jIGIvZnMvaGZzcGx1cy9vcHRpb25zLmMKPiA+IGluZGV4IGE5NzU1NDhmNmI5MS4uMTZjMDhj
-YjVjNGY4IDEwMDY0NAo+ID4gLS0tIGEvZnMvaGZzcGx1cy9vcHRpb25zLmMKPiA+ICsrKyBiL2Zz
-L2hmc3BsdXMvb3B0aW9ucy5jCj4gPiBAQCAtMTA0LDYgKzEwNCw5IEBAIGludCBoZnNwbHVzX3Bh
-cnNlX29wdGlvbnMoY2hhciAqaW5wdXQsIHN0cnVjdCBoZnNwbHVzX3NiX2luZm8gKnNiaSkKPiA+
-IAljaGFyICpwOwo+ID4gCXN1YnN0cmluZ190IGFyZ3NbTUFYX09QVF9BUkdTXTsKPiA+IAlpbnQg
-dG1wLCB0b2tlbjsKPiA+ICsJaW50IGhhdmVfaW9jaGFyc2V0Owo+ID4gKwo+ID4gKwloYXZlX2lv
-Y2hhcnNldCA9IDA7Cj4gCj4gV2hhdOKAmXMgYWJvdXQgYm9vbGVhbiB0eXBlIGFuZCB0byB1c2Ug
-dHJ1ZS9mYWxzZT8KCk9rLiBJIGNhbiBjaGFuZ2UgdHlwZSB0byAiYm9vbCIgYW5kIHVzZSAidHJ1
-ZSIvImZhbHNlIiB2YWx1ZXMuCgo+ID4gCj4gPiAJaWYgKCFpbnB1dCkKPiA+IAkJZ290byBkb25l
-Owo+ID4gQEAgLTE3MSwyMCArMTc0LDI0IEBAIGludCBoZnNwbHVzX3BhcnNlX29wdGlvbnMoY2hh
-ciAqaW5wdXQsIHN0cnVjdCBoZnNwbHVzX3NiX2luZm8gKnNiaSkKPiA+IAkJCXByX3dhcm4oIm9w
-dGlvbiBubHM9IGlzIGRlcHJlY2F0ZWQsIHVzZSBpb2NoYXJzZXQ9XG4iKTsKPiA+IAkJCS8qIGZh
-bGx0aHJvdWdoICovCj4gPiAJCWNhc2Ugb3B0X2lvY2hhcnNldDoKPiA+IC0JCQlpZiAoc2JpLT5u
-bHMpIHsKPiA+ICsJCQlpZiAoaGF2ZV9pb2NoYXJzZXQpIHsKPiA+IAkJCQlwcl9lcnIoInVuYWJs
-ZSB0byBjaGFuZ2UgbmxzIG1hcHBpbmdcbiIpOwo+ID4gCQkJCXJldHVybiAwOwo+ID4gCQkJfQo+
-ID4gCQkJcCA9IG1hdGNoX3N0cmR1cCgmYXJnc1swXSk7Cj4gPiAtCQkJaWYgKHApCj4gPiAtCQkJ
-CXNiaS0+bmxzID0gbG9hZF9ubHMocCk7Cj4gPiAtCQkJaWYgKCFzYmktPm5scykgewo+ID4gLQkJ
-CQlwcl9lcnIoInVuYWJsZSB0byBsb2FkIG5scyBtYXBwaW5nIFwiJXNcIlxuIiwKPiA+IC0JCQkJ
-ICAgICAgIHApOwo+ID4gLQkJCQlrZnJlZShwKTsKPiA+ICsJCQlpZiAoIXApCj4gPiAJCQkJcmV0
-dXJuIDA7Cj4gPiArCQkJaWYgKHN0cmNtcChwLCAidXRmOCIpICE9IDApIHsKPiA+ICsJCQkJc2Jp
-LT5ubHMgPSBsb2FkX25scyhwKTsKPiA+ICsJCQkJaWYgKCFzYmktPm5scykgewo+ID4gKwkJCQkJ
-cHJfZXJyKCJ1bmFibGUgdG8gbG9hZCBubHMgbWFwcGluZyAiCj4gPiArCQkJCQkJIlwiJXNcIlxu
-IiwgcCk7Cj4gPiArCQkJCQlrZnJlZShwKTsKPiA+ICsJCQkJCXJldHVybiAwOwo+ID4gKwkJCQl9
-Cj4gPiAJCQl9Cj4gPiAJCQlrZnJlZShwKTsKPiA+ICsJCQloYXZlX2lvY2hhcnNldCA9IDE7Cj4g
-Cj4gRGl0dG8uIFdoYXTigJlzIGFib3V0IHRydWUgaGVyZT8KPiAKPiA+IAkJCWJyZWFrOwo+ID4g
-CQljYXNlIG9wdF9kZWNvbXBvc2U6Cj4gPiAJCQljbGVhcl9iaXQoSEZTUExVU19TQl9OT0RFQ09N
-UE9TRSwgJnNiaS0+ZmxhZ3MpOwouLi4KPiA+IEBAIC0yNTYsNyArMjY2LDIyIEBAIGludCBoZnNw
-bHVzX3VuaTJhc2Moc3RydWN0IHN1cGVyX2Jsb2NrICpzYiwKPiA+IHN0YXRpYyBpbmxpbmUgaW50
-IGFzYzJ1bmljaGFyKHN0cnVjdCBzdXBlcl9ibG9jayAqc2IsIGNvbnN0IGNoYXIgKmFzdHIsIGlu
-dCBsZW4sCj4gPiAJCQkgICAgICB3Y2hhcl90ICp1YykKPiA+IHsKPiA+IC0JaW50IHNpemUgPSBI
-RlNQTFVTX1NCKHNiKS0+bmxzLT5jaGFyMnVuaShhc3RyLCBsZW4sIHVjKTsKPiA+ICsJc3RydWN0
-IG5sc190YWJsZSAqbmxzID0gSEZTUExVU19TQihzYiktPm5sczsKPiA+ICsJdW5pY29kZV90IHU7
-Cj4gPiArCWludCBzaXplOwo+ID4gKwo+ID4gKwlpZiAobmxzKQo+ID4gKwkJc2l6ZSA9IG5scy0+
-Y2hhcjJ1bmkoYXN0ciwgbGVuLCB1Yyk7Cj4gPiArCWVsc2Ugewo+ID4gKwkJc2l6ZSA9IHV0Zjhf
-dG9fdXRmMzIoYXN0ciwgbGVuLCAmdSk7Cj4gPiArCQlpZiAoc2l6ZSA+PSAwKSB7Cj4gPiArCQkJ
-LyogVE9ETzogQWRkIHN1cHBvcnQgZm9yIFVURi0xNiBzdXJyb2dhdGUgcGFpcnMgKi8KPiAKPiBI
-YXZlIHlvdSBmb3Jnb3QgdG8gZGVsZXRlIHRoaXMgc3RyaW5nPyBPciBkbyB5b3UgcGxhbiB0byBp
-bXBsZW1lbnQgdGhpcz8KCk5vLiBJIGhhdmUgbm90IGZvcmdvdC4gSW4gY3VycmVudCB2ZXJzaW9u
-IHRoZXJlIGlzIG1pc3Npbmcgc3VwcG9ydCBmb3IKVVRGLTE2IHN1cnJvZ2F0ZSBwYWlycyBhbmQg
-dGhpcyBteSBwYXRjaCBzdGlsbCBkb2VzIG5vdCBpbXBsZW1lbnQgaXQuCgpTbyB0aGlzIGlzIGtp
-bmQgYSBpc3N1ZSAvIGJ1ZyBpbiB0aGUgZHJpdmVyIGFuZCBhdCBsZWFzdCBpdCBzaG91bGQgYmUK
-ZG9jdW1lbnRlZC4gU28gcmVhZGVyIG9mIHRoaXMgY29kZSB3b3VsZCBrbm93IGl0IGFuZCBtYXli
-ZSBzb21lYm9keSBpbgpmdXR1cmUgd2lsbCBpbXBsZW1lbnQgaXQuCgo+ID4gKwkJCWlmICh1IDw9
-IE1BWF9XQ0hBUl9UKQo+ID4gKwkJCQkqdWMgPSB1Owo+ID4gKwkJCWVsc2UKPiA+ICsJCQkJc2l6
-ZSA9IC1FSU5WQUw7Cj4gPiArCQl9Cj4gPiArCX0KCgpfX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fXwpKZnMtZGlzY3Vzc2lvbiBtYWlsaW5nIGxpc3QKSmZzLWRp
-c2N1c3Npb25AbGlzdHMuc291cmNlZm9yZ2UubmV0Cmh0dHBzOi8vbGlzdHMuc291cmNlZm9yZ2Uu
-bmV0L2xpc3RzL2xpc3RpbmZvL2pmcy1kaXNjdXNzaW9uCg==
+Hello,
+
+syzbot found the following issue on:
+
+HEAD commit:    1a61b828566f Merge tag 'char-misc-6.0-rc7' of git://git.ke..
+git tree:       upstream
+console+strace: https://syzkaller.appspot.com/x/log.txt?x=145e5098880000
+kernel config:  https://syzkaller.appspot.com/x/.config?x=122d7bd4fc8e0ecb
+dashboard link: https://syzkaller.appspot.com/bug?extid=9924e2a08d9ba0fd4ce2
+compiler:       gcc (Debian 10.2.1-6) 10.2.1 20210110, GNU ld (GNU Binutils for Debian) 2.35.2
+syz repro:      https://syzkaller.appspot.com/x/repro.syz?x=1708652f080000
+C reproducer:   https://syzkaller.appspot.com/x/repro.c?x=112601ff080000
+
+Downloadable assets:
+disk image: https://storage.googleapis.com/syzbot-assets/367e34e7ff83/disk-1a61b828.raw.xz
+vmlinux: https://storage.googleapis.com/syzbot-assets/91a2819fe451/vmlinux-1a61b828.xz
+
+IMPORTANT: if you fix the issue, please add the following tag to the commit:
+Reported-by: syzbot+9924e2a08d9ba0fd4ce2@syzkaller.appspotmail.com
+
+loop0: detected capacity change from 0 to 65535
+==================================================================
+BUG: KASAN: slab-out-of-bounds in ciCompare fs/jfs/jfs_dtree.c:3393 [inline]
+BUG: KASAN: slab-out-of-bounds in dtSearch+0x1d88/0x2000 fs/jfs/jfs_dtree.c:639
+Read of size 1 at addr ffff8880738eb714 by task syz-executor104/3605
+
+CPU: 1 PID: 3605 Comm: syz-executor104 Not tainted 6.0.0-rc6-syzkaller-00309-g1a61b828566f #0
+Hardware name: Google Google Compute Engine/Google Compute Engine, BIOS Google 08/26/2022
+Call Trace:
+ <TASK>
+ __dump_stack lib/dump_stack.c:88 [inline]
+ dump_stack_lvl+0xcd/0x134 lib/dump_stack.c:106
+ print_address_description mm/kasan/report.c:317 [inline]
+ print_report.cold+0x2ba/0x719 mm/kasan/report.c:433
+ kasan_report+0xb1/0x1e0 mm/kasan/report.c:495
+ ciCompare fs/jfs/jfs_dtree.c:3393 [inline]
+ dtSearch+0x1d88/0x2000 fs/jfs/jfs_dtree.c:639
+ jfs_lookup+0x17c/0x2f0 fs/jfs/namei.c:1454
+ lookup_open.isra.0+0x76a/0x12a0 fs/namei.c:3391
+ open_last_lookups fs/namei.c:3481 [inline]
+ path_openat+0x996/0x28f0 fs/namei.c:3688
+ do_filp_open+0x1b6/0x400 fs/namei.c:3718
+ do_sys_openat2+0x16d/0x4c0 fs/open.c:1313
+ do_sys_open fs/open.c:1329 [inline]
+ __do_sys_open fs/open.c:1337 [inline]
+ __se_sys_open fs/open.c:1333 [inline]
+ __x64_sys_open+0x119/0x1c0 fs/open.c:1333
+ do_syscall_x64 arch/x86/entry/common.c:50 [inline]
+ do_syscall_64+0x35/0xb0 arch/x86/entry/common.c:80
+ entry_SYSCALL_64_after_hwframe+0x63/0xcd
+RIP: 0033:0x7f5b32967089
+Code: ff ff c3 66 2e 0f 1f 84 00 00 00 00 00 0f 1f 40 00 48 89 f8 48 89 f7 48 89 d6 48 89 ca 4d 89 c2 4d 89 c8 4c 8b 4c 24 08 0f 05 <48> 3d 01 f0 ff ff 73 01 c3 48 c7 c1 c0 ff ff ff f7 d8 64 89 01 48
+RSP: 002b:00007ffde79b8fd8 EFLAGS: 00000246 ORIG_RAX: 0000000000000002
+RAX: ffffffffffffffda RBX: 0000000000000000 RCX: 00007f5b32967089
+RDX: 0000000000000000 RSI: 0000000000000000 RDI: 00000000200001c0
+RBP: 00007f5b32926850 R08: 0000000000000000 R09: 0000000000000000
+R10: 00007ffde79b8ea0 R11: 0000000000000246 R12: 00000000f8008000
+R13: 0000000000000000 R14: 00083878000000f8 R15: 0000000000000000
+ </TASK>
+
+Allocated by task 3605:
+ kasan_save_stack+0x1e/0x40 mm/kasan/common.c:38
+ kasan_set_track mm/kasan/common.c:45 [inline]
+ set_alloc_info mm/kasan/common.c:437 [inline]
+ __kasan_slab_alloc+0x90/0xc0 mm/kasan/common.c:470
+ kasan_slab_alloc include/linux/kasan.h:224 [inline]
+ slab_post_alloc_hook mm/slab.h:727 [inline]
+ slab_alloc_node mm/slub.c:3248 [inline]
+ slab_alloc mm/slub.c:3256 [inline]
+ __kmem_cache_alloc_lru mm/slub.c:3263 [inline]
+ kmem_cache_alloc_lru+0x255/0x720 mm/slub.c:3280
+ alloc_inode_sb include/linux/fs.h:3103 [inline]
+ jfs_alloc_inode+0x23/0x60 fs/jfs/super.c:105
+ alloc_inode+0x61/0x230 fs/inode.c:260
+ iget_locked+0x1b7/0x6f0 fs/inode.c:1287
+ jfs_iget+0x1a/0x4d0 fs/jfs/inode.c:29
+ jfs_fill_super+0x6a4/0xc70 fs/jfs/super.c:580
+ mount_bdev+0x34d/0x410 fs/super.c:1400
+ legacy_get_tree+0x105/0x220 fs/fs_context.c:610
+ vfs_get_tree+0x89/0x2f0 fs/super.c:1530
+ do_new_mount fs/namespace.c:3040 [inline]
+ path_mount+0x1326/0x1e20 fs/namespace.c:3370
+ do_mount fs/namespace.c:3383 [inline]
+ __do_sys_mount fs/namespace.c:3591 [inline]
+ __se_sys_mount fs/namespace.c:3568 [inline]
+ __x64_sys_mount+0x27f/0x300 fs/namespace.c:3568
+ do_syscall_x64 arch/x86/entry/common.c:50 [inline]
+ do_syscall_64+0x35/0xb0 arch/x86/entry/common.c:80
+ entry_SYSCALL_64_after_hwframe+0x63/0xcd
+
+The buggy address belongs to the object at ffff8880738eae40
+ which belongs to the cache jfs_ip of size 2240
+The buggy address is located 20 bytes to the right of
+ 2240-byte region [ffff8880738eae40, ffff8880738eb700)
+
+The buggy address belongs to the physical page:
+page:ffffea0001ce3a00 refcount:1 mapcount:0 mapping:0000000000000000 index:0x0 pfn:0x738e8
+head:ffffea0001ce3a00 order:3 compound_mapcount:0 compound_pincount:0
+flags: 0xfff00000010200(slab|head|node=0|zone=1|lastcpupid=0x7ff)
+raw: 00fff00000010200 0000000000000000 dead000000000122 ffff88814635d640
+raw: 0000000000000000 00000000800d000d 00000001ffffffff 0000000000000000
+page dumped because: kasan: bad access detected
+page_owner tracks the page as allocated
+page last allocated via order 3, migratetype Reclaimable, gfp_mask 0xd2050(__GFP_IO|__GFP_NOWARN|__GFP_NORETRY|__GFP_COMP|__GFP_NOMEMALLOC|__GFP_RECLAIMABLE), pid 3605, tgid 3605 (syz-executor104), ts 44185585735, free_ts 10115165657
+ prep_new_page mm/page_alloc.c:2532 [inline]
+ get_page_from_freelist+0x109b/0x2ce0 mm/page_alloc.c:4283
+ __alloc_pages+0x1c7/0x510 mm/page_alloc.c:5515
+ alloc_pages+0x1a6/0x270 mm/mempolicy.c:2270
+ alloc_slab_page mm/slub.c:1829 [inline]
+ allocate_slab+0x27e/0x3d0 mm/slub.c:1974
+ new_slab mm/slub.c:2034 [inline]
+ ___slab_alloc+0x7f1/0xe10 mm/slub.c:3036
+ __slab_alloc.constprop.0+0x4d/0xa0 mm/slub.c:3123
+ slab_alloc_node mm/slub.c:3214 [inline]
+ slab_alloc mm/slub.c:3256 [inline]
+ __kmem_cache_alloc_lru mm/slub.c:3263 [inline]
+ kmem_cache_alloc_lru+0x528/0x720 mm/slub.c:3280
+ alloc_inode_sb include/linux/fs.h:3103 [inline]
+ jfs_alloc_inode+0x23/0x60 fs/jfs/super.c:105
+ alloc_inode+0x61/0x230 fs/inode.c:260
+ new_inode_pseudo fs/inode.c:1019 [inline]
+ new_inode+0x27/0x270 fs/inode.c:1047
+ jfs_fill_super+0x436/0xc70 fs/jfs/super.c:544
+ mount_bdev+0x34d/0x410 fs/super.c:1400
+ legacy_get_tree+0x105/0x220 fs/fs_context.c:610
+ vfs_get_tree+0x89/0x2f0 fs/super.c:1530
+ do_new_mount fs/namespace.c:3040 [inline]
+ path_mount+0x1326/0x1e20 fs/namespace.c:3370
+ do_mount fs/namespace.c:3383 [inline]
+ __do_sys_mount fs/namespace.c:3591 [inline]
+ __se_sys_mount fs/namespace.c:3568 [inline]
+ __x64_sys_mount+0x27f/0x300 fs/namespace.c:3568
+page last free stack trace:
+ reset_page_owner include/linux/page_owner.h:24 [inline]
+ free_pages_prepare mm/page_alloc.c:1449 [inline]
+ free_pcp_prepare+0x5e4/0xd20 mm/page_alloc.c:1499
+ free_unref_page_prepare mm/page_alloc.c:3380 [inline]
+ free_unref_page+0x19/0x4d0 mm/page_alloc.c:3476
+ free_contig_range+0xb1/0x180 mm/page_alloc.c:9408
+ destroy_args+0xa8/0x646 mm/debug_vm_pgtable.c:1031
+ debug_vm_pgtable+0x2945/0x29d6 mm/debug_vm_pgtable.c:1354
+ do_one_initcall+0xfe/0x650 init/main.c:1296
+ do_initcall_level init/main.c:1369 [inline]
+ do_initcalls init/main.c:1385 [inline]
+ do_basic_setup init/main.c:1404 [inline]
+ kernel_init_freeable+0x6b1/0x73a init/main.c:1623
+ kernel_init+0x1a/0x1d0 init/main.c:1512
+ ret_from_fork+0x1f/0x30 arch/x86/entry/entry_64.S:306
+
+Memory state around the buggy address:
+ ffff8880738eb600: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+ ffff8880738eb680: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+>ffff8880738eb700: fc fc fc fc fc fc fc fc fc fc fc fc fc fc fc fc
+                         ^
+ ffff8880738eb780: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+ ffff8880738eb800: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+==================================================================
+
+
+---
+This report is generated by a bot. It may contain errors.
+See https://goo.gl/tpsmEJ for more information about syzbot.
+syzbot engineers can be reached at syzkaller@googlegroups.com.
+
+syzbot will keep track of this issue. See:
+https://goo.gl/tpsmEJ#status for how to communicate with syzbot.
+syzbot can test patches for this issue, for details see:
+https://goo.gl/tpsmEJ#testing-patches
+
+
+_______________________________________________
+Jfs-discussion mailing list
+Jfs-discussion@lists.sourceforge.net
+https://lists.sourceforge.net/lists/listinfo/jfs-discussion
