@@ -2,75 +2,75 @@ Return-Path: <jfs-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+jfs-discussion@lfdr.de
 Delivered-To: lists+jfs-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id C2B955EACB5
-	for <lists+jfs-discussion@lfdr.de>; Mon, 26 Sep 2022 18:38:23 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D43AD5EADA1
+	for <lists+jfs-discussion@lfdr.de>; Mon, 26 Sep 2022 19:07:51 +0200 (CEST)
 Received: from [127.0.0.1] (helo=sfs-ml-2.v29.lw.sourceforge.com)
 	by sfs-ml-2.v29.lw.sourceforge.com with esmtp (Exim 4.95)
 	(envelope-from <jfs-discussion-bounces@lists.sourceforge.net>)
-	id 1ocr7L-00066V-Km;
-	Mon, 26 Sep 2022 16:38:03 +0000
+	id 1ocrZs-0006bx-Um;
+	Mon, 26 Sep 2022 17:07:32 +0000
 Received: from [172.30.20.202] (helo=mx.sourceforge.net)
- by sfs-ml-2.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
+ by sfs-ml-1.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
  TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (Exim 4.95) (envelope-from
- <3atQxYwkbAPktz0lbmmfsbqqje.hpphmfvtfsdpoufou.dpn@M3KW2WVRGUFZ5GODRSRYTGD7.apphosting.bounces.google.com>)
- id 1ocr3L-00062j-L3 for jfs-discussion@lists.sourceforge.net;
- Mon, 26 Sep 2022 16:33:55 +0000
+ <36dsxYwkbAIg4ABwmxxq3m11up.s00sxq64q3o0z5qz5.o0y@M3KW2WVRGUFZ5GODRSRYTGD7.apphosting.bounces.google.com>)
+ id 1ocrYF-0004rG-Nn for jfs-discussion@lists.sourceforge.net;
+ Mon, 26 Sep 2022 17:05:51 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=sourceforge.net; s=x; h=Content-Type:To:From:Subject:Message-ID:Date:
  MIME-Version:Sender:Reply-To:Cc:Content-Transfer-Encoding:Content-ID:
  Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
  :Resent-Message-ID:In-Reply-To:References:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=sH/T/5nf2i+jeNlSqZiHLFAU4DhNiChsnk0LGWVzHxQ=; b=N/+ySU0PNz9IBRQRrijpdC/MaQ
- /EmCTuQF9JISnjcJjfNcn74j+Cx6dxOk78BIsc5pG3pOzmxo3ND9EJJTOqnY26Pb0qT0AIeWTIrRX
- wAY/jIS10cREmQHbmhMlS55ipwi91qLWM6zW/1QztcGRUSu8mfW4XFC0fWx1ZzcYEL2Y=;
+ bh=y28CCcBuJ1ylNWh8a512gzTxThjJ7xoc0njafP1n4Lk=; b=cZLfzyPar2H9ghhRbzbnPyb9aM
+ 7LEnPYd/xeC0wQvxW5xDAOpXi6+b0Vx2ITp6VVmiE8C1TIFh+Njr1DwHL7zwwqvpt35Z2K8Z3IipC
+ Dd7uEEEHSIXLQkC+8t7XUxYMSOl7ClrrZRJgD32mqIUQTDEfhJaqQeeGkiQofN8h5/rs=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
  h=Content-Type:To:From:Subject:Message-ID:Date:MIME-Version:Sender:Reply-To
  :Cc:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
  Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
  References:List-Id:List-Help:List-Unsubscribe:List-Subscribe:List-Post:
- List-Owner:List-Archive; bh=sH/T/5nf2i+jeNlSqZiHLFAU4DhNiChsnk0LGWVzHxQ=; b=f
- +P+LmeWR6QN7mW5q9z+G1xOHkpt/ogyeez6dJNaCkU3VG4fH+G9GBMWlgyb1U9pDxFQGTjaWkDRfB
- 7WiMexlvUn/OenrMDYmE0zh72d/GfC0rRrk106df3i9je6kYHKWO8mVr/45DZMrn3TwRn5cGBIEeR
- GXJbI6S1T2FGVnSo=;
-Received: from mail-il1-f199.google.com ([209.85.166.199])
- by sfi-mx-2.v28.lw.sourceforge.com with esmtps
+ List-Owner:List-Archive; bh=y28CCcBuJ1ylNWh8a512gzTxThjJ7xoc0njafP1n4Lk=; b=G
+ hQiTq6l4qdXjFDRoIDvSpeq1Cb0Ak4M7PhZnwtUZXiwjNDm3rSHqDY7Sui7HAsyhwI4yNv+BMz2V8
+ ttvD+HL5TQxVF1yw940ol9x0ggpqZ1NaXTkudFFLnrv2Hoh+Tf/8usEUfavHmUj2lpWz+IvRGKL+v
+ +9bjBgb+ZIoiTAIM=;
+Received: from mail-io1-f70.google.com ([209.85.166.70])
+ by sfi-mx-1.v28.lw.sourceforge.com with esmtps
  (TLS1.2:ECDHE-RSA-AES128-GCM-SHA256:128) (Exim 4.95)
- id 1ocr3I-0001pW-7P for jfs-discussion@lists.sourceforge.net;
- Mon, 26 Sep 2022 16:33:55 +0000
-Received: by mail-il1-f199.google.com with SMTP id
- h10-20020a92c26a000000b002f57c5ac7dbso5537802ild.15
+ id 1ocrYF-003bvf-2M for jfs-discussion@lists.sourceforge.net;
+ Mon, 26 Sep 2022 17:05:51 +0000
+Received: by mail-io1-f70.google.com with SMTP id
+ f11-20020a5d858b000000b006a17b75af65so4232305ioj.13
  for <jfs-discussion@lists.sourceforge.net>;
- Mon, 26 Sep 2022 09:33:52 -0700 (PDT)
+ Mon, 26 Sep 2022 10:05:51 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20210112;
  h=to:from:subject:message-id:date:mime-version:x-gm-message-state
  :from:to:cc:subject:date;
- bh=sH/T/5nf2i+jeNlSqZiHLFAU4DhNiChsnk0LGWVzHxQ=;
- b=MwH45nSepxgMcxDfg4Sz4EE+OEo8S8/WbfZAtyDAY5VeWiToEIRpc5EknLgRYjiSzH
- wDSX25P5HNdecGP/m2JXsssDeuAunMLl/DSUaSnUhDzMOlDsseNfbtTY4zGZs762J231
- kn0D3DHciI0EwgD93FS3gy/Wxb2jzMHVkowxpcYyeQ5Uzv0gz/iqzkwOvvZorKnXkszN
- F679+aMDRcbNH+ctqKem96tF22C7wT57bAbvyYwqwCpyhRLeQmGFPWF2/kCnIFWadqeh
- g1y+YFg+c0yKufubPjlxt7pt+sgltHrezPwNqVLS2L17Szty+rO2TIM5v6Hgo6xUafm6
- T/Fw==
-X-Gm-Message-State: ACrzQf1KLqVR9kZRa4UkQ5kbDTVfctQFz3O598xAPDbdpCxfWx8fsTfT
- goRtZEfLhg2dy7XzJK8oMsY6Pp8Kg79jldSmDQ1TnX8KbC9u
-X-Google-Smtp-Source: AMsMyM5yhMIxXjeRH2xGVyDxfsCSbKvYLZ0BJ6Tl2N7b8S8v/cZMzyoXx9f0UyI0beRfBt2N4wIibctCF2WQqcVageVxZOX4EulH
+ bh=y28CCcBuJ1ylNWh8a512gzTxThjJ7xoc0njafP1n4Lk=;
+ b=skVEVslyPV2FLZItH0A/1N7b70veUkQDylAu9T0CQfOItTZMkZihZLM35Di2orWGxW
+ +YPWRSRG5d0HTZwFbwb+lIoH3mCbHNYKdafOgzZ2SjAFd/a9r8A6K2WLhVqYHq3yJk3a
+ BBqsaxpYn13n2ICABPNkncMeb0wLf0OXWxn63++jLHctOCDLYNfFJQqHzdns4qoHZTfR
+ WtV6sg8UqnqGT2lTHW/YRghdAMq3M7xTqp3mHe1MLZgXROKYUP92JZMEBQQjz5PrcBwv
+ e+z+/kQvSKl7wNT9Yrm98asBHT7eu+Gs2j2yK39KpOEmWmnj7RKQyN+LH6gZXlMJArY0
+ uszw==
+X-Gm-Message-State: ACrzQf2+/bbRSMJ2Q9F3NY8aNg/i8m0SoRBFwUWoHLMjyokJgG9cgJMQ
+ s0YM+VgFWukD6vkq53NbMJFfoANGAa6neKEeir7ClrTaDDgM
+X-Google-Smtp-Source: AMsMyM5a/dR1igz98v9x/QuvU++r0t3bOtDiGDqubbY/vXledqC4nj+kfqJEoJWSr5sLzgvxZExw/wcqju6Xt5+ffLIslvzgIFl+
 MIME-Version: 1.0
-X-Received: by 2002:a92:c108:0:b0:2f6:b612:cbb5 with SMTP id
- p8-20020a92c108000000b002f6b612cbb5mr9896021ile.34.1664210026663; Mon, 26 Sep
- 2022 09:33:46 -0700 (PDT)
-Date: Mon, 26 Sep 2022 09:33:46 -0700
+X-Received: by 2002:a05:6e02:1d92:b0:2f6:a470:cb4f with SMTP id
+ h18-20020a056e021d9200b002f6a470cb4fmr10448434ila.221.1664211945555; Mon, 26
+ Sep 2022 10:05:45 -0700 (PDT)
+Date: Mon, 26 Sep 2022 10:05:45 -0700
 X-Google-Appengine-App-Id: s~syzkaller
 X-Google-Appengine-App-Id-Alias: syzkaller
-Message-ID: <0000000000007898e505e9971783@google.com>
-From: syzbot <syzbot+c853277dcbfa2182e9aa@syzkaller.appspotmail.com>
+Message-ID: <000000000000d890a405e997896e@google.com>
+From: syzbot <syzbot+9c0c58ea2e4887ab502e@syzkaller.appspotmail.com>
 To: jfs-discussion@lists.sourceforge.net, linux-kernel@vger.kernel.org, 
  shaggy@kernel.org, syzkaller-bugs@googlegroups.com
 X-Spam-Score: 0.6 (/)
 X-Spam-Report: Spam detection software,
- running on the system "util-spamd-1.v13.lw.sourceforge.com", 
+ running on the system "util-spamd-2.v13.lw.sourceforge.com", 
  has NOT identified this incoming email as spam.  The original
  message has been attached to this so you can view it or label
  similar future email.  If you have any questions, see
@@ -83,19 +83,18 @@ X-Spam-Report: Spam detection software,
  Content analysis details:   (0.6 points, 6.0 required)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.3 FROM_LOCAL_HEX         From: localpart has long hexadecimal sequence
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.166.199 listed in list.dnswl.org]
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
+ no trust [209.85.166.70 listed in list.dnswl.org]
+ 0.3 FROM_LOCAL_HEX         From: localpart has long hexadecimal sequence
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.166.199 listed in wl.mailspike.net]
-X-Headers-End: 1ocr3I-0001pW-7P
-X-Mailman-Approved-At: Mon, 26 Sep 2022 16:38:01 +0000
-Subject: [Jfs-discussion] [syzbot] BUG: unable to handle kernel NULL pointer
- dereference in dtInsertEntry
+ [209.85.166.70 listed in wl.mailspike.net]
+X-Headers-End: 1ocrYF-003bvf-2M
+X-Mailman-Approved-At: Mon, 26 Sep 2022 17:07:24 +0000
+Subject: [Jfs-discussion] [syzbot] kernel BUG in jfs_evict_inode
 X-BeenThere: jfs-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -117,65 +116,62 @@ syzbot found the following issue on:
 
 HEAD commit:    c194837ebb57 Merge branch 'for-next/core', remote-tracking..
 git tree:       git://git.kernel.org/pub/scm/linux/kernel/git/arm64/linux.git for-kernelci
-console output: https://syzkaller.appspot.com/x/log.txt?x=1271d188880000
+console output: https://syzkaller.appspot.com/x/log.txt?x=117dbdc4880000
 kernel config:  https://syzkaller.appspot.com/x/.config?x=15a770deac0c935a
-dashboard link: https://syzkaller.appspot.com/bug?extid=c853277dcbfa2182e9aa
+dashboard link: https://syzkaller.appspot.com/bug?extid=9c0c58ea2e4887ab502e
 compiler:       Debian clang version 13.0.1-++20220126092033+75e33f71c2da-1~exp1~20220126212112.63, GNU ld (GNU Binutils for Debian) 2.35.2
 userspace arch: arm64
-syz repro:      https://syzkaller.appspot.com/x/repro.syz?x=10d2d470880000
-C reproducer:   https://syzkaller.appspot.com/x/repro.c?x=14717b18880000
+syz repro:      https://syzkaller.appspot.com/x/repro.syz?x=11f2e288880000
+C reproducer:   https://syzkaller.appspot.com/x/repro.c?x=127d1ae4880000
 
 Downloadable assets:
 disk image: https://storage.googleapis.com/syzbot-assets/8d8ae425e7fa/disk-c194837e.raw.xz
 vmlinux: https://storage.googleapis.com/syzbot-assets/c540d501ebe7/vmlinux-c194837e.xz
 
 IMPORTANT: if you fix the issue, please add the following tag to the commit:
-Reported-by: syzbot+c853277dcbfa2182e9aa@syzkaller.appspotmail.com
+Reported-by: syzbot+9c0c58ea2e4887ab502e@syzkaller.appspotmail.com
 
-loop0: detected capacity change from 0 to 65535
-Unable to handle kernel NULL pointer dereference at virtual address 0000000000000008
-Mem abort info:
-  ESR = 0x0000000096000046
-  EC = 0x25: DABT (current EL), IL = 32 bits
-  SET = 0, FnV = 0
-  EA = 0, S1PTW = 0
-  FSC = 0x06: level 2 translation fault
-Data abort info:
-  ISV = 0, ISS = 0x00000046
-  CM = 0, WnR = 1
-user pgtable: 4k pages, 48-bit VAs, pgdp=000000010b4bb000
-[0000000000000008] pgd=080000010b405003, p4d=080000010b405003, pud=0800000107ba1003, pmd=0000000000000000
-Internal error: Oops: 0000000096000046 [#1] PREEMPT SMP
+loop0: detected capacity change from 0 to 264192
+ERROR: (device loop0): xtTruncate: XT_GETPAGE: xtree page corrupt
+ERROR: (device loop0): remounting filesystem as read-only
+------------[ cut here ]------------
+kernel BUG at fs/jfs/inode.c:169!
+Internal error: Oops - BUG: 00000000f2000800 [#1] PREEMPT SMP
 Modules linked in:
-CPU: 0 PID: 3064 Comm: syz-executor267 Not tainted 6.0.0-rc6-syzkaller-17742-gc194837ebb57 #0
+CPU: 1 PID: 3065 Comm: syz-executor105 Not tainted 6.0.0-rc6-syzkaller-17742-gc194837ebb57 #0
 Hardware name: Google Google Compute Engine/Google Compute Engine, BIOS Google 08/26/2022
 pstate: 80400005 (Nzcv daif +PAN -UAO -TCO -DIT -SSBS BTYPE=--)
-pc : dtInsertEntry+0x470/0x660 fs/jfs/jfs_dtree.c:3708
-lr : dtInsertEntry+0x468/0x660 fs/jfs/jfs_dtree.c:3708
-sp : ffff80000ff7b820
-x29: ffff80000ff7b8a0 x28: ffff0000ca10aed8 x27: ffff0000ca10aef8
-x26: 0000000000000000 x25: 000000000000000d x24: 0000000000000001
-x23: 0000000000000000 x22: 0000000000000073 x21: 0000000000000006
-x20: ffff80000ff7b908 x19: 0000000000000079 x18: 00000000000000c0
-x17: ffff80000dd0b198 x16: 0000000000000000 x15: 0000000000000000
-x14: 0000000000000000 x13: 0000000000008000 x12: ffff80000d5335c0
-x11: ff80800008d4c768 x10: 0000000000000000 x9 : 0000000000000000
-x8 : 00000000000000ff x7 : ffff800008d5cfac x6 : 0000000000000000
-x5 : 0000000000000000 x4 : ffff80000ff7b900 x3 : ffff80000ff7b908
-x2 : ffff80000ff7b9b0 x1 : 0000000000000000 x0 : 0000000000000000
+pc : jfs_evict_inode+0x1c0/0x1e8 fs/jfs/inode.c:169
+lr : jfs_evict_inode+0x1c0/0x1e8 fs/jfs/inode.c:169
+sp : ffff8000126f3ac0
+x29: ffff8000126f3ac0 x28: ffff0000cb292a00 x27: ffff0000ca9e85f8
+x26: ffff0000c759b500 x25: ffff0000cb292a00 x24: ffff8000126f3b38
+x23: ffff0000ca9eba98 x22: ffff0000ca9eb4b0 x21: ffff800008d32a0c
+x20: 0000000000000001 x19: ffff0000ca9eb8e0 x18: 00000000000000c0
+x17: ffff80000dd0b198 x16: ffff80000db49158 x15: ffff0000c759b500
+x14: 0000000000000050 x13: 00000000ffffffff x12: ffff0000c759b500
+x11: ff80800008d32bcc x10: 0000000000000000 x9 : ffff800008d32bcc
+x8 : ffff0000c759b500 x7 : ffff8000085e852c x6 : 0000000000000000
+x5 : 0000000000000080 x4 : 0000000000000001 x3 : 0000000000000000
+x2 : 0000000000000006 x1 : 0000000000000000 x0 : ffff0000ca9eb8c0
 Call trace:
- dtInsertEntry+0x470/0x660
- dtInsert+0x21c/0x378 fs/jfs/jfs_dtree.c:886
- jfs_create+0x390/0x488 fs/jfs/namei.c:137
- lookup_open fs/namei.c:3413 [inline]
- open_last_lookups fs/namei.c:3481 [inline]
- path_openat+0x804/0x11c4 fs/namei.c:3688
- do_filp_open+0xdc/0x1b8 fs/namei.c:3718
- do_sys_openat2+0xb8/0x22c fs/open.c:1311
- do_sys_open fs/open.c:1327 [inline]
- __do_sys_openat fs/open.c:1343 [inline]
- __se_sys_openat fs/open.c:1338 [inline]
- __arm64_sys_openat+0xb0/0xe0 fs/open.c:1338
+ jfs_evict_inode+0x1c0/0x1e8 fs/jfs/inode.c:169
+ evict+0xec/0x334 fs/inode.c:665
+ dispose_list fs/inode.c:698 [inline]
+ evict_inodes+0x2e0/0x354 fs/inode.c:748
+ generic_shutdown_super+0x50/0x190 fs/super.c:480
+ kill_block_super+0x30/0x78 fs/super.c:1427
+ deactivate_locked_super+0x70/0xe8 fs/super.c:332
+ deactivate_super+0xd0/0xd4 fs/super.c:363
+ cleanup_mnt+0x1f8/0x234 fs/namespace.c:1186
+ __cleanup_mnt+0x20/0x30 fs/namespace.c:1193
+ task_work_run+0xc4/0x14c kernel/task_work.c:177
+ exit_task_work include/linux/task_work.h:38 [inline]
+ do_exit+0x26c/0xbe0 kernel/exit.c:795
+ do_group_exit+0x60/0xe8 kernel/exit.c:925
+ __do_sys_exit_group kernel/exit.c:936 [inline]
+ __se_sys_exit_group kernel/exit.c:934 [inline]
+ __wake_up_parent+0x0/0x40 kernel/exit.c:934
  __invoke_syscall arch/arm64/kernel/syscall.c:38 [inline]
  invoke_syscall arch/arm64/kernel/syscall.c:52 [inline]
  el0_svc_common+0x138/0x220 arch/arm64/kernel/syscall.c:142
@@ -183,15 +179,8 @@ Call trace:
  el0_svc+0x58/0x150 arch/arm64/kernel/entry-common.c:636
  el0t_64_sync_handler+0x84/0xf0 arch/arm64/kernel/entry-common.c:654
  el0t_64_sync+0x18c/0x190
-Code: 370800d3 97d54f56 f9400fe9 52801fe8 (39002128) 
+Code: aa1303e0 97e62ca1 17ffffaf 97d5b63d (d4210000) 
 ---[ end trace 0000000000000000 ]---
-----------------
-Code disassembly (best guess):
-   0:	370800d3 	tbnz	w19, #1, 0x18
-   4:	97d54f56 	bl	0xffffffffff553d5c
-   8:	f9400fe9 	ldr	x9, [sp, #24]
-   c:	52801fe8 	mov	w8, #0xff                  	// #255
-* 10:	39002128 	strb	w8, [x9, #8] <-- trapping instruction
 
 
 ---
