@@ -2,104 +2,75 @@ Return-Path: <jfs-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+jfs-discussion@lfdr.de
 Delivered-To: lists+jfs-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id F134F5EE6E8
-	for <lists+jfs-discussion@lfdr.de>; Wed, 28 Sep 2022 22:58:30 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BBFEE5EF6EA
+	for <lists+jfs-discussion@lfdr.de>; Thu, 29 Sep 2022 15:50:10 +0200 (CEST)
 Received: from [127.0.0.1] (helo=sfs-ml-4.v29.lw.sourceforge.com)
 	by sfs-ml-4.v29.lw.sourceforge.com with esmtp (Exim 4.95)
 	(envelope-from <jfs-discussion-bounces@lists.sourceforge.net>)
-	id 1ode7v-0007A4-3F;
-	Wed, 28 Sep 2022 20:58:07 +0000
+	id 1odtut-0001AY-VJ;
+	Thu, 29 Sep 2022 13:49:44 +0000
 Received: from [172.30.20.202] (helo=mx.sourceforge.net)
- by sfs-ml-4.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
- TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (Exim 4.95) (envelope-from
- <3-7E0YwkbAFICIJ4u55yBu992x.08805yECyBw87Dy7D.w86@M3KW2WVRGUFZ5GODRSRYTGD7.apphosting.bounces.google.com>)
- id 1oddu4-0006xN-Of for jfs-discussion@lists.sourceforge.net;
- Wed, 28 Sep 2022 20:43:49 +0000
+ by sfs-ml-1.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
+ TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (Exim 4.95)
+ (envelope-from <dzm91@hust.edu.cn>) id 1odmOb-0003ht-OH
+ for jfs-discussion@lists.sourceforge.net;
+ Thu, 29 Sep 2022 05:47:41 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=sourceforge.net; s=x; h=Content-Type:To:From:Subject:Message-ID:Date:
- MIME-Version:Sender:Reply-To:Cc:Content-Transfer-Encoding:Content-ID:
+ d=sourceforge.net; s=x; h=Content-Transfer-Encoding:MIME-Version:Message-Id:
+ Date:Subject:Cc:To:From:Sender:Reply-To:Content-Type:Content-ID:
  Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
  :Resent-Message-ID:In-Reply-To:References:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=nstnZIDjGjtGExNjTIDmjV9nq6K+84XmwWh9HIHAZLg=; b=JPretQUlH2UclATtjuS9BZnyDq
- db7Mzb/CYTsQ1HOeRJPkM8pBIo0geS8Z14pBKn6durjp/UtsvftYCXzRywTrYliIPUkih6XoeVX6E
- H9NaCnoEXAoAzJTrOt+XAgiMNccjRg64vp5/WvM+pz4XpsznEet3NyVmzyhJeR3OOIHs=;
+ bh=a5EKDyyqzsxE8R+DxFQZiEX8zLKwRzjo9z2GoYGmLgw=; b=AlZPod+sdJbIzSqYUUS8FSVR/l
+ 7SDJJ/6IUCjHne95pgzm/NsDVi7bNui/TF5TMn2Tr8KKFhfk8fH3kx/mJDk1zvq1viaMtAIOMZ98V
+ 0Tiiyk/wtlg3mG1CF5MbumgTRXAUtLwGNbh3rPuKXiEEMEn/m/lHFRrq4jAPd3RC5cis=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
- h=Content-Type:To:From:Subject:Message-ID:Date:MIME-Version:Sender:Reply-To
- :Cc:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+ h=Content-Transfer-Encoding:MIME-Version:Message-Id:Date:Subject:Cc:To:From
+ :Sender:Reply-To:Content-Type:Content-ID:Content-Description:Resent-Date:
  Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
  References:List-Id:List-Help:List-Unsubscribe:List-Subscribe:List-Post:
- List-Owner:List-Archive; bh=nstnZIDjGjtGExNjTIDmjV9nq6K+84XmwWh9HIHAZLg=; b=b
- Kv7Q9OUmR1wuy11+L1VoMpZ4+qkeC5qtcfBsdMlU6Pc1uFIuIxJuzR6jL2es+CTis/ovqbqBEoyOH
- IRy76HKTDwhzKtOcsKGT9fI3d1dpKg4SypGCnEN/+zIgtSXRrRQ+9nZFvsN31L7ZsqZtgpqHotjIq
- foqRZVAmdA1L38aQ=;
-Received: from mail-il1-f200.google.com ([209.85.166.200])
- by sfi-mx-2.v28.lw.sourceforge.com with esmtps
- (TLS1.2:ECDHE-RSA-AES128-GCM-SHA256:128) (Exim 4.95)
- id 1odduD-0000IB-6U for jfs-discussion@lists.sourceforge.net;
- Wed, 28 Sep 2022 20:43:49 +0000
-Received: by mail-il1-f200.google.com with SMTP id
- i13-20020a056e02152d00b002f58aea654fso10862170ilu.20
- for <jfs-discussion@lists.sourceforge.net>;
- Wed, 28 Sep 2022 13:43:45 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20210112;
- h=to:from:subject:message-id:date:mime-version:x-gm-message-state
- :from:to:cc:subject:date;
- bh=nstnZIDjGjtGExNjTIDmjV9nq6K+84XmwWh9HIHAZLg=;
- b=QLebB4ym0zIhUAl1MCWeB9g2W34TZRbsKRhu4vqHqvgDcKa0Mvz2Ra49XX0L3v9LY6
- uwaYQkARALH/1iYHLUeNOzgQtHYfJBF0YAVm4dUdG/CHHm2kh1/zfzwq8N8OBsL38OE+
- 5vvHJ3RVYYYSPbmuW1Tl9dG0/U+bGyVMs5+AmFBoa8DV3VvwdfxIecOMf3hLpgytV42Z
- mxkNjK20uj3+t2b7pF1qs/bb/a6lXMEsRI5BV3PhDfDAUZEr0zYUrq7aiSN6J+qBQ7y/
- f/D5gnWlMj74s2I2F8qECOqjEEwoL09Ov79vN6hbQWMJFHfspujfRvL+twvXee9hFwKw
- FpdQ==
-X-Gm-Message-State: ACrzQf3jy9qH5Pn9hGRKVBj4H8R5VN9SfT5NLmY/Y95Co7DQVR1qbS7+
- LaXlQju3n/79UrSXVU1JOJOVmPc9HCwwOXyWUuoPTSSiiw65
-X-Google-Smtp-Source: AMsMyM4uZ5DgjycIi3Jt1GAyaf9KJQOhVWRAICGi/t0+htTcLLtl6tYx7Povvsh1wpXNiTkQ2Zw4+rmUdmqm6yTQYpgTErwEZw9L
+ List-Owner:List-Archive; bh=a5EKDyyqzsxE8R+DxFQZiEX8zLKwRzjo9z2GoYGmLgw=; b=G
+ xg2oW5n30HPFQ35N63vzSiljwage1gLP1dItfrw7aiZ6Y8rK4ei5YKKcvpDtsdOhseRjHMo13Oe/M
+ oI+kqdYdLRxmH0V9SZ4tC8bI3ss7cSCnD4mmihCI2NlNJODY/D4AB9B4BN7OL0jb157fPBz9yuxRA
+ bDAacgQHYYTrYiT0=;
+Received: from mail.hust.edu.cn ([202.114.0.240] helo=hust.edu.cn)
+ by sfi-mx-1.v28.lw.sourceforge.com with esmtps
+ (TLS1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.95)
+ id 1odmOW-006Ghk-UH for jfs-discussion@lists.sourceforge.net;
+ Thu, 29 Sep 2022 05:47:41 +0000
+Received: from localhost.localdomain ([172.16.0.254])
+ (user=dzm91@hust.edu.cn mech=LOGIN bits=0)
+ by mx1.hust.edu.cn  with ESMTP id 28T5kZ33024682-28T5kZ36024682
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NO);
+ Thu, 29 Sep 2022 13:46:40 +0800
+From: Dongliang Mu <dzm91@hust.edu.cn>
+To: Dave Kleikamp <shaggy@kernel.org>
+Date: Thu, 29 Sep 2022 13:44:59 +0800
+Message-Id: <20220929054500.488604-1-dzm91@hust.edu.cn>
+X-Mailer: git-send-email 2.35.1
 MIME-Version: 1.0
-X-Received: by 2002:a92:c6c9:0:b0:2f6:d00c:8ab0 with SMTP id
- v9-20020a92c6c9000000b002f6d00c8ab0mr13392756ilm.85.1664397819685; Wed, 28
- Sep 2022 13:43:39 -0700 (PDT)
-Date: Wed, 28 Sep 2022 13:43:39 -0700
-X-Google-Appengine-App-Id: s~syzkaller
-X-Google-Appengine-App-Id-Alias: syzkaller
-Message-ID: <000000000000ceb2fa05e9c2d0e3@google.com>
-From: syzbot <syzbot+15342c1aa6a00fb7a438@syzkaller.appspotmail.com>
-To: jfs-discussion@lists.sourceforge.net, linux-kernel@vger.kernel.org, 
- shaggy@kernel.org, syzkaller-bugs@googlegroups.com
-X-Spam-Score: 0.6 (/)
+X-FEAS-AUTH-USER: dzm91@hust.edu.cn
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: Spam detection software,
  running on the system "util-spamd-1.v13.lw.sourceforge.com", 
  has NOT identified this incoming email as spam.  The original
  message has been attached to this so you can view it or label
  similar future email.  If you have any questions, see
  the administrator of that system for details.
- Content preview:  Hello,
- syzbot found the following issue on: HEAD commit: 3800a713b607
- Merge tag 'mm-hotfixes-stable-2022-09-26' of .. git tree: upstream
- console+strace:
- https://syzkaller.appspot.com/x/log.txt?x=1513bdc4880000 kernel config:
- https://syzkaller.a [...] 
- Content analysis details:   (0.6 points, 6.0 required)
+ Content preview: From: Dongliang Mu <mudongliangabcd@gmail.com> Syzbot found
+ a crash : UBSAN: shift-out-of-bounds in dbAllocAG. The underlying bug is
+ the missing check of bmp->db_agl2size. The field can be greater than 32 and
+ trigger the shift-out-of-bounds. 
+ Content analysis details:   (-0.0 points, 6.0 required)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.3 FROM_LOCAL_HEX         From: localpart has long hexadecimal sequence
- 0.0 URIBL_BLOCKED          ADMINISTRATOR NOTICE: The query to URIBL was
- blocked.  See
- http://wiki.apache.org/spamassassin/DnsBlocklists#dnsbl-block
- for more information. [URIs: syzkaller.appspot.com]
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.166.200 listed in list.dnswl.org]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.166.200 listed in wl.mailspike.net]
-X-Headers-End: 1odduD-0000IB-6U
-X-Mailman-Approved-At: Wed, 28 Sep 2022 20:58:06 +0000
-Subject: [Jfs-discussion] [syzbot] UBSAN: shift-out-of-bounds in dbAllocAG
+X-Headers-End: 1odmOW-006Ghk-UH
+X-Mailman-Approved-At: Thu, 29 Sep 2022 13:49:40 +0000
+Subject: [Jfs-discussion] [PATCH] fs: jfs: fix shift-out-of-bounds in
+ dbAllocAG
 X-BeenThere: jfs-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -111,75 +82,92 @@ List-Post: <mailto:jfs-discussion@lists.sourceforge.net>
 List-Help: <mailto:jfs-discussion-request@lists.sourceforge.net?subject=help>
 List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/jfs-discussion>, 
  <mailto:jfs-discussion-request@lists.sourceforge.net?subject=subscribe>
+Cc: syzbot+15342c1aa6a00fb7a438@syzkaller.appspotmail.com,
+ Dongliang Mu <mudongliangabcd@gmail.com>, jfs-discussion@lists.sourceforge.net,
+ linux-kernel@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Errors-To: jfs-discussion-bounces@lists.sourceforge.net
 
-Hello,
+From: Dongliang Mu <mudongliangabcd@gmail.com>
 
-syzbot found the following issue on:
+Syzbot found a crash : UBSAN: shift-out-of-bounds in dbAllocAG. The
+underlying bug is the missing check of bmp->db_agl2size. The field can
+be greater than 32 and trigger the shift-out-of-bounds.
 
-HEAD commit:    3800a713b607 Merge tag 'mm-hotfixes-stable-2022-09-26' of ..
-git tree:       upstream
-console+strace: https://syzkaller.appspot.com/x/log.txt?x=1513bdc4880000
-kernel config:  https://syzkaller.appspot.com/x/.config?x=ba0d23aa7e1ffaf5
-dashboard link: https://syzkaller.appspot.com/bug?extid=15342c1aa6a00fb7a438
-compiler:       Debian clang version 13.0.1-++20220126092033+75e33f71c2da-1~exp1~20220126212112.63, GNU ld (GNU Binutils for Debian) 2.35.2
-syz repro:      https://syzkaller.appspot.com/x/repro.syz?x=14e7836c880000
-C reproducer:   https://syzkaller.appspot.com/x/repro.c?x=16fc20e0880000
+Fix this bug by adding a check of bmp->db_agl2size in dbMount since this
+field is used in many following functions. Note that, for maintainance,
+I reorganzie the error handling code of dbMount.
 
-IMPORTANT: if you fix the issue, please add the following tag to the commit:
 Reported-by: syzbot+15342c1aa6a00fb7a438@syzkaller.appspotmail.com
-
-loop0: detected capacity change from 0 to 97743
-================================================================================
-UBSAN: shift-out-of-bounds in fs/jfs/jfs_dmap.c:1313:21
-shift exponent 8345714 is too large for 64-bit type 's64' (aka 'long long')
-CPU: 1 PID: 3614 Comm: syz-executor252 Not tainted 6.0.0-rc7-syzkaller-00029-g3800a713b607 #0
-Hardware name: Google Google Compute Engine/Google Compute Engine, BIOS Google 08/26/2022
-Call Trace:
- <TASK>
- __dump_stack lib/dump_stack.c:88 [inline]
- dump_stack_lvl+0x1b1/0x28e lib/dump_stack.c:106
- ubsan_epilogue lib/ubsan.c:151 [inline]
- __ubsan_handle_shift_out_of_bounds+0x33d/0x3b0 lib/ubsan.c:322
- dbAllocAG+0xf3d/0x1100 fs/jfs/jfs_dmap.c:1313
- dbAlloc+0x661/0xc90 fs/jfs/jfs_dmap.c:858
- diNewIAG fs/jfs/jfs_imap.c:2500 [inline]
- diAllocExt fs/jfs/jfs_imap.c:1898 [inline]
- diAllocAG+0xaf6/0x1f80 fs/jfs/jfs_imap.c:1662
- diAlloc+0x3dd/0x1700 fs/jfs/jfs_imap.c:1583
- ialloc+0x8c/0xa80 fs/jfs/jfs_inode.c:56
- jfs_mkdir+0x141/0xb00 fs/jfs/namei.c:225
- vfs_mkdir+0x3b3/0x590 fs/namei.c:4013
- do_mkdirat+0x279/0x550 fs/namei.c:4038
- __do_sys_mkdir fs/namei.c:4058 [inline]
- __se_sys_mkdir fs/namei.c:4056 [inline]
- __x64_sys_mkdir+0x6a/0x80 fs/namei.c:4056
- do_syscall_x64 arch/x86/entry/common.c:50 [inline]
- do_syscall_64+0x3d/0xb0 arch/x86/entry/common.c:80
- entry_SYSCALL_64_after_hwframe+0x63/0xcd
-RIP: 0033:0x7f533bcccf49
-Code: ff ff c3 66 2e 0f 1f 84 00 00 00 00 00 0f 1f 40 00 48 89 f8 48 89 f7 48 89 d6 48 89 ca 4d 89 c2 4d 89 c8 4c 8b 4c 24 08 0f 05 <48> 3d 01 f0 ff ff 73 01 c3 48 c7 c1 c0 ff ff ff f7 d8 64 89 01 48
-RSP: 002b:00007ffffbdf0e58 EFLAGS: 00000246 ORIG_RAX: 0000000000000053
-RAX: ffffffffffffffda RBX: 0000000000000000 RCX: 00007f533bcccf49
-RDX: 00007f533bc8b443 RSI: 0000000000000000 RDI: 00000000200052c0
-RBP: 00007f533bc8c710 R08: 0000000000000000 R09: 0000000000000000
-R10: 00007ffffbdf0d20 R11: 0000000000000246 R12: 00000000f8008000
-R13: 0000000000000000 R14: 00080000000000f8 R15: 0000000000000000
- </TASK>
-================================================================================
-
-
+Signed-off-by: Dongliang Mu <mudongliangabcd@gmail.com>
 ---
-This report is generated by a bot. It may contain errors.
-See https://goo.gl/tpsmEJ for more information about syzbot.
-syzbot engineers can be reached at syzkaller@googlegroups.com.
+ fs/jfs/jfs_dmap.c | 21 +++++++++++++++------
+ 1 file changed, 15 insertions(+), 6 deletions(-)
 
-syzbot will keep track of this issue. See:
-https://goo.gl/tpsmEJ#status for how to communicate with syzbot.
-syzbot can test patches for this issue, for details see:
-https://goo.gl/tpsmEJ#testing-patches
+diff --git a/fs/jfs/jfs_dmap.c b/fs/jfs/jfs_dmap.c
+index 6b838d3ae7c2..4c717f245920 100644
+--- a/fs/jfs/jfs_dmap.c
++++ b/fs/jfs/jfs_dmap.c
+@@ -155,7 +155,7 @@ int dbMount(struct inode *ipbmap)
+ 	struct bmap *bmp;
+ 	struct dbmap_disk *dbmp_le;
+ 	struct metapage *mp;
+-	int i;
++	int i, err;
+ 
+ 	/*
+ 	 * allocate/initialize the in-memory bmap descriptor
+@@ -170,8 +170,8 @@ int dbMount(struct inode *ipbmap)
+ 			   BMAPBLKNO << JFS_SBI(ipbmap->i_sb)->l2nbperpage,
+ 			   PSIZE, 0);
+ 	if (mp == NULL) {
+-		kfree(bmp);
+-		return -EIO;
++		err = -EIO;
++		goto err_kfree_bmp;
+ 	}
+ 
+ 	/* copy the on-disk bmap descriptor to its in-memory version. */
+@@ -181,9 +181,8 @@ int dbMount(struct inode *ipbmap)
+ 	bmp->db_l2nbperpage = le32_to_cpu(dbmp_le->dn_l2nbperpage);
+ 	bmp->db_numag = le32_to_cpu(dbmp_le->dn_numag);
+ 	if (!bmp->db_numag) {
+-		release_metapage(mp);
+-		kfree(bmp);
+-		return -EINVAL;
++		err = -EINVAL;
++		goto err_release_metapage;
+ 	}
+ 
+ 	bmp->db_maxlevel = le32_to_cpu(dbmp_le->dn_maxlevel);
+@@ -194,6 +193,10 @@ int dbMount(struct inode *ipbmap)
+ 	bmp->db_agwidth = le32_to_cpu(dbmp_le->dn_agwidth);
+ 	bmp->db_agstart = le32_to_cpu(dbmp_le->dn_agstart);
+ 	bmp->db_agl2size = le32_to_cpu(dbmp_le->dn_agl2size);
++	if (bmp->db_agl2size >= 32) {
++		err = -EINVAL;
++		goto err_release_metapage;
++	}
+ 	for (i = 0; i < MAXAG; i++)
+ 		bmp->db_agfree[i] = le64_to_cpu(dbmp_le->dn_agfree[i]);
+ 	bmp->db_agsize = le64_to_cpu(dbmp_le->dn_agsize);
+@@ -214,6 +217,12 @@ int dbMount(struct inode *ipbmap)
+ 	BMAP_LOCK_INIT(bmp);
+ 
+ 	return (0);
++
++err_release_metapage:
++	release_metapage(mp);
++err_kfree_bmp:
++	kfree(bmp);
++	return err;
+ }
+ 
+ 
+-- 
+2.35.1
+
 
 
 _______________________________________________
