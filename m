@@ -2,100 +2,208 @@ Return-Path: <jfs-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+jfs-discussion@lfdr.de
 Delivered-To: lists+jfs-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id 58E625FA002
-	for <lists+jfs-discussion@lfdr.de>; Mon, 10 Oct 2022 16:15:22 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 974DA5F9FFE
+	for <lists+jfs-discussion@lfdr.de>; Mon, 10 Oct 2022 16:14:57 +0200 (CEST)
 Received: from [127.0.0.1] (helo=sfs-ml-2.v29.lw.sourceforge.com)
 	by sfs-ml-2.v29.lw.sourceforge.com with esmtp (Exim 4.95)
 	(envelope-from <jfs-discussion-bounces@lists.sourceforge.net>)
-	id 1ohtYg-0000IS-5r;
-	Mon, 10 Oct 2022 14:15:06 +0000
+	id 1ohtY9-0000GN-By;
+	Mon, 10 Oct 2022 14:14:33 +0000
 Received: from [172.30.20.202] (helo=mx.sourceforge.net)
- by sfs-ml-1.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
- TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (Exim 4.95) (envelope-from
- <3S8tDYwkbABIAGH2s33w9s770v.y66y3wCAw9u65Bw5B.u64@M3KW2WVRGUFZ5GODRSRYTGD7.apphosting.bounces.google.com>)
- id 1ohnKH-00063j-4m for jfs-discussion@lists.sourceforge.net;
- Mon, 10 Oct 2022 07:35:49 +0000
+ by sfs-ml-2.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
+ TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (Exim 4.95)
+ (envelope-from <dave.kleikamp@oracle.com>) id 1ohtY8-0000G3-Ik
+ for jfs-discussion@lists.sourceforge.net;
+ Mon, 10 Oct 2022 14:14:32 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=sourceforge.net; s=x; h=Content-Type:To:From:Subject:Message-ID:Date:
- MIME-Version:Sender:Reply-To:Cc:Content-Transfer-Encoding:Content-ID:
- Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
- :Resent-Message-ID:In-Reply-To:References:List-Id:List-Help:List-Unsubscribe:
+ d=sourceforge.net; s=x; h=MIME-Version:Content-Transfer-Encoding:Content-Type
+ :In-Reply-To:From:References:Cc:To:Subject:Date:Message-ID:Sender:Reply-To:
+ Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
+ Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=yvGLK7BFZQXPO6UYsdQpXLwU9WtlibEyuFOmtYBinVY=; b=hoBYmD//4Hyl3/BiL6drigSud4
- 8YmxaX9O+J0jVQptGHVnbmxsCTjEdpq1pSLGHu2XbeiQZEGHyHxFnLP+lgSvfiJYCjDqB71E8zjQ9
- folvQS7EQks9YGENEKe4gubZFqWE62BS1WSzo2WaJ0FEsJ8ZC/8LcZLVsrpkCW37TXWk=;
+ bh=gJVCNUVQJEA8v4a1T1RwVQq88kbuvu+nH0mb2ETbz0o=; b=lSWh+xyGuGiSxWrYUfAWl998Xz
+ gvQHUye6u0TcGJJNao30ROCSIwD3nW0BmUXkjJJVHHpPa0/RTxVA/N94mgC8+KbAYt5d2MhNphWBr
+ 7sGGghBEBd7TjK1BRh+PtyfZOcZM7EyfcM9C9EaMrvD1O+BdedvYyE+HTmE8nYThFFr4=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
- h=Content-Type:To:From:Subject:Message-ID:Date:MIME-Version:Sender:Reply-To
- :Cc:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
- Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
- References:List-Id:List-Help:List-Unsubscribe:List-Subscribe:List-Post:
- List-Owner:List-Archive; bh=yvGLK7BFZQXPO6UYsdQpXLwU9WtlibEyuFOmtYBinVY=; b=k
- HrVJ3gV6tn5v6dNzrKB0R2PMXDsEzixu5miXBIhw0k+d6CXYqv7TSaC047hrzqbNU7x57ZL0+rvmG
- ro/3GOeFpiwfRj5Xt3sslpmAylUD5hkghW1R6XzWVC3KBKUO8XUAGSWsHYsTpifEqJfm0vuYSwv7p
- +K/2IF6UQ73agc4Q=;
-Received: from mail-io1-f70.google.com ([209.85.166.70])
+ h=MIME-Version:Content-Transfer-Encoding:Content-Type:In-Reply-To:From:
+ References:Cc:To:Subject:Date:Message-ID:Sender:Reply-To:Content-ID:
+ Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+ :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
+ List-Post:List-Owner:List-Archive;
+ bh=gJVCNUVQJEA8v4a1T1RwVQq88kbuvu+nH0mb2ETbz0o=; b=NGvpC4f9MlzQyq9j6gWT/X/9VR
+ +KJaz4uFNf+xyBqlViraIS47a6pvNToLacQIS+y168GS/oDKTjQKU4Hc3hSpF9lvhXTidCf7zP4Pd
+ 4gFlWSSFhKePxCdCnsd+6zCrMBP7piRMYaqbE1Dh1GyxLIlJ6sevQrXH7J8civn0Pah8=;
+Received: from mx0a-00069f02.pphosted.com ([205.220.165.32])
  by sfi-mx-2.v28.lw.sourceforge.com with esmtps
- (TLS1.2:ECDHE-RSA-AES128-GCM-SHA256:128) (Exim 4.95)
- id 1ohnKD-000163-0B for jfs-discussion@lists.sourceforge.net;
- Mon, 10 Oct 2022 07:35:49 +0000
-Received: by mail-io1-f70.google.com with SMTP id
- f25-20020a5d8799000000b006a44e33ddb6so6793132ion.1
- for <jfs-discussion@lists.sourceforge.net>;
- Mon, 10 Oct 2022 00:35:44 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20210112;
- h=to:from:subject:message-id:date:mime-version:x-gm-message-state
- :from:to:cc:subject:date:message-id:reply-to;
- bh=yvGLK7BFZQXPO6UYsdQpXLwU9WtlibEyuFOmtYBinVY=;
- b=z8Xhz2mbwIKb9M9kNWWUjT85QSmsTnZNEgEqpOucKcxpUxHo7sR7+9jRpIGesFRRxV
- Qf7eOtNZxYefGh2Ns5OcX7AcsKkIJQE8Xs+PTOQNrNAfBLRfKekuu11xiGWsfxGGIxz5
- 19BmhPK688HjqN7ug3nmWY4VP0a+Nunyxv91azRZa3zW9ASxUHGPYs1RYA2d9K/p1p8M
- ask+qddLCDhBez57m2pTkSj2KVwojrQ0Qa74MKU0XBxOnQUh4oqJLbRqyh51kwv/aNkI
- 01fSooXTxdEgqYj/6KgN+9917R1EAqq1uLf3ddZkTM0TLywQtJZBaJt6KtpM1YGY2t76
- I8Aw==
-X-Gm-Message-State: ACrzQf2MKRAmLUOiOq07PIyrZ5FrJkNm2UbIawN8GSXaVtU6lpkrlMGx
- lu+UerM5NQxMoZhEg0sIxZoPXB25uw/YtIs1IyuApMzbeSMH
-X-Google-Smtp-Source: AMsMyM6hqCOvQYCJV54FsKZr5AJtxoj59WwbeeasWEouPpt1+Dodib9ZlQ/xn7sp7yH9p+I0hrDCERwWT9lVEE/MaPBCLGnpghEX
+ (TLS1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.95)
+ id 1ohtY0-0002kj-8z for jfs-discussion@lists.sourceforge.net;
+ Mon, 10 Oct 2022 14:14:32 +0000
+Received: from pps.filterd (m0246629.ppops.net [127.0.0.1])
+ by mx0b-00069f02.pphosted.com (8.17.1.5/8.17.1.5) with ESMTP id 29AC459v030737;
+ Mon, 10 Oct 2022 14:13:56 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=oracle.com;
+ h=message-id : date :
+ subject : to : cc : references : from : in-reply-to : content-type :
+ content-transfer-encoding : mime-version; s=corp-2022-7-12;
+ bh=gJVCNUVQJEA8v4a1T1RwVQq88kbuvu+nH0mb2ETbz0o=;
+ b=g6wIVu7nAo8Ae9rP0Cnd8ewRSSMW2HsuV1Hm/5WPOAqBepf3w9ACgzlZSz66/Z3muf+0
+ xTav8x/9EX8ehVDJlmT+IFZvbN8F+izWGr9dMu8+6oAZf/PkzEXVIYf88mR2KGDM3Xhv
+ lFWxyRbpIJGsiDkL4sGZVyBTKxDGS9hY6UjSqxW7CHLyYoUD8JPlrVr5VE7BUwbyx/BN
+ YeMYFwyxzlKrHXa7h23I6omdj4ReFilHkFn7xd6MT06GSyY2acOI5RHf4Swgu9bA8Z9d
+ 3//o/vX8D25ByAub+ts5g28rldhniQSg42sIJff0jNtYOTuxgVKQlnepVrco4gfPBv6O Mw== 
+Received: from phxpaimrmta01.imrmtpd1.prodappphxaev1.oraclevcn.com
+ (phxpaimrmta01.appoci.oracle.com [138.1.114.2])
+ by mx0b-00069f02.pphosted.com (PPS) with ESMTPS id 3k3139upwg-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
+ Mon, 10 Oct 2022 14:13:56 +0000
+Received: from pps.filterd
+ (phxpaimrmta01.imrmtpd1.prodappphxaev1.oraclevcn.com [127.0.0.1])
+ by phxpaimrmta01.imrmtpd1.prodappphxaev1.oraclevcn.com (8.17.1.5/8.17.1.5)
+ with ESMTP id 29ADhHB3002907; Mon, 10 Oct 2022 14:13:55 GMT
+Received: from nam10-dm6-obe.outbound.protection.outlook.com
+ (mail-dm6nam10lp2102.outbound.protection.outlook.com [104.47.58.102])
+ by phxpaimrmta01.imrmtpd1.prodappphxaev1.oraclevcn.com (PPS) with ESMTPS id
+ 3k2yn2pfv1-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
+ Mon, 10 Oct 2022 14:13:55 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=GGE71p3z8CY5yvPU9MC8uP+tJfkHxfPQBI6jsDt7JX1wfuSNtNj+c1x3Vw9H9rPS2i1EDz61u3luyS4LM6O8BZ70hqKlZ1JyFSN7wqaa3jq3dxgREPK2YW3M2+cqsq9gm5yV1OitWxig1pEGsb2EqkneQgVfWFrjQa0oPXkO3stKP04QisdvNzoHn+KMdGtCVQsmC4U7/La9GVBjbn0oaHdCr/XeFz3tOLxkaQqFsFWibVgzTYn01D/eUnClYSR0ukUAwI61gu028sZxYX9sNCHMGEKkpkBLtLCg2v061XS+xe5CjNgcexz5AkxWXvLTXeoUpU6PA2NoaMlI4C/vpQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=gJVCNUVQJEA8v4a1T1RwVQq88kbuvu+nH0mb2ETbz0o=;
+ b=dhgZyS21f95lm1FjgoUQPe9EQ2CXvNGgh+kXrTdwtK7tXkfuEcFoXzG33Ktjsf2pzlz9PNAqy/XsRJ3wQkLRFj96aKxbB40cDeF5XcwuQDtf5IUs4gyvQajk1c7s2oM4g1cewIHcbnwFMdLrG7WEGEduwiioYpBcFOVVd+DIRhFUlahnkgsRGyEJkKw18q885vvwJAatatVNi08hKpUBnoeml9UiPr2aB7b9mYlE8ACjldaelRhKr1jO/pDk5ymomX7lQipIoIosfwe2U1K5TvTeXBIWzoPW06wpSWXdMJk/QT6lEtF3/M3ZK9M47WXee/getYmrj6GaEGcdI/YJqw==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=oracle.com; dmarc=pass action=none header.from=oracle.com;
+ dkim=pass header.d=oracle.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=oracle.onmicrosoft.com; s=selector2-oracle-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=gJVCNUVQJEA8v4a1T1RwVQq88kbuvu+nH0mb2ETbz0o=;
+ b=V80YQZHHspvAo1vO/hPfU823A7ESZUTfVjNQd6pdmWkymPF0LfyRXs7qm/HtQM1gcxOytMwVDs8yVFKm0J5UJ7rZiDv17/EWmMEQNxTJYH3FKjHMC+EMA+UAHk+m25lTiRcJ1jUzAOdRyj8sr4O4cTMO4z4SpL5z7b7hceo3h3M=
+Received: from MW5PR10MB5738.namprd10.prod.outlook.com (2603:10b6:303:19b::14)
+ by MW5PR10MB5714.namprd10.prod.outlook.com (2603:10b6:303:19b::19)
+ with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.5709.15; Mon, 10 Oct
+ 2022 14:13:54 +0000
+Received: from MW5PR10MB5738.namprd10.prod.outlook.com
+ ([fe80::dff7:be08:8fff:b064]) by MW5PR10MB5738.namprd10.prod.outlook.com
+ ([fe80::dff7:be08:8fff:b064%7]) with mapi id 15.20.5709.015; Mon, 10 Oct 2022
+ 14:13:54 +0000
+Message-ID: <cb418668-e02e-964e-f6ac-6bb3d82f5e36@oracle.com>
+Date: Mon, 10 Oct 2022 09:13:51 -0500
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
+ Thunderbird/102.3.2
+To: Dongliang Mu <mudongliangabcd@gmail.com>, Dongliang Mu <dzm91@hust.edu.cn>
+References: <20220929054500.488604-1-dzm91@hust.edu.cn>
+ <CAD-N9QXODN4xjOg3a3chs0yxfXfAO8pY+yud0Den+1padxGoLA@mail.gmail.com>
+Content-Language: en-US
+From: Dave Kleikamp <dave.kleikamp@oracle.com>
+In-Reply-To: <CAD-N9QXODN4xjOg3a3chs0yxfXfAO8pY+yud0Den+1padxGoLA@mail.gmail.com>
+X-ClientProxiedBy: CH2PR03CA0025.namprd03.prod.outlook.com
+ (2603:10b6:610:59::35) To MW5PR10MB5738.namprd10.prod.outlook.com
+ (2603:10b6:303:19b::14)
 MIME-Version: 1.0
-X-Received: by 2002:a05:6e02:15c9:b0:2da:c33e:49c7 with SMTP id
- q9-20020a056e0215c900b002dac33e49c7mr8468301ilu.26.1665387339440; Mon, 10 Oct
- 2022 00:35:39 -0700 (PDT)
-Date: Mon, 10 Oct 2022 00:35:39 -0700
-X-Google-Appengine-App-Id: s~syzkaller
-X-Google-Appengine-App-Id-Alias: syzkaller
-Message-ID: <000000000000c7e7be05eaa93401@google.com>
-From: syzbot <syzbot+667a6d667592227b1452@syzkaller.appspotmail.com>
-To: jfs-discussion@lists.sourceforge.net, linux-kernel@vger.kernel.org, 
- shaggy@kernel.org, syzkaller-bugs@googlegroups.com
-X-Spam-Score: 0.6 (/)
+X-MS-PublicTrafficType: Email
+X-MS-TrafficTypeDiagnostic: MW5PR10MB5738:EE_|MW5PR10MB5714:EE_
+X-MS-Office365-Filtering-Correlation-Id: d5a9157c-cc1f-4570-85fc-08daaac9a999
+X-MS-Exchange-SenderADCheck: 1
+X-MS-Exchange-AntiSpam-Relay: 0
+X-Microsoft-Antispam: BCL:0;
+X-Microsoft-Antispam-Message-Info: 7/UubeVP7KflRHkO/a/chqEBVJL+2Zc0PslUXXitqFpwQh6LYaG1wfKH0TJ0C9l9GPIlqSzwvqB/P9BxKsSL55VIfm/wHtnd1uetONSwh3lncryPFHLw3RwlClIwO3IjTVN7hxNOa/HtUaaTanBqwskk98hAy1GnnLF3qb7bQvohAVzdIgyAI7PphVsXYi0hSsI7Nlh/uic222VfIo3rnyeDCyeIu8MVe4rIa5wodLEQga7coCQwD03DOps7+RjtFyil8vSTHkE6nfgTOtDRLWwYPp30zWvhslW8kF6pKrnmefOnriGYpNL5iqJt5M5pbZJCwEcDoA+4m7So9DEXQ4pe9drZwbS+buYSognvIW9axNEnwddyOHU+bnPDqZKgNY44yw9ivoCIpghDwZ4H8ysq2KsnsFNlQk5m/PffsSSQgXkKlPxKyforiJYyAO1J+B6J/kl0TFG0jpzWHthN51HviX3LhL6gHZ476nthx2P9fSDxgG/pTIAeEBShZQzEErgERuP+3NJDsxEfhhPQFhC4Nt+R2WS3jZVoDjcUeySYjzqOutTA2Ji+CJKYkJL7Rp/RhGLs/biaU/f/dirVhHiXVHy35bLH21UyzDHPScK2GhEw6qeqpIMi5qi2wIsdtbZ9V/VRSXf+Y42IOLF2FS1levMSfnAHyLAh2jttV98zFuDyaNUDN9oB96WFNnXdoBc/9AGq4LvgbLbEdWRxSekjZ0wwW3185Mup/FrZY3P1OUWGB2qAxUMGMDxUiLoAWaApNO/GVnqYWleJbhV4ghFO9dg5vQaq5wOdCmJ74eg=
+X-Forefront-Antispam-Report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
+ IPV:NLI; SFV:NSPM; H:MW5PR10MB5738.namprd10.prod.outlook.com; PTR:; CAT:NONE;
+ SFS:(13230022)(39860400002)(366004)(346002)(376002)(136003)(396003)(451199015)(31696002)(8676002)(86362001)(66476007)(38100700002)(4326008)(44832011)(66556008)(316002)(66946007)(2906002)(41300700001)(186003)(110136005)(2616005)(53546011)(6512007)(5660300002)(6486002)(6666004)(478600001)(83380400001)(6506007)(8936002)(26005)(31686004)(36756003)(45980500001)(43740500002);
+ DIR:OUT; SFP:1101; 
+X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
+X-MS-Exchange-AntiSpam-MessageData-0: =?utf-8?B?ZC9meEFPenhEK2RRdTdJSElSQmF3Z3RkZml2YnVCdFlJOWc3WThDRkMrUGp6?=
+ =?utf-8?B?czZPa01hUElMeTF6ZU50elpIQXllRGh2ck9YMWRRdTd5b1Q0WVpmdUswcktT?=
+ =?utf-8?B?dFNlZjYvM2lIeHViWEt1MVZmRFVPWnBQa3pHK1lBTlJmOTRMTmNvSHVIZjkx?=
+ =?utf-8?B?TmVzclpJNlZyVDBWRGlHbk0rRWhYQVVxYlFuTzdVUVdmcWdnQUNVcTYwdUI3?=
+ =?utf-8?B?R2FHbjlxVlRrOFE1Q25rbHVqWm05dmdNd0JQM0FmUGduZGFoTnpEbTgxblpw?=
+ =?utf-8?B?R3V1VzNHTzEvdVRNeFdHMElwenY1WmEyLzdCVGZHd2FWUFVCazlhSm8wendy?=
+ =?utf-8?B?OHljUTh1cVpsb3YvUk5CL0tXVXhRYlN4elhLY2dFbHJMekJVa21SV1JFMjMz?=
+ =?utf-8?B?WklUcjJCK2ZGUHQ4Z2QwVmV6M0I1aTZ4Y1FTNzExQ0xSRWljNTlpK0ZRYWZu?=
+ =?utf-8?B?V1VQSURSOFd1aU1VdjhBbmZFaURtQ2dBcUlBUEMzU01SMC8xTUNHTElzTWxH?=
+ =?utf-8?B?eHJGOXRxVmVhSjRZelJjUk5kV2UzMzZSNytDdDJBYlArSzBXSFQrUGo4TGtr?=
+ =?utf-8?B?SWkwdGxka2FnMWd5eFJVYldTMm9PeUZ3VXRNeTdpZDl0RjhKUWk0OVRONmR1?=
+ =?utf-8?B?L2V2Vi83VExHWUdBaS9ZWTl2cTRDL204TDVxeHBYV2ZXVUJZUlBVY1VsMmp6?=
+ =?utf-8?B?ODdGUXloVnhCb1VTYWxXbG9rYkZDWFlwOVQrZnBUcXM1Tzlkck1xK3ZGK3hF?=
+ =?utf-8?B?ZE5tSlhoaUppcytnZk5tdDlnOHJYMFZuczhuSWU2SkVHdjQxTkZ1S21uWUlE?=
+ =?utf-8?B?Z0RSUTRmdXBLUmhHTFNwak4vVGRnM2VvWExnSWhSbzJva2FWREtRUU9KVW5o?=
+ =?utf-8?B?ekYvY0p0RytZT2ltNXUySGFXZnNPOU9JTHlYRVIzR0o3WVBVZVFwY3FXODhZ?=
+ =?utf-8?B?VG1yMlhhTUdkZjYrd0NYVzBPUXJLWnhoRHVDeGppaitkSE5JRFBHaTF2b1lq?=
+ =?utf-8?B?TG5lZ1N5M1F0R29lWjBFNkpGTDJtVy9RRWpOK2M2V1hqTFk3RjZDMWpOaGVl?=
+ =?utf-8?B?NVAwdW9NKzREYmhDS2RRdEYxcFBqUWpER1l5bXhHQnZBSUVOMUtkWm5PTXpK?=
+ =?utf-8?B?ZHM5dVFXYVVzaS9sRlp6L3RCMCtNczF3bzYrNm1uUHpKdWVyU1hQeTc2ek5S?=
+ =?utf-8?B?SEtsekR1bklVcy9qQ05jZHY3aDZvUTJpNXB3aHdobWVwOWc2Uk5QcFNUb0FU?=
+ =?utf-8?B?Skphc3Flc0ZLR3o5RE9XWHEvWXVyVTdtVUgwVmF5WjhCdUdCOG1ja1hXYnlp?=
+ =?utf-8?B?QWRlVEgxdmJ5cUF5MmxrcWp3aWNacGptK2srL2thV0hseVJ6cXVrRVEwbEJo?=
+ =?utf-8?B?bG9MeThXczB5dSs5T1NlNnVhQWlaUTljZWhwV0daaDI5VmVEL05JMXVHbW5N?=
+ =?utf-8?B?d2hJQTBxb0JjMGdCN0MvdCtjcll4VGJYSHF4THJjQ3B4V0hocjhIdGhXR3Uw?=
+ =?utf-8?B?THV5L0NzSXpYRk5Pa0ZFYjloZ09KVXJFZWdiN282RGNaZWtaNHdGallVbFZt?=
+ =?utf-8?B?NDF2R1dnTGdxNnVVR0tMTXlxSmhIdzdMWTR3aEVXOWJQVWFCbVZGak40dkMz?=
+ =?utf-8?B?N3gxL1NFSENWMURUNHVUZU1QY0IxVUZ4SEg3TGhEelZMeGFnamZhMDdhTUg4?=
+ =?utf-8?B?cE1TSUQ1UEI5aFFielhhRHVJV0RmNzZTanNTMUk3ZjdVUjZnUzllcWpWRHFX?=
+ =?utf-8?B?MDEvbmFKcXFZUmFxdElPUHROeDlXTncxbTF4NW9PRDhNSXgrZHpVTW9YTm5W?=
+ =?utf-8?B?V01kVGRoazRzQko0V0d2cjRxY3Z6TkFrOXd6VTExMVFKYWI2Sk1HaURHM083?=
+ =?utf-8?B?WDc5TnVCWElVU2pmb2ZjZkgzait0RFFwTjFwOS9tTFpOS0dzTHFxSklBc2pU?=
+ =?utf-8?B?cTFsY0IvNEZ6KzRLMEhwQzI4NWhBbzBDbTUrY3pJMFg4VjIvR3hjTWZ0VE5G?=
+ =?utf-8?B?bkt0T1ZqWWlDdTNCOHpQOTVWUllGOWdha2M5SEJTcnNyTC90bC9ibkNyYVJG?=
+ =?utf-8?B?N3diY0IzT3FDTzhHMDlUcXdnUExMM0lnR2V1WFlwcU1kRW5DeVJONkw4ZUll?=
+ =?utf-8?B?ZVgwenBFTnhpdW5nN2JZNkxUR3IwTXFpUDZreW9FVnpNQUlSWVBaWUcvditt?=
+ =?utf-8?B?Q0E9PQ==?=
+X-OriginatorOrg: oracle.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: d5a9157c-cc1f-4570-85fc-08daaac9a999
+X-MS-Exchange-CrossTenant-AuthSource: MW5PR10MB5738.namprd10.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 10 Oct 2022 14:13:53.9561 (UTC)
+X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
+X-MS-Exchange-CrossTenant-Id: 4e2c6054-71cb-48f1-bd6c-3a9705aca71b
+X-MS-Exchange-CrossTenant-MailboxType: HOSTED
+X-MS-Exchange-CrossTenant-UserPrincipalName: LMbPrj2j6iArUys8LcP6NTYGVfDqTCzX9hcMDJzM+mNeAehYT9w7by0cbMceXfVm9BCTkohQYeTVRqAW9hCTtuXxIn5pNuPQ7tpObOHgxic=
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: MW5PR10MB5714
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.205,Aquarius:18.0.895,Hydra:6.0.528,FMLib:17.11.122.1
+ definitions=2022-10-10_08,2022-10-10_02,2022-06-22_01
+X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 mlxlogscore=999
+ bulkscore=0
+ adultscore=0 malwarescore=0 phishscore=0 suspectscore=0 mlxscore=0
+ spamscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.12.0-2209130000 definitions=main-2210100085
+X-Proofpoint-GUID: 45MYHqACc-LiyWa9vCIkQe6Cr9bGBsiT
+X-Proofpoint-ORIG-GUID: 45MYHqACc-LiyWa9vCIkQe6Cr9bGBsiT
+X-Spam-Score: -2.9 (--)
 X-Spam-Report: Spam detection software,
  running on the system "util-spamd-1.v13.lw.sourceforge.com", 
  has NOT identified this incoming email as spam.  The original
  message has been attached to this so you can view it or label
  similar future email.  If you have any questions, see
  the administrator of that system for details.
- Content preview:  Hello,
- syzbot found the following issue on: HEAD commit: aaa11ce2ffc8
- Add linux-next specific files for 20220923 git tree: linux-next console
- output:
- https://syzkaller.appspot.com/x/log.txt?x=10a9b134880000 kernel config:
- https://syzkaller.apps [...] 
- Content analysis details:   (0.6 points, 6.0 required)
+ Content preview:  On 10/8/22 9:00PM, Dongliang Mu wrote: > On Thu, Sep 29, 2022
+ at 1:47 PM Dongliang Mu <dzm91@hust.edu.cn> wrote: >> >> From: Dongliang
+ Mu <mudongliangabcd@gmail.com> >> >> Syzbot found a crash : UBSAN [...] 
+ Content analysis details:   (-2.9 points, 6.0 required)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.3 FROM_LOCAL_HEX         From: localpart has long hexadecimal sequence
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [205.220.165.32 listed in list.dnswl.org]
  -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.166.70 listed in wl.mailspike.net]
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.166.70 listed in list.dnswl.org]
-X-Headers-End: 1ohnKD-000163-0B
-X-Mailman-Approved-At: Mon, 10 Oct 2022 14:15:03 +0000
-Subject: [Jfs-discussion] [syzbot] KASAN: use-after-free Read in dbJoin
+ [205.220.165.32 listed in wl.mailspike.net]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -2.0 NICE_REPLY_A           Looks like a legit reply (A)
+X-Headers-End: 1ohtY0-0002kj-8z
+Subject: Re: [Jfs-discussion] [PATCH] fs: jfs: fix shift-out-of-bounds in
+ dbAllocAG
 X-BeenThere: jfs-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -107,80 +215,103 @@ List-Post: <mailto:jfs-discussion@lists.sourceforge.net>
 List-Help: <mailto:jfs-discussion-request@lists.sourceforge.net?subject=help>
 List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/jfs-discussion>, 
  <mailto:jfs-discussion-request@lists.sourceforge.net?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
+Cc: syzbot+15342c1aa6a00fb7a438@syzkaller.appspotmail.com,
+ jfs-discussion@lists.sourceforge.net, linux-kernel@vger.kernel.org
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Errors-To: jfs-discussion-bounces@lists.sourceforge.net
 
-Hello,
+On 10/8/22 9:00PM, Dongliang Mu wrote:
+> On Thu, Sep 29, 2022 at 1:47 PM Dongliang Mu <dzm91@hust.edu.cn> wrote:
+>>
+>> From: Dongliang Mu <mudongliangabcd@gmail.com>
+>>
+>> Syzbot found a crash : UBSAN: shift-out-of-bounds in dbAllocAG. The
+>> underlying bug is the missing check of bmp->db_agl2size. The field can
+>> be greater than 32 and trigger the shift-out-of-bounds.
+>>
+>> Fix this bug by adding a check of bmp->db_agl2size in dbMount since this
+>> field is used in many following functions. Note that, for maintainance,
+>> I reorganzie the error handling code of dbMount.
+>>
+>> Reported-by: syzbot+15342c1aa6a00fb7a438@syzkaller.appspotmail.com
+>> Signed-off-by: Dongliang Mu <mudongliangabcd@gmail.com>
+>> ---
+>>   fs/jfs/jfs_dmap.c | 21 +++++++++++++++------
+>>   1 file changed, 15 insertions(+), 6 deletions(-)
+>>
+>> diff --git a/fs/jfs/jfs_dmap.c b/fs/jfs/jfs_dmap.c
+>> index 6b838d3ae7c2..4c717f245920 100644
+>> --- a/fs/jfs/jfs_dmap.c
+>> +++ b/fs/jfs/jfs_dmap.c
+>> @@ -155,7 +155,7 @@ int dbMount(struct inode *ipbmap)
+>>          struct bmap *bmp;
+>>          struct dbmap_disk *dbmp_le;
+>>          struct metapage *mp;
+>> -       int i;
+>> +       int i, err;
+>>
+>>          /*
+>>           * allocate/initialize the in-memory bmap descriptor
+>> @@ -170,8 +170,8 @@ int dbMount(struct inode *ipbmap)
+>>                             BMAPBLKNO << JFS_SBI(ipbmap->i_sb)->l2nbperpage,
+>>                             PSIZE, 0);
+>>          if (mp == NULL) {
+>> -               kfree(bmp);
+>> -               return -EIO;
+>> +               err = -EIO;
+>> +               goto err_kfree_bmp;
+>>          }
+>>
+>>          /* copy the on-disk bmap descriptor to its in-memory version. */
+>> @@ -181,9 +181,8 @@ int dbMount(struct inode *ipbmap)
+>>          bmp->db_l2nbperpage = le32_to_cpu(dbmp_le->dn_l2nbperpage);
+>>          bmp->db_numag = le32_to_cpu(dbmp_le->dn_numag);
+>>          if (!bmp->db_numag) {
+>> -               release_metapage(mp);
+>> -               kfree(bmp);
+>> -               return -EINVAL;
+>> +               err = -EINVAL;
+>> +               goto err_release_metapage;
+>>          }
+>>
+>>          bmp->db_maxlevel = le32_to_cpu(dbmp_le->dn_maxlevel);
+>> @@ -194,6 +193,10 @@ int dbMount(struct inode *ipbmap)
+>>          bmp->db_agwidth = le32_to_cpu(dbmp_le->dn_agwidth);
+>>          bmp->db_agstart = le32_to_cpu(dbmp_le->dn_agstart);
+>>          bmp->db_agl2size = le32_to_cpu(dbmp_le->dn_agl2size);
+>> +       if (bmp->db_agl2size >= 32) {
+>> +               err = -EINVAL;
+>> +               goto err_release_metapage;
+>> +       }
+>>          for (i = 0; i < MAXAG; i++)
+>>                  bmp->db_agfree[i] = le64_to_cpu(dbmp_le->dn_agfree[i]);
+>>          bmp->db_agsize = le64_to_cpu(dbmp_le->dn_agsize);
+>> @@ -214,6 +217,12 @@ int dbMount(struct inode *ipbmap)
+>>          BMAP_LOCK_INIT(bmp);
+>>
+>>          return (0);
+>> +
+>> +err_release_metapage:
+>> +       release_metapage(mp);
+>> +err_kfree_bmp:
+>> +       kfree(bmp);
+>> +       return err;
+>>   }
+>>
+> 
+> ping?
 
-syzbot found the following issue on:
+Sorry, it's taking me so long to get to this. It looks good, but I'll 
+give it a little better look and push it.
 
-HEAD commit:    aaa11ce2ffc8 Add linux-next specific files for 20220923
-git tree:       linux-next
-console output: https://syzkaller.appspot.com/x/log.txt?x=10a9b134880000
-kernel config:  https://syzkaller.appspot.com/x/.config?x=186d1ff305f10294
-dashboard link: https://syzkaller.appspot.com/bug?extid=667a6d667592227b1452
-compiler:       gcc (Debian 10.2.1-6) 10.2.1 20210110, GNU ld (GNU Binutils for Debian) 2.35.2
+Shaggy
 
-Unfortunately, I don't have any reproducer for this issue yet.
-
-Downloadable assets:
-disk image: https://storage.googleapis.com/syzbot-assets/95c7bf83c07e/disk-aaa11ce2.raw.xz
-vmlinux: https://storage.googleapis.com/syzbot-assets/b161cd56a7a3/vmlinux-aaa11ce2.xz
-
-IMPORTANT: if you fix the issue, please add the following tag to the commit:
-Reported-by: syzbot+667a6d667592227b1452@syzkaller.appspotmail.com
-
-==================================================================
-BUG: KASAN: use-after-free in dbJoin+0x23b/0x240 fs/jfs/jfs_dmap.c:2772
-Read of size 1 at addr ffff88817cbdfa4c by task jfsCommit/123
-
-CPU: 0 PID: 123 Comm: jfsCommit Not tainted 6.0.0-rc6-next-20220923-syzkaller #0
-Hardware name: Google Google Compute Engine/Google Compute Engine, BIOS Google 09/22/2022
-Call Trace:
- <TASK>
- __dump_stack lib/dump_stack.c:88 [inline]
- dump_stack_lvl+0xcd/0x134 lib/dump_stack.c:106
- print_address_description mm/kasan/report.c:284 [inline]
- print_report+0x15e/0x45d mm/kasan/report.c:395
- kasan_report+0xbb/0x1f0 mm/kasan/report.c:495
- dbJoin+0x23b/0x240 fs/jfs/jfs_dmap.c:2772
- dbFreeBits+0x15d/0x8c0 fs/jfs/jfs_dmap.c:2305
- dbFreeDmap+0x61/0x1a0 fs/jfs/jfs_dmap.c:2054
- dbFree+0x250/0x540 fs/jfs/jfs_dmap.c:379
- txFreeMap+0x8f1/0xd70 fs/jfs/jfs_txnmgr.c:2529
- txUpdateMap+0x3cd/0xc50 fs/jfs/jfs_txnmgr.c:2325
- txLazyCommit fs/jfs/jfs_txnmgr.c:2659 [inline]
- jfs_lazycommit+0x5bb/0xaa0 fs/jfs/jfs_txnmgr.c:2727
- kthread+0x2e4/0x3a0 kernel/kthread.c:376
- ret_from_fork+0x1f/0x30 arch/x86/entry/entry_64.S:306
- </TASK>
-
-The buggy address belongs to the physical page:
-page:ffffea0005f2f7c0 refcount:0 mapcount:0 mapping:0000000000000000 index:0x0 pfn:0x17cbdf
-flags: 0x57ff00000000000(node=1|zone=2|lastcpupid=0x7ff)
-raw: 057ff00000000000 ffffea0005f2f7c8 ffffea0005f2f7c8 0000000000000000
-raw: 0000000000000000 0000000000000000 00000000ffffffff 0000000000000000
-page dumped because: kasan: bad access detected
-page_owner info is not present (never set?)
-
-Memory state around the buggy address:
- ffff88817cbdf900: ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff
- ffff88817cbdf980: ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff
->ffff88817cbdfa00: ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff
-                                              ^
- ffff88817cbdfa80: ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff
- ffff88817cbdfb00: ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff
-==================================================================
-
-
----
-This report is generated by a bot. It may contain errors.
-See https://goo.gl/tpsmEJ for more information about syzbot.
-syzbot engineers can be reached at syzkaller@googlegroups.com.
-
-syzbot will keep track of this issue. See:
-https://goo.gl/tpsmEJ#status for how to communicate with syzbot.
+> 
+>>
+>> --
+>> 2.35.1
+>>
 
 
 _______________________________________________
