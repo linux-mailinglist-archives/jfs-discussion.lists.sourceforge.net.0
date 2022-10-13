@@ -2,99 +2,100 @@ Return-Path: <jfs-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+jfs-discussion@lfdr.de
 Delivered-To: lists+jfs-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id E09005FC5E9
-	for <lists+jfs-discussion@lfdr.de>; Wed, 12 Oct 2022 15:06:45 +0200 (CEST)
-Received: from [127.0.0.1] (helo=sfs-ml-4.v29.lw.sourceforge.com)
-	by sfs-ml-4.v29.lw.sourceforge.com with esmtp (Exim 4.95)
+	by mail.lfdr.de (Postfix) with ESMTPS id B8E7C5FDEA5
+	for <lists+jfs-discussion@lfdr.de>; Thu, 13 Oct 2022 19:08:56 +0200 (CEST)
+Received: from [127.0.0.1] (helo=sfs-ml-1.v29.lw.sourceforge.com)
+	by sfs-ml-1.v29.lw.sourceforge.com with esmtp (Exim 4.95)
 	(envelope-from <jfs-discussion-bounces@lists.sourceforge.net>)
-	id 1oibRI-0007OZ-CR;
-	Wed, 12 Oct 2022 13:06:24 +0000
+	id 1oj1h9-0003xN-CU;
+	Thu, 13 Oct 2022 17:08:31 +0000
 Received: from [172.30.20.202] (helo=mx.sourceforge.net)
- by sfs-ml-1.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
+ by sfs-ml-4.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
  TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (Exim 4.95) (envelope-from
- <3bmhGYwkbAHkpvwhXiiboXmmfa.dlldibrpboZlkqbkq.Zlj@M3KW2WVRGUFZ5GODRSRYTGD7.apphosting.bounces.google.com>)
- id 1oiVtA-0006oZ-AG for jfs-discussion@lists.sourceforge.net;
- Wed, 12 Oct 2022 07:10:48 +0000
+ <3ZslHYwkbADkntufVggZmVkkdY.bjjbgZpnZmXjioZio.Xjh@M3KW2WVRGUFZ5GODRSRYTGD7.apphosting.bounces.google.com>)
+ id 1oitOW-0003cM-BX for jfs-discussion@lists.sourceforge.net;
+ Thu, 13 Oct 2022 08:16:44 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=sourceforge.net; s=x; h=Content-Type:To:From:Subject:Message-ID:Date:
  MIME-Version:Sender:Reply-To:Cc:Content-Transfer-Encoding:Content-ID:
  Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
  :Resent-Message-ID:In-Reply-To:References:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=YYSkbxbZp7Lujns4JDNxK9vBGB5ktyygEXvBNF9YcpM=; b=F3hQkJdpqpsbLYITO/9b68lucR
- y9H3SmCA+xTIYYKu4DFLf5vrL0jzm16pGLo/FBZTib7PPgI/mKNkTryx8MpxdV7Dox6PqSsztIrcM
- pExLxB4piGQ/YY3h7UMgpG98y8CCdP2FxATEEHpYa2ckzFXLYEa34BJTeMbmRJYc7ujg=;
+ bh=5/rjiqK5kQOfJLoV8xW4Jx0LB9fiOiRBlADM5JZWwQg=; b=bowAqJC0sWIUsavjcOZI/GQfEZ
+ 1kHzDhmtiDRQGIYpi9zJguiOC+eo2tcgVP0QAecKjFMDPflWNCAhSXVuXXUncT6z+2mf8sadCMVWz
+ 6nZOVPvzGX7J33Hu/ZS2qFVM0gZV3E6e0e3ezX+UtzP3YAgoaft7zKGFS9w45cdXDP+0=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
  h=Content-Type:To:From:Subject:Message-ID:Date:MIME-Version:Sender:Reply-To
  :Cc:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
  Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
  References:List-Id:List-Help:List-Unsubscribe:List-Subscribe:List-Post:
- List-Owner:List-Archive; bh=YYSkbxbZp7Lujns4JDNxK9vBGB5ktyygEXvBNF9YcpM=; b=A
- s77NBfdrDpioe0sw9K9HgorsteUTYKLFgtF5XcL2l4sUuRyULfBEVCrrSvk0tldXWoFZA7YE3ZOwt
- ETo0YvFfhRvbyeza3g5mZ+CtUVjiZojfHzPLcUHejeya8FgYNRPcNlk4BtsWOef4aXRgTudP5EYqE
- jv3zmB/YFOpiK8+E=;
+ List-Owner:List-Archive; bh=5/rjiqK5kQOfJLoV8xW4Jx0LB9fiOiRBlADM5JZWwQg=; b=K
+ BoY3On/Fj7R3KlygQ80uy1weLCV0VJuzBO6XBmVcRlvSm/xreN4Nv4706A9gDAHjU4EzT2x0tK7f4
+ 72RLGfsugxSxEOTW09C+z5LzqygSQDs0zmmfgXSQr+ZcvihE+PtdXpBvpN+NlFGqw6JV8yjDcH7pD
+ IJRWaxzz2foRMkmg=;
 Received: from mail-il1-f197.google.com ([209.85.166.197])
  by sfi-mx-2.v28.lw.sourceforge.com with esmtps
  (TLS1.2:ECDHE-RSA-AES128-GCM-SHA256:128) (Exim 4.95)
- id 1oiVt5-0003RA-9r for jfs-discussion@lists.sourceforge.net;
- Wed, 12 Oct 2022 07:10:47 +0000
+ id 1oitOV-0005dg-3J for jfs-discussion@lists.sourceforge.net;
+ Thu, 13 Oct 2022 08:16:44 +0000
 Received: by mail-il1-f197.google.com with SMTP id
- z4-20020a921a44000000b002f8da436b83so12674399ill.19
+ l5-20020a056e0212e500b002fa8ea32922so948313iln.15
  for <jfs-discussion@lists.sourceforge.net>;
- Wed, 12 Oct 2022 00:10:43 -0700 (PDT)
+ Thu, 13 Oct 2022 01:16:43 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20210112;
  h=to:from:subject:message-id:date:mime-version:x-gm-message-state
  :from:to:cc:subject:date:message-id:reply-to;
- bh=YYSkbxbZp7Lujns4JDNxK9vBGB5ktyygEXvBNF9YcpM=;
- b=WvmU/KS2O9ZXJqv8SaS6coFAuglAIcIx09dkeO8Y+oUvRzzE67rOnXIp/lxru7+S8a
- 4J4UGd9CwVbg3ocmwYSFD0uOLEBTha9V9juOsGU5SsEa7P/n6ZmWrG6uIsUJhB5H30f4
- C0CkeFt83Iiadd143la7pSVB4mNMA8JNKpt5w/jnQfuCkAcxmwwSRYtZrGmZnJi41fev
- oBxzsrJEWIIhtUICBFqs4xFr59+tRGLj0/BD5z43rSaIZ/cnDjnVZzoxnVOpGwqJe2G5
- mJSk1t8Z9uoyu5ZRnCgV3/W1CDvBiN8CbRWcKOOBDIqSLlS7sSK0v6O9oFswCERjyOvn
- FHGw==
-X-Gm-Message-State: ACrzQf3WcPr+pmppSVXFI3taVxfXQbusy1QESqtXXxoFq+7Ct2BEh0KJ
- F1ynd/Q30+rU/mg+4Uq6bGz+ESFUOncp2XfMYubCzHJOUKJA
-X-Google-Smtp-Source: AMsMyM4eooXBmwRS5Hn7xx58BanYfSnC+kW1AZHjL93el4GOdaI65PfghWQfpN0oFsADj+veKko+bq605FxmY8S5BvudcWCFpJxj
+ bh=5/rjiqK5kQOfJLoV8xW4Jx0LB9fiOiRBlADM5JZWwQg=;
+ b=CjQa5jqrh2IWOlBUg7vZWZ1mgzjmIfeJHKcNMq2SA5gQdETgES2lTUrfcpu/PSMCmY
+ kl/xD9I1FYmA/TmUU1l6XMQvICk0TX6NIC6iQ0ezTRw3aVMYiugCdqil79q0xs/F5NUr
+ 9t/ZiWGL8vJ8tsw9Vpf0JPSHtV9Y1TSTq/ze9TN/tYIHHrm4XLjj9Z5dlQRB30M55idZ
+ VoseFMpSSMVHqIJKlcZRManNpA0JeI7FsMhbcWbXlbUbgs+qg+0f1K2q316cz3eFYfyk
+ PJaSmbsnk7KzdKCX4A9Owh7MT4VPLW751hOtmLe7EZBIspbHOdTgW/hrYRhl4VHbbSdg
+ /tIA==
+X-Gm-Message-State: ACrzQf1GPS+QqRHxXX3Puq8rOoiX8Qhw4mHS+b3e8Zr7K5Pl6SuZgmlf
+ 8IWY5GnJ7x0aoQd1+RhC5rIx9JuQu9IUzy/Sz2ZAIxWrGALr
+X-Google-Smtp-Source: AMsMyM6yAO2d8zQcuYpmKxvxf5DkGckDSRM+1OG2zXvRviebrgOKgj7ssmYn/bF7ynh3eHrAMGJYGY6FbZLC8jtsXkdFPBapa1ok
 MIME-Version: 1.0
-X-Received: by 2002:a05:6e02:1785:b0:2fa:2428:a37b with SMTP id
- y5-20020a056e02178500b002fa2428a37bmr13295814ilu.312.1665558638316; Wed, 12
- Oct 2022 00:10:38 -0700 (PDT)
-Date: Wed, 12 Oct 2022 00:10:38 -0700
+X-Received: by 2002:a92:c74d:0:b0:2f8:dcf1:2797 with SMTP id
+ y13-20020a92c74d000000b002f8dcf12797mr16392178ilp.199.1665648998170; Thu, 13
+ Oct 2022 01:16:38 -0700 (PDT)
+Date: Thu, 13 Oct 2022 01:16:38 -0700
 X-Google-Appengine-App-Id: s~syzkaller
 X-Google-Appengine-App-Id-Alias: syzkaller
-Message-ID: <000000000000fd532f05ead1161d@google.com>
-From: syzbot <syzbot+10b40e9bbb7ce5b6dd42@syzkaller.appspotmail.com>
+Message-ID: <000000000000db47da05eae620bc@google.com>
+From: syzbot <syzbot+f2cb7e5fa4043ec4ebde@syzkaller.appspotmail.com>
 To: jfs-discussion@lists.sourceforge.net, linux-kernel@vger.kernel.org, 
  shaggy@kernel.org, syzkaller-bugs@googlegroups.com
 X-Spam-Score: 0.6 (/)
 X-Spam-Report: Spam detection software,
- running on the system "util-spamd-1.v13.lw.sourceforge.com", 
+ running on the system "util-spamd-2.v13.lw.sourceforge.com", 
  has NOT identified this incoming email as spam.  The original
  message has been attached to this so you can view it or label
  similar future email.  If you have any questions, see
  the administrator of that system for details.
  Content preview:  Hello,
- syzbot found the following issue on: HEAD commit: bbed346d5a96
- Merge branch 'for-next/core' into for-kernelci git tree:
- git://git.kernel.org/pub/scm/linux/kernel/git/arm64/linux.git
- for-kernelci console output: https://syzkaller.appspot. [...] 
+ syzbot found the following issue on: HEAD commit: 493ffd6605b2
+ Merge tag 'ucount-rlimits-cleanups-for-v5.19'.. git tree: upstream
+ console+strace:
+ https://syzkaller.appspot.com/x/log.txt?x=10afbfcc880000 kernel config:
+ https://syzkaller.a [...] 
  Content analysis details:   (0.6 points, 6.0 required)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.3 FROM_LOCAL_HEX         From: localpart has long hexadecimal sequence
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
  no trust [209.85.166.197 listed in list.dnswl.org]
+ 0.3 FROM_LOCAL_HEX         From: localpart has long hexadecimal sequence
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
  mail domains are different
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
  [209.85.166.197 listed in wl.mailspike.net]
-X-Headers-End: 1oiVt5-0003RA-9r
-X-Mailman-Approved-At: Wed, 12 Oct 2022 13:06:23 +0000
-Subject: [Jfs-discussion] [syzbot] WARNING in diAlloc
+X-Headers-End: 1oitOV-0005dg-3J
+X-Mailman-Approved-At: Thu, 13 Oct 2022 17:08:31 +0000
+Subject: [Jfs-discussion] [syzbot] general protection fault in dtInsert
 X-BeenThere: jfs-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -114,76 +115,103 @@ Hello,
 
 syzbot found the following issue on:
 
-HEAD commit:    bbed346d5a96 Merge branch 'for-next/core' into for-kernelci
-git tree:       git://git.kernel.org/pub/scm/linux/kernel/git/arm64/linux.git for-kernelci
-console output: https://syzkaller.appspot.com/x/log.txt?x=15c3a20c880000
-kernel config:  https://syzkaller.appspot.com/x/.config?x=3a4a45d2d827c1e
-dashboard link: https://syzkaller.appspot.com/bug?extid=10b40e9bbb7ce5b6dd42
+HEAD commit:    493ffd6605b2 Merge tag 'ucount-rlimits-cleanups-for-v5.19'..
+git tree:       upstream
+console+strace: https://syzkaller.appspot.com/x/log.txt?x=10afbfcc880000
+kernel config:  https://syzkaller.appspot.com/x/.config?x=d19f5d16783f901
+dashboard link: https://syzkaller.appspot.com/bug?extid=f2cb7e5fa4043ec4ebde
 compiler:       Debian clang version 13.0.1-++20220126092033+75e33f71c2da-1~exp1~20220126212112.63, GNU ld (GNU Binutils for Debian) 2.35.2
-userspace arch: arm64
-syz repro:      https://syzkaller.appspot.com/x/repro.syz?x=14932ffa880000
-C reproducer:   https://syzkaller.appspot.com/x/repro.c?x=129ede94880000
+syz repro:      https://syzkaller.appspot.com/x/repro.syz?x=176e96dc880000
+C reproducer:   https://syzkaller.appspot.com/x/repro.c?x=1206468a880000
 
 Downloadable assets:
-disk image: https://storage.googleapis.com/syzbot-assets/e8e91bc79312/disk-bbed346d.raw.xz
-vmlinux: https://storage.googleapis.com/syzbot-assets/c1cb3fb3b77e/vmlinux-bbed346d.xz
-mounted in repro: https://storage.googleapis.com/syzbot-assets/427d0279ba6b/mount_0.gz
+disk image: https://storage.googleapis.com/syzbot-assets/f1ff6481e26f/disk-493ffd66.raw.xz
+vmlinux: https://storage.googleapis.com/syzbot-assets/101bd3c7ae47/vmlinux-493ffd66.xz
+mounted in repro: https://storage.googleapis.com/syzbot-assets/f1a297a3e97e/mount_0.gz
 
 IMPORTANT: if you fix the issue, please add the following tag to the commit:
-Reported-by: syzbot+10b40e9bbb7ce5b6dd42@syzkaller.appspotmail.com
+Reported-by: syzbot+f2cb7e5fa4043ec4ebde@syzkaller.appspotmail.com
 
 loop0: detected capacity change from 0 to 32768
-------------[ cut here ]------------
-DEBUG_LOCKS_WARN_ON(lock->magic != lock)
-WARNING: CPU: 1 PID: 3065 at kernel/locking/mutex.c:582 __mutex_lock_common+0x4c4/0xca8 kernel/locking/mutex.c:582
+general protection fault, probably for non-canonical address 0xdffffc0000000000: 0000 [#1] PREEMPT SMP KASAN
+KASAN: null-ptr-deref in range [0x0000000000000000-0x0000000000000007]
+CPU: 0 PID: 3606 Comm: syz-executor277 Not tainted 6.0.0-syzkaller-09423-g493ffd6605b2 #0
+Hardware name: Google Google Compute Engine/Google Compute Engine, BIOS Google 09/22/2022
+RIP: 0010:dtExtendPage fs/jfs/jfs_dtree.c:1661 [inline]
+RIP: 0010:dtSplitUp fs/jfs/jfs_dtree.c:1034 [inline]
+RIP: 0010:dtInsert+0x30cc/0x6b80 fs/jfs/jfs_dtree.c:863
+Code: 55 88 fe 49 83 c7 e8 42 80 3c 23 00 74 08 4c 89 f7 e8 38 c0 db fe 4d 89 3e eb 08 e8 fe 54 88 fe 45 31 ff 4d 89 fe 49 c1 ee 03 <43> 80 3c 26 00 74 08 4c 89 ff e8 95 bf db fe 49 8b 1f 31 ff 48 89
+RSP: 0018:ffffc90003cbf6a0 EFLAGS: 00010246
+RAX: ffffffff82fe2c52 RBX: 1ffff92000797f7c RCX: ffff888021b51d80
+RDX: 0000000000000000 RSI: 0000000000000000 RDI: 0000000000000000
+RBP: ffffc90003cbfb10 R08: ffffffff82fe125b R09: fffff9400038ebbf
+R10: fffff9400038ebbf R11: 1ffffd400038ebbe R12: dffffc0000000000
+R13: ffff88807497b7e8 R14: 0000000000000000 R15: 0000000000000000
+FS:  000055555738c300(0000) GS:ffff8880b9a00000(0000) knlGS:0000000000000000
+CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033
+CR2: 00000000005d84c8 CR3: 0000000071d83000 CR4: 00000000003506f0
+DR0: 0000000000000000 DR1: 0000000000000000 DR2: 0000000000000000
+DR3: 0000000000000000 DR6: 00000000fffe0ff0 DR7: 0000000000000400
+Call Trace:
+ <TASK>
+ jfs_create+0x736/0xb10 fs/jfs/namei.c:137
+ vfs_create+0x302/0x490 fs/namei.c:3115
+ do_mknodat+0x412/0x6b0 fs/namei.c:3942
+ __do_sys_mknodat fs/namei.c:3970 [inline]
+ __se_sys_mknodat fs/namei.c:3967 [inline]
+ __x64_sys_mknodat+0xa5/0xc0 fs/namei.c:3967
+ do_syscall_x64 arch/x86/entry/common.c:50 [inline]
+ do_syscall_64+0x3d/0xb0 arch/x86/entry/common.c:80
+ entry_SYSCALL_64_after_hwframe+0x63/0xcd
+RIP: 0033:0x7f18ca9e4eb9
+Code: ff ff c3 66 2e 0f 1f 84 00 00 00 00 00 0f 1f 40 00 48 89 f8 48 89 f7 48 89 d6 48 89 ca 4d 89 c2 4d 89 c8 4c 8b 4c 24 08 0f 05 <48> 3d 01 f0 ff ff 73 01 c3 48 c7 c1 c0 ff ff ff f7 d8 64 89 01 48
+RSP: 002b:00007ffefc41f358 EFLAGS: 00000246 ORIG_RAX: 0000000000000103
+RAX: ffffffffffffffda RBX: 0030656c69662f2e RCX: 00007f18ca9e4eb9
+RDX: 0000000000000008 RSI: 0000000020000180 RDI: 0000000000000003
+RBP: 00007f18ca9a4680 R08: 0000000000000000 R09: 0000000000000000
+R10: 0000000000000103 R11: 0000000000000246 R12: 00000000f8008000
+R13: 0000000000000000 R14: 00083878000000f8 R15: 0000000000000000
+ </TASK>
 Modules linked in:
-CPU: 1 PID: 3065 Comm: syz-executor404 Not tainted 6.0.0-rc7-syzkaller-18095-gbbed346d5a96 #0
-Hardware name: Google Google Compute Engine/Google Compute Engine, BIOS Google 09/30/2022
-pstate: 60400005 (nZCv daif +PAN -UAO -TCO -DIT -SSBS BTYPE=--)
-pc : __mutex_lock_common+0x4c4/0xca8 kernel/locking/mutex.c:582
-lr : __mutex_lock_common+0x4c4/0xca8 kernel/locking/mutex.c:582
-sp : ffff80000fb63a20
-x29: ffff80000fb63a90 x28: ffff80000ee2b000 x27: 0000000000000000
-x26: 0000000000000000 x25: ffff0000ca4b1e88 x24: 0000000000000002
-x23: ffff800008d3efd8 x22: 0000000000000000 x21: 0000000000000000
-x20: 0000000000000000 x19: ffff0001110fab68 x18: 000000000000010f
-x17: 0000000000000000 x16: 0000000000000000 x15: 0000000000000000
-x14: 0000000000000000 x13: 0000000000000012 x12: ffff80000d5ef920
-x11: ff808000081c0d5c x10: 0000000000000000 x9 : 45906cf89ce0d400
-x8 : 45906cf89ce0d400 x7 : 4e5241575f534b43 x6 : ffff80000819545c
-x5 : 0000000000000000 x4 : 0000000000000001 x3 : 0000000000000000
-x2 : 0000000000000000 x1 : 0000000100000000 x0 : 0000000000000028
-Call trace:
- __mutex_lock_common+0x4c4/0xca8 kernel/locking/mutex.c:582
- __mutex_lock kernel/locking/mutex.c:747 [inline]
- mutex_lock_nested+0x38/0x44 kernel/locking/mutex.c:799
- diAlloc+0x8c/0x98c fs/jfs/jfs_imap.c:1343
- ialloc+0x5c/0x2fc fs/jfs/jfs_inode.c:56
- jfs_mkdir+0xf8/0x490 fs/jfs/namei.c:225
- vfs_mkdir+0x1f8/0x2b0 fs/namei.c:4013
- do_mkdirat+0xe4/0x22c fs/namei.c:4038
- __do_sys_mkdirat fs/namei.c:4053 [inline]
- __se_sys_mkdirat fs/namei.c:4051 [inline]
- __arm64_sys_mkdirat+0x40/0x54 fs/namei.c:4051
- __invoke_syscall arch/arm64/kernel/syscall.c:38 [inline]
- invoke_syscall arch/arm64/kernel/syscall.c:52 [inline]
- el0_svc_common+0x138/0x220 arch/arm64/kernel/syscall.c:142
- do_el0_svc+0x48/0x164 arch/arm64/kernel/syscall.c:206
- el0_svc+0x58/0x150 arch/arm64/kernel/entry-common.c:636
- el0t_64_sync_handler+0x84/0xf0 arch/arm64/kernel/entry-common.c:654
- el0t_64_sync+0x18c/0x190 arch/arm64/kernel/entry.S:581
-irq event stamp: 21471
-hardirqs last  enabled at (21471): [<ffff80000bfc89b4>] __raw_spin_unlock_irqrestore include/linux/spinlock_api_smp.h:151 [inline]
-hardirqs last  enabled at (21471): [<ffff80000bfc89b4>] _raw_spin_unlock_irqrestore+0x48/0x8c kernel/locking/spinlock.c:194
-hardirqs last disabled at (21470): [<ffff80000bfc87f0>] __raw_spin_lock_irqsave include/linux/spinlock_api_smp.h:108 [inline]
-hardirqs last disabled at (21470): [<ffff80000bfc87f0>] _raw_spin_lock_irqsave+0xa4/0xb4 kernel/locking/spinlock.c:162
-softirqs last  enabled at (18588): [<ffff8000080102e4>] _stext+0x2e4/0x37c
-softirqs last disabled at (18579): [<ffff800008017c14>] ____do_softirq+0x14/0x20 arch/arm64/kernel/irq.c:79
 ---[ end trace 0000000000000000 ]---
-ERROR: (device loop0): dbAlloc: the hint is outside the map
-
-ERROR: (device loop0): remounting filesystem as read-only
-ialloc: diAlloc returned -5!
+RIP: 0010:dtExtendPage fs/jfs/jfs_dtree.c:1661 [inline]
+RIP: 0010:dtSplitUp fs/jfs/jfs_dtree.c:1034 [inline]
+RIP: 0010:dtInsert+0x30cc/0x6b80 fs/jfs/jfs_dtree.c:863
+Code: 55 88 fe 49 83 c7 e8 42 80 3c 23 00 74 08 4c 89 f7 e8 38 c0 db fe 4d 89 3e eb 08 e8 fe 54 88 fe 45 31 ff 4d 89 fe 49 c1 ee 03 <43> 80 3c 26 00 74 08 4c 89 ff e8 95 bf db fe 49 8b 1f 31 ff 48 89
+RSP: 0018:ffffc90003cbf6a0 EFLAGS: 00010246
+RAX: ffffffff82fe2c52 RBX: 1ffff92000797f7c RCX: ffff888021b51d80
+RDX: 0000000000000000 RSI: 0000000000000000 RDI: 0000000000000000
+RBP: ffffc90003cbfb10 R08: ffffffff82fe125b R09: fffff9400038ebbf
+R10: fffff9400038ebbf R11: 1ffffd400038ebbe R12: dffffc0000000000
+R13: ffff88807497b7e8 R14: 0000000000000000 R15: 0000000000000000
+FS:  000055555738c300(0000) GS:ffff8880b9a00000(0000) knlGS:0000000000000000
+CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033
+CR2: 00005593a690d0b8 CR3: 0000000071d83000 CR4: 00000000003506f0
+DR0: 0000000000000000 DR1: 0000000000000000 DR2: 0000000000000000
+DR3: 0000000000000000 DR6: 00000000fffe0ff0 DR7: 0000000000000400
+----------------
+Code disassembly (best guess):
+   0:	55                   	push   %rbp
+   1:	88 fe                	mov    %bh,%dh
+   3:	49 83 c7 e8          	add    $0xffffffffffffffe8,%r15
+   7:	42 80 3c 23 00       	cmpb   $0x0,(%rbx,%r12,1)
+   c:	74 08                	je     0x16
+   e:	4c 89 f7             	mov    %r14,%rdi
+  11:	e8 38 c0 db fe       	callq  0xfedbc04e
+  16:	4d 89 3e             	mov    %r15,(%r14)
+  19:	eb 08                	jmp    0x23
+  1b:	e8 fe 54 88 fe       	callq  0xfe88551e
+  20:	45 31 ff             	xor    %r15d,%r15d
+  23:	4d 89 fe             	mov    %r15,%r14
+  26:	49 c1 ee 03          	shr    $0x3,%r14
+* 2a:	43 80 3c 26 00       	cmpb   $0x0,(%r14,%r12,1) <-- trapping instruction
+  2f:	74 08                	je     0x39
+  31:	4c 89 ff             	mov    %r15,%rdi
+  34:	e8 95 bf db fe       	callq  0xfedbbfce
+  39:	49 8b 1f             	mov    (%r15),%rbx
+  3c:	31 ff                	xor    %edi,%edi
+  3e:	48                   	rex.W
+  3f:	89                   	.byte 0x89
 
 
 ---
