@@ -2,106 +2,197 @@ Return-Path: <jfs-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+jfs-discussion@lfdr.de
 Delivered-To: lists+jfs-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id E980B602F96
-	for <lists+jfs-discussion@lfdr.de>; Tue, 18 Oct 2022 17:23:49 +0200 (CEST)
-Received: from [127.0.0.1] (helo=sfs-ml-4.v29.lw.sourceforge.com)
-	by sfs-ml-4.v29.lw.sourceforge.com with esmtp (Exim 4.95)
+	by mail.lfdr.de (Postfix) with ESMTPS id 25B49602FF3
+	for <lists+jfs-discussion@lfdr.de>; Tue, 18 Oct 2022 17:45:09 +0200 (CEST)
+Received: from [127.0.0.1] (helo=sfs-ml-2.v29.lw.sourceforge.com)
+	by sfs-ml-2.v29.lw.sourceforge.com with esmtp (Exim 4.95)
 	(envelope-from <jfs-discussion-bounces@lists.sourceforge.net>)
-	id 1okoRA-0005qe-GK;
-	Tue, 18 Oct 2022 15:23:24 +0000
+	id 1okolu-0005Gq-SG;
+	Tue, 18 Oct 2022 15:44:50 +0000
 Received: from [172.30.20.202] (helo=mx.sourceforge.net)
- by sfs-ml-4.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
+ by sfs-ml-2.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
  TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (Exim 4.95)
- (envelope-from <colin.i.king@gmail.com>) id 1okoR9-0005qY-Vd
+ (envelope-from <dave.kleikamp@oracle.com>) id 1okolt-0005Gk-9V
  for jfs-discussion@lists.sourceforge.net;
- Tue, 18 Oct 2022 15:23:23 +0000
+ Tue, 18 Oct 2022 15:44:49 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=sourceforge.net; s=x; h=Content-Transfer-Encoding:Content-Type:MIME-Version
- :Message-Id:Date:Subject:Cc:To:From:Sender:Reply-To:Content-ID:
- Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
- :Resent-Message-ID:In-Reply-To:References:List-Id:List-Help:List-Unsubscribe:
+ d=sourceforge.net; s=x; h=MIME-Version:Content-Transfer-Encoding:Content-Type
+ :In-Reply-To:From:References:Cc:To:Subject:Date:Message-ID:Sender:Reply-To:
+ Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
+ Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=OuktP/aQVcIixsd3H1BycnEwVjhNMLHzZI3vDKt2TCE=; b=iyeoNzbSF09jy+SKcPlxMqL8Pk
- YlSPdv6u17ki0yOoZanFjGUoyTeuiZHfgbyBNf/vsluXh3oClupUnb9lfRciBg0RUClcUCuZMtjoI
- ZsqIE6eZ91iGuGDFqgdBIQtHLHs5Q3yVXUdHni+OiMpzeuKGOS++XutGHUw+4tBYRbpI=;
+ bh=KfbhhNosA+WBs+y3aTVYe9LVhIBJW+pdgotv2mt596Y=; b=RiZCGl8DvQa2vgbB9+K17zLdKq
+ ncOUlGvQoOc5p9/lbRRY8lFolEjX/pPFLaKnlgfk+7F1Tomh7bpmGyMNytIKC4XeHMeXPAfsDMHvC
+ 5D5pKkQRQ+p+uKWngubjyxgspcSfoHYDfnTfbBqbDAjRLTjvDBSKQ24G2AWbGXic6AB8=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
- h=Content-Transfer-Encoding:Content-Type:MIME-Version:Message-Id:Date:
- Subject:Cc:To:From:Sender:Reply-To:Content-ID:Content-Description:Resent-Date
- :Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
- References:List-Id:List-Help:List-Unsubscribe:List-Subscribe:List-Post:
- List-Owner:List-Archive; bh=OuktP/aQVcIixsd3H1BycnEwVjhNMLHzZI3vDKt2TCE=; b=e
- GNoeWXsmpt4iWJLFNf5n6JeqJwcTHUVjC2/58I//AZQs/TvRCH7g1SoLjfzwMmgPfustphVN3bzHA
- TGy4oBi6gVshexr12lT9o0sZWPgBKE8t21z9Qdbx4Bv8XLSII1sHBwueoHp/hg80GS05A+ulc/516
- kZmduwsrHZ+P30yY=;
-Received: from mail-wm1-f49.google.com ([209.85.128.49])
- by sfi-mx-2.v28.lw.sourceforge.com with esmtps
- (TLS1.2:ECDHE-RSA-AES128-GCM-SHA256:128) (Exim 4.95)
- id 1okoR3-0008JC-TG for jfs-discussion@lists.sourceforge.net;
- Tue, 18 Oct 2022 15:23:23 +0000
-Received: by mail-wm1-f49.google.com with SMTP id iv17so10964795wmb.4
- for <jfs-discussion@lists.sourceforge.net>;
- Tue, 18 Oct 2022 08:23:17 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20210112;
- h=content-transfer-encoding:mime-version:message-id:date:subject:cc
- :to:from:from:to:cc:subject:date:message-id:reply-to;
- bh=OuktP/aQVcIixsd3H1BycnEwVjhNMLHzZI3vDKt2TCE=;
- b=hDAwsrhsKS+SPsEjAinvEM/ehe7PzpVeQGv9sXVKw7hsS+pNecMp18s8IOgXZFlf/R
- IbhA1U2y8ZnirNxe6g/L4SHb4FO7eWzoTHjn7t2Lies5NJMUeFtnyNssEe/KuZcYE3Tf
- CW20OL6yqvPSVegMUsjJQ5gIHoYsyQgJAj1eFoaq7QOZgOk3DxsDmnJv0BArBNFW2CRr
- DfmJ4BJIalnBnPBSIg/6pLEOR1grYCQMxDmKwto6Ik8mD+NW1nR5tQNOqQJtZRMCWFDL
- 2HJk9MJrgBwbuGYk0I0/8PwU5P3g/PDblCTgwnU7IdUBepTl7ZYirEo5KFNJ0qV1iKxg
- LiQg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20210112;
- h=content-transfer-encoding:mime-version:message-id:date:subject:cc
- :to:from:x-gm-message-state:from:to:cc:subject:date:message-id
- :reply-to;
- bh=OuktP/aQVcIixsd3H1BycnEwVjhNMLHzZI3vDKt2TCE=;
- b=4WxlmWLPUYv0GAaXHmQzjG7TMYq2B5MslNUMAibN5B4mV7PAPA3qskxDObm5EVWf43
- vpucWeJE6VzP1ga8/a86f5S8DEzFjlPzguPJvTggYOvJCkeejWgv00pAIVwGfzzR1e46
- gnuggeGWdwcp/EKPnaHKLbEFiiJJ/555Dnl1x8H342JJyNhwzMq3p+4Nl3gNSYfo7oaU
- 5toG9XAE4SH9PpKgT3RY1+mXVgccw2n+rXcsx5lacMb3Js1J5JDjFTceJSh+HlRfZVtA
- xo5a9Hrhv49k+4b+GEGUDpvke52TBw6sEyZAd4ElhhBdvIU3txYU/QFxbBAS/pa6V6qE
- U8Ow==
-X-Gm-Message-State: ACrzQf0aL6LV3WHaZg6HAPV3Lp9SgZInDWvGpNz8IEojYwV0GPa9Tp+X
- uEvbrakX3xHJlPaJzUoeHqk=
-X-Google-Smtp-Source: AMsMyM5up2w2JHyQVaU1eRlRnWFBK3r2aapndJwprZs/HAzxbT7MKeZodL6eY1JPZVSdXRvYu7yU/Q==
-X-Received: by 2002:a05:600c:2754:b0:3c6:aba7:5c93 with SMTP id
- 20-20020a05600c275400b003c6aba75c93mr2346816wmw.177.1666106591457; 
- Tue, 18 Oct 2022 08:23:11 -0700 (PDT)
-Received: from localhost (cpc154979-craw9-2-0-cust193.16-3.cable.virginm.net.
- [80.193.200.194]) by smtp.gmail.com with ESMTPSA id
- az12-20020a05600c600c00b003a62052053csm22308877wmb.18.2022.10.18.08.23.10
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 18 Oct 2022 08:23:10 -0700 (PDT)
-From: Colin Ian King <colin.i.king@gmail.com>
-To: Dave Kleikamp <shaggy@kernel.org>,
-	jfs-discussion@lists.sourceforge.net
-Date: Tue, 18 Oct 2022 16:23:10 +0100
-Message-Id: <20221018152310.941770-1-colin.i.king@gmail.com>
-X-Mailer: git-send-email 2.37.3
+ h=MIME-Version:Content-Transfer-Encoding:Content-Type:In-Reply-To:From:
+ References:Cc:To:Subject:Date:Message-ID:Sender:Reply-To:Content-ID:
+ Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+ :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
+ List-Post:List-Owner:List-Archive;
+ bh=KfbhhNosA+WBs+y3aTVYe9LVhIBJW+pdgotv2mt596Y=; b=OHLECKcpFlzcsGByG/qqfBPdqZ
+ r0+WZLIj0qS2Xfrn0pMsdtCHw/5UR0Sg18jNyKPiyGqthacHusqfFwKYg5P5DjPArBewfe72sWVwU
+ ii6tmZYQBi041G3ab4rbXB6eZRJ/nNK/HfHDPYETmHfMYYw2ijJv1C8ol3pQ8/QpUS3g=;
+Received: from mx0a-00069f02.pphosted.com ([205.220.165.32])
+ by sfi-mx-1.v28.lw.sourceforge.com with esmtps
+ (TLS1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.95)
+ id 1okoln-008XDk-0p for jfs-discussion@lists.sourceforge.net;
+ Tue, 18 Oct 2022 15:44:48 +0000
+Received: from pps.filterd (m0246627.ppops.net [127.0.0.1])
+ by mx0b-00069f02.pphosted.com (8.17.1.5/8.17.1.5) with ESMTP id 29IDxiEL005979;
+ Tue, 18 Oct 2022 15:44:37 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=oracle.com;
+ h=message-id : date :
+ subject : to : cc : references : from : in-reply-to : content-type :
+ content-transfer-encoding : mime-version; s=corp-2022-7-12;
+ bh=KfbhhNosA+WBs+y3aTVYe9LVhIBJW+pdgotv2mt596Y=;
+ b=joerbc5zi/P7C1KwwVyovT1fsY9K9Q1pHN43NB/XjZbHZMvz2jeA3uvf224oefvZAuD8
+ hoFL+9mK4AH8Fhc6jZbNf/bNXOLHN8swUeJtBSK64jwSK52/tnIRmQ9Xorp+CDujKykz
+ TvAlkybrs52VHijVT8QHKwgffgln41Y5h2FRoCP6MzY/gqEzmybDBZCvwmt9eD21viY9
+ tl1u03eonAgB/qn4qK0l/y/wzJcFOwp6Gi75nWvFq/lWU1XIb1+ROnnOH0SFi1nPW7LR
+ F32IQq77xb2iYSQSt8H0CaFWiZzZXqOayIDhax25Qe/HckWjMuL+f3cC22/MkvxrjbFC lg== 
+Received: from iadpaimrmta03.imrmtpd1.prodappiadaev1.oraclevcn.com
+ (iadpaimrmta03.appoci.oracle.com [130.35.103.27])
+ by mx0b-00069f02.pphosted.com (PPS) with ESMTPS id 3k99ntb9cr-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
+ Tue, 18 Oct 2022 15:44:36 +0000
+Received: from pps.filterd
+ (iadpaimrmta03.imrmtpd1.prodappiadaev1.oraclevcn.com [127.0.0.1])
+ by iadpaimrmta03.imrmtpd1.prodappiadaev1.oraclevcn.com (8.17.1.5/8.17.1.5)
+ with ESMTP id 29IEeXiC033274; Tue, 18 Oct 2022 15:44:35 GMT
+Received: from nam11-co1-obe.outbound.protection.outlook.com
+ (mail-co1nam11lp2174.outbound.protection.outlook.com [104.47.56.174])
+ by iadpaimrmta03.imrmtpd1.prodappiadaev1.oraclevcn.com (PPS) with ESMTPS id
+ 3k8hradt9x-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
+ Tue, 18 Oct 2022 15:44:35 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=DFOXsEPlJWMK7kGZkTpYM+IaRubL1UrclI3HB76dJuEZMNe6yXisF/Q+I7oHSwv3wIRFt1K+BA8kUw3oE6Stk5ouRdQNiWFQ5tKwiLaBdv0gWO3IFO2P+r5o5ZxcnMVuIFvQTUOz/j73MACKcbVOj+guDuHbAB8Ozp4SnYzmGTFpbEducIJBq6TnfoQH5ySxL05hX8T/SPo85QQ3Ib6tc0pM8N5P48xV8A4r0uoQ1k3DSsUQ1itP2pHXRxu13aAU6EMIy7lkEtUn8540zQa/hz4sxxtdEXhhdB+szKaeGuu8BbbPMVLKWMu//KkdkLvIx0pkI+Zav49T8jFQPtc9rQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=KfbhhNosA+WBs+y3aTVYe9LVhIBJW+pdgotv2mt596Y=;
+ b=RWxg68z/PL5KGJEzU1uid1P3dpc5AJ+/khEn/j8/kek5d4QshtXXxxJjnIAi8sVLrAX6eDM20giaOLwKV8MKbuWbHe58zthapK0+hLXJqLfKh++wgtaZc8sAXKYFkD8s1q18lGATwQs5AQSxGdvv0TTo2vlLE+8MnRrVbivBkxl2SBtxgoESHAOLZ4kpQDy4sKblV0e5WqjWZqdIvxdZ2IL9Axs5U2AA032edDPliCskS5nrMFeNSmZbOt5LqmwzEkOK5w6P2asxIPc//3aKSrZJCja+jk2MDFaxDsT7LcJ1gJZrggfeLKtk0qO0gHc9c+hEMikoHyRHWh5jW2POCw==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=oracle.com; dmarc=pass action=none header.from=oracle.com;
+ dkim=pass header.d=oracle.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=oracle.onmicrosoft.com; s=selector2-oracle-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=KfbhhNosA+WBs+y3aTVYe9LVhIBJW+pdgotv2mt596Y=;
+ b=DZ5X80Dzg9gc4sMH9ufH0ge2harcb1MGSHSYaAK+3/9ZelzoGFHLDggKZAmvCV3AlgYbOacBxk8bx4M+I/5jgXwBguRFRy3Il/jOPggtC/rCRIb597FW6glD8tR+7wzowqgo2nLz/d7GN9PJv2Soi9XYHVr2nmvSA7UYOKigxoU=
+Received: from MW5PR10MB5738.namprd10.prod.outlook.com (2603:10b6:303:19b::14)
+ by CH0PR10MB5017.namprd10.prod.outlook.com (2603:10b6:610:c3::11)
+ with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.5723.33; Tue, 18 Oct
+ 2022 15:44:32 +0000
+Received: from MW5PR10MB5738.namprd10.prod.outlook.com
+ ([fe80::56fd:b251:fc9e:aee4]) by MW5PR10MB5738.namprd10.prod.outlook.com
+ ([fe80::56fd:b251:fc9e:aee4%3]) with mapi id 15.20.5723.033; Tue, 18 Oct 2022
+ 15:44:32 +0000
+Message-ID: <2c02b2de-4fb3-1ad2-5a30-614f9550c108@oracle.com>
+Date: Tue, 18 Oct 2022 10:44:30 -0500
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
+ Thunderbird/102.3.3
+Content-Language: en-US
+To: Colin Ian King <colin.i.king@gmail.com>,
+ jfs-discussion@lists.sourceforge.net
+References: <20221018152310.941770-1-colin.i.king@gmail.com>
+From: Dave Kleikamp <dave.kleikamp@oracle.com>
+In-Reply-To: <20221018152310.941770-1-colin.i.king@gmail.com>
+X-ClientProxiedBy: CH2PR12CA0027.namprd12.prod.outlook.com
+ (2603:10b6:610:57::37) To MW5PR10MB5738.namprd10.prod.outlook.com
+ (2603:10b6:303:19b::14)
 MIME-Version: 1.0
-X-Spam-Score: -0.2 (/)
+X-MS-PublicTrafficType: Email
+X-MS-TrafficTypeDiagnostic: MW5PR10MB5738:EE_|CH0PR10MB5017:EE_
+X-MS-Office365-Filtering-Correlation-Id: 3c05e085-031a-42f9-4781-08dab11fa6ad
+X-MS-Exchange-SenderADCheck: 1
+X-MS-Exchange-AntiSpam-Relay: 0
+X-Microsoft-Antispam: BCL:0;
+X-Microsoft-Antispam-Message-Info: beD35QvKBMPdb2cZhmZ/juaBndiv0L28HS5m816AZGSaDBKIc8qM77ZUOhTR/nI4aZOJaH5jH+5tKnakMyffkMh8mrcXX/PEXrN7uJdHIoKtEb7hsots1a9fKq10SKW90mFeE1krHgukOzAc1VOnxEE31exltBJKpqxd5H5aVRIsIy49cg/q7OxUxzuB34w7XF64VAQDECatuTBnR+ZfKYwqXo5dZmV/BlFOScPw+gvaiS7gWZ3cE6D+5tZqhjTwixMmDAbLNk3TLPMpTaVhxyuQO2DAuCNOmoXBuc4NpMCrVMk3JvTawrP+vD2fOd3WXwcXqt01pU6yUqtA1BqQaUl3pQu2+crMdto3jE/ARm4xOTOeH4leaFCfn3i3FCBpfN5bTKP9Xmyiso9hnAGrVkEl3F8ahiWhs5KqwYnAE+8LdwbNtkFLsAAyizqvr+NjNi14fHj8pgOoIvliTjHvTwOpkKoQwLkoW3cIHMkE2k8q3ZRRSJpI1kD92FAwqbxjjby7JD8gQT2EUpZ77CAolpgR92Ah5jH66QZzjR+BZNP2uAiITJAtKDmd3yE6RazQboN5jUyYFjafEQo7xrorkNJB+/6zWPVFL1vPuFYLthst76jV+6tICy3MYaIpfajlCTZjyvuxLZYjp7d7QmqhHxq8QRUTwrth+3aB5sG1Hzdd5yQInAhCqHM3V2khVjARTR/d6uKga283d64s6S18vRRIGXK6N4oTq1iElwipf75UaNWsUUY3x7RwImPE02NOknV9i5Y4dzF0BcVfKOcr5vB2ggRksCN/S3+QeYD7oys=
+X-Forefront-Antispam-Report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
+ IPV:NLI; SFV:NSPM; H:MW5PR10MB5738.namprd10.prod.outlook.com; PTR:; CAT:NONE;
+ SFS:(13230022)(366004)(376002)(396003)(346002)(136003)(39860400002)(451199015)(2616005)(6506007)(36756003)(8676002)(66476007)(66556008)(4326008)(186003)(2906002)(38100700002)(5660300002)(26005)(66946007)(6512007)(8936002)(83380400001)(44832011)(41300700001)(478600001)(31686004)(86362001)(31696002)(6486002)(316002)(45980500001)(43740500002);
+ DIR:OUT; SFP:1101; 
+X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
+X-MS-Exchange-AntiSpam-MessageData-0: =?utf-8?B?RFp2eHV1czNoaEh2aVlNSDYvSmxUdmIvQmNReXIvNkxkQk5RcjBWU2ZkL1Q1?=
+ =?utf-8?B?K2xjQ1VmVEppeWovUERZQ3Jjek5KSDB6UmJvNEVYTkFBeTBGb1ZrdXdLamFV?=
+ =?utf-8?B?MTZYa084RFhPL2daVi9xVGpXNDlkVlFWb1BZT1FzSUtOSEp1c21ZT3daN1NX?=
+ =?utf-8?B?bGNoMUhFbjY3cjJSYXFTdkp3RlUzcGtHTTd0b3lNNjRxeWwraTEwM1lvbnUv?=
+ =?utf-8?B?S2xIMC9ZZlJXQWRwMXBhbkMzMWNjRTdCdDl2dVdFWVFDQTdOSS9BejVYaFdX?=
+ =?utf-8?B?TlZnVTk0aHY5M0x5NklIV244MDJDS2pwY2lkM1A3cUJ2YUNxanRGYVh2Y0lG?=
+ =?utf-8?B?NDZxVmRRN2pnZTkwZGRiVkVWTlRtR2tseTlBSllxQ21tUE5JM2tVeXRyNFMv?=
+ =?utf-8?B?eVRsYk9JYjBzTkNzb1YvWmlGRGJLTzJiS1JOeHpZTitzSVZLVVlPTzJzRUdB?=
+ =?utf-8?B?dlJvSlBwelJoelBkMWRvcUZ0LzRkc3g5b29mM3FFOWpNNjZaWnRmalhkUFRn?=
+ =?utf-8?B?cnZ6MWd6cFRmZVBabVZ6ZEYxVUh4QXl5dDBoZndqemtoekluYXBiN2xEU1h3?=
+ =?utf-8?B?MGVNVlBKM3pVSzQ1OVQzaUhkTmdFZUZBUExRNnh2aGZyMEtmY0RhOFhtVzBJ?=
+ =?utf-8?B?YWZGSEVwVnF0Y05SQ3Y5MVFPSTlkMTQ1NWdzQnoxcXdxRHFzZVVVV0hZOVlB?=
+ =?utf-8?B?d09LRnovUVN6Sko5ODVQUXZ3WjB5dksydVpWWllxSkEzVkJmYkFkdVRsQllK?=
+ =?utf-8?B?M01MWE02cW1vbUpZMVhZekIyUEExVmdtN1BmMEQrTEJEYUY5MndxYzBna0F0?=
+ =?utf-8?B?MkZETW9TMmwxRkNEbXVCemE5bTNibFd1aVpqTlMwbkFTUURqdEhoMmFySUYz?=
+ =?utf-8?B?VVpYbWp2anRpczN0SkhQMGFwUWhlYlB3Q21jRHV0VUJkSzN2ZTlVcWFaNGlJ?=
+ =?utf-8?B?M0t1dTFVVHRURVpFZHhuR2grYWlyTjg2T3owY2FrcURVZW9VVmpSczRrbTVJ?=
+ =?utf-8?B?ekxVL2dabXJUdm5CMFFCLzNYcDZQb21lOENqRGFlckNmSmNRTXkzVXU0U3hN?=
+ =?utf-8?B?a1NrQXM0MzY1ZUt0eVZ1Um1QbkxVTEdmUkpsd05LbktyOUhuV1BLR0lvTEdF?=
+ =?utf-8?B?OWRSSXRuOUR6aGpWTHpYcm1MN25oU0dZeXNDbndsYjliTUFwVHJ4WEdJNHdR?=
+ =?utf-8?B?K3VieHpmbzBPZjRUYVpqSG44UXN1aXRWZSt5UXF0eUUzZXdKLzBJYjdKV0FR?=
+ =?utf-8?B?VE8zMU9NZE5BcjRSUi94elJORE5VYmxGVkpFMEhlSlIrS2VqcTdJWEVPeXVa?=
+ =?utf-8?B?RStKWlIzSW9pSmpGSUlmdGV0bHlBc1RlWDA3eG5oZUtEM0M5UEVJdkRKN3FT?=
+ =?utf-8?B?ZnNraGs4TVlwN3V3ZHIxV0ZmbHdOVGdrR2pzVStzbnVoRGRlelQ2UE91cUNi?=
+ =?utf-8?B?QmZxenJFbjVmYUJ5ZkJZditvd2xBN2ZpdUtCd0phRkcraEtueW13dWN4ZHVW?=
+ =?utf-8?B?Y3JoV0REbmczbG9FRU9XdmZ2TWpmVHlrU0VnM0ZWWWg5YzExd0pIT2kxOXpy?=
+ =?utf-8?B?U2htc2NyWkU1ZG1ZbzRGYWI5Wmc3TTd0RHo2Q3JBZnc0MmRhUktkWmFjYVRk?=
+ =?utf-8?B?Wm5ldENFdVlIR0ZvZUQ3b2NQbkxybjg2dDMwdXhOcHVEY090Y0s1UVBobk9K?=
+ =?utf-8?B?M2ZXaDBNTVBTb0xyREt1aml2c2w5UnJocXMvWHljOGx2T0ZDNm9xUDVNclBN?=
+ =?utf-8?B?Q2VOTzhIWmFjKzFZSWoyTUw5SGovOGhHN0l3MzdPU2I4R1N4QWVBb3MzODJ2?=
+ =?utf-8?B?a1NmNWgvWUllSHFDRnFiYW4zWkZFQWxpcGJLUCtxRkxjVjllWXpKUVpkcFNw?=
+ =?utf-8?B?N29EeFpoVVFnUVZ0bitsa1VkbWczREsySDdTQTVLYW5wRGw0U3Z1Skl0OXg4?=
+ =?utf-8?B?Yi9iMlJvV2cyY3FBYnFmdEJERnp3Mmh3eHhEOW1QK2I4V3Nob0Zoai95YUda?=
+ =?utf-8?B?TzZoQTZZSis4SGwrZE0rUE1NN0o1eEVscmkvdEpKeWRGR2VTVkM1eEZoZkRR?=
+ =?utf-8?B?RlU3eXBlbUJaVjF3cW5KdWtXV0sxSk9kWEg5RmdSUTdyUi96WUUybElmWWU0?=
+ =?utf-8?B?L3daeG9zVWxJTFVLM3JoRkZiQ2tSLzZ6ZFhJU1VzaTJJVWhFTWcxSG9nZVJq?=
+ =?utf-8?B?eUE9PQ==?=
+X-OriginatorOrg: oracle.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 3c05e085-031a-42f9-4781-08dab11fa6ad
+X-MS-Exchange-CrossTenant-AuthSource: MW5PR10MB5738.namprd10.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 18 Oct 2022 15:44:32.6385 (UTC)
+X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
+X-MS-Exchange-CrossTenant-Id: 4e2c6054-71cb-48f1-bd6c-3a9705aca71b
+X-MS-Exchange-CrossTenant-MailboxType: HOSTED
+X-MS-Exchange-CrossTenant-UserPrincipalName: RZ3vNLKR6XyNhiX3iRE6wBrz5t2AEZGrhYNAOBpIWSIh2vjK/kB14fJ9NFaJpc4OnZ05L40nUZIMCjteimvM5pIwdb4KqGvCmvgSgEQVpZI=
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: CH0PR10MB5017
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.205,Aquarius:18.0.895,Hydra:6.0.545,FMLib:17.11.122.1
+ definitions=2022-10-18_06,2022-10-18_01,2022-06-22_01
+X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 malwarescore=0
+ spamscore=0 bulkscore=0
+ mlxscore=0 phishscore=0 suspectscore=0 adultscore=0 mlxlogscore=999
+ classifier=spam adjust=0 reason=mlx scancount=1 engine=8.12.0-2209130000
+ definitions=main-2210180090
+X-Proofpoint-ORIG-GUID: yX5upKYJvUlFggn87Wku5MuevZOw_9Q_
+X-Proofpoint-GUID: yX5upKYJvUlFggn87Wku5MuevZOw_9Q_
+X-Spam-Score: -2.9 (--)
 X-Spam-Report: Spam detection software,
  running on the system "util-spamd-1.v13.lw.sourceforge.com", 
  has NOT identified this incoming email as spam.  The original
  message has been attached to this so you can view it or label
  similar future email.  If you have any questions, see
  the administrator of that system for details.
- Content preview: The pointers ipaimap and ipaimap2 are re-assigned with values
- a second time with the same values when they were initialized. The
- re-assignments
- are redundant and can be removed. Cleans up two clang scan build warnings:
- fs/jfs/jfs_umount.c:42:16: warning: Value stored to 'ipaimap' during its
- initialization is never read [deadcode.DeadStores] 
- Content analysis details:   (-0.2 points, 6.0 required)
+ Content preview:  Looks good. Applied. Thanks, Shaggy On 10/18/22 10:23AM,
+ Colin
+ Ian King wrote: > The pointers ipaimap and ipaimap2 are re-assigned with
+ values a second > time with the same values when they were initialized. The
+ re-assignments > are red [...] 
+ Content analysis details:   (-2.9 points, 6.0 required)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.128.49 listed in list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [colin.i.king[at]gmail.com]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [205.220.165.32 listed in list.dnswl.org]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [205.220.165.32 listed in wl.mailspike.net]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -111,11 +202,10 @@ X-Spam-Report: Spam detection software,
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.128.49 listed in wl.mailspike.net]
-X-Headers-End: 1okoR3-0008JC-TG
-Subject: [Jfs-discussion] [PATCH][V2] jfs: remove redundant assignments to
- ipaimap and ipaimap2
+ -2.0 NICE_REPLY_A           Looks like a legit reply (A)
+X-Headers-End: 1okoln-008XDk-0p
+Subject: Re: [Jfs-discussion] [PATCH][V2] jfs: remove redundant assignments
+ to ipaimap and ipaimap2
 X-BeenThere: jfs-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -128,52 +218,55 @@ List-Help: <mailto:jfs-discussion-request@lists.sourceforge.net?subject=help>
 List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/jfs-discussion>, 
  <mailto:jfs-discussion-request@lists.sourceforge.net?subject=subscribe>
 Cc: kernel-janitors@vger.kernel.org, linux-kernel@vger.kernel.org
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Errors-To: jfs-discussion-bounces@lists.sourceforge.net
 
-The pointers ipaimap and ipaimap2 are re-assigned with values a second
-time with the same values when they were initialized. The re-assignments
-are redundant and can be removed.
+Looks good. Applied.
 
-Cleans up two clang scan build warnings:
-fs/jfs/jfs_umount.c:42:16: warning: Value stored to 'ipaimap' during
-its initialization is never read [deadcode.DeadStores]
+Thanks,
+Shaggy
 
-fs/jfs/jfs_umount.c:43:16: warning: Value stored to 'ipaimap2' during
-its initialization is never read [deadcode.DeadStores]
-
-Signed-off-by: Colin Ian King <colin.i.king@gmail.com>
----
-V2: remove re-assignments rather than initializations as per the
-    recommendation from Dave Kleikamp
----
- fs/jfs/jfs_umount.c | 2 --
- 1 file changed, 2 deletions(-)
-
-diff --git a/fs/jfs/jfs_umount.c b/fs/jfs/jfs_umount.c
-index 3e8b13e6aa01..95ebcd17ce75 100644
---- a/fs/jfs/jfs_umount.c
-+++ b/fs/jfs/jfs_umount.c
-@@ -68,7 +68,6 @@ int jfs_umount(struct super_block *sb)
- 	/*
- 	 * close secondary aggregate inode allocation map
- 	 */
--	ipaimap2 = sbi->ipaimap2;
- 	if (ipaimap2) {
- 		diUnmount(ipaimap2, 0);
- 		diFreeSpecial(ipaimap2);
-@@ -78,7 +77,6 @@ int jfs_umount(struct super_block *sb)
- 	/*
- 	 * close aggregate inode allocation map
- 	 */
--	ipaimap = sbi->ipaimap;
- 	diUnmount(ipaimap, 0);
- 	diFreeSpecial(ipaimap);
- 	sbi->ipaimap = NULL;
--- 
-2.37.3
-
+On 10/18/22 10:23AM, Colin Ian King wrote:
+> The pointers ipaimap and ipaimap2 are re-assigned with values a second
+> time with the same values when they were initialized. The re-assignments
+> are redundant and can be removed.
+> 
+> Cleans up two clang scan build warnings:
+> fs/jfs/jfs_umount.c:42:16: warning: Value stored to 'ipaimap' during
+> its initialization is never read [deadcode.DeadStores]
+> 
+> fs/jfs/jfs_umount.c:43:16: warning: Value stored to 'ipaimap2' during
+> its initialization is never read [deadcode.DeadStores]
+> 
+> Signed-off-by: Colin Ian King <colin.i.king@gmail.com>
+> ---
+> V2: remove re-assignments rather than initializations as per the
+>      recommendation from Dave Kleikamp
+> ---
+>   fs/jfs/jfs_umount.c | 2 --
+>   1 file changed, 2 deletions(-)
+> 
+> diff --git a/fs/jfs/jfs_umount.c b/fs/jfs/jfs_umount.c
+> index 3e8b13e6aa01..95ebcd17ce75 100644
+> --- a/fs/jfs/jfs_umount.c
+> +++ b/fs/jfs/jfs_umount.c
+> @@ -68,7 +68,6 @@ int jfs_umount(struct super_block *sb)
+>   	/*
+>   	 * close secondary aggregate inode allocation map
+>   	 */
+> -	ipaimap2 = sbi->ipaimap2;
+>   	if (ipaimap2) {
+>   		diUnmount(ipaimap2, 0);
+>   		diFreeSpecial(ipaimap2);
+> @@ -78,7 +77,6 @@ int jfs_umount(struct super_block *sb)
+>   	/*
+>   	 * close aggregate inode allocation map
+>   	 */
+> -	ipaimap = sbi->ipaimap;
+>   	diUnmount(ipaimap, 0);
+>   	diFreeSpecial(ipaimap);
+>   	sbi->ipaimap = NULL;
 
 
 _______________________________________________
