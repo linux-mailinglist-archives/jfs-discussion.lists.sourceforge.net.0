@@ -2,104 +2,84 @@ Return-Path: <jfs-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+jfs-discussion@lfdr.de
 Delivered-To: lists+jfs-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9977B6060E1
+	by mail.lfdr.de (Postfix) with ESMTPS id EED756060E2
 	for <lists+jfs-discussion@lfdr.de>; Thu, 20 Oct 2022 15:02:58 +0200 (CEST)
 Received: from [127.0.0.1] (helo=sfs-ml-2.v29.lw.sourceforge.com)
 	by sfs-ml-2.v29.lw.sourceforge.com with esmtp (Exim 4.95)
 	(envelope-from <jfs-discussion-bounces@lists.sourceforge.net>)
-	id 1olVC0-0000eh-ES;
+	id 1olVC0-0000ec-4F;
 	Thu, 20 Oct 2022 13:02:36 +0000
 Received: from [172.30.20.202] (helo=mx.sourceforge.net)
  by sfs-ml-2.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
- TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (Exim 4.95) (envelope-from
- <30OdQYwkbAAUx34pfqqjwfuuni.lttlqjzxjwhtsyjsy.htr@M3KW2WVRGUFZ5GODRSRYTGD7.apphosting.bounces.google.com>)
- id 1olOrP-0000dd-VU for jfs-discussion@lists.sourceforge.net;
- Thu, 20 Oct 2022 06:16:55 +0000
+ TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (Exim 4.95)
+ (envelope-from <zhangqilong3@huawei.com>) id 1olQ9Z-0002CL-7m
+ for jfs-discussion@lists.sourceforge.net;
+ Thu, 20 Oct 2022 07:39:45 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=sourceforge.net; s=x; h=Content-Type:To:From:Subject:Message-ID:Date:
- MIME-Version:Sender:Reply-To:Cc:Content-Transfer-Encoding:Content-ID:
+ d=sourceforge.net; s=x; h=Content-Type:Content-Transfer-Encoding:MIME-Version
+ :Message-ID:Date:Subject:CC:To:From:Sender:Reply-To:Content-ID:
  Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
  :Resent-Message-ID:In-Reply-To:References:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=1MfdereceE/3V87nTfYGeF1utu/rzFdYI+GBtd+NMds=; b=NFUbEBCLVdEixCP1oXeSJ+Yz2R
- VloxLZmdvQhyCW8RLGUv8qZCNVYr2bJeNiZeslY44zeY8hYNoVNc8mgxGc8XcPZn4NRnPW1i89hkh
- g3K0QhPb0dN/Ig+CwJBfVYv6WwBR4vq/ccAsAx2DPbYRJ0pKHPUJtAIxd7RrtQ2Wt8vo=;
+ bh=gd0nGJbrwEHOTK99QxhV6tHRm+vcZy/VsQMSL59J/44=; b=V0m94DcVH/f/y7VPDc0SiYdeDC
+ ZJuQjmbwTNH9qbODf+0TBz+y3CUH0lySYpCzSGO8T+qBDO3t8YoZl+GWz0F7cCn+WUkBESFrPzrm7
+ 0zZJ0A18R/c4mbZv2ikUShtWpUDLjXsb2x2s+sQjc9yq/PueJobRFgua9y015Kcfs5cU=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
- h=Content-Type:To:From:Subject:Message-ID:Date:MIME-Version:Sender:Reply-To
- :Cc:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
- Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+ h=Content-Type:Content-Transfer-Encoding:MIME-Version:Message-ID:Date:
+ Subject:CC:To:From:Sender:Reply-To:Content-ID:Content-Description:Resent-Date
+ :Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
  References:List-Id:List-Help:List-Unsubscribe:List-Subscribe:List-Post:
- List-Owner:List-Archive; bh=1MfdereceE/3V87nTfYGeF1utu/rzFdYI+GBtd+NMds=; b=B
- AHZ2YX/l9eUFlD9w0PHw54wMsd820A0JUXumyuOp9rn++cmME305AwkwVp9Q4RdMPIX2E2nPPMPOl
- 7LsJE3BAdldPU3mnTTwd7+JZMvhv3jqIFl8GFQHF/y+Y63LnQD0CeCoo84972pLbCHt9ZGjpsDx0R
- 4oU5gfZLDxWkgvx4=;
-Received: from mail-il1-f197.google.com ([209.85.166.197])
+ List-Owner:List-Archive; bh=gd0nGJbrwEHOTK99QxhV6tHRm+vcZy/VsQMSL59J/44=; b=O
+ cYlEiaLh4NoQsE9U1kg9bTnbh8Os/JEHadOOVV1JFm0E0M830TNfzndMj4dnCvjNzE+G6Z6+xtddw
+ QSAarDwcL27g7KpqHow5koCo5CQwp0OCw7HjC3iCQaODruJ5np8zDyxGRZXb7pXBhZ6RPVTvYguCj
+ jerjoSJ9fCY/fL/Y=;
+Received: from szxga01-in.huawei.com ([45.249.212.187])
  by sfi-mx-2.v28.lw.sourceforge.com with esmtps
- (TLS1.2:ECDHE-RSA-AES128-GCM-SHA256:128) (Exim 4.95)
- id 1olOrO-0007I1-6r for jfs-discussion@lists.sourceforge.net;
- Thu, 20 Oct 2022 06:16:55 +0000
-Received: by mail-il1-f197.google.com with SMTP id
- j8-20020a056e02154800b002fc89e9ebeeso19413630ilu.16
- for <jfs-discussion@lists.sourceforge.net>;
- Wed, 19 Oct 2022 23:16:54 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20210112;
- h=to:from:subject:message-id:date:mime-version:x-gm-message-state
- :from:to:cc:subject:date:message-id:reply-to;
- bh=1MfdereceE/3V87nTfYGeF1utu/rzFdYI+GBtd+NMds=;
- b=a9Yxf6YbvMJDD5lCu6v4H+/suzYqTusCJzxGPb98zBFLxGRwz3GWIr7NrCyR18U3Iv
- IVUaM7YRCsrvZs6r1gsupXhlcaPn8Ar+O6p5IxPggh4P39nz9qwppfP6bHJgzzGfdbn2
- jaLcAPqh2Zfc5h1B0WVl7No/Jqh2SfvOQ8WAv6zFXcVFum4dXwz8g7TU3mmfDh47U6en
- 8Dc7lcwIn6z8YhRXG1HNXoc2T4387vfjlSmHNv03asz/NaTXLzWY/okNeIBNuwQ4jVZL
- dn2ge28GzUj0PlpLeeQlRne84UIZm6WpdmArZaPrW8wPfYKz2pjn9/FxYFr8aGrR4m8w
- yjjw==
-X-Gm-Message-State: ACrzQf17dYOfYN+vHQclxX11UrStauvegg5ra5/AO//0rsEKdcrpzUk9
- Dg4Ko6YNy/akAtmPSh5NkhchfvTUFS4eay9LvUZZ6ntAp2h6
-X-Google-Smtp-Source: AMsMyM7p/Bay7M4z3EDkhLxZAvg7exxdu+H7Q8p2Qxy2t8IkCX7DCRqe1BCdP1QMash7awkL/RG4OIGLFuGbnYSkx0XlQ24Tcm1X
+ (TLS1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.95)
+ id 1olQ9U-0002T9-4D for jfs-discussion@lists.sourceforge.net;
+ Thu, 20 Oct 2022 07:39:45 +0000
+Received: from dggemv711-chm.china.huawei.com (unknown [172.30.72.56])
+ by szxga01-in.huawei.com (SkyGuard) with ESMTP id 4MtK9v4tPNzmVDX;
+ Thu, 20 Oct 2022 15:34:43 +0800 (CST)
+Received: from kwepemm600014.china.huawei.com (7.193.23.54) by
+ dggemv711-chm.china.huawei.com (10.1.198.66) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
+ 15.1.2375.31; Thu, 20 Oct 2022 15:39:21 +0800
+Received: from huawei.com (10.90.53.225) by kwepemm600014.china.huawei.com
+ (7.193.23.54) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.2375.31; Thu, 20 Oct
+ 2022 15:39:20 +0800
+To: <shaggy@kernel.org>, <willy@infradead.org>
+Date: Thu, 20 Oct 2022 15:44:27 +0800
+Message-ID: <20221020074427.54990-1-zhangqilong3@huawei.com>
+X-Mailer: git-send-email 2.26.0.106.g9fadedd
 MIME-Version: 1.0
-X-Received: by 2002:a02:cc9c:0:b0:363:e0e6:ec1b with SMTP id
- s28-20020a02cc9c000000b00363e0e6ec1bmr9284183jap.89.1666246608618; Wed, 19
- Oct 2022 23:16:48 -0700 (PDT)
-Date: Wed, 19 Oct 2022 23:16:48 -0700
-X-Google-Appengine-App-Id: s~syzkaller
-X-Google-Appengine-App-Id-Alias: syzkaller
-Message-ID: <000000000000370ac005eb71453c@google.com>
-From: syzbot <syzbot+4685943e4e2bf4a61bed@syzkaller.appspotmail.com>
-To: jfs-discussion@lists.sourceforge.net, linux-kernel@vger.kernel.org, 
- shaggy@kernel.org, syzkaller-bugs@googlegroups.com
-X-Spam-Score: 0.6 (/)
+X-Originating-IP: [10.90.53.225]
+X-ClientProxiedBy: dggems702-chm.china.huawei.com (10.3.19.179) To
+ kwepemm600014.china.huawei.com (7.193.23.54)
+X-CFilter-Loop: Reflected
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: Spam detection software,
- running on the system "util-spamd-1.v13.lw.sourceforge.com", 
+ running on the system "util-spamd-2.v13.lw.sourceforge.com", 
  has NOT identified this incoming email as spam.  The original
  message has been attached to this so you can view it or label
  similar future email.  If you have any questions, see
  the administrator of that system for details.
- Content preview:  Hello,
- syzbot found the following issue on: HEAD commit: a72b55bc981b
- Add linux-next specific files for 20221019 git tree: linux-next
- console+strace:
- https://syzkaller.appspot.com/x/log.txt?x=12478bd6880000 kernel config:
- https://syzkaller.apps [...] 
- Content analysis details:   (0.6 points, 6.0 required)
+ Content preview: We should not access sbi which obtained form previous context
+ of LAZY_LOCK, it may have been freed because of cleanup_mnt/umount. If we
+ get LAZY_LOCK again, we should re-dereference tblk to get sbi to [...] 
+ Content analysis details:   (-2.3 points, 6.0 required)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.3 FROM_LOCAL_HEX         From: localpart has long hexadecimal sequence
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.166.197 listed in list.dnswl.org]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.166.197 listed in wl.mailspike.net]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [45.249.212.187 listed in list.dnswl.org]
+ 0.0 T_SPF_TEMPERROR        SPF: test of record failed (temperror)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 URIBL_BLOCKED          ADMINISTRATOR NOTICE: The query to URIBL was
- blocked.  See
- http://wiki.apache.org/spamassassin/DnsBlocklists#dnsbl-block
- for more information. [URIs: syzkaller.appspot.com]
-X-Headers-End: 1olOrO-0007I1-6r
-X-Mailman-Approved-At: Thu, 20 Oct 2022 13:02:23 +0000
-Subject: [Jfs-discussion] [syzbot] UBSAN: shift-out-of-bounds in extHint
+X-Headers-End: 1olQ9U-0002T9-4D
+X-Mailman-Approved-At: Thu, 20 Oct 2022 13:02:22 +0000
+Subject: [Jfs-discussion] [PATCH] fs/jfs: Fix use-after-free in
+ jfs_lazycommit()
 X-BeenThere: jfs-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -111,84 +91,89 @@ List-Post: <mailto:jfs-discussion@lists.sourceforge.net>
 List-Help: <mailto:jfs-discussion-request@lists.sourceforge.net?subject=help>
 List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/jfs-discussion>, 
  <mailto:jfs-discussion-request@lists.sourceforge.net?subject=subscribe>
+From: Zhang Qilong via Jfs-discussion <jfs-discussion@lists.sourceforge.net>
+Reply-To: Zhang Qilong <zhangqilong3@huawei.com>
+Cc: jfs-discussion@lists.sourceforge.net
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Errors-To: jfs-discussion-bounces@lists.sourceforge.net
 
-Hello,
+We should not access sbi which obtained form previous
+context of LAZY_LOCK, it may have been freed because
+of cleanup_mnt/umount. If we get LAZY_LOCK again, we
+should re-dereference tblk to get sbi to avoid UAF in
+jfs_lazycommit().
 
-syzbot found the following issue on:
+BUG: KASAN: use-after-free in jfs_lazycommit+0x746/0xba0 fs/jfs/jfs_txnmgr.c:2730
+Read of size 4 at addr ffff88807ee78094 by task jfsCommit/120
 
-HEAD commit:    a72b55bc981b Add linux-next specific files for 20221019
-git tree:       linux-next
-console+strace: https://syzkaller.appspot.com/x/log.txt?x=12478bd6880000
-kernel config:  https://syzkaller.appspot.com/x/.config?x=200524babbc01b2a
-dashboard link: https://syzkaller.appspot.com/bug?extid=4685943e4e2bf4a61bed
-compiler:       gcc (Debian 10.2.1-6) 10.2.1 20210110, GNU ld (GNU Binutils for Debian) 2.35.2
-syz repro:      https://syzkaller.appspot.com/x/repro.syz?x=15c7d70c880000
-C reproducer:   https://syzkaller.appspot.com/x/repro.c?x=141adad2880000
-
-Downloadable assets:
-disk image: https://storage.googleapis.com/syzbot-assets/fa24fb5893fd/disk-a72b55bc.raw.xz
-vmlinux: https://storage.googleapis.com/syzbot-assets/cf1b7e7b579c/vmlinux-a72b55bc.xz
-mounted in repro: https://storage.googleapis.com/syzbot-assets/2505d71f3ea8/mount_0.gz
-
-IMPORTANT: if you fix the issue, please add the following tag to the commit:
-Reported-by: syzbot+4685943e4e2bf4a61bed@syzkaller.appspotmail.com
-
-loop0: detected capacity change from 0 to 32768
-================================================================================
-UBSAN: shift-out-of-bounds in fs/jfs/jfs_extent.c:314:16
-shift exponent -1 is negative
-CPU: 1 PID: 3615 Comm: syz-executor427 Not tainted 6.1.0-rc1-next-20221019-syzkaller #0
+CPU: 1 PID: 120 Comm: jfsCommit Not tainted 6.0.0-syzkaller-09423-g493ffd6605b2 #0
 Hardware name: Google Google Compute Engine/Google Compute Engine, BIOS Google 09/22/2022
 Call Trace:
  <TASK>
  __dump_stack lib/dump_stack.c:88 [inline]
- dump_stack_lvl+0xcd/0x134 lib/dump_stack.c:106
- ubsan_epilogue+0xb/0x50 lib/ubsan.c:151
- __ubsan_handle_shift_out_of_bounds.cold+0xb1/0x187 lib/ubsan.c:322
- extHint.cold-0x5/0x1f
- jfs_get_block+0x661/0xa90 fs/jfs/inode.c:248
- __block_write_begin_int+0x3b9/0x14b0 fs/buffer.c:1991
- __block_write_begin fs/buffer.c:2041 [inline]
- block_write_begin+0xb5/0x440 fs/buffer.c:2102
- jfs_write_begin+0x2d/0xd0 fs/jfs/inode.c:304
- generic_perform_write+0x252/0x570 mm/filemap.c:3771
- __generic_file_write_iter+0x2aa/0x4d0 mm/filemap.c:3899
- generic_file_write_iter+0xdf/0x350 mm/filemap.c:3931
- call_write_iter include/linux/fs.h:2191 [inline]
- do_iter_readv_writev+0x20b/0x3b0 fs/read_write.c:735
- do_iter_write+0x182/0x700 fs/read_write.c:861
- vfs_writev+0x1aa/0x630 fs/read_write.c:934
- do_pwritev+0x1b6/0x270 fs/read_write.c:1031
- __do_sys_pwritev2 fs/read_write.c:1090 [inline]
- __se_sys_pwritev2 fs/read_write.c:1081 [inline]
- __x64_sys_pwritev2+0xeb/0x150 fs/read_write.c:1081
- do_syscall_x64 arch/x86/entry/common.c:50 [inline]
- do_syscall_64+0x35/0xb0 arch/x86/entry/common.c:80
- entry_SYSCALL_64_after_hwframe+0x63/0xcd
-RIP: 0033:0x7f54a91b6e89
-Code: ff ff c3 66 2e 0f 1f 84 00 00 00 00 00 0f 1f 40 00 48 89 f8 48 89 f7 48 89 d6 48 89 ca 4d 89 c2 4d 89 c8 4c 8b 4c 24 08 0f 05 <48> 3d 01 f0 ff ff 73 01 c3 48 c7 c1 c0 ff ff ff f7 d8 64 89 01 48
-RSP: 002b:00007ffda0797a78 EFLAGS: 00000246 ORIG_RAX: 0000000000000148
-RAX: ffffffffffffffda RBX: 0000000000000000 RCX: 00007f54a91b6e89
-RDX: 0000000000000002 RSI: 0000000020003380 RDI: 0000000000000003
-RBP: 00007f54a9176650 R08: 0000000000000000 R09: 0000000000000006
-R10: 0000000000000000 R11: 0000000000000246 R12: 00000000f8008000
-R13: 0000000000000000 R14: 00083878000000fc R15: 0000000000000000
+ dump_stack_lvl+0x1b1/0x28e lib/dump_stack.c:106
+ print_address_description+0x65/0x4b0 mm/kasan/report.c:317
+ print_report+0x108/0x1f0 mm/kasan/report.c:433
+ kasan_report+0xc3/0xf0 mm/kasan/report.c:495
+ jfs_lazycommit+0x746/0xba0 fs/jfs/jfs_txnmgr.c:2730
+ kthread+0x266/0x300 kernel/kthread.c:376
+ ret_from_fork+0x1f/0x30 arch/x86/entry/entry_64.S:306
  </TASK>
-================================================================================
 
+Allocated by task 4321:
+ kasan_save_stack mm/kasan/common.c:38 [inline]
+ kasan_set_track mm/kasan/common.c:45 [inline]
+ set_alloc_info mm/kasan/common.c:437 [inline]
+ ____kasan_kmalloc+0xcd/0x100 mm/kasan/common.c:516
+ kasan_kmalloc include/linux/kasan.h:234 [inline]
+ kmem_cache_alloc_trace+0x97/0x310 mm/slub.c:3289
+ kmalloc include/linux/slab.h:600 [inline]
+ kzalloc include/linux/slab.h:733 [inline]
+ jfs_fill_super+0xfb/0xc50 fs/jfs/super.c:495
+ mount_bdev+0x26c/0x3a0 fs/super.c:1400
 
+Freed by task 3642:
+ kasan_save_stack mm/kasan/common.c:38 [inline]
+ kasan_set_track+0x3d/0x60 mm/kasan/common.c:45
+ kasan_set_free_info+0x1f/0x40 mm/kasan/generic.c:370
+ ____kasan_slab_free+0xd8/0x120 mm/kasan/common.c:367
+ kasan_slab_free include/linux/kasan.h:200 [inline]
+ slab_free_hook mm/slub.c:1759 [inline]
+ slab_free_freelist_hook+0x12e/0x1a0 mm/slub.c:1785
+ slab_free mm/slub.c:3539 [inline]
+ kfree+0xda/0x210 mm/slub.c:4567
+ generic_shutdown_super+0x130/0x310 fs/super.c:491
+ kill_block_super+0x79/0xd0 fs/super.c:1427
+ deactivate_locked_super+0xa7/0xf0 fs/super.c:331
+ cleanup_mnt+0x4ce/0x560 fs/namespace.c:1186
+ task_work_run+0x146/0x1c0 kernel/task_work.c:177
+
+Fixes: 1da177e4c3f4 ("Linux-2.6.12-rc2")
+Reported-by: syzbot+e9ec3b8a36d350400038@syzkaller.appspotmail.com
+Signed-off-by: Zhang Qilong <zhangqilong3@huawei.com>
 ---
-This report is generated by a bot. It may contain errors.
-See https://goo.gl/tpsmEJ for more information about syzbot.
-syzbot engineers can be reached at syzkaller@googlegroups.com.
+ fs/jfs/jfs_txnmgr.c | 4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
 
-syzbot will keep track of this issue. See:
-https://goo.gl/tpsmEJ#status for how to communicate with syzbot.
-syzbot can test patches for this issue, for details see:
-https://goo.gl/tpsmEJ#testing-patches
+diff --git a/fs/jfs/jfs_txnmgr.c b/fs/jfs/jfs_txnmgr.c
+index ffd4feece078..d8beefadd47a 100644
+--- a/fs/jfs/jfs_txnmgr.c
++++ b/fs/jfs/jfs_txnmgr.c
+@@ -2727,7 +2727,9 @@ int jfs_lazycommit(void *arg)
+ 				txLazyCommit(tblk);
+ 				LAZY_LOCK(flags);
+ 
+-				sbi->commit_state &= ~IN_LAZYCOMMIT;
++				sbi = JFS_SBI(tblk->sb);
++				if (sbi)
++					sbi->commit_state &= ~IN_LAZYCOMMIT;
+ 				/*
+ 				 * Don't continue in the for loop.  (We can't
+ 				 * anyway, it's unsafe!)  We want to go back to
+-- 
+2.25.1
+
 
 
 _______________________________________________
