@@ -2,99 +2,113 @@ Return-Path: <jfs-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+jfs-discussion@lfdr.de
 Delivered-To: lists+jfs-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id EE84F60A9B5
-	for <lists+jfs-discussion@lfdr.de>; Mon, 24 Oct 2022 15:24:01 +0200 (CEST)
-Received: from [127.0.0.1] (helo=sfs-ml-1.v29.lw.sourceforge.com)
-	by sfs-ml-1.v29.lw.sourceforge.com with esmtp (Exim 4.95)
+	by mail.lfdr.de (Postfix) with ESMTPS id 61A2760B449
+	for <lists+jfs-discussion@lfdr.de>; Mon, 24 Oct 2022 19:35:33 +0200 (CEST)
+Received: from [127.0.0.1] (helo=sfs-ml-2.v29.lw.sourceforge.com)
+	by sfs-ml-2.v29.lw.sourceforge.com with esmtp (Exim 4.95)
 	(envelope-from <jfs-discussion-bounces@lists.sourceforge.net>)
-	id 1omxQa-0004Om-OF;
-	Mon, 24 Oct 2022 13:23:40 +0000
+	id 1on1Lw-0006cp-7c;
+	Mon, 24 Oct 2022 17:35:08 +0000
 Received: from [172.30.20.202] (helo=mx.sourceforge.net)
- by sfs-ml-1.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
- TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (Exim 4.95) (envelope-from
- <3BDlWYwkbAO8jpqbRccViRggZU.XffXcVljViTfekVek.Tfd@M3KW2WVRGUFZ5GODRSRYTGD7.apphosting.bounces.google.com>)
- id 1omrVr-0000EQ-1e for jfs-discussion@lists.sourceforge.net;
- Mon, 24 Oct 2022 07:04:43 +0000
+ by sfs-ml-2.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
+ TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (Exim 4.95)
+ (envelope-from <keescook@chromium.org>) id 1on1Lm-0006cj-J0
+ for jfs-discussion@lists.sourceforge.net;
+ Mon, 24 Oct 2022 17:34:58 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=sourceforge.net; s=x; h=Content-Type:To:From:Subject:Message-ID:Date:
- MIME-Version:Sender:Reply-To:Cc:Content-Transfer-Encoding:Content-ID:
- Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
- :Resent-Message-ID:In-Reply-To:References:List-Id:List-Help:List-Unsubscribe:
+ d=sourceforge.net; s=x; h=In-Reply-To:Content-Type:MIME-Version:References:
+ Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:Content-Transfer-Encoding:
+ Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
+ Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=guQBpKVE1fSZKSKrsCy/ErG3GRc+o9cC6FZBdBYutjA=; b=kK0Ar0I3JY8GumgnEFBaxzli6l
- K4Fz9OZlt7N8HOkAAW/R/OsyTqFEs+KuAWtuYQxF+DSBdomBgilhn9zy4yvTyAlzs3xprrrhgo/gm
- PtiK49vPmaxdqxECxjJzH+/faxvhVrn+m7PsA57IMe4Z6Ny1RgRWdm2O0s8DKhEiRzv4=;
+ bh=i2byGtEXgZJqwC1xhUiJg77blmnFurI60zGNAGyGmaU=; b=Jf1zBwU8tEFhmp9s+vU4Kj0AxF
+ yWBXfEKnEsKxVGWXqZCgAp702XKITZ3BavGnUYVuR2KhFkCSXbv02ARkj8LJjxR8ng6PZ1cAtf53j
+ gp7OZmFSpRB8jpQw8wAFWvCfZc3E5nYHwtcZJT54bxbD0mLm5/NRMlGdbWxcB5ylMTrg=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
- h=Content-Type:To:From:Subject:Message-ID:Date:MIME-Version:Sender:Reply-To
- :Cc:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
- Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
- References:List-Id:List-Help:List-Unsubscribe:List-Subscribe:List-Post:
- List-Owner:List-Archive; bh=guQBpKVE1fSZKSKrsCy/ErG3GRc+o9cC6FZBdBYutjA=; b=J
- xa9DBruh0tEmXnf/5M4EOF41vLKexh7DAzSntAelBojIBb4hV07z+/6mwIX/oR5W0kWt/c3zKcsi/
- dcw4CHID3nHCR75AnDHJE97pfCXwChNEWrafJmt4h+MjFQOFHbLs41+ApBpc4xjfBhLYBgIxaHUFO
- DCwKwyChE6W4RhhM=;
-Received: from mail-il1-f200.google.com ([209.85.166.200])
+ h=In-Reply-To:Content-Type:MIME-Version:References:Message-ID:Subject:Cc:To
+ :From:Date:Sender:Reply-To:Content-Transfer-Encoding:Content-ID:
+ Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+ :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
+ List-Post:List-Owner:List-Archive;
+ bh=i2byGtEXgZJqwC1xhUiJg77blmnFurI60zGNAGyGmaU=; b=jcW72YxWlQDlYviF+7ErclS9pG
+ y35iNg5AVXFXvEad4rSQyPkXgHSjnHUUZc7fG9Y4Q0MLHUrEZuqky0FcEqgIB62fePufiRzDzHVeU
+ o1so1gYwJTmmAeDr0m5RSZaCtyX0jjS9Q6oHHQvE9RwrdAWmR1bx7SntSIna/3nsZSFQ=;
+Received: from mail-oi1-f179.google.com ([209.85.167.179])
  by sfi-mx-1.v28.lw.sourceforge.com with esmtps
  (TLS1.2:ECDHE-RSA-AES128-GCM-SHA256:128) (Exim 4.95)
- id 1omrVq-00FSq9-76 for jfs-discussion@lists.sourceforge.net;
- Mon, 24 Oct 2022 07:04:42 +0000
-Received: by mail-il1-f200.google.com with SMTP id
- u2-20020a056e021a4200b002f9ecfa353cso8330871ilv.20
+ id 1on1Ll-00Fwxz-G6 for jfs-discussion@lists.sourceforge.net;
+ Mon, 24 Oct 2022 17:34:58 +0000
+Received: by mail-oi1-f179.google.com with SMTP id y72so11590073oia.3
  for <jfs-discussion@lists.sourceforge.net>;
- Mon, 24 Oct 2022 00:04:42 -0700 (PDT)
+ Mon, 24 Oct 2022 10:34:57 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
+ h=in-reply-to:content-disposition:mime-version:references:message-id
+ :subject:cc:to:from:date:from:to:cc:subject:date:message-id:reply-to;
+ bh=i2byGtEXgZJqwC1xhUiJg77blmnFurI60zGNAGyGmaU=;
+ b=TmzigJCgTBapdK0xkoXEz8vHuz4MX1KCMk1WsbpTta1fdAJMYtolT8c+MbBUUY66gh
+ HhR4QOE6ff5VSgCKNs68HnkcILYqkh0alXR+pdd6xa59lIxg92vARF6jPTAKv45aSoX7
+ UYpW407tNV89sAg+DBOdyGkt/wLS8h68jzqIQ=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20210112;
- h=to:from:subject:message-id:date:mime-version:x-gm-message-state
- :from:to:cc:subject:date:message-id:reply-to;
- bh=guQBpKVE1fSZKSKrsCy/ErG3GRc+o9cC6FZBdBYutjA=;
- b=BWF8pVAaKneXFWq7w3X5M0DCRRAbkylqK5a24mZWMWZ7kfiU7FiKIK0RahrEgSuWn9
- k/a1S6ZHmE777ugDS+1tx+1v66W+X8x8lSyNXaOknuwJXw42PqzAwWUIk9fIemkUgsDQ
- 8+Bv6zVupu/F0D0Wk4woXqEIVm51xJ5/goq0wMFTx8GqC1saQsLSDAF+t0fqqrkvjNC6
- 8kF5JX23Lcei2TcrIY2KLxdQ0epgmse6qEbYD2Omfy3BEFgFqly0a/WiYO1jcHfxKcKg
- kprpIGEU14dRxwQmsA1zCglaRbYMQZ93bRyLPe1eb2ANXvNr4gGqMQjLHED07xZyP+/c
- YlVQ==
-X-Gm-Message-State: ACrzQf1+fA678W2M/lLrZRqo4bNPUXevjcruSN8hb+fuK86SFyYPy+rN
- G2cGW+OpUfwphUjhIL8Z6EMQr8tP0rKmG5GlT34PfFdcZT0U
-X-Google-Smtp-Source: AMsMyM7EwbZCuDoIyQG4Ron635vfyqLAh7wG4Ie5hHRvFbDKNZBBIgKkEd/stYNePJN3ZWUSnODwwzrXBHuWCgDWL25KyUnfc5rL
+ h=in-reply-to:content-disposition:mime-version:references:message-id
+ :subject:cc:to:from:date:x-gm-message-state:from:to:cc:subject:date
+ :message-id:reply-to;
+ bh=i2byGtEXgZJqwC1xhUiJg77blmnFurI60zGNAGyGmaU=;
+ b=ay6tYwyvuKGiEgKtp9wbjDxxd0b0plZc9bwuOyiqBgM8KrgOHvUE704dWOZCZs2v/t
+ 30u6eYQfoUunY/VQ6NLpdXnVO8Hyp8WXi/StkJ7j5Xb9fxXowfhn2vqhxzkzmJa+SimQ
+ oQiD5OoU96AOsiD0K/WeXgtItqfmywxU7n0ldugeCdyKKOwchwPu1s0fY8hYE8JEbI8P
+ wEX2dDyVor+wmMKRYJ063U5UY22eZ7cWeeDHC2zod4edEuE4lG8e99AHN6ukBJneDfvQ
+ xRg2+NFxsHJS+iiDvXwBAflV4Zb2Z9UmIL1SNF9V1nSZ5JkvifJJEMpSsS/M/2Sr8HKB
+ BM6g==
+X-Gm-Message-State: ACrzQf2hhE9DBL+4NtjcxSd0rmzOiF27ZPqi+UOGOQo/++WAZ4bffAGP
+ CSvejGilUUAyLwhZ8/90inLJNxKNaq852A==
+X-Google-Smtp-Source: AMsMyM5jpYkGLl4OBfSCMdyvabVZ9M6UzPL366jLswkI52JXS24uvkzZDH1iQ/9WXBipLDQHLijhfg==
+X-Received: by 2002:a17:90b:1e49:b0:20b:36a3:aba6 with SMTP id
+ pi9-20020a17090b1e4900b0020b36a3aba6mr77169003pjb.2.1666632509281; 
+ Mon, 24 Oct 2022 10:28:29 -0700 (PDT)
+Received: from www.outflux.net (smtp.outflux.net. [198.145.64.163])
+ by smtp.gmail.com with ESMTPSA id
+ d8-20020a170902654800b001788ccecbf5sm30958pln.31.2022.10.24.10.28.28
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Mon, 24 Oct 2022 10:28:28 -0700 (PDT)
+Date: Mon, 24 Oct 2022 10:28:27 -0700
+From: Kees Cook <keescook@chromium.org>
+To: linux@treblig.org
+Message-ID: <202210241021.6E9E1EF65@keescook>
+References: <20221022203913.264855-1-linux@treblig.org>
 MIME-Version: 1.0
-X-Received: by 2002:a05:6e02:1487:b0:2fa:a78c:1d8b with SMTP id
- n7-20020a056e02148700b002faa78c1d8bmr21651995ilk.264.1666595076614; Mon, 24
- Oct 2022 00:04:36 -0700 (PDT)
-Date: Mon, 24 Oct 2022 00:04:36 -0700
-X-Google-Appengine-App-Id: s~syzkaller
-X-Google-Appengine-App-Id-Alias: syzkaller
-Message-ID: <00000000000086b13105ebc267f8@google.com>
-From: syzbot <syzbot+cfb3836ee00e264151bc@syzkaller.appspotmail.com>
-To: jfs-discussion@lists.sourceforge.net, linux-kernel@vger.kernel.org, 
- shaggy@kernel.org, syzkaller-bugs@googlegroups.com
-X-Spam-Score: 0.6 (/)
+Content-Disposition: inline
+In-Reply-To: <20221022203913.264855-1-linux@treblig.org>
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: Spam detection software,
  running on the system "util-spamd-1.v13.lw.sourceforge.com", 
  has NOT identified this incoming email as spam.  The original
  message has been attached to this so you can view it or label
  similar future email.  If you have any questions, see
  the administrator of that system for details.
- Content preview:  Hello,
- syzbot found the following issue on: HEAD commit: d47136c28015
- Merge tag 'hwmon-for-v6.1-rc2' of git://git.k.. git tree: upstream console
- output: https://syzkaller.appspot.com/x/log.txt?x=1564d752880000 kernel
- config: https://syzkaller.a [...] 
- Content analysis details:   (0.6 points, 6.0 required)
+ Content preview:  On Sat, Oct 22, 2022 at 09:39:14PM +0100, linux@treblig.org
+ wrote: > From: "Dr. David Alan Gilbert" <linux@treblig.org> > > JFS has in
+ jfs_incore.h: > > /* _inline may overflow into _inline_ea when ne [...] 
+ Content analysis details:   (-0.9 points, 6.0 required)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.3 FROM_LOCAL_HEX         From: localpart has long hexadecimal sequence
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.166.200 listed in wl.mailspike.net]
+ [209.85.167.179 listed in wl.mailspike.net]
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.166.200 listed in list.dnswl.org]
-X-Headers-End: 1omrVq-00FSq9-76
-X-Mailman-Approved-At: Mon, 24 Oct 2022 13:23:38 +0000
-Subject: [Jfs-discussion] [syzbot] UBSAN: shift-out-of-bounds in diAllocBit
+ no trust [209.85.167.179 listed in list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.7 DKIMWL_WL_HIGH         DKIMwl.org - High trust sender
+X-Headers-End: 1on1Ll-00Fwxz-G6
+Subject: Re: [Jfs-discussion] [PATCH] jfs: Fix fortify moan in symlink
 X-BeenThere: jfs-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -106,73 +120,74 @@ List-Post: <mailto:jfs-discussion@lists.sourceforge.net>
 List-Help: <mailto:jfs-discussion-request@lists.sourceforge.net?subject=help>
 List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/jfs-discussion>, 
  <mailto:jfs-discussion-request@lists.sourceforge.net?subject=subscribe>
+Cc: shaggy@kernel.org, jfs-discussion@lists.sourceforge.net,
+ linux-kernel@vger.kernel.org,
+ syzbot+5fc38b2ddbbca7f5c680@syzkaller.appspotmail.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Errors-To: jfs-discussion-bounces@lists.sourceforge.net
 
-Hello,
+On Sat, Oct 22, 2022 at 09:39:14PM +0100, linux@treblig.org wrote:
+> From: "Dr. David Alan Gilbert" <linux@treblig.org>
+> 
+> JFS has in jfs_incore.h:
+> 
+>       /* _inline may overflow into _inline_ea when needed */
+>       /* _inline_ea may overlay the last part of
+>        * file._xtroot if maxentry = XTROOTINITSLOT
+>        */
+>       union {
+>         struct {
+>           /* 128: inline symlink */
+>           unchar _inline[128];
+>           /* 128: inline extended attr */
+>           unchar _inline_ea[128];
+>         };
+>         unchar _inline_all[256];
+> 
+> and currently the symlink code copies into _inline;
+> if this is larger than 128 bytes it triggers a fortify warning of the
+> form:
+> 
+>   memcpy: detected field-spanning write (size 132) of single field
+>      "ip->i_link" at fs/jfs/namei.c:950 (size 18446744073709551615)
 
-syzbot found the following issue on:
+Which compiler are you using for this build? This size report (SIZE_MAX)
+should be impossible to reach. But also, the size is just wrong --
+i_inline is 128 bytes, not SIZE_MAX. So, the detection is working
+(132 > 128), but the report is broken, and I can't see how...
 
-HEAD commit:    d47136c28015 Merge tag 'hwmon-for-v6.1-rc2' of git://git.k..
-git tree:       upstream
-console output: https://syzkaller.appspot.com/x/log.txt?x=1564d752880000
-kernel config:  https://syzkaller.appspot.com/x/.config?x=afc317c0f52ce670
-dashboard link: https://syzkaller.appspot.com/bug?extid=cfb3836ee00e264151bc
-compiler:       Debian clang version 13.0.1-++20220126092033+75e33f71c2da-1~exp1~20220126212112.63, GNU ld (GNU Binutils for Debian) 2.35.2
+> 
+> when it's actually OK.
+> 
+> Copy it into _inline_all instead.
+> 
+> Reported-by: syzbot+5fc38b2ddbbca7f5c680@syzkaller.appspotmail.com
+> Signed-off-by: Dr. David Alan Gilbert <linux@treblig.org>
+> ---
+>  fs/jfs/namei.c | 2 +-
+>  1 file changed, 1 insertion(+), 1 deletion(-)
+> 
+> diff --git a/fs/jfs/namei.c b/fs/jfs/namei.c
+> index 9db4f5789c0ec..4fbbf88435e69 100644
+> --- a/fs/jfs/namei.c
+> +++ b/fs/jfs/namei.c
+> @@ -946,7 +946,7 @@ static int jfs_symlink(struct user_namespace *mnt_userns, struct inode *dip,
+>  	if (ssize <= IDATASIZE) {
+>  		ip->i_op = &jfs_fast_symlink_inode_operations;
+>  
+> -		ip->i_link = JFS_IP(ip)->i_inline;
+> +		ip->i_link = JFS_IP(ip)->i_inline_all;
+>  		memcpy(ip->i_link, name, ssize);
+>  		ip->i_size = ssize - 1;
+>  
 
-Unfortunately, I don't have any reproducer for this issue yet.
+Regardless, the fix looks correct to me!
 
-Downloadable assets:
-disk image: https://storage.googleapis.com/syzbot-assets/93767c1bd2e7/disk-d47136c2.raw.xz
-vmlinux: https://storage.googleapis.com/syzbot-assets/c8bee7ab7d48/vmlinux-d47136c2.xz
+Reviewed-by: Kees Cook <keescook@chromium.org>
 
-IMPORTANT: if you fix the issue, please add the following tag to the commit:
-Reported-by: syzbot+cfb3836ee00e264151bc@syzkaller.appspotmail.com
-
-UBSAN: shift-out-of-bounds in fs/jfs/jfs_imap.c:2039:9
-shift exponent 3328 is too large for 64-bit type '__u64' (aka 'unsigned long long')
-CPU: 0 PID: 19191 Comm: syz-executor.2 Not tainted 6.1.0-rc1-syzkaller-00427-gd47136c28015 #0
-Hardware name: Google Google Compute Engine/Google Compute Engine, BIOS Google 10/11/2022
-Call Trace:
- <TASK>
- __dump_stack lib/dump_stack.c:88 [inline]
- dump_stack_lvl+0x1b1/0x28e lib/dump_stack.c:106
- ubsan_epilogue lib/ubsan.c:151 [inline]
- __ubsan_handle_shift_out_of_bounds+0x33d/0x3b0 lib/ubsan.c:322
- diAllocBit+0x9d7/0xd30 fs/jfs/jfs_imap.c:2039
- diAllocIno fs/jfs/jfs_imap.c:1837 [inline]
- diAllocAG+0x1418/0x1f80 fs/jfs/jfs_imap.c:1669
- diAlloc+0x3dd/0x1700 fs/jfs/jfs_imap.c:1583
- ialloc+0x8c/0xa80 fs/jfs/jfs_inode.c:56
- jfs_mkdir+0x141/0xb00 fs/jfs/namei.c:225
- vfs_mkdir+0x3b3/0x590 fs/namei.c:4035
- do_mkdirat+0x279/0x550 fs/namei.c:4060
- __do_sys_mkdir fs/namei.c:4080 [inline]
- __se_sys_mkdir fs/namei.c:4078 [inline]
- __x64_sys_mkdir+0x6a/0x80 fs/namei.c:4078
- do_syscall_x64 arch/x86/entry/common.c:50 [inline]
- do_syscall_64+0x3d/0xb0 arch/x86/entry/common.c:80
- entry_SYSCALL_64_after_hwframe+0x63/0xcd
-RIP: 0033:0x7f7246c8b5f9
-Code: ff ff c3 66 2e 0f 1f 84 00 00 00 00 00 0f 1f 40 00 48 89 f8 48 89 f7 48 89 d6 48 89 ca 4d 89 c2 4d 89 c8 4c 8b 4c 24 08 0f 05 <48> 3d 01 f0 ff ff 73 01 c3 48 c7 c1 b8 ff ff ff f7 d8 64 89 01 48
-RSP: 002b:00007f7247dad168 EFLAGS: 00000246 ORIG_RAX: 0000000000000053
-RAX: ffffffffffffffda RBX: 00007f7246dac050 RCX: 00007f7246c8b5f9
-RDX: 0000000000000000 RSI: 0000000000000000 RDI: 0000000020007040
-RBP: 00007f7246ce67b0 R08: 0000000000000000 R09: 0000000000000000
-R10: 0000000000000000 R11: 0000000000000246 R12: 0000000000000000
-R13: 00007ffc5fe2b60f R14: 00007f7247dad300 R15: 0000000000022000
- </TASK>
-================================================================================
-
-
----
-This report is generated by a bot. It may contain errors.
-See https://goo.gl/tpsmEJ for more information about syzbot.
-syzbot engineers can be reached at syzkaller@googlegroups.com.
-
-syzbot will keep track of this issue. See:
-https://goo.gl/tpsmEJ#status for how to communicate with syzbot.
+-- 
+Kees Cook
 
 
 _______________________________________________
