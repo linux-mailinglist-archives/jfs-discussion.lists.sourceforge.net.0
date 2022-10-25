@@ -2,206 +2,112 @@ Return-Path: <jfs-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+jfs-discussion@lfdr.de
 Delivered-To: lists+jfs-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id BEDEC60BB9A
-	for <lists+jfs-discussion@lfdr.de>; Mon, 24 Oct 2022 23:06:17 +0200 (CEST)
-Received: from [127.0.0.1] (helo=sfs-ml-1.v29.lw.sourceforge.com)
-	by sfs-ml-1.v29.lw.sourceforge.com with esmtp (Exim 4.95)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1D93E60C326
+	for <lists+jfs-discussion@lfdr.de>; Tue, 25 Oct 2022 07:13:19 +0200 (CEST)
+Received: from [127.0.0.1] (helo=sfs-ml-4.v29.lw.sourceforge.com)
+	by sfs-ml-4.v29.lw.sourceforge.com with esmtp (Exim 4.95)
 	(envelope-from <jfs-discussion-bounces@lists.sourceforge.net>)
-	id 1on4dr-0002Iq-BS;
-	Mon, 24 Oct 2022 21:05:51 +0000
+	id 1onCFF-0001XT-70;
+	Tue, 25 Oct 2022 05:12:57 +0000
 Received: from [172.30.20.202] (helo=mx.sourceforge.net)
- by sfs-ml-1.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
+ by sfs-ml-4.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
  TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (Exim 4.95)
- (envelope-from <dave.kleikamp@oracle.com>) id 1on4dp-0002Ij-Nf
+ (envelope-from <wuhoipok@gmail.com>) id 1onCFE-0001XM-4U
  for jfs-discussion@lists.sourceforge.net;
- Mon, 24 Oct 2022 21:05:49 +0000
+ Tue, 25 Oct 2022 05:12:56 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=sourceforge.net; s=x; h=MIME-Version:Content-Transfer-Encoding:Content-Type
- :In-Reply-To:From:References:Cc:To:Subject:Date:Message-ID:Sender:Reply-To:
- Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
+ d=sourceforge.net; s=x; h=Content-Type:Cc:To:Subject:Message-ID:Date:From:
+ In-Reply-To:References:MIME-Version:Sender:Reply-To:Content-Transfer-Encoding
+ :Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
  Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=whDEstjGgEl5/QsfnnIW5PJydQYwHlZwHedOU/bMKas=; b=W3R/OAlaDwkoEILhTPhw1Sda9F
- EnmT+Zeljy2qS22VsOX42fDO+h/t9oXLqhuUJXZkUTT/475jJwovieteQxOVWbb4oFUabLyuptQHI
- oCIeYf8W0EiS0c08q8NGNbiECxbH2ScOcUdRvieob8j4xiTsUiuBXcKl3fN+0odKZWSo=;
+ bh=9aTHUqAheweyy4ly5f1XL+MDpqeGn6Gh3fTd+xRqqGg=; b=IfMSYVD+ksfWQX2/Jd10iNE5J+
+ GvVGTwv2HxXn9vsXoRTyJOq2WXHwqRjBC65dZgzKZdR8Cama3eD8JS8lYW76YRjW0lNhr5ITBEeE2
+ GZJdKYUQ9wLbdoNFxBk9WJqiq6+wfZJU7rSZpSVpMPxXKUT/dri0vPTfN8G/UWzGFNro=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
- h=MIME-Version:Content-Transfer-Encoding:Content-Type:In-Reply-To:From:
- References:Cc:To:Subject:Date:Message-ID:Sender:Reply-To:Content-ID:
+ h=Content-Type:Cc:To:Subject:Message-ID:Date:From:In-Reply-To:References:
+ MIME-Version:Sender:Reply-To:Content-Transfer-Encoding:Content-ID:
  Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
  :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
  List-Post:List-Owner:List-Archive;
- bh=whDEstjGgEl5/QsfnnIW5PJydQYwHlZwHedOU/bMKas=; b=F5TUCDnCWtXoYg4W0OOgx1J8rD
- DuwbikP5yRzJfE5v/FxKxMpAz3AJyr5FH2E3OgVi1nG6251Cj8sXlskcyc6UssV2T6W9NSPX1rwWw
- xWH/AomYjKW4kdRPXxMPhXiYzVvr0dudHRbVIXWwYVmqptY29GlFxBgvmeAadZvlZvp4=;
-Received: from mx0b-00069f02.pphosted.com ([205.220.177.32])
- by sfi-mx-1.v28.lw.sourceforge.com with esmtps
- (TLS1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.95)
- id 1on4dk-00G5Sy-3q for jfs-discussion@lists.sourceforge.net;
- Mon, 24 Oct 2022 21:05:49 +0000
-Received: from pps.filterd (m0246631.ppops.net [127.0.0.1])
- by mx0b-00069f02.pphosted.com (8.17.1.5/8.17.1.5) with ESMTP id 29OKpDio010282;
- Mon, 24 Oct 2022 21:05:36 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=oracle.com;
- h=message-id : date :
- subject : to : cc : references : from : in-reply-to : content-type :
- content-transfer-encoding : mime-version; s=corp-2022-7-12;
- bh=whDEstjGgEl5/QsfnnIW5PJydQYwHlZwHedOU/bMKas=;
- b=OuvO05SvlskulAHn+igAtfyQKqUL8l6ig54MJJQNdDxEcMrGBddg4V/qNgwTCJGUF55D
- gxsYI38ui3FObZEAJVBYwE6JeRjt63YzxwNHdi2+pVbbQ5Nhym14C+3Mn41i95Bn2o7s
- L4MFl5vq+kSbLW4dcVpB0qn5xD56ZembZKeqazhqk4BjAS5A+HSYgHYNaKBr0qNB1pVd
- Z1BLRXMCyphm23qzsaSl6FISTF38VY0v9LrUGeG72/Ar2PFgdElu01eOR9sl6zJUM6xT
- LZkunjlji7z1neOFQ6h0s82Y7E9swRT7caDXfuR7ti/9c2c9QGqdYcvQn1ij2FKEGiFm Bw== 
-Received: from phxpaimrmta03.imrmtpd1.prodappphxaev1.oraclevcn.com
- (phxpaimrmta03.appoci.oracle.com [138.1.37.129])
- by mx0b-00069f02.pphosted.com (PPS) with ESMTPS id 3kc7a2wf3s-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
- Mon, 24 Oct 2022 21:05:35 +0000
-Received: from pps.filterd
- (phxpaimrmta03.imrmtpd1.prodappphxaev1.oraclevcn.com [127.0.0.1])
- by phxpaimrmta03.imrmtpd1.prodappphxaev1.oraclevcn.com (8.17.1.5/8.17.1.5)
- with ESMTP id 29OJ4xmX017396; Mon, 24 Oct 2022 21:05:35 GMT
-Received: from nam12-mw2-obe.outbound.protection.outlook.com
- (mail-mw2nam12lp2048.outbound.protection.outlook.com [104.47.66.48])
- by phxpaimrmta03.imrmtpd1.prodappphxaev1.oraclevcn.com (PPS) with ESMTPS id
- 3kc6y47j0s-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
- Mon, 24 Oct 2022 21:05:34 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=WP+wP3NQaPBo4l7Lufreq5YbxugGO8SgHNzYiqhpbtWyZI4ihzT6bP9vtj8cq0MNfsNKTvuhXaxpch3sNVVavFOzfA20yiO6zKFQoytF+1RFXPV0gmArmFzRGxOYj47E9nsSTaDVkHwscIyYVvcjY5dkxqqa6KtN8cFGTSdAk3sLMTKbufy7SHEPQ3eMgBqbkoufHmZVnAQrd3BdRBQuGu+Db3daIE3p0CHUXAqgnCzwwHbWjrzEIlI7fAkO1XblX3FfpCtIZ0SyWCdUQVmJpJ3pJXzdQ6LDOyK90uZUL2NWmRVwoU0MFxLjMABMGqsgkzsi+OklAVcBhwnRLKMygQ==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=whDEstjGgEl5/QsfnnIW5PJydQYwHlZwHedOU/bMKas=;
- b=l+PDosqZ6Z1KWGzM24ZFBPJTN3n8yvR5ZkHw9k5h2e2q5CEVTtk6nRqzC4pq4tjrL46corxNPqONL+W/hc73vE1vz3E2A1s7M6Oe/YRJAc7jLDYhvAZwsLgbZRuu4dyrIJXsYg/JMkmKmVfJrBKuDwQgUXHsVVib1JKO99ucQ5q8wx09DrtayENxmkwzKeBDUlzVUgz6aAjuJ46m7c9h0xHSmcobRZiTPTaMKD6jRWxkK/VvdeJx40hsUWwar4LKEX6Q0cvtHVNLU6Dube0kxep+4EK8Xk72Wt1kZ6pdt4Mu7LPIF0MbHdjVWhaq1dnigS2w21nmEzv0YOnFkmE/cg==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=oracle.com; dmarc=pass action=none header.from=oracle.com;
- dkim=pass header.d=oracle.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=oracle.onmicrosoft.com; s=selector2-oracle-onmicrosoft-com;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=whDEstjGgEl5/QsfnnIW5PJydQYwHlZwHedOU/bMKas=;
- b=Zbd6w2XLkJ5hwAycU0oMNgxpA+2Tc69N+LuJTBeNwvWCH3UDv4vdLTzApdgcN6SE8fTliu+iRti0t7JdKiK05AlIbIg53K+uqOln//mOH4zX9dxP/KbMMif+ZiHy5EIbjsZJX/f5qSqkaxP6yBVdEYg8VTdwqwlFOGG9gWndPvk=
-Received: from MW5PR10MB5738.namprd10.prod.outlook.com (2603:10b6:303:19b::14)
- by SJ0PR10MB5648.namprd10.prod.outlook.com (2603:10b6:a03:3e0::10)
- with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.5723.29; Mon, 24 Oct
- 2022 21:05:33 +0000
-Received: from MW5PR10MB5738.namprd10.prod.outlook.com
- ([fe80::56fd:b251:fc9e:aee4]) by MW5PR10MB5738.namprd10.prod.outlook.com
- ([fe80::56fd:b251:fc9e:aee4%4]) with mapi id 15.20.5746.028; Mon, 24 Oct 2022
- 21:05:33 +0000
-Message-ID: <286146b0-51bb-a1d0-fa28-50e5a792aeed@oracle.com>
-Date: Mon, 24 Oct 2022 16:05:30 -0500
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
- Thunderbird/102.4.0
-Content-Language: en-US
-To: Hoi Pok Wu <wuhoipok@gmail.com>
-References: <20221019093825.339991-1-wuhoipok@gmail.com>
-From: Dave Kleikamp <dave.kleikamp@oracle.com>
-In-Reply-To: <20221019093825.339991-1-wuhoipok@gmail.com>
-X-ClientProxiedBy: CH0PR03CA0342.namprd03.prod.outlook.com
- (2603:10b6:610:11a::16) To MW5PR10MB5738.namprd10.prod.outlook.com
- (2603:10b6:303:19b::14)
+ bh=9aTHUqAheweyy4ly5f1XL+MDpqeGn6Gh3fTd+xRqqGg=; b=nNXgQC9TQ6zFRzp3PQBOLZgWhW
+ al+Vr5jIj1Mads+5rKdGdBQ0eu0xQdnZWrvRA2zhTLrh/plhtweoCCO/CIJ2nA1Cyxr+l5zF3Zi/E
+ JeaBbztPVkP0OPZhG1Pvxu2AZcw+SWcEPhVgbycEC6tbj1EZvkaNxbVK4+8unF7GXo3k=;
+Received: from mail-ed1-f44.google.com ([209.85.208.44])
+ by sfi-mx-2.v28.lw.sourceforge.com with esmtps
+ (TLS1.2:ECDHE-RSA-AES128-GCM-SHA256:128) (Exim 4.95)
+ id 1onCFD-0003PW-FS for jfs-discussion@lists.sourceforge.net;
+ Tue, 25 Oct 2022 05:12:56 +0000
+Received: by mail-ed1-f44.google.com with SMTP id z97so34565702ede.8
+ for <jfs-discussion@lists.sourceforge.net>;
+ Mon, 24 Oct 2022 22:12:55 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20210112;
+ h=cc:to:subject:message-id:date:from:in-reply-to:references
+ :mime-version:from:to:cc:subject:date:message-id:reply-to;
+ bh=9aTHUqAheweyy4ly5f1XL+MDpqeGn6Gh3fTd+xRqqGg=;
+ b=Su5LRX20NO5m7VHBO9GKbjIzmeZNIIurDnF3KvBWymvVp1/y2NrbbxBtoeuUs9b3iD
+ n3PsRkwVWd9dpB40ElzE08bjqRBzM1EXQZxRHfABeGllH8PPvIy7CJD1ALU+qq5Jn+fD
+ vfA5RuYErAMoArBEaEOuXFCg4S8cZ2B+YBVpF1yHKQD+6cAblY70ibk+I7M1AbJqDMG1
+ Fw8tMT1omuN5az73TY9wlGEd6ay7wD5RjReMaOr/XBDLL8jpbu67DrWmb674lRoUcQyB
+ c/MxaimY3/lJhUY95/NRJC1n4Xwa1Ujul1NSBbkAd7L4MA5LM80Cu+OJnRf0k7eDdgne
+ caBA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20210112;
+ h=cc:to:subject:message-id:date:from:in-reply-to:references
+ :mime-version:x-gm-message-state:from:to:cc:subject:date:message-id
+ :reply-to;
+ bh=9aTHUqAheweyy4ly5f1XL+MDpqeGn6Gh3fTd+xRqqGg=;
+ b=rmAtOUDkGqjNX4R+eL5DEfal9T0mJUEuRV0GNfAG5WqXkw6DaLJ5gGcx2gFC1+fWH3
+ TLT6+58c60iRhcdSEqZxsCpCJ+FoWoLUvsIoe+mlOgSBKeGZOjN+3c5EVSklJGHxlv4x
+ cTUEcqJ1hd9YD/Rb3NLnrlVZBwKSVG0FOumihVRIWbLGdLOEGmvL18Ew1+qs81KTJ85N
+ atnx0WEW1c3FIneciaSp6pQBkMU1iTIzhuyVZ++z15goUYs7RF0ewkkP1xRLYflz2x/E
+ VvPc+qWUYSQ80IY9fhVkm3LmnJsjSScQDwishBTLbsjj8gJiLGsxD+eE8gNxp0k+tbRQ
+ cCNA==
+X-Gm-Message-State: ACrzQf2bjJdpIyRCU3iSAaU3oaW9PYXBaFySb6jX28IUbGz4VmtNAlXU
+ ffKUNAQR9KF8wPJjlrbtp9q2AlXnwYw2e+4pi0c=
+X-Google-Smtp-Source: AMsMyM6RArFbp850nkgtiOqcN7VB6Bf8Ce8q8gjZVQC1pTTQD0UTubifiigV5lFZS4AvnymXd1WpZoY87T7/uU/lo7s=
+X-Received: by 2002:a05:6402:909:b0:435:a8b:5232 with SMTP id
+ g9-20020a056402090900b004350a8b5232mr33858562edz.240.1666674768924; Mon, 24
+ Oct 2022 22:12:48 -0700 (PDT)
 MIME-Version: 1.0
-X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: MW5PR10MB5738:EE_|SJ0PR10MB5648:EE_
-X-MS-Office365-Filtering-Correlation-Id: 98c86430-8014-4f53-dc9b-08dab6037d37
-X-MS-Exchange-SenderADCheck: 1
-X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;
-X-Microsoft-Antispam-Message-Info: MMgTG+1IuytMQ677h0KyYG++p8eP2tn2XZUI6zqnQkpaRACcfjO5pp8P+i7/oesFS4U6UAgP3j6Ghh6e5jZGzuiQ8MWrdSG/5KH7AXK3W61qmCPmeSrw4h0BFmR9gA19XGrpyzUMjN1MIZMsLd44rqvqNwlFTjk8Nk7sBZc+Y0XZZDBZ6wDJLSlK+pJvjEphdB1DxbaCTMIys7Vsq++q/9j++uNjxPZGP7im5FvWBQLnjn8VpVKKM+SfONWY+KsvgrLfhmsh+n+reKJU2utiSOIDUTSJax0U1izkp5MaJKemwNbePtPxT3xqRkwmFOlmee3kKYqsIvWgrVhX6nA1I0KaRrI0tIip7MLqwgOh3zAPwD0VIc0fXsTdHvgLe7pDlR21qe25oVIA1gmnXJ2juf7YQpKeaTWSpN4ydaRSsvXBM+BYIvyFPZzsCHP/ifoFeB+cOXghzMJF8MoakIGaKbADgq9Od8gNV+d7Ynehm9BXdCf0ANGBJGBa52DhQbLHffNK/nZaL72ETobDbfKXK5hdWbpfqro+5gxNJe80i1vB00zHFpR9V195XWzGPUGSLW3Ej8caT4bBHDM9BtCVAHStbVaPVx3Uwfx81GPwN7OSwT3tnjFNxy6x+Fw/me4KjD2uUjGnA90tUIMk/wJO7aUSQREyfB32o2RG8iOkgS7Tw2G2YWc/o+xu+g+IG101HLZLrH0RO90y6/2809GMzPNsOAV6RJVGw30Vm47w+3nRPWu7IbeAwUwnL6GeqLAh7Bqb9cUfKFc+L6NakXPGXA0YndtQR0lOf2zv4pGov1M=
-X-Forefront-Antispam-Report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
- IPV:NLI; SFV:NSPM; H:MW5PR10MB5738.namprd10.prod.outlook.com; PTR:; CAT:NONE;
- SFS:(13230022)(396003)(376002)(346002)(39860400002)(136003)(366004)(451199015)(44832011)(6916009)(66946007)(8936002)(316002)(5660300002)(2906002)(66556008)(8676002)(26005)(41300700001)(186003)(6512007)(478600001)(4326008)(31686004)(2616005)(6486002)(6506007)(36756003)(66476007)(86362001)(38100700002)(83380400001)(31696002)(45980500001)(43740500002);
- DIR:OUT; SFP:1101; 
-X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: =?utf-8?B?aGY2Y0Y1Q08xLzE1WEZGWjJWc2I0NHNzczFRQ24zSWVwT3JHWTl3Q1RSZmxE?=
- =?utf-8?B?aDdNVyt5Z0dHejlrUDVJZkRMUHlCWXRsNUVSL09WK3hoVUpBS1VmemRCcWVT?=
- =?utf-8?B?MGpEZVNySWl0K0JaWlYzSzdjTjlmK0tTWHdYR1QzS2RGQW9nVTNkTW95ZUtw?=
- =?utf-8?B?bEIwcUc2WWFiMDZKVytzYXFGVUtzdFkvOStXMzBQbHNoWXFNT0dyU0doeHo4?=
- =?utf-8?B?NTJtMllQeU5FVm91ZFUwdEZENUY3SzN4QU5TeHZ6TDlKaWlObmViamwyTlA3?=
- =?utf-8?B?NUNMTkM4WG5yYnNpMjNaeEsxMi9JZlluY0l3V09xNTFvV0UxdWU2VHVMOTF0?=
- =?utf-8?B?QVBsWUFyK1c0QXNGNCtZMEdCWEZKaXFHeFRBWWN0djhJN21NSVcweUhwK05D?=
- =?utf-8?B?TS9PUDFMOUptSTNsVlY0aitEL2ZkYnd6UXVKLytrTlJFWmtnNkFDKytobERs?=
- =?utf-8?B?dVRrckxLMnl5dFFScnJJVDJPWHYrL0o5cFJxTDRTbHQrdkNHQVI3dnE5L1A1?=
- =?utf-8?B?VG5TamtXZlh5Q0RqeVB5dDNETE1DVS9nWXBaeFZpUGgzdHkzaHQxYTNTMzdO?=
- =?utf-8?B?ckxwditnbVRwWDBFbVR0eDVFc05wV0V3RWFqeGFtMFJlclFxaExQYU0vQ0lw?=
- =?utf-8?B?NDhtbUlLVXBQK1BWSEN1T0xQT21RNUtWYjV3Q1dHdHJBRHM2ZmNZdzZHQjBO?=
- =?utf-8?B?TmZYUTNzMklqUmxmUEZSdWhLYnRUTFNUemFrK0lYSDd5NHBvZ3ZoTmlYbWtE?=
- =?utf-8?B?dDdhNGRoQ1o2TXJxc0wyRm1NTG8wK0FLS3hWLzRNd05nTmVxeXR3eGU2TStv?=
- =?utf-8?B?Z3krSUZxK1htT1pIRUNmak5zN2hEanR0VzNMOFNOWlFua2dpQWZNK01rSHk2?=
- =?utf-8?B?dm5UU2hacUMvK3ZmeENld3htME1WTEd1Y3MyQkpXVE84RmxPbmVTN1plQkcv?=
- =?utf-8?B?UUszUm83OGFsa1hNdDcrUXVoQXdRRGpqWTg0L2h1am1udlE5NTl2dVBEWkFx?=
- =?utf-8?B?OTZwYzh4TEt5aU01cUc0eEo4RENSQ2gzMVo0RU1xT0s4ZjZ1Sm9RZjVhVHVj?=
- =?utf-8?B?QS9wSGx4U3QycmJPdVZWKzlQS290eXpNUTFQV01lM3hvR3NyNTRYYW5teDRD?=
- =?utf-8?B?bk4zVGRaM1RTSVUrdlRqb2JFSlhvSFczRE9kY3h6QS9ZWmpYdnJZcjc3TWxn?=
- =?utf-8?B?enNxakcrWStnR3hLZ1VTc0ZGOVJkZ2pjeFlkTHpPd1NmdkEvc1JRUHMyekNC?=
- =?utf-8?B?Z3NjRkM0NGRWRnZpdUp3dnhKaTVONnFubHRuWXQ2NmV3S3QyZHQyamdtajRB?=
- =?utf-8?B?YzFndjJORFdMNVF5WHErV0lHY3hRZTMwU3RxS1hSNFBpOXJSaXEwRDNUb2FY?=
- =?utf-8?B?S2pOYnJsTVdDaFE4ODNiakEvWjJXY3RKNnFyM3JUeHpEbng5NGFtRWFISmcv?=
- =?utf-8?B?b2JvOU5zSFNFczd5dHBURHZMenJwdHZGVWxaMXBRWTRGWCtkUEluN0phSmxL?=
- =?utf-8?B?czZzZmwreG4vaHZyZE9UWVNnczA4MFF3R3NuQ0RObngwVU1zQjN3UkU5RS9Q?=
- =?utf-8?B?SG0yZC9NZGJOQklWcWNiM2srWk54RFdRSVltMERNYXkrWktFQXhOYjR6ZGMv?=
- =?utf-8?B?RVFZd2t5dlliQzJPTG0wOTlNSVlxR2RsVXowK1c2TkpZUk5xTVVickVXYUFa?=
- =?utf-8?B?ZW9LS3RNVG8zTzZpQ0Vla1FrbzdFK2Q0a3J5V2VFZmtvUXRnWUVhNFhMck02?=
- =?utf-8?B?YjJqZkJ2bnR1cnlBNzh0OGg0RytQbDUxV3llU212cHJ0RGxuYXpiSUtkWllM?=
- =?utf-8?B?alNsUjUrdFc5L1B3NEJ4bjZScFZXd3RVUk42RlY4dURMblh6MFVHTlFPTjhs?=
- =?utf-8?B?bGgzRFRtOWpDQ1Yrcld0UDl6VUJUeVRVSzhqK3hPV1IyOFdBdzVnVkhoVFl3?=
- =?utf-8?B?VUp1akVQWGJSa1RxbU5CdjlYWUFiTE96N2ZiTXZIUFVCcGZIRzdvQWJhNHIv?=
- =?utf-8?B?SEQrOG5rRlFxOHZycXVqUDdESy9weERvaTMzQUtocmpDNWJrUXpaTWI0WTRp?=
- =?utf-8?B?Y1ZrVEdZYjNadnN5Z3ExT2l0alpaNCt0TGR0aXYrbUgrMjRha0JrdkZzeGJ5?=
- =?utf-8?B?bGdreXNMNUJpbVRQUXhEZktEUmNSbTV1N1NPL1BleWFZc0gzaHFiaEtYY3NS?=
- =?utf-8?B?dWc9PQ==?=
-X-OriginatorOrg: oracle.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 98c86430-8014-4f53-dc9b-08dab6037d37
-X-MS-Exchange-CrossTenant-AuthSource: MW5PR10MB5738.namprd10.prod.outlook.com
-X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 24 Oct 2022 21:05:33.0503 (UTC)
-X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
-X-MS-Exchange-CrossTenant-Id: 4e2c6054-71cb-48f1-bd6c-3a9705aca71b
-X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: hE3PUQsuPxwLQkCod/SETnSGIz+Xx1L2tQKb0IwzQQJiBRoKSBKFRtvvsw28jg1RPEort2dZ9edzqlxMaNS7gQWNx3zXuJWFTAPoCHJq+EE=
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: SJ0PR10MB5648
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.205,Aquarius:18.0.895,Hydra:6.0.545,FMLib:17.11.122.1
- definitions=2022-10-24_07,2022-10-21_01,2022-06-22_01
-X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 bulkscore=0
- mlxscore=0 phishscore=0
- mlxlogscore=999 adultscore=0 malwarescore=0 spamscore=0 suspectscore=0
- classifier=spam adjust=0 reason=mlx scancount=1 engine=8.12.0-2209130000
- definitions=main-2210240126
-X-Proofpoint-GUID: wqnbjppyQ6qLSR_fMZhTq8pGUsKpgQSt
-X-Proofpoint-ORIG-GUID: wqnbjppyQ6qLSR_fMZhTq8pGUsKpgQSt
-X-Spam-Score: -0.9 (/)
+References: <20221019093825.339991-1-wuhoipok@gmail.com>
+ <286146b0-51bb-a1d0-fa28-50e5a792aeed@oracle.com>
+In-Reply-To: <286146b0-51bb-a1d0-fa28-50e5a792aeed@oracle.com>
+From: Hoi Pok Wu <wuhoipok@gmail.com>
+Date: Tue, 25 Oct 2022 13:12:43 +0800
+Message-ID: <CANyH0kDm8rMVBDNJVsXxYxDH+=S_UsKu82PgFL82WhgmtvsXig@mail.gmail.com>
+To: Dave Kleikamp <dave.kleikamp@oracle.com>
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: Spam detection software,
- running on the system "util-spamd-2.v13.lw.sourceforge.com", 
+ running on the system "util-spamd-1.v13.lw.sourceforge.com", 
  has NOT identified this incoming email as spam.  The original
  message has been attached to this so you can view it or label
  similar future email.  If you have any questions, see
  the administrator of that system for details.
- Content preview:  On 10/19/22 4:38AM,
- Hoi Pok Wu wrote: > Bug reported by syzbot, 
- UBSAN: array-index-out-of-bounds in dbDiscardAG. > Fixed by simply rearranging
- agno_end smaller than MAXAG. However, I wonder if it > is [...] 
- Content analysis details:   (-0.9 points, 6.0 required)
+ Content preview:  Thanks for the suggestion! I will send a Patch V2 soon. On
+ Tue, Oct 25, 2022 at 5:05 AM Dave Kleikamp wrote: > > On 10/19/22 4:38AM,
+ Hoi Pok Wu wrote: > > Bug reported by syzbot, UBSAN: array-index-out-of-bounds
+ in dbDiscardAG. > > Fixed by simply rearra [...] 
+ Content analysis details:   (-0.2 points, 6.0 required)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [205.220.177.32 listed in list.dnswl.org]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [205.220.177.32 listed in wl.mailspike.net]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [wuhoipok[at]gmail.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
- -0.0 NICE_REPLY_A           Looks like a legit reply (A)
-X-Headers-End: 1on4dk-00G5Sy-3q
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.208.44 listed in list.dnswl.org]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.208.44 listed in wl.mailspike.net]
+X-Headers-End: 1onCFD-0003PW-FS
 Subject: Re: [Jfs-discussion] [PATCH] fs: jfs: fix shift-out-of-bounds in
  dbDiscardAG
 X-BeenThere: jfs-discussion@lists.sourceforge.net
@@ -218,49 +124,54 @@ List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/jfs-discussion>,
 Cc: syzbot+f0e0fcf3cd1047ae60ad@syzkaller.appspotmail.com,
  jfs-discussion@lists.sourceforge.net, syzkaller-bugs@googlegroups.com,
  linux-kernel@vger.kernel.org
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Errors-To: jfs-discussion-bounces@lists.sourceforge.net
 
-On 10/19/22 4:38AM, Hoi Pok Wu wrote:
-> Bug reported by syzbot, UBSAN: array-index-out-of-bounds in dbDiscardAG.
-> Fixed by simply rearranging agno_end smaller than MAXAG. However, I wonder if it
-> is a better idea to return -EINVAL, rejecting user input. Thank you.
+Thanks for the suggestion! I will send a Patch V2 soon.
 
-I don't think the problem is simply that the user input is bad, the 
-range is already limited:
 
-         if (end >= bmp->db_mapsize)
-                 end = bmp->db_mapsize - 1;
-
-It seems syzbot corrupted some on-disk data structure to trigger this 
-failure. It may be best to call jfs_error() and bail out.
-
-Thanks,
-Shaggy
-
-> 
-> Reported-by: syzbot+f0e0fcf3cd1047ae60ad@syzkaller.appspotmail.com
-> Signed-off-by: Hoi Pok Wu <wuhoipok@gmail.com>
-> ---
->   fs/jfs/jfs_discard.c | 4 ++++
->   1 file changed, 4 insertions(+)
-> 
-> diff --git a/fs/jfs/jfs_discard.c b/fs/jfs/jfs_discard.c
-> index 575cb2ba74fc..3101eaf3098a 100644
-> --- a/fs/jfs/jfs_discard.c
-> +++ b/fs/jfs/jfs_discard.c
-> @@ -96,6 +96,10 @@ int jfs_ioc_trim(struct inode *ip, struct fstrim_range *range)
->   	 */
->   	agno = BLKTOAG(start, JFS_SBI(ip->i_sb));
->   	agno_end = BLKTOAG(end, JFS_SBI(ip->i_sb));
-> +
-> +	if (agno_end >= MAXAG)
-> +		agno_end = MAXAG - 1;
-> +
->   	while (agno <= agno_end) {
->   		trimmed += dbDiscardAG(ip, agno, minlen);
->   		agno++;
+On Tue, Oct 25, 2022 at 5:05 AM Dave Kleikamp <dave.kleikamp@oracle.com> wrote:
+>
+> On 10/19/22 4:38AM, Hoi Pok Wu wrote:
+> > Bug reported by syzbot, UBSAN: array-index-out-of-bounds in dbDiscardAG.
+> > Fixed by simply rearranging agno_end smaller than MAXAG. However, I wonder if it
+> > is a better idea to return -EINVAL, rejecting user input. Thank you.
+>
+> I don't think the problem is simply that the user input is bad, the
+> range is already limited:
+>
+>          if (end >= bmp->db_mapsize)
+>                  end = bmp->db_mapsize - 1;
+>
+> It seems syzbot corrupted some on-disk data structure to trigger this
+> failure. It may be best to call jfs_error() and bail out.
+>
+> Thanks,
+> Shaggy
+>
+> >
+> > Reported-by: syzbot+f0e0fcf3cd1047ae60ad@syzkaller.appspotmail.com
+> > Signed-off-by: Hoi Pok Wu <wuhoipok@gmail.com>
+> > ---
+> >   fs/jfs/jfs_discard.c | 4 ++++
+> >   1 file changed, 4 insertions(+)
+> >
+> > diff --git a/fs/jfs/jfs_discard.c b/fs/jfs/jfs_discard.c
+> > index 575cb2ba74fc..3101eaf3098a 100644
+> > --- a/fs/jfs/jfs_discard.c
+> > +++ b/fs/jfs/jfs_discard.c
+> > @@ -96,6 +96,10 @@ int jfs_ioc_trim(struct inode *ip, struct fstrim_range *range)
+> >        */
+> >       agno = BLKTOAG(start, JFS_SBI(ip->i_sb));
+> >       agno_end = BLKTOAG(end, JFS_SBI(ip->i_sb));
+> > +
+> > +     if (agno_end >= MAXAG)
+> > +             agno_end = MAXAG - 1;
+> > +
+> >       while (agno <= agno_end) {
+> >               trimmed += dbDiscardAG(ip, agno, minlen);
+> >               agno++;
 
 
 _______________________________________________
