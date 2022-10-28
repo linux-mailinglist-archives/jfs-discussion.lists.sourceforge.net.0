@@ -2,105 +2,105 @@ Return-Path: <jfs-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+jfs-discussion@lfdr.de
 Delivered-To: lists+jfs-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9FC12611139
-	for <lists+jfs-discussion@lfdr.de>; Fri, 28 Oct 2022 14:24:56 +0200 (CEST)
-Received: from [127.0.0.1] (helo=sfs-ml-1.v29.lw.sourceforge.com)
-	by sfs-ml-1.v29.lw.sourceforge.com with esmtp (Exim 4.95)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1DAD7611DD2
+	for <lists+jfs-discussion@lfdr.de>; Sat, 29 Oct 2022 00:57:13 +0200 (CEST)
+Received: from [127.0.0.1] (helo=sfs-ml-4.v29.lw.sourceforge.com)
+	by sfs-ml-4.v29.lw.sourceforge.com with esmtp (Exim 4.95)
 	(envelope-from <jfs-discussion-bounces@lists.sourceforge.net>)
-	id 1ooOPb-0007qM-Ky;
-	Fri, 28 Oct 2022 12:24:35 +0000
+	id 1ooYHP-0004ju-2U;
+	Fri, 28 Oct 2022 22:56:47 +0000
 Received: from [172.30.20.202] (helo=mx.sourceforge.net)
- by sfs-ml-1.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
+ by sfs-ml-4.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
  TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (Exim 4.95)
- (envelope-from <okanatov@gmail.com>) id 1ooOPa-0007pz-7f
+ (envelope-from <keescook@chromium.org>) id 1ooYHO-0004jo-GB
  for jfs-discussion@lists.sourceforge.net;
- Fri, 28 Oct 2022 12:24:34 +0000
+ Fri, 28 Oct 2022 22:56:46 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=sourceforge.net; s=x; h=Content-Transfer-Encoding:MIME-Version:Message-Id:
- Date:Subject:Cc:To:From:Sender:Reply-To:Content-Type:Content-ID:
- Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
- :Resent-Message-ID:In-Reply-To:References:List-Id:List-Help:List-Unsubscribe:
+ d=sourceforge.net; s=x; h=In-Reply-To:Content-Type:MIME-Version:References:
+ Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:Content-Transfer-Encoding:
+ Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
+ Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=fkNyqRiedTm3lH/AVehxw07LQ3B/+YJMsP8sTlhH3nE=; b=Bf+JaD1elYpl5n/m8bVgZc/lEj
- vlPXtJA9EjchVi/9J+nPJ+k8rdmhd1q1HL2rfJDsC4jllN+y4jOEg5adX4Lx9ngaWOmPOsjLKnE2l
- duFRsnDysHmXd8BLdl2baGZ4p38jBB7hqo4HHgS3NhlF+aipEJFHRhq95uv8uBHKqNHc=;
+ bh=rQVwlOrzjvZiwM1yWaKuSc9d6GkFqbVluxP+1zRoo5U=; b=SJ30rI/7Quu+nTCaLW5xoM+T77
+ M8eqVmek7WqRdh+UNinzZvrSSWTtR+Suq3l3G7/gL7NHT1AJ/H8/Dx9ZjI4JdJWb2wHMEXtByJSJe
+ rfjA5Hi+cJuVcK49LWUpefmpDBn5CQXUr3CahrYdVE5FqIowvVODF4OyK/afzE6PTR1U=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
- h=Content-Transfer-Encoding:MIME-Version:Message-Id:Date:Subject:Cc:To:From
- :Sender:Reply-To:Content-Type:Content-ID:Content-Description:Resent-Date:
- Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
- References:List-Id:List-Help:List-Unsubscribe:List-Subscribe:List-Post:
- List-Owner:List-Archive; bh=fkNyqRiedTm3lH/AVehxw07LQ3B/+YJMsP8sTlhH3nE=; b=I
- 8EMq34Jfvb9KP0YuK5BI70nok+0nZnLS0Ffu3CZEUAhQgA5VjC4L29UCymkvz+cQz/MMtdYIxkfHi
- Eu9A2a6j5GPiwpGZ04HlrGF6R2OoSpcWSYx4fF0NLOji9wZvIw1Q5/nQB96PmGB9S0iQwYhvO032f
- 1yLEdf8u5wNlEYAo=;
-Received: from mail-lf1-f52.google.com ([209.85.167.52])
+ h=In-Reply-To:Content-Type:MIME-Version:References:Message-ID:Subject:Cc:To
+ :From:Date:Sender:Reply-To:Content-Transfer-Encoding:Content-ID:
+ Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+ :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
+ List-Post:List-Owner:List-Archive;
+ bh=rQVwlOrzjvZiwM1yWaKuSc9d6GkFqbVluxP+1zRoo5U=; b=b0pm52mnuR+u3KGnYk+ZA0Px/l
+ kTOxGDi/JzzSGvUgJzdzabB1fphEEaOVQKqZJawdQA9CAtJFTeMpEU8bAZO6fphuhzbngjmdXxbbO
+ hLnp907bwA6p0gQiR3toJmTDKmJN/GnAylDUvAYZjhE3zy6xszdHpvRUIZBKFFPfJ+YA=;
+Received: from mail-pl1-f177.google.com ([209.85.214.177])
  by sfi-mx-2.v28.lw.sourceforge.com with esmtps
  (TLS1.2:ECDHE-RSA-AES128-GCM-SHA256:128) (Exim 4.95)
- id 1ooOPY-0001v3-KI for jfs-discussion@lists.sourceforge.net;
- Fri, 28 Oct 2022 12:24:33 +0000
-Received: by mail-lf1-f52.google.com with SMTP id g7so8024517lfv.5
+ id 1ooYHM-00082Y-Nn for jfs-discussion@lists.sourceforge.net;
+ Fri, 28 Oct 2022 22:56:46 +0000
+Received: by mail-pl1-f177.google.com with SMTP id f23so6057959plr.6
  for <jfs-discussion@lists.sourceforge.net>;
- Fri, 28 Oct 2022 05:24:32 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20210112;
- h=content-transfer-encoding:mime-version:message-id:date:subject:cc
- :to:from:from:to:cc:subject:date:message-id:reply-to;
- bh=fkNyqRiedTm3lH/AVehxw07LQ3B/+YJMsP8sTlhH3nE=;
- b=gRJ4praDAGw8E8zTwBp3rS9xfPk35V676mB/QeOxwyzopxEGteUPw9sAoLNXIZcgf9
- jYn1MJrjYBTGJsHpplB7gyPOGRQmuNahGxrApoE5EVDGy8vR2vjaRn7Sc+17KWyDI/D1
- QE7bX1McwmZpoHKNlL4Gj19GfK96ecrbnsK3Umt+aKDeEDJSVjvQAaCY5f+a7X8cwLVk
- /4w2zQ7SYWMSC1EU7AYWfQbkg10qvQqWSy6apCUNGinuTSHph6/Q2VpukkjMiBPEdgPK
- DzCLekHmldZ4N14x04bFscTVIcDtRa5SQROZT3XbBZ2oJCD+C00xk4qbSofI8nbWT3uw
- 3vCw==
+ Fri, 28 Oct 2022 15:56:44 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
+ h=in-reply-to:content-disposition:mime-version:references:message-id
+ :subject:cc:to:from:date:from:to:cc:subject:date:message-id:reply-to;
+ bh=rQVwlOrzjvZiwM1yWaKuSc9d6GkFqbVluxP+1zRoo5U=;
+ b=eU8VLE4GEjE+APWuWM6WRrEfDSltFZWeZlSXHgeGp5TncgAyuPYWq7hMBq0IfiTrC8
+ DZVXxlLkRH6qA+M+RNmZYXcvXR46nDJ18CyPAht469DmLhfezSz3AJYGBA0IaOqn+csV
+ 2eVii3ad+U/qMLpjwXtpwdBEaGNoJ9vWoTF2c=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20210112;
- h=content-transfer-encoding:mime-version:message-id:date:subject:cc
- :to:from:x-gm-message-state:from:to:cc:subject:date:message-id
- :reply-to;
- bh=fkNyqRiedTm3lH/AVehxw07LQ3B/+YJMsP8sTlhH3nE=;
- b=4J7NOCgKyM/rWGPjEZoY62s4X5xdk3ztrJXYRRKJBcQUdfSzSm+nekNgqHNhcuzH4S
- lCRI3QS5BmR8cquglwnVahE7whnLNeQsEh79KYC0XhS5eYyf7nnc3j1IKGVoRzDSQF+e
- BEBDFzuUOLTeAjagODNWpr4+jSYs2T+yEM4sObCqWnY/iAg//YGV35S955N9CQU9cAED
- 1xJEbjPIgeNkF691KIyuJKf2jSBYumMhW9iES0fnssF/zQxEQJFN3df9az+pnCFtR9yZ
- ZJ4feJqmbD08bAHZAcyGBHl2vARmzyJCpDyn6QIbA8VeyEdN0p+Jg09WHmznPLTskSbL
- 6DSQ==
-X-Gm-Message-State: ACrzQf1TCe4w0thuE9kw0DXOVMfBokyeT/KV00EycqZRKu8ysX0gh1xA
- Ul3wCw6OzPujxYbsnPfbFiM=
-X-Google-Smtp-Source: AMsMyM6RoZ8X77fBYLy65DpIZTWDdHUBFFqnJHhzGbQmFoLXJxxHjOLEj+VwHQ8LhoccmrYbZDsknA==
-X-Received: by 2002:a05:6512:3085:b0:4a2:7d80:d4b4 with SMTP id
- z5-20020a056512308500b004a27d80d4b4mr21397278lfd.534.1666959865943; 
- Fri, 28 Oct 2022 05:24:25 -0700 (PDT)
-Received: from localhost.localdomain ([95.79.189.126])
+ h=in-reply-to:content-disposition:mime-version:references:message-id
+ :subject:cc:to:from:date:x-gm-message-state:from:to:cc:subject:date
+ :message-id:reply-to;
+ bh=rQVwlOrzjvZiwM1yWaKuSc9d6GkFqbVluxP+1zRoo5U=;
+ b=j6HztiSj/SnKNt/nyN83DxJO+t5SGiy2vrOfzlb/cWIzJ9w3ZNnyvxY8p8GE19MVae
+ p/KKjR+6W16rxLA+nNspBB6cygqkB1v92FgZ6DWraBV2o424n9/nDBNyjQnnFsJ2oQlI
+ pcLbCYnSo4d4sN/E+F5eCNEhY6ScIgiVETS2BK4ns24F88flH715Fuaf9ziC5WEhLOBJ
+ UvWCgbxeRNU+seRvfTuFihM4k2tMhZRAdDP5v3HFVVoBPSQRe2NOODr7HhipM4HWDtl0
+ 7gDQRkOvTCZlhg/vY1bAeo0n9HGV7/HratrdEbyLr5cIT+gWDRzLDXxZ1USd3BAqf1ly
+ TeyA==
+X-Gm-Message-State: ACrzQf0PA2OU/09XqSwyDkg6H5IGL3xq3jzjnL4FfMFX5IUXS2zg8E3V
+ S7ypUmMh4Oj31cghX/mJqxfL4g==
+X-Google-Smtp-Source: AMsMyM71FiYjLx0f78sa5ClLCKOCsteQvvfwYpKRsKxw8Q9/oGoGzeAAt58B/ZtFZEwdoblo2PGEqg==
+X-Received: by 2002:a17:90b:1804:b0:213:1a9c:5ae with SMTP id
+ lw4-20020a17090b180400b002131a9c05aemr19031610pjb.81.1666997799152; 
+ Fri, 28 Oct 2022 15:56:39 -0700 (PDT)
+Received: from www.outflux.net (smtp.outflux.net. [198.145.64.163])
  by smtp.gmail.com with ESMTPSA id
- x16-20020a056512079000b00498f871f33fsm546686lfr.86.2022.10.28.05.24.24
+ f130-20020a623888000000b0056c06d583fasm3289439pfa.219.2022.10.28.15.56.38
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Fri, 28 Oct 2022 05:24:25 -0700 (PDT)
-From: Oleg Kanatov <okanatov@gmail.com>
-X-Google-Original-From: Oleg Kanatov <okanatov@astralinux.ru>
-To: Dave Kleikamp <shaggy@kernel.org>
-Date: Fri, 28 Oct 2022 15:22:54 +0300
-Message-Id: <20221028122254.21081-1-okanatov@astralinux.ru>
-X-Mailer: git-send-email 2.30.2
+ Fri, 28 Oct 2022 15:56:38 -0700 (PDT)
+Date: Fri, 28 Oct 2022 15:56:37 -0700
+From: Kees Cook <keescook@chromium.org>
+To: "Dr. David Alan Gilbert" <linux@treblig.org>
+Message-ID: <202210281526.B32C79C4@keescook>
+References: <20221022203913.264855-1-linux@treblig.org>
+ <202210241021.6E9E1EF65@keescook> <Y1beLWto/J2W1Stu@gallifrey>
 MIME-Version: 1.0
-X-Spam-Score: -0.2 (/)
+Content-Disposition: inline
+In-Reply-To: <Y1beLWto/J2W1Stu@gallifrey>
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: Spam detection software,
  running on the system "util-spamd-1.v13.lw.sourceforge.com", 
  has NOT identified this incoming email as spam.  The original
  message has been attached to this so you can view it or label
  similar future email.  If you have any questions, see
  the administrator of that system for details.
- Content preview: jfs_mount_rw can call diUnmount and then diMount. These calls
- change the imap pointer. In case JFS filesystem is mounted on root (/), between
- these two calls there may be calls of function jfs_lookup( [...] 
- Content analysis details:   (-0.2 points, 6.0 required)
+ Content preview:  On Mon, Oct 24, 2022 at 07:49:17PM +0100,
+ Dr. David Alan Gilbert
+ wrote: > * Kees Cook (keescook@chromium.org) wrote: > > On Sat, Oct 22, 2022
+ at 09:39:14PM +0100, linux@treblig.org wrote: > > > From: [...] 
+ Content analysis details:   (-0.9 points, 6.0 required)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [okanatov[at]gmail.com]
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [209.85.214.177 listed in wl.mailspike.net]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.167.52 listed in list.dnswl.org]
+ no trust [209.85.214.177 listed in list.dnswl.org]
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -108,11 +108,10 @@ X-Spam-Report: Spam detection software,
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.167.52 listed in wl.mailspike.net]
-X-Headers-End: 1ooOPY-0001v3-KI
-Subject: [Jfs-discussion] [PATCH] jfs: makes diUnmount/diMount in
- jfs_mount_rw atomic
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ -0.7 DKIMWL_WL_HIGH         DKIMwl.org - High trust sender
+X-Headers-End: 1ooYHM-00082Y-Nn
+Subject: Re: [Jfs-discussion] [PATCH] jfs: Fix fortify moan in symlink
 X-BeenThere: jfs-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -124,71 +123,90 @@ List-Post: <mailto:jfs-discussion@lists.sourceforge.net>
 List-Help: <mailto:jfs-discussion-request@lists.sourceforge.net?subject=help>
 List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/jfs-discussion>, 
  <mailto:jfs-discussion-request@lists.sourceforge.net?subject=subscribe>
-Cc: lvc-project@linuxtesting.org, jfs-discussion@lists.sourceforge.net,
- Oleg Kanatov <okanatov@astralinux.ru>, Oleg Kanatov <okanatov@gmail.com>,
- linux-kernel@vger.kernel.org
+Cc: shaggy@kernel.org, jfs-discussion@lists.sourceforge.net,
+ linux-kernel@vger.kernel.org,
+ syzbot+5fc38b2ddbbca7f5c680@syzkaller.appspotmail.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Errors-To: jfs-discussion-bounces@lists.sourceforge.net
 
-jfs_mount_rw can call diUnmount and then diMount. These calls
-change the imap pointer.
-In case JFS filesystem is mounted on root (/), between these two
-calls there may be calls of function jfs_lookup().
-The jfs_lookup() function calls jfs_iget(), which, in its turn,
-calls diRead(). The latter references the imap pointer.
-That may cause diRead() to refer to a pointer "freed" in
-diUnmount().
-This commit makes calls diUnmount()/diMount() be atomic so that
-nothing will read the imap pointer until the whole remount is
-completed.
+On Mon, Oct 24, 2022 at 07:49:17PM +0100, Dr. David Alan Gilbert wrote:
+> * Kees Cook (keescook@chromium.org) wrote:
+> > On Sat, Oct 22, 2022 at 09:39:14PM +0100, linux@treblig.org wrote:
+> > > From: "Dr. David Alan Gilbert" <linux@treblig.org>
+> > > 
+> > > JFS has in jfs_incore.h:
+> > > 
+> > >       /* _inline may overflow into _inline_ea when needed */
+> > >       /* _inline_ea may overlay the last part of
+> > >        * file._xtroot if maxentry = XTROOTINITSLOT
+> > >        */
+> > >       union {
+> > >         struct {
+> > >           /* 128: inline symlink */
+> > >           unchar _inline[128];
+> > >           /* 128: inline extended attr */
+> > >           unchar _inline_ea[128];
+> > >         };
+> > >         unchar _inline_all[256];
+> > > 
+> > > and currently the symlink code copies into _inline;
+> > > if this is larger than 128 bytes it triggers a fortify warning of the
+> > > form:
+> > > 
+> > >   memcpy: detected field-spanning write (size 132) of single field
+> > >      "ip->i_link" at fs/jfs/namei.c:950 (size 18446744073709551615)
+> > 
+> > Which compiler are you using for this build?
+> 
+> I think that report was the same on gcc on Fedora 37 and whatever
+> syzkaller was running.
+> 
+> > This size report (SIZE_MAX)
+> > should be impossible to reach. But also, the size is just wrong --
+> > i_inline is 128 bytes, not SIZE_MAX. So, the detection is working
+> > (132 > 128), but the report is broken, and I can't see how...
+> 
+> Yeh, and led me down a blind alley for a while thinking something had
+> really managed to screwup the strlen somehow.
 
-Signed-off-by: Oleg Kanatov <okanatov@gmail.com>
----
- fs/jfs/jfs_imap.c  | 2 +-
- fs/jfs/jfs_mount.c | 6 ++++++
- 2 files changed, 7 insertions(+), 1 deletion(-)
+This looks like a GCC bug (going at least back to GCC 10.2)[1], but some
+extra care around the macro appears to make it go away, so the reporting
+variable doesn't get confused/re-evaluated:
 
-diff --git a/fs/jfs/jfs_imap.c b/fs/jfs/jfs_imap.c
-index 799d3837e7c2..390cbfce391f 100644
---- a/fs/jfs/jfs_imap.c
-+++ b/fs/jfs/jfs_imap.c
-@@ -310,8 +310,8 @@ int diRead(struct inode *ip)
- 	iagno = INOTOIAG(ip->i_ino);
+diff --git a/include/linux/fortify-string.h b/include/linux/fortify-string.h
+index 09a032f6ce6b..9e2d96993c30 100644
+--- a/include/linux/fortify-string.h
++++ b/include/linux/fortify-string.h
+@@ -550,13 +550,18 @@ __FORTIFY_INLINE bool fortify_memcpy_chk(__kernel_size_t size,
  
- 	/* read the iag */
--	imap = JFS_IP(ipimap)->i_imap;
- 	IREAD_LOCK(ipimap, RDWRLOCK_IMAP);
-+	imap = JFS_IP(ipimap)->i_imap;
- 	rc = diIAGRead(imap, iagno, &mp);
- 	IREAD_UNLOCK(ipimap);
- 	if (rc) {
-diff --git a/fs/jfs/jfs_mount.c b/fs/jfs/jfs_mount.c
-index 48d1f70f786c..972b9ff18723 100644
---- a/fs/jfs/jfs_mount.c
-+++ b/fs/jfs/jfs_mount.c
-@@ -234,12 +234,18 @@ int jfs_mount_rw(struct super_block *sb, int remount)
+ #define __fortify_memcpy_chk(p, q, size, p_size, q_size,		\
+ 			     p_size_field, q_size_field, op) ({		\
+-	size_t __fortify_size = (size_t)(size);				\
+-	WARN_ONCE(fortify_memcpy_chk(__fortify_size, p_size, q_size,	\
+-				     p_size_field, q_size_field, #op),	\
++	const size_t __fortify_size = (size_t)(size);			\
++	const size_t __p_size = (p_size);				\
++	const size_t __q_size = (q_size);				\
++	const size_t __p_size_field = (p_size_field);			\
++	const size_t __q_size_field = (q_size_field);			\
++	WARN_ONCE(fortify_memcpy_chk(__fortify_size, __p_size,		\
++				     __q_size, __p_size_field,		\
++				     __q_size_field, #op),		\
+ 		  #op ": detected field-spanning write (size %zu) of single %s (size %zu)\n", \
+ 		  __fortify_size,					\
+ 		  "field \"" #p "\" at " __FILE__ ":" __stringify(__LINE__), \
+-		  p_size_field);					\
++		  __p_size_field);					\
+ 	__underlying_##op(p, q, __fortify_size);			\
+ })
  
- 		truncate_inode_pages(sbi->ipimap->i_mapping, 0);
- 		truncate_inode_pages(sbi->ipbmap->i_mapping, 0);
-+
-+		IWRITE_LOCK(sbi->ipimap, RDWRLOCK_IMAP);
-+
- 		diUnmount(sbi->ipimap, 1);
- 		if ((rc = diMount(sbi->ipimap))) {
-+			IWRITE_UNLOCK(sbi->ipimap);
- 			jfs_err("jfs_mount_rw: diMount failed!");
- 			return rc;
- 		}
- 
-+		IWRITE_UNLOCK(sbi->ipimap);
-+
- 		dbUnmount(sbi->ipbmap, 1);
- 		if ((rc = dbMount(sbi->ipbmap))) {
- 			jfs_err("jfs_mount_rw: dbMount failed!");
+
+
+[1] https://syzkaller.appspot.com/bug?id=23d613df5259b977dac1696bec77f61a85890e3d
+
 -- 
-2.30.2
-
+Kees Cook
 
 
 _______________________________________________
