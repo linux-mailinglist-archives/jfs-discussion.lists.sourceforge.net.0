@@ -2,71 +2,70 @@ Return-Path: <jfs-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+jfs-discussion@lfdr.de
 Delivered-To: lists+jfs-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id C113061F440
+	by mail.lfdr.de (Postfix) with ESMTPS id 5A6C761F43F
 	for <lists+jfs-discussion@lfdr.de>; Mon,  7 Nov 2022 14:25:44 +0100 (CET)
 Received: from [127.0.0.1] (helo=sfs-ml-2.v29.lw.sourceforge.com)
 	by sfs-ml-2.v29.lw.sourceforge.com with esmtp (Exim 4.95)
 	(envelope-from <jfs-discussion-bounces@lists.sourceforge.net>)
-	id 1os27s-00027G-Qh;
-	Mon, 07 Nov 2022 13:25:20 +0000
+	id 1os27t-00027K-4H;
+	Mon, 07 Nov 2022 13:25:21 +0000
 Received: from [172.30.20.202] (helo=mx.sourceforge.net)
- by sfs-ml-1.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
+ by sfs-ml-4.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
  TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (Exim 4.95) (envelope-from
- <35hJoYwkbAM0BHI3t44xAt881w.z77z4xDBxAv76Cx6C.v75@M3KW2WVRGUFZ5GODRSRYTGD7.apphosting.bounces.google.com>)
- id 1orlr4-0008R0-0t for jfs-discussion@lists.sourceforge.net;
- Sun, 06 Nov 2022 20:02:54 +0000
+ <3XBdoYwkbAE07DEzp00t6p44xs.v33v0t97t6r328t28.r31@M3KW2WVRGUFZ5GODRSRYTGD7.apphosting.bounces.google.com>)
+ id 1orm9W-0003ks-KA for jfs-discussion@lists.sourceforge.net;
+ Sun, 06 Nov 2022 20:21:58 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=sourceforge.net; s=x; h=Content-Type:To:From:Subject:Message-ID:In-Reply-To
- :Date:MIME-Version:Sender:Reply-To:Cc:Content-Transfer-Encoding:Content-ID:
+ d=sourceforge.net; s=x; h=Content-Type:To:From:Subject:Message-ID:Date:
+ MIME-Version:Sender:Reply-To:Cc:Content-Transfer-Encoding:Content-ID:
  Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
- :Resent-Message-ID:References:List-Id:List-Help:List-Unsubscribe:
+ :Resent-Message-ID:In-Reply-To:References:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=kW1a4fRbEa1SEBmyH4rjxoqQpC2WFDzr69iE3nyWhiU=; b=mN2warsjO3JhfKxCmv+O+vsojh
- g9zwsV884vejnebiFsqqPH+jf/EDXmpJ+9vF+w+lCHTWa3S5MxAZl/cWnLiXd6hltlN+jt4wGxmL+
- jMiYeBK0iYBRvqSoCvoKTz7mo9uyPRIUjZm5vvuBpXYlUSLaDy3Sl40lRuSbfvO++vfI=;
+ bh=iFxtpsBCdq9AcVN6nHrpSjVURQQ/Q55yiCvyBMA//bs=; b=hRad90UuU7RXSMPRAcSAf8nxRt
+ dxfRJvPhsjSudQsIsrP3SAGpMtvKe84XRNf+57zTF9m3eGvk008Aj3FaqFbHa/nXLx+O8rmp72nS8
+ SU0BxtDVOYfBzNnyObISXy2SvBcwoWdeG8O1qxS1gxZgnQVOLHNvHYPYPJqSdYqYhxyY=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
- h=Content-Type:To:From:Subject:Message-ID:In-Reply-To:Date:MIME-Version:
- Sender:Reply-To:Cc:Content-Transfer-Encoding:Content-ID:Content-Description:
- Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+ h=Content-Type:To:From:Subject:Message-ID:Date:MIME-Version:Sender:Reply-To
+ :Cc:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+ Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
  References:List-Id:List-Help:List-Unsubscribe:List-Subscribe:List-Post:
- List-Owner:List-Archive; bh=kW1a4fRbEa1SEBmyH4rjxoqQpC2WFDzr69iE3nyWhiU=; b=R
- 4/3IsojH9fUTY6G3qb62mT/tboF1lgcxSxI/vpN7D19BRD3N9aWMRYc/dgK5JgLHwKxjZqJdjjuYZ
- XMzRS6jMLRHxm2TgoDW2dtH1xMvp71RE9VsP02KqNYToqdHbptTCpJ5OG1TvCi+PCFtK1Vl0We1SJ
- nHTdrMqk/xoqVzuY=;
-Received: from mail-il1-f199.google.com ([209.85.166.199])
+ List-Owner:List-Archive; bh=iFxtpsBCdq9AcVN6nHrpSjVURQQ/Q55yiCvyBMA//bs=; b=V
+ xwCRCnUwnMdWDrmtzsydSN7cm2NaK+NzZh8ViBTRHLdum9XJXu/04KvRPl9hAgzhGNNmzkj37oi4I
+ xgewx+q3uxdLi3DRf4Ecg1YGzf+/ByULk7pN+fgpynVfS7l7fzyZTUj6eQroatCBXVcPLJDgYNg6S
+ kawojhqBBR3teQSA=;
+Received: from mail-il1-f198.google.com ([209.85.166.198])
  by sfi-mx-2.v28.lw.sourceforge.com with esmtps
  (TLS1.2:ECDHE-RSA-AES128-GCM-SHA256:128) (Exim 4.95)
- id 1orlr2-00024v-2t for jfs-discussion@lists.sourceforge.net;
- Sun, 06 Nov 2022 20:02:53 +0000
-Received: by mail-il1-f199.google.com with SMTP id
- n7-20020a056e02148700b002ffbfe5a9aeso7337549ilk.19
+ id 1orm9S-0002id-Ad for jfs-discussion@lists.sourceforge.net;
+ Sun, 06 Nov 2022 20:21:57 +0000
+Received: by mail-il1-f198.google.com with SMTP id
+ k3-20020a92c243000000b0030201475a6bso2944990ilo.9
  for <jfs-discussion@lists.sourceforge.net>;
- Sun, 06 Nov 2022 12:02:52 -0800 (PST)
+ Sun, 06 Nov 2022 12:21:54 -0800 (PST)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20210112;
- h=to:from:subject:message-id:in-reply-to:date:mime-version
- :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
- bh=kW1a4fRbEa1SEBmyH4rjxoqQpC2WFDzr69iE3nyWhiU=;
- b=Pa9Kwsdigp6yc8Kdhf6s0Y9dYw7pHxXreqNLCRDkx9wkGYuKfCTk/pA41a1d9HVNcG
- Lp1X8ity8ynUyQ7Mn9rmN1dibbElU032oxHARa5dMQg/MWwe5bXfJIP4ktNmfZvvuSe7
- 5c1FYjX6EaM8yGgDuqg9ZAE1IQ7nnQrbeqVptQOpJFBx0/sZ40hTxFpkOKXT213MKeYC
- qsZU8QgCrPv7mdPeaIxNFh5c3Nl2nTsw+K3FqxuxDYqLtFiNoXbhZMaRnhpcfmUqt2io
- HKwHiKABQX5jQ6u9U0kxyhX8PBbfx/B1KMkY1iYuP4fqTBVsMqOW337R498DNkMY6GMZ
- 8W0w==
-X-Gm-Message-State: ACrzQf2qT5fjWqGYMsIUYfUp6qxB6LQOzOapIOPdNnM8NwfmaGC0E33V
- 1svPTkrOrCXyoqtLx8TylAwdkAwg4z2zy7n4t+wPx0gx4DaU
-X-Google-Smtp-Source: AMsMyM4ky7JZui9hRI4tDDDeI3wLOKEV1GDV4vqhkIUxR1RGQiu+ldEcDus+Dwu/dHlag9wbgVkUkiX3e2BUNFwt4pzJg1zXP/pF
+ h=to:from:subject:message-id:date:mime-version:x-gm-message-state
+ :from:to:cc:subject:date:message-id:reply-to;
+ bh=iFxtpsBCdq9AcVN6nHrpSjVURQQ/Q55yiCvyBMA//bs=;
+ b=pUittq9E28SQ4YsjckOQzEKtvqT199waAmzFlLQ+eobylKUa5GqWYT7LYwj5hGEWCC
+ 3KM8XVJdG/3FdZZ7iJS2cUk+MWuWl6iKdUrZVa6ZZQTfHGP9Z1NuOXoWp0mIVSqSx5Wa
+ 7bYPqlrJPSG/pBxEEa9v2N+PHrbKC2sR0LeBhVQvxcDsygsxC8W/7JNPDI015NJ5ceCa
+ YPHPleIlg5w/955Xc1HAshUUjD+xqEp9YFdV/dvIEKgo/CALxNdtdUtxFQF5jCBEpNbS
+ ZdkofivrxsgTDRWNQc1YejpV/XnYyXlLFmoDM9anJKTS8mjNZcotBJZm7cYVi58sAej5
+ dLpQ==
+X-Gm-Message-State: ACrzQf0W4sfwOvq8cehB1P8bjfKpZbQY53ZFy/wKaYjlSqfXSkPAh5Ce
+ gylaN0OK0zod+FbwkZr6sE+teMZkqD02eMnfnF3F2SkNKN+0
+X-Google-Smtp-Source: AMsMyM6EqIFLfRw3XsvZWos8WTIfz2nip/IxuKz8yIJJgbeT3yYSLrqxahtGADhLRG0BQFMiYtskWl4JRK2yFjpA0siEKTrQLKVO
 MIME-Version: 1.0
-X-Received: by 2002:a05:6e02:1688:b0:2fc:50d7:6966 with SMTP id
- f8-20020a056e02168800b002fc50d76966mr26208240ila.51.1667764966542; Sun, 06
- Nov 2022 12:02:46 -0800 (PST)
-Date: Sun, 06 Nov 2022 12:02:46 -0800
-In-Reply-To: <000000000000c7e7be05eaa93401@google.com>
+X-Received: by 2002:a92:c5d4:0:b0:300:d9d7:fe2e with SMTP id
+ s20-20020a92c5d4000000b00300d9d7fe2emr9682435ilt.212.1667766108744; Sun, 06
+ Nov 2022 12:21:48 -0800 (PST)
+Date: Sun, 06 Nov 2022 12:21:48 -0800
 X-Google-Appengine-App-Id: s~syzkaller
 X-Google-Appengine-App-Id-Alias: syzkaller
-Message-ID: <0000000000006653e305ecd2ca03@google.com>
-From: syzbot <syzbot+667a6d667592227b1452@syzkaller.appspotmail.com>
+Message-ID: <0000000000007af51d05ecd30ed9@google.com>
+From: syzbot <syzbot+e526b0844b096abaa8c7@syzkaller.appspotmail.com>
 To: jfs-discussion@lists.sourceforge.net, linux-kernel@vger.kernel.org, 
  shaggy@kernel.org, syzkaller-bugs@googlegroups.com
 X-Spam-Score: 0.6 (/)
@@ -76,26 +75,27 @@ X-Spam-Report: Spam detection software,
  message has been attached to this so you can view it or label
  similar future email.  If you have any questions, see
  the administrator of that system for details.
- Content preview:  syzbot has found a reproducer for the following issue on:
- HEAD commit: b208b9fbbcba Merge tag 'arm64-fixes' of git://git.kernel.o..
- git tree: upstream console+strace:
- https://syzkaller.appspot.com/x/log.txt?x=162c2866880000
- kernel config: https://syzkaller.a [...] 
+ Content preview:  Hello,
+ syzbot found the following issue on: HEAD commit: b229b6ca5abb
+ Merge tag 'perf-tools-fixes-for-v6.1-2022-10-.. git tree: upstream console
+ output: https://syzkaller.appspot.com/x/log.txt?x=144f6876880000 kernel
+ config: https://syzkaller.a [...] 
  Content analysis details:   (0.6 points, 6.0 required)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  0.3 FROM_LOCAL_HEX         From: localpart has long hexadecimal sequence
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.166.198 listed in list.dnswl.org]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.166.198 listed in wl.mailspike.net]
  0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
  mail domains are different
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.166.199 listed in wl.mailspike.net]
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.166.199 listed in list.dnswl.org]
-X-Headers-End: 1orlr2-00024v-2t
+X-Headers-End: 1orm9S-0002id-Ad
 X-Mailman-Approved-At: Mon, 07 Nov 2022 13:25:19 +0000
-Subject: Re: [Jfs-discussion] [syzbot] KASAN: use-after-free Read in dbJoin
+Subject: [Jfs-discussion] [syzbot] UBSAN: array-index-out-of-bounds in
+ xtLookup
 X-BeenThere: jfs-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -111,54 +111,77 @@ Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Errors-To: jfs-discussion-bounces@lists.sourceforge.net
 
-syzbot has found a reproducer for the following issue on:
+Hello,
 
-HEAD commit:    b208b9fbbcba Merge tag 'arm64-fixes' of git://git.kernel.o..
+syzbot found the following issue on:
+
+HEAD commit:    b229b6ca5abb Merge tag 'perf-tools-fixes-for-v6.1-2022-10-..
 git tree:       upstream
-console+strace: https://syzkaller.appspot.com/x/log.txt?x=162c2866880000
-kernel config:  https://syzkaller.appspot.com/x/.config?x=f7e100ed8aaa828e
-dashboard link: https://syzkaller.appspot.com/bug?extid=667a6d667592227b1452
+console output: https://syzkaller.appspot.com/x/log.txt?x=144f6876880000
+kernel config:  https://syzkaller.appspot.com/x/.config?x=1d3548a4365ba17d
+dashboard link: https://syzkaller.appspot.com/bug?extid=e526b0844b096abaa8c7
 compiler:       Debian clang version 13.0.1-++20220126092033+75e33f71c2da-1~exp1~20220126212112.63, GNU ld (GNU Binutils for Debian) 2.35.2
-syz repro:      https://syzkaller.appspot.com/x/repro.syz?x=12f7ffb1880000
-C reproducer:   https://syzkaller.appspot.com/x/repro.c?x=17f9a066880000
+
+Unfortunately, I don't have any reproducer for this issue yet.
 
 Downloadable assets:
-disk image: https://storage.googleapis.com/syzbot-assets/92fde6d92d82/disk-b208b9fb.raw.xz
-vmlinux: https://storage.googleapis.com/syzbot-assets/ae3dbdb3faf8/vmlinux-b208b9fb.xz
-kernel image: https://storage.googleapis.com/syzbot-assets/bbf4da09683c/bzImage-b208b9fb.xz
-mounted in repro: https://storage.googleapis.com/syzbot-assets/69e8cbb81983/mount_0.gz
+disk image: https://storage.googleapis.com/syzbot-assets/24728b72a896/disk-b229b6ca.raw.xz
+vmlinux: https://storage.googleapis.com/syzbot-assets/10a3c40c60e1/vmlinux-b229b6ca.xz
+kernel image: https://storage.googleapis.com/syzbot-assets/69f963b02b7e/bzImage-b229b6ca.xz
 
 IMPORTANT: if you fix the issue, please add the following tag to the commit:
-Reported-by: syzbot+667a6d667592227b1452@syzkaller.appspotmail.com
+Reported-by: syzbot+e526b0844b096abaa8c7@syzkaller.appspotmail.com
 
 ================================================================================
-UBSAN: array-index-out-of-bounds in fs/jfs/jfs_dmap.c:2745:24
-index 1426063360 is out of range for type 's8 [1365]'
-CPU: 0 PID: 122 Comm: jfsCommit Not tainted 6.1.0-rc3-syzkaller-00288-gb208b9fbbcba #0
-Hardware name: Google Google Compute Engine/Google Compute Engine, BIOS Google 10/26/2022
+UBSAN: array-index-out-of-bounds in fs/jfs/jfs_xtree.c:179:9
+index 19 is out of range for type 'xad_t [18]'
+CPU: 1 PID: 8948 Comm: syz-executor.1 Not tainted 6.1.0-rc2-syzkaller-00105-gb229b6ca5abb #0
+Hardware name: Google Google Compute Engine/Google Compute Engine, BIOS Google 10/11/2022
 Call Trace:
  <TASK>
  __dump_stack lib/dump_stack.c:88 [inline]
  dump_stack_lvl+0x1b1/0x28e lib/dump_stack.c:106
  ubsan_epilogue lib/ubsan.c:151 [inline]
  __ubsan_handle_out_of_bounds+0xdb/0x130 lib/ubsan.c:283
- dbJoin+0x2c7/0x2f0 fs/jfs/jfs_dmap.c:2745
- dbFreeBits+0x50d/0xd40 fs/jfs/jfs_dmap.c:2305
- dbFreeDmap fs/jfs/jfs_dmap.c:2054 [inline]
- dbFree+0x35e/0x660 fs/jfs/jfs_dmap.c:379
- txFreeMap+0x97c/0xd70 fs/jfs/jfs_txnmgr.c:2510
- xtTruncate+0xe74/0x32d0 fs/jfs/jfs_xtree.c:2467
- jfs_free_zero_link+0x3f5/0x680 fs/jfs/namei.c:758
- jfs_evict_inode+0x35a/0x440 fs/jfs/inode.c:153
- evict+0x2a4/0x620 fs/inode.c:664
- txUpdateMap+0x8eb/0xaa0 fs/jfs/jfs_txnmgr.c:2362
- txLazyCommit fs/jfs/jfs_txnmgr.c:2659 [inline]
- jfs_lazycommit+0x488/0xb80 fs/jfs/jfs_txnmgr.c:2727
- kthread+0x266/0x300 kernel/kthread.c:376
- ret_from_fork+0x1f/0x30 arch/x86/entry/entry_64.S:306
+ xtLookup+0x86c/0x880 fs/jfs/jfs_xtree.c:179
+ jfs_get_block+0x24b/0xce0 fs/jfs/inode.c:218
+ do_mpage_readpage+0x970/0x1c50 fs/mpage.c:208
+ mpage_readahead+0x210/0x380 fs/mpage.c:361
+ read_pages+0x169/0x9c0 mm/readahead.c:161
+ page_cache_ra_unbounded+0x703/0x820 mm/readahead.c:270
+ filemap_readahead mm/filemap.c:2557 [inline]
+ filemap_get_pages+0x72f/0x10d0 mm/filemap.c:2597
+ filemap_read+0x3cf/0xea0 mm/filemap.c:2675
+ call_read_iter include/linux/fs.h:2185 [inline]
+ generic_file_splice_read+0x1ff/0x5d0 fs/splice.c:309
+ do_splice_to fs/splice.c:793 [inline]
+ splice_direct_to_actor+0x41b/0xc00 fs/splice.c:865
+ do_splice_direct+0x279/0x3d0 fs/splice.c:974
+ do_sendfile+0x5fb/0xf80 fs/read_write.c:1255
+ __do_sys_sendfile64 fs/read_write.c:1323 [inline]
+ __se_sys_sendfile64+0x14f/0x1b0 fs/read_write.c:1309
+ do_syscall_x64 arch/x86/entry/common.c:50 [inline]
+ do_syscall_64+0x3d/0xb0 arch/x86/entry/common.c:80
+ entry_SYSCALL_64_after_hwframe+0x63/0xcd
+RIP: 0033:0x7f59e548b5a9
+Code: ff ff c3 66 2e 0f 1f 84 00 00 00 00 00 0f 1f 40 00 48 89 f8 48 89 f7 48 89 d6 48 89 ca 4d 89 c2 4d 89 c8 4c 8b 4c 24 08 0f 05 <48> 3d 01 f0 ff ff 73 01 c3 48 c7 c1 b8 ff ff ff f7 d8 64 89 01 48
+RSP: 002b:00007f59e6216168 EFLAGS: 00000246 ORIG_RAX: 0000000000000028
+RAX: ffffffffffffffda RBX: 00007f59e55abf80 RCX: 00007f59e548b5a9
+RDX: 0000000000000000 RSI: 0000000000000009 RDI: 0000000000000008
+RBP: 00007f59e54e67b0 R08: 0000000000000000 R09: 0000000000000000
+R10: 0001000000201005 R11: 0000000000000246 R12: 0000000000000000
+R13: 00007fff7e17c23f R14: 00007f59e6216300 R15: 0000000000022000
  </TASK>
 ================================================================================
 
+
+---
+This report is generated by a bot. It may contain errors.
+See https://goo.gl/tpsmEJ for more information about syzbot.
+syzbot engineers can be reached at syzkaller@googlegroups.com.
+
+syzbot will keep track of this issue. See:
+https://goo.gl/tpsmEJ#status for how to communicate with syzbot.
 
 
 _______________________________________________
