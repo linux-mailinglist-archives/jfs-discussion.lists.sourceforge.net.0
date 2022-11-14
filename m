@@ -2,96 +2,110 @@ Return-Path: <jfs-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+jfs-discussion@lfdr.de
 Delivered-To: lists+jfs-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id B0215627237
-	for <lists+jfs-discussion@lfdr.de>; Sun, 13 Nov 2022 20:25:30 +0100 (CET)
-Received: from [127.0.0.1] (helo=sfs-ml-1.v29.lw.sourceforge.com)
-	by sfs-ml-1.v29.lw.sourceforge.com with esmtp (Exim 4.95)
+	by mail.lfdr.de (Postfix) with ESMTPS id 17396627AF7
+	for <lists+jfs-discussion@lfdr.de>; Mon, 14 Nov 2022 11:50:03 +0100 (CET)
+Received: from [127.0.0.1] (helo=sfs-ml-2.v29.lw.sourceforge.com)
+	by sfs-ml-2.v29.lw.sourceforge.com with esmtp (Exim 4.95)
 	(envelope-from <jfs-discussion-bounces@lists.sourceforge.net>)
-	id 1ouIbO-00047f-6X;
-	Sun, 13 Nov 2022 19:25:10 +0000
+	id 1ouX23-0008Vt-1C;
+	Mon, 14 Nov 2022 10:49:39 +0000
 Received: from [172.30.20.202] (helo=mx.sourceforge.net)
- by sfs-ml-1.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
- TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (Exim 4.95) (envelope-from
- <BATV+5e9d9a7f9455f7bb8c66+7021+infradead.org+hch@bombadil.srs.infradead.org>)
- id 1ouIbM-00047W-Mh; Sun, 13 Nov 2022 19:25:08 +0000
+ by sfs-ml-2.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
+ TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (Exim 4.95)
+ (envelope-from <jack@suse.cz>) id 1ouX21-0008Vk-M8;
+ Mon, 14 Nov 2022 10:49:37 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=sourceforge.net; s=x; h=Content-Transfer-Encoding:MIME-Version:References:
- In-Reply-To:Message-Id:Date:Subject:Cc:To:From:Sender:Reply-To:Content-Type:
+ d=sourceforge.net; s=x; h=In-Reply-To:Content-Type:MIME-Version:References:
+ Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:Content-Transfer-Encoding:
  Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
  Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=MEfXNy0oYvg+oByXyXaf2fLih3PRNTBnoHWoUbGvyo0=; b=KNchJzNkHkjdEPUg6JmTdP9g1B
- DLKuC98jWe4tTMbesNDva9wscydVxm/FRkw3g9dIWUTIzI1NJc6kyTIBRMOkiFySKtjhk13H+8/jQ
- TqdP6MRINykOg91bwsntDNr0+hf+hSiTGZ9SoAXhT9DCT5U7CjYln7vdvZpC4EZqjPuc=;
+ bh=Ubo9RUeILLOZCFhRqSz41sUmP7donszofRssChRT+mk=; b=lzoTiSM8wg3f3zNEX8rKCOlkXH
+ fEDT+ISK9hBSUXiteVxIwhnGIpfuNcOj/31h6xECqQIs6D1eqCZvlCVcZz1leN5LVUBT1UYT6CvpX
+ e5UAAZypYprJv1sMw9ewKqYRcQnaConabIRXzGsrSK1bas9R0nWVWsdYSJkEVyCNjJBM=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
- h=Content-Transfer-Encoding:MIME-Version:References:In-Reply-To:Message-Id:
- Date:Subject:Cc:To:From:Sender:Reply-To:Content-Type:Content-ID:
+ h=In-Reply-To:Content-Type:MIME-Version:References:Message-ID:Subject:Cc:To
+ :From:Date:Sender:Reply-To:Content-Transfer-Encoding:Content-ID:
  Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
  :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
  List-Post:List-Owner:List-Archive;
- bh=MEfXNy0oYvg+oByXyXaf2fLih3PRNTBnoHWoUbGvyo0=; b=gr84DapNNjKMp+tA9BgxdgCYJI
- VOnq2UiDUHbjHAqEWNc5MnwqID4kMPOcAkDOaT6PFPkWXGE+WMTuXBO2AUG61Pw0+n8NWFOK/3K9h
- HSbkys1cfJET/IsmdKh2O2q+atlUCvnRcPRhfeLfdEbJyxBbT5N5KE6w47fpEjICJngk=;
-Received: from bombadil.infradead.org ([198.137.202.133])
+ bh=Ubo9RUeILLOZCFhRqSz41sUmP7donszofRssChRT+mk=; b=lnh3rDr93ZMQnJELiZpdfPKErg
+ YV+wRZsW12bldoxk6sK84mP6SGOqITASb2XGNSHFiBlCXSbLI6doiGsBzVuaWNJEN5D0fvtrwmSEo
+ g4W1hyJyfICWPehE5qQko6UjqDXD6kz8SNkQjiTjatk6ON7NKeaDV72AKbgs2wXbC5QI=;
+Received: from smtp-out2.suse.de ([195.135.220.29])
  by sfi-mx-1.v28.lw.sourceforge.com with esmtps
- (TLS1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.95)
- id 1ouIbM-006xpR-4s; Sun, 13 Nov 2022 19:25:08 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=infradead.org; s=bombadil.20210309; h=Content-Transfer-Encoding:
- MIME-Version:References:In-Reply-To:Message-Id:Date:Subject:Cc:To:From:Sender
- :Reply-To:Content-Type:Content-ID:Content-Description;
- bh=MEfXNy0oYvg+oByXyXaf2fLih3PRNTBnoHWoUbGvyo0=; b=1CYlSCKTrhaufOIQITLboWc3nv
- 5XP8UaQ6updySgkzvHd+U0qG7p63m8ky3bOXtD/C5Lv62v2DvM+6ycEE2NyriXXCT8GlQRzLkqwHl
- PjPioAVEb5Yi1VFqlE9lmvf0ARj8+YcM96t2AnpdL5Xial7ovi4MPfSFEzQBZMV/phYO54KwQiuAa
- jrzM3eetiPkSNibuVO6DW7XDWDELhJbeCrOOgoSz5vfvh2lTcMcq9ewYxCv8wljb/FihZUdKoZqRd
- /jeBjIMEvgKWGdgnNgGodWrmTB6NEAkqivpO9lhBFpdyHBPdRoYsNw6dKFJScAZk7eCy9QCvG7ZiI
- tKo1bOOw==;
-Received: from 213-225-8-167.nat.highway.a1.net ([213.225.8.167]
- helo=localhost)
- by bombadil.infradead.org with esmtpsa (Exim 4.94.2 #2 (Red Hat Linux))
- id 1ouFrP-00CJu6-H9; Sun, 13 Nov 2022 16:29:32 +0000
-From: Christoph Hellwig <hch@lst.de>
-To: Namjae Jeon <linkinjeon@kernel.org>, Sungjong Seo <sj1557.seo@samsung.com>,
- Jan Kara <jack@suse.com>, OGAWA Hirofumi <hirofumi@mail.parknet.co.jp>,
- Mikulas Patocka <mikulas@artax.karlin.mff.cuni.cz>,
- Dave Kleikamp <shaggy@kernel.org>, Bob Copeland <me@bobcopeland.com>
-Date: Sun, 13 Nov 2022 17:28:59 +0100
-Message-Id: <20221113162902.883850-7-hch@lst.de>
-X-Mailer: git-send-email 2.30.2
-In-Reply-To: <20221113162902.883850-1-hch@lst.de>
+ (TLS1.2:ECDHE-RSA-AES128-GCM-SHA256:128) (Exim 4.95)
+ id 1ouX20-007pYw-Mb; Mon, 14 Nov 2022 10:49:37 +0000
+Received: from imap2.suse-dmz.suse.de (imap2.suse-dmz.suse.de [192.168.254.74])
+ (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+ key-exchange X25519 server-signature ECDSA (P-521) server-digest SHA512)
+ (No client certificate requested)
+ by smtp-out2.suse.de (Postfix) with ESMTPS id E16871FE67;
+ Mon, 14 Nov 2022 10:49:27 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=suse.cz; s=susede2_rsa;
+ t=1668422967; h=from:from:reply-to:date:date:message-id:message-id:to:to:cc:cc:
+ mime-version:mime-version:content-type:content-type:
+ in-reply-to:in-reply-to:references:references;
+ bh=Ubo9RUeILLOZCFhRqSz41sUmP7donszofRssChRT+mk=;
+ b=FCJdYm9kzAhz4vYOrsAtx1I3ezNTwuYj9tisurbURs8GMQMuDY7MNqoKTq9Jo2s46wmDM4
+ KLXrTSl6G1mjhcXykUIOgXNTJL65jcU/3xY8IYjqW7Cb2ICxqU9GCpKor69sgQtUVpUD1D
+ pbWbo6t4OX6sRFdseSr8R25qMN9mhpg=
+DKIM-Signature: v=1; a=ed25519-sha256; c=relaxed/relaxed; d=suse.cz;
+ s=susede2_ed25519; t=1668422967;
+ h=from:from:reply-to:date:date:message-id:message-id:to:to:cc:cc:
+ mime-version:mime-version:content-type:content-type:
+ in-reply-to:in-reply-to:references:references;
+ bh=Ubo9RUeILLOZCFhRqSz41sUmP7donszofRssChRT+mk=;
+ b=927zvK6sEulfOA+/7LmlwmEuhq43kTGhclLO5y7m/oMptFQXPkIWgf9Yn+PvAO20O14a4E
+ 315hsx4OV89dt4Cg==
+Received: from imap2.suse-dmz.suse.de (imap2.suse-dmz.suse.de [192.168.254.74])
+ (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+ key-exchange X25519 server-signature ECDSA (P-521) server-digest SHA512)
+ (No client certificate requested)
+ by imap2.suse-dmz.suse.de (Postfix) with ESMTPS id D284013A8C;
+ Mon, 14 Nov 2022 10:49:27 +0000 (UTC)
+Received: from dovecot-director2.suse.de ([192.168.254.65])
+ by imap2.suse-dmz.suse.de with ESMTPSA id o0VfMzcdcmOqZgAAMHmgww
+ (envelope-from <jack@suse.cz>); Mon, 14 Nov 2022 10:49:27 +0000
+Received: by quack3.suse.cz (Postfix, from userid 1000)
+ id 65ECAA0709; Mon, 14 Nov 2022 11:49:27 +0100 (CET)
+Date: Mon, 14 Nov 2022 11:49:27 +0100
+From: Jan Kara <jack@suse.cz>
+To: Christoph Hellwig <hch@lst.de>
+Message-ID: <20221114104927.k5x4i4uanxskfs6m@quack3>
 References: <20221113162902.883850-1-hch@lst.de>
+ <20221113162902.883850-3-hch@lst.de>
 MIME-Version: 1.0
-X-SRS-Rewrite: SMTP reverse-path rewritten from <hch@infradead.org> by
- bombadil.infradead.org. See http://www.infradead.org/rpr.html
-X-Spam-Score: -2.1 (--)
+Content-Disposition: inline
+In-Reply-To: <20221113162902.883850-3-hch@lst.de>
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: Spam detection software,
  running on the system "util-spamd-2.v13.lw.sourceforge.com", 
  has NOT identified this incoming email as spam.  The original
  message has been attached to this so you can view it or label
  similar future email.  If you have any questions, see
  the administrator of that system for details.
- Content preview:  ->writepage is a very inefficient method to write back data, 
- and only used through write_cache_pages or a a fallback when no
- ->migrate_folio
- method is present. Set ->migrate_folio to the generic buffer_head based helper,
- and remove the ->writepage implementation. 
- Content analysis details:   (-2.1 points, 6.0 required)
+ Content preview:  On Sun 13-11-22 17:28:55,
+ Christoph Hellwig wrote: > ->writepage
+ is a very inefficient method to write back data, and only > used through
+ write_cache_pages or a a fallback when no ->migrate_folio > me [...] 
+ Content analysis details:   (-2.5 points, 6.0 required)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [198.137.202.133 listed in list.dnswl.org]
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
+ medium trust [195.135.220.29 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
-X-Headers-End: 1ouIbM-006xpR-4s
-Subject: [Jfs-discussion] [PATCH 6/9] hpfs: remove ->writepage
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+X-Headers-End: 1ouX20-007pYw-Mb
+Subject: Re: [Jfs-discussion] [PATCH 2/9] ext2: remove ->writepage
 X-BeenThere: jfs-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -103,59 +117,63 @@ List-Post: <mailto:jfs-discussion@lists.sourceforge.net>
 List-Help: <mailto:jfs-discussion-request@lists.sourceforge.net?subject=help>
 List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/jfs-discussion>, 
  <mailto:jfs-discussion-request@lists.sourceforge.net?subject=subscribe>
-Cc: linux-fsdevel@vger.kernel.org, linux-mm@kvack.org,
- jfs-discussion@lists.sourceforge.net, linux-ext4@vger.kernel.org,
- linux-karma-devel@lists.sourceforge.net
+Cc: Dave Kleikamp <shaggy@kernel.org>, jfs-discussion@lists.sourceforge.net,
+ linux-ext4@vger.kernel.org, Bob Copeland <me@bobcopeland.com>,
+ linux-karma-devel@lists.sourceforge.net, linux-mm@kvack.org,
+ Mikulas Patocka <mikulas@artax.karlin.mff.cuni.cz>, Jan Kara <jack@suse.com>,
+ linux-fsdevel@vger.kernel.org, Sungjong Seo <sj1557.seo@samsung.com>,
+ Namjae Jeon <linkinjeon@kernel.org>,
+ OGAWA Hirofumi <hirofumi@mail.parknet.co.jp>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Errors-To: jfs-discussion-bounces@lists.sourceforge.net
 
-->writepage is a very inefficient method to write back data, and only
-used through write_cache_pages or a a fallback when no ->migrate_folio
-method is present.
+On Sun 13-11-22 17:28:55, Christoph Hellwig wrote:
+> ->writepage is a very inefficient method to write back data, and only
+> used through write_cache_pages or a a fallback when no ->migrate_folio
+> method is present.
+> 
+> Signed-off-by: Christoph Hellwig <hch@lst.de>
 
-Set ->migrate_folio to the generic buffer_head based helper, and remove
-the ->writepage implementation.
+Looks good! Feel free to add:
 
-Signed-off-by: Christoph Hellwig <hch@lst.de>
----
- fs/hpfs/file.c | 9 ++-------
- 1 file changed, 2 insertions(+), 7 deletions(-)
+Acked-by: Jan Kara <jack@suse.cz>
 
-diff --git a/fs/hpfs/file.c b/fs/hpfs/file.c
-index f7547a62c81f6..88952d4a631e6 100644
---- a/fs/hpfs/file.c
-+++ b/fs/hpfs/file.c
-@@ -163,11 +163,6 @@ static int hpfs_read_folio(struct file *file, struct folio *folio)
- 	return mpage_read_folio(folio, hpfs_get_block);
- }
- 
--static int hpfs_writepage(struct page *page, struct writeback_control *wbc)
--{
--	return block_write_full_page(page, hpfs_get_block, wbc);
--}
--
- static void hpfs_readahead(struct readahead_control *rac)
- {
- 	mpage_readahead(rac, hpfs_get_block);
-@@ -248,12 +243,12 @@ const struct address_space_operations hpfs_aops = {
- 	.dirty_folio	= block_dirty_folio,
- 	.invalidate_folio = block_invalidate_folio,
- 	.read_folio = hpfs_read_folio,
--	.writepage = hpfs_writepage,
- 	.readahead = hpfs_readahead,
- 	.writepages = hpfs_writepages,
- 	.write_begin = hpfs_write_begin,
- 	.write_end = hpfs_write_end,
--	.bmap = _hpfs_bmap
-+	.bmap = _hpfs_bmap,
-+	.migrate_folio = buffer_migrate_folio,
- };
- 
- const struct file_operations hpfs_file_ops =
+								Honza
+> ---
+>  fs/ext2/inode.c | 6 ------
+>  1 file changed, 6 deletions(-)
+> 
+> diff --git a/fs/ext2/inode.c b/fs/ext2/inode.c
+> index 918ab2f9e4c05..3b2e3e1e0fa25 100644
+> --- a/fs/ext2/inode.c
+> +++ b/fs/ext2/inode.c
+> @@ -869,11 +869,6 @@ int ext2_fiemap(struct inode *inode, struct fiemap_extent_info *fieinfo,
+>  	return ret;
+>  }
+>  
+> -static int ext2_writepage(struct page *page, struct writeback_control *wbc)
+> -{
+> -	return block_write_full_page(page, ext2_get_block, wbc);
+> -}
+> -
+>  static int ext2_read_folio(struct file *file, struct folio *folio)
+>  {
+>  	return mpage_read_folio(folio, ext2_get_block);
+> @@ -948,7 +943,6 @@ const struct address_space_operations ext2_aops = {
+>  	.invalidate_folio	= block_invalidate_folio,
+>  	.read_folio		= ext2_read_folio,
+>  	.readahead		= ext2_readahead,
+> -	.writepage		= ext2_writepage,
+>  	.write_begin		= ext2_write_begin,
+>  	.write_end		= ext2_write_end,
+>  	.bmap			= ext2_bmap,
+> -- 
+> 2.30.2
+> 
 -- 
-2.30.2
-
+Jan Kara <jack@suse.com>
+SUSE Labs, CR
 
 
 _______________________________________________
