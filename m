@@ -2,106 +2,238 @@ Return-Path: <jfs-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+jfs-discussion@lfdr.de
 Delivered-To: lists+jfs-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id DEF46628290
-	for <lists+jfs-discussion@lfdr.de>; Mon, 14 Nov 2022 15:30:56 +0100 (CET)
-Received: from [127.0.0.1] (helo=sfs-ml-1.v29.lw.sourceforge.com)
-	by sfs-ml-1.v29.lw.sourceforge.com with esmtp (Exim 4.95)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1B471628289
+	for <lists+jfs-discussion@lfdr.de>; Mon, 14 Nov 2022 15:30:14 +0100 (CET)
+Received: from [127.0.0.1] (helo=sfs-ml-2.v29.lw.sourceforge.com)
+	by sfs-ml-2.v29.lw.sourceforge.com with esmtp (Exim 4.95)
 	(envelope-from <jfs-discussion-bounces@lists.sourceforge.net>)
-	id 1ouaTx-0006GM-W1;
-	Mon, 14 Nov 2022 14:30:41 +0000
+	id 1ouaTA-0004dh-PA;
+	Mon, 14 Nov 2022 14:29:53 +0000
 Received: from [172.30.20.202] (helo=mx.sourceforge.net)
  by sfs-ml-2.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
  TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (Exim 4.95)
- (envelope-from <linkinjeon@kernel.org>) id 1ouXJ6-0000Xr-Dc;
- Mon, 14 Nov 2022 11:07:16 +0000
+ (envelope-from <dave.kleikamp@oracle.com>) id 1ouaT0-0004dW-E9;
+ Mon, 14 Nov 2022 14:29:42 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=sourceforge.net; s=x; h=Content-Type:Cc:To:Subject:Message-ID:Date:From:
- References:In-Reply-To:MIME-Version:Sender:Reply-To:Content-Transfer-Encoding
- :Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
+ d=sourceforge.net; s=x; h=MIME-Version:Content-Transfer-Encoding:Content-Type
+ :In-Reply-To:From:References:Cc:To:Subject:Date:Message-ID:Sender:Reply-To:
+ Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
  Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=BBQzIyZZF5rlbBw98y1P4gBlWGiyde5VKcuft9ToRAY=; b=dDVKbmVRxG2Sp3XOGLWwMuY0iT
- ywdQYj42h5dHK2gPPiqDm0TLLbdXB0ay9IuaFFxbqwsPTyOu9uesSVTBoApCBPVLEMYauhjTre9SE
- mTQp3ZNnAp3wrEJGt4JCllPOPmPWcxD70X5IEeolRIwgFuQTZCjgoa47v2p5QujpuS6Q=;
+ bh=0zcpbriBPpYKBgynpH+AkH5dMoego3+hiw3MuoSIRXs=; b=Bk6uxsqq7jObTUUTHpBIRIpsiL
+ Gl8r1KiUsW1C/A7ejmnWSO7/pCdhuy0ZB1WWVA/RxdV/YTIZ4zKehUe+bhaYOroq9b2k0ASVGEPK1
+ VknCCN/7BNZAO2cWRXcAotQi6i1ctQ7G40hi4PdtT0h7mA+7A3X1HCJfKeg5SEchEKC4=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
- h=Content-Type:Cc:To:Subject:Message-ID:Date:From:References:In-Reply-To:
- MIME-Version:Sender:Reply-To:Content-Transfer-Encoding:Content-ID:
+ h=MIME-Version:Content-Transfer-Encoding:Content-Type:In-Reply-To:From:
+ References:Cc:To:Subject:Date:Message-ID:Sender:Reply-To:Content-ID:
  Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
  :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
  List-Post:List-Owner:List-Archive;
- bh=BBQzIyZZF5rlbBw98y1P4gBlWGiyde5VKcuft9ToRAY=; b=TpGQCsTsysILGvFiq7A2x0F7nS
- CgWyLMM2FI5qj9SCDQXATL2b1Unv95Hi89BGbrvd2rCxm+qS+E99O401S3F0zb/PTqH661VbypVeC
- SD5oGT5AuQjtqrpmpGmLX64r+cnd2dBin8m8ivZsBkW7O8OdhCGWwKhZ/dZ3AaEdbNb8=;
-Received: from dfw.source.kernel.org ([139.178.84.217])
+ bh=0zcpbriBPpYKBgynpH+AkH5dMoego3+hiw3MuoSIRXs=; b=DnwOenitSJ4b0AXJig7budwUd0
+ RWNlUwtGBuPQZkF3/LBuGnQEsZmYIpqMHxX3Z1r/lQXVOrifKkWm8hFH8B1j4IQA8SlMgXXMUivOX
+ 50u+s4jJ0a8nWiA6qFuYMnGnZdIiBMRqO6/CUP21brogBq2mkmB3+c1RVrTqN2VJEnKQ=;
+Received: from mx0a-00069f02.pphosted.com ([205.220.165.32])
  by sfi-mx-2.v28.lw.sourceforge.com with esmtps
  (TLS1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.95)
- id 1ouXJ5-0002Qf-NS; Mon, 14 Nov 2022 11:07:16 +0000
-Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by dfw.source.kernel.org (Postfix) with ESMTPS id 516AA60FBF;
- Mon, 14 Nov 2022 11:07:10 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 21E41C433D6;
- Mon, 14 Nov 2022 11:07:10 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=k20201202; t=1668424030;
- bh=BBQzIyZZF5rlbBw98y1P4gBlWGiyde5VKcuft9ToRAY=;
- h=In-Reply-To:References:From:Date:Subject:To:Cc:From;
- b=A/TWlCEXkE5eooKrE2sEkXhKTjGb3+uPZCt/nWSjrS0c0XadKDRzxeuS7AKBK/yPt
- T1mF7ErfYbnVFTcUAffc67ZaVM1VXjUavuw9Jh8RXHmQC5lLEJP2rm8+f9O8GxbMlS
- glXGyBrF6446yghIoXpRloUtXLUSmptRJNSdEtSPc2DnqXKONFWlsmDPs5YwmYYtKa
- xquA2tJgsHbSwtj78bz+6VAJKxQ9YGL2dXhsWmZXZLAOq14M76EVTsaJnGJlR8Vdux
- 5jT8m1WsqQkVlcD3jEadQzW3SVWoMOasaECwL1e1swUImgx7WnD0qQWyLAujTGgMk5
- bGdUN6zX46vGQ==
-Received: by mail-oo1-f44.google.com with SMTP id
- v7-20020a4aa507000000b00496e843fdfeso1525585ook.7; 
- Mon, 14 Nov 2022 03:07:10 -0800 (PST)
-X-Gm-Message-State: ANoB5pm0SPHwmVEKSRH2JF+8RIHK0uE2qK6mjGfCTJVmEGJEXpzdIHiJ
- qeyZIlQU+Xd+hDbxz1KUZshbB55WNYKX/DUNuxU=
-X-Google-Smtp-Source: AA0mqf7wDQwPA3pTOSPVjMBQXValCRkcy0eZQuDEsbG8KDjXL393R4wvF7iCYv59B/mzoOk4MhJydooBoEVZepSGpZ0=
-X-Received: by 2002:a4a:b582:0:b0:49d:d7ad:4195 with SMTP id
- t2-20020a4ab582000000b0049dd7ad4195mr5275628ooo.44.1668424029332; Mon, 14 Nov
- 2022 03:07:09 -0800 (PST)
-MIME-Version: 1.0
-Received: by 2002:a05:6839:1a4e:0:0:0:0 with HTTP; Mon, 14 Nov 2022 03:07:08
- -0800 (PST)
-In-Reply-To: <20221113162902.883850-2-hch@lst.de>
+ id 1ouaSw-0004c0-U0; Mon, 14 Nov 2022 14:29:42 +0000
+Received: from pps.filterd (m0246617.ppops.net [127.0.0.1])
+ by mx0b-00069f02.pphosted.com (8.17.1.19/8.17.1.19) with ESMTP id
+ 2AEBixpB009272; Mon, 14 Nov 2022 14:29:15 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=oracle.com;
+ h=message-id : date :
+ subject : to : cc : references : from : in-reply-to : content-type :
+ content-transfer-encoding : mime-version; s=corp-2022-7-12;
+ bh=0zcpbriBPpYKBgynpH+AkH5dMoego3+hiw3MuoSIRXs=;
+ b=ru+9HALv9G28n1+YyhO5y8/9OxId87FAIvm7mowSaYyAoPq+sjVxrffrkOoyTEePaiYW
+ 8FFirgH8hSp//9vTO2x2rMVIVMDaFBxJlXsPgIaAF1X01cZg6e8+P+jeIYTsHOVsgwDu
+ PlgB4ZV3OCtH0zJ5EYSG3332TmO5zObAdhL2VfUDB9xZKNaoE5XuCyJlUNWcQYw1R7LE
+ 0PnV0txa7hgBP6TaoDE2homoykZyNaldfj2+TdAZ0mha76aG9wB5RPrT1c/iGZi0D//q
+ zCSerg6unc57uDyRy1aG15aGTmMcN3HmlFmdyfcbrwuRDi6B1PQcRvreaL7F4vgOKOM5 IQ== 
+Received: from iadpaimrmta02.imrmtpd1.prodappiadaev1.oraclevcn.com
+ (iadpaimrmta02.appoci.oracle.com [147.154.18.20])
+ by mx0b-00069f02.pphosted.com (PPS) with ESMTPS id 3ku0x8a6v2-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
+ Mon, 14 Nov 2022 14:29:14 +0000
+Received: from pps.filterd
+ (iadpaimrmta02.imrmtpd1.prodappiadaev1.oraclevcn.com [127.0.0.1])
+ by iadpaimrmta02.imrmtpd1.prodappiadaev1.oraclevcn.com (8.17.1.5/8.17.1.5)
+ with ESMTP id 2AEE7THw020596; Mon, 14 Nov 2022 14:29:11 GMT
+Received: from nam11-dm6-obe.outbound.protection.outlook.com
+ (mail-dm6nam11lp2170.outbound.protection.outlook.com [104.47.57.170])
+ by iadpaimrmta02.imrmtpd1.prodappiadaev1.oraclevcn.com (PPS) with ESMTPS id
+ 3kt1xafms0-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
+ Mon, 14 Nov 2022 14:29:11 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=cpD/dggFikTNRF9SsfJrimzQTaVKcg7wPXsq1ejbwDZ5uT4hUPHtiX/M/XnvMfwdJWfJK7EpVApqow9oMd1VRAGokuDISY4GPDpoCkmMeUHFlQRy8INPRyx3i+iDtm9dPrrATp1aOmMGzhYtZESScgHuc8+Xz7T7nl9+L3oHOPQC9ZN1FjlFNq2h6Gq7TI9I153kny1oA40Q9qYOgDI8K30Qp7vxy87LdPJGYwMIOylQ3qmFS1tZFpMtVAQd9KDUXp5HrrfvUWXjWgTsH+R+IBn+YIVf9o7F7nPWoD3IE4RZBRKQ2Lxh56I5c9xq+VBsP6/6+itqyYkKAZK5AaZ6gQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=0zcpbriBPpYKBgynpH+AkH5dMoego3+hiw3MuoSIRXs=;
+ b=TMuILALUBlncY2dCkc6FIL0gqTC8E+uC7FVKnKc5ZAUFhR+O6yeaWQCcIwelM5FdCc2i6f1zS5yEEJnpYyY/UEm8H2BaExsrSeVZiSK7Bm6pVnMrBVsyXxXzJxHc9PPUQbtEaUcxBBs+Z5/CR8hak9aMsB/x9EeCxNrsFxJYXMMjp7vh4YErZe+HZCrhudvtpSG3GVu+5SsKw6PSfolD9akGvKuJaL7bR5yig1Wz0sY/sl3WD9FX4znR6eVvgZNDMtGSIDBMm8tnsU2d9pbiMaCz3Hrfxy/OUwo+RMx184OSbm6Cc9J4usWQ9lZ/9XcWlOadjlT1dbGjjaXn2e9zlQ==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=oracle.com; dmarc=pass action=none header.from=oracle.com;
+ dkim=pass header.d=oracle.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=oracle.onmicrosoft.com; s=selector2-oracle-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=0zcpbriBPpYKBgynpH+AkH5dMoego3+hiw3MuoSIRXs=;
+ b=PYJ53JjeNGMJWR4kkLNqCORO7zs28MLaUNGK9XQfP0OnJ7lrK9Xp9hfVcozCvFhZGjdpIH7vg5PqeBpqFCRVTzaJx5L0gYTMsIN2sMxxX6n+SoKxbOvHv7CWMiGkJFPbDLaAoQknqnVFdRbDfstgrfYy699oYo8w0sSFfrlpEYM=
+Received: from MW5PR10MB5738.namprd10.prod.outlook.com (2603:10b6:303:19b::14)
+ by CH2PR10MB4247.namprd10.prod.outlook.com (2603:10b6:610:7a::15)
+ with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.5813.17; Mon, 14 Nov
+ 2022 14:29:09 +0000
+Received: from MW5PR10MB5738.namprd10.prod.outlook.com
+ ([fe80::cdac:526e:e65:cfd8]) by MW5PR10MB5738.namprd10.prod.outlook.com
+ ([fe80::cdac:526e:e65:cfd8%4]) with mapi id 15.20.5813.016; Mon, 14 Nov 2022
+ 14:29:08 +0000
+Message-ID: <5be7974a-9b36-75ec-8bd4-e6c74a8f3492@oracle.com>
+Date: Mon, 14 Nov 2022 08:29:04 -0600
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
+ Thunderbird/102.4.2
+Content-Language: en-US
+To: Christoph Hellwig <hch@lst.de>, Namjae Jeon <linkinjeon@kernel.org>,
+ Sungjong Seo <sj1557.seo@samsung.com>, Jan Kara <jack@suse.com>,
+ OGAWA Hirofumi <hirofumi@mail.parknet.co.jp>,
+ Mikulas Patocka <mikulas@artax.karlin.mff.cuni.cz>,
+ Bob Copeland <me@bobcopeland.com>
 References: <20221113162902.883850-1-hch@lst.de>
- <20221113162902.883850-2-hch@lst.de>
-From: Namjae Jeon <linkinjeon@kernel.org>
-Date: Mon, 14 Nov 2022 20:07:08 +0900
-X-Gmail-Original-Message-ID: <CAKYAXd97CmO5AvKPzziaKiqtUManSgXzFQatynGojTNzaBk9gw@mail.gmail.com>
-Message-ID: <CAKYAXd97CmO5AvKPzziaKiqtUManSgXzFQatynGojTNzaBk9gw@mail.gmail.com>
-To: Christoph Hellwig <hch@lst.de>
-X-Spam-Score: -5.2 (-----)
+ <20221113162902.883850-8-hch@lst.de>
+From: Dave Kleikamp <dave.kleikamp@oracle.com>
+In-Reply-To: <20221113162902.883850-8-hch@lst.de>
+X-ClientProxiedBy: CH2PR12CA0002.namprd12.prod.outlook.com
+ (2603:10b6:610:57::12) To MW5PR10MB5738.namprd10.prod.outlook.com
+ (2603:10b6:303:19b::14)
+MIME-Version: 1.0
+X-MS-PublicTrafficType: Email
+X-MS-TrafficTypeDiagnostic: MW5PR10MB5738:EE_|CH2PR10MB4247:EE_
+X-MS-Office365-Filtering-Correlation-Id: 818575ed-9a66-4b29-be54-08dac64c96f0
+X-MS-Exchange-SenderADCheck: 1
+X-MS-Exchange-AntiSpam-Relay: 0
+X-Microsoft-Antispam: BCL:0;
+X-Microsoft-Antispam-Message-Info: IUcIpiDWKePwmzhgrJkQhIV2ztz5vThpNwLVzFrJh49KHLp/rUsTSAOh6g2sy2T4fhWq0BFkMIZDOmIXrajbYWxPa/rdvbT/vyeWqVgX+nlxYXlB4GvBhSdca615+dFM8jX/IYWBPB5YWSCqrtGTT6XK3hvc+/lCkgsyJqefqpX1qJvwCJj12m7YUfX7aH0WSS0TCKnzQTp4ncvLNQJ2IB6NfvU7KDsizL9LjTdy4TaTNvbvK4Pl8hLeE56z7PKMGaL6H0+f18xViDwjGxiFgZH/svxA0CyZyERqhwofIzmdOrqxoSooRRlNZHaqovT+hRIf4wabZfTwEoTHA4nEJp+n0IncP4Z8X7s3ds9Xpk8SZwS0JuuMHGlyMsnpJ56xcaAI2e8zqHl9sGC8ZdxYKO8eRD7/+kq3f/Z2ti+Us+Td3lRmS6Ibq6qBIz2hsrHPpIqnBqRrN9Fmt66JvBArcJOLhzkLWraYOLywiptCPqT3OBqeDrIuiwG0fy2a979OEidxhIes3yZGnL98VjnMYdeMakPsWWMQl40jyB9r8dj1KurxtxrD0KAgKLpbop+tMHWmQqUj8CrqXE5wORXw7OK4rPF0Dfa9WN6fZCJMG2kxG28QIK27SleyB0//YHFic4yzk6PxIgW75HYLQRzJrmWSr3gQGdbdJUuc2kjQYTeKWsShRSlLKPbGjuivZoDLvlEcJPSzgzurRmcYmuwSd0l0l4eUTxJGUbecnYUpteL9d0xYZKMt4a9DKRMLsNK528mEQzL/1+xYRmBSw/Zitk+ycClBOd6fZKag+mWIbjA=
+X-Forefront-Antispam-Report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
+ IPV:NLI; SFV:NSPM; H:MW5PR10MB5738.namprd10.prod.outlook.com; PTR:; CAT:NONE;
+ SFS:(13230022)(39860400002)(136003)(396003)(346002)(376002)(366004)(451199015)(36756003)(186003)(6512007)(26005)(2616005)(83380400001)(38100700002)(86362001)(5660300002)(8936002)(7416002)(44832011)(2906002)(31696002)(41300700001)(478600001)(6486002)(31686004)(316002)(66476007)(110136005)(6506007)(6666004)(4326008)(66946007)(8676002)(66556008)(43740500002)(45980500001);
+ DIR:OUT; SFP:1101; 
+X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
+X-MS-Exchange-AntiSpam-MessageData-0: =?utf-8?B?M0V3ZjcxaEdQeUZDdEpReEY1cHN0YjI1SGFiMTY2OXVEcFFtdTFJNlErZVB5?=
+ =?utf-8?B?b2x6bXovVy8xRktnb3dDSTAxR3RlcWFMb0V1cTg5UURTeGJzK3FYdlljU2xn?=
+ =?utf-8?B?d2V4alNDV1g2OVA2V24rNEViMU5nM2RQdGUvV2VlM2xNODEwSEdYcUlBSUx4?=
+ =?utf-8?B?R21POW40Um13eHY3WE5Hc2szQ0VIVGpCb1ZEd2MxcGtLK3YxUUJXQmVma0tp?=
+ =?utf-8?B?Tk9aejlTUFNRNGZIeTNHQy8rSUh6eURxb0NzTzAwdTVCbCtNMWdac0oxNEhV?=
+ =?utf-8?B?RTNmRFg4Zm5PRWR2Qnh3RlYrL2VqLzEzdFpnQWFSZCtsa1Y5bkFycCt4NWVP?=
+ =?utf-8?B?RTFFSnF3RnExU2w3OG5KZzJsL2wyMEQxeGFwVVl4bit4V1F6WUt6bC8vU2p3?=
+ =?utf-8?B?ZGp4Ukh1VXh5NVVSTnNGNDhMOVZqSzJFZEZlMGRBejRVS3B1WWhCK0ZVOGVV?=
+ =?utf-8?B?emlMaVpPMlFyMzhVZ0RYOXVQRFdkbjVTeEEzUjlsNEpiRzZKUmx5UVp0b1V5?=
+ =?utf-8?B?dm9EUFNsNWU1QUd5V3k4ekx6aE1Yb0JZdmdWeU9WWTB0MllHSHVkTGZIOVJv?=
+ =?utf-8?B?cTJhbE12MFhNL3NKdDM5N2JkbmRxdk4xbm5pYlBEZWlONnp0bmZ0YTliNFlN?=
+ =?utf-8?B?MnRwVXBvRnJkVmFKSC9xUjY2d3lMUG5GL0xoSW05ZEYvczd4ZVVFMkZtWHlZ?=
+ =?utf-8?B?NHErRC9remtGMkUvb0p3SDZIVkMwbi82NFoxMkpqUzZETDltT0lIVGpwT0ZC?=
+ =?utf-8?B?U0wydEtBZUtUZ2JDbzNWc2Z5TmVJWXV6U2Rqald5NTYxQzFHbTk5RHk2ejFR?=
+ =?utf-8?B?TUM2eDVrVXFGSHY3RDg5Tm5SdGlGeU1PcldHbXBqMEV3TGM5SStySk50bHBw?=
+ =?utf-8?B?amw1clVDU2FKaHVIdUMrY1Z1TlJLRzI2Zktiay9mWDRjelJiU2tpbmVtZWJk?=
+ =?utf-8?B?SWdlNmgvb0RXQkY0WmEzdWVmMlZrNXB0eWc2YmlaY3NQbzR3cGcxVk91M2lH?=
+ =?utf-8?B?bFNzaWZjNGxzWHl4bzc5Y0NjaXpBMlR1ZVhZbkhyUG55RXNZRkFGZGd2QUJW?=
+ =?utf-8?B?WnEvUk9iS1lGQ0VRVmRkdzlNYklSWmk0N0VLWHFncUNRMHlwbnByNmtjVmE5?=
+ =?utf-8?B?MVp0UlZBYVZNdkg5K1I0dzZsMmhZb0Rvb0greDhLSkFpWlhHTUM4OWRXMjJJ?=
+ =?utf-8?B?eU9TYXZ4c0lDWGJja2ZQL3ZPSDU0RGJWL2VKeGdZK0FBQjYvTjVscDJDd0pW?=
+ =?utf-8?B?TzUwY3JxUHFJVDRoZnhvdFBmUlVVMFdPRUc1UWk5R3k0TERDRDJXSG9kdlFV?=
+ =?utf-8?B?cEJ6M3ZRY2laaUR0VG5Db2VwVmY4NGQzNFUwaW00akE4M1o5YXorU2pvVWUx?=
+ =?utf-8?B?QUU1ZXljZG5lYitHRW5EelF6a1FXYUF3aElkcVhOTldyYkJoWDNLUmZ5N3FU?=
+ =?utf-8?B?bkt0OEo0OHVlaW1MZjZvZm1OUXNXL2x3bjQyaE5pN1BrZ2ZCcy9BdU5qNmVS?=
+ =?utf-8?B?Sis5UU9JV2ZtRkdJQTkyV250empsOC9BODJ5NjgyUGV1eFNQMEx0U1dDWDlv?=
+ =?utf-8?B?enowTkI5eWpVdCtSd244TkNkNWNMekFTNWkrczF6K2czOFQyQllUYWNmY014?=
+ =?utf-8?B?cmFVMnZvbmtvSDZVcURrT3dxMk1GVUIrR3lDNVhZN2RUUmE3c2NZbXdLRnla?=
+ =?utf-8?B?RDRxQTIwRXNHNGJpQXdISlI5Q3E4YmRrOUhrWWpxUU12RmNiazA4ZWxCQWxL?=
+ =?utf-8?B?VmlMa1dGTlRZZ25Kc1ZxdUlvSEFqMDRmMDFTWW5BWDgwV1JJdW05TEdGTmRw?=
+ =?utf-8?B?blhBQjRlSTFVem5kU21mZVlNWHZlOE1obmtJRFpjWjJPSTlVZEFkamtyL3BC?=
+ =?utf-8?B?TDJtNjVUeDFlM2NrbWQ3YmF1TnpEdXphV0VwM2g3RFp6cS9SQzdLZnlzMlk1?=
+ =?utf-8?B?R3JtSnMyV1VMUzAwNzFaOFgydFQ3TFBHb0VyRm91dEJJZHN3WGZDZVZNcXhh?=
+ =?utf-8?B?RlFqRlNJWnoxSm9yUHc5b1ZSeFFHalBVOTh0K1dtQjJXMHJnSmtIbEhuMWFT?=
+ =?utf-8?B?d2lzNkZteDhWbHhoa3o1SnZ1dDJtR1ZmbkhldzFSSHBKbXkvR1h2YmlRTFQ3?=
+ =?utf-8?B?NEFER3d6aWpaa0Z4cW9vY1AveVBhYW5EWUF0dXN0eE8xUTJGVlVlMGxUaEhC?=
+ =?utf-8?B?NVE9PQ==?=
+X-MS-Exchange-AntiSpam-ExternalHop-MessageData-ChunkCount: 1
+X-MS-Exchange-AntiSpam-ExternalHop-MessageData-0: =?utf-8?B?TjlEcXg5Ny9DQVJud1hVRHJMS2RNd1grR1VFR2FsMi96WGk2Rk04elRzamdW?=
+ =?utf-8?B?Q0hPWHcrc2JGSGFRanRYakRwY01NdktyaE8rU2JYaWxwL0xmVXBsZ3ROeVNl?=
+ =?utf-8?B?aTNTaGtqbEVUeHJKemtEWWF5OEljZjllRTc5RkQ3a294VFZZTnd2MG1BVTEy?=
+ =?utf-8?B?R0NFeXNNLzhUMTdEWjA2bWczNTRCME4rR0dwd1o4M2JtR2dSWnljWjAvV2Nh?=
+ =?utf-8?B?RDFjS0RzUkgrZjVHSlk1Si9zNk9VSkpNZDRUZXBTRnBHby9iRnRSc2lnUHRP?=
+ =?utf-8?B?T21Rb2VHOHBBQmxEQmN2bGFOMUxFQkxHQTh0M0lOUmxtSmJJYUlQVTZZVktR?=
+ =?utf-8?B?aTdhQkMvY3J0dGJMQkdnU3FFSTRnbUpTVGcvYWh6VUs4Y1R4ZDBGRjloQmhM?=
+ =?utf-8?B?eW9DRG5YQ0JRZWdXL0NIQVROVUlJM25Cbms1aHJtbWZuRkJXUnJNeFJIRGJw?=
+ =?utf-8?B?WEtiQ2F4ZUdUNzZDVmMzc2x3Ti9KK1pVamlaVVA4VDhJL2wxOHNvdjRBTHVN?=
+ =?utf-8?B?OGdnbkNLZkVxYS9ZejUwVm85QTV3Y1B1UW12UE9tZEUvYU43OHB2OXFHQTRS?=
+ =?utf-8?B?ajhia2pyT1Yxc1hrcUFCdVNCcHN6bHlRY3o4aXdlVXBCUHlyb3RVYVp2aEdl?=
+ =?utf-8?B?UTRKaGw0TnVtT2RvWXNMZ0drbHY5d2lleVQvakxmRDVQb2tpVDlBb0FkTkVl?=
+ =?utf-8?B?TXFSR1NYVmY4NkhnK2NIb21SblhIeVFiaXVsTEFlSjhFNHU4cWpZT2Z2TUdk?=
+ =?utf-8?B?Mlp2QmYydnBqTkZ1TWRWMURpNVNBV2tkdGIrNDBWclMvS2VSMkNkS3g1M1RD?=
+ =?utf-8?B?SWtyVDdCTUxvd2lTU3RFdHlWQndVd1doWE8zd0ZpMGtlZGNTbmp3ZUhuNDJQ?=
+ =?utf-8?B?OU1Pa09qektmVDc1amhic3JSVE5aWDBoUzYwc2lDY044QWZiWEJ3d3JUYWpU?=
+ =?utf-8?B?MTRyNzNVc2hEUlg4aUs1NXBUREhLRXhJbjNLRis0MXFiY0hoUDVUMTlRb3Qw?=
+ =?utf-8?B?dktaZHhKamRWblV5RVBkc3N5RExUU015dHl2Vks2WFJxY0pHaDIyaHdMWGlU?=
+ =?utf-8?B?M2ZJOEpWRnNpOUl3NHhTRmdCVktHN2xHbWhWMjM1UU02bWNpamhxWTFNK3d0?=
+ =?utf-8?B?ZVRJN1RsaUJGUW1Udit4eDBPZENBaVlJRGpyZGRIaW9mVjc4cHVobnJOYWdz?=
+ =?utf-8?B?S1hvenRmNWROK1FaQW8rNklmK0l3bHR4VmVGbmJiL0tzNTNZbXl1b1NJb3JO?=
+ =?utf-8?B?SFRkbWZNN3F6MmIrWmVrTkJPWGZiSWY5bU9VUXNQWUJST3M3YTB3M1haUTdD?=
+ =?utf-8?B?a1doR1hZamoxVmFUUkhSeU1XQXdDdEZaeFBCSkJCVTYyai9BaC9WakthM0hv?=
+ =?utf-8?B?NURMTUVVN0dkR29WVzM2Qnc0K2NDdVJvMENLeHQ2d1lsVWtWZEd2U2VmTXZM?=
+ =?utf-8?B?WnpvQnJVaXpoVGRoSFU1OWZ5QmNaTWtBMis0U1Q2QnF3dFBQdlhITDJPREh1?=
+ =?utf-8?B?U0Uya2VnaTMrMkFLSUl3UmFmUGRNRW80ZUxsY1JYcit5RlZ3NExITUI2WDBt?=
+ =?utf-8?B?M1A4U3F6OUwyWitsQjFUSldVeDRvSDR5UkUwZ2t0U3JzME1yZU1Yaml4VExO?=
+ =?utf-8?B?dVVnZUxoS01MNElVbFlpbXhYR0pjQnc9PQ==?=
+X-OriginatorOrg: oracle.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 818575ed-9a66-4b29-be54-08dac64c96f0
+X-MS-Exchange-CrossTenant-AuthSource: MW5PR10MB5738.namprd10.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 14 Nov 2022 14:29:08.0395 (UTC)
+X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
+X-MS-Exchange-CrossTenant-Id: 4e2c6054-71cb-48f1-bd6c-3a9705aca71b
+X-MS-Exchange-CrossTenant-MailboxType: HOSTED
+X-MS-Exchange-CrossTenant-UserPrincipalName: lPUdGd+df6kuFMNQvh8SoudO6rPzQqPPocV+j3kPUrHJY+GmkmWmlIgHOXCz0GPJoHTQSMvyOjCiMtArks4CuLU3/XwPW+S6j/fW9EF5rL0=
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: CH2PR10MB4247
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.219,Aquarius:18.0.895,Hydra:6.0.545,FMLib:17.11.122.1
+ definitions=2022-11-14_12,2022-11-11_01,2022-06-22_01
+X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 mlxlogscore=999
+ bulkscore=0 mlxscore=0
+ phishscore=0 suspectscore=0 spamscore=0 adultscore=0 malwarescore=0
+ classifier=spam adjust=0 reason=mlx scancount=1 engine=8.12.0-2210170000
+ definitions=main-2211140103
+X-Proofpoint-ORIG-GUID: ljDOmqwQcAm5_FIs4ymoblB0W5ARw-W8
+X-Proofpoint-GUID: ljDOmqwQcAm5_FIs4ymoblB0W5ARw-W8
+X-Spam-Score: -2.9 (--)
 X-Spam-Report: Spam detection software,
- running on the system "util-spamd-2.v13.lw.sourceforge.com", 
+ running on the system "util-spamd-1.v13.lw.sourceforge.com", 
  has NOT identified this incoming email as spam.  The original
  message has been attached to this so you can view it or label
  similar future email.  If you have any questions, see
  the administrator of that system for details.
- Content preview:  2022-11-14 1:28 GMT+09:00, Christoph Hellwig <hch@lst.de>:
- > ->writepage is a very inefficient method to write back data, and only >
- used through write_cache_pages or a a fallback when no ->migrate_fo [...]
- Content analysis details:   (-5.2 points, 6.0 required)
+ Content preview:  On 11/13/22 10:29AM, Christoph Hellwig wrote: > ->writepage
+ is a very inefficient method to write back data, and only > used through
+ write_cache_pages or a a fallback when no ->migrate_folio > method [...] 
+ Content analysis details:   (-2.9 points, 6.0 required)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [205.220.165.32 listed in list.dnswl.org]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [205.220.165.32 listed in wl.mailspike.net]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [139.178.84.217 listed in list.dnswl.org]
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - High trust sender
-X-Headers-End: 1ouXJ5-0002Qf-NS
-X-Mailman-Approved-At: Mon, 14 Nov 2022 14:30:40 +0000
-Subject: Re: [Jfs-discussion] [PATCH 1/9] extfat: remove ->writepage
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -2.0 NICE_REPLY_A           Looks like a legit reply (A)
+X-Headers-End: 1ouaSw-0004c0-U0
+Subject: Re: [Jfs-discussion] [PATCH 7/9] jfs: remove ->writepage
 X-BeenThere: jfs-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -113,28 +245,59 @@ List-Post: <mailto:jfs-discussion@lists.sourceforge.net>
 List-Help: <mailto:jfs-discussion-request@lists.sourceforge.net?subject=help>
 List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/jfs-discussion>, 
  <mailto:jfs-discussion-request@lists.sourceforge.net?subject=subscribe>
-Cc: Dave Kleikamp <shaggy@kernel.org>, jfs-discussion@lists.sourceforge.net,
- linux-ext4@vger.kernel.org, Bob Copeland <me@bobcopeland.com>,
- linux-mm@kvack.org, Mikulas Patocka <mikulas@artax.karlin.mff.cuni.cz>,
- Jan Kara <jack@suse.com>, linux-fsdevel@vger.kernel.org,
- Sungjong Seo <sj1557.seo@samsung.com>, linux-karma-devel@lists.sourceforge.net,
- OGAWA Hirofumi <hirofumi@mail.parknet.co.jp>
-Content-Type: text/plain; charset="us-ascii"
+Cc: linux-fsdevel@vger.kernel.org, linux-mm@kvack.org,
+ jfs-discussion@lists.sourceforge.net, linux-ext4@vger.kernel.org,
+ linux-karma-devel@lists.sourceforge.net
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Errors-To: jfs-discussion-bounces@lists.sourceforge.net
 
-2022-11-14 1:28 GMT+09:00, Christoph Hellwig <hch@lst.de>:
+On 11/13/22 10:29AM, Christoph Hellwig wrote:
 > ->writepage is a very inefficient method to write back data, and only
 > used through write_cache_pages or a a fallback when no ->migrate_folio
 > method is present.
->
+> 
 > Set ->migrate_folio to the generic buffer_head based helper, and remove
 > the ->writepage implementation.
->
+> 
 > Signed-off-by: Christoph Hellwig <hch@lst.de>
-Acked-by: Namjae Jeon <linkinjeon@kernel.org>
 
-Thanks!
+Acked-by: Dave Kleikamp <dave.kleikamp@oracle.com>
+
+> ---
+>   fs/jfs/inode.c | 7 +------
+>   1 file changed, 1 insertion(+), 6 deletions(-)
+> 
+> diff --git a/fs/jfs/inode.c b/fs/jfs/inode.c
+> index d1ec920aa030a..8ac10e3960508 100644
+> --- a/fs/jfs/inode.c
+> +++ b/fs/jfs/inode.c
+> @@ -264,11 +264,6 @@ int jfs_get_block(struct inode *ip, sector_t lblock,
+>   	return rc;
+>   }
+>   
+> -static int jfs_writepage(struct page *page, struct writeback_control *wbc)
+> -{
+> -	return block_write_full_page(page, jfs_get_block, wbc);
+> -}
+> -
+>   static int jfs_writepages(struct address_space *mapping,
+>   			struct writeback_control *wbc)
+>   {
+> @@ -355,12 +350,12 @@ const struct address_space_operations jfs_aops = {
+>   	.invalidate_folio = block_invalidate_folio,
+>   	.read_folio	= jfs_read_folio,
+>   	.readahead	= jfs_readahead,
+> -	.writepage	= jfs_writepage,
+>   	.writepages	= jfs_writepages,
+>   	.write_begin	= jfs_write_begin,
+>   	.write_end	= jfs_write_end,
+>   	.bmap		= jfs_bmap,
+>   	.direct_IO	= jfs_direct_IO,
+> +	.migrate_folio	= buffer_migrate_folio,
+>   };
+>   
+>   /*
 
 
 _______________________________________________
