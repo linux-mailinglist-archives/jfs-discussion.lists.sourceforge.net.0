@@ -2,117 +2,79 @@ Return-Path: <jfs-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+jfs-discussion@lfdr.de
 Delivered-To: lists+jfs-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5E82D6299F6
-	for <lists+jfs-discussion@lfdr.de>; Tue, 15 Nov 2022 14:22:07 +0100 (CET)
-Received: from [127.0.0.1] (helo=sfs-ml-1.v29.lw.sourceforge.com)
-	by sfs-ml-1.v29.lw.sourceforge.com with esmtp (Exim 4.95)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0C2CB62B0A0
+	for <lists+jfs-discussion@lfdr.de>; Wed, 16 Nov 2022 02:39:42 +0100 (CET)
+Received: from [127.0.0.1] (helo=sfs-ml-4.v29.lw.sourceforge.com)
+	by sfs-ml-4.v29.lw.sourceforge.com with esmtp (Exim 4.95)
 	(envelope-from <jfs-discussion-bounces@lists.sourceforge.net>)
-	id 1ouvsp-0004bh-QF;
-	Tue, 15 Nov 2022 13:21:47 +0000
+	id 1ov7OZ-0006IS-UT;
+	Wed, 16 Nov 2022 01:39:19 +0000
 Received: from [172.30.20.202] (helo=mx.sourceforge.net)
  by sfs-ml-4.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
  TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (Exim 4.95)
- (envelope-from <me@bobcopeland.com>) id 1oumjK-00050Q-Vr
+ (envelope-from <liaochang1@huawei.com>) id 1ov7OY-0006IM-HY
  for jfs-discussion@lists.sourceforge.net;
- Tue, 15 Nov 2022 03:35:22 +0000
+ Wed, 16 Nov 2022 01:39:18 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=sourceforge.net; s=x; h=In-Reply-To:Content-Type:MIME-Version:References:
- Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:Content-Transfer-Encoding:
- Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
- Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
+ d=sourceforge.net; s=x; h=Content-Type:MIME-Version:Message-ID:Date:Subject:
+ CC:To:From:Sender:Reply-To:Content-Transfer-Encoding:Content-ID:
+ Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+ :Resent-Message-ID:In-Reply-To:References:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=I5DBoIqNagH3XrdRY1r6Eco1A6aUzboNusmzdLRomUQ=; b=IJ4H4l2mdbbAMzVhcb47hnAl3p
- 8TgXN/0ST/mkk8Zhjf+usslHoop3Z+UksZ9fFlApTIqlb3SRszU7KvdTQBxg9f/jCy2NUVgo9aKUn
- 7J2OSl1R2CzAgFb3n0Nyy8yYKtTMsgLVB+meHmVwxeuoeI1q/uOmUmMwB9NgrpAkeGpg=;
+ bh=CHEs41920Zj2f7OGB0BW6zlWERMZtfqHtG8zMYlovvg=; b=WEs61Lmogq+5r0Vzb60kFeuU1S
+ tXQne19izFVgANafNcuwLrg+Qx2fv3quOGweOdUVAHYIYPeQty3D+M28SUjqWOT0J4qm9RguSEA0p
+ ihHu0HMviBSy9Vv500+GrEEUhiR3HatSfMnEZxh8m89T7YaKVpyASj7TyvQg7oD0xTqU=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
- h=In-Reply-To:Content-Type:MIME-Version:References:Message-ID:Subject:Cc:To
- :From:Date:Sender:Reply-To:Content-Transfer-Encoding:Content-ID:
- Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
- :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
- List-Post:List-Owner:List-Archive;
- bh=I5DBoIqNagH3XrdRY1r6Eco1A6aUzboNusmzdLRomUQ=; b=mQtLWzVCW4yKMjr5C7v/E6nC4u
- og6yYW9YKLxMYAakz5zSofeDH4MO9fl0wAEhOsGwE/U9OzvUGMpMPLE7lJ2Sjy5nG+wDUlKG7i6Jk
- HMPLSZB5qoXkDAI5LQs1B4XVYHoR7TTz4iIVnrgiAmzP105xI9lqmW/HwRifPdx8IQDI=;
-Received: from mail-pf1-f182.google.com ([209.85.210.182])
+ h=Content-Type:MIME-Version:Message-ID:Date:Subject:CC:To:From:Sender:
+ Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
+ :Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+ References:List-Id:List-Help:List-Unsubscribe:List-Subscribe:List-Post:
+ List-Owner:List-Archive; bh=CHEs41920Zj2f7OGB0BW6zlWERMZtfqHtG8zMYlovvg=; b=i
+ cUua6gy4qe7aVYjN8c7IabrARJ+1JrTz874gdhujSi/kMGmbToR77l8kwXHu2Wxds/flPu3zgaXU+
+ oJQai5xIjydjuNVSfJmiMEwOIEl3bFFJjaoJGW43XT2ig5z0SrcmQ+q9vGckiPDe3htV2iRaJ2JXL
+ dbN8j4DufjkiZFCw=;
+Received: from szxga08-in.huawei.com ([45.249.212.255])
  by sfi-mx-1.v28.lw.sourceforge.com with esmtps
- (TLS1.2:ECDHE-RSA-AES128-GCM-SHA256:128) (Exim 4.95)
- id 1oumjB-008eTD-L9 for jfs-discussion@lists.sourceforge.net;
- Tue, 15 Nov 2022 03:35:17 +0000
-Received: by mail-pf1-f182.google.com with SMTP id z26so12948395pff.1
- for <jfs-discussion@lists.sourceforge.net>;
- Mon, 14 Nov 2022 19:35:13 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=bobcopeland-com.20210112.gappssmtp.com; s=20210112;
- h=in-reply-to:content-disposition:mime-version:references:message-id
- :subject:cc:to:from:date:from:to:cc:subject:date:message-id:reply-to;
- bh=I5DBoIqNagH3XrdRY1r6Eco1A6aUzboNusmzdLRomUQ=;
- b=BhLHIICyakMONq9rF7PTSR31xmu60lcMvmCY2Ved5pkA3CMCOwasit37iZcXH0t3gO
- vrFIOD/CM1U2YYMLP1XsvBhAbnHH4PJKe3YQ0MjuyKctAqaf9Ff7fMqBk+SsV2m8+3db
- 71ZCvALpPlT/q2S+hSblu9+dC/IKszNgG+3jzwGoUOG9Zy2wWDRYNPJpeWnK8/HcE24t
- 3JiAgikkYgpvRkYFtTiB+4T5XYg65wOvoTqt7zqXOOM5yuEy0AX0TtI/ZtUUXicF99Ss
- HsFcjTd41n/aJfhMi1UN+8CIJuQtL0jJjhlOHwj22oV7V2hF2B46FKI4hNuo8rvD+or6
- FEVA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20210112;
- h=in-reply-to:content-disposition:mime-version:references:message-id
- :subject:cc:to:from:date:x-gm-message-state:from:to:cc:subject:date
- :message-id:reply-to;
- bh=I5DBoIqNagH3XrdRY1r6Eco1A6aUzboNusmzdLRomUQ=;
- b=nDvO3bsoXDQYnSaied/kcTpOkytpJkx62vQnFCedM9ymrJHtnw20OXpOEEtmggZ3Vm
- A0Q1DpU8JZyHhODKFJfmDlXpzE1hJrEHAeSGF006Hyd/vIivnm6widYJ/rBIiuMv+Efw
- q/6O1ciYwgrOnKzyp5lzF7/gnv9ogGy+8yBEAqHnu8aCB7sOKxDVTBr0iT7MP4ruR6gN
- ZL4OZQJ9y7ukK7QAfCjGMPfmPfijzYQn+jHcQmW4b3sQ7OX4+w5QaKYgvuOB2JIIRikg
- 8OBLSbhJ1O0xzaHHTlhH8iPxmeeLeqTAVwtFYMjAedFAQgfA1RFxlXzjOfmNsYki351S
- B1pQ==
-X-Gm-Message-State: ANoB5pksu8ZEXQpIaSZ8Fyp73H7zunFfqHAwXSCz4a6mJQjA4IsG0oYR
- iu53qW2s999DYPfc0iaRr+CeHym0kcOrfAcz
-X-Google-Smtp-Source: AA0mqf7kAKIWh2OS1WpDznT7RyX7mgjfWyyk2UEacMxAMSsL23+bcKLTzBzFPbqhHAEvBf20J60FbQ==
-X-Received: by 2002:a92:d305:0:b0:2f9:b594:970 with SMTP id
- x5-20020a92d305000000b002f9b5940970mr7467585ila.56.1668479682530; 
- Mon, 14 Nov 2022 18:34:42 -0800 (PST)
-Received: from elrond.bobcopeland.com ([142.113.148.203])
- by smtp.gmail.com with ESMTPSA id
- e99-20020a02866c000000b0035b3e0a3243sm4064564jai.57.2022.11.14.18.34.41
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 14 Nov 2022 18:34:42 -0800 (PST)
-Received: by elrond.bobcopeland.com (Postfix, from userid 1000)
- id 0953CFC00A9; Mon, 14 Nov 2022 21:34:37 -0500 (EST)
-Date: Mon, 14 Nov 2022 21:34:37 -0500
-From: Bob Copeland <me@bobcopeland.com>
-To: Christoph Hellwig <hch@lst.de>
-Message-ID: <Y3L6vah7mSxFjZ28@bobcopeland.com>
-References: <20221113162902.883850-1-hch@lst.de>
- <20221113162902.883850-9-hch@lst.de>
+ (TLS1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.95)
+ id 1ov7OW-009tE0-8C for jfs-discussion@lists.sourceforge.net;
+ Wed, 16 Nov 2022 01:39:18 +0000
+Received: from kwepemi500012.china.huawei.com (unknown [172.30.72.57])
+ by szxga08-in.huawei.com (SkyGuard) with ESMTP id 4NBm0k1fvlz15Mgd;
+ Wed, 16 Nov 2022 09:38:46 +0800 (CST)
+Received: from huawei.com (10.67.174.53) by kwepemi500012.china.huawei.com
+ (7.221.188.12) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.2375.31; Wed, 16 Nov
+ 2022 09:39:07 +0800
+To: <shaggy@kernel.org>
+Date: Wed, 16 Nov 2022 09:36:00 +0800
+Message-ID: <20221116013600.77906-1-liaochang1@huawei.com>
+X-Mailer: git-send-email 2.17.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20221113162902.883850-9-hch@lst.de>
-X-Spam-Score: 0.0 (/)
+X-Originating-IP: [10.67.174.53]
+X-ClientProxiedBy: dggems704-chm.china.huawei.com (10.3.19.181) To
+ kwepemi500012.china.huawei.com (7.221.188.12)
+X-CFilter-Loop: Reflected
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: Spam detection software,
  running on the system "util-spamd-1.v13.lw.sourceforge.com", 
  has NOT identified this incoming email as spam.  The original
  message has been attached to this so you can view it or label
  similar future email.  If you have any questions, see
  the administrator of that system for details.
- Content preview:  On Sun, Nov 13, 2022 at 05:29:01PM +0100, Christoph Hellwig
- wrote: > ->writepage is a very inefficient method to write back data, and
- only > used through write_cache_pages or a a fallback when no ->mi [...] 
- Content analysis details:   (0.0 points, 6.0 required)
+ Content preview: Syzkaller report issue as follows: UBSAN: shift-out-of-bounds
+ in fs/jfs/super.c:140:14 shift exponent -236023038 is negative CPU: 0 PID:
+ 3985 Comm: syz-executor.4 Not tainted 6.1.0-rc2-syzkaller #0 Hardware name:
+ Google Compute Engine, [...] 
+ Content analysis details:   (-2.3 points, 6.0 required)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.210.182 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [45.249.212.255 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [209.85.210.182 listed in wl.mailspike.net]
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
-X-Headers-End: 1oumjB-008eTD-L9
-X-Mailman-Approved-At: Tue, 15 Nov 2022 13:21:45 +0000
-Subject: Re: [Jfs-discussion] [PATCH 8/9] omfs: remove ->writepage
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+X-Headers-End: 1ov7OW-009tE0-8C
+Subject: [Jfs-discussion] [PATCH] jfs: Fix shift-out-of-bounds in jfs_statfs
 X-BeenThere: jfs-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -124,32 +86,70 @@ List-Post: <mailto:jfs-discussion@lists.sourceforge.net>
 List-Help: <mailto:jfs-discussion-request@lists.sourceforge.net?subject=help>
 List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/jfs-discussion>, 
  <mailto:jfs-discussion-request@lists.sourceforge.net?subject=subscribe>
-Cc: Dave Kleikamp <shaggy@kernel.org>, jfs-discussion@lists.sourceforge.net,
- linux-ext4@vger.kernel.org, linux-karma-devel@lists.sourceforge.net,
- linux-mm@kvack.org, Mikulas Patocka <mikulas@artax.karlin.mff.cuni.cz>,
- Jan Kara <jack@suse.com>, linux-fsdevel@vger.kernel.org,
- Sungjong Seo <sj1557.seo@samsung.com>, Namjae Jeon <linkinjeon@kernel.org>,
- OGAWA Hirofumi <hirofumi@mail.parknet.co.jp>
+From: Liao Chang via Jfs-discussion <jfs-discussion@lists.sourceforge.net>
+Reply-To: Liao Chang <liaochang1@huawei.com>
+Cc: jfs-discussion@lists.sourceforge.net, liaochang1@huawei.com,
+ linux-kernel@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Errors-To: jfs-discussion-bounces@lists.sourceforge.net
 
-On Sun, Nov 13, 2022 at 05:29:01PM +0100, Christoph Hellwig wrote:
-> ->writepage is a very inefficient method to write back data, and only
-> used through write_cache_pages or a a fallback when no ->migrate_folio
-> method is present.
-> 
-> Set ->migrate_folio to the generic buffer_head based helper, and remove
-> the ->writepage implementation.
-> 
-> Signed-off-by: Christoph Hellwig <hch@lst.de>
+Syzkaller report issue as follows:
 
-Looks good,
+UBSAN: shift-out-of-bounds in fs/jfs/super.c:140:14
+shift exponent -236023038 is negative
+CPU: 0 PID: 3985 Comm: syz-executor.4 Not tainted 6.1.0-rc2-syzkaller #0
+Hardware name: Google Compute Engine, BIOS Google 10/11/2022
+Call Trace:
+ <TASK>
+ __dump_stack lib/dump_stack.c:88
+ dump_stack_lvl+0x1b1/0x28e lib/dump_stack.c:106
+ ubsan_epilogue lib/ubsan.c:151
+ __ubsan_handle_shift_out_of_bounds+0x33d/0x3b0 lib/ubsan.c:322
+ jfs_statfs+0x503/0x510 fs/jfs/super.c:140
+ statfs_by_dentry fs/statfs.c:66
+ vfs_statfs+0x136/0x310 fs/statfs.c:90
+ user_statfs fs/statfs.c:105
+__ubsan_handle_shift_out_of_bounds __do_sys_statfs fs/statfs.c:195
+ __se_sys_statfs fs/statfs.c:192
+ __x64_sys_statfs+0x120/0x230 fs/statfs.c:192
+ do_syscall_x64 arch/x86/entry/common.c:50
+ do_syscall_64+0x3d/0xb0 arch/x86/entry/common.c:80
+ entry_SYSCALL_64_after_hwframe+0x63/0xcd
+ </TASK>
 
-Acked-by: Bob Copeland <me@bobcopeland.com>
+The on-disk inode map control structure contains a number indicates the
+log2 number of blocks per inode extent, which will be used as the shift
+to calculate the number of free blocks in jfs_statfs, so it needs to
+ensure the on-disk log2 number is positive and less than 64 on JFS
+mount.
 
+Reported-by: syzbot+3424c9550a49659f1704@syzkaller.appspotmail.com
+Signed-off-by: Liao Chang <liaochang1@huawei.com>
+---
+ fs/jfs/jfs_imap.c | 6 ++++++
+ 1 file changed, 6 insertions(+)
+
+diff --git a/fs/jfs/jfs_imap.c b/fs/jfs/jfs_imap.c
+index 799d3837e7c2..1ff632c55acf 100644
+--- a/fs/jfs/jfs_imap.c
++++ b/fs/jfs/jfs_imap.c
+@@ -124,6 +124,12 @@ int diMount(struct inode *ipimap)
+ 	atomic_set(&imap->im_numfree, le32_to_cpu(dinom_le->in_numfree));
+ 	imap->im_nbperiext = le32_to_cpu(dinom_le->in_nbperiext);
+ 	imap->im_l2nbperiext = le32_to_cpu(dinom_le->in_l2nbperiext);
++	if (imap->im_l2nbperiext < 0 ||
++	    imap->im_l2nbperiext >= sizeof(s64) * 8) {
++		kfree(imap);
++		return -EINVAL;
++	}
++
+ 	for (index = 0; index < MAXAG; index++) {
+ 		imap->im_agctl[index].inofree =
+ 		    le32_to_cpu(dinom_le->in_agctl[index].inofree);
 -- 
-Bob Copeland %% https://bobcopeland.com/
+2.17.1
+
 
 
 _______________________________________________
