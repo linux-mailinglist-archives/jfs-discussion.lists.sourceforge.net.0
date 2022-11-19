@@ -2,109 +2,105 @@ Return-Path: <jfs-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+jfs-discussion@lfdr.de
 Delivered-To: lists+jfs-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2317C62E726
-	for <lists+jfs-discussion@lfdr.de>; Thu, 17 Nov 2022 22:41:52 +0100 (CET)
-Received: from [127.0.0.1] (helo=sfs-ml-1.v29.lw.sourceforge.com)
-	by sfs-ml-1.v29.lw.sourceforge.com with esmtp (Exim 4.95)
+	by mail.lfdr.de (Postfix) with ESMTPS id DBC5E630F33
+	for <lists+jfs-discussion@lfdr.de>; Sat, 19 Nov 2022 15:46:37 +0100 (CET)
+Received: from [127.0.0.1] (helo=sfs-ml-3.v29.lw.sourceforge.com)
+	by sfs-ml-3.v29.lw.sourceforge.com with esmtp (Exim 4.95)
 	(envelope-from <jfs-discussion-bounces@lists.sourceforge.net>)
-	id 1ovmdb-0005aI-6x;
-	Thu, 17 Nov 2022 21:41:35 +0000
+	id 1owP6m-00008q-0e;
+	Sat, 19 Nov 2022 14:46:16 +0000
 Received: from [172.30.20.202] (helo=mx.sourceforge.net)
- by sfs-ml-1.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
- TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (Exim 4.95)
- (envelope-from <dhowells@redhat.com>) id 1ovmdZ-0005aC-Vg
- for jfs-discussion@lists.sourceforge.net;
- Thu, 17 Nov 2022 21:41:33 +0000
+ by sfs-ml-2.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
+ TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (Exim 4.95) (envelope-from
+ <3vaJ4YwkbAAg067sittmzixxql.owwotm20mzkwv1mv1.kwu@M3KW2WVRGUFZ5GODRSRYTGD7.apphosting.bounces.google.com>)
+ id 1owKDY-0000n3-5G for jfs-discussion@lists.sourceforge.net;
+ Sat, 19 Nov 2022 09:32:56 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=sourceforge.net; s=x; h=Message-ID:Date:Content-ID:Content-Type:
- MIME-Version:Subject:Cc:To:References:In-Reply-To:From:Sender:Reply-To:
- Content-Transfer-Encoding:Content-Description:Resent-Date:Resent-From:
- Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:
- List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=UuffnjWXo7tMwo00tJbjEU1LHxhg1We6830zDfm1nv8=; b=i2jwhgxI53Y8gwUrkjnvA16zIp
- foW6wSQMwk1mqu2PCycvq/Aekd/5pDFcTVFkqxjpVa0M+kJH/cnnprsJBU2YHMtq9EsEHNpMsCBe4
- KtnBkwdq+FrF+jA9GNzlhftV6DjEMyCVvHeH2ZGvq8X/rmHRMj1j2E6LiBrJZATgzApk=;
+ d=sourceforge.net; s=x; h=Content-Type:To:From:Subject:Message-ID:In-Reply-To
+ :Date:MIME-Version:Sender:Reply-To:Cc:Content-Transfer-Encoding:Content-ID:
+ Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+ :Resent-Message-ID:References:List-Id:List-Help:List-Unsubscribe:
+ List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=nzgvcnu4RehLlaIos2qw74V1Rm/ANtY+0e1pgohKtVc=; b=WX4Op5XNuh+Kz3gToihyzjMeYK
+ IOMWQKmoYnOnGyisRdF9IowQLQr64X3kiPNHCpGC7DnpdWsqqklOlfrgrDav6cYgwf9hf61Etg0Ju
+ 7XT+LeP31WvjcqAs+j+aZr2ohNQsDpmxJj9y1OkKJPyTI1ZwpUQhC1j/o2DtmzQivP2w=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
- h=Message-ID:Date:Content-ID:Content-Type:MIME-Version:Subject:Cc:To:
- References:In-Reply-To:From:Sender:Reply-To:Content-Transfer-Encoding:
- Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
- :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
- List-Post:List-Owner:List-Archive;
- bh=UuffnjWXo7tMwo00tJbjEU1LHxhg1We6830zDfm1nv8=; b=J6KiFZPkndj2BBKdc+HX/09owo
- G2YklVzEDb+5/mvgl8jQqz8sgzjNWdCRzwCNhjlk52PNiVzOM7hqoPfwGPNuBk6kT5t4jNsD0E7Ji
- LrsPNTB/3lAnppwUacmZQDUkJgwIHQsU8g0oeiNE4BK9VUV7ePgcfR3xGWt0KmXCBpqw=;
-Received: from us-smtp-delivery-124.mimecast.com ([170.10.133.124])
+ h=Content-Type:To:From:Subject:Message-ID:In-Reply-To:Date:MIME-Version:
+ Sender:Reply-To:Cc:Content-Transfer-Encoding:Content-ID:Content-Description:
+ Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+ References:List-Id:List-Help:List-Unsubscribe:List-Subscribe:List-Post:
+ List-Owner:List-Archive; bh=nzgvcnu4RehLlaIos2qw74V1Rm/ANtY+0e1pgohKtVc=; b=V
+ 3Z/jCL1yMLtOWTJnycLvrgCwAcHP9c19Xex91CXGByQ+8L4aUx7hoyUE/xSJDv4dS2q/9XpSFVIUz
+ ehJKPhijAarxZQGGFu+a6uavpE8xdp2MlLzkgDtVSbWCbFrmmgJt3wgzihP2qBfVlALes4WLeVBv6
+ 7xzyPVKRB3uY24Us=;
+Received: from mail-il1-f197.google.com ([209.85.166.197])
  by sfi-mx-1.v28.lw.sourceforge.com with esmtps
- (TLS1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.95)
- id 1ovmdZ-00Bfxb-EJ for jfs-discussion@lists.sourceforge.net;
- Thu, 17 Nov 2022 21:41:33 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
- s=mimecast20190719; t=1668721287;
- h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
- to:to:cc:cc:mime-version:mime-version:content-type:content-type:
- in-reply-to:in-reply-to:references:references;
- bh=UuffnjWXo7tMwo00tJbjEU1LHxhg1We6830zDfm1nv8=;
- b=JPnN1ymAyFuo68ai7GWHturNV1Vz8EGwaijTfCiw0EHFZqlHPNic4Dl3cR/d32ubISycrm
- V0ayhrzrFMJFdGYNeB4W2tL7JgWWnxAnpuVvW3ImrGY8ZE1pByjZ5Ls/QJW6o9e9GHmkV/
- 3SlPKzqvuVF9T24VR+GFRKEAc8qqFqQ=
-Received: from mimecast-mx02.redhat.com (mx3-rdu2.redhat.com
- [66.187.233.73]) by relay.mimecast.com with ESMTP with STARTTLS
- (version=TLSv1.2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- us-mta-628-2Ct9ZNWvOY2mRvcbD5Qzyg-1; Thu, 17 Nov 2022 16:41:25 -0500
-X-MC-Unique: 2Ct9ZNWvOY2mRvcbD5Qzyg-1
-Received: from smtp.corp.redhat.com (int-mx02.intmail.prod.int.rdu2.redhat.com
- [10.11.54.2])
- (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
- (No client certificate requested)
- by mimecast-mx02.redhat.com (Postfix) with ESMTPS id A8B0329ABA33;
- Thu, 17 Nov 2022 21:41:24 +0000 (UTC)
-Received: from warthog.procyon.org.uk (unknown [10.33.36.24])
- by smtp.corp.redhat.com (Postfix) with ESMTP id 123EF40C6EC3;
- Thu, 17 Nov 2022 21:41:22 +0000 (UTC)
-Organization: Red Hat UK Ltd. Registered Address: Red Hat UK Ltd, Amberley
- Place, 107-111 Peascod Street, Windsor, Berkshire, SI4 1TE, United
- Kingdom.
- Registered in England and Wales under Company Registration No. 3798903
-From: David Howells <dhowells@redhat.com>
-In-Reply-To: <20221116183900.yzpcymelnnwppoh7@riteshh-domain>
-References: <20221116183900.yzpcymelnnwppoh7@riteshh-domain>
- <20221113162902.883850-1-hch@lst.de>
-To: "Ritesh Harjani (IBM)" <ritesh.list@gmail.com>
+ (TLS1.2:ECDHE-RSA-AES128-GCM-SHA256:128) (Exim 4.95)
+ id 1owKDT-00DnPh-7w for jfs-discussion@lists.sourceforge.net;
+ Sat, 19 Nov 2022 09:32:51 +0000
+Received: by mail-il1-f197.google.com with SMTP id
+ c4-20020a056e020bc400b0030098df879dso4841316ilu.6
+ for <jfs-discussion@lists.sourceforge.net>;
+ Sat, 19 Nov 2022 01:32:51 -0800 (PST)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20210112;
+ h=to:from:subject:message-id:in-reply-to:date:mime-version
+ :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+ bh=nzgvcnu4RehLlaIos2qw74V1Rm/ANtY+0e1pgohKtVc=;
+ b=f/fksbzNp1abZPFZrs70sI+zRJqJBherCZlcuowgiZcTgQVAR0pncs5fv0TmM6UJpo
+ c5fYhmUnl/gV9GJl6DpdKmezoMPFqz7vjLL+27j9t6dX5VrgEmQ0NiNMztZUOVGDAhLp
+ Bt1Z8Fes6fq35u5n9pj+wH/MW+EuOsdzeZdKLFZSuDsi+Tld93zS50eFJkFjk+0eOEPO
+ 2F0Kq2lYkoD1/RCr+4kSoWcTgqXKYFEShiHn3zz4pJLxXwcZhxoWfBT4B+mFIFgeAREJ
+ d1zzYg3L68kRlfK0o5PL7SLpXIquU8LmiwkkSj1gM4vYrgrCY8CjcQYFrhNRxlZ+v9Xz
+ HWYQ==
+X-Gm-Message-State: ANoB5pmzrwpw2rH4g94VAG0QHRWlfop1N4ZxL41QH2cOfkALzlQ6BJ4c
+ BVkJ6stQkEW8kdJeQ2BKKGmYCu7/lV9saiYtmV0hU9kOewiC
+X-Google-Smtp-Source: AA0mqf7M34HLaReQ7iZxJI6lr+tDpY4FARUliJwgjpFrVOM2hnrKidFbnLhng2IytDkaqRhYMOFvq3JOwb26lfsuXNkpIvKv5POv
 MIME-Version: 1.0
-Content-ID: <4031744.1668721280.1@warthog.procyon.org.uk>
-Date: Thu, 17 Nov 2022 21:41:20 +0000
-Message-ID: <4031745.1668721280@warthog.procyon.org.uk>
-X-Scanned-By: MIMEDefang 3.1 on 10.11.54.2
-X-Spam-Score: -0.9 (/)
+X-Received: by 2002:a92:d90c:0:b0:2fc:b8b7:484e with SMTP id
+ s12-20020a92d90c000000b002fcb8b7484emr4772923iln.122.1668850365654; Sat, 19
+ Nov 2022 01:32:45 -0800 (PST)
+Date: Sat, 19 Nov 2022 01:32:45 -0800
+In-Reply-To: <00000000000009854205ebd33650@google.com>
+X-Google-Appengine-App-Id: s~syzkaller
+X-Google-Appengine-App-Id-Alias: syzkaller
+Message-ID: <0000000000003a702c05edcf81ef@google.com>
+From: syzbot <syzbot+3424c9550a49659f1704@syzkaller.appspotmail.com>
+To: jfs-discussion@lists.sourceforge.net, linux-kernel@vger.kernel.org, 
+ shaggy@kernel.org, syzkaller-bugs@googlegroups.com
+X-Spam-Score: 0.6 (/)
 X-Spam-Report: Spam detection software,
- running on the system "util-spamd-1.v13.lw.sourceforge.com", 
+ running on the system "util-spamd-2.v13.lw.sourceforge.com", 
  has NOT identified this incoming email as spam.  The original
  message has been attached to this so you can view it or label
  similar future email.  If you have any questions, see
  the administrator of that system for details.
- Content preview:  Also ->writepage() is called with the page already locked,
- which is a problem if you need to write out a number of surrounding pages
- with it. David 
- Content analysis details:   (-0.9 points, 6.0 required)
+ Content preview:  syzbot has found a reproducer for the following issue on:
+ HEAD commit: ab290eaddc4c Merge tag 's390-6.1-5' of git://git.kernel.or..
+ git tree: upstream console+strace:
+ https://syzkaller.appspot.com/x/log.txt?x=1006e331880000
+ kernel config: https://syzkaller.a [...] 
+ Content analysis details:   (0.6 points, 6.0 required)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [170.10.133.124 listed in list.dnswl.org]
+ no trust [209.85.166.197 listed in list.dnswl.org]
+ 0.3 FROM_LOCAL_HEX         From: localpart has long hexadecimal sequence
+ 0.0 URIBL_BLOCKED          ADMINISTRATOR NOTICE: The query to URIBL was
+ blocked.  See
+ http://wiki.apache.org/spamassassin/DnsBlocklists#dnsbl-block
+ for more information. [URIs: googleapis.com]
  -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [170.10.133.124 listed in wl.mailspike.net]
+ [209.85.166.197 listed in wl.mailspike.net]
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.7 DKIMWL_WL_HIGH         DKIMwl.org - High trust sender
-X-Headers-End: 1ovmdZ-00Bfxb-EJ
-Subject: Re: [Jfs-discussion] start removing writepage instances
+X-Headers-End: 1owKDT-00DnPh-7w
+X-Mailman-Approved-At: Sat, 19 Nov 2022 14:46:12 +0000
+Subject: Re: [Jfs-discussion] [syzbot] UBSAN: shift-out-of-bounds in
+ jfs_statfs
 X-BeenThere: jfs-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -116,21 +112,62 @@ List-Post: <mailto:jfs-discussion@lists.sourceforge.net>
 List-Help: <mailto:jfs-discussion-request@lists.sourceforge.net?subject=help>
 List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/jfs-discussion>, 
  <mailto:jfs-discussion-request@lists.sourceforge.net?subject=subscribe>
-Cc: Dave Kleikamp <shaggy@kernel.org>, jfs-discussion@lists.sourceforge.net,
- linux-ext4@vger.kernel.org, linux-karma-devel@lists.sourceforge.net,
- Bob Copeland <me@bobcopeland.com>, Namjae Jeon <linkinjeon@kernel.org>,
- dhowells@redhat.com, linux-mm@kvack.org,
- Mikulas Patocka <mikulas@artax.karlin.mff.cuni.cz>, Jan Kara <jack@suse.com>,
- linux-fsdevel@vger.kernel.org, Sungjong Seo <sj1557.seo@samsung.com>,
- Christoph Hellwig <hch@lst.de>, OGAWA Hirofumi <hirofumi@mail.parknet.co.jp>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Errors-To: jfs-discussion-bounces@lists.sourceforge.net
 
-Also ->writepage() is called with the page already locked, which is a problem
-if you need to write out a number of surrounding pages with it.
+syzbot has found a reproducer for the following issue on:
 
-David
+HEAD commit:    ab290eaddc4c Merge tag 's390-6.1-5' of git://git.kernel.or..
+git tree:       upstream
+console+strace: https://syzkaller.appspot.com/x/log.txt?x=1006e331880000
+kernel config:  https://syzkaller.appspot.com/x/.config?x=6f9416d398342c83
+dashboard link: https://syzkaller.appspot.com/bug?extid=3424c9550a49659f1704
+compiler:       Debian clang version 13.0.1-++20220126092033+75e33f71c2da-1~exp1~20220126212112.63, GNU ld (GNU Binutils for Debian) 2.35.2
+syz repro:      https://syzkaller.appspot.com/x/repro.syz?x=15a0ec6e880000
+C reproducer:   https://syzkaller.appspot.com/x/repro.c?x=105d8d45880000
+
+Downloadable assets:
+disk image: https://storage.googleapis.com/syzbot-assets/a3af44347ffd/disk-ab290ead.raw.xz
+vmlinux: https://storage.googleapis.com/syzbot-assets/4331229e5ff9/vmlinux-ab290ead.xz
+kernel image: https://storage.googleapis.com/syzbot-assets/b0c12f02efc3/bzImage-ab290ead.xz
+mounted in repro: https://storage.googleapis.com/syzbot-assets/6e5bfebe2bc7/mount_0.gz
+
+IMPORTANT: if you fix the issue, please add the following tag to the commit:
+Reported-by: syzbot+3424c9550a49659f1704@syzkaller.appspotmail.com
+
+loop0: detected capacity change from 0 to 32768
+================================================================================
+UBSAN: shift-out-of-bounds in fs/jfs/super.c:140:14
+shift exponent 1749508610 is too large for 64-bit type 's64' (aka 'long long')
+CPU: 0 PID: 3634 Comm: syz-executor222 Not tainted 6.1.0-rc5-syzkaller-00241-gab290eaddc4c #0
+Hardware name: Google Google Compute Engine/Google Compute Engine, BIOS Google 10/26/2022
+Call Trace:
+ <TASK>
+ __dump_stack lib/dump_stack.c:88 [inline]
+ dump_stack_lvl+0x1b1/0x28e lib/dump_stack.c:106
+ ubsan_epilogue lib/ubsan.c:151 [inline]
+ __ubsan_handle_shift_out_of_bounds+0x33d/0x3b0 lib/ubsan.c:322
+ jfs_statfs+0x503/0x510 fs/jfs/super.c:140
+ statfs_by_dentry fs/statfs.c:66 [inline]
+ vfs_statfs+0x136/0x310 fs/statfs.c:90
+ user_statfs fs/statfs.c:105 [inline]
+ __do_sys_statfs fs/statfs.c:195 [inline]
+ __se_sys_statfs fs/statfs.c:192 [inline]
+ __x64_sys_statfs+0x120/0x230 fs/statfs.c:192
+ do_syscall_x64 arch/x86/entry/common.c:50 [inline]
+ do_syscall_64+0x3d/0xb0 arch/x86/entry/common.c:80
+ entry_SYSCALL_64_after_hwframe+0x63/0xcd
+RIP: 0033:0x7f0501ab8f79
+Code: ff ff c3 66 2e 0f 1f 84 00 00 00 00 00 0f 1f 40 00 48 89 f8 48 89 f7 48 89 d6 48 89 ca 4d 89 c2 4d 89 c8 4c 8b 4c 24 08 0f 05 <48> 3d 01 f0 ff ff 73 01 c3 48 c7 c1 c0 ff ff ff f7 d8 64 89 01 48
+RSP: 002b:00007ffffd945308 EFLAGS: 00000246 ORIG_RAX: 0000000000000089
+RAX: ffffffffffffffda RBX: 0030656c69662f2e RCX: 00007f0501ab8f79
+RDX: 00007f0501a77473 RSI: 0000000000000000 RDI: 0000000020004c80
+RBP: 00007f0501a78740 R08: 0000555555fe32c0 R09: 0000000000000000
+R10: 00007ffffd9451d0 R11: 0000000000000246 R12: 0a0a0a0a0a0a0a0a
+R13: 0000000000000000 R14: 00083878000000f8 R15: 0000000000000000
+ </TASK>
+================================================================================
 
 
 
