@@ -2,27 +2,27 @@ Return-Path: <jfs-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+jfs-discussion@lfdr.de
 Delivered-To: lists+jfs-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id 48E8E6404A2
-	for <lists+jfs-discussion@lfdr.de>; Fri,  2 Dec 2022 11:27:40 +0100 (CET)
-Received: from [127.0.0.1] (helo=sfs-ml-1.v29.lw.sourceforge.com)
-	by sfs-ml-1.v29.lw.sourceforge.com with esmtp (Exim 4.95)
+	by mail.lfdr.de (Postfix) with ESMTPS id 963D56404A4
+	for <lists+jfs-discussion@lfdr.de>; Fri,  2 Dec 2022 11:27:46 +0100 (CET)
+Received: from [127.0.0.1] (helo=sfs-ml-4.v29.lw.sourceforge.com)
+	by sfs-ml-4.v29.lw.sourceforge.com with esmtp (Exim 4.95)
 	(envelope-from <jfs-discussion-bounces@lists.sourceforge.net>)
-	id 1p13GJ-00046u-RL;
-	Fri, 02 Dec 2022 10:27:19 +0000
+	id 1p13GX-00078F-IY;
+	Fri, 02 Dec 2022 10:27:33 +0000
 Received: from [172.30.20.202] (helo=mx.sourceforge.net)
- by sfs-ml-1.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
+ by sfs-ml-4.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
  TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (Exim 4.95) (envelope-from
  <BATV+dbb76fff442e09cb8719+7040+infradead.org+hch@bombadil.srs.infradead.org>)
- id 1p13GG-000460-4f; Fri, 02 Dec 2022 10:27:16 +0000
+ id 1p13GH-000776-Is; Fri, 02 Dec 2022 10:27:17 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=sourceforge.net; s=x; h=Content-Transfer-Encoding:MIME-Version:References:
  In-Reply-To:Message-Id:Date:Subject:Cc:To:From:Sender:Reply-To:Content-Type:
  Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
  Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=mbvlyXxWhO9WFxugvmMSJQGn9fzMBZ852OGR/GsDnBQ=; b=H9JM76KQnWy2ei9H+Xxw/hRQfz
- G8rk9BhQCC8apul54AniDibQUKCw0NCVbIgNXb9PqEr5SNWhSXaptG7DMAwy639F7isHNfHkE3h5C
- G4O284GaVpa+PrQXIqXv+ptxGjfRGLQQnW+XkFKeCHXb05vkxC/YepyPzzpEsmujJKB0=;
+ bh=fqr9TW+rT8ValeXLVFOQSDtrNHXsSl7u56JKe2jXztI=; b=Vg7rqYPbAfJhFopty2dLZ+6Hwd
+ i4/yREQEzptMnEqB00WWBw1/mANCb1y+8cPScOWmxFIiTda7qwcupiH2boZBR3J/RPNGq/q7eafUE
+ qkihF/Vv4K/SzymF8AXxfyeNSAl8VW1MvaN8vrIZwahvz04nqYD1750x6yQZnH4uBtkE=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
  h=Content-Transfer-Encoding:MIME-Version:References:In-Reply-To:Message-Id:
@@ -30,34 +30,34 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
  :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
  List-Post:List-Owner:List-Archive;
- bh=mbvlyXxWhO9WFxugvmMSJQGn9fzMBZ852OGR/GsDnBQ=; b=mMnaIRYMsUzTibdx9kmF1St475
- UrMZRVi838GqvmLKKhmxi2B8KAdGnYvBHrnfYiGl/ENrsuZFF94IA7qtrjBM1NyKn3N5+Pknfpl37
- Q5GjAtdO7IwAy7PpcLDOY0I7OdkN+wjdl5ZO0M4RR+o1FNpNofJ4mYzBrObqr+Bx4pwE=;
+ bh=fqr9TW+rT8ValeXLVFOQSDtrNHXsSl7u56JKe2jXztI=; b=NWcyuwTV/Zvh4PpxC5hfPVY54M
+ ETsayC++kNNUpfsE0Pj67gKSXqDH2/DfQj76qD17v1azsJzF88rGEAACQAKszRiUAaFKQXewiY2ih
+ 947TZOQ1Sulh/ydN9CQ386HE1u0gz/Fso2axoEmYZq9zigZMfGFvyMUoXcRJe50OALW4=;
 Received: from bombadil.infradead.org ([198.137.202.133])
- by sfi-mx-2.v28.lw.sourceforge.com with esmtps
+ by sfi-mx-1.v28.lw.sourceforge.com with esmtps
  (TLS1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.95)
- id 1p13GE-0003Rv-LB; Fri, 02 Dec 2022 10:27:15 +0000
+ id 1p13GG-0042AY-DX; Fri, 02 Dec 2022 10:27:16 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=infradead.org; s=bombadil.20210309; h=Content-Transfer-Encoding:
  MIME-Version:References:In-Reply-To:Message-Id:Date:Subject:Cc:To:From:Sender
  :Reply-To:Content-Type:Content-ID:Content-Description;
- bh=mbvlyXxWhO9WFxugvmMSJQGn9fzMBZ852OGR/GsDnBQ=; b=INC7W8kcASEs2+FQI6tK+fkYe7
- FVLv5J6Yt9ZchoTmC3IrWcFjNI8P8nW/kfVnPT8z4afsigc0DyzXO/8jHJO4Lb+ZG3fJnolV4DQRY
- IAUlwenbG5qLTeP0d/+f+FXyW/PFBt2gXZ6V7In4xC82yItOO63+eSh9MshNuHBeHLlaZoxr2Wtg7
- h0UuhIkcrY6s4liyPpdjMHfpFvKmXU3TZC0Z8kursgybQFsK42q7alrWlDNMR9loGPNZPTlr5PC3X
- 0N2gBn0iRz0FtIqvqeAeyX0/yD7W1p+duoifLZEIOu0sc7+LbZHHQjXMm8l5LgxIqc7RrHLLYUWvZ
- YtODIeZA==;
+ bh=fqr9TW+rT8ValeXLVFOQSDtrNHXsSl7u56JKe2jXztI=; b=TWvEKxe1hgaqaar0S3SdimrN6x
+ CCDVFmRGCM1ggNXnG5FjJDcpDBjli7i4LD/ks900zzcj1gTmSm5Gec8vrJIJc0FAdbCn/oPYdx6Zt
+ T05aBcXid3fSpkehDIgr1ssY1DY7NeoCM6NTgkF8Vti6BYts/hcAO9azLBFkGAkL3ItNAnApvXXyu
+ BZ5KwzzO58NFGMAbVIIZUWGmHki7aOK6zFx1KMBI5NFt2H8SHg5srWFPDo3CeaHU/T3xDokLMAjJ4
+ ueFDVhrzFEEHXF9JZhYku8gRMyvySJf07CcRonjhN0xseuAoTI2jGFX2ZwGLSf2ZqyQh893fl2rar
+ sG+xo6dA==;
 Received: from [2001:4bb8:192:26e7:bcd3:7e81:e7de:56fd] (helo=localhost)
  by bombadil.infradead.org with esmtpsa (Exim 4.94.2 #2 (Red Hat Linux))
- id 1p13G1-00FR1N-A5; Fri, 02 Dec 2022 10:27:01 +0000
+ id 1p13G4-00FR2o-7h; Fri, 02 Dec 2022 10:27:04 +0000
 From: Christoph Hellwig <hch@lst.de>
 To: Andrew Morton <akpm@linux-foundation.org>,
  Namjae Jeon <linkinjeon@kernel.org>, Sungjong Seo <sj1557.seo@samsung.com>,
  Jan Kara <jack@suse.com>, OGAWA Hirofumi <hirofumi@mail.parknet.co.jp>,
  Mikulas Patocka <mikulas@artax.karlin.mff.cuni.cz>,
  Dave Kleikamp <shaggy@kernel.org>, Bob Copeland <me@bobcopeland.com>
-Date: Fri,  2 Dec 2022 11:26:42 +0100
-Message-Id: <20221202102644.770505-6-hch@lst.de>
+Date: Fri,  2 Dec 2022 11:26:43 +0100
+Message-Id: <20221202102644.770505-7-hch@lst.de>
 X-Mailer: git-send-email 2.30.2
 In-Reply-To: <20221202102644.770505-1-hch@lst.de>
 References: <20221202102644.770505-1-hch@lst.de>
@@ -94,8 +94,8 @@ X-Spam-Report: Spam detection software,
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
-X-Headers-End: 1p13GE-0003Rv-LB
-Subject: [Jfs-discussion] [PATCH 5/7] hpfs: remove ->writepage
+X-Headers-End: 1p13GG-0042AY-DX
+Subject: [Jfs-discussion] [PATCH 6/7] jfs: remove ->writepage
 X-BeenThere: jfs-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -122,42 +122,42 @@ Set ->migrate_folio to the generic buffer_head based helper, and remove
 the ->writepage implementation.
 
 Signed-off-by: Christoph Hellwig <hch@lst.de>
+Acked-by: Dave Kleikamp <dave.kleikamp@oracle.com>
 Acked-by: Johannes Weiner <hannes@cmpxchg.org>
 ---
- fs/hpfs/file.c | 9 ++-------
- 1 file changed, 2 insertions(+), 7 deletions(-)
+ fs/jfs/inode.c | 7 +------
+ 1 file changed, 1 insertion(+), 6 deletions(-)
 
-diff --git a/fs/hpfs/file.c b/fs/hpfs/file.c
-index f7547a62c81f6a..88952d4a631e6c 100644
---- a/fs/hpfs/file.c
-+++ b/fs/hpfs/file.c
-@@ -163,11 +163,6 @@ static int hpfs_read_folio(struct file *file, struct folio *folio)
- 	return mpage_read_folio(folio, hpfs_get_block);
+diff --git a/fs/jfs/inode.c b/fs/jfs/inode.c
+index d1ec920aa030a8..8ac10e39605081 100644
+--- a/fs/jfs/inode.c
++++ b/fs/jfs/inode.c
+@@ -264,11 +264,6 @@ int jfs_get_block(struct inode *ip, sector_t lblock,
+ 	return rc;
  }
  
--static int hpfs_writepage(struct page *page, struct writeback_control *wbc)
+-static int jfs_writepage(struct page *page, struct writeback_control *wbc)
 -{
--	return block_write_full_page(page, hpfs_get_block, wbc);
+-	return block_write_full_page(page, jfs_get_block, wbc);
 -}
 -
- static void hpfs_readahead(struct readahead_control *rac)
+ static int jfs_writepages(struct address_space *mapping,
+ 			struct writeback_control *wbc)
  {
- 	mpage_readahead(rac, hpfs_get_block);
-@@ -248,12 +243,12 @@ const struct address_space_operations hpfs_aops = {
- 	.dirty_folio	= block_dirty_folio,
+@@ -355,12 +350,12 @@ const struct address_space_operations jfs_aops = {
  	.invalidate_folio = block_invalidate_folio,
- 	.read_folio = hpfs_read_folio,
--	.writepage = hpfs_writepage,
- 	.readahead = hpfs_readahead,
- 	.writepages = hpfs_writepages,
- 	.write_begin = hpfs_write_begin,
- 	.write_end = hpfs_write_end,
--	.bmap = _hpfs_bmap
-+	.bmap = _hpfs_bmap,
-+	.migrate_folio = buffer_migrate_folio,
+ 	.read_folio	= jfs_read_folio,
+ 	.readahead	= jfs_readahead,
+-	.writepage	= jfs_writepage,
+ 	.writepages	= jfs_writepages,
+ 	.write_begin	= jfs_write_begin,
+ 	.write_end	= jfs_write_end,
+ 	.bmap		= jfs_bmap,
+ 	.direct_IO	= jfs_direct_IO,
++	.migrate_folio	= buffer_migrate_folio,
  };
  
- const struct file_operations hpfs_file_ops =
+ /*
 -- 
 2.30.2
 
