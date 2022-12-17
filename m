@@ -2,66 +2,68 @@ Return-Path: <jfs-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+jfs-discussion@lfdr.de
 Delivered-To: lists+jfs-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8B49764F9E4
-	for <lists+jfs-discussion@lfdr.de>; Sat, 17 Dec 2022 16:29:02 +0100 (CET)
-Received: from [127.0.0.1] (helo=sfs-ml-1.v29.lw.sourceforge.com)
-	by sfs-ml-1.v29.lw.sourceforge.com with esmtp (Exim 4.95)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4CB3C64F9E5
+	for <lists+jfs-discussion@lfdr.de>; Sat, 17 Dec 2022 16:29:05 +0100 (CET)
+Received: from [127.0.0.1] (helo=sfs-ml-4.v29.lw.sourceforge.com)
+	by sfs-ml-4.v29.lw.sourceforge.com with esmtp (Exim 4.95)
 	(envelope-from <jfs-discussion-bounces@lists.sourceforge.net>)
-	id 1p6Z7J-0002Tz-3m;
-	Sat, 17 Dec 2022 15:28:49 +0000
+	id 1p6Z7K-0001bz-4s;
+	Sat, 17 Dec 2022 15:28:50 +0000
 Received: from [172.30.20.202] (helo=mx.sourceforge.net)
- by sfs-ml-1.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
+ by sfs-ml-4.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
  TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (Exim 4.95)
- (envelope-from <sashal@kernel.org>) id 1p6Z7F-0002Sc-54
+ (envelope-from <sashal@kernel.org>) id 1p6Z7F-0001bi-5K
  for jfs-discussion@lists.sourceforge.net;
  Sat, 17 Dec 2022 15:28:45 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=sourceforge.net; s=x; h=Content-Transfer-Encoding:MIME-Version:Message-Id:
- Date:Subject:Cc:To:From:Sender:Reply-To:Content-Type:Content-ID:
- Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
- :Resent-Message-ID:In-Reply-To:References:List-Id:List-Help:List-Unsubscribe:
+ d=sourceforge.net; s=x; h=Content-Transfer-Encoding:MIME-Version:References:
+ In-Reply-To:Message-Id:Date:Subject:Cc:To:From:Sender:Reply-To:Content-Type:
+ Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
+ Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=79E9++Gyuo7RYEdpcKgy5BKuJEQ0drrl/R0K7XoSiP0=; b=K+s7l97H8oFULjAOZug+SxyaPf
- AtYlrzsbZW0fx7U4Vh2SlC5hHXRSW8/OecL1uxqjWj5bVCV7s9aiprYb9JY5XVgLOkfGF5eTbwWkR
- hb03Uans2ssrxS3BYcP6nHEvBPpYK8lTCnezvd2EEBaCmH13jR7VavRs1ixnx4509SBM=;
+ bh=B1HWRWguYEfsJEbwyd9lvU4XC5lA+HfLqwGQNloFcY0=; b=jJFwTiYWM1Bxz20tb4PXxxA5us
+ dZ/oeVn+zuJuDJkaaryDww4eoBJo67OXb/2DwtHAcb4rkKI1Eir0wJH+oowuZzmMkAZ2LANdDycCW
+ Kr3thoJDg3jMPoE5sgFtss6d+QRE3BFjkLN6OmNIBegz0IOcAbSX/ldLTuHp2iBZyLv0=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
- h=Content-Transfer-Encoding:MIME-Version:Message-Id:Date:Subject:Cc:To:From
- :Sender:Reply-To:Content-Type:Content-ID:Content-Description:Resent-Date:
- Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
- References:List-Id:List-Help:List-Unsubscribe:List-Subscribe:List-Post:
- List-Owner:List-Archive; bh=79E9++Gyuo7RYEdpcKgy5BKuJEQ0drrl/R0K7XoSiP0=; b=J
- p0laUJs65Q0xJaJUz1YtA5PV1Z9ZCJwLgrJ9s7yDjf3UiNWgLAuJd5In+DfnArg9upIMOII9zEM8w
- XYkY0UO06jE97VqedwELmxhrs15uLm6nnz/wgYI5JM7nu7YTpShg5ZL3E3x5zW6jyA7utHhDmPaUQ
- 3RLHADS5On5ZxIEY=;
+ h=Content-Transfer-Encoding:MIME-Version:References:In-Reply-To:Message-Id:
+ Date:Subject:Cc:To:From:Sender:Reply-To:Content-Type:Content-ID:
+ Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+ :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
+ List-Post:List-Owner:List-Archive;
+ bh=B1HWRWguYEfsJEbwyd9lvU4XC5lA+HfLqwGQNloFcY0=; b=ZtebnEgS56rkuFG8epVEeJCm1x
+ Ikcl6vhVdmLLcNbr0x5JpCWNlzCm+L/3swywWQPFxWsOXXgeIla7LRippzHU2niI65Xg7NXfotHBY
+ 8oMkq2cAyI67htW3EDFf+dlwVkagC4BbcMgrCLdlmNbOG7Cm2f5f6DWLSWvhVFIYQAr0=;
 Received: from dfw.source.kernel.org ([139.178.84.217])
  by sfi-mx-1.v28.lw.sourceforge.com with esmtps
  (TLS1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.95)
- id 1p6Z70-002cSm-KC for jfs-discussion@lists.sourceforge.net;
- Sat, 17 Dec 2022 15:28:31 +0000
+ id 1p6Z74-002cSq-Uk for jfs-discussion@lists.sourceforge.net;
+ Sat, 17 Dec 2022 15:28:35 +0000
 Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by dfw.source.kernel.org (Postfix) with ESMTPS id 3BA7760C15;
- Sat, 17 Dec 2022 15:28:25 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 769C4C433F0;
- Sat, 17 Dec 2022 15:28:23 +0000 (UTC)
+ by dfw.source.kernel.org (Postfix) with ESMTPS id 8C6BC60C1D;
+ Sat, 17 Dec 2022 15:28:29 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id DD0DFC433F0;
+ Sat, 17 Dec 2022 15:28:27 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=k20201202; t=1671290904;
- bh=oK4XDHowo8pk+fzEGgRwIFdrMEojl+jVI5Mt9gJlPyU=;
- h=From:To:Cc:Subject:Date:From;
- b=Wxaw0dI3rD1Th1Y3gwmgTErC6epOsbZvskOgIUdZBT+pBcvzvQRGSA6N3aCaJyAKg
- dPOL551RXR8X7H81rWvxZg/DGywQUzKIPfxVECNECIECDDnd1JwmZYCWapV15hedpi
- dXNEoPQ5TmPhCPSfyAch2TKbYkOoa99Y+FnN4d/MjJump/uRBvzKWcrSUhvwoXMCPK
- eLwX5zLHTud9x5mQ7bP/vQavuot4XRJNmxhz3zoYVn7GC7iBpYmmSlFMjAFvMCqirI
- nUmGXn4RQmOCXX10gV70kEQuRR9qdUb5jTF75o1uQh7CrPROKdEvDNrHbjxK54SKRF
- ADwWP+oZr0mAg==
+ s=k20201202; t=1671290909;
+ bh=OOTfHPq132Z/gNUYFksJS8kJvhXbse9O8ds3QhYEmVc=;
+ h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
+ b=SIrvgormVL0NuG7VF3nm2c25vPAekEdi8/17a76SIJ3cEbSzOVDSI2Mn5BF9zjXII
+ x3zmhyV3j/cl6A6oYuQs6GNr8hMhBYflwRM3W7MXhJPrK5bTBw6BYi4IFcSC9OgV0h
+ 2J6Uf15DgBOcRnZ40PkHY2JzxMliyX6mROxpwnOcUMebW28ldnahpuigKxlBPCEW2k
+ 5xRZOeLTYDQECmY2LXY47XJh9q/8bIhDo4xwbqIktDc8nY4qFgG+EkOoCf68P5JKoD
+ YFNy8v/Owz6JhkpFrE3CXUyL42i2odKdHyLf5hOsaQhRprhxUfWq9/T0+DmrLgOxC5
+ xvt8VyAKXAFYA==
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Date: Sat, 17 Dec 2022 10:28:04 -0500
-Message-Id: <20221217152821.98618-1-sashal@kernel.org>
+Date: Sat, 17 Dec 2022 10:28:06 -0500
+Message-Id: <20221217152821.98618-3-sashal@kernel.org>
 X-Mailer: git-send-email 2.35.1
+In-Reply-To: <20221217152821.98618-1-sashal@kernel.org>
+References: <20221217152821.98618-1-sashal@kernel.org>
 MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
@@ -72,12 +74,8 @@ X-Spam-Report: Spam detection software,
  message has been attached to this so you can view it or label
  similar future email.  If you have any questions, see
  the administrator of that system for details.
- Content preview:  From: Dongliang Mu <mudongliangabcd@gmail.com> [ Upstream
- commit 898f706695682b9954f280d95e49fa86ffa55d08 ] Syzbot found a crash :
- UBSAN:
- shift-out-of-bounds in dbAllocAG. The underlying bug is the missing check
- of bmp->db_agl2size. The field can be greater than 64 and trigger the
- shift-out-of-bounds.
+ Content preview: From: "Dr. David Alan Gilbert" <linux@treblig.org> [ Upstream
+ commit ebe060369f8d6e4588b115f252bebf5ba4d64350 ] JFS has in jfs_incore.h:
  Content analysis details:   (-5.9 points, 6.0 required)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
@@ -93,9 +91,9 @@ X-Spam-Report: Spam detection software,
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.7 DKIMWL_WL_HIGH         DKIMwl.org - High trust sender
-X-Headers-End: 1p6Z70-002cSm-KC
-Subject: [Jfs-discussion] [PATCH AUTOSEL 6.0 01/16] fs: jfs: fix
- shift-out-of-bounds in dbAllocAG
+X-Headers-End: 1p6Z74-002cSq-Uk
+Subject: [Jfs-discussion] [PATCH AUTOSEL 6.0 03/16] jfs: Fix fortify moan in
+ symlink
 X-BeenThere: jfs-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -107,95 +105,65 @@ List-Post: <mailto:jfs-discussion@lists.sourceforge.net>
 List-Help: <mailto:jfs-discussion-request@lists.sourceforge.net?subject=help>
 List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/jfs-discussion>, 
  <mailto:jfs-discussion-request@lists.sourceforge.net?subject=subscribe>
-Cc: Sasha Levin <sashal@kernel.org>, shaggy@kernel.org,
- jfs-discussion@lists.sourceforge.net, paskripkin@gmail.com,
- syzbot+15342c1aa6a00fb7a438@syzkaller.appspotmail.com,
- Dongliang Mu <mudongliangabcd@gmail.com>, r33s3n6@gmail.com
+Cc: Sasha Levin <sashal@kernel.org>, shaggy@kernel.org, brauner@kernel.org,
+ Kees Cook <keescook@chromium.org>, jfs-discussion@lists.sourceforge.net,
+ syzbot+5fc38b2ddbbca7f5c680@syzkaller.appspotmail.com,
+ "Dr. David Alan Gilbert" <linux@treblig.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Errors-To: jfs-discussion-bounces@lists.sourceforge.net
 
-From: Dongliang Mu <mudongliangabcd@gmail.com>
+From: "Dr. David Alan Gilbert" <linux@treblig.org>
 
-[ Upstream commit 898f706695682b9954f280d95e49fa86ffa55d08 ]
+[ Upstream commit ebe060369f8d6e4588b115f252bebf5ba4d64350 ]
 
-Syzbot found a crash : UBSAN: shift-out-of-bounds in dbAllocAG. The
-underlying bug is the missing check of bmp->db_agl2size. The field can
-be greater than 64 and trigger the shift-out-of-bounds.
+JFS has in jfs_incore.h:
 
-Fix this bug by adding a check of bmp->db_agl2size in dbMount since this
-field is used in many following functions. The upper bound for this
-field is L2MAXL2SIZE - L2MAXAG, thanks for the help of Dave Kleikamp.
-Note that, for maintenance, I reorganized error handling code of dbMount.
+      /* _inline may overflow into _inline_ea when needed */
+      /* _inline_ea may overlay the last part of
+       * file._xtroot if maxentry = XTROOTINITSLOT
+       */
+      union {
+        struct {
+          /* 128: inline symlink */
+          unchar _inline[128];
+          /* 128: inline extended attr */
+          unchar _inline_ea[128];
+        };
+        unchar _inline_all[256];
 
-Reported-by: syzbot+15342c1aa6a00fb7a438@syzkaller.appspotmail.com
-Signed-off-by: Dongliang Mu <mudongliangabcd@gmail.com>
+and currently the symlink code copies into _inline;
+if this is larger than 128 bytes it triggers a fortify warning of the
+form:
+
+  memcpy: detected field-spanning write (size 132) of single field
+     "ip->i_link" at fs/jfs/namei.c:950 (size 18446744073709551615)
+
+when it's actually OK.
+
+Copy it into _inline_all instead.
+
+Reported-by: syzbot+5fc38b2ddbbca7f5c680@syzkaller.appspotmail.com
+Signed-off-by: Dr. David Alan Gilbert <linux@treblig.org>
+Reviewed-by: Kees Cook <keescook@chromium.org>
 Signed-off-by: Dave Kleikamp <dave.kleikamp@oracle.com>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- fs/jfs/jfs_dmap.c | 22 ++++++++++++++++------
- 1 file changed, 16 insertions(+), 6 deletions(-)
+ fs/jfs/namei.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
-diff --git a/fs/jfs/jfs_dmap.c b/fs/jfs/jfs_dmap.c
-index 6b838d3ae7c2..e1cbfbb60303 100644
---- a/fs/jfs/jfs_dmap.c
-+++ b/fs/jfs/jfs_dmap.c
-@@ -155,7 +155,7 @@ int dbMount(struct inode *ipbmap)
- 	struct bmap *bmp;
- 	struct dbmap_disk *dbmp_le;
- 	struct metapage *mp;
--	int i;
-+	int i, err;
+diff --git a/fs/jfs/namei.c b/fs/jfs/namei.c
+index 9db4f5789c0e..4fbbf88435e6 100644
+--- a/fs/jfs/namei.c
++++ b/fs/jfs/namei.c
+@@ -946,7 +946,7 @@ static int jfs_symlink(struct user_namespace *mnt_userns, struct inode *dip,
+ 	if (ssize <= IDATASIZE) {
+ 		ip->i_op = &jfs_fast_symlink_inode_operations;
  
- 	/*
- 	 * allocate/initialize the in-memory bmap descriptor
-@@ -170,8 +170,8 @@ int dbMount(struct inode *ipbmap)
- 			   BMAPBLKNO << JFS_SBI(ipbmap->i_sb)->l2nbperpage,
- 			   PSIZE, 0);
- 	if (mp == NULL) {
--		kfree(bmp);
--		return -EIO;
-+		err = -EIO;
-+		goto err_kfree_bmp;
- 	}
- 
- 	/* copy the on-disk bmap descriptor to its in-memory version. */
-@@ -181,9 +181,8 @@ int dbMount(struct inode *ipbmap)
- 	bmp->db_l2nbperpage = le32_to_cpu(dbmp_le->dn_l2nbperpage);
- 	bmp->db_numag = le32_to_cpu(dbmp_le->dn_numag);
- 	if (!bmp->db_numag) {
--		release_metapage(mp);
--		kfree(bmp);
--		return -EINVAL;
-+		err = -EINVAL;
-+		goto err_release_metapage;
- 	}
- 
- 	bmp->db_maxlevel = le32_to_cpu(dbmp_le->dn_maxlevel);
-@@ -194,6 +193,11 @@ int dbMount(struct inode *ipbmap)
- 	bmp->db_agwidth = le32_to_cpu(dbmp_le->dn_agwidth);
- 	bmp->db_agstart = le32_to_cpu(dbmp_le->dn_agstart);
- 	bmp->db_agl2size = le32_to_cpu(dbmp_le->dn_agl2size);
-+	if (bmp->db_agl2size > L2MAXL2SIZE - L2MAXAG) {
-+		err = -EINVAL;
-+		goto err_release_metapage;
-+	}
-+
- 	for (i = 0; i < MAXAG; i++)
- 		bmp->db_agfree[i] = le64_to_cpu(dbmp_le->dn_agfree[i]);
- 	bmp->db_agsize = le64_to_cpu(dbmp_le->dn_agsize);
-@@ -214,6 +218,12 @@ int dbMount(struct inode *ipbmap)
- 	BMAP_LOCK_INIT(bmp);
- 
- 	return (0);
-+
-+err_release_metapage:
-+	release_metapage(mp);
-+err_kfree_bmp:
-+	kfree(bmp);
-+	return err;
- }
- 
+-		ip->i_link = JFS_IP(ip)->i_inline;
++		ip->i_link = JFS_IP(ip)->i_inline_all;
+ 		memcpy(ip->i_link, name, ssize);
+ 		ip->i_size = ssize - 1;
  
 -- 
 2.35.1
