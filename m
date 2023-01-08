@@ -2,28 +2,28 @@ Return-Path: <jfs-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+jfs-discussion@lfdr.de
 Delivered-To: lists+jfs-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id ED5BF6619E5
-	for <lists+jfs-discussion@lfdr.de>; Sun,  8 Jan 2023 22:19:46 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id D6DC6661A07
+	for <lists+jfs-discussion@lfdr.de>; Sun,  8 Jan 2023 22:32:13 +0100 (CET)
 Received: from [127.0.0.1] (helo=sfs-ml-4.v29.lw.sourceforge.com)
 	by sfs-ml-4.v29.lw.sourceforge.com with esmtp (Exim 4.95)
 	(envelope-from <jfs-discussion-bounces@lists.sourceforge.net>)
-	id 1pEd4l-0007wt-Am;
-	Sun, 08 Jan 2023 21:19:31 +0000
+	id 1pEdGl-0008BW-WC;
+	Sun, 08 Jan 2023 21:31:56 +0000
 Received: from [172.30.20.202] (helo=mx.sourceforge.net)
  by sfs-ml-4.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
  TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (Exim 4.95)
- (envelope-from <willy@infradead.org>) id 1pEd4i-0007wi-Pu
+ (envelope-from <willy@infradead.org>) id 1pEdGe-0008BL-DE
  for jfs-discussion@lists.sourceforge.net;
- Sun, 08 Jan 2023 21:19:28 +0000
+ Sun, 08 Jan 2023 21:31:48 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=sourceforge.net; s=x; h=In-Reply-To:Content-Type:MIME-Version:References:
  Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:Content-Transfer-Encoding:
  Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
  Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=smtf3b6c0YiLyegeGcE2QFdIpMIIUxY2QjH9VIZPeqs=; b=UMxfrxDGDW0X69nwezCPxsa1Wu
- cCOmv7BmP1g4a/GDOebNklEezoxQI0IQQPZPK+WuHDmyjQydsBD3qIVXLEAB2HgkM9mvKd7vpeOZG
- w1/bBW0GxMCwlJYp63DdIscqYkpT9kYNNUPcBpnyJUxzMg5vUrnQa7vQ3jtkiEuMiHvE=;
+ bh=++R3apswKn917ceG4txQXiZ1LJjLtj+nBEmEVXkWhS8=; b=WeWjHXy6Iyp8lOXBjudW1Ut89U
+ oDInDXUnwqeiCToVlG0V2oXxyRT+JP1OeKAnyyt2aPbqmHMSG3EVAaGPyIQouS5PGJBi7xWlQ0/S4
+ DRDxpaNVtVGN+NSmOiN3bIGG7mL/uQT5kG0DOb6y1GpOzLrE9jfV9Ve4NZyXXzkDXKeY=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
  h=In-Reply-To:Content-Type:MIME-Version:References:Message-ID:Subject:Cc:To
@@ -31,46 +31,45 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
  :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
  List-Post:List-Owner:List-Archive;
- bh=smtf3b6c0YiLyegeGcE2QFdIpMIIUxY2QjH9VIZPeqs=; b=jP/sWmxgtjMzNphImk3aucmFwu
- RpOiXZ8guuNXTKDccjn0y9W6eBlsEbGFQQOen9sAnoz28764/DMCi6Kho9JZQeVT1OxEkL8ixLnNG
- okP9WeQ/FjENrDGiF8WO5vWnUfvNdxfohU7T7nseLNPX08OO8ndrhmHnTiA97+oLEzSo=;
-Received: from casper.infradead.org ([90.155.50.34])
- by sfi-mx-2.v28.lw.sourceforge.com with esmtps
+ bh=++R3apswKn917ceG4txQXiZ1LJjLtj+nBEmEVXkWhS8=; b=hFxcZvJ2t1NYuIvvZo3e9IcyOT
+ jGlQNaBEOlbioJ45SL0o/2k1+m9jrB9Ab1M95GwErB90OvLA1k9u/aqZ66yj2+dWS8aRRMy6ARxJe
+ qNa/sWiooJNZZMTkgKTsSgQd+0jJ1BTou9WxFDPCHBOMYtQEDrZ5GEmblFfsSc2a069I=;
+Received: from [90.155.50.34] (helo=casper.infradead.org)
+ by sfi-mx-1.v28.lw.sourceforge.com with esmtps
  (TLS1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.95)
- id 1pEd4i-00081B-67 for jfs-discussion@lists.sourceforge.net;
- Sun, 08 Jan 2023 21:19:28 +0000
+ id 1pEdGd-00AbZY-Mu for jfs-discussion@lists.sourceforge.net;
+ Sun, 08 Jan 2023 21:31:48 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=infradead.org; s=casper.20170209; h=In-Reply-To:Content-Type:MIME-Version:
  References:Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:
  Content-Transfer-Encoding:Content-ID:Content-Description;
- bh=smtf3b6c0YiLyegeGcE2QFdIpMIIUxY2QjH9VIZPeqs=; b=LwRCSfg4lurhfJplbjaoasx+AK
- i9NeK9Itn6mhZyaQBDGH8TsyNknvvOz6OzxmWVVH2jlqc/3k/698PgjVLLVYaPEjFaZdELofoEm8c
- w4wtquN4FxNlPO/Tyk44scz4/CWeWCVw2QzvSZmJwjvQ76VjjJJkcBRdiiH/CGf5OOsRAAp5NVqPF
- KodMj3MQOePSeDYwwAhqMQA7DCoBX9hicB1aN6THIdKISHSSVBQVgxGVetK6Oy18dlTXXLTtq7xk7
- wQSlhxVeURFfEUK6vyKbQgKfXUvkaRIuXkjROCzDp83BpM0eSnokETYF8b+nY1OpbJXqWeD3RaIoF
- zcJMPD6g==;
+ bh=++R3apswKn917ceG4txQXiZ1LJjLtj+nBEmEVXkWhS8=; b=dm/cLFNaKZAOrFlytHsOvTk2Jr
+ ez8yteUWEcM+9Gvjd7lmrZYc8XtHwp9CxOiARQuiTXyFgAsjzy3BvOKdi6Oqkw4uYoM5bx9Zhquvd
+ CfqTrxz9e1zrOlo3uKseyW7BDZTUKqM93uHTKqr+TKAQdIWYJ1GpWrZKrdQzGnvUt1TA+wb8u28/V
+ qfs/1IGoaHoVjwdS40H5YXZN03jNyFQ5Ct+IpTy9QHadGXXKZIlrIjyAJVKd/VvXA+Njjonyf3h/h
+ mavaFrnmkentZmOxii9RnnHf+WPa18T290G6Rs7XdgCFtfqKtR3EsibJzFKgmY2YydLv7S0chGUn7
+ WdsGGqeA==;
 Received: from willy by casper.infradead.org with local (Exim 4.94.2 #2 (Red
- Hat Linux)) id 1pEd4c-001khF-Q6; Sun, 08 Jan 2023 21:19:22 +0000
-Date: Sun, 8 Jan 2023 21:19:22 +0000
+ Hat Linux)) id 1pEdGM-001l4v-H0; Sun, 08 Jan 2023 21:31:30 +0000
+Date: Sun, 8 Jan 2023 21:31:30 +0000
 From: Matthew Wilcox <willy@infradead.org>
 To: Christoph Hellwig <hch@lst.de>
-Message-ID: <Y7szWmUKSwcxsaMu@casper.infradead.org>
+Message-ID: <Y7s2Mo+XR4YJUfoH@casper.infradead.org>
 References: <20230108165645.381077-1-hch@lst.de>
- <20230108165645.381077-5-hch@lst.de>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20230108165645.381077-5-hch@lst.de>
-X-Spam-Score: -0.2 (/)
+In-Reply-To: <20230108165645.381077-1-hch@lst.de>
+X-Spam-Score: 1.1 (+)
 X-Spam-Report: Spam detection software,
  running on the system "util-spamd-2.v13.lw.sourceforge.com", 
  has NOT identified this incoming email as spam.  The original
  message has been attached to this so you can view it or label
  similar future email.  If you have any questions, see
  the administrator of that system for details.
- Content preview:  On Sun, Jan 08, 2023 at 05:56:42PM +0100, Christoph Hellwig
- wrote: > We do not need to writeout modified directory blocks immediately
- when > modifying them while the page is locked. It is enough to do [...] 
- Content analysis details:   (-0.2 points, 6.0 required)
+ Content preview:  On Sun, Jan 08, 2023 at 05:56:38PM +0100, Christoph Hellwig
+ wrote: > this series removes the write_one_page API, and it's folioized >
+ implementation as folio_write_one. These helpers internally call > [...] 
+ Content analysis details:   (1.1 points, 6.0 required)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  0.0 URIBL_BLOCKED          ADMINISTRATOR NOTICE: The query to URIBL was
@@ -86,9 +85,9 @@ X-Spam-Report: Spam detection software,
  author's domain
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
-X-Headers-End: 1pEd4i-00081B-67
-Subject: Re: [Jfs-discussion] [PATCH 4/7] sysv: don't flush page immediately
- for DIRSYNC directories
+ 1.3 RDNS_NONE Delivered to internal network by a host with no rDNS
+X-Headers-End: 1pEdGd-00AbZY-Mu
+Subject: Re: [Jfs-discussion] remove write_one_page / folio_write_one
 X-BeenThere: jfs-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -111,15 +110,22 @@ Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Errors-To: jfs-discussion-bounces@lists.sourceforge.net
 
-On Sun, Jan 08, 2023 at 05:56:42PM +0100, Christoph Hellwig wrote:
-> We do not need to writeout modified directory blocks immediately when
-> modifying them while the page is locked. It is enough to do the flush
-> somewhat later which has the added benefit that inode times can be
-> flushed as well. It also allows us to stop depending on
-> write_one_page() function.
+On Sun, Jan 08, 2023 at 05:56:38PM +0100, Christoph Hellwig wrote:
+> this series removes the write_one_page API, and it's folioized
+> implementation as folio_write_one.  These helpers internally call
+> ->writepage which we are gradually removing from the kernel.
+> 
+> For most callers there are better APIs to use, and this cleans them up.
+> The big questionmark is jfs, where the metapage abstraction uses the
+> pagecache in a bit of an odd way, and which would probably benefit from
+> not using the page cache at all like the XFS buffer cache, but given
+> that jfs has been in minimum maintaince mode for a long time that might
+> not be worth it.  So for now it just moves the implementation of
+> write_one_page into jfs instead.
 
-Similar concerns to the minix patch here ... missing assignments to
-'err'.
+Thanks.  This totally wrecks a patchset I was working on, but it's
+definitely the right thing to do, and I'll rebase on top of it once
+it's in.  Looking forward to v2 with my niggles fixed ;-)
 
 
 _______________________________________________
