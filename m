@@ -2,68 +2,78 @@ Return-Path: <jfs-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+jfs-discussion@lfdr.de
 Delivered-To: lists+jfs-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7F7226652D0
-	for <lists+jfs-discussion@lfdr.de>; Wed, 11 Jan 2023 05:27:20 +0100 (CET)
-Received: from [127.0.0.1] (helo=sfs-ml-2.v29.lw.sourceforge.com)
-	by sfs-ml-2.v29.lw.sourceforge.com with esmtp (Exim 4.95)
+	by mail.lfdr.de (Postfix) with ESMTPS id A8658665300
+	for <lists+jfs-discussion@lfdr.de>; Wed, 11 Jan 2023 05:59:27 +0100 (CET)
+Received: from [127.0.0.1] (helo=sfs-ml-1.v29.lw.sourceforge.com)
+	by sfs-ml-1.v29.lw.sourceforge.com with esmtp (Exim 4.95)
 	(envelope-from <jfs-discussion-bounces@lists.sourceforge.net>)
-	id 1pFShW-00060l-Ay;
-	Wed, 11 Jan 2023 04:26:57 +0000
+	id 1pFTCf-0005cL-W3;
+	Wed, 11 Jan 2023 04:59:09 +0000
 Received: from [172.30.20.202] (helo=mx.sourceforge.net)
- by sfs-ml-2.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
+ by sfs-ml-1.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
  TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (Exim 4.95)
- (envelope-from <hch@lst.de>) id 1pFShT-00060e-Um
+ (envelope-from <viro@ftp.linux.org.uk>) id 1pFTCf-0005cF-FK
  for jfs-discussion@lists.sourceforge.net;
- Wed, 11 Jan 2023 04:26:55 +0000
+ Wed, 11 Jan 2023 04:59:08 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=sourceforge.net; s=x; h=In-Reply-To:Content-Type:MIME-Version:References:
- Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:Content-Transfer-Encoding:
- Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
- Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
- List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=1CoD0yqJ0q7gLouXffZ6iJW190LiYTx9N0HBrnV17Vg=; b=N8IptzHxKGBlF8wRmKba6ddGMs
- sqr/7W8hs0unKQt1KcIY2lYZR7Mxn+BhC4r91L80oo2zeRSc8nFwANIHzi+PS6tjAKbEMWA38QzVf
- G6FQn7W5jiiD1Qheb2Qs4ie2cXjs/ai6Ejc4ZD5ZoxuTxFT01dV5Wd4zmdpT/y17WnK0=;
+ d=sourceforge.net; s=x; h=Sender:In-Reply-To:Content-Type:MIME-Version:
+ References:Message-ID:Subject:Cc:To:From:Date:Reply-To:
+ Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+ Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
+ List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=hwxTpnik4GFRaEfSysSXhVpKMkvUhYmc7DfBcKe47Q8=; b=GAGJisRwuTeqdH3jFsEPlIzKag
+ YcSmpwkqHoXNuqk8B8BUTfZL0pTqZI4CaqHvJBTChXtiI6wHKRvYNzHNh/sMFq2MbsmhpXgO9Ggvs
+ jbPW1y6iKiKuGWr3qV5vPWWqwIXOXuGJnWVTt8g9GnLa884zVTjpH9GC3kWHebbUaxXE=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
- h=In-Reply-To:Content-Type:MIME-Version:References:Message-ID:Subject:Cc:To
- :From:Date:Sender:Reply-To:Content-Transfer-Encoding:Content-ID:
+ h=Sender:In-Reply-To:Content-Type:MIME-Version:References:Message-ID:
+ Subject:Cc:To:From:Date:Reply-To:Content-Transfer-Encoding:Content-ID:
  Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
  :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
  List-Post:List-Owner:List-Archive;
- bh=1CoD0yqJ0q7gLouXffZ6iJW190LiYTx9N0HBrnV17Vg=; b=LVQQwsZ0blAuUKbv4+xwSW525R
- FYXZSvPEywabTyHXXJRRzKvyY80qH7aRcrHgVnE5g6OXwNazYtW84ZfT92es0UzyoRm3JmMUkHQTD
- zCm9aHMCIOBFwkBBHgg8csID4FsQcjeosLnK48onOZun1xO8NvezHMjFYaP5hG18SW74=;
-Received: from verein.lst.de ([213.95.11.211])
- by sfi-mx-2.v28.lw.sourceforge.com with esmtps
+ bh=hwxTpnik4GFRaEfSysSXhVpKMkvUhYmc7DfBcKe47Q8=; b=R9yzm4iVmo0GubWbVkYXUU9pYb
+ pPkyDavB0iQDQOJhmFeXdYg21qZrSljHKdGIi9s8b9JjfvXPlFMEUz7VRhAYEoObh/5iYkv2W1eyG
+ fokaFV5ONGPiIW6dRQhF2tejBiVRuuOuhGRoHkoqQn/f9oMgBEk4yfYjJA4g7/kYoaIg=;
+Received: from zeniv.linux.org.uk ([62.89.141.173])
+ by sfi-mx-1.v28.lw.sourceforge.com with esmtps
  (TLS1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.95)
- id 1pFShP-00047b-9X for jfs-discussion@lists.sourceforge.net;
- Wed, 11 Jan 2023 04:26:55 +0000
-Received: by verein.lst.de (Postfix, from userid 2407)
- id 13E4B68BEB; Wed, 11 Jan 2023 05:26:42 +0100 (CET)
-Date: Wed, 11 Jan 2023 05:26:41 +0100
-From: Christoph Hellwig <hch@lst.de>
-To: Al Viro <viro@zeniv.linux.org.uk>
-Message-ID: <20230111042641.GA15181@lst.de>
+ id 1pFTCd-00DYvh-Jw for jfs-discussion@lists.sourceforge.net;
+ Wed, 11 Jan 2023 04:59:08 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=linux.org.uk; s=zeniv-20220401; h=Sender:In-Reply-To:Content-Type:
+ MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Reply-To:
+ Content-Transfer-Encoding:Content-ID:Content-Description;
+ bh=hwxTpnik4GFRaEfSysSXhVpKMkvUhYmc7DfBcKe47Q8=; b=gwuZnr26GfvdSwtTngWR0qosOP
+ HUs1Cd/2fuK8Qmn4R+lCu65v90x3QDWE/O14fdzypvhBXSoYF4rbsU1ykCOH27b8Xj7rp2JRAnf60
+ hcESkI65xxGkW5d1dmkrRhX253+s2bBeRS8x9As4FZk1sJg0/i9tdrxE2gBIqXrCUpjSjFVQmD59P
+ yWkZ1kvppP2R3edwG0o19wXOgbKokc9xs+7pjD3M1PsiLmk0yVgIe/2Wh3vCPRj++UHnAGs2zyx+w
+ F7rqLOZOjVvXeWfpNOgnCiEvEkTI822rlxKyO8e/cKnXhKVhmdqatpDQdhRiuxoCcE4feBhtRD5Bd
+ BQG8ySuw==;
+Received: from viro by zeniv.linux.org.uk with local (Exim 4.96 #2 (Red Hat
+ Linux)) id 1pFTCF-0017ZY-1R; Wed, 11 Jan 2023 04:58:43 +0000
+Date: Wed, 11 Jan 2023 04:58:43 +0000
+From: Al Viro <viro@zeniv.linux.org.uk>
+To: Christoph Hellwig <hch@lst.de>
+Message-ID: <Y75CAwtM1gE1sevy@ZenIV>
 References: <20230108165645.381077-1-hch@lst.de>
- <20230108165645.381077-4-hch@lst.de> <Y7sy5jzjT7tpPX6Z@casper.infradead.org>
+ <20230108165645.381077-4-hch@lst.de>
+ <Y7sy5jzjT7tpPX6Z@casper.infradead.org>
  <20230110082225.GB11947@lst.de> <Y74c+WSEajAic3Kh@ZenIV>
+ <20230111042641.GA15181@lst.de>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <Y74c+WSEajAic3Kh@ZenIV>
-User-Agent: Mutt/1.5.17 (2007-11-01)
-X-Spam-Score: 0.0 (/)
+In-Reply-To: <20230111042641.GA15181@lst.de>
+X-Spam-Score: -0.1 (/)
 X-Spam-Report: Spam detection software,
  running on the system "util-spamd-1.v13.lw.sourceforge.com", 
  has NOT identified this incoming email as spam.  The original
  message has been attached to this so you can view it or label
  similar future email.  If you have any questions, see
  the administrator of that system for details.
- Content preview:  On Wed, Jan 11, 2023 at 02:20:41AM +0000, Al Viro wrote: >
- More seriously, all those ..._set_link() need to return an error and their
- > callers (..._rename()) need to deal with failures. That's actually what
- I did yesterday: 
- Content analysis details:   (0.0 points, 6.0 required)
+ Content preview:  On Wed, Jan 11, 2023 at 05:26:41AM +0100, Christoph Hellwig
+ wrote: > On Wed, Jan 11, 2023 at 02:20:41AM +0000, Al Viro wrote: > > More
+ seriously, all those ..._set_link() need to return an error and t [...] 
+ Content analysis details:   (-0.1 points, 6.0 required)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  0.0 URIBL_BLOCKED          ADMINISTRATOR NOTICE: The query to URIBL was
@@ -72,7 +82,12 @@ X-Spam-Report: Spam detection software,
  for more information. [URIs: infradead.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 SPF_NONE               SPF: sender does not publish an SPF Record
-X-Headers-End: 1pFShP-00047b-9X
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+X-Headers-End: 1pFTCd-00DYvh-Jw
 Subject: Re: [Jfs-discussion] [PATCH 3/7] minix: don't flush page
  immediately for DIRSYNC directories
 X-BeenThere: jfs-discussion@lists.sourceforge.net
@@ -93,18 +108,87 @@ Cc: Dave Kleikamp <shaggy@kernel.org>, jfs-discussion@lists.sourceforge.net,
  Chris Mason <clm@fb.com>, ocfs2-devel@oss.oracle.com,
  Joel Becker <jlbec@evilplan.org>, David Sterba <dsterba@suse.com>,
  linux-fsdevel@vger.kernel.org, Andrew Morton <akpm@linux-foundation.org>,
- Christoph Hellwig <hch@lst.de>, linux-btrfs@vger.kernel.org
+ linux-btrfs@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Errors-To: jfs-discussion-bounces@lists.sourceforge.net
 
-On Wed, Jan 11, 2023 at 02:20:41AM +0000, Al Viro wrote:
-> More seriously, all those ..._set_link() need to return an error and their
-> callers (..._rename()) need to deal with failures.
+On Wed, Jan 11, 2023 at 05:26:41AM +0100, Christoph Hellwig wrote:
+> On Wed, Jan 11, 2023 at 02:20:41AM +0000, Al Viro wrote:
+> > More seriously, all those ..._set_link() need to return an error and their
+> > callers (..._rename()) need to deal with failures.
+> 
+> That's actually what I did yesterday:
+> 
+> http://git.infradead.org/users/hch/misc.git/shortlog/refs/heads/remove-write_one_page
 
-That's actually what I did yesterday:
+ext2 also has that bug.  As well as "need to check for delete_entry errors"
+one (also in ext2_rename()).
 
-http://git.infradead.org/users/hch/misc.git/shortlog/refs/heads/remove-write_one_page
+Completely untested patch follows:
+
+diff --git a/fs/ext2/dir.c b/fs/ext2/dir.c
+index e5cbc27ba459..b38fab33cd0d 100644
+--- a/fs/ext2/dir.c
++++ b/fs/ext2/dir.c
+@@ -461,7 +461,7 @@ static int ext2_handle_dirsync(struct inode *dir)
+ 	return err;
+ }
+ 
+-void ext2_set_link(struct inode *dir, struct ext2_dir_entry_2 *de,
++int ext2_set_link(struct inode *dir, struct ext2_dir_entry_2 *de,
+ 		   struct page *page, void *page_addr, struct inode *inode,
+ 		   int update_times)
+ {
+@@ -480,7 +480,7 @@ void ext2_set_link(struct inode *dir, struct ext2_dir_entry_2 *de,
+ 		dir->i_mtime = dir->i_ctime = current_time(dir);
+ 	EXT2_I(dir)->i_flags &= ~EXT2_BTREE_FL;
+ 	mark_inode_dirty(dir);
+-	ext2_handle_dirsync(dir);
++	return ext2_handle_dirsync(dir);
+ }
+ 
+ /*
+diff --git a/fs/ext2/ext2.h b/fs/ext2/ext2.h
+index 28de11a22e5f..95c083bb1b7c 100644
+--- a/fs/ext2/ext2.h
++++ b/fs/ext2/ext2.h
+@@ -734,7 +734,7 @@ extern int ext2_delete_entry(struct ext2_dir_entry_2 *dir, struct page *page,
+ 			     char *kaddr);
+ extern int ext2_empty_dir (struct inode *);
+ extern struct ext2_dir_entry_2 *ext2_dotdot(struct inode *dir, struct page **p, void **pa);
+-extern void ext2_set_link(struct inode *, struct ext2_dir_entry_2 *, struct page *, void *,
++extern int ext2_set_link(struct inode *, struct ext2_dir_entry_2 *, struct page *, void *,
+ 			  struct inode *, int);
+ static inline void ext2_put_page(struct page *page, void *page_addr)
+ {
+diff --git a/fs/ext2/namei.c b/fs/ext2/namei.c
+index c056957221a2..5e3397680faa 100644
+--- a/fs/ext2/namei.c
++++ b/fs/ext2/namei.c
+@@ -370,8 +370,10 @@ static int ext2_rename (struct user_namespace * mnt_userns,
+ 			err = PTR_ERR(new_de);
+ 			goto out_dir;
+ 		}
+-		ext2_set_link(new_dir, new_de, new_page, page_addr, old_inode, 1);
++		err = ext2_set_link(new_dir, new_de, new_page, page_addr, old_inode, 1);
+ 		ext2_put_page(new_page, page_addr);
++		if (err)
++			goto out_dir;
+ 		new_inode->i_ctime = current_time(new_inode);
+ 		if (dir_de)
+ 			drop_nlink(new_inode);
+@@ -391,7 +393,9 @@ static int ext2_rename (struct user_namespace * mnt_userns,
+ 	old_inode->i_ctime = current_time(old_inode);
+ 	mark_inode_dirty(old_inode);
+ 
+-	ext2_delete_entry(old_de, old_page, old_page_addr);
++	err = ext2_delete_entry(old_de, old_page, old_page_addr);
++	if (err)
++		goto out_dir;
+ 
+ 	if (dir_de) {
+ 		if (old_dir != new_dir)
 
 
 _______________________________________________
