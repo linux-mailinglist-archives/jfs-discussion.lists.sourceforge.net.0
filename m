@@ -2,162 +2,102 @@ Return-Path: <jfs-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+jfs-discussion@lfdr.de
 Delivered-To: lists+jfs-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id 432B469AF34
-	for <lists+jfs-discussion@lfdr.de>; Fri, 17 Feb 2023 16:13:12 +0100 (CET)
-Received: from [127.0.0.1] (helo=sfs-ml-2.v29.lw.sourceforge.com)
-	by sfs-ml-2.v29.lw.sourceforge.com with esmtp (Exim 4.95)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3BFF669AF77
+	for <lists+jfs-discussion@lfdr.de>; Fri, 17 Feb 2023 16:26:05 +0100 (CET)
+Received: from [127.0.0.1] (helo=sfs-ml-3.v29.lw.sourceforge.com)
+	by sfs-ml-3.v29.lw.sourceforge.com with esmtp (Exim 4.95)
 	(envelope-from <jfs-discussion-bounces@lists.sourceforge.net>)
-	id 1pT2Pn-0005ym-Cp;
-	Fri, 17 Feb 2023 15:12:46 +0000
+	id 1pT2cF-0005fJ-Ml;
+	Fri, 17 Feb 2023 15:25:39 +0000
 Received: from [172.30.20.202] (helo=mx.sourceforge.net)
  by sfs-ml-4.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
- TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (Exim 4.95)
- (envelope-from <sanan.hasanov@Knights.ucf.edu>) id 1pSm3L-0005qB-VC
- for jfs-discussion@lists.sourceforge.net;
- Thu, 16 Feb 2023 21:44:32 +0000
+ TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (Exim 4.95) (envelope-from
+ <3IZrvYwkbADoouvgWhhanWlleZ.ckkchaqoanYkjpajp.Yki@M3KW2WVRGUFZ5GODRSRYTGD7.apphosting.bounces.google.com>)
+ id 1pT2Sl-0002bw-I2 for jfs-discussion@lists.sourceforge.net;
+ Fri, 17 Feb 2023 15:15:51 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=sourceforge.net; s=x; h=MIME-Version:Content-Transfer-Encoding:Content-Type
- :Message-ID:Date:Subject:CC:To:From:Sender:Reply-To:Content-ID:
+ d=sourceforge.net; s=x; h=Content-Type:To:From:Subject:Message-ID:In-Reply-To
+ :Date:MIME-Version:Sender:Reply-To:Cc:Content-Transfer-Encoding:Content-ID:
  Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
- :Resent-Message-ID:In-Reply-To:References:List-Id:List-Help:List-Unsubscribe:
+ :Resent-Message-ID:References:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=k7AwandNsDahcPrKvnDdFSYXV1/q9IDCskIfmvaznAY=; b=CQsw1PtjGYdHqbRL6XXXYuSPp8
- VbkA3UWDXJbZecXFJu3grFxjuQqZ4oWp6IineN6iOn6rNIVTGynIrmlyq7QfUONd70yCxmoko8XsY
- Hue96w/A5ozYUl6U7+Hjzvh4bP17DhqCZnVJT9ykJZJMJaP7O5wXQmQECrh6FZ09wojY=;
+ bh=bOF1NJR2C6VQIkmOaGm3OZ/hC3PZmxuYb581posA0pY=; b=J+kRJnp2ZvOj4obhVEraD8ruPm
+ e0PT5q3N3e/Dh4jByklImQBbpfFFOajJ0nCQgvGRBNcW2x1jyGvZ45RHt5yyHrFyFCkDBDdgEraIO
+ y0wgM3qxhZxXNnZavgjAdcPkJvzNXub2tSmgU7E3vSPZo28i1w9rNVzrUyFDz9E78LZw=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
- h=MIME-Version:Content-Transfer-Encoding:Content-Type:Message-ID:Date:
- Subject:CC:To:From:Sender:Reply-To:Content-ID:Content-Description:Resent-Date
- :Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+ h=Content-Type:To:From:Subject:Message-ID:In-Reply-To:Date:MIME-Version:
+ Sender:Reply-To:Cc:Content-Transfer-Encoding:Content-ID:Content-Description:
+ Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
  References:List-Id:List-Help:List-Unsubscribe:List-Subscribe:List-Post:
- List-Owner:List-Archive; bh=k7AwandNsDahcPrKvnDdFSYXV1/q9IDCskIfmvaznAY=; b=U
- h+J1vzbC5N2wITKQcArLacuIiyTca/c/V8uI92gj5sqXISef8OGkl5hXe5Jk4TMiiOR2iVa2a+Edq
- KaBDxT7saofrfGn6ilSffldtr08airI3CDX+nvrInvLaHWWhv9WGwESXggT8s8r/5pAYtwsc3XYWd
- eoLbEdGXb/EAEw40=;
-Received: from mail-co1nam11on2070.outbound.protection.outlook.com
- ([40.107.220.70] helo=NAM11-CO1-obe.outbound.protection.outlook.com)
- by sfi-mx-2.v28.lw.sourceforge.com with esmtps
- (TLS1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.95)
- id 1pSm3H-0000DJ-W1 for jfs-discussion@lists.sourceforge.net;
- Thu, 16 Feb 2023 21:44:31 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=C+dT7MkwHvL8F0pmwGjNVXDFx8G+QRPVd4/GW6HvNsHZqBsJZyCKII4WvJCPXqqIqz6BgRz2VVza2zj/fDvNmlZkN7UgM5/YrV2VjPLZPf3SLK2VwQeEoEytSMpm+mltrq0Ig80be9m1CrEj+vFroHxCW4qb66j0k9L/WQIjPZXj8h7qzUvANF99Opb78A3SYTgNOVCBfSP/ZMxV3ZzFocPVCUoX4fXtwilVh0a6aqN6d3ZJxi6HEAwRvNKx752kBidVOXc9bNx9jbSUvB5YE0BuKlac/BLh4x53NR+18c7prftiwtQGHNr1tFnYH5DjsgXJ5KWBpy4o6VznyI/Pjg==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=k7AwandNsDahcPrKvnDdFSYXV1/q9IDCskIfmvaznAY=;
- b=m7B9ewfNlbrNIwZ30Z7XYf74xDGKuwiDcnqF0gwFrw4od1z9IGJ8Bbu525MzzD1K/Sq75Uvld2OiTHiV3kyxDKFZgSKglRbHoa5eTo9qnuDKZ8BiPA6CYUzEW1j8tTT61JmNZ2C3LzBCJ5QmkTz/MIbQ5Y5R7Y76PZ6K0ONAQ65NGgjPPkRc5WWmcDV2gZGe0TwHJ1VzPhkWy3dUMCyNgJbWKWBzdZMEfHCoSTb3xLU6R9fhwSV9AqLMpz7RQxU9caaI9Ff0LY38ikdYV4g7pvXDbLahPAunxt7Sq7zN2OYtrw9qzgxNxbaCFxHTtObcgSJxI52sCV2Mr7UGcqt7og==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=knights.ucf.edu; dmarc=pass action=none
- header.from=knights.ucf.edu; dkim=pass header.d=knights.ucf.edu; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=knightsucfedu39751.onmicrosoft.com;
- s=selector2-knightsucfedu39751-onmicrosoft-com;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=k7AwandNsDahcPrKvnDdFSYXV1/q9IDCskIfmvaznAY=;
- b=ekSnqTCgaRLqh9Rbtb3WTEsTF9UZcq2KgZhx/ZN5UYrgOGOh+Z8yrUl4D+Ttf5ueEubnAml66StFefcl+NHPA3E0Iopo/BE7K7qxwrGhs3NF5qPv2xEHvQiJEg89so/xBSXE73guPgynixHzM2zEZmvlcdyUKqZaK0f3BdOwyic=
-Received: from IA1PR07MB9830.namprd07.prod.outlook.com (2603:10b6:208:44b::14)
- by PH0PR07MB8717.namprd07.prod.outlook.com (2603:10b6:510:86::12)
- with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.6111.13; Thu, 16 Feb
- 2023 21:44:20 +0000
-Received: from IA1PR07MB9830.namprd07.prod.outlook.com
- ([fe80::d883:f078:37f:dace]) by IA1PR07MB9830.namprd07.prod.outlook.com
- ([fe80::d883:f078:37f:dace%6]) with mapi id 15.20.6086.026; Thu, 16 Feb 2023
- 21:44:20 +0000
-From: Sanan Hasanov <sanan.hasanov@Knights.ucf.edu>
-To: "shaggy@kernel.org" <shaggy@kernel.org>, "okanatov@gmail.com"
- <okanatov@gmail.com>, "jfs-discussion@lists.sourceforge.net"
- <jfs-discussion@lists.sourceforge.net>, "linux-kernel@vger.kernel.org"
- <linux-kernel@vger.kernel.org>
-Thread-Topic: KASAN: use-after-free Read in diFree
-Thread-Index: AQHZQkt2BggXpjbzg0yrJLC+JV9WgQ==
-Date: Thu, 16 Feb 2023 21:44:20 +0000
-Message-ID: <IA1PR07MB9830F102D9E73960D30C35AAABA09@IA1PR07MB9830.namprd07.prod.outlook.com>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-msip_labels: 
-authentication-results: dkim=none (message not signed)
- header.d=none;dmarc=none action=none header.from=Knights.ucf.edu;
-x-ms-publictraffictype: Email
-x-ms-traffictypediagnostic: IA1PR07MB9830:EE_|PH0PR07MB8717:EE_
-x-ms-office365-filtering-correlation-id: 25073ecb-0535-4e94-62ab-08db1066f5f8
-x-ms-exchange-senderadcheck: 1
-x-ms-exchange-antispam-relay: 0
-x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: U2IQqruxsSWH5PdGTraHWt9vFUasWtPlg2NmWlmIF56/Z951hjfTMNiWk5/o7RyUWEQ3NZXpMUy3nDC1U0h2LtpI+djZv7Pnmls4oOt/jEjzrofM+TJomHVyD7IgoUnvzWgfcdNFaFceenBRNdjBI1qKBW8qYyRNhbCVR1fAMfaOqh6w34//sdXzqhn99VjJMlPfz+3nsi7XV1CLkwiFsddK09gi8w0eHZka80Sz3pbiaWJX/yTWCVof65Y+XGVK4PQwgM3jL6ff9j2wGbB+vBZoza///txvtQK4FLdcE+k2GD3uneJ9T4SaUEXRKogGOC8tjn/CzcNa3LW4qS9cG+YEMbS0OeCsb45q1yOjh67tNpBdlPNNdd7ZY8zzUVH9EIkAPSOYRJFEdfriBXz78kKh5A9tzQaZH0654P+fXuPVAM594eEt6zt2UgXpVJDO49Cln0eOJtGm4ZlNL9Wrn/+SN7Y2qUWVj379dZxZldTFFrwPk0TspJJw1CcbOfy2EeMeLkyOMB9IfkibbVeuKLtXf/2BdVzfbqNEvZmHwUE3DbFCthn0nHLxTfB9lQZnu/d2QkttfvxLulpmOw1j4+748bpvozpwobR3a2lMfiR1/nQGWooou38HpQkclkpFqvzpfqjc8jUaqKaqDy3wjeFBMpMLmvFSy6V+zOGlde/z8Kjz3UYBey+H8/1zKRGnsw3abYo8dI9BBfg4yk4b+w==
-x-forefront-antispam-report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
- IPV:NLI; SFV:NSPM; H:IA1PR07MB9830.namprd07.prod.outlook.com; PTR:; CAT:NONE;
- SFS:(13230025)(4636009)(39860400002)(346002)(396003)(366004)(376002)(136003)(451199018)(5930299012)(966005)(55016003)(83380400001)(86362001)(2906002)(44832011)(478600001)(33656002)(7696005)(71200400001)(6506007)(186003)(26005)(9686003)(122000001)(38070700005)(75432002)(38100700002)(66446008)(8936002)(41300700001)(4326008)(5660300002)(52536014)(41320700001)(8676002)(786003)(66476007)(66556008)(64756008)(66946007)(76116006)(316002)(54906003)(110136005);
- DIR:OUT; SFP:1101; 
-x-ms-exchange-antispam-messagedata-chunkcount: 1
-x-ms-exchange-antispam-messagedata-0: =?iso-8859-1?Q?p4HIWHqmJ51HTW5xrX64WCq5i0t+yRwCkb3f+5V7obc9naqZjdHCCyp9HP?=
- =?iso-8859-1?Q?vacbXbiQvNL66DKSFE18BiNKn1du1TEWXUcfDtavN6nx8RVnqt9W34CRYE?=
- =?iso-8859-1?Q?n7gvrtzf7kSQ+kP5fAkXnopFolj7Mb9w5N7bMeNBzsmVFZRLyKtBzAoCwM?=
- =?iso-8859-1?Q?laAEzz2pHDfz4EX/12+tzqFZMWTkp6rBaT/LWLLFjFs56f0kmRHNneZx9O?=
- =?iso-8859-1?Q?SDJlPB0JyT8zWJOZtr6Bru8QcMKdmm6emB+/ook/X1tZ/K0vvmZv891mra?=
- =?iso-8859-1?Q?H0fUq0xFs2XUKoyjf5poP2cl+BZVnvEXjjYgHrQx0bys8e5E59wHc4KB1/?=
- =?iso-8859-1?Q?Fol+0/xbWWAvrOW99M45hTBSvbPcw0Ra5FCp3V0xO3hkNJcdyu73hGL81F?=
- =?iso-8859-1?Q?7ay+EjssgdT9j2jGj0yJ7gtQAjL8aXXI/dBN5EzB+rp4g2pUmxuwsSmy5G?=
- =?iso-8859-1?Q?b4F7oivBsKqp5lw+TEAw8uKi1zzVpAPxeclprFoYawaZJxJszwg4KVanGT?=
- =?iso-8859-1?Q?scC1XXg9HpzgYLiiW5JEuUhkyjaDjjNGVlK486eQFrUSVOEaPRj8068H4A?=
- =?iso-8859-1?Q?uyYPyEkDH29CTltlWzwrTMO98db8ObSj2fuuOFo5yNhK14FR9EN9Sc99Yo?=
- =?iso-8859-1?Q?oHzc9dLGSJTC3NWf2rRnNpJFLyX5OCLHkvzO9qQ5FfVP0UM6W4/jSdJZFK?=
- =?iso-8859-1?Q?v579FsCuVJVjVj9mKD+OYNuQdy1CY4ZPzCF6ybw77t8T1iKY6edsvrGPIl?=
- =?iso-8859-1?Q?EBy512Bfl2phOs++RKJdf3b+tcpCnh1oviOCsRNAwwVnYDBuYToR+gpB5l?=
- =?iso-8859-1?Q?WYDazWDi4wYPaE2UszYQApg3WuyT/XP+vJ99UtTL7UDfQxZFr2u1PwJO//?=
- =?iso-8859-1?Q?TldAw3z/kY27/wFVWoCUjvko9tpcN7aI8reA0ByaH+OdIgiapt7m4JEitQ?=
- =?iso-8859-1?Q?Dsfmq3TDtN06stXRN1ePOlBbCLmGnEYRTTZ7sAjVs5v/mK2j7f7IHHWpi2?=
- =?iso-8859-1?Q?2x6VyJ5loWwsrh4+TQkzvQH5w2CMwMSXWZxzjFsJh9eorvphHAO72Cv1Fk?=
- =?iso-8859-1?Q?K/cTYrq4CT9U+ccBmY9VhWxatVd9hh8i3a9SBXin9L9TB7kjVZGFPS+XgM?=
- =?iso-8859-1?Q?VM4X1Hre2WAIku15KL+y2CW31v8mi4yPEb9CSzHs5mjp1i0hM5elIhnUa/?=
- =?iso-8859-1?Q?7V75TyT3ZeHIcTf/P4pzZecSZc9/z5l9wGnEixjZ9Vw7E4QcPJdXhgP67z?=
- =?iso-8859-1?Q?M7azW/kvbrQN3wEAE3lBRvwVzBYEl6helWO25J3u0OQI/N0RnEJSlsHJYH?=
- =?iso-8859-1?Q?/4k5RQWUefjJn+u/Mx436U7tUxgwLfcG1/EgW1xx34P7uJJUhvWzkfLGYo?=
- =?iso-8859-1?Q?zjZH1mz7YbiV1mug0pIkM3hikIjPvoMhHRcKN8DR8+++RG21+1o5pw4ssI?=
- =?iso-8859-1?Q?wu8kpG6jp5UFQ1pj9XEIcHvmVXmLi1S0Ep1lgyiQN13pZED900XLqxgmgS?=
- =?iso-8859-1?Q?Mj+wxX81KjUvpINB1SP0zVF2TeQscSQ4nQgXhuozWk4othOsVQ3v8ogLEI?=
- =?iso-8859-1?Q?9REfe4TZxpI1IuuNz5fgvMDmD/2h0n4lB57GUA2Q+pHL/XG7QOx9mVveqF?=
- =?iso-8859-1?Q?Fr8RusUAuAmJdAlv4UFGvXsEB7R0zT4hd1rNuPpT62ttXDPRtk09EUbg?=
- =?iso-8859-1?Q?=3D=3D?=
+ List-Owner:List-Archive; bh=bOF1NJR2C6VQIkmOaGm3OZ/hC3PZmxuYb581posA0pY=; b=E
+ DMtLghF7OQpUgizHvXqCarJQj4bT5RwJYJ2QsMEx2ZgGDQEqkLgbbGnNx4m4igwLAJoCM8lulGxe6
+ uV+qi2d6NaPxcd28OfgbfOVR+TG9S0mpejmmAUYxpGOtzFePq0t8wvDwvq4SDLy5yBh7yT1N4c2EW
+ aEIEOok58zaZhkIk=;
+Received: from mail-il1-f206.google.com ([209.85.166.206])
+ by sfi-mx-1.v28.lw.sourceforge.com with esmtps
+ (TLS1.2:ECDHE-RSA-AES128-GCM-SHA256:128) (Exim 4.95)
+ id 1pT2Sk-007PjR-O3 for jfs-discussion@lists.sourceforge.net;
+ Fri, 17 Feb 2023 15:15:51 +0000
+Received: by mail-il1-f206.google.com with SMTP id
+ c6-20020a056e02058600b00313f4759a73so640139ils.9
+ for <jfs-discussion@lists.sourceforge.net>;
+ Fri, 17 Feb 2023 07:15:50 -0800 (PST)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20210112;
+ h=to:from:subject:message-id:in-reply-to:date:mime-version
+ :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+ bh=bOF1NJR2C6VQIkmOaGm3OZ/hC3PZmxuYb581posA0pY=;
+ b=yMGBjp7e9f82xlKoPo64bbNVc34C4LlsBm65G/HneoRhchslwQbuXJzMBfsH3aRao7
+ ZYk4Ij1oOdCJp9u+89uO67boGyuz9gsVi/v52AXTKXHdcfKS6XXHSl5GDQ3PSrHd+OYL
+ XJEmehzOQQMTLfsFlcz1Sfeas8MeWPvwMlPPlbePagxCARuNhUSRVg14Nr6OUBWktiX0
+ tfrDOw481R302C4O5UJxdxV3oUsxXTHCxwmFkAtITWJJxik6q+B8ZkGBcWWkvYa6ySeX
+ U1fhM8V5t0Pr0zgJc/1lQ2aWNdBWdeoj45JHTUn5EIhFTvylYO+sOIl6mzsY64FWBp/S
+ hZ2A==
+X-Gm-Message-State: AO0yUKVFNkK/PZ4rYch5oHvtTrgmzPM4fnNlsB8s58IZ9BJDh4usuw5d
+ y6B/lb3pCMncTWQXw4YQBbFUfAsEm/1EM1yUaaIZJMdx06glpG4g7Q==
+X-Google-Smtp-Source: AK7set8vsPE+Lbo+ybYE5fGk6chIL2Evqt2sM77c+hW8E0qS33wbuY+st4OMVHbpzwSWn8xFvemqmLAgLWD51yswvGsRCjkphFIo
 MIME-Version: 1.0
-X-OriginatorOrg: knights.ucf.edu
-X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-AuthSource: IA1PR07MB9830.namprd07.prod.outlook.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 25073ecb-0535-4e94-62ab-08db1066f5f8
-X-MS-Exchange-CrossTenant-originalarrivaltime: 16 Feb 2023 21:44:20.2149 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 5b16e182-78b3-412c-9196-68342689eeb7
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: S4EsF/96nxMWXhdl2N+sNueqLNjOQlzDE/WWaiG7mFHF0MNFvHGWmw57D/0eA7Emietariu2mMaO5wREuwcXKuzqZXU47ABzayzAuL3NqDM=
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: PH0PR07MB8717
-X-Spam-Score: -0.0 (/)
+X-Received: by 2002:a05:6e02:1050:b0:314:8c8:de65 with SMTP id
+ p16-20020a056e02105000b0031408c8de65mr391899ilj.3.1676646945161; Fri, 17 Feb
+ 2023 07:15:45 -0800 (PST)
+Date: Fri, 17 Feb 2023 07:15:45 -0800
+In-Reply-To: <000000000000471f2d05f1ce8bad@google.com>
+X-Google-Appengine-App-Id: s~syzkaller
+X-Google-Appengine-App-Id-Alias: syzkaller
+Message-ID: <0000000000009489a105f4e6c9e6@google.com>
+From: syzbot <syzbot+6a93efb725385bc4b2e9@syzkaller.appspotmail.com>
+To: jfs-discussion@lists.sourceforge.net, linux-fsdevel@vger.kernel.org, 
+ linux-kernel@vger.kernel.org, mudongliangabcd@gmail.com, paskripkin@gmail.com, 
+ r33s3n6@gmail.com, shaggy@kernel.org, syzkaller-bugs@googlegroups.com, 
+ wuhoipok@gmail.com
+X-Spam-Score: 3.1 (+++)
 X-Spam-Report: Spam detection software,
  running on the system "util-spamd-1.v13.lw.sourceforge.com", 
  has NOT identified this incoming email as spam.  The original
  message has been attached to this so you can view it or label
  similar future email.  If you have any questions, see
  the administrator of that system for details.
- Content preview:  Good day, dear maintainers, We found a bug using a modified
- kernel configuration file used by syzbot. We enhanced the coverage of the
- configuration file using our tool, klocalizer. 
- Content analysis details:   (-0.0 points, 6.0 required)
+ Content preview:  syzbot has found a reproducer for the following issue on:
+ HEAD commit: ec35307e18ba Merge tag 'drm-fixes-2023-02-17' of git://ano..
+ git tree: upstream console output:
+ https://syzkaller.appspot.com/x/log.txt?x=136bc2f0c80000
+ kernel config: https://syzkaller.a [...] 
+ Content analysis details:   (3.1 points, 6.0 required)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ 0.3 FROM_LOCAL_HEX         From: localpart has long hexadecimal sequence
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.220.70 listed in list.dnswl.org]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [40.107.220.70 listed in wl.mailspike.net]
+ no trust [209.85.166.206 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
-X-Headers-End: 1pSm3H-0000DJ-W1
-X-Mailman-Approved-At: Fri, 17 Feb 2023 15:12:42 +0000
-Subject: [Jfs-discussion] KASAN: use-after-free Read in diFree
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 2.5 SORTED_RECIPS          Recipient list is sorted by address
+X-Headers-End: 1pT2Sk-007PjR-O3
+X-Mailman-Approved-At: Fri, 17 Feb 2023 15:25:37 +0000
+Subject: Re: [Jfs-discussion] [syzbot] [jfs?] KASAN: invalid-free in
+ dbUnmount
 X-BeenThere: jfs-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -169,93 +109,177 @@ List-Post: <mailto:jfs-discussion@lists.sourceforge.net>
 List-Help: <mailto:jfs-discussion-request@lists.sourceforge.net?subject=help>
 List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/jfs-discussion>, 
  <mailto:jfs-discussion-request@lists.sourceforge.net?subject=subscribe>
-Cc: "syzkaller@googlegroups.com" <syzkaller@googlegroups.com>,
- "contact@pgazz.com" <contact@pgazz.com>
-Content-Type: text/plain; charset="iso-8859-1"
-Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Errors-To: jfs-discussion-bounces@lists.sourceforge.net
 
-Good day, dear maintainers,
+syzbot has found a reproducer for the following issue on:
 
-We found a bug using a modified kernel configuration file used by syzbot.
+HEAD commit:    ec35307e18ba Merge tag 'drm-fixes-2023-02-17' of git://ano..
+git tree:       upstream
+console output: https://syzkaller.appspot.com/x/log.txt?x=136bc2f0c80000
+kernel config:  https://syzkaller.appspot.com/x/.config?x=f4b0f5dd9aee9645
+dashboard link: https://syzkaller.appspot.com/bug?extid=6a93efb725385bc4b2e9
+compiler:       Debian clang version 15.0.7, GNU ld (GNU Binutils for Debian) 2.35.2
+syz repro:      https://syzkaller.appspot.com/x/repro.syz?x=16782d80c80000
 
-We enhanced the coverage of the configuration file using our tool, klocaliz=
-er.
+Downloadable assets:
+disk image: https://storage.googleapis.com/syzbot-assets/5680df3ffb85/disk-ec35307e.raw.xz
+vmlinux: https://storage.googleapis.com/syzbot-assets/6bdf250f8996/vmlinux-ec35307e.xz
+kernel image: https://storage.googleapis.com/syzbot-assets/5855b843bfdd/bzImage-ec35307e.xz
+mounted in repro #1: https://storage.googleapis.com/syzbot-assets/7c16d31db3c2/mount_0.gz
+mounted in repro #2: https://storage.googleapis.com/syzbot-assets/7cb46f599e58/mount_5.gz
 
-Kernel Branch: 6.2.0-rc7-next-20230213
-Kernel config:=A0https://drive.google.com/file/d/1yVvlPL4-MMdjARqrwJ0QoKuPv=
-_3lFQIR/view?usp=3Dsharing
-Unfortunately, we do not have a reproducer yet.
+IMPORTANT: if you fix the issue, please add the following tag to the commit:
+Reported-by: syzbot+6a93efb725385bc4b2e9@syzkaller.appspotmail.com
 
-Thank you!
+==================================================================
+BUG: KASAN: double-free in dbUnmount+0xf8/0x110 fs/jfs/jfs_dmap.c:264
+Free of addr ffff888070065000 by task syz-executor.2/5106
 
-Best regards,
-Sanan Hasanov
-
-=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
-=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
-=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D
-BUG: KASAN: use-after-free in diFree+0x19b3/0x2b90
-Read of size 4 at addr ffff888077b90004 by task syz-executor.2/24105
-
-CPU: 5 PID: 24105 Comm: syz-executor.2 Not tainted 6.2.0-rc7-next-20230213+=
- #1
-Hardware name: QEMU Standard PC (i440FX + PIIX, 1996), BIOS 1.15.0-1 04/01/=
-2014
+CPU: 0 PID: 5106 Comm: syz-executor.2 Not tainted 6.2.0-rc8-syzkaller-00098-gec35307e18ba #0
+Hardware name: Google Google Compute Engine/Google Compute Engine, BIOS Google 01/21/2023
 Call Trace:
  <TASK>
- dump_stack_lvl+0x17f/0x260
- print_report+0xc5/0x5e0
- kasan_report+0xd7/0x110
- __asan_report_load4_noabort+0x18/0x20
- diFree+0x19b3/0x2b90
- jfs_evict_inode+0x36d/0x430
- evict+0x305/0x6f0
- iput+0x541/0x8c0
- diFreeSpecial+0x7b/0xa0
- jfs_umount+0x13e/0x340
- jfs_fill_super+0x9ab/0xc00
- mount_bdev+0x332/0x400
- jfs_do_mount+0x39/0x50
- legacy_get_tree+0x10c/0x220
- vfs_get_tree+0x92/0x360
- path_mount+0x6cf/0x1fa0
- __x64_sys_mount+0x2ae/0x340
- do_syscall_64+0x39/0x80
+ __dump_stack lib/dump_stack.c:88 [inline]
+ dump_stack_lvl+0x1e7/0x2d0 lib/dump_stack.c:106
+ print_address_description mm/kasan/report.c:306 [inline]
+ print_report+0x163/0x4f0 mm/kasan/report.c:417
+ kasan_report_invalid_free+0x110/0x130 mm/kasan/report.c:482
+ ____kasan_slab_free+0xfb/0x120
+ kasan_slab_free include/linux/kasan.h:177 [inline]
+ slab_free_hook mm/slub.c:1781 [inline]
+ slab_free_freelist_hook mm/slub.c:1807 [inline]
+ slab_free mm/slub.c:3787 [inline]
+ __kmem_cache_free+0x264/0x3c0 mm/slub.c:3800
+ dbUnmount+0xf8/0x110 fs/jfs/jfs_dmap.c:264
+ jfs_umount+0x238/0x3a0 fs/jfs/jfs_umount.c:87
+ jfs_put_super+0x8a/0x190 fs/jfs/super.c:194
+ generic_shutdown_super+0x134/0x310 fs/super.c:492
+ kill_block_super+0x7e/0xe0 fs/super.c:1386
+ deactivate_locked_super+0xa4/0x110 fs/super.c:332
+ cleanup_mnt+0x490/0x520 fs/namespace.c:1291
+ task_work_run+0x24a/0x300 kernel/task_work.c:179
+ resume_user_mode_work include/linux/resume_user_mode.h:49 [inline]
+ exit_to_user_mode_loop+0xd9/0x100 kernel/entry/common.c:171
+ exit_to_user_mode_prepare+0xb1/0x140 kernel/entry/common.c:203
+ __syscall_exit_to_user_mode_work kernel/entry/common.c:285 [inline]
+ syscall_exit_to_user_mode+0x64/0x2e0 kernel/entry/common.c:296
+ do_syscall_64+0x4d/0xc0 arch/x86/entry/common.c:86
  entry_SYSCALL_64_after_hwframe+0x63/0xcd
-RIP: 0033:0x7f592ba9176e
-Code: 48 c7 c1 b8 ff ff ff f7 d8 64 89 01 48 83 c8 ff c3 66 2e 0f 1f 84 00 =
-00 00 00 00 90 f3 0f 1e fa 49 89 ca b8 a5 00 00 00 0f 05 <48> 3d 01 f0 ff f=
-f 73 01 c3 48 c7 c1 b8 ff ff ff f7 d8 64 89 01 48
-RSP: 002b:00007f592cc8ca08 EFLAGS: 00000206 ORIG_RAX: 00000000000000a5
-RAX: ffffffffffffffda RBX: 0000000020000200 RCX: 00007f592ba9176e
-RDX: 0000000020000000 RSI: 0000000020000100 RDI: 00007f592cc8ca60
-RBP: 00007f592cc8caa0 R08: 00007f592cc8caa0 R09: 0000000020000000
-R10: 0000000000000000 R11: 0000000000000206 R12: 0000000020000000
-R13: 0000000020000100 R14: 00007f592cc8ca60 R15: 00000000200000c0
+RIP: 0033:0x7f2586c8d567
+Code: ff ff ff f7 d8 64 89 01 48 83 c8 ff c3 66 0f 1f 44 00 00 31 f6 e9 09 00 00 00 66 0f 1f 84 00 00 00 00 00 b8 a6 00 00 00 0f 05 <48> 3d 01 f0 ff ff 73 01 c3 48 c7 c1 b8 ff ff ff f7 d8 64 89 01 48
+RSP: 002b:00007ffcc1f3b418 EFLAGS: 00000246 ORIG_RAX: 00000000000000a6
+RAX: 0000000000000000 RBX: 0000000000000000 RCX: 00007f2586c8d567
+RDX: 00007ffcc1f3b4ea RSI: 000000000000000a RDI: 00007ffcc1f3b4e0
+RBP: 00007ffcc1f3b4e0 R08: 00000000ffffffff R09: 00007ffcc1f3b2b0
+R10: 00005555571d08b3 R11: 0000000000000246 R12: 00007f2586ce6b24
+R13: 00007ffcc1f3c5a0 R14: 00005555571d0810 R15: 00007ffcc1f3c5e0
  </TASK>
 
+Allocated by task 6074:
+ kasan_save_stack mm/kasan/common.c:45 [inline]
+ kasan_set_track+0x4f/0x80 mm/kasan/common.c:52
+ ____kasan_kmalloc mm/kasan/common.c:374 [inline]
+ __kasan_kmalloc+0x9b/0xb0 mm/kasan/common.c:383
+ kmalloc include/linux/slab.h:580 [inline]
+ dbMount+0x58/0x9a0 fs/jfs/jfs_dmap.c:164
+ jfs_mount+0x1e5/0x830 fs/jfs/jfs_mount.c:121
+ jfs_fill_super+0x59c/0xc50 fs/jfs/super.c:556
+ mount_bdev+0x271/0x3a0 fs/super.c:1359
+ legacy_get_tree+0xef/0x190 fs/fs_context.c:610
+ vfs_get_tree+0x8c/0x270 fs/super.c:1489
+ do_new_mount+0x28f/0xae0 fs/namespace.c:3145
+ do_mount fs/namespace.c:3488 [inline]
+ __do_sys_mount fs/namespace.c:3697 [inline]
+ __se_sys_mount+0x2d9/0x3c0 fs/namespace.c:3674
+ do_syscall_x64 arch/x86/entry/common.c:50 [inline]
+ do_syscall_64+0x41/0xc0 arch/x86/entry/common.c:80
+ entry_SYSCALL_64_after_hwframe+0x63/0xcd
+
+Freed by task 6095:
+ kasan_save_stack mm/kasan/common.c:45 [inline]
+ kasan_set_track+0x4f/0x80 mm/kasan/common.c:52
+ kasan_save_free_info+0x2b/0x40 mm/kasan/generic.c:523
+ ____kasan_slab_free+0xd6/0x120 mm/kasan/common.c:236
+ kasan_slab_free include/linux/kasan.h:177 [inline]
+ slab_free_hook mm/slub.c:1781 [inline]
+ slab_free_freelist_hook mm/slub.c:1807 [inline]
+ slab_free mm/slub.c:3787 [inline]
+ __kmem_cache_free+0x264/0x3c0 mm/slub.c:3800
+ dbUnmount+0xf8/0x110 fs/jfs/jfs_dmap.c:264
+ jfs_mount_rw+0x4ac/0x6a0 fs/jfs/jfs_mount.c:247
+ jfs_remount+0x3d1/0x6b0 fs/jfs/super.c:454
+ reconfigure_super+0x3c9/0x7c0 fs/super.c:935
+ vfs_fsconfig_locked fs/fsopen.c:254 [inline]
+ __do_sys_fsconfig fs/fsopen.c:439 [inline]
+ __se_sys_fsconfig+0xa29/0xf70 fs/fsopen.c:314
+ do_syscall_x64 arch/x86/entry/common.c:50 [inline]
+ do_syscall_64+0x41/0xc0 arch/x86/entry/common.c:80
+ entry_SYSCALL_64_after_hwframe+0x63/0xcd
+
+The buggy address belongs to the object at ffff888070065000
+ which belongs to the cache kmalloc-2k of size 2048
+The buggy address is located 0 bytes inside of
+ 2048-byte region [ffff888070065000, ffff888070065800)
+
 The buggy address belongs to the physical page:
-page:000000004cb7d93b refcount:0 mapcount:0 mapping:0000000000000000 index:=
-0x0 pfn:0x77b90
-flags: 0xfffe0000000000(node=3D0|zone=3D1|lastcpupid=3D0x3fff)
-raw: 00fffe0000000000 ffffea0000594408 ffffe8ffffc82420 0000000000000000
-raw: 0000000000000000 0000000000000000 00000000ffffffff 0000000000000000
+page:ffffea0001c01800 refcount:1 mapcount:0 mapping:0000000000000000 index:0x0 pfn:0x70060
+head:ffffea0001c01800 order:3 compound_mapcount:0 subpages_mapcount:0 compound_pincount:0
+anon flags: 0xfff00000010200(slab|head|node=0|zone=1|lastcpupid=0x7ff)
+raw: 00fff00000010200 ffff888012442000 0000000000000000 dead000000000001
+raw: 0000000000000000 0000000080080008 00000001ffffffff 0000000000000000
 page dumped because: kasan: bad access detected
+page_owner tracks the page as allocated
+page last allocated via order 3, migratetype Unmovable, gfp_mask 0xd20c0(__GFP_IO|__GFP_FS|__GFP_NOWARN|__GFP_NORETRY|__GFP_COMP|__GFP_NOMEMALLOC), pid 5107, tgid 5107 (syz-executor.4), ts 445079557996, free_ts 18734675106
+ prep_new_page mm/page_alloc.c:2531 [inline]
+ get_page_from_freelist+0x3449/0x35c0 mm/page_alloc.c:4283
+ __alloc_pages+0x291/0x7e0 mm/page_alloc.c:5549
+ alloc_slab_page+0x6a/0x160 mm/slub.c:1851
+ allocate_slab mm/slub.c:1998 [inline]
+ new_slab+0x84/0x2f0 mm/slub.c:2051
+ ___slab_alloc+0xa85/0x10a0 mm/slub.c:3193
+ __slab_alloc mm/slub.c:3292 [inline]
+ __slab_alloc_node mm/slub.c:3345 [inline]
+ slab_alloc_node mm/slub.c:3442 [inline]
+ __kmem_cache_alloc_node+0x1b8/0x2a0 mm/slub.c:3491
+ kmalloc_trace+0x2a/0x60 mm/slab_common.c:1062
+ kmalloc include/linux/slab.h:580 [inline]
+ kzalloc include/linux/slab.h:720 [inline]
+ nsim_fib_create+0xa8/0xbb0 drivers/net/netdevsim/fib.c:1558
+ nsim_drv_probe+0x6ed/0xb30 drivers/net/netdevsim/dev.c:1581
+ really_probe+0x2ab/0xcd0 drivers/base/dd.c:639
+ __driver_probe_device+0x1c3/0x3f0 drivers/base/dd.c:778
+ driver_probe_device+0x50/0x420 drivers/base/dd.c:808
+ __device_attach_driver+0x2d3/0x520 drivers/base/dd.c:936
+ bus_for_each_drv+0x187/0x210 drivers/base/bus.c:427
+ __device_attach+0x35d/0x580 drivers/base/dd.c:1008
+ bus_probe_device+0xbe/0x1e0 drivers/base/bus.c:487
+page last free stack trace:
+ reset_page_owner include/linux/page_owner.h:24 [inline]
+ free_pages_prepare mm/page_alloc.c:1446 [inline]
+ free_pcp_prepare mm/page_alloc.c:1496 [inline]
+ free_unref_page_prepare+0xf3a/0x1040 mm/page_alloc.c:3369
+ free_unref_page+0x37/0x3f0 mm/page_alloc.c:3464
+ free_contig_range+0x9e/0x150 mm/page_alloc.c:9488
+ destroy_args+0x102/0x9a0 mm/debug_vm_pgtable.c:998
+ debug_vm_pgtable+0x40a/0x470 mm/debug_vm_pgtable.c:1318
+ do_one_initcall+0x2c3/0xa60 init/main.c:1306
+ do_initcall_level+0x157/0x210 init/main.c:1379
+ do_initcalls+0x3f/0x80 init/main.c:1395
+ kernel_init_freeable+0x477/0x630 init/main.c:1634
+ kernel_init+0x1d/0x2a0 init/main.c:1522
+ ret_from_fork+0x1f/0x30 arch/x86/entry/entry_64.S:308
 
 Memory state around the buggy address:
- ffff888077b8ff00: fc fc fc fc fc fc fc fc fc fc fc fc fc fc fc fc
- ffff888077b8ff80: fc fc fc fc fc fc fc fc fc fc fc fc fc fc fc fc
->ffff888077b90000: ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff
+ ffff888070064f00: fc fc fc fc fc fc fc fc fc fc fc fc fc fc fc fc
+ ffff888070064f80: fc fc fc fc fc fc fc fc fc fc fc fc fc fc fc fc
+>ffff888070065000: fa fb fb fb fb fb fb fb fb fb fb fb fb fb fb fb
                    ^
- ffff888077b90080: ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff
- ffff888077b90100: ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff
-=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
-=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
-=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D
-imap: 00000000fcdc15ea: 00000ecc 00000000 00000000 00000000
-imap: 00000000d740174b: 00000000 00000001 00000000 00000000
-ERROR: (device loop2): diFree: inum =3D 16, iagno =3D 0, nextiag =3D 0
+ ffff888070065080: fb fb fb fb fb fb fb fb fb fb fb fb fb fb fb fb
+ ffff888070065100: fb fb fb fb fb fb fb fb fb fb fb fb fb fb fb fb
+==================================================================
+
 
 
 _______________________________________________
