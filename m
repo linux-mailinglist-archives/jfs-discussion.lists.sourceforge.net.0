@@ -2,66 +2,66 @@ Return-Path: <jfs-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+jfs-discussion@lfdr.de
 Delivered-To: lists+jfs-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id 881D16B3D1F
-	for <lists+jfs-discussion@lfdr.de>; Fri, 10 Mar 2023 12:02:08 +0100 (CET)
-Received: from [127.0.0.1] (helo=sfs-ml-2.v29.lw.sourceforge.com)
-	by sfs-ml-2.v29.lw.sourceforge.com with esmtp (Exim 4.95)
+	by mail.lfdr.de (Postfix) with ESMTPS id E2A5B6B3D2B
+	for <lists+jfs-discussion@lfdr.de>; Fri, 10 Mar 2023 12:04:28 +0100 (CET)
+Received: from [127.0.0.1] (helo=sfs-ml-1.v29.lw.sourceforge.com)
+	by sfs-ml-1.v29.lw.sourceforge.com with esmtp (Exim 4.95)
 	(envelope-from <jfs-discussion-bounces@lists.sourceforge.net>)
-	id 1paaVS-00068k-Cz;
-	Fri, 10 Mar 2023 11:01:51 +0000
+	id 1paaXi-000408-OC;
+	Fri, 10 Mar 2023 11:04:11 +0000
 Received: from [172.30.20.202] (helo=mx.sourceforge.net)
- by sfs-ml-2.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
+ by sfs-ml-1.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
  TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (Exim 4.95)
- (envelope-from <sashal@kernel.org>) id 1paaVQ-00068e-Ql
+ (envelope-from <sashal@kernel.org>) id 1paaXW-0003yq-C0
  for jfs-discussion@lists.sourceforge.net;
- Fri, 10 Mar 2023 11:01:49 +0000
+ Fri, 10 Mar 2023 11:03:58 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=sourceforge.net; s=x; h=Content-Transfer-Encoding:MIME-Version:Message-Id:
  Date:Subject:Cc:To:From:Sender:Reply-To:Content-Type:Content-ID:
  Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
  :Resent-Message-ID:In-Reply-To:References:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=frey1/N/p0WNHhNYF0xkmnVmXCZOisPP2TIL4xv5Usk=; b=bhU1ug9c7paWBZOkmU+wwVRgWP
- HQmLKE6OdelX3WSmvIOd0qYp+i9gGZHo1lT+GcO5HJOJS3X+Wf8SA7ZR0irZv/05Lo5TIxl+Qa71h
- z4aP3/GZ5JyyJSzHUTpuwPGKu0tvSgoE6CWX9jltTa9ab+21yMRXH0H9ZQR8V0XRVCdY=;
+ bh=/+MbZzSo8BfT2XhWPlaLrOTAXbu6l2AlpPRvOZe6WQ4=; b=aLOHbALaS62R5p2LCBq+L2ldaT
+ kaeSaKNvhWJ4V2ZOKUVwmmYjAUl/KLG2tE02m4XLb/JJgdlbcMvZt1wTwqT7g7rIHFb8aIn4aWkZM
+ lScfFp1/2hBPn41q8g1lhWL4RORqs4pSDm1/lCNxe8Kf3DAnXU2AORbRGo0oGTG3QoKc=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
  h=Content-Transfer-Encoding:MIME-Version:Message-Id:Date:Subject:Cc:To:From
  :Sender:Reply-To:Content-Type:Content-ID:Content-Description:Resent-Date:
  Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
  References:List-Id:List-Help:List-Unsubscribe:List-Subscribe:List-Post:
- List-Owner:List-Archive; bh=frey1/N/p0WNHhNYF0xkmnVmXCZOisPP2TIL4xv5Usk=; b=P
- gY36g1AujxCcZGyqdxCA7i9gJvy566KqZ1ILXuj7hK9SGkWAEk30WKWw6atLFE4uoKQwOQ+g3sfvL
- OQXV9zqKa82L1ZVh7h1yWrinu+Qmzn/jI9NZWsRb628Sl2VPo2Q0zoLIV70tPfP6srvbO0JPhcylj
- k0+vEIzPTUP2QwKE=;
-Received: from ams.source.kernel.org ([145.40.68.75])
+ List-Owner:List-Archive; bh=/+MbZzSo8BfT2XhWPlaLrOTAXbu6l2AlpPRvOZe6WQ4=; b=I
+ 4HbfXUJrZ0LWQTSgUMMVcdUqenf4fxajVCJ37i7o9I1QW71+KVq9h9M7pcvpbnq1os1HsCNaxt3oY
+ bGafArlg5HKbogEA8fSMhMoqBRVM/CFzmywywPpupFCFGmKzlrwnH96aIQssMURjj4ULkpUDfVFXf
+ t5bZgRhUEHZztfn8=;
+Received: from dfw.source.kernel.org ([139.178.84.217])
  by sfi-mx-2.v28.lw.sourceforge.com with esmtps
  (TLS1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.95)
- id 1paaVR-0005eE-L4 for jfs-discussion@lists.sourceforge.net;
- Fri, 10 Mar 2023 11:01:49 +0000
+ id 1paaXX-0005jJ-5P for jfs-discussion@lists.sourceforge.net;
+ Fri, 10 Mar 2023 11:03:58 +0000
 Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by ams.source.kernel.org (Postfix) with ESMTPS id 6B532B808CE
+ by dfw.source.kernel.org (Postfix) with ESMTPS id D67796136F
  for <jfs-discussion@lists.sourceforge.net>;
- Fri, 10 Mar 2023 11:01:42 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id B6580C433D2;
- Fri, 10 Mar 2023 11:01:40 +0000 (UTC)
+ Fri, 10 Mar 2023 11:03:52 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id CB84AC4339B;
+ Fri, 10 Mar 2023 11:03:51 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=k20201202; t=1678446101;
- bh=qGWmylliJvhYxK6aX6iSmtZ2twz2pXDXCzL2yQW1gwc=;
+ s=k20201202; t=1678446232;
+ bh=CNhCWLbiePlN1JSMq9agpIXJdhwfAmbnLLMkc/tJH9E=;
  h=From:To:Cc:Subject:Date:From;
- b=f0Hh+AetyK8moJ/mkv+TdaEjRelyNN9AwFZBtjEqnGBp/CWfo76jxWbgf6L5sr5bM
- VqisolqbsaR/celDSUzHsZfwyL270jL7ZrTJAVovxK9BobOBg2vAYJ43eNzsS9JPp3
- ofYAeYOUhsEKuKuvftxHCliCe8UrMlQwQ8GsTbPwwb55xcMRe4MKBNTwkDBP2Izt+0
- 1LbmbaBSCl8WMaSjmi17xEuDhsNJr5tEaRt/aZdG+H2QXbiTbnXVW2/qxAx/jvn55A
- GV26GeQF4KfDNOOaNTfDJc+GjYQvT9E75gBgS5nqKY7RGcQ+UZlEAMIgO6Doqcyb1t
- ecpa1day8EAcA==
+ b=QX/mwSWFafErP8fiAeb7hveYPuAT1zgQVS4+WjE+AoxJdPU/r8TdqOLPi5LUDkefl
+ 4cjqC5SQPEPauFcD87YPRCjhUH7miirK4RjiL+Tnsdnb1chiF7M/hGD/Ms2RUl4sLQ
+ usSy8T8nOk7rwK7SbzBa8XEpYILLkLcDOM5agMW6uiTT5G3bQKgWsanboTyeg6adbc
+ xbq4Jezo04LwXA984Amx5M5zfZXxVoj+bS1dHQPjMlKFu1ekNbYzHXcCvIlT5ftYf5
+ jJ1VKAsrw8feRZFTYZaPY8pqj7SVtQcRUF1Fb8ArM7Pn1QjDK2UNtcyT1sn5K42XBZ
+ YH/JvPi1iUAOw==
 From: Sasha Levin <sashal@kernel.org>
 To: stable-commits@vger.kernel.org,
 	jfs-discussion@lists.sourceforge.net
-Date: Fri, 10 Mar 2023 06:01:38 -0500
-Message-Id: <20230310110139.3094481-1-sashal@kernel.org>
+Date: Fri, 10 Mar 2023 06:03:49 -0500
+Message-Id: <20230310110350.3096371-1-sashal@kernel.org>
 X-Mailer: git-send-email 2.39.2
 MIME-Version: 1.0
 X-Patchwork-Hint: ignore
@@ -74,7 +74,7 @@ X-Spam-Report: Spam detection software,
  similar future email.  If you have any questions, see
  the administrator of that system for details.
  Content preview: This is a note to let you know that I've just added the patch
- titled fs/jfs: fix shift exponent db_agl2size negative to the 4.19-stable
+ titled fs/jfs: fix shift exponent db_agl2size negative to the 4.14-stable
  tree which can be found at:
  http://www.kernel.org/git/?p=linux/kernel/git/stable/stable-queue.git;
  a=summary
@@ -82,7 +82,7 @@ X-Spam-Report: Spam detection software,
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [145.40.68.75 listed in list.dnswl.org]
+ high trust [139.178.84.217 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -92,9 +92,9 @@ X-Spam-Report: Spam detection software,
  author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid -0.0 DKIMWL_WL_HIGH         DKIMwl.org - High trust sender
-X-Headers-End: 1paaVR-0005eE-L4
+X-Headers-End: 1paaXX-0005jJ-5P
 Subject: [Jfs-discussion] Patch "fs/jfs: fix shift exponent db_agl2size
- negative" has been added to the 4.19-stable tree
+ negative" has been added to the 4.14-stable tree
 X-BeenThere: jfs-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -115,19 +115,19 @@ This is a note to let you know that I've just added the patch titled
 
     fs/jfs: fix shift exponent db_agl2size negative
 
-to the 4.19-stable tree which can be found at:
+to the 4.14-stable tree which can be found at:
     http://www.kernel.org/git/?p=linux/kernel/git/stable/stable-queue.git;a=summary
 
 The filename of the patch is:
      fs-jfs-fix-shift-exponent-db_agl2size-negative.patch
-and it can be found in the queue-4.19 subdirectory.
+and it can be found in the queue-4.14 subdirectory.
 
 If you, or anyone else, feels it should not be added to the stable tree,
 please let <stable@vger.kernel.org> know about it.
 
 
 
-commit b2829da999ef241f604f4345d0c10e08185871f0
+commit a042f3c7ffffbde38065115517f676fcb6833970
 Author: Liu Shixin via Jfs-discussion <jfs-discussion@lists.sourceforge.net>
 Date:   Thu Nov 3 11:01:59 2022 +0800
 
@@ -148,7 +148,7 @@ Date:   Thu Nov 3 11:01:59 2022 +0800
     Signed-off-by: Sasha Levin <sashal@kernel.org>
 
 diff --git a/fs/jfs/jfs_dmap.c b/fs/jfs/jfs_dmap.c
-index f06796cad9aa8..3ad0a33e0443b 100644
+index 0ca1ad2610df9..6a0f564e58ddb 100644
 --- a/fs/jfs/jfs_dmap.c
 +++ b/fs/jfs/jfs_dmap.c
 @@ -206,7 +206,8 @@ int dbMount(struct inode *ipbmap)
