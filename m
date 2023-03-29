@@ -2,18 +2,18 @@ Return-Path: <jfs-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+jfs-discussion@lfdr.de
 Delivered-To: lists+jfs-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id 72E3F6CF039
-	for <lists+jfs-discussion@lfdr.de>; Wed, 29 Mar 2023 19:06:57 +0200 (CEST)
-Received: from [127.0.0.1] (helo=sfs-ml-2.v29.lw.sourceforge.com)
-	by sfs-ml-2.v29.lw.sourceforge.com with esmtp (Exim 4.95)
+	by mail.lfdr.de (Postfix) with ESMTPS id 622646CF032
+	for <lists+jfs-discussion@lfdr.de>; Wed, 29 Mar 2023 19:06:53 +0200 (CEST)
+Received: from [127.0.0.1] (helo=sfs-ml-3.v29.lw.sourceforge.com)
+	by sfs-ml-3.v29.lw.sourceforge.com with esmtp (Exim 4.95)
 	(envelope-from <jfs-discussion-bounces@lists.sourceforge.net>)
-	id 1phZFn-0008LG-7M;
-	Wed, 29 Mar 2023 17:06:31 +0000
+	id 1phZFr-0000dx-7A;
+	Wed, 29 Mar 2023 17:06:34 +0000
 Received: from [172.30.20.202] (helo=mx.sourceforge.net)
- by sfs-ml-2.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
+ by sfs-ml-3.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
  TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (Exim 4.95)
  (envelope-from <prvs=445a3f1bb=johannes.thumshirn@wdc.com>)
- id 1phZFk-0008L9-TD for jfs-discussion@lists.sourceforge.net;
+ id 1phZFm-0000dp-KF for jfs-discussion@lists.sourceforge.net;
  Wed, 29 Mar 2023 17:06:29 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=sourceforge.net; s=x; h=Content-Transfer-Encoding:MIME-Version:References:
@@ -21,9 +21,9 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
  Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=kKJBTmnd2YIfpjD3AfeOKUtgOUUgwb/dhMYX9hb9VBw=; b=N86hb1jt6JkPa068atTyDPxS5a
- sae4rhrqBqlneglrlcV/o+86YVLGtHCz9eUt3HV5xzZsF1thQvRKRQmCvNi3VsOlY/pV+gUl1YgLr
- nHyNnOjpG7UATsWnfrbEyYZOA8NIgxz247yC8Q9OSUlu3u5wa7xxh18vBDPE7lcKZFiU=;
+ bh=XBVoGOaxFjX7F249TlpPBZ0ayzeIHnTslvlScVx5NcE=; b=bVqltnZHsjf+0hwq9g23GMd8aY
+ b2v6bYZWgbKemRNru0QzgJSkhSzAgDg0OyW3li4UWf8YvuIeM+B9zrVPVQMya28ggoKvaIOnWvV0o
+ SeaRtGDPkiInDC/M20GAt31xXUVReQG+rYeGeIDc8udkHtYL88N654/uCT5BLLHyq998=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
  h=Content-Transfer-Encoding:MIME-Version:References:In-Reply-To:Message-Id:
@@ -31,61 +31,61 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
  :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
  List-Post:List-Owner:List-Archive;
- bh=kKJBTmnd2YIfpjD3AfeOKUtgOUUgwb/dhMYX9hb9VBw=; b=mxo8RpwpxKncul9no1M0ppDW/V
- kog4inFbpFmfszdHtGCPnYMT69tHTdqPiuPiXeuGGNdfCuwG8qI8jrjYqrZirUzGHWZctAaZzwCCD
- XaewbvU21ZaRc22LkJ1cgYd0QdkdWQAwLwfQZSrGM/SXtUJRGI5K5CBRMA4wXXik+/Mc=;
+ bh=XBVoGOaxFjX7F249TlpPBZ0ayzeIHnTslvlScVx5NcE=; b=HeSuecxZ2IDp4eKrzpuLvOvUnz
+ EOpbS151gIGPgU3iAoGxATQtaQLMexzznOC2GnAj9W77P3Yzxea3ed4rpOEH6qMpzR+v3HbT8cn60
+ FGvCrNKDmDF0KQiK31OhtvF352hxPxL+KiEXC3KWKOzsAY4tLn8NOzUl6ZfTuFOQdgao=;
 Received: from esa6.hgst.iphmx.com ([216.71.154.45])
  by sfi-mx-1.v28.lw.sourceforge.com with esmtps
  (TLS1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.95)
- id 1phZFk-008aXc-HR for jfs-discussion@lists.sourceforge.net;
+ id 1phZFl-008aXc-7l for jfs-discussion@lists.sourceforge.net;
  Wed, 29 Mar 2023 17:06:29 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple;
  d=wdc.com; i=@wdc.com; q=dns/txt; s=dkim.wdc.com;
- t=1680109588; x=1711645588;
+ t=1680109589; x=1711645589;
  h=from:to:cc:subject:date:message-id:in-reply-to:
  references:mime-version:content-transfer-encoding;
- bh=TM7IBzNT7/14xTwowvJHPkTQX8VqnD9S2m9y/nmGXPw=;
- b=SkPnXOU5wGNOC/FlQWfftxPfQXp/vyop7KQKtYFoWEKkfUpsFUx3UA1h
- bhk3LYX37E9b/L3iAllDrqBrnVtRpuKIK79DbfrB9OymNDvv9FhaFVK7h
- BWq9IKQy7sLPjTRjFf5FcbiZ6oQrQfT6EfIJslZq3zke/XgG8CV59kU+z
- Fe+mWvhfmLNeL8C/kt6fD0PxsTQbbtDj/FqfkEVoS3qyCXM5iXQuui3Qj
- m6YlFhBegs8X6l4xLTAzlpuwJ/iXknqmocUYGz060uDGGi4nZPfGnEnw/
- tgRjV6WZVigoNaWx9GristOL/nqSk4/hQd6ncjGwaGbIFEmdmUI0j0Og8 Q==;
-X-IronPort-AV: E=Sophos;i="5.98,301,1673884800"; d="scan'208";a="226807001"
+ bh=b2tfkQJHOoMo9xPMUAirVs15MwxpHItWsELh86gGl5g=;
+ b=OpLTBt9HB7HNpB/th0V5kS9hT3M8N5H9sMN8ys+AXKnx4m6JZ7YpuZ3y
+ s2hAzsdMLsAFlXbEtoL45avaHtvPO9zr2/9fzcq8+jJv0jQdhEFYrzQKq
+ 2B2wE84osOXkGVP5jEeyac82Kmh1ca7ZT5hUMSP3zUm9UuQv9LoLIjT54
+ fu4rIFbMjGZxB0r2P6VPNC70x7Dvp4XnZBg1WAoC1dG1CGyejm08mYhEa
+ uQfqSnOiAFHSY4Q0Z0YMO6TtVf1n0QVORf/U2tQ08CCTCm8ZFiXSynEgw
+ dRWcjGO1HhyHCXbJjWBncZd7PRXS1suNIOuw6zq8XW71pvnZ79Hquu63F g==;
+X-IronPort-AV: E=Sophos;i="5.98,301,1673884800"; d="scan'208";a="226807012"
 Received: from h199-255-45-14.hgst.com (HELO uls-op-cesaep01.wdc.com)
  ([199.255.45.14])
- by ob1.hgst.iphmx.com with ESMTP; 30 Mar 2023 01:06:23 +0800
-IronPort-SDR: yc8ivD5XxjyIGBrVz94XdDUbNbn2HVTaed9tqB/Pwrb5LGCnveDsS4P7TIbsnTPsuEz5iB7Zlq
- 3vYKsgq458efCqQzXUm2UxvSKDgxuMvLtiYwQg2RUoxVOh/f3yZRV161vIUYSxPuBkjKF+zBUA
- kZbs3z+OfttSx2EuscPrAectnNgTESCKJxfs+iz0lIK5l0uUfsTj+63CKWG5DKheo0afugFcFS
- r22KrBjkVN7JKObjjgMzyMw3UUtwPMPgipOatxi9KKx/ee6e4KY7nEPOekGU3WG9fx3TBapb/7
- kPM=
+ by ob1.hgst.iphmx.com with ESMTP; 30 Mar 2023 01:06:26 +0800
+IronPort-SDR: WPr5yze6U1GBj/MDFJbRODop4/CQ8ZYt9RkP/wSmr/12kbSpY/RX+h+7jrjHkkigj8MrZn70Rc
+ +4c8j2TVkDzY0GlwOtNTA0a8/OBVsXaNyE7BCM+BG/xvMWlGjgAIaQtAMCgsV2wsdEFTTsoAtH
+ yAjKEwv8ELw6wsuMcAP8av3YCvp8sZhbyDnIO0umdpVrdsn5A3iZ3bCCPvHTqHvFd8Pp1X9p2L
+ OXUg4TzivoGHQoOHa0rHEntwudNteq8He7r6U/CHnz3H9wjDcC0SvkhuBsFPy8pcvgUojW9ESg
+ D1M=
 Received: from uls-op-cesaip01.wdc.com ([10.248.3.36])
  by uls-op-cesaep01.wdc.com with ESMTP/TLS/ECDHE-RSA-AES128-GCM-SHA256;
- 29 Mar 2023 09:22:33 -0700
-IronPort-SDR: yyFKbwfOEl8vOCdlm8o/aBoXRqrxQAe/juUDniPmOyA6KC3OO/1kAhsEUEEYLVsoCPHg44tswf
- U4/t+Eht43hkaug7Qk7+EHXBNakm9gxNEJ3L7TUTHnO6hgxDZl9fUBGyLmIxwdFu7eEHUBHXpO
- mDw2lAW7wlIEhS9KYrLKfz7UOp4cFL6JpgENGlPck777d5NCTl/Xpkpz9Aa9Jk2kPk7WtKRS1c
- WhXighkZnqtO4Hr42uzllq0JA5rZq58zNcIHYGF/y9POF5WRGYiU4StYBbSKeJu9G4+2PBGJBo
- br4=
+ 29 Mar 2023 09:22:36 -0700
+IronPort-SDR: oN2UR0L9Ic/bC5ZlKdub2hL2B3WzSMNwWPaTts8Go9tRNUBzKiBjVMXtPb1MCBqH30XhfX5VFK
+ r3o3y5lK4V0syF4FJkhuPmKVn0NSvYTqzCGIASu7aUGIjtgkWZfbeiTvlj5dp1GTJ+SAbWxEQ1
+ bH84aK1rLSnMEBKGsMwYaHXGhkfZPfTCuxZYs+HVziD2+k4Bdwtx3+/JcWFce+mApOYNcNV45r
+ 3t5a5tYLJENitHpxBEddwdCKeyJVZy3OKiWBV7xOctdwFhAm4r3Z/fd+xkk6SD/0qdXQzGwmhy
+ sn0=
 WDCIronportException: Internal
 Received: from unknown (HELO redsun91.ssa.fujisawa.hgst.com) ([10.149.66.72])
- by uls-op-cesaip01.wdc.com with ESMTP; 29 Mar 2023 10:06:22 -0700
+ by uls-op-cesaip01.wdc.com with ESMTP; 29 Mar 2023 10:06:25 -0700
 To: Jens Axboe <axboe@kernel.dk>
-Date: Wed, 29 Mar 2023 10:05:47 -0700
-Message-Id: <7849b142e073b20f033e5124a39080f59e5f19d2.1680108414.git.johannes.thumshirn@wdc.com>
+Date: Wed, 29 Mar 2023 10:05:48 -0700
+Message-Id: <87d0bf7d65cb7c64a0010524e5b39466f2b79870.1680108414.git.johannes.thumshirn@wdc.com>
 X-Mailer: git-send-email 2.39.2
 In-Reply-To: <cover.1680108414.git.johannes.thumshirn@wdc.com>
 References: <cover.1680108414.git.johannes.thumshirn@wdc.com>
 MIME-Version: 1.0
 X-Spam-Score: -2.5 (--)
 X-Spam-Report: Spam detection software,
- running on the system "util-spamd-1.v13.lw.sourceforge.com", 
+ running on the system "util-spamd-2.v13.lw.sourceforge.com", 
  has NOT identified this incoming email as spam.  The original
  message has been attached to this so you can view it or label
  similar future email.  If you have any questions, see
  the administrator of that system for details.
- Content preview: The swap code only adds a single page to a newly created bio.
+ Content preview: The drbd code only adds a single page to a newly created bio.
  So use __bio_add_page() to add the page which is guaranteed to succeed in
  this case. This brings us closer to marking bio_add_page() as __must_check.
  Content analysis details:   (-2.5 points, 6.0 required)
@@ -93,17 +93,17 @@ X-Spam-Report: Spam detection software,
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
  medium trust [216.71.154.45 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
-X-Headers-End: 1phZFk-008aXc-HR
-Subject: [Jfs-discussion] [PATCH 01/19] swap: use __bio_add_page to add page
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+X-Headers-End: 1phZFl-008aXc-7l
+Subject: [Jfs-discussion] [PATCH 02/19] drbd: use __bio_add_page to add page
  to bio
 X-BeenThere: jfs-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
@@ -134,7 +134,7 @@ Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Errors-To: jfs-discussion-bounces@lists.sourceforge.net
 
-The swap code only adds a single page to a newly created bio. So use
+The drbd code only adds a single page to a newly created bio. So use
 __bio_add_page() to add the page which is guaranteed to succeed in this
 case.
 
@@ -142,49 +142,28 @@ This brings us closer to marking bio_add_page() as __must_check.
 
 Signed-off-by: Johannes Thumshirn <johannes.thumshirn@wdc.com>
 ---
- mm/page_io.c | 8 ++++----
- 1 file changed, 4 insertions(+), 4 deletions(-)
+ drivers/block/drbd/drbd_bitmap.c | 8 +++++---
+ 1 file changed, 5 insertions(+), 3 deletions(-)
 
-diff --git a/mm/page_io.c b/mm/page_io.c
-index 87b682d18850..684cd3c7b59b 100644
---- a/mm/page_io.c
-+++ b/mm/page_io.c
-@@ -338,7 +338,7 @@ static void swap_writepage_bdev_sync(struct page *page,
- 	bio_init(&bio, sis->bdev, &bv, 1,
- 		 REQ_OP_WRITE | REQ_SWAP | wbc_to_write_flags(wbc));
- 	bio.bi_iter.bi_sector = swap_page_sector(page);
--	bio_add_page(&bio, page, thp_size(page), 0);
-+	__bio_add_page(&bio, page, thp_size(page), 0);
+diff --git a/drivers/block/drbd/drbd_bitmap.c b/drivers/block/drbd/drbd_bitmap.c
+index 289876ffbc31..c542dcf8c457 100644
+--- a/drivers/block/drbd/drbd_bitmap.c
++++ b/drivers/block/drbd/drbd_bitmap.c
+@@ -1043,9 +1043,11 @@ static void bm_page_io_async(struct drbd_bm_aio_ctx *ctx, int page_nr) __must_ho
+ 	bio = bio_alloc_bioset(device->ldev->md_bdev, 1, op, GFP_NOIO,
+ 			&drbd_md_io_bio_set);
+ 	bio->bi_iter.bi_sector = on_disk_sector;
+-	/* bio_add_page of a single page to an empty bio will always succeed,
+-	 * according to api.  Do we want to assert that? */
+-	bio_add_page(bio, page, len, 0);
++	/*
++	 * __bio_add_page of a single page to an empty bio will always succeed,
++	 * according to api.  Do we want to assert that?
++	 */
++	__bio_add_page(bio, page, len, 0);
+ 	bio->bi_private = ctx;
+ 	bio->bi_end_io = drbd_bm_endio;
  
- 	bio_associate_blkg_from_page(&bio, page);
- 	count_swpout_vm_event(page);
-@@ -360,7 +360,7 @@ static void swap_writepage_bdev_async(struct page *page,
- 			GFP_NOIO);
- 	bio->bi_iter.bi_sector = swap_page_sector(page);
- 	bio->bi_end_io = end_swap_bio_write;
--	bio_add_page(bio, page, thp_size(page), 0);
-+	__bio_add_page(bio, page, thp_size(page), 0);
- 
- 	bio_associate_blkg_from_page(bio, page);
- 	count_swpout_vm_event(page);
-@@ -468,7 +468,7 @@ static void swap_readpage_bdev_sync(struct page *page,
- 
- 	bio_init(&bio, sis->bdev, &bv, 1, REQ_OP_READ);
- 	bio.bi_iter.bi_sector = swap_page_sector(page);
--	bio_add_page(&bio, page, thp_size(page), 0);
-+	__bio_add_page(&bio, page, thp_size(page), 0);
- 	/*
- 	 * Keep this task valid during swap readpage because the oom killer may
- 	 * attempt to access it in the page fault retry time check.
-@@ -488,7 +488,7 @@ static void swap_readpage_bdev_async(struct page *page,
- 	bio = bio_alloc(sis->bdev, 1, REQ_OP_READ, GFP_KERNEL);
- 	bio->bi_iter.bi_sector = swap_page_sector(page);
- 	bio->bi_end_io = end_swap_bio_read;
--	bio_add_page(bio, page, thp_size(page), 0);
-+	__bio_add_page(bio, page, thp_size(page), 0);
- 	count_vm_event(PSWPIN);
- 	submit_bio(bio);
- }
 -- 
 2.39.2
 
