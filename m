@@ -2,28 +2,28 @@ Return-Path: <jfs-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+jfs-discussion@lfdr.de
 Delivered-To: lists+jfs-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2E8196D0252
+	by mail.lfdr.de (Postfix) with ESMTPS id 190DD6D024D
 	for <lists+jfs-discussion@lfdr.de>; Thu, 30 Mar 2023 13:00:09 +0200 (CEST)
-Received: from [127.0.0.1] (helo=sfs-ml-4.v29.lw.sourceforge.com)
-	by sfs-ml-4.v29.lw.sourceforge.com with esmtp (Exim 4.95)
+Received: from [127.0.0.1] (helo=sfs-ml-1.v29.lw.sourceforge.com)
+	by sfs-ml-1.v29.lw.sourceforge.com with esmtp (Exim 4.95)
 	(envelope-from <jfs-discussion-bounces@lists.sourceforge.net>)
-	id 1phq0Y-0005y7-3B;
-	Thu, 30 Mar 2023 10:59:55 +0000
+	id 1phq0X-0004Ta-Sj;
+	Thu, 30 Mar 2023 10:59:53 +0000
 Received: from [172.30.20.202] (helo=mx.sourceforge.net)
- by sfs-ml-4.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
+ by sfs-ml-1.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
  TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (Exim 4.95)
  (envelope-from <prvs=446327cdf=johannes.thumshirn@wdc.com>)
- id 1phq0U-0005xf-1l for jfs-discussion@lists.sourceforge.net;
- Thu, 30 Mar 2023 10:59:50 +0000
+ id 1phq0W-0004T4-B5 for jfs-discussion@lists.sourceforge.net;
+ Thu, 30 Mar 2023 10:59:51 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=sourceforge.net; s=x; h=Content-Transfer-Encoding:MIME-Version:References:
  In-Reply-To:Message-Id:Date:Subject:Cc:To:From:Sender:Reply-To:Content-Type:
  Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
  Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=kcNN3p6S5fn31oSt7NvkB3NfN6Wj528DNJTta2mWC1Y=; b=G3hdAKC/ybvQ3InrHJuEswCO7w
- nMyCDh+FPfWILbRzyP0l+AxfCEgdLoaU9krhX+YkxbmFK6gwLLjDGpr6XRh4YDIGh5vknEfK3nZnJ
- Nz627NKAzWeyPCog/8uL6D5TbAPdPnvxhkuTJSsrQATKjIt9MhoZihaw+Kds+khh29TA=;
+ bh=NvLJF7eTLo27RNoKIJRG6qSoRpaf2jS02f120/4JtBs=; b=dBdoyuv2dP6+XjfgHSLdVIhx1k
+ 6v28c+NEUJc1ra0KVehCnq9/R/W1utL3s0FjBVliii7Z/tfuHRrdytt1EyodjuDzZkS5DMEjc6gvu
+ MD+zhTVsnLAOj3RUjd+uuFCGeiTQTwc0MoAg2OI2lYFcsVuMYZuq68zb/RZ/UHMb4+CQ=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
  h=Content-Transfer-Encoding:MIME-Version:References:In-Reply-To:Message-Id:
@@ -31,49 +31,49 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
  :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
  List-Post:List-Owner:List-Archive;
- bh=kcNN3p6S5fn31oSt7NvkB3NfN6Wj528DNJTta2mWC1Y=; b=NZGc3IVD2VkYi2ceB8QtxAMyn5
- VxkwOyw/ifwjN9Mjjo6gMDF7lFH6iyWg0ViWJd0VcgKydEDhMH+tBOPtc/ATIViYl5P1hv5g5HDS4
- u6fSqyCAgsnrkAzqYFkwDORQcwrebp69uNaCEwMRpGkSFE1ELZKORNT825K1+i+OCqWE=;
+ bh=NvLJF7eTLo27RNoKIJRG6qSoRpaf2jS02f120/4JtBs=; b=TTbF1qUxYZateMDPGjV8eYiCxA
+ ATr2oOPpPMEd7vXAkgYo8iVWmHVmRhRREtP9ZYbq1Em1hcrvSLQd5FKyFYoSPw2RhwkYqSCNFDN1E
+ D10NTBxrHbUoPLWEny08LVwI2HmC7BlcQ3ohrNCxnmXmmbzxrOoGg3QgNwfeCEwxAk5Q=;
 Received: from esa1.hgst.iphmx.com ([68.232.141.245])
- by sfi-mx-1.v28.lw.sourceforge.com with esmtps
+ by sfi-mx-2.v28.lw.sourceforge.com with esmtps
  (TLS1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.95)
- id 1phq0U-009UvH-9V for jfs-discussion@lists.sourceforge.net;
- Thu, 30 Mar 2023 10:59:50 +0000
+ id 1phq0U-0007Q4-Rg for jfs-discussion@lists.sourceforge.net;
+ Thu, 30 Mar 2023 10:59:51 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple;
  d=wdc.com; i=@wdc.com; q=dns/txt; s=dkim.wdc.com;
  t=1680173990; x=1711709990;
  h=from:to:cc:subject:date:message-id:in-reply-to:
  references:mime-version:content-transfer-encoding;
- bh=RpitYrbMFeR5j8yxFMmc3tnhDIhgkd0gY7Yp5w5KjZY=;
- b=nrbCNjHhSo5pTZhTkbWWAuGIRq7Y1VcJ7savyQRAONTmM71OADW5YFN9
- 72QGHcD46q26qqcNGPbPOCM89JUqwJU0NOFmeZohW78lAjduMH91a0QJi
- ppYvSXYhIMXvgcQmyJl7Kzr82iN1ScRY+vvFjJp4iep1i8T6Gub+8yOV9
- CXGHiIF1GffWafe+avEPZ9oSyjO6kQmqHmPpVAJIPeuhloakz/z4e44cu
- i5cRbwq9Pp/wF+Mbz4vJEHbqytVcfMAOlCxP75u+tXt19szedg8RLOfoT
- P9wsokDg/ZIVpclWUcT+BAt34q7upM03n1n+/zLU++vtSETMyocR6kHXh w==;
-X-IronPort-AV: E=Sophos;i="5.98,303,1673884800"; d="scan'208";a="338948097"
+ bh=Kw/gd8mi4cp3C+0+JmkC18fkS8wJMSIrrh7WtKkZNvs=;
+ b=muR/JrtaN66rO3FDE3Pfw19567nwGi96vf7wIb64MyBWSEpwaf5EYZkZ
+ 5y1FNrA8rJluKumG1Ryer3is82UoOqwQfRNGT58jaglHdTU5PgPW7v/Lf
+ 82fdWxywmDhT310mnrcuEuF//qsKleGcSN7XGOcT2Bmz0JhPwm+m5G1jd
+ +G4eBcX4wbDa+zmnmT2eyO6A2E8KdUBDblM+RzBf+qITzO9mAJKvMfyv7
+ J2GaU78EDTymWQTi3SxjXAFzekdxVcsdtCM6vWt/C3AUvhNZrpDD7DrOy
+ 4n6KLitZNWrWcr28x6CHRZ1m/rv9Z52OCC4JuHSKz2JKbUa8jIjgKEQMA w==;
+X-IronPort-AV: E=Sophos;i="5.98,303,1673884800"; d="scan'208";a="338948109"
 Received: from uls-op-cesaip01.wdc.com (HELO uls-op-cesaep01.wdc.com)
  ([199.255.45.14])
- by ob1.hgst.iphmx.com with ESMTP; 30 Mar 2023 18:44:20 +0800
-IronPort-SDR: duRybdCn15UELbBps7wxRpR32lI0KkhyXYZ0IpYc1y93lupcUpw67D3GYfStS+PAVTO77z5pIa
- obB7smXbygV6YW21YwhO5N5LGZyYRSReWUR7lkA0v7OnQUWvRU1GXztn6Cqgwtnq6LENVm5gpP
- bAzonaeZAuTQ+xaMpTjG1U82TN+XNX7c8kuP6DTPSaGg5tfz3K99fH/CjYsH6hEON6uNOIJaqi
- 4vdXYnTjwUoFjfIMOXRySqYZ704tsupifOLVsWZGnRq/yAflzNT+7LZwy+rydfKl+vv6sF9F/E
- LVI=
+ by ob1.hgst.iphmx.com with ESMTP; 30 Mar 2023 18:44:23 +0800
+IronPort-SDR: Vokpe2wCQ6+YYGRMgnoNIGjeHbeGPaC+fgPJU5rRp3JG2lGr8ZQ19kfh9dKRo6dfiLfAQXbaiz
+ +ngn78Jwd3ZTTzHFQ0MuSrjUGF01HxZNt0NL9IPWJBNCS945aHw7PKxif6NEgsIJ/gAy3IG5WG
+ 2pcO4kle6couvCCBcTA7IlSLHVfH+s/0g0QhIbDWzCEV8AOKJQy36qGqwQcQDB5xJTPNTR+wt7
+ x3hHow221J0ahVxj+y5BqiTkFdsX+XKWkxsIB3uSUVLlYnQiUh0/OQs9WLeTq/IYRUahRieVCQ
+ UqY=
 Received: from uls-op-cesaip01.wdc.com ([10.248.3.36])
  by uls-op-cesaep01.wdc.com with ESMTP/TLS/ECDHE-RSA-AES128-GCM-SHA256;
- 30 Mar 2023 03:00:29 -0700
-IronPort-SDR: +ifl+ssGQMJo1793QyummmYdxHd3XzP9XbjKXn6B6L9A/71IfxQfpv8qYdarzpWEctk4Ql3WMW
- tPTK/6UQPkyog3HY7qay4dpVKeTmP5uIdnwjy4w1mx3YP2Y/toi1PbzB3aslZB5M04afc8o1z4
- yZQbo9Y6NFNa+sXQ/Q+D/AMjunNqR24ybNaqHMPMmSEop2iGUVZ7PeH8+3OU/sv+eDng5CjLZz
- ga7rpWvmqRchNNkmOIEQBKIXfa2Mc8UQommU9tZ/kK5i+Hil+N15boStP09k/34t8fBi6p3L0m
- tHI=
+ 30 Mar 2023 03:00:31 -0700
+IronPort-SDR: V9njnv+t+GuKggx1vZa0T1MyyD/4iSSXEJKOary+Bq17fidU3Wq1CXNYZJCw9uLZGgQvn++tes
+ OUuz4YBad4EEj5SCwfzseRk61pTGeIXQTJ8sWWZ6C/a6IojWDHpOIMFR1kBlWwqA9+1RZimaU2
+ 9ugMrtf5vwEtfAfHMV1SAmH0gL4ClOl0L1H4690JPAzrH+EYrtPzKQsIBiaqdN4IhpHVhohUHn
+ t7AtVhCoScM7RNoNSFn3XL939XSpDOx7ZCfy1+MZ2oQUID6IQmdyOsZrB+CvmCXJX8/vdquFwu
+ xWc=
 WDCIronportException: Internal
 Received: from unknown (HELO redsun91.ssa.fujisawa.hgst.com) ([10.149.66.72])
- by uls-op-cesaip01.wdc.com with ESMTP; 30 Mar 2023 03:44:18 -0700
+ by uls-op-cesaip01.wdc.com with ESMTP; 30 Mar 2023 03:44:21 -0700
 To: Jens Axboe <axboe@kernel.dk>
-Date: Thu, 30 Mar 2023 03:43:47 -0700
-Message-Id: <359e6d4d77ee175e2ce7c315a3176ca360e10fbc.1680172791.git.johannes.thumshirn@wdc.com>
+Date: Thu, 30 Mar 2023 03:43:48 -0700
+Message-Id: <d406d7e205f7c7e701275674f77c7e21b93ae7a5.1680172791.git.johannes.thumshirn@wdc.com>
 X-Mailer: git-send-email 2.39.2
 In-Reply-To: <cover.1680172791.git.johannes.thumshirn@wdc.com>
 References: <cover.1680172791.git.johannes.thumshirn@wdc.com>
@@ -85,8 +85,8 @@ X-Spam-Report: Spam detection software,
  message has been attached to this so you can view it or label
  similar future email.  If you have any questions, see
  the administrator of that system for details.
- Content preview:  The md-raid superblock writing code uses bio_add_page() to
- add a page to a newly created bio. bio_add_page() can fail, but the return
+ Content preview:  The raid5 log metadata submission code uses bio_add_page()
+ to add a page to a newly created bio. bio_add_page() can fail, but the return
  value is never checked. Use __bio_add_page() as adding a single page to a
  newly created bio is guaranteed to succeed. 
  Content analysis details:   (-2.5 points, 6.0 required)
@@ -103,9 +103,9 @@ X-Spam-Report: Spam detection software,
  valid
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
-X-Headers-End: 1phq0U-009UvH-9V
-Subject: [Jfs-discussion] [PATCH v2 05/19] md: use __bio_add_page to add
- single page
+X-Headers-End: 1phq0U-0007Q4-Rg
+Subject: [Jfs-discussion] [PATCH v2 06/19] md: raid5-log: use __bio_add_page
+ to add single page
 X-BeenThere: jfs-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -136,42 +136,33 @@ Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Errors-To: jfs-discussion-bounces@lists.sourceforge.net
 
-The md-raid superblock writing code uses bio_add_page() to add a page to a
-newly created bio. bio_add_page() can fail, but the return value is never
-checked.
+The raid5 log metadata submission code uses bio_add_page() to add a page
+to a newly created bio. bio_add_page() can fail, but the return value is
+never checked.
 
 Use __bio_add_page() as adding a single page to a newly created bio is
 guaranteed to succeed.
 
 This brings us a step closer to marking bio_add_page() as __must_check.
 
-Signed-of_-by: Johannes Thumshirn <johannes.thumshirn@wdc.com>
+Signed-off-by: Johannes Thumshirn <johannes.thumshirn@wdc.com>
 Reviewed-by: Damien Le Moal <damien.lemoal@opensource.wdc.com>
 ---
- drivers/md/md.c | 4 ++--
- 1 file changed, 2 insertions(+), 2 deletions(-)
+ drivers/md/raid5-cache.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
-diff --git a/drivers/md/md.c b/drivers/md/md.c
-index 39e49e5d7182..e730c3627d00 100644
---- a/drivers/md/md.c
-+++ b/drivers/md/md.c
-@@ -958,7 +958,7 @@ void md_super_write(struct mddev *mddev, struct md_rdev *rdev,
- 	atomic_inc(&rdev->nr_pending);
+diff --git a/drivers/md/raid5-cache.c b/drivers/md/raid5-cache.c
+index 46182b955aef..852b265c5db4 100644
+--- a/drivers/md/raid5-cache.c
++++ b/drivers/md/raid5-cache.c
+@@ -792,7 +792,7 @@ static struct r5l_io_unit *r5l_new_meta(struct r5l_log *log)
+ 	io->current_bio = r5l_bio_alloc(log);
+ 	io->current_bio->bi_end_io = r5l_log_endio;
+ 	io->current_bio->bi_private = io;
+-	bio_add_page(io->current_bio, io->meta_page, PAGE_SIZE, 0);
++	__bio_add_page(io->current_bio, io->meta_page, PAGE_SIZE, 0);
  
- 	bio->bi_iter.bi_sector = sector;
--	bio_add_page(bio, page, size, 0);
-+	__bio_add_page(bio, page, size, 0);
- 	bio->bi_private = rdev;
- 	bio->bi_end_io = super_written;
- 
-@@ -999,7 +999,7 @@ int sync_page_io(struct md_rdev *rdev, sector_t sector, int size,
- 		bio.bi_iter.bi_sector = sector + rdev->new_data_offset;
- 	else
- 		bio.bi_iter.bi_sector = sector + rdev->data_offset;
--	bio_add_page(&bio, page, size, 0);
-+	__bio_add_page(&bio, page, size, 0);
- 
- 	submit_bio_wait(&bio);
+ 	r5_reserve_log_entry(log, io);
  
 -- 
 2.39.2
