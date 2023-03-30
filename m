@@ -2,147 +2,101 @@ Return-Path: <jfs-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+jfs-discussion@lfdr.de
 Delivered-To: lists+jfs-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id BC0B66CF835
-	for <lists+jfs-discussion@lfdr.de>; Thu, 30 Mar 2023 02:25:08 +0200 (CEST)
-Received: from [127.0.0.1] (helo=sfs-ml-2.v29.lw.sourceforge.com)
-	by sfs-ml-2.v29.lw.sourceforge.com with esmtp (Exim 4.95)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6BBB76D07F2
+	for <lists+jfs-discussion@lfdr.de>; Thu, 30 Mar 2023 16:19:00 +0200 (CEST)
+Received: from [127.0.0.1] (helo=sfs-ml-1.v29.lw.sourceforge.com)
+	by sfs-ml-1.v29.lw.sourceforge.com with esmtp (Exim 4.95)
 	(envelope-from <jfs-discussion-bounces@lists.sourceforge.net>)
-	id 1phg5x-0007YI-Ro;
-	Thu, 30 Mar 2023 00:24:50 +0000
+	id 1pht6u-0000OC-Nh;
+	Thu, 30 Mar 2023 14:18:39 +0000
 Received: from [172.30.20.202] (helo=mx.sourceforge.net)
- by sfs-ml-2.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
- TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (Exim 4.95)
- (envelope-from <prvs=446f2bedc=damien.lemoal@opensource.wdc.com>)
- id 1phg5w-0007YC-5M for jfs-discussion@lists.sourceforge.net;
- Thu, 30 Mar 2023 00:24:48 +0000
+ by sfs-ml-4.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
+ TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (Exim 4.95) (envelope-from
+ <3W-wkZAkbAO4iopaQbbUhQffYT.WeeWbUkiUhSedjUdj.Sec@M3KW2WVRGUFZ5GODRSRYTGD7.apphosting.bounces.google.com>)
+ id 1phhX1-00084N-Nf for jfs-discussion@lists.sourceforge.net;
+ Thu, 30 Mar 2023 01:56:52 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=sourceforge.net; s=x; h=Content-Transfer-Encoding:Content-Type:In-Reply-To:
- From:References:Cc:To:Subject:MIME-Version:Date:Message-ID:Sender:Reply-To:
- Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
- Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
+ d=sourceforge.net; s=x; h=Content-Type:To:From:Subject:Message-ID:Date:
+ MIME-Version:Sender:Reply-To:Cc:Content-Transfer-Encoding:Content-ID:
+ Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+ :Resent-Message-ID:In-Reply-To:References:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=Qt1x7YVxfqzn+HD4mjAgVT20c57AOdxOnsXsCs1FA/w=; b=iOB/lE/QNrcfZmrPQIlT73B6uS
- yKKisVVLkN3zVbatO+foTaRgBGZKACB1NYS47PB7f2v/iVAVhDBKD5oIjNs1AL6ENFG69zP43RLyq
- elP3Ge/20RpDRpQhrwSOR85amU3IzM161xLsPp3wnLAHpsXWP1mSqy4xPHgdpcOaGZPI=;
+ bh=5N0H4ymCjh9wzGxcMajFTZh5WCGao2MuZfKfdGwves8=; b=g9wOg7eVAeqPi4I9TGry5cPCI9
+ MXAJ4iYdjbzTMRLSOc6nQfqMjw2TbCN2UDS65w747jEXwfmGiq6wvfq6aV6EtlcIqsgCbi5xRmMUI
+ RjC8175BD/OAEmbvByshksxpXc5eht0S6FfjKnaNT8HtkcsIDTaW90o9+1pbhJBxSU4w=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
- h=Content-Transfer-Encoding:Content-Type:In-Reply-To:From:References:Cc:To:
- Subject:MIME-Version:Date:Message-ID:Sender:Reply-To:Content-ID:
- Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
- :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
- List-Post:List-Owner:List-Archive;
- bh=Qt1x7YVxfqzn+HD4mjAgVT20c57AOdxOnsXsCs1FA/w=; b=fyQC6H5g1rYeT/mvR+dJ0e3qO4
- HsLNEzfztIdkFWFmee2m06DB9E8n6Eqvb/ZNheit2PaLYZL/Q4I92lmeXMb2xzqiYQIRFhDS51k5/
- SWXFHqCn7WyGDCLkNcB/ObqBTYdSAvbz2FSgC7GtStRI7bEHNBj/DefoRiQb35CngSAk=;
-Received: from esa4.hgst.iphmx.com ([216.71.154.42])
- by sfi-mx-1.v28.lw.sourceforge.com with esmtps
- (TLS1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.95)
- id 1phg5s-008wW4-Kq for jfs-discussion@lists.sourceforge.net;
- Thu, 30 Mar 2023 00:24:48 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple;
- d=wdc.com; i=@wdc.com; q=dns/txt; s=dkim.wdc.com;
- t=1680135884; x=1711671884;
- h=message-id:date:mime-version:subject:to:cc:references:
- from:in-reply-to:content-transfer-encoding;
- bh=Qt1x7YVxfqzn+HD4mjAgVT20c57AOdxOnsXsCs1FA/w=;
- b=UL/erMrswF2IewSoWSt0NwmmEjzjusAZFM6HDym8yXZOsEy57eryHJ/1
- vJO1t6JraE2Whtn+cNK2FkOzegZgaCGEAPxY2yynp+iq6Shr46p+V7vKd
- 4qnhjL9RiLrfiuRix/ZOWb8ynWx9/YgWJ1Ruwa062dZsTpfoj2pWtyTY0
- HyDyBp1imb6SOXzY/uRvCXSsksCV/nsCKJRvKWOYt8JUMHZPYO27v8vER
- FBmJnLHwACGkOekcrkheHg9iUGJfjpt95FN34ohFZKlo2jXy6CHXR/uj9
- 6JgkQa4LXs1+zoishP5LeF0GJcEZKq/e+SRsnW69wLte13qJSOCHFABo+ Q==;
-X-IronPort-AV: E=Sophos;i="5.98,301,1673884800"; d="scan'208";a="225116487"
-Received: from h199-255-45-15.hgst.com (HELO uls-op-cesaep02.wdc.com)
- ([199.255.45.15])
- by ob1.hgst.iphmx.com with ESMTP; 30 Mar 2023 08:24:38 +0800
-IronPort-SDR: WkEmpqb9enOvLbQdM9c2ubRoWEr9y4/w7c82ZpST9Guxx7qrSXH0dCCeB4pxnzvYLgM4OQKJ/N
- cZtQJyoi6c/vT5l77GElstd6/BDzxCCrmyNVVhSSW/sshkPZlUB51a9VvOjoYO1aGsjCB4DNbF
- 1saaVYbvpGKeymP1534r500VfKfeuC5g9Re0U3XCQ2n2gIR/NQmcSezfKdkUCy7t8ENc/Fo3sn
- B/uPq2zhWl028Zn4yuQjL4suTMWvLGLyF7Tfk9dK70RJo2V5oyh64TE+uyC6NTYRX0bicakgu9
- ut4=
-Received: from uls-op-cesaip02.wdc.com ([10.248.3.37])
- by uls-op-cesaep02.wdc.com with ESMTP/TLS/ECDHE-RSA-AES128-GCM-SHA256;
- 29 Mar 2023 16:35:06 -0700
-IronPort-SDR: HjtnEq/ZDxBBI34D8ZTy6qO+GfgGOhyReh1NQKc9r0TZn/rXYt83xPaOndz8m/1qolES7+8s8I
- fvvj5O3qNk7y1qvi2jz5XhLwV6Zg9PPGfaOwUwW+rDVhfp43hG+zNTCLZaBtfa/cNJ5t4i5ONU
- jzjdjuPoklz0NU6R1LMfsFm9ZYlTPlSTGt+cfuF2u2uCzAICzI+cyIO0a26uTL0Qz2GXyIkS6L
- rZYST0VZ+KZtKxXO4oC3ZDi+xEc4wUiS8Dj+Blu+KsC3r4zZpjHsCCiBHMUsSUEjE0REveWWIn
- 8BE=
-WDCIronportException: Internal
-Received: from usg-ed-osssrv.wdc.com ([10.3.10.180])
- by uls-op-cesaip02.wdc.com with ESMTP/TLS/ECDHE-RSA-AES128-GCM-SHA256;
- 29 Mar 2023 17:24:38 -0700
-Received: from usg-ed-osssrv.wdc.com (usg-ed-osssrv.wdc.com [127.0.0.1])
- by usg-ed-osssrv.wdc.com (Postfix) with ESMTP id 4Pn41J2Z0fz1RtVy
+ h=Content-Type:To:From:Subject:Message-ID:Date:MIME-Version:Sender:Reply-To
+ :Cc:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+ Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+ References:List-Id:List-Help:List-Unsubscribe:List-Subscribe:List-Post:
+ List-Owner:List-Archive; bh=5N0H4ymCjh9wzGxcMajFTZh5WCGao2MuZfKfdGwves8=; b=W
+ 5j5kmGNuJido00lVL+pwccBin5A3cfbvU05luXGSZQ9UNpTlYDtlhG37etbBYXvFUalvpB0G1lBAf
+ NwBB8cKWBJRUMXl7jFomiPf7iw9dG1mYx6SI6BX7YSvbXsBoU2uhpLStF2Qqf3589oCCGrnq7TCNV
+ v/GiDrLfgHnmW5mQ=;
+Received: from mail-io1-f79.google.com ([209.85.166.79])
+ by sfi-mx-2.v28.lw.sourceforge.com with esmtps
+ (TLS1.2:ECDHE-RSA-AES128-GCM-SHA256:128) (Exim 4.95)
+ id 1phhWz-0006m5-2O for jfs-discussion@lists.sourceforge.net;
+ Thu, 30 Mar 2023 01:56:52 +0000
+Received: by mail-io1-f79.google.com with SMTP id
+ l7-20020a0566022dc700b0074cc9aba965so10592549iow.11
  for <jfs-discussion@lists.sourceforge.net>;
- Wed, 29 Mar 2023 17:24:36 -0700 (PDT)
-Authentication-Results: usg-ed-osssrv.wdc.com (amavisd-new); dkim=pass
- reason="pass (just generated, assumed good)"
- header.d=opensource.wdc.com
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=
- opensource.wdc.com; h=content-transfer-encoding:content-type
- :in-reply-to:organization:from:references:to:content-language
- :subject:user-agent:mime-version:date:message-id; s=dkim; t=
- 1680135875; x=1682727876; bh=Qt1x7YVxfqzn+HD4mjAgVT20c57AOdxOnsX
- sCs1FA/w=; b=QYxDsIVMrmX6uf+9bVUxwnELpwLFtWbRMF/Nt94gTpOQqsLyuHo
- PXJiVZbl3870VsxXn8brpbI6uXwWHk7stsw+5gkioY211aQ4o7Uwst47JscjbQrE
- K99N0ESBwKRwcJ19lOavdNixjywODC+7YTyIWnQWpWiZ7LOJA65a1Dktc5vhkT82
- znVNQgKCEILTiX4ZJrtUa8z6RLlEDM8bBMpnfRTy9OPKQbfOM5lFjJG9REul1WDJ
- YusjXPCg9SHR5Djh+zW5IEAVq4UBPEDGxuvLD8JkqpT7PkTcGPvdn28OEWHZvMVg
- 2Mi24TQl4Lz1GQlrFjxVXjdvpPxbmdednfA==
-X-Virus-Scanned: amavisd-new at usg-ed-osssrv.wdc.com
-Received: from usg-ed-osssrv.wdc.com ([127.0.0.1])
- by usg-ed-osssrv.wdc.com (usg-ed-osssrv.wdc.com [127.0.0.1]) (amavisd-new,
- port 10026)
- with ESMTP id r6bun9PkgXit for <jfs-discussion@lists.sourceforge.net>;
- Wed, 29 Mar 2023 17:24:35 -0700 (PDT)
-Received: from [10.225.163.116] (unknown [10.225.163.116])
- by usg-ed-osssrv.wdc.com (Postfix) with ESMTPSA id 4Pn41C5RmQz1RtVm;
- Wed, 29 Mar 2023 17:24:31 -0700 (PDT)
-Message-ID: <b19696d3-54bb-d997-5e56-aa5fd58b469f@opensource.wdc.com>
-Date: Thu, 30 Mar 2023 09:24:30 +0900
+ Wed, 29 Mar 2023 18:56:48 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20210112; t=1680141403; x=1682733403;
+ h=to:from:subject:message-id:date:mime-version:x-gm-message-state
+ :from:to:cc:subject:date:message-id:reply-to;
+ bh=5N0H4ymCjh9wzGxcMajFTZh5WCGao2MuZfKfdGwves8=;
+ b=TUuvjA2T1elLgp1JGk0GgM/ekC6XQFwCOTdsv5NCBlplKPOsNy/orWYpaFACx8LM9h
+ n3YEnNBBU1ry+PrDt/oayAB75Kt5FJFD4Hjfs3NSK9YDar2ceKWJiGmcpxQnFmInfub+
+ acWB3lyG2fgVhJqju2d9gSqXx5KjSc8FSjlgmsBjizhrvbu6F82oIvHQz6JGC30cr3tT
+ KAcZFhWH1OGG9aiCGyEE1JNvPjEheDt07JsM8IRQ+lkNYDWHPXp+DJsw10XdoYu1TEAR
+ ZigI0EW8MBHlH9GHUZLzeEj/wfNVtSPjPzgGDYRsFjyIwnKqaC0EPWNSkrJ3xQAS1b9R
+ CW/w==
+X-Gm-Message-State: AO0yUKV5Rg/JaTTtNf/RYPQN/9BBEyq57vXAkLorr0Nly4+mIFhiZwbI
+ E5K4OyLZUs+z5B08JiPhTzwM9QJ8mL2lRPE/n7Es9XCQrh9mFEbgag==
+X-Google-Smtp-Source: AK7set/IOtUwwx5RdJZpxvyS1jwBWAD6QZdcvMELk0H+2xYQdP1j1gsp5BPOJXJjHMgwc6CgR/7IRIQjA7PNEtLNsElT4rUHuOlN
 MIME-Version: 1.0
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
- Thunderbird/102.9.0
-Content-Language: en-US
-To: Yang Shi <shy828301@gmail.com>
-References: <cover.1680108414.git.johannes.thumshirn@wdc.com>
- <beea645603eccbb045ad9bb777e05a085b91808a.1680108414.git.johannes.thumshirn@wdc.com>
- <3a0f0c92-63cb-3624-c2fe-049a76d1a64a@opensource.wdc.com>
- <CAHbLzkoRdTTbnfz3RyLQAeNJBOEVNGL2WLgRSE2eQ4nR8sRe2g@mail.gmail.com>
-Organization: Western Digital Research
-In-Reply-To: <CAHbLzkoRdTTbnfz3RyLQAeNJBOEVNGL2WLgRSE2eQ4nR8sRe2g@mail.gmail.com>
-X-Spam-Score: -2.5 (--)
-X-Spam-Report: Spam detection software, running on the system "util-spamd-2.v13.lw.sourceforge.com",
+X-Received: by 2002:a5e:8908:0:b0:745:4154:b571 with SMTP id
+ k8-20020a5e8908000000b007454154b571mr7950941ioj.3.1680141403215; Wed, 29 Mar
+ 2023 18:56:43 -0700 (PDT)
+Date: Wed, 29 Mar 2023 18:56:43 -0700
+X-Google-Appengine-App-Id: s~syzkaller
+X-Google-Appengine-App-Id-Alias: syzkaller
+Message-ID: <00000000000082de1c05f81467ed@google.com>
+From: syzbot <syzbot+aa7397130ec6a8c2e2d9@syzkaller.appspotmail.com>
+To: jfs-discussion@lists.sourceforge.net, linux-fsdevel@vger.kernel.org, 
+ linux-kernel@vger.kernel.org, shaggy@kernel.org, 
+ syzkaller-bugs@googlegroups.com
+X-Spam-Score: 0.6 (/)
+X-Spam-Report: Spam detection software,
+ running on the system "util-spamd-2.v13.lw.sourceforge.com", 
  has NOT identified this incoming email as spam.  The original
  message has been attached to this so you can view it or label
  similar future email.  If you have any questions, see
  the administrator of that system for details.
- 
- Content preview:  On 3/30/23 09:17, Yang Shi wrote: > On Wed, Mar 29, 2023 at
-    4:49 PM Damien Le Moal > <damien.lemoal@opensource.wdc.com> wrote: >> >>
-    On 3/30/23 02:06, Johannes Thumshirn wrote: >>> Check if adding p [...] 
- 
- Content analysis details:   (-2.5 points, 6.0 required)
- 
-  pts rule name              description
+ Content preview:  Hello,
+ syzbot found the following issue on: HEAD commit: 4bdec23f971b
+ Merge tag 'hwmon-for-v6.3-rc4' of git://git.k.. git tree: upstream console
+ output: https://syzkaller.appspot.com/x/log.txt?x=17c90be5c80000 kernel
+ config: https://syzkaller.a [...] 
+ Content analysis details:   (0.6 points, 6.0 required)
+ pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
-                             medium trust
-                             [216.71.154.42 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.166.79 listed in list.dnswl.org]
+ 0.3 FROM_LOCAL_HEX         From: localpart has long hexadecimal sequence
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.166.79 listed in wl.mailspike.net]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- -0.1 DKIM_VALID             Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
-                             author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
-                             envelope-from domain
-  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
-                             valid
- -0.0 NICE_REPLY_A           Looks like a legit reply (A)
-X-Headers-End: 1phg5s-008wW4-Kq
-Subject: Re: [Jfs-discussion] [PATCH 18/19] dm-crypt: check if adding pages
- to clone bio fails
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+X-Headers-End: 1phhWz-0006m5-2O
+X-Mailman-Approved-At: Thu, 30 Mar 2023 14:18:38 +0000
+Subject: [Jfs-discussion] [syzbot] [jfs?] INFO: task hung in
+ deactivate_super (2)
 X-BeenThere: jfs-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -154,44 +108,190 @@ List-Post: <mailto:jfs-discussion@lists.sourceforge.net>
 List-Help: <mailto:jfs-discussion-request@lists.sourceforge.net?subject=help>
 List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/jfs-discussion>, 
  <mailto:jfs-discussion-request@lists.sourceforge.net?subject=subscribe>
-From: Damien Le Moal via Jfs-discussion <jfs-discussion@lists.sourceforge.net>
-Reply-To: Damien Le Moal <damien.lemoal@opensource.wdc.com>
-Cc: Jens Axboe <axboe@kernel.dk>, linux-raid@vger.kernel.org,
- jfs-discussion@lists.sourceforge.net, cluster-devel@redhat.com,
- Chaitanya Kulkarni <kch@nvidia.com>, Andreas Gruenbacher <agruenba@redhat.com>,
- Song Liu <song@kernel.org>, Dave Kleikamp <shaggy@kernel.org>,
- Johannes Thumshirn <johannes.thumshirn@wdc.com>,
- Mike Snitzer <snitzer@kernel.org>, Matthew Wilcox <willy@infradead.org>,
- Ming Lei <ming.lei@redhat.com>, linux-block@vger.kernel.org,
- linux-mm@kvack.org, dm-devel@redhat.com, David Sterba <dsterba@suse.com>,
- Hannes Reinecke <hare@suse.de>, linux-fsdevel@vger.kernel.org,
- Christoph Hellwig <hch@lst.de>, linux-btrfs@vger.kernel.org,
- Bob Peterson <rpeterso@redhat.com>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Errors-To: jfs-discussion-bounces@lists.sourceforge.net
 
-T24gMy8zMC8yMyAwOToxNywgWWFuZyBTaGkgd3JvdGU6Cj4gT24gV2VkLCBNYXIgMjksIDIwMjMg
-YXQgNDo0OeKAr1BNIERhbWllbiBMZSBNb2FsCj4gPGRhbWllbi5sZW1vYWxAb3BlbnNvdXJjZS53
-ZGMuY29tPiB3cm90ZToKPj4KPj4gT24gMy8zMC8yMyAwMjowNiwgSm9oYW5uZXMgVGh1bXNoaXJu
-IHdyb3RlOgo+Pj4gQ2hlY2sgaWYgYWRkaW5nIHBhZ2VzIHRvIGNsb25lIGJpbyBmYWlscyBhbmQg
-aWYgYmFpbCBvdXQuCj4+Cj4+IE5vcGUuIFRoZSBjb2RlIHJldHJpZXMgd2l0aCBkaXJlY3QgcmVj
-bGFpbSB1bnRpbCBpdCBzdWNjZWVkcy4gV2hpY2ggaXMgdmVyeQo+PiBzdXNwaWNpb3VzLi4uCj4g
-Cj4gSXQgaXMgbm90IHJlbGF0ZWQgdG8gYmlvX2FkZF9wYWdlKCkgZmFpbHVyZS4gSXQgaXMgdXNl
-ZCB0byBhdm9pZCBhCj4gcmFjZSBjb25kaXRpb24gd2hlbiB0d28gcHJvY2Vzc2VzIGFyZSBkZXBs
-ZXRpbmcgdGhlIG1lbXBvb2wKPiBzaW11bHRhbmVvdXNseS4KPiAKPiBJSVVDIEkgZG9uJ3QgdGhp
-bmsgcGFnZSBtZXJnZSBtYXkgaGFwcGVuIGZvciBkbS1jcnlwdCwgc28gaXMKPiBfX2Jpb19hZGRf
-cGFnZSgpIGdvb2QgZW5vdWdoPyBJJ20gd29ya2luZyBvbiB0aGlzIGNvZGUgdG9vLCB1c2luZwo+
-IF9fYmlvX2FkZF9wYWdlKCkgd291bGQgbWFrZSBteSBwYXRjaCBlYXNpZXIuCgpJZiB0aGUgQklP
-IHdhcyBhbGxvY2F0ZWQgd2l0aCBlbm91Z2ggYnZlY3MsIHdlIGNvdWxkIHVzZSB0aGF0IGZ1bmN0
-aW9uLiBCdXQgcGFnZQptZXJnaW5nIHJlZHVjZXMgb3ZlcmhlYWQsIHNvIGlmIGl0IGNhbiBoYXBw
-ZW4sIGxldCdzIHVzZSBpdC4KCj4gCj4+Cj4+Pgo+Pj4gVGhpcyB3YXkgd2UgY2FuIG1hcmsgYmlv
-X2FkZF9wYWdlcyBhcyBfX211c3RfY2hlY2suCj4+Pgo+Pj4gU2lnbmVkLW9mZi1ieTogSm9oYW5u
-ZXMgVGh1bXNoaXJuIDxqb2hhbm5lcy50aHVtc2hpcm5Ad2RjLmNvbT4KPj4KPj4gV2l0aCB0aGUg
-Y29tbWl0IG1lc3NhZ2UgZml4ZWQsCj4+Cj4+IFJldmlld2VkLWJ5OiBEYW1pZW4gTGUgTW9hbCA8
-ZGFtaWVuLmxlbW9hbEBvcGVuc291cmNlLndkYy5jb20+Cj4+Cj4+Cj4+IC0tCj4+IERhbWllbiBM
-ZSBNb2FsCj4+IFdlc3Rlcm4gRGlnaXRhbCBSZXNlYXJjaAo+Pgo+PgoKLS0gCkRhbWllbiBMZSBN
-b2FsCldlc3Rlcm4gRGlnaXRhbCBSZXNlYXJjaAoKCgpfX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fXwpKZnMtZGlzY3Vzc2lvbiBtYWlsaW5nIGxpc3QKSmZzLWRp
-c2N1c3Npb25AbGlzdHMuc291cmNlZm9yZ2UubmV0Cmh0dHBzOi8vbGlzdHMuc291cmNlZm9yZ2Uu
-bmV0L2xpc3RzL2xpc3RpbmZvL2pmcy1kaXNjdXNzaW9uCg==
+Hello,
+
+syzbot found the following issue on:
+
+HEAD commit:    4bdec23f971b Merge tag 'hwmon-for-v6.3-rc4' of git://git.k..
+git tree:       upstream
+console output: https://syzkaller.appspot.com/x/log.txt?x=17c90be5c80000
+kernel config:  https://syzkaller.appspot.com/x/.config?x=acdb62bf488a8fe5
+dashboard link: https://syzkaller.appspot.com/bug?extid=aa7397130ec6a8c2e2d9
+compiler:       Debian clang version 15.0.7, GNU ld (GNU Binutils for Debian) 2.35.2
+
+Unfortunately, I don't have any reproducer for this issue yet.
+
+Downloadable assets:
+disk image: https://storage.googleapis.com/syzbot-assets/a5040aa82cfc/disk-4bdec23f.raw.xz
+vmlinux: https://storage.googleapis.com/syzbot-assets/e72022149541/vmlinux-4bdec23f.xz
+kernel image: https://storage.googleapis.com/syzbot-assets/ea0702be72a9/bzImage-4bdec23f.xz
+
+IMPORTANT: if you fix the issue, please add the following tag to the commit:
+Reported-by: syzbot+aa7397130ec6a8c2e2d9@syzkaller.appspotmail.com
+
+INFO: task syz-executor.2:5116 blocked for more than 143 seconds.
+      Not tainted 6.3.0-rc3-syzkaller-00322-g4bdec23f971b #0
+"echo 0 > /proc/sys/kernel/hung_task_timeout_secs" disables this message.
+task:syz-executor.2  state:D stack:20992 pid:5116  ppid:1      flags:0x00004004
+Call Trace:
+ <TASK>
+ context_switch kernel/sched/core.c:5304 [inline]
+ __schedule+0x173b/0x4630 kernel/sched/core.c:6622
+ schedule+0xc3/0x180 kernel/sched/core.c:6698
+ schedule_preempt_disabled+0x13/0x20 kernel/sched/core.c:6757
+ rwsem_down_write_slowpath+0xedd/0x13a0 kernel/locking/rwsem.c:1178
+ __down_write_common+0x1aa/0x200 kernel/locking/rwsem.c:1306
+ deactivate_super+0xad/0xf0 fs/super.c:361
+ cleanup_mnt+0x426/0x4c0 fs/namespace.c:1177
+ task_work_run+0x24a/0x300 kernel/task_work.c:179
+ resume_user_mode_work include/linux/resume_user_mode.h:49 [inline]
+ exit_to_user_mode_loop+0xd9/0x100 kernel/entry/common.c:171
+ exit_to_user_mode_prepare+0xb1/0x140 kernel/entry/common.c:203
+ __syscall_exit_to_user_mode_work kernel/entry/common.c:285 [inline]
+ syscall_exit_to_user_mode+0x64/0x280 kernel/entry/common.c:296
+ do_syscall_64+0x4d/0xc0 arch/x86/entry/common.c:86
+ entry_SYSCALL_64_after_hwframe+0x63/0xcd
+RIP: 0033:0x7f226468d567
+RSP: 002b:00007ffc2a9420b8 EFLAGS: 00000246 ORIG_RAX: 00000000000000a6
+RAX: 0000000000000000 RBX: 0000000000000000 RCX: 00007f226468d567
+RDX: 00007ffc2a94218b RSI: 000000000000000a RDI: 00007ffc2a942180
+RBP: 00007ffc2a942180 R08: 00000000ffffffff R09: 00007ffc2a941f50
+R10: 0000555555bcc8b3 R11: 0000000000000246 R12: 00007f22646e6b74
+R13: 00007ffc2a943240 R14: 0000555555bcc810 R15: 00007ffc2a943280
+ </TASK>
+INFO: task syz-executor.3:17448 blocked for more than 143 seconds.
+      Not tainted 6.3.0-rc3-syzkaller-00322-g4bdec23f971b #0
+"echo 0 > /proc/sys/kernel/hung_task_timeout_secs" disables this message.
+task:syz-executor.3  state:D stack:24872 pid:17448 ppid:5104   flags:0x00004004
+Call Trace:
+ <TASK>
+ context_switch kernel/sched/core.c:5304 [inline]
+ __schedule+0x173b/0x4630 kernel/sched/core.c:6622
+ schedule+0xc3/0x180 kernel/sched/core.c:6698
+ jfs_flush_journal+0x733/0xec0 fs/jfs/jfs_logmgr.c:1564
+ jfs_sync_fs+0x80/0xa0 fs/jfs/super.c:684
+ iterate_supers+0x12b/0x1e0 fs/super.c:745
+ ksys_sync+0xdb/0x1c0 fs/sync.c:104
+ __do_sys_sync+0xe/0x20 fs/sync.c:113
+ do_syscall_x64 arch/x86/entry/common.c:50 [inline]
+ do_syscall_64+0x41/0xc0 arch/x86/entry/common.c:80
+ entry_SYSCALL_64_after_hwframe+0x63/0xcd
+RIP: 0033:0x7f00b0c8c0f9
+RSP: 002b:00007f00af7fe168 EFLAGS: 00000246 ORIG_RAX: 00000000000000a2
+RAX: ffffffffffffffda RBX: 00007f00b0dabf80 RCX: 00007f00b0c8c0f9
+RDX: 0000000000000000 RSI: 0000000000000000 RDI: 0000000000000000
+RBP: 00007f00b0ce7b39 R08: 0000000000000000 R09: 0000000000000000
+R10: 0000000000000000 R11: 0000000000000246 R12: 0000000000000000
+R13: 00007fff50002ebf R14: 00007f00af7fe300 R15: 0000000000022000
+ </TASK>
+INFO: task syz-executor.4:17450 blocked for more than 144 seconds.
+      Not tainted 6.3.0-rc3-syzkaller-00322-g4bdec23f971b #0
+"echo 0 > /proc/sys/kernel/hung_task_timeout_secs" disables this message.
+task:syz-executor.4  state:D stack:24728 pid:17450 ppid:5110   flags:0x00004004
+Call Trace:
+ <TASK>
+ context_switch kernel/sched/core.c:5304 [inline]
+ __schedule+0x173b/0x4630 kernel/sched/core.c:6622
+ schedule+0xc3/0x180 kernel/sched/core.c:6698
+ schedule_preempt_disabled+0x13/0x20 kernel/sched/core.c:6757
+ rwsem_down_read_slowpath+0x5f4/0x950 kernel/locking/rwsem.c:1086
+ __down_read_common+0x61/0x2c0 kernel/locking/rwsem.c:1250
+ iterate_supers+0xb0/0x1e0 fs/super.c:743
+ ksys_sync+0xbd/0x1c0 fs/sync.c:102
+ __do_sys_sync+0xe/0x20 fs/sync.c:113
+ do_syscall_x64 arch/x86/entry/common.c:50 [inline]
+ do_syscall_64+0x41/0xc0 arch/x86/entry/common.c:80
+ entry_SYSCALL_64_after_hwframe+0x63/0xcd
+RIP: 0033:0x7f030608c0f9
+RSP: 002b:00007f0306d49168 EFLAGS: 00000246 ORIG_RAX: 00000000000000a2
+RAX: ffffffffffffffda RBX: 00007f03061abf80 RCX: 00007f030608c0f9
+RDX: 0000000000000000 RSI: 0000000000000000 RDI: 0000000000000000
+RBP: 00007f03060e7b39 R08: 0000000000000000 R09: 0000000000000000
+R10: 0000000000000000 R11: 0000000000000246 R12: 0000000000000000
+R13: 00007ffd20fdb81f R14: 00007f0306d49300 R15: 0000000000022000
+ </TASK>
+
+Showing all locks held in the system:
+1 lock held by rcu_tasks_kthre/12:
+ #0: ffffffff8cf255f0 (rcu_tasks.tasks_gp_mutex){+.+.}-{3:3}, at: rcu_tasks_one_gp+0x29/0xd20 kernel/rcu/tasks.h:510
+1 lock held by rcu_tasks_trace/13:
+ #0: ffffffff8cf25df0 (rcu_tasks_trace.tasks_gp_mutex){+.+.}-{3:3}, at: rcu_tasks_one_gp+0x29/0xd20 kernel/rcu/tasks.h:510
+1 lock held by khungtaskd/28:
+ #0: ffffffff8cf25420 (rcu_read_lock){....}-{1:2}, at: rcu_lock_acquire+0x0/0x30
+2 locks held by getty/4750:
+ #0: ffff888028196098 (&tty->ldisc_sem){++++}-{0:0}, at: tty_ldisc_ref_wait+0x25/0x70 drivers/tty/tty_ldisc.c:244
+ #1: ffffc900015c02f0 (&ldata->atomic_read_lock){+.+.}-{3:3}, at: n_tty_read+0x6ab/0x1db0 drivers/tty/n_tty.c:2177
+1 lock held by syz-executor.2/5116:
+ #0: ffff88803e8e60e0 (&type->s_umount_key#79){++++}-{3:3}, at: deactivate_super+0xad/0xf0 fs/super.c:361
+1 lock held by syz-executor.3/17448:
+ #0: ffff88803e8e60e0 (&type->s_umount_key#79){++++}-{3:3}, at: iterate_supers+0xb0/0x1e0 fs/super.c:743
+1 lock held by syz-executor.4/17450:
+ #0: ffff88803e8e60e0 (&type->s_umount_key#79){++++}-{3:3}, at: iterate_supers+0xb0/0x1e0 fs/super.c:743
+1 lock held by syz-executor.4/17517:
+ #0: ffff88803e8e60e0 (&type->s_umount_key#79){++++}-{3:3}, at: iterate_supers+0xb0/0x1e0 fs/super.c:743
+
+=============================================
+
+NMI backtrace for cpu 1
+CPU: 1 PID: 28 Comm: khungtaskd Not tainted 6.3.0-rc3-syzkaller-00322-g4bdec23f971b #0
+Hardware name: Google Google Compute Engine/Google Compute Engine, BIOS Google 03/02/2023
+Call Trace:
+ <TASK>
+ __dump_stack lib/dump_stack.c:88 [inline]
+ dump_stack_lvl+0x1e7/0x2d0 lib/dump_stack.c:106
+ nmi_cpu_backtrace+0x498/0x4d0 lib/nmi_backtrace.c:113
+ nmi_trigger_cpumask_backtrace+0x187/0x300 lib/nmi_backtrace.c:62
+ trigger_all_cpu_backtrace include/linux/nmi.h:148 [inline]
+ check_hung_uninterruptible_tasks kernel/hung_task.c:222 [inline]
+ watchdog+0xec2/0xf00 kernel/hung_task.c:379
+ kthread+0x270/0x300 kernel/kthread.c:376
+ ret_from_fork+0x1f/0x30 arch/x86/entry/entry_64.S:308
+ </TASK>
+Sending NMI from CPU 1 to CPUs 0:
+NMI backtrace for cpu 0
+CPU: 0 PID: 9 Comm: kworker/u4:0 Not tainted 6.3.0-rc3-syzkaller-00322-g4bdec23f971b #0
+Hardware name: Google Google Compute Engine/Google Compute Engine, BIOS Google 03/02/2023
+Workqueue: bat_events batadv_nc_worker
+RIP: 0010:debug_spin_lock_before kernel/locking/spinlock_debug.c:85 [inline]
+RIP: 0010:do_raw_spin_lock+0x83/0x3a0 kernel/locking/spinlock_debug.c:114
+Code: 40 48 c1 ee 03 48 b8 f1 f1 f1 f1 04 f3 f3 f3 48 89 f1 48 89 74 24 38 48 89 04 16 48 8d 5f 04 48 89 d8 48 c1 e8 03 0f b6 04 10 <84> c0 0f 85 1c 02 00 00 8b 03 3d ad 4e ad de 0f 85 5c 01 00 00 49
+RSP: 0018:ffffc900000e7a80 EFLAGS: 00000a07
+RAX: 0000000000000000 RBX: ffff88803a8f5f84 RCX: 1ffff9200001cf58
+RDX: dffffc0000000000 RSI: 1ffff9200001cf58 RDI: ffff88803a8f5f80
+RBP: ffffc900000e7b50 R08: dffffc0000000000 R09: fffffbfff205be54
+R10: 0000000000000000 R11: dffffc0000000001 R12: ffff88803a8f5f80
+R13: dffffc0000000000 R14: ffff8880205d6d00 R15: ffff8880205d6d10
+FS:  0000000000000000(0000) GS:ffff8880b9800000(0000) knlGS:0000000000000000
+CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033
+CR2: 0000561274c7f150 CR3: 000000000cd30000 CR4: 00000000003506f0
+DR0: 00000000ffff070c DR1: 0000000000000000 DR2: 0000000000000000
+DR3: 0000000000000000 DR6: 00000000ffff0ff0 DR7: 0000000000000400
+Call Trace:
+ <TASK>
+ spin_lock_bh include/linux/spinlock.h:355 [inline]
+ batadv_nc_purge_paths+0xe8/0x3a0 net/batman-adv/network-coding.c:442
+ batadv_nc_worker+0x30f/0x5c0 net/batman-adv/network-coding.c:722
+ process_one_work+0x8a0/0x10e0 kernel/workqueue.c:2390
+ worker_thread+0xa63/0x1210 kernel/workqueue.c:2537
+ kthread+0x270/0x300 kernel/kthread.c:376
+ ret_from_fork+0x1f/0x30 arch/x86/entry/entry_64.S:308
+ </TASK>
+
+
+---
+This report is generated by a bot. It may contain errors.
+See https://goo.gl/tpsmEJ for more information about syzbot.
+syzbot engineers can be reached at syzkaller@googlegroups.com.
+
+syzbot will keep track of this issue. See:
+https://goo.gl/tpsmEJ#status for how to communicate with syzbot.
+
+
+_______________________________________________
+Jfs-discussion mailing list
+Jfs-discussion@lists.sourceforge.net
+https://lists.sourceforge.net/lists/listinfo/jfs-discussion
