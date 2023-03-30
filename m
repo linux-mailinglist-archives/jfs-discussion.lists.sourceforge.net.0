@@ -2,143 +2,124 @@ Return-Path: <jfs-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+jfs-discussion@lfdr.de
 Delivered-To: lists+jfs-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id 17FEC6CF7DE
-	for <lists+jfs-discussion@lfdr.de>; Thu, 30 Mar 2023 01:59:04 +0200 (CEST)
-Received: from [127.0.0.1] (helo=sfs-ml-4.v29.lw.sourceforge.com)
-	by sfs-ml-4.v29.lw.sourceforge.com with esmtp (Exim 4.95)
+	by mail.lfdr.de (Postfix) with ESMTPS id D6C9E6CF82E
+	for <lists+jfs-discussion@lfdr.de>; Thu, 30 Mar 2023 02:24:24 +0200 (CEST)
+Received: from [127.0.0.1] (helo=sfs-ml-3.v29.lw.sourceforge.com)
+	by sfs-ml-3.v29.lw.sourceforge.com with esmtp (Exim 4.95)
 	(envelope-from <jfs-discussion-bounces@lists.sourceforge.net>)
-	id 1phfgl-0006uG-0S;
-	Wed, 29 Mar 2023 23:58:47 +0000
+	id 1phg5K-0005eV-4Q;
+	Thu, 30 Mar 2023 00:24:09 +0000
 Received: from [172.30.20.202] (helo=mx.sourceforge.net)
  by sfs-ml-4.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
  TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (Exim 4.95)
- (envelope-from <prvs=44543d287=damien.lemoal@opensource.wdc.com>)
- id 1phfgj-0006uA-TY for jfs-discussion@lists.sourceforge.net;
- Wed, 29 Mar 2023 23:58:46 +0000
+ (envelope-from <shy828301@gmail.com>) id 1phfzS-000731-7n
+ for jfs-discussion@lists.sourceforge.net;
+ Thu, 30 Mar 2023 00:18:07 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=sourceforge.net; s=x; h=Content-Transfer-Encoding:Content-Type:In-Reply-To:
- From:References:Cc:To:Subject:MIME-Version:Date:Message-ID:Sender:Reply-To:
- Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
- Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
+ d=sourceforge.net; s=x; h=Content-Transfer-Encoding:Content-Type:Cc:To:
+ Subject:Message-ID:Date:From:In-Reply-To:References:MIME-Version:Sender:
+ Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender
+ :Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=F5o74pGkof5L83tXVvBV5KpnClJIqJsUfyGloBtTHts=; b=aVoTcvUhA5C+Y3Gd7CCcV/DGd4
- HK2NZIzFOOiRoU+diC3RH2mlA4GpYVZBwxxW0KFo/s80SBtDCVyP7jPTffQbiCsfYlKbY7Mm1ds6d
- XqR8ZnhDaFuPw5fOEQIrbHzrSDKdLDWSn7tC1872LlIQU5JiDpqQhLEJRGZeXMmN/CdA=;
+ bh=GFrxtn9d5G2riP70vvdw/yu25SnT/y5gfBPSK+n92IU=; b=RqJborfzG0XMz3qhzphXDb5KVm
+ oETJuuXNT0GLzdmwNBXJQ7E62uLBMx9OFktzdK0Teai91Rdfqho655H3accNeC1S2nn4AJTQTu4xn
+ hcTzqlUIWTtazz+sprKpw4fxOvu1GRKDiHr2u7DxRssc97U5MnrZwjhtO2gP7NgqCpgo=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
- h=Content-Transfer-Encoding:Content-Type:In-Reply-To:From:References:Cc:To:
- Subject:MIME-Version:Date:Message-ID:Sender:Reply-To:Content-ID:
+ h=Content-Transfer-Encoding:Content-Type:Cc:To:Subject:Message-ID:Date:From
+ :In-Reply-To:References:MIME-Version:Sender:Reply-To:Content-ID:
  Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
  :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
  List-Post:List-Owner:List-Archive;
- bh=F5o74pGkof5L83tXVvBV5KpnClJIqJsUfyGloBtTHts=; b=TIlcPBPS/d3MrnS9XIuUK0D7Xl
- yAy10WgJ8zeiFPlOgiOJxabk/qCgMGesPWIzkmb1R+hpPMBckQxwQRlWxlEKwfILGiqtpsbxZcDG7
- 5acEOd79wzZsnHd/8cpl/zCmaNQHrqdEfMawhu0fPG9kibrPOt0fR8HqWA5o6FL829yU=;
-Received: from esa5.hgst.iphmx.com ([216.71.153.144])
- by sfi-mx-2.v28.lw.sourceforge.com with esmtps
- (TLS1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.95)
- id 1phfgk-0002Ji-4W for jfs-discussion@lists.sourceforge.net;
- Wed, 29 Mar 2023 23:58:46 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple;
- d=wdc.com; i=@wdc.com; q=dns/txt; s=dkim.wdc.com;
- t=1680134325; x=1711670325;
- h=message-id:date:mime-version:subject:to:cc:references:
- from:in-reply-to:content-transfer-encoding;
- bh=l3K4Kt/FO4iBIKq8VgAcGfFNIvXYccX/xQem9blms08=;
- b=kYShXUt87NyQ4EyHghySqrm3yAZZWjRaPcL8tNR8NsHCCxAbwK4QH4ZV
- 0fDbXwT58hi1ZbEqmC6goliBIymdkyhk8eYp6/NYkfKVIH/T/Y/vKhsUD
- lolcr1nuI38sAalf8OFLejXgwe7vL+seP1OF4COFEsz2TBr1b9ty2Itz0
- BtEnEIFnicDV7XlBh4Ll+kuBSMU//ZuByTLXQFw6JSNkCbo3QOeZUc8d8
- zLqTYz8Kfj+KbgnkK08bD6mAvrKpKV85mLjbjRGenAcJFzGvnOoyCNNkI
- PAJphaG7ISR1QHiTihDuszEGtwaXJxjWJu4wM5elot02wtK4+qzX6Q5LR g==;
-X-IronPort-AV: E=Sophos;i="5.98,301,1673884800"; d="scan'208";a="226649500"
-Received: from uls-op-cesaip02.wdc.com (HELO uls-op-cesaep02.wdc.com)
- ([199.255.45.15])
- by ob1.hgst.iphmx.com with ESMTP; 30 Mar 2023 07:58:40 +0800
-IronPort-SDR: ggYm18Y5QXhFvd971TGcaRE+nkOAtH4Vq+Ha1IavqT60Bjuq+enEN8UADxmDrdly1wVC2bmCPo
- r5bKmFNNpNcLKDq5aLvcXOnsxWU/RrckXP7YCvM001O5J4Cuq+F1BxIFyLKHjg3nsG5znw6p7K
- /lbwj0aaeD5NKYNoqceFcTAhAkitKhSBNU33/ya7+V2URaKyoARY4QyNKiU2sO513D2d2vG+r2
- BGsiSy5eANsP1lGWf4Z1Z0IXYgNxlYUVBVY1K5U18u19vvzCF2GVfLgsWZml9lXdF/nwE2u3D8
- iSc=
-Received: from uls-op-cesaip02.wdc.com ([10.248.3.37])
- by uls-op-cesaep02.wdc.com with ESMTP/TLS/ECDHE-RSA-AES128-GCM-SHA256;
- 29 Mar 2023 16:09:08 -0700
-IronPort-SDR: b0EG3r00zD4lFNm81HKTZqPu8AqtVsbVBLpX6AjH6Vkxg5k7zecXchgltrXrbFTqCzL5hpPB+4
- PuNmiNoCrADJuK6M8WyYPlYoQsxr8hbZhHtGtJCvbkeFXPqAw3jJ/KNjJTuCUyCuJjlwXo8OqG
- k5R8DTdaaOZNPMfqc6io3tn9i1PcbtsH8RNWJ5orJh8z2W9JrJZnwuUcWd4WCRLlUd2YQFl3VA
- TVIrOBKy68Hq+pZfh/49k4Wy5dUPVBQ6+lMhAyGC4fqm3CCEDOCI6L+pXdMAKuBO87zU2BLXwN
- UG4=
-WDCIronportException: Internal
-Received: from usg-ed-osssrv.wdc.com ([10.3.10.180])
- by uls-op-cesaip02.wdc.com with ESMTP/TLS/ECDHE-RSA-AES128-GCM-SHA256;
- 29 Mar 2023 16:58:41 -0700
-Received: from usg-ed-osssrv.wdc.com (usg-ed-osssrv.wdc.com [127.0.0.1])
- by usg-ed-osssrv.wdc.com (Postfix) with ESMTP id 4Pn3RN0Vgbz1RtVn
+ bh=GFrxtn9d5G2riP70vvdw/yu25SnT/y5gfBPSK+n92IU=; b=aAkLfmgVvQzcyfnvkUq/77c3GK
+ 0FJMZU1+OCV8X1rlvXC4s6iZGoKy4uFzKPDYmRNBMgEBsCY3UQtRFiEDgX1EWRIAVrR4U4nnYqOFi
+ 01Q8VfhKqs/n1SmjAUfH0V0ps5Ga0zMM+lT43zu8Q4gynkbSi7xv6XQb/oCBNOvru3Uw=;
+Received: from mail-pf1-f171.google.com ([209.85.210.171])
+ by sfi-mx-1.v28.lw.sourceforge.com with esmtps
+ (TLS1.2:ECDHE-RSA-AES128-GCM-SHA256:128) (Exim 4.95)
+ id 1phfzP-008wEH-QX for jfs-discussion@lists.sourceforge.net;
+ Thu, 30 Mar 2023 00:18:07 +0000
+Received: by mail-pf1-f171.google.com with SMTP id i15so11430130pfo.8
  for <jfs-discussion@lists.sourceforge.net>;
- Wed, 29 Mar 2023 16:58:39 -0700 (PDT)
-Authentication-Results: usg-ed-osssrv.wdc.com (amavisd-new); dkim=pass
- reason="pass (just generated, assumed good)"
- header.d=opensource.wdc.com
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=
- opensource.wdc.com; h=content-transfer-encoding:content-type
- :in-reply-to:organization:from:references:to:content-language
- :subject:user-agent:mime-version:date:message-id; s=dkim; t=
- 1680134319; x=1682726320; bh=l3K4Kt/FO4iBIKq8VgAcGfFNIvXYccX/xQe
- m9blms08=; b=Z/xEynILGjmaBwHeY3zVoiULWBo3e30fvx6iPr3Zx6Wj7JD/AeL
- AlMf5sdtT16U+2fy8eU1VAKFPpBudi6kurLPAGIzKE9drC6EeQeqgjCFT9E4ojVy
- TQQB5cTsm8u17203jJLawINrINsD7UcNkKFsfaNP554pst6fe7CQNFLH/4gnZpHW
- cIc0ZPn8qBqY/PUa8EZzINk2DyDa38pZrA2IHJhRPZg8wTakQ8CRn+WKb8IUyz/t
- SBylBZXjhtrWwGcmAPksFGN22jMLMsZOAJeZ+IGqQ1Xj5XyaZ0SgGrhmF2I15zcu
- VVtWA4JMjP+QyIuov+vQWELqF/Tx0+aFYxg==
-X-Virus-Scanned: amavisd-new at usg-ed-osssrv.wdc.com
-Received: from usg-ed-osssrv.wdc.com ([127.0.0.1])
- by usg-ed-osssrv.wdc.com (usg-ed-osssrv.wdc.com [127.0.0.1]) (amavisd-new,
- port 10026)
- with ESMTP id tSNtvE4zKaFP for <jfs-discussion@lists.sourceforge.net>;
- Wed, 29 Mar 2023 16:58:39 -0700 (PDT)
-Received: from [10.225.163.116] (unknown [10.225.163.116])
- by usg-ed-osssrv.wdc.com (Postfix) with ESMTPSA id 4Pn3RJ0pDLz1RtVm;
- Wed, 29 Mar 2023 16:58:35 -0700 (PDT)
-Message-ID: <e088f7f1-827e-f0e5-4fc0-df0dcefbb873@opensource.wdc.com>
-Date: Thu, 30 Mar 2023 08:58:35 +0900
+ Wed, 29 Mar 2023 17:18:03 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=gmail.com; s=20210112; t=1680135478;
+ h=content-transfer-encoding:cc:to:subject:message-id:date:from
+ :in-reply-to:references:mime-version:from:to:cc:subject:date
+ :message-id:reply-to;
+ bh=GFrxtn9d5G2riP70vvdw/yu25SnT/y5gfBPSK+n92IU=;
+ b=KYNyyyhqVrYmGqRxxi/SM2DiuO4mCIY7EWWchExvtXdrm1XO5oDXmK5Er2s+mn3Pk9
+ FIXNpsZ/Ua3VaC+qLRcNGDw6wPWb33mnRw6m/M+OaV8Qr7zs9AP2V/DrGD6ZUuF2+OUB
+ o6Ua7cfXYbLRFXCBVkwJDiUT5QTRRpeH/v/wIbDaCuyXgMAom79byhB+4uNMuEUEU+k4
+ BH1NkWsGPTccS19YXMQKMiuXZTxILZIFb8xHIrqz8VjA3PccOBpiH9JmGdZE1DHpVHZ5
+ Tn9nyYB5YUxugZgn8IAWqsmKnLtuXTMPowJSCgZlhxdNAsP1q6BF5/rUHHwmLF1RvMxB
+ h9lw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20210112; t=1680135478;
+ h=content-transfer-encoding:cc:to:subject:message-id:date:from
+ :in-reply-to:references:mime-version:x-gm-message-state:from:to:cc
+ :subject:date:message-id:reply-to;
+ bh=GFrxtn9d5G2riP70vvdw/yu25SnT/y5gfBPSK+n92IU=;
+ b=nGMV7YM5Zm0+BDG46gQSDb7DVi/wz/3LcF+HjpMGcHGw5LUra2rPw6c5PNo/iPl+RV
+ GxqFR1JrEoyXUTgRq/gGyCpB36LG6um2hVclmQh8IqE1q37Oh0biN/OCEDUBxxi3NTPW
+ nk5ORVRyAk88PMth5pUk+3Kkc3qXOPGIil32yPjBZ5oA18cpFwQHfE1I2RDMHDyACVdh
+ nMraRK0U4YGzLUhz0H/3DVKERgi6ul5ZZxR9az/+Spicw7PDjkffPex4CHP3QqAX8Ol5
+ PdFsZuLp5vzX9/yBxyo4A01oFZ4jY0ba69Vcz0ATLqDTCUsUPd+WFR2HFPx3hh9I/DYy
+ rmgQ==
+X-Gm-Message-State: AAQBX9fAEiyy1qA8ZydSeQfvJDKm+Y5W/FwvSrpsulgF2hilKZWhkG4q
+ HwM73qJZMHWUrKMEnIR5U4da5BxSqsl/fDpPqrU=
+X-Google-Smtp-Source: AKy350aEVPs1e5xvudW7+v0SaWp4yk4rckHRftoj/jiGIVi7YJx59Ax0QojqF2IskeBIF4cBFMwK7DyHsh5zud9IPEs=
+X-Received: by 2002:a05:6a00:2e9f:b0:628:1e57:afd7 with SMTP id
+ fd31-20020a056a002e9f00b006281e57afd7mr10923270pfb.0.1680135478121; Wed, 29
+ Mar 2023 17:17:58 -0700 (PDT)
 MIME-Version: 1.0
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
- Thunderbird/102.9.0
-Content-Language: en-US
-To: Johannes Thumshirn <johannes.thumshirn@wdc.com>,
- Jens Axboe <axboe@kernel.dk>
 References: <cover.1680108414.git.johannes.thumshirn@wdc.com>
- <350bd9c62ce575267a2b38625ab767c332429bc1.1680108414.git.johannes.thumshirn@wdc.com>
-Organization: Western Digital Research
-In-Reply-To: <350bd9c62ce575267a2b38625ab767c332429bc1.1680108414.git.johannes.thumshirn@wdc.com>
-X-Spam-Score: -4.5 (----)
-X-Spam-Report: Spam detection software,
- running on the system "util-spamd-1.v13.lw.sourceforge.com", 
+ <beea645603eccbb045ad9bb777e05a085b91808a.1680108414.git.johannes.thumshirn@wdc.com>
+ <3a0f0c92-63cb-3624-c2fe-049a76d1a64a@opensource.wdc.com>
+In-Reply-To: <3a0f0c92-63cb-3624-c2fe-049a76d1a64a@opensource.wdc.com>
+From: Yang Shi <shy828301@gmail.com>
+Date: Wed, 29 Mar 2023 17:17:46 -0700
+Message-ID: <CAHbLzkoRdTTbnfz3RyLQAeNJBOEVNGL2WLgRSE2eQ4nR8sRe2g@mail.gmail.com>
+To: Damien Le Moal <damien.lemoal@opensource.wdc.com>
+X-Spam-Score: 0.1 (/)
+X-Spam-Report: Spam detection software, running on the system "util-spamd-2.v13.lw.sourceforge.com",
  has NOT identified this incoming email as spam.  The original
  message has been attached to this so you can view it or label
  similar future email.  If you have any questions, see
  the administrator of that system for details.
- Content preview:  On 3/30/23 02:06, Johannes Thumshirn wrote: > Now that all
- users of bio_add_page check for the return value, mark > bio_add_page as
- __must_check. > > Signed-off-by: Johannes Thumshirn <johannes.thumsh [...]
- Content analysis details:   (-4.5 points, 6.0 required)
- pts rule name              description
+ 
+ Content preview:  On Wed, Mar 29, 2023 at 4:49 PM Damien Le Moal wrote: >
+   > On 3/30/23 02:06, Johannes Thumshirn wrote: > > Check if adding pages to
+    clone bio fails and if bail out. > > Nope. The code retries with [...] 
+ 
+ Content analysis details:   (0.1 points, 6.0 required)
+ 
+  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [216.71.153.144 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+                             provider
+                             [shy828301[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
+  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+  0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+                             in digit
+                             [shy828301[at]gmail.com]
+ -0.1 DKIM_VALID             Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -2.0 NICE_REPLY_A           Looks like a legit reply (A)
-X-Headers-End: 1phfgk-0002Ji-4W
-Subject: Re: [Jfs-discussion] [PATCH 19/19] block: mark bio_add_page as
- __must_check
+                             author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+                             envelope-from domain
+  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+                             valid
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+                             [209.85.210.171 listed in wl.mailspike.net]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+                              no trust
+                             [209.85.210.171 listed in list.dnswl.org]
+X-Headers-End: 1phfzP-008wEH-QX
+X-Mailman-Approved-At: Thu, 30 Mar 2023 00:24:07 +0000
+Subject: Re: [Jfs-discussion] [PATCH 18/19] dm-crypt: check if adding pages
+ to clone bio fails
 X-BeenThere: jfs-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -150,36 +131,37 @@ List-Post: <mailto:jfs-discussion@lists.sourceforge.net>
 List-Help: <mailto:jfs-discussion-request@lists.sourceforge.net?subject=help>
 List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/jfs-discussion>, 
  <mailto:jfs-discussion-request@lists.sourceforge.net?subject=subscribe>
-From: Damien Le Moal via Jfs-discussion <jfs-discussion@lists.sourceforge.net>
-Reply-To: Damien Le Moal <damien.lemoal@opensource.wdc.com>
-Cc: linux-raid@vger.kernel.org, jfs-discussion@lists.sourceforge.net,
- cluster-devel@redhat.com, Chaitanya Kulkarni <kch@nvidia.com>,
- Andreas Gruenbacher <agruenba@redhat.com>, Song Liu <song@kernel.org>,
- Dave Kleikamp <shaggy@kernel.org>, Mike Snitzer <snitzer@kernel.org>,
- Matthew Wilcox <willy@infradead.org>, Ming Lei <ming.lei@redhat.com>,
- linux-block@vger.kernel.org, linux-mm@kvack.org, dm-devel@redhat.com,
- David Sterba <dsterba@suse.com>, Hannes Reinecke <hare@suse.de>,
- linux-fsdevel@vger.kernel.org, Christoph Hellwig <hch@lst.de>,
- linux-btrfs@vger.kernel.org, Bob Peterson <rpeterso@redhat.com>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Jens Axboe <axboe@kernel.dk>, linux-raid@vger.kernel.org,
+ jfs-discussion@lists.sourceforge.net, cluster-devel@redhat.com,
+ Chaitanya Kulkarni <kch@nvidia.com>, Andreas Gruenbacher <agruenba@redhat.com>,
+ Song Liu <song@kernel.org>, Dave Kleikamp <shaggy@kernel.org>,
+ Johannes Thumshirn <johannes.thumshirn@wdc.com>,
+ Mike Snitzer <snitzer@kernel.org>, Matthew Wilcox <willy@infradead.org>,
+ Ming Lei <ming.lei@redhat.com>, linux-block@vger.kernel.org,
+ linux-mm@kvack.org, dm-devel@redhat.com, David Sterba <dsterba@suse.com>,
+ Hannes Reinecke <hare@suse.de>, linux-fsdevel@vger.kernel.org,
+ Christoph Hellwig <hch@lst.de>, linux-btrfs@vger.kernel.org,
+ Bob Peterson <rpeterso@redhat.com>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Errors-To: jfs-discussion-bounces@lists.sourceforge.net
 
-On 3/30/23 02:06, Johannes Thumshirn wrote:
-> Now that all users of bio_add_page check for the return value, mark
-> bio_add_page as __must_check.
-> 
-> Signed-off-by: Johannes Thumshirn <johannes.thumshirn@wdc.com>
-
-Reviewed-by: Damien Le Moal <damien.lemoal@opensource.wdc.com>
-
--- 
-Damien Le Moal
-Western Digital Research
-
-
-
-_______________________________________________
-Jfs-discussion mailing list
-Jfs-discussion@lists.sourceforge.net
-https://lists.sourceforge.net/lists/listinfo/jfs-discussion
+T24gV2VkLCBNYXIgMjksIDIwMjMgYXQgNDo0OeKAr1BNIERhbWllbiBMZSBNb2FsCjxkYW1pZW4u
+bGVtb2FsQG9wZW5zb3VyY2Uud2RjLmNvbT4gd3JvdGU6Cj4KPiBPbiAzLzMwLzIzIDAyOjA2LCBK
+b2hhbm5lcyBUaHVtc2hpcm4gd3JvdGU6Cj4gPiBDaGVjayBpZiBhZGRpbmcgcGFnZXMgdG8gY2xv
+bmUgYmlvIGZhaWxzIGFuZCBpZiBiYWlsIG91dC4KPgo+IE5vcGUuIFRoZSBjb2RlIHJldHJpZXMg
+d2l0aCBkaXJlY3QgcmVjbGFpbSB1bnRpbCBpdCBzdWNjZWVkcy4gV2hpY2ggaXMgdmVyeQo+IHN1
+c3BpY2lvdXMuLi4KCkl0IGlzIG5vdCByZWxhdGVkIHRvIGJpb19hZGRfcGFnZSgpIGZhaWx1cmUu
+IEl0IGlzIHVzZWQgdG8gYXZvaWQgYQpyYWNlIGNvbmRpdGlvbiB3aGVuIHR3byBwcm9jZXNzZXMg
+YXJlIGRlcGxldGluZyB0aGUgbWVtcG9vbApzaW11bHRhbmVvdXNseS4KCklJVUMgSSBkb24ndCB0
+aGluayBwYWdlIG1lcmdlIG1heSBoYXBwZW4gZm9yIGRtLWNyeXB0LCBzbyBpcwpfX2Jpb19hZGRf
+cGFnZSgpIGdvb2QgZW5vdWdoPyBJJ20gd29ya2luZyBvbiB0aGlzIGNvZGUgdG9vLCB1c2luZwpf
+X2Jpb19hZGRfcGFnZSgpIHdvdWxkIG1ha2UgbXkgcGF0Y2ggZWFzaWVyLgoKPgo+ID4KPiA+IFRo
+aXMgd2F5IHdlIGNhbiBtYXJrIGJpb19hZGRfcGFnZXMgYXMgX19tdXN0X2NoZWNrLgo+ID4KPiA+
+IFNpZ25lZC1vZmYtYnk6IEpvaGFubmVzIFRodW1zaGlybiA8am9oYW5uZXMudGh1bXNoaXJuQHdk
+Yy5jb20+Cj4KPiBXaXRoIHRoZSBjb21taXQgbWVzc2FnZSBmaXhlZCwKPgo+IFJldmlld2VkLWJ5
+OiBEYW1pZW4gTGUgTW9hbCA8ZGFtaWVuLmxlbW9hbEBvcGVuc291cmNlLndkYy5jb20+Cj4KPgo+
+IC0tCj4gRGFtaWVuIExlIE1vYWwKPiBXZXN0ZXJuIERpZ2l0YWwgUmVzZWFyY2gKPgo+CgoKX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18KSmZzLWRpc2N1c3Np
+b24gbWFpbGluZyBsaXN0Ckpmcy1kaXNjdXNzaW9uQGxpc3RzLnNvdXJjZWZvcmdlLm5ldApodHRw
+czovL2xpc3RzLnNvdXJjZWZvcmdlLm5ldC9saXN0cy9saXN0aW5mby9qZnMtZGlzY3Vzc2lvbgo=
