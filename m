@@ -2,125 +2,169 @@ Return-Path: <jfs-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+jfs-discussion@lfdr.de
 Delivered-To: lists+jfs-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id 12A3A6D1AA8
-	for <lists+jfs-discussion@lfdr.de>; Fri, 31 Mar 2023 10:44:39 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7709D6D21DE
+	for <lists+jfs-discussion@lfdr.de>; Fri, 31 Mar 2023 15:58:05 +0200 (CEST)
 Received: from [127.0.0.1] (helo=sfs-ml-1.v29.lw.sourceforge.com)
 	by sfs-ml-1.v29.lw.sourceforge.com with esmtp (Exim 4.95)
 	(envelope-from <jfs-discussion-bounces@lists.sourceforge.net>)
-	id 1piAMt-0006Mp-Et;
-	Fri, 31 Mar 2023 08:44:18 +0000
+	id 1piFGF-00072G-Mi;
+	Fri, 31 Mar 2023 13:57:46 +0000
 Received: from [172.30.20.202] (helo=mx.sourceforge.net)
- by sfs-ml-1.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
+ by sfs-ml-2.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
  TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (Exim 4.95)
- (envelope-from <nogikh@google.com>) id 1piAMo-0006L1-Te
+ (envelope-from <p.raghav@samsung.com>) id 1piE0Q-0003Z2-9P
  for jfs-discussion@lists.sourceforge.net;
- Fri, 31 Mar 2023 08:44:14 +0000
+ Fri, 31 Mar 2023 12:37:22 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=sourceforge.net; s=x; h=Content-Transfer-Encoding:Content-Type:Cc:To:
- Subject:Message-ID:Date:From:In-Reply-To:References:MIME-Version:Sender:
- Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender
- :Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
+ d=sourceforge.net; s=x; h=References:In-Reply-To:Content-Type:MIME-Version:
+ Message-ID:Subject:CC:To:From:Date:Sender:Reply-To:Content-Transfer-Encoding:
+ Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
+ Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=sha7c++P1pbeS2BqNK6x5hml1dJwu4esM9ohuBhGxoo=; b=DOXrpHf1AScaoJpxBVa7lNjFge
- 9ARiVGes0pxwfgiK7gsmiTk77cx8z+5RN3fInx+YF8M57n/+sAk1iXDnCcj1QOmHw4pErT/YckfW5
- gZzmDfORjZYMUpsMl7hliwQCijKRAr5O0GGkXTn8qqeWCBROMedd0xSRgicRvs4f1plY=;
+ bh=RG0AskesBGxejlTr4JHEhK02MF/IWOxvFzpfN3R7npc=; b=iyj/nZEOJG6FAU/8/ECpnouTsU
+ LtS7exPCEoxW2U4mclWLfaFKyL+fqckWDg1/SIWG+zYKmWHvwBGuQMNu+G3bSK09IwuCEeMvyezc/
+ FcZtcL+E6T1ARln0rH/n0qPXv8G5xFFWrc8ZJ5oG0jekwgQLHDgBQ7bd/jkWy9nq5sfM=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
- h=Content-Transfer-Encoding:Content-Type:Cc:To:Subject:Message-ID:Date:From
- :In-Reply-To:References:MIME-Version:Sender:Reply-To:Content-ID:
+ h=References:In-Reply-To:Content-Type:MIME-Version:Message-ID:Subject:CC:To
+ :From:Date:Sender:Reply-To:Content-Transfer-Encoding:Content-ID:
  Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
  :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
  List-Post:List-Owner:List-Archive;
- bh=sha7c++P1pbeS2BqNK6x5hml1dJwu4esM9ohuBhGxoo=; b=Uw4xga213poIetQue5Z0Z6WS3z
- +gPn2bjXCcdd29+kdTysHx7OxZsBsITkOF+30hhnKaxvNMrgKbtS/W0Od5wUWDoUUrL6Z+St3xg2i
- o4x20hmGcJPEsYeb5NPKhdwYEocwQLwSPHuO8VOUangjU7wiQshOb/TjwBCmjONFI+kU=;
-Received: from mail-qt1-f178.google.com ([209.85.160.178])
+ bh=RG0AskesBGxejlTr4JHEhK02MF/IWOxvFzpfN3R7npc=; b=KTBKRVkucyKi5tXgppD6lnznuT
+ hHMcoJ0CW8jxiKXE0mKZZm61GA+IpPmRRqhYjJ1RdP9smAHrygbMWzfYfNFcnBZQhTMgRGPZ/GJn4
+ 6ODG90KEXpRV5JirHIStzZbes3pahlUSpNpZRAh6YpeDP8/WV79feIBT8Ytl+FYhbAVk=;
+Received: from mailout1.w1.samsung.com ([210.118.77.11])
  by sfi-mx-2.v28.lw.sourceforge.com with esmtps
- (TLS1.2:ECDHE-RSA-AES128-GCM-SHA256:128) (Exim 4.95)
- id 1piAMj-0002xC-UP for jfs-discussion@lists.sourceforge.net;
- Fri, 31 Mar 2023 08:44:13 +0000
-Received: by mail-qt1-f178.google.com with SMTP id
- d75a77b69052e-3e390e23f83so663931cf.1
+ (TLS1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.95)
+ id 1piE0K-0002x4-9K for jfs-discussion@lists.sourceforge.net;
+ Fri, 31 Mar 2023 12:37:22 +0000
+Received: from eucas1p2.samsung.com (unknown [182.198.249.207])
+ by mailout1.w1.samsung.com (KnoxPortal) with ESMTP id
+ 20230331122047euoutp01dc19847b4bfca8f578e50e3ebe345ecd~RgFcIkF1V0191301913euoutp01Z
  for <jfs-discussion@lists.sourceforge.net>;
- Fri, 31 Mar 2023 01:44:09 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=google.com; s=20210112; t=1680252244;
- h=content-transfer-encoding:cc:to:subject:message-id:date:from
- :in-reply-to:references:mime-version:from:to:cc:subject:date
- :message-id:reply-to;
- bh=sha7c++P1pbeS2BqNK6x5hml1dJwu4esM9ohuBhGxoo=;
- b=lNYvkbIyWPH+TukSN5yijUu/JrmZj5WLsnvNYR2WMPTr/aAoGX4PBhqjDnocmACo/T
- MKxWcIAMY6g3Qj3EA7bH3uhenyiYlZLrcq47lMizoYpId8Y00zJXLJhsXqzYJUDCI+Cs
- nJFAiwfBkcqXwhCkReUQoQbazemGfu/2fNZZdHzwCN8a/LD6dFtSVYxkOmw8Ts/TZsD9
- geCQiwZK6Gadn3rKi2GqtqZonAv/8GNP8y8jMIYB2MnziogexhLHL9zEHNcY8w3arIpM
- ORlmLAp2o9A8/h4lzpencXFRzCRdmDOFVaEetAa+suLQmmE+ripVLYdvVUFqjg4VtSDS
- M9JQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20210112; t=1680252244;
- h=content-transfer-encoding:cc:to:subject:message-id:date:from
- :in-reply-to:references:mime-version:x-gm-message-state:from:to:cc
- :subject:date:message-id:reply-to;
- bh=sha7c++P1pbeS2BqNK6x5hml1dJwu4esM9ohuBhGxoo=;
- b=w2fR/UP+OvoBp1ce5nIaneQRf9d9aSl2qoMciFoJQOsVVafqpaf542zJq7o8GjvB2V
- IFrmiG+zwkONzFJzFOrD1btJXx10U/qBW42QxwA+UGr+UxQYO3xHJjcxirr8LUJD5jat
- O348fFRBUBx6L+vQXlLw1V77ul1YH25X5T/ix4aNrthA0po8XG+FFTwN/0ID+UhOLnd4
- ZGTWXi1YCd6+hCSr9QghY17OnyzecbweU1G+QbVXaCc7XpdOC5hXMVAR+g+KFbfQUicN
- efTNArp8vwVVZXxL5yAU9juTiXQLwXOS0oFaQ+qRoDf1hN0vBKO9deYbOKZ/b8scsCq8
- sReg==
-X-Gm-Message-State: AAQBX9d/kznxYBZi4J1WhnRFf5A41qyWHv1LnMuQ89lPOzsz+Bu42ku/
- Syo9OfbZY4KCGP7MVumFdlQqlBbqNmoJpDRsmFtw0w==
-X-Google-Smtp-Source: AKy350b8nraY3tqqEiP3oP5jd8OLxt+sQatka0/Et5K9qmgE0sibhdHo4mg2zz3tsXHVyCIrioMNFjdncGojggKz9ac=
-X-Received: by 2002:a05:622a:189a:b0:3df:6cbb:c76 with SMTP id
- v26-20020a05622a189a00b003df6cbb0c76mr199176qtc.13.1680252244119; Fri, 31 Mar
- 2023 01:44:04 -0700 (PDT)
+ Fri, 31 Mar 2023 12:20:47 +0000 (GMT)
+DKIM-Filter: OpenDKIM Filter v2.11.0 mailout1.w1.samsung.com
+ 20230331122047euoutp01dc19847b4bfca8f578e50e3ebe345ecd~RgFcIkF1V0191301913euoutp01Z
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=samsung.com;
+ s=mail20170921; t=1680265247;
+ bh=RG0AskesBGxejlTr4JHEhK02MF/IWOxvFzpfN3R7npc=;
+ h=Date:From:To:CC:Subject:In-Reply-To:References:From;
+ b=sEWO2dKySJf9bqBkoq2fkNFxwAwamiqJ5bOxce1NxpZX61XpF66PidxaF84lkquev
+ ++ETNPtaWZbvBoFM+W6uSokTPuVsDNzpbcAsQREz9177zRQ6KDcSJVKD666vQWplV9
+ jUBvS2BYT6A/G1RW/hKzXwYnSiqMy+MammGcX9dw=
+Received: from eusmges1new.samsung.com (unknown [203.254.199.242]) by
+ eucas1p2.samsung.com (KnoxPortal) with ESMTP id
+ 20230331122046eucas1p2dd047848b60f9ddc31dd7b266bd86d77~RgFbxwOsi1098310983eucas1p24;
+ Fri, 31 Mar 2023 12:20:46 +0000 (GMT)
+Received: from eucas1p1.samsung.com ( [182.198.249.206]) by
+ eusmges1new.samsung.com (EUCPMTA) with SMTP id 14.78.09503.E10D6246; Fri, 31
+ Mar 2023 13:20:46 +0100 (BST)
+Received: from eusmtrp2.samsung.com (unknown [182.198.249.139]) by
+ eucas1p2.samsung.com (KnoxPortal) with ESMTPA id
+ 20230331122046eucas1p247e0cd2d06229a6b7cae9cb26ea43d5b~RgFbZahPc1098310983eucas1p23;
+ Fri, 31 Mar 2023 12:20:46 +0000 (GMT)
+Received: from eusmgms2.samsung.com (unknown [182.198.249.180]) by
+ eusmtrp2.samsung.com (KnoxPortal) with ESMTP id
+ 20230331122046eusmtrp238c8959c39aa187032906ac97e80131b~RgFbYiwNm2670526705eusmtrp2U;
+ Fri, 31 Mar 2023 12:20:46 +0000 (GMT)
+X-AuditID: cbfec7f2-ea5ff7000000251f-bf-6426d01eee9e
+Received: from eusmtip2.samsung.com ( [203.254.199.222]) by
+ eusmgms2.samsung.com (EUCPMTA) with SMTP id F3.4E.09583.E10D6246; Fri, 31
+ Mar 2023 13:20:46 +0100 (BST)
+Received: from CAMSVWEXC02.scsc.local (unknown [106.1.227.72]) by
+ eusmtip2.samsung.com (KnoxPortal) with ESMTPA id
+ 20230331122046eusmtip2b8baf2b87eb1e2370ba007aa92d0a40b~RgFbLcVLU2523725237eusmtip2g;
+ Fri, 31 Mar 2023 12:20:46 +0000 (GMT)
+Received: from localhost (106.110.32.140) by CAMSVWEXC02.scsc.local
+ (2002:6a01:e348::6a01:e348) with Microsoft SMTP Server (TLS) id 15.0.1497.2;
+ Fri, 31 Mar 2023 13:20:45 +0100
+Date: Fri, 31 Mar 2023 14:12:29 +0200
+From: Pankaj Raghav <p.raghav@samsung.com>
+To: Johannes Thumshirn <johannes.thumshirn@wdc.com>
+Message-ID: <20230331121156.7c7nbxfhagdufpzo@blixen>
 MIME-Version: 1.0
-References: <00000000000093079705ea9aada2@google.com>
- <0000000000004ee9b405f82355d8@google.com>
-In-Reply-To: <0000000000004ee9b405f82355d8@google.com>
-Date: Fri, 31 Mar 2023 10:43:50 +0200
-Message-ID: <CANp29Y7wQccVBGJM_jJzrszzkE9wiHOhjdYoaPtzB=0WP0BbDA@mail.gmail.com>
-To: syzbot <syzbot+7edb85bc97be9f350d90@syzkaller.appspotmail.com>
-X-Spam-Score: -13.2 (-------------)
-X-Spam-Report: Spam detection software, running on the system "util-spamd-1.v13.lw.sourceforge.com",
+Content-Disposition: inline
+In-Reply-To: <7849b142e073b20f033e5124a39080f59e5f19d2.1680108414.git.johannes.thumshirn@wdc.com>
+X-Originating-IP: [106.110.32.140]
+X-ClientProxiedBy: CAMSVWEXC02.scsc.local (2002:6a01:e348::6a01:e348) To
+ CAMSVWEXC02.scsc.local (2002:6a01:e348::6a01:e348)
+X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFvrBKsWRmVeSWpSXmKPExsWy7djPc7pyF9RSDBZPM7TYtm43u8Xqu/1s
+ FidXP2azaG3/xmSx991sVosLPxqZLPYsmsRksXL1USaLix9bmSz+dt1jsnh6dRZQyS1ti0uP
+ V7Bb7Nl7ksXi3pr/rBbt83cxWhya3Mxk0TW7lc3i9p0fzBYnbklbHF/+l83i9485bA5iHptX
+ aHlcPlvqsWlVJ5vHpk+T2D12L/jM5LH7ZgObR2/zOzaP9/uusnms33KVxWPz6WqPz5vkPNoP
+ dDMF8ERx2aSk5mSWpRbp2yVwZcz/doOtYCNzxfprsQ2Mj5i6GDk5JARMJI5NaGHsYuTiEBJY
+ wSixunsRG4TzhVFi1+QXrBDOZ0aJ7a+uw7WceLyHBSKxnFFiX9M2Rriq46eeQjlbGCUuntsE
+ 1sIioCqx4etl9i5GDg42AS2Jxk52kLCIgLHEle8LwSYxC5xmlVh4/QsrSEJYwE2ibepCsCJe
+ oHVH7ixnhLAFJU7OfMICYjML6Egs2P2JDWQms4C0xPJ/HCBhToFEiZt7FkBdqiTRsPkMC4Rd
+ K7G3+QA7hP2NU+LUCiEI20Vix+rNUPXCEq+Ob4GqkZH4v3M+VLxa4umN38wgd0oItDBK9O9c
+ D7ZXQsBaou9MDoTpKLFrii2EySdx460gxJF8EpO2TWeGCPNKdLRBLVWT2NG0lXECo/IsJG/N
+ QvLWLIS3FjAyr2IUTy0tzk1PLTbMSy3XK07MLS7NS9dLzs/dxAhMnKf/Hf+0g3Huq496hxiZ
+ OBgPMUpwMCuJ8BYaq6YI8aYkVlalFuXHF5XmpBYfYpTmYFES59W2PZksJJCeWJKanZpakFoE
+ k2Xi4JRqYGJ/Mq99ttHmVS9fhk9x2O7O7HvTf+/R+lhRfRXOv75H4oX0PF9zSC0zsTrB2Hsi
+ eKO1iPxXL+MvIfrzNi9OcG46+ol153PN+JnpYbKbTDaqOVs9D1OquC2Qvc6bJZbv0SouaanZ
+ J+X3chn66V2wn3wx+Nano/cD+ev+KYgXdvDKXHV6X3w0czGPM8dGn7d1vwrNFazUsroWMtkd
+ +Ls72vL37s3Kn4871TzKdpGfZlo61e5ruFDCKqVOfjP5pt+WNy4fDn79+XDsAe7Oo6avAv35
+ 39y5bHdLp1fXyF+qKOcGH9MF62viPsXSs85vcJbSfPmjgyG4/s+0ABtmk9XT80s+SRrPL0wQ
+ ULNpnrtUiaU4I9FQi7moOBEAP8WwqwsEAAA=
+X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFprGKsWRmVeSWpSXmKPExsVy+t/xe7pyF9RSDK5cErfYtm43u8Xqu/1s
+ FidXP2azaG3/xmSx991sVosLPxqZLPYsmsRksXL1USaLix9bmSz+dt1jsnh6dRZQyS1ti0uP
+ V7Bb7Nl7ksXi3pr/rBbt83cxWhya3Mxk0TW7lc3i9p0fzBYnbklbHF/+l83i9485bA5iHptX
+ aHlcPlvqsWlVJ5vHpk+T2D12L/jM5LH7ZgObR2/zOzaP9/uusnms33KVxWPz6WqPz5vkPNoP
+ dDMF8ETp2RTll5akKmTkF5fYKkUbWhjpGVpa6BmZWOoZGpvHWhmZKunb2aSk5mSWpRbp2yXo
+ Zcz/doOtYCNzxfprsQ2Mj5i6GDk5JARMJE483sMCYgsJLGWUeLRWCiIuI/Hpykd2CFtY4s+1
+ LrYuRi6gmo+MEptubYFytjBKfJz6G6yKRUBVYsPXy0A2BwebgJZEYydYWETAWOLK94UsIPXM
+ AqdZJT7PfskIkhAWcJNom7oQrIgX6Iojd5YzQlwxhVFi8msViLigxMmZT8CuYxbQkViw+xMb
+ yHxmAWmJ5f84QMKcAokSN/csgHpGSaJh8xkWCLtWovPVabYJjMKzkEyahWTSLIRJCxiZVzGK
+ pJYW56bnFhvpFSfmFpfmpesl5+duYgQmkG3Hfm7Zwbjy1Ue9Q4xMHIyHGCU4mJVEeAuNVVOE
+ eFMSK6tSi/Lji0pzUosPMZoCQ2Iis5Rocj4wheWVxBuaGZgamphZGphamhkrifN6FnQkCgmk
+ J5akZqemFqQWwfQxcXBKNTDFVzyrFHN98C7HflXCTe5DketvM5byVt4rXXFnmnXppfPP/gtl
+ BZ5b8vLrudR/D3Iz/Fasl/4UvMc041N88wNOBgf+xBThdu+rZRy24sznqrl8jSra+Ll+/Yzt
+ 3xBydFb+naTaadW32p4G3VITy/E2PH3Ft25+7jOHcJGd0efa9vScOnT3UZHSofkuTbK2e6aF
+ OpbGm31dtmbVN/uOqc+ubDQIvfkv/5/Jt4LA442q4pY3XU00w07n5CmwnVj63Te1aaPR/7fN
+ 6xx/JofOXyfrWGzyV7Sgq/yyyfkbxVGrbKvEPRfzpB0tL9sqLRthkNB5f0FPx8pVbt/eSXo8
+ /JRkIvyyfrYM914byRPTBJRYijMSDbWYi4oTAXZ/WI2pAwAA
+X-CMS-MailID: 20230331122046eucas1p247e0cd2d06229a6b7cae9cb26ea43d5b
+X-Msg-Generator: CA
+X-RootMTR: 20230331122046eucas1p247e0cd2d06229a6b7cae9cb26ea43d5b
+X-EPHeader: CA
+CMS-TYPE: 201P
+X-CMS-RootMailID: 20230331122046eucas1p247e0cd2d06229a6b7cae9cb26ea43d5b
+References: <cover.1680108414.git.johannes.thumshirn@wdc.com>
+ <7849b142e073b20f033e5124a39080f59e5f19d2.1680108414.git.johannes.thumshirn@wdc.com>
+ <CGME20230331122046eucas1p247e0cd2d06229a6b7cae9cb26ea43d5b@eucas1p2.samsung.com>
+X-Spam-Score: -5.9 (-----)
+X-Spam-Report: Spam detection software,
+ running on the system "util-spamd-1.v13.lw.sourceforge.com", 
  has NOT identified this incoming email as spam.  The original
  message has been attached to this so you can view it or label
  similar future email.  If you have any questions, see
  the administrator of that system for details.
- 
- Content preview:  On Thu, Mar 30, 2023 at 9:45 PM syzbot <syzbot+7edb85bc97be9f350d90@syzkaller.appspotmail.com>
-    wrote: > > syzbot suspects this issue was fixed by commit: > > commit fad376fce0af58deebc5075b8539dc05b
-    [...] 
- 
- Content analysis details:   (-13.2 points, 6.0 required)
- 
-  pts rule name              description
+ Content preview:  On Wed, Mar 29, 2023 at 10:05:47AM -0700, Johannes Thumshirn
+ wrote: > The swap code only adds a single page to a newly created bio. So
+ use > __bio_add_page() to add the page which is guaranteed to suc [...] 
+ Content analysis details:   (-5.9 points, 6.0 required)
+ pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
-                             white-list
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [210.118.77.11 listed in list.dnswl.org]
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [210.118.77.11 listed in wl.mailspike.net]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
-  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
-  2.5 SORTED_RECIPS          Recipient list is sorted by address
- -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
-                             welcome-list
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
-                              no trust
-                             [209.85.160.178 listed in list.dnswl.org]
-  0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
-                             [209.85.160.178 listed in wl.mailspike.net]
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
-                             envelope-from domain
- -0.1 DKIM_VALID             Message has at least one valid DKIM or DK signature
-  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
-                             valid
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
-                             author's domain
- -0.5 ENV_AND_HDR_SPF_MATCH  Env and Hdr From used in default SPF WL
-                             Match
-  0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
- -0.0 DKIMWL_WL_MED          DKIMwl.org - Medium trust sender
-X-Headers-End: 1piAMj-0002xC-UP
-Subject: Re: [Jfs-discussion] [syzbot] [jfs?] UBSAN: shift-out-of-bounds in
- dbFindCtl
+ author's domain
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ -0.7 DKIMWL_WL_HIGH         DKIMwl.org - High trust sender
+X-Headers-End: 1piE0K-0002x4-9K
+X-Mailman-Approved-At: Fri, 31 Mar 2023 13:57:44 +0000
+Subject: Re: [Jfs-discussion] [PATCH 01/19] swap: use __bio_add_page to add
+ page to bio
 X-BeenThere: jfs-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -132,42 +176,35 @@ List-Post: <mailto:jfs-discussion@lists.sourceforge.net>
 List-Help: <mailto:jfs-discussion-request@lists.sourceforge.net?subject=help>
 List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/jfs-discussion>, 
  <mailto:jfs-discussion-request@lists.sourceforge.net?subject=subscribe>
-From: Aleksandr Nogikh via Jfs-discussion
- <jfs-discussion@lists.sourceforge.net>
-Reply-To: Aleksandr Nogikh <nogikh@google.com>
-Cc: shaggy@kernel.org, jfs-discussion@lists.sourceforge.net,
- syzkaller-bugs@googlegroups.com, linux-kernel@vger.kernel.org,
- liushixin2@huawei.com, linux-fsdevel@vger.kernel.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Jens Axboe <axboe@kernel.dk>, linux-raid@vger.kernel.org,
+ Damien Le Moal <damien.lemoal@wdc.com>, cluster-devel@redhat.com,
+ Chaitanya Kulkarni <kch@nvidia.com>, Andreas Gruenbacher <agruenba@redhat.com>,
+ Song Liu <song@kernel.org>, Dave Kleikamp <shaggy@kernel.org>,
+ Mike Snitzer <snitzer@kernel.org>, jfs-discussion@lists.sourceforge.net,
+ Matthew Wilcox <willy@infradead.org>, Ming Lei <ming.lei@redhat.com>,
+ linux-block@vger.kernel.org, linux-mm@kvack.org, dm-devel@redhat.com,
+ David Sterba <dsterba@suse.com>, Hannes
+ Reinecke <hare@suse.de>, linux-fsdevel@vger.kernel.org,
+ Christoph Hellwig <hch@lst.de>, linux-btrfs@vger.kernel.org, Bob
+ Peterson <rpeterso@redhat.com>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Errors-To: jfs-discussion-bounces@lists.sourceforge.net
 
-T24gVGh1LCBNYXIgMzAsIDIwMjMgYXQgOTo0NeKAr1BNIHN5emJvdAo8c3l6Ym90KzdlZGI4NWJj
-OTdiZTlmMzUwZDkwQHN5emthbGxlci5hcHBzcG90bWFpbC5jb20+IHdyb3RlOgo+Cj4gc3l6Ym90
-IHN1c3BlY3RzIHRoaXMgaXNzdWUgd2FzIGZpeGVkIGJ5IGNvbW1pdDoKPgo+IGNvbW1pdCBmYWQz
-NzZmY2UwYWY1OGRlZWJjNTA3NWI4NTM5ZGMwNWJmNjM5YWYzCj4gQXV0aG9yOiBMaXUgU2hpeGlu
-IHZpYSBKZnMtZGlzY3Vzc2lvbiA8amZzLWRpc2N1c3Npb25AbGlzdHMuc291cmNlZm9yZ2UubmV0
-Pgo+IERhdGU6ICAgVGh1IE5vdiAzIDAzOjAxOjU5IDIwMjIgKzAwMDAKPgo+ICAgICBmcy9qZnM6
-IGZpeCBzaGlmdCBleHBvbmVudCBkYl9hZ2wyc2l6ZSBuZWdhdGl2ZQo+Cj4gYmlzZWN0aW9uIGxv
-ZzogIGh0dHBzOi8vc3l6a2FsbGVyLmFwcHNwb3QuY29tL3gvYmlzZWN0LnR4dD94PTE0NmQ3NGE1
-YzgwMDAwCj4gc3RhcnQgY29tbWl0OiAgIGIyMjliNmNhNWFiYiBNZXJnZSB0YWcgJ3BlcmYtdG9v
-bHMtZml4ZXMtZm9yLXY2LjEtMjAyMi0xMC0uLgo+IGdpdCB0cmVlOiAgICAgICB1cHN0cmVhbQo+
-IGtlcm5lbCBjb25maWc6ICBodHRwczovL3N5emthbGxlci5hcHBzcG90LmNvbS94Ly5jb25maWc/
-eD1hNjZjNmM2NzNmYjU1NWU4Cj4gZGFzaGJvYXJkIGxpbms6IGh0dHBzOi8vc3l6a2FsbGVyLmFw
-cHNwb3QuY29tL2J1Zz9leHRpZD03ZWRiODViYzk3YmU5ZjM1MGQ5MAo+IHN5eiByZXBybzogICAg
-ICBodHRwczovL3N5emthbGxlci5hcHBzcG90LmNvbS94L3JlcHJvLnN5ej94PTE2ZDU4MTdhODgw
-MDAwCj4gQyByZXByb2R1Y2VyOiAgIGh0dHBzOi8vc3l6a2FsbGVyLmFwcHNwb3QuY29tL3gvcmVw
-cm8uYz94PTE1ZDY4Y2RlODgwMDAwCj4KPiBJZiB0aGUgcmVzdWx0IGxvb2tzIGNvcnJlY3QsIHBs
-ZWFzZSBtYXJrIHRoZSBpc3N1ZSBhcyBmaXhlZCBieSByZXBseWluZyB3aXRoOgo+Cj4gI3N5eiBm
-aXg6IGZzL2pmczogZml4IHNoaWZ0IGV4cG9uZW50IGRiX2FnbDJzaXplIG5lZ2F0aXZlCgpJdCBt
-aWdodCB3ZWxsIGJlIHBvc3NpYmxlLiBUaGUgcGF0Y2ggaW1wcm92ZXMgdGhlIHZhbGlkYXRpb24g
-b2YKZGJfYWdsMnNpemUgcGFyYW1ldGVyLCB3aGljaCBhZmZlY3RzIHRoZSBleGVjdXRpb24gc29t
-ZSBmcmFtZXMgdXAgaW4KdGhlIGNyYXNoIHN0YWNrIHRyYWNlOgpodHRwczovL2dpdC5rZXJuZWwu
-b3JnL3B1Yi9zY20vbGludXgva2VybmVsL2dpdC90b3J2YWxkcy9saW51eC5naXQvdHJlZS9mcy9q
-ZnMvamZzX2RtYXAuYz9pZD02ZDM2YzcyOGJjMmUyZDYzMmY0YjBkZWEwMGRmNTUzMmUyMGRmZGFi
-I243MjkKCiNzeXogZml4OiBmcy9qZnM6IGZpeCBzaGlmdCBleHBvbmVudCBkYl9hZ2wyc2l6ZSBu
-ZWdhdGl2ZQoKPgo+IEZvciBpbmZvcm1hdGlvbiBhYm91dCBiaXNlY3Rpb24gcHJvY2VzcyBzZWU6
-IGh0dHBzOi8vZ29vLmdsL3Rwc21FSiNiaXNlY3Rpb24KPgoKCl9fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fCkpmcy1kaXNjdXNzaW9uIG1haWxpbmcgbGlzdApK
-ZnMtZGlzY3Vzc2lvbkBsaXN0cy5zb3VyY2Vmb3JnZS5uZXQKaHR0cHM6Ly9saXN0cy5zb3VyY2Vm
-b3JnZS5uZXQvbGlzdHMvbGlzdGluZm8vamZzLWRpc2N1c3Npb24K
+On Wed, Mar 29, 2023 at 10:05:47AM -0700, Johannes Thumshirn wrote:
+> The swap code only adds a single page to a newly created bio. So use
+> __bio_add_page() to add the page which is guaranteed to succeed in this
+> case.
+> 
+> This brings us closer to marking bio_add_page() as __must_check.
+> 
+> Signed-off-by: Johannes Thumshirn <johannes.thumshirn@wdc.com>
+
+Looks good,
+Reviewed-by: Pankaj Raghav <p.raghav@samsung.com>
+
+
+_______________________________________________
+Jfs-discussion mailing list
+Jfs-discussion@lists.sourceforge.net
+https://lists.sourceforge.net/lists/listinfo/jfs-discussion
