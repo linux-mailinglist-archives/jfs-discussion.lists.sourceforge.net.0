@@ -2,28 +2,28 @@ Return-Path: <jfs-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+jfs-discussion@lfdr.de
 Delivered-To: lists+jfs-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4CA376E7BAA
-	for <lists+jfs-discussion@lfdr.de>; Wed, 19 Apr 2023 16:11:14 +0200 (CEST)
-Received: from [127.0.0.1] (helo=sfs-ml-2.v29.lw.sourceforge.com)
-	by sfs-ml-2.v29.lw.sourceforge.com with esmtp (Exim 4.95)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8A63D6E7BA8
+	for <lists+jfs-discussion@lfdr.de>; Wed, 19 Apr 2023 16:11:12 +0200 (CEST)
+Received: from [127.0.0.1] (helo=sfs-ml-3.v29.lw.sourceforge.com)
+	by sfs-ml-3.v29.lw.sourceforge.com with esmtp (Exim 4.95)
 	(envelope-from <jfs-discussion-bounces@lists.sourceforge.net>)
-	id 1pp8WS-0002LP-2j;
-	Wed, 19 Apr 2023 14:11:00 +0000
+	id 1pp8WO-0005IY-KU;
+	Wed, 19 Apr 2023 14:10:55 +0000
 Received: from [172.30.20.202] (helo=mx.sourceforge.net)
- by sfs-ml-2.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
+ by sfs-ml-3.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
  TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (Exim 4.95)
- (envelope-from <morbidrsa@gmail.com>) id 1pp8WN-0002Kr-K5
+ (envelope-from <morbidrsa@gmail.com>) id 1pp8WM-0005IG-1e
  for jfs-discussion@lists.sourceforge.net;
- Wed, 19 Apr 2023 14:10:55 +0000
+ Wed, 19 Apr 2023 14:10:53 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=sourceforge.net; s=x; h=Content-Transfer-Encoding:MIME-Version:References:
  In-Reply-To:Message-Id:Date:Subject:Cc:To:From:Sender:Reply-To:Content-Type:
  Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
  Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=D58hy5/Cr3/DLqz8bPLF+cijdU1EeyUsaB6+w7+K1A4=; b=YEPyl9KJcaIXpl/7sMDvhnpoLt
- 0U30v0y35uAaqxNkrw9Ywrb2r58vHbeaqbOXt27OU6ogIIYyW7FpLOLesWneGlyJxMOHiDXhJGTRA
- n+JAvD+Cg+WCrIZJw0B/tXzxk8/cJfaoknljeZ4fANlxBbwJosUK1WzkEwTrGcbhTkf4=;
+ bh=KLQcibH4QQVSvQQ/bVwiqZIZ4Gz6ywI38VTMDoqxjbc=; b=FpKqzUwzFI4kdYzRYVEHAmTOya
+ +ZghwKhFWS+EZ/UFAjonVKv/vJx7Apcf+xubxejSarDTYdwgWNTGVUADTWCxq3vagcklVDAJfpk+1
+ VcB6aZbRFC9XFxi8R+hWCJLEok1GMNnHYl/nyr7ZPsxOq8KewO2i54DoBxrxNhX5scq0=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
  h=Content-Transfer-Encoding:MIME-Version:References:In-Reply-To:Message-Id:
@@ -31,46 +31,46 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
  :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
  List-Post:List-Owner:List-Archive;
- bh=D58hy5/Cr3/DLqz8bPLF+cijdU1EeyUsaB6+w7+K1A4=; b=CjMwsxtN/uzZ6bsnaLQRJawbW3
- ASDpI6Fgaarcv6B6PgGxB6YhTQnSA8+GjXCRSmfyjqhMNe7XxAUjID+Pz1GbZqhtc+iHeGm34ek2H
- 4L7f2b0PZCo02j1Ryj0T7r89hsIRXlspCb4IVnD9hLYnqb4o1cw3ywrgnApv0q0foLc4=;
-Received: from mail-wm1-f54.google.com ([209.85.128.54])
+ bh=KLQcibH4QQVSvQQ/bVwiqZIZ4Gz6ywI38VTMDoqxjbc=; b=gGdrW+Ld6T+U+EkjrFXGgvuYU1
+ NDpyWP2UZ155EpjCueWBxhXkazFRLrgegCCeArSkO2hyw5fBWW3Et88N/Cv6ED1VPfrIaGVCtBvjA
+ Y4BlDDBiBw40aeJ2Kvss5nSxXF7DlAKgUYrCvl2RHnK8Ak46gvEtE83Q7zcXjqI9mbrM=;
+Received: from mail-wm1-f42.google.com ([209.85.128.42])
  by sfi-mx-1.v28.lw.sourceforge.com with esmtps
  (TLS1.2:ECDHE-RSA-AES128-GCM-SHA256:128) (Exim 4.95)
- id 1pp8WN-00Cc6O-El for jfs-discussion@lists.sourceforge.net;
- Wed, 19 Apr 2023 14:10:55 +0000
-Received: by mail-wm1-f54.google.com with SMTP id
- m39-20020a05600c3b2700b003f170e75bd3so2154142wms.1
+ id 1pp8WJ-00Cc61-Dv for jfs-discussion@lists.sourceforge.net;
+ Wed, 19 Apr 2023 14:10:53 +0000
+Received: by mail-wm1-f42.google.com with SMTP id
+ 5b1f17b1804b1-3f18123d9f6so3364085e9.0
  for <jfs-discussion@lists.sourceforge.net>;
- Wed, 19 Apr 2023 07:10:55 -0700 (PDT)
+ Wed, 19 Apr 2023 07:10:51 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20221208; t=1681913449; x=1684505449;
+ d=1e100.net; s=20221208; t=1681913451; x=1684505451;
  h=content-transfer-encoding:mime-version:references:in-reply-to
  :message-id:date:subject:cc:to:from:x-gm-message-state:from:to:cc
  :subject:date:message-id:reply-to;
- bh=D58hy5/Cr3/DLqz8bPLF+cijdU1EeyUsaB6+w7+K1A4=;
- b=MbQv50N13wGY25uMZe9resdjHMliIbYw+fYctSlohiaJHLnGJJ4ah5mkD8pKvdYgY3
- pDYVvpkSRrx+JIY/UBwUobrZ3m9vNnSnhzy3+hdXAltOwUL0/c1HTnNOXJ6BS7nPrXHJ
- 3BexuFnQMuyQoid8XimbLVmnoSu/9Nk4shoD+8cgISA4IswMi9ExcmtG2wxr3B3XEdKv
- DM4U3xTBR7suwQkWP/KIaJVXvm6PxUPsbExxh5QMfWOwT6UXlv0YpHG0uBhQkGrsPJY+
- 5fVBpzSMAD0fEEXQNSJWOB/O1Cr0wWOCTVJy7KOOj9ZeJbufljmaaLBymQVPe7ZccqLe
- Z/pg==
-X-Gm-Message-State: AAQBX9cVwP0A+avjHXSb3dQjNf6ZpmkzeBxxrHi3O6QI1fcsjUCMiE79
- owg9VED1VnLxTs1JxesW/6Y=
-X-Google-Smtp-Source: AKy350YVGom4jRqLlz1SlZT1B3VxAH80TCdfTvTrIcrTBS48HRxL8jnx3ehntNMClr8C3qNVzqHCog==
-X-Received: by 2002:a05:600c:24d:b0:3f0:373d:780 with SMTP id
- 13-20020a05600c024d00b003f0373d0780mr16769739wmj.34.1681913448956; 
- Wed, 19 Apr 2023 07:10:48 -0700 (PDT)
+ bh=KLQcibH4QQVSvQQ/bVwiqZIZ4Gz6ywI38VTMDoqxjbc=;
+ b=bEKX6SJnrWORanRRQPPjoophvuaYsnqaE4iQbHeADS8i4+ablC/nsKg3dZ1phXdxWt
+ d38RjJDSH4GCeWL6TzS096QBUkagWrKwOI5l+C0I6R3BZv+2ECkBfR1E3f07Tva2En7+
+ wnp1ECpN7lL7YpDJhsCmF/7JlEtbQwQzc13qxraMC6bJbADTt8KqEPwoRAPhwRDnruZo
+ NuxaG3d6ldEN/OmI/Cdt2+QNAguRNvJJL0lY/Tch9M1URJ/fsPv+cfhNqG/AX++MG1qQ
+ /r51VQ6nVwm3S6k/CZsI5IBJIrNJp6VEqJi83d3kDV330NtnOJefrprmPeHXfmLJLJBm
+ KxYA==
+X-Gm-Message-State: AAQBX9dnRR2Nc5ejpQJn1vBFFmk/xTAb/Zl1GvgHyYgjt5ZUyOF18g7j
+ +pSvectEXJYJRCVFZikgnQA=
+X-Google-Smtp-Source: AKy350a8pHXX4xoTqjmCp8VzLpP9Mr6nWBR11mzOBYZ2TpzRIUZcgG4OmK15TMBBeqCZ8wsfO4biJw==
+X-Received: by 2002:adf:df05:0:b0:2ce:9d06:58c6 with SMTP id
+ y5-20020adfdf05000000b002ce9d0658c6mr4762888wrl.53.1681913450788; 
+ Wed, 19 Apr 2023 07:10:50 -0700 (PDT)
 Received: from localhost.localdomain
  (aftr-62-216-205-204.dynamic.mnet-online.de. [62.216.205.204])
  by smtp.googlemail.com with ESMTPSA id
- q17-20020a5d61d1000000b002faaa9a1721sm7612089wrv.58.2023.04.19.07.10.47
+ q17-20020a5d61d1000000b002faaa9a1721sm7612089wrv.58.2023.04.19.07.10.49
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 19 Apr 2023 07:10:48 -0700 (PDT)
+ Wed, 19 Apr 2023 07:10:49 -0700 (PDT)
 From: Johannes Thumshirn <jth@kernel.org>
 To: axboe@kernel.dk
-Date: Wed, 19 Apr 2023 16:09:23 +0200
-Message-Id: <20230419140929.5924-14-jth@kernel.org>
+Date: Wed, 19 Apr 2023 16:09:24 +0200
+Message-Id: <20230419140929.5924-15-jth@kernel.org>
 X-Mailer: git-send-email 2.39.2
 In-Reply-To: <20230419140929.5924-1-jth@kernel.org>
 References: <20230419140929.5924-1-jth@kernel.org>
@@ -83,26 +83,28 @@ X-Spam-Report: Spam detection software,
  similar future email.  If you have any questions, see
  the administrator of that system for details.
  Content preview:  From: Johannes Thumshirn <johannes.thumshirn@wdc.com> The
- zram writeback code uses bio_add_page() to add a page to a newly created bio.
- bio_add_page() can fail, but the return value is never checked. 
+ floppy code uses bio_add_page() to add a page to a newly created bio.
+ bio_add_page()
+ can fail, but the return value is never checked. Use __bio_add_page() as
+ adding a single page to a newly created bio is guaranteed to succeed. 
  Content analysis details:   (0.5 points, 6.0 required)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.128.42 listed in wl.mailspike.net]
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.128.54 listed in list.dnswl.org]
+ no trust [209.85.128.42 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
  mail domains are different
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider [morbidrsa[at]gmail.com]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.128.54 listed in wl.mailspike.net]
  -0.0 T_SCC_BODY_TEXT_LINE   No description available.
  0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
  EnvelopeFrom freemail headers are different
-X-Headers-End: 1pp8WN-00Cc6O-El
-Subject: [Jfs-discussion] [PATCH v3 13/19] zram: use __bio_add_page for
+X-Headers-End: 1pp8WJ-00Cc61-Dv
+Subject: [Jfs-discussion] [PATCH v3 14/19] floppy: use __bio_add_page for
  adding single page to bio
 X-BeenThere: jfs-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
@@ -129,9 +131,8 @@ Errors-To: jfs-discussion-bounces@lists.sourceforge.net
 
 From: Johannes Thumshirn <johannes.thumshirn@wdc.com>
 
-The zram writeback code uses bio_add_page() to add a page to a newly
-created bio. bio_add_page() can fail, but the return value is never
-checked.
+The floppy code uses bio_add_page() to add a page to a newly created bio.
+bio_add_page() can fail, but the return value is never checked.
 
 Use __bio_add_page() as adding a single page to a newly created bio is
 guaranteed to succeed.
@@ -141,22 +142,22 @@ This brings us a step closer to marking bio_add_page() as __must_check.
 Signed-off-by: Johannes Thumshirn <johannes.thumshirn@wdc.com>
 Reviewed-by: Damien Le Moal <damien.lemoal@opensource.wdc.com>
 ---
- drivers/block/zram/zram_drv.c | 2 +-
+ drivers/block/floppy.c | 2 +-
  1 file changed, 1 insertion(+), 1 deletion(-)
 
-diff --git a/drivers/block/zram/zram_drv.c b/drivers/block/zram/zram_drv.c
-index aa490da3cef2..9179bd0f248c 100644
---- a/drivers/block/zram/zram_drv.c
-+++ b/drivers/block/zram/zram_drv.c
-@@ -760,7 +760,7 @@ static ssize_t writeback_store(struct device *dev,
- 			 REQ_OP_WRITE | REQ_SYNC);
- 		bio.bi_iter.bi_sector = blk_idx * (PAGE_SIZE >> 9);
+diff --git a/drivers/block/floppy.c b/drivers/block/floppy.c
+index 487840e3564d..6f46a30f7c36 100644
+--- a/drivers/block/floppy.c
++++ b/drivers/block/floppy.c
+@@ -4147,7 +4147,7 @@ static int __floppy_read_block_0(struct block_device *bdev, int drive)
+ 	cbdata.drive = drive;
  
--		bio_add_page(&bio, bvec.bv_page, bvec.bv_len,
-+		__bio_add_page(&bio, bvec.bv_page, bvec.bv_len,
- 				bvec.bv_offset);
- 		/*
- 		 * XXX: A single page IO would be inefficient for write
+ 	bio_init(&bio, bdev, &bio_vec, 1, REQ_OP_READ);
+-	bio_add_page(&bio, page, block_size(bdev), 0);
++	__bio_add_page(&bio, page, block_size(bdev), 0);
+ 
+ 	bio.bi_iter.bi_sector = 0;
+ 	bio.bi_flags |= (1 << BIO_QUIET);
 -- 
 2.39.2
 
