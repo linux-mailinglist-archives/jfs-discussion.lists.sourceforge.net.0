@@ -2,28 +2,28 @@ Return-Path: <jfs-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+jfs-discussion@lfdr.de
 Delivered-To: lists+jfs-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id CC1B46E8F01
-	for <lists+jfs-discussion@lfdr.de>; Thu, 20 Apr 2023 12:06:29 +0200 (CEST)
-Received: from [127.0.0.1] (helo=sfs-ml-2.v29.lw.sourceforge.com)
-	by sfs-ml-2.v29.lw.sourceforge.com with esmtp (Exim 4.95)
+	by mail.lfdr.de (Postfix) with ESMTPS id E75F86E8F02
+	for <lists+jfs-discussion@lfdr.de>; Thu, 20 Apr 2023 12:06:30 +0200 (CEST)
+Received: from [127.0.0.1] (helo=sfs-ml-3.v29.lw.sourceforge.com)
+	by sfs-ml-3.v29.lw.sourceforge.com with esmtp (Exim 4.95)
 	(envelope-from <jfs-discussion-bounces@lists.sourceforge.net>)
-	id 1ppRBD-0006us-8r;
-	Thu, 20 Apr 2023 10:06:19 +0000
+	id 1ppRBF-0001sh-Np;
+	Thu, 20 Apr 2023 10:06:20 +0000
 Received: from [172.30.20.202] (helo=mx.sourceforge.net)
- by sfs-ml-2.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
+ by sfs-ml-3.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
  TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (Exim 4.95)
- (envelope-from <morbidrsa@gmail.com>) id 1ppRBB-0006uk-GI
+ (envelope-from <morbidrsa@gmail.com>) id 1ppRBD-0001sU-RK
  for jfs-discussion@lists.sourceforge.net;
- Thu, 20 Apr 2023 10:06:17 +0000
+ Thu, 20 Apr 2023 10:06:19 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=sourceforge.net; s=x; h=Content-Transfer-Encoding:MIME-Version:References:
  In-Reply-To:Message-Id:Date:Subject:Cc:To:From:Sender:Reply-To:Content-Type:
  Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
  Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=NtU3y1Zr3yjzTsE4b676R+MqirB7TojNGzCXkCz9E5c=; b=c0I61ZRqpDtPDxk4g8POYS5A50
- vPVTWwsuUCHVQ6H6AW98c31TzX6MIhK+ZRDyB7GyuffgHq4aeIFJOtWoOorZPnBLBnKZIA/foHm61
- qggJM9hWWQxM+cf3xFv3inPyk3qSaky80B6eGepkudPBl31G4y3JTrpMCraNfmB8V6HM=;
+ bh=/zlw+dyGlfnLYWyTWZyG7072cksvgegzTzOhlPnlIpY=; b=KXzMAWyAL6Atzo95e8Hz7kDcyW
+ reVRuMcM66r8HQVx3d17xJ9lmUy9AtkpZ/NiYHRj/aqlZVY+6uqbNCKhdJ4rv245wkV2AdulHfboQ
+ n4gGqZeqCD0emRj76ZRyklZycrAbdc67R+VN2V9Ax7o72KNvIn4UWFpPFvsMm/AAz+50=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
  h=Content-Transfer-Encoding:MIME-Version:References:In-Reply-To:Message-Id:
@@ -31,78 +31,79 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
  :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
  List-Post:List-Owner:List-Archive;
- bh=NtU3y1Zr3yjzTsE4b676R+MqirB7TojNGzCXkCz9E5c=; b=On0b40Ce34t5cJ2KIo+4RoCapo
- Br+283b2V4Be3aPzTPBUJlYucPMFVTugfVhVp2PhhOb470DUn2lkx3F9mZyX4nPD/EhoYuCylbO1i
- uhqswOCC0w75JVdAYdaIfflgvbRyBePFzJOY145gif9JjcSIQnYzGHyQHjt2t3ZIrzLY=;
-Received: from mail-wm1-f51.google.com ([209.85.128.51])
- by sfi-mx-1.v28.lw.sourceforge.com with esmtps
+ bh=/zlw+dyGlfnLYWyTWZyG7072cksvgegzTzOhlPnlIpY=; b=FRx0rsU5sR+licbmirpEcPOObd
+ BPJ3MKVxfWm9LNrESZRh9iBBsWbCbBRR1CMFa38pgJth/JenA2N0yByoNPXD55j1YgfYmOBMUGozE
+ jV7RJwwajIEg1AcryOtNO3TIn+0E/ddVGkPX3o52RV3pwGPQJUN2FFZuaW9H8Cn6Vqq4=;
+Received: from mail-wr1-f47.google.com ([209.85.221.47])
+ by sfi-mx-2.v28.lw.sourceforge.com with esmtps
  (TLS1.2:ECDHE-RSA-AES128-GCM-SHA256:128) (Exim 4.95)
- id 1ppRBB-00DRPd-47 for jfs-discussion@lists.sourceforge.net;
- Thu, 20 Apr 2023 10:06:17 +0000
-Received: by mail-wm1-f51.google.com with SMTP id
- 5b1f17b1804b1-3f16b99b936so3347805e9.3
+ id 1ppRBC-0002ep-Ek for jfs-discussion@lists.sourceforge.net;
+ Thu, 20 Apr 2023 10:06:18 +0000
+Received: by mail-wr1-f47.google.com with SMTP id
+ ffacd0b85a97d-2f7c281a015so281290f8f.1
  for <jfs-discussion@lists.sourceforge.net>;
- Thu, 20 Apr 2023 03:06:17 -0700 (PDT)
+ Thu, 20 Apr 2023 03:06:18 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20221208; t=1681985170; x=1684577170;
+ d=1e100.net; s=20221208; t=1681985172; x=1684577172;
  h=content-transfer-encoding:mime-version:references:in-reply-to
  :message-id:date:subject:cc:to:from:x-gm-message-state:from:to:cc
  :subject:date:message-id:reply-to;
- bh=NtU3y1Zr3yjzTsE4b676R+MqirB7TojNGzCXkCz9E5c=;
- b=IUrEppMSywahm31dtw2ITH2p0Y9oBUFuCjrJkiQByXZWt7R+ENKJnWKEm8WLeohzTT
- nvI89i/0dfxREZcgWkKD77nH7OPsc35IsiH2Y+wFuYs+d/Xs3Y4SJzb2MpTWVAMOFY+U
- Z6pQbK5EMthDBLP/fqCE1bEtamvDPsmsX68cepl3uQDVCvYlPkIUXAvW/Q7GNcBexL8j
- fVto5o4PXuM4EGDTFXTpm4c2fs4DhRC0eoZcFvn56YuBP0nIjE8vCd37IrV/Mbx54hkH
- b3YbRWuFa7OMY7W4ACm1qP0oTVQK1cLuroY1A6gLl4L8qiAaAW2iEIlaYgg1oya/TLlK
- TTPg==
-X-Gm-Message-State: AAQBX9fj26eDcW01aSW0lmhv8kQb6do9E3zSxE8o2rkvlUvoRf1oDr/K
- QlWkgxZtikjBi72Nklj1k/M=
-X-Google-Smtp-Source: AKy350Yf43FTKduuCP1kMcXqJDkEawnut9n4ItV54pfFrm9DNgw20nsuo8ykxVcEagPqAFCwlrvDXw==
-X-Received: by 2002:adf:f4d0:0:b0:2f7:e3aa:677a with SMTP id
- h16-20020adff4d0000000b002f7e3aa677amr912509wrp.46.1681985170733; 
- Thu, 20 Apr 2023 03:06:10 -0700 (PDT)
+ bh=/zlw+dyGlfnLYWyTWZyG7072cksvgegzTzOhlPnlIpY=;
+ b=gyYPQGh/7HV4D2ubeRCCX8Lrbth/RQuh8ZwBT3di+ZjDrh+tBZih/toDZUF9H7PlZV
+ B35asIWmEWZBVRwdE3v21jqh4tUPWaPBUxC15FEyDlN8dyPWurujOiFANfgkI/f149z7
+ EwMNu9uSOejoGKR1x288Udrt7v9iH7EijivWI2ckgPfVGSB9PjueszVOlHGRkdFe9Eyv
+ ZzA/HRHBLoC1QvcLHDcjv1wLQIh9QyScQxMuwJOuw51y45XZxZ6W/OH44z5k3MA9L9MU
+ CCWCrF2RxAoizugVk/9IY1/nneGvLReXg/KTlt/QxeSUACfd8DcC+50lQsHx6HBi8i4z
+ Lifw==
+X-Gm-Message-State: AAQBX9eRZM+dr940LPxl8Qf80HoqW7f9N5nZARuuybuQTEJeOuTvnOIh
+ 8TivVX2BBb0Yg8s4rOMKUqc=
+X-Google-Smtp-Source: AKy350b4+pGxVTyaXt7ZP5FpDVVarQnYRrcgBCCIE1KFKr5Sq8P0zgMU35+ypve4Bt1qBgDPW2LUww==
+X-Received: by 2002:a5d:640a:0:b0:2ee:d53b:d9ef with SMTP id
+ z10-20020a5d640a000000b002eed53bd9efmr813643wru.55.1681985171893; 
+ Thu, 20 Apr 2023 03:06:11 -0700 (PDT)
 Received: from localhost.localdomain
  (aftr-62-216-205-208.dynamic.mnet-online.de. [62.216.205.208])
  by smtp.googlemail.com with ESMTPSA id
- l11-20020a5d674b000000b0030276f42f08sm201410wrw.88.2023.04.20.03.06.09
+ l11-20020a5d674b000000b0030276f42f08sm201410wrw.88.2023.04.20.03.06.10
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 20 Apr 2023 03:06:10 -0700 (PDT)
+ Thu, 20 Apr 2023 03:06:11 -0700 (PDT)
 From: Johannes Thumshirn <jth@kernel.org>
 To: axboe@kernel.dk
-Date: Thu, 20 Apr 2023 12:04:56 +0200
-Message-Id: <20230420100501.32981-18-jth@kernel.org>
+Date: Thu, 20 Apr 2023 12:04:57 +0200
+Message-Id: <20230420100501.32981-19-jth@kernel.org>
 X-Mailer: git-send-email 2.39.2
 In-Reply-To: <20230420100501.32981-1-jth@kernel.org>
 References: <20230420100501.32981-1-jth@kernel.org>
 MIME-Version: 1.0
 X-Spam-Score: 0.5 (/)
 X-Spam-Report: Spam detection software,
- running on the system "util-spamd-1.v13.lw.sourceforge.com", 
+ running on the system "util-spamd-2.v13.lw.sourceforge.com", 
  has NOT identified this incoming email as spam.  The original
  message has been attached to this so you can view it or label
  similar future email.  If you have any questions, see
  the administrator of that system for details.
  Content preview: From: Johannes Thumshirn <johannes.thumshirn@wdc.com> Check
- if adding pages to resync bio fails and if bail out. As the comment above
- suggests this cannot happen, WARN if it actually happens. 
+ if adding pages to clone bio fails and if it does retry with reclaim. This
+ mirrors the behaviour of page allocation in crypt_alloc_buffer(). 
  Content analysis details:   (0.5 points, 6.0 required)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.128.51 listed in wl.mailspike.net]
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.128.51 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [morbidrsa[at]gmail.com]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
  mail domains are different
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [morbidrsa[at]gmail.com]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.221.47 listed in list.dnswl.org]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.221.47 listed in wl.mailspike.net]
+ -0.0 T_SCC_BODY_TEXT_LINE   No description available.
  0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
  EnvelopeFrom freemail headers are different
-X-Headers-End: 1ppRBB-00DRPd-47
-Subject: [Jfs-discussion] [PATCH v4 17/22] md: raid1: check if adding pages
- to resync bio fails
+X-Headers-End: 1ppRBC-0002ep-Ek
+Subject: [Jfs-discussion] [PATCH v4 18/22] dm-crypt: check if adding pages
+ to clone bio fails
 X-BeenThere: jfs-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -128,81 +129,38 @@ Errors-To: jfs-discussion-bounces@lists.sourceforge.net
 
 From: Johannes Thumshirn <johannes.thumshirn@wdc.com>
 
-Check if adding pages to resync bio fails and if bail out.
-
-As the comment above suggests this cannot happen, WARN if it actually
-happens.
+Check if adding pages to clone bio fails and if it does retry with
+reclaim. This mirrors the behaviour of page allocation in
+crypt_alloc_buffer().
 
 This way we can mark bio_add_pages as __must_check.
 
 Signed-off-by: Johannes Thumshirn <johannes.thumshirn@wdc.com>
 Reviewed-by: Damien Le Moal <damien.lemoal@opensource.wdc.com>
-Acked-by: Song Liu <song@kernel.org>
 ---
- drivers/md/raid1-10.c | 11 ++++++-----
- drivers/md/raid10.c   | 20 ++++++++++----------
- 2 files changed, 16 insertions(+), 15 deletions(-)
+ drivers/md/dm-crypt.c | 9 ++++++++-
+ 1 file changed, 8 insertions(+), 1 deletion(-)
 
-diff --git a/drivers/md/raid1-10.c b/drivers/md/raid1-10.c
-index e61f6cad4e08..cd349e69ed77 100644
---- a/drivers/md/raid1-10.c
-+++ b/drivers/md/raid1-10.c
-@@ -101,11 +101,12 @@ static void md_bio_reset_resync_pages(struct bio *bio, struct resync_pages *rp,
- 		struct page *page = resync_fetch_page(rp, idx);
- 		int len = min_t(int, size, PAGE_SIZE);
+diff --git a/drivers/md/dm-crypt.c b/drivers/md/dm-crypt.c
+index 3ba53dc3cc3f..19f7e087c6df 100644
+--- a/drivers/md/dm-crypt.c
++++ b/drivers/md/dm-crypt.c
+@@ -1693,7 +1693,14 @@ static struct bio *crypt_alloc_buffer(struct dm_crypt_io *io, unsigned int size)
  
--		/*
--		 * won't fail because the vec table is big
--		 * enough to hold all these pages
--		 */
--		bio_add_page(bio, page, len, 0);
-+		if (WARN_ON(!bio_add_page(bio, page, len, 0))) {
-+			bio->bi_status = BLK_STS_RESOURCE;
-+			bio_endio(bio);
-+			return;
-+		}
+ 		len = (remaining_size > PAGE_SIZE) ? PAGE_SIZE : remaining_size;
+ 
+-		bio_add_page(clone, page, len, 0);
++		if (!bio_add_page(clone, page, len, 0)) {
++			mempool_free(page, &cc->page_pool);
++			crypt_free_buffer_pages(cc, clone);
++			bio_put(clone);
++			gfp_mask |= __GFP_DIRECT_RECLAIM;
++			goto retry;
 +
- 		size -= len;
- 	} while (idx++ < RESYNC_PAGES && size > 0);
- }
-diff --git a/drivers/md/raid10.c b/drivers/md/raid10.c
-index 6c66357f92f5..59e52cf01569 100644
---- a/drivers/md/raid10.c
-+++ b/drivers/md/raid10.c
-@@ -3804,11 +3804,11 @@ static sector_t raid10_sync_request(struct mddev *mddev, sector_t sector_nr,
- 		for (bio= biolist ; bio ; bio=bio->bi_next) {
- 			struct resync_pages *rp = get_resync_pages(bio);
- 			page = resync_fetch_page(rp, page_idx);
--			/*
--			 * won't fail because the vec table is big enough
--			 * to hold all these pages
--			 */
--			bio_add_page(bio, page, len, 0);
-+			if (WARN_ON(!bio_add_page(bio, page, len, 0))) {
-+				bio->bi_status = BLK_STS_RESOURCE;
-+				bio_endio(bio);
-+				goto giveup;
-+			}
- 		}
- 		nr_sectors += len>>9;
- 		sector_nr += len>>9;
-@@ -4985,11 +4985,11 @@ static sector_t reshape_request(struct mddev *mddev, sector_t sector_nr,
- 		if (len > PAGE_SIZE)
- 			len = PAGE_SIZE;
- 		for (bio = blist; bio ; bio = bio->bi_next) {
--			/*
--			 * won't fail because the vec table is big enough
--			 * to hold all these pages
--			 */
--			bio_add_page(bio, page, len, 0);
-+			if (WARN_ON(!bio_add_page(bio, page, len, 0))) {
-+				bio->bi_status = BLK_STS_RESOURCE;
-+				bio_endio(bio);
-+				return sectors_done;
-+			}
- 		}
- 		sector_nr += len >> 9;
- 		nr_sectors += len >> 9;
++		}
+ 
+ 		remaining_size -= len;
+ 	}
 -- 
 2.39.2
 
