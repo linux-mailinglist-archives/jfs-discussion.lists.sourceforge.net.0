@@ -2,119 +2,100 @@ Return-Path: <jfs-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+jfs-discussion@lfdr.de
 Delivered-To: lists+jfs-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id C49DD6EAB65
-	for <lists+jfs-discussion@lfdr.de>; Fri, 21 Apr 2023 15:20:29 +0200 (CEST)
-Received: from [127.0.0.1] (helo=sfs-ml-1.v29.lw.sourceforge.com)
-	by sfs-ml-1.v29.lw.sourceforge.com with esmtp (Exim 4.95)
+	by mail.lfdr.de (Postfix) with ESMTPS id 48E8E6F0668
+	for <lists+jfs-discussion@lfdr.de>; Thu, 27 Apr 2023 15:11:43 +0200 (CEST)
+Received: from [127.0.0.1] (helo=sfs-ml-2.v29.lw.sourceforge.com)
+	by sfs-ml-2.v29.lw.sourceforge.com with esmtp (Exim 4.95)
 	(envelope-from <jfs-discussion-bounces@lists.sourceforge.net>)
-	id 1ppqgA-0007wL-MO;
-	Fri, 21 Apr 2023 13:19:57 +0000
+	id 1ps1Ov-0006y0-Ti;
+	Thu, 27 Apr 2023 13:11:10 +0000
 Received: from [172.30.20.202] (helo=mx.sourceforge.net)
- by sfs-ml-3.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
- TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (Exim 4.95)
- (envelope-from <senozhatsky@chromium.org>) id 1ppl7L-0008Iu-B4
- for jfs-discussion@lists.sourceforge.net;
- Fri, 21 Apr 2023 07:23:38 +0000
+ by sfs-ml-2.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
+ TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (Exim 4.95) (envelope-from
+ <3SVBKZAkbADwqwxiYjjcpYnngb.emmejcsqcpamlrclr.amk@M3KW2WVRGUFZ5GODRSRYTGD7.apphosting.bounces.google.com>)
+ id 1pryzr-0004Gt-3y for jfs-discussion@lists.sourceforge.net;
+ Thu, 27 Apr 2023 10:37:07 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=sourceforge.net; s=x; h=In-Reply-To:Content-Type:MIME-Version:References:
- Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:Content-Transfer-Encoding:
- Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
- Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
+ d=sourceforge.net; s=x; h=Content-Type:To:From:Subject:Message-ID:Date:
+ MIME-Version:Sender:Reply-To:Cc:Content-Transfer-Encoding:Content-ID:
+ Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+ :Resent-Message-ID:In-Reply-To:References:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=iCQQOrDHvv7muofgTvhggno9gmpvYe5WVwBD+zXre78=; b=kirAUZewD1avdhxEoen48ldOoE
- YpXkt1Sa2lKNP+8Z0YparAY5hyXqPjfEPCfbiKoaiGXixYBHfNERVA1wfdoWoYC1kncm4V8DQ0Vyb
- LsnkvABr1nX3OEk//ohnHMN9qvwQvLZn/J17ygEvcRnrAHG7AkvRIK+blJFYAWCelUg4=;
+ bh=RnKvJRGuTj19/qeFfCObJ1mKSwbZtyjNqHI5nsZidCI=; b=WRF8riVQmrWKq9OT+YB0+84Phw
+ ps+1U5mmeo2hK2Ce0aed8mL6WswjIwjWp9uqg9vnr/3KfUbJkxNobgybQ9i1J5yXp3A+O2evXWJGf
+ b1RmyuZQ7kyklh/oRxKFeZSUWoLqCuBIo7covNP6v//5hLqtgmWzkOxzh9qo8PlKHW3I=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
- h=In-Reply-To:Content-Type:MIME-Version:References:Message-ID:Subject:Cc:To
- :From:Date:Sender:Reply-To:Content-Transfer-Encoding:Content-ID:
- Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
- :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
- List-Post:List-Owner:List-Archive;
- bh=iCQQOrDHvv7muofgTvhggno9gmpvYe5WVwBD+zXre78=; b=G+R8t13fqdQEkLHVvzQNDhYjAo
- pV0N18OF9yc+W51B/3daP5IFDR0KmKdJuYjtV/VKqFKj+Pzph+lBENmXMV41CiMkbXqsz3rBMrqo2
- uXugnaN58FVpNfs0WdKTLLzT82di5ZPlcx2i7lZ4ibfppAw+hnVQrOpbQ9jWBory4L3I=;
-Received: from mail-ua1-f48.google.com ([209.85.222.48])
+ h=Content-Type:To:From:Subject:Message-ID:Date:MIME-Version:Sender:Reply-To
+ :Cc:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+ Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+ References:List-Id:List-Help:List-Unsubscribe:List-Subscribe:List-Post:
+ List-Owner:List-Archive; bh=RnKvJRGuTj19/qeFfCObJ1mKSwbZtyjNqHI5nsZidCI=; b=F
+ TIidK2blKHpocFv8TCPanZutrw7jhdJUNVYFrgD3deFXT91VYN3l5qHm2EQbN9U6e6d3hQGaUAwTr
+ 1weMtBgtuGqcP4q5nUpZc8oWgosczNdnpo5ngzenEOM1UgPZLLFbR1rDrYa75kbrKPAIhJldwaCuL
+ UmB7adpHJ0xiKB/M=;
+Received: from mail-il1-f197.google.com ([209.85.166.197])
  by sfi-mx-1.v28.lw.sourceforge.com with esmtps
  (TLS1.2:ECDHE-RSA-AES128-GCM-SHA256:128) (Exim 4.95)
- id 1ppl7H-00EVoe-36 for jfs-discussion@lists.sourceforge.net;
- Fri, 21 Apr 2023 07:23:38 +0000
-Received: by mail-ua1-f48.google.com with SMTP id
- a1e0cc1a2514c-77858d8dcb5so5571982241.1
+ id 1pryzn-0032k1-BS for jfs-discussion@lists.sourceforge.net;
+ Thu, 27 Apr 2023 10:37:07 +0000
+Received: by mail-il1-f197.google.com with SMTP id
+ e9e14a558f8ab-32b58d571a8so59116495ab.0
  for <jfs-discussion@lists.sourceforge.net>;
- Fri, 21 Apr 2023 00:23:35 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=chromium.org; s=google; t=1682061809; x=1684653809;
- h=in-reply-to:content-disposition:mime-version:references:message-id
- :subject:cc:to:from:date:from:to:cc:subject:date:message-id:reply-to;
- bh=iCQQOrDHvv7muofgTvhggno9gmpvYe5WVwBD+zXre78=;
- b=dGjSmUI/48jgVLdk2SJU9DZ4zOveEUnOYlKfTS0NXfCPrYm3y6jLIPidJ6i9RbbHx1
- yUJk+J4bPuefTTLcj0hiaEQbrzAJZUOzAJ9yXkwui6dEI2KD2i6A4y9YG5Ujs+iM2uXL
- /ZguhzsD5ZVdd4exocR5yfkxR6qfi4pcWXZPc=
+ Thu, 27 Apr 2023 03:37:03 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20221208; t=1682061809; x=1684653809;
- h=in-reply-to:content-disposition:mime-version:references:message-id
- :subject:cc:to:from:date:x-gm-message-state:from:to:cc:subject:date
- :message-id:reply-to;
- bh=iCQQOrDHvv7muofgTvhggno9gmpvYe5WVwBD+zXre78=;
- b=EbDD9YCvkvaSfPLVa6SGvDs50aS2IXbGMGBenFHJdK7SPZrLeGZmVSIfvJm1PccKZ/
- t6QKT+cDfPBfPmHsdqhqPPN0n7hNKsSb+ZxppsmVAfJaY+RJJ4JhzjqDloW/BjXGu2zy
- 7HR37hh7KztzxbmKhgY/DsiJBHLZ0oG6w9EKz+kyeMZovSX0nZwQpNv2JqTtYM22RPMu
- wB6ReMfzfnAvOsuPolQPVW/fJFp/LoQ/nb/7Qry29ZGO7GPFy7LrmFOesRVOQJMvPsm7
- NMSKFAogGCwbKnByMa/w8J/g21dDzaMf3cIiVk3g/lHc7xNo24IRMik8D2bCJcHR+UjQ
- PZEQ==
-X-Gm-Message-State: AAQBX9cYt8OaMRyQt3s0nlY0/bepor8kVoVfe6ReNvbBMq1p/dpyNbA7
- evOcDqrG+EyLCslgal+NIAzGy6yd0gGcc3Svfms=
-X-Google-Smtp-Source: AKy350ZEEP/PrU7kYgyyZkKivdaMPHUVf5WGz+Wiu1WQ8mlkUVfjfkCNB7ZnxyH4DOCp4JsT1PbWNg==
-X-Received: by 2002:aa7:8554:0:b0:63d:40bb:a88b with SMTP id
- y20-20020aa78554000000b0063d40bba88bmr8194787pfn.14.1682060275718; 
- Thu, 20 Apr 2023 23:57:55 -0700 (PDT)
-Received: from google.com (KD124209188001.ppp-bb.dion.ne.jp. [124.209.188.1])
- by smtp.gmail.com with ESMTPSA id
- 136-20020a63008e000000b0051806da5cd6sm2038374pga.60.2023.04.20.23.57.49
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 20 Apr 2023 23:57:54 -0700 (PDT)
-Date: Fri, 21 Apr 2023 15:57:47 +0900
-From: Sergey Senozhatsky <senozhatsky@chromium.org>
-To: Johannes Thumshirn <jth@kernel.org>
-Message-ID: <20230421065747.GB1496740@google.com>
-References: <20230420100501.32981-1-jth@kernel.org>
- <20230420100501.32981-14-jth@kernel.org>
+ d=1e100.net; s=20221208; t=1682591817; x=1685183817;
+ h=to:from:subject:message-id:date:mime-version:x-gm-message-state
+ :from:to:cc:subject:date:message-id:reply-to;
+ bh=RnKvJRGuTj19/qeFfCObJ1mKSwbZtyjNqHI5nsZidCI=;
+ b=kgq6gZ2mwjFivX/AOpY1xDDj5/dW3VzPdOqb7jQA+aSM6WM/1ypawA/15TvLxGB1L/
+ lDl9cgH0vQHDSYnB3cUbLW+dlfFDwLLndWY+ljwrVLfa8SwmZEzUUOeEwIEI2wSVdRlK
+ y3OzJCVfFtdi0SuOd6JHiRHCT2F4NOcDK8KO1JUFJY09wXPM1zGlpC92Uy8OcADEJr37
+ szLo1enTtKK221Oy2ShTb5/XwBhvBMh20+OpNqQRtXNRXGXnCbhnkCL51lGTLve/ocYl
+ Q50GQ8Iwrib/hps1liGXmoTITeV58fO995X+gXB61fukyuMVxLfhucSUULBKIe8GNyv9
+ D1Yg==
+X-Gm-Message-State: AC+VfDxMYJaH9jknyzXJmgqhH44c8ZAEwq0X07DOodOzqGM1hWlKl+LE
+ qBiHhBwFD2PyQq4JCFXsnzahuln2k+S6SGPO/SfVZhp4zd83txc=
+X-Google-Smtp-Source: ACHHUZ6SwoeQT/XLmwNrFtRoV/YVN3rzG4Cw/+wZIzYcGxb+fsStPZfJnPBiq+lGfhD2+Ahvdv2JuYGT2BXSEPie7N6Dbd3PO8G1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20230420100501.32981-14-jth@kernel.org>
-X-Spam-Score: -0.2 (/)
+X-Received: by 2002:a05:6e02:548:b0:32a:9e86:242f with SMTP id
+ i8-20020a056e02054800b0032a9e86242fmr996137ils.6.1682591817801; Thu, 27 Apr
+ 2023 03:36:57 -0700 (PDT)
+Date: Thu, 27 Apr 2023 03:36:57 -0700
+X-Google-Appengine-App-Id: s~syzkaller
+X-Google-Appengine-App-Id-Alias: syzkaller
+Message-ID: <0000000000009a2a1b05fa4eef8f@google.com>
+From: syzbot <syzbot+listfa7b6ec26861d7b6f193@syzkaller.appspotmail.com>
+To: jfs-discussion@lists.sourceforge.net, linux-fsdevel@vger.kernel.org, 
+ linux-kernel@vger.kernel.org, shaggy@kernel.org, 
+ syzkaller-bugs@googlegroups.com
+X-Spam-Score: 0.6 (/)
 X-Spam-Report: Spam detection software,
- running on the system "util-spamd-2.v13.lw.sourceforge.com", 
+ running on the system "util-spamd-1.v13.lw.sourceforge.com", 
  has NOT identified this incoming email as spam.  The original
  message has been attached to this so you can view it or label
  similar future email.  If you have any questions, see
  the administrator of that system for details.
- Content preview:  + Minchan On (23/04/20 12:04), Johannes Thumshirn wrote: >
- > From: Johannes Thumshirn <johannes.thumshirn@wdc.com> > > The zram writeback
- code uses bio_add_page() to add a page to a newly > created bio. bio_add
- [...] Content analysis details:   (-0.2 points, 6.0 required)
+ Content preview:  Hello jfs maintainers/developers, This is a 31-day syzbot
+ report for the jfs subsystem. All related reports/information can be found
+ at: https://syzkaller.appspot.com/upstream/s/jfs During the period, 1 new
+ issues were detected and 0 were fixed. In total, 63 issues are still open
+ and 9 have been fixed so far. 
+ Content analysis details:   (0.6 points, 6.0 required)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.222.48 listed in list.dnswl.org]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.222.48 listed in wl.mailspike.net]
+ 0.3 FROM_LOCAL_HEX         From: localpart has long hexadecimal sequence
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.166.197 listed in wl.mailspike.net]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.166.197 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.0 T_SCC_BODY_TEXT_LINE   No description available.
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - High trust sender
-X-Headers-End: 1ppl7H-00EVoe-36
-X-Mailman-Approved-At: Fri, 21 Apr 2023 13:19:56 +0000
-Subject: Re: [Jfs-discussion] [PATCH v4 13/22] zram: use __bio_add_page for
- adding single page to bio
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+X-Headers-End: 1pryzn-0032k1-BS
+X-Mailman-Approved-At: Thu, 27 Apr 2023 13:11:03 +0000
+Subject: [Jfs-discussion] [syzbot] Monthly jfs report (Apr 2023)
 X-BeenThere: jfs-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -126,38 +107,55 @@ List-Post: <mailto:jfs-discussion@lists.sourceforge.net>
 List-Help: <mailto:jfs-discussion-request@lists.sourceforge.net?subject=help>
 List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/jfs-discussion>, 
  <mailto:jfs-discussion-request@lists.sourceforge.net?subject=subscribe>
-Cc: shaggy@kernel.org, jfs-discussion@lists.sourceforge.net, linux-mm@kvack.org,
- dm-devel@redhat.com, hch@lst.de, agruenba@redhat.com,
- Damien Le Moal <damien.lemoal@opensource.wdc.com>, willy@infradead.org,
- cluster-devel@redhat.com, kch@nvidia.com, snitzer@kernel.org,
- ming.lei@redhat.com, linux-block@vger.kernel.org, rpeterso@redhat.com,
- hare@suse.de, dsterba@suse.com, axboe@kernel.dk, linux-raid@vger.kernel.org,
- damien.lemoal@wdc.com, song@kernel.org, johannes.thumshirn@wdc.com,
- Minchan Kim <minchan@kernel.org>, linux-fsdevel@vger.kernel.org,
- linux-btrfs@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Errors-To: jfs-discussion-bounces@lists.sourceforge.net
 
-+ Minchan
+Hello jfs maintainers/developers,
 
-On (23/04/20 12:04), Johannes Thumshirn wrote:
-> 
-> From: Johannes Thumshirn <johannes.thumshirn@wdc.com>
-> 
-> The zram writeback code uses bio_add_page() to add a page to a newly
-> created bio. bio_add_page() can fail, but the return value is never
-> checked.
-> 
-> Use __bio_add_page() as adding a single page to a newly created bio is
-> guaranteed to succeed.
-> 
-> This brings us a step closer to marking bio_add_page() as __must_check.
-> 
-> Signed-off-by: Johannes Thumshirn <johannes.thumshirn@wdc.com>
-> Reviewed-by: Damien Le Moal <damien.lemoal@opensource.wdc.com>
+This is a 31-day syzbot report for the jfs subsystem.
+All related reports/information can be found at:
+https://syzkaller.appspot.com/upstream/s/jfs
 
-Reviewed-by: Sergey Senozhatsky <senozhatsky@chromium.org>
+During the period, 1 new issues were detected and 0 were fixed.
+In total, 63 issues are still open and 9 have been fixed so far.
+
+Some of the still happening issues:
+
+Ref  Crashes Repro Title
+<1>  4032    Yes   UBSAN: shift-out-of-bounds in extAlloc
+                   https://syzkaller.appspot.com/bug?extid=5f088f29593e6b4c8db8
+<2>  940     Yes   KASAN: slab-out-of-bounds Read in hex_dump_to_buffer
+                   https://syzkaller.appspot.com/bug?extid=489783e0c22fbb27d8e9
+<3>  871     Yes   UBSAN: array-index-out-of-bounds in xtInsert
+                   https://syzkaller.appspot.com/bug?extid=55a7541cfd25df68109e
+<4>  594     Yes   general protection fault in lmLogSync (2)
+                   https://syzkaller.appspot.com/bug?extid=e14b1036481911ae4d77
+<5>  455     Yes   kernel BUG in jfs_evict_inode
+                   https://syzkaller.appspot.com/bug?extid=9c0c58ea2e4887ab502e
+<6>  306     Yes   general protection fault in write_special_inodes
+                   https://syzkaller.appspot.com/bug?extid=c732e285f8fc38d15916
+<7>  229     Yes   kernel BUG in txUnlock
+                   https://syzkaller.appspot.com/bug?extid=a63afa301d1258d09267
+<8>  221     Yes   UBSAN: array-index-out-of-bounds in dbAllocBits
+                   https://syzkaller.appspot.com/bug?extid=ae2f5a27a07ae44b0f17
+<9>  202     Yes   UBSAN: array-index-out-of-bounds in txCommit
+                   https://syzkaller.appspot.com/bug?extid=0558d19c373e44da3c18
+<10> 136     Yes   general protection fault in jfs_flush_journal
+                   https://syzkaller.appspot.com/bug?extid=194bfe3476f96782c0b6
+
+---
+This report is generated by a bot. It may contain errors.
+See https://goo.gl/tpsmEJ for more information about syzbot.
+syzbot engineers can be reached at syzkaller@googlegroups.com.
+
+To disable reminders for individual bugs, reply with the following command:
+#syz set <Ref> no-reminders
+
+To change bug's subsystems, reply with:
+#syz set <Ref> subsystems: new-subsystem
+
+You may send multiple commands in a single email message.
 
 
 _______________________________________________
