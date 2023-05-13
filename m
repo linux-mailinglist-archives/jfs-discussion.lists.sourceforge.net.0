@@ -2,120 +2,103 @@ Return-Path: <jfs-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+jfs-discussion@lfdr.de
 Delivered-To: lists+jfs-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id 64C4A6FB32C
-	for <lists+jfs-discussion@lfdr.de>; Mon,  8 May 2023 16:45:46 +0200 (CEST)
-Received: from [127.0.0.1] (helo=sfs-ml-1.v29.lw.sourceforge.com)
-	by sfs-ml-1.v29.lw.sourceforge.com with esmtp (Exim 4.95)
+	by mail.lfdr.de (Postfix) with ESMTPS id B6BE8702ED9
+	for <lists+jfs-discussion@lfdr.de>; Mon, 15 May 2023 15:55:06 +0200 (CEST)
+Received: from [127.0.0.1] (helo=sfs-ml-3.v29.lw.sourceforge.com)
+	by sfs-ml-3.v29.lw.sourceforge.com with esmtp (Exim 4.95)
 	(envelope-from <jfs-discussion-bounces@lists.sourceforge.net>)
-	id 1pw279-0002SD-Tm;
-	Mon, 08 May 2023 14:45:24 +0000
+	id 1pyYev-0000SA-Lr;
+	Mon, 15 May 2023 13:54:42 +0000
 Received: from [172.30.20.202] (helo=mx.sourceforge.net)
- by sfs-ml-2.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
- TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (Exim 4.95)
- (envelope-from <anupnewsmail@gmail.com>) id 1pvWxQ-0006fJ-DB
- for jfs-discussion@lists.sourceforge.net;
- Sun, 07 May 2023 05:29:16 +0000
+ by sfs-ml-4.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
+ TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (Exim 4.95) (envelope-from
+ <3061fZAkbANYKQRC2DD6J2HHA5.8GG8D6MK6J4GFL6FL.4GE@M3KW2WVRGUFZ5GODRSRYTGD7.apphosting.bounces.google.com>)
+ id 1pxrFn-000609-DL for jfs-discussion@lists.sourceforge.net;
+ Sat, 13 May 2023 15:33:51 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=sourceforge.net; s=x; h=Content-Type:To:Subject:Message-ID:Date:From:
- In-Reply-To:References:MIME-Version:Sender:Reply-To:Cc:
- Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
- Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
- List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=r9VsomI8HYFx3oLJzVYzc8WqDFNSBbJBqqUVE5TiUyc=; b=ivl4kqGAi30UWz+MKVzNuCWdqa
- JXcpXRv8UA10FPb07IFkIuXiAJLGkcgVA36k9TCxdaMtaPJy86QfhfL3WzTH0W5vQqJmeOtSVdCAo
- KF8azDDTNb1xtfr7R2GofwYb/DfLKBHJe+/uP8mfZMuMJcL5H5y+gd7eef7b4zyTwGyI=;
+ d=sourceforge.net; s=x; h=Content-Type:To:From:Subject:Message-ID:In-Reply-To
+ :Date:MIME-Version:Sender:Reply-To:Cc:Content-Transfer-Encoding:Content-ID:
+ Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+ :Resent-Message-ID:References:List-Id:List-Help:List-Unsubscribe:
+ List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=aAgvi+hKTLEvn6404KesPduiFToAEOmz//Bkp7rH+nU=; b=Eene9u1bNzcVy+lIJDnzi6/QyX
+ bPtejjXWNTjdqjJMeGEb8vX0v33gVSBw2289WvJvox2ObfccuWB0skDbEopPXC9G9/oWULNUgMKxA
+ ETIlR/6FvnfEVv5lNFzcXs2AWUtD4LpkqPkBho4aiQPiM/oHuJwqLM7TbljWHNLotK/c=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
- h=Content-Type:To:Subject:Message-ID:Date:From:In-Reply-To:References:
- MIME-Version:Sender:Reply-To:Cc:Content-Transfer-Encoding:Content-ID:
- Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
- :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
- List-Post:List-Owner:List-Archive;
- bh=r9VsomI8HYFx3oLJzVYzc8WqDFNSBbJBqqUVE5TiUyc=; b=WWqLKKInfrr9RP9ddwD3/FKgv2
- tJsrODPOaKWXiHFTAzJka2GJ1u8EpJfBO4brpiUJomlozcf1LkNriQHSeGxPzgbeloC6Cmh4aZ74J
- noKyjjK+SXY6xn0kq6xjqCG2YzSZviKSvyA+wq5In+TzNsPe95DFXq1vWQ5tp6E3JwxM=;
-Received: from mail-yb1-f180.google.com ([209.85.219.180])
- by sfi-mx-2.v28.lw.sourceforge.com with esmtps
+ h=Content-Type:To:From:Subject:Message-ID:In-Reply-To:Date:MIME-Version:
+ Sender:Reply-To:Cc:Content-Transfer-Encoding:Content-ID:Content-Description:
+ Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+ References:List-Id:List-Help:List-Unsubscribe:List-Subscribe:List-Post:
+ List-Owner:List-Archive; bh=aAgvi+hKTLEvn6404KesPduiFToAEOmz//Bkp7rH+nU=; b=R
+ 6sHb0/ceVZ1X5NhSWyNM22Ks1ddAru8Fu7QKBGZqcqC2i9m0cM37e3lPTwRYwNihn445Kqndv0UFI
+ jtnmFdrevVGKnKNbXaNWPA1ItHxrAsKmzDOQQxMmIvurEg5f9MrM86khQVCwxHL/T0ic5vLTyeMxs
+ Y0COPkBtwP9jzbOo=;
+Received: from mail-il1-f199.google.com ([209.85.166.199])
+ by sfi-mx-1.v28.lw.sourceforge.com with esmtps
  (TLS1.2:ECDHE-RSA-AES128-GCM-SHA256:128) (Exim 4.95)
- id 1pvWxM-0007zZ-8A for jfs-discussion@lists.sourceforge.net;
- Sun, 07 May 2023 05:29:16 +0000
-Received: by mail-yb1-f180.google.com with SMTP id
- 3f1490d57ef6-b9a6ab9ede3so4444665276.2
+ id 1pxrFk-006GjH-6X for jfs-discussion@lists.sourceforge.net;
+ Sat, 13 May 2023 15:33:51 +0000
+Received: by mail-il1-f199.google.com with SMTP id
+ e9e14a558f8ab-33456e0a12bso62180535ab.2
  for <jfs-discussion@lists.sourceforge.net>;
- Sat, 06 May 2023 22:29:12 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=gmail.com; s=20221208; t=1683437346; x=1686029346;
- h=to:subject:message-id:date:from:in-reply-to:references:mime-version
- :from:to:cc:subject:date:message-id:reply-to;
- bh=r9VsomI8HYFx3oLJzVYzc8WqDFNSBbJBqqUVE5TiUyc=;
- b=SEYRvbYQiuoyeXRSe+hrsCaWEaHYu22RwPMmWjeRVCfJE1T3cRSLGPC8/5MoRA7Obj
- Ly0qq9l5X9GgYB2+Q02KwgJ9N+eMUB7wUqF94bNYzB5VakaxTigarpjTG2wFGipmQXrc
- krFshhillfZMYYkYra9XQv6X9gUXuOxYhkK5fWYrtSjBCO/TTS58hjS1ErjwsZxxDQT3
- lkO3uJYSKuWkZiusRWBRdRc42S/hWJciTlTJrF/Z2xblnKEA1zJxd8JK2lXSUAbAZxpI
- dYcLwlUYaCKI6it0GtuRBhYSD0Zhyg0/5TDQdq1ru6h+JqQ3JdsTb8PVMiQ8IXee1/yg
- /S+w==
+ Sat, 13 May 2023 08:33:48 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20221208; t=1683437346; x=1686029346;
- h=to:subject:message-id:date:from:in-reply-to:references:mime-version
+ d=1e100.net; s=20221208; t=1683992019; x=1686584019;
+ h=to:from:subject:message-id:in-reply-to:date:mime-version
  :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
- bh=r9VsomI8HYFx3oLJzVYzc8WqDFNSBbJBqqUVE5TiUyc=;
- b=MNMjFas3kQVDeJgE0QXEC/rBvgMK8Mdx4yFndgZLjQaM9GFUSmKwlGq2TiO66ljLAj
- rXWJVtYjTQA2IltjTPrqqj4rxxb0BAFmeHuTW2nDI7hCBdNcYORnIL4u2e5hQ7uo551j
- Ux3omoDqdPl829Dg8yPTL4pLLRvazC2+kwmJ1HWZmfmvSZdDIjaTM5RzfkTHSmCi8qZW
- VgHW9Q/OVIbuExBxtVuOfvidDUy4BXIUGb+Pvv68l5+USXk32hStCQ7Sg2jWX4POYi9U
- BxDv29W2MJPImf63Ox1zIHUQyGnyBB3D0x7EF+lPrl0FAvrifRwA9MWTsbC18lvfBqWA
- bUmQ==
-X-Gm-Message-State: AC+VfDz7vaHhYyaab3Abp1R9iC/uOoHPZuCZ18b1lLpxtDAOE3TG8tof
- UjmFFstuPAwKZ1jTMSXpzP1w8NL12TkjIHIuuV4=
-X-Google-Smtp-Source: ACHHUZ6Uh7nvU3ymUNpiksbcolDmJ1sTrE3djrFEWabZtJrevhHQR3v5khk3x2+Tu8Y9w7+Wkp5kCrjWzCsrdBg93eQ=
-X-Received: by 2002:a25:2985:0:b0:b95:9e75:ff0d with SMTP id
- p127-20020a252985000000b00b959e75ff0dmr6826914ybp.36.1683437346391; Sat, 06
- May 2023 22:29:06 -0700 (PDT)
+ bh=aAgvi+hKTLEvn6404KesPduiFToAEOmz//Bkp7rH+nU=;
+ b=A4C3fXn4uV+GghJjV4WEV5HVe5iYFvX67dJ0mCFFfY4+jGjknRMDFhFxpm+L4viNq+
+ /2a1r4VAj4R5i03WBHz/SCT9yM8WSXPkYn433YNvK0Lx4Z7ZwHapUK8Y7toA+cIh3fau
+ wxYK5Nnl+oYzKLdSPb0lHsjMVUjG7bIt41BOec4aHHD9Ma+cyG0RsUi716S2jAOcLMDk
+ 8W6YTSL6J34meRRhSEyBUCIdt4gqskDwMQnSx+5NsE9OI1uUSiR+eF39Skqd3/qHIuaI
+ tM+9DuCZJuP1urY31rbJ3zEwKJ/r8JRPOAO3xD3dJo4/g/kHwo3QsB1PfslmKj2kPhTI
+ j7Vg==
+X-Gm-Message-State: AC+VfDwCO0g+34zK8vgpUEQegP+xWKqUMGGbZssuz1ofbZDvDiDIIGOq
+ aouFlzeoArc/1FtieDmVRyVJZqiYr0Hhmrn7qK7E8U9JO1OVTek=
+X-Google-Smtp-Source: ACHHUZ7WytFWQeobYVerIwdatJX6lGAhpMCO3F93mqFX77Q584A1/EoJwZsBLR6NU652JTvQTVBGlBEyM2Q/pNhB7E0NLqW9KtKB
 MIME-Version: 1.0
-References: <ZDla2Nuyq2QLdo96@yoga>
-In-Reply-To: <ZDla2Nuyq2QLdo96@yoga>
-From: Anup Sharma <anupnewsmail@gmail.com>
-Date: Sun, 7 May 2023 10:58:53 +0530
-Message-ID: <CAJPAYX=D6aTGOPsOzep2Eq6FaocqDUwGBTzC-c_6n5w8H_AvBA@mail.gmail.com>
-To: shaggy@kernel.org, r33s3n6@gmail.com, mudongliangabcd@gmail.com, 
- liushixin2@huawei.com, wuhoipok@gmail.com, 
- jfs-discussion@lists.sourceforge.net, 
- linux-kernel-mentees@lists.linuxfoundation.org, linux-kernel@vger.kernel.org, 
- skhan@linuxfoundation.org
-X-Spam-Score: -0.2 (/)
+X-Received: by 2002:a92:b106:0:b0:335:ba2a:c3d with SMTP id
+ t6-20020a92b106000000b00335ba2a0c3dmr6483049ilh.5.1683992019328; Sat, 13 May
+ 2023 08:33:39 -0700 (PDT)
+Date: Sat, 13 May 2023 08:33:39 -0700
+In-Reply-To: <00000000000013dee605f4fedf8b@google.com>
+X-Google-Appengine-App-Id: s~syzkaller
+X-Google-Appengine-App-Id-Alias: syzkaller
+Message-ID: <0000000000001de64005fb94f2f1@google.com>
+From: syzbot <syzbot+f1faa20eec55e0c8644c@syzkaller.appspotmail.com>
+To: jfs-discussion@lists.sourceforge.net, linux-fsdevel@vger.kernel.org, 
+ linux-kernel@vger.kernel.org, mirimmad17@gmail.com, mirimmad@outlook.com, 
+ shaggy@kernel.org, skhan@linuxfoundation.org, syzkaller-bugs@googlegroups.com
+X-Spam-Score: 3.0 (+++)
 X-Spam-Report: Spam detection software,
  running on the system "util-spamd-2.v13.lw.sourceforge.com", 
  has NOT identified this incoming email as spam.  The original
  message has been attached to this so you can view it or label
  similar future email.  If you have any questions, see
  the administrator of that system for details.
- Content preview:  On Fri, 14 Apr 2023 at 19:23, anupsharma wrote: > Syzkaller
- reported the following issue: > option from the mount to silence this warning.
- > ======================================================= > find_entry called
- with index = 0 > read_mapping_p [...] 
- Content analysis details:   (-0.2 points, 6.0 required)
+ Content preview:  syzbot has found a reproducer for the following issue on:
+ HEAD commit: 14f8db1c0f9a Merge branch 'for-next/core' into for-kernelci git
+ tree: git://git.kernel.org/pub/scm/linux/kernel/git/arm64/linux.git
+ for-kernelci console output: https://syzkaller.appspot. [...] 
+ Content analysis details:   (3.0 points, 6.0 required)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ 0.3 FROM_LOCAL_HEX         From: localpart has long hexadecimal sequence
+ 2.5 SORTED_RECIPS          Recipient list is sorted by address
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.219.180 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [anupnewsmail[at]gmail.com]
+ no trust [209.85.166.199 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.219.180 listed in wl.mailspike.net]
- 0.0 HTML_MESSAGE           BODY: HTML included in message
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid -0.0 T_SCC_BODY_TEXT_LINE   No description available.
-X-Headers-End: 1pvWxM-0007zZ-8A
-X-Mailman-Approved-At: Mon, 08 May 2023 14:45:24 +0000
-Subject: Re: [Jfs-discussion] [PATCH] fs: jfs: fixed UBSAN:
- shift-out-of-bounds in dbFree
+ [209.85.166.199 listed in wl.mailspike.net]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ -0.0 T_SCC_BODY_TEXT_LINE   No description available.
+X-Headers-End: 1pxrFk-006GjH-6X
+X-Mailman-Approved-At: Mon, 15 May 2023 13:54:41 +0000
+Subject: Re: [Jfs-discussion] [syzbot] [jfs?] KASAN: null-ptr-deref Read in
+ txBegin
 X-BeenThere: jfs-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -127,258 +110,105 @@ List-Post: <mailto:jfs-discussion@lists.sourceforge.net>
 List-Help: <mailto:jfs-discussion-request@lists.sourceforge.net?subject=help>
 List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/jfs-discussion>, 
  <mailto:jfs-discussion-request@lists.sourceforge.net?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============0413602589361568766=="
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Errors-To: jfs-discussion-bounces@lists.sourceforge.net
 
---===============0413602589361568766==
-Content-Type: multipart/alternative; boundary="000000000000088a8805fb13cd68"
+syzbot has found a reproducer for the following issue on:
 
---000000000000088a8805fb13cd68
-Content-Type: text/plain; charset="UTF-8"
+HEAD commit:    14f8db1c0f9a Merge branch 'for-next/core' into for-kernelci
+git tree:       git://git.kernel.org/pub/scm/linux/kernel/git/arm64/linux.git for-kernelci
+console output: https://syzkaller.appspot.com/x/log.txt?x=12f5764e280000
+kernel config:  https://syzkaller.appspot.com/x/.config?x=a837a8ba7e88bb45
+dashboard link: https://syzkaller.appspot.com/bug?extid=f1faa20eec55e0c8644c
+compiler:       Debian clang version 15.0.7, GNU ld (GNU Binutils for Debian) 2.35.2
+userspace arch: arm64
+syz repro:      https://syzkaller.appspot.com/x/repro.syz?x=15b9e24e280000
+C reproducer:   https://syzkaller.appspot.com/x/repro.c?x=105d3e46280000
 
-On Fri, 14 Apr 2023 at 19:23, anupsharma <anupnewsmail@gmail.com> wrote:
+Downloadable assets:
+disk image: https://storage.googleapis.com/syzbot-assets/ad6ce516eed3/disk-14f8db1c.raw.xz
+vmlinux: https://storage.googleapis.com/syzbot-assets/1f38c2cc7667/vmlinux-14f8db1c.xz
+kernel image: https://storage.googleapis.com/syzbot-assets/d795115eee39/Image-14f8db1c.gz.xz
+mounted in repro: https://storage.googleapis.com/syzbot-assets/014681b264cc/mount_0.gz
 
-> Syzkaller reported the following issue:
->          option from the mount to silence this warning.
-> =======================================================
-> find_entry called with index = 0
-> read_mapping_page failed!
-> ERROR: (device loop0): txCommit:
-> ERROR: (device loop0): remounting filesystem as read-only
->
-> ================================================================================
-> UBSAN: shift-out-of-bounds in fs/jfs/jfs_dmap.c:381:12
-> shift exponent 134217736 is too large for 64-bit type 'long long'
-> CPU: 1 PID: 5068 Comm: syz-executor350 Not tainted
-> 6.3.0-rc2-syzkaller-00069-g0ddc84d2dd43 #0
-> Hardware name: Google Google Compute Engine/Google Compute Engine, BIOS
-> Google 03/02/2023
-> Call Trace:
->  <TASK>
->  __dump_stack lib/dump_stack.c:88 [inline]
->  dump_stack_lvl+0x1e7/0x2d0 lib/dump_stack.c:106
->  ubsan_epilogue lib/ubsan.c:217 [inline]
->  __ubsan_handle_shift_out_of_bounds+0x3c3/0x420 lib/ubsan.c:387
->  dbFree+0x46e/0x650 fs/jfs/jfs_dmap.c:381
->  txFreeMap+0x96a/0xd50 fs/jfs/jfs_txnmgr.c:2510
->  xtTruncate+0xe5c/0x3260 fs/jfs/jfs_xtree.c:2467
->  jfs_free_zero_link+0x46e/0x6e0 fs/jfs/namei.c:758
->  jfs_evict_inode+0x35f/0x440 fs/jfs/inode.c:153
->  evict+0x2a4/0x620 fs/inode.c:665
->  __dentry_kill+0x436/0x650 fs/dcache.c:607
->  shrink_dentry_list+0x39c/0x6a0 fs/dcache.c:1201
->  shrink_dcache_parent+0xcd/0x480
->  do_one_tree+0x23/0xe0 fs/dcache.c:1682
->  shrink_dcache_for_umount+0x7d/0x120 fs/dcache.c:1699
->  generic_shutdown_super+0x67/0x340 fs/super.c:472
->  kill_block_super+0x7e/0xe0 fs/super.c:1398
->  deactivate_locked_super+0xa4/0x110 fs/super.c:331
->  cleanup_mnt+0x426/0x4c0 fs/namespace.c:1177
->  task_work_run+0x24a/0x300 kernel/task_work.c:179
->  exit_task_work include/linux/task_work.h:38 [inline]
->  do_exit+0x68f/0x2290 kernel/exit.c:869
->  do_group_exit+0x206/0x2c0 kernel/exit.c:1019
->  __do_sys_exit_group kernel/exit.c:1030 [inline]
->  __se_sys_exit_group kernel/exit.c:1028 [inline]
->  __x64_sys_exit_group+0x3f/0x40 kernel/exit.c:1028
->  do_syscall_x64 arch/x86/entry/common.c:50 [inline]
->  do_syscall_64+0x41/0xc0 arch/x86/entry/common.c:80
->  entry_SYSCALL_64_after_hwframe+0x63/0xcd
-> RIP: 0033:0x7fa87e2289b9
-> Code: Unable to access opcode bytes at 0x7fa87e22898f.
-> RSP: 002b:00007fff4bfe3938 EFLAGS: 00000246 ORIG_RAX: 00000000000000e7
-> RAX: ffffffffffffffda RBX: 00007fa87e2a3330 RCX: 00007fa87e2289b9
-> RDX: 000000000000003c RSI: 00000000000000e7 RDI: 0000000000000001
-> RBP: 0000000000000001 R08: ffffffffffffffc0 R09: 00007fa87e29de40
-> R10: 00007fff4bfe3850 R11: 0000000000000246 R12: 00007fa87e2a3330
-> R13: 0000000000000001 R14: 0000000000000000 R15: 0000000000000001
->  </TASK>
->
-> ================================================================================
->
-> db_l2nbperpage which is used as a shift exponent to get the buffer
-> for the current dmap will be less than and equal to 64.
->
-> Tested via syzbot.
->
-> Reported-by: syzbot+d2cd27dcf8e04b232eb2@syzkaller.appspotmail.com
-> Link:
-> https://syzkaller.appspot.com/bug?id=2a70a453331db32ed491f5cbb07e81bf2d225715
->
-> Signed-off-by: Anup Sharma <anupnewsmail@gmail.com>
-> ---
->  fs/jfs/jfs_dmap.c | 5 ++++-
->  1 file changed, 4 insertions(+), 1 deletion(-)
->
-> diff --git a/fs/jfs/jfs_dmap.c b/fs/jfs/jfs_dmap.c
-> index a3eb1e826947..d2cf56dd8f91 100644
-> --- a/fs/jfs/jfs_dmap.c
-> +++ b/fs/jfs/jfs_dmap.c
-> @@ -184,7 +184,10 @@ int dbMount(struct inode *ipbmap)
->                 err = -EINVAL;
->                 goto err_release_metapage;
->         }
-> -
-> +       if (bmp->db_l2nbperpage >= 64) {
-> +               err = -EINVAL;
-> +               goto err_release_metapage;
-> +       }
->         bmp->db_maxlevel = le32_to_cpu(dbmp_le->dn_maxlevel);
->         bmp->db_maxag = le32_to_cpu(dbmp_le->dn_maxag);
->         bmp->db_agpref = le32_to_cpu(dbmp_le->dn_agpref);
-> --
-> 2.34.1
->
-> Hello All,
-Just wanted to follow up on this patch submitted earlier. May I please
-request
-a review and feedback on this patch.
-Thanks,
-Anup
+IMPORTANT: if you fix the issue, please add the following tag to the commit:
+Reported-by: syzbot+f1faa20eec55e0c8644c@syzkaller.appspotmail.com
 
---000000000000088a8805fb13cd68
-Content-Type: text/html; charset="UTF-8"
-Content-Transfer-Encoding: quoted-printable
-
-<div dir=3D"ltr"><div dir=3D"ltr"><br></div><br><div class=3D"gmail_quote">=
-<div dir=3D"ltr" class=3D"gmail_attr">On Fri, 14 Apr 2023 at 19:23, anupsha=
-rma &lt;<a href=3D"mailto:anupnewsmail@gmail.com">anupnewsmail@gmail.com</a=
->&gt; wrote:<br></div><blockquote class=3D"gmail_quote" style=3D"margin:0px=
- 0px 0px 0.8ex;border-left:1px solid rgb(204,204,204);padding-left:1ex">Syz=
-kaller reported the following issue:<br>
-=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0option from the mount to silence this war=
-ning.<br>
-=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
-=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
-=3D=3D=3D=3D=3D<br>
-find_entry called with index =3D 0<br>
-read_mapping_page failed!<br>
-ERROR: (device loop0): txCommit:<br>
-ERROR: (device loop0): remounting filesystem as read-only<br>
-=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
-=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
-=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
-=3D=3D=3D=3D=3D<br>
-UBSAN: shift-out-of-bounds in fs/jfs/jfs_dmap.c:381:12<br>
-shift exponent 134217736 is too large for 64-bit type &#39;long long&#39;<b=
-r>
-CPU: 1 PID: 5068 Comm: syz-executor350 Not tainted 6.3.0-rc2-syzkaller-0006=
-9-g0ddc84d2dd43 #0<br>
-Hardware name: Google Google Compute Engine/Google Compute Engine, BIOS Goo=
-gle 03/02/2023<br>
-Call Trace:<br>
-=C2=A0&lt;TASK&gt;<br>
-=C2=A0__dump_stack lib/dump_stack.c:88 [inline]<br>
-=C2=A0dump_stack_lvl+0x1e7/0x2d0 lib/dump_stack.c:106<br>
-=C2=A0ubsan_epilogue lib/ubsan.c:217 [inline]<br>
-=C2=A0__ubsan_handle_shift_out_of_bounds+0x3c3/0x420 lib/ubsan.c:387<br>
-=C2=A0dbFree+0x46e/0x650 fs/jfs/jfs_dmap.c:381<br>
-=C2=A0txFreeMap+0x96a/0xd50 fs/jfs/jfs_txnmgr.c:2510<br>
-=C2=A0xtTruncate+0xe5c/0x3260 fs/jfs/jfs_xtree.c:2467<br>
-=C2=A0jfs_free_zero_link+0x46e/0x6e0 fs/jfs/namei.c:758<br>
-=C2=A0jfs_evict_inode+0x35f/0x440 fs/jfs/inode.c:153<br>
-=C2=A0evict+0x2a4/0x620 fs/inode.c:665<br>
-=C2=A0__dentry_kill+0x436/0x650 fs/dcache.c:607<br>
-=C2=A0shrink_dentry_list+0x39c/0x6a0 fs/dcache.c:1201<br>
-=C2=A0shrink_dcache_parent+0xcd/0x480<br>
-=C2=A0do_one_tree+0x23/0xe0 fs/dcache.c:1682<br>
-=C2=A0shrink_dcache_for_umount+0x7d/0x120 fs/dcache.c:1699<br>
-=C2=A0generic_shutdown_super+0x67/0x340 fs/super.c:472<br>
-=C2=A0kill_block_super+0x7e/0xe0 fs/super.c:1398<br>
-=C2=A0deactivate_locked_super+0xa4/0x110 fs/super.c:331<br>
-=C2=A0cleanup_mnt+0x426/0x4c0 fs/namespace.c:1177<br>
-=C2=A0task_work_run+0x24a/0x300 kernel/task_work.c:179<br>
-=C2=A0exit_task_work include/linux/task_work.h:38 [inline]<br>
-=C2=A0do_exit+0x68f/0x2290 kernel/exit.c:869<br>
-=C2=A0do_group_exit+0x206/0x2c0 kernel/exit.c:1019<br>
-=C2=A0__do_sys_exit_group kernel/exit.c:1030 [inline]<br>
-=C2=A0__se_sys_exit_group kernel/exit.c:1028 [inline]<br>
-=C2=A0__x64_sys_exit_group+0x3f/0x40 kernel/exit.c:1028<br>
-=C2=A0do_syscall_x64 arch/x86/entry/common.c:50 [inline]<br>
-=C2=A0do_syscall_64+0x41/0xc0 arch/x86/entry/common.c:80<br>
-=C2=A0entry_SYSCALL_64_after_hwframe+0x63/0xcd<br>
-RIP: 0033:0x7fa87e2289b9<br>
-Code: Unable to access opcode bytes at 0x7fa87e22898f.<br>
-RSP: 002b:00007fff4bfe3938 EFLAGS: 00000246 ORIG_RAX: 00000000000000e7<br>
-RAX: ffffffffffffffda RBX: 00007fa87e2a3330 RCX: 00007fa87e2289b9<br>
-RDX: 000000000000003c RSI: 00000000000000e7 RDI: 0000000000000001<br>
-RBP: 0000000000000001 R08: ffffffffffffffc0 R09: 00007fa87e29de40<br>
-R10: 00007fff4bfe3850 R11: 0000000000000246 R12: 00007fa87e2a3330<br>
-R13: 0000000000000001 R14: 0000000000000000 R15: 0000000000000001<br>
-=C2=A0&lt;/TASK&gt;<br>
-=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
-=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
-=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
-=3D=3D=3D=3D=3D<br>
-<br>
-db_l2nbperpage which is used as a shift exponent to get the buffer<br>
-for the current dmap will be less than and equal to 64. <br>
-<br>
-Tested via syzbot.<br>
-<br>
-Reported-by: <a href=3D"mailto:syzbot%2Bd2cd27dcf8e04b232eb2@syzkaller.apps=
-potmail.com" target=3D"_blank">syzbot+d2cd27dcf8e04b232eb2@syzkaller.appspo=
-tmail.com</a><br>
-Link: <a href=3D"https://syzkaller.appspot.com/bug?id=3D2a70a453331db32ed49=
-1f5cbb07e81bf2d225715" rel=3D"noreferrer" target=3D"_blank">https://syzkall=
-er.appspot.com/bug?id=3D2a70a453331db32ed491f5cbb07e81bf2d225715</a><br>
-<br>
-Signed-off-by: Anup Sharma &lt;<a href=3D"mailto:anupnewsmail@gmail.com" ta=
-rget=3D"_blank">anupnewsmail@gmail.com</a>&gt;<br>
----<br>
-=C2=A0fs/jfs/jfs_dmap.c | 5 ++++-<br>
-=C2=A01 file changed, 4 insertions(+), 1 deletion(-)<br>
-<br>
-diff --git a/fs/jfs/jfs_dmap.c b/fs/jfs/jfs_dmap.c<br>
-index a3eb1e826947..d2cf56dd8f91 100644<br>
---- a/fs/jfs/jfs_dmap.c<br>
-+++ b/fs/jfs/jfs_dmap.c<br>
-@@ -184,7 +184,10 @@ int dbMount(struct inode *ipbmap)<br>
-=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 err =3D -EINVAL;<br=
->
-=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 goto err_release_me=
-tapage;<br>
-=C2=A0 =C2=A0 =C2=A0 =C2=A0 }<br>
--<br>
-+=C2=A0 =C2=A0 =C2=A0 =C2=A0if (bmp-&gt;db_l2nbperpage &gt;=3D 64) {<br>
-+=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0err =3D -EINVAL;<br=
->
-+=C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0goto err_release_me=
-tapage;<br>
-+=C2=A0 =C2=A0 =C2=A0 =C2=A0}<br>
-=C2=A0 =C2=A0 =C2=A0 =C2=A0 bmp-&gt;db_maxlevel =3D le32_to_cpu(dbmp_le-&gt=
-;dn_maxlevel);<br>
-=C2=A0 =C2=A0 =C2=A0 =C2=A0 bmp-&gt;db_maxag =3D le32_to_cpu(dbmp_le-&gt;dn=
-_maxag);<br>
-=C2=A0 =C2=A0 =C2=A0 =C2=A0 bmp-&gt;db_agpref =3D le32_to_cpu(dbmp_le-&gt;d=
-n_agpref);<br>
--- <br>
-2.34.1<br>
-<br>
-</blockquote></div>Hello All,<br>Just wanted to follow up on this patch sub=
-mitted earlier. May I please request<br><div>a review and feedback on this =
-patch.</div><div>Thanks, <br></div><div>Anup<br></div></div>
-
---000000000000088a8805fb13cd68--
+WARNING: The mand mount option has been deprecated and
+         and is ignored by this kernel. Remove the mand
+         option from the mount to silence this warning.
+=======================================================
+Unable to handle kernel paging request at virtual address dfff800000000008
+KASAN: null-ptr-deref in range [0x0000000000000040-0x0000000000000047]
+Mem abort info:
+  ESR = 0x0000000096000006
+  EC = 0x25: DABT (current EL), IL = 32 bits
+  SET = 0, FnV = 0
+  EA = 0, S1PTW = 0
+  FSC = 0x06: level 2 translation fault
+Data abort info:
+  ISV = 0, ISS = 0x00000006
+  CM = 0, WnR = 0
+[dfff800000000008] address between user and kernel address ranges
+Internal error: Oops: 0000000096000006 [#1] PREEMPT SMP
+Modules linked in:
+CPU: 0 PID: 5926 Comm: syz-executor228 Not tainted 6.3.0-rc7-syzkaller-g14f8db1c0f9a #0
+Hardware name: Google Google Compute Engine/Google Compute Engine, BIOS Google 04/14/2023
+pstate: 80400005 (Nzcv daif +PAN -UAO -TCO -DIT -SSBS BTYPE=--)
+pc : generic_test_bit include/asm-generic/bitops/generic-non-atomic.h:128 [inline]
+pc : txBegin+0x138/0x5e0 fs/jfs/jfs_txnmgr.c:366
+lr : txBegin+0x104/0x5e0 fs/jfs/jfs_txnmgr.c:357
+sp : ffff80001eb37660
+x29: ffff80001eb37680 x28: dfff800000000000 x27: dfff800000000000
+x26: ffff800016308bc8 x25: 0000000000000040 x24: 0000000000000000
+x23: ffff800016306520 x22: ffff0000d6a57c30 x21: 0000000000000150
+x20: 0000000000000008 x19: 0000000000000000 x18: ffff80001eb37360
+x17: ffff800008ad82e4 x16: ffff80000831ae40 x15: 000000000000bb8c
+x14: 000000003eb35159 x13: dfff800000000000 x12: ffff700003d66eb4
+x11: 0000000000000001 x10: 0000000000000000 x9 : 0000000000000000
+x8 : 1ffff00002c5f670 x7 : 0000000000000000 x6 : 0000000000000000
+x5 : ffff800019238f80 x4 : 0000000000000008 x3 : ffff80000831af70
+x2 : 0000000000000001 x1 : 0000000000000000 x0 : 0000000000000000
+Call trace:
+ txBegin+0x138/0x5e0 fs/jfs/jfs_txnmgr.c:362
+ __jfs_xattr_set+0xc8/0x190 fs/jfs/xattr.c:915
+ jfs_xattr_set+0x58/0x70 fs/jfs/xattr.c:941
+ __vfs_setxattr+0x3d8/0x400 fs/xattr.c:203
+ __vfs_setxattr_noperm+0x110/0x528 fs/xattr.c:237
+ __vfs_setxattr_locked+0x1ec/0x218 fs/xattr.c:298
+ vfs_setxattr+0x1a8/0x344 fs/xattr.c:324
+ do_setxattr fs/xattr.c:609 [inline]
+ setxattr+0x208/0x29c fs/xattr.c:632
+ path_setxattr+0x17c/0x258 fs/xattr.c:651
+ __do_sys_setxattr fs/xattr.c:667 [inline]
+ __se_sys_setxattr fs/xattr.c:663 [inline]
+ __arm64_sys_setxattr+0xbc/0xd8 fs/xattr.c:663
+ __invoke_syscall arch/arm64/kernel/syscall.c:38 [inline]
+ invoke_syscall+0x98/0x2c0 arch/arm64/kernel/syscall.c:52
+ el0_svc_common+0x138/0x258 arch/arm64/kernel/syscall.c:142
+ do_el0_svc+0x64/0x198 arch/arm64/kernel/syscall.c:193
+ el0_svc+0x4c/0x15c arch/arm64/kernel/entry-common.c:637
+ el0t_64_sync_handler+0x84/0xf0 arch/arm64/kernel/entry-common.c:655
+ el0t_64_sync+0x190/0x194 arch/arm64/kernel/entry.S:591
+Code: 9400012e aa1703e0 95954bf6 350002f8 (387c6a88) 
+---[ end trace 0000000000000000 ]---
+----------------
+Code disassembly (best guess):
+   0:	9400012e 	bl	0x4b8
+   4:	aa1703e0 	mov	x0, x23
+   8:	95954bf6 	bl	0x6552fe0
+   c:	350002f8 	cbnz	w24, 0x68
+* 10:	387c6a88 	ldrb	w8, [x20, x28] <-- trapping instruction
 
 
---===============0413602589361568766==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+---
+If you want syzbot to run the reproducer, reply with:
+#syz test: git://repo/address.git branch-or-commit-hash
+If you attach or paste a git patch, syzbot will apply it before testing.
 
-
---===============0413602589361568766==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
 
 _______________________________________________
 Jfs-discussion mailing list
 Jfs-discussion@lists.sourceforge.net
 https://lists.sourceforge.net/lists/listinfo/jfs-discussion
-
---===============0413602589361568766==--
-
