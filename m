@@ -2,28 +2,28 @@ Return-Path: <jfs-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+jfs-discussion@lfdr.de
 Delivered-To: lists+jfs-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id CF10B716794
-	for <lists+jfs-discussion@lfdr.de>; Tue, 30 May 2023 17:50:03 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2C8017167B0
+	for <lists+jfs-discussion@lfdr.de>; Tue, 30 May 2023 17:50:20 +0200 (CEST)
 Received: from [127.0.0.1] (helo=sfs-ml-1.v29.lw.sourceforge.com)
 	by sfs-ml-1.v29.lw.sourceforge.com with esmtp (Exim 4.95)
 	(envelope-from <jfs-discussion-bounces@lists.sourceforge.net>)
-	id 1q41ba-00085O-Ky;
-	Tue, 30 May 2023 15:49:51 +0000
+	id 1q41bp-00087z-Ke;
+	Tue, 30 May 2023 15:50:06 +0000
 Received: from [172.30.20.202] (helo=mx.sourceforge.net)
  by sfs-ml-1.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
  TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (Exim 4.95)
  (envelope-from <prvs=507b913ec=johannes.thumshirn@wdc.com>)
- id 1q41bZ-000853-3Q for jfs-discussion@lists.sourceforge.net;
- Tue, 30 May 2023 15:49:49 +0000
+ id 1q41bo-00087M-ME for jfs-discussion@lists.sourceforge.net;
+ Tue, 30 May 2023 15:50:05 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=sourceforge.net; s=x; h=Content-Transfer-Encoding:MIME-Version:References:
  In-Reply-To:Message-Id:Date:Subject:Cc:To:From:Sender:Reply-To:Content-Type:
  Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
  Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=lesC7ZHzHc7ah/ToJ8yOzNcL34jZPc+O7TdhQ2cqcu8=; b=POMXO093UHFZ0Y6OHFALJnhcsb
- zYv3Xn/m4SUVXq3f68lugbhWZXv2OsxmaDTvvJkDiwrC5XbsL7v+AIC6we6PkVBGJzepYXXbtvS9v
- FiorNH3LzSS8/boqlD4oiBLrvuHpcB84WUhU5AiQlTfHPaDm/H4AtiEqvr2uCHysyio8=;
+ bh=1S2DSWAZA9qgvAvQBzAiSeR/Df+u9UWYi0qKutiToQ8=; b=QxqL4Qm8q+SzumBR5f91o6Iw8X
+ 7s/1xsDhTxcE0cCNffca5bq5yZZeXgz70Gzywzb/MN/vUkDLQakCm5kFsmt6VhXeMcOEppKPslOxW
+ A64ZXXnlAUB9mI07KLmkNp2Y1/9z/KO2Q2V/aa77XWPmzsI1rMXmQ0v3ZDhenwnMWE2w=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
  h=Content-Transfer-Encoding:MIME-Version:References:In-Reply-To:Message-Id:
@@ -31,49 +31,49 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
  :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
  List-Post:List-Owner:List-Archive;
- bh=lesC7ZHzHc7ah/ToJ8yOzNcL34jZPc+O7TdhQ2cqcu8=; b=a5H0Ac1iiVluMgYqwT/R4JGdpl
- Hj1e5tAF6Stx6fjDbOmMERD7P++UrPzueaRdk3SYEXiD12gdIeFOMeSnAWL4e3Bk5Lmj2AfB9WDMh
- f3RFtyw6ArRan7tAxz9RvTKeFBSUEWSpkX1p9AMWnDSWbjeiN66FASwTs33HP8cH3TCE=;
-Received: from esa5.hgst.iphmx.com ([216.71.153.144])
+ bh=1S2DSWAZA9qgvAvQBzAiSeR/Df+u9UWYi0qKutiToQ8=; b=TEzoqrBrhe/v6tM+41Ec+SW6Cr
+ HjN2T2Ovpw2d1k9BTp6Vw21TcKTPQa3GOUTfG5ezavIztgE3O6FOpIYo2TrQenuvu/PjdTdSuTUz2
+ VtgilyeRyMWixzS4wLiuphe6Czspf/Mk8b+2AF72qJIBhdlKCwiF3KQ3zXJdwG3KZBSk=;
+Received: from esa3.hgst.iphmx.com ([216.71.153.141])
  by sfi-mx-1.v28.lw.sourceforge.com with esmtps
  (TLS1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.95)
- id 1q41bZ-006ft6-Ey for jfs-discussion@lists.sourceforge.net;
- Tue, 30 May 2023 15:49:49 +0000
+ id 1q41bj-006ftx-8q for jfs-discussion@lists.sourceforge.net;
+ Tue, 30 May 2023 15:50:02 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple;
  d=wdc.com; i=@wdc.com; q=dns/txt; s=dkim.wdc.com;
- t=1685461789; x=1716997789;
+ t=1685461799; x=1716997799;
  h=from:to:cc:subject:date:message-id:in-reply-to:
  references:mime-version:content-transfer-encoding;
- bh=mEDf+2bPYBdApkRtQGcrKQLhlyK4U4yv8ooj5C9H9Fo=;
- b=o/WD03XlFctcGVjsLT9m16PVF8BATb/Ts5UmSbgzd+SgVUVfXMBYUlv4
- JdVsH746NE+eL3DU5peqbeaO37CQp8jbBK/85RVHkASTf8Q5Od4eCGD5g
- uxSyWoCLl6LD+Prc4Lzv8CMBorNq163QQ4CpyFHIgggvuWF97iI3Sam4w
- dAU/i1PVLRQ3ujZP8DyfoypP3olF6OL8q+XaejbK2nr8GsPH2n0LYv1+j
- 0sPEs6EjJ8yWpyH19zmgYBsPFGrkzaYtWeSotMkoqei4Q/H2GRX6VMGPP
- W4UYOc/FMxMPrFIQMr3qhEjH/7XcG9uOgOtww9hYARxwbql7kKAAL5+7J A==;
-X-IronPort-AV: E=Sophos;i="6.00,204,1681142400"; d="scan'208";a="231905698"
-Received: from uls-op-cesaip01.wdc.com (HELO uls-op-cesaep01.wdc.com)
+ bh=3krWE0DP9xJWhQSqe7JjRJmAUx3KR1tDfQYkyCcToNw=;
+ b=khmYQpUuLCUXTOvEznLGKP3HxV/26U3MF/3+PnK+edB+wQfV54JehMJD
+ H3mDlZR3Xw4jGpsZ4GtX6dSxGcQdITmebxkCSZvbvxUEYcFljvk+CW2Tl
+ PUETWL+QSCSQmZYNYpsuRMuJ3OYkBzMbwNcDOgFW2s/VDjWgQ6IFXmqQ1
+ H9li3Hkg5lrqXQnq+X8XK/Dm67a18GQLQ2Dzn/Fva5G6WDUfymvrldsgM
+ A88VndcKearq9gkA92MQbIls3dXySNwc5UDLUDoeGrsrqNZ2MfKSiykVy
+ +hmY/EeJ6WTqR9ENY/oHrdphbIUQ49ZrK1oPFptn7/32H1I/6h/2hs3C8 g==;
+X-IronPort-AV: E=Sophos;i="6.00,204,1681142400"; d="scan'208";a="236922647"
+Received: from h199-255-45-14.hgst.com (HELO uls-op-cesaep01.wdc.com)
  ([199.255.45.14])
- by ob1.hgst.iphmx.com with ESMTP; 30 May 2023 23:49:47 +0800
-IronPort-SDR: jLS42Kwsm9WesJiFS9UwqVFbSCd9daPvMCta22OB/OKhW5Ocof0hOKeqZi5eLpE70Q4CWimm1H
- fL6qDt7TBfgYy9sRRi1Alfxaymc1sDRQQ34AUiDddASwXrXlzaMIKBey/PKipt1DC9QaxUXBac
- 9S+2MruUu//AYqUBj87I7vu5L2Mxp1FJNFhQ50bCvnKKTrntHBHqwL0FFn9JZZb56KUZAD5bUI
- O/+9AbhWnPh7V6BwI9q52u2zt+ZIPAkwyGlUd2tphEwMRdtuagEFyAcQWS5qX9oFw07rG0rONf
- fxs=
+ by ob1.hgst.iphmx.com with ESMTP; 30 May 2023 23:49:53 +0800
+IronPort-SDR: n9NaY2mRMNZR0MB3rrPlq/ZtCKP1PLy7BOAyt5iv0g921b2IyqQOI2W5fYh4X4VKHuaMJcidNP
+ tx3kSQK8OB+e4fuJEmKtgTKNFry+Cc+Rshth60OTMm97LvhlF/oYKbLYpOYPRTsghd54YjLDM7
+ ES13Sh1BBZdzucLjHEipcy23dj5cln9mJ8DRAge/kk3pWv10ibO8f2ZRWYCvAwyazg3ExRlZK4
+ AYWHBIgzB4BrddVi7w6yMTriVts5zBnIpMJISaZyYImsIyaea1Jk0AQ52OWfu4qAYYtk2Wl2nh
+ xMY=
 Received: from uls-op-cesaip02.wdc.com ([10.248.3.37])
  by uls-op-cesaep01.wdc.com with ESMTP/TLS/ECDHE-RSA-AES128-GCM-SHA256;
- 30 May 2023 08:04:41 -0700
-IronPort-SDR: MKlOX/uF8wNEct5950xnnV315MLl9jdeWlyzj552Na9mJDZsmp05yot7aD76Oi4Xbupl3BrWor
- CH08la1ldQbZ9LbsD2PbKhD1eEz/Wv7IO4J88KwTSohJz4Tcq8kYJ5TJv5OIor4ThvImZ+P9EU
- dnuo5e3IdJkZtM6PymLdROP06o8OObtizuI8cob1Ebk7RJhUIOuDEY5ObLtCjGKqVpe5/yRxRA
- o0I5mrkdFpgizKWYnBAUJNxt+kr6dHKCyqjCW1az0geORLLKn3tAB7Qv9196t3xurORVn7mWMo
- rkk=
+ 30 May 2023 08:04:45 -0700
+IronPort-SDR: u+PASvmVFMOeoxAfCOzPTJVxs9w/SxKXdV+WL45zR5MhQmBtIcKpxPC+suAbA8R40WSAoABsDU
+ Savu3CckUXivbi6WToWKdQUwLLmbPrlu+t0D2w2adCHgpIa07VBP9yc9YZfQWP/W4p3Ho8L2TP
+ qdpGq1vryZADT62MQ7QL5o4LjYTKjHlalTuDTjetxk+HbtcWGU7QYi1lbKcIylnIUUvlIOyZMf
+ GU4oqaEupybuJkpumSK7vLspE4ZBbcyj/b78AtZhDrf17exWHWQM4qistlncc13/I/U8bGzbTt
+ Qx0=
 WDCIronportException: Internal
 Received: from unknown (HELO redsun91.ssa.fujisawa.hgst.com) ([10.149.66.6])
- by uls-op-cesaip02.wdc.com with ESMTP; 30 May 2023 08:49:45 -0700
+ by uls-op-cesaip02.wdc.com with ESMTP; 30 May 2023 08:49:48 -0700
 To: Jens Axboe <axboe@kernel.dk>
-Date: Tue, 30 May 2023 08:49:09 -0700
-Message-Id: <1ee0465c7b2634a4435e65a4d0b06019a73d8389.1685461490.git.johannes.thumshirn@wdc.com>
+Date: Tue, 30 May 2023 08:49:10 -0700
+Message-Id: <6cdf62501852fa43493ba866a49dfc9e859aa5ee.1685461490.git.johannes.thumshirn@wdc.com>
 X-Mailer: git-send-email 2.40.1
 In-Reply-To: <cover.1685461490.git.johannes.thumshirn@wdc.com>
 References: <cover.1685461490.git.johannes.thumshirn@wdc.com>
@@ -85,15 +85,12 @@ X-Spam-Report: Spam detection software,
  message has been attached to this so you can view it or label
  similar future email.  If you have any questions, see
  the administrator of that system for details.
- Content preview:  The raid5 log metadata submission code uses bio_add_page()
- to add a page to a newly created bio. bio_add_page() can fail, but the return
- value is never checked. Use __bio_add_page() as adding a single page to a
- newly created bio is guaranteed to succeed. 
+ Content preview:  The raid5-ppl submission code uses bio_add_page() to add a
+ page to a newly created bio. bio_add_page() can fail, but the return value
+ is never checked. For adding consecutive pages, the return is actu [...] 
  Content analysis details:   (-2.5 points, 6.0 required)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [216.71.153.144 listed in list.dnswl.org]
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -103,10 +100,12 @@ X-Spam-Report: Spam detection software,
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [216.71.153.141 listed in list.dnswl.org]
  -0.0 T_SCC_BODY_TEXT_LINE   No description available.
-X-Headers-End: 1q41bZ-006ft6-Ey
-Subject: [Jfs-discussion] [PATCH v6 06/20] md: raid5-log: use __bio_add_page
- to add single page
+X-Headers-End: 1q41bj-006ftx-8q
+Subject: [Jfs-discussion] [PATCH v6 07/20] md: raid5: use __bio_add_page to
+ add single page to new bio
 X-BeenThere: jfs-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -137,9 +136,10 @@ Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Errors-To: jfs-discussion-bounces@lists.sourceforge.net
 
-The raid5 log metadata submission code uses bio_add_page() to add a page
-to a newly created bio. bio_add_page() can fail, but the return value is
-never checked.
+The raid5-ppl submission code uses bio_add_page() to add a page to a
+newly created bio. bio_add_page() can fail, but the return value is never
+checked. For adding consecutive pages, the return is actually checked and
+a new bio is allocated if adding the page fails.
 
 Use __bio_add_page() as adding a single page to a newly created bio is
 guaranteed to succeed.
@@ -150,22 +150,31 @@ Reviewed-by: Damien Le Moal <damien.lemoal@opensource.wdc.com>
 Acked-by: Song Liu <song@kernel.org>
 Signed-off-by: Johannes Thumshirn <johannes.thumshirn@wdc.com>
 ---
- drivers/md/raid5-cache.c | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+ drivers/md/raid5-ppl.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
 
-diff --git a/drivers/md/raid5-cache.c b/drivers/md/raid5-cache.c
-index 46182b955aef..852b265c5db4 100644
---- a/drivers/md/raid5-cache.c
-+++ b/drivers/md/raid5-cache.c
-@@ -792,7 +792,7 @@ static struct r5l_io_unit *r5l_new_meta(struct r5l_log *log)
- 	io->current_bio = r5l_bio_alloc(log);
- 	io->current_bio->bi_end_io = r5l_log_endio;
- 	io->current_bio->bi_private = io;
--	bio_add_page(io->current_bio, io->meta_page, PAGE_SIZE, 0);
-+	__bio_add_page(io->current_bio, io->meta_page, PAGE_SIZE, 0);
+diff --git a/drivers/md/raid5-ppl.c b/drivers/md/raid5-ppl.c
+index e495939bb3e0..eaea57aee602 100644
+--- a/drivers/md/raid5-ppl.c
++++ b/drivers/md/raid5-ppl.c
+@@ -465,7 +465,7 @@ static void ppl_submit_iounit(struct ppl_io_unit *io)
  
- 	r5_reserve_log_entry(log, io);
+ 	bio->bi_end_io = ppl_log_endio;
+ 	bio->bi_iter.bi_sector = log->next_io_sector;
+-	bio_add_page(bio, io->header_page, PAGE_SIZE, 0);
++	__bio_add_page(bio, io->header_page, PAGE_SIZE, 0);
  
+ 	pr_debug("%s: log->current_io_sector: %llu\n", __func__,
+ 	    (unsigned long long)log->next_io_sector);
+@@ -496,7 +496,7 @@ static void ppl_submit_iounit(struct ppl_io_unit *io)
+ 					       prev->bi_opf, GFP_NOIO,
+ 					       &ppl_conf->bs);
+ 			bio->bi_iter.bi_sector = bio_end_sector(prev);
+-			bio_add_page(bio, sh->ppl_page, PAGE_SIZE, 0);
++			__bio_add_page(bio, sh->ppl_page, PAGE_SIZE, 0);
+ 
+ 			bio_chain(bio, prev);
+ 			ppl_submit_iounit_bio(io, prev);
 -- 
 2.40.1
 
