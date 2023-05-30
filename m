@@ -2,18 +2,18 @@ Return-Path: <jfs-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+jfs-discussion@lfdr.de
 Delivered-To: lists+jfs-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5AE237167C4
-	for <lists+jfs-discussion@lfdr.de>; Tue, 30 May 2023 17:50:39 +0200 (CEST)
-Received: from [127.0.0.1] (helo=sfs-ml-3.v29.lw.sourceforge.com)
-	by sfs-ml-3.v29.lw.sourceforge.com with esmtp (Exim 4.95)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5C7027167C5
+	for <lists+jfs-discussion@lfdr.de>; Tue, 30 May 2023 17:50:40 +0200 (CEST)
+Received: from [127.0.0.1] (helo=sfs-ml-1.v29.lw.sourceforge.com)
+	by sfs-ml-1.v29.lw.sourceforge.com with esmtp (Exim 4.95)
 	(envelope-from <jfs-discussion-bounces@lists.sourceforge.net>)
-	id 1q41cB-0001lr-RV;
-	Tue, 30 May 2023 15:50:28 +0000
+	id 1q41cC-0008Aq-6H;
+	Tue, 30 May 2023 15:50:29 +0000
 Received: from [172.30.20.202] (helo=mx.sourceforge.net)
- by sfs-ml-3.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
+ by sfs-ml-1.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
  TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (Exim 4.95)
  (envelope-from <prvs=507b913ec=johannes.thumshirn@wdc.com>)
- id 1q41cA-0001lf-Ta for jfs-discussion@lists.sourceforge.net;
+ id 1q41cB-0008AO-17 for jfs-discussion@lists.sourceforge.net;
  Tue, 30 May 2023 15:50:27 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=sourceforge.net; s=x; h=Content-Transfer-Encoding:MIME-Version:References:
@@ -21,9 +21,9 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
  Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=XqmW/pWhr1cgDEAd3F/aGuYlTwkOFNTZjCl2H81a0pc=; b=VUhK14UsC0++n4iv9OFrxCxD3h
- jip18mRgdBtUKt2SNZeDWQ6ZWXwvAKipZJktyJaTdGP3ATIyI6xtoFbzmmuOzm+0o23YjCAwtd4o0
- MoJJSxwxA7NnvvrUKo6PsCsRWk4L8Kn1NjAFMiVq9Yn1xg8uXUCz8+o1e/rRsphXRIXM=;
+ bh=eIMNShzbX4d+fuJlDQGVddQb83DiGokEGK2iaexvnMI=; b=Tb5pxm7Kp+Z7XB2tkkaTDm9aZ+
+ rs25ygIKp/195cNXWfInNqwFx/wNdpNAjh+vmqc3wR3cCLBkEHgOs5PP/9SmVZpn3d7S1YfIEjAiF
+ MNRaP77jMlLa4yTyKoAFgftZ83yYS9AkXOF5C9tmWyxRbBr120CXp6cRT7IptXoqKvXM=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
  h=Content-Transfer-Encoding:MIME-Version:References:In-Reply-To:Message-Id:
@@ -31,49 +31,49 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
  :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
  List-Post:List-Owner:List-Archive;
- bh=XqmW/pWhr1cgDEAd3F/aGuYlTwkOFNTZjCl2H81a0pc=; b=SaKjiFLou/iTtoru9AV8h9DKxJ
- 3ArEfXaO2TN/823qRwO8sqfyxQlgrxmKE4hDlMTeIDH6odLbX0D0hPxnuYpf8EQBkQJDcn7+f/0aN
- j7FslbO5T/2EqMU1vMJAG+kcxxyd6jriluzbXiGo4euizCit7RsidAGJJJVJRLzgAZ5A=;
+ bh=eIMNShzbX4d+fuJlDQGVddQb83DiGokEGK2iaexvnMI=; b=SyhAPC7+DHLp1QckzH2S23sJ55
+ sgS3XvfYWAysCvH6SDbqucaRXs+/lfaU1AGb+H0Jbe6gzih7i0o+F2E1INt2GOKM/JcyuuB+KNOB4
+ HD7XWmE2cRun/hun+fNeRjmKuaBVavwtlBrdG1iGzVcruEeVeGWlsE2oIsD8EfvJrSOE=;
 Received: from esa3.hgst.iphmx.com ([216.71.153.141])
  by sfi-mx-1.v28.lw.sourceforge.com with esmtps
  (TLS1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.95)
- id 1q41cA-006fvv-O7 for jfs-discussion@lists.sourceforge.net;
+ id 1q41cB-006fvv-Bj for jfs-discussion@lists.sourceforge.net;
  Tue, 30 May 2023 15:50:27 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple;
  d=wdc.com; i=@wdc.com; q=dns/txt; s=dkim.wdc.com;
- t=1685461826; x=1716997826;
+ t=1685461827; x=1716997827;
  h=from:to:cc:subject:date:message-id:in-reply-to:
  references:mime-version:content-transfer-encoding;
- bh=Wr+M2zDQXb1A/M8JUY7t1USwG0IIo/LDQXKOrkxoR08=;
- b=LvM/KNLo7NByUEjsNpaI/dcGBz7OIyzObTtX98mKQ8mY1kfzkljmuemU
- T4HehUFI46F69gJQwPuJ5d6sRgfTnBlLjYms+ZEE8NHbYDOJ2fDtN7aEB
- 1mDKBnRoLpZpp6893ZgX8PWy1+Y16HkhXOQDLuFDAKhrAB2+Nu3KKlPgW
- nBvua1/VHjtRJuXIiaX46eTwW/LIV/ZAm0Yg6icajJudSh8wSbliZQWTM
- KHWRPA5NbodyE8squrxgelVzmcjMQ6g3IkWKK3hvzL6Wm7fnZM++LCe38
- RRvqXNlVNearxq6Z7vh3/aNt1Ftf+aY/3ZYkVZmMwAo+J31xRa5esDPax w==;
-X-IronPort-AV: E=Sophos;i="6.00,204,1681142400"; d="scan'208";a="236922746"
+ bh=Mcd/H07yjDNLd/X+ei4F/kInbJgAqWy0dojDfw1QWYw=;
+ b=PTZkcIk0KtnwDwSQzUA7nqgARKxDH+YKYBnkqf/ALRMRXVT07PPikqN4
+ KQ8IpwicrfANfCP+b8hpkuFVi3xYOdWxdx96rlvdo52GjR6Sb6E+ms7X/
+ +dCch7tY8qR9g1vdsz6MMmESBoOw+V6ozahzCBYAHyL1gQD4n1yMwzLYs
+ Xo5LHtuPaM1fATdmtWFp2CrXVTBlN4dWrdry4o4hEoQjd3lpejFKU67H6
+ VUZD0ogC0fxxirPiGlMSEzuUF26Ayt30/PTdGEmUSfcilyW5+ckcfE/Zb
+ UMDeFUyvv/ZnCROHy9wxbC26ty0bB6SIsHZ9B+zRYGpr3gHqkeid+t8jI A==;
+X-IronPort-AV: E=Sophos;i="6.00,204,1681142400"; d="scan'208";a="236922750"
 Received: from h199-255-45-14.hgst.com (HELO uls-op-cesaep01.wdc.com)
  ([199.255.45.14])
- by ob1.hgst.iphmx.com with ESMTP; 30 May 2023 23:50:25 +0800
-IronPort-SDR: agicOxYx6zJT8CH3cNkIjf/fx+mu+arxgQZRSZzj6ct5jNWKjyhWsoIkSEpsAK2ySdcPtLZbHD
- PE9zflqzawVITkk58fqJrJe3Gj+M4D9l1YCX4SJ1IwgV+F5CNn1mLxBxHNTzC2HKNiFk3L1RaF
- Nd8EsvkkBxZWSSTiUseo+j8PLRKHgXo9fUyjCBVKnYFhPJOLTE+lzsb3EITGHBiCBdLmr6SE13
- aTUEputPAQbh3WLDr9csG/ufjfQmsPM3btG1lE1h4hsIFUzg6JHyzndH7+qMtNLsJof/xr59Do
- YRU=
+ by ob1.hgst.iphmx.com with ESMTP; 30 May 2023 23:50:27 +0800
+IronPort-SDR: DzCLfR7OLRMA5+qxgmEUMoC8r84IegrbTod2umgeL4bCweZteqEsuVGWrVBkueSOLpKR4u6uSm
+ wC47vy+H917Yw0EmlnlUhHtBYIdFHqEStJQ+UB5EW9BfcH7grOL4tnfAEWp7Z7INjglZo3fVbY
+ bwRO6k5uPtvY1VQT+6FDyjk7tLhSfmECW73vReKe2aK4UOzxthYAJLCtDLNDziP1mO6KzoH1+7
+ jsyCOwrM+VjxqhHo5ul9chgGdSG4qPkndDOG3HuFR2PuXUMoMT2DBLJjXT+0gYqCS3WjVOeFD5
+ D+w=
 Received: from uls-op-cesaip02.wdc.com ([10.248.3.37])
  by uls-op-cesaep01.wdc.com with ESMTP/TLS/ECDHE-RSA-AES128-GCM-SHA256;
- 30 May 2023 08:05:19 -0700
-IronPort-SDR: ZseWV5fWdzcZGsBvaK1MnzJbe6LJ/RDHXZo6rvQuZIvPrGhH7sOBfNMut82zppqTmYnoXKTB7z
- QrMk0hDekgJdL7i7w/cfcGZBQUO8WxGw7qvwaCfyj9g9v8vpCBL79fSHs9c7ocbmkyi+tKeTnl
- 5yWwIot/krgGKEZrPU2K+W7DW94upy4aq9B0nKyn95xRamrF3GJ6KUciaCyMyK5wqC2s2vs9RF
- va9UVub6OltLs9qszN3A4HrAJxFVHZVWU6ZfU0MHB8DAntksi1VUcnPRTCZpwc76EDliVEcshA
- NQc=
+ 30 May 2023 08:05:20 -0700
+IronPort-SDR: vm077LYPjNAgf5XlpecJ/3icJc5CMvd0lv/Avf1qt9Q/GL6TJkcMXRi6IgIjrnSc7COF5QrvoM
+ rybn4aIsk3ovkS/odxyg0sJi8dTutwPKjZDfzTgOQd2shRAOUl0eyZW+AxMzq0gSSpTLt0zblr
+ UlT5/9heJdPYSEr71OD35L2+mnxp5yfUxAvMikvD+47W4RcDny9nyhyoPmkkZUZCDcFsZlAdtd
+ Z+zkSGqfSgcxDW2nlTOB+X8K7FgyMtw8b3N4WfdZtYRGEapJ7oDAz61v2TGB77bpv7441w8fn/
+ igk=
 WDCIronportException: Internal
 Received: from unknown (HELO redsun91.ssa.fujisawa.hgst.com) ([10.149.66.6])
- by uls-op-cesaip02.wdc.com with ESMTP; 30 May 2023 08:50:21 -0700
+ by uls-op-cesaip02.wdc.com with ESMTP; 30 May 2023 08:50:24 -0700
 To: Jens Axboe <axboe@kernel.dk>
-Date: Tue, 30 May 2023 08:49:21 -0700
-Message-Id: <5a142a7663a4beb2966d82f25708a9f22316117c.1685461490.git.johannes.thumshirn@wdc.com>
+Date: Tue, 30 May 2023 08:49:22 -0700
+Message-Id: <e809b83d60d9fb0f65a8116b3e50f1432f594725.1685461490.git.johannes.thumshirn@wdc.com>
 X-Mailer: git-send-email 2.40.1
 In-Reply-To: <cover.1685461490.git.johannes.thumshirn@wdc.com>
 References: <cover.1685461490.git.johannes.thumshirn@wdc.com>
@@ -85,10 +85,10 @@ X-Spam-Report: Spam detection software,
  message has been attached to this so you can view it or label
  similar future email.  If you have any questions, see
  the administrator of that system for details.
- Content preview: Just like for bio_add_pages() add a no-fail variant for
- bio_add_folio().
- Signed-off-by: Johannes Thumshirn <johannes.thumshirn@wdc.com> --- block/bio.c
- | 8 ++++++++ include/linux/bio.h | 1 + 2 files changed, 9 insertions(+) 
+ Content preview:  When the iomap buffered-io code can't add a folio to a bio, 
+ it allocates a new bio and adds the folio to that one. This is done using
+ bio_add_folio(), but doesn't check for errors. As adding a folio to a newly
+ created bio can't fail, use the newly introduced __bio_add_folio() function.
  Content analysis details:   (-2.5 points, 6.0 required)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
@@ -104,8 +104,9 @@ X-Spam-Report: Spam detection software,
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.0 T_SCC_BODY_TEXT_LINE   No description available.
-X-Headers-End: 1q41cA-006fvv-O7
-Subject: [Jfs-discussion] [PATCH v6 18/20] block: add __bio_add_folio
+X-Headers-End: 1q41cB-006fvv-Bj
+Subject: [Jfs-discussion] [PATCH v6 19/20] fs: iomap: use __bio_add_folio
+ where possible
 X-BeenThere: jfs-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -135,45 +136,49 @@ Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Errors-To: jfs-discussion-bounces@lists.sourceforge.net
 
-Just like for bio_add_pages() add a no-fail variant for bio_add_folio().
+When the iomap buffered-io code can't add a folio to a bio, it allocates a
+new bio and adds the folio to that one. This is done using bio_add_folio(),
+but doesn't check for errors.
+
+As adding a folio to a newly created bio can't fail, use the newly
+introduced __bio_add_folio() function.
 
 Signed-off-by: Johannes Thumshirn <johannes.thumshirn@wdc.com>
 ---
- block/bio.c         | 8 ++++++++
- include/linux/bio.h | 1 +
- 2 files changed, 9 insertions(+)
+ fs/iomap/buffered-io.c | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
 
-diff --git a/block/bio.c b/block/bio.c
-index 043944fd46eb..350c653d4a57 100644
---- a/block/bio.c
-+++ b/block/bio.c
-@@ -1138,6 +1138,14 @@ int bio_add_page(struct bio *bio, struct page *page,
- }
- EXPORT_SYMBOL(bio_add_page);
+diff --git a/fs/iomap/buffered-io.c b/fs/iomap/buffered-io.c
+index 063133ec77f4..42c5fc0ad329 100644
+--- a/fs/iomap/buffered-io.c
++++ b/fs/iomap/buffered-io.c
+@@ -312,7 +312,7 @@ static loff_t iomap_readpage_iter(const struct iomap_iter *iter,
+ 			ctx->bio->bi_opf |= REQ_RAHEAD;
+ 		ctx->bio->bi_iter.bi_sector = sector;
+ 		ctx->bio->bi_end_io = iomap_read_end_io;
+-		bio_add_folio(ctx->bio, folio, plen, poff);
++		__bio_add_folio(ctx->bio, folio, plen, poff);
+ 	}
  
-+void __bio_add_folio(struct bio *bio, struct folio *folio, size_t len,
-+		     size_t off)
-+{
-+	WARN_ON_ONCE(len > UINT_MAX);
-+	WARN_ON_ONCE(off > UINT_MAX);
-+	__bio_add_page(bio, &folio->page, len, off);
-+}
-+
- /**
-  * bio_add_folio - Attempt to add part of a folio to a bio.
-  * @bio: BIO to add to.
-diff --git a/include/linux/bio.h b/include/linux/bio.h
-index 5d5b081ee062..4232a17e6b10 100644
---- a/include/linux/bio.h
-+++ b/include/linux/bio.h
-@@ -473,6 +473,7 @@ int bio_add_zone_append_page(struct bio *bio, struct page *page,
- 			     unsigned int len, unsigned int offset);
- void __bio_add_page(struct bio *bio, struct page *page,
- 		unsigned int len, unsigned int off);
-+void __bio_add_folio(struct bio *, struct folio *, size_t len, size_t off);
- int bio_iov_iter_get_pages(struct bio *bio, struct iov_iter *iter);
- void bio_iov_bvec_set(struct bio *bio, struct iov_iter *iter);
- void __bio_release_pages(struct bio *bio, bool mark_dirty);
+ done:
+@@ -539,7 +539,7 @@ static int iomap_read_folio_sync(loff_t block_start, struct folio *folio,
+ 
+ 	bio_init(&bio, iomap->bdev, &bvec, 1, REQ_OP_READ);
+ 	bio.bi_iter.bi_sector = iomap_sector(iomap, block_start);
+-	bio_add_folio(&bio, folio, plen, poff);
++	__bio_add_folio(&bio, folio, plen, poff);
+ 	return submit_bio_wait(&bio);
+ }
+ 
+@@ -1582,7 +1582,7 @@ iomap_add_to_ioend(struct inode *inode, loff_t pos, struct folio *folio,
+ 
+ 	if (!bio_add_folio(wpc->ioend->io_bio, folio, len, poff)) {
+ 		wpc->ioend->io_bio = iomap_chain_bio(wpc->ioend->io_bio);
+-		bio_add_folio(wpc->ioend->io_bio, folio, len, poff);
++		__bio_add_folio(wpc->ioend->io_bio, folio, len, poff);
+ 	}
+ 
+ 	if (iop)
 -- 
 2.40.1
 
