@@ -2,28 +2,28 @@ Return-Path: <jfs-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+jfs-discussion@lfdr.de
 Delivered-To: lists+jfs-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2D0C3717F10
+	by mail.lfdr.de (Postfix) with ESMTPS id A97EB717F11
 	for <lists+jfs-discussion@lfdr.de>; Wed, 31 May 2023 13:52:05 +0200 (CEST)
-Received: from [127.0.0.1] (helo=sfs-ml-2.v29.lw.sourceforge.com)
-	by sfs-ml-2.v29.lw.sourceforge.com with esmtp (Exim 4.95)
+Received: from [127.0.0.1] (helo=sfs-ml-4.v29.lw.sourceforge.com)
+	by sfs-ml-4.v29.lw.sourceforge.com with esmtp (Exim 4.95)
 	(envelope-from <jfs-discussion-bounces@lists.sourceforge.net>)
-	id 1q4KMq-0005z0-W0;
-	Wed, 31 May 2023 11:51:53 +0000
+	id 1q4KMr-0004qq-MA;
+	Wed, 31 May 2023 11:51:54 +0000
 Received: from [172.30.20.202] (helo=mx.sourceforge.net)
- by sfs-ml-2.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
+ by sfs-ml-4.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
  TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (Exim 4.95)
  (envelope-from <prvs=508ef2a02=johannes.thumshirn@wdc.com>)
- id 1q4KMo-0005yS-1Y for jfs-discussion@lists.sourceforge.net;
- Wed, 31 May 2023 11:51:50 +0000
+ id 1q4KMq-0004qj-7M for jfs-discussion@lists.sourceforge.net;
+ Wed, 31 May 2023 11:51:52 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=sourceforge.net; s=x; h=Content-Transfer-Encoding:MIME-Version:References:
  In-Reply-To:Message-Id:Date:Subject:Cc:To:From:Sender:Reply-To:Content-Type:
  Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
  Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=7tVUjP4+PH6St5yF3wX9Wp96WFgE/j1N0ByIBSNUfaQ=; b=X4c4vNvL/UHxb8ZbHQKVeX1gdo
- 94HK7az+mpUyEDjZDhWVJ7mmjAAG6U0q8CFQd6WWfiMcO+ehDneY9CbZlek4+bjC8j8oiGi91aGRQ
- JOVk5OJxCDzww4MfB+s2uP+XEE0k0Sk/VcTLsRMNQgJR9ICmaFb7RGcwHCQI2dWrQ2DU=;
+ bh=sNH7pVmdygoeCZgHZmSqANM+8vLZ64wXe5n0PirP0kQ=; b=hqVxYPMlsYmZH/zN7frQYWHeoi
+ i+8qOo0feWShRKn0VWs/4WkN8KtBO7E9KYWgdlyr5tI2UeCedi8UHYsR7Z05qZWx97bNCZtaAl6QJ
+ xm4vQbS6v2fE/XzlcOTOMBsb0ooLNj48+WQn4T6lnzI+r2Cc1GLhRm1PHGrEYYxVmDg0=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
  h=Content-Transfer-Encoding:MIME-Version:References:In-Reply-To:Message-Id:
@@ -31,49 +31,49 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
  :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
  List-Post:List-Owner:List-Archive;
- bh=7tVUjP4+PH6St5yF3wX9Wp96WFgE/j1N0ByIBSNUfaQ=; b=INOWG8ed30e0FNzgjb8cGEb0yT
- /Dpu5ipEJ67CO8o9qmGRv8wDgY3s0Y87LTr2sYOB1gjNao53E0F/IzSimqnL3+8DJ7aY0YDkRNc8V
- qy843xOsdaoiknd/Sprnr7yk5D4ULAXYgNRTeRaAbHz+d2N9DSUWxOZ3RHJwsi/HSo+Q=;
-Received: from esa3.hgst.iphmx.com ([216.71.153.141])
- by sfi-mx-1.v28.lw.sourceforge.com with esmtps
+ bh=sNH7pVmdygoeCZgHZmSqANM+8vLZ64wXe5n0PirP0kQ=; b=md+3E2SIRFmTQju+IXiBEash8W
+ QXa0a3O9M0XKXK+BsFmrpe9tXlZ3WDvzT8xfh/XJsXqtMZjmYNSTu5NOyX68fXFKttQFLjFqq2KM1
+ DUaQCz6U/4A75EJKUKAWZM+j0Wp+kwbzEfkcNl0EiUREwWLhrczb2A1JAh8XckA2/2gY=;
+Received: from esa6.hgst.iphmx.com ([216.71.154.45])
+ by sfi-mx-2.v28.lw.sourceforge.com with esmtps
  (TLS1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.95)
- id 1q4KMn-007QQu-HG for jfs-discussion@lists.sourceforge.net;
- Wed, 31 May 2023 11:51:49 +0000
+ id 1q4KMn-0007Rb-DE for jfs-discussion@lists.sourceforge.net;
+ Wed, 31 May 2023 11:51:52 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple;
  d=wdc.com; i=@wdc.com; q=dns/txt; s=dkim.wdc.com;
  t=1685533909; x=1717069909;
  h=from:to:cc:subject:date:message-id:in-reply-to:
  references:mime-version:content-transfer-encoding;
- bh=wyX37qrNukpOnFd0kuw76h6e0vzZ4DyBtjizjt54zEs=;
- b=FbbF/BrPUT5BWyYul17m0A3jGK1R26gxF1JWeFOjwclOvwxb9k8ssT8Q
- hWw//w12De/fC8knpNKvFNozC+hYA5S3nNY4CNvv/8kII0hAmsqif3jXi
- 3FXTeG3FV+gaz8MEraBx9PykrvJD5DRdsGY+z8wRE2FG/+OJRKfFW04as
- 1j3XNtpvWD3XsdOA5ALUkK0aQZU+izpKitfHBlZnU1IijHnbphpL+sDlf
- sDEjNZeQJL9YR4VQtdbLAGxBkj6NS7KRc9JXEZy1OIhcrbFsHsgqzkm/3
- se2c3G4gSLYBJqd47WQ6hANxQ66tziAcnPmy5uMK2EWLD5MjPdoTFh4Rx g==;
-X-IronPort-AV: E=Sophos;i="6.00,207,1681142400"; d="scan'208";a="237001990"
-Received: from h199-255-45-14.hgst.com (HELO uls-op-cesaep01.wdc.com)
- ([199.255.45.14])
- by ob1.hgst.iphmx.com with ESMTP; 31 May 2023 19:51:44 +0800
-IronPort-SDR: 5eGLiA4EKiIVAIffeRue3pxcsr/Di/VmiV6CMhDz782BAZ0TqfEtCA10FOo1ldVa1aFbfOKThP
- r+thMoS6gHEFfzZ1Z8z+mU/aJGuKzacMQCQlAcCyExfn2ovIWfHQcj9PwSzSlhivD4xory3Ulw
- aDTo2DqN3udy97wuB/fQu3DJ176u4X1ealEr6hxbn1KBKVenHKoNJWgC+Y509yS9SHLxhGZtRy
- /IlmeeiVBiZc7VjqS0w7aCsWTQaeLN5EkDJa/xUbhGzui3p2GqabW2HmirhJyqsmlFdd2D858t
- HTI=
+ bh=eNep3j+omtdw7VUEVyvSEuMvQR4DwZ3logtHWgIlxjI=;
+ b=M131xzwqylep4etMGMmJe/Hq1Aa/ycLlgygK0D+UAPakdFdLUIZGSlDA
+ xs6kLlCtErXoSsYKbmxGQWE7tEcUQB2omZFQjEsNtnXjfdgLcvor6RzDX
+ i9V8XZAAJnX5Vup1eMxyz5kNIQ3NYpbDWsIUkD4n/HFKleHiO/g8jtUCV
+ FMytGozwY+WcdfBVyPKE1+dthngZ/+YiEynbG/uB6SMD6zDdF4k/fiVCI
+ qYb5vdiSX3cS0ZII6sWRq2qjwnlST8meFakBS8ao9q+cD+srzNEvMCtbx
+ w07Ap1Q3kEzNE5J/T2FjKEf9fNUdBJLikpNyyeOIrRtJpvnC6LRaTUB9q Q==;
+X-IronPort-AV: E=Sophos;i="6.00,207,1681142400"; d="scan'208";a="232065001"
+Received: from uls-op-cesaip02.wdc.com (HELO uls-op-cesaep02.wdc.com)
+ ([199.255.45.15])
+ by ob1.hgst.iphmx.com with ESMTP; 31 May 2023 19:51:43 +0800
+IronPort-SDR: 3n4s/oiDQsXRpKyvacm9uIZkLJEnHZL5pNiPKoh6c4la29BG0thX+JY10VTEVpthZkvfCNzavj
+ 1ur+WkF3C6HSGWFzBy7xxx7vNy0tJSorz9+kZVkPQQk9FU4TU/X6ijfx02PATH+SID55FbM68+
+ RNpgT8M44nU54PyKoNgJsyVmxfZmrBDL8UkupZAah/64sn0v3jCZqz5blI3dJxrLz9/1glj5iz
+ M6m1AMvSSuUdyEsdKMOnVpk2n6QSMtCpvcDoei2g0JFl5hvXqlpoPSH2bE5/PKg0xHHdkwesae
+ VZM=
 Received: from uls-op-cesaip02.wdc.com ([10.248.3.37])
- by uls-op-cesaep01.wdc.com with ESMTP/TLS/ECDHE-RSA-AES128-GCM-SHA256;
- 31 May 2023 04:06:36 -0700
-IronPort-SDR: xo459tElfFqtwBDe2sQAJqvwfBpbSzCQVTTIg+wPUWJFH5rvf87QZ0/LRdMy+YjMhlouZBBxmo
- sSFHKg9lUYcIkRHQv54nV+2OgEzxoHzxVahxn3BeeKZAyYylUuWRRTeDS6dvBOIxkJePE/rTcC
- eYbX1rHn5bbth8QftqRWLPHth0Gq61eGFZ6K61AfXG67LUgq2wZH8hWCBqD5V+7su+uSzYeeSR
- Ss5cmfzwMHsFg984FR8v7pis/w9ow+W2i6iaGIo6tiECTtkMKiiQqzdfNTk2BbJ95DDObBEoN5
- z/8=
+ by uls-op-cesaep02.wdc.com with ESMTP/TLS/ECDHE-RSA-AES128-GCM-SHA256;
+ 31 May 2023 04:00:54 -0700
+IronPort-SDR: FCL2eubAZP5N9vA9HDK+m1l82gIsrfnKwR7xl5QF91RBemiBMgqeza4/jZiezHWUmx+A2BPvbg
+ diAJW3D6qzTTjWDhUmm4+CPI/5Pg7yzgXHh3HJFIrkz3I6/YCxvrl5dZGpioD3FIrHJ11rp7ht
+ I6HmAKaEKAajDqnW187jX1JXP1SwiHNqHZle9nVdQDpjjStKHttQk7X5nq4km22hnGrB8FLHbJ
+ 5GGj+z1T+oiCsX5btGRw34bpXv3+vXL9f6GlctCmHk5dzGi6sYWMqAROn6Jr2ed+EqoN495klc
+ Cyk=
 WDCIronportException: Internal
 Received: from unknown (HELO redsun91.ssa.fujisawa.hgst.com) ([10.149.66.6])
- by uls-op-cesaip02.wdc.com with ESMTP; 31 May 2023 04:51:38 -0700
+ by uls-op-cesaip02.wdc.com with ESMTP; 31 May 2023 04:51:41 -0700
 To: Jens Axboe <axboe@kernel.dk>
-Date: Wed, 31 May 2023 04:50:39 -0700
-Message-Id: <f9a4dee5e81389fd70ffc442da01006538e55aca.1685532726.git.johannes.thumshirn@wdc.com>
+Date: Wed, 31 May 2023 04:50:40 -0700
+Message-Id: <7ae4a902e08fe2e90c012ee07aeb35d4aae28373.1685532726.git.johannes.thumshirn@wdc.com>
 X-Mailer: git-send-email 2.40.1
 In-Reply-To: <cover.1685532726.git.johannes.thumshirn@wdc.com>
 References: <cover.1685532726.git.johannes.thumshirn@wdc.com>
@@ -85,18 +85,17 @@ X-Spam-Report: Spam detection software,
  message has been attached to this so you can view it or label
  similar future email.  If you have any questions, see
  the administrator of that system for details.
- Content preview: crypt_alloc_buffer() already allocates enough entries in the
- clone bio's vector,
- so adding a page to the bio can't fail. Use __bio_add_page()
- to reflect this. Signed-off-by: Johannes Thumshirn
- <johannes.thumshirn@wdc.com>
- --- drivers/md/dm-crypt.c | 3 +-- 1 file changed, 1 insertion(+),
- 2 deletions(-)
+ Content preview: Now that all users of bio_add_page check for the return value,
+ mark bio_add_page as __must_check. Reviewed-by: Damien Le Moal
+ <damien.lemoal@opensource.wdc.com>
+ Signed-off-by: Johannes Thumshirn <johannes.thumshirn@wdc.com> ---
+ include/linux/bio.h
+ | 3 ++- 1 file changed, 2 insertions(+), 1 deletio [...] 
  Content analysis details:   (-2.5 points, 6.0 required)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [216.71.153.141 listed in list.dnswl.org]
+ medium trust [216.71.154.45 listed in list.dnswl.org]
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -106,9 +105,9 @@ X-Spam-Report: Spam detection software,
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid -0.0 T_SCC_BODY_TEXT_LINE   No description available.
-X-Headers-End: 1q4KMn-007QQu-HG
-Subject: [Jfs-discussion] [PATCH v7 16/20] dm-crypt: use __bio_add_page to
- add single page to clone bio
+X-Headers-End: 1q4KMn-0007Rb-DE
+Subject: [Jfs-discussion] [PATCH v7 17/20] block: mark bio_add_page as
+ __must_check
 X-BeenThere: jfs-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -123,44 +122,45 @@ List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/jfs-discussion>,
 From: Johannes Thumshirn via Jfs-discussion
  <jfs-discussion@lists.sourceforge.net>
 Reply-To: Johannes Thumshirn <johannes.thumshirn@wdc.com>
-Cc: linux-raid@vger.kernel.org, Damien Le Moal <damien.lemoal@wdc.com>,
- cluster-devel@redhat.com, Chaitanya Kulkarni <kch@nvidia.com>,
- Andreas Gruenbacher <agruenba@redhat.com>, Song Liu <song@kernel.org>,
- Dave Kleikamp <shaggy@kernel.org>,
- Johannes Thumshirn <johannes.thumshirn@wdc.com>,
- Mike Snitzer <snitzer@kernel.org>, jfs-discussion@lists.sourceforge.net,
- Matthew Wilcox <willy@infradead.org>, Ming Lei <ming.lei@redhat.com>,
- linux-block@vger.kernel.org, linux-mm@kvack.org, dm-devel@redhat.com,
- Mikulas Patocka <mpatocka@redhat.com>, Hannes Reinecke <hare@suse.de>,
- linux-fsdevel@vger.kernel.org, gouha7@uniontech.com,
- Christoph Hellwig <hch@lst.de>, Bob Peterson <rpeterso@redhat.com>
+Cc: Dave Kleikamp <shaggy@kernel.org>, jfs-discussion@lists.sourceforge.net,
+ Song Liu <song@kernel.org>, dm-devel@redhat.com,
+ Christoph Hellwig <hch@lst.de>, Andreas Gruenbacher <agruenba@redhat.com>,
+ Damien Le Moal <damien.lemoal@opensource.wdc.com>,
+ Matthew Wilcox <willy@infradead.org>, cluster-devel@redhat.com,
+ Chaitanya Kulkarni <kch@nvidia.com>, Mike Snitzer <snitzer@kernel.org>,
+ Ming Lei <ming.lei@redhat.com>, linux-raid@vger.kernel.org,
+ Bob Peterson <rpeterso@redhat.com>, Mikulas Patocka <mpatocka@redhat.com>,
+ Hannes Reinecke <hare@suse.de>, gouha7@uniontech.com,
+ linux-block@vger.kernel.org, Damien Le Moal <damien.lemoal@wdc.com>,
+ linux-mm@kvack.org, Johannes Thumshirn <johannes.thumshirn@wdc.com>,
+ linux-fsdevel@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Errors-To: jfs-discussion-bounces@lists.sourceforge.net
 
-crypt_alloc_buffer() already allocates enough entries in the clone bio's
-vector, so adding a page to the bio can't fail. Use __bio_add_page() to
-reflect this.
+Now that all users of bio_add_page check for the return value, mark
+bio_add_page as __must_check.
 
+Reviewed-by: Damien Le Moal <damien.lemoal@opensource.wdc.com>
 Signed-off-by: Johannes Thumshirn <johannes.thumshirn@wdc.com>
 ---
- drivers/md/dm-crypt.c | 3 +--
- 1 file changed, 1 insertion(+), 2 deletions(-)
+ include/linux/bio.h | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
 
-diff --git a/drivers/md/dm-crypt.c b/drivers/md/dm-crypt.c
-index 8b47b913ee83..09e37ebf7cc8 100644
---- a/drivers/md/dm-crypt.c
-+++ b/drivers/md/dm-crypt.c
-@@ -1693,8 +1693,7 @@ static struct bio *crypt_alloc_buffer(struct dm_crypt_io *io, unsigned int size)
+diff --git a/include/linux/bio.h b/include/linux/bio.h
+index b3e7529ff55e..ea2d937d3cba 100644
+--- a/include/linux/bio.h
++++ b/include/linux/bio.h
+@@ -465,7 +465,8 @@ extern void bio_uninit(struct bio *);
+ void bio_reset(struct bio *bio, struct block_device *bdev, blk_opf_t opf);
+ void bio_chain(struct bio *, struct bio *);
  
- 		len = (remaining_size > PAGE_SIZE) ? PAGE_SIZE : remaining_size;
- 
--		bio_add_page(clone, page, len, 0);
--
-+		__bio_add_page(clone, page, len, 0);
- 		remaining_size -= len;
- 	}
- 
+-int bio_add_page(struct bio *, struct page *, unsigned len, unsigned off);
++int __must_check bio_add_page(struct bio *bio, struct page *page, unsigned len,
++			      unsigned off);
+ bool bio_add_folio(struct bio *, struct folio *, size_t len, size_t off);
+ extern int bio_add_pc_page(struct request_queue *, struct bio *, struct page *,
+ 			   unsigned int, unsigned int);
 -- 
 2.40.1
 
