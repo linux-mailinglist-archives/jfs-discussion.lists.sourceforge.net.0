@@ -2,28 +2,28 @@ Return-Path: <jfs-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+jfs-discussion@lfdr.de
 Delivered-To: lists+jfs-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id ABCD6717541
-	for <lists+jfs-discussion@lfdr.de>; Wed, 31 May 2023 06:23:25 +0200 (CEST)
-Received: from [127.0.0.1] (helo=sfs-ml-4.v29.lw.sourceforge.com)
-	by sfs-ml-4.v29.lw.sourceforge.com with esmtp (Exim 4.95)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1CEB371754D
+	for <lists+jfs-discussion@lfdr.de>; Wed, 31 May 2023 06:24:10 +0200 (CEST)
+Received: from [127.0.0.1] (helo=sfs-ml-2.v29.lw.sourceforge.com)
+	by sfs-ml-2.v29.lw.sourceforge.com with esmtp (Exim 4.95)
 	(envelope-from <jfs-discussion-bounces@lists.sourceforge.net>)
-	id 1q4DMd-0007eR-Rt;
-	Wed, 31 May 2023 04:23:12 +0000
+	id 1q4DNE-0001XM-Jx;
+	Wed, 31 May 2023 04:23:48 +0000
 Received: from [172.30.20.202] (helo=mx.sourceforge.net)
- by sfs-ml-4.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
+ by sfs-ml-2.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
  TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (Exim 4.95)
- (envelope-from <hch@lst.de>) id 1q4DMb-0007eL-T4
+ (envelope-from <hch@lst.de>) id 1q4DND-0001XF-JI
  for jfs-discussion@lists.sourceforge.net;
- Wed, 31 May 2023 04:23:10 +0000
+ Wed, 31 May 2023 04:23:47 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=sourceforge.net; s=x; h=In-Reply-To:Content-Type:MIME-Version:References:
  Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:Content-Transfer-Encoding:
  Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
  Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=M7NmYC/Iylm9myghHwqILim55SAUt9QrM+UZYk0eJlw=; b=eYkqufOvK7JEszb5Oj26QJbmhv
- XiZp6ua5jrIu5NRHru83RH7Ka5mtZJqJZGIDBknjzYRb4Hhr7SZBzIyddOuwB6HOMe1lzlRypVqHJ
- K4tcPqvZ6N9OXyeCVbR5fBPpYRLQptGPXo9xvfggoyEaeWMsqmiJLlpe6/fYEVY90ZVk=;
+ bh=fs7J0ogDltyNtiDk92EpmxVm3aCy8RyBqdikzJVS1bM=; b=OwUYm72X3IS0cr0FAHeLvCBc02
+ k/o5ywV2C+a+Yvxus3BlfqURWj2Frvy6FJdnaz4IcOTTe1GKE64SXFjPHdl0RcPS1ho9PTyVlyU8J
+ tNCdoNjRc/RnMDuYf3ZURQchUlKESTdRzwLChV02Bd+aNyxddwGD6PYNSrq7sjsJYsds=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
  h=In-Reply-To:Content-Type:MIME-Version:References:Message-ID:Subject:Cc:To
@@ -31,43 +31,44 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
  :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
  List-Post:List-Owner:List-Archive;
- bh=M7NmYC/Iylm9myghHwqILim55SAUt9QrM+UZYk0eJlw=; b=UyI0xDTV5zJyS5SxdtPvajzR3g
- WiQTx0lbT+fIsTsgMjUkJUPu7qB6iJwLSpL93JrCnFaoUy82Sq2lA2SRaNEelEXsfnxsmfmmDQAFF
- KY7bQh2eB0mOU82xtz/oA/yzRkTQftbf9IMq7Aw8Z1Oe9VaMY3apinJ/2t0dFnhcReNI=;
+ bh=fs7J0ogDltyNtiDk92EpmxVm3aCy8RyBqdikzJVS1bM=; b=TQ7V9J2BBWkzorZ/zjXAyLqJhs
+ iw3X+XVWeBPpWCsIOsM5yQZVekKg+jgPuSubwBbTrpkKALJZyANlf4fT5oClbqN70Lv6cDIbkXOW9
+ +3PUgXqLkFpZAXiZvnsMlcTAiS4hpY49I+aMGZwv3HXMu4lFYE/9pE+P63QmHMSXM2j8=;
 Received: from verein.lst.de ([213.95.11.211])
- by sfi-mx-1.v28.lw.sourceforge.com with esmtps
+ by sfi-mx-2.v28.lw.sourceforge.com with esmtps
  (TLS1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.95)
- id 1q4DMb-0076UU-IR for jfs-discussion@lists.sourceforge.net;
- Wed, 31 May 2023 04:23:10 +0000
+ id 1q4DNC-0007ze-U2 for jfs-discussion@lists.sourceforge.net;
+ Wed, 31 May 2023 04:23:47 +0000
 Received: by verein.lst.de (Postfix, from userid 2407)
- id B8FDB68BEB; Wed, 31 May 2023 06:23:01 +0200 (CEST)
-Date: Wed, 31 May 2023 06:23:01 +0200
+ id 2A61568B05; Wed, 31 May 2023 06:23:39 +0200 (CEST)
+Date: Wed, 31 May 2023 06:23:38 +0200
 From: Christoph Hellwig <hch@lst.de>
 To: Johannes Thumshirn <johannes.thumshirn@wdc.com>
-Message-ID: <20230531042301.GJ32705@lst.de>
+Message-ID: <20230531042338.GK32705@lst.de>
 References: <cover.1685461490.git.johannes.thumshirn@wdc.com>
- <7e817bf13ca47fd863385997c0a9794221df7781.1685461490.git.johannes.thumshirn@wdc.com>
+ <d7cfd04d410accee4148d8c0e51230bcb8b4bb8f.1685461490.git.johannes.thumshirn@wdc.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <7e817bf13ca47fd863385997c0a9794221df7781.1685461490.git.johannes.thumshirn@wdc.com>
+In-Reply-To: <d7cfd04d410accee4148d8c0e51230bcb8b4bb8f.1685461490.git.johannes.thumshirn@wdc.com>
 User-Agent: Mutt/1.5.17 (2007-11-01)
-X-Spam-Score: -0.0 (/)
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: Spam detection software,
- running on the system "util-spamd-2.v13.lw.sourceforge.com", 
+ running on the system "util-spamd-1.v13.lw.sourceforge.com", 
  has NOT identified this incoming email as spam.  The original
  message has been attached to this so you can view it or label
  similar future email.  If you have any questions, see
  the administrator of that system for details.
- Content preview:  Looks good: Reviewed-by: Christoph Hellwig <hch@lst.de> 
- Content analysis details:   (-0.0 points, 6.0 required)
+ Content preview:  On Tue, May 30, 2023 at 08:49:16AM -0700, Johannes Thumshirn
+ wrote: > alloc_behind_master_bio() can possibly add multiple pages to a bio,
+ but it > is not checking for the return value of bio_add_page( [...] 
+ Content analysis details:   (0.0 points, 6.0 required)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- -0.0 T_SCC_BODY_TEXT_LINE   No description available.
-X-Headers-End: 1q4DMb-0076UU-IR
-Subject: Re: [Jfs-discussion] [PATCH v6 12/20] floppy: use __bio_add_page
- for adding single page to bio
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+X-Headers-End: 1q4DNC-0007ze-U2
+Subject: Re: [Jfs-discussion] [PATCH v6 13/20] md: check for failure when
+ adding pages in alloc_behind_master_bio
 X-BeenThere: jfs-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -93,6 +94,16 @@ Cc: Dave Kleikamp <shaggy@kernel.org>, jfs-discussion@lists.sourceforge.net,
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Errors-To: jfs-discussion-bounces@lists.sourceforge.net
+
+On Tue, May 30, 2023 at 08:49:16AM -0700, Johannes Thumshirn wrote:
+> alloc_behind_master_bio() can possibly add multiple pages to a bio, but it
+> is not checking for the return value of bio_add_page() if adding really
+> succeeded.
+> 
+> Check if the page adding succeeded and if not bail out.
+> 
+> Reviewed-by: Damien Le Moal <damien.lemoal@opensource.wdc.com>
+> Signed-off-by: Johannes Thumshirn <johannes.thumshirn@wdc.com>
 
 Looks good:
 
