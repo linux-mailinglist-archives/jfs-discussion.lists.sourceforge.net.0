@@ -2,28 +2,28 @@ Return-Path: <jfs-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+jfs-discussion@lfdr.de
 Delivered-To: lists+jfs-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id 80DDF717525
-	for <lists+jfs-discussion@lfdr.de>; Wed, 31 May 2023 06:22:02 +0200 (CEST)
-Received: from [127.0.0.1] (helo=sfs-ml-1.v29.lw.sourceforge.com)
-	by sfs-ml-1.v29.lw.sourceforge.com with esmtp (Exim 4.95)
+	by mail.lfdr.de (Postfix) with ESMTPS id 933ED717528
+	for <lists+jfs-discussion@lfdr.de>; Wed, 31 May 2023 06:22:03 +0200 (CEST)
+Received: from [127.0.0.1] (helo=sfs-ml-2.v29.lw.sourceforge.com)
+	by sfs-ml-2.v29.lw.sourceforge.com with esmtp (Exim 4.95)
 	(envelope-from <jfs-discussion-bounces@lists.sourceforge.net>)
-	id 1q4DLF-0003rC-L7;
-	Wed, 31 May 2023 04:21:46 +0000
+	id 1q4DLM-0001UT-37;
+	Wed, 31 May 2023 04:21:52 +0000
 Received: from [172.30.20.202] (helo=mx.sourceforge.net)
- by sfs-ml-1.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
+ by sfs-ml-2.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
  TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (Exim 4.95)
- (envelope-from <hch@lst.de>) id 1q4DLC-0003r5-Pq
+ (envelope-from <hch@lst.de>) id 1q4DLJ-0001UL-68
  for jfs-discussion@lists.sourceforge.net;
- Wed, 31 May 2023 04:21:43 +0000
+ Wed, 31 May 2023 04:21:49 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=sourceforge.net; s=x; h=In-Reply-To:Content-Type:MIME-Version:References:
  Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:Content-Transfer-Encoding:
  Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
  Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=M7NmYC/Iylm9myghHwqILim55SAUt9QrM+UZYk0eJlw=; b=S1dwMnm6HgGpFaNeGyznXa0LgE
- laj0y1SXvPwe+ZX+Q/jP7WLHxC0msyeSA4AViiC7yjd9hNekMLLQkhzCQ8dPVPWtUxCtioOa8/CGY
- e1lPWW3BqGtuaNPuHAVrFptgdJSdnXTP3vFQXpj+WVQWFabSSgFsesLOnigtLbveOoFY=;
+ bh=M7NmYC/Iylm9myghHwqILim55SAUt9QrM+UZYk0eJlw=; b=hqPLWH+e90C5WgYuFYUTU/KI3V
+ jE9S9rQKxKbtcdjSjUlDITfIMvhoeAg8MCJH3PXtPwu5hGrymOUtrEsT2jOtsOUZBTOhMUhz2vy//
+ rys+C3Q14PRqqIq1W62TgkTGbpqhHzNAYqzRNkmhHjACN6LMQ15abSdit+yikPXkRtHk=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
  h=In-Reply-To:Content-Type:MIME-Version:References:Message-ID:Subject:Cc:To
@@ -31,43 +31,42 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
  :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
  List-Post:List-Owner:List-Archive;
- bh=M7NmYC/Iylm9myghHwqILim55SAUt9QrM+UZYk0eJlw=; b=PVxk6wyE2n9LE/g6r5WaHY/cMW
- X+EFRf7vWL4fAQM15Rltk5s7GE6RfBcazILVoXFS+3SIp/sFN5InZDlswp94t1S1KrJTlraHoRtWZ
- gylH9k6VdiiiejVd8q3ryt69VZbP6KbERctoR/husYjnxrk5b7dP8VES3D1ifFrYU7Hw=;
+ bh=M7NmYC/Iylm9myghHwqILim55SAUt9QrM+UZYk0eJlw=; b=JZnwcz3rLIzBnQd15lcecUTs2+
+ jE1T5pRmNaPSu/uXWI9DKrz80bAHb5NVouJXMZiA2N5ULpdTIntUPz/2ySyDhdCXTgGG2E2orVDlE
+ /2AN0kd0huxs/zVrqK4uqFUsR9yx8BMI0b90pXtrIX+MSZFHsmNjFiUMmd3y5TGLhX84=;
 Received: from verein.lst.de ([213.95.11.211])
  by sfi-mx-2.v28.lw.sourceforge.com with esmtps
  (TLS1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.95)
- id 1q4DL4-0007wP-4N for jfs-discussion@lists.sourceforge.net;
- Wed, 31 May 2023 04:21:39 +0000
+ id 1q4DLI-0007wp-Er for jfs-discussion@lists.sourceforge.net;
+ Wed, 31 May 2023 04:21:49 +0000
 Received: by verein.lst.de (Postfix, from userid 2407)
- id AA38268B05; Wed, 31 May 2023 06:21:23 +0200 (CEST)
-Date: Wed, 31 May 2023 06:21:23 +0200
+ id 7FC9F68BEB; Wed, 31 May 2023 06:21:40 +0200 (CEST)
+Date: Wed, 31 May 2023 06:21:40 +0200
 From: Christoph Hellwig <hch@lst.de>
 To: Johannes Thumshirn <johannes.thumshirn@wdc.com>
-Message-ID: <20230531042123.GD32705@lst.de>
+Message-ID: <20230531042140.GE32705@lst.de>
 References: <cover.1685461490.git.johannes.thumshirn@wdc.com>
- <1ee0465c7b2634a4435e65a4d0b06019a73d8389.1685461490.git.johannes.thumshirn@wdc.com>
+ <6cdf62501852fa43493ba866a49dfc9e859aa5ee.1685461490.git.johannes.thumshirn@wdc.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <1ee0465c7b2634a4435e65a4d0b06019a73d8389.1685461490.git.johannes.thumshirn@wdc.com>
+In-Reply-To: <6cdf62501852fa43493ba866a49dfc9e859aa5ee.1685461490.git.johannes.thumshirn@wdc.com>
 User-Agent: Mutt/1.5.17 (2007-11-01)
-X-Spam-Score: -0.0 (/)
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: Spam detection software,
- running on the system "util-spamd-2.v13.lw.sourceforge.com", 
+ running on the system "util-spamd-1.v13.lw.sourceforge.com", 
  has NOT identified this incoming email as spam.  The original
  message has been attached to this so you can view it or label
  similar future email.  If you have any questions, see
  the administrator of that system for details.
  Content preview:  Looks good: Reviewed-by: Christoph Hellwig <hch@lst.de> 
- Content analysis details:   (-0.0 points, 6.0 required)
+ Content analysis details:   (0.0 points, 6.0 required)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- -0.0 T_SCC_BODY_TEXT_LINE   No description available.
-X-Headers-End: 1q4DL4-0007wP-4N
-Subject: Re: [Jfs-discussion] [PATCH v6 06/20] md: raid5-log: use
- __bio_add_page to add single page
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+X-Headers-End: 1q4DLI-0007wp-Er
+Subject: Re: [Jfs-discussion] [PATCH v6 07/20] md: raid5: use __bio_add_page
+ to add single page to new bio
 X-BeenThere: jfs-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
