@@ -2,28 +2,28 @@ Return-Path: <jfs-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+jfs-discussion@lfdr.de
 Delivered-To: lists+jfs-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5515E71EFD3
-	for <lists+jfs-discussion@lfdr.de>; Thu,  1 Jun 2023 18:56:07 +0200 (CEST)
-Received: from [127.0.0.1] (helo=sfs-ml-3.v29.lw.sourceforge.com)
-	by sfs-ml-3.v29.lw.sourceforge.com with esmtp (Exim 4.95)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0D1AB71F2B5
+	for <lists+jfs-discussion@lfdr.de>; Thu,  1 Jun 2023 21:13:23 +0200 (CEST)
+Received: from [127.0.0.1] (helo=sfs-ml-1.v29.lw.sourceforge.com)
+	by sfs-ml-1.v29.lw.sourceforge.com with esmtp (Exim 4.95)
 	(envelope-from <jfs-discussion-bounces@lists.sourceforge.net>)
-	id 1q4laI-0001gL-Q7;
-	Thu, 01 Jun 2023 16:55:36 +0000
+	id 1q4njK-0004w0-3n;
+	Thu, 01 Jun 2023 19:13:02 +0000
 Received: from [172.30.20.202] (helo=mx.sourceforge.net)
- by sfs-ml-3.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
+ by sfs-ml-1.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
  TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (Exim 4.95)
- (envelope-from <keescook@chromium.org>) id 1q4la8-0001gD-Ec
+ (envelope-from <msnitzer@redhat.com>) id 1q4njH-0004vV-8z
  for jfs-discussion@lists.sourceforge.net;
- Thu, 01 Jun 2023 16:55:26 +0000
+ Thu, 01 Jun 2023 19:13:00 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=sourceforge.net; s=x; h=In-Reply-To:Content-Type:MIME-Version:References:
  Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:Content-Transfer-Encoding:
  Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
  Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=7R//X5NdsgI6wLK3+Qn/oGuxEvWJrNQ/UPsJ5NYCxrI=; b=iT+Zc/Z+8gg3oXhAIKva9cxb2H
- XkZ+TCcpn6zqNZ4GgHpcWJkVlL5wDGtfJ30HurL6GkhHrP1T3aaSbbEa//KDj3BhOS2DK5ZaCquew
- wx4zOlTSH/k3GdtTPz9EETJUCWqx24thgxeE/HJ6lIFyO99BQeV3qWq3F7kK6E/ow5sw=;
+ bh=OhyufVORgAPdxy2e2nylP7DQVEhvcm7KBzR049ls10E=; b=MQE2hU5NJoX9AqUygkhf29ow1o
+ 80CObHGqCkS54U9Zg/Q9Hb+tYWmgcvhBEZKhYdVcniDv2pF7adyJ9068lU85lFTIszfftUPz4eL74
+ LtmEGPrASqpixU8xf3ZnmpmtQDccuzhtp6ZMVk6irOnpbYcEf1CXQW2K9pZe149MPeLc=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
  h=In-Reply-To:Content-Type:MIME-Version:References:Message-ID:Subject:Cc:To
@@ -31,92 +31,80 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
  :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
  List-Post:List-Owner:List-Archive;
- bh=7R//X5NdsgI6wLK3+Qn/oGuxEvWJrNQ/UPsJ5NYCxrI=; b=X5qhpyQAfkxQ7b7TXn9mTUR+Ur
- RVzfYBYyXMsqMugW/4+doQ5+rN8Wzfg2JThTZxv6WjKL4XMe2LfikDc4fyiUKPuxY9bNMAVTmpKKT
- 5hlHP79KVuFcpHN1lKD2A++TTm58ajD+12wf63OCHPcNBIjq2mke+QnTR5vpZAFt166c=;
-Received: from mail-ot1-f44.google.com ([209.85.210.44])
- by sfi-mx-1.v28.lw.sourceforge.com with esmtps
+ bh=OhyufVORgAPdxy2e2nylP7DQVEhvcm7KBzR049ls10E=; b=D9ScmwhdoJVByenYSxELJUpW2D
+ vzI09eKkl5M3P7GQOjkXSuI1YYlZli4ef3luVPVs36eF0GXduz28yXko2hdCyyR7PC6JzkqWzqStn
+ mo7tslF70Ss2urF0HucXMJO05riVEAz8D6jh1Kp2Onra9Sf8xKdeScoaRqyY+L/cmTIU=;
+Received: from mail-qk1-f180.google.com ([209.85.222.180])
+ by sfi-mx-2.v28.lw.sourceforge.com with esmtps
  (TLS1.2:ECDHE-RSA-AES128-GCM-SHA256:128) (Exim 4.95)
- id 1q4la5-008XQ1-0L for jfs-discussion@lists.sourceforge.net;
- Thu, 01 Jun 2023 16:55:24 +0000
-Received: by mail-ot1-f44.google.com with SMTP id
- 46e09a7af769-6b085e425ffso1042436a34.1
+ id 1q4njD-0000Jg-Rv for jfs-discussion@lists.sourceforge.net;
+ Thu, 01 Jun 2023 19:13:00 +0000
+Received: by mail-qk1-f180.google.com with SMTP id
+ af79cd13be357-75b14216386so110077185a.0
  for <jfs-discussion@lists.sourceforge.net>;
- Thu, 01 Jun 2023 09:55:20 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=chromium.org; s=google; t=1685638515; x=1688230515;
- h=in-reply-to:content-disposition:mime-version:references:message-id
- :subject:cc:to:from:date:from:to:cc:subject:date:message-id:reply-to;
- bh=7R//X5NdsgI6wLK3+Qn/oGuxEvWJrNQ/UPsJ5NYCxrI=;
- b=N7jxBsxokIj4dbKG6CfxgzcFsr0fRqCh3i51kOL9bnVoVD7qhUPnQdT61rQLCRW9Sf
- 4HqGyhdlZ6lg0JDJd8XMOiBemmXtWSiGpZ0wcSMfI4cdrK3bxXfXe2Dy1jA51fWkUfIo
- 8gGyws9b00BKw41Xo6nv9fll2wH3Vr9k8IlBU=
+ Thu, 01 Jun 2023 12:12:55 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20221208; t=1685638515; x=1688230515;
+ d=1e100.net; s=20221208; t=1685646770; x=1688238770;
  h=in-reply-to:content-disposition:mime-version:references:message-id
  :subject:cc:to:from:date:x-gm-message-state:from:to:cc:subject:date
  :message-id:reply-to;
- bh=7R//X5NdsgI6wLK3+Qn/oGuxEvWJrNQ/UPsJ5NYCxrI=;
- b=fA9yWaLM/zRk+SDcmo89O7liM6V60CArOTSBYD7I1MTGqY29x89lbGwKAKBjNSKrgz
- kT4kKN3rUa9it5JtDZK6M0ob9LO++/xMzEpw3fVoSX9aq4OL5sk+uAVsWHzaus8BtvMm
- adqDiVWGRCcjzE/FlsVoadOQ25HHBDm2Zrn/ADsFy75Z0AWiyezBFjE9OTnVds09wgBu
- nWfWa5FNsEUXPOh5FuJAnNh3HwwV3g6VjzbZBfFwDKrIHwPbyPBNIPUghIgAY9BRojlw
- QFHWd42QM08d6zISHT/qRwhwDyx20fjQkWU7WvHJG2PTaYzhCnQaNI89RTJV118C1qTM
- 6WXw==
-X-Gm-Message-State: AC+VfDwQNsFIhM0Byj6BD2iEh99A6+qpp4UMybhfAQMxZwM+tGI80Tzf
- OD5FLUGMZ0b2MQjlDT0dGiUXoA==
-X-Google-Smtp-Source: ACHHUZ6zCvExEfmdXvt05aBdnohmfteqciUcd9dCgQeL02IZcrLpDgudgpXfQvw66OgRXUYf/54XDw==
-X-Received: by 2002:a05:6358:5903:b0:123:41df:5196 with SMTP id
- g3-20020a056358590300b0012341df5196mr7098945rwf.7.1685638515289; 
- Thu, 01 Jun 2023 09:55:15 -0700 (PDT)
-Received: from www.outflux.net (198-0-35-241-static.hfc.comcastbusiness.net.
- [198.0.35.241]) by smtp.gmail.com with ESMTPSA id
- o1-20020a17090ab88100b0024dfbac9e2fsm1628265pjr.21.2023.06.01.09.55.14
+ bh=OhyufVORgAPdxy2e2nylP7DQVEhvcm7KBzR049ls10E=;
+ b=F8C9z+3tfFAZqfcZNDf4/sfxZtAwYC8Dro1uAD/2/y8Vc8rfY6KnyKV6B3xkRM9Cba
+ NQWXK1/emt3hi/XCe24UDXWMBSbUXij8n7NYDYA0QcU5FHsYsrNYPA3NW44znlsexDps
+ z66wBlunjKqno2RRuLnDFBG5IVmBFucOVHGgbyKvk5gtTHGrgZQcbjHrRptX/aSWDfVE
+ 9nvLRbgqf+rIzJaI101k7QESWPjR7UGI/5Z5msHL+59w4Mnzn5BKjDqCWZQvvgn2vq8C
+ 4kdWRHi99Slnr8yaaC9HV+uEEkz5xp8mKKfh/bLsumr9zt519Qh2vraKIvF8Us5lA0KC
+ 9dOA==
+X-Gm-Message-State: AC+VfDyG7vSD99S5WWHivi5U9YaJBKPjauE5PWoZaAJqMSTcTE32XSBv
+ X1J3xdliXJ3UPB41tTZZXrkRBpWVekzlPBgsjQ==
+X-Google-Smtp-Source: ACHHUZ6u3xR1YiMGmuLlFSVcpQijECu4NK+3gxplM1YXFxd6uPbdqueU4kLpHglpcsupIu+Tz62ckA==
+X-Received: by 2002:a05:6214:aca:b0:625:b849:fa3 with SMTP id
+ g10-20020a0562140aca00b00625b8490fa3mr11540334qvi.30.1685645167691; 
+ Thu, 01 Jun 2023 11:46:07 -0700 (PDT)
+Received: from localhost (pool-68-160-166-30.bstnma.fios.verizon.net.
+ [68.160.166.30]) by smtp.gmail.com with ESMTPSA id
+ y3-20020ac87c83000000b003e89e2b3c23sm7940746qtv.58.2023.06.01.11.46.06
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 01 Jun 2023 09:55:14 -0700 (PDT)
-Date: Thu, 1 Jun 2023 09:55:14 -0700
-From: Kees Cook <keescook@chromium.org>
-To: "Dr. David Alan Gilbert" <linux@treblig.org>
-Message-ID: <202306010954.23972A710A@keescook>
-References: <20230204183355.never.877-kees@kernel.org>
- <Y96/SUlPUl7xH1NO@gallifrey>
- <63e1486a.050a0220.7001.ca15@mx.google.com>
- <Y+FaEp2blurmgVlH@gallifrey>
+ Thu, 01 Jun 2023 11:46:07 -0700 (PDT)
+Date: Thu, 1 Jun 2023 14:46:06 -0400
+From: Mike Snitzer <snitzer@kernel.org>
+To: Mikulas Patocka <mpatocka@redhat.com>
+Message-ID: <ZHjnbkcpZ/yZWRsE@redhat.com>
+References: <20230502101934.24901-1-johannes.thumshirn@wdc.com>
+ <20230502101934.24901-17-johannes.thumshirn@wdc.com>
+ <alpine.LRH.2.21.2305301045220.3943@file01.intranet.prod.int.rdu2.redhat.com>
+ <ZHYbIYxGbcXbpvIK@redhat.com>
+ <alpine.LRH.2.21.2305301527410.18906@file01.intranet.prod.int.rdu2.redhat.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <Y+FaEp2blurmgVlH@gallifrey>
-X-Spam-Score: -0.4 (/)
+In-Reply-To: <alpine.LRH.2.21.2305301527410.18906@file01.intranet.prod.int.rdu2.redhat.com>
+X-Spam-Score: 0.2 (/)
 X-Spam-Report: Spam detection software,
  running on the system "util-spamd-2.v13.lw.sourceforge.com", 
  has NOT identified this incoming email as spam.  The original
  message has been attached to this so you can view it or label
  similar future email.  If you have any questions, see
  the administrator of that system for details.
- Content preview:  On Mon, Feb 06, 2023 at 07:50:42PM +0000,
- Dr. David Alan Gilbert
- wrote: > * Kees Cook (keescook@chromium.org) wrote: > > On Sat, Feb 04, 2023
- at 08:25:45PM +0000, Dr. David Alan Gilbert wrote: > > > * [...] 
- Content analysis details:   (-0.4 points, 6.0 required)
+ Content preview:  On Tue, May 30 2023 at 3:43P -0400,
+ Mikulas Patocka <mpatocka@redhat.com>
+ wrote: > > > On Tue, 30 May 2023, Mike Snitzer wrote: > > > On Tue, May 30
+ 2023 at 11:13P -0400, > > Mikulas Patocka <mpatocka@redhat.com> wrote: >
+ > > > > Hi > > > > > > I nack this. This just adds code tha [...] 
+ Content analysis details:   (0.2 points, 6.0 required)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.210.44 listed in list.dnswl.org]
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [209.85.210.44 listed in wl.mailspike.net]
+ no trust [209.85.222.180 listed in list.dnswl.org]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.222.180 listed in wl.mailspike.net]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid -0.0 T_SCC_BODY_TEXT_LINE   No description available.
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
- -0.2 DKIMWL_WL_HIGH         DKIMwl.org - High trust sender
-X-Headers-End: 1q4la5-008XQ1-0L
-Subject: Re: [Jfs-discussion] [PATCH] jfs: Use unsigned variable for length
- calculations
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ -0.0 T_SCC_BODY_TEXT_LINE   No description available.
+X-Headers-End: 1q4njD-0000Jg-Rv
+Subject: Re: [Jfs-discussion] [PATCH v5 16/20] dm-crypt: check if adding
+ pages to clone bio fails
 X-BeenThere: jfs-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -128,70 +116,71 @@ List-Post: <mailto:jfs-discussion@lists.sourceforge.net>
 List-Help: <mailto:jfs-discussion-request@lists.sourceforge.net?subject=help>
 List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/jfs-discussion>, 
  <mailto:jfs-discussion-request@lists.sourceforge.net?subject=subscribe>
-Cc: Dave Kleikamp <shaggy@kernel.org>, Christian Brauner <brauner@kernel.org>,
- jfs-discussion@lists.sourceforge.net, linux-kernel@vger.kernel.org,
- linux-hardening@vger.kernel.org, Dave Chinner <dchinner@redhat.com>
+Cc: "axboe @ kernel . dk" <axboe@kernel.dk>, shaggy@kernel.org,
+ damien.lemoal@wdc.com, cluster-devel@redhat.com, kch@nvidia.com,
+ agruenba@redhat.com, linux-mm@kvack.org,
+ Johannes Thumshirn <johannes.thumshirn@wdc.com>,
+ Damien Le Moal <damien.lemoal@opensource.wdc.com>,
+ jfs-discussion@lists.sourceforge.net, willy@infradead.org, ming.lei@redhat.com,
+ linux-raid@vger.kernel.org, song@kernel.org, dm-devel@redhat.com,
+ linux-block@vger.kernel.org, rpeterso@redhat.com,
+ linux-fsdevel@vger.kernel.org, hch@lst.de
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Errors-To: jfs-discussion-bounces@lists.sourceforge.net
 
-On Mon, Feb 06, 2023 at 07:50:42PM +0000, Dr. David Alan Gilbert wrote:
-> * Kees Cook (keescook@chromium.org) wrote:
-> > On Sat, Feb 04, 2023 at 08:25:45PM +0000, Dr. David Alan Gilbert wrote:
-> > > * Kees Cook (keescook@chromium.org) wrote:
-> > > > To avoid confusing the compiler about possible negative sizes, switch
-> > > > "ssize" which can never be negative from int to u32.  Seen with GCC 13:
-> > > > 
-> > > > ../fs/jfs/namei.c: In function 'jfs_symlink': ../include/linux/fortify-string.h:57:33: warning: '__builtin_memcpy' pointer overflow between offset 0 and size [-2147483648, -1]
-> > > > [-Warray-bounds=]
-> > > >    57 | #define __underlying_memcpy     __builtin_memcpy
-> > > >       |                                 ^
-> > > > ...
-> > > > ../fs/jfs/namei.c:950:17: note: in expansion of macro 'memcpy'
-> > > >   950 |                 memcpy(ip->i_link, name, ssize);
-> > > >       |                 ^~~~~~
-> > > > 
-> > > > Cc: Dave Kleikamp <shaggy@kernel.org>
-> > > > Cc: Christian Brauner <brauner@kernel.org>
-> > > > Cc: Dave Chinner <dchinner@redhat.com>
-> > > > Cc: jfs-discussion@lists.sourceforge.net
-> > > > Signed-off-by: Kees Cook <keescook@chromium.org>
-> > > > ---
-> > > >  fs/jfs/namei.c | 6 +++---
-> > > >  1 file changed, 3 insertions(+), 3 deletions(-)
-> > > > 
-> > > > diff --git a/fs/jfs/namei.c b/fs/jfs/namei.c
-> > > > index b29d68b5eec5..494b9f4043cf 100644
-> > > > --- a/fs/jfs/namei.c
-> > > > +++ b/fs/jfs/namei.c
-> > > > @@ -876,7 +876,7 @@ static int jfs_symlink(struct mnt_idmap *idmap, struct inode *dip,
-> > > >  	tid_t tid;
-> > > >  	ino_t ino = 0;
-> > > >  	struct component_name dname;
-> > > > -	int ssize;		/* source pathname size */
-> > > > +	u32 ssize;		/* source pathname size */
-> > > 
-> > > Had you considered using size_t - this is set from a strlen and used by a memcpy
-> > > that both talk size_t.
+On Tue, May 30 2023 at  3:43P -0400,
+Mikulas Patocka <mpatocka@redhat.com> wrote:
+
+> 
+> 
+> On Tue, 30 May 2023, Mike Snitzer wrote:
+> 
+> > On Tue, May 30 2023 at 11:13P -0400,
+> > Mikulas Patocka <mpatocka@redhat.com> wrote:
 > > 
-> > I considered that, but I've had other maintainers upset about doubling
-> > the variable size.
+> > > Hi
+> > > 
+> > > I nack this. This just adds code that can't ever be executed.
+> > > 
+> > > dm-crypt already allocates enough entries in the vector (see "unsigned int 
+> > > nr_iovecs = (size + PAGE_SIZE - 1) >> PAGE_SHIFT;"), so bio_add_page can't 
+> > > fail.
+> > > 
+> > > If you want to add __must_check to bio_add_page, you should change the 
+> > > dm-crypt code to:
+> > > if (!bio_add_page(clone, page, len, 0)) {
+> > > 	WARN(1, "this can't happen");
+> > > 	return NULL;
+> > > }
+> > > and not write recovery code for a can't-happen case.
+> > 
+> > Thanks for the review Mikulas. But the proper way forward, in the
+> > context of this patchset, is to simply change bio_add_page() to
+> > __bio_add_page()
+> > 
+> > Subject becomes: "dm crypt: use __bio_add_page to add single page to clone bio"
+> > 
+> > And header can explain that "crypt_alloc_buffer() already allocates
+> > enough entries in the clone bio's vector, so bio_add_page can't fail".
+> > 
+> > Mike
 > 
-> I bet at least on some platforms it's cheaper as the 64 bit.
+> Yes, __bio_add_page would look nicer. But bio_add_page can merge adjacent 
+> pages into a single bvec entry and __bio_add_page can't (I don't know how 
+> often the merging happens or what is the performance implication of 
+> non-merging).
 > 
-> > I opted to keep the variable 32-bit here, so the
-> > machine code would only change to lose signed-ness.
-> 
-> Fair enough.
+> I think that for the next merge window, we can apply this patch: 
+> https://listman.redhat.com/archives/dm-devel/2023-May/054046.html
+> which makes this discussion irrelevant. (you can change bio_add_page to 
+> __bio_add_page in it)
 
-Thread ping. Can someone pick this up (or Ack it for my tree), please?
+Yes, your patch is on my TODO list.  I've rebased my dm-6.5 branch on
+the latest block 6.5 branch.  I'll be reviewing/rebasing/applying your
+patch soon.
 
-Thanks!
-
--Kees
-
--- 
-Kees Cook
+Mike
 
 
 _______________________________________________
