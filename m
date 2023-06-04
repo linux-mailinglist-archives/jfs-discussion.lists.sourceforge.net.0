@@ -2,115 +2,102 @@ Return-Path: <jfs-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+jfs-discussion@lfdr.de
 Delivered-To: lists+jfs-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id EEE3872177A
-	for <lists+jfs-discussion@lfdr.de>; Sun,  4 Jun 2023 15:44:22 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 78796721779
+	for <lists+jfs-discussion@lfdr.de>; Sun,  4 Jun 2023 15:44:21 +0200 (CEST)
 Received: from [127.0.0.1] (helo=sfs-ml-1.v29.lw.sourceforge.com)
 	by sfs-ml-1.v29.lw.sourceforge.com with esmtp (Exim 4.95)
 	(envelope-from <jfs-discussion-bounces@lists.sourceforge.net>)
-	id 1q5o1X-0001bU-K5;
+	id 1q5o1X-0001bY-S8;
 	Sun, 04 Jun 2023 13:44:00 +0000
 Received: from [172.30.20.202] (helo=mx.sourceforge.net)
- by sfs-ml-4.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
- TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (Exim 4.95)
- (envelope-from <oswalpalash@gmail.com>) id 1q5NJS-0001wV-9U
- for jfs-discussion@lists.sourceforge.net;
- Sat, 03 Jun 2023 09:12:42 +0000
+ by sfs-ml-2.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
+ TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (Exim 4.95) (envelope-from
+ <3KkV8ZAkbAM8DJK5v66zCvAA3y.19916zFDzCx98Ez8E.x97@M3KW2WVRGUFZ5GODRSRYTGD7.apphosting.bounces.google.com>)
+ id 1q5ihX-0005x3-Kq for jfs-discussion@lists.sourceforge.net;
+ Sun, 04 Jun 2023 08:02:59 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=sourceforge.net; s=x; h=Content-Type:To:Subject:Message-ID:Date:From:
- MIME-Version:Sender:Reply-To:Cc:Content-Transfer-Encoding:Content-ID:
+ d=sourceforge.net; s=x; h=Content-Type:To:From:Subject:Message-ID:In-Reply-To
+ :Date:MIME-Version:Sender:Reply-To:Cc:Content-Transfer-Encoding:Content-ID:
  Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
- :Resent-Message-ID:In-Reply-To:References:List-Id:List-Help:List-Unsubscribe:
+ :Resent-Message-ID:References:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=VvGvevK1DZh3VeG8nQiw1mon0qMeY/YAlPPjsFEFcBA=; b=bVavFI7Gi8PFG3vuMqSD9AETjc
- wh2BTQHjnlC80QiuyEq5vAq6VOw24JXAzFYLoSkFzbC66MA6Ew8D6PRiCRRNaeDYltr6ojnVTjLR3
- 7NG5uqXYLlyKJMAlGRsofpI9uRjv4cyiw8Jgqff8gaBLBYJC0Vym+y11n4jrrWrEII1g=;
+ bh=pX3JrkxK3bl4mL5qQRzJ3YzJ93nC54ATg72Z3TueWFg=; b=WFYruOaTQshdyMXq96blSQhH4G
+ wZggzwdRYLaSi7Ax3axKkmohifrL4mkPUCL27aYONy8UFSKkHvolW1mc6WJfHHAic2JTsPr/1HeEa
+ rwTq8wYMoHQdAESzoRqAstPc06EHQLtKkcPvl6+xNuOHRLFv94cnTgOb06w9/w2U1RbE=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
- h=Content-Type:To:Subject:Message-ID:Date:From:MIME-Version:Sender:Reply-To
- :Cc:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
- Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+ h=Content-Type:To:From:Subject:Message-ID:In-Reply-To:Date:MIME-Version:
+ Sender:Reply-To:Cc:Content-Transfer-Encoding:Content-ID:Content-Description:
+ Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
  References:List-Id:List-Help:List-Unsubscribe:List-Subscribe:List-Post:
- List-Owner:List-Archive; bh=VvGvevK1DZh3VeG8nQiw1mon0qMeY/YAlPPjsFEFcBA=; b=m
- j9sc08j7crD0pT+c0y3hB79ImAefmFCbjLfeGhERkWqSiys1S79lE486SNcNI/FYAbcTCFT1+qRIk
- ovuRBWA2WnhmO6IcLB8C6WMLC48lYWwzLRjyLbpxOHhyennE4Rs1ELPnMDfzyV6C5MhR2Q7v0ysOp
- nvNBNntwOtFRQF68=;
-Received: from mail-yw1-f178.google.com ([209.85.128.178])
- by sfi-mx-2.v28.lw.sourceforge.com with esmtps
+ List-Owner:List-Archive; bh=pX3JrkxK3bl4mL5qQRzJ3YzJ93nC54ATg72Z3TueWFg=; b=e
+ VCN4Nyp8qDS5KpR8FRmYcxSQgVh56j3BgojSeMhcskWW/creJ8SUODJdw9V89POOI3OS4phRU3pdw
+ O/URqQpSKc/Nqwe4szjzuQGTMzQim586fbhC8LSYJDCSLe6mG/G9rlnarNmyKhMbOS4/q0isf30iw
+ z7kjKEDrVlAxh9So=;
+Received: from mail-io1-f79.google.com ([209.85.166.79])
+ by sfi-mx-1.v28.lw.sourceforge.com with esmtps
  (TLS1.2:ECDHE-RSA-AES128-GCM-SHA256:128) (Exim 4.95)
- id 1q5NJS-0001VL-0x for jfs-discussion@lists.sourceforge.net;
- Sat, 03 Jun 2023 09:12:42 +0000
-Received: by mail-yw1-f178.google.com with SMTP id
- 00721157ae682-568bb833462so32170767b3.1
+ id 1q5ihU-00AgFd-2D for jfs-discussion@lists.sourceforge.net;
+ Sun, 04 Jun 2023 08:02:59 +0000
+Received: by mail-io1-f79.google.com with SMTP id
+ ca18e2360f4ac-77567c00a37so279627939f.3
  for <jfs-discussion@lists.sourceforge.net>;
- Sat, 03 Jun 2023 02:12:41 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=gmail.com; s=20221208; t=1685783556; x=1688375556;
- h=to:subject:message-id:date:from:mime-version:from:to:cc:subject
- :date:message-id:reply-to;
- bh=VvGvevK1DZh3VeG8nQiw1mon0qMeY/YAlPPjsFEFcBA=;
- b=OhUXBASmjr+1EdRQScFm5mzIBwpEqSzMZhcQ/1HLIHQ6R7MRwAQGV4P2sM/6nI9nRO
- atHx/kv50XrzSSTZBcMi7Ib7KW94S5At2m+2E4oPhmhxzbjZoO4OMsQgu1/nrpHsacmm
- AYs9B2lLAla6Or+xfJPjHy6qR3FzVNXZrusfZvxwIfQLhBIkI4yq1E0v7I6wUQxZTeJP
- 3yJBOfOxRw7RGLs9mEFRiVQeXP4ZJa8JJKp+A0U1cwjlpik3HmKMlQjr2P8ur3YvQLQZ
- K3qpU3EzgIwCgzbbGX4mvk5+vAxHMvIVIa6+2+7eUHo+tZhHH9rm21Gtz1L45Pt5ardd
- HCNQ==
+ Sun, 04 Jun 2023 01:02:56 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20221208; t=1685783556; x=1688375556;
- h=to:subject:message-id:date:from:mime-version:x-gm-message-state
- :from:to:cc:subject:date:message-id:reply-to;
- bh=VvGvevK1DZh3VeG8nQiw1mon0qMeY/YAlPPjsFEFcBA=;
- b=WnBSFCs4S/OOOilOOZ+o3gJ5BZFlUajBI0nQRqb/HEJ4hOYUVERqMLXkEM38ps3ldk
- /BZwMhxaISyFKcw2IFzrnfPV8P96YRzs6XLlrjP7ju6W0dUToLPhtVTwZc9M4Dxc3tNH
- iUdyj3ZKCmcw34H7IxAk7tS0qNZSjsd++sIzW+LmTpaFzcIgngz7CFrwSBHWaWjhml+z
- PsgrSDwjs7W8/SQRqwoQIATMAEvXE6ohPYApdYSJXntEkkCnvsRDMA4txkMFTkrd7HMg
- 4wJA6VFrqshZf+ZC35hue/cCgAQmIV0MLfN/q87R2eIXFfWP+D/WIE+Kd5tU4/MuOg5g
- 1Yag==
-X-Gm-Message-State: AC+VfDx+MPXqYSjT6JQBPbpfEaFQeNGrD90JuXYePymvnpjMfAx2/I2L
- 7VR0Lhe5ls3Lu17ZcxHSGiU54du2WXuv5wYKMA4=
-X-Google-Smtp-Source: ACHHUZ6ZKwVVFm5QBTMpd2I3LPh5rKu94ytSDHwSktz3kwDGeWZsRNKin3Y0dNnJ4sp6t+cbXvmSVkEZaOtMjbQvErY=
-X-Received: by 2002:a81:9251:0:b0:55a:7c7:6ff7 with SMTP id
- j78-20020a819251000000b0055a07c76ff7mr2953760ywg.11.1685783555990; Sat, 03
- Jun 2023 02:12:35 -0700 (PDT)
+ d=1e100.net; s=20221208; t=1685865770; x=1688457770;
+ h=to:from:subject:message-id:in-reply-to:date:mime-version
+ :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+ bh=pX3JrkxK3bl4mL5qQRzJ3YzJ93nC54ATg72Z3TueWFg=;
+ b=HeZa1NibdjrX8q7Xkji9PkfZ+/75L0Cx0mPVdXFB6R/JBbpVacmPxukX3Sz9nPgvj2
+ XZNrQbSlcQZ0zY0G0lLJmmd8cXEQ5jlix3ElRoEDQzrKJ4/LTVYi4b2qo1HdsWLKqA+P
+ 4GRXepwNaDCwfmd2cDnrrj0kuz1bLs42S8V7pWgv/8jXeEVoSiR1Dln9tSy9iBuy+ueI
+ EODfqGFoyc0EGW7SiV9FWA8GIIP6McIYxFF0pM6MjOeI6pLm0c2uEE/Q6lHZEMb00Y0v
+ XWXxTMlCkfF1z5NssgxUeQDKnHqzVImmvht/bkfkd16Xfxj5MSc9EUbd5cm9Qipgq1TJ
+ A4XA==
+X-Gm-Message-State: AC+VfDyr741Xdls/cUyQ2rWi61dr6IGi3J98qkGjiw2ywL+5JOjmOCVj
+ PcKI4bCvaBHPtML5Z/bocONyYqmNiyv3VtPgYuu50TOfeOIh1/96Pw==
+X-Google-Smtp-Source: ACHHUZ7qk0MWucJ4G9ALaHbToQi4eroKlaw30e7bZ4ghmojvQqN8CxQfvRbeszVQphZZMrO/BeyBLwC1EifGg3Yweyz2eooA6Ya1
 MIME-Version: 1.0
-From: Palash Oswal <oswalpalash@gmail.com>
-Date: Sat, 3 Jun 2023 02:12:24 -0700
-Message-ID: <CAGyP=7czgoq8V+v09uAJWLXM4sRYsMGQ6YGF2eFARXxmcg8xTw@mail.gmail.com>
-To: Dave Kleikamp <shaggy@kernel.org>, jfs-discussion@lists.sourceforge.net, 
- LKML <linux-kernel@vger.kernel.org>, 
- syzkaller-bugs <syzkaller-bugs@googlegroups.com>
-X-Spam-Score: -0.2 (/)
+X-Received: by 2002:a02:29c5:0:b0:41c:feac:7a9c with SMTP id
+ p188-20020a0229c5000000b0041cfeac7a9cmr6425394jap.6.1685865770507; Sun, 04
+ Jun 2023 01:02:50 -0700 (PDT)
+Date: Sun, 04 Jun 2023 01:02:50 -0700
+In-Reply-To: <00000000000050314505d3429981@google.com>
+X-Google-Appengine-App-Id: s~syzkaller
+X-Google-Appengine-App-Id-Alias: syzkaller
+Message-ID: <00000000000063e8d005fd493617@google.com>
+From: syzbot <syzbot+52ddb6c83a04ca55f975@syzkaller.appspotmail.com>
+To: jfs-discussion@lists.sourceforge.net, linux-fsdevel@vger.kernel.org, 
+ linux-kernel@vger.kernel.org, shaggy@kernel.org, 
+ syzkaller-bugs@googlegroups.com
+X-Spam-Score: 0.6 (/)
 X-Spam-Report: Spam detection software,
  running on the system "util-spamd-2.v13.lw.sourceforge.com", 
  has NOT identified this incoming email as spam.  The original
  message has been attached to this so you can view it or label
  similar future email.  If you have any questions, see
  the administrator of that system for details.
- Content preview:  Hello,
- I found the following issue using syzkaller with enriched
- corpus[1] on: HEAD commit : 0bcc4025550403ae28d2984bddacafbca0a2f112 git
- tree: linux C Reproducer : I do not have a C reproducer yet. I [...] 
- Content analysis details:   (-0.2 points, 6.0 required)
+ Content preview:  syzbot has found a reproducer for the following issue on:
+ HEAD commit: 715abedee4cd Add linux-next specific files for 20230515 git tree:
+ linux-next console output:
+ https://syzkaller.appspot.com/x/log.txt?x=16769f33280000
+ kernel config: https://syzkaller.apps [...] 
+ Content analysis details:   (0.6 points, 6.0 required)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.128.178 listed in list.dnswl.org]
+ 0.3 FROM_LOCAL_HEX         From: localpart has long hexadecimal sequence
  -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.128.178 listed in wl.mailspike.net]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [oswalpalash[at]gmail.com]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ [209.85.166.79 listed in wl.mailspike.net]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.166.79 listed in list.dnswl.org]
  -0.0 T_SCC_BODY_TEXT_LINE   No description available.
-X-Headers-End: 1q5NJS-0001VL-0x
+X-Headers-End: 1q5ihU-00AgFd-2D
 X-Mailman-Approved-At: Sun, 04 Jun 2023 13:43:59 +0000
-Subject: [Jfs-discussion] KASAN: use-after-free Read in dtSearch
+Subject: Re: [Jfs-discussion] [syzbot] [jfs?] kernel BUG in lbmIODone
 X-BeenThere: jfs-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -126,107 +113,81 @@ Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Errors-To: jfs-discussion-bounces@lists.sourceforge.net
 
-Hello,
-I found the following issue using syzkaller with enriched corpus[1] on:
-HEAD commit : 0bcc4025550403ae28d2984bddacafbca0a2f112
-git tree: linux
-C Reproducer : I do not have a C reproducer yet. I will update this
-thread when I get one.
-Kernel .config :
-https://gist.github.com/oswalpalash/d9580b0bfce202b37445fa5fd426e41f
+syzbot has found a reproducer for the following issue on:
 
-Link:
-1. https://github.com/cmu-pasta/linux-kernel-enriched-corpus
+HEAD commit:    715abedee4cd Add linux-next specific files for 20230515
+git tree:       linux-next
+console output: https://syzkaller.appspot.com/x/log.txt?x=16769f33280000
+kernel config:  https://syzkaller.appspot.com/x/.config?x=6a2745d066dda0ec
+dashboard link: https://syzkaller.appspot.com/bug?extid=52ddb6c83a04ca55f975
+compiler:       gcc (Debian 10.2.1-6) 10.2.1 20210110, GNU ld (GNU Binutils for Debian) 2.35.2
+syz repro:      https://syzkaller.appspot.com/x/repro.syz?x=1262d159280000
+C reproducer:   https://syzkaller.appspot.com/x/repro.c?x=14e3b42d280000
 
-Console log :
-==================================================================
-BUG: KASAN: use-after-free in dtSearch+0x1c87/0x20b0
-Read of size 1 at addr ffff8881272d16f4 by task syz-executor.0/21592
+Downloadable assets:
+disk image: https://storage.googleapis.com/syzbot-assets/d4d1d06b34b8/disk-715abede.raw.xz
+vmlinux: https://storage.googleapis.com/syzbot-assets/3ef33a86fdc8/vmlinux-715abede.xz
+kernel image: https://storage.googleapis.com/syzbot-assets/e0006b413ed1/bzImage-715abede.xz
+mounted in repro: https://storage.googleapis.com/syzbot-assets/e03edfdf992b/mount_0.gz
 
-CPU: 1 PID: 21592 Comm: syz-executor.0 Not tainted
-6.3.0-rc6-pasta-00035-g0bcc40255504 #1
-Hardware name: QEMU Standard PC (i440FX + PIIX, 1996), BIOS
-1.13.0-1ubuntu1.1 04/01/2014
+IMPORTANT: if you fix the issue, please add the following tag to the commit:
+Reported-by: syzbot+52ddb6c83a04ca55f975@syzkaller.appspotmail.com
+
+BUG at fs/jfs/jfs_logmgr.c:2298 assert(bp->l_flag & lbmRELEASE)
+------------[ cut here ]------------
+kernel BUG at fs/jfs/jfs_logmgr.c:2298!
+invalid opcode: 0000 [#1] PREEMPT SMP KASAN
+CPU: 0 PID: 15 Comm: ksoftirqd/0 Not tainted 6.4.0-rc2-next-20230515-syzkaller #0
+Hardware name: Google Google Compute Engine/Google Compute Engine, BIOS Google 05/25/2023
+RIP: 0010:lbmIODone+0x111a/0x11d0 fs/jfs/jfs_logmgr.c:2298
+Code: fe e9 97 f3 ff ff e8 25 70 95 fe 48 c7 c1 80 ac 89 8a ba fa 08 00 00 48 c7 c6 c0 aa 89 8a 48 c7 c7 00 ab 89 8a e8 26 58 79 fe <0f> 0b e8 df 70 e8 fe e9 09 f2 ff ff e8 f5 6f 95 fe 48 c7 c1 c0 ac
+RSP: 0018:ffffc90000147c70 EFLAGS: 00010086
+RAX: 000000000000003f RBX: ffff88814aa95200 RCX: 0000000000000100
+RDX: 0000000000000000 RSI: ffffffff81689ddc RDI: 0000000000000005
+RBP: 0000000000000020 R08: 0000000000000005 R09: 0000000000000000
+R10: 0000000080000101 R11: 0000000000000001 R12: 0000000000000246
+R13: 0000000000000000 R14: 0000000000000000 R15: 0000000000000000
+FS:  0000000000000000(0000) GS:ffff8880b9800000(0000) knlGS:0000000000000000
+CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033
+CR2: 00007f5731f31000 CR3: 00000000219b5000 CR4: 00000000003506f0
+DR0: 0000000000000000 DR1: 0000000000000000 DR2: 0000000000000000
+DR3: 0000000000000000 DR6: 00000000fffe0ff0 DR7: 0000000000000400
 Call Trace:
  <TASK>
- dump_stack_lvl+0xd9/0x150
- print_address_description.constprop.0+0x2c/0x3c0
- kasan_report+0x11c/0x130
- dtSearch+0x1c87/0x20b0
- jfs_lookup+0x180/0x340
- __lookup_slow+0x24c/0x460
- walk_component+0x33f/0x5a0
- path_lookupat+0x185/0x760
- filename_lookup+0x1d2/0x590
- user_path_at_empty+0x46/0x60
- __x64_sys_mount+0x1ee/0x300
- do_syscall_64+0x39/0xb0
- entry_SYSCALL_64_after_hwframe+0x63/0xcd
-RIP: 0033:0x7f4547e8eacd
-Code: 02 b8 ff ff ff ff c3 66 0f 1f 44 00 00 f3 0f 1e fa 48 89 f8 48
-89 f7 48 89 d6 48 89 ca 4d 89 c2 4d 89 c8 4c 8b 4c 24 08 0f 05 <48> 3d
-01 f0 ff ff 73 01 c3 48 c7 c1 b8 ff ff ff f7 d8 64 89 01 48
-RSP: 002b:00007f4548b8abf8 EFLAGS: 00000246 ORIG_RAX: 00000000000000a5
-RAX: ffffffffffffffda RBX: 00007f4547fbbf80 RCX: 00007f4547e8eacd
-RDX: 0000000000000000 RSI: 0000000020000000 RDI: 0000000000000000
-RBP: 00007f4547efcb05 R08: 0000000000000000 R09: 0000000000000000
-R10: 0000000000000000 R11: 0000000000000246 R12: 0000000000000000
-R13: 00007fffdef4763f R14: 00007fffdef477e0 R15: 00007f4548b8ad80
+ bio_endio+0x5af/0x6c0 block/bio.c:1608
+ req_bio_endio block/blk-mq.c:761 [inline]
+ blk_update_request+0x56a/0x14f0 block/blk-mq.c:906
+ blk_mq_end_request+0x59/0x4c0 block/blk-mq.c:1023
+ lo_complete_rq+0x1c6/0x280 drivers/block/loop.c:370
+ blk_complete_reqs+0xad/0xe0 block/blk-mq.c:1101
+ __do_softirq+0x1d4/0x905 kernel/softirq.c:553
+ run_ksoftirqd kernel/softirq.c:921 [inline]
+ run_ksoftirqd+0x31/0x60 kernel/softirq.c:913
+ smpboot_thread_fn+0x659/0x9f0 kernel/smpboot.c:164
+ kthread+0x344/0x440 kernel/kthread.c:379
+ ret_from_fork+0x1f/0x30 arch/x86/entry/entry_64.S:308
  </TASK>
+Modules linked in:
+---[ end trace 0000000000000000 ]---
+RIP: 0010:lbmIODone+0x111a/0x11d0 fs/jfs/jfs_logmgr.c:2298
+Code: fe e9 97 f3 ff ff e8 25 70 95 fe 48 c7 c1 80 ac 89 8a ba fa 08 00 00 48 c7 c6 c0 aa 89 8a 48 c7 c7 00 ab 89 8a e8 26 58 79 fe <0f> 0b e8 df 70 e8 fe e9 09 f2 ff ff e8 f5 6f 95 fe 48 c7 c1 c0 ac
+RSP: 0018:ffffc90000147c70 EFLAGS: 00010086
+RAX: 000000000000003f RBX: ffff88814aa95200 RCX: 0000000000000100
+RDX: 0000000000000000 RSI: ffffffff81689ddc RDI: 0000000000000005
+RBP: 0000000000000020 R08: 0000000000000005 R09: 0000000000000000
+R10: 0000000080000101 R11: 0000000000000001 R12: 0000000000000246
+R13: 0000000000000000 R14: 0000000000000000 R15: 0000000000000000
+FS:  0000000000000000(0000) GS:ffff8880b9800000(0000) knlGS:0000000000000000
+CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033
+CR2: 00007f5731f31000 CR3: 00000000219b5000 CR4: 00000000003506f0
+DR0: 0000000000000000 DR1: 0000000000000000 DR2: 0000000000000000
+DR3: 0000000000000000 DR6: 00000000fffe0ff0 DR7: 0000000000000400
 
-The buggy address belongs to the physical page:
-page:ffffea00049cb440 refcount:0 mapcount:0 mapping:0000000000000000
-index:0x2 pfn:0x1272d1
-flags: 0x57ff00000000000(node=1|zone=2|lastcpupid=0x7ff)
-raw: 057ff00000000000 ffffea00049c8fc8 ffffea0004cca408 0000000000000000
-raw: 0000000000000002 ffff8881272d1000 00000000ffffffff 0000000000000000
-page dumped because: kasan: bad access detected
-page_owner tracks the page as freed
-page last allocated via order 0, migratetype Reclaimable, gfp_mask
-0x242050(__GFP_IO|__GFP_NOWARN|__GFP_COMP|__GFP_THISNODE|__GFP_RECLAIMABLE),
-pid 17911, tgid 17910 (syz-executor.0), ts 959645805638, free_ts
-962549035260
- get_page_from_freelist+0x1190/0x2e20
- __alloc_pages+0x1cb/0x4a0
- cache_grow_begin+0x9b/0x3b0
- cache_alloc_refill+0x27f/0x380
- kmem_cache_alloc+0x397/0x3f0
- jbd2__journal_start+0x190/0x850
- __ext4_journal_start_sb+0x411/0x5d0
- ext4_dirty_inode+0xa5/0x130
- __mark_inode_dirty+0x1e0/0xd60
- generic_write_end+0x354/0x440
- ext4_da_write_end+0x172/0x8e0
- generic_perform_write+0x316/0x570
- ext4_buffered_write_iter+0x15b/0x460
- ext4_file_write_iter+0xbd8/0x1720
- __kernel_write_iter+0x262/0x7a0
- dump_user_range+0x234/0x700
-page last free stack trace:
- free_pcp_prepare+0x5d5/0xa50
- free_unref_page+0x1d/0x490
- slabs_destroy+0x85/0xc0
- ___cache_free+0x2ae/0x3d0
- qlist_free_all+0x4f/0x1a0
- kasan_quarantine_reduce+0x192/0x220
- __kasan_slab_alloc+0x63/0x90
- kmem_cache_alloc+0x1bd/0x3f0
- getname_flags.part.0+0x50/0x4f0
- getname_flags+0x9e/0xe0
- user_path_at_empty+0x2f/0x60
- do_readlinkat+0xcd/0x2f0
- __x64_sys_readlinkat+0x97/0x100
- do_syscall_64+0x39/0xb0
- entry_SYSCALL_64_after_hwframe+0x63/0xcd
 
-Memory state around the buggy address:
- ffff8881272d1580: ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff
- ffff8881272d1600: ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff
->ffff8881272d1680: ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff
-                                                             ^
- ffff8881272d1700: ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff
- ffff8881272d1780: ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff
-==================================================================
+---
+If you want syzbot to run the reproducer, reply with:
+#syz test: git://repo/address.git branch-or-commit-hash
+If you attach or paste a git patch, syzbot will apply it before testing.
 
 
 _______________________________________________
