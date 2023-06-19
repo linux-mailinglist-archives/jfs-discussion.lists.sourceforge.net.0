@@ -2,74 +2,72 @@ Return-Path: <jfs-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+jfs-discussion@lfdr.de
 Delivered-To: lists+jfs-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4D99F737208
+	by mail.lfdr.de (Postfix) with ESMTPS id 6987873720A
 	for <lists+jfs-discussion@lfdr.de>; Tue, 20 Jun 2023 18:48:28 +0200 (CEST)
 Received: from [127.0.0.1] (helo=sfs-ml-4.v29.lw.sourceforge.com)
 	by sfs-ml-4.v29.lw.sourceforge.com with esmtp (Exim 4.95)
 	(envelope-from <jfs-discussion-bounces@lists.sourceforge.net>)
-	id 1qBeWV-00047p-0o;
+	id 1qBeWV-00047t-AK;
 	Tue, 20 Jun 2023 16:48:07 +0000
 Received: from [172.30.20.202] (helo=mx.sourceforge.net)
- by sfs-ml-2.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
+ by sfs-ml-1.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
  TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (Exim 4.95)
- (envelope-from <code@siddh.me>) id 1qBDbY-0007GL-I8
+ (envelope-from <code@siddh.me>) id 1qBElH-0000D8-LB
  for jfs-discussion@lists.sourceforge.net;
- Mon, 19 Jun 2023 12:03:32 +0000
+ Mon, 19 Jun 2023 13:17:40 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=sourceforge.net; s=x; h=Content-Transfer-Encoding:Content-Type:MIME-Version
- :Subject:References:In-Reply-To:Message-ID:Cc:To:From:Date:Sender:Reply-To:
- Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
- Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
+ d=sourceforge.net; s=x; h=Content-Type:Content-Transfer-Encoding:MIME-Version
+ :Date:Subject:Message-ID:Cc:To:From:Sender:Reply-To:Content-ID:
+ Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+ :Resent-Message-ID:In-Reply-To:References:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=ssQr11wA5JNcyAnldJTk18B1wXzPiiGhQYpVTxFwBAA=; b=i/XZH8ll+vOOXI32OZ06T/yxDb
- AXIUcAJV/238PPa3NQ7cSaVFCK9Uw/yo8BczfqQcNUliYOzbYLqKv+htMt3NBljlPt/gGQGQWchGw
- iVdJFz7Sr1Cv41TpcDJQInLxN8DeU+AAOvfXJ1VanKMmvyyIr8RFrk0tqrNw3+/A2E5w=;
+ bh=GvzDRB8KKM+eFSppRsIz/VHygepCr5cjnv/6S4U0hdo=; b=XZl4bA9M7jZjBD+wcLwQQgSvoO
+ +qEp61MrzpC45vDRMNj1/fTvDvb0U2f87Mzu25B8gcJGod17DdD4TxERTohti5HQgs7XMON1U0Lg7
+ bKN3QgwYvdEn5mhrJ7d0u401LWPQShuDvdTcd0NxvRCCwIP4oMR+gX9Eq17sp54XmUNw=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
- h=Content-Transfer-Encoding:Content-Type:MIME-Version:Subject:References:
- In-Reply-To:Message-ID:Cc:To:From:Date:Sender:Reply-To:Content-ID:
- Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
- :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
+ h=Content-Type:Content-Transfer-Encoding:MIME-Version:Date:Subject:
+ Message-ID:Cc:To:From:Sender:Reply-To:Content-ID:Content-Description:
+ Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+ In-Reply-To:References:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
  List-Post:List-Owner:List-Archive;
- bh=ssQr11wA5JNcyAnldJTk18B1wXzPiiGhQYpVTxFwBAA=; b=e2xt9R9nbIGvfyXhT0H3rZJoWt
- g4TxZbapkAR1Eol/ZvC2koAF5w1259AKthjz1LDGF8cl0dPuQVIGwsfgL55qcSrBiT8U8lfR8FOyf
- 9M6BCUgBYz1EAAKFysomGuFhrCJmOIYYLy8jYnwQLTo9+1cWMpiDMKlkrFeFOtK7b4e4=;
+ bh=GvzDRB8KKM+eFSppRsIz/VHygepCr5cjnv/6S4U0hdo=; b=jykzzdl2CYSEIGdR5ANiGyYE1O
+ 7NzR+4bkhardxiFIVCMOjBkDEI+Y9ptn224Sc1tNqq7B7kY+nmdI0QKonwiPPOGtWFc4znViw9aCu
+ Qk8qs6XYnkpbw66ko+Vtz2pZNDUEtNoS8YM4jznD8amJBtfNRTuDQlZBcu1JDZvRlMU0=;
 Received: from sender-of-o51.zoho.in ([103.117.158.51])
  by sfi-mx-1.v28.lw.sourceforge.com with esmtps
  (TLS1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.95)
- id 1qBDbR-008cXt-61 for jfs-discussion@lists.sourceforge.net;
- Mon, 19 Jun 2023 12:03:32 +0000
-ARC-Seal: i=1; a=rsa-sha256; t=1687176174; cv=none; d=zohomail.in; s=zohoarc; 
- b=PUlEb5/yFcJ3vdmEBdlKMXQmv7Z+Q/5nGdJBgdt7hSBsi8xvOxi1KK7s+Q02aDhfIk8G19FSypzg2BAMtrKlszhaGP3XnqLK3i8Pj/oE8h4g+we4DMhXqhtQXx7MjxpR6aRrsbC/OfTZCzpYDazvEZoF4FMUbW7UIGDNyyHA/qU=
+ id 1qBElE-008gip-Ll for jfs-discussion@lists.sourceforge.net;
+ Mon, 19 Jun 2023 13:17:40 +0000
+ARC-Seal: i=1; a=rsa-sha256; t=1687180639; cv=none; d=zohomail.in; s=zohoarc; 
+ b=NBdXVMn5z9fWMBGwVqYqBoCyLpHQOCJwzIifpNUC3TNjRszlZfWK5/y5Eu/4/ZNFgfcrNJcq/BeSieQz9R4nNLvdHrcQ4MoaPQ02kt+PpuWmAc7XmfLn2XcReii6LBjkj/VFKDhw/bBbkJ8+YRhgHi/abmZhJe40zrMiAe+v0zE=
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=zohomail.in;
- s=zohoarc; t=1687176174;
- h=Content-Type:Content-Transfer-Encoding:Cc:Date:From:In-Reply-To:MIME-Version:Message-ID:References:Subject:To;
- bh=ssQr11wA5JNcyAnldJTk18B1wXzPiiGhQYpVTxFwBAA=; 
- b=RyFwWo3mC+FA9gY0i/iluDoecDHQeAM5dnB5HfM/jYqR+OxJX86o3+ZcpXMwy38UXtY3e8QrOQMJYmNDb0CQ+QNR9d68ov8EvPCK5+UovOabbk1CtNNt8/fzaznLUz0o7CsgZEyX1HhEO4wsr4Pzhp34MmoCK2kcEt3aJAauE24=
+ s=zohoarc; t=1687180639;
+ h=Content-Type:Content-Transfer-Encoding:Cc:Date:From:MIME-Version:Message-ID:Subject:To;
+ bh=GvzDRB8KKM+eFSppRsIz/VHygepCr5cjnv/6S4U0hdo=; 
+ b=fUJTI8z4jxlOoFSClv9SIhRkvh9fvRZdeXFs6G7rPwLtxlxLu2uWnL9RQrxLKZhO5E+Chj6oUHI6Xd9gtmDsHXHjfXEWtjvDQ9D5Y0CvT+B0J4P5JmJ4CbhYdIBkQ2EQepwli73ETqlxfgyonypPgThRg6ZfBH8fTnz67WpoABw=
 ARC-Authentication-Results: i=1; mx.zohomail.in; dkim=pass  header.i=siddh.me;
  spf=pass  smtp.mailfrom=code@siddh.me;
  dmarc=pass header.from=<code@siddh.me>
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; t=1687176174; 
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; t=1687180639; 
  s=zmail; d=siddh.me; i=code@siddh.me;
- h=Date:Date:From:From:To:To:Cc:Cc:Message-ID:In-Reply-To:References:Subject:Subject:MIME-Version:Content-Type:Content-Transfer-Encoding:Message-Id:Reply-To;
- bh=ssQr11wA5JNcyAnldJTk18B1wXzPiiGhQYpVTxFwBAA=;
- b=pvP+LrH2/zxPlq+yzHyBrlLvbtd1jnZ/NhfO3saQ2gD94VnDGnt38vrhXfb+Iqj0
- MCOAI74wI1JM44ogmBQ7apVqVs5XmhHZtTG6uhXImvCtwrKX4leOgaaa7cCCmgU86Pg
- OvCv0g29VoYWsAT3IlTxFR1Ctj26VOVHLgQorYc8=
-Received: from mail.zoho.in by mx.zoho.in
- with SMTP id 1687176143401505.491704779305;
- Mon, 19 Jun 2023 17:32:23 +0530 (IST)
-Date: Mon, 19 Jun 2023 17:32:23 +0530
+ h=From:From:To:To:Cc:Cc:Message-ID:Subject:Subject:Date:Date:MIME-Version:Content-Transfer-Encoding:Content-Type:Message-Id:Reply-To;
+ bh=GvzDRB8KKM+eFSppRsIz/VHygepCr5cjnv/6S4U0hdo=;
+ b=GPgWrcCZkH2OW2/Y3pftJf/rXBY+6/GUt0qVsBANuoi/UFFygltgRbHJR9jkmaxi
+ lJR+BnOPBtctgxnydC7ePBSwCLdjyJHhxOAp0kIJn6+kUHiowQ/cLkirmSsqUUCXv+C
+ 1yMeqKIpaXjSO2yE6e6RS2fnjMFYi6RSMcPWun6c=
+Received: from kampyooter.. (223.179.149.51 [223.179.149.51]) by mx.zoho.in
+ with SMTPS id 1687180638188470.44972217847703;
+ Mon, 19 Jun 2023 18:47:18 +0530 (IST)
 From: Siddh Raman Pant <code@siddh.me>
-To: "Dave Kleikamp" <dave.kleikamp@oracle.com>
-Message-ID: <188d388e20c.68252734185979.7356640998684740177@siddh.me>
-In-Reply-To: <6284256f-dacc-e287-fe07-377491f87ca3@oracle.com>
-References: <20230605140151.635604-1-code@siddh.me>
- <6284256f-dacc-e287-fe07-377491f87ca3@oracle.com>
+To: Dave Kleikamp <dave.kleikamp@oracle.com>, Hoi Pok Wu <wuhoipok@gmail.com>,
+ Liu Shixin <liushixin2@huawei.com>,
+ Dongliang Mu <mudongliangabcd@gmail.com>
+Message-ID: <20230619131644.118332-1-code@siddh.me>
+Date: Mon, 19 Jun 2023 18:46:44 +0530
+X-Mailer: git-send-email 2.39.2
 MIME-Version: 1.0
-Importance: Medium
-User-Agent: Zoho Mail
-X-Mailer: Zoho Mail
+X-ZohoMailClient: External
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: Spam detection software,
  running on the system "util-spamd-1.v13.lw.sourceforge.com", 
@@ -77,9 +75,9 @@ X-Spam-Report: Spam detection software,
  message has been attached to this so you can view it or label
  similar future email.  If you have any questions, see
  the administrator of that system for details.
- Content preview:  On Sat, 17 Jun 2023 03:46:09 +0530, Dave Kleikamp wrote: >
- Actually the sanity check should be much smaller. The maximum value > should
- be L2PSIZE - log2(MINBLOCKSIZE). In reality, I think it's always [...] 
+ Content preview:  In jfs_dmap.c at line 381, BLKTODMAP is used to get a logical
+ block number inside dbFree(). db_l2nbperpage, which is the log2 number of
+ blocks per page, is passed as an argument to BLKTODMAP which use [...] 
  Content analysis details:   (-0.2 points, 6.0 required)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
@@ -94,9 +92,9 @@ X-Spam-Report: Spam detection software,
  author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
-X-Headers-End: 1qBDbR-008cXt-61
+X-Headers-End: 1qBElE-008gip-Ll
 X-Mailman-Approved-At: Tue, 20 Jun 2023 16:48:06 +0000
-Subject: Re: [Jfs-discussion] [PATCH] jfs: jfs_dmap: Validate db_l2nbperpage
+Subject: [Jfs-discussion] [PATCH v2] jfs: jfs_dmap: Validate db_l2nbperpage
  while mounting
 X-BeenThere: jfs-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
@@ -109,26 +107,79 @@ List-Post: <mailto:jfs-discussion@lists.sourceforge.net>
 List-Help: <mailto:jfs-discussion-request@lists.sourceforge.net?subject=help>
 List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/jfs-discussion>, 
  <mailto:jfs-discussion-request@lists.sourceforge.net?subject=subscribe>
-Cc: jfs-discussion <jfs-discussion@lists.sourceforge.net>,
- Dongliang Mu <mudongliangabcd@gmail.com>, stable <stable@vger.kernel.org>,
- linux-kernel <linux-kernel@vger.kernel.org>,
- Liu Shixin <liushixin2@huawei.com>, Hoi Pok Wu <wuhoipok@gmail.com>,
- syzbot+d2cd27dcf8e04b232eb2
- <syzbot+d2cd27dcf8e04b232eb2@syzkaller.appspotmail.com>,
- Anup Sharma <anupnewsmail@gmail.com>
+Cc: jfs-discussion@lists.sourceforge.net, linux-kernel@vger.kernel.org,
+ stable@vger.kernel.org, syzbot+d2cd27dcf8e04b232eb2@syzkaller.appspotmail.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Errors-To: jfs-discussion-bounces@lists.sourceforge.net
 
-On Sat, 17 Jun 2023 03:46:09 +0530, Dave Kleikamp wrote:
-> Actually the sanity check should be much smaller. The maximum value
-> should be L2PSIZE - log2(MINBLOCKSIZE). In reality, I think it's always
-> zero.
+In jfs_dmap.c at line 381, BLKTODMAP is used to get a logical block
+number inside dbFree(). db_l2nbperpage, which is the log2 number of
+blocks per page, is passed as an argument to BLKTODMAP which uses it
+for shifting.
 
-Thanks for the review, will amend the patch and send.
+Syzbot reported a shift out-of-bounds crash because db_l2nbperpage is
+too big. This happens because the large value is set without any
+validation in dbMount() at line 181.
 
-Thanks,
-Siddh
+Thus, make sure that db_l2nbperpage is correct while mounting.
+
+Max number of pages = Page size / Min block size
+=> log2(Max number of pages) = log2(Page size / Min block size)
+			     = log2(Page size) - log2(Min block size)
+
+=> Max db_l2nbperpage = L2PSIZE - L2MINBLOCKSIZE
+
+Reported-and-tested-by: syzbot+d2cd27dcf8e04b232eb2@syzkaller.appspotmail.com
+Closes: https://syzkaller.appspot.com/bug?id=2a70a453331db32ed491f5cbb07e81bf2d225715
+Cc: stable@vger.kernel.org
+Suggested-by: Dave Kleikamp <dave.kleikamp@oracle.com>
+Signed-off-by: Siddh Raman Pant <code@siddh.me>
+---
+Changes in v2:
+- Fix upper bound as pointed out in v1 by Shaggy.
+- Add an explanation for the same in commit message for completeness.
+
+ fs/jfs/jfs_dmap.c   | 6 ++++++
+ fs/jfs/jfs_filsys.h | 2 ++
+ 2 files changed, 8 insertions(+)
+
+diff --git a/fs/jfs/jfs_dmap.c b/fs/jfs/jfs_dmap.c
+index a3eb1e826947..da6a2bc6bf02 100644
+--- a/fs/jfs/jfs_dmap.c
++++ b/fs/jfs/jfs_dmap.c
+@@ -178,7 +178,13 @@ int dbMount(struct inode *ipbmap)
+ 	dbmp_le = (struct dbmap_disk *) mp->data;
+ 	bmp->db_mapsize = le64_to_cpu(dbmp_le->dn_mapsize);
+ 	bmp->db_nfree = le64_to_cpu(dbmp_le->dn_nfree);
++
+ 	bmp->db_l2nbperpage = le32_to_cpu(dbmp_le->dn_l2nbperpage);
++	if (bmp->db_l2nbperpage > L2PSIZE - L2MINBLOCKSIZE) {
++		err = -EINVAL;
++		goto err_release_metapage;
++	}
++
+ 	bmp->db_numag = le32_to_cpu(dbmp_le->dn_numag);
+ 	if (!bmp->db_numag) {
+ 		err = -EINVAL;
+diff --git a/fs/jfs/jfs_filsys.h b/fs/jfs/jfs_filsys.h
+index b5d702df7111..33ef13a0b110 100644
+--- a/fs/jfs/jfs_filsys.h
++++ b/fs/jfs/jfs_filsys.h
+@@ -122,7 +122,9 @@
+ #define NUM_INODE_PER_IAG	INOSPERIAG
+ 
+ #define MINBLOCKSIZE		512
++#define L2MINBLOCKSIZE		9
+ #define MAXBLOCKSIZE		4096
++#define L2MAXBLOCKSIZE		12
+ #define	MAXFILESIZE		((s64)1 << 52)
+ 
+ #define JFS_LINK_MAX		0xffffffff
+-- 
+2.39.2
+
+
 
 
 _______________________________________________
