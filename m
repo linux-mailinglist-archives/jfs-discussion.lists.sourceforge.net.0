@@ -2,235 +2,154 @@ Return-Path: <jfs-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+jfs-discussion@lfdr.de
 Delivered-To: lists+jfs-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id 28074737604
-	for <lists+jfs-discussion@lfdr.de>; Tue, 20 Jun 2023 22:26:31 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 59CF873858F
+	for <lists+jfs-discussion@lfdr.de>; Wed, 21 Jun 2023 15:44:30 +0200 (CEST)
 Received: from [127.0.0.1] (helo=sfs-ml-3.v29.lw.sourceforge.com)
 	by sfs-ml-3.v29.lw.sourceforge.com with esmtp (Exim 4.95)
 	(envelope-from <jfs-discussion-bounces@lists.sourceforge.net>)
-	id 1qBhvS-0006O8-NV;
-	Tue, 20 Jun 2023 20:26:07 +0000
+	id 1qBy7x-0000bX-1T;
+	Wed, 21 Jun 2023 13:44:05 +0000
 Received: from [172.30.20.202] (helo=mx.sourceforge.net)
- by sfs-ml-3.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
+ by sfs-ml-2.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
  TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (Exim 4.95)
- (envelope-from <dave.kleikamp@oracle.com>) id 1qBhvR-0006O1-8z
+ (envelope-from <mirimmad@outlook.com>) id 1qBoum-00005G-OC
  for jfs-discussion@lists.sourceforge.net;
- Tue, 20 Jun 2023 20:26:05 +0000
+ Wed, 21 Jun 2023 03:53:52 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=sourceforge.net; s=x; h=MIME-Version:Content-Transfer-Encoding:Content-Type
- :In-Reply-To:From:References:Cc:To:Subject:Date:Message-ID:Sender:Reply-To:
+ d=sourceforge.net; s=x; h=MIME-Version:Content-Type:In-Reply-To:References:
+ Message-ID:Date:Subject:CC:To:From:Sender:Reply-To:Content-Transfer-Encoding:
  Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
  Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=8PaFQZmpiOkDHkxygNkd8SpR2UsL/7MFszQITCIeINw=; b=caElg8nXJG1lEX5ldqzxo8tuU8
- d1iKNh63XoB8GFYjkroMTdcJJAsmzKD3/9h0wkgBOrBaCyfmRsR/VxWBPSxIFnecJeyBUa3gSlVaz
- /ZJwkutzRckWOJMSQVU2uQamV2CpNIvfkesLzmhdUqIfEMT0YA3144Dvr/YVrhSAlHp8=;
+ bh=x0dra68gXDf7npP7R65gJh3sSegOHMHMAAb/3GlGBRo=; b=IPg59/YrpXFuTxc0WGcplXx8Mq
+ 9qoXj9f2vqcWs5Oin8QNWnXMUU4iBOPJUchxCAvvkHmF4MPPVRBLwYB6Pa36KxNepoH5+8aBOLUcy
+ Jh1MOzaRu+gDx5rpQpSObKamyqjt0gOu8ZSqkuOVplXcGaCpRS6UP2hD2Ndx/3M1376M=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
- h=MIME-Version:Content-Transfer-Encoding:Content-Type:In-Reply-To:From:
- References:Cc:To:Subject:Date:Message-ID:Sender:Reply-To:Content-ID:
+ h=MIME-Version:Content-Type:In-Reply-To:References:Message-ID:Date:Subject:
+ CC:To:From:Sender:Reply-To:Content-Transfer-Encoding:Content-ID:
  Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
  :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
  List-Post:List-Owner:List-Archive;
- bh=8PaFQZmpiOkDHkxygNkd8SpR2UsL/7MFszQITCIeINw=; b=XMY8bZB5fj8eIWIh1Y5UP0bZT1
- 4KjZScxkn1mIAPhe5gYPtubfcD17xIY4Uq9jBmpjnpzQirEGRKYZ92ExmA/KNlpcbSMvxkDC1fv70
- cc664wh98CJKCe8kASqpbrNYIONyHxHqlckBGqfBIlQD4y75ko4z7FYzjewfAtlkN30E=;
-Received: from mx0b-00069f02.pphosted.com ([205.220.177.32])
- by sfi-mx-1.v28.lw.sourceforge.com with esmtps
+ bh=x0dra68gXDf7npP7R65gJh3sSegOHMHMAAb/3GlGBRo=; b=gEtpNmIbfiLgu3Cv7dsQddA61x
+ dU/s766YFN68Qq9UBAhQ7/wObGZTDHxwyg6j0SeuVigG3LPn+TqO7HmfMhEu+Halpk5JtpiMagK6w
+ wiVOA4FP21SIhxv35qAs21+ILixgGxuNTyXl6zwTQVJNRMoEA4hZfCsZyaRqR204SPV0=;
+Received: from mail-bn8nam12olkn2019.outbound.protection.outlook.com
+ ([40.92.21.19] helo=NAM12-BN8-obe.outbound.protection.outlook.com)
+ by sfi-mx-2.v28.lw.sourceforge.com with esmtps
  (TLS1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.95)
- id 1qBhvK-00A3Ih-5r for jfs-discussion@lists.sourceforge.net;
- Tue, 20 Jun 2023 20:26:05 +0000
-Received: from pps.filterd (m0333520.ppops.net [127.0.0.1])
- by mx0b-00069f02.pphosted.com (8.17.1.19/8.17.1.19) with ESMTP id
- 35KK8ubl000646; Tue, 20 Jun 2023 20:25:46 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=oracle.com;
- h=message-id : date :
- subject : to : cc : references : from : in-reply-to : content-type :
- content-transfer-encoding : mime-version; s=corp-2023-03-30;
- bh=8PaFQZmpiOkDHkxygNkd8SpR2UsL/7MFszQITCIeINw=;
- b=Ue/tAJTXdLupIAqLN9lxCMjPlPuJ6h4dH99RNWLrNELJE3K/0oMTxIYgQKhpB1lReR5M
- C3IYlHPkOwBubBZFI0s2nzxLUEykKHJn9G84pz0BitNYwkIwRTZU3xTUYdTLqbjjc1cE
- 7RsRFYqFPtjZyS/S7f1uBGnNphq+RpZbCsKd7MjZc+wGsYjDszemnVwJOFTDuulukxcH
- ztEu0yIAhXAbcezD9QzlkI63nheimGFwV/3z+6VD7hN42j/aNJ36GnU7jK4T75i3Xwfi
- VpRZHHGdwn1QwWAyeq7DKjp9ytDOg7z+HYaVFgjb7dIRfO9btdwjVcFbMbxdsWprlM3f Ew== 
-Received: from phxpaimrmta01.imrmtpd1.prodappphxaev1.oraclevcn.com
- (phxpaimrmta01.appoci.oracle.com [138.1.114.2])
- by mx0b-00069f02.pphosted.com (PPS) with ESMTPS id 3r94vcntvg-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
- Tue, 20 Jun 2023 20:25:46 +0000
-Received: from pps.filterd
- (phxpaimrmta01.imrmtpd1.prodappphxaev1.oraclevcn.com [127.0.0.1])
- by phxpaimrmta01.imrmtpd1.prodappphxaev1.oraclevcn.com (8.17.1.19/8.17.1.19)
- with ESMTP id 35KJb9So032944; Tue, 20 Jun 2023 20:25:45 GMT
-Received: from nam12-mw2-obe.outbound.protection.outlook.com
- (mail-mw2nam12lp2045.outbound.protection.outlook.com [104.47.66.45])
- by phxpaimrmta01.imrmtpd1.prodappphxaev1.oraclevcn.com (PPS) with ESMTPS id
- 3r93963mqw-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
- Tue, 20 Jun 2023 20:25:45 +0000
+ id 1qBouj-0001f4-HY for jfs-discussion@lists.sourceforge.net;
+ Wed, 21 Jun 2023 03:53:52 +0000
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=lTPcvZTuvFf1dE4U6nbcwKuZoDIWyfiMAKx9g6s/ndEZ0BI3PrCuUZemikUK4MThv7fpl7pQqfdY+lbUPwY/nn/t8iypCK58bEyfPolZ1qs3/7viF+GQF8PXhYvRe0yzW8JW7uC//bEJVbPWsCdGF22DS89O/qtfXZwFBRtT4Op0j1lyVeGb7rEkCiEWL4+8Ums+heLADMBdytZHsxcwpVT2jfZWe1lsyF/M+F2VbObezN/XENc0CpkCnCaw1qa8G49zrZ6RGCxYqdfffXtMUWYhr5utrgc/Bl7EAwBLWwPci4ro3g6/yP/Q+Tq7ijkn1oD6MgkilEFCndv9H8+Uaw==
+ b=nuTCXhFiBxF60yumnYcC4SPNO9tuGVeYdVPdaLoq7Fn+yZyszHHuM2Dw8jVEMbzaemBvaB0TX/4YFfmZqmkSoARbbsDLGuxstuu+j7Xl9HxybUkDZb8cRJY90/OhZQYPxhKObK9ky3ghAu8uHBSKEFnq1aJqAt52WlytuNQSkfW5jfSiaLxqg3yqlKsXXS1qW3IGioDlUb2sowxp5cXvUmTxq2bZckziBWyEp0Yigw6Oa2FF9j4Ym4ySJSppdhNZo8y8+Of4v++1r2VhDFyPC40HFtAsKp1bvdxh5dXvh+JhoT0Ex/i5SdDpVSAQ/936iW7ZxkbdM0DJEX6Y2ncBLg==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
  s=arcselector9901;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=8PaFQZmpiOkDHkxygNkd8SpR2UsL/7MFszQITCIeINw=;
- b=iQzZLSNre2CU/I51O/evq5fPbs72YM3nzMpCAjQkHmXSGyU+d4a+QZn62SDTvO2Roq2TAq2eQk/DUYABm7GskYbe3Xngmp3v7pjm2VkhT/tUD5iLRNzkOmBL33VJ0nWp2gxRduGl6BKNa38CpjogfFdnCEZlt9Et7ORGUJRnYmfte6KDoGwMKMHioEjqZB99u2kqwnx4ioWuDh3m16LnOY+2i/IYIj1huRzrnSSsdnHQv/LMbrqi0y7TvN+9iXN4qQjHxJsekT76xSIhFkIiVJNB/7E3dWDiLoUwVkehvsRiS6Ok0IONlnftgjL3UrIkDAwMV9v+I1ag99n6RXxcqg==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=oracle.com; dmarc=pass action=none header.from=oracle.com;
- dkim=pass header.d=oracle.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=oracle.onmicrosoft.com; s=selector2-oracle-onmicrosoft-com;
+ bh=x0dra68gXDf7npP7R65gJh3sSegOHMHMAAb/3GlGBRo=;
+ b=RyDoTsTyOKG9mcOSaDNSfVdT1tNt6AvJ/+7JnEiVp9813gdtSYKjMvax9NexFUHyv0X9ga3mR1n+H/vyFYuj3ShRTyiOoqRMVue9yn55ZdIMsvoV0rdXk5t6Ea1RWhWv2kmk8Sez0z9QuWOg/XeoY1UvEMH6qo8wNwVRjXn5PW3It53iXjrbxkjjt1kneVXxSD0R7uH6yekxg/X787GjktmMoEyb7fNV9XD70ZJn5yimfvkXwIaXjbv8+xB3kzkhlJTh45IG1BB4YCZX9BsP7ZA42eRdfm3IlM0XJS8AvKagl7+CwNUIkSaRnCGZIIJ+sl2SbdliFvmnuE46QBbrLg==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=none; dmarc=none;
+ dkim=none; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=outlook.com;
+ s=selector1;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=8PaFQZmpiOkDHkxygNkd8SpR2UsL/7MFszQITCIeINw=;
- b=IiLOAIfQOQ2Vktz2vCjYUEGwAWkYaahvz/jRud8hMZKI+obxiMq2eXVV9PJkFr8HDFb/I822k5Gp/RlKlvBsTjv1fYvadz4ggP7GpZWgrI3tNK7Dy5v4JQxY2lSftatAh4MYZBQtU7wDxIxXcggUd2GkRDdFLDbQ+QchUS4q0Ko=
-Received: from MW5PR10MB5738.namprd10.prod.outlook.com (2603:10b6:303:19b::14)
- by PH0PR10MB4583.namprd10.prod.outlook.com (2603:10b6:510:43::6) with
+ bh=x0dra68gXDf7npP7R65gJh3sSegOHMHMAAb/3GlGBRo=;
+ b=HIC0MJ2VxAFIGA1g1ByF01nfCzT9jc7gCc0cjIYNhqrru60jGexNSeCQODscU8lwYfAkT+9srztdt0sN5iWWQGG6Hj59/Zma1NLGyruEziBofE8B7VEHLvPvAo4qyex4eb3gd4iCshor/Ne3BRg1FYLI4O5lSVosmZcQWLvlOIJXLDpO/+2fXWhJfI1wwD1zLo9435ZpjLNqKR6EQ58znc2zYY6K0lYyQuXqm38evGye1Td4wF0IwplAby4O6kJ65a3TVsEokFn/iw5pTp5H1stlKN4Eem731PQQcMG2paEcalBBi8tYWjzRJg2EqlyFtKq1+4c2PBkFUQiE1X2fOA==
+Received: from CY5PR12MB6455.namprd12.prod.outlook.com (2603:10b6:930:35::10)
+ by CY8PR12MB8066.namprd12.prod.outlook.com (2603:10b6:930:70::5) with
  Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.6521.21; Tue, 20 Jun
- 2023 20:25:43 +0000
-Received: from MW5PR10MB5738.namprd10.prod.outlook.com
- ([fe80::9c17:d256:43b9:7e96]) by MW5PR10MB5738.namprd10.prod.outlook.com
- ([fe80::9c17:d256:43b9:7e96%5]) with mapi id 15.20.6500.036; Tue, 20 Jun 2023
- 20:25:43 +0000
-Message-ID: <3bc70da4-efa0-462b-8dbf-0569fc2c0275@oracle.com>
-Date: Tue, 20 Jun 2023 15:24:59 -0500
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
- Thunderbird/102.12.0
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.6500.37; Wed, 21 Jun
+ 2023 03:53:42 +0000
+Received: from CY5PR12MB6455.namprd12.prod.outlook.com
+ ([fe80::f849:c65e:3d5b:5d]) by CY5PR12MB6455.namprd12.prod.outlook.com
+ ([fe80::f849:c65e:3d5b:5d%5]) with mapi id 15.20.6521.020; Wed, 21 Jun 2023
+ 03:53:42 +0000
+From: Immad Mir <mirimmad@outlook.com>
+To: Immad Mir <mirimmad@outlook.com>
+Thread-Topic: [PATCH] FS: JFS: Fix null-ptr-deref Read in txBegin
+Thread-Index: AQHZX/75csqQal6xKEyDlGkswLMrNK+VJ7Ny
+Date: Wed, 21 Jun 2023 03:53:42 +0000
+Message-ID: <CY5PR12MB64551AB18AB4DB2D3F1CA5A9C65DA@CY5PR12MB6455.namprd12.prod.outlook.com>
+References: <CY4PR1801MB1910F3DE3B29710C1D7A9226C68A9@CY4PR1801MB1910.namprd18.prod.outlook.com>
+In-Reply-To: <CY4PR1801MB1910F3DE3B29710C1D7A9226C68A9@CY4PR1801MB1910.namprd18.prod.outlook.com>
+Accept-Language: en-US
 Content-Language: en-US
-To: anupsharma <anupnewsmail@gmail.com>, r33s3n6@gmail.com,
- mudongliangabcd@gmail.com, liushixin2@huawei.com, wuhoipok@gmail.com
-References: <ZDla2Nuyq2QLdo96@yoga>
-From: Dave Kleikamp <dave.kleikamp@oracle.com>
-In-Reply-To: <ZDla2Nuyq2QLdo96@yoga>
-X-ClientProxiedBy: CH2PR19CA0016.namprd19.prod.outlook.com
- (2603:10b6:610:4d::26) To MW5PR10MB5738.namprd10.prod.outlook.com
- (2603:10b6:303:19b::14)
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+x-tmn: [jvnN11P/CogINUH+0/J89nbXiU9iN3xM]
+x-ms-publictraffictype: Email
+x-ms-traffictypediagnostic: CY5PR12MB6455:EE_|CY8PR12MB8066:EE_
+x-ms-office365-filtering-correlation-id: 126acafc-c5fa-483b-c381-08db720b1ade
+x-ms-exchange-slblob-mailprops: V85gaVfRD4+01U1U5L0H0gcqwa/2RtrTD1w0W44FTdo6tAE6k+JpvLLMjymHaqorTwU4/L0NO0OMFGp86193+CZ5zBUYkDgkVUXTj+VpUNu04OZbH1o6hairj9zx6bFxrR++aYK8Lp6gAhPzwYw0oPj1SXB+Ijq0AsMOXV0DO6T0iZUMNGQNOqZUELXMtYRL3j7VmJIcs16pwXnojR/HbEr35+uXh73q6kLHkFhaxZhCpkv7D4pgAZ3ZJ7IORE/YpLR39UeevMA+2TpCP2FmJK4NhKGM68YR9j88LSkBAeq83IrRnC3p/thqOap5vQoi+lZX79naoSTZH9mjUl71j6Ne10GKOGSAsMii+xIs+me8ZNuRMDtoefOC+qAGBIVdDZDsK9idebGazR0ApMDEYx0sYkpQg7xpVA1IsSsBVhGnxD584fGRktpL0I+4y2xQBH546TwQZFAZkobKaiNyJGPa5aHhSF9T6MHFC4or3wLAW0K1+EGY33I4g9U6M7u8kH8NubMxEVRY3dHwWexN//bcIykz3luUONegUiPTlEwjLn4/6KqxRDpiPIRs2X0bmzSIjG6HDsbJQadsAvBZ79YH1DUNBFbD8JfKeaqlBx8VLGy6XuUdVp/XvzrBpRS3G9EGgbZUrXwP5LeBzShGqIbY1p1YtdQe5/TvTpVJWr3vOYnlIeo7CfrovCWluDlL0l1lRyZrLj6dWFilDKw/IZyM6CGicmiTURjkHyn8q7EI2TFk5EAzwVRcN9LfuOm3nde36rTHXRXtJXdwBNfZwfZC2rmKCGmexoIS0aKapgveal74qOqdovP69M3UNCickiyU65maVyX2pfHtql5n0A==
+x-microsoft-antispam: BCL:0;
+x-microsoft-antispam-message-info: OaslYFjbjs+kQuQxUykAZr160ert8BSx5LfIX387K6KhcccJnH5BHjjUfVuurI5yEPiVzCkQai0Ix9mlNJ4xVfHQzWhpGmfwBWBjXGw1c7FFwo/wUSzsjMqxfwZoNl9hSZjh6BWI3A67gpTSBb2VNmP0GowqWlOzakXX70gKmyqE9xzsC/sW7T3Kl1jPTNuRAvrFJw7VwV1Inf95jsVt3wFjBAfeFucPC+aCAMRSiXUFyoUOlDxxYYsCVwzXNfFZYsLTj7u2c9oLXy9kIwS235FiiPbOd4DHW13Oj8roDJXGh2QNX+U6E5PkjrmUo03E0USt0cujlMSOjiDR+sYz0FkZ6K2DbAXAs/VJbhIPumJ1ZOQoC/w/f5bKaii0cFWnqLGHWMtvUhiAVzgKFDa6VH29n1j1J38jQT426IwNDlWR8L52PDJ1+djR00/YoqG6507zVFSxdsg34NETquiEN+Dw3IFueazuzgi1d1HDR32spLFhHGHAAXReJwvcBzYRDTFbGKeH8TuB1nKn36SzxT9dgk5OTdF6cNpA6ZIRMTaeaLih8FK6zpBrvCJxy1DMyCcYA8eJLTCsjI+x1ugOuHYyVxyU6aGXpM7JIvdUQKpr87dnfbea8CQFP4xiYmRhpF5ZGU+02mkNGd4BfGKIwpYtZS08KX07eedoEyzv/hMqw0myaxXN2ppSt3S9jGCf
+x-ms-exchange-antispam-messagedata-chunkcount: 1
+x-ms-exchange-antispam-messagedata-0: =?us-ascii?Q?oFyC1887Denk8Zq+F42My9teGm9oE00WdYnva5ypQad7WOZg22TfRE6xcA//?=
+ =?us-ascii?Q?JqHZZ3ehWdBcvUmsF8nSFMbm9I91vUj41rSMGqQlvFaHQEPwHc3Kasqfp157?=
+ =?us-ascii?Q?pGeen1uQtUaw8803io90s9QpqEFuAVNrk3p0sV+4DeWDsir6PhcNFAinWD3r?=
+ =?us-ascii?Q?Z39O+WjguRoAG1TrtgdINiOIJUlYjIdBpQdLmRyTixCxED6CZCa9xuORKOE/?=
+ =?us-ascii?Q?luw7RAhZYT4E0zK2JdVWpsCNWD1mC3iZRFXDLpA2dnWr9RnSu7M1ubV9MNUm?=
+ =?us-ascii?Q?S5BIRpMRJqlzMHc31frFxb2CcKcz2COehqKz/kphriRdEywQwm+pL7/CL0/8?=
+ =?us-ascii?Q?c7M3wUxEn+83jfOc511Qj22kwi/e9BPQNGqJMvzt1FHIdj2KnTh8pc0gRkc8?=
+ =?us-ascii?Q?Q4MG2Q3fe2OiRPcBXCZZAHEzpQ9PPjsQ+0mFMQk5Bi3JxxGnol+G0+h/EmTZ?=
+ =?us-ascii?Q?vLGCn7eLwson4L3nNhKzPHuGw7IjBQmC/MAsD4OO53Psv2hgZevMzPoLIsah?=
+ =?us-ascii?Q?7L6ThggPQ6PCsuwpnST9lK+az0MCjYaGujsobpessT4kHFyOenJAvAIOBfhk?=
+ =?us-ascii?Q?Z1x7zhlo3Eh5ZwJPkM46NtAcaMqetEFa3asEU6KSIXiuDbzfdRcyb6GbEHc1?=
+ =?us-ascii?Q?oE1jJu/Pf788crCaDPmfUVWxVk4+7rIqTldEmqjPf6BLYMJKIfmhS16L/+4p?=
+ =?us-ascii?Q?qfmlP1X5cZsFsLW5gZeQ9NP5Fm7kZItO/bCsC0Z97forv+TpA4aNdYGXb1XU?=
+ =?us-ascii?Q?rtrpXTRPZGRKoSvcTxhdkGV6jg+A7JUqzgjWcRZEuWKfpoLejW+wGwqTnYgZ?=
+ =?us-ascii?Q?EpVpss9bcQLj+3wRzJhlJhWZYjNjmn2iCRN/tepbUQ4Jug2O0ghfaq0z0ClY?=
+ =?us-ascii?Q?H81YZpaUkuFXAmGgTl0k9eYLbDQ2gaaukgU1kkz9+6JakcVq5WafeGLkGxKA?=
+ =?us-ascii?Q?ZmXxkaa7nFA4qzrvOkyk0tbP27o7KV7jqCHzMfxvMMoMKl2gSDY/nOOmhrWP?=
+ =?us-ascii?Q?f07xZs/a9Ce6QRkoLIqERayEHzlCmJhFAH/KLpl2VDAQsCxWju590A232ExQ?=
+ =?us-ascii?Q?8y3u0/Iz26HfrPc2tS+CUYhj6k5hsjcOMFb4PJkw35Etu8yj24rBsXpmeh4q?=
+ =?us-ascii?Q?hr7I5gvnV7EJBbmmR1tZQLrsrNCBQfh1ubEab/EKjjyd4InFe2o3c0jAVP+K?=
+ =?us-ascii?Q?h8OYQzNZQMWNrb8yHpUgxILvnPWJIrZQ7LOV5UOk4Jr3HKx03MYWaCMieYU?=
+ =?us-ascii?Q?=3D?=
 MIME-Version: 1.0
-X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: MW5PR10MB5738:EE_|PH0PR10MB4583:EE_
-X-MS-Office365-Filtering-Correlation-Id: cddeeada-2dc3-489b-0d84-08db71cc6d32
-X-MS-Exchange-SenderADCheck: 1
-X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;
-X-Microsoft-Antispam-Message-Info: xAMZFHUg+WYIsNoVNUDTo4Y/G0GBNo0Rf5UZWfPdO06mlb5SbOCNpNNAzlHuKSwZI2Ph2B1s41ViTtAXU7rrwpuN9e7XoTRjDnWWmjb9ajqB9MJcgr5YRRC6ykYrsP6VpdYS7LTfKCeeGLsXPvpkF9BdBI7huXimbsozlLRxiQDWIvi1mvDxKMwwafU207whyFdzQrXaAtua+VMCm90b18bnYhGxVVWbB4SmSmlWl5GDN0aWhDKL11ObRUuNrmTpF2cH4Z74rAuQ5QjtBrCZWJ8/3f/wSXpOHRKs1VG0P9qjYoijRak5ZSUE8AiTtCoDNXc4n1y6lGqjtaQ6Fkfg8Dc7G2tu0D0aN+zZXrpd3ecS8rNMGm6MP4KYXMYccU5ubyNKYeRvtJz/i/U0LR1J92lhFuQ+1CNHEVMW3AU/AMxqGIGpRKVNw62rbow+jAtt2RrXSQ+X4GpwYs+iJ0ipofZ3EOie7RROjrlAuQQOp0GB/Nys3xpihTQSQctnK41Fnfh+96rG4Lj/fFdTs8xS0l3RrhV7iNNDgSatFamO+Mu+XPGM1t4OUxv0yjuzBNvV2lbrB+988ktbWhx/jlqmCCtdBaSoTCaEAEJePL6QZSZMUxz96NgBfeut36s4VmJ324PZsGJTqj9R3H6XhQ4nOfkgUw/qWqga1cJwZ7QiWQk=
-X-Forefront-Antispam-Report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
- IPV:NLI; SFV:NSPM; H:MW5PR10MB5738.namprd10.prod.outlook.com; PTR:; CAT:NONE;
- SFS:(13230028)(136003)(346002)(396003)(366004)(39860400002)(376002)(451199021)(83380400001)(6512007)(8676002)(8936002)(41300700001)(4326008)(5660300002)(66476007)(316002)(66556008)(66946007)(2616005)(31696002)(36756003)(86362001)(26005)(186003)(6506007)(31686004)(38100700002)(6666004)(478600001)(966005)(6486002)(2906002)(44832011)(99710200001)(43740500002)(45980500001);
- DIR:OUT; SFP:1101; 
-X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: =?utf-8?B?RnE3MWhZQmg0U3FOcldKYVV1c0RKQzNnakJ2dnV1K1BTUUc4Ukp1SXJtUG5C?=
- =?utf-8?B?emwvZi9uenNvVWtQem1abVZTWnhxM2dyTGZ3Y2JMWHJXWWVpWi9LNUsvN2tr?=
- =?utf-8?B?NGxQL3hnRHFjSlZNR3NqUWVwUXBSZXdwME9ISm8rc2RRa2d6RVErejZuUkxj?=
- =?utf-8?B?R1A1aENUVGVvWE9JcXgzU1QwaTFvU2c2aGU4Ylp4Y1h1OFg4ajdwQVhXejFu?=
- =?utf-8?B?V09yZXNVb2FZei9wWHgyQ1FkY0phakhSV1EyZ25yZENnQ2ViMG5OMjVXMWhD?=
- =?utf-8?B?QTdML0RpYTJydzBsNGIzR3VmQ25MN29UeUYzdnZ5d2RxSVp4akdOVkwwV2NV?=
- =?utf-8?B?MHUrMUsrWThULzZKcFNiZUxURHJTSVdwWmFJeDNyOVdWK3lsZm43TC9QRXlx?=
- =?utf-8?B?a3VWc0FENS9kRFQ0TUI3VkNybnlvc1k1RFI2SitwUmE3S3RpZ1FFZUZxSUMx?=
- =?utf-8?B?OVMvZXBhQkkxeE04bVp6NFhiU0g2akxxL2t0STVyWGV3THhrNlRoeFc4dkYy?=
- =?utf-8?B?R2hGdGs4Z1R4b3doQ0VsZ1NSdy93dlVkaEtmN20vTE5QZTU1QWVmVWxrMzNq?=
- =?utf-8?B?NnJaUUN6cS9paUswUzRBdlJtTXBlMDl5TlRtSVZMM045QkFmT00wd0dBR1dJ?=
- =?utf-8?B?WURTRDZSUEpYU1JsUzFoUHAraHVhSzdJTW92dG5sMmFsTkY3TlFrcTJIUDRw?=
- =?utf-8?B?V1k5Vk8xaUxWdnJwVTRiUHhOZ0dVczlRalJSTi9PeVdhUVduZzFPZGlnTUIz?=
- =?utf-8?B?UFZyNDVSZ3dyMEFMZlRCR3RSQWprT1BYS1VJQU41aEU4TnowdlJPbEpCL0FE?=
- =?utf-8?B?WW03TFl4NXY5QVIrVWlWQzhBLzJjdExYZlo2b2cweGNIeGdXMjZYcE1JRHNO?=
- =?utf-8?B?Y1lIUmIrZmdqRVFaY0k2NkxBYWpPRnFTYnY0SFZ4OUJqR3AzeCtXRUk4NmJF?=
- =?utf-8?B?cTlhQzRSK2Y4NDd1M0xMQTRhSHZRTkNOSEN6TncvM2FFT1lPQXpTNDdPeXp3?=
- =?utf-8?B?akhoMStxcm1wTEJsM3Y4VHFMbVFtWFIrbkNIUC84WkJaS3NTbkVOQjRicEJ1?=
- =?utf-8?B?ZmFwcnRGUVFQRkdURDFyaDlJQzc2OXhFMnIyZUF0RHZjSnhYUm1pWnRkcTRh?=
- =?utf-8?B?SHU3TGMrem5uWnd4aXdqaENLZ3VRcFVpQ0lTNThtUytVSVN1QWVjNzZuWExx?=
- =?utf-8?B?Vkw0TkdndVJvRVF6TUxiZUxpT3kxSjZ3Smk2bVhXVEZLSjEvYUlNa1RUakZ1?=
- =?utf-8?B?SHBROEc0TUpNelh0STFndEpmV29wSEpvUFFxbkh3QjRBRnk5NVMzK2RiWW5N?=
- =?utf-8?B?c2s4K0RYaXZYYXFjWkw2Q1BNY0hXbmpSZVo3bDM2aXNTd0ZJRGRtKzQwckRP?=
- =?utf-8?B?ZEVHMnZReGtxY29scEZ0VkY0Y2htTXJ5OXJWbHdxZ2JKWkZFOG5TclJnQmx0?=
- =?utf-8?B?dmdDR2ZuMkFtN05oUmdOWjY5SSs3clFOemY1OFRTNk9IT0s2VGVadGNrM1E4?=
- =?utf-8?B?ZjRIc25aM00wcmxpZzRoRnBVVW9XUzVrZU1wb1hqVElYMHRKSXhFTExVeHNj?=
- =?utf-8?B?aTA2Mk5GZ2hzWnNRQTB0U0ZHSGJLMHlVekhIYmJod3RPcFhKcERPSnpYdUpP?=
- =?utf-8?B?T0k2ZU9tK2JSVGIxMXZJcmZBV1ZNOVY2OXZPTVpobnhKNGYwU0VOS1IxT3JY?=
- =?utf-8?B?TWE1WDRlRDJkd095eVNwOEtEZGdSZ2ExZnR6TXkwY2FtcXM1cXRVWVh6U2ZN?=
- =?utf-8?B?NlhLd1FEOHZzNVF1L2pLSk4vWGEyQStkd2k5VlA1aVBDQ1dla3Z0ZWc3UlFq?=
- =?utf-8?B?dENSaTR2dVlOQUwrdkV3VWg0NW1UMkVPdHFMYXU3bUxuTVFTSkQxU3RIc2gv?=
- =?utf-8?B?Ykx2d1FzeDUydXBFWVZ3cTZFZW5XejlsRjFPbHlhMS9ZQ2t3aGU5WUJCa0h3?=
- =?utf-8?B?anFPaXdWbjcrZ1d2dnJEcHFVQVhHOFl5VzkwYlBrL252MGpVM0cwakZSNmF1?=
- =?utf-8?B?cTVkUUUwSzE2aFhySE9LVHJEV0ZWZWdLWFF3cjJ6bU9OaGZZR2k4eC9UN2RR?=
- =?utf-8?B?Y0hJM0hCWUhHa0pCN1k4T3IyMWg5K0dkTHc3QVNBRkdvUU8xZzVuQnpVQnUv?=
- =?utf-8?B?cDBqTjcycVp5NFB5VThIL1V5UlVvZXRmeW9JV3l2T1VGU0dhV2FEeXh0QnRH?=
- =?utf-8?B?blE9PQ==?=
-X-MS-Exchange-AntiSpam-ExternalHop-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-ExternalHop-MessageData-0: =?utf-8?B?aUJFcjhYeUlEcCtTUXloWTdic0p6UnNNQ0lISHV2cms5TTdmVkpRRVYrV25r?=
- =?utf-8?B?RStWdENjdW95VDlVc1FzTDVWY2lRbDN3OWt4dktIOS8vM3lSelY5SHhjWjFC?=
- =?utf-8?B?SklycWdnN3J2MlFvNUJpWjNYcTNPdXJZQXM0SDRNeldUdjFEcDJpbHZnQkMr?=
- =?utf-8?B?SGVESGpjcGJmVDd4cnNDV21Hd0dMV2JBZ1ZZRUxFNyt1cHhDQS9SYWZhUmxF?=
- =?utf-8?B?bnBXbGhsTFY4OXBZeitpbmE5R0owaGxDNnNJczB1Z3ZTODZJeXFqaTFXLzZj?=
- =?utf-8?B?TVN3T0Q2N2V0MzRqc1VHOGJWYjNSNnpwOGRTcWFiVjdFd0duaW5pZ0x1UlFP?=
- =?utf-8?B?K0xMeEF5MjJBOW5DdDl0VzZiQ1dHcnhRU3V3dExyWjRGVkpBYXppNmpVVW02?=
- =?utf-8?B?dHFacHU5Z2NWM0QvTTNZVENid3dYOGNqRjczb3dJR05TQzNyYk5CQVk3QjAy?=
- =?utf-8?B?NXlia2srWXFyUUtHRDJjaXhaZHcrTUtTY3dxSFoxM0hkMUpEazVBMVNmYTZH?=
- =?utf-8?B?MWZvek9rd2ZjZkdhS2ZEY0Y2alg5RU5rWEVmSGFUSGhIRzY5M1JWNEJMbklO?=
- =?utf-8?B?N09VSDhxZkhPd3Q4VG9GZTd6ZVQxMEVHT0I3aHZjNm5DdkZDMStyRXQ5S1J5?=
- =?utf-8?B?QUJxSkRycnNlYWlGRlQwL0hjWEppUlFQU0xTeDViRE1nM1V0T0ZnWHRoL1Mv?=
- =?utf-8?B?MTdPSFE5dlZuZ25MYmhyNTJWeUkvVkNvTk95WUYzdDhEY3ltckJDN0Y4bVVH?=
- =?utf-8?B?U1g3NlJmYUhJcDJ4VjlTR2tEQkZodlBsT0tGUE1WcEhCNHdGOFczQ2FXLzNj?=
- =?utf-8?B?ZnBqUXkwL0o5UUZLS3U3R25mbDRDeEF5M3psTkVKVVJJMEZKdkloem1Gdndu?=
- =?utf-8?B?c1dyYkwyQ2ZtN21OazNLeGUvOFg1OW9OYlkwTmhiT2lCSVdWcDZHYmNCbVlo?=
- =?utf-8?B?UGg1SWprazBVVzdkOVJsMDlLZjVvV21JWVQ0Qy93cDlBcjNSNURwWjFXWm1P?=
- =?utf-8?B?RzNNczZ2dktrb2R6b1NKWlY4M1JnSDJ5NUxSOHhienNkRjhEdUJtK0dvS0tD?=
- =?utf-8?B?eWgwbi9WLytDNXhaU05SZkVDeUdSZUx0bEIxMm9HbEZtbGhMZklvQjExTXIw?=
- =?utf-8?B?RzcwMVJFWUc0NWZRNmZkaThxWkNHM0dZWitZNkxPZnlhc3JWcklFenhvUlhO?=
- =?utf-8?B?Q05PSlkzNVlmOHoyWHJMMzNFVE01SWVYbVBCUkhIZmtyL2RFYVRiUmkrRjJZ?=
- =?utf-8?B?UVRUcnI1QVpHaGlvUFFWYWtoVHRERm9wUXRERTRYQ2ZZVkh3YVRqU2QxN0xE?=
- =?utf-8?Q?x/pHVaENJzrszB4IRO0OTXBsNRwYKqZ2JM?=
-X-OriginatorOrg: oracle.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: cddeeada-2dc3-489b-0d84-08db71cc6d32
-X-MS-Exchange-CrossTenant-AuthSource: MW5PR10MB5738.namprd10.prod.outlook.com
+X-OriginatorOrg: outlook.com
 X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 20 Jun 2023 20:25:43.0593 (UTC)
-X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
-X-MS-Exchange-CrossTenant-Id: 4e2c6054-71cb-48f1-bd6c-3a9705aca71b
-X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: pJ03eKlN2vlQVNE07VjR/+yQO2jr6tKWrWEfZCpan4lmyggt54nzpi10OILMf2+AaCPrXebAEoNAloFGET5pIotNu0/qE5qhxSUC0BqAu24=
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: PH0PR10MB4583
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.254,Aquarius:18.0.957,Hydra:6.0.591,FMLib:17.11.176.26
- definitions=2023-06-20_15,2023-06-16_01,2023-05-22_02
-X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 mlxlogscore=855
- phishscore=0
- bulkscore=0 suspectscore=0 mlxscore=0 spamscore=0 malwarescore=0
- adultscore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.12.0-2305260000 definitions=main-2306200184
-X-Proofpoint-GUID: 9BU6a0-o7AFw2wff0iNu64AijUZCN3Dm
-X-Proofpoint-ORIG-GUID: 9BU6a0-o7AFw2wff0iNu64AijUZCN3Dm
-X-Spam-Score: -1.0 (-)
+X-MS-Exchange-CrossTenant-AuthSource: CY5PR12MB6455.namprd12.prod.outlook.com
+X-MS-Exchange-CrossTenant-RMS-PersistedConsumerOrg: 00000000-0000-0000-0000-000000000000
+X-MS-Exchange-CrossTenant-Network-Message-Id: 126acafc-c5fa-483b-c381-08db720b1ade
+X-MS-Exchange-CrossTenant-originalarrivaltime: 21 Jun 2023 03:53:42.3807 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 84df9e7f-e9f6-40af-b435-aaaaaaaaaaaa
+X-MS-Exchange-CrossTenant-rms-persistedconsumerorg: 00000000-0000-0000-0000-000000000000
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: CY8PR12MB8066
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: Spam detection software,
  running on the system "util-spamd-2.v13.lw.sourceforge.com", 
  has NOT identified this incoming email as spam.  The original
  message has been attached to this so you can view it or label
  similar future email.  If you have any questions, see
  the administrator of that system for details.
- Content preview:  I want to apologize about this one. Recently, Siddh Raman
- Pant submitted a similar patch and I picked that one up. I'm sorry that I
- let yours get buried in my inbox, since it was submitted earlier. I actually
- prefer his patch since it caught it earlier during mount time, but that's
- no excuse to not give you a more timely response. 
- Content analysis details:   (-1.0 points, 6.0 required)
+ Content preview:  Hi. May I please request a review on this patch. Thanks,
+ Immad From: mirimmad@outlook.com Sent: Sunday, March 26,
+ 2023 9:51:15 PM Cc: mirimmad@outlook.com
+ ; skhan@linuxfoundation.org ; Immad Mir ; syzbot+f1faa20eec55e0c8644c@ [...]
+ Content analysis details:   (-0.2 points, 6.0 required)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [205.220.177.32 listed in list.dnswl.org]
- 0.0 RCVD_IN_MSPIKE_H5      RBL: Excellent reputation (+5)
- [205.220.177.32 listed in wl.mailspike.net]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [40.92.21.19 listed in wl.mailspike.net]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [40.92.21.19 listed in list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [mirimmad[at]outlook.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 HTML_MESSAGE           BODY: HTML included in message
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
- -0.0 T_SCC_BODY_TEXT_LINE   No description available.
- -0.1 NICE_REPLY_A           Looks like a legit reply (A)
-X-Headers-End: 1qBhvK-00A3Ih-5r
-Subject: Re: [Jfs-discussion] [PATCH] fs: jfs: fixed UBSAN:
- shift-out-of-bounds in dbFree
+ valid -0.0 T_SCC_BODY_TEXT_LINE   No description available.
+X-Headers-End: 1qBouj-0001f4-HY
+X-Mailman-Approved-At: Wed, 21 Jun 2023 13:44:03 +0000
+Subject: Re: [Jfs-discussion] [PATCH] FS: JFS: Fix null-ptr-deref Read in
+ txBegin
 X-BeenThere: jfs-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -242,110 +161,256 @@ List-Post: <mailto:jfs-discussion@lists.sourceforge.net>
 List-Help: <mailto:jfs-discussion-request@lists.sourceforge.net?subject=help>
 List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/jfs-discussion>, 
  <mailto:jfs-discussion-request@lists.sourceforge.net?subject=subscribe>
-Cc: jfs-discussion@lists.sourceforge.net,
- linux-kernel-mentees@lists.linuxfoundation.org, linux-kernel@vger.kernel.org,
- skhan@linuxfoundation.org
-Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
+Cc: Dave Kleikamp <shaggy@kernel.org>, "jfs-discussion@lists.sourceforge.net"
+ <jfs-discussion@lists.sourceforge.net>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "syzbot+f1faa20eec55e0c8644c@syzkaller.appspotmail.com"
+ <syzbot+f1faa20eec55e0c8644c@syzkaller.appspotmail.com>,
+ "skhan@linuxfoundation.org" <skhan@linuxfoundation.org>,
+ Immad Mir <mirimmad17@gmail.com>
+Content-Type: multipart/mixed; boundary="===============4310934731062290123=="
 Errors-To: jfs-discussion-bounces@lists.sourceforge.net
 
-I want to apologize about this one. Recently, Siddh Raman Pant submitted 
-a similar patch and I picked that one up. I'm sorry that I let yours get 
-buried in my inbox, since it was submitted earlier.
+--===============4310934731062290123==
+Content-Language: en-US
+Content-Type: multipart/alternative;
+	boundary="_000_CY5PR12MB64551AB18AB4DB2D3F1CA5A9C65DACY5PR12MB6455namp_"
 
-I actually prefer his patch since it caught it earlier during mount 
-time, but that's no excuse to not give you a more timely response.
+--_000_CY5PR12MB64551AB18AB4DB2D3F1CA5A9C65DACY5PR12MB6455namp_
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: quoted-printable
+
+
+
+Hi. May I please request a review on this patch.
 
 Thanks,
-Shaggy
+Immad
 
-On 4/14/23 8:53AM, anupsharma wrote:
-> Syzkaller reported the following issue:
->           option from the mount to silence this warning.
-> =======================================================
-> find_entry called with index = 0
-> read_mapping_page failed!
-> ERROR: (device loop0): txCommit:
-> ERROR: (device loop0): remounting filesystem as read-only
-> ================================================================================
-> UBSAN: shift-out-of-bounds in fs/jfs/jfs_dmap.c:381:12
-> shift exponent 134217736 is too large for 64-bit type 'long long'
-> CPU: 1 PID: 5068 Comm: syz-executor350 Not tainted 6.3.0-rc2-syzkaller-00069-g0ddc84d2dd43 #0
-> Hardware name: Google Google Compute Engine/Google Compute Engine, BIOS Google 03/02/2023
-> Call Trace:
->   <TASK>
->   __dump_stack lib/dump_stack.c:88 [inline]
->   dump_stack_lvl+0x1e7/0x2d0 lib/dump_stack.c:106
->   ubsan_epilogue lib/ubsan.c:217 [inline]
->   __ubsan_handle_shift_out_of_bounds+0x3c3/0x420 lib/ubsan.c:387
->   dbFree+0x46e/0x650 fs/jfs/jfs_dmap.c:381
->   txFreeMap+0x96a/0xd50 fs/jfs/jfs_txnmgr.c:2510
->   xtTruncate+0xe5c/0x3260 fs/jfs/jfs_xtree.c:2467
->   jfs_free_zero_link+0x46e/0x6e0 fs/jfs/namei.c:758
->   jfs_evict_inode+0x35f/0x440 fs/jfs/inode.c:153
->   evict+0x2a4/0x620 fs/inode.c:665
->   __dentry_kill+0x436/0x650 fs/dcache.c:607
->   shrink_dentry_list+0x39c/0x6a0 fs/dcache.c:1201
->   shrink_dcache_parent+0xcd/0x480
->   do_one_tree+0x23/0xe0 fs/dcache.c:1682
->   shrink_dcache_for_umount+0x7d/0x120 fs/dcache.c:1699
->   generic_shutdown_super+0x67/0x340 fs/super.c:472
->   kill_block_super+0x7e/0xe0 fs/super.c:1398
->   deactivate_locked_super+0xa4/0x110 fs/super.c:331
->   cleanup_mnt+0x426/0x4c0 fs/namespace.c:1177
->   task_work_run+0x24a/0x300 kernel/task_work.c:179
->   exit_task_work include/linux/task_work.h:38 [inline]
->   do_exit+0x68f/0x2290 kernel/exit.c:869
->   do_group_exit+0x206/0x2c0 kernel/exit.c:1019
->   __do_sys_exit_group kernel/exit.c:1030 [inline]
->   __se_sys_exit_group kernel/exit.c:1028 [inline]
->   __x64_sys_exit_group+0x3f/0x40 kernel/exit.c:1028
->   do_syscall_x64 arch/x86/entry/common.c:50 [inline]
->   do_syscall_64+0x41/0xc0 arch/x86/entry/common.c:80
->   entry_SYSCALL_64_after_hwframe+0x63/0xcd
-> RIP: 0033:0x7fa87e2289b9
-> Code: Unable to access opcode bytes at 0x7fa87e22898f.
-> RSP: 002b:00007fff4bfe3938 EFLAGS: 00000246 ORIG_RAX: 00000000000000e7
-> RAX: ffffffffffffffda RBX: 00007fa87e2a3330 RCX: 00007fa87e2289b9
-> RDX: 000000000000003c RSI: 00000000000000e7 RDI: 0000000000000001
-> RBP: 0000000000000001 R08: ffffffffffffffc0 R09: 00007fa87e29de40
-> R10: 00007fff4bfe3850 R11: 0000000000000246 R12: 00007fa87e2a3330
-> R13: 0000000000000001 R14: 0000000000000000 R15: 0000000000000001
->   </TASK>
-> ================================================================================
-> 
-> db_l2nbperpage which is used as a shift exponent to get the buffer
-> for the current dmap will be less than and equal to 64.
-> 
-> Tested via syzbot.
-> 
-> Reported-by: syzbot+d2cd27dcf8e04b232eb2@syzkaller.appspotmail.com
-> Link: https://syzkaller.appspot.com/bug?id=2a70a453331db32ed491f5cbb07e81bf2d225715
-> 
-> Signed-off-by: Anup Sharma <anupnewsmail@gmail.com>
-> ---
->   fs/jfs/jfs_dmap.c | 5 ++++-
->   1 file changed, 4 insertions(+), 1 deletion(-)
-> 
-> diff --git a/fs/jfs/jfs_dmap.c b/fs/jfs/jfs_dmap.c
-> index a3eb1e826947..d2cf56dd8f91 100644
-> --- a/fs/jfs/jfs_dmap.c
-> +++ b/fs/jfs/jfs_dmap.c
-> @@ -184,7 +184,10 @@ int dbMount(struct inode *ipbmap)
->   		err = -EINVAL;
->   		goto err_release_metapage;
->   	}
-> -
-> +	if (bmp->db_l2nbperpage >= 64) {
-> +		err = -EINVAL;
-> +		goto err_release_metapage;
-> +	}
->   	bmp->db_maxlevel = le32_to_cpu(dbmp_le->dn_maxlevel);
->   	bmp->db_maxag = le32_to_cpu(dbmp_le->dn_maxag);
->   	bmp->db_agpref = le32_to_cpu(dbmp_le->dn_agpref);
+________________________________
+From: mirimmad@outlook.com <mirimmad@outlook.com>
+Sent: Sunday, March 26, 2023 9:51:15 PM
+Cc: mirimmad@outlook.com <mirimmad@outlook.com>; skhan@linuxfoundation.org =
+<skhan@linuxfoundation.org>; Immad Mir <mirimmad17@gmail.com>; syzbot+f1faa=
+20eec55e0c8644c@syzkaller.appspotmail.com <syzbot+f1faa20eec55e0c8644c@syzk=
+aller.appspotmail.com>; Dave Kleikamp <shaggy@kernel.org>; jfs-discussion@l=
+ists.sourceforge.net <jfs-discussion@lists.sourceforge.net>; linux-kernel@v=
+ger.kernel.org <linux-kernel@vger.kernel.org>
+Subject: [PATCH] FS: JFS: Fix null-ptr-deref Read in txBegin
 
+From: Immad Mir <mirimmad17@gmail.com>
+
+syzkaller reported the following issue:
+
+BUG: KASAN: null-ptr-deref in instrument_atomic_read include/linux/instrume=
+nted.h:72 [inline]
+BUG: KASAN: null-ptr-deref in _test_bit include/asm-generic/bitops/instrume=
+nted-non-atomic.h:141 [inline]
+BUG: KASAN: null-ptr-deref in txBegin+0x131/0x6c0 fs/jfs/jfs_txnmgr.c:366
+Read of size 8 at addr 0000000000000040 by task syz-executor.0/5098
+
+CPU: 0 PID: 5098 Comm: syz-executor.0 Not tainted 6.3.0-rc3-syzkaller-00005=
+-g7d31677bb7b1 #0
+Hardware name: Google Compute Engine/Google Compute Engine, BIOS Google 03/=
+02/2023
+Call Trace:
+ <TASK>
+ __dump_stack lib/dump_stack.c:88 [inline]
+ dump_stack_lvl+0x1e7/0x2d0 lib/dump_stack.c:106
+ print_report+0xe6/0x540 mm/kasan/report.c:433
+ kasan_report+0x176/0x1b0 mm/kasan/report.c:536
+ kasan_check_range+0x283/0x290 mm/kasan/generic.c:187
+ instrument_atomic_read include/linux/instrumented.h:72 [inline]
+ _test_bit include/asm-generic/bitops/instrumented-non-atomic.h:141 [inline=
+]
+ txBegin+0x131/0x6c0 fs/jfs/jfs_txnmgr.c:366
+ jfs_link+0x1ac/0x5e0 fs/jfs/namei.c:802
+ vfs_link+0x4ed/0x680 fs/namei.c:4522
+ do_linkat+0x5cc/0x9e0 fs/namei.c:4593
+ __do_sys_linkat fs/namei.c:4621 [inline]
+ __se_sys_linkat fs/namei.c:4618 [inline]
+ __x64_sys_linkat+0xdd/0xf0 fs/namei.c:4618
+ do_syscall_x64 arch/x86/entry/common.c:50 [inline]
+ do_syscall_64+0x41/0xc0 arch/x86/entry/common.c:80
+ entry_SYSCALL_64_after_hwframe+0x63/0xcd
+
+The issue can be resolved by checking whethere "log"
+for a given superblock exists in the jfs_link function
+before beginning a transaction.
+
+Tested with syzbot.
+Reported-by: syzbot+f1faa20eec55e0c8644c@syzkaller.appspotmail.com
+Link: https://syzkaller.appspot.com/bug?id=3Dbe7e52c50c5182cc09a09ea6fc4564=
+46b2039de3
+
+Signed-off-by: Immad Mir <mirimmad17@gmail.com>
+---
+ fs/jfs/namei.c | 2 ++
+ 1 file changed, 2 insertions(+)
+
+diff --git a/fs/jfs/namei.c b/fs/jfs/namei.c
+index b29d68b5e..cd43b68e2 100644
+--- a/fs/jfs/namei.c
++++ b/fs/jfs/namei.c
+@@ -799,6 +799,8 @@ static int jfs_link(struct dentry *old_dentry,
+         if (rc)
+                 goto out;
+
++       if (!(JFS_SBI(ip->i_sb)->log))
++               goto out;
+         tid =3D txBegin(ip->i_sb, 0);
+
+         mutex_lock_nested(&JFS_IP(dir)->commit_mutex, COMMIT_MUTEX_PARENT)=
+;
+--
+2.40.0
+
+
+
+--_000_CY5PR12MB64551AB18AB4DB2D3F1CA5A9C65DACY5PR12MB6455namp_
+Content-Type: text/html; charset="us-ascii"
+Content-Transfer-Encoding: quoted-printable
+
+<html>
+<head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dus-ascii"=
+>
+</head>
+<body>
+<div style=3D""><br>
+</div>
+<div dir=3D"auto">
+<div><br>
+</div>
+</div>
+<div id=3D"ms-outlook-mobile-signature" dir=3D"auto">Hi. May I please reque=
+st a review on this patch.<br>
+</div>
+<div id=3D"ms-outlook-mobile-signature" dir=3D"auto"><br>
+</div>
+<div id=3D"ms-outlook-mobile-signature" dir=3D"auto">Thanks,</div>
+<div id=3D"ms-outlook-mobile-signature" dir=3D"auto">Immad</div>
+<div dir=3D"auto">
+<div id=3D"mail-editor-reference-message-container" dir=3D"auto"><br>
+<hr style=3D"display:inline-block;width:98%" tabindex=3D"-1">
+<div id=3D"divRplyFwdMsg" style=3D"font-size: 11pt;"><strong>From:</strong>=
+ mirimmad@outlook.com &lt;mirimmad@outlook.com&gt;<br>
+<strong>Sent:</strong> Sunday, March 26, 2023 9:51:15 PM<br>
+<strong>Cc:</strong> mirimmad@outlook.com &lt;mirimmad@outlook.com&gt;; skh=
+an@linuxfoundation.org &lt;skhan@linuxfoundation.org&gt;; Immad Mir &lt;mir=
+immad17@gmail.com&gt;; syzbot+f1faa20eec55e0c8644c@syzkaller.appspotmail.co=
+m &lt;syzbot+f1faa20eec55e0c8644c@syzkaller.appspotmail.com&gt;;
+ Dave Kleikamp &lt;shaggy@kernel.org&gt;; jfs-discussion@lists.sourceforge.=
+net &lt;jfs-discussion@lists.sourceforge.net&gt;; linux-kernel@vger.kernel.=
+org &lt;linux-kernel@vger.kernel.org&gt;<br>
+<strong>Subject:</strong> [PATCH] FS: JFS: Fix null-ptr-deref Read in txBeg=
+in<br>
+</div>
+<br>
+<meta name=3D"Generator" content=3D"Microsoft Exchange Server">
+<!-- converted from text --><font size=3D"2"><span style=3D"font-size:11pt;=
+">
+<div class=3D"PlainText">From: Immad Mir &lt;mirimmad17@gmail.com&gt;<br>
+<br>
+syzkaller reported the following issue:<br>
+<br>
+BUG: KASAN: null-ptr-deref in instrument_atomic_read include/linux/instrume=
+nted.h:72 [inline]<br>
+BUG: KASAN: null-ptr-deref in _test_bit include/asm-generic/bitops/instrume=
+nted-non-atomic.h:141 [inline]<br>
+BUG: KASAN: null-ptr-deref in txBegin+0x131/0x6c0 fs/jfs/jfs_txnmgr.c:366<b=
+r>
+Read of size 8 at addr 0000000000000040 by task syz-executor.0/5098<br>
+<br>
+CPU: 0 PID: 5098 Comm: syz-executor.0 Not tainted 6.3.0-rc3-syzkaller-00005=
+-g7d31677bb7b1 #0<br>
+Hardware name: Google Compute Engine/Google Compute Engine, BIOS Google 03/=
+02/2023<br>
+Call Trace:<br>
+&nbsp;&lt;TASK&gt;<br>
+&nbsp;__dump_stack lib/dump_stack.c:88 [inline]<br>
+&nbsp;dump_stack_lvl+0x1e7/0x2d0 lib/dump_stack.c:106<br>
+&nbsp;print_report+0xe6/0x540 mm/kasan/report.c:433<br>
+&nbsp;kasan_report+0x176/0x1b0 mm/kasan/report.c:536<br>
+&nbsp;kasan_check_range+0x283/0x290 mm/kasan/generic.c:187<br>
+&nbsp;instrument_atomic_read include/linux/instrumented.h:72 [inline]<br>
+&nbsp;_test_bit include/asm-generic/bitops/instrumented-non-atomic.h:141 [i=
+nline]<br>
+&nbsp;txBegin+0x131/0x6c0 fs/jfs/jfs_txnmgr.c:366<br>
+&nbsp;jfs_link+0x1ac/0x5e0 fs/jfs/namei.c:802<br>
+&nbsp;vfs_link+0x4ed/0x680 fs/namei.c:4522<br>
+&nbsp;do_linkat+0x5cc/0x9e0 fs/namei.c:4593<br>
+&nbsp;__do_sys_linkat fs/namei.c:4621 [inline]<br>
+&nbsp;__se_sys_linkat fs/namei.c:4618 [inline]<br>
+&nbsp;__x64_sys_linkat+0xdd/0xf0 fs/namei.c:4618<br>
+&nbsp;do_syscall_x64 arch/x86/entry/common.c:50 [inline]<br>
+&nbsp;do_syscall_64+0x41/0xc0 arch/x86/entry/common.c:80<br>
+&nbsp;entry_SYSCALL_64_after_hwframe+0x63/0xcd<br>
+<br>
+The issue can be resolved by checking whethere &quot;log&quot;<br>
+for a given superblock exists in the jfs_link function<br>
+before beginning a transaction.<br>
+<br>
+Tested with syzbot.<br>
+Reported-by: syzbot+f1faa20eec55e0c8644c@syzkaller.appspotmail.com<br>
+Link: <a href=3D"https://syzkaller.appspot.com/bug?id=3Dbe7e52c50c5182cc09a=
+09ea6fc456446b2039de3">
+https://syzkaller.appspot.com/bug?id=3Dbe7e52c50c5182cc09a09ea6fc456446b203=
+9de3</a><br>
+<br>
+Signed-off-by: Immad Mir &lt;mirimmad17@gmail.com&gt;<br>
+---<br>
+&nbsp;fs/jfs/namei.c | 2 ++<br>
+&nbsp;1 file changed, 2 insertions(+)<br>
+<br>
+diff --git a/fs/jfs/namei.c b/fs/jfs/namei.c<br>
+index b29d68b5e..cd43b68e2 100644<br>
+--- a/fs/jfs/namei.c<br>
++++ b/fs/jfs/namei.c<br>
+@@ -799,6 +799,8 @@ static int jfs_link(struct dentry *old_dentry,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if (rc)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nb=
+sp;&nbsp;&nbsp;&nbsp; goto out;<br>
+<br>
++&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if (!(JFS_SBI(ip-&gt;i_sb)-&gt;log))<=
+br>
++&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&n=
+bsp;&nbsp; goto out;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; tid =3D txBegin(ip-&gt;i_s=
+b, 0);<br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; mutex_lock_nested(&amp;JFS=
+_IP(dir)-&gt;commit_mutex, COMMIT_MUTEX_PARENT);<br>
+--<br>
+2.40.0<br>
+<br>
+</div>
+</span></font><br>
+</div>
+</div>
+</body>
+</html>
+
+--_000_CY5PR12MB64551AB18AB4DB2D3F1CA5A9C65DACY5PR12MB6455namp_--
+
+
+--===============4310934731062290123==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
+
+
+--===============4310934731062290123==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 Jfs-discussion mailing list
 Jfs-discussion@lists.sourceforge.net
 https://lists.sourceforge.net/lists/listinfo/jfs-discussion
+
+--===============4310934731062290123==--
+
