@@ -2,97 +2,122 @@ Return-Path: <jfs-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+jfs-discussion@lfdr.de
 Delivered-To: lists+jfs-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id 67D6473B899
-	for <lists+jfs-discussion@lfdr.de>; Fri, 23 Jun 2023 15:17:52 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 03F8573B928
+	for <lists+jfs-discussion@lfdr.de>; Fri, 23 Jun 2023 15:53:50 +0200 (CEST)
 Received: from [127.0.0.1] (helo=sfs-ml-4.v29.lw.sourceforge.com)
 	by sfs-ml-4.v29.lw.sourceforge.com with esmtp (Exim 4.95)
 	(envelope-from <jfs-discussion-bounces@lists.sourceforge.net>)
-	id 1qCgfI-0007IX-6H;
-	Fri, 23 Jun 2023 13:17:28 +0000
+	id 1qChED-0007lM-Ky;
+	Fri, 23 Jun 2023 13:53:34 +0000
 Received: from [172.30.20.202] (helo=mx.sourceforge.net)
  by sfs-ml-4.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
  TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (Exim 4.95)
- (envelope-from <brauner@kernel.org>) id 1qCg7V-0006ub-Lv;
- Fri, 23 Jun 2023 12:42:34 +0000
+ (envelope-from <mirimmad17@gmail.com>) id 1qCh1v-0007TS-Dy
+ for jfs-discussion@lists.sourceforge.net;
+ Fri, 23 Jun 2023 13:40:51 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=sourceforge.net; s=x; h=In-Reply-To:Content-Transfer-Encoding:Content-Type:
- MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:
- Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
+ d=sourceforge.net; s=x; h=Content-Type:Cc:To:Subject:Message-ID:Date:From:
+ In-Reply-To:References:MIME-Version:Sender:Reply-To:Content-Transfer-Encoding
+ :Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
  Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=WDuz/mF8fj+i+/ap56of24e8/R894BB1LybagVZ6DkM=; b=IGFW4LKIDX84jFwGcLWP++jyzA
- TgV0XGQp2SpTlp1KrgXKloEk2/5Kwdfa/erbgwmgvI8U+h8xWMpvHoBx6X7vbGvA35rvlFK7R66nN
- 1uVQ322v9CUAruxOl3PMRQZlYyNdsUqPTB5pXlt4LhcPM5yA8wM03EY8u6c2a/Tu0RXc=;
+ bh=4+7H3k9xy277oLed+TWizCwehvCr5NTWFidwXIFvyCc=; b=KjRkhyI/y8h9NpqqGOj0cX3AA4
+ pwJVPBDL+lfVl3J+pl2q/rKzJWDWb6xHi/7xIG4lQtAvMV8PHI/0nmYifv2mv6kYjZnL60t5mbcqf
+ 6ra/TdASbECoHbmTXk8flu/1/J9AppygdvXU+Zye8VBcqzYLFf7PWSrszgQE2UAq3/5g=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
- h=In-Reply-To:Content-Transfer-Encoding:Content-Type:MIME-Version:
- References:Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:Content-ID:
+ h=Content-Type:Cc:To:Subject:Message-ID:Date:From:In-Reply-To:References:
+ MIME-Version:Sender:Reply-To:Content-Transfer-Encoding:Content-ID:
  Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
  :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
  List-Post:List-Owner:List-Archive;
- bh=WDuz/mF8fj+i+/ap56of24e8/R894BB1LybagVZ6DkM=; b=SlxPL7mXevoV+pq7wCAc3m1ehy
- itmAfvBYXkephuSOsXubeTp3MFvoTVZER0knXBDJKsN6a9OW3slUygC43Xy3YezoDWltyf6I425hm
- TBXyqjUyKxex9qzioJWQ1A1jpApDB+FuUlwEwz+YCbypyh07qQ4nvX1oxwpoQ4l9T0I0=;
-Received: from dfw.source.kernel.org ([139.178.84.217])
+ bh=4+7H3k9xy277oLed+TWizCwehvCr5NTWFidwXIFvyCc=; b=SDehyYdAhCG401JqHoyOOh3ruo
+ zCBs069ObjtA+IE5yZxKR3tQQ36QcoTBubvpXmDafQ6V4P9Ariy6C4N0sWauvots4ExqWvO0OO0OR
+ 52fjViXlng2x0RpGj3Nuw0hABrzic4VgYPCaSM0nMEKK6XL+YLEbfhh5OS8zQFE/riqE=;
+Received: from mail-oa1-f51.google.com ([209.85.160.51])
  by sfi-mx-1.v28.lw.sourceforge.com with esmtps
- (TLS1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.95)
- id 1qCg7V-00CPuv-CK; Fri, 23 Jun 2023 12:42:34 +0000
-Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
- (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
- key-exchange X25519 server-signature RSA-PSS (2048 bits))
- (No client certificate requested)
- by dfw.source.kernel.org (Postfix) with ESMTPS id 7570161A22;
- Fri, 23 Jun 2023 12:42:27 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 9DB4BC433C8;
- Fri, 23 Jun 2023 12:41:45 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=k20201202; t=1687524146;
- bh=ljQRDIRYG4TydFhjD0LuSn8BREerPmb4Ipkpa2QAq6Q=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=apfm6xvoeO6UvUfxPwNSOl0FaLWJ7ShkzzPeuSOb0bank70626+jFCCnlqxUCd2NX
- mV+Eb3SlbyeKtShM0cPnGoccCVrProiQPYgaM4HyeW5epsbNbu8US+O9nrIP4r+ghW
- Y8FmG2CVOdPNZ1eNovI71PsOzsGS/p5EOkEcjtA4zTWfFdhpQkNKBq1hEMuzxsWytK
- w9zTBeB4xmhiyjllhLtRaoNC8lgBTTH19xNIsLsgb+18yFVUlxxLoSku7XQ5A1i1lR
- WF4IRekFC21BVGIj1AxyqNGVCxMph3jwY74VjiaGchsSc5v31PlBNGYvRkbk2aFmu+
- 9KQZIm3JpdS0g==
-Date: Fri, 23 Jun 2023 14:41:42 +0200
-From: Christian Brauner <brauner@kernel.org>
-To: Jeff Layton <jlayton@kernel.org>
-Message-ID: <20230623-wegelagerei-kanzlei-45cdcf5da157@brauner>
-References: <20230621144507.55591-1-jlayton@kernel.org>
- <20230621152141.5961cf5f@gandalf.local.home>
- <2a5a069572b46b59dd16fe8d54e549a9b5bbb6eb.camel@kernel.org>
+ (TLS1.2:ECDHE-RSA-AES128-GCM-SHA256:128) (Exim 4.95)
+ id 1qCh1v-00CRj7-2Z for jfs-discussion@lists.sourceforge.net;
+ Fri, 23 Jun 2023 13:40:51 +0000
+Received: by mail-oa1-f51.google.com with SMTP id
+ 586e51a60fabf-19a427d7b57so412895fac.2
+ for <jfs-discussion@lists.sourceforge.net>;
+ Fri, 23 Jun 2023 06:40:51 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=gmail.com; s=20221208; t=1687527642; x=1690119642;
+ h=cc:to:subject:message-id:date:from:in-reply-to:references
+ :mime-version:from:to:cc:subject:date:message-id:reply-to;
+ bh=4+7H3k9xy277oLed+TWizCwehvCr5NTWFidwXIFvyCc=;
+ b=kn4K5OVQn7PET8JZAF7rzm1SnYHK6Satu5TahpAc7iFwSiyNqRILEiIJ0rjWZp4+bF
+ 13Y3CXGFoXPidH+gii19rzw2PpMG+J8BzNT5WruyJLE01fNwQ2gePZakEaMDljJT/VkZ
+ htrCLyS5d+IJLFp6AN6WIg6Qezdln+B1a0Eea1wHtoYFnPQF0+LGLMpeUXrG6s0gNT8g
+ /o7sdUqUkK9EJklkp6isb7gr6dkuRQ6MFMFyTvxsJyzRtLLTFdnlUo0JEbD79zeENWXG
+ wuvUQt7F82FG2JUcr/CY8Ivx6IAZ8pTrmR22Oo14Lh/0XPffj9ZODdGUEUNdblMwUeMz
+ 7+fQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20221208; t=1687527642; x=1690119642;
+ h=cc:to:subject:message-id:date:from:in-reply-to:references
+ :mime-version:x-gm-message-state:from:to:cc:subject:date:message-id
+ :reply-to;
+ bh=4+7H3k9xy277oLed+TWizCwehvCr5NTWFidwXIFvyCc=;
+ b=FXBGfJTFRME5MxlaPARTSO42w17ZwWoGDAqxHMqjSCWN2QoDLBETJJKjmxi5a5cFzx
+ T3bZa9AZGp9qNdhpK6vTPWVOkMmx0rpRnhHpINOZLK7F20ai+gmrSkN6SMTPCjteYNML
+ SqLdM9fiPsB0UTHdO6HXbmz6kbVLjhk1+JQ6wL7tIH3j0E6LT0CcYgtVY/tGfYBmjdga
+ F/iMe3G9e5dcvADBpQY6APTWiRkygl86h8xK52ro7RFvQTRjKy5TYzNoZOekElVD/aPK
+ 5MC9rrU6Ds6ssJSjWMkR20UctU0/oeeCIGRZt5gbmGcSEP7QaCzqeQuUDUP0O/0yhpjE
+ vTLA==
+X-Gm-Message-State: AC+VfDzeqBfmrzYmc1bEteavzFb3HpSv+0m94QlochredbEgvyagEcAb
+ o2CdqDwx0QrWngXOOx+eVYXTFou5eAfjmw7jWSY=
+X-Google-Smtp-Source: ACHHUZ6WP6+QquCXCochsIQgKBZpyiKnf8Kr4c/z1G3fSAX+EL0o3YV7n6fBVYvDMtweZRAkoQnH9shWR3fUXB9KxaY=
+X-Received: by 2002:a05:6870:d451:b0:1a9:8606:dfcd with SMTP id
+ j17-20020a056870d45100b001a98606dfcdmr12162779oag.0.1687527641965; Fri, 23
+ Jun 2023 06:40:41 -0700 (PDT)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <2a5a069572b46b59dd16fe8d54e549a9b5bbb6eb.camel@kernel.org>
-X-Spam-Score: -5.9 (-----)
+References: <CY4PR1801MB1910F3DE3B29710C1D7A9226C68A9@CY4PR1801MB1910.namprd18.prod.outlook.com>
+ <CY5PR12MB64551AB18AB4DB2D3F1CA5A9C65DA@CY5PR12MB6455.namprd12.prod.outlook.com>
+ <a0493c88-358a-9d77-110a-18449314193b@oracle.com>
+In-Reply-To: <a0493c88-358a-9d77-110a-18449314193b@oracle.com>
+From: Immad Mir <mirimmad17@gmail.com>
+Date: Fri, 23 Jun 2023 19:10:30 +0530
+Message-ID: <CAJfv2=A-b7yVtNA_T2kYyk_xK_suWrVX=gC3b+Am4LmNmvq02A@mail.gmail.com>
+To: Dave Kleikamp <dave.kleikamp@oracle.com>
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: Spam detection software,
- running on the system "util-spamd-1.v13.lw.sourceforge.com", 
+ running on the system "util-spamd-2.v13.lw.sourceforge.com", 
  has NOT identified this incoming email as spam.  The original
  message has been attached to this so you can view it or label
  similar future email.  If you have any questions, see
  the administrator of that system for details.
- Content preview:  On Wed, Jun 21, 2023 at 03:52:27PM -0400, Jeff Layton wrote:
- > On Wed, 2023-06-21 at 15:21 -0400, Steven Rostedt wrote: > > On Wed, 21
- Jun 2023 10:45:05 -0400 > > Jeff Layton <jlayton@kernel.org> wrot [...] 
- Content analysis details:   (-5.9 points, 6.0 required)
+ Content preview:  Thanks for the feedback. I've prepared two patches to fix
+ the bug. > Does this test case attempt to remount a read-only file system
+ as read-write? I see a potential bug there. I'm not really sure about this.
+ Content analysis details:   (0.0 points, 6.0 required)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [139.178.84.217 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [mirimmad17[at]gmail.com]
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit [mirimmad17[at]gmail.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [209.85.160.51 listed in wl.mailspike.net]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.160.51 listed in list.dnswl.org]
+ 0.0 HTML_MESSAGE           BODY: HTML included in message
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid -0.7 DKIMWL_WL_HIGH         DKIMwl.org - High trust sender
-X-Headers-End: 1qCg7V-00CPuv-CK
-X-Mailman-Approved-At: Fri, 23 Jun 2023 13:17:26 +0000
-Subject: Re: [Jfs-discussion] [PATCH 00/79] fs: new accessors for
- inode->i_ctime
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ -0.0 T_SCC_BODY_TEXT_LINE   No description available.
+X-Headers-End: 1qCh1v-00CRj7-2Z
+X-Mailman-Approved-At: Fri, 23 Jun 2023 13:53:32 +0000
+Subject: Re: [Jfs-discussion] [PATCH] FS: JFS: Fix null-ptr-deref Read in
+ txBegin
 X-BeenThere: jfs-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -104,155 +129,441 @@ List-Post: <mailto:jfs-discussion@lists.sourceforge.net>
 List-Help: <mailto:jfs-discussion-request@lists.sourceforge.net?subject=help>
 List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/jfs-discussion>, 
  <mailto:jfs-discussion-request@lists.sourceforge.net?subject=subscribe>
-Cc: Latchesar Ionkov <lucho@ionkov.net>,
- "Rafael J. Wysocki" <rafael@kernel.org>, "Darrick J. Wong" <djwong@kernel.org>,
- Anders Larsen <al@alarsen.net>, Carlos Llamas <cmllamas@google.com>,
- Andrii Nakryiko <andrii@kernel.org>, Hugh Dickins <hughd@google.com>,
- John Johansen <john.johansen@canonical.com>,
- Seth Forshee <sforshee@digitalocean.com>,
- Alexander Gordeev <agordeev@linux.ibm.com>, Christoph Hellwig <hch@lst.de>,
- Mike Marshall <hubcap@omnibond.com>, Paulo Alcantara <pc@manguebit.com>,
- linux-xfs@vger.kernel.org, Bart Van Assche <bvanassche@acm.org>,
- Michael Ellerman <mpe@ellerman.id.au>, John Keeping <john@keeping.me.uk>,
- Zhang Yi <yi.zhang@huawei.com>, James Morris <jmorris@namei.org>,
- Christophe Leroy <christophe.leroy@csgroup.eu>, Tyler Hicks <code@tyhicks.com>,
- Alan Stern <stern@rowland.harvard.edu>,
- Christian Borntraeger <borntraeger@linux.ibm.com>, devel@lists.orangefs.org,
- Shyam Prasad N <sprasad@microsoft.com>, Jan Harkes <jaharkes@cs.cmu.edu>,
- linux-um@lists.infradead.org, Nicholas Piggin <npiggin@gmail.com>,
- Joel Becker <jlbec@evilplan.org>, Eric Van Hensbergen <ericvh@kernel.org>,
- Suren Baghdasaryan <surenb@google.com>,
- Trond Myklebust <trond.myklebust@hammerspace.com>,
- Anton Altaparmakov <anton@tuxera.com>,
- Wolfram Sang <wsa+renesas@sang-engineering.com>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Stephen Smalley <stephen.smalley.work@gmail.com>, linux-usb@vger.kernel.org,
- linux-kernel@vger.kernel.org, Ronnie Sahlberg <lsahlber@redhat.com>,
- Sergey Senozhatsky <senozhatsky@chromium.org>,
- Luis Chamberlain <mcgrof@kernel.org>, Chuck Lever <chuck.lever@oracle.com>,
- Sven Schnelle <svens@linux.ibm.com>, Jiri Olsa <jolsa@kernel.org>,
- Jan Kara <jack@suse.com>, Tejun Heo <tj@kernel.org>,
- Andrew Morton <akpm@linux-foundation.org>, linux-trace-kernel@vger.kernel.org,
- linux-hardening@vger.kernel.org, Dave Kleikamp <shaggy@kernel.org>,
- Sandeep Dhavale <dhavale@google.com>,
- Tetsuo Handa <penguin-kernel@I-love.SAKURA.ne.jp>,
- Mimi Zohar <zohar@linux.ibm.com>, linux-mm@kvack.org,
- Joel Fernandes <joel@joelfernandes.org>, Eric Dumazet <edumazet@google.com>,
- Stanislav Fomichev <sdf@google.com>,
- Andrzej Pietrasiewicz <andrzej.p@collabora.com>, Hangyu Hua <hbh25y@gmail.com>,
- linux-s390@vger.kernel.org, linux-nilfs@vger.kernel.org,
- Paul Moore <paul@paul-moore.com>, Leon Romanovsky <leon@kernel.org>,
- John Fastabend <john.fastabend@gmail.com>,
- Arve =?utf-8?B?SGrDuG5uZXbDpWc=?= <arve@android.com>,
- Minghao Chi <chi.minghao@zte.com.cn>, codalist@coda.cs.cmu.edu,
- selinux@vger.kernel.org, ZhangPeng <zhangpeng362@huawei.com>,
- Udipto Goswami <quic_ugoswami@quicinc.com>, Yonghong Song <yhs@fb.com>,
- Iurii Zaikin <yzaikin@google.com>, Namjae Jeon <linkinjeon@kernel.org>,
- Masami Hiramatsu <mhiramat@kernel.org>, ecryptfs@vger.kernel.org,
- Todd Kjos <tkjos@android.com>, Vasily Gorbik <gor@linux.ibm.com>,
- Yu Zhe <yuzhe@nfschina.com>, linuxppc-dev@lists.ozlabs.org,
- reiserfs-devel@vger.kernel.org, Miklos Szeredi <miklos@szeredi.hu>,
- Yue Hu <huyue2@coolpad.com>, Jaegeuk Kim <jaegeuk@kernel.org>,
- Aditya Garg <gargaditya08@live.com>, Martijn Coenen <maco@android.com>,
- OGAWA Hirofumi <hirofumi@mail.parknet.co.jp>, Hao Luo <haoluo@google.com>,
- Tony Luck <tony.luck@intel.com>, Theodore Ts'o <tytso@mit.edu>,
- Nicolas Pitre <nico@fluxnic.net>, linux-ntfs-dev@lists.sourceforge.net,
- Muchun Song <muchun.song@linux.dev>, Roberto Sassu <roberto.sassu@huawei.com>,
- linux-f2fs-devel@lists.sourceforge.net,
- "Guilherme G. Piccoli" <gpiccoli@igalia.com>,
- Jozef Martiniak <jomajm@gmail.com>, Eric Biederman <ebiederm@xmission.com>,
- Anna Schumaker <anna@kernel.org>, xu xin <cgel.zte@gmail.com>,
- Brad Warrum <bwarrum@linux.ibm.com>, Mike Kravetz <mike.kravetz@oracle.com>,
- Jingyu Wang <jingyuwang_vip@163.com>, linux-efi@vger.kernel.org,
- Dan Carpenter <error27@gmail.com>, Martin Brandenburg <martin@omnibond.com>,
- Tom Rix <trix@redhat.com>, Alexei Starovoitov <ast@kernel.org>,
- Chris Mason <clm@fb.com>, linux-mtd@lists.infradead.org,
- "Matthew Wilcox \(Oracle\)" <willy@infradead.org>,
- Marc Dionne <marc.dionne@auristor.com>, linux-afs@lists.infradead.org,
- Ian Kent <raven@themaw.net>, Naohiro Aota <naohiro.aota@wdc.com>,
- Daniel Borkmann <daniel@iogearbox.net>,
- Dennis Dalessandro <dennis.dalessandro@cornelisnetworks.com>,
- linux-rdma@vger.kernel.org, Linyu Yuan <quic_linyyuan@quicinc.com>,
- coda@cs.cmu.edu, Ilya Dryomov <idryomov@gmail.com>,
- Paolo Abeni <pabeni@redhat.com>, Alexey Dobriyan <adobriyan@gmail.com>,
- "Serge E. Hallyn" <serge@hallyn.com>, Zhihao Cheng <chengzhihao1@huawei.com>,
- Jens Axboe <axboe@kernel.dk>, Zeng Jingxiang <linuszeng@tencent.com>,
- Kees Cook <keescook@chromium.org>, Arnd Bergmann <arnd@arndb.de>,
- autofs@vger.kernel.org, Steven Rostedt <rostedt@goodmis.org>,
- Yifei Liu <yifeliu@cs.stonybrook.edu>, Damien Le Moal <dlemoal@kernel.org>,
- Eric Paris <eparis@parisplace.org>, ceph-devel@vger.kernel.org,
- Gao Xiang <xiang@kernel.org>, Jiangshan Yi <yijiangshan@kylinos.cn>,
- David Howells <dhowells@redhat.com>, linux-nfs@vger.kernel.org,
- linux-ext4@vger.kernel.org, Song Liu <song@kernel.org>,
- samba-technical@lists.samba.org, Steve French <sfrench@samba.org>,
- Jeremy Kerr <jk@ozlabs.org>, netdev@vger.kernel.org,
- Bob Peterson <rpeterso@redhat.com>, linux-fsdevel@vger.kernel.org,
- bpf@vger.kernel.org, ntfs3@lists.linux.dev, linux-erofs@lists.ozlabs.org,
- "David S. Miller" <davem@davemloft.net>, ocfs2-devel@oss.oracle.com,
- jfs-discussion@lists.sourceforge.net,
- Dominique Martinet <asmadeus@codewreck.org>,
- Christian Schoenebeck <linux_oss@crudebyte.com>,
- Bob Copeland <me@bobcopeland.com>, KP Singh <kpsingh@kernel.org>,
- Oleg Kanatov <okanatov@gmail.com>,
- Konstantin Komarov <almaz.alexandrovich@paragon-software.com>,
- Joseph Qi <joseph.qi@linux.alibaba.com>, Yuta Hayama <hayama@lineo.co.jp>,
- Andreas Dilger <adilger.kernel@dilger.ca>,
- Mikulas Patocka <mikulas@artax.karlin.mff.cuni.cz>,
- Zhengchao Shao <shaozhengchao@huawei.com>,
- Chen Zhongjin <chenzhongjin@huawei.com>, Ard Biesheuvel <ardb@kernel.org>,
- Anton Ivanov <anton.ivanov@cambridgegreys.com>,
- Laurent Pinchart <laurent.pinchart+renesas@ideasonboard.com>,
- Andreas Gruenbacher <agruenba@redhat.com>, Richard Weinberger <richard@nod.at>,
- Mark Fasheh <mark@fasheh.com>, Stefan Roesch <shr@devkernel.io>,
- cluster-devel@redhat.com, Jason Gunthorpe <jgg@ziepe.ca>,
- Jakub Kicinski <kuba@kernel.org>, Rik van Riel <riel@surriel.com>,
- Salah Triki <salah.triki@gmail.com>, Evgeniy Dushistov <dushistov@mail.ru>,
- linux-cifs@vger.kernel.org, Heiko Carstens <hca@linux.ibm.com>,
- Chao Yu <chao@kernel.org>, apparmor@lists.ubuntu.com,
- Josef Bacik <josef@toxicpanda.com>,
- "Liam R. Howlett" <Liam.Howlett@Oracle.com>, Tom Talpey <tom@talpey.com>,
- Hans de Goede <hdegoede@redhat.com>,
- "Tigran A. Aivazian" <aivazian.tigran@gmail.com>,
- Dave Chinner <dchinner@redhat.com>, David Sterba <dsterba@suse.com>,
- Xiubo Li <xiubli@redhat.com>, Ryusuke Konishi <konishi.ryusuke@gmail.com>,
- Juergen Gross <jgross@suse.com>, Johannes Thumshirn <jth@kernel.org>,
- Ritu Agarwal <rituagar@linux.ibm.com>, Luis de Bethencourt <luisbg@kernel.org>,
- Martin KaFai Lau <martin.lau@linux.dev>, v9fs@lists.linux.dev,
- "Fabio M. De Francesco" <fmdefrancesco@gmail.com>,
- linux-unionfs@vger.kernel.org, Ruihan Li <lrh2000@pku.edu.cn>,
- linux-security-module@vger.kernel.org, Erez Zadok <ezk@cs.stonybrook.edu>,
- Jeffle Xu <jefflexu@linux.alibaba.com>,
- "Dr. David Alan Gilbert" <linux@treblig.org>,
- Johannes Weiner <hannes@cmpxchg.org>,
- Phillip Lougher <phillip@squashfs.org.uk>,
- Johannes Berg <johannes@sipsolutions.net>,
- Sungjong Seo <sj1557.seo@samsung.com>, David Woodhouse <dwmw2@infradead.org>,
- linux-karma-devel@lists.sourceforge.net, linux-btrfs@vger.kernel.org,
- Alexander Viro <viro@zeniv.linux.org.uk>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Dave Kleikamp <shaggy@kernel.org>, "jfs-discussion@lists.sourceforge.net"
+ <jfs-discussion@lists.sourceforge.net>, Immad Mir <mirimmad@outlook.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "syzbot+f1faa20eec55e0c8644c@syzkaller.appspotmail.com"
+ <syzbot+f1faa20eec55e0c8644c@syzkaller.appspotmail.com>,
+ "skhan@linuxfoundation.org" <skhan@linuxfoundation.org>
+Content-Type: multipart/mixed; boundary="===============5902096791360541873=="
 Errors-To: jfs-discussion-bounces@lists.sourceforge.net
 
-T24gV2VkLCBKdW4gMjEsIDIwMjMgYXQgMDM6NTI6MjdQTSAtMDQwMCwgSmVmZiBMYXl0b24gd3Jv
-dGU6Cj4gT24gV2VkLCAyMDIzLTA2LTIxIGF0IDE1OjIxIC0wNDAwLCBTdGV2ZW4gUm9zdGVkdCB3
-cm90ZToKPiA+IE9uIFdlZCwgMjEgSnVuIDIwMjMgMTA6NDU6MDUgLTA0MDAKPiA+IEplZmYgTGF5
-dG9uIDxqbGF5dG9uQGtlcm5lbC5vcmc+IHdyb3RlOgo+ID4gCj4gPiA+IE1vc3Qgb2YgdGhpcyBj
-b252ZXJzaW9uIHdhcyBkb25lIHZpYSBjb2NjaW5lbGxlLCB3aXRoIGEgZmV3IG9mIHRoZSBtb3Jl
-Cj4gPiA+IG5vbi1zdGFuZGFyZCBhY2Nlc3NlcyBkb25lIGJ5IGhhbmQuIFRoZXJlIHNob3VsZCBi
-ZSBubyBiZWhhdmlvcmFsCj4gPiA+IGNoYW5nZXMgd2l0aCB0aGlzIHNldC4gVGhhdCB3aWxsIGNv
-bWUgbGF0ZXIsIGFzIHdlIGNvbnZlcnQgaW5kaXZpZHVhbAo+ID4gPiBmaWxlc3lzdGVtcyB0byB1
-c2UgbXVsdGlncmFpbiB0aW1lc3RhbXBzLgo+ID4gCj4gPiBCVFcsIExpbnVzIGhhcyBzdWdnZXN0
-ZWQgdG8gbWUgdGhhdCB3aGVuZXZlciBhIGNvbmNjaW5lbGxlIHNjcmlwdCBpcyB1c2VkLAo+ID4g
-aXQgc2hvdWxkIGJlIGluY2x1ZGVkIGluIHRoZSBjaGFuZ2UgbG9nLgo+ID4gCj4gCj4gT2ssIGhl
-cmUncyB3aGF0IEkgaGF2ZS4gSSBub3RlIGFnYWluIHRoYXQgbXkgdXNhZ2Ugb2YgY29jY2luZWxs
-ZSBpcwo+IHByZXR0eSBwcmltaXRpdmUsIHNvIEkgZW5kZWQgdXAgZG9pbmcgYSBmYWlyIGJpdCBv
-ZiBieS1oYW5kIGZpeGluZyBhZnRlcgo+IGFwcGx5aW5nIHRoZXNlLgo+IAo+IEdpdmVuIHRoZSB3
-YXkgdGhhdCB0aGlzIGNoYW5nZSBpcyBicm9rZW4gdXAgaW50byA3NyBwYXRjaGVzIGJ5Cj4gc3Vi
-c3lzdGVtLCB0byB3aGljaCBjaGFuZ2Vsb2dzIHNob3VsZCBJIGFkZCBpdD8gSSBjb3VsZCBhZGQg
-aXQgdG8gdGhlCj4gImluZnJhc3RydWN0dXJlIiBwYXRjaCwgYnV0IHRoYXQncyB0aGUgb25lIHdo
-ZXJlIEkgX2RpZG4ndF8gdXNlIGl0LsKgCj4gCj4gTWF5YmUgdG8gcGF0Y2ggIzc5ICh0aGUgb25l
-IHRoYXQgcmVuYW1lcyBpX2N0aW1lKT8KClRoYXQgd29ya3MuIEkgY2FuIGFsc28gcHV0IHRoaXMg
-aW50byBhIG1lcmdlIGNvbW1pdCBvciBwciBtZXNzYWdlLgoKCl9fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fCkpmcy1kaXNjdXNzaW9uIG1haWxpbmcgbGlzdApK
-ZnMtZGlzY3Vzc2lvbkBsaXN0cy5zb3VyY2Vmb3JnZS5uZXQKaHR0cHM6Ly9saXN0cy5zb3VyY2Vm
-b3JnZS5uZXQvbGlzdHMvbGlzdGluZm8vamZzLWRpc2N1c3Npb24K
+--===============5902096791360541873==
+Content-Type: multipart/alternative; boundary="000000000000a5e9fd05fecc25f5"
+
+--000000000000a5e9fd05fecc25f5
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+Thanks for the feedback. I've prepared two patches to fix the bug.
+
+> Does this test case attempt to remount a read-only file system as
+read-write? I see a potential bug there.
+I'm not really sure about this.
+
+> Should be setting rc to an error here. I suggest -EROFS, but anything is
+better than returning zero. Calling jfs_error() might also be in order, as
+that would explicitly mark the file system to read-only. (The default
+behavior at least.)
+
+I've incorporated your suggested changes.
+
+> It'd be nice if we could move the check to txBegin(), but it is assumed
+to always succeed, so there's no good error recovery there without changing
+all of the callers. Maybe we can call jfs_error() there in case we get
+there from another syscall.
+
+I am not sure what to do here. I am calling jfs_error and returning 0 which
+is not what the caller would expect.
+
+Thanks,
+Immad.
+
+
+On Thu, Jun 22, 2023 at 8:38=E2=80=AFPM Dave Kleikamp <dave.kleikamp@oracle=
+.com>
+wrote:
+
+> On 6/20/23 10:53PM, Immad Mir wrote:
+>
+>
+>
+> Hi. May I please request a review on this patch.
+>
+> Sorry for the delay. See below.
+>
+>
+> Thanks,
+> Immad
+>
+> ------------------------------
+> *From:* mirimmad@outlook.com <mirimmad@outlook.com> <mirimmad@outlook.com=
+>
+> *Sent:* Sunday, March 26, 2023 9:51:15 PM
+> *Cc:* mirimmad@outlook.com <mirimmad@outlook.com> <mirimmad@outlook.com>;
+> skhan@linuxfoundation.org <skhan@linuxfoundation.org>
+> <skhan@linuxfoundation.org>; Immad Mir <mirimmad17@gmail.com>
+> <mirimmad17@gmail.com>;
+> syzbot+f1faa20eec55e0c8644c@syzkaller.appspotmail.com
+> <syzbot+f1faa20eec55e0c8644c@syzkaller.appspotmail.com>
+> <syzbot+f1faa20eec55e0c8644c@syzkaller.appspotmail.com>; Dave Kleikamp
+> <shaggy@kernel.org> <shaggy@kernel.org>;
+> jfs-discussion@lists.sourceforge.net
+> <jfs-discussion@lists.sourceforge.net>
+> <jfs-discussion@lists.sourceforge.net>; linux-kernel@vger.kernel.org
+> <linux-kernel@vger.kernel.org> <linux-kernel@vger.kernel.org>
+> *Subject:* [PATCH] FS: JFS: Fix null-ptr-deref Read in txBegin
+>
+> From: Immad Mir <mirimmad17@gmail.com> <mirimmad17@gmail.com>
+>
+> syzkaller reported the following issue:
+>
+> BUG: KASAN: null-ptr-deref in instrument_atomic_read
+> include/linux/instrumented.h:72 [inline]
+> BUG: KASAN: null-ptr-deref in _test_bit
+> include/asm-generic/bitops/instrumented-non-atomic.h:141 [inline]
+> BUG: KASAN: null-ptr-deref in txBegin+0x131/0x6c0 fs/jfs/jfs_txnmgr.c:366
+> Read of size 8 at addr 0000000000000040 by task syz-executor.0/5098
+>
+> CPU: 0 PID: 5098 Comm: syz-executor.0 Not tainted
+> 6.3.0-rc3-syzkaller-00005-g7d31677bb7b1 #0
+> Hardware name: Google Compute Engine/Google Compute Engine, BIOS Google
+> 03/02/2023
+> Call Trace:
+>  <TASK>
+>  __dump_stack lib/dump_stack.c:88 [inline]
+>  dump_stack_lvl+0x1e7/0x2d0 lib/dump_stack.c:106
+>  print_report+0xe6/0x540 mm/kasan/report.c:433
+>  kasan_report+0x176/0x1b0 mm/kasan/report.c:536
+>  kasan_check_range+0x283/0x290 mm/kasan/generic.c:187
+>  instrument_atomic_read include/linux/instrumented.h:72 [inline]
+>  _test_bit include/asm-generic/bitops/instrumented-non-atomic.h:141
+> [inline]
+>  txBegin+0x131/0x6c0 fs/jfs/jfs_txnmgr.c:366
+>  jfs_link+0x1ac/0x5e0 fs/jfs/namei.c:802
+>  vfs_link+0x4ed/0x680 fs/namei.c:4522
+>  do_linkat+0x5cc/0x9e0 fs/namei.c:4593
+>  __do_sys_linkat fs/namei.c:4621 [inline]
+>  __se_sys_linkat fs/namei.c:4618 [inline]
+>  __x64_sys_linkat+0xdd/0xf0 fs/namei.c:4618
+>  do_syscall_x64 arch/x86/entry/common.c:50 [inline]
+>  do_syscall_64+0x41/0xc0 arch/x86/entry/common.c:80
+>  entry_SYSCALL_64_after_hwframe+0x63/0xcd
+>
+> The issue can be resolved by checking whethere "log"
+> for a given superblock exists in the jfs_link function
+> before beginning a transaction.
+>
+> I'm not sure how we got here. log should only be null if the file system
+> is mounted read-only. Does this test case attempt to remount a read-only
+> file system as read-write? I see a potential bug there.
+>
+>
+> Tested with syzbot.
+> Reported-by: syzbot+f1faa20eec55e0c8644c@syzkaller.appspotmail.com
+> Link:
+> https://syzkaller.appspot.com/bug?id=3Dbe7e52c50c5182cc09a09ea6fc456446b2=
+039de3
+>
+> Signed-off-by: Immad Mir <mirimmad17@gmail.com> <mirimmad17@gmail.com>
+> ---
+>  fs/jfs/namei.c | 2 ++
+>  1 file changed, 2 insertions(+)
+>
+> diff --git a/fs/jfs/namei.c b/fs/jfs/namei.c
+> index b29d68b5e..cd43b68e2 100644
+> --- a/fs/jfs/namei.c
+> +++ b/fs/jfs/namei.c
+> @@ -799,6 +799,8 @@ static int jfs_link(struct dentry *old_dentry,
+>          if (rc)
+>                  goto out;
+>
+> +       if (!(JFS_SBI(ip->i_sb)->log))
+> +               goto out;
+>
+> Should be setting rc to an error here. I suggest -EROFS, but anything is
+> better than returning zero. Calling jfs_error() might also be in order, a=
+s
+> that would explicitly mark the file system to read-only. (The default
+> behavior at least.)
+>
+>          tid =3D txBegin(ip->i_sb, 0);
+>
+> It'd be nice if we could move the check to txBegin(), but it is assumed t=
+o
+> always succeed, so there's no good error recovery there without changing
+> all of the callers. Maybe we can call jfs_error() there in case we get
+> there from another syscall.
+>
+>
+>          mutex_lock_nested(&JFS_IP(dir)->commit_mutex,
+> COMMIT_MUTEX_PARENT);
+> --
+> 2.40.0
+>
+>
+>
+
+--000000000000a5e9fd05fecc25f5
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<div dir=3D"ltr"><div dir=3D"ltr"><div>Thanks for the feedback. I&#39;ve pr=
+epared two patches to fix the bug.<br></div><div><br></div><div>&gt;<font s=
+ize=3D"2"> Does this test
+        case attempt to remount a read-only file system as read-write? I
+        see a potential bug there.</font></div><div><font size=3D"2">I&#39;=
+m not really sure about this.</font></div><div><font size=3D"2"><br></font>=
+</div><div><font size=3D"2">&gt; </font><font size=3D"2">Should be setting =
+rc to an error here. I suggest
+        -EROFS, but anything is better than returning zero. Calling
+        jfs_error() might also be in order, as that would explicitly
+        mark the file system to read-only. (The default behavior at
+        least.)</font></div><div><font size=3D"2"><br></font></div><div><fo=
+nt size=3D"2">I&#39;ve incorporated your suggested changes.</font></div><di=
+v><font size=3D"2"><br></font></div><div><font size=3D"2">&gt; </font><font=
+ size=3D"2">It&#39;d be nice if we could move the check to txBegin(),
+      but it is assumed to always succeed, so there&#39;s no good error
+      recovery there without changing all of the callers. Maybe we can
+      call jfs_error() there in case we get there from another syscall.</fo=
+nt></div><div><font size=3D"2"><br></font></div><div><font size=3D"2">I am =
+not sure what to do here. I am calling jfs_error and returning 0 which is n=
+ot what the caller would expect.</font></div><div><font size=3D"2"><br></fo=
+nt></div><div><font size=3D"2">Thanks,</font></div><div><font size=3D"2">Im=
+mad.<br></font></div><div><font size=3D"2"><br></font></div></div><br><div =
+class=3D"gmail_quote"><div dir=3D"ltr" class=3D"gmail_attr">On Thu, Jun 22,=
+ 2023 at 8:38=E2=80=AFPM Dave Kleikamp &lt;<a href=3D"mailto:dave.kleikamp@=
+oracle.com">dave.kleikamp@oracle.com</a>&gt; wrote:<br></div><blockquote cl=
+ass=3D"gmail_quote" style=3D"margin:0px 0px 0px 0.8ex;border-left:1px solid=
+ rgb(204,204,204);padding-left:1ex">
+
+ =20
+  <div>
+    <p>On 6/20/23 10:53PM, Immad Mir wrote:<br>
+    </p>
+    <blockquote type=3D"cite">
+     =20
+      <div><br>
+      </div>
+      <div dir=3D"auto">
+        <div><br>
+        </div>
+      </div>
+      <div id=3D"m_-9107136514394148148ms-outlook-mobile-signature" dir=3D"=
+auto">Hi. May I please
+        request a review on this patch.<br>
+      </div>
+    </blockquote>
+    <p>Sorry for the delay. See below.<br>
+    </p>
+    <blockquote type=3D"cite">
+      <div id=3D"m_-9107136514394148148ms-outlook-mobile-signature" dir=3D"=
+auto">
+      </div>
+      <div id=3D"m_-9107136514394148148ms-outlook-mobile-signature" dir=3D"=
+auto"><br>
+      </div>
+      <div id=3D"m_-9107136514394148148ms-outlook-mobile-signature" dir=3D"=
+auto">Thanks,</div>
+      <div id=3D"m_-9107136514394148148ms-outlook-mobile-signature" dir=3D"=
+auto">Immad</div>
+      <div dir=3D"auto">
+        <div id=3D"m_-9107136514394148148mail-editor-reference-message-cont=
+ainer" dir=3D"auto"><br>
+          <hr style=3D"display:inline-block;width:98%">
+          <div id=3D"m_-9107136514394148148divRplyFwdMsg" style=3D"font-siz=
+e:11pt"><b>From:</b>
+            <a href=3D"mailto:mirimmad@outlook.com" target=3D"_blank">mirim=
+mad@outlook.com</a> <a href=3D"mailto:mirimmad@outlook.com" target=3D"_blan=
+k">&lt;mirimmad@outlook.com&gt;</a><br>
+            <b>Sent:</b> Sunday, March 26, 2023 9:51:15 PM<br>
+            <b>Cc:</b> <a href=3D"mailto:mirimmad@outlook.com" target=3D"_b=
+lank">mirimmad@outlook.com</a>
+            <a href=3D"mailto:mirimmad@outlook.com" target=3D"_blank">&lt;m=
+irimmad@outlook.com&gt;</a>; <a href=3D"mailto:skhan@linuxfoundation.org" t=
+arget=3D"_blank">skhan@linuxfoundation.org</a>
+            <a href=3D"mailto:skhan@linuxfoundation.org" target=3D"_blank">=
+&lt;skhan@linuxfoundation.org&gt;</a>; Immad Mir
+            <a href=3D"mailto:mirimmad17@gmail.com" target=3D"_blank">&lt;m=
+irimmad17@gmail.com&gt;</a>;
+            <a href=3D"mailto:syzbot+f1faa20eec55e0c8644c@syzkaller.appspot=
+mail.com" target=3D"_blank">syzbot+f1faa20eec55e0c8644c@syzkaller.appspotma=
+il.com</a>
+            <a href=3D"mailto:syzbot+f1faa20eec55e0c8644c@syzkaller.appspot=
+mail.com" target=3D"_blank">&lt;syzbot+f1faa20eec55e0c8644c@syzkaller.appsp=
+otmail.com&gt;</a>;
+            Dave Kleikamp <a href=3D"mailto:shaggy@kernel.org" target=3D"_b=
+lank">&lt;shaggy@kernel.org&gt;</a>;
+            <a href=3D"mailto:jfs-discussion@lists.sourceforge.net" target=
+=3D"_blank">jfs-discussion@lists.sourceforge.net</a>
+            <a href=3D"mailto:jfs-discussion@lists.sourceforge.net" target=
+=3D"_blank">&lt;jfs-discussion@lists.sourceforge.net&gt;</a>;
+            <a href=3D"mailto:linux-kernel@vger.kernel.org" target=3D"_blan=
+k">linux-kernel@vger.kernel.org</a>
+            <a href=3D"mailto:linux-kernel@vger.kernel.org" target=3D"_blan=
+k">&lt;linux-kernel@vger.kernel.org&gt;</a><br>
+            <b>Subject:</b> [PATCH] FS: JFS: Fix
+            null-ptr-deref Read in txBegin<br>
+          </div>
+          <br>
+         =20
+          <font size=3D"2"><span style=3D"font-size:11pt">
+              <div>From: Immad Mir
+                <a href=3D"mailto:mirimmad17@gmail.com" target=3D"_blank">&=
+lt;mirimmad17@gmail.com&gt;</a><br>
+                <br>
+                syzkaller reported the following issue:<br>
+                <br>
+                BUG: KASAN: null-ptr-deref in instrument_atomic_read
+                include/linux/instrumented.h:72 [inline]<br>
+                BUG: KASAN: null-ptr-deref in _test_bit
+                include/asm-generic/bitops/instrumented-non-atomic.h:141
+                [inline]<br>
+                BUG: KASAN: null-ptr-deref in txBegin+0x131/0x6c0
+                fs/jfs/jfs_txnmgr.c:366<br>
+                Read of size 8 at addr 0000000000000040 by task
+                syz-executor.0/5098<br>
+                <br>
+                CPU: 0 PID: 5098 Comm: syz-executor.0 Not tainted
+                6.3.0-rc3-syzkaller-00005-g7d31677bb7b1 #0<br>
+                Hardware name: Google Compute Engine/Google Compute
+                Engine, BIOS Google 03/02/2023<br>
+                Call Trace:<br>
+                =C2=A0&lt;TASK&gt;<br>
+                =C2=A0__dump_stack lib/dump_stack.c:88 [inline]<br>
+                =C2=A0dump_stack_lvl+0x1e7/0x2d0 lib/dump_stack.c:106<br>
+                =C2=A0print_report+0xe6/0x540 mm/kasan/report.c:433<br>
+                =C2=A0kasan_report+0x176/0x1b0 mm/kasan/report.c:536<br>
+                =C2=A0kasan_check_range+0x283/0x290 mm/kasan/generic.c:187<=
+br>
+                =C2=A0instrument_atomic_read include/linux/instrumented.h:7=
+2
+                [inline]<br>
+                =C2=A0_test_bit
+                include/asm-generic/bitops/instrumented-non-atomic.h:141
+                [inline]<br>
+                =C2=A0txBegin+0x131/0x6c0 fs/jfs/jfs_txnmgr.c:366<br>
+                =C2=A0jfs_link+0x1ac/0x5e0 fs/jfs/namei.c:802<br>
+                =C2=A0vfs_link+0x4ed/0x680 fs/namei.c:4522<br>
+                =C2=A0do_linkat+0x5cc/0x9e0 fs/namei.c:4593<br>
+                =C2=A0__do_sys_linkat fs/namei.c:4621 [inline]<br>
+                =C2=A0__se_sys_linkat fs/namei.c:4618 [inline]<br>
+                =C2=A0__x64_sys_linkat+0xdd/0xf0 fs/namei.c:4618<br>
+                =C2=A0do_syscall_x64 arch/x86/entry/common.c:50 [inline]<br=
+>
+                =C2=A0do_syscall_64+0x41/0xc0 arch/x86/entry/common.c:80<br=
+>
+                =C2=A0entry_SYSCALL_64_after_hwframe+0x63/0xcd<br>
+                <br>
+                The issue can be resolved by checking whethere &quot;log&qu=
+ot;<br>
+                for a given superblock exists in the jfs_link function<br>
+                before beginning a transaction.<br>
+              </div>
+            </span></font></div>
+      </div>
+    </blockquote>
+    <p><font size=3D"2">I&#39;m not sure how we got here. log should only b=
+e
+        null if the file system is mounted read-only. Does this test
+        case attempt to remount a read-only file system as read-write? I
+        see a potential bug there.</font><br>
+    </p>
+    <blockquote type=3D"cite">
+      <div dir=3D"auto">
+        <div id=3D"m_-9107136514394148148mail-editor-reference-message-cont=
+ainer" dir=3D"auto"><font size=3D"2"><span style=3D"font-size:11pt">
+              <div>
+                <br>
+                Tested with syzbot.<br>
+                Reported-by:
+                <a href=3D"mailto:syzbot+f1faa20eec55e0c8644c@syzkaller.app=
+spotmail.com" target=3D"_blank">syzbot+f1faa20eec55e0c8644c@syzkaller.appsp=
+otmail.com</a><br>
+                Link: <a href=3D"https://syzkaller.appspot.com/bug?id=3Dbe7=
+e52c50c5182cc09a09ea6fc456446b2039de3" target=3D"_blank">
+https://syzkaller.appspot.com/bug?id=3Dbe7e52c50c5182cc09a09ea6fc456446b203=
+9de3</a><br>
+                <br>
+                Signed-off-by: Immad Mir <a href=3D"mailto:mirimmad17@gmail=
+.com" target=3D"_blank">&lt;mirimmad17@gmail.com&gt;</a><br>
+                ---<br>
+                =C2=A0fs/jfs/namei.c | 2 ++<br>
+                =C2=A01 file changed, 2 insertions(+)<br>
+                <br>
+                diff --git a/fs/jfs/namei.c b/fs/jfs/namei.c<br>
+                index b29d68b5e..cd43b68e2 100644<br>
+                --- a/fs/jfs/namei.c<br>
+                +++ b/fs/jfs/namei.c<br>
+                @@ -799,6 +799,8 @@ static int jfs_link(struct dentry
+                *old_dentry,<br>
+                =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 if (rc)<br=
+>
+                =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=
+=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 goto out;<br>
+                <br>
+                +=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 if (!(JFS_SBI(ip-&gt;=
+i_sb)-&gt;log))<br>
+                +=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=
+=A0=C2=A0=C2=A0=C2=A0=C2=A0 goto out;<br>
+              </div>
+            </span></font></div>
+      </div>
+    </blockquote>
+    <p><font size=3D"2">Should be setting rc to an error here. I suggest
+        -EROFS, but anything is better than returning zero. Calling
+        jfs_error() might also be in order, as that would explicitly
+        mark the file system to read-only. (The default behavior at
+        least.)</font><br>
+    </p>
+    <blockquote type=3D"cite">
+      <div dir=3D"auto">
+        <div id=3D"m_-9107136514394148148mail-editor-reference-message-cont=
+ainer" dir=3D"auto"><font size=3D"2"><span style=3D"font-size:11pt">
+              <div>
+                =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0 tid =3D tx=
+Begin(ip-&gt;i_sb, 0);<br>
+              </div>
+            </span></font></div>
+      </div>
+    </blockquote>
+    <font size=3D"2">It&#39;d be nice if we could move the check to txBegin=
+(),
+      but it is assumed to always succeed, so there&#39;s no good error
+      recovery there without changing all of the callers. Maybe we can
+      call jfs_error() there in case we get there from another syscall.</fo=
+nt><br>
+    <blockquote type=3D"cite">
+      <div dir=3D"auto">
+        <div id=3D"m_-9107136514394148148mail-editor-reference-message-cont=
+ainer" dir=3D"auto"><font size=3D"2"><span style=3D"font-size:11pt">
+              <div>
+                <br>
+                =C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0
+                mutex_lock_nested(&amp;JFS_IP(dir)-&gt;commit_mutex,
+                COMMIT_MUTEX_PARENT);<br>
+                --<br>
+                2.40.0<br>
+                <br>
+              </div>
+            </span></font><br>
+        </div>
+      </div>
+    </blockquote>
+  </div>
+
+</blockquote></div></div>
+
+--000000000000a5e9fd05fecc25f5--
+
+
+--===============5902096791360541873==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
+
+
+--===============5902096791360541873==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
+
+_______________________________________________
+Jfs-discussion mailing list
+Jfs-discussion@lists.sourceforge.net
+https://lists.sourceforge.net/lists/listinfo/jfs-discussion
+
+--===============5902096791360541873==--
+
