@@ -2,97 +2,148 @@ Return-Path: <jfs-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+jfs-discussion@lfdr.de
 Delivered-To: lists+jfs-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id 34D36740785
-	for <lists+jfs-discussion@lfdr.de>; Wed, 28 Jun 2023 03:15:58 +0200 (CEST)
-Received: from [127.0.0.1] (helo=sfs-ml-2.v29.lw.sourceforge.com)
-	by sfs-ml-2.v29.lw.sourceforge.com with esmtp (Exim 4.95)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2712F7409CB
+	for <lists+jfs-discussion@lfdr.de>; Wed, 28 Jun 2023 09:46:01 +0200 (CEST)
+Received: from [127.0.0.1] (helo=sfs-ml-3.v29.lw.sourceforge.com)
+	by sfs-ml-3.v29.lw.sourceforge.com with esmtp (Exim 4.95)
 	(envelope-from <jfs-discussion-bounces@lists.sourceforge.net>)
-	id 1qEJmQ-0006PC-0C;
-	Wed, 28 Jun 2023 01:15:34 +0000
+	id 1qEPrp-0006sp-L4;
+	Wed, 28 Jun 2023 07:45:33 +0000
 Received: from [172.30.20.202] (helo=mx.sourceforge.net)
- by sfs-ml-2.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
+ by sfs-ml-3.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
  TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (Exim 4.95)
- (envelope-from <linux@treblig.org>) id 1qEJmK-0006OY-4P
+ (envelope-from <mirimmad@outlook.com>) id 1qEPrg-0006sh-RJ
  for jfs-discussion@lists.sourceforge.net;
- Wed, 28 Jun 2023 01:15:28 +0000
+ Wed, 28 Jun 2023 07:45:25 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=sourceforge.net; s=x; h=Content-Transfer-Encoding:MIME-Version:References:
- In-Reply-To:Message-ID:Date:Subject:Cc:To:From:Sender:Reply-To:Content-Type:
- Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
- Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
+ d=sourceforge.net; s=x; h=MIME-Version:Content-Type:Content-Transfer-Encoding
+ :Message-ID:Date:Subject:Cc:To:From:Sender:Reply-To:Content-ID:
+ Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+ :Resent-Message-ID:In-Reply-To:References:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=CbbF7wKwwiTatjmUOYYR1IVmmiEHD3co9Mp07PNnxSI=; b=UP/KW3oy/yvLdtqoEw/DugWNS4
- xLkTqzxsSEpsPLp4UNB4mTPAnjYAg0yQBxMKSqfxY79LCvwpQDNhyzK0ObeEyZZcsCK04k9Z9h6Ks
- 9x2bf42bClU8CaxLHYPwATNAbDiErpb8nzHCBTx4f34Ix4VrouStRftvslIyo7cwQO10=;
+ bh=m7r91z1X4c0FZ7iZhfgbqxVvpsyFW6Thj6k+2pT2XFk=; b=SVcvkXGhQiLymsFaD6eMyipQ2h
+ ujC+Mt/UAZelj28I0cy4hNU/+QTFGNjOB2bn0UDbIegEGM/hAQY0yNS5U0hj6OziofDYWdBvZeqwl
+ UfNWRb01Ud/aFIiWypcu8tMATCYdEPP7sL0jd2gx9x4/xeaiPAve9ZneXH8iHXcP6lEk=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
- h=Content-Transfer-Encoding:MIME-Version:References:In-Reply-To:Message-ID:
- Date:Subject:Cc:To:From:Sender:Reply-To:Content-Type:Content-ID:
- Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
- :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
- List-Post:List-Owner:List-Archive;
- bh=CbbF7wKwwiTatjmUOYYR1IVmmiEHD3co9Mp07PNnxSI=; b=kgkUQfwjd5RMSl3JCynAtRe4fc
- aQndvMRAY92feXZtSQyxwLU50FtRP5hgSGN6YPwsM3JmsViQ1pbfQve0oi7nxU/R9RH+RosvAndzf
- mnUM5FgLYapXyCg/2ZAL9Hf5zNaM1qFK7j0bDNvhhlFqf8hvR/vfY22cd0NCvssYN4ZQ=;
-Received: from mx.treblig.org ([46.235.229.95])
+ h=MIME-Version:Content-Type:Content-Transfer-Encoding:Message-ID:Date:
+ Subject:Cc:To:From:Sender:Reply-To:Content-ID:Content-Description:Resent-Date
+ :Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+ References:List-Id:List-Help:List-Unsubscribe:List-Subscribe:List-Post:
+ List-Owner:List-Archive; bh=m7r91z1X4c0FZ7iZhfgbqxVvpsyFW6Thj6k+2pT2XFk=; b=Y
+ R31yaRhwxYP9AS45+S3J4MlY2RCjp9ntZmbBoXmZiWZvYpJo2f2NabNN3fvvhOKUILfmxbYXCfr/E
+ j15Z92yoGS5QvfP+camGurhCnJGnGqIi0CwFO3cqu2/i4wWooVejeiKvgSctoYjlC+A7evC79kimA
+ +wCrmeCs7DrhirJI=;
+Received: from mail-mw2nam12olkn2080.outbound.protection.outlook.com
+ ([40.92.23.80] helo=NAM12-MW2-obe.outbound.protection.outlook.com)
  by sfi-mx-1.v28.lw.sourceforge.com with esmtps
  (TLS1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.95)
- id 1qEJmG-00GtUW-79 for jfs-discussion@lists.sourceforge.net;
- Wed, 28 Jun 2023 01:15:26 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=treblig.org
- ; s=bytemarkmx;
- h=Content-Transfer-Encoding:MIME-Version:References:
- In-Reply-To:Message-ID:Date:Subject:Cc:To:From:Sender:Reply-To:Content-Type:
- Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
- Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
- List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=CbbF7wKwwiTatjmUOYYR1IVmmiEHD3co9Mp07PNnxSI=; b=hAi2U9mnRWhcd0itBCjbUx7KPf
- 4TRvywnzsG8B2OpV7q/5/EzhrVcXHMzfg7xzJr5QGnf2BM3d/wuRMwd3ehtcIStTqUYgkdNPWPYyK
- DQUoZcwJbwa4hKFhfnmNsHg/WDLqr+MW6MBanx6bQgW46a0VQGoIvDcSpSzn7ej4kFRuVzwiW3xZc
- +SHis/c2LHNL+46vQ4uIWq/jNFgNORk7tE6GNXYaLxOLJs5Ynb6PckrfF5mXZl+s2ZS/52M1suPlJ
- SUAteQDuDmisTp+kni756PQGW4rBySlr2aAQAnbmXPn+V5C75hglRhyzROKpiQW//63ajyRuZ1PLy
- B0q3IX+A==;
-Received: from localhost ([127.0.0.1] helo=dalek.home.treblig.org)
- by mx.treblig.org with esmtp (Exim 4.94.2)
- (envelope-from <linux@treblig.org>)
- id 1qEJm2-00GNA7-Op; Wed, 28 Jun 2023 01:15:09 +0000
-From: linux@treblig.org
-To: sfrench@samba.org,
-	linkinjeon@kernel.org,
-	linux-cifs@vger.kernel.org
-Date: Wed, 28 Jun 2023 02:14:39 +0100
-Message-ID: <20230628011439.159678-4-linux@treblig.org>
-X-Mailer: git-send-email 2.41.0
-In-Reply-To: <20230628011439.159678-1-linux@treblig.org>
-References: <20230628011439.159678-1-linux@treblig.org>
+ id 1qEPrc-00HBeM-0Q for jfs-discussion@lists.sourceforge.net;
+ Wed, 28 Jun 2023 07:45:25 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=DJCFe7xmu2mgJEb2TxL7masBXdZW18VPqKSiDZBgxMAgUwAZDMSrX9tIUPlaRrjkX5+X+l/NOyTyRJ5tkl7Pf7fsKzKbUu0a9rB7amDtEi20zKUfsD27Bu4+qWo/N9cjE/vdUBdPVw0qMywMBKI4Kku3z+2o0u0q97onbqnwnszGNmIRStI/+u11Of3nMLVZhzhKb1CyaJX2uMC+0RLSymG4g0ydQwltzDP2bVuIrefWOrW5auVS9aYKOF06yvLlDy7rRNHR+VpGpfEAQHJRFwotRe/gV43NtspUh+AkS7Af1p+J6F+EDXP1eoOkjeLu/cd0W4Q/+6teH7nRoA/D2w==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=m7r91z1X4c0FZ7iZhfgbqxVvpsyFW6Thj6k+2pT2XFk=;
+ b=kbr6RKIZm9x0AaFS7anX7GazDWAThPF+PgEQV4Vfau5o841WCVw+NVkgr5oDm3jrgdrmWeewbouL5cK35cnmvIUnC9OLhVQJpnBwJpMQfayBWXqv0gqHl7+doRI7hY1ZaKF+qBy6v6I28iRrQwrr7y9igSD5UCCu+7ftq+5pmbxgKpXk5hgUuF+dA7JppuWvXJr6PzWzdAeDjQVjIo26RHyHmAuPsAtTOS/m0Iy+0FLAf53hpGnvEpRiSZdFbLEk3skihGSdjca3iYuUPPUfFMq2w6/dOzNJEBFp/5NdN3p2cmkgWr3rR3J5fCDznPH1KmHaLXzfa0gmajjj2pmZ/w==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=none; dmarc=none;
+ dkim=none; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=outlook.com;
+ s=selector1;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=m7r91z1X4c0FZ7iZhfgbqxVvpsyFW6Thj6k+2pT2XFk=;
+ b=Mi1LSS+3FYkcz1wQKel+3I6RilETsROayTUp2VcLvczc4BNLJ5O/MACZ+ZkA3S31Kmxg9WIMJCl1W7pwursLFk8rlA2jAn1IqM+hfUJZXA+mpTFTJvHkUgRbm0TGfJQWCG1znDVKHvDoCpyByv2MLNVEh/PEP2pgFoSs3Ith/ZhgM1KYQpR8yCEdOa79PM7OQuYfmQTLT9519MqR2dwAxYbKJr7ZKJgxxuPEa5cN3MMDWBAKFfdd2AT6vh9iL1LyxZS3SADg8z25lc+7SJkpz1XQUudrsWS2PoAE97qrQtwgFSh9EepefchFjBO/32Qv7bu7kEISycpuc1JU2GIRYw==
+Received: from CY5PR12MB6455.namprd12.prod.outlook.com (2603:10b6:930:35::10)
+ by SN7PR12MB6911.namprd12.prod.outlook.com (2603:10b6:806:261::8)
+ with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.6521.23; Wed, 28 Jun
+ 2023 07:45:04 +0000
+Received: from CY5PR12MB6455.namprd12.prod.outlook.com
+ ([fe80::f849:c65e:3d5b:5d]) by CY5PR12MB6455.namprd12.prod.outlook.com
+ ([fe80::f849:c65e:3d5b:5d%5]) with mapi id 15.20.6521.026; Wed, 28 Jun 2023
+ 07:45:04 +0000
+From: mirimmad@outlook.com
+To: 
+Date: Wed, 28 Jun 2023 13:14:21 +0530
+Message-ID: <CY5PR12MB64558542113D0368DD98FA62C624A@CY5PR12MB6455.namprd12.prod.outlook.com>
+X-Mailer: git-send-email 2.40.0
+X-TMN: [XeZnY3Yqkxs/mBCyrx4nPnplBakSoDF1OIem7rUUvYTnjEoBfhLeNb3UuC998sFA]
+X-ClientProxiedBy: BM1P287CA0006.INDP287.PROD.OUTLOOK.COM
+ (2603:1096:b00:40::34) To CY5PR12MB6455.namprd12.prod.outlook.com
+ (2603:10b6:930:35::10)
+X-Microsoft-Original-Message-ID: <20230628074421.11317-1-mirimmad@outlook.com>
 MIME-Version: 1.0
+X-MS-Exchange-MessageSentRepresentingType: 1
+X-MS-PublicTrafficType: Email
+X-MS-TrafficTypeDiagnostic: CY5PR12MB6455:EE_|SN7PR12MB6911:EE_
+X-MS-Office365-Filtering-Correlation-Id: dbf9536d-6a83-43f4-4ff5-08db77ab959b
+X-Microsoft-Antispam: BCL:0;
+X-Microsoft-Antispam-Message-Info: 5r3QR5rgPiUggiu/bYUMtQuSUZ5onasfX++37s/zcij1tW6ERrzMS5KpKWzbYQFh6SB6zDn27Z+Lq3BXI71zALvCTx04pObckQqCAnm0CHa0ks/3K3Er1fDeXuAfzeVBToTXBJcFoRv6rMuCRVmPz/Vz9/IANT6kKytUfhyqJIgVfGeruidAjp642IUAIlS/9jmp8Ult8UC1ZwYLT3N0ANAeCOMajCz9rrbTRlAmaMFw6dqHrcuAqfBlBpMX0qjjBlqATSroUfA4iqU5M/IhbbXYpo1YOveGqDPpUTA/9BwAC4x/1taXwiPY2vk+HI9aI2TnAwLlGUYf2fBDrn7blRg6E3626zt/1wvNI53G8nqVhsWI37llv4Pdgjc/c7YnYGC3DTtJ9dRxfL3JPOmMxnIzwhGlZC5q8Fn8Iq67Lj4k2slAyks6WujRFjTC5pTDrAdQ4ItkO3RIBzeojH1x9bKCvZIp9ESlhtWT2j6+a2XjaBExoqef88BWHU/0Nr21Dv9f/dPmTiJwDuLpOBmgI1MqcdLXElTVzc4036AQI/cv7ur+49ys55E8mtm7d/Q7
+X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
+X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?8TQ4qYCDVVzBdn+0oAboqMiXUoE+YxKSy7ZsJcSjH2xQbat9GTfXcfGEJ7lq?=
+ =?us-ascii?Q?7d33E5iLXDjlhGzEFM+WI8lyDky9Omy8IxQPcgZ+ea/Uk4HkQ4r9aYvWzJQY?=
+ =?us-ascii?Q?psfoDaaBMn4SO8hQm9hwV16YU4XGPWrkGEB7RFTEYsBps85IfNUzMPPmpgTz?=
+ =?us-ascii?Q?HSnwETlr63S92YbYqpQLdMAjMYzuj4DCKyJs6/kzL5ZGRuKwLxSj9vaBjnta?=
+ =?us-ascii?Q?BEQ1nnqDR5cUaQ+dSbz9MXt0VCR9AyrJX2so3b5sUlclIKGwyqqUOMgtXkFY?=
+ =?us-ascii?Q?oYx3MaiGt4X8Ul9PsiQrAcnZUmV0+ieEmYoYWNXb9XwQ+ZnddNxGpuMd9Oez?=
+ =?us-ascii?Q?6U64iHWJziRfytz6F+Yw+922wk9YJMfjMjyuXw8TzglXHM1c1sqGQjyB7jLb?=
+ =?us-ascii?Q?M+3iJiSkBRfr+ojlCfOWU+gMGy79V659htDcE2km5p6vtXsjA+l3+W7r1l3f?=
+ =?us-ascii?Q?kHsRCttf4cEABVQnQlqQRo0xPWAxX/bAIPjF6bBgOi5kqS27FtBe8yCxKak4?=
+ =?us-ascii?Q?FDy67sY/9g9JJG6EPhbb2jb+ZNsON3F9NmN78vB4V+n1u+XAaKoxXgX3X8eJ?=
+ =?us-ascii?Q?F9Bxjn58m1uNw74Bd07lOqBFIC4JoZ75h6KHy+c7tTDTjCKXq7kavotqlOjW?=
+ =?us-ascii?Q?NRA12MUZ/klz+SPg+cKcEyFxbVt7ukfQe2IH/xMPuG65xtKuvwtTN2vN0rqs?=
+ =?us-ascii?Q?yy499yXmEs0DtmKH1etoojjkahmCedwjs0HCk553AvjSVPED9/Dj+C6PyW7b?=
+ =?us-ascii?Q?vnl506FygiKtQaKuL9QB6hk9k5knOsKPQmHjuI7Oob8FW0utANRz1gZCmGHR?=
+ =?us-ascii?Q?iNkDyVGvqnp9BpWWC1xN09D2V8lKGBwUTDcBa5BJitDQ0uAfXTd1lVGc6n8D?=
+ =?us-ascii?Q?owhZJCCvNPKz44g7KTESa6IgRZrZAcqcUeBZWnrJby96wNAYrTpJv3llAaOa?=
+ =?us-ascii?Q?HSpEEMu82lISJyVR2w3OGCsMEd7Yb/9axPVqfYptV153aPzA4kQuqDDG+DBl?=
+ =?us-ascii?Q?rZbmKZZMk1BZZTnIcTOx115AWCtU5Z76ByAPpSf8LSdQHuW+NA6STMTY6YIc?=
+ =?us-ascii?Q?/ksYwDgmz2Dky9ySTlLKH1EySAIpsx7Ls6661nriRESYLcVBMwuAT8uINDn/?=
+ =?us-ascii?Q?DNyNuvn+jLLeLd00UPXJPO24Ws1cLQPXYFhqT/3XILGuIYJgwR004WsBDenN?=
+ =?us-ascii?Q?tWqVaGfDhcMFLstMq/PPjgvT0Drx0H4C7PXcfb8wa+OfgLIgw4X/G8IorzMW?=
+ =?us-ascii?Q?aViy2ms7l4mZ43lsQ1Wxo+SV93anoV67uwIiQYJfwA=3D=3D?=
+X-OriginatorOrg: outlook.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: dbf9536d-6a83-43f4-4ff5-08db77ab959b
+X-MS-Exchange-CrossTenant-AuthSource: CY5PR12MB6455.namprd12.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 28 Jun 2023 07:45:04.2206 (UTC)
+X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
+X-MS-Exchange-CrossTenant-Id: 84df9e7f-e9f6-40af-b435-aaaaaaaaaaaa
+X-MS-Exchange-CrossTenant-RMS-PersistedConsumerOrg: 00000000-0000-0000-0000-000000000000
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: SN7PR12MB6911
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: Spam detection software,
- running on the system "util-spamd-2.v13.lw.sourceforge.com", 
+ running on the system "util-spamd-1.v13.lw.sourceforge.com", 
  has NOT identified this incoming email as spam.  The original
  message has been attached to this so you can view it or label
  similar future email.  If you have any questions, see
  the administrator of that system for details.
- Content preview: From: "Dr. David Alan Gilbert" <linux@treblig.org> Now we've
- got the common code, use it for the client as well. Signed-off-by: Dr. David
- Alan Gilbert <linux@treblig.org> --- fs/smb/client/cifs_unicode.c | 1 -
- fs/smb/client/cifs_unicode.h
- | 263 + fs/smb/client/cifs_uniupr.h | 12 [...] 
+ Content preview: From: Immad Mir There is a grammatical error in one the
+ commnents
+ in extAlloc function. Signed-off-by: Immad Mir --- fs/jfs/jfs_extent.c |
+ 2 +- 1 file changed, 1 insertion(+), 1 deletion(-) 
  Content analysis details:   (-0.2 points, 6.0 required)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [mirimmad[at]outlook.com]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [40.92.23.80 listed in list.dnswl.org]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [40.92.23.80 listed in wl.mailspike.net]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid -0.0 T_SCC_BODY_TEXT_LINE   No description available.
-X-Headers-End: 1qEJmG-00GtUW-79
-Subject: [Jfs-discussion] [PATCH 3/3] fs/smb/client: Use common code in
- client
+ valid
+X-Headers-End: 1qEPrc-00HBeM-0Q
+Subject: [Jfs-discussion] [PATCH] FS: JFS: (trivial) Fix grammatical error
+ in extAlloc
 X-BeenThere: jfs-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -104,453 +155,37 @@ List-Post: <mailto:jfs-discussion@lists.sourceforge.net>
 List-Help: <mailto:jfs-discussion-request@lists.sourceforge.net?subject=help>
 List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/jfs-discussion>, 
  <mailto:jfs-discussion-request@lists.sourceforge.net?subject=subscribe>
-Cc: jfs-discussion@lists.sourceforge.net, linux-kernel@vger.kernel.org,
- "Dr. David Alan Gilbert" <linux@treblig.org>
+Cc: Dave Kleikamp <shaggy@kernel.org>, jfs-discussion@lists.sourceforge.net,
+ linux-kernel@vger.kernel.org, Immad Mir <mirimmad17@gmail.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Errors-To: jfs-discussion-bounces@lists.sourceforge.net
 
-From: "Dr. David Alan Gilbert" <linux@treblig.org>
+From: Immad Mir <mirimmad17@gmail.com>
 
-Now we've got the common code, use it for the client as well.
+ There is a grammatical error in one the commnents
+ in extAlloc function.
 
-Signed-off-by: Dr. David Alan Gilbert <linux@treblig.org>
+Signed-off-by: Immad Mir <mirimmad17@gmail.com>
 ---
- fs/smb/client/cifs_unicode.c |   1 -
- fs/smb/client/cifs_unicode.h | 263 +----------------------------------
- fs/smb/client/cifs_uniupr.h  | 123 ----------------
- 3 files changed, 1 insertion(+), 386 deletions(-)
- delete mode 100644 fs/smb/client/cifs_uniupr.h
+ fs/jfs/jfs_extent.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
-diff --git a/fs/smb/client/cifs_unicode.c b/fs/smb/client/cifs_unicode.c
-index e7582dd79179..79d99a913944 100644
---- a/fs/smb/client/cifs_unicode.c
-+++ b/fs/smb/client/cifs_unicode.c
-@@ -8,7 +8,6 @@
- #include <linux/slab.h>
- #include "cifs_fs_sb.h"
- #include "cifs_unicode.h"
--#include "cifs_uniupr.h"
- #include "cifspdu.h"
- #include "cifsglob.h"
- #include "cifs_debug.h"
-diff --git a/fs/smb/client/cifs_unicode.h b/fs/smb/client/cifs_unicode.h
-index 33b651def482..9a80f71e3fc8 100644
---- a/fs/smb/client/cifs_unicode.h
-+++ b/fs/smb/client/cifs_unicode.h
-@@ -21,19 +21,7 @@
- #include <asm/byteorder.h>
- #include <linux/types.h>
- #include <linux/nls.h>
--
--/*
-- * Windows maps these to the user defined 16 bit Unicode range since they are
-- * reserved symbols (along with \ and /), otherwise illegal to store
-- * in filenames in NTFS
-- */
--#define UNI_ASTERISK    (__u16) ('*' + 0xF000)
--#define UNI_QUESTION    (__u16) ('?' + 0xF000)
--#define UNI_COLON       (__u16) (':' + 0xF000)
--#define UNI_GRTRTHAN    (__u16) ('>' + 0xF000)
--#define UNI_LESSTHAN    (__u16) ('<' + 0xF000)
--#define UNI_PIPE        (__u16) ('|' + 0xF000)
--#define UNI_SLASH       (__u16) ('\\' + 0xF000)
-+#include "../common/cifs_unicode_common.h"
- 
- /*
-  * Macs use an older "SFM" mapping of the symbols above. Fortunately it does
-@@ -66,22 +54,6 @@
- #define SFM_MAP_UNI_RSVD	1
- #define SFU_MAP_UNI_RSVD	2
- 
--/* Just define what we want from uniupr.h.  We don't want to define the tables
-- * in each source file.
-- */
--#ifndef	UNICASERANGE_DEFINED
--struct UniCaseRange {
--	wchar_t start;
--	wchar_t end;
--	signed char *table;
--};
--#endif				/* UNICASERANGE_DEFINED */
--
--#ifndef UNIUPR_NOUPPER
--extern signed char CifsUniUpperTable[512];
--extern const struct UniCaseRange CifsUniUpperRange[];
--#endif				/* UNIUPR_NOUPPER */
--
- #ifdef __KERNEL__
- int cifs_from_utf16(char *to, const __le16 *from, int tolen, int fromlen,
- 		    const struct nls_table *cp, int map_type);
-@@ -118,237 +90,4 @@ UniStrcat(__le16 *ucs1, const __le16 *ucs2)
- 	return anchor;
- }
- 
--/*
-- * UniStrchr:  Find a character in a string
-- *
-- * Returns:
-- *     Address of first occurrence of character in string
-- *     or NULL if the character is not in the string
-- */
--static inline wchar_t *
--UniStrchr(const wchar_t *ucs, wchar_t uc)
--{
--	while ((*ucs != uc) && *ucs)
--		ucs++;
--
--	if (*ucs == uc)
--		return (wchar_t *) ucs;
--	return NULL;
--}
--
--/*
-- * UniStrcmp:  Compare two strings
-- *
-- * Returns:
-- *     < 0:  First string is less than second
-- *     = 0:  Strings are equal
-- *     > 0:  First string is greater than second
-- */
--static inline int
--UniStrcmp(const wchar_t *ucs1, const wchar_t *ucs2)
--{
--	while ((*ucs1 == *ucs2) && *ucs1) {
--		ucs1++;
--		ucs2++;
--	}
--	return (int) *ucs1 - (int) *ucs2;
--}
--
--/*
-- * UniStrcpy:  Copy a string
-- */
--static inline wchar_t *
--UniStrcpy(wchar_t *ucs1, const wchar_t *ucs2)
--{
--	wchar_t *anchor = ucs1;	/* save the start of result string */
--
--	while ((*ucs1++ = *ucs2++)) ;
--	return anchor;
--}
--
--/*
-- * UniStrlen:  Return the length of a string (in 16 bit Unicode chars not bytes)
-- */
--static inline size_t
--UniStrlen(const wchar_t *ucs1)
--{
--	int i = 0;
--
--	while (*ucs1++)
--		i++;
--	return i;
--}
--
--/*
-- * UniStrnlen:  Return the length (in 16 bit Unicode chars not bytes) of a
-- *		string (length limited)
-- */
--static inline size_t
--UniStrnlen(const wchar_t *ucs1, int maxlen)
--{
--	int i = 0;
--
--	while (*ucs1++) {
--		i++;
--		if (i >= maxlen)
--			break;
--	}
--	return i;
--}
--
--/*
-- * UniStrncat:  Concatenate length limited string
-- */
--static inline wchar_t *
--UniStrncat(wchar_t *ucs1, const wchar_t *ucs2, size_t n)
--{
--	wchar_t *anchor = ucs1;	/* save pointer to string 1 */
--
--	while (*ucs1++) ;
--	ucs1--;			/* point to null terminator of s1 */
--	while (n-- && (*ucs1 = *ucs2)) {	/* copy s2 after s1 */
--		ucs1++;
--		ucs2++;
--	}
--	*ucs1 = 0;		/* Null terminate the result */
--	return (anchor);
--}
--
--/*
-- * UniStrncmp:  Compare length limited string
-- */
--static inline int
--UniStrncmp(const wchar_t *ucs1, const wchar_t *ucs2, size_t n)
--{
--	if (!n)
--		return 0;	/* Null strings are equal */
--	while ((*ucs1 == *ucs2) && *ucs1 && --n) {
--		ucs1++;
--		ucs2++;
--	}
--	return (int) *ucs1 - (int) *ucs2;
--}
--
--/*
-- * UniStrncmp_le:  Compare length limited string - native to little-endian
-- */
--static inline int
--UniStrncmp_le(const wchar_t *ucs1, const wchar_t *ucs2, size_t n)
--{
--	if (!n)
--		return 0;	/* Null strings are equal */
--	while ((*ucs1 == __le16_to_cpu(*ucs2)) && *ucs1 && --n) {
--		ucs1++;
--		ucs2++;
--	}
--	return (int) *ucs1 - (int) __le16_to_cpu(*ucs2);
--}
--
--/*
-- * UniStrncpy:  Copy length limited string with pad
-- */
--static inline wchar_t *
--UniStrncpy(wchar_t *ucs1, const wchar_t *ucs2, size_t n)
--{
--	wchar_t *anchor = ucs1;
--
--	while (n-- && *ucs2)	/* Copy the strings */
--		*ucs1++ = *ucs2++;
--
--	n++;
--	while (n--)		/* Pad with nulls */
--		*ucs1++ = 0;
--	return anchor;
--}
--
--/*
-- * UniStrncpy_le:  Copy length limited string with pad to little-endian
-- */
--static inline wchar_t *
--UniStrncpy_le(wchar_t *ucs1, const wchar_t *ucs2, size_t n)
--{
--	wchar_t *anchor = ucs1;
--
--	while (n-- && *ucs2)	/* Copy the strings */
--		*ucs1++ = __le16_to_cpu(*ucs2++);
--
--	n++;
--	while (n--)		/* Pad with nulls */
--		*ucs1++ = 0;
--	return anchor;
--}
--
--/*
-- * UniStrstr:  Find a string in a string
-- *
-- * Returns:
-- *     Address of first match found
-- *     NULL if no matching string is found
-- */
--static inline wchar_t *
--UniStrstr(const wchar_t *ucs1, const wchar_t *ucs2)
--{
--	const wchar_t *anchor1 = ucs1;
--	const wchar_t *anchor2 = ucs2;
--
--	while (*ucs1) {
--		if (*ucs1 == *ucs2) {
--			/* Partial match found */
--			ucs1++;
--			ucs2++;
--		} else {
--			if (!*ucs2)	/* Match found */
--				return (wchar_t *) anchor1;
--			ucs1 = ++anchor1;	/* No match */
--			ucs2 = anchor2;
--		}
--	}
--
--	if (!*ucs2)		/* Both end together */
--		return (wchar_t *) anchor1;	/* Match found */
--	return NULL;		/* No match */
--}
--
--#ifndef UNIUPR_NOUPPER
--/*
-- * UniToupper:  Convert a unicode character to upper case
-- */
--static inline wchar_t
--UniToupper(register wchar_t uc)
--{
--	register const struct UniCaseRange *rp;
--
--	if (uc < sizeof(CifsUniUpperTable)) {
--		/* Latin characters */
--		return uc + CifsUniUpperTable[uc];	/* Use base tables */
--	} else {
--		rp = CifsUniUpperRange;	/* Use range tables */
--		while (rp->start) {
--			if (uc < rp->start)	/* Before start of range */
--				return uc;	/* Uppercase = input */
--			if (uc <= rp->end)	/* In range */
--				return uc + rp->table[uc - rp->start];
--			rp++;	/* Try next range */
--		}
--	}
--	return uc;		/* Past last range */
--}
--
--/*
-- * UniStrupr:  Upper case a unicode string
-- */
--static inline __le16 *
--UniStrupr(register __le16 *upin)
--{
--	register __le16 *up;
--
--	up = upin;
--	while (*up) {		/* For all characters */
--		*up = cpu_to_le16(UniToupper(le16_to_cpu(*up)));
--		up++;
--	}
--	return upin;		/* Return input pointer */
--}
--#endif				/* UNIUPR_NOUPPER */
--
- #endif /* _CIFS_UNICODE_H */
-diff --git a/fs/smb/client/cifs_uniupr.h b/fs/smb/client/cifs_uniupr.h
-deleted file mode 100644
-index b1d51d0da4fe..000000000000
---- a/fs/smb/client/cifs_uniupr.h
-+++ /dev/null
-@@ -1,123 +0,0 @@
--/* SPDX-License-Identifier: GPL-2.0-or-later */
--/*
-- *   Copyright (c) International Business Machines  Corp., 2000,2002
-- *
-- * uniupr.h - Unicode compressed case ranges
--*/
--
--#ifndef UNIUPR_NOUPPER
--/*
-- * Latin upper case
-- */
--signed char CifsUniUpperTable[512] = {
--	0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,	/* 000-00f */
--	0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,	/* 010-01f */
--	0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,	/* 020-02f */
--	0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,	/* 030-03f */
--	0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,	/* 040-04f */
--	0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,	/* 050-05f */
--	0, -32, -32, -32, -32, -32, -32, -32, -32, -32, -32, -32, -32, -32, -32, -32,	/* 060-06f */
--	-32, -32, -32, -32, -32, -32, -32, -32, -32, -32, -32, 0, 0, 0, 0, 0,	/* 070-07f */
--	0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,	/* 080-08f */
--	0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,	/* 090-09f */
--	0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,	/* 0a0-0af */
--	0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,	/* 0b0-0bf */
--	0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,	/* 0c0-0cf */
--	0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,	/* 0d0-0df */
--	-32, -32, -32, -32, -32, -32, -32, -32, -32, -32, -32, -32, -32, -32, -32, -32,	/* 0e0-0ef */
--	-32, -32, -32, -32, -32, -32, -32, 0, -32, -32, -32, -32, -32, -32, -32, 121,	/* 0f0-0ff */
--	0, -1, 0, -1, 0, -1, 0, -1, 0, -1, 0, -1, 0, -1, 0, -1,	/* 100-10f */
--	0, -1, 0, -1, 0, -1, 0, -1, 0, -1, 0, -1, 0, -1, 0, -1,	/* 110-11f */
--	0, -1, 0, -1, 0, -1, 0, -1, 0, -1, 0, -1, 0, -1, 0, -1,	/* 120-12f */
--	0, 0, 0, -1, 0, -1, 0, -1, 0, 0, -1, 0, -1, 0, -1, 0,	/* 130-13f */
--	-1, 0, -1, 0, -1, 0, -1, 0, -1, 0, 0, -1, 0, -1, 0, -1,	/* 140-14f */
--	0, -1, 0, -1, 0, -1, 0, -1, 0, -1, 0, -1, 0, -1, 0, -1,	/* 150-15f */
--	0, -1, 0, -1, 0, -1, 0, -1, 0, -1, 0, -1, 0, -1, 0, -1,	/* 160-16f */
--	0, -1, 0, -1, 0, -1, 0, -1, 0, 0, -1, 0, -1, 0, -1, 0,	/* 170-17f */
--	0, 0, 0, -1, 0, -1, 0, 0, -1, 0, 0, 0, -1, 0, 0, 0,	/* 180-18f */
--	0, 0, -1, 0, 0, 0, 0, 0, 0, -1, 0, 0, 0, 0, 0, 0,	/* 190-19f */
--	0, -1, 0, -1, 0, -1, 0, 0, -1, 0, 0, 0, 0, -1, 0, 0,	/* 1a0-1af */
--	-1, 0, 0, 0, -1, 0, -1, 0, 0, -1, 0, 0, 0, -1, 0, 0,	/* 1b0-1bf */
--	0, 0, 0, 0, 0, -1, -2, 0, -1, -2, 0, -1, -2, 0, -1, 0,	/* 1c0-1cf */
--	-1, 0, -1, 0, -1, 0, -1, 0, -1, 0, -1, 0, -1, -79, 0, -1, /* 1d0-1df */
--	0, -1, 0, -1, 0, -1, 0, -1, 0, -1, 0, -1, 0, -1, 0, -1,	/* 1e0-1ef */
--	0, 0, -1, -2, 0, -1, 0, 0, 0, -1, 0, -1, 0, -1, 0, -1,	/* 1f0-1ff */
--};
--
--/* Upper case range - Greek */
--static signed char UniCaseRangeU03a0[47] = {
--	0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -38, -37, -37, -37,	/* 3a0-3af */
--	0, -32, -32, -32, -32, -32, -32, -32, -32, -32, -32, -32, -32, -32, -32, -32,	/* 3b0-3bf */
--	-32, -32, -31, -32, -32, -32, -32, -32, -32, -32, -32, -32, -64,
--	-63, -63,
--};
--
--/* Upper case range - Cyrillic */
--static signed char UniCaseRangeU0430[48] = {
--	-32, -32, -32, -32, -32, -32, -32, -32, -32, -32, -32, -32, -32, -32, -32, -32,	/* 430-43f */
--	-32, -32, -32, -32, -32, -32, -32, -32, -32, -32, -32, -32, -32, -32, -32, -32,	/* 440-44f */
--	0, -80, -80, -80, -80, -80, -80, -80, -80, -80, -80, -80, -80, 0, -80, -80,	/* 450-45f */
--};
--
--/* Upper case range - Extended cyrillic */
--static signed char UniCaseRangeU0490[61] = {
--	0, -1, 0, -1, 0, -1, 0, -1, 0, -1, 0, -1, 0, -1, 0, -1,	/* 490-49f */
--	0, -1, 0, -1, 0, -1, 0, -1, 0, -1, 0, -1, 0, -1, 0, -1,	/* 4a0-4af */
--	0, -1, 0, -1, 0, -1, 0, -1, 0, -1, 0, -1, 0, -1, 0, -1,	/* 4b0-4bf */
--	0, 0, -1, 0, -1, 0, 0, 0, -1, 0, 0, 0, -1,
--};
--
--/* Upper case range - Extended latin and greek */
--static signed char UniCaseRangeU1e00[509] = {
--	0, -1, 0, -1, 0, -1, 0, -1, 0, -1, 0, -1, 0, -1, 0, -1,	/* 1e00-1e0f */
--	0, -1, 0, -1, 0, -1, 0, -1, 0, -1, 0, -1, 0, -1, 0, -1,	/* 1e10-1e1f */
--	0, -1, 0, -1, 0, -1, 0, -1, 0, -1, 0, -1, 0, -1, 0, -1,	/* 1e20-1e2f */
--	0, -1, 0, -1, 0, -1, 0, -1, 0, -1, 0, -1, 0, -1, 0, -1,	/* 1e30-1e3f */
--	0, -1, 0, -1, 0, -1, 0, -1, 0, -1, 0, -1, 0, -1, 0, -1,	/* 1e40-1e4f */
--	0, -1, 0, -1, 0, -1, 0, -1, 0, -1, 0, -1, 0, -1, 0, -1,	/* 1e50-1e5f */
--	0, -1, 0, -1, 0, -1, 0, -1, 0, -1, 0, -1, 0, -1, 0, -1,	/* 1e60-1e6f */
--	0, -1, 0, -1, 0, -1, 0, -1, 0, -1, 0, -1, 0, -1, 0, -1,	/* 1e70-1e7f */
--	0, -1, 0, -1, 0, -1, 0, -1, 0, -1, 0, -1, 0, -1, 0, -1,	/* 1e80-1e8f */
--	0, -1, 0, -1, 0, -1, 0, 0, 0, 0, 0, -59, 0, -1, 0, -1,	/* 1e90-1e9f */
--	0, -1, 0, -1, 0, -1, 0, -1, 0, -1, 0, -1, 0, -1, 0, -1,	/* 1ea0-1eaf */
--	0, -1, 0, -1, 0, -1, 0, -1, 0, -1, 0, -1, 0, -1, 0, -1,	/* 1eb0-1ebf */
--	0, -1, 0, -1, 0, -1, 0, -1, 0, -1, 0, -1, 0, -1, 0, -1,	/* 1ec0-1ecf */
--	0, -1, 0, -1, 0, -1, 0, -1, 0, -1, 0, -1, 0, -1, 0, -1,	/* 1ed0-1edf */
--	0, -1, 0, -1, 0, -1, 0, -1, 0, -1, 0, -1, 0, -1, 0, -1,	/* 1ee0-1eef */
--	0, -1, 0, -1, 0, -1, 0, -1, 0, -1, 0, 0, 0, 0, 0, 0,	/* 1ef0-1eff */
--	8, 8, 8, 8, 8, 8, 8, 8, 0, 0, 0, 0, 0, 0, 0, 0,	/* 1f00-1f0f */
--	8, 8, 8, 8, 8, 8, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,	/* 1f10-1f1f */
--	8, 8, 8, 8, 8, 8, 8, 8, 0, 0, 0, 0, 0, 0, 0, 0,	/* 1f20-1f2f */
--	8, 8, 8, 8, 8, 8, 8, 8, 0, 0, 0, 0, 0, 0, 0, 0,	/* 1f30-1f3f */
--	8, 8, 8, 8, 8, 8, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,	/* 1f40-1f4f */
--	0, 8, 0, 8, 0, 8, 0, 8, 0, 0, 0, 0, 0, 0, 0, 0,	/* 1f50-1f5f */
--	8, 8, 8, 8, 8, 8, 8, 8, 0, 0, 0, 0, 0, 0, 0, 0,	/* 1f60-1f6f */
--	74, 74, 86, 86, 86, 86, 100, 100, 0, 0, 112, 112, 126, 126, 0, 0,	/* 1f70-1f7f */
--	8, 8, 8, 8, 8, 8, 8, 8, 0, 0, 0, 0, 0, 0, 0, 0,	/* 1f80-1f8f */
--	8, 8, 8, 8, 8, 8, 8, 8, 0, 0, 0, 0, 0, 0, 0, 0,	/* 1f90-1f9f */
--	8, 8, 8, 8, 8, 8, 8, 8, 0, 0, 0, 0, 0, 0, 0, 0,	/* 1fa0-1faf */
--	8, 8, 0, 9, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,	/* 1fb0-1fbf */
--	0, 0, 0, 9, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,	/* 1fc0-1fcf */
--	8, 8, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,	/* 1fd0-1fdf */
--	8, 8, 0, 0, 0, 7, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,	/* 1fe0-1fef */
--	0, 0, 0, 9, 0, 0, 0, 0, 0, 0, 0, 0, 0,
--};
--
--/* Upper case range - Wide latin */
--static signed char UniCaseRangeUff40[27] = {
--	0, -32, -32, -32, -32, -32, -32, -32, -32, -32, -32, -32, -32, -32, -32, -32,	/* ff40-ff4f */
--	-32, -32, -32, -32, -32, -32, -32, -32, -32, -32, -32,
--};
--
--/*
-- * Upper Case Range
-- */
--const struct UniCaseRange CifsUniUpperRange[] = {
--	{0x03a0, 0x03ce, UniCaseRangeU03a0},
--	{0x0430, 0x045f, UniCaseRangeU0430},
--	{0x0490, 0x04cc, UniCaseRangeU0490},
--	{0x1e00, 0x1ffc, UniCaseRangeU1e00},
--	{0xff40, 0xff5a, UniCaseRangeUff40},
--	{0}
--};
--#endif
--- 
-2.41.0
+diff --git a/fs/jfs/jfs_extent.c b/fs/jfs/jfs_extent.c
+index ae99a7e23..399492308 100644
+--- a/fs/jfs/jfs_extent.c
++++ b/fs/jfs/jfs_extent.c
+@@ -166,7 +166,7 @@ extAlloc(struct inode *ip, s64 xlen, s64 pno, xad_t * xp, bool abnr)
+ 	/*
+ 	 * COMMIT_SyncList flags an anonymous tlock on page that is on
+ 	 * sync list.
+-	 * We need to commit the inode to get the page written disk.
++	 * We need to commit the inode to get the page written to the disk.
+ 	 */
+ 	if (test_and_clear_cflag(COMMIT_Synclist,ip))
+ 		jfs_commit_inode(ip, 0);
+--
+2.40.0
 
 
 
