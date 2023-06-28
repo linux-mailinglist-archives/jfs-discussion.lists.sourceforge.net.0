@@ -2,124 +2,112 @@ Return-Path: <jfs-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+jfs-discussion@lfdr.de
 Delivered-To: lists+jfs-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id 03D8474147A
-	for <lists+jfs-discussion@lfdr.de>; Wed, 28 Jun 2023 17:04:10 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 630D074148D
+	for <lists+jfs-discussion@lfdr.de>; Wed, 28 Jun 2023 17:07:18 +0200 (CEST)
 Received: from [127.0.0.1] (helo=sfs-ml-2.v29.lw.sourceforge.com)
 	by sfs-ml-2.v29.lw.sourceforge.com with esmtp (Exim 4.95)
 	(envelope-from <jfs-discussion-bounces@lists.sourceforge.net>)
-	id 1qEWhy-0002i8-59;
-	Wed, 28 Jun 2023 15:03:50 +0000
+	id 1qEWl6-0002pt-7U;
+	Wed, 28 Jun 2023 15:07:04 +0000
 Received: from [172.30.20.202] (helo=mx.sourceforge.net)
  by sfs-ml-2.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
  TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (Exim 4.95)
- (envelope-from <smfrench@gmail.com>) id 1qEWhr-0002i1-Lp
+ (envelope-from <linkinjeon@kernel.org>) id 1qEWl3-0002pj-HL
  for jfs-discussion@lists.sourceforge.net;
- Wed, 28 Jun 2023 15:03:43 +0000
+ Wed, 28 Jun 2023 15:07:01 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=sourceforge.net; s=x; h=Content-Transfer-Encoding:Content-Type:Cc:To:
- Subject:Message-ID:Date:From:In-Reply-To:References:MIME-Version:Sender:
- Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender
- :Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
+ d=sourceforge.net; s=x; h=Content-Type:Cc:To:Subject:Message-ID:Date:From:
+ References:In-Reply-To:MIME-Version:Sender:Reply-To:Content-Transfer-Encoding
+ :Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
+ Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=8wS0/tVVfYmWAxxo37y+v0M6HIvge1vajIKiOpWu/wQ=; b=UIAsfn9OCHJ3LKsaItv+zFXwm5
- eSk6vQ2U0teQc+XR4/oMZZixVteC6PG91ad+OgkhWJFQ3kaCopTjT0Woyl1fo5m0rA/S/bbtC6BHH
- WcgvgNXj1Yr+16LpTDp0dQ7BoeyLw+IcReMSGC98akeFRtnKA1ODUXKRZ62S6U53HFZc=;
+ bh=tYONJNnGCQMJ80wSHKkNy+/9k7bcbNipagC4FIaSVh4=; b=aubRG7su4QV5j8/bbAEWqoN26l
+ IyLaswQ694gsApnRU/CTYS7o1Hr8JXn+VnabvMT6ck0G+mCdN8nbsAaJzC0XNyPGzLcKdkCjiALXl
+ fzh9zRtxFfx8dYv0FbqZUaOyDu1zy3MiavKzl58gAeAS+iigRU5j4aJAvYDzgfHPVk8U=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
- h=Content-Transfer-Encoding:Content-Type:Cc:To:Subject:Message-ID:Date:From
- :In-Reply-To:References:MIME-Version:Sender:Reply-To:Content-ID:
+ h=Content-Type:Cc:To:Subject:Message-ID:Date:From:References:In-Reply-To:
+ MIME-Version:Sender:Reply-To:Content-Transfer-Encoding:Content-ID:
  Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
  :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
  List-Post:List-Owner:List-Archive;
- bh=8wS0/tVVfYmWAxxo37y+v0M6HIvge1vajIKiOpWu/wQ=; b=Vl7eI1Mz9HrBD09wNJnJAVUvpO
- N8KU6OoKVqM6a+PZP0JrGxmfRjzfuSayQf4FZZ1fskFVIV/+UPkIWiqYQuMmM7u5wzwd3dFCW4Ybh
- GOwc19NJVg4hAifnqo5a4EPUsu4Z15pffJPUhgbjLUHme3DytQhXODHiZLbFj06/6HMY=;
-Received: from mail-ej1-f46.google.com ([209.85.218.46])
+ bh=tYONJNnGCQMJ80wSHKkNy+/9k7bcbNipagC4FIaSVh4=; b=AICraSApXlqjWH2k/6JEW6Xq3r
+ J44NTk5Qm+jqFez7Za+zBLcdInQvhNINCgfWUnFAa8f7ZfIylfrMTu1UQJj6paThjAqHemo41lDf5
+ udH6bDWbJXitUBt9DrkU1xyr28CN6WzdGMcVf0Ymswfp61z5e3Lz9T3ArMlzHPhan9yc=;
+Received: from dfw.source.kernel.org ([139.178.84.217])
  by sfi-mx-2.v28.lw.sourceforge.com with esmtps
- (TLS1.2:ECDHE-RSA-AES128-GCM-SHA256:128) (Exim 4.95)
- id 1qEWhp-0007Op-Mi for jfs-discussion@lists.sourceforge.net;
- Wed, 28 Jun 2023 15:03:43 +0000
-Received: by mail-ej1-f46.google.com with SMTP id
- a640c23a62f3a-98e011f45ffso474652166b.3
+ (TLS1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.95)
+ id 1qEWl2-0007UD-P1 for jfs-discussion@lists.sourceforge.net;
+ Wed, 28 Jun 2023 15:07:01 +0000
+Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
+ (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+ key-exchange X25519 server-signature RSA-PSS (2048 bits))
+ (No client certificate requested)
+ by dfw.source.kernel.org (Postfix) with ESMTPS id 60FE4612A5
  for <jfs-discussion@lists.sourceforge.net>;
- Wed, 28 Jun 2023 08:03:41 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=gmail.com; s=20221208; t=1687964615; x=1690556615;
- h=content-transfer-encoding:cc:to:subject:message-id:date:from
- :in-reply-to:references:mime-version:from:to:cc:subject:date
- :message-id:reply-to;
- bh=8wS0/tVVfYmWAxxo37y+v0M6HIvge1vajIKiOpWu/wQ=;
- b=ME6xclwZwAKxvdbSiH7N5rG8ryo5U4E538D0nnDMbunKQdRXYX78PbUueytpfqLFhB
- nm08tVIGha1qYoNPECIqFEOr8sams/BfwupmWtLEwvaZJUuaKt5dth9n41ZkWYLW0OBF
- 58vvJ9OclwmfZLNmoRSfzZrfs9sEBCIKTLFU59hrHX525xL9UnaJKwT/8RozQJWOIbYS
- Hn52ieE/PTBNEveYm0ZQ5w38seM577yXEC2AFMLmrOg60VLG2wH5q1Tr1UpzIHIuhT4C
- 0QxQRRt7Op67cHEbPJjCJETKBf7cX9JIXGomfJtJeRl04FaW9ZXeIv7oFBWv9Xz80Pns
- aw9A==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20221208; t=1687964615; x=1690556615;
- h=content-transfer-encoding:cc:to:subject:message-id:date:from
- :in-reply-to:references:mime-version:x-gm-message-state:from:to:cc
- :subject:date:message-id:reply-to;
- bh=8wS0/tVVfYmWAxxo37y+v0M6HIvge1vajIKiOpWu/wQ=;
- b=RZQZn+HdlwqhrmFVIMUtfAVZ26KycXZMgYrlCPASN9sgHRvXcFdbpXPfVU1/M1R/bL
- F6UzwsLVqthheNy6VSC+kmBm9qaxSmVBLM3GQkc8ETqD6VKBIFKFrRDj1ShwS52+hMNX
- 7ZWDLIMjDiJzcRfDmMR6YRPI6x+1P6uqNDA/SMoU8DhTql00kc+JGqWVWeHl3rL6vbVM
- rvCvlHcCTxfv3Dk6uw6rmMeHKKTwN3ZcNi8af1w8EA9JdtEIwDRm6QzVJeDLZCjcKngW
- HRzQr4Glx7NNCi8A2yM/vWX5+nvRNdRa8sPg9u+rp5T6gePhFeJnFxinTW9qboYb9yCA
- EbAw==
-X-Gm-Message-State: AC+VfDxgoIJpaEt5KfYMEgIynQ8AiV/bkg/nkY58zlyxzWW9jyUCamZg
- ykwdc9fzVyOFAiRv6lpyDg9B59ziYX6kbfpiuQs=
-X-Google-Smtp-Source: ACHHUZ4bDstTP1DqJWuzHP2Nrm5f9oBvhMa44NotmxDjlNg0QAlbZg/QasCcLY/KGLdkWShNGNYgTSRq+ocENqiQQrA=
-X-Received: by 2002:a17:907:6d1d:b0:992:4a1b:30e2 with SMTP id
- sa29-20020a1709076d1d00b009924a1b30e2mr3237054ejc.7.1687964614906; Wed, 28
- Jun 2023 08:03:34 -0700 (PDT)
+ Wed, 28 Jun 2023 15:06:55 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id CA6F1C433CB
+ for <jfs-discussion@lists.sourceforge.net>;
+ Wed, 28 Jun 2023 15:06:54 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=k20201202; t=1687964814;
+ bh=tYONJNnGCQMJ80wSHKkNy+/9k7bcbNipagC4FIaSVh4=;
+ h=In-Reply-To:References:From:Date:Subject:To:Cc:From;
+ b=fH3IUtR0gjCfGcOCNMckBP2f/Vs37X+rPVTO1uoh0Ocxu9vLx7mIfIgmE5UNXcRoM
+ ogAbNleaeEMIL8vXfLUV9xsABdJYxzznt/+oUqFmmJgFQwmfr4ykUEi5VdEqL4emt1
+ VBrN0WQBW8RAQNhUWwGsrd7t1QlsAWmwUIRBJveXODht9U2Z5gU0KpuSJvCl+MFffJ
+ ZJ1Pg/F3xXwfFeeY29HbU7PmpVANRdsdDrdVOqc+In+rrGj/DN+DLIwgZIC5FnbX8k
+ x0aRa3Iax38OyIKeajKR4UkyJWdPxg6NH7l2luXYY/3JH5xRtngl8too4lulS6neTZ
+ LmMjwNWo1RHZg==
+Received: by mail-oo1-f54.google.com with SMTP id
+ 006d021491bc7-5657d8ecdd3so1385709eaf.1
+ for <jfs-discussion@lists.sourceforge.net>;
+ Wed, 28 Jun 2023 08:06:54 -0700 (PDT)
+X-Gm-Message-State: AC+VfDzNm7l0h3S7OCmfhb1yxEBrdLPlLvkwRBPSRoSgtBxv0oSaC8vj
+ rioHyI4H23gnVk81TLz/llq7jYLkxPyLEdhF6/Y=
+X-Google-Smtp-Source: ACHHUZ6B52reag+L2IlplUvg6F+aLqCsIPNfwwTs1JaQRfUZzOM5Xa4xbUxzeJQ+BYca+dwvBsArZR5zC0ac59AlOQA=
+X-Received: by 2002:a05:6820:396:b0:563:5542:c45 with SMTP id
+ r22-20020a056820039600b0056355420c45mr5562605ooj.7.1687964813976; Wed, 28 Jun
+ 2023 08:06:53 -0700 (PDT)
 MIME-Version: 1.0
+Received: by 2002:ac9:7a97:0:b0:4e8:f6ff:2aab with HTTP; Wed, 28 Jun 2023
+ 08:06:53 -0700 (PDT)
+In-Reply-To: <20230628011439.159678-3-linux@treblig.org>
 References: <20230628011439.159678-1-linux@treblig.org>
- <9343462e-6a4a-ca7b-03b8-4855e5a33b72@talpey.com>
- <ZJw4iLlFWRMq6a3S@gallifrey> <ZJw50e0pvn/IN5Gj@gallifrey>
- <90f35697-5941-d42d-b600-245454cbd040@oracle.com>
- <ZJxGFBzuhU8t5rcx@gallifrey>
-In-Reply-To: <ZJxGFBzuhU8t5rcx@gallifrey>
-From: Steve French <smfrench@gmail.com>
-Date: Wed, 28 Jun 2023 10:03:22 -0500
-Message-ID: <CAH2r5ms1UE4vAuakBLuayv1CXw3sC_OcuhtCrz5mV_ftR+=rjg@mail.gmail.com>
-To: "Dr. David Alan Gilbert" <linux@treblig.org>
-X-Spam-Score: -0.2 (/)
-X-Spam-Report: Spam detection software, running on the system "util-spamd-2.v13.lw.sourceforge.com",
+ <20230628011439.159678-3-linux@treblig.org>
+From: Namjae Jeon <linkinjeon@kernel.org>
+Date: Thu, 29 Jun 2023 00:06:53 +0900
+X-Gmail-Original-Message-ID: <CAKYAXd-KeNM56ecmnaDR2wA4meTqPRa=e+KT3JJkpvC9=PCeiw@mail.gmail.com>
+Message-ID: <CAKYAXd-KeNM56ecmnaDR2wA4meTqPRa=e+KT3JJkpvC9=PCeiw@mail.gmail.com>
+To: linux@treblig.org
+X-Spam-Score: -5.9 (-----)
+X-Spam-Report: Spam detection software,
+ running on the system "util-spamd-1.v13.lw.sourceforge.com", 
  has NOT identified this incoming email as spam.  The original
  message has been attached to this so you can view it or label
  similar future email.  If you have any questions, see
  the administrator of that system for details.
- 
- Content preview:  On Wed, Jun 28, 2023 at 9:40 AM Dr. David Alan Gilbert wrote:
-    > > > Actually, would you be ok with smb_unicode_common ? The reason is that
-    > > > you end up with a module named unicode_common that [...] 
- 
- Content analysis details:   (-0.2 points, 6.0 required)
- 
-  pts rule name              description
+ Content preview:  2023-06-28 10:14 GMT+09:00,
+ linux@treblig.org <linux@treblig.org>:
+ > From: "Dr. David Alan Gilbert" <linux@treblig.org> > > Swing most of the
+ inline functions and unicode tables into smb/common > from [...] 
+ Content analysis details:   (-5.9 points, 6.0 required)
+ pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
-                              no trust
-                             [209.85.218.46 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [139.178.84.217 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
-  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
-                             provider
-                             [smfrench[at]gmail.com]
-  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID             Message has at least one valid DKIM or DK signature
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
-                             envelope-from domain
-  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
-                             valid
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
-                             author's domain
-  0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
-                             [209.85.218.46 listed in wl.mailspike.net]
- -0.0 T_SCC_BODY_TEXT_LINE   No description available.
-  0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
-X-Headers-End: 1qEWhp-0007Op-Mi
-Subject: Re: [Jfs-discussion] [PATCH 0/3] dedupe smb unicode files
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid -0.7 DKIMWL_WL_HIGH         DKIMwl.org - High trust sender
+X-Headers-End: 1qEWl2-0007UD-P1
+Subject: Re: [Jfs-discussion] [PATCH 2/3] fs/smb: Swing unicode common code
+ from server->common
 X-BeenThere: jfs-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -131,23 +119,26 @@ List-Post: <mailto:jfs-discussion@lists.sourceforge.net>
 List-Help: <mailto:jfs-discussion-request@lists.sourceforge.net?subject=help>
 List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/jfs-discussion>, 
  <mailto:jfs-discussion-request@lists.sourceforge.net?subject=subscribe>
-Cc: sfrench@samba.org, jfs-discussion@lists.sourceforge.net,
- linux-cifs@vger.kernel.org, linux-kernel@vger.kernel.org,
- Tom Talpey <tom@talpey.com>, krisman@collabora.com, linkinjeon@kernel.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: sfrench@samba.org, linux-cifs@vger.kernel.org,
+ jfs-discussion@lists.sourceforge.net, linux-kernel@vger.kernel.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Errors-To: jfs-discussion-bounces@lists.sourceforge.net
 
-T24gV2VkLCBKdW4gMjgsIDIwMjMgYXQgOTo0MOKAr0FNIERyLiBEYXZpZCBBbGFuIEdpbGJlcnQK
-PGxpbnV4QHRyZWJsaWcub3JnPiB3cm90ZToKPiA+ID4gQWN0dWFsbHksIHdvdWxkIHlvdSBiZSBv
-ayB3aXRoIHNtYl91bmljb2RlX2NvbW1vbiA/ICBUaGUgcmVhc29uIGlzIHRoYXQKPiA+ID4geW91
-IGVuZCB1cCB3aXRoIGEgbW9kdWxlIG5hbWVkIHVuaWNvZGVfY29tbW9uICB0aGF0IHNvdW5kcyB0
-b28gZ2VuZXJpYy4KPiA+Cj4gPiBJJ2Qgc3VnZ2VzdCBtYWtlIGl0IGdlbmVyaWMgYW5kIG1vdmUg
-aXQgdG8gZnMvbmxzLy4gSSdkIHJ1biBpdCBieSB0aGUgbmxzCj4gPiBtYWludGFpbmVycywgYnV0
-IEkgZG9uJ3QgdGhpbmsgdGhlcmUgYXJlIGFueS4KPgo+IFN0ZXZlICYgVG9tIC0gd291bGQgeW91
-IGJlIE9LIHdpdGggdGhhdD8KClllcyAtIGFic29sdXRlbHkKCj4gKENvcHlpbmcgaW4gR2Ficmll
-bCBCZXJ0YXppLCBvd25lciBvZiBmcy91bmljb2RlOyBhbHRob3VnaCB0aGlzIGlzbid0Cj4gdXRm
-LTgpCgpVbmljb2RlIFVDUy0yCgoKLS0gClRoYW5rcywKClN0ZXZlCgoKX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18KSmZzLWRpc2N1c3Npb24gbWFpbGluZyBs
-aXN0Ckpmcy1kaXNjdXNzaW9uQGxpc3RzLnNvdXJjZWZvcmdlLm5ldApodHRwczovL2xpc3RzLnNv
-dXJjZWZvcmdlLm5ldC9saXN0cy9saXN0aW5mby9qZnMtZGlzY3Vzc2lvbgo=
+2023-06-28 10:14 GMT+09:00, linux@treblig.org <linux@treblig.org>:
+> From: "Dr. David Alan Gilbert" <linux@treblig.org>
+>
+> Swing most of the inline functions and unicode tables into smb/common
+> from the copy in smb/server.
+>
+> UniStrcat has different types between the client and server
+> versions so I've not moved it (although I suspect it's OK).
+ksmbd doesn't use this function. You can move it to smb_unicode_common.h.
+
+Thanks.
+
+
+_______________________________________________
+Jfs-discussion mailing list
+Jfs-discussion@lists.sourceforge.net
+https://lists.sourceforge.net/lists/listinfo/jfs-discussion
