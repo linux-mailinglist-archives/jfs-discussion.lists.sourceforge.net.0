@@ -2,148 +2,158 @@ Return-Path: <jfs-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+jfs-discussion@lfdr.de
 Delivered-To: lists+jfs-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2712F7409CB
-	for <lists+jfs-discussion@lfdr.de>; Wed, 28 Jun 2023 09:46:01 +0200 (CEST)
-Received: from [127.0.0.1] (helo=sfs-ml-3.v29.lw.sourceforge.com)
-	by sfs-ml-3.v29.lw.sourceforge.com with esmtp (Exim 4.95)
+	by mail.lfdr.de (Postfix) with ESMTPS id D4D8A741211
+	for <lists+jfs-discussion@lfdr.de>; Wed, 28 Jun 2023 15:16:31 +0200 (CEST)
+Received: from [127.0.0.1] (helo=sfs-ml-2.v29.lw.sourceforge.com)
+	by sfs-ml-2.v29.lw.sourceforge.com with esmtp (Exim 4.95)
 	(envelope-from <jfs-discussion-bounces@lists.sourceforge.net>)
-	id 1qEPrp-0006sp-L4;
-	Wed, 28 Jun 2023 07:45:33 +0000
+	id 1qEV1g-0000tc-DW;
+	Wed, 28 Jun 2023 13:16:04 +0000
 Received: from [172.30.20.202] (helo=mx.sourceforge.net)
- by sfs-ml-3.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
+ by sfs-ml-2.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
  TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (Exim 4.95)
- (envelope-from <mirimmad@outlook.com>) id 1qEPrg-0006sh-RJ
+ (envelope-from <tom@talpey.com>) id 1qEV1e-0000tW-LK
  for jfs-discussion@lists.sourceforge.net;
- Wed, 28 Jun 2023 07:45:25 +0000
+ Wed, 28 Jun 2023 13:16:02 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=sourceforge.net; s=x; h=MIME-Version:Content-Type:Content-Transfer-Encoding
- :Message-ID:Date:Subject:Cc:To:From:Sender:Reply-To:Content-ID:
- Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
- :Resent-Message-ID:In-Reply-To:References:List-Id:List-Help:List-Unsubscribe:
+ d=sourceforge.net; s=x; h=MIME-Version:Content-Transfer-Encoding:Content-Type
+ :In-Reply-To:From:References:Cc:To:Subject:Date:Message-ID:Sender:Reply-To:
+ Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
+ Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=m7r91z1X4c0FZ7iZhfgbqxVvpsyFW6Thj6k+2pT2XFk=; b=SVcvkXGhQiLymsFaD6eMyipQ2h
- ujC+Mt/UAZelj28I0cy4hNU/+QTFGNjOB2bn0UDbIegEGM/hAQY0yNS5U0hj6OziofDYWdBvZeqwl
- UfNWRb01Ud/aFIiWypcu8tMATCYdEPP7sL0jd2gx9x4/xeaiPAve9ZneXH8iHXcP6lEk=;
+ bh=umv3tlOcwAKRea9FMCN3hru8uNNmYXLG4rjQkOyr/+0=; b=GrHRU+h0N+CNzkvaOZYvbPgTQf
+ 2xzcokj/DonVx4k1ewS0W8+OKlwiVPvHnCYVN1YvX+LMkrbS8j+IddmZSTkFIoRgveL9lABVVui9Z
+ cYvgqneffCUuwtMGlggANYbhRysACmj5cQYjQkDRcwQloVdfVrMyQgT7O8PnQ1lz4lkw=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
- h=MIME-Version:Content-Type:Content-Transfer-Encoding:Message-ID:Date:
- Subject:Cc:To:From:Sender:Reply-To:Content-ID:Content-Description:Resent-Date
- :Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
- References:List-Id:List-Help:List-Unsubscribe:List-Subscribe:List-Post:
- List-Owner:List-Archive; bh=m7r91z1X4c0FZ7iZhfgbqxVvpsyFW6Thj6k+2pT2XFk=; b=Y
- R31yaRhwxYP9AS45+S3J4MlY2RCjp9ntZmbBoXmZiWZvYpJo2f2NabNN3fvvhOKUILfmxbYXCfr/E
- j15Z92yoGS5QvfP+camGurhCnJGnGqIi0CwFO3cqu2/i4wWooVejeiKvgSctoYjlC+A7evC79kimA
- +wCrmeCs7DrhirJI=;
-Received: from mail-mw2nam12olkn2080.outbound.protection.outlook.com
- ([40.92.23.80] helo=NAM12-MW2-obe.outbound.protection.outlook.com)
+ h=MIME-Version:Content-Transfer-Encoding:Content-Type:In-Reply-To:From:
+ References:Cc:To:Subject:Date:Message-ID:Sender:Reply-To:Content-ID:
+ Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+ :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
+ List-Post:List-Owner:List-Archive;
+ bh=umv3tlOcwAKRea9FMCN3hru8uNNmYXLG4rjQkOyr/+0=; b=WmmgRwcDP4/KonnM4jngTfEJkn
+ qCScSH/231AlBMYd2DAmgCSCsh1ciIvvsQ7Zy7iwWHTGZ+xVRH3GFH1CrUgD8hM2LoK14hvWwQUE/
+ x8wutMz5ojRLAQ3qGynvwzpJ2QRPOJ7PTCiVHkBuY1qntrfUZMJe4+dLAoanefYgUJ3Y=;
+Received: from mail-bn8nam11on2041.outbound.protection.outlook.com
+ ([40.107.236.41] helo=NAM11-BN8-obe.outbound.protection.outlook.com)
  by sfi-mx-1.v28.lw.sourceforge.com with esmtps
  (TLS1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.95)
- id 1qEPrc-00HBeM-0Q for jfs-discussion@lists.sourceforge.net;
- Wed, 28 Jun 2023 07:45:25 +0000
+ id 1qEV1b-000Bx5-0J for jfs-discussion@lists.sourceforge.net;
+ Wed, 28 Jun 2023 13:16:02 +0000
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=DJCFe7xmu2mgJEb2TxL7masBXdZW18VPqKSiDZBgxMAgUwAZDMSrX9tIUPlaRrjkX5+X+l/NOyTyRJ5tkl7Pf7fsKzKbUu0a9rB7amDtEi20zKUfsD27Bu4+qWo/N9cjE/vdUBdPVw0qMywMBKI4Kku3z+2o0u0q97onbqnwnszGNmIRStI/+u11Of3nMLVZhzhKb1CyaJX2uMC+0RLSymG4g0ydQwltzDP2bVuIrefWOrW5auVS9aYKOF06yvLlDy7rRNHR+VpGpfEAQHJRFwotRe/gV43NtspUh+AkS7Af1p+J6F+EDXP1eoOkjeLu/cd0W4Q/+6teH7nRoA/D2w==
+ b=jXVl/wKe7FOrmrjAWSgDszX/FnsFhfpU+oOVQ9Ms8yqVlWWxtz+fjlLzuuROMD5zDgeEB1mObmsFW4+f41UAzEJ1d0ev608YKgJd8QPPYVwDbYHF8NRBylhq4qs/jYpcUP4ZsDWAhBTgP7HGbm4foX6Hnpu8BgfzNGPa1EjRq8E7y1EWZAP1TuiV1Q0bzH2PCj5y+kbCCv3/1wXYlTSlkiMQTFF+5ot+b5h3B6tfyXWSEUwUZy8p4b9bhuHqWGrJu5f/19m7VgGJhYgfQgIZYsrEfFGG4fhGcfvZDTL4ZYT3eOB1K4Ow+r7vWumQSbSythYzs0J9ShZJr5AyoMg6eQ==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
  s=arcselector9901;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=m7r91z1X4c0FZ7iZhfgbqxVvpsyFW6Thj6k+2pT2XFk=;
- b=kbr6RKIZm9x0AaFS7anX7GazDWAThPF+PgEQV4Vfau5o841WCVw+NVkgr5oDm3jrgdrmWeewbouL5cK35cnmvIUnC9OLhVQJpnBwJpMQfayBWXqv0gqHl7+doRI7hY1ZaKF+qBy6v6I28iRrQwrr7y9igSD5UCCu+7ftq+5pmbxgKpXk5hgUuF+dA7JppuWvXJr6PzWzdAeDjQVjIo26RHyHmAuPsAtTOS/m0Iy+0FLAf53hpGnvEpRiSZdFbLEk3skihGSdjca3iYuUPPUfFMq2w6/dOzNJEBFp/5NdN3p2cmkgWr3rR3J5fCDznPH1KmHaLXzfa0gmajjj2pmZ/w==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=none; dmarc=none;
- dkim=none; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=outlook.com;
- s=selector1;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=m7r91z1X4c0FZ7iZhfgbqxVvpsyFW6Thj6k+2pT2XFk=;
- b=Mi1LSS+3FYkcz1wQKel+3I6RilETsROayTUp2VcLvczc4BNLJ5O/MACZ+ZkA3S31Kmxg9WIMJCl1W7pwursLFk8rlA2jAn1IqM+hfUJZXA+mpTFTJvHkUgRbm0TGfJQWCG1znDVKHvDoCpyByv2MLNVEh/PEP2pgFoSs3Ith/ZhgM1KYQpR8yCEdOa79PM7OQuYfmQTLT9519MqR2dwAxYbKJr7ZKJgxxuPEa5cN3MMDWBAKFfdd2AT6vh9iL1LyxZS3SADg8z25lc+7SJkpz1XQUudrsWS2PoAE97qrQtwgFSh9EepefchFjBO/32Qv7bu7kEISycpuc1JU2GIRYw==
-Received: from CY5PR12MB6455.namprd12.prod.outlook.com (2603:10b6:930:35::10)
- by SN7PR12MB6911.namprd12.prod.outlook.com (2603:10b6:806:261::8)
- with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.6521.23; Wed, 28 Jun
- 2023 07:45:04 +0000
-Received: from CY5PR12MB6455.namprd12.prod.outlook.com
- ([fe80::f849:c65e:3d5b:5d]) by CY5PR12MB6455.namprd12.prod.outlook.com
- ([fe80::f849:c65e:3d5b:5d%5]) with mapi id 15.20.6521.026; Wed, 28 Jun 2023
- 07:45:04 +0000
-From: mirimmad@outlook.com
-To: 
-Date: Wed, 28 Jun 2023 13:14:21 +0530
-Message-ID: <CY5PR12MB64558542113D0368DD98FA62C624A@CY5PR12MB6455.namprd12.prod.outlook.com>
-X-Mailer: git-send-email 2.40.0
-X-TMN: [XeZnY3Yqkxs/mBCyrx4nPnplBakSoDF1OIem7rUUvYTnjEoBfhLeNb3UuC998sFA]
-X-ClientProxiedBy: BM1P287CA0006.INDP287.PROD.OUTLOOK.COM
- (2603:1096:b00:40::34) To CY5PR12MB6455.namprd12.prod.outlook.com
- (2603:10b6:930:35::10)
-X-Microsoft-Original-Message-ID: <20230628074421.11317-1-mirimmad@outlook.com>
+ bh=umv3tlOcwAKRea9FMCN3hru8uNNmYXLG4rjQkOyr/+0=;
+ b=UhLULac7W1o7mw+7qvHAaxX9gR4cXKcfslmfbMtIhiseE6E47bnA7YgnMhtqvigJJA3ufv8w4h8pIQPFceJW3NTeYM6CFGqQOEZkdTpSA45s6TuK8WmuAmUGTMBeap4rMMpXu2y6kGbXllCBHEDPvY0xLi0L7kyFWymDCh0utAcDncb9BI8qtgl6cGEBlqxEgNN6SNyZv6krubuk/PSl6gV0nOB/Ill6/fm2/nbeOAYu8svA4ou3f2u6zF0NF5b44sS9IDjRNSk5ZDTf7iiiYKQ45j2scTG8VFLobnvplF17dIzco0vMfYjo+SnoYNy8f7Nfrm/JBDuB6XFyAWmg0g==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=talpey.com; dmarc=pass action=none header.from=talpey.com;
+ dkim=pass header.d=talpey.com; arc=none
+Authentication-Results: dkim=none (message not signed)
+ header.d=none;dmarc=none action=none header.from=talpey.com;
+Received: from SN6PR01MB4445.prod.exchangelabs.com (2603:10b6:805:e2::33) by
+ SA1PR01MB6784.prod.exchangelabs.com (2603:10b6:806:1a1::24) with Microsoft
+ SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.6521.24; Wed, 28 Jun 2023 13:15:51 +0000
+Received: from SN6PR01MB4445.prod.exchangelabs.com
+ ([fe80::17e9:7e30:6603:23bc]) by SN6PR01MB4445.prod.exchangelabs.com
+ ([fe80::17e9:7e30:6603:23bc%5]) with mapi id 15.20.6521.023; Wed, 28 Jun 2023
+ 13:15:51 +0000
+Message-ID: <9343462e-6a4a-ca7b-03b8-4855e5a33b72@talpey.com>
+Date: Wed, 28 Jun 2023 09:15:49 -0400
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:102.0) Gecko/20100101
+ Thunderbird/102.12.0
+Content-Language: en-US
+To: linux@treblig.org, sfrench@samba.org, linkinjeon@kernel.org,
+ linux-cifs@vger.kernel.org
+References: <20230628011439.159678-1-linux@treblig.org>
+From: Tom Talpey <tom@talpey.com>
+In-Reply-To: <20230628011439.159678-1-linux@treblig.org>
+X-ClientProxiedBy: BL1PR13CA0176.namprd13.prod.outlook.com
+ (2603:10b6:208:2bd::31) To SN6PR01MB4445.prod.exchangelabs.com
+ (2603:10b6:805:e2::33)
 MIME-Version: 1.0
-X-MS-Exchange-MessageSentRepresentingType: 1
 X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: CY5PR12MB6455:EE_|SN7PR12MB6911:EE_
-X-MS-Office365-Filtering-Correlation-Id: dbf9536d-6a83-43f4-4ff5-08db77ab959b
+X-MS-TrafficTypeDiagnostic: SN6PR01MB4445:EE_|SA1PR01MB6784:EE_
+X-MS-Office365-Filtering-Correlation-Id: 8f1f5a2e-4b2d-47a6-7f9e-08db77d9cb7e
+X-MS-Exchange-SenderADCheck: 1
+X-MS-Exchange-AntiSpam-Relay: 0
 X-Microsoft-Antispam: BCL:0;
-X-Microsoft-Antispam-Message-Info: 5r3QR5rgPiUggiu/bYUMtQuSUZ5onasfX++37s/zcij1tW6ERrzMS5KpKWzbYQFh6SB6zDn27Z+Lq3BXI71zALvCTx04pObckQqCAnm0CHa0ks/3K3Er1fDeXuAfzeVBToTXBJcFoRv6rMuCRVmPz/Vz9/IANT6kKytUfhyqJIgVfGeruidAjp642IUAIlS/9jmp8Ult8UC1ZwYLT3N0ANAeCOMajCz9rrbTRlAmaMFw6dqHrcuAqfBlBpMX0qjjBlqATSroUfA4iqU5M/IhbbXYpo1YOveGqDPpUTA/9BwAC4x/1taXwiPY2vk+HI9aI2TnAwLlGUYf2fBDrn7blRg6E3626zt/1wvNI53G8nqVhsWI37llv4Pdgjc/c7YnYGC3DTtJ9dRxfL3JPOmMxnIzwhGlZC5q8Fn8Iq67Lj4k2slAyks6WujRFjTC5pTDrAdQ4ItkO3RIBzeojH1x9bKCvZIp9ESlhtWT2j6+a2XjaBExoqef88BWHU/0Nr21Dv9f/dPmTiJwDuLpOBmgI1MqcdLXElTVzc4036AQI/cv7ur+49ys55E8mtm7d/Q7
+X-Microsoft-Antispam-Message-Info: 1xfIL8URF8Ef6VReg32icpZma3Sd715dwET+M3lrr4yqAXnFBPRNl0LiFDH0BnFHq7jkN+IHtUvB+5eHziGO67kmS7ryb/v1UO5jlUA54zUWL0OGgsNriNqPwzyS1dBlgxPKnmS8JdqgOrPgayQZIzT6KjnJJ/eBF6JdPe1q8Xrjmd0htVgC39XExruvt4sqJEwpkkpAB3xKjMMszQkUQ0EseCjKwBXYhKXUNCBhPjCGiunTxvqemjIB3knG7PcHcs1YjdWgzSCjhBV1Cv3JuATqV1/9pWuB2+5GDjPJhJkvCzrnbjAz5lxznJmKG+uK1MexJpNoEB3bKbGmOl9t4p7Bt1VNSQlWWH11xl6vzzws9rVm2/pMO5w6pg77k4CDFO1iFw7p4zaOntHkKK8+XdfdK2Qu5noZ55a4guSRoBQ0UiEvqvPRp5mfvVQQ7Tbg74GrwKU4Ds4Na5zcO9mRUD4jzoViSKJX9cLGWn101VYnVymwhcqTFDPZYadScZMTP/cHzoJx+ntzmOj9DzNoqtwGjnupHfTGggL/HUkYsseCcPSAd22Xl0Yi+Q+/poKh+fLXPuvdxGcj1aDHR+cJ79WSEmEyRiuxKS7DyvsZrmx/qru3yTaQu14NFu31JgriisbgI5ylsk4gQBKWonWSeQ==
+X-Forefront-Antispam-Report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
+ IPV:NLI; SFV:NSPM; H:SN6PR01MB4445.prod.exchangelabs.com; PTR:; CAT:NONE;
+ SFS:(13230028)(366004)(396003)(136003)(376002)(346002)(39830400003)(451199021)(31686004)(36756003)(53546011)(6506007)(66476007)(5660300002)(86362001)(316002)(4326008)(66556008)(41300700001)(8936002)(38100700002)(31696002)(66946007)(38350700002)(8676002)(6486002)(966005)(6512007)(2906002)(186003)(26005)(478600001)(52116002)(83380400001)(2616005)(43740500002);
+ DIR:OUT; SFP:1101; 
 X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?8TQ4qYCDVVzBdn+0oAboqMiXUoE+YxKSy7ZsJcSjH2xQbat9GTfXcfGEJ7lq?=
- =?us-ascii?Q?7d33E5iLXDjlhGzEFM+WI8lyDky9Omy8IxQPcgZ+ea/Uk4HkQ4r9aYvWzJQY?=
- =?us-ascii?Q?psfoDaaBMn4SO8hQm9hwV16YU4XGPWrkGEB7RFTEYsBps85IfNUzMPPmpgTz?=
- =?us-ascii?Q?HSnwETlr63S92YbYqpQLdMAjMYzuj4DCKyJs6/kzL5ZGRuKwLxSj9vaBjnta?=
- =?us-ascii?Q?BEQ1nnqDR5cUaQ+dSbz9MXt0VCR9AyrJX2so3b5sUlclIKGwyqqUOMgtXkFY?=
- =?us-ascii?Q?oYx3MaiGt4X8Ul9PsiQrAcnZUmV0+ieEmYoYWNXb9XwQ+ZnddNxGpuMd9Oez?=
- =?us-ascii?Q?6U64iHWJziRfytz6F+Yw+922wk9YJMfjMjyuXw8TzglXHM1c1sqGQjyB7jLb?=
- =?us-ascii?Q?M+3iJiSkBRfr+ojlCfOWU+gMGy79V659htDcE2km5p6vtXsjA+l3+W7r1l3f?=
- =?us-ascii?Q?kHsRCttf4cEABVQnQlqQRo0xPWAxX/bAIPjF6bBgOi5kqS27FtBe8yCxKak4?=
- =?us-ascii?Q?FDy67sY/9g9JJG6EPhbb2jb+ZNsON3F9NmN78vB4V+n1u+XAaKoxXgX3X8eJ?=
- =?us-ascii?Q?F9Bxjn58m1uNw74Bd07lOqBFIC4JoZ75h6KHy+c7tTDTjCKXq7kavotqlOjW?=
- =?us-ascii?Q?NRA12MUZ/klz+SPg+cKcEyFxbVt7ukfQe2IH/xMPuG65xtKuvwtTN2vN0rqs?=
- =?us-ascii?Q?yy499yXmEs0DtmKH1etoojjkahmCedwjs0HCk553AvjSVPED9/Dj+C6PyW7b?=
- =?us-ascii?Q?vnl506FygiKtQaKuL9QB6hk9k5knOsKPQmHjuI7Oob8FW0utANRz1gZCmGHR?=
- =?us-ascii?Q?iNkDyVGvqnp9BpWWC1xN09D2V8lKGBwUTDcBa5BJitDQ0uAfXTd1lVGc6n8D?=
- =?us-ascii?Q?owhZJCCvNPKz44g7KTESa6IgRZrZAcqcUeBZWnrJby96wNAYrTpJv3llAaOa?=
- =?us-ascii?Q?HSpEEMu82lISJyVR2w3OGCsMEd7Yb/9axPVqfYptV153aPzA4kQuqDDG+DBl?=
- =?us-ascii?Q?rZbmKZZMk1BZZTnIcTOx115AWCtU5Z76ByAPpSf8LSdQHuW+NA6STMTY6YIc?=
- =?us-ascii?Q?/ksYwDgmz2Dky9ySTlLKH1EySAIpsx7Ls6661nriRESYLcVBMwuAT8uINDn/?=
- =?us-ascii?Q?DNyNuvn+jLLeLd00UPXJPO24Ws1cLQPXYFhqT/3XILGuIYJgwR004WsBDenN?=
- =?us-ascii?Q?tWqVaGfDhcMFLstMq/PPjgvT0Drx0H4C7PXcfb8wa+OfgLIgw4X/G8IorzMW?=
- =?us-ascii?Q?aViy2ms7l4mZ43lsQ1Wxo+SV93anoV67uwIiQYJfwA=3D=3D?=
-X-OriginatorOrg: outlook.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: dbf9536d-6a83-43f4-4ff5-08db77ab959b
-X-MS-Exchange-CrossTenant-AuthSource: CY5PR12MB6455.namprd12.prod.outlook.com
+X-MS-Exchange-AntiSpam-MessageData-0: =?utf-8?B?aGNrVHEyS05pOXVhUytGRFoveTF0b2RMRDZRejh2cEhKbVM0YzZQSVJ6TFJE?=
+ =?utf-8?B?elhPaldseWMrYXM0Uk1KbnlLdVpZUzI0RlVLTFN6RVpZdkdNS1pOS1U5NFZF?=
+ =?utf-8?B?M1dob1RzaWlTd1RNVUE5cHRFZGNwb0xJc1JUc0hBSk5vaUZIQkhSY1hWZmZa?=
+ =?utf-8?B?dW9sVTV3TlFCbmNOd1MwS1kyMC9YZ1k4Nk00bjRySjE4TjFaaTQ2QzlLblZ0?=
+ =?utf-8?B?dWRaZGtDMWZRa3NZM1ZjdWVYdGFoay9ENDVzZHYrU1VJWk1ReVFuRmZraHA1?=
+ =?utf-8?B?QmwwSUI3TnNjVmQ0VlJpenJialZMRWdrUnU2Z1JwVkFkclNBMGx2dHhIcCty?=
+ =?utf-8?B?NGJvSUpSNklWZFlXNWg1cjdMNU03MjJCQ2ZRRHRzNFlYZmpEbEEwbE5Wakdy?=
+ =?utf-8?B?UUh2OEhRZzkxME9OM0NQRW1CMWx1WkNpR2syb291Z0JGZXdKbFNZL2pJbnlx?=
+ =?utf-8?B?VlJDcWV2R1EzeUtGdlhHOHF4RytSb2h4SWg5aTNuZ0pUUy9qZitUV29QMkEz?=
+ =?utf-8?B?VTJBUnRRcFRieHdsUVZSd0dwVXVhZk1mY2h2cWd1Vkh1NXhEZWpKNXZmbjNI?=
+ =?utf-8?B?a0xzQndKaWRDby82c1FvNS9jMXpkZ1Ixb2pHcHFPNC9CdEd3SUlPMjB5U1FS?=
+ =?utf-8?B?QnUyb0xsdnAvMXNwYUJud25sY04wWWlyZGxWUjF4TGl4RXhOR2Q1NVBUbE92?=
+ =?utf-8?B?RmRWeVZFVVAybkYxVHU1eE9XcDQwT3p1dWw2ZkdZbDBvZnhkRFlaR1p1ZWJs?=
+ =?utf-8?B?bkRIZUFYQWNIMFlLY0hjR2hoQkNoMk1rRlp3Vm9jZE84T01hVjduckRSdTU0?=
+ =?utf-8?B?bWdrd2J3OGxmTDhnQTRXNmxGWGwxZE1mR0d0czR2MGRsQXdNM1dmcm1ycWRD?=
+ =?utf-8?B?cmRmZWJWNkY4Sm1JZzYvR09KSEx4TFJ1bVk1NUtQWEcveG9Rb1UzbjloaERJ?=
+ =?utf-8?B?NG5MV1FJSjF3RVpPSHlwVVN1TVVGUG01RUdSamxwazJMR1FKTnM0K3FrazVW?=
+ =?utf-8?B?cmY4Yytzc3RJQXBoeFNaaXhMd0wrRHJNODk2RnVnVU9McU15N1FVeVhpNzd4?=
+ =?utf-8?B?YUwvZXMzRGg1NC9yOE1mVVJSbXVmYzlMeGUvNjduY2Jaa0l0ZFBpaTE0bEZp?=
+ =?utf-8?B?dStOenYzbko4T0pXNHd0amVXRkM0eWVRUGl3dW9ZQVZ2UTZpRGlzc0wrckda?=
+ =?utf-8?B?MHRQRHU2RDllcTVXaFhmcTF6T3J6M0h6WUczL2QyWmxFTURvbmQyUjFDZHdl?=
+ =?utf-8?B?MFRCOG44S1d4SjErV1VoSHE2aXQ2WmVsbXBOakRvWkQvVFB6MGZmaElJMEVz?=
+ =?utf-8?B?V2JmcWJLb3QvRWxxTUpNNWNWVE9BUmVFWlZGUDBaQXJTWWhZb2IvaXFJbFVP?=
+ =?utf-8?B?ZVFic0dkN0lRL29lY1BmdHpFQkhVbmx2WjFnUllrSzhJMkllOEQvYXlHYVRi?=
+ =?utf-8?B?Uk55OW02N294NTl0K1ZJVFZaSWVLUzgyRjI1TlBsYTNrRDluR0Z5SUc5VGVI?=
+ =?utf-8?B?SVAzNzdGZUFZcmxabWZqYmhTN01LeG4rTE1neDJRbTNYeWFrOEREUUpmTFVV?=
+ =?utf-8?B?NktpOGR2N0E0R2UwdkcrZ3QreEZUTjhKbVFqZW95cG84R3Z3dmJGbWRuNVZV?=
+ =?utf-8?B?QlhQR0hvVVJBRDU5R0NXb0FOT0xTN1d6U1RvbzFRWnhJazZhUms3WWovRTBC?=
+ =?utf-8?B?VEdZQnlhdHUwZkJjYnpndkR4cWZXOERrVngxaFRvUmpOeExSS0pkZm5lckhG?=
+ =?utf-8?B?VHY0TWdwK1dnT1lXVGtDUUlvNnF3OWY3amZGZ2FkQkhBRXdHQjFrM0RFS1Rv?=
+ =?utf-8?B?Zi9SL2d0TlZoR2lHMnloWWk2aUtvNTZWdnM4b2NWNDJ3NitBWEY3WUg5dVZH?=
+ =?utf-8?B?QTFUaHlHUGtLRnRlVmp2ckJYSjluOGlKVWVVNTk5N2p3MFFCSHdwMTFEZ2t4?=
+ =?utf-8?B?MkVtMVAyNkRFc3JxYklqM0w4RGh2Z1pkaUw2U1FueGlJNWZYaDZqOEloekwz?=
+ =?utf-8?B?RkQ0R1ZaNXlJVVArY29lRDhHQmgzS1RxRTB6bmc3RW53RkUvaVJoSERvaWlN?=
+ =?utf-8?B?U0h3TVd2YjYrUnFjSG4xZUJLblJWb0Nub1BOQUhiNUdCakRsL1FIdzkxSlJj?=
+ =?utf-8?Q?g9uiznqCG2sSZGjdmtukphLxr?=
+X-OriginatorOrg: talpey.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 8f1f5a2e-4b2d-47a6-7f9e-08db77d9cb7e
+X-MS-Exchange-CrossTenant-AuthSource: SN6PR01MB4445.prod.exchangelabs.com
 X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 28 Jun 2023 07:45:04.2206 (UTC)
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 28 Jun 2023 13:15:50.9976 (UTC)
 X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
-X-MS-Exchange-CrossTenant-Id: 84df9e7f-e9f6-40af-b435-aaaaaaaaaaaa
-X-MS-Exchange-CrossTenant-RMS-PersistedConsumerOrg: 00000000-0000-0000-0000-000000000000
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: SN7PR12MB6911
-X-Spam-Score: -0.2 (/)
+X-MS-Exchange-CrossTenant-Id: 2b2dcae7-2555-4add-bc80-48756da031d5
+X-MS-Exchange-CrossTenant-MailboxType: HOSTED
+X-MS-Exchange-CrossTenant-UserPrincipalName: 5uFo9HEswso7UVRFr8qy1bCrjwSFCD7/YeCFPvJpcRFBMbeleMM0V45ABj3qUHjz
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: SA1PR01MB6784
+X-Spam-Score: -2.0 (--)
 X-Spam-Report: Spam detection software,
  running on the system "util-spamd-1.v13.lw.sourceforge.com", 
  has NOT identified this incoming email as spam.  The original
  message has been attached to this so you can view it or label
  similar future email.  If you have any questions, see
  the administrator of that system for details.
- Content preview: From: Immad Mir There is a grammatical error in one the
- commnents
- in extAlloc function. Signed-off-by: Immad Mir --- fs/jfs/jfs_extent.c |
- 2 +- 1 file changed, 1 insertion(+), 1 deletion(-) 
- Content analysis details:   (-0.2 points, 6.0 required)
+ Content preview:  On 6/27/2023 9:14 PM, linux@treblig.org wrote: > From: "Dr.
+ David Alan Gilbert" <linux@treblig.org> > > The smb client and server code
+ have (mostly) duplicated code > for unicode manipulation, in part [...] 
+ Content analysis details:   (-2.0 points, 6.0 required)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [mirimmad[at]outlook.com]
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.92.23.80 listed in list.dnswl.org]
+ no trust [40.107.236.41 listed in list.dnswl.org]
  -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [40.92.23.80 listed in wl.mailspike.net]
+ [40.107.236.41 listed in wl.mailspike.net]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
-X-Headers-End: 1qEPrc-00HBeM-0Q
-Subject: [Jfs-discussion] [PATCH] FS: JFS: (trivial) Fix grammatical error
- in extAlloc
+ -2.0 NICE_REPLY_A           Looks like a legit reply (A)
+X-Headers-End: 1qEV1b-000Bx5-0J
+Subject: Re: [Jfs-discussion] [PATCH 0/3] dedupe smb unicode files
 X-BeenThere: jfs-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -155,38 +165,59 @@ List-Post: <mailto:jfs-discussion@lists.sourceforge.net>
 List-Help: <mailto:jfs-discussion-request@lists.sourceforge.net?subject=help>
 List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/jfs-discussion>, 
  <mailto:jfs-discussion-request@lists.sourceforge.net?subject=subscribe>
-Cc: Dave Kleikamp <shaggy@kernel.org>, jfs-discussion@lists.sourceforge.net,
- linux-kernel@vger.kernel.org, Immad Mir <mirimmad17@gmail.com>
-Content-Type: text/plain; charset="us-ascii"
+Cc: jfs-discussion@lists.sourceforge.net, linux-kernel@vger.kernel.org
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Errors-To: jfs-discussion-bounces@lists.sourceforge.net
 
-From: Immad Mir <mirimmad17@gmail.com>
+On 6/27/2023 9:14 PM, linux@treblig.org wrote:
+> From: "Dr. David Alan Gilbert" <linux@treblig.org>
+> 
+> The smb client and server code have (mostly) duplicated code
+> for unicode manipulation, in particular upper case handling.
+> 
+> Flatten this lot into shared code.
+> 
+> There's some code that's slightly different between the two, and
+> I've not attempted to share that - this should be strictly a no
+> behaviour change set.
+> 
+> I'd love to also boil out the same code from fs/jfs/ - but that's
+> a thought for another time (and harder since there's no good test
+> for it).
+> 
+> Lightly tested with a module and a monolithic build, and just mounting
+> itself.
+> 
+> This dupe was found using PMD:
+>    https://pmd.github.io/pmd/pmd_userdocs_cpd.html
+> 
+> Dave
+> 
+> Dr. David Alan Gilbert (3):
+>    fs/smb: Remove unicode 'lower' tables
+>    fs/smb: Swing unicode common code from server->common
+>    fs/smb/client: Use common code in client
+> 
+>   fs/smb/client/cifs_unicode.c                  |   1 -
+>   fs/smb/client/cifs_unicode.h                  | 313 +-----------------
+>   fs/smb/client/cifs_uniupr.h                   | 239 -------------
+>   fs/smb/common/Makefile                        |   1 +
+>   .../uniupr.h => common/cifs_unicode_common.c} | 156 +--------
+>   fs/smb/common/cifs_unicode_common.h           | 279 ++++++++++++++++
 
- There is a grammatical error in one the commnents
- in extAlloc function.
+So far so good, but please drop the "cifs_" prefix from this new file's
+name, since its contents apply to later smb dialects as well.
 
-Signed-off-by: Immad Mir <mirimmad17@gmail.com>
----
- fs/jfs/jfs_extent.c | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+Tom.
 
-diff --git a/fs/jfs/jfs_extent.c b/fs/jfs/jfs_extent.c
-index ae99a7e23..399492308 100644
---- a/fs/jfs/jfs_extent.c
-+++ b/fs/jfs/jfs_extent.c
-@@ -166,7 +166,7 @@ extAlloc(struct inode *ip, s64 xlen, s64 pno, xad_t * xp, bool abnr)
- 	/*
- 	 * COMMIT_SyncList flags an anonymous tlock on page that is on
- 	 * sync list.
--	 * We need to commit the inode to get the page written disk.
-+	 * We need to commit the inode to get the page written to the disk.
- 	 */
- 	if (test_and_clear_cflag(COMMIT_Synclist,ip))
- 		jfs_commit_inode(ip, 0);
---
-2.40.0
-
+>   fs/smb/server/unicode.c                       |   1 -
+>   fs/smb/server/unicode.h                       | 301 +----------------
+>   8 files changed, 298 insertions(+), 993 deletions(-)
+>   delete mode 100644 fs/smb/client/cifs_uniupr.h
+>   rename fs/smb/{server/uniupr.h => common/cifs_unicode_common.c} (50%)
+>   create mode 100644 fs/smb/common/cifs_unicode_common.h
+> 
 
 
 _______________________________________________
