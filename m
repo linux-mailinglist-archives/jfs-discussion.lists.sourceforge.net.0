@@ -2,157 +2,97 @@ Return-Path: <jfs-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+jfs-discussion@lfdr.de
 Delivered-To: lists+jfs-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id D4D8A741211
-	for <lists+jfs-discussion@lfdr.de>; Wed, 28 Jun 2023 15:16:31 +0200 (CEST)
-Received: from [127.0.0.1] (helo=sfs-ml-2.v29.lw.sourceforge.com)
-	by sfs-ml-2.v29.lw.sourceforge.com with esmtp (Exim 4.95)
+	by mail.lfdr.de (Postfix) with ESMTPS id 40B7F7412BD
+	for <lists+jfs-discussion@lfdr.de>; Wed, 28 Jun 2023 15:42:09 +0200 (CEST)
+Received: from [127.0.0.1] (helo=sfs-ml-4.v29.lw.sourceforge.com)
+	by sfs-ml-4.v29.lw.sourceforge.com with esmtp (Exim 4.95)
 	(envelope-from <jfs-discussion-bounces@lists.sourceforge.net>)
-	id 1qEV1g-0000tc-DW;
-	Wed, 28 Jun 2023 13:16:04 +0000
+	id 1qEVQY-00015Q-QX;
+	Wed, 28 Jun 2023 13:41:47 +0000
 Received: from [172.30.20.202] (helo=mx.sourceforge.net)
- by sfs-ml-2.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
+ by sfs-ml-4.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
  TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (Exim 4.95)
- (envelope-from <tom@talpey.com>) id 1qEV1e-0000tW-LK
+ (envelope-from <dg@treblig.org>) id 1qEVQW-00014S-9i
  for jfs-discussion@lists.sourceforge.net;
- Wed, 28 Jun 2023 13:16:02 +0000
+ Wed, 28 Jun 2023 13:41:44 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=sourceforge.net; s=x; h=MIME-Version:Content-Transfer-Encoding:Content-Type
- :In-Reply-To:From:References:Cc:To:Subject:Date:Message-ID:Sender:Reply-To:
+ d=sourceforge.net; s=x; h=In-Reply-To:Content-Type:MIME-Version:References:
+ Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:Content-Transfer-Encoding:
  Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
  Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=umv3tlOcwAKRea9FMCN3hru8uNNmYXLG4rjQkOyr/+0=; b=GrHRU+h0N+CNzkvaOZYvbPgTQf
- 2xzcokj/DonVx4k1ewS0W8+OKlwiVPvHnCYVN1YvX+LMkrbS8j+IddmZSTkFIoRgveL9lABVVui9Z
- cYvgqneffCUuwtMGlggANYbhRysACmj5cQYjQkDRcwQloVdfVrMyQgT7O8PnQ1lz4lkw=;
+ bh=EPySIftZSA/ANVv7duy+nkpNF1TRSIy5ZkBMzXpU3B4=; b=iqic+cfcABRFlXbniXyzDz1CL/
+ wUCK8rMuvPJFnVaB36WuwRkTYThR5QqkH98RqiX/K6WzhVRmM7SlSBXUHVSRN/0Nb1aIqd391rqiW
+ nA0AMnMGgzNNDi5p/ZsGEr7oiNGKi/rEmRBcuDRu0cFIjCkMhw4fA6pjEReb/VgtTR8Q=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
- h=MIME-Version:Content-Transfer-Encoding:Content-Type:In-Reply-To:From:
- References:Cc:To:Subject:Date:Message-ID:Sender:Reply-To:Content-ID:
+ h=In-Reply-To:Content-Type:MIME-Version:References:Message-ID:Subject:Cc:To
+ :From:Date:Sender:Reply-To:Content-Transfer-Encoding:Content-ID:
  Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
  :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
  List-Post:List-Owner:List-Archive;
- bh=umv3tlOcwAKRea9FMCN3hru8uNNmYXLG4rjQkOyr/+0=; b=WmmgRwcDP4/KonnM4jngTfEJkn
- qCScSH/231AlBMYd2DAmgCSCsh1ciIvvsQ7Zy7iwWHTGZ+xVRH3GFH1CrUgD8hM2LoK14hvWwQUE/
- x8wutMz5ojRLAQ3qGynvwzpJ2QRPOJ7PTCiVHkBuY1qntrfUZMJe4+dLAoanefYgUJ3Y=;
-Received: from mail-bn8nam11on2041.outbound.protection.outlook.com
- ([40.107.236.41] helo=NAM11-BN8-obe.outbound.protection.outlook.com)
+ bh=EPySIftZSA/ANVv7duy+nkpNF1TRSIy5ZkBMzXpU3B4=; b=nQWaA8qRJZyqrb3BSsV+36AkxG
+ C59KGuGqoV7rub/9kgwNwXAnYD38fjPGFvshMUOqTrYYF2nSfX9lkfmfC00Ej6mOvVHLAOwKx3Edb
+ 0QHzzgjxdEbKAypV0u82p8VuC8l+WXe9zfg4rn/AvxdVSB2/EqcRjLqx08CyANIEObOE=;
+Received: from mx.treblig.org ([46.235.229.95])
  by sfi-mx-1.v28.lw.sourceforge.com with esmtps
  (TLS1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.95)
- id 1qEV1b-000Bx5-0J for jfs-discussion@lists.sourceforge.net;
- Wed, 28 Jun 2023 13:16:02 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=jXVl/wKe7FOrmrjAWSgDszX/FnsFhfpU+oOVQ9Ms8yqVlWWxtz+fjlLzuuROMD5zDgeEB1mObmsFW4+f41UAzEJ1d0ev608YKgJd8QPPYVwDbYHF8NRBylhq4qs/jYpcUP4ZsDWAhBTgP7HGbm4foX6Hnpu8BgfzNGPa1EjRq8E7y1EWZAP1TuiV1Q0bzH2PCj5y+kbCCv3/1wXYlTSlkiMQTFF+5ot+b5h3B6tfyXWSEUwUZy8p4b9bhuHqWGrJu5f/19m7VgGJhYgfQgIZYsrEfFGG4fhGcfvZDTL4ZYT3eOB1K4Ow+r7vWumQSbSythYzs0J9ShZJr5AyoMg6eQ==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=umv3tlOcwAKRea9FMCN3hru8uNNmYXLG4rjQkOyr/+0=;
- b=UhLULac7W1o7mw+7qvHAaxX9gR4cXKcfslmfbMtIhiseE6E47bnA7YgnMhtqvigJJA3ufv8w4h8pIQPFceJW3NTeYM6CFGqQOEZkdTpSA45s6TuK8WmuAmUGTMBeap4rMMpXu2y6kGbXllCBHEDPvY0xLi0L7kyFWymDCh0utAcDncb9BI8qtgl6cGEBlqxEgNN6SNyZv6krubuk/PSl6gV0nOB/Ill6/fm2/nbeOAYu8svA4ou3f2u6zF0NF5b44sS9IDjRNSk5ZDTf7iiiYKQ45j2scTG8VFLobnvplF17dIzco0vMfYjo+SnoYNy8f7Nfrm/JBDuB6XFyAWmg0g==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=talpey.com; dmarc=pass action=none header.from=talpey.com;
- dkim=pass header.d=talpey.com; arc=none
-Authentication-Results: dkim=none (message not signed)
- header.d=none;dmarc=none action=none header.from=talpey.com;
-Received: from SN6PR01MB4445.prod.exchangelabs.com (2603:10b6:805:e2::33) by
- SA1PR01MB6784.prod.exchangelabs.com (2603:10b6:806:1a1::24) with Microsoft
- SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.6521.24; Wed, 28 Jun 2023 13:15:51 +0000
-Received: from SN6PR01MB4445.prod.exchangelabs.com
- ([fe80::17e9:7e30:6603:23bc]) by SN6PR01MB4445.prod.exchangelabs.com
- ([fe80::17e9:7e30:6603:23bc%5]) with mapi id 15.20.6521.023; Wed, 28 Jun 2023
- 13:15:51 +0000
-Message-ID: <9343462e-6a4a-ca7b-03b8-4855e5a33b72@talpey.com>
-Date: Wed, 28 Jun 2023 09:15:49 -0400
-User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:102.0) Gecko/20100101
- Thunderbird/102.12.0
-Content-Language: en-US
-To: linux@treblig.org, sfrench@samba.org, linkinjeon@kernel.org,
- linux-cifs@vger.kernel.org
+ id 1qEVQV-000CzT-2L for jfs-discussion@lists.sourceforge.net;
+ Wed, 28 Jun 2023 13:41:44 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=treblig.org
+ ; s=bytemarkmx;
+ h=In-Reply-To:Content-Type:MIME-Version:References:Message-ID
+ :Subject:Cc:To:From:Date:Sender:Reply-To:Content-Transfer-Encoding:Content-ID
+ :Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:
+ Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe
+ :List-Post:List-Owner:List-Archive;
+ bh=EPySIftZSA/ANVv7duy+nkpNF1TRSIy5ZkBMzXpU3B4=; b=UN6LVzBThsGmqA3+M7gmTxfh1l
+ zMVyubo43pIUiCCMKEzgJSXs8rhru8EwKMOZvlO/ekv+vM4VkuQOcSPy8mlYA6WE/lblOu9Ulio8P
+ Zt8p2SXv6APS2z3SP6RI9Av+YriIxYFvrWXapRlB5mwcW7B3uwpN3u/vW9TX9UraBMF6cvHp6OJ71
+ hlhfXBm85dK6NFNyb9SOn6JyCblqLjjNrx+PzqWXWt47x6q4zKp9T+KE+oVYECmID0M/qbazE2gtS
+ g+bmH3BNR2s/LOFIju1kaf2zO5OUlG286VA2GKn1t5hrHV4/6Y/TYbrN4bFSzQXZon/Jv1WIcSiQx
+ 3zprm/ew==;
+Received: from dg by mx.treblig.org with local (Exim 4.94.2)
+ (envelope-from <dg@treblig.org>)
+ id 1qEVQG-00GT0N-Px; Wed, 28 Jun 2023 13:41:28 +0000
+Date: Wed, 28 Jun 2023 13:41:28 +0000
+From: "Dr. David Alan Gilbert" <dave@treblig.org>
+To: Tom Talpey <tom@talpey.com>
+Message-ID: <ZJw4iLlFWRMq6a3S@gallifrey>
 References: <20230628011439.159678-1-linux@treblig.org>
-From: Tom Talpey <tom@talpey.com>
-In-Reply-To: <20230628011439.159678-1-linux@treblig.org>
-X-ClientProxiedBy: BL1PR13CA0176.namprd13.prod.outlook.com
- (2603:10b6:208:2bd::31) To SN6PR01MB4445.prod.exchangelabs.com
- (2603:10b6:805:e2::33)
+ <9343462e-6a4a-ca7b-03b8-4855e5a33b72@talpey.com>
 MIME-Version: 1.0
-X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: SN6PR01MB4445:EE_|SA1PR01MB6784:EE_
-X-MS-Office365-Filtering-Correlation-Id: 8f1f5a2e-4b2d-47a6-7f9e-08db77d9cb7e
-X-MS-Exchange-SenderADCheck: 1
-X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;
-X-Microsoft-Antispam-Message-Info: 1xfIL8URF8Ef6VReg32icpZma3Sd715dwET+M3lrr4yqAXnFBPRNl0LiFDH0BnFHq7jkN+IHtUvB+5eHziGO67kmS7ryb/v1UO5jlUA54zUWL0OGgsNriNqPwzyS1dBlgxPKnmS8JdqgOrPgayQZIzT6KjnJJ/eBF6JdPe1q8Xrjmd0htVgC39XExruvt4sqJEwpkkpAB3xKjMMszQkUQ0EseCjKwBXYhKXUNCBhPjCGiunTxvqemjIB3knG7PcHcs1YjdWgzSCjhBV1Cv3JuATqV1/9pWuB2+5GDjPJhJkvCzrnbjAz5lxznJmKG+uK1MexJpNoEB3bKbGmOl9t4p7Bt1VNSQlWWH11xl6vzzws9rVm2/pMO5w6pg77k4CDFO1iFw7p4zaOntHkKK8+XdfdK2Qu5noZ55a4guSRoBQ0UiEvqvPRp5mfvVQQ7Tbg74GrwKU4Ds4Na5zcO9mRUD4jzoViSKJX9cLGWn101VYnVymwhcqTFDPZYadScZMTP/cHzoJx+ntzmOj9DzNoqtwGjnupHfTGggL/HUkYsseCcPSAd22Xl0Yi+Q+/poKh+fLXPuvdxGcj1aDHR+cJ79WSEmEyRiuxKS7DyvsZrmx/qru3yTaQu14NFu31JgriisbgI5ylsk4gQBKWonWSeQ==
-X-Forefront-Antispam-Report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
- IPV:NLI; SFV:NSPM; H:SN6PR01MB4445.prod.exchangelabs.com; PTR:; CAT:NONE;
- SFS:(13230028)(366004)(396003)(136003)(376002)(346002)(39830400003)(451199021)(31686004)(36756003)(53546011)(6506007)(66476007)(5660300002)(86362001)(316002)(4326008)(66556008)(41300700001)(8936002)(38100700002)(31696002)(66946007)(38350700002)(8676002)(6486002)(966005)(6512007)(2906002)(186003)(26005)(478600001)(52116002)(83380400001)(2616005)(43740500002);
- DIR:OUT; SFP:1101; 
-X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: =?utf-8?B?aGNrVHEyS05pOXVhUytGRFoveTF0b2RMRDZRejh2cEhKbVM0YzZQSVJ6TFJE?=
- =?utf-8?B?elhPaldseWMrYXM0Uk1KbnlLdVpZUzI0RlVLTFN6RVpZdkdNS1pOS1U5NFZF?=
- =?utf-8?B?M1dob1RzaWlTd1RNVUE5cHRFZGNwb0xJc1JUc0hBSk5vaUZIQkhSY1hWZmZa?=
- =?utf-8?B?dW9sVTV3TlFCbmNOd1MwS1kyMC9YZ1k4Nk00bjRySjE4TjFaaTQ2QzlLblZ0?=
- =?utf-8?B?dWRaZGtDMWZRa3NZM1ZjdWVYdGFoay9ENDVzZHYrU1VJWk1ReVFuRmZraHA1?=
- =?utf-8?B?QmwwSUI3TnNjVmQ0VlJpenJialZMRWdrUnU2Z1JwVkFkclNBMGx2dHhIcCty?=
- =?utf-8?B?NGJvSUpSNklWZFlXNWg1cjdMNU03MjJCQ2ZRRHRzNFlYZmpEbEEwbE5Wakdy?=
- =?utf-8?B?UUh2OEhRZzkxME9OM0NQRW1CMWx1WkNpR2syb291Z0JGZXdKbFNZL2pJbnlx?=
- =?utf-8?B?VlJDcWV2R1EzeUtGdlhHOHF4RytSb2h4SWg5aTNuZ0pUUy9qZitUV29QMkEz?=
- =?utf-8?B?VTJBUnRRcFRieHdsUVZSd0dwVXVhZk1mY2h2cWd1Vkh1NXhEZWpKNXZmbjNI?=
- =?utf-8?B?a0xzQndKaWRDby82c1FvNS9jMXpkZ1Ixb2pHcHFPNC9CdEd3SUlPMjB5U1FS?=
- =?utf-8?B?QnUyb0xsdnAvMXNwYUJud25sY04wWWlyZGxWUjF4TGl4RXhOR2Q1NVBUbE92?=
- =?utf-8?B?RmRWeVZFVVAybkYxVHU1eE9XcDQwT3p1dWw2ZkdZbDBvZnhkRFlaR1p1ZWJs?=
- =?utf-8?B?bkRIZUFYQWNIMFlLY0hjR2hoQkNoMk1rRlp3Vm9jZE84T01hVjduckRSdTU0?=
- =?utf-8?B?bWdrd2J3OGxmTDhnQTRXNmxGWGwxZE1mR0d0czR2MGRsQXdNM1dmcm1ycWRD?=
- =?utf-8?B?cmRmZWJWNkY4Sm1JZzYvR09KSEx4TFJ1bVk1NUtQWEcveG9Rb1UzbjloaERJ?=
- =?utf-8?B?NG5MV1FJSjF3RVpPSHlwVVN1TVVGUG01RUdSamxwazJMR1FKTnM0K3FrazVW?=
- =?utf-8?B?cmY4Yytzc3RJQXBoeFNaaXhMd0wrRHJNODk2RnVnVU9McU15N1FVeVhpNzd4?=
- =?utf-8?B?YUwvZXMzRGg1NC9yOE1mVVJSbXVmYzlMeGUvNjduY2Jaa0l0ZFBpaTE0bEZp?=
- =?utf-8?B?dStOenYzbko4T0pXNHd0amVXRkM0eWVRUGl3dW9ZQVZ2UTZpRGlzc0wrckda?=
- =?utf-8?B?MHRQRHU2RDllcTVXaFhmcTF6T3J6M0h6WUczL2QyWmxFTURvbmQyUjFDZHdl?=
- =?utf-8?B?MFRCOG44S1d4SjErV1VoSHE2aXQ2WmVsbXBOakRvWkQvVFB6MGZmaElJMEVz?=
- =?utf-8?B?V2JmcWJLb3QvRWxxTUpNNWNWVE9BUmVFWlZGUDBaQXJTWWhZb2IvaXFJbFVP?=
- =?utf-8?B?ZVFic0dkN0lRL29lY1BmdHpFQkhVbmx2WjFnUllrSzhJMkllOEQvYXlHYVRi?=
- =?utf-8?B?Uk55OW02N294NTl0K1ZJVFZaSWVLUzgyRjI1TlBsYTNrRDluR0Z5SUc5VGVI?=
- =?utf-8?B?SVAzNzdGZUFZcmxabWZqYmhTN01LeG4rTE1neDJRbTNYeWFrOEREUUpmTFVV?=
- =?utf-8?B?NktpOGR2N0E0R2UwdkcrZ3QreEZUTjhKbVFqZW95cG84R3Z3dmJGbWRuNVZV?=
- =?utf-8?B?QlhQR0hvVVJBRDU5R0NXb0FOT0xTN1d6U1RvbzFRWnhJazZhUms3WWovRTBC?=
- =?utf-8?B?VEdZQnlhdHUwZkJjYnpndkR4cWZXOERrVngxaFRvUmpOeExSS0pkZm5lckhG?=
- =?utf-8?B?VHY0TWdwK1dnT1lXVGtDUUlvNnF3OWY3amZGZ2FkQkhBRXdHQjFrM0RFS1Rv?=
- =?utf-8?B?Zi9SL2d0TlZoR2lHMnloWWk2aUtvNTZWdnM4b2NWNDJ3NitBWEY3WUg5dVZH?=
- =?utf-8?B?QTFUaHlHUGtLRnRlVmp2ckJYSjluOGlKVWVVNTk5N2p3MFFCSHdwMTFEZ2t4?=
- =?utf-8?B?MkVtMVAyNkRFc3JxYklqM0w4RGh2Z1pkaUw2U1FueGlJNWZYaDZqOEloekwz?=
- =?utf-8?B?RkQ0R1ZaNXlJVVArY29lRDhHQmgzS1RxRTB6bmc3RW53RkUvaVJoSERvaWlN?=
- =?utf-8?B?U0h3TVd2YjYrUnFjSG4xZUJLblJWb0Nub1BOQUhiNUdCakRsL1FIdzkxSlJj?=
- =?utf-8?Q?g9uiznqCG2sSZGjdmtukphLxr?=
-X-OriginatorOrg: talpey.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 8f1f5a2e-4b2d-47a6-7f9e-08db77d9cb7e
-X-MS-Exchange-CrossTenant-AuthSource: SN6PR01MB4445.prod.exchangelabs.com
-X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 28 Jun 2023 13:15:50.9976 (UTC)
-X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
-X-MS-Exchange-CrossTenant-Id: 2b2dcae7-2555-4add-bc80-48756da031d5
-X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: 5uFo9HEswso7UVRFr8qy1bCrjwSFCD7/YeCFPvJpcRFBMbeleMM0V45ABj3qUHjz
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: SA1PR01MB6784
-X-Spam-Score: -2.0 (--)
+Content-Disposition: inline
+In-Reply-To: <9343462e-6a4a-ca7b-03b8-4855e5a33b72@talpey.com>
+X-Chocolate: 70 percent or better cocoa solids preferably
+X-Operating-System: Linux/5.10.0-21-amd64 (x86_64)
+X-Uptime: 13:41:22 up 101 days, 15 min,  1 user,  load average: 0.01, 0.05,
+ 0.00
+User-Agent: Mutt/2.0.5 (2021-01-21)
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: Spam detection software,
  running on the system "util-spamd-1.v13.lw.sourceforge.com", 
  has NOT identified this incoming email as spam.  The original
  message has been attached to this so you can view it or label
  similar future email.  If you have any questions, see
  the administrator of that system for details.
- Content preview:  On 6/27/2023 9:14 PM, linux@treblig.org wrote: > From: "Dr.
- David Alan Gilbert" <linux@treblig.org> > > The smb client and server code
- have (mostly) duplicated code > for unicode manipulation, in part [...] 
- Content analysis details:   (-2.0 points, 6.0 required)
+ Content preview:  * Tom Talpey (tom@talpey.com) wrote: > On 6/27/2023 9:14 PM, 
+ linux@treblig.org wrote: > > From: "Dr. David Alan Gilbert"
+ <linux@treblig.org>
+ > > > > The smb client and server code have (mostly) duplic [...] 
+ Content analysis details:   (-0.2 points, 6.0 required)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.236.41 listed in list.dnswl.org]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [40.107.236.41 listed in wl.mailspike.net]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- -2.0 NICE_REPLY_A           Looks like a legit reply (A)
-X-Headers-End: 1qEV1b-000Bx5-0J
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+X-Headers-End: 1qEVQV-000CzT-2L
 Subject: Re: [Jfs-discussion] [PATCH 0/3] dedupe smb unicode files
 X-BeenThere: jfs-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
@@ -165,59 +105,71 @@ List-Post: <mailto:jfs-discussion@lists.sourceforge.net>
 List-Help: <mailto:jfs-discussion-request@lists.sourceforge.net?subject=help>
 List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/jfs-discussion>, 
  <mailto:jfs-discussion-request@lists.sourceforge.net?subject=subscribe>
-Cc: jfs-discussion@lists.sourceforge.net, linux-kernel@vger.kernel.org
+Cc: sfrench@samba.org, linux-cifs@vger.kernel.org,
+ jfs-discussion@lists.sourceforge.net, linkinjeon@kernel.org,
+ linux-kernel@vger.kernel.org
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Errors-To: jfs-discussion-bounces@lists.sourceforge.net
 
-On 6/27/2023 9:14 PM, linux@treblig.org wrote:
-> From: "Dr. David Alan Gilbert" <linux@treblig.org>
+* Tom Talpey (tom@talpey.com) wrote:
+> On 6/27/2023 9:14 PM, linux@treblig.org wrote:
+> > From: "Dr. David Alan Gilbert" <linux@treblig.org>
+> > 
+> > The smb client and server code have (mostly) duplicated code
+> > for unicode manipulation, in particular upper case handling.
+> > 
+> > Flatten this lot into shared code.
+> > 
+> > There's some code that's slightly different between the two, and
+> > I've not attempted to share that - this should be strictly a no
+> > behaviour change set.
+> > 
+> > I'd love to also boil out the same code from fs/jfs/ - but that's
+> > a thought for another time (and harder since there's no good test
+> > for it).
+> > 
+> > Lightly tested with a module and a monolithic build, and just mounting
+> > itself.
+> > 
+> > This dupe was found using PMD:
+> >    https://pmd.github.io/pmd/pmd_userdocs_cpd.html
+> > 
+> > Dave
+> > 
+> > Dr. David Alan Gilbert (3):
+> >    fs/smb: Remove unicode 'lower' tables
+> >    fs/smb: Swing unicode common code from server->common
+> >    fs/smb/client: Use common code in client
+> > 
+> >   fs/smb/client/cifs_unicode.c                  |   1 -
+> >   fs/smb/client/cifs_unicode.h                  | 313 +-----------------
+> >   fs/smb/client/cifs_uniupr.h                   | 239 -------------
+> >   fs/smb/common/Makefile                        |   1 +
+> >   .../uniupr.h => common/cifs_unicode_common.c} | 156 +--------
+> >   fs/smb/common/cifs_unicode_common.h           | 279 ++++++++++++++++
 > 
-> The smb client and server code have (mostly) duplicated code
-> for unicode manipulation, in particular upper case handling.
-> 
-> Flatten this lot into shared code.
-> 
-> There's some code that's slightly different between the two, and
-> I've not attempted to share that - this should be strictly a no
-> behaviour change set.
-> 
-> I'd love to also boil out the same code from fs/jfs/ - but that's
-> a thought for another time (and harder since there's no good test
-> for it).
-> 
-> Lightly tested with a module and a monolithic build, and just mounting
-> itself.
-> 
-> This dupe was found using PMD:
->    https://pmd.github.io/pmd/pmd_userdocs_cpd.html
-> 
-> Dave
-> 
-> Dr. David Alan Gilbert (3):
->    fs/smb: Remove unicode 'lower' tables
->    fs/smb: Swing unicode common code from server->common
->    fs/smb/client: Use common code in client
-> 
->   fs/smb/client/cifs_unicode.c                  |   1 -
->   fs/smb/client/cifs_unicode.h                  | 313 +-----------------
->   fs/smb/client/cifs_uniupr.h                   | 239 -------------
->   fs/smb/common/Makefile                        |   1 +
->   .../uniupr.h => common/cifs_unicode_common.c} | 156 +--------
->   fs/smb/common/cifs_unicode_common.h           | 279 ++++++++++++++++
+> So far so good, but please drop the "cifs_" prefix from this new file's
+> name, since its contents apply to later smb dialects as well.
 
-So far so good, but please drop the "cifs_" prefix from this new file's
-name, since its contents apply to later smb dialects as well.
+Sure.
 
-Tom.
+Dave
 
->   fs/smb/server/unicode.c                       |   1 -
->   fs/smb/server/unicode.h                       | 301 +----------------
->   8 files changed, 298 insertions(+), 993 deletions(-)
->   delete mode 100644 fs/smb/client/cifs_uniupr.h
->   rename fs/smb/{server/uniupr.h => common/cifs_unicode_common.c} (50%)
->   create mode 100644 fs/smb/common/cifs_unicode_common.h
+> Tom.
 > 
+> >   fs/smb/server/unicode.c                       |   1 -
+> >   fs/smb/server/unicode.h                       | 301 +----------------
+> >   8 files changed, 298 insertions(+), 993 deletions(-)
+> >   delete mode 100644 fs/smb/client/cifs_uniupr.h
+> >   rename fs/smb/{server/uniupr.h => common/cifs_unicode_common.c} (50%)
+> >   create mode 100644 fs/smb/common/cifs_unicode_common.h
+> > 
+-- 
+ -----Open up your eyes, open up your mind, open up your code -------   
+/ Dr. David Alan Gilbert    |       Running GNU/Linux       | Happy  \ 
+\        dave @ treblig.org |                               | In Hex /
+ \ _________________________|_____ http://www.treblig.org   |_______/
 
 
 _______________________________________________
