@@ -2,105 +2,93 @@ Return-Path: <jfs-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+jfs-discussion@lfdr.de
 Delivered-To: lists+jfs-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2DECF742EFF
-	for <lists+jfs-discussion@lfdr.de>; Thu, 29 Jun 2023 22:52:17 +0200 (CEST)
-Received: from [127.0.0.1] (helo=sfs-ml-1.v29.lw.sourceforge.com)
-	by sfs-ml-1.v29.lw.sourceforge.com with esmtp (Exim 4.95)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3CC147444D1
+	for <lists+jfs-discussion@lfdr.de>; Sat,  1 Jul 2023 00:28:29 +0200 (CEST)
+Received: from [127.0.0.1] (helo=sfs-ml-3.v29.lw.sourceforge.com)
+	by sfs-ml-3.v29.lw.sourceforge.com with esmtp (Exim 4.95)
 	(envelope-from <jfs-discussion-bounces@lists.sourceforge.net>)
-	id 1qEycP-0001wq-Ro;
-	Thu, 29 Jun 2023 20:51:58 +0000
+	id 1qFMb0-0007Ea-Ga;
+	Fri, 30 Jun 2023 22:28:06 +0000
 Received: from [172.30.20.202] (helo=mx.sourceforge.net)
  by sfs-ml-1.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
  TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (Exim 4.95)
- (envelope-from <pr-tracker-bot@kernel.org>) id 1qEycL-0001wg-8Y
- for jfs-discussion@lists.sourceforge.net;
- Thu, 29 Jun 2023 20:51:54 +0000
+ (envelope-from <mcgrof@infradead.org>) id 1qFMPi-0005pp-CF;
+ Fri, 30 Jun 2023 22:16:27 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=sourceforge.net; s=x; h=Cc:To:Date:Message-Id:References:In-Reply-To:From:
- Subject:Sender:Reply-To:MIME-Version:Content-Type:Content-Transfer-Encoding:
- Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
- Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
- List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=ECo/TkuNRTzTyG1ZoaRmqui9QVf0F3fWl+UjVbvDoVY=; b=H+Zy0K5EbCa0I+MPKMv3z6aNAT
- EJE2/9AsI7lUCITs/pLVlGF/79ifDSVcdtuLm45EU4aSFh5MRxQMyv88u2PYuKjeOBatKPm9O3niq
- YcT3qXmc5ONBU3HVChbBvGcqyKGTSWdf7EGEFKjF+lhfucDrQdkQeXYhvnDgiSG0TXfI=;
+ d=sourceforge.net; s=x; h=Sender:In-Reply-To:Content-Type:MIME-Version:
+ References:Message-ID:Subject:Cc:To:From:Date:Reply-To:
+ Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+ Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
+ List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=mmrCw93FsSgGVqkQGx3tY+c3DxJ3ErMGqt6cuZmQDk4=; b=TwG7eG8JfM6KvLpUllu4TW4uIl
+ ZvufRLDnwKCH1SFntI789oF9kbwAHWjQDx6gis4Jxasb+joVKiiw4zbk3IbMZM5c2aXTZNhdT0PWB
+ l8kKV13LYYERiNJspsUuV1GJ+gOuNP9zU5KY96DbCXtZz8m4pHG/U8Yg5+KCv4XfNFic=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
- h=Cc:To:Date:Message-Id:References:In-Reply-To:From:Subject:Sender:Reply-To
- :MIME-Version:Content-Type:Content-Transfer-Encoding:Content-ID:
+ h=Sender:In-Reply-To:Content-Type:MIME-Version:References:Message-ID:
+ Subject:Cc:To:From:Date:Reply-To:Content-Transfer-Encoding:Content-ID:
  Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
  :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
  List-Post:List-Owner:List-Archive;
- bh=ECo/TkuNRTzTyG1ZoaRmqui9QVf0F3fWl+UjVbvDoVY=; b=VecSAvkbEhFoEdl9DwSoNstyw+
- a42qpiKMhh2pBVJhY/YydQKnvkCNDH21R7xH1qwSkTic3mMJR4k6Kof6YAllfbQAk5Tzz9vCuF65S
- 6snlasipVAR57U4D1rhw4GZRe2egMjlBY9Tq2DZANGDZ6SrFMmxK2QCZ5DlKb7htzPys=;
-Received: from dfw.source.kernel.org ([139.178.84.217])
- by sfi-mx-2.v28.lw.sourceforge.com with esmtps
+ bh=mmrCw93FsSgGVqkQGx3tY+c3DxJ3ErMGqt6cuZmQDk4=; b=CDa19wsIFB0DIZxbOFw8X3+d/V
+ ELmh9S5U+ESuYBYjkrhd1YKBOx7b2xei0///vTlVcEj0Xq+7Fm4zVBLhyovIziwD40GEBrgB1d0RF
+ HQ8zdji6c2rbteog+gMLKG9Iv8o1RRUXFpIYtCfTma5BTWNDHSHnRUzWGhyWfAwM90jc=;
+Received: from bombadil.infradead.org ([198.137.202.133])
+ by sfi-mx-1.v28.lw.sourceforge.com with esmtps
  (TLS1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.95)
- id 1qEycH-0000ct-Sv for jfs-discussion@lists.sourceforge.net;
- Thu, 29 Jun 2023 20:51:54 +0000
-Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
- (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
- key-exchange X25519 server-signature RSA-PSS (2048 bits))
- (No client certificate requested)
- by dfw.source.kernel.org (Postfix) with ESMTPS id 4753861633;
- Thu, 29 Jun 2023 20:51:41 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPS id B0EB5C433C8;
- Thu, 29 Jun 2023 20:51:40 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=k20201202; t=1688071900;
- bh=8A7A32gALfnhjzft8+IJHdrDaXDUT1+cutM2HkVtR64=;
- h=Subject:From:In-Reply-To:References:Date:To:Cc:From;
- b=UrJRbarGqCBDMCGrLFUxTQBrj5zG63N4XFpHc5vAyfBsFmW4nVM9LeMiIxSlSVeeR
- e7iqTu3fxBI1YK0LpIEYehdG/nFa5889b2CJJkmYkxZ5pA8PwyRfj1pwe6x0p670pm
- gSEbe6kpkbQFYLaYrbZNJ6wMDFQJDNyQQA8Bw4E/kTs5zJ+OSy2vtK+HRmED0QqgJp
- O9GiGsJkCfb29tfEcoGERFjasI5Ewztjmr47DMg7wHwY0Ifld6l+U1YOzC8h+z5rhn
- dbz+cph0gt1GiWq5XeAshl/er+h0cijcrrKiADNf5oosz45x0Mf36sPxcV50GkUKfY
- Ns2k4+uzDbFNg==
-Received: from aws-us-west-2-korg-oddjob-1.ci.codeaurora.org
- (localhost.localdomain [127.0.0.1])
- by aws-us-west-2-korg-oddjob-1.ci.codeaurora.org (Postfix) with ESMTP id
- 9EC79C40C5E; Thu, 29 Jun 2023 20:51:40 +0000 (UTC)
-From: pr-tracker-bot@kernel.org
-In-Reply-To: <0c277be9-a3be-2c23-a016-82238fc946eb@oracle.com>
-References: <0c277be9-a3be-2c23-a016-82238fc946eb@oracle.com>
-X-PR-Tracked-List-Id: <linux-kernel.vger.kernel.org>
-X-PR-Tracked-Message-Id: <0c277be9-a3be-2c23-a016-82238fc946eb@oracle.com>
-X-PR-Tracked-Remote: git@github.com:kleikamp/linux-shaggy.git tags/jfs-6.5
-X-PR-Tracked-Commit-Id: 95e2b352c03b0a86c5717ba1d24ea20969abcacc
-X-PR-Merge-Tree: torvalds/linux.git
-X-PR-Merge-Refname: refs/heads/master
-X-PR-Merge-Commit-Id: b9d02c224d00a412d9c7fb1f92c358604038a783
-Message-Id: <168807190064.21634.1464816030990376881.pr-tracker-bot@kernel.org>
-Date: Thu, 29 Jun 2023 20:51:40 +0000
-To: Dave Kleikamp <dave.kleikamp@oracle.com>
-X-Spam-Score: -5.9 (-----)
+ id 1qFMPh-002Ugz-C0; Fri, 30 Jun 2023 22:16:27 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=infradead.org; s=bombadil.20210309; h=Sender:In-Reply-To:Content-Type:
+ MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Reply-To:
+ Content-Transfer-Encoding:Content-ID:Content-Description;
+ bh=mmrCw93FsSgGVqkQGx3tY+c3DxJ3ErMGqt6cuZmQDk4=; b=3Xi9NJjkd4QPELIEMLqHm1+oJy
+ QNIOVPA8HW3kXP6XuZluim3h/1Z/sfwrG9QOzNRHgYq+vOXcblPYVWq7qnircmbeiJPJDVgOjWyzo
+ LbnhyHqo5AegY+fER/tKQShp8dh+Z/+/bv4xI3KoQiSpmxUAYDgP6p5vAe2pi77qFUU0ycsQEmV7V
+ 4gCVdOf3P+PueFWMrnvROKMoMz+u7SsILxSnayKbZrj37v0X+NhKaX7iej/SD3IFAsLN2XayGDdUC
+ G3y/vRbujnR04W/Op5jRENlRX4f86+/5+pwYqxdiQMmhYNN5AwTPrNqa/XDugttEtOweLL0X0YqO/
+ pQ84xrwQ==;
+Received: from mcgrof by bombadil.infradead.org with local (Exim 4.96 #2 (Red
+ Hat Linux)) id 1qFML8-004eW8-2f; Fri, 30 Jun 2023 22:11:42 +0000
+Date: Fri, 30 Jun 2023 15:11:42 -0700
+From: Luis Chamberlain <mcgrof@kernel.org>
+To: Steven Rostedt <rostedt@goodmis.org>,
+ Julia Lawall <julia.lawall@inria.fr>, Takashi Iwai <tiwai@suse.de>
+Message-ID: <ZJ9THiUlOUmm0xpD@bombadil.infradead.org>
+References: <20230621144507.55591-1-jlayton@kernel.org>
+ <20230621152141.5961cf5f@gandalf.local.home>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20230621152141.5961cf5f@gandalf.local.home>
+X-Spam-Score: -2.2 (--)
 X-Spam-Report: Spam detection software,
- running on the system "util-spamd-1.v13.lw.sourceforge.com", 
+ running on the system "util-spamd-2.v13.lw.sourceforge.com", 
  has NOT identified this incoming email as spam.  The original
  message has been attached to this so you can view it or label
  similar future email.  If you have any questions, see
  the administrator of that system for details.
- Content preview:  The pull request you sent on Tue, 27 Jun 2023 09:07:41 -0500:
- > git@github.com:kleikamp/linux-shaggy.git tags/jfs-6.5 has been merged into
- torvalds/linux.git:
- https://git.kernel.org/torvalds/c/b9d02c224d00a412d9c7fb1f92c358604038a783
- Content analysis details:   (-5.9 points, 6.0 required)
+ Content preview:  On Wed, Jun 21, 2023 at 03:21:41PM -0400,
+ Steven Rostedt wrote:
+ > On Wed, 21 Jun 2023 10:45:05 -0400 > Jeff Layton <jlayton@kernel.org> wrote:
+ > > > Most of this conversion was done via coccinelle, wi [...] 
+ Content analysis details:   (-2.2 points, 6.0 required)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [139.178.84.217 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [198.137.202.133 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid -0.7 DKIMWL_WL_HIGH         DKIMwl.org - High trust sender
-X-Headers-End: 1qEycH-0000ct-Sv
-Subject: Re: [Jfs-discussion] [GIT PULL] jfs updates for v6.5
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 T_SCC_BODY_TEXT_LINE   No description available.
+X-Headers-End: 1qFMPh-002Ugz-C0
+X-Mailman-Approved-At: Fri, 30 Jun 2023 22:28:06 +0000
+Subject: Re: [Jfs-discussion] [PATCH 00/79] fs: new accessors for
+ inode->i_ctime
 X-BeenThere: jfs-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -112,26 +100,154 @@ List-Post: <mailto:jfs-discussion@lists.sourceforge.net>
 List-Help: <mailto:jfs-discussion-request@lists.sourceforge.net?subject=help>
 List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/jfs-discussion>, 
  <mailto:jfs-discussion-request@lists.sourceforge.net?subject=subscribe>
-Cc: "jfs-discussion@lists.sourceforge.net"
- <jfs-discussion@lists.sourceforge.net>,
- Linus Torvalds <torvalds@linux-foundation.org>, linux-kernel@vger.kernel.org
-MIME-Version: 1.0
+Cc: Latchesar Ionkov <lucho@ionkov.net>,
+ "Rafael J. Wysocki" <rafael@kernel.org>, "Darrick J. Wong" <djwong@kernel.org>,
+ Anders Larsen <al@alarsen.net>, Carlos Llamas <cmllamas@google.com>,
+ Hugh Dickins <hughd@google.com>, John Johansen <john.johansen@canonical.com>,
+ Seth Forshee <sforshee@digitalocean.com>,
+ Alexander Gordeev <agordeev@linux.ibm.com>, Christoph Hellwig <hch@lst.de>,
+ Mike Marshall <hubcap@omnibond.com>, Paulo Alcantara <pc@manguebit.com>,
+ linux-xfs@vger.kernel.org, Bart Van Assche <bvanassche@acm.org>,
+ Michael Ellerman <mpe@ellerman.id.au>, John Keeping <john@keeping.me.uk>,
+ Zhang Yi <yi.zhang@huawei.com>, James Morris <jmorris@namei.org>,
+ Christophe Leroy <christophe.leroy@csgroup.eu>, Tyler Hicks <code@tyhicks.com>,
+ Alan Stern <stern@rowland.harvard.edu>,
+ Christian Borntraeger <borntraeger@linux.ibm.com>, devel@lists.orangefs.org,
+ Shyam Prasad N <sprasad@microsoft.com>, Jan Harkes <jaharkes@cs.cmu.edu>,
+ linux-um@lists.infradead.org, Nicholas Piggin <npiggin@gmail.com>,
+ Alexander Viro <viro@zeniv.linux.org.uk>,
+ Eric Van Hensbergen <ericvh@kernel.org>,
+ Suren Baghdasaryan <surenb@google.com>,
+ Trond Myklebust <trond.myklebust@hammerspace.com>,
+ Anton Altaparmakov <anton@tuxera.com>, Christian Brauner <brauner@kernel.org>,
+ Wolfram Sang <wsa+renesas@sang-engineering.com>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Stephen Smalley <stephen.smalley.work@gmail.com>, linux-usb@vger.kernel.org,
+ linux-kernel@vger.kernel.org, Ronnie Sahlberg <lsahlber@redhat.com>,
+ Sergey Senozhatsky <senozhatsky@chromium.org>,
+ Arve =?iso-8859-1?B?SGr4bm5lduVn?= <arve@android.com>,
+ Chuck Lever <chuck.lever@oracle.com>, Sven Schnelle <svens@linux.ibm.com>,
+ Jiri Olsa <jolsa@kernel.org>, Jan Kara <jack@suse.com>,
+ Tejun Heo <tj@kernel.org>, Andrew Morton <akpm@linux-foundation.org>,
+ linux-trace-kernel@vger.kernel.org, linux-hardening@vger.kernel.org,
+ Dave Kleikamp <shaggy@kernel.org>, Sandeep Dhavale <dhavale@google.com>,
+ Tetsuo Handa <penguin-kernel@i-love.sakura.ne.jp>,
+ samba-technical@lists.samba.org, Mimi Zohar <zohar@linux.ibm.com>,
+ linux-mm@kvack.org, Joel Fernandes <joel@joelfernandes.org>,
+ Eric Dumazet <edumazet@google.com>, Stanislav Fomichev <sdf@google.com>,
+ Andrzej Pietrasiewicz <andrzej.p@collabora.com>, Hangyu Hua <hbh25y@gmail.com>,
+ linux-s390@vger.kernel.org, linux-nilfs@vger.kernel.org,
+ Paul Moore <paul@paul-moore.com>, Leon Romanovsky <leon@kernel.org>,
+ John Fastabend <john.fastabend@gmail.com>, Andrii Nakryiko <andrii@kernel.org>,
+ Minghao Chi <chi.minghao@zte.com.cn>, codalist@coda.cs.cmu.edu,
+ selinux@vger.kernel.org, ZhangPeng <zhangpeng362@huawei.com>,
+ Udipto Goswami <quic_ugoswami@quicinc.com>, Yonghong Song <yhs@fb.com>,
+ Iurii Zaikin <yzaikin@google.com>, Namjae Jeon <linkinjeon@kernel.org>,
+ Masami Hiramatsu <mhiramat@kernel.org>, ecryptfs@vger.kernel.org,
+ Todd Kjos <tkjos@android.com>, Vasily Gorbik <gor@linux.ibm.com>,
+ Yu Zhe <yuzhe@nfschina.com>, linuxppc-dev@lists.ozlabs.org,
+ reiserfs-devel@vger.kernel.org, Miklos Szeredi <miklos@szeredi.hu>,
+ Yue Hu <huyue2@coolpad.com>, Jaegeuk Kim <jaegeuk@kernel.org>,
+ Aditya Garg <gargaditya08@live.com>, Martijn Coenen <maco@android.com>,
+ OGAWA Hirofumi <hirofumi@mail.parknet.co.jp>, Hao Luo <haoluo@google.com>,
+ Tony Luck <tony.luck@intel.com>, Theodore Ts'o <tytso@mit.edu>,
+ Nicolas Pitre <nico@fluxnic.net>, linux-ntfs-dev@lists.sourceforge.net,
+ Muchun Song <muchun.song@linux.dev>, Roberto Sassu <roberto.sassu@huawei.com>,
+ linux-f2fs-devel@lists.sourceforge.net,
+ "Guilherme G. Piccoli" <gpiccoli@igalia.com>,
+ Jozef Martiniak <jomajm@gmail.com>, Eric Biederman <ebiederm@xmission.com>,
+ Anna Schumaker <anna@kernel.org>, xu xin <cgel.zte@gmail.com>,
+ Brad Warrum <bwarrum@linux.ibm.com>, Mike Kravetz <mike.kravetz@oracle.com>,
+ Jingyu Wang <jingyuwang_vip@163.com>, linux-efi@vger.kernel.org,
+ Dan Carpenter <error27@gmail.com>, Martin Brandenburg <martin@omnibond.com>,
+ Tom Rix <trix@redhat.com>, Alexei Starovoitov <ast@kernel.org>,
+ Chris Mason <clm@fb.com>, linux-mtd@lists.infradead.org,
+ "Matthew Wilcox \(Oracle\)" <willy@infradead.org>,
+ Marc Dionne <marc.dionne@auristor.com>, linux-afs@lists.infradead.org,
+ Ian Kent <raven@themaw.net>, Naohiro Aota <naohiro.aota@wdc.com>,
+ Daniel Borkmann <daniel@iogearbox.net>,
+ Dennis Dalessandro <dennis.dalessandro@cornelisnetworks.com>,
+ linux-rdma@vger.kernel.org, Linyu Yuan <quic_linyyuan@quicinc.com>,
+ coda@cs.cmu.edu, Ilya Dryomov <idryomov@gmail.com>,
+ Paolo Abeni <pabeni@redhat.com>, Alexey Dobriyan <adobriyan@gmail.com>,
+ "Serge E. Hallyn" <serge@hallyn.com>, Zhihao Cheng <chengzhihao1@huawei.com>,
+ Jens Axboe <axboe@kernel.dk>, Zeng Jingxiang <linuszeng@tencent.com>,
+ Kees Cook <keescook@chromium.org>, Arnd Bergmann <arnd@arndb.de>,
+ autofs@vger.kernel.org, Yifei Liu <yifeliu@cs.stonybrook.edu>,
+ Damien Le Moal <dlemoal@kernel.org>, Eric Paris <eparis@parisplace.org>,
+ ceph-devel@vger.kernel.org, Gao Xiang <xiang@kernel.org>,
+ Jiangshan Yi <yijiangshan@kylinos.cn>, David Howells <dhowells@redhat.com>,
+ linux-nfs@vger.kernel.org, linux-ext4@vger.kernel.org,
+ Song Liu <song@kernel.org>, Jeff Layton <jlayton@kernel.org>,
+ Steve French <sfrench@samba.org>, Jeremy Kerr <jk@ozlabs.org>,
+ netdev@vger.kernel.org, Bob Peterson <rpeterso@redhat.com>,
+ linux-fsdevel@vger.kernel.org, bpf@vger.kernel.org, ntfs3@lists.linux.dev,
+ linux-erofs@lists.ozlabs.org, "David S. Miller" <davem@davemloft.net>,
+ ocfs2-devel@oss.oracle.com, jfs-discussion@lists.sourceforge.net,
+ Dominique Martinet <asmadeus@codewreck.org>,
+ Christian Schoenebeck <linux_oss@crudebyte.com>,
+ Bob Copeland <me@bobcopeland.com>, KP Singh <kpsingh@kernel.org>,
+ Oleg Kanatov <okanatov@gmail.com>,
+ Konstantin Komarov <almaz.alexandrovich@paragon-software.com>,
+ Joseph Qi <joseph.qi@linux.alibaba.com>, Yuta Hayama <hayama@lineo.co.jp>,
+ Andreas Dilger <adilger.kernel@dilger.ca>,
+ Mikulas Patocka <mikulas@artax.karlin.mff.cuni.cz>,
+ Zhengchao Shao <shaozhengchao@huawei.com>,
+ Chen Zhongjin <chenzhongjin@huawei.com>, Ard Biesheuvel <ardb@kernel.org>,
+ Anton Ivanov <anton.ivanov@cambridgegreys.com>,
+ Laurent Pinchart <laurent.pinchart+renesas@ideasonboard.com>,
+ Andreas Gruenbacher <agruenba@redhat.com>, Richard Weinberger <richard@nod.at>,
+ Mark Fasheh <mark@fasheh.com>, Stefan Roesch <shr@devkernel.io>,
+ cluster-devel@redhat.com, Jason Gunthorpe <jgg@ziepe.ca>,
+ Jakub Kicinski <kuba@kernel.org>, Rik van Riel <riel@surriel.com>,
+ Salah Triki <salah.triki@gmail.com>, Evgeniy Dushistov <dushistov@mail.ru>,
+ linux-cifs@vger.kernel.org, Heiko Carstens <hca@linux.ibm.com>,
+ Chao Yu <chao@kernel.org>, apparmor@lists.ubuntu.com,
+ Josef Bacik <josef@toxicpanda.com>,
+ "Liam R. Howlett" <Liam.Howlett@oracle.com>, Tom Talpey <tom@talpey.com>,
+ Hans de Goede <hdegoede@redhat.com>,
+ "Tigran A. Aivazian" <aivazian.tigran@gmail.com>,
+ Dave Chinner <dchinner@redhat.com>, David Sterba <dsterba@suse.com>,
+ Xiubo Li <xiubli@redhat.com>, Ryusuke Konishi <konishi.ryusuke@gmail.com>,
+ Juergen Gross <jgross@suse.com>, Johannes Thumshirn <jth@kernel.org>,
+ Ritu Agarwal <rituagar@linux.ibm.com>, Luis de Bethencourt <luisbg@kernel.org>,
+ Martin KaFai Lau <martin.lau@linux.dev>, v9fs@lists.linux.dev,
+ "Fabio M. De Francesco" <fmdefrancesco@gmail.com>,
+ linux-unionfs@vger.kernel.org, Ruihan Li <lrh2000@pku.edu.cn>,
+ linux-security-module@vger.kernel.org, Erez Zadok <ezk@cs.stonybrook.edu>,
+ Jeffle Xu <jefflexu@linux.alibaba.com>,
+ "Dr. David Alan Gilbert" <linux@treblig.org>,
+ Johannes Weiner <hannes@cmpxchg.org>,
+ Phillip Lougher <phillip@squashfs.org.uk>,
+ Johannes Berg <johannes@sipsolutions.net>,
+ Sungjong Seo <sj1557.seo@samsung.com>, David Woodhouse <dwmw2@infradead.org>,
+ linux-karma-devel@lists.sourceforge.net, linux-btrfs@vger.kernel.org,
+ Joel Becker <jlbec@evilplan.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Errors-To: jfs-discussion-bounces@lists.sourceforge.net
 
-The pull request you sent on Tue, 27 Jun 2023 09:07:41 -0500:
+On Wed, Jun 21, 2023 at 03:21:41PM -0400, Steven Rostedt wrote:
+> On Wed, 21 Jun 2023 10:45:05 -0400
+> Jeff Layton <jlayton@kernel.org> wrote:
+> 
+> > Most of this conversion was done via coccinelle, with a few of the more
+> > non-standard accesses done by hand. There should be no behavioral
+> > changes with this set. That will come later, as we convert individual
+> > filesystems to use multigrain timestamps.
+> 
+> BTW, Linus has suggested to me that whenever a conccinelle script is used,
+> it should be included in the change log.
 
-> git@github.com:kleikamp/linux-shaggy.git tags/jfs-6.5
+Sometimes people like the coccinelle included in the commit, sometimes
+people don't [0], it really ends up being up to a subjective maintainer
+preference. A compromise could be to use git notes as these are
+optional, however if we want to go down that path we should try to make
+a general consensus on it so we can send a consistent message.
 
-has been merged into torvalds/linux.git:
-https://git.kernel.org/torvalds/c/b9d02c224d00a412d9c7fb1f92c358604038a783
+[0] https://lore.kernel.org/all/20230512073100.GC32559@twin.jikos.cz/
 
-Thank you!
-
--- 
-Deet-doot-dot, I am a bot.
-https://korg.docs.kernel.org/prtracker.html
+  Luis
 
 
 _______________________________________________
