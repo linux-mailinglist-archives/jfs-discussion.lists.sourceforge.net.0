@@ -2,90 +2,124 @@ Return-Path: <jfs-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+jfs-discussion@lfdr.de
 Delivered-To: lists+jfs-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3A0B67444D0
-	for <lists+jfs-discussion@lfdr.de>; Sat,  1 Jul 2023 00:28:29 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id DC0DE744E14
+	for <lists+jfs-discussion@lfdr.de>; Sun,  2 Jul 2023 16:27:24 +0200 (CEST)
 Received: from [127.0.0.1] (helo=sfs-ml-3.v29.lw.sourceforge.com)
 	by sfs-ml-3.v29.lw.sourceforge.com with esmtp (Exim 4.95)
 	(envelope-from <jfs-discussion-bounces@lists.sourceforge.net>)
-	id 1qFMb0-0007Ee-QU;
-	Fri, 30 Jun 2023 22:28:07 +0000
+	id 1qFy2X-0005kt-Ie;
+	Sun, 02 Jul 2023 14:27:01 +0000
 Received: from [172.30.20.202] (helo=mx.sourceforge.net)
  by sfs-ml-2.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
  TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (Exim 4.95)
- (envelope-from <mcgrof@infradead.org>) id 1qFMPj-00044l-Qx;
- Fri, 30 Jun 2023 22:16:29 +0000
+ (envelope-from <andrew.kanner@gmail.com>) id 1qFbF0-0002q8-FP
+ for jfs-discussion@lists.sourceforge.net;
+ Sat, 01 Jul 2023 14:06:22 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=sourceforge.net; s=x; h=Sender:In-Reply-To:Content-Type:MIME-Version:
- References:Message-ID:Subject:Cc:To:From:Date:Reply-To:
- Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
- Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
- List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=lAGAJ28n1AlcMoZYeCm9uRz7rvcCocSlQtZJp9kS4hM=; b=WxwDzoEgo8EA7vJE67drmDyj5M
- edkfno35J7O3Rec+SCHYVOlsz91cbj3zc3HndvUGCrk9m+hahiMg2MHKrxFsBVL/o0oqzn7YOM8ZJ
- swV/KEMwXM3K9gkocMvCjw9J4u5bayWfpMkPdETZ/O9zuPU8CF0ABpqlSAe7Ts6VJdrA=;
+ d=sourceforge.net; s=x; h=Content-Transfer-Encoding:MIME-Version:References:
+ In-Reply-To:Message-Id:Date:Subject:Cc:To:From:Sender:Reply-To:Content-Type:
+ Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
+ Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
+ List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=r/GvNDtCln3mttOJGf/TOdwCpXEhlkTWnrJx4RvWdwM=; b=QWQaDjtVlAZUFtTSr9EtYk82gt
+ BF3qZzzSM+R0OefGQLUH906MNxs+SwqfoCJPRlJmmjursTv4D7K7fmDcxkISpaMAcYlp/GooCiyP/
+ KtYGlC/+Z1eoFDQDFqUhQqevLVkgMOuWR8orhyIbJc1oX6i6llhomATQzPPyikcQ/Qxc=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
- h=Sender:In-Reply-To:Content-Type:MIME-Version:References:Message-ID:
- Subject:Cc:To:From:Date:Reply-To:Content-Transfer-Encoding:Content-ID:
+ h=Content-Transfer-Encoding:MIME-Version:References:In-Reply-To:Message-Id:
+ Date:Subject:Cc:To:From:Sender:Reply-To:Content-Type:Content-ID:
  Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
  :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
  List-Post:List-Owner:List-Archive;
- bh=lAGAJ28n1AlcMoZYeCm9uRz7rvcCocSlQtZJp9kS4hM=; b=nS8hMEXpuvxRrSd7TOLWYTHWqf
- Uirq9eOW/gtWeXWDTnFgjWvM/zR1m8WPQr2+DBFOjfEjDxfzMroQ7xnjdc3/JI8UG9LVnku2Vonj2
- X4yLbUpuJqADLXZwibetW/nEUNICjDUD2QN3x/xT2OuXw9Wx/sJnXfSIpMfwKkEpo2OY=;
-Received: from bombadil.infradead.org ([198.137.202.133])
+ bh=r/GvNDtCln3mttOJGf/TOdwCpXEhlkTWnrJx4RvWdwM=; b=er4LaEpwvCGcMEITJLDlxlNonA
+ 7nC5fimKrkSVOgtcP+ogdXyFTtqeWjreN8jy89TnPr5A9GBHaKtsxcsIvJeLNK4vw6NNvVYy5fyc7
+ b7Bmeah6YO4htE6aZBH+ETVo4D/0nWQKVLvXLpE0OLZXCHRxUQqbjatKrY7YQQl5Q2Xg=;
+Received: from mail-lf1-f46.google.com ([209.85.167.46])
  by sfi-mx-2.v28.lw.sourceforge.com with esmtps
- (TLS1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.95)
- id 1qFMPg-0007nE-LP; Fri, 30 Jun 2023 22:16:27 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=infradead.org; s=bombadil.20210309; h=Sender:In-Reply-To:Content-Type:
- MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Reply-To:
- Content-Transfer-Encoding:Content-ID:Content-Description;
- bh=lAGAJ28n1AlcMoZYeCm9uRz7rvcCocSlQtZJp9kS4hM=; b=MDK5OMbWDIQ7k5BUsVfTTCeUKK
- ykHg2ksytfiKty5DqeoojsJgI19pnpO3bU4G0Nu4GjG2hEs2ZxnYXR7D6/oVlp5Pe2D5JneqmFcdb
- aqUSSmtLLmtBD1hqWecPq0g6kKIyzG4SS3mQ1IFdkZFT8q1yIbLznGNVCRFkmuvgVZewrQL+j94VD
- WaM6JFD5ZLKSStA4y0A2mjB/5tQW5fCKp810bYosB6+mCMAVZBJndIY7cGkKy5/JBuK2Tl+F43Ugr
- 599NI5n1vZXoqkj6Re0aIa5xI5fj+j2Mg09LQQtRQAZLHqXoNHWcWfm/2CAipcBnuw9FG3zZ4Gpbp
- XVBvS0Ww==;
-Received: from mcgrof by bombadil.infradead.org with local (Exim 4.96 #2 (Red
- Hat Linux)) id 1qFMM7-004egi-0d; Fri, 30 Jun 2023 22:12:43 +0000
-Date: Fri, 30 Jun 2023 15:12:43 -0700
-From: Luis Chamberlain <mcgrof@kernel.org>
-To: Jeff Layton <jlayton@kernel.org>
-Message-ID: <ZJ9TW9MQmlqmbRU/@bombadil.infradead.org>
-References: <20230621144507.55591-1-jlayton@kernel.org>
- <20230621144507.55591-2-jlayton@kernel.org>
+ (TLS1.2:ECDHE-RSA-AES128-GCM-SHA256:128) (Exim 4.95)
+ id 1qFbEx-0007dX-4T for jfs-discussion@lists.sourceforge.net;
+ Sat, 01 Jul 2023 14:06:22 +0000
+Received: by mail-lf1-f46.google.com with SMTP id
+ 2adb3069b0e04-4f875b267d9so4687863e87.1
+ for <jfs-discussion@lists.sourceforge.net>;
+ Sat, 01 Jul 2023 07:06:19 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=gmail.com; s=20221208; t=1688220372; x=1690812372;
+ h=content-transfer-encoding:mime-version:references:in-reply-to
+ :message-id:date:subject:cc:to:from:from:to:cc:subject:date
+ :message-id:reply-to;
+ bh=r/GvNDtCln3mttOJGf/TOdwCpXEhlkTWnrJx4RvWdwM=;
+ b=Ks+QnT+fLgC0REedKsq6ZYblXr0OPOIYcR3pxSB4RldP8BK+6Ao6RFi62cO4CzInVQ
+ cF/wFA4tt56MB5ejw27Tcg5x4Em+0EPBcZnDPGRmOg4apbbLXi/SkJh07g3dPNTNntxD
+ yOKhawX9C+aNnFdy9BZDAGfOUQYIyD977YCVbJyTMKJSN7Wb3R09OqeSICnsqt3nchhG
+ IAi+sH/2Krg04SpnuF8Hc07yXhol7tRdinOv8BtxHfZBaBEODDY/yxCU8s6TWTM42t4r
+ /T8vXz0THeG/90v7SEynhu9a8J9BfObVMP0CTm3N8rDFGFI519AGaZEeFyvCR7rYyAyh
+ 0VsQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20221208; t=1688220372; x=1690812372;
+ h=content-transfer-encoding:mime-version:references:in-reply-to
+ :message-id:date:subject:cc:to:from:x-gm-message-state:from:to:cc
+ :subject:date:message-id:reply-to;
+ bh=r/GvNDtCln3mttOJGf/TOdwCpXEhlkTWnrJx4RvWdwM=;
+ b=UJD4N5dUAn1W+wUTRx3M8oGazenC2UjgltJ4IhoQlkgy/7D/pGo3wts+rQSDWiWseT
+ tj6aNnQ3wOrgVZsokDFldAkqEzx59MyiXGcNz7/BQi66NwC3a4IgPByav2sEyAgOUz3g
+ jruJOG/ugHUdvjIkDBxnt8WKtXeuSVpz4b2n08dkwQYLjbak5NXXE237HyF6Efm6ngyf
+ UZAugdoAxsf5MvywZ5jERkNNllBjAcHrBkmVQpzJy7tDBbU7HbdL8V6aWjLNIaPRBTvk
+ B+kveYZ54mqB8zNge1tKueoY2hlYIOEE7py/7yPTDMrljglXzb7q6oB8vfsVbLn5wZ1w
+ JJ6Q==
+X-Gm-Message-State: ABy/qLYBE75zQXzsWl1B0N5DKu7ZQTI2a/fnYyAkyIxT9RDBSlTOAzIr
+ F9w9LjdgEr1FN4ZsQVkX9QA=
+X-Google-Smtp-Source: APBJJlFR96QDw3TIO2gO0LlFDT9R6vIjC9Z0ojQV9hS+B6DNsisw0F85A1+B+HGvx1G6ukQSMJileA==
+X-Received: by 2002:a05:6512:34c9:b0:4fb:820a:f87f with SMTP id
+ w9-20020a05651234c900b004fb820af87fmr3870098lfr.10.1688220372178; 
+ Sat, 01 Jul 2023 07:06:12 -0700 (PDT)
+Received: from localhost.localdomain ([77.222.24.81])
+ by smtp.gmail.com with ESMTPSA id
+ q2-20020ac25a02000000b004f122a378d4sm3426174lfn.163.2023.07.01.07.06.10
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Sat, 01 Jul 2023 07:06:11 -0700 (PDT)
+From: Andrew Kanner <andrew.kanner@gmail.com>
+To: shaggy@kernel.org, jfs-discussion@lists.sourceforge.net,
+ linux-kernel@vger.kernel.org
+Date: Sat,  1 Jul 2023 17:05:41 +0300
+Message-Id: <20230701140542.2252-1-andrew.kanner@gmail.com>
+X-Mailer: git-send-email 2.39.3
+In-Reply-To: <20221201124628.603505-1-liushixin2@huawei.com>
+References: <20221201124628.603505-1-liushixin2@huawei.com>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20230621144507.55591-2-jlayton@kernel.org>
-X-Spam-Score: -2.1 (--)
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: Spam detection software,
  running on the system "util-spamd-1.v13.lw.sourceforge.com", 
  has NOT identified this incoming email as spam.  The original
  message has been attached to this so you can view it or label
  similar future email.  If you have any questions, see
  the administrator of that system for details.
- Content preview:  On Wed, Jun 21, 2023 at 10:45:06AM -0400, Jeff Layton wrote:
- > struct timespec64 has unused bits in the tv_nsec field that can be used
- > for other purposes. In future patches, we're going to change ho [...] 
- Content analysis details:   (-2.1 points, 6.0 required)
+ Content preview:  +Tested-by: Andrew Kanner for The next change complements
+ the patch from Liu Shixin (see above). Two patches for fs/jfs/jfs_{imap,
+ dmap}.c fix syzkaller issues: Link:
+ https://syzkaller.appspot.com/bug?extid=9f06ddd18bf059dff2ad
+ Lin [...] 
+ Content analysis details:   (-0.2 points, 6.0 required)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [198.137.202.133 listed in list.dnswl.org]
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.167.46 listed in list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [andrew.kanner[at]gmail.com]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
-X-Headers-End: 1qFMPg-0007nE-LP
-X-Mailman-Approved-At: Fri, 30 Jun 2023 22:28:06 +0000
-Subject: Re: [Jfs-discussion] [PATCH 01/79] fs: add ctime accessors
- infrastructure
+ valid -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.167.46 listed in wl.mailspike.net]
+X-Headers-End: 1qFbEx-0007dX-4T
+X-Mailman-Approved-At: Sun, 02 Jul 2023 14:27:01 +0000
+Subject: [Jfs-discussion] [PATCH 0/1] fs/jfs: fix KASAN double-free warnings
+ after failed jfs_remount()
 X-BeenThere: jfs-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -97,148 +131,37 @@ List-Post: <mailto:jfs-discussion@lists.sourceforge.net>
 List-Help: <mailto:jfs-discussion-request@lists.sourceforge.net?subject=help>
 List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/jfs-discussion>, 
  <mailto:jfs-discussion-request@lists.sourceforge.net?subject=subscribe>
-Cc: Latchesar Ionkov <lucho@ionkov.net>,
- "Rafael J. Wysocki" <rafael@kernel.org>, "Darrick J. Wong" <djwong@kernel.org>,
- Anders Larsen <al@alarsen.net>, Carlos Llamas <cmllamas@google.com>,
- Hugh Dickins <hughd@google.com>, John Johansen <john.johansen@canonical.com>,
- Seth Forshee <sforshee@digitalocean.com>,
- Alexander Gordeev <agordeev@linux.ibm.com>, Christoph Hellwig <hch@lst.de>,
- Mike Marshall <hubcap@omnibond.com>, Paulo Alcantara <pc@manguebit.com>,
- linux-xfs@vger.kernel.org, Bart Van Assche <bvanassche@acm.org>,
- Michael Ellerman <mpe@ellerman.id.au>, John Keeping <john@keeping.me.uk>,
- Zhang Yi <yi.zhang@huawei.com>, James Morris <jmorris@namei.org>,
- Christophe Leroy <christophe.leroy@csgroup.eu>, Tyler Hicks <code@tyhicks.com>,
- Alan Stern <stern@rowland.harvard.edu>,
- Christian Borntraeger <borntraeger@linux.ibm.com>, devel@lists.orangefs.org,
- Shyam Prasad N <sprasad@microsoft.com>, Jan Harkes <jaharkes@cs.cmu.edu>,
- linux-um@lists.infradead.org, Nicholas Piggin <npiggin@gmail.com>,
- Alexander Viro <viro@zeniv.linux.org.uk>,
- Eric Van Hensbergen <ericvh@kernel.org>,
- Suren Baghdasaryan <surenb@google.com>,
- Trond Myklebust <trond.myklebust@hammerspace.com>,
- Anton Altaparmakov <anton@tuxera.com>, Christian Brauner <brauner@kernel.org>,
- Wolfram Sang <wsa+renesas@sang-engineering.com>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Stephen Smalley <stephen.smalley.work@gmail.com>, linux-usb@vger.kernel.org,
- linux-kernel@vger.kernel.org, Ronnie Sahlberg <lsahlber@redhat.com>,
- Sergey Senozhatsky <senozhatsky@chromium.org>,
- Arve =?iso-8859-1?B?SGr4bm5lduVn?= <arve@android.com>,
- Chuck Lever <chuck.lever@oracle.com>, Sven Schnelle <svens@linux.ibm.com>,
- Jiri Olsa <jolsa@kernel.org>, Jan Kara <jack@suse.com>,
- Tejun Heo <tj@kernel.org>, Andrew Morton <akpm@linux-foundation.org>,
- linux-trace-kernel@vger.kernel.org, linux-hardening@vger.kernel.org,
- Dave Kleikamp <shaggy@kernel.org>, Sandeep Dhavale <dhavale@google.com>,
- Tetsuo Handa <penguin-kernel@i-love.sakura.ne.jp>,
- Mimi Zohar <zohar@linux.ibm.com>, linux-mm@kvack.org,
- Joel Fernandes <joel@joelfernandes.org>, Eric Dumazet <edumazet@google.com>,
- Stanislav Fomichev <sdf@google.com>,
- Andrzej Pietrasiewicz <andrzej.p@collabora.com>, Hangyu Hua <hbh25y@gmail.com>,
- linux-s390@vger.kernel.org, linux-nilfs@vger.kernel.org,
- Paul Moore <paul@paul-moore.com>, Leon Romanovsky <leon@kernel.org>,
- John Fastabend <john.fastabend@gmail.com>, Andrii Nakryiko <andrii@kernel.org>,
- Minghao Chi <chi.minghao@zte.com.cn>, codalist@coda.cs.cmu.edu,
- selinux@vger.kernel.org, ZhangPeng <zhangpeng362@huawei.com>,
- Udipto Goswami <quic_ugoswami@quicinc.com>, Yonghong Song <yhs@fb.com>,
- Iurii Zaikin <yzaikin@google.com>, Namjae Jeon <linkinjeon@kernel.org>,
- Masami Hiramatsu <mhiramat@kernel.org>, ecryptfs@vger.kernel.org,
- Todd Kjos <tkjos@android.com>, Vasily Gorbik <gor@linux.ibm.com>,
- Yu Zhe <yuzhe@nfschina.com>, linuxppc-dev@lists.ozlabs.org,
- reiserfs-devel@vger.kernel.org, Miklos Szeredi <miklos@szeredi.hu>,
- Yue Hu <huyue2@coolpad.com>, Jaegeuk Kim <jaegeuk@kernel.org>,
- Aditya Garg <gargaditya08@live.com>, Martijn Coenen <maco@android.com>,
- OGAWA Hirofumi <hirofumi@mail.parknet.co.jp>, Hao Luo <haoluo@google.com>,
- Tony Luck <tony.luck@intel.com>, Theodore Ts'o <tytso@mit.edu>,
- Nicolas Pitre <nico@fluxnic.net>, linux-ntfs-dev@lists.sourceforge.net,
- Muchun Song <muchun.song@linux.dev>, Roberto Sassu <roberto.sassu@huawei.com>,
- linux-f2fs-devel@lists.sourceforge.net,
- "Guilherme G. Piccoli" <gpiccoli@igalia.com>,
- Jozef Martiniak <jomajm@gmail.com>, Eric Biederman <ebiederm@xmission.com>,
- Anna Schumaker <anna@kernel.org>, xu xin <cgel.zte@gmail.com>,
- Brad Warrum <bwarrum@linux.ibm.com>, Mike Kravetz <mike.kravetz@oracle.com>,
- Jingyu Wang <jingyuwang_vip@163.com>, linux-efi@vger.kernel.org,
- Dan Carpenter <error27@gmail.com>, Martin Brandenburg <martin@omnibond.com>,
- Tom Rix <trix@redhat.com>, Alexei Starovoitov <ast@kernel.org>,
- Chris Mason <clm@fb.com>, linux-mtd@lists.infradead.org,
- "Matthew Wilcox \(Oracle\)" <willy@infradead.org>,
- Marc Dionne <marc.dionne@auristor.com>, linux-afs@lists.infradead.org,
- Ian Kent <raven@themaw.net>, Naohiro Aota <naohiro.aota@wdc.com>,
- Daniel Borkmann <daniel@iogearbox.net>,
- Dennis Dalessandro <dennis.dalessandro@cornelisnetworks.com>,
- linux-rdma@vger.kernel.org, Linyu Yuan <quic_linyyuan@quicinc.com>,
- coda@cs.cmu.edu, Ilya Dryomov <idryomov@gmail.com>,
- Paolo Abeni <pabeni@redhat.com>, Alexey Dobriyan <adobriyan@gmail.com>,
- "Serge E. Hallyn" <serge@hallyn.com>, Zhihao Cheng <chengzhihao1@huawei.com>,
- Jens Axboe <axboe@kernel.dk>, Zeng Jingxiang <linuszeng@tencent.com>,
- Kees Cook <keescook@chromium.org>, Arnd Bergmann <arnd@arndb.de>,
- autofs@vger.kernel.org, Steven Rostedt <rostedt@goodmis.org>,
- Yifei Liu <yifeliu@cs.stonybrook.edu>, Damien Le Moal <dlemoal@kernel.org>,
- Eric Paris <eparis@parisplace.org>, ceph-devel@vger.kernel.org,
- Gao Xiang <xiang@kernel.org>, Jiangshan Yi <yijiangshan@kylinos.cn>,
- David Howells <dhowells@redhat.com>, linux-nfs@vger.kernel.org,
- linux-ext4@vger.kernel.org, Song Liu <song@kernel.org>,
- samba-technical@lists.samba.org, Steve French <sfrench@samba.org>,
- Jeremy Kerr <jk@ozlabs.org>, netdev@vger.kernel.org,
- Bob Peterson <rpeterso@redhat.com>, linux-fsdevel@vger.kernel.org,
- bpf@vger.kernel.org, ntfs3@lists.linux.dev, linux-erofs@lists.ozlabs.org,
- "David S. Miller" <davem@davemloft.net>, ocfs2-devel@oss.oracle.com,
- jfs-discussion@lists.sourceforge.net,
- Dominique Martinet <asmadeus@codewreck.org>,
- Christian Schoenebeck <linux_oss@crudebyte.com>,
- Bob Copeland <me@bobcopeland.com>, KP Singh <kpsingh@kernel.org>,
- Oleg Kanatov <okanatov@gmail.com>,
- Konstantin Komarov <almaz.alexandrovich@paragon-software.com>,
- Joseph Qi <joseph.qi@linux.alibaba.com>, Yuta Hayama <hayama@lineo.co.jp>,
- Andreas Dilger <adilger.kernel@dilger.ca>,
- Mikulas Patocka <mikulas@artax.karlin.mff.cuni.cz>,
- Zhengchao Shao <shaozhengchao@huawei.com>,
- Chen Zhongjin <chenzhongjin@huawei.com>, Ard Biesheuvel <ardb@kernel.org>,
- Anton Ivanov <anton.ivanov@cambridgegreys.com>,
- Laurent Pinchart <laurent.pinchart+renesas@ideasonboard.com>,
- Andreas Gruenbacher <agruenba@redhat.com>, Richard Weinberger <richard@nod.at>,
- Mark Fasheh <mark@fasheh.com>, Stefan Roesch <shr@devkernel.io>,
- cluster-devel@redhat.com, Jason Gunthorpe <jgg@ziepe.ca>,
- Jakub Kicinski <kuba@kernel.org>, Rik van Riel <riel@surriel.com>,
- Salah Triki <salah.triki@gmail.com>, Evgeniy Dushistov <dushistov@mail.ru>,
- linux-cifs@vger.kernel.org, Heiko Carstens <hca@linux.ibm.com>,
- Chao Yu <chao@kernel.org>, apparmor@lists.ubuntu.com,
- Josef Bacik <josef@toxicpanda.com>,
- "Liam R. Howlett" <Liam.Howlett@oracle.com>, Tom Talpey <tom@talpey.com>,
- Hans de Goede <hdegoede@redhat.com>,
- "Tigran A. Aivazian" <aivazian.tigran@gmail.com>,
- Dave Chinner <dchinner@redhat.com>, David Sterba <dsterba@suse.com>,
- Xiubo Li <xiubli@redhat.com>, Ryusuke Konishi <konishi.ryusuke@gmail.com>,
- Juergen Gross <jgross@suse.com>, Johannes Thumshirn <jth@kernel.org>,
- Ritu Agarwal <rituagar@linux.ibm.com>, Luis de Bethencourt <luisbg@kernel.org>,
- Martin KaFai Lau <martin.lau@linux.dev>, v9fs@lists.linux.dev,
- "Fabio M. De Francesco" <fmdefrancesco@gmail.com>,
- linux-unionfs@vger.kernel.org, Ruihan Li <lrh2000@pku.edu.cn>,
- linux-security-module@vger.kernel.org, Erez Zadok <ezk@cs.stonybrook.edu>,
- Jeffle Xu <jefflexu@linux.alibaba.com>,
- "Dr. David Alan Gilbert" <linux@treblig.org>,
- Johannes Weiner <hannes@cmpxchg.org>,
- Phillip Lougher <phillip@squashfs.org.uk>,
- Johannes Berg <johannes@sipsolutions.net>,
- Sungjong Seo <sj1557.seo@samsung.com>, David Woodhouse <dwmw2@infradead.org>,
- linux-karma-devel@lists.sourceforge.net, linux-btrfs@vger.kernel.org,
- Joel Becker <jlbec@evilplan.org>
+Cc: Andrew Kanner <andrew.kanner@gmail.com>,
+ linux-kernel-mentees@lists.linuxfoundation.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Errors-To: jfs-discussion-bounces@lists.sourceforge.net
 
-On Wed, Jun 21, 2023 at 10:45:06AM -0400, Jeff Layton wrote:
-> struct timespec64 has unused bits in the tv_nsec field that can be used
-> for other purposes. In future patches, we're going to change how the
-> inode->i_ctime is accessed in certain inodes in order to make use of
-> them. In order to do that safely though, we'll need to eradicate raw
-> accesses of the inode->i_ctime field from the kernel.
-> 
-> Add new accessor functions for the ctime that we can use to replace them.
-> 
-> Signed-off-by: Jeff Layton <jlayton@kernel.org>
++Tested-by: Andrew Kanner <andrew.kanner@gmail.com>
+for https://lore.kernel.org/all/20221201124628.603505-1-liushixin2@huawei.com/T/
 
-Reviewed-by: Luis Chamberlain <mcgrof@kernel.org>
+The next change complements the patch from Liu Shixin (see above).
+Two patches for fs/jfs/jfs_{imap,dmap}.c fix syzkaller issues:
+Link: https://syzkaller.appspot.com/bug?extid=9f06ddd18bf059dff2ad
+Link: https://syzkaller.appspot.com/bug?extid=6a93efb725385bc4b2e9
+Link: https://syzkaller.appspot.com/bug?extid=90a11e6b1e810785c6ff
+Link: https://syzkaller.appspot.com/bug?extid=47366a6b503c7edf6bbb
+And Similar bugs from the other branches:
+Link: https://syzkaller.appspot.com/bug?extid=cfff8c52c283dd09bf27
+Link: https://syzkaller.appspot.com/bug?extid=e8f9034a130a66a2b351
+Link: https://syzkaller.appspot.com/bug?extid=5c604c1cc148275ab8a6
+Link: https://syzkaller.appspot.com/bug?extid=ea731a6641531af62f80
+Link: https://syzkaller.appspot.com/bug?extid=b212249c28280daa4576
 
-  Luis
+Andrew Kanner (1):
+  fs/jfs: prevent double-free in dbUnmount() after failed jfs_remount()
+
+ fs/jfs/jfs_dmap.c | 1 +
+ 1 file changed, 1 insertion(+)
+
+-- 
+2.39.3
+
 
 
 _______________________________________________
