@@ -2,112 +2,211 @@ Return-Path: <jfs-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+jfs-discussion@lfdr.de
 Delivered-To: lists+jfs-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id C478B7484A6
-	for <lists+jfs-discussion@lfdr.de>; Wed,  5 Jul 2023 15:08:47 +0200 (CEST)
-Received: from [127.0.0.1] (helo=sfs-ml-4.v29.lw.sourceforge.com)
-	by sfs-ml-4.v29.lw.sourceforge.com with esmtp (Exim 4.95)
+	by mail.lfdr.de (Postfix) with ESMTPS id BD4EA7487A8
+	for <lists+jfs-discussion@lfdr.de>; Wed,  5 Jul 2023 17:17:57 +0200 (CEST)
+Received: from [127.0.0.1] (helo=sfs-ml-1.v29.lw.sourceforge.com)
+	by sfs-ml-1.v29.lw.sourceforge.com with esmtp (Exim 4.95)
 	(envelope-from <jfs-discussion-bounces@lists.sourceforge.net>)
-	id 1qH2FA-0006AT-5b;
-	Wed, 05 Jul 2023 13:08:28 +0000
+	id 1qH4G9-0003wW-LR;
+	Wed, 05 Jul 2023 15:17:38 +0000
 Received: from [172.30.20.202] (helo=mx.sourceforge.net)
  by sfs-ml-1.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
  TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (Exim 4.95)
- (envelope-from <jack@suse.cz>) id 1qGzdo-0006YN-Iz;
- Wed, 05 Jul 2023 10:21:45 +0000
+ (envelope-from <dave.kleikamp@oracle.com>) id 1qH4G6-0003wQ-Vb
+ for jfs-discussion@lists.sourceforge.net;
+ Wed, 05 Jul 2023 15:17:36 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=sourceforge.net; s=x; h=In-Reply-To:Content-Type:MIME-Version:References:
- Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:Content-Transfer-Encoding:
+ d=sourceforge.net; s=x; h=MIME-Version:Content-Transfer-Encoding:Content-Type
+ :In-Reply-To:From:References:Cc:To:Subject:Date:Message-ID:Sender:Reply-To:
  Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
  Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=qqER76PXnxWxMVZH46uY+IP0A7ISNxa4dFOpqm8Npig=; b=YESYyi2YImhhK2rtlqSwcOAUkW
- Css5htVzx/sRtPRvV7jvJo3U6IjLb+6NWnx6AvoffgAhXWbVF9tuK/BI/VfcYhzWA6wsrzdVZNrJw
- JHolFQ7DeD9VD4onTtFTw+PsoMftkxGherScja5t0EyyvoVM3llcOtWQ3nRdmPvMYNsw=;
+ bh=k2bJ938nudHyRKAShPZjcfDPGQbFlYLFYXl6qIc8ZPM=; b=nEnFAb4ewHAdMZX6Btlm9INf0U
+ jp6hZYhWshNciG2/PRgNM+BsmQ9ed1dR5XbljJt76qZPcB9QIFDWOdux/WaMPRqhkYBJ+C3zel/vs
+ d/SurX1xWudw4/vWXx5xq6d7exUSIBmuYqgsaEHtInuBTq5G0P8yLSJ/M3eblpywEkX4=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
- h=In-Reply-To:Content-Type:MIME-Version:References:Message-ID:Subject:Cc:To
- :From:Date:Sender:Reply-To:Content-Transfer-Encoding:Content-ID:
+ h=MIME-Version:Content-Transfer-Encoding:Content-Type:In-Reply-To:From:
+ References:Cc:To:Subject:Date:Message-ID:Sender:Reply-To:Content-ID:
  Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
  :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
  List-Post:List-Owner:List-Archive;
- bh=qqER76PXnxWxMVZH46uY+IP0A7ISNxa4dFOpqm8Npig=; b=KeoBifEIJ4VDW/fkTSI3SeGipG
- v9HEYkCjjy8f8VgGiBwvKk9DmE6WizKJUjntyUerPOTRh51V2hA0aiOw+z4BLsVof1YqfEF07TtZy
- 4gu1SvoHafnqDbpRUCnvTxdc8c/ZIvn5h7b9m+S4WRz3wieasD5OVMgOBwa0t++9HJn4=;
-Received: from smtp-out2.suse.de ([195.135.220.29])
- by sfi-mx-1.v28.lw.sourceforge.com with esmtps
- (TLS1.2:ECDHE-RSA-AES128-GCM-SHA256:128) (Exim 4.95)
- id 1qGzdi-0076iY-Ro; Wed, 05 Jul 2023 10:21:45 +0000
-Received: from imap2.suse-dmz.suse.de (imap2.suse-dmz.suse.de [192.168.254.74])
- (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
- key-exchange X25519 server-signature ECDSA (P-521) server-digest SHA512)
- (No client certificate requested)
- by smtp-out2.suse.de (Postfix) with ESMTPS id 58F0C1F6E6;
- Wed,  5 Jul 2023 10:21:29 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=suse.cz; s=susede2_rsa;
- t=1688552489; h=from:from:reply-to:date:date:message-id:message-id:to:to:cc:cc:
- mime-version:mime-version:content-type:content-type:
- in-reply-to:in-reply-to:references:references;
- bh=qqER76PXnxWxMVZH46uY+IP0A7ISNxa4dFOpqm8Npig=;
- b=rK+eFTza2+XXgbRvOv5tQtV93F/4zZpu7norREAepZy5yow7baD/dvvqWhpeeItBt0IPcu
- Y5rwLWutv/on4mwv5EJraqTeqhb05mRkTW0yYXikGz/UA9AQcATVDIgxrBuvXRHMAszN6R
- RSIAN/j2D8s9RJrt3/Umhb+lT3pvazU=
-DKIM-Signature: v=1; a=ed25519-sha256; c=relaxed/relaxed; d=suse.cz;
- s=susede2_ed25519; t=1688552489;
- h=from:from:reply-to:date:date:message-id:message-id:to:to:cc:cc:
- mime-version:mime-version:content-type:content-type:
- in-reply-to:in-reply-to:references:references;
- bh=qqER76PXnxWxMVZH46uY+IP0A7ISNxa4dFOpqm8Npig=;
- b=0Ik5A3faiNr6MKUo0ZlFf0SVDy0zGGeX4x6PTOEnPlUJVjHk96v3tsbq/TGqKcufwhGJGx
- 3sf2EXg0rHzUTICQ==
-Received: from imap2.suse-dmz.suse.de (imap2.suse-dmz.suse.de [192.168.254.74])
- (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
- key-exchange X25519 server-signature ECDSA (P-521) server-digest SHA512)
- (No client certificate requested)
- by imap2.suse-dmz.suse.de (Postfix) with ESMTPS id 44C0D13460;
- Wed,  5 Jul 2023 10:21:29 +0000 (UTC)
-Received: from dovecot-director2.suse.de ([192.168.254.65])
- by imap2.suse-dmz.suse.de with ESMTPSA id Xem5EClEpWRSCwAAMHmgww
- (envelope-from <jack@suse.cz>); Wed, 05 Jul 2023 10:21:29 +0000
-Received: by quack3.suse.cz (Postfix, from userid 1000)
- id C5467A0707; Wed,  5 Jul 2023 12:21:28 +0200 (CEST)
-Date: Wed, 5 Jul 2023 12:21:28 +0200
-From: Jan Kara <jack@suse.cz>
-To: Keith Busch <kbusch@kernel.org>
-Message-ID: <20230705102128.vquve4qencbbn2br@quack3>
+ bh=k2bJ938nudHyRKAShPZjcfDPGQbFlYLFYXl6qIc8ZPM=; b=OBKic0nOadKUO4HR3CFT9EEsMq
+ Ut7kkNeJtSR3YTYpN5kEOOWnQ0ykJF1+DXNdtEGZKQ3sCYSo+Sp7t8o89/DuudhAhEkI8m/u1Xg55
+ 3K4etu7Xe7J2pdqMpxLqL1ABcbiLH2M5dbYrUgfWIDb7dap5HrS0NFrCfwxx3p3VVdfY=;
+Received: from mx0b-00069f02.pphosted.com ([205.220.177.32])
+ by sfi-mx-2.v28.lw.sourceforge.com with esmtps
+ (TLS1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.95)
+ id 1qH4Fw-000274-R5 for jfs-discussion@lists.sourceforge.net;
+ Wed, 05 Jul 2023 15:17:35 +0000
+Received: from pps.filterd (m0246631.ppops.net [127.0.0.1])
+ by mx0b-00069f02.pphosted.com (8.17.1.19/8.17.1.19) with ESMTP id
+ 365Eu5aj010290; Wed, 5 Jul 2023 15:16:50 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=oracle.com;
+ h=message-id : date :
+ subject : to : cc : references : from : in-reply-to : content-type :
+ content-transfer-encoding : mime-version; s=corp-2023-03-30;
+ bh=k2bJ938nudHyRKAShPZjcfDPGQbFlYLFYXl6qIc8ZPM=;
+ b=c7t8B6CRihfkJ2T9trEs3K89NiznG/8IQmJBi3tp98xpUsSNW5ZvC/uld2VQ30Bgv8iQ
+ LkqgdpWzvaGwntcuhG3Aivm1/1JLGIHkTLJvibj23DwkMpQbUdRCW1yqFOlmxUxnkQ4F
+ UebBVtNq6TXrNZ8BOELvQdJIhCIzV/FMjkJLzMIpykVq7qulsvhP034t+bL7k2xosRXJ
+ JKEQ1m83HKJOtx3UdJowEx21J1wPUwzSo9xt646vG6FhmkJMYNde7g6C5UyEc5C3IBB/
+ AoP+o6oSDKGB/qeUmEYka3zGIQFrXm56aToF7269W0nRhhpK3j6dhjD41p05qHKRsraM xQ== 
+Received: from phxpaimrmta03.imrmtpd1.prodappphxaev1.oraclevcn.com
+ (phxpaimrmta03.appoci.oracle.com [138.1.37.129])
+ by mx0b-00069f02.pphosted.com (PPS) with ESMTPS id 3rn9ybr62t-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
+ Wed, 05 Jul 2023 15:16:50 +0000
+Received: from pps.filterd
+ (phxpaimrmta03.imrmtpd1.prodappphxaev1.oraclevcn.com [127.0.0.1])
+ by phxpaimrmta03.imrmtpd1.prodappphxaev1.oraclevcn.com (8.17.1.19/8.17.1.19)
+ with ESMTP id 365EuDq9024594; Wed, 5 Jul 2023 15:16:49 GMT
+Received: from nam10-dm6-obe.outbound.protection.outlook.com
+ (mail-dm6nam10lp2101.outbound.protection.outlook.com [104.47.58.101])
+ by phxpaimrmta03.imrmtpd1.prodappphxaev1.oraclevcn.com (PPS) with ESMTPS id
+ 3rjak67wa9-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
+ Wed, 05 Jul 2023 15:16:49 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=Jt5rYvuarh2Z2aR121sZ00h1Mift366NCXqDfPf+ifyOhTwTqnNd0aayCzIPZu44dCxbxl6rDiuvbqKKsoKRRAlQ5wpoq4EMFovpg2yl725yRP/E07zmF28e5j1e/0mWSWTKvrEID78s/DUyotur/u49FmknyBq+hWUVtyrSxbgYZC2UF+1++7I7+IrUf9u0btcTlY6bEiN0eUmC30/14k2y8wzdB0SWcvCQfcd7vjsK+ooAkzE1jom1+Xoy+uPrf636gj5rtexjtblDAqyUhPcFP/TLAwtp44VS5roowI+TTth5Myracc+6PuDOsFbsZ9/Zx6Jo/YCWvUsl8NEpKw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=k2bJ938nudHyRKAShPZjcfDPGQbFlYLFYXl6qIc8ZPM=;
+ b=Wy8Ek4SfIPdyFAhuIVINjEyqt0TP8/ytUH2SwMtOcVTBBVHFXp9EFEBSOxMyjDXm16NrR8XEOXCxNPSvKQWnZw7WXSehtsahceozhqQ+3mu9zCK41ejb/50f1piQkYrGYq82llnWmfNG9Fu4frwp4fsrqv+78H14XGreYpLlqmjHtmdyoxi2iGhNZlTrsRiNxDcyQAjfwiewAB+N4M+sHRkf9GGFTaHGIB2J/57Q2mDQG4lON59+Q6XrimaudNabkwQB6NUioSpEo7AE0iE2jiRTYOVFSExG6DUEVPHftN5ocUe6/JWAglHS2STNuC2JftahkvFEKqg6RkMEliqQJg==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=oracle.com; dmarc=pass action=none header.from=oracle.com;
+ dkim=pass header.d=oracle.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=oracle.onmicrosoft.com; s=selector2-oracle-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=k2bJ938nudHyRKAShPZjcfDPGQbFlYLFYXl6qIc8ZPM=;
+ b=x02NDtATSgLIokCxWvR6+F8dCeaWLDIJdfPj9x+/J/E74eBXG4AenWXhL+hV0NWe+9Ouo0RaIHF6FSTVFljPgOMJkpFMEFfF8WNKYQkIhz0oIbxNA+kaFTAqJXqp13YkwPnPR3tuuhs3YzhTJ5Oi8HlLOmgOeENXtEUywjOwf84=
+Received: from MW5PR10MB5738.namprd10.prod.outlook.com (2603:10b6:303:19b::14)
+ by SJ1PR10MB5953.namprd10.prod.outlook.com (2603:10b6:a03:48c::8)
+ with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.6544.24; Wed, 5 Jul
+ 2023 15:16:47 +0000
+Received: from MW5PR10MB5738.namprd10.prod.outlook.com
+ ([fe80::9c17:d256:43b9:7e96]) by MW5PR10MB5738.namprd10.prod.outlook.com
+ ([fe80::9c17:d256:43b9:7e96%6]) with mapi id 15.20.6565.016; Wed, 5 Jul 2023
+ 15:16:47 +0000
+Message-ID: <1a7e551d-2419-f783-ab53-037bcab6cebe@oracle.com>
+Date: Wed, 5 Jul 2023 10:16:44 -0500
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
+ Thunderbird/102.12.0
+Content-Language: en-US
+To: Jan Kara <jack@suse.cz>, linux-block@vger.kernel.org
 References: <20230629165206.383-1-jack@suse.cz>
- <20230704122224.16257-1-jack@suse.cz> <ZKRItBRhm8f5Vba/@kbusch-mbp>
+ <20230704122224.16257-25-jack@suse.cz>
+From: Dave Kleikamp <dave.kleikamp@oracle.com>
+In-Reply-To: <20230704122224.16257-25-jack@suse.cz>
+X-ClientProxiedBy: CH2PR02CA0015.namprd02.prod.outlook.com
+ (2603:10b6:610:4e::25) To MW5PR10MB5738.namprd10.prod.outlook.com
+ (2603:10b6:303:19b::14)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <ZKRItBRhm8f5Vba/@kbusch-mbp>
-X-Spam-Score: -2.5 (--)
+X-MS-PublicTrafficType: Email
+X-MS-TrafficTypeDiagnostic: MW5PR10MB5738:EE_|SJ1PR10MB5953:EE_
+X-MS-Office365-Filtering-Correlation-Id: fd680146-1055-48cf-213b-08db7d6ad939
+X-MS-Exchange-SenderADCheck: 1
+X-MS-Exchange-AntiSpam-Relay: 0
+X-Microsoft-Antispam: BCL:0;
+X-Microsoft-Antispam-Message-Info: jCPYeBoR60yr8Z7zHkT4Hd4L2d+hquMCnZi6sQhmlewcTUska8R1zyWUXMcgG2jE4/iYuAqDEAN9I7b4Rj8R3BdCeofSCWbiJ+o7MbEe30q+5X5XsMJMiap2kwub/A2mPSgI6NcEivG2ZP3Xsal0+g4eIu+7lZOWxdrZTayLDEx16WC3EcdUEVAoX+0BTo2WGUeNVfJjKyD1e0jteKK9Gx3onZNBmTGrwWVrUV0L0KaSf5R1rh2JoTWYMgkJ+ZtTOn6S0KnbDVcPliOJKxoX8H3JJv73LZhZ+IMl7PJIN1ihtsl2PKG1hfyRZ5e0+XqHCOts68hnH/w3xSBnt7LVztKqxnT/nHOaC9h1KQBa5meCOwPCxlE9wEi90ZUjvbXA+afp0bGfgNSronf+1oqzuA7lgFBSaqfer2MZSb2w8Zi3sP5odISlS1xOasE5EUUT7mGTk39PS9VWX0SJyimvQ7D4Zy0L1cB8hbtoLw7z6/jQxuoFG+HKVRFlTqBKmJrjFjKrrM+0lYLRBv21BSudrqs6FUasHyp5RxtAW/VfcejvYdjoUinbllgTeweXsnR3c/8QyHEtZtmDkrce3dWflKHi3F08/Ll4mf/7Ddj8xykIaoSvQ01yku7ZyZ1Ll/r+M//l5K7UB6UuSg8rd9OsGg==
+X-Forefront-Antispam-Report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
+ IPV:NLI; SFV:NSPM; H:MW5PR10MB5738.namprd10.prod.outlook.com; PTR:; CAT:NONE;
+ SFS:(13230028)(366004)(396003)(136003)(346002)(39860400002)(376002)(451199021)(478600001)(36756003)(6666004)(54906003)(6486002)(5660300002)(8936002)(41300700001)(8676002)(44832011)(2906002)(4326008)(316002)(66556008)(66476007)(31686004)(66946007)(86362001)(31696002)(2616005)(83380400001)(6506007)(186003)(26005)(6512007)(38100700002)(45980500001)(43740500002);
+ DIR:OUT; SFP:1101; 
+X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
+X-MS-Exchange-AntiSpam-MessageData-0: =?utf-8?B?Y1pjM3JRRldIbS9mQjNURWxuYmNHSnpCR2tWcW56Z0lPZXFMTWpjMEdrc3Fj?=
+ =?utf-8?B?VFEwdUkweUdRS2tmU2ppMVFLNTFPTWlVUW1yYXk1bFhwejRpLzhoVDkxUFNF?=
+ =?utf-8?B?OTY3NlZZa1RRMXFHelcxeHFJYytuZDFrMVZ4ZFc3dFpNbitHR0VxeURtNDdD?=
+ =?utf-8?B?REYvOXBzQkxsZzVCK25HZVdMd0RJOG8rV2cxZUc3WjFlZGxPS0JKQkxZcWwv?=
+ =?utf-8?B?aXNzakwvK3BpUGJQcWVuZU5sY3dkYzY3MnhSRnphSWpUY3NaQ24yQjh1c1dm?=
+ =?utf-8?B?OE13Qm9UR3d2bVR5d1huWkpNZlhYRnNBMER0TGFsbUo5Yk0vNW9Pa3IwUlNR?=
+ =?utf-8?B?TmhCd2RxRVpVZnNBem01d05pQkZQa2hUVFFVL0NLK0NwY0JNank2ZUg2ZUpF?=
+ =?utf-8?B?UmhOYWZXc2VMYVVva2hsVThXWEZvN0hlR1UyVUVDRnJFZllidUFlOHA4bG5F?=
+ =?utf-8?B?US9KRzNhL0RlZS9GSFcxa2hnRFRaL3l6N1h2Z2pTVmdoVmV2d3l6d1dMaUx4?=
+ =?utf-8?B?SjlrcVZHdExsSG1WSFZnREhOdmJnYVFrQWN5eEFaOUlUQzZPc2F1bG5BRXI3?=
+ =?utf-8?B?MllVZGdueWdMUnc0TzdsYjJSTTRMV29NTEFvSkY2RjUzUnNsUXBMOTFGRGhR?=
+ =?utf-8?B?ZUJadzlwN0FQY1BSeFIrQmV6bStNbzJESEZlY0cydXRRN2dXZEcwWTlqSHkr?=
+ =?utf-8?B?ajZrL2pzcStqdlFacFpONWp5a2ZYOEthWWgzbDFWT1ozQ1BOVjRMVnFpWnll?=
+ =?utf-8?B?S1ZOc3hlU1hlTnFqQmZadnQ2Y0Nwb0xBcHRHejIxTis2NEtQbng3QU51ZUh0?=
+ =?utf-8?B?U2dpZEZoSWJCYjAyMytBSzJhYk1qZWdrWXhLRWdWU3lBUHB6TkhRbGtPbDZj?=
+ =?utf-8?B?Y1ZzU2JzNjlPZUhhYzlxTGxKRzl1R1pjRGJMYmJZTXN3ME45d090MllENkoz?=
+ =?utf-8?B?OVU5eHl6WnJKQS9SVHdPU0JzK2l6VXJPVzM3czdLaWxDTWJ0WktaU2RyRWRs?=
+ =?utf-8?B?bXNqdGpELzNIWEZJOUZqbkZoVkEzMktvUjVjM1pONFV2cVM0bzE5RE5KY284?=
+ =?utf-8?B?Qi9TYmRRMmZ1WlkyUlVrUGhLeXBHTThnZFE5TWtJYXJyenlydXRWYWRDck1D?=
+ =?utf-8?B?amxuNk8xL1gvaHRTQzJUWERpTWpZZU8xcWJHSklIbW1wZndQYm55RFVUdFVk?=
+ =?utf-8?B?SEtkZStHQndxTVdOK3l0NFZIV0RVT3RnaFcyTEdCVFF6dmhudUhjK1hMRFR3?=
+ =?utf-8?B?Tkk0aUt4WUJyc2FtNmFGVEszN1g2VktsWVJRWjBWNnlhb1dkNHBPbUpraGNI?=
+ =?utf-8?B?L0I2U2F6WVk2VktjcnF6RFk2T09sVWZYUkc5QW9CQ2FMak5GSlppQk9STHkz?=
+ =?utf-8?B?R1ZzWnpteEtBdVdPSHJSajFMZVR1bW82M2NxMFMweWMxTVk5ZW5jMS9nM2JC?=
+ =?utf-8?B?Y0o4NGwrTThqNXZEdFNnR1U2TGpJbWZPYUhQYXBFc2xKazhDS1ZCYjRtMmwx?=
+ =?utf-8?B?c3dhd0g2TE5jU21NdWVTWEJBNzVUYmw0TXJnaW0vVTJ3ZC9GQWFldGs2UnRF?=
+ =?utf-8?B?RWpUcjhYS2lZR0h4aGx5QnFDUUVVYnltV01GMjQ4YTJZUEFaYWJSdTcxVFNn?=
+ =?utf-8?B?ODYxY1NiSndiMkIrUEtONGszQlppR2k4NlNiaHpOQjQrcTl6dnltRGFocDVO?=
+ =?utf-8?B?SkpNZ0hmclNBSjVMTXZKZTZSbU5KQ3U5WXVURVZwMStGb29kSUd1NHNJYk1Q?=
+ =?utf-8?B?OC9Fdm9GTEZJKzB3dFNyTld5Sm94bklhbXp2L0tUNVA2dGdlT2RUSzh4MmJ0?=
+ =?utf-8?B?UWVTYUtJeWZmaXJFNzJTT2k0Sm9DUWpHRGJRa1lySnlYeS9uZENyVkV4TnpU?=
+ =?utf-8?B?MS9VbVVLNXpFV29lQmpBWEM5blBMK0pwZ1ZKRFdTZnJIL0ROb3EvRVB3T0xp?=
+ =?utf-8?B?bFZsVnZEaUU5cTZoWThSbmVSa0lZclBPMG8wMUgrTDJlYlhsKzF3ejkvYnNx?=
+ =?utf-8?B?TVlLbDZlR1IweHllczlwSEd1VWQ3OGVkTFdncjhqaGFmaVc1cEpqZytUSzFo?=
+ =?utf-8?B?ZjA2UWRuT2plOEExQk9hcTNCSXpZNjQyQ29sMEp3MEJBcjF5TzJ4aEFWV0NJ?=
+ =?utf-8?B?dGpWZllWdEtlWFk5SWthZU9yYUhsaStVaUpHNFZuRkFKRlNTcVlxa1NWYk56?=
+ =?utf-8?B?WHc9PQ==?=
+X-MS-Exchange-AntiSpam-ExternalHop-MessageData-ChunkCount: 1
+X-MS-Exchange-AntiSpam-ExternalHop-MessageData-0: rOqbAoq/hknDbGCBD+fDFbgyNa5pTJk9/P5zNjvZjREVNQYQImzMexJd2MI2fKOifT5D58f9MQ7TWQ/HL0O2Nje7cqrcvgSD/ta3BCRx2IK+E839Ut6/kVuzhqp8JdG+3IFCnbvgshtryxLHLsaorcl4QE+MXzTHyNg4EUl8nhe4gPe7o5XbWTy+9PYoLzqfXNQzzMgByUdV5AH+fKjzhWwZb7v2eIDF9GI+IJhsKhpRvO0u+q3E1I0HrzeuHyaFUaexp4saG7f6DlzlzKqewkbPTSGk1WTus1svQ+F5jN7tZSm0S1At+EYPxQoikGksUAMy9caFQU4/5aeA2c8zX2EXJqMdCbYZmT+iRdPhD9TT8MkPtf0CfoJJQAjcmFJxeh5dp8tF22WxIdkkpd/6t+WID+ADjCtLIaRc8cyPFLaPPhcoy0MaFMYuBc28PJcwWyTkpdfqop1uJYzSdALDIKN+11k+UFvbUwLKe5dPFaD4bMMUCUnA+O2di0lrbVumtVCmUE1Rg53qFDpkxvHJZ9lqOf+g5nIRowOGwIMXpkPit62+9IwPZiO51mjtX2KkpwiAEdTl0UKghkRIjwR4/vbMu/CsxZyyfmugjPyTwsDQcH722yfIKEwUTt+5Nb4rFK2dXtKkPYmjRS6P67Bl2eWAfNA3FO0ph4Pqhy7TCtnXiUL4DyqJfRBgcf9YTcFZihKF0ZeK9velffLzlmvIW6LPwNqNLsJpxI/lRf+2dq1mrI3eWaGzwAy8zQc8JOPWihqBEhk1rg54uIoJrvEVyrqu3lbpYCI+mcHVLe/xkKpefFLOo1O5ylK5YzL7dpN9D78v6yTACSi6PhV5nqNaHW1/diFdEY2/ld71dglK1JGU2ycR03O1UVRcdxO5vinH0QUrafF4Kwn8qR5CBvcxiA==
+X-OriginatorOrg: oracle.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: fd680146-1055-48cf-213b-08db7d6ad939
+X-MS-Exchange-CrossTenant-AuthSource: MW5PR10MB5738.namprd10.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 05 Jul 2023 15:16:46.9773 (UTC)
+X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
+X-MS-Exchange-CrossTenant-Id: 4e2c6054-71cb-48f1-bd6c-3a9705aca71b
+X-MS-Exchange-CrossTenant-MailboxType: HOSTED
+X-MS-Exchange-CrossTenant-UserPrincipalName: 4vmREIGgMUvYS7Pckgqoiog/w78zrdsYhwazVG0Ww8EkGK+D5H9+rHyXCPJ+9U3eQA/652NAJSVb7C4eIdAaD4KV2H9AdMRKDxspruHUzH8=
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: SJ1PR10MB5953
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.254,Aquarius:18.0.957,Hydra:6.0.591,FMLib:17.11.176.26
+ definitions=2023-07-05_07,2023-07-05_01,2023-05-22_02
+X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 mlxscore=0
+ mlxlogscore=999 phishscore=0
+ malwarescore=0 spamscore=0 bulkscore=0 suspectscore=0 adultscore=0
+ classifier=spam adjust=0 reason=mlx scancount=1 engine=8.12.0-2305260000
+ definitions=main-2307050138
+X-Proofpoint-GUID: 9-GIT2PsUONzCXSHi6ONJ-_RzKSfa9we
+X-Proofpoint-ORIG-GUID: 9-GIT2PsUONzCXSHi6ONJ-_RzKSfa9we
+X-Spam-Score: -2.9 (--)
 X-Spam-Report: Spam detection software,
- running on the system "util-spamd-2.v13.lw.sourceforge.com", 
+ running on the system "util-spamd-1.v13.lw.sourceforge.com", 
  has NOT identified this incoming email as spam.  The original
  message has been attached to this so you can view it or label
  similar future email.  If you have any questions, see
  the administrator of that system for details.
- Content preview:  On Tue 04-07-23 10:28:36, Keith Busch wrote: > On Tue, Jul
- 04, 2023 at 02:21:28PM +0200,
- Jan Kara wrote: > > +struct bdev_handle *blkdev_get_handle_by_dev(dev_t
- dev, blk_mode_t mode, > > + void *holde [...] 
- Content analysis details:   (-2.5 points, 6.0 required)
+ Content preview:  On 7/4/23 7:21AM,
+ Jan Kara wrote: > Convert jfs to use blkdev_get_handle_by_dev()
+ and pass the handle > around. No problem from jfs's persepective. Acked-by:
+ Dave Kleikamp <dave.kleikamp@oracle.com> 
+ Content analysis details:   (-2.9 points, 6.0 required)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [195.135.220.29 listed in list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [205.220.177.32 listed in list.dnswl.org]
+ 0.0 RCVD_IN_MSPIKE_H5      RBL: Excellent reputation (+5)
+ [205.220.177.32 listed in wl.mailspike.net]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid -0.0 T_SCC_BODY_TEXT_LINE   No description available.
-X-Headers-End: 1qGzdi-0076iY-Ro
-X-Mailman-Approved-At: Wed, 05 Jul 2023 13:08:27 +0000
-Subject: Re: [Jfs-discussion] [PATCH 01/32] block: Provide
- blkdev_get_handle_* functions
+ valid 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ -2.0 NICE_REPLY_A           Looks like a legit reply (A)
+X-Headers-End: 1qH4Fw-000274-R5
+Subject: Re: [Jfs-discussion] [PATCH 25/32] jfs: Convert to
+ blkdev_get_handle_by_dev()
 X-BeenThere: jfs-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -119,69 +218,158 @@ List-Post: <mailto:jfs-discussion@lists.sourceforge.net>
 List-Help: <mailto:jfs-discussion-request@lists.sourceforge.net?subject=help>
 List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/jfs-discussion>, 
  <mailto:jfs-discussion-request@lists.sourceforge.net?subject=subscribe>
-Cc: Dave Kleikamp <shaggy@kernel.org>, jfs-discussion@lists.sourceforge.net,
- Jan Kara <jack@suse.cz>, "Darrick J. Wong" <djwong@kernel.org>,
- linux-nvme@lists.infradead.org, Joseph Qi <joseph.qi@linux.alibaba.com>,
- dm-devel@redhat.com, target-devel@vger.kernel.org,
- linux-mtd@lists.infradead.org, Jack Wang <jinpu.wang@ionos.com>,
- Alasdair Kergon <agk@redhat.com>, drbd-dev@lists.linbit.com,
- linux-s390@vger.kernel.org, linux-nilfs@vger.kernel.org,
- linux-scsi@vger.kernel.org, Sergey Senozhatsky <senozhatsky@chromium.org>,
- Christoph Hellwig <hch@infradead.org>, xen-devel@lists.xenproject.org,
- Gao Xiang <xiang@kernel.org>,
- Christian Borntraeger <borntraeger@linux.ibm.com>,
- Kent Overstreet <kent.overstreet@gmail.com>,
- Sven Schnelle <svens@linux.ibm.com>, linux-pm@vger.kernel.org,
- Mike Snitzer <snitzer@kernel.org>, Chao Yu <chao@kernel.org>,
- Joern Engel <joern@lazybastard.org>, reiserfs-devel@vger.kernel.org,
- linux-block@vger.kernel.org, linux-bcache@vger.kernel.org,
- David Sterba <dsterba@suse.com>, Jaegeuk Kim <jaegeuk@kernel.org>,
- Trond Myklebust <trond.myklebust@hammerspace.com>,
- Jens Axboe <axboe@kernel.dk>, linux-raid@vger.kernel.org,
- linux-nfs@vger.kernel.org, linux-ext4@vger.kernel.org, Ted Tso <tytso@mit.edu>,
- linux-mm@kvack.org, Song Liu <song@kernel.org>,
- linux-f2fs-devel@lists.sourceforge.net, linux-xfs@vger.kernel.org,
- Minchan Kim <minchan@kernel.org>, ocfs2-devel@oss.oracle.com,
- Anna Schumaker <anna@kernel.org>, linux-fsdevel@vger.kernel.org,
- "Md. Haris Iqbal" <haris.iqbal@ionos.com>,
- Andrew Morton <akpm@linux-foundation.org>, linux-erofs@lists.ozlabs.org,
- linux-btrfs@vger.kernel.org
-Content-Type: text/plain; charset="us-ascii"
+Cc: linux-fsdevel@vger.kernel.org, Jens Axboe <axboe@kernel.dk>,
+ jfs-discussion@lists.sourceforge.net, Christoph Hellwig <hch@infradead.org>
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Errors-To: jfs-discussion-bounces@lists.sourceforge.net
 
-On Tue 04-07-23 10:28:36, Keith Busch wrote:
-> On Tue, Jul 04, 2023 at 02:21:28PM +0200, Jan Kara wrote:
-> > +struct bdev_handle *blkdev_get_handle_by_dev(dev_t dev, blk_mode_t mode,
-> > +		void *holder, const struct blk_holder_ops *hops)
-> > +{
-> > +	struct bdev_handle *handle = kmalloc(sizeof(struct bdev_handle),
-> > +					     GFP_KERNEL);
+On 7/4/23 7:21AM, Jan Kara wrote:
+> Convert jfs to use blkdev_get_handle_by_dev() and pass the handle
+> around.
+
+No problem from jfs's persepective.
+
+Acked-by: Dave Kleikamp <dave.kleikamp@oracle.com>
+
 > 
-> I believe 'sizeof(*handle)' is the preferred style.
-
-OK.
-
-> > +	struct block_device *bdev;
-> > +
-> > +	if (!handle)
-> > +		return ERR_PTR(-ENOMEM);
-> > +	bdev = blkdev_get_by_dev(dev, mode, holder, hops);
-> > +	if (IS_ERR(bdev))
-> > +		return ERR_CAST(bdev);
+> CC: Dave Kleikamp <shaggy@kernel.org>
+> CC: jfs-discussion@lists.sourceforge.net
+> Signed-off-by: Jan Kara <jack@suse.cz>
+> ---
+>   fs/jfs/jfs_logmgr.c | 29 +++++++++++++++--------------
+>   fs/jfs/jfs_logmgr.h |  2 +-
+>   fs/jfs/jfs_mount.c  |  3 ++-
+>   3 files changed, 18 insertions(+), 16 deletions(-)
 > 
-> Need a 'kfree(handle)' before the error return. Or would it be simpler
-> to get the bdev first so you can check the mode settings against a
-> read-only bdev prior to the kmalloc?
-
-Yeah. Good point with kfree(). I'm not sure calling blkdev_get_by_dev()
-first will be "simpler" - then we need blkdev_put() in case of kmalloc()
-failure. Thanks for review!
- 
-								Honza
--- 
-Jan Kara <jack@suse.com>
-SUSE Labs, CR
+> diff --git a/fs/jfs/jfs_logmgr.c b/fs/jfs/jfs_logmgr.c
+> index e855b8fde76c..9d06323261e6 100644
+> --- a/fs/jfs/jfs_logmgr.c
+> +++ b/fs/jfs/jfs_logmgr.c
+> @@ -1058,7 +1058,7 @@ void jfs_syncpt(struct jfs_log *log, int hard_sync)
+>   int lmLogOpen(struct super_block *sb)
+>   {
+>   	int rc;
+> -	struct block_device *bdev;
+> +	struct bdev_handle *bdev_handle;
+>   	struct jfs_log *log;
+>   	struct jfs_sb_info *sbi = JFS_SBI(sb);
+>   
+> @@ -1070,7 +1070,7 @@ int lmLogOpen(struct super_block *sb)
+>   
+>   	mutex_lock(&jfs_log_mutex);
+>   	list_for_each_entry(log, &jfs_external_logs, journal_list) {
+> -		if (log->bdev->bd_dev == sbi->logdev) {
+> +		if (log->bdev_handle->bdev->bd_dev == sbi->logdev) {
+>   			if (!uuid_equal(&log->uuid, &sbi->loguuid)) {
+>   				jfs_warn("wrong uuid on JFS journal");
+>   				mutex_unlock(&jfs_log_mutex);
+> @@ -1100,14 +1100,14 @@ int lmLogOpen(struct super_block *sb)
+>   	 * file systems to log may have n-to-1 relationship;
+>   	 */
+>   
+> -	bdev = blkdev_get_by_dev(sbi->logdev, BLK_OPEN_READ | BLK_OPEN_WRITE,
+> -				 log, NULL);
+> -	if (IS_ERR(bdev)) {
+> -		rc = PTR_ERR(bdev);
+> +	bdev_handle = blkdev_get_handle_by_dev(sbi->logdev,
+> +			BLK_OPEN_READ | BLK_OPEN_WRITE, log, NULL);
+> +	if (IS_ERR(bdev_handle)) {
+> +		rc = PTR_ERR(bdev_handle);
+>   		goto free;
+>   	}
+>   
+> -	log->bdev = bdev;
+> +	log->bdev_handle = bdev_handle;
+>   	uuid_copy(&log->uuid, &sbi->loguuid);
+>   
+>   	/*
+> @@ -1141,7 +1141,7 @@ int lmLogOpen(struct super_block *sb)
+>   	lbmLogShutdown(log);
+>   
+>         close:		/* close external log device */
+> -	blkdev_put(bdev, log);
+> +	blkdev_handle_put(bdev_handle);
+>   
+>         free:		/* free log descriptor */
+>   	mutex_unlock(&jfs_log_mutex);
+> @@ -1162,7 +1162,7 @@ static int open_inline_log(struct super_block *sb)
+>   	init_waitqueue_head(&log->syncwait);
+>   
+>   	set_bit(log_INLINELOG, &log->flag);
+> -	log->bdev = sb->s_bdev;
+> +	log->bdev_handle = sb->s_bdev_handle;
+>   	log->base = addressPXD(&JFS_SBI(sb)->logpxd);
+>   	log->size = lengthPXD(&JFS_SBI(sb)->logpxd) >>
+>   	    (L2LOGPSIZE - sb->s_blocksize_bits);
+> @@ -1436,7 +1436,7 @@ int lmLogClose(struct super_block *sb)
+>   {
+>   	struct jfs_sb_info *sbi = JFS_SBI(sb);
+>   	struct jfs_log *log = sbi->log;
+> -	struct block_device *bdev;
+> +	struct bdev_handle *bdev_handle;
+>   	int rc = 0;
+>   
+>   	jfs_info("lmLogClose: log:0x%p", log);
+> @@ -1482,10 +1482,10 @@ int lmLogClose(struct super_block *sb)
+>   	 *	external log as separate logical volume
+>   	 */
+>   	list_del(&log->journal_list);
+> -	bdev = log->bdev;
+> +	bdev_handle = log->bdev_handle;
+>   	rc = lmLogShutdown(log);
+>   
+> -	blkdev_put(bdev, log);
+> +	blkdev_handle_put(bdev_handle);
+>   
+>   	kfree(log);
+>   
+> @@ -1972,7 +1972,7 @@ static int lbmRead(struct jfs_log * log, int pn, struct lbuf ** bpp)
+>   
+>   	bp->l_flag |= lbmREAD;
+>   
+> -	bio = bio_alloc(log->bdev, 1, REQ_OP_READ, GFP_NOFS);
+> +	bio = bio_alloc(log->bdev_handle->bdev, 1, REQ_OP_READ, GFP_NOFS);
+>   	bio->bi_iter.bi_sector = bp->l_blkno << (log->l2bsize - 9);
+>   	__bio_add_page(bio, bp->l_page, LOGPSIZE, bp->l_offset);
+>   	BUG_ON(bio->bi_iter.bi_size != LOGPSIZE);
+> @@ -2113,7 +2113,8 @@ static void lbmStartIO(struct lbuf * bp)
+>   
+>   	jfs_info("lbmStartIO");
+>   
+> -	bio = bio_alloc(log->bdev, 1, REQ_OP_WRITE | REQ_SYNC, GFP_NOFS);
+> +	bio = bio_alloc(log->bdev_handle->bdev, 1, REQ_OP_WRITE | REQ_SYNC,
+> +			GFP_NOFS);
+>   	bio->bi_iter.bi_sector = bp->l_blkno << (log->l2bsize - 9);
+>   	__bio_add_page(bio, bp->l_page, LOGPSIZE, bp->l_offset);
+>   	BUG_ON(bio->bi_iter.bi_size != LOGPSIZE);
+> diff --git a/fs/jfs/jfs_logmgr.h b/fs/jfs/jfs_logmgr.h
+> index 805877ce5020..84aa2d253907 100644
+> --- a/fs/jfs/jfs_logmgr.h
+> +++ b/fs/jfs/jfs_logmgr.h
+> @@ -356,7 +356,7 @@ struct jfs_log {
+>   				 *    before writing syncpt.
+>   				 */
+>   	struct list_head journal_list; /* Global list */
+> -	struct block_device *bdev; /* 4: log lv pointer */
+> +	struct bdev_handle *bdev_handle; /* 4: log lv pointer */
+>   	int serial;		/* 4: log mount serial number */
+>   
+>   	s64 base;		/* @8: log extent address (inline log ) */
+> diff --git a/fs/jfs/jfs_mount.c b/fs/jfs/jfs_mount.c
+> index b83aae56a1f2..415eb65a36ff 100644
+> --- a/fs/jfs/jfs_mount.c
+> +++ b/fs/jfs/jfs_mount.c
+> @@ -430,7 +430,8 @@ int updateSuper(struct super_block *sb, uint state)
+>   
+>   	if (state == FM_MOUNT) {
+>   		/* record log's dev_t and mount serial number */
+> -		j_sb->s_logdev = cpu_to_le32(new_encode_dev(sbi->log->bdev->bd_dev));
+> +		j_sb->s_logdev = cpu_to_le32(
+> +			new_encode_dev(sbi->log->bdev_handle->bdev->bd_dev));
+>   		j_sb->s_logserial = cpu_to_le32(sbi->log->serial);
+>   	} else if (state == FM_CLEAN) {
+>   		/*
 
 
 _______________________________________________
