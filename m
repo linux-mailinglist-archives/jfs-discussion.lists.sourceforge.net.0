@@ -2,97 +2,95 @@ Return-Path: <jfs-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+jfs-discussion@lfdr.de
 Delivered-To: lists+jfs-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6BDB274A213
-	for <lists+jfs-discussion@lfdr.de>; Thu,  6 Jul 2023 18:15:50 +0200 (CEST)
-Received: from [127.0.0.1] (helo=sfs-ml-4.v29.lw.sourceforge.com)
-	by sfs-ml-4.v29.lw.sourceforge.com with esmtp (Exim 4.95)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7508274A5F0
+	for <lists+jfs-discussion@lfdr.de>; Thu,  6 Jul 2023 23:33:43 +0200 (CEST)
+Received: from [127.0.0.1] (helo=sfs-ml-2.v29.lw.sourceforge.com)
+	by sfs-ml-2.v29.lw.sourceforge.com with esmtp (Exim 4.95)
 	(envelope-from <jfs-discussion-bounces@lists.sourceforge.net>)
-	id 1qHRdj-0008H8-Jj;
-	Thu, 06 Jul 2023 16:15:32 +0000
+	id 1qHWbD-0007VC-Ao;
+	Thu, 06 Jul 2023 21:33:15 +0000
 Received: from [172.30.20.202] (helo=mx.sourceforge.net)
- by sfs-ml-4.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
+ by sfs-ml-3.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
  TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (Exim 4.95)
- (envelope-from <jlayton@kernel.org>) id 1qHRdc-0008Gs-M6;
- Thu, 06 Jul 2023 16:15:25 +0000
+ (envelope-from <seth.arnold@canonical.com>) id 1qHWOa-0005qU-Uf;
+ Thu, 06 Jul 2023 21:20:13 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=sourceforge.net; s=x; h=MIME-Version:Content-Transfer-Encoding:Content-Type
- :References:In-Reply-To:Date:Cc:To:From:Subject:Message-ID:Sender:Reply-To:
+ d=sourceforge.net; s=x; h=In-Reply-To:Content-Type:MIME-Version:References:
+ Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:Content-Transfer-Encoding:
  Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
  Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=TxLDV50UNGuwfdwrUq1A15tGUegvUIwgImLkAQWsDq8=; b=N6Wjm8iVkuDcL6S54Xk8rDrpjG
- hIKB5YpKWKfkuwCdOoZbIo87X44GyiLm9ktBLjZpFwywpjswe1cw2e4pI9n2NJPCV5lzKYLg2vslZ
- FJp1enTra4d7DD8pRBo0DUTZLfLYvpuhAUCsSje0mZlKDmLdYdccGX5KdemM0eJTMotw=;
+ bh=wL7I+1AkkXlsdAXc0IgIVs00VMlkDlPzLoO7HtCH8Yo=; b=JUTd4q1fyKHGU0JqmCSxM6zUXy
+ BFLp2dgBNA6PtdO7S+3oNgyrkmqnr8ef25Sf8TEQyX/q7+YxpG/Wi7cQQG8UcW6uKLEwCP0RfkAAr
+ A/gsTdI67kJn806RVhEQHLU4OVahB2Lvq6qXPcHocRyaf9srPv+Mq7FLfqyRKnY47IDA=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
- h=MIME-Version:Content-Transfer-Encoding:Content-Type:References:
- In-Reply-To:Date:Cc:To:From:Subject:Message-ID:Sender:Reply-To:Content-ID:
+ h=In-Reply-To:Content-Type:MIME-Version:References:Message-ID:Subject:Cc:To
+ :From:Date:Sender:Reply-To:Content-Transfer-Encoding:Content-ID:
  Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
  :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
  List-Post:List-Owner:List-Archive;
- bh=TxLDV50UNGuwfdwrUq1A15tGUegvUIwgImLkAQWsDq8=; b=OpDuqhTKlIlVgrqKyK5HlZRLd6
- owqMMEi49JOmYPfDy3OjUCy5HWRgQdEmXKGeA5J8yL0YglK8jYdnCIfe3HJDdb1u5IzwHv+q0wZiN
- 0keJhi3UYZ2SXq6fm+SKbgl08dcv7yjcJc3SU4/gapYaegJ1j8PQCbyDKIMOrG72MyLU=;
-Received: from dfw.source.kernel.org ([139.178.84.217])
- by sfi-mx-1.v28.lw.sourceforge.com with esmtps
+ bh=wL7I+1AkkXlsdAXc0IgIVs00VMlkDlPzLoO7HtCH8Yo=; b=PW7Zbs679mQEDXlSK1QMUxqXnp
+ r4buNOcUeqLq4eT45jGQ7LDjEHOpGRS4lPUVbCbjMDFx1RvWpY6+8cr6XSyX4S1TzugPODig0480e
+ oMr2eEIOvDScUIjqfrfFrTe0JuNg2U+MQWnBZVjRDyrQ5rK5RRYAEXsUn7otz5PlTIog=;
+Received: from smtp-relay-canonical-0.canonical.com ([185.125.188.120])
+ by sfi-mx-2.v28.lw.sourceforge.com with esmtps
  (TLS1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.95)
- id 1qHRdc-008anS-GR; Thu, 06 Jul 2023 16:15:25 +0000
-Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
+ id 1qHWOY-0006fM-Pa; Thu, 06 Jul 2023 21:20:12 +0000
+Received: from localhost (2.general.sarnold.us.vpn [10.172.64.71])
  (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
- key-exchange X25519 server-signature RSA-PSS (2048 bits))
- (No client certificate requested)
- by dfw.source.kernel.org (Postfix) with ESMTPS id F322860EEE;
- Thu,  6 Jul 2023 16:15:18 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 4AD63C433C7;
- Thu,  6 Jul 2023 16:15:00 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=k20201202; t=1688660118;
- bh=r5Eqjb/koo4X65bgDBYxDesIkgsRAdhnfATQ4gt2Esk=;
- h=Subject:From:To:Cc:Date:In-Reply-To:References:From;
- b=uOgU9evq5o16T6L6tpJH1n8YSQl4p50BjR5wiJPLoKkMzHgO7DWjFII6ePLp5KpdE
- 3SlBOVBQ0Ayb1Ck5njyhQkfK/lBmsjOnzq7A/dE1stN3VqJX7pH6IQsgFKtN1DalJo
- E+zh6oq4S0OPw7rIh8zXpFwi+8/fexgoqLXDvhFUUOG0TWnPj5LM1mmg7dIC7PaCB3
- IOEyQDVn/tGwcs+s3mZaJELn1kEqbOemjyG66rmihhs9u/EaGnd4WvmH/942idbgOQ
- fgiPtHR0C+lrv0o8CzKEzOTX/CaJMpmdnCKaL0ZpaSmvJsFgbp9PEliTkXRbGZddzd
- Fm4yxVau37qTQ==
-Message-ID: <3948ae7653d1cb7c51febcca26a35775e71a53b4.camel@kernel.org>
-To: "Eric W. Biederman" <ebiederm@xmission.com>
-Date: Thu, 06 Jul 2023 12:14:58 -0400
-In-Reply-To: <87ilaxgjek.fsf@email.froward.int.ebiederm.org>
+ key-exchange ECDHE (P-256) server-signature RSA-PSS (2048 bits) server-digest
+ SHA256) (No client certificate requested)
+ by smtp-relay-canonical-0.canonical.com (Postfix) with ESMTPSA id EC65D3F31B; 
+ Thu,  6 Jul 2023 21:02:37 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=canonical.com;
+ s=20210705; t=1688677359;
+ bh=wL7I+1AkkXlsdAXc0IgIVs00VMlkDlPzLoO7HtCH8Yo=;
+ h=Date:From:To:Cc:Subject:Message-ID:References:MIME-Version:
+ Content-Type:In-Reply-To;
+ b=UigHgg1tEN+F2JYmBK+lUOcRBpRtdrNgGbqup1NnaXOwyODWf/TTOdnjSM3EJKV2r
+ nSVjFudDceCGObMlTU+uma1muY2uaIkS7sazvVomlUh2z4Cx6T6ypWSOKoKTLr1e7n
+ Ld2z62ONf1z9dg8T10Z72Jl2h0B3vIxrVCycmYrM1jOwV4H0NyvFgu4GNfgDT4ln1d
+ cD6OBnHOJHdcMdNwqptcYXDLv4IErHsYENHamhLEH+hxLeB02yXRDCQTTC0JuBjK6l
+ ZNgX1V/W8Fy+2Orhx/aZTqqWjx/zv/bYCRboXEZa1I0V5mrDoaohFkaxDrb57pylVz
+ OTISOPjT4Hs9A==
+Date: Thu, 6 Jul 2023 21:02:36 +0000
+To: Jeff Layton <jlayton@kernel.org>
+Message-ID: <20230706210236.GB3244704@millbarge>
 References: <20230705185812.579118-1-jlayton@kernel.org>
- <a4e6cfec345487fc9ac8ab814a817c79a61b123a.camel@kernel.org>
- <87ilaxgjek.fsf@email.froward.int.ebiederm.org>
-User-Agent: Evolution 3.48.4 (3.48.4-1.fc38) 
+ <20230705185812.579118-3-jlayton@kernel.org>
+ <3b403ef1-22e6-0220-6c9c-435e3444b4d3@kernel.org>
+ <7c783969641b67d6ffdfb10e509f382d083c5291.camel@kernel.org>
 MIME-Version: 1.0
-X-Spam-Score: -5.2 (-----)
+In-Reply-To: <7c783969641b67d6ffdfb10e509f382d083c5291.camel@kernel.org>
+X-Spam-Score: -3.2 (---)
 X-Spam-Report: Spam detection software,
- running on the system "util-spamd-2.v13.lw.sourceforge.com", 
+ running on the system "util-spamd-1.v13.lw.sourceforge.com", 
  has NOT identified this incoming email as spam.  The original
  message has been attached to this so you can view it or label
  similar future email.  If you have any questions, see
  the administrator of that system for details.
- Content preview:  On Thu, 2023-07-06 at 10:16 -0500, Eric W. Biederman wrote:
- > Jeff Layton <jlayton@kernel.org> writes: > > > On Wed, 2023-07-05 at 14:58
- -0400, Jeff Layton wrote: > > > v2: > > > - prepend patches to [...] 
- Content analysis details:   (-5.2 points, 6.0 required)
+ Content preview:  On Wed, Jul 05, 2023 at 08:04:41PM -0400, Jeff Layton wrote:
+ > > I don't believe it's an issue. I've seen nothing in the POSIX spec that
+ > mandates that timestamp updates to different inodes involved [...] 
+ Content analysis details:   (-3.2 points, 6.0 required)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [139.178.84.217 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [185.125.188.120 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.0 T_SCC_BODY_TEXT_LINE   No description available.
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - High trust sender
-X-Headers-End: 1qHRdc-008anS-GR
-Subject: Re: [Jfs-discussion] [PATCH v2 00/89] fs: new accessors for
- inode->i_ctime
+ valid -0.7 DKIMWL_WL_HIGH         DKIMwl.org - High trust sender
+X-Headers-End: 1qHWOY-0006fM-Pa
+X-Mailman-Approved-At: Thu, 06 Jul 2023 21:33:13 +0000
+Subject: Re: [Jfs-discussion] [apparmor] [PATCH v2 08/92] fs: new helper:
+ simple_rename_timestamp
 X-BeenThere: jfs-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -104,8 +102,8 @@ List-Post: <mailto:jfs-discussion@lists.sourceforge.net>
 List-Help: <mailto:jfs-discussion-request@lists.sourceforge.net?subject=help>
 List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/jfs-discussion>, 
  <mailto:jfs-discussion-request@lists.sourceforge.net?subject=subscribe>
-From: Jeff Layton via Jfs-discussion <jfs-discussion@lists.sourceforge.net>
-Reply-To: Jeff Layton <jlayton@kernel.org>
+From: Seth Arnold via Jfs-discussion <jfs-discussion@lists.sourceforge.net>
+Reply-To: Seth Arnold <seth.arnold@canonical.com>
 Cc: lucho@ionkov.net, rafael@kernel.org, djwong@kernel.org, al@alarsen.net,
  cmllamas@google.com, andrii@kernel.org, hughd@google.com,
  john.johansen@canonical.com, agordeev@linux.ibm.com, hch@lst.de,
@@ -139,24 +137,24 @@ Cc: lucho@ionkov.net, rafael@kernel.org, djwong@kernel.org, al@alarsen.net,
  tytso@mit.edu, nico@fluxnic.net, linux-ntfs-dev@lists.sourceforge.net,
  muchun.song@linux.dev, roberto.sassu@huawei.com,
  linux-f2fs-devel@lists.sourceforge.net, yang.yang29@zte.com.cn,
- gpiccoli@igalia.com, anna@kernel.org, quic_uaggarwa@quicinc.com,
- bwarrum@linux.ibm.com, mike.kravetz@oracle.com, jingyuwang_vip@163.com,
- linux-efi@vger.kernel.org, error27@gmail.com, martin@omnibond.com,
- trix@redhat.com, ocfs2-devel@lists.linux.dev, ast@kernel.org,
- sebastian.reichel@collabora.com, clm@fb.com, linux-mtd@lists.infradead.org,
- willy@infradead.org, marc.dionne@auristor.com, linux-afs@lists.infradead.org,
- raven@themaw.net, naohiro.aota@wdc.com, daniel@iogearbox.net,
- dennis.dalessandro@cornelisnetworks.com, linux-rdma@vger.kernel.org,
- quic_linyyuan@quicinc.com, coda@cs.cmu.edu, idryomov@gmail.com,
- pabeni@redhat.com, adobriyan@gmail.com, serge@hallyn.com,
+ gpiccoli@igalia.com, ebiederm@xmission.com, anna@kernel.org,
+ quic_uaggarwa@quicinc.com, bwarrum@linux.ibm.com, mike.kravetz@oracle.com,
+ jingyuwang_vip@163.com, linux-efi@vger.kernel.org, error27@gmail.com,
+ martin@omnibond.com, trix@redhat.com, ocfs2-devel@lists.linux.dev,
+ ast@kernel.org, sebastian.reichel@collabora.com, clm@fb.com,
+ linux-mtd@lists.infradead.org, willy@infradead.org, marc.dionne@auristor.com,
+ linux-afs@lists.infradead.org, raven@themaw.net, naohiro.aota@wdc.com,
+ daniel@iogearbox.net, dennis.dalessandro@cornelisnetworks.com,
+ linux-rdma@vger.kernel.org, quic_linyyuan@quicinc.com, coda@cs.cmu.edu,
+ idryomov@gmail.com, pabeni@redhat.com, adobriyan@gmail.com, serge@hallyn.com,
  chengzhihao1@huawei.com, axboe@kernel.dk, amir73il@gmail.com,
  linuszeng@tencent.com, keescook@chromium.org, arnd@arndb.de,
  autofs@vger.kernel.org, rostedt@goodmis.org, yifeliu@cs.stonybrook.edu,
- dlemoal@kernel.org, eparis@parisplace.org, ceph-devel@vger.kernel.org,
- xiang@kernel.org, yijiangshan@kylinos.cn, dhowells@redhat.com,
- linux-nfs@vger.kernel.org, linux-ext4@vger.kernel.org, kolga@netapp.com,
- song@kernel.org, samba-technical@lists.samba.org, sfrench@samba.org,
- jk@ozlabs.org, netdev@vger.kernel.org, rpeterso@redhat.com,
+ Damien Le Moal <dlemoal@kernel.org>, eparis@parisplace.org,
+ ceph-devel@vger.kernel.org, xiang@kernel.org, yijiangshan@kylinos.cn,
+ dhowells@redhat.com, linux-nfs@vger.kernel.org, linux-ext4@vger.kernel.org,
+ kolga@netapp.com, song@kernel.org, samba-technical@lists.samba.org,
+ sfrench@samba.org, jk@ozlabs.org, netdev@vger.kernel.org, rpeterso@redhat.com,
  linux-fsdevel@vger.kernel.org, bpf@vger.kernel.org, ntfs3@lists.linux.dev,
  linux-erofs@lists.ozlabs.org, davem@davemloft.net,
  jfs-discussion@lists.sourceforge.net, princekumarmaurya06@gmail.com,
@@ -182,78 +180,125 @@ Cc: lucho@ionkov.net, rafael@kernel.org, djwong@kernel.org, al@alarsen.net,
  sj1557.seo@samsung.com, dwmw2@infradead.org,
  linux-karma-devel@lists.sourceforge.net, linux-btrfs@vger.kernel.org,
  jlbec@evilplan.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: multipart/mixed; boundary="===============5414470074918076202=="
 Errors-To: jfs-discussion-bounces@lists.sourceforge.net
 
-On Thu, 2023-07-06 at 10:16 -0500, Eric W. Biederman wrote:
-> Jeff Layton <jlayton@kernel.org> writes:
-> 
-> > On Wed, 2023-07-05 at 14:58 -0400, Jeff Layton wrote:
-> > > v2:
-> > > - prepend patches to add missing ctime updates
-> > > - add simple_rename_timestamp helper function
-> > > - rename ctime accessor functions as inode_get_ctime/inode_set_ctime_*
-> > > - drop individual inode_ctime_set_{sec,nsec} helpers
-> > > 
-> > > I've been working on a patchset to change how the inode->i_ctime is
-> > > accessed in order to give us conditional, high-res timestamps for the
-> > > ctime and mtime. struct timespec64 has unused bits in it that we can use
-> > > to implement this. In order to do that however, we need to wrap all
-> > > accesses of inode->i_ctime to ensure that bits used as flags are
-> > > appropriately handled.
-> > > 
-> > > The patchset starts with reposts of some missing ctime updates that I
-> > > spotted in the tree. It then adds a new helper function for updating the
-> > > timestamp after a successful rename, and new ctime accessor
-> > > infrastructure.
-> > > 
-> > > The bulk of the patchset is individual conversions of different
-> > > subsysteme to use the new infrastructure. Finally, the patchset renames
-> > > the i_ctime field to __i_ctime to help ensure that I didn't miss
-> > > anything.
-> > > 
-> > > This should apply cleanly to linux-next as of this morning.
-> > > 
-> > > Most of this conversion was done via 5 different coccinelle scripts, run
-> > > in succession, with a large swath of by-hand conversions to clean up the
-> > > remainder.
-> > > 
-> > 
-> > A couple of other things I should note:
-> > 
-> > If you sent me an Acked-by or Reviewed-by in the previous set, then I
-> > tried to keep it on the patch here, since the respun patches are mostly
-> > just renaming stuff from v1. Let me know if I've missed any.
-> > 
-> > I've also pushed the pile to my tree as this tag:
-> > 
-> >     https://git.kernel.org/pub/scm/linux/kernel/git/jlayton/linux.git/tag/?h=ctime.20230705
-> > 
-> > In case that's easier to work with.
-> 
-> Are there any preliminary patches showing what you want your introduced
-> accessors to turn into?  It is hard to judge the sanity of the
-> introduction of wrappers without seeing what the wrappers are ultimately
-> going to do.
-> 
-> Eric
 
-I have a draft version of the multigrain patches on top of the wrapper
-conversion I've already posted in my "mgctime-experimental" branch:
+--===============5414470074918076202==
+Content-Type: multipart/signed; micalg=pgp-sha512;
+	protocol="application/pgp-signature"; boundary="E39vaYmALEf/7YXx"
+Content-Disposition: inline
 
-    https://git.kernel.org/pub/scm/linux/kernel/git/jlayton/linux.git/log/?h=mgctime-experimental
 
-The rationale is best explained in this changelog:
+--E39vaYmALEf/7YXx
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
 
-    https://git.kernel.org/pub/scm/linux/kernel/git/jlayton/linux.git/commit/?h=mgctime-experimental&id=face437a144d3375afb7f70c233b0644b4edccba
+On Wed, Jul 05, 2023 at 08:04:41PM -0400, Jeff Layton wrote:
+>=20
+> I don't believe it's an issue. I've seen nothing in the POSIX spec that
+> mandates that timestamp updates to different inodes involved in an
+> operation be set to the _same_ value. It just says they must be updated.
+>=20
+> It's also hard to believe that any software would depend on this either,
+> given that it's very inconsistent across filesystems today. AFAICT, this
+> was mostly done in the past just as a matter of convenience.
 
-The idea will be to enable this on a per-fs basis.
--- 
-Jeff Layton <jlayton@kernel.org>
+I've seen this assumption in several programs:
 
+mutt buffy.c
+https://sources.debian.org/src/mutt/2.2.9-1/buffy.c/?hl=3D625#L625
+
+  if (mailbox->newly_created &&
+      (sb->st_ctime !=3D sb->st_mtime || sb->st_ctime !=3D sb->st_atime))
+    mailbox->newly_created =3D 0;
+
+
+neomutt mbox/mbox.c
+https://sources.debian.org/src/neomutt/20220429+dfsg1-4.1/mbox/mbox.c/?hl=
+=3D1820#L1820
+
+  if (m->newly_created && ((st.st_ctime !=3D st.st_mtime) || (st.st_ctime !=
+=3D st.st_atime)))
+    m->newly_created =3D false;
+
+
+screen logfile.c
+https://sources.debian.org/src/screen/4.9.0-4/logfile.c/?hl=3D130#L130
+
+  if ((!s->st_dev && !s->st_ino) ||             /* stat failed, that's new!=
+ */
+      !s->st_nlink ||                           /* red alert: file unlinked=
+ */
+      (s->st_size < o.st_size) ||               /*           file truncated=
+ */
+      (s->st_mtime !=3D o.st_mtime) ||            /*            file modifi=
+ed */
+      ((s->st_ctime !=3D o.st_ctime) &&           /*     file changed (move=
+d) */
+       !(s->st_mtime =3D=3D s->st_ctime &&          /*  and it was not a ch=
+ange */
+         o.st_ctime < s->st_ctime)))            /* due to delayed nfs write=
+ */
+  {
+
+nemo libnemo-private/nemo-vfs-file.c
+https://sources.debian.org/src/nemo/5.6.5-1/libnemo-private/nemo-vfs-file.c=
+/?hl=3D344#L344
+
+		/* mtime is when the contents changed; ctime is when the
+		 * contents or the permissions (inc. owner/group) changed.
+		 * So we can only know when the permissions changed if mtime
+		 * and ctime are different.
+		 */
+		if (file->details->mtime =3D=3D file->details->ctime) {
+			return FALSE;
+		}
+
+
+While looking for more examples, I found a perl test that seems to suggest
+that at least Solaris, AFS, AmigaOS, DragonFly BSD do as you suggest:
+https://sources.debian.org/src/perl/5.36.0-7/t/op/stat.t/?hl=3D158#L140
+
+
+Thanks
+
+--E39vaYmALEf/7YXx
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iQEzBAABCgAdFiEEQVAQ8bojyMcg37H18yFyWZ2NLpcFAmSnK+gACgkQ8yFyWZ2N
+Lpd3gQf6AtE8sBL09BSTvT1P5I8tCXnJ4U7VbzQxWTcKAQHRpyZn8IRSdWuxiPEU
+soaBmSx6jov+kkZYX5uP1LSM1INMYpJTJELGas9A7wenNppBGS07LjwAL40wouPm
+UfcVWQqOgM8eoseMKBKePv5TkTJFn/M3cPK9Wy31E+qF1IPMNtxz9JKz109YlDOO
+FxVTwBGGxxKvx3SsUl6hdaqBCK3omZlbWCzqSyqBzzvjgZ01VC5ktw5FuuTABbu8
+TScNnT5GtO5AE8RV0T3TKISm19xD69JHQt/etFeU2yKwiBsn89pY4Xut3CrxbSQm
+prQ7ssP3/fi41WxFFDQzO/oQok/b+A==
+=/KNl
+-----END PGP SIGNATURE-----
+
+--E39vaYmALEf/7YXx--
+
+
+--===============5414470074918076202==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
+
+
+--===============5414470074918076202==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 Jfs-discussion mailing list
 Jfs-discussion@lists.sourceforge.net
 https://lists.sourceforge.net/lists/listinfo/jfs-discussion
+
+--===============5414470074918076202==--
+
