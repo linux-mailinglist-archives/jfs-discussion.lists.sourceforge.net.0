@@ -2,27 +2,28 @@ Return-Path: <jfs-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+jfs-discussion@lfdr.de
 Delivered-To: lists+jfs-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id 816B9749DDA
-	for <lists+jfs-discussion@lfdr.de>; Thu,  6 Jul 2023 15:36:07 +0200 (CEST)
-Received: from [127.0.0.1] (helo=sfs-ml-3.v29.lw.sourceforge.com)
-	by sfs-ml-3.v29.lw.sourceforge.com with esmtp (Exim 4.95)
+	by mail.lfdr.de (Postfix) with ESMTPS id 99DBA749DA0
+	for <lists+jfs-discussion@lfdr.de>; Thu,  6 Jul 2023 15:28:13 +0200 (CEST)
+Received: from [127.0.0.1] (helo=sfs-ml-2.v29.lw.sourceforge.com)
+	by sfs-ml-2.v29.lw.sourceforge.com with esmtp (Exim 4.95)
 	(envelope-from <jfs-discussion-bounces@lists.sourceforge.net>)
-	id 1qHP90-0000SI-4u;
-	Thu, 06 Jul 2023 13:35:38 +0000
+	id 1qHP1D-0005yS-8L;
+	Thu, 06 Jul 2023 13:27:35 +0000
 Received: from [172.30.20.202] (helo=mx.sourceforge.net)
- by sfs-ml-1.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
+ by sfs-ml-2.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
  TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (Exim 4.95)
- (envelope-from <jack@suse.cz>) id 1qHMCj-0002JW-B6;
- Thu, 06 Jul 2023 10:27:19 +0000
+ (envelope-from <jack@suse.cz>) id 1qHP19-0005y7-Nh
+ for jfs-discussion@lists.sourceforge.net;
+ Thu, 06 Jul 2023 13:27:32 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=sourceforge.net; s=x; h=In-Reply-To:Content-Type:MIME-Version:References:
  Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:Content-Transfer-Encoding:
  Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
  Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=bA8lspzVCI0QkBBZSOZ2NaXyU+WIcRfNoOGE3kPhpJ0=; b=Zf+C6uhHHF5tr2Ixlc0HU9iDrG
- o0Cza1ElGZbgIoqvJba2AqTnAMTLy60/jZHcUz/rY4uwSZzsty9jo37/aUHIJhuCAkv+UiZ4HojZY
- h7PWCUoODBCLW+Kzp1ZJI6kw2Y+7/VqjWdOT8g2h0oivRYXJyMFpsyGoJ80A7V8Uzw4k=;
+ bh=9jiWKE4OzG6TzXYLixnatIY8nUy0TcM8xqgDtkKakcY=; b=dg9/fDVy0O9lIRpdkFITbQHPZg
+ dohMnpNpVwYBZthWDV3v6hJR0iq62FVRQnNv/774tV3O3/jkiwMT01N2mzRIS90rvJOf9zTvnpYPF
+ P9OgGpo5TGyIlZt1lSuICDobD2mSAyWGoypaurrIOmJMi82tnpuswOos33VoQXwpMw3E=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
  h=In-Reply-To:Content-Type:MIME-Version:References:Message-ID:Subject:Cc:To
@@ -30,55 +31,57 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
  :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
  List-Post:List-Owner:List-Archive;
- bh=bA8lspzVCI0QkBBZSOZ2NaXyU+WIcRfNoOGE3kPhpJ0=; b=P+a1hYpFIdXCoggt58a5Z1Bly9
- WKN+BUS9vx8KfQ5B+DDa+6mLFHK1x9bL2YeyMz/R0jmE7HpTCSEj91qd4iloD6st2fTzABzBmt2Oc
- vrOmNcaBrxwROa3KtBno+iBIeTUCL5foVq43THBKMfrWJGghasTTSrXIiudyVRJ1OUV0=;
-Received: from smtp-out2.suse.de ([195.135.220.29])
+ bh=9jiWKE4OzG6TzXYLixnatIY8nUy0TcM8xqgDtkKakcY=; b=Ju6GNeWr8a9llfyGwV6do5U7ra
+ xXE6l8H3gSEr/yE8b6OO8v16ptVeVPNuzuqqW5px/U/S3XsfHJ+6AJrO9uEd6bOkNYMJysy/ZkAYJ
+ agMrR29frYbK6E5UXIpYFUWt27k1Gykp8E58bwU0B4kY35c3FSwGtWjx/1nLx7Uvmbl4=;
+Received: from smtp-out1.suse.de ([195.135.220.28])
  by sfi-mx-2.v28.lw.sourceforge.com with esmtps
  (TLS1.2:ECDHE-RSA-AES128-GCM-SHA256:128) (Exim 4.95)
- id 1qHMCh-0004OM-BL; Thu, 06 Jul 2023 10:27:18 +0000
+ id 1qHP17-0003XP-7H for jfs-discussion@lists.sourceforge.net;
+ Thu, 06 Jul 2023 13:27:31 +0000
 Received: from imap2.suse-dmz.suse.de (imap2.suse-dmz.suse.de [192.168.254.74])
  (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
  key-exchange X25519 server-signature ECDSA (P-521) server-digest SHA512)
  (No client certificate requested)
- by smtp-out2.suse.de (Postfix) with ESMTPS id D768F2027F;
- Thu,  6 Jul 2023 10:27:06 +0000 (UTC)
+ by smtp-out1.suse.de (Postfix) with ESMTPS id EF9832206D;
+ Thu,  6 Jul 2023 13:27:22 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=suse.cz; s=susede2_rsa;
- t=1688639226; h=from:from:reply-to:date:date:message-id:message-id:to:to:cc:cc:
+ t=1688650042; h=from:from:reply-to:date:date:message-id:message-id:to:to:cc:cc:
  mime-version:mime-version:content-type:content-type:
  in-reply-to:in-reply-to:references:references;
- bh=bA8lspzVCI0QkBBZSOZ2NaXyU+WIcRfNoOGE3kPhpJ0=;
- b=cwJXVYMxjabgJAc1WiPXwEoX0OTfi47rAf4OBX1TAQ+OGmO9dcjviKfq9JaMZbP2e77Zft
- ZFGj4L7K2Mk/xcezt5kjd+qP2pHojrW25RMENmZ0z2yxrjNTco/s31l/aUs5F51DaCvlcK
- y6kdxWpKryRTZKsAyjQoNnmkqAh2mzg=
+ bh=9jiWKE4OzG6TzXYLixnatIY8nUy0TcM8xqgDtkKakcY=;
+ b=z+VCj9+lDhEUOls9jjpIB1QJ0vzyrk/GzxzLb9XI1xFP2feDQK5uwFGiCzkoIFfJ6QFp5V
+ 36Dyr1f3TuzQXY9MRL2ft4Z1PrJex47lMFeCIchSMWeUopN+gOJ6VdL3I97VdUYKBHeXom
+ tNfYmFdXJwWJbxc65EQp8SIs1WSST64=
 DKIM-Signature: v=1; a=ed25519-sha256; c=relaxed/relaxed; d=suse.cz;
- s=susede2_ed25519; t=1688639226;
+ s=susede2_ed25519; t=1688650042;
  h=from:from:reply-to:date:date:message-id:message-id:to:to:cc:cc:
  mime-version:mime-version:content-type:content-type:
  in-reply-to:in-reply-to:references:references;
- bh=bA8lspzVCI0QkBBZSOZ2NaXyU+WIcRfNoOGE3kPhpJ0=;
- b=NZCT2CDl1JUNY6ijIJLjHssrtsmLEPFUK3ppAhWe46d1TfukNG5xi7VbWtXEv0lhKCq/xt
- xNVG4YexDp28AbCA==
+ bh=9jiWKE4OzG6TzXYLixnatIY8nUy0TcM8xqgDtkKakcY=;
+ b=qI3+T3Jn/YHkFlYcAKhJdQhmchgufcae9k6h7YE3NwIeP8hhGlQjznsr24u1+w9XezEP4E
+ 9zEFTmp+bL8Gc9Dw==
 Received: from imap2.suse-dmz.suse.de (imap2.suse-dmz.suse.de [192.168.254.74])
  (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
  key-exchange X25519 server-signature ECDSA (P-521) server-digest SHA512)
  (No client certificate requested)
- by imap2.suse-dmz.suse.de (Postfix) with ESMTPS id 94E18138FC;
- Thu,  6 Jul 2023 10:27:06 +0000 (UTC)
+ by imap2.suse-dmz.suse.de (Postfix) with ESMTPS id C0971138EE;
+ Thu,  6 Jul 2023 13:27:22 +0000 (UTC)
 Received: from dovecot-director2.suse.de ([192.168.254.65])
- by imap2.suse-dmz.suse.de with ESMTPSA id EJEiJPqWpmTLdAAAMHmgww
- (envelope-from <jack@suse.cz>); Thu, 06 Jul 2023 10:27:06 +0000
+ by imap2.suse-dmz.suse.de with ESMTPSA id BssBLzrBpmSjVgAAMHmgww
+ (envelope-from <jack@suse.cz>); Thu, 06 Jul 2023 13:27:22 +0000
 Received: by quack3.suse.cz (Postfix, from userid 1000)
- id 1CB0FA0707; Thu,  6 Jul 2023 12:27:06 +0200 (CEST)
-Date: Thu, 6 Jul 2023 12:27:06 +0200
+ id 4E08AA0707; Thu,  6 Jul 2023 15:27:22 +0200 (CEST)
+Date: Thu, 6 Jul 2023 15:27:22 +0200
 From: Jan Kara <jack@suse.cz>
 To: Jeff Layton <jlayton@kernel.org>
-Message-ID: <20230706102706.w7udmbmuwp7hhcry@quack3>
-References: <20230705185812.579118-1-jlayton@kernel.org>
- <20230705185812.579118-3-jlayton@kernel.org>
+Message-ID: <20230706132722.wpzk2766amw2fz72@quack3>
+References: <20230705185755.579053-1-jlayton@kernel.org>
+ <20230705190309.579783-1-jlayton@kernel.org>
+ <20230705190309.579783-53-jlayton@kernel.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20230705185812.579118-3-jlayton@kernel.org>
+In-Reply-To: <20230705190309.579783-53-jlayton@kernel.org>
 X-Spam-Score: -2.5 (--)
 X-Spam-Report: Spam detection software,
  running on the system "util-spamd-2.v13.lw.sourceforge.com", 
@@ -86,17 +89,17 @@ X-Spam-Report: Spam detection software,
  message has been attached to this so you can view it or label
  similar future email.  If you have any questions, see
  the administrator of that system for details.
- Content preview:  On Wed 05-07-23 14:58:11,
- Jeff Layton wrote: > A rename potentially
- involves updating 4 different inode timestamps. Add > a function that handles
- the details sanely, and convert the libfs.c > callers [...] 
+ Content preview:  On Wed 05-07-23 15:01:20,
+ Jeff Layton wrote: > In later patches, 
+ we're going to change how the inode's ctime field is > used. Switch to using
+ accessor functions instead of raw accesses of > inode->i_c [...] 
  Content analysis details:   (-2.5 points, 6.0 required)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [195.135.220.28 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [195.135.220.29 listed in list.dnswl.org]
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -105,10 +108,9 @@ X-Spam-Report: Spam detection software,
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.0 T_SCC_BODY_TEXT_LINE   No description available.
-X-Headers-End: 1qHMCh-0004OM-BL
-X-Mailman-Approved-At: Thu, 06 Jul 2023 13:35:35 +0000
-Subject: Re: [Jfs-discussion] [PATCH v2 08/92] fs: new helper:
- simple_rename_timestamp
+X-Headers-End: 1qHP17-0003XP-7H
+Subject: Re: [Jfs-discussion] [PATCH v2 55/92] jfs: convert to ctime
+ accessor functions
 X-BeenThere: jfs-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -120,185 +122,245 @@ List-Post: <mailto:jfs-discussion@lists.sourceforge.net>
 List-Help: <mailto:jfs-discussion-request@lists.sourceforge.net?subject=help>
 List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/jfs-discussion>, 
  <mailto:jfs-discussion-request@lists.sourceforge.net?subject=subscribe>
-Cc: lucho@ionkov.net, rafael@kernel.org, djwong@kernel.org, al@alarsen.net,
- cmllamas@google.com, andrii@kernel.org, hughd@google.com,
- john.johansen@canonical.com, agordeev@linux.ibm.com, hch@lst.de,
- hubcap@omnibond.com, pc@manguebit.com, linux-xfs@vger.kernel.org,
- bvanassche@acm.org, jeffxu@chromium.org, mpe@ellerman.id.au,
- john@keeping.me.uk, yi.zhang@huawei.com, jmorris@namei.org,
- christophe.leroy@csgroup.eu, code@tyhicks.com, stern@rowland.harvard.edu,
- borntraeger@linux.ibm.com, devel@lists.orangefs.org, mirimmad17@gmail.com,
- sprasad@microsoft.com, jaharkes@cs.cmu.edu, linux-um@lists.infradead.org,
- npiggin@gmail.com, viro@zeniv.linux.org.uk, ericvh@kernel.org,
- surenb@google.com, trond.myklebust@hammerspace.com, anton@tuxera.com,
- brauner@kernel.org, wsa+renesas@sang-engineering.com,
- gregkh@linuxfoundation.org, stephen.smalley.work@gmail.com,
- linux-usb@vger.kernel.org, linux-kernel@vger.kernel.org, lsahlber@redhat.com,
- senozhatsky@chromium.org, arve@android.com, chuck.lever@oracle.com,
- svens@linux.ibm.com, jolsa@kernel.org, jack@suse.com, tj@kernel.org,
- akpm@linux-foundation.org, linux-trace-kernel@vger.kernel.org,
- xu.xin16@zte.com.cn, shaggy@kernel.org, dhavale@google.com,
- penguin-kernel@I-love.SAKURA.ne.jp, zohar@linux.ibm.com, linux-mm@kvack.org,
- joel@joelfernandes.org, edumazet@google.com, sdf@google.com, jomajm@gmail.com,
- linux-s390@vger.kernel.org, linux-nilfs@vger.kernel.org, paul@paul-moore.com,
- leon@kernel.org, john.fastabend@gmail.com, mcgrof@kernel.org,
- chi.minghao@zte.com.cn, codalist@coda.cs.cmu.edu, selinux@vger.kernel.org,
- zhangpeng362@huawei.com, quic_ugoswami@quicinc.com, yhs@fb.com,
- yzaikin@google.com, linkinjeon@kernel.org, mhiramat@kernel.org,
- ecryptfs@vger.kernel.org, tkjos@android.com, madkar@cs.stonybrook.edu,
- gor@linux.ibm.com, yuzhe@nfschina.com, linuxppc-dev@lists.ozlabs.org,
- reiserfs-devel@vger.kernel.org, miklos@szeredi.hu, huyue2@coolpad.com,
- jaegeuk@kernel.org, gargaditya08@live.com, maco@android.com,
- hirofumi@mail.parknet.co.jp, haoluo@google.com, tony.luck@intel.com,
- tytso@mit.edu, nico@fluxnic.net, linux-ntfs-dev@lists.sourceforge.net,
- muchun.song@linux.dev, roberto.sassu@huawei.com,
- linux-f2fs-devel@lists.sourceforge.net, yang.yang29@zte.com.cn,
- gpiccoli@igalia.com, ebiederm@xmission.com, anna@kernel.org,
- quic_uaggarwa@quicinc.com, bwarrum@linux.ibm.com, mike.kravetz@oracle.com,
- jingyuwang_vip@163.com, linux-efi@vger.kernel.org, error27@gmail.com,
- martin@omnibond.com, trix@redhat.com, ocfs2-devel@lists.linux.dev,
- ast@kernel.org, sebastian.reichel@collabora.com, clm@fb.com,
- linux-mtd@lists.infradead.org, willy@infradead.org, marc.dionne@auristor.com,
- linux-afs@lists.infradead.org, raven@themaw.net, naohiro.aota@wdc.com,
- daniel@iogearbox.net, dennis.dalessandro@cornelisnetworks.com,
- linux-rdma@vger.kernel.org, quic_linyyuan@quicinc.com, coda@cs.cmu.edu,
- idryomov@gmail.com, pabeni@redhat.com, adobriyan@gmail.com, serge@hallyn.com,
- chengzhihao1@huawei.com, axboe@kernel.dk, amir73il@gmail.com,
- linuszeng@tencent.com, keescook@chromium.org, arnd@arndb.de,
- autofs@vger.kernel.org, rostedt@goodmis.org, yifeliu@cs.stonybrook.edu,
- dlemoal@kernel.org, eparis@parisplace.org, ceph-devel@vger.kernel.org,
- xiang@kernel.org, yijiangshan@kylinos.cn, dhowells@redhat.com,
- linux-nfs@vger.kernel.org, linux-ext4@vger.kernel.org, kolga@netapp.com,
- song@kernel.org, samba-technical@lists.samba.org, sfrench@samba.org,
- jk@ozlabs.org, netdev@vger.kernel.org, rpeterso@redhat.com,
- linux-fsdevel@vger.kernel.org, bpf@vger.kernel.org, ntfs3@lists.linux.dev,
- linux-erofs@lists.ozlabs.org, davem@davemloft.net,
- jfs-discussion@lists.sourceforge.net, princekumarmaurya06@gmail.com,
- ebiggers@google.com, neilb@suse.de, asmadeus@codewreck.org,
- linux_oss@crudebyte.com, me@bobcopeland.com, kpsingh@kernel.org,
- okanatov@gmail.com, almaz.alexandrovich@paragon-software.com,
- joseph.qi@linux.alibaba.com, hayama@lineo.co.jp, adilger.kernel@dilger.ca,
- mikulas@artax.karlin.mff.cuni.cz, shaozhengchao@huawei.com,
- chenzhongjin@huawei.com, ardb@kernel.org, anton.ivanov@cambridgegreys.com,
- agruenba@redhat.com, richard@nod.at, mark@fasheh.com, shr@devkernel.io,
- Dai.Ngo@oracle.com, cluster-devel@redhat.com, jgg@ziepe.ca, kuba@kernel.org,
- riel@surriel.com, salah.triki@gmail.com, dushistov@mail.ru,
- linux-cifs@vger.kernel.org, hca@linux.ibm.com, chao@kernel.org,
- apparmor@lists.ubuntu.com, josef@toxicpanda.com, Liam.Howlett@Oracle.com,
- tom@talpey.com, hdegoede@redhat.com, linux-hardening@vger.kernel.org,
- aivazian.tigran@gmail.com, dchinner@redhat.com, dsterba@suse.com,
- xiubli@redhat.com, konishi.ryusuke@gmail.com, jgross@suse.com, jth@kernel.org,
- rituagar@linux.ibm.com, luisbg@kernel.org, martin.lau@linux.dev,
- v9fs@lists.linux.dev, fmdefrancesco@gmail.com, linux-unionfs@vger.kernel.org,
- lrh2000@pku.edu.cn, linux-security-module@vger.kernel.org,
- ezk@cs.stonybrook.edu, jefflexu@linux.alibaba.com, linux@treblig.org,
- hannes@cmpxchg.org, phillip@squashfs.org.uk, johannes@sipsolutions.net,
- sj1557.seo@samsung.com, dwmw2@infradead.org,
- linux-karma-devel@lists.sourceforge.net, linux-btrfs@vger.kernel.org,
- jlbec@evilplan.org
+Cc: Dave Kleikamp <shaggy@kernel.org>, Christian Brauner <brauner@kernel.org>,
+ Jan Kara <jack@suse.cz>, linux-kernel@vger.kernel.org,
+ Al Viro <viro@zeniv.linux.org.uk>, linux-fsdevel@vger.kernel.org,
+ jfs-discussion@lists.sourceforge.net
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Errors-To: jfs-discussion-bounces@lists.sourceforge.net
 
-On Wed 05-07-23 14:58:11, Jeff Layton wrote:
-> A rename potentially involves updating 4 different inode timestamps. Add
-> a function that handles the details sanely, and convert the libfs.c
-> callers to use it.
+On Wed 05-07-23 15:01:20, Jeff Layton wrote:
+> In later patches, we're going to change how the inode's ctime field is
+> used. Switch to using accessor functions instead of raw accesses of
+> inode->i_ctime.
 > 
+> Acked-by: Dave Kleikamp <dave.kleikamp@oracle.com>
 > Signed-off-by: Jeff Layton <jlayton@kernel.org>
 
-Looks good to me. Feel free to add:
+Looks good. Feel free to add:
 
 Reviewed-by: Jan Kara <jack@suse.cz>
 
 								Honza
 
 > ---
->  fs/libfs.c         | 36 +++++++++++++++++++++++++++---------
->  include/linux/fs.h |  2 ++
->  2 files changed, 29 insertions(+), 9 deletions(-)
+>  fs/jfs/acl.c       |  2 +-
+>  fs/jfs/inode.c     |  2 +-
+>  fs/jfs/ioctl.c     |  2 +-
+>  fs/jfs/jfs_imap.c  |  8 ++++----
+>  fs/jfs/jfs_inode.c |  4 ++--
+>  fs/jfs/namei.c     | 24 ++++++++++++------------
+>  fs/jfs/super.c     |  2 +-
+>  fs/jfs/xattr.c     |  2 +-
+>  8 files changed, 23 insertions(+), 23 deletions(-)
 > 
-> diff --git a/fs/libfs.c b/fs/libfs.c
-> index a7e56baf8bbd..9ee79668c909 100644
-> --- a/fs/libfs.c
-> +++ b/fs/libfs.c
-> @@ -692,6 +692,31 @@ int simple_rmdir(struct inode *dir, struct dentry *dentry)
->  }
->  EXPORT_SYMBOL(simple_rmdir);
->  
-> +/**
-> + * simple_rename_timestamp - update the various inode timestamps for rename
-> + * @old_dir: old parent directory
-> + * @old_dentry: dentry that is being renamed
-> + * @new_dir: new parent directory
-> + * @new_dentry: target for rename
-> + *
-> + * POSIX mandates that the old and new parent directories have their ctime and
-> + * mtime updated, and that inodes of @old_dentry and @new_dentry (if any), have
-> + * their ctime updated.
-> + */
-> +void simple_rename_timestamp(struct inode *old_dir, struct dentry *old_dentry,
-> +			     struct inode *new_dir, struct dentry *new_dentry)
-> +{
-> +	struct inode *newino = d_inode(new_dentry);
-> +
-> +	old_dir->i_mtime = inode_set_ctime_current(old_dir);
-> +	if (new_dir != old_dir)
-> +		new_dir->i_mtime = inode_set_ctime_current(new_dir);
-> +	inode_set_ctime_current(d_inode(old_dentry));
-> +	if (newino)
-> +		inode_set_ctime_current(newino);
-> +}
-> +EXPORT_SYMBOL_GPL(simple_rename_timestamp);
-> +
->  int simple_rename_exchange(struct inode *old_dir, struct dentry *old_dentry,
->  			   struct inode *new_dir, struct dentry *new_dentry)
->  {
-> @@ -707,11 +732,7 @@ int simple_rename_exchange(struct inode *old_dir, struct dentry *old_dentry,
->  			inc_nlink(old_dir);
+> diff --git a/fs/jfs/acl.c b/fs/jfs/acl.c
+> index fb96f872d207..1de3602c98de 100644
+> --- a/fs/jfs/acl.c
+> +++ b/fs/jfs/acl.c
+> @@ -116,7 +116,7 @@ int jfs_set_acl(struct mnt_idmap *idmap, struct dentry *dentry,
+>  	if (!rc) {
+>  		if (update_mode) {
+>  			inode->i_mode = mode;
+> -			inode->i_ctime = current_time(inode);
+> +			inode_set_ctime_current(inode);
+>  			mark_inode_dirty(inode);
 >  		}
+>  		rc = txCommit(tid, 1, &inode, 0);
+> diff --git a/fs/jfs/inode.c b/fs/jfs/inode.c
+> index 8ac10e396050..920d58a1566b 100644
+> --- a/fs/jfs/inode.c
+> +++ b/fs/jfs/inode.c
+> @@ -393,7 +393,7 @@ void jfs_truncate_nolock(struct inode *ip, loff_t length)
+>  			break;
+>  		}
+>  
+> -		ip->i_mtime = ip->i_ctime = current_time(ip);
+> +		ip->i_mtime = inode_set_ctime_current(ip);
+>  		mark_inode_dirty(ip);
+>  
+>  		txCommit(tid, 1, &ip, 0);
+> diff --git a/fs/jfs/ioctl.c b/fs/jfs/ioctl.c
+> index ed7989bc2db1..f7bd7e8f5be4 100644
+> --- a/fs/jfs/ioctl.c
+> +++ b/fs/jfs/ioctl.c
+> @@ -96,7 +96,7 @@ int jfs_fileattr_set(struct mnt_idmap *idmap,
+>  	jfs_inode->mode2 = flags;
+>  
+>  	jfs_set_inode_flags(inode);
+> -	inode->i_ctime = current_time(inode);
+> +	inode_set_ctime_current(inode);
+>  	mark_inode_dirty(inode);
+>  
+>  	return 0;
+> diff --git a/fs/jfs/jfs_imap.c b/fs/jfs/jfs_imap.c
+> index 390cbfce391f..a40383aa6c84 100644
+> --- a/fs/jfs/jfs_imap.c
+> +++ b/fs/jfs/jfs_imap.c
+> @@ -3064,8 +3064,8 @@ static int copy_from_dinode(struct dinode * dip, struct inode *ip)
+>  	ip->i_atime.tv_nsec = le32_to_cpu(dip->di_atime.tv_nsec);
+>  	ip->i_mtime.tv_sec = le32_to_cpu(dip->di_mtime.tv_sec);
+>  	ip->i_mtime.tv_nsec = le32_to_cpu(dip->di_mtime.tv_nsec);
+> -	ip->i_ctime.tv_sec = le32_to_cpu(dip->di_ctime.tv_sec);
+> -	ip->i_ctime.tv_nsec = le32_to_cpu(dip->di_ctime.tv_nsec);
+> +	inode_set_ctime(ip, le32_to_cpu(dip->di_ctime.tv_sec),
+> +			le32_to_cpu(dip->di_ctime.tv_nsec));
+>  	ip->i_blocks = LBLK2PBLK(ip->i_sb, le64_to_cpu(dip->di_nblocks));
+>  	ip->i_generation = le32_to_cpu(dip->di_gen);
+>  
+> @@ -3139,8 +3139,8 @@ static void copy_to_dinode(struct dinode * dip, struct inode *ip)
+>  
+>  	dip->di_atime.tv_sec = cpu_to_le32(ip->i_atime.tv_sec);
+>  	dip->di_atime.tv_nsec = cpu_to_le32(ip->i_atime.tv_nsec);
+> -	dip->di_ctime.tv_sec = cpu_to_le32(ip->i_ctime.tv_sec);
+> -	dip->di_ctime.tv_nsec = cpu_to_le32(ip->i_ctime.tv_nsec);
+> +	dip->di_ctime.tv_sec = cpu_to_le32(inode_get_ctime(ip).tv_sec);
+> +	dip->di_ctime.tv_nsec = cpu_to_le32(inode_get_ctime(ip).tv_nsec);
+>  	dip->di_mtime.tv_sec = cpu_to_le32(ip->i_mtime.tv_sec);
+>  	dip->di_mtime.tv_nsec = cpu_to_le32(ip->i_mtime.tv_nsec);
+>  	dip->di_ixpxd = jfs_ip->ixpxd;	/* in-memory pxd's are little-endian */
+> diff --git a/fs/jfs/jfs_inode.c b/fs/jfs/jfs_inode.c
+> index 9e1f02767201..87594efa7f7c 100644
+> --- a/fs/jfs/jfs_inode.c
+> +++ b/fs/jfs/jfs_inode.c
+> @@ -97,8 +97,8 @@ struct inode *ialloc(struct inode *parent, umode_t mode)
+>  	jfs_inode->mode2 |= inode->i_mode;
+>  
+>  	inode->i_blocks = 0;
+> -	inode->i_mtime = inode->i_atime = inode->i_ctime = current_time(inode);
+> -	jfs_inode->otime = inode->i_ctime.tv_sec;
+> +	inode->i_mtime = inode->i_atime = inode_set_ctime_current(inode);
+> +	jfs_inode->otime = inode_get_ctime(inode).tv_sec;
+>  	inode->i_generation = JFS_SBI(sb)->gengen++;
+>  
+>  	jfs_inode->cflag = 0;
+> diff --git a/fs/jfs/namei.c b/fs/jfs/namei.c
+> index 9b030297aa64..541578126b1a 100644
+> --- a/fs/jfs/namei.c
+> +++ b/fs/jfs/namei.c
+> @@ -149,7 +149,7 @@ static int jfs_create(struct mnt_idmap *idmap, struct inode *dip,
+>  
+>  	mark_inode_dirty(ip);
+>  
+> -	dip->i_ctime = dip->i_mtime = current_time(dip);
+> +	dip->i_mtime = inode_set_ctime_current(dip);
+>  
+>  	mark_inode_dirty(dip);
+>  
+> @@ -284,7 +284,7 @@ static int jfs_mkdir(struct mnt_idmap *idmap, struct inode *dip,
+>  
+>  	/* update parent directory inode */
+>  	inc_nlink(dip);		/* for '..' from child directory */
+> -	dip->i_ctime = dip->i_mtime = current_time(dip);
+> +	dip->i_mtime = inode_set_ctime_current(dip);
+>  	mark_inode_dirty(dip);
+>  
+>  	rc = txCommit(tid, 2, &iplist[0], 0);
+> @@ -390,7 +390,7 @@ static int jfs_rmdir(struct inode *dip, struct dentry *dentry)
+>  	/* update parent directory's link count corresponding
+>  	 * to ".." entry of the target directory deleted
+>  	 */
+> -	dip->i_ctime = dip->i_mtime = current_time(dip);
+> +	dip->i_mtime = inode_set_ctime_current(dip);
+>  	inode_dec_link_count(dip);
+>  
+>  	/*
+> @@ -512,7 +512,7 @@ static int jfs_unlink(struct inode *dip, struct dentry *dentry)
+>  
+>  	ASSERT(ip->i_nlink);
+>  
+> -	ip->i_ctime = dip->i_ctime = dip->i_mtime = current_time(ip);
+> +	dip->i_mtime = inode_set_ctime_to_ts(dip, inode_set_ctime_current(ip));
+>  	mark_inode_dirty(dip);
+>  
+>  	/* update target's inode */
+> @@ -827,8 +827,8 @@ static int jfs_link(struct dentry *old_dentry,
+>  
+>  	/* update object inode */
+>  	inc_nlink(ip);		/* for new link */
+> -	ip->i_ctime = current_time(ip);
+> -	dir->i_ctime = dir->i_mtime = current_time(dir);
+> +	inode_set_ctime_current(ip);
+> +	dir->i_mtime = inode_set_ctime_current(dir);
+>  	mark_inode_dirty(dir);
+>  	ihold(ip);
+>  
+> @@ -1028,7 +1028,7 @@ static int jfs_symlink(struct mnt_idmap *idmap, struct inode *dip,
+>  
+>  	mark_inode_dirty(ip);
+>  
+> -	dip->i_ctime = dip->i_mtime = current_time(dip);
+> +	dip->i_mtime = inode_set_ctime_current(dip);
+>  	mark_inode_dirty(dip);
+>  	/*
+>  	 * commit update of parent directory and link object
+> @@ -1205,7 +1205,7 @@ static int jfs_rename(struct mnt_idmap *idmap, struct inode *old_dir,
+>  			tblk->xflag |= COMMIT_DELETE;
+>  			tblk->u.ip = new_ip;
+>  		} else {
+> -			new_ip->i_ctime = current_time(new_ip);
+> +			inode_set_ctime_current(new_ip);
+>  			mark_inode_dirty(new_ip);
+>  		}
+>  	} else {
+> @@ -1268,10 +1268,10 @@ static int jfs_rename(struct mnt_idmap *idmap, struct inode *old_dir,
+>  	/*
+>  	 * Update ctime on changed/moved inodes & mark dirty
+>  	 */
+> -	old_ip->i_ctime = current_time(old_ip);
+> +	inode_set_ctime_current(old_ip);
+>  	mark_inode_dirty(old_ip);
+>  
+> -	new_dir->i_ctime = new_dir->i_mtime = current_time(new_dir);
+> +	new_dir->i_mtime = inode_set_ctime_current(new_dir);
+>  	mark_inode_dirty(new_dir);
+>  
+>  	/* Build list of inodes modified by this transaction */
+> @@ -1283,7 +1283,7 @@ static int jfs_rename(struct mnt_idmap *idmap, struct inode *old_dir,
+>  
+>  	if (old_dir != new_dir) {
+>  		iplist[ipcount++] = new_dir;
+> -		old_dir->i_ctime = old_dir->i_mtime = current_time(old_dir);
+> +		old_dir->i_mtime = inode_set_ctime_current(old_dir);
+>  		mark_inode_dirty(old_dir);
 >  	}
-> -	old_dir->i_ctime = old_dir->i_mtime =
-> -	new_dir->i_ctime = new_dir->i_mtime =
-> -	d_inode(old_dentry)->i_ctime =
-> -	d_inode(new_dentry)->i_ctime = current_time(old_dir);
-> -
-> +	simple_rename_timestamp(old_dir, old_dentry, new_dir, new_dentry);
+>  
+> @@ -1416,7 +1416,7 @@ static int jfs_mknod(struct mnt_idmap *idmap, struct inode *dir,
+>  
+>  	mark_inode_dirty(ip);
+>  
+> -	dir->i_ctime = dir->i_mtime = current_time(dir);
+> +	dir->i_mtime = inode_set_ctime_current(dir);
+>  
+>  	mark_inode_dirty(dir);
+>  
+> diff --git a/fs/jfs/super.c b/fs/jfs/super.c
+> index d2f82cb7db1b..2e2f7f6d36a0 100644
+> --- a/fs/jfs/super.c
+> +++ b/fs/jfs/super.c
+> @@ -818,7 +818,7 @@ static ssize_t jfs_quota_write(struct super_block *sb, int type,
+>  	}
+>  	if (inode->i_size < off+len-towrite)
+>  		i_size_write(inode, off+len-towrite);
+> -	inode->i_mtime = inode->i_ctime = current_time(inode);
+> +	inode->i_mtime = inode_set_ctime_current(inode);
+>  	mark_inode_dirty(inode);
+>  	inode_unlock(inode);
+>  	return len - towrite;
+> diff --git a/fs/jfs/xattr.c b/fs/jfs/xattr.c
+> index 931e50018f88..8577ad494e05 100644
+> --- a/fs/jfs/xattr.c
+> +++ b/fs/jfs/xattr.c
+> @@ -647,7 +647,7 @@ static int ea_put(tid_t tid, struct inode *inode, struct ea_buffer *ea_buf,
+>  	if (old_blocks)
+>  		dquot_free_block(inode, old_blocks);
+>  
+> -	inode->i_ctime = current_time(inode);
+> +	inode_set_ctime_current(inode);
+>  
 >  	return 0;
 >  }
->  EXPORT_SYMBOL_GPL(simple_rename_exchange);
-> @@ -720,7 +741,6 @@ int simple_rename(struct mnt_idmap *idmap, struct inode *old_dir,
->  		  struct dentry *old_dentry, struct inode *new_dir,
->  		  struct dentry *new_dentry, unsigned int flags)
->  {
-> -	struct inode *inode = d_inode(old_dentry);
->  	int they_are_dirs = d_is_dir(old_dentry);
->  
->  	if (flags & ~(RENAME_NOREPLACE | RENAME_EXCHANGE))
-> @@ -743,9 +763,7 @@ int simple_rename(struct mnt_idmap *idmap, struct inode *old_dir,
->  		inc_nlink(new_dir);
->  	}
->  
-> -	old_dir->i_ctime = old_dir->i_mtime = new_dir->i_ctime =
-> -		new_dir->i_mtime = inode->i_ctime = current_time(old_dir);
-> -
-> +	simple_rename_timestamp(old_dir, old_dentry, new_dir, new_dentry);
->  	return 0;
->  }
->  EXPORT_SYMBOL(simple_rename);
-> diff --git a/include/linux/fs.h b/include/linux/fs.h
-> index bdfbd11a5811..14e38bd900f1 100644
-> --- a/include/linux/fs.h
-> +++ b/include/linux/fs.h
-> @@ -2979,6 +2979,8 @@ extern int simple_open(struct inode *inode, struct file *file);
->  extern int simple_link(struct dentry *, struct inode *, struct dentry *);
->  extern int simple_unlink(struct inode *, struct dentry *);
->  extern int simple_rmdir(struct inode *, struct dentry *);
-> +void simple_rename_timestamp(struct inode *old_dir, struct dentry *old_dentry,
-> +			     struct inode *new_dir, struct dentry *new_dentry);
->  extern int simple_rename_exchange(struct inode *old_dir, struct dentry *old_dentry,
->  				  struct inode *new_dir, struct dentry *new_dentry);
->  extern int simple_rename(struct mnt_idmap *, struct inode *,
 > -- 
 > 2.41.0
 > 
