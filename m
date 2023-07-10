@@ -2,93 +2,102 @@ Return-Path: <jfs-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+jfs-discussion@lfdr.de
 Delivered-To: lists+jfs-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id B433C74B12B
-	for <lists+jfs-discussion@lfdr.de>; Fri,  7 Jul 2023 14:43:22 +0200 (CEST)
-Received: from [127.0.0.1] (helo=sfs-ml-1.v29.lw.sourceforge.com)
-	by sfs-ml-1.v29.lw.sourceforge.com with esmtp (Exim 4.95)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7AF7E74D531
+	for <lists+jfs-discussion@lfdr.de>; Mon, 10 Jul 2023 14:20:22 +0200 (CEST)
+Received: from [127.0.0.1] (helo=sfs-ml-4.v29.lw.sourceforge.com)
+	by sfs-ml-4.v29.lw.sourceforge.com with esmtp (Exim 4.95)
 	(envelope-from <jfs-discussion-bounces@lists.sourceforge.net>)
-	id 1qHkne-0003mJ-Sf;
-	Fri, 07 Jul 2023 12:43:03 +0000
+	id 1qIps0-0001Gr-Hz;
+	Mon, 10 Jul 2023 12:20:01 +0000
 Received: from [172.30.20.202] (helo=mx.sourceforge.net)
- by sfs-ml-1.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
+ by sfs-ml-4.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
  TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (Exim 4.95)
- (envelope-from <jlayton@kernel.org>) id 1qHknZ-0003lh-Qd;
- Fri, 07 Jul 2023 12:42:58 +0000
+ (envelope-from <brauner@kernel.org>) id 1qIprv-0001GS-JP;
+ Mon, 10 Jul 2023 12:19:56 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=sourceforge.net; s=x; h=MIME-Version:Content-Transfer-Encoding:Content-Type
- :References:In-Reply-To:Date:Cc:To:From:Subject:Message-ID:Sender:Reply-To:
+ d=sourceforge.net; s=x; h=Content-Transfer-Encoding:Content-Type:MIME-Version
+ :References:In-Reply-To:Message-Id:Date:Subject:Cc:To:From:Sender:Reply-To:
  Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
  Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=KqYFX6K2BFU6XGUWySDxQkGT4Jq8Vp8jf4PAOwn7JSg=; b=G/as73EX3gxIk+iu+2SAacK+4e
- uVPUTdB5LhPJOsoq2T0NOXjbRgoCf2FefRzlkY2ix2jADaEuI+vudmzB5dCw2OenaRcuR3Rf7cIsM
- VBLpYYIeZeZAr4NOVdSu5S2+Kn4Mv4qazyCF6SzwMG+V+qWTP1Iimbb4T1cwC5+/Xnf4=;
+ bh=mel9TpUW8tVQGU43suJdqlMOaA7hvOUH0G4Ovm06lLc=; b=cwTtszTzRlltGTdnevYXy3isit
+ CqHpZ6oCj3zOgm598a8vMLH/x1CIe0r6q1cnT1AmVZWUgTERrNbdCfCTh00qBVfikGGtk0ywp0Hmw
+ oSOvc7QmP/b+vNKRaameNxp1FIvjbZO0QLQLYYXavKLRUfPJhAOTbVJglJK9nV5xHVEs=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
- h=MIME-Version:Content-Transfer-Encoding:Content-Type:References:
- In-Reply-To:Date:Cc:To:From:Subject:Message-ID:Sender:Reply-To:Content-ID:
+ h=Content-Transfer-Encoding:Content-Type:MIME-Version:References:
+ In-Reply-To:Message-Id:Date:Subject:Cc:To:From:Sender:Reply-To:Content-ID:
  Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
  :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
  List-Post:List-Owner:List-Archive;
- bh=KqYFX6K2BFU6XGUWySDxQkGT4Jq8Vp8jf4PAOwn7JSg=; b=YeW6LCf13hqb45hhcxv68AZS6w
- UVCoSeZrOfgljkfK5iQ4WiJJ/PpHFq4e9YRlzxHzzvZeIrIy7Xj+OPw5Ilvq+p7n2AdnzknxUB0zI
- PiDz+YYSalvECgJANKW4E7ppJNFD9G/SViURLYIiOxotVx8peHz+ty4+huD8RSkQ56lo=;
+ bh=mel9TpUW8tVQGU43suJdqlMOaA7hvOUH0G4Ovm06lLc=; b=KbKfaqnfIzYtj4sz4lS8Dm6fHD
+ 2UoMs22HViMMxeWqJ4tW306/+3pUWh8PUrAgB9tWB15FmJ4gjZbLLKvkXoMUQPFETOq8zMVlV0BVd
+ Uu+U8jbNmklCdueAjyNfp8pmsTmCHIWDHBKMO0dFTkXcmVg/sqdUQuzfMF+wFvZTBDHc=;
 Received: from dfw.source.kernel.org ([139.178.84.217])
  by sfi-mx-2.v28.lw.sourceforge.com with esmtps
  (TLS1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.95)
- id 1qHknb-0005kM-IF; Fri, 07 Jul 2023 12:42:58 +0000
+ id 1qIprw-00022E-4n; Mon, 10 Jul 2023 12:19:54 +0000
 Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
  (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
  key-exchange X25519 server-signature RSA-PSS (2048 bits))
  (No client certificate requested)
- by dfw.source.kernel.org (Postfix) with ESMTPS id 46E6860DC0;
- Fri,  7 Jul 2023 12:42:51 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 96F41C433C7;
- Fri,  7 Jul 2023 12:42:32 +0000 (UTC)
+ by dfw.source.kernel.org (Postfix) with ESMTPS id 78E6460FAA;
+ Mon, 10 Jul 2023 12:19:48 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id CD76EC433C7;
+ Mon, 10 Jul 2023 12:19:06 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=k20201202; t=1688733770;
- bh=TyDDLyY/VcXA49d9KRhq25UQSsoE8KWu0+bfyRbBUqg=;
- h=Subject:From:To:Cc:Date:In-Reply-To:References:From;
- b=iyNIEkX0vplHsZRVLrECpVOA1mp+pn1xQk8anv4sNjl819MUB6L7g/QyZr09T8v7X
- 4l5fvHniDmWHLBbdiHqiq9H2cTxWHaomnmD4P0h6lKZGmzU4smc5wAjNsqS84NFdll
- SSoDpJcqRJcJOvdAyIR3hUdTdGFP8DMxgpiVSBrtu8xsQGAVo33idlmhxRmj5xte2M
- GXiVu3pw23oyZWMMzp8kXFgZEQukowtqu+nAIcpDxVTKiHudvESqbwGfJcf0AdYGsm
- WEMofoo1motyhtMcUn2DtHPcG7Cqyp0rQarcusFg1CfwsyO+EeEA0qEhKts9ufRMsA
- P6UZP6VS0JBRg==
-Message-ID: <5e40891f6423feb5b68f025e31f26e9a50ae9390.camel@kernel.org>
-To: Christian Brauner <brauner@kernel.org>
-Date: Fri, 07 Jul 2023 08:42:31 -0400
+ s=k20201202; t=1688991587;
+ bh=2J+fX1q6zGco9Qkkut7k1oGUom0kvdTsmG/UR5nBS/g=;
+ h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
+ b=lcZg/5Hf6Blw0S0KBVmLS7XuB4wH3HsrCXsC5h2hKYACqGAETSqwGiuAn1zv2/Rsl
+ YOfRjkeYMFIcaW7p23OxWcTEiGLmzVZP8u7MfCw251UdZXm1FaRYowg+5pVNRUg4SH
+ rGbxakRBAw9Je/7IcFdyUw/AWroEm+9K1nQHsFNnUlEt3jB8MrvNjS2zRswA08V8pZ
+ wds+9xHOVtRXpxw7AKs0S8ikoHFutTN5KKOCQTdSntzEeWNrOBLYZvNJ58I4jWKMO4
+ trOiZmcTQJEaQV42w0QGQ4l/lY6Yv8dXtuTOWkUkO0al5gZVMemGZipC4IDHXdVMiv
+ 89FE2RmemJaUA==
+To: Jeff Layton <jlayton@kernel.org>
+Date: Mon, 10 Jul 2023 14:18:51 +0200
+Message-Id: <20230710-stift-flexibel-0867d393e8fa@brauner>
+X-Mailer: git-send-email 2.34.1
 In-Reply-To: <20230705185812.579118-1-jlayton@kernel.org>
 References: <20230705185812.579118-1-jlayton@kernel.org>
-User-Agent: Evolution 3.48.4 (3.48.4-1.fc38) 
 MIME-Version: 1.0
-X-Spam-Score: -5.9 (-----)
+X-Developer-Signature: v=1; a=openpgp-sha256; l=11283; i=brauner@kernel.org;
+ h=from:subject:message-id; bh=2J+fX1q6zGco9Qkkut7k1oGUom0kvdTsmG/UR5nBS/g=;
+ b=owGbwMvMwCU28Zj0gdSKO4sYT6slMaSs/vZNcyJHQ0Srmfqv55c3nchaqnLhiXDZo5JbRxU5e1cl
+ n+5y6yhlYRDjYpAVU2RxaDcJl1vOU7HZKFMDZg4rE8gQBi5OAZiIeSLDPw3jLbFNd8SdNfmWvzKRN5
+ 4i/XfC34/Ccjwx+uq6O0V4vRgZbnS7HzHcMNt5f8KEj277edSLOHh1Hm9NW7nW7fLG/4kybAA=
+X-Developer-Key: i=brauner@kernel.org; a=openpgp;
+ fpr=4880B8C9BD0E5106FC070F4F7B3C391EFEA93624
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: Spam detection software,
- running on the system "util-spamd-1.v13.lw.sourceforge.com", 
+ running on the system "util-spamd-2.v13.lw.sourceforge.com", 
  has NOT identified this incoming email as spam.  The original
  message has been attached to this so you can view it or label
  similar future email.  If you have any questions, see
  the administrator of that system for details.
- Content preview:  On Wed, 2023-07-05 at 14:58 -0400, Jeff Layton wrote: > v2:
+ Content preview:  On Wed, 05 Jul 2023 14:58:09 -0400, Jeff Layton wrote: > v2:
  > - prepend patches to add missing ctime updates > - add
  simple_rename_timestamp
- helper function > - rename ctime accessor functions as inod [...] 
- Content analysis details:   (-5.9 points, 6.0 required)
+ helper function > - rename ctime accessor functions as ino [...] 
+ Content analysis details:   (-5.2 points, 6.0 required)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
  high trust [139.178.84.217 listed in list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid -0.7 DKIMWL_WL_HIGH         DKIMwl.org - High trust sender
-X-Headers-End: 1qHknb-0005kM-IF
-Subject: Re: [Jfs-discussion] [PATCH v2 00/89] fs: new accessors for
+ -0.0 T_SCC_BODY_TEXT_LINE   No description available.
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - High trust sender
+X-Headers-End: 1qIprw-00022E-4n
+Subject: Re: [Jfs-discussion] [PATCH v2 00/92] fs: new accessors for
  inode->i_ctime
 X-BeenThere: jfs-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
@@ -101,8 +110,9 @@ List-Post: <mailto:jfs-discussion@lists.sourceforge.net>
 List-Help: <mailto:jfs-discussion-request@lists.sourceforge.net?subject=help>
 List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/jfs-discussion>, 
  <mailto:jfs-discussion-request@lists.sourceforge.net?subject=subscribe>
-From: Jeff Layton via Jfs-discussion <jfs-discussion@lists.sourceforge.net>
-Reply-To: Jeff Layton <jlayton@kernel.org>
+From: Christian Brauner via Jfs-discussion
+ <jfs-discussion@lists.sourceforge.net>
+Reply-To: Christian Brauner <brauner@kernel.org>
 Cc: lucho@ionkov.net, rafael@kernel.org, djwong@kernel.org, al@alarsen.net,
  cmllamas@google.com, andrii@kernel.org, hughd@google.com,
  john.johansen@canonical.com, agordeev@linux.ibm.com, hch@lst.de,
@@ -114,7 +124,7 @@ Cc: lucho@ionkov.net, rafael@kernel.org, djwong@kernel.org, al@alarsen.net,
  sprasad@microsoft.com, jaharkes@cs.cmu.edu, linux-um@lists.infradead.org,
  npiggin@gmail.com, viro@zeniv.linux.org.uk, ericvh@kernel.org,
  surenb@google.com, trond.myklebust@hammerspace.com, anton@tuxera.com,
- brauner@kernel.org, wsa+renesas@sang-engineering.com,
+ Christian Brauner <brauner@kernel.org>, wsa+renesas@sang-engineering.com,
  gregkh@linuxfoundation.org, stephen.smalley.work@gmail.com,
  linux-usb@vger.kernel.org, linux-kernel@vger.kernel.org, lsahlber@redhat.com,
  senozhatsky@chromium.org, arve@android.com, chuck.lever@oracle.com,
@@ -183,412 +193,221 @@ Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Errors-To: jfs-discussion-bounces@lists.sourceforge.net
 
-On Wed, 2023-07-05 at 14:58 -0400, Jeff Layton wrote:
+On Wed, 05 Jul 2023 14:58:09 -0400, Jeff Layton wrote:
 > v2:
 > - prepend patches to add missing ctime updates
 > - add simple_rename_timestamp helper function
 > - rename ctime accessor functions as inode_get_ctime/inode_set_ctime_*
 > - drop individual inode_ctime_set_{sec,nsec} helpers
 > 
+> I've been working on a patchset to change how the inode->i_ctime is
+> accessed in order to give us conditional, high-res timestamps for the
+> ctime and mtime. struct timespec64 has unused bits in it that we can use
+> to implement this. In order to do that however, we need to wrap all
+> accesses of inode->i_ctime to ensure that bits used as flags are
+> appropriately handled.
+> 
+> [...]
 
-After review by Jan and others, and Jan's ext4 rework, the diff on top
-of the series I posted a couple of days ago is below. I don't really
-want to spam everyone with another ~100 patch v3 series, but I can if
-you think that's best.
+Applied to the vfs.ctime branch of the vfs/vfs.git tree.
+Patches in the vfs.ctime branch should appear in linux-next soon.
 
-Christian, what would you like me to do here?
+Please report any outstanding bugs that were missed during review in a
+new review to the original patch series allowing us to drop it.
 
-diff --git a/fs/ceph/inode.c b/fs/ceph/inode.c
-index bcdb1a0beccf..5f6e93714f5a 100644
---- a/fs/ceph/inode.c
-+++ b/fs/ceph/inode.c
-@@ -699,8 +699,7 @@ void ceph_fill_file_time(struct inode *inode, int issued,
- 		if (ci->i_version == 0 ||
- 		    timespec64_compare(ctime, &ictime) > 0) {
- 			dout("ctime %lld.%09ld -> %lld.%09ld inc w/ cap\n",
--			     inode_get_ctime(inode).tv_sec,
--			     inode_get_ctime(inode).tv_nsec,
-+			     ictime.tv_sec, ictime.tv_nsec,
- 			     ctime->tv_sec, ctime->tv_nsec);
- 			inode_set_ctime_to_ts(inode, *ctime);
- 		}
-diff --git a/fs/erofs/inode.c b/fs/erofs/inode.c
-index 806374d866d1..567c0d305ea4 100644
---- a/fs/erofs/inode.c
-+++ b/fs/erofs/inode.c
-@@ -175,10 +175,7 @@ static void *erofs_read_inode(struct erofs_buf *buf,
- 		vi->chunkbits = sb->s_blocksize_bits +
- 			(vi->chunkformat & EROFS_CHUNK_FORMAT_BLKBITS_MASK);
- 	}
--	inode->i_mtime.tv_sec = inode_get_ctime(inode).tv_sec;
--	inode->i_atime.tv_sec = inode_get_ctime(inode).tv_sec;
--	inode->i_mtime.tv_nsec = inode_get_ctime(inode).tv_nsec;
--	inode->i_atime.tv_nsec = inode_get_ctime(inode).tv_nsec;
-+	inode->i_mtime = inode->i_atime = inode_get_ctime(inode);
- 
- 	inode->i_flags &= ~S_DAX;
- 	if (test_opt(&sbi->opt, DAX_ALWAYS) && S_ISREG(inode->i_mode) &&
-diff --git a/fs/exfat/namei.c b/fs/exfat/namei.c
-index c007de6ac1c7..1b9f587f6cca 100644
---- a/fs/exfat/namei.c
-+++ b/fs/exfat/namei.c
-@@ -1351,7 +1351,7 @@ static int exfat_rename(struct mnt_idmap *idmap,
- 			exfat_warn(sb, "abnormal access to an inode dropped");
- 			WARN_ON(new_inode->i_nlink == 0);
- 		}
--		EXFAT_I(new_inode)->i_crtime = inode_set_ctime_current(new_inode);
-+		EXFAT_I(new_inode)->i_crtime = current_time(new_inode);
- 	}
- 
- unlock:
-diff --git a/fs/ext4/ext4.h b/fs/ext4/ext4.h
-index d502b930431b..d63543187359 100644
---- a/fs/ext4/ext4.h
-+++ b/fs/ext4/ext4.h
-@@ -868,64 +868,63 @@ struct ext4_inode {
-  * affected filesystem before 2242.
-  */
- 
--static inline __le32 ext4_encode_extra_time(struct timespec64 *time)
-+static inline __le32 ext4_encode_extra_time(struct timespec64 ts)
- {
--	u32 extra =((time->tv_sec - (s32)time->tv_sec) >> 32) & EXT4_EPOCH_MASK;
--	return cpu_to_le32(extra | (time->tv_nsec << EXT4_EPOCH_BITS));
-+	u32 extra = ((ts.tv_sec - (s32)ts.tv_sec) >> 32) & EXT4_EPOCH_MASK;
-+	return cpu_to_le32(extra | (ts.tv_nsec << EXT4_EPOCH_BITS));
- }
- 
--static inline void ext4_decode_extra_time(struct timespec64 *time,
--					  __le32 extra)
-+static inline struct timespec64 ext4_decode_extra_time(__le32 base,
-+						       __le32 extra)
- {
-+	struct timespec64 ts = { .tv_sec = le32_to_cpu(base) };
-+
- 	if (unlikely(extra & cpu_to_le32(EXT4_EPOCH_MASK)))
--		time->tv_sec += (u64)(le32_to_cpu(extra) & EXT4_EPOCH_MASK) << 32;
--	time->tv_nsec = (le32_to_cpu(extra) & EXT4_NSEC_MASK) >> EXT4_EPOCH_BITS;
-+		ts.tv_sec += (u64)(le32_to_cpu(extra) & EXT4_EPOCH_MASK) << 32;
-+	ts.tv_nsec = (le32_to_cpu(extra) & EXT4_NSEC_MASK) >> EXT4_EPOCH_BITS;
-+	return ts;
- }
- 
--#define EXT4_INODE_SET_XTIME(xtime, inode, raw_inode)				\
-+#define EXT4_INODE_SET_XTIME_VAL(xtime, inode, raw_inode, ts)			\
- do {										\
--	if (EXT4_FITS_IN_INODE(raw_inode, EXT4_I(inode), xtime ## _extra))     {\
--		(raw_inode)->xtime = cpu_to_le32((inode)->xtime.tv_sec);	\
--		(raw_inode)->xtime ## _extra =					\
--				ext4_encode_extra_time(&(inode)->xtime);	\
--		}								\
--	else	\
--		(raw_inode)->xtime = cpu_to_le32(clamp_t(int32_t, (inode)->xtime.tv_sec, S32_MIN, S32_MAX));	\
-+	if (EXT4_FITS_IN_INODE(raw_inode, EXT4_I(inode), xtime ## _extra)) {	\
-+		(raw_inode)->xtime = cpu_to_le32((ts).tv_sec);			\
-+		(raw_inode)->xtime ## _extra = ext4_encode_extra_time(ts);	\
-+	} else									\
-+		(raw_inode)->xtime = cpu_to_le32(clamp_t(int32_t, (ts).tv_sec, S32_MIN, S32_MAX));	\
- } while (0)
- 
-+#define EXT4_INODE_SET_XTIME(xtime, inode, raw_inode)				\
-+	EXT4_INODE_SET_XTIME_VAL(xtime, inode, raw_inode, (inode)->xtime)
-+
-+#define EXT4_INODE_SET_CTIME(inode, raw_inode)					\
-+	EXT4_INODE_SET_XTIME_VAL(i_ctime, inode, raw_inode, inode_get_ctime(inode))
-+
- #define EXT4_EINODE_SET_XTIME(xtime, einode, raw_inode)			       \
--do {									       \
--	if (EXT4_FITS_IN_INODE(raw_inode, einode, xtime))		       \
--		(raw_inode)->xtime = cpu_to_le32((einode)->xtime.tv_sec);      \
--	if (EXT4_FITS_IN_INODE(raw_inode, einode, xtime ## _extra))	       \
--		(raw_inode)->xtime ## _extra =				       \
--				ext4_encode_extra_time(&(einode)->xtime);      \
--} while (0)
-+	EXT4_INODE_SET_XTIME_VAL(xtime, &((einode)->vfs_inode), raw_inode, (einode)->xtime)
-+
-+#define EXT4_INODE_GET_XTIME_VAL(xtime, inode, raw_inode)			\
-+	(EXT4_FITS_IN_INODE(raw_inode, EXT4_I(inode), xtime ## _extra) ?	\
-+		ext4_decode_extra_time((raw_inode)->xtime,				\
-+				       (raw_inode)->xtime ## _extra) :		\
-+		(struct timespec64) {						\
-+			.tv_sec = (signed)le32_to_cpu((raw_inode)->xtime)	\
-+		})
- 
- #define EXT4_INODE_GET_XTIME(xtime, inode, raw_inode)				\
- do {										\
--	(inode)->xtime.tv_sec = (signed)le32_to_cpu((raw_inode)->xtime);	\
--	if (EXT4_FITS_IN_INODE(raw_inode, EXT4_I(inode), xtime ## _extra)) {	\
--		ext4_decode_extra_time(&(inode)->xtime,				\
--				       raw_inode->xtime ## _extra);		\
--		}								\
--	else									\
--		(inode)->xtime.tv_nsec = 0;					\
-+	(inode)->xtime = EXT4_INODE_GET_XTIME_VAL(xtime, inode, raw_inode);	\
- } while (0)
- 
-+#define EXT4_INODE_GET_CTIME(inode, raw_inode)					\
-+do {										\
-+	inode_set_ctime_to_ts(inode,						\
-+		EXT4_INODE_GET_XTIME_VAL(i_ctime, inode, raw_inode));		\
-+} while (0)
- 
- #define EXT4_EINODE_GET_XTIME(xtime, einode, raw_inode)			       \
- do {									       \
--	if (EXT4_FITS_IN_INODE(raw_inode, einode, xtime))		       \
--		(einode)->xtime.tv_sec = 				       \
--			(signed)le32_to_cpu((raw_inode)->xtime);	       \
--	else								       \
--		(einode)->xtime.tv_sec = 0;				       \
--	if (EXT4_FITS_IN_INODE(raw_inode, einode, xtime ## _extra))	       \
--		ext4_decode_extra_time(&(einode)->xtime,		       \
--				       raw_inode->xtime ## _extra);	       \
--	else								       \
--		(einode)->xtime.tv_nsec = 0;				       \
-+	(einode)->xtime = EXT4_INODE_GET_XTIME_VAL(xtime, &(einode->vfs_inode), raw_inode);	\
- } while (0)
- 
- #define i_disk_version osd1.linux1.l_i_version
-@@ -3823,27 +3822,6 @@ static inline int ext4_buffer_uptodate(struct buffer_head *bh)
- 	return buffer_uptodate(bh);
- }
- 
--static inline void ext4_inode_set_ctime(struct inode *inode, struct ext4_inode *raw_inode)
--{
--	struct timespec64 ctime = inode_get_ctime(inode);
--
--	if (EXT4_FITS_IN_INODE(raw_inode, EXT4_I(inode), i_ctime_extra)) {
--		raw_inode->i_ctime = cpu_to_le32(ctime.tv_sec);
--		raw_inode->i_ctime_extra = ext4_encode_extra_time(&ctime);
--	} else {
--		raw_inode->i_ctime = cpu_to_le32(clamp_t(int32_t, ctime.tv_sec, S32_MIN, S32_MAX));
--	}
--}
--
--static inline void ext4_inode_get_ctime(struct inode *inode, const struct ext4_inode *raw_inode)
--{
--	struct timespec64 ctime = { .tv_sec = (signed)le32_to_cpu(raw_inode->i_ctime) };
--
--	if (EXT4_FITS_IN_INODE(raw_inode, EXT4_I(inode), i_ctime_extra))
--		ext4_decode_extra_time(&ctime, raw_inode->i_ctime_extra);
--	inode_set_ctime(inode, ctime.tv_sec, ctime.tv_nsec);
--}
--
- #endif	/* __KERNEL__ */
- 
- #define EFSBADCRC	EBADMSG		/* Bad CRC detected */
-diff --git a/fs/ext4/inode-test.c b/fs/ext4/inode-test.c
-index 7935ea6cf92c..f0c0fd507fbc 100644
---- a/fs/ext4/inode-test.c
-+++ b/fs/ext4/inode-test.c
-@@ -245,9 +245,9 @@ static void inode_test_xtimestamp_decoding(struct kunit *test)
- 	struct timestamp_expectation *test_param =
- 			(struct timestamp_expectation *)(test->param_value);
- 
--	timestamp.tv_sec = get_32bit_time(test_param);
--	ext4_decode_extra_time(&timestamp,
--			       cpu_to_le32(test_param->extra_bits));
-+	timestamp = ext4_decode_extra_time(
-+				cpu_to_le32(get_32bit_time(test_param)),
-+				cpu_to_le32(test_param->extra_bits));
- 
- 	KUNIT_EXPECT_EQ_MSG(test,
- 			    test_param->expected.tv_sec,
-diff --git a/fs/ext4/inode.c b/fs/ext4/inode.c
-index bbc57954dfd3..c6a837b90af4 100644
---- a/fs/ext4/inode.c
-+++ b/fs/ext4/inode.c
-@@ -4249,7 +4249,7 @@ static int ext4_fill_raw_inode(struct inode *inode, struct ext4_inode *raw_inode
- 	}
- 	raw_inode->i_links_count = cpu_to_le16(inode->i_nlink);
- 
--	ext4_inode_set_ctime(inode, raw_inode);
-+	EXT4_INODE_SET_CTIME(inode, raw_inode);
- 	EXT4_INODE_SET_XTIME(i_mtime, inode, raw_inode);
- 	EXT4_INODE_SET_XTIME(i_atime, inode, raw_inode);
- 	EXT4_EINODE_SET_XTIME(i_crtime, ei, raw_inode);
-@@ -4858,7 +4858,7 @@ struct inode *__ext4_iget(struct super_block *sb, unsigned long ino,
- 		}
- 	}
- 
--	ext4_inode_get_ctime(inode, raw_inode);
-+	EXT4_INODE_GET_CTIME(inode, raw_inode);
- 	EXT4_INODE_GET_XTIME(i_mtime, inode, raw_inode);
- 	EXT4_INODE_GET_XTIME(i_atime, inode, raw_inode);
- 	EXT4_EINODE_GET_XTIME(i_crtime, ei, raw_inode);
-@@ -4981,7 +4981,7 @@ static void __ext4_update_other_inode_time(struct super_block *sb,
- 		spin_unlock(&inode->i_lock);
- 
- 		spin_lock(&ei->i_raw_lock);
--		ext4_inode_get_ctime(inode, raw_inode);
-+		EXT4_INODE_SET_CTIME(inode, raw_inode);
- 		EXT4_INODE_SET_XTIME(i_mtime, inode, raw_inode);
- 		EXT4_INODE_SET_XTIME(i_atime, inode, raw_inode);
- 		ext4_inode_csum_set(inode, raw_inode, ei);
-diff --git a/fs/fat/inode.c b/fs/fat/inode.c
-index 2be40ff8a74f..cdd39b6020f3 100644
---- a/fs/fat/inode.c
-+++ b/fs/fat/inode.c
-@@ -1407,9 +1407,7 @@ static int fat_read_root(struct inode *inode)
- 	MSDOS_I(inode)->mmu_private = inode->i_size;
- 
- 	fat_save_attrs(inode, ATTR_DIR);
--	inode->i_mtime.tv_sec = inode->i_atime.tv_sec = inode_set_ctime(inode,
--									0, 0).tv_sec;
--	inode->i_mtime.tv_nsec = inode->i_atime.tv_nsec = 0;
-+	inode->i_mtime = inode->i_atime = inode_set_ctime(inode, 0, 0);
- 	set_nlink(inode, fat_subdirs(inode)+2);
- 
- 	return 0;
-diff --git a/fs/hpfs/namei.c b/fs/hpfs/namei.c
-index 36babb78b510..f4eb8d6f5989 100644
---- a/fs/hpfs/namei.c
-+++ b/fs/hpfs/namei.c
-@@ -15,8 +15,7 @@ static void hpfs_update_directory_times(struct inode *dir)
- 	if (t == dir->i_mtime.tv_sec &&
- 	    t == inode_get_ctime(dir).tv_sec)
- 		return;
--	dir->i_mtime.tv_sec = inode_set_ctime(dir, t, 0).tv_sec;
--	dir->i_mtime.tv_nsec = 0;
-+	dir->i_mtime = inode_set_ctime(dir, t, 0);
- 	hpfs_write_inode_nolock(dir);
- }
- 
-@@ -59,11 +58,8 @@ static int hpfs_mkdir(struct mnt_idmap *idmap, struct inode *dir,
- 	result->i_ino = fno;
- 	hpfs_i(result)->i_parent_dir = dir->i_ino;
- 	hpfs_i(result)->i_dno = dno;
--	inode_set_ctime(result,
--			result->i_mtime.tv_sec = result->i_atime.tv_sec = local_to_gmt(dir->i_sb, le32_to_cpu(dee.creation_date)),
--			0);
--	result->i_mtime.tv_nsec = 0; 
--	result->i_atime.tv_nsec = 0; 
-+	result->i_mtime = result->i_atime =
-+		inode_set_ctime(result, local_to_gmt(dir->i_sb, le32_to_cpu(dee.creation_date)), 0);
- 	hpfs_i(result)->i_ea_size = 0;
- 	result->i_mode |= S_IFDIR;
- 	result->i_op = &hpfs_dir_iops;
-@@ -168,11 +164,8 @@ static int hpfs_create(struct mnt_idmap *idmap, struct inode *dir,
- 	result->i_fop = &hpfs_file_ops;
- 	set_nlink(result, 1);
- 	hpfs_i(result)->i_parent_dir = dir->i_ino;
--	inode_set_ctime(result,
--			result->i_mtime.tv_sec = result->i_atime.tv_sec = local_to_gmt(dir->i_sb, le32_to_cpu(dee.creation_date)),
--			0);
--	result->i_mtime.tv_nsec = 0;
--	result->i_atime.tv_nsec = 0;
-+	result->i_mtime = result->i_atime =
-+		inode_set_ctime(result, local_to_gmt(dir->i_sb, le32_to_cpu(dee.creation_date)), 0);
- 	hpfs_i(result)->i_ea_size = 0;
- 	if (dee.read_only)
- 		result->i_mode &= ~0222;
-@@ -252,11 +245,8 @@ static int hpfs_mknod(struct mnt_idmap *idmap, struct inode *dir,
- 	hpfs_init_inode(result);
- 	result->i_ino = fno;
- 	hpfs_i(result)->i_parent_dir = dir->i_ino;
--	inode_set_ctime(result,
--			result->i_mtime.tv_sec = result->i_atime.tv_sec = local_to_gmt(dir->i_sb, le32_to_cpu(dee.creation_date)),
--			0);
--	result->i_mtime.tv_nsec = 0;
--	result->i_atime.tv_nsec = 0;
-+	result->i_mtime = result->i_atime =
-+		inode_set_ctime(result, local_to_gmt(dir->i_sb, le32_to_cpu(dee.creation_date)), 0);
- 	hpfs_i(result)->i_ea_size = 0;
- 	result->i_uid = current_fsuid();
- 	result->i_gid = current_fsgid();
-@@ -329,11 +319,8 @@ static int hpfs_symlink(struct mnt_idmap *idmap, struct inode *dir,
- 	result->i_ino = fno;
- 	hpfs_init_inode(result);
- 	hpfs_i(result)->i_parent_dir = dir->i_ino;
--	inode_set_ctime(result,
--			result->i_mtime.tv_sec = result->i_atime.tv_sec = local_to_gmt(dir->i_sb, le32_to_cpu(dee.creation_date)),
--			0);
--	result->i_mtime.tv_nsec = 0;
--	result->i_atime.tv_nsec = 0;
-+	result->i_mtime = result->i_atime =
-+		inode_set_ctime(result, local_to_gmt(dir->i_sb, le32_to_cpu(dee.creation_date)), 0);
- 	hpfs_i(result)->i_ea_size = 0;
- 	result->i_mode = S_IFLNK | 0777;
- 	result->i_uid = current_fsuid();
-diff --git a/fs/isofs/inode.c b/fs/isofs/inode.c
-index 98a78200cff1..2ee21286ac8f 100644
---- a/fs/isofs/inode.c
-+++ b/fs/isofs/inode.c
-@@ -1422,13 +1422,8 @@ static int isofs_read_inode(struct inode *inode, int relocated)
- 			inode->i_ino, de->flags[-high_sierra]);
- 	}
- #endif
--
--	inode->i_mtime.tv_sec =
--	inode->i_atime.tv_sec = inode_set_ctime(inode,
--						iso_date(de->date, high_sierra),
--						0).tv_sec;
--	inode->i_mtime.tv_nsec =
--	inode->i_atime.tv_nsec = 0;
-+	inode->i_mtime = inode->i_atime =
-+		inode_set_ctime(inode, iso_date(de->date, high_sierra), 0);
- 
- 	ei->i_first_extent = (isonum_733(de->extent) +
- 			isonum_711(de->ext_attr_length));
-diff --git a/fs/minix/inode.c b/fs/minix/inode.c
-index 3715a3940bd4..8a4fc9420b36 100644
---- a/fs/minix/inode.c
-+++ b/fs/minix/inode.c
-@@ -501,11 +501,7 @@ static struct inode *V1_minix_iget(struct inode *inode)
- 	i_gid_write(inode, raw_inode->i_gid);
- 	set_nlink(inode, raw_inode->i_nlinks);
- 	inode->i_size = raw_inode->i_size;
--	inode->i_mtime.tv_sec = inode->i_atime.tv_sec = inode_set_ctime(inode,
--									raw_inode->i_time,
--									0).tv_sec;
--	inode->i_mtime.tv_nsec = 0;
--	inode->i_atime.tv_nsec = 0;
-+	inode->i_mtime = inode->i_atime = inode_set_ctime(inode, raw_inode->i_time, 0);
- 	inode->i_blocks = 0;
- 	for (i = 0; i < 9; i++)
- 		minix_inode->u.i1_data[i] = raw_inode->i_zone[i];
-diff --git a/fs/overlayfs/file.c b/fs/overlayfs/file.c
-index 7acd3e3fe790..7e7876aae01c 100644
---- a/fs/overlayfs/file.c
-+++ b/fs/overlayfs/file.c
-@@ -255,7 +255,7 @@ static void ovl_file_accessed(struct file *file)
- 	if ((!timespec64_equal(&inode->i_mtime, &upperinode->i_mtime) ||
- 	     !timespec64_equal(&ctime, &uctime))) {
- 		inode->i_mtime = upperinode->i_mtime;
--		inode_set_ctime_to_ts(inode, inode_get_ctime(upperinode));
-+		inode_set_ctime_to_ts(inode, uctime);
- 	}
- 
- 	touch_atime(&file->f_path);
-diff --git a/fs/romfs/super.c b/fs/romfs/super.c
-index 961b9d342e0e..d89739655f9e 100644
---- a/fs/romfs/super.c
-+++ b/fs/romfs/super.c
-@@ -322,8 +322,7 @@ static struct inode *romfs_iget(struct super_block *sb, unsigned long pos)
- 
- 	set_nlink(i, 1);		/* Hard to decide.. */
- 	i->i_size = be32_to_cpu(ri.size);
--	i->i_mtime.tv_sec = i->i_atime.tv_sec = inode_set_ctime(i, 0, 0).tv_sec;
--	i->i_mtime.tv_nsec = i->i_atime.tv_nsec = 0;
-+	i->i_mtime = i->i_atime = inode_set_ctime(i, 0, 0);
- 
- 	/* set up mode and ops */
- 	mode = romfs_modemap[nextfh & ROMFH_TYPE];
-diff --git a/fs/smb/client/fscache.h b/fs/smb/client/fscache.h
-index a228964bc2ce..84f3b09367d2 100644
---- a/fs/smb/client/fscache.h
-+++ b/fs/smb/client/fscache.h
-@@ -56,7 +56,7 @@ void cifs_fscache_fill_coherency(struct inode *inode,
- 	cd->last_write_time_sec   = cpu_to_le64(cifsi->netfs.inode.i_mtime.tv_sec);
- 	cd->last_write_time_nsec  = cpu_to_le32(cifsi->netfs.inode.i_mtime.tv_nsec);
- 	cd->last_change_time_sec  = cpu_to_le64(ctime.tv_sec);
--	cd->last_change_time_nsec  = cpu_to_le64(ctime.tv_nsec);
-+	cd->last_change_time_nsec = cpu_to_le32(ctime.tv_nsec);
- }
- 
- 
+It's encouraged to provide Acked-bys and Reviewed-bys even though the
+patch has now been applied. If possible patch trailers will be updated.
 
--- 
-Jeff Layton <jlayton@kernel.org>
+Note that commit hashes shown below are subject to change due to rebase,
+trailer updates or similar. If in doubt, please check the listed branch.
+
+tree:   https://git.kernel.org/pub/scm/linux/kernel/git/vfs/vfs.git
+branch: vfs.ctime
+
+[01/92] ibmvmc: update ctime in conjunction with mtime on write
+        https://git.kernel.org/vfs/vfs/c/ead310563ad2
+[02/92] bfs: update ctime in addition to mtime when adding entries
+        https://git.kernel.org/vfs/vfs/c/f42faf14b838
+[03/92] efivarfs: update ctime when mtime changes on a write
+        https://git.kernel.org/vfs/vfs/c/d8d026e0d1f2
+[04/92] exfat: ensure that ctime is updated whenever the mtime is
+        https://git.kernel.org/vfs/vfs/c/d84bd8fa48d7
+[05/92] apparmor: update ctime whenever the mtime changes on an inode
+        https://git.kernel.org/vfs/vfs/c/73955caedfae
+[06/92] cifs: update the ctime on a partial page write
+        https://git.kernel.org/vfs/vfs/c/c2f784379c99
+[07/92] fs: add ctime accessors infrastructure
+        https://git.kernel.org/vfs/vfs/c/64f0367de800
+[08/92] fs: new helper: simple_rename_timestamp
+        https://git.kernel.org/vfs/vfs/c/54ced54a0239
+[09/92] btrfs: convert to simple_rename_timestamp
+        https://git.kernel.org/vfs/vfs/c/218e0f662fee
+[10/92] ubifs: convert to simple_rename_timestamp
+        https://git.kernel.org/vfs/vfs/c/caac4f65568d
+[11/92] shmem: convert to simple_rename_timestamp
+        https://git.kernel.org/vfs/vfs/c/d3d11e9927b6
+[12/92] exfat: convert to simple_rename_timestamp
+        https://git.kernel.org/vfs/vfs/c/71534b484c63
+[13/92] ntfs3: convert to simple_rename_timestamp
+        https://git.kernel.org/vfs/vfs/c/140880821ce0
+[14/92] reiserfs: convert to simple_rename_timestamp
+        https://git.kernel.org/vfs/vfs/c/1a1a4df5e8fc
+[15/92] spufs: convert to ctime accessor functions
+        https://git.kernel.org/vfs/vfs/c/784e5a93c9cf
+[16/92] s390: convert to ctime accessor functions
+        https://git.kernel.org/vfs/vfs/c/1cece1f8e5c2
+[17/92] binderfs: convert to ctime accessor functions
+        https://git.kernel.org/vfs/vfs/c/0bcd830a76f3
+[18/92] infiniband: convert to ctime accessor functions
+        https://git.kernel.org/vfs/vfs/c/811f97f80b01
+[19/92] ibm: convert to ctime accessor functions
+        https://git.kernel.org/vfs/vfs/c/b447ed7597f0
+[20/92] usb: convert to ctime accessor functions
+        https://git.kernel.org/vfs/vfs/c/2557dc7f2dde
+[21/92] 9p: convert to ctime accessor functions
+        https://git.kernel.org/vfs/vfs/c/4cd4b11385ef
+[22/92] adfs: convert to ctime accessor functions
+        https://git.kernel.org/vfs/vfs/c/e257d7ade66e
+[23/92] affs: convert to ctime accessor functions
+        https://git.kernel.org/vfs/vfs/c/770619f19a77
+[24/92] afs: convert to ctime accessor functions
+        https://git.kernel.org/vfs/vfs/c/758506e44668
+[25/92] fs: convert to ctime accessor functions
+        https://git.kernel.org/vfs/vfs/c/a0a5a9810b37
+[26/92] autofs: convert to ctime accessor functions
+        https://git.kernel.org/vfs/vfs/c/d7d1363cc3f6
+[27/92] befs: convert to ctime accessor functions
+        https://git.kernel.org/vfs/vfs/c/d6218773de2d
+[28/92] bfs: convert to ctime accessor functions
+        https://git.kernel.org/vfs/vfs/c/368b313ac2ab
+[29/92] btrfs: convert to ctime accessor functions
+        https://git.kernel.org/vfs/vfs/c/d3d15221956a
+[30/92] ceph: convert to ctime accessor functions
+        https://git.kernel.org/vfs/vfs/c/818fc6e0129a
+[31/92] coda: convert to ctime accessor functions
+        https://git.kernel.org/vfs/vfs/c/4e0b22fbc012
+[32/92] configfs: convert to ctime accessor functions
+        https://git.kernel.org/vfs/vfs/c/69c977798a6a
+[33/92] cramfs: convert to ctime accessor functions
+        https://git.kernel.org/vfs/vfs/c/911f086eae23
+[34/92] debugfs: convert to ctime accessor functions
+        https://git.kernel.org/vfs/vfs/c/634a50390dbb
+[35/92] devpts: convert to ctime accessor functions
+        https://git.kernel.org/vfs/vfs/c/92bb29a24707
+[36/92] ecryptfs: convert to ctime accessor functions
+        https://git.kernel.org/vfs/vfs/c/16d21856dfd6
+[37/92] efivarfs: convert to ctime accessor functions
+        https://git.kernel.org/vfs/vfs/c/cfeee05a50e1
+[38/92] efs: convert to ctime accessor functions
+        https://git.kernel.org/vfs/vfs/c/3a30b097319f
+[39/92] erofs: convert to ctime accessor functions
+        https://git.kernel.org/vfs/vfs/c/e3594996216f
+[40/92] exfat: convert to ctime accessor functions
+        https://git.kernel.org/vfs/vfs/c/8bd562d6f46d
+[41/92] ext2: convert to ctime accessor functions
+        https://git.kernel.org/vfs/vfs/c/7483252e8894
+[42/92] ext4: convert to ctime accessor functions
+        https://git.kernel.org/vfs/vfs/c/f2ddb05870fb
+[43/92] 9afc475653af f2fs: convert to ctime accessor functions
+        https://git.kernel.org/vfs/vfs/c/f2ddb05870fb
+[44/92] fat: convert to ctime accessor functions
+        https://git.kernel.org/vfs/vfs/c/8a0c417b695b
+[45/92] freevxfs: convert to ctime accessor functions
+        https://git.kernel.org/vfs/vfs/c/7affaeb5b914
+[46/92] fuse: convert to ctime accessor functions
+        https://git.kernel.org/vfs/vfs/c/688279761436
+[47/92] gfs2: convert to ctime accessor functions
+        https://git.kernel.org/vfs/vfs/c/9e5b114b5ee4
+[48/92] hfs: convert to ctime accessor functions
+        https://git.kernel.org/vfs/vfs/c/d41f5876a177
+[49/92] hfsplus: convert to ctime accessor functions
+        https://git.kernel.org/vfs/vfs/c/147f3dd171d2
+[50/92] hostfs: convert to ctime accessor functions
+        https://git.kernel.org/vfs/vfs/c/2ceaa835b4f5
+[51/92] hpfs: convert to ctime accessor functions
+        https://git.kernel.org/vfs/vfs/c/e6fd7f49daa7
+[52/92] hugetlbfs: convert to ctime accessor functions
+        https://git.kernel.org/vfs/vfs/c/f5950f079b1a
+[53/92] isofs: convert to ctime accessor functions
+        https://git.kernel.org/vfs/vfs/c/53f2bb3567f0
+[54/92] jffs2: convert to ctime accessor functions
+        https://git.kernel.org/vfs/vfs/c/7e8dc4ab1afb
+[55/92] jfs: convert to ctime accessor functions
+        https://git.kernel.org/vfs/vfs/c/77737373dbb3
+[56/92] kernfs: convert to ctime accessor functions
+        https://git.kernel.org/vfs/vfs/c/8b0e3c2e9900
+[57/92] nfs: convert to ctime accessor functions
+        https://git.kernel.org/vfs/vfs/c/12844cb15dc6
+[58/92] nfsd: convert to ctime accessor functions
+        https://git.kernel.org/vfs/vfs/c/f297728268bf
+[59/92] nilfs2: convert to ctime accessor functions
+        https://git.kernel.org/vfs/vfs/c/1e9f083bc9cd
+[60/92] ntfs: convert to ctime accessor functions
+        https://git.kernel.org/vfs/vfs/c/3cc66672eaa5
+[61/92] ntfs3: convert to ctime accessor functions
+        https://git.kernel.org/vfs/vfs/c/9438de01396e
+[62/92] ocfs2: convert to ctime accessor functions
+        https://git.kernel.org/vfs/vfs/c/da5b97da32e7
+[63/92] omfs: convert to ctime accessor functions
+        https://git.kernel.org/vfs/vfs/c/563d772c8d70
+[64/92] openpromfs: convert to ctime accessor functions
+        https://git.kernel.org/vfs/vfs/c/5f0978a6f0a6
+[65/92] orangefs: convert to ctime accessor functions
+        https://git.kernel.org/vfs/vfs/c/6a83804b4325
+[66/92] overlayfs: convert to ctime accessor functions
+        https://git.kernel.org/vfs/vfs/c/60dcee636746
+[67/92] procfs: convert to ctime accessor functions
+        https://git.kernel.org/vfs/vfs/c/85e0a6b3b8cf
+[68/92] pstore: convert to ctime accessor functions
+        https://git.kernel.org/vfs/vfs/c/2b8125b5e7c6
+[69/92] qnx4: convert to ctime accessor functions
+        https://git.kernel.org/vfs/vfs/c/77eb00659cb5
+[70/92] qnx6: convert to ctime accessor functions
+        https://git.kernel.org/vfs/vfs/c/af1acd38df36
+[71/92] ramfs: convert to ctime accessor functions
+        https://git.kernel.org/vfs/vfs/c/0eb8012f4b0b
+[72/92] reiserfs: convert to ctime accessor functions
+        https://git.kernel.org/vfs/vfs/c/e3e5f5f70292
+[73/92] romfs: convert to ctime accessor functions
+        https://git.kernel.org/vfs/vfs/c/b6058a9af143
+[74/92] smb: convert to ctime accessor functions
+        https://git.kernel.org/vfs/vfs/c/d5c263f2187d
+[75/92] squashfs: convert to ctime accessor functions
+        https://git.kernel.org/vfs/vfs/c/eaace9c73ba8
+[76/92] sysv: convert to ctime accessor functions
+        https://git.kernel.org/vfs/vfs/c/41b6f4fbbe32
+[77/92] tracefs: convert to ctime accessor functions
+        https://git.kernel.org/vfs/vfs/c/5f69a5364568
+[78/92] ubifs: convert to ctime accessor functions
+        https://git.kernel.org/vfs/vfs/c/5bb225ba81c0
+[79/92] udf: convert to ctime accessor functions
+        https://git.kernel.org/vfs/vfs/c/e251f0e98433
+[80/92] ufs: convert to ctime accessor functions
+        https://git.kernel.org/vfs/vfs/c/376ef9f6cab1
+[81/92] vboxsf: convert to ctime accessor functions
+        https://git.kernel.org/vfs/vfs/c/9f06612951d5
+[82/92] xfs: convert to ctime accessor functions
+        https://git.kernel.org/vfs/vfs/c/4e8c1361146f
+[83/92] zonefs: convert to ctime accessor functions
+        https://git.kernel.org/vfs/vfs/c/cbdc6aa5f65d
+[84/92] linux: convert to ctime accessor functions
+        https://git.kernel.org/vfs/vfs/c/ff12abb4a71a
+[85/92] mqueue: convert to ctime accessor functions
+        https://git.kernel.org/vfs/vfs/c/a6b5a0055142
+[86/92] bpf: convert to ctime accessor functions
+        https://git.kernel.org/vfs/vfs/c/d2b6a0a3863a
+[87/92] shmem: convert to ctime accessor functions
+        https://git.kernel.org/vfs/vfs/c/ffcd778237d3
+[88/92] sunrpc: convert to ctime accessor functions
+        https://git.kernel.org/vfs/vfs/c/ccf1c9002d71
+[89/92] apparmor: convert to ctime accessor functions
+        https://git.kernel.org/vfs/vfs/c/ff91aaa76f1a
+[90/92] security: convert to ctime accessor functions
+        https://git.kernel.org/vfs/vfs/c/701071f9ad33
+[91/92] selinux: convert to ctime accessor functions
+        https://git.kernel.org/vfs/vfs/c/cb6dfffdc7e9
+[92/92] fs: rename i_ctime field to __i_ctime
+        https://git.kernel.org/vfs/vfs/c/c06d4bf5e207
 
 
 _______________________________________________
