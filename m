@@ -2,122 +2,105 @@ Return-Path: <jfs-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+jfs-discussion@lfdr.de
 Delivered-To: lists+jfs-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4020D759D06
-	for <lists+jfs-discussion@lfdr.de>; Wed, 19 Jul 2023 20:03:09 +0200 (CEST)
-Received: from [127.0.0.1] (helo=sfs-ml-4.v29.lw.sourceforge.com)
-	by sfs-ml-4.v29.lw.sourceforge.com with esmtp (Exim 4.95)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9664B759D24
+	for <lists+jfs-discussion@lfdr.de>; Wed, 19 Jul 2023 20:17:27 +0200 (CEST)
+Received: from [127.0.0.1] (helo=sfs-ml-3.v29.lw.sourceforge.com)
+	by sfs-ml-3.v29.lw.sourceforge.com with esmtp (Exim 4.95)
 	(envelope-from <jfs-discussion-bounces@lists.sourceforge.net>)
-	id 1qMBVk-00072I-9a;
-	Wed, 19 Jul 2023 18:02:52 +0000
+	id 1qMBja-0003i6-Lx;
+	Wed, 19 Jul 2023 18:17:10 +0000
 Received: from [172.30.20.202] (helo=mx.sourceforge.net)
- by sfs-ml-4.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
- TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (Exim 4.95)
- (envelope-from <smfrench@gmail.com>) id 1qMBVd-00072B-If
- for jfs-discussion@lists.sourceforge.net;
- Wed, 19 Jul 2023 18:02:46 +0000
+ by sfs-ml-1.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
+ TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (Exim 4.95) (envelope-from
+ <35CK4ZAkbADclrsdTeeXkTiibW.ZhhZeXnlXkVhgmXgm.Vhf@M3KW2WVRGUFZ5GODRSRYTGD7.apphosting.bounces.google.com>)
+ id 1qMBLu-0003zU-LX for jfs-discussion@lists.sourceforge.net;
+ Wed, 19 Jul 2023 17:52:43 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=sourceforge.net; s=x; h=Content-Transfer-Encoding:Content-Type:Cc:To:
- Subject:Message-ID:Date:From:In-Reply-To:References:MIME-Version:Sender:
- Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender
- :Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
+ d=sourceforge.net; s=x; h=Content-Type:To:From:Subject:Message-ID:In-Reply-To
+ :Date:MIME-Version:Sender:Reply-To:Cc:Content-Transfer-Encoding:Content-ID:
+ Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+ :Resent-Message-ID:References:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=bBHJ5zznIS99/1DyqAk4yervL0PEta1EYDdROer+oA8=; b=RpVDlA6fk11kLckX+T19aJSixd
- EMbYBDjZCeukaMzjQBIEXq3pDhtP5f72DDTgDeoplOux/YdrYh9y9MbDmETXymPB5e85OPG1Qt4A/
- hv+oapaMHhgLhYLBpQVcQafxzfuDHhy//tQdn4PqFK+GBTCylKKwKN45GJh39x5sjvUM=;
+ bh=hiRiXJW3cvp7FSsZTUGSxXp2M76eBloK3LBfm2fpvAw=; b=GQ1vsKXIaC8YsI4gIr0Kl9MwSb
+ ybRWpg4Pg+qkxP/O8i933RkKDbo3uQvwcN5HZ8AxrAU0ztm0C5P5beyAxluuZdriJD7dHn7XcAO0C
+ TfEiWVHTR0W50OZkGBh+9bMDZk1+uS7ViYRlGbTPY+mo3roQnRTpl9sXOcN0u5TW3/Go=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
- h=Content-Transfer-Encoding:Content-Type:Cc:To:Subject:Message-ID:Date:From
- :In-Reply-To:References:MIME-Version:Sender:Reply-To:Content-ID:
- Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
- :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
- List-Post:List-Owner:List-Archive;
- bh=bBHJ5zznIS99/1DyqAk4yervL0PEta1EYDdROer+oA8=; b=T3JP+Nfo62reF3sxzXP5r0UpqW
- Wp8OZQKfHk/0kvI/nrSMmns2NP3IkfUl1iRPKL3cGp3PavNHYEQqsuoEb9AbY2lFp0frOyRWzktz7
- 8DWTC9hiCJ90GqB0M/L0fXz/jqoz479vrwKrLSiKsluD74hj4F6XEugJogqN8crIoWAo=;
-Received: from mail-lj1-f179.google.com ([209.85.208.179])
+ h=Content-Type:To:From:Subject:Message-ID:In-Reply-To:Date:MIME-Version:
+ Sender:Reply-To:Cc:Content-Transfer-Encoding:Content-ID:Content-Description:
+ Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+ References:List-Id:List-Help:List-Unsubscribe:List-Subscribe:List-Post:
+ List-Owner:List-Archive; bh=hiRiXJW3cvp7FSsZTUGSxXp2M76eBloK3LBfm2fpvAw=; b=A
+ MGmXa1d+72nqilAp3csFSVoDQSFxcSre82CK5U9CM139aYiDUzuakUfY6DkkZdxZywgn+NHFGat3R
+ nsUoy+rQ714OeLNa2xls8cgsEHDFr2lCM3RS1ipyXjz1it4TkP9P3Pq3vVz42QuMqwyGEUHFWDqsA
+ t8Kva/4q6XFP7BiU=;
+Received: from mail-oi1-f200.google.com ([209.85.167.200])
  by sfi-mx-1.v28.lw.sourceforge.com with esmtps
  (TLS1.2:ECDHE-RSA-AES128-GCM-SHA256:128) (Exim 4.95)
- id 1qMBVd-00DK8j-82 for jfs-discussion@lists.sourceforge.net;
- Wed, 19 Jul 2023 18:02:45 +0000
-Received: by mail-lj1-f179.google.com with SMTP id
- 38308e7fff4ca-2b703caf344so106448341fa.1
+ id 1qMBLt-00DJly-Tk for jfs-discussion@lists.sourceforge.net;
+ Wed, 19 Jul 2023 17:52:43 +0000
+Received: by mail-oi1-f200.google.com with SMTP id
+ 5614622812f47-3a36b311b5cso11777252b6e.3
  for <jfs-discussion@lists.sourceforge.net>;
- Wed, 19 Jul 2023 11:02:45 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=gmail.com; s=20221208; t=1689789758; x=1690394558;
- h=content-transfer-encoding:cc:to:subject:message-id:date:from
- :in-reply-to:references:mime-version:from:to:cc:subject:date
- :message-id:reply-to;
- bh=bBHJ5zznIS99/1DyqAk4yervL0PEta1EYDdROer+oA8=;
- b=CJi8/yl+47Yh9Kwk9UJYfszuGOwBrtcd3kkj8+k/hM6XwtvYQnswt+9l5kx5w6l+JW
- Pf1pkx4nAG2GxfLdljDLsrpuGn4910S++QJI/u7DkoAR2tHmuMLCayjLX9v9NK3ddR29
- EV/DjrjjyxXK1m+JJvit5D+pzBDTUmvDWLAlEg1fmjD2WHvAHd/bUuugJlLuserF3hVH
- D3ZMff/erGW7+o+J0uN2fSJ06ct6NOAJlRi1WKLxdSd+p7pij+gvMwq8CHGjM+4qeFGy
- M82JVyCsZD2Y+Tx2zQ8MIs7hLH0KvKONhM3EimNxr3SoEqpfVNym/8jrt4YrTnNXYmJp
- Qb8w==
+ Wed, 19 Jul 2023 10:52:41 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20221208; t=1689789758; x=1690394558;
- h=content-transfer-encoding:cc:to:subject:message-id:date:from
- :in-reply-to:references:mime-version:x-gm-message-state:from:to:cc
- :subject:date:message-id:reply-to;
- bh=bBHJ5zznIS99/1DyqAk4yervL0PEta1EYDdROer+oA8=;
- b=WUCwSJtP2hejWzKOTWfYDdrFrH30OMtAHdunrqdLRdStV7gIoGwGpnaRbJNf6gVcBP
- izk/WuHCnHwJYNmHwE64FSL32hSCCCfA9/ZeldpdFGkzQGq4fGBfflwemPVCaMbPTGU8
- W3Vz12Pcwj425Aglgw78ptUj7bXpEPa5+ZttJvadDtMnzoit0UaMF3oAUB6EBFpL4YF1
- XwFBhA5pRaIjEXYq6wkuhHLzf/cx9TN80Sl8e5fswQaOrBZuC5fEDHlRpYdMbQ7klCWV
- pyWo/bSVKgI8mWXFVjzyiBk8TyNB5sFf5IBBxH9/fdH6HJ4dX2wa0C88MNe6JBGedI/v
- T/DQ==
-X-Gm-Message-State: ABy/qLaHFe3cZSASKfsyBGy0z8w+2GCT95aLuyDGfD/xbbvpTdStJ/4N
- FXWZUb1YnGPULUsR28Q2tVjGarIGEBEFhbuwfpk=
-X-Google-Smtp-Source: APBJJlEmxHipuzXPKDdED5w7bl7mjtpLoEV1pqtEokzwAwo2FlEBgMIh13kfzR6FclKI1K183n9Tobgj4uzDjPnC/l0=
-X-Received: by 2002:a2e:86d1:0:b0:2b7:3633:2035 with SMTP id
- n17-20020a2e86d1000000b002b736332035mr502768ljj.32.1689789758212; Wed, 19 Jul
- 2023 11:02:38 -0700 (PDT)
+ d=1e100.net; s=20221208; t=1689789156; x=1692381156;
+ h=to:from:subject:message-id:in-reply-to:date:mime-version
+ :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+ bh=hiRiXJW3cvp7FSsZTUGSxXp2M76eBloK3LBfm2fpvAw=;
+ b=cvh1iglLrGqkHHe8kpHxJZSbfuQPfXxnys3zAqPtAdOXRxMx9JWtK71O97s/t9AH1y
+ uSOMtiLs5EyK8qy2prdO5lahDMZqXnTvXfWSwNdM7ySn5NSdvtfZ/eKlMbntmmmM5IdF
+ OePrR2HKAqaFQ0At8XLMCz56LsuZzGzdBxIpaxgoL+cqYuTTyluiXQxDu5tT5oD4uEyH
+ /Y+lYHgLTRi7C3gEuUYkRV0Kwjr1dMmc6Wx6EkftK6GWsgW3x/L5/4CP9vWm5qnFFSjv
+ NFjM69j/WNRPjHi0UvsedXUBtgb5gqdEL2GUYwZWhxQn9dcC/Lihfa0H6huP06m9gb80
+ BAIg==
+X-Gm-Message-State: ABy/qLZUwsarBhqYq8NL0krbqzz5Z9PyG2ku8GmPIW70qfzPCDXIvQxb
+ MtdA/h0gOUqWtNtf55efHYbpXZ8AL0o3+mzazV16pZRuYr9z
+X-Google-Smtp-Source: APBJJlG5ugVl7dPPwQXLSskdx//wo3Cxwyt6xyJHDlFhfMqOYOoEiwYraGQnxOCt15oVej8GHXbJ8Vy/Q7WgiHAYGdyqnMHSkz9m
 MIME-Version: 1.0
-References: <20230628232417.120844-1-linux@treblig.org>
- <ZK80mu/YbHLEABAB@gallifrey>
- <CAH2r5mvrhr52hXFv87O9O=Qw45AXRXr0NQAsTk4Wj-6s19-2bA@mail.gmail.com>
-In-Reply-To: <CAH2r5mvrhr52hXFv87O9O=Qw45AXRXr0NQAsTk4Wj-6s19-2bA@mail.gmail.com>
-Date: Wed, 19 Jul 2023 13:02:27 -0500
-Message-ID: <CAH2r5mss4RsEF1b6gJo8LFWsN9-YBSEP6GV7axsNhX7ihj5CqA@mail.gmail.com>
-To: "Dr. David Alan Gilbert" <dave@treblig.org>
-X-Spam-Score: -0.2 (/)
-X-Spam-Report: Spam detection software, running on the system "util-spamd-1.v13.lw.sourceforge.com",
+X-Received: by 2002:a05:6808:f0a:b0:3a3:644a:b55 with SMTP id
+ m10-20020a0568080f0a00b003a3644a0b55mr30865038oiw.4.1689789156368; Wed, 19
+ Jul 2023 10:52:36 -0700 (PDT)
+Date: Wed, 19 Jul 2023 10:52:36 -0700
+In-Reply-To: <30f03978-3035-a28e-c097-112036901bcb@nerdbynature.de>
+X-Google-Appengine-App-Id: s~syzkaller
+X-Google-Appengine-App-Id-Alias: syzkaller
+Message-ID: <00000000000069291b0600dab2d6@google.com>
+To: broonie@kernel.org, dave.kleikamp@oracle.com, davem@davemloft.net, 
+ edumazet@google.com, jason@zx2c4.com, jfs-discussion@lists.sourceforge.net, 
+ kuba@kernel.org, kuninori.morimoto.gx@renesas.com, 
+ linux-fsdevel@vger.kernel.org, linux-kernel@vger.kernel.org, 
+ lists@nerdbynature.de, netdev@vger.kernel.org, pabeni@redhat.com, 
+ povik@cutebit.org, syzkaller-bugs@googlegroups.com, wireguard@lists.zx2c4.com
+X-Spam-Score: 3.0 (+++)
+X-Spam-Report: Spam detection software,
+ running on the system "util-spamd-2.v13.lw.sourceforge.com", 
  has NOT identified this incoming email as spam.  The original
  message has been attached to this so you can view it or label
  similar future email.  If you have any questions, see
  the administrator of that system for details.
- 
- Content preview:  The related question is which tree to send it from, if no
-   problems reported (presumably mine since it mostly affect cifs.ko and ksmbd.ko,
-    and because there hasn't been activity in fs/nls for years) On Wed, Jul 19,
-    2023 at 12:56 PM Steve French wrote: > > No objections to this on my part.
-    If Shaggy is ok with the JFS > change, we could target it for 6.6-rc1 if
-   it tests out ok > > On Wed, Jul [...] 
- 
- Content analysis details:   (-0.2 points, 6.0 required)
- 
-  pts rule name              description
+ Content preview:  Hello,
+ syzbot has tested the proposed patch and the reproducer
+ did not trigger any issue: Reported-and-tested-by:
+ syzbot+96eb4e0d727f0ae998a6@syzkaller.appspotmail.com
+ Content analysis details:   (3.0 points, 6.0 required)
+ pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
-                              no trust
-                             [209.85.208.179 listed in list.dnswl.org]
-  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
-                             provider
-                             [smfrench[at]gmail.com]
- -0.0 SPF_PASS               SPF: sender matches SPF record
-  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.3 FROM_LOCAL_HEX         From: localpart has long hexadecimal sequence
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
-                             [209.85.208.179 listed in wl.mailspike.net]
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
-                             envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
-                             author's domain
- -0.1 DKIM_VALID             Message has at least one valid DKIM or DK signature
-  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
-                             valid
-X-Headers-End: 1qMBVd-00DK8j-82
-Subject: Re: [Jfs-discussion] [PATCH v2 0/4] dedupe smb unicode files
+ [209.85.167.200 listed in wl.mailspike.net]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.167.200 listed in list.dnswl.org]
+ 2.5 SORTED_RECIPS          Recipient list is sorted by address
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 T_SCC_BODY_TEXT_LINE   No description available.
+X-Headers-End: 1qMBLt-00DJly-Tk
+X-Mailman-Approved-At: Wed, 19 Jul 2023 18:17:09 +0000
+Subject: Re: [Jfs-discussion] [syzbot] [wireguard?] [jfs?] KASAN:
+ slab-use-after-free Read in wg_noise_keypair_get
 X-BeenThere: jfs-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -129,82 +112,32 @@ List-Post: <mailto:jfs-discussion@lists.sourceforge.net>
 List-Help: <mailto:jfs-discussion-request@lists.sourceforge.net?subject=help>
 List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/jfs-discussion>, 
  <mailto:jfs-discussion-request@lists.sourceforge.net?subject=subscribe>
-From: Steve French via Jfs-discussion <jfs-discussion@lists.sourceforge.net>
-Reply-To: Steve French <smfrench@gmail.com>
-Cc: shaggy@kernel.org, jfs-discussion@lists.sourceforge.net,
- linux-cifs@vger.kernel.org, linux-kernel@vger.kernel.org, tom@talpey.com,
- krisman@collabora.com, linkinjeon@kernel.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+From: syzbot via Jfs-discussion <jfs-discussion@lists.sourceforge.net>
+Reply-To: syzbot <syzbot+96eb4e0d727f0ae998a6@syzkaller.appspotmail.com>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Errors-To: jfs-discussion-bounces@lists.sourceforge.net
 
-VGhlIHJlbGF0ZWQgcXVlc3Rpb24gaXMgd2hpY2ggdHJlZSB0byBzZW5kIGl0IGZyb20sIGlmIG5v
-IHByb2JsZW1zCnJlcG9ydGVkIChwcmVzdW1hYmx5IG1pbmUgc2luY2UgaXQgbW9zdGx5IGFmZmVj
-dCBjaWZzLmtvIGFuZCBrc21iZC5rbywKYW5kIGJlY2F1c2UgdGhlcmUgaGFzbid0IGJlZW4gYWN0
-aXZpdHkgaW4gZnMvbmxzIGZvciB5ZWFycykKCk9uIFdlZCwgSnVsIDE5LCAyMDIzIGF0IDEyOjU2
-4oCvUE0gU3RldmUgRnJlbmNoIDxzbWZyZW5jaEBnbWFpbC5jb20+IHdyb3RlOgo+Cj4gTm8gb2Jq
-ZWN0aW9ucyB0byB0aGlzIG9uIG15IHBhcnQuICBJZiBTaGFnZ3kgaXMgb2sgd2l0aCB0aGUgSkZT
-Cj4gY2hhbmdlLCB3ZSBjb3VsZCB0YXJnZXQgaXQgZm9yIDYuNi1yYzEgaWYgaXQgdGVzdHMgb3V0
-IG9rCj4KPiBPbiBXZWQsIEp1bCAxMiwgMjAyMyBhdCA2OjI44oCvUE0gRHIuIERhdmlkIEFsYW4g
-R2lsYmVydCA8ZGF2ZUB0cmVibGlnLm9yZz4gd3JvdGU6Cj4gPgo+ID4gKiBsaW51eEB0cmVibGln
-Lm9yZyAobGludXhAdHJlYmxpZy5vcmcpIHdyb3RlOgo+ID4gPiBGcm9tOiAiRHIuIERhdmlkIEFs
-YW4gR2lsYmVydCIgPGxpbnV4QHRyZWJsaWcub3JnPgo+ID4gPgo+ID4gPiBUaGUgc21iIGNsaWVu
-dCBhbmQgc2VydmVyIGNvZGUgaGF2ZSAobW9zdGx5KSBkdXBsaWNhdGVkIGNvZGUKPiA+ID4gZm9y
-IHVuaWNvZGUgbWFuaXB1bGF0aW9uLCBpbiBwYXJ0aWN1bGFyIHVwcGVyIGNhc2UgaGFuZGxpbmcu
-Cj4gPiA+Cj4gPiA+IEZsYXR0ZW4gdGhpcyBsb3QgaW50byBzaGFyZWQgY29kZS4KPiA+Cj4gPiBH
-ZW50bGUgdHdvIHdlZWsgcGluZyBvbiB0aGlzIHBsZWFzZS4KPiA+Cj4gPiBEYXZlCj4gPgo+ID4g
-KEFwb2xvZ2llcyB0byB0aGUgMyBvZiB5b3Ugd2hvIGFscmVhZHkgZ290IGEgY29weSBvZiB0aGlz
-IHBpbmcsCj4gPiByZWNlbnQgZHVlIHRvIGEgbWlzc2luZyBoZWFkZXIgJywnICkKPiA+Cj4gPiA+
-IFRoZXJlJ3Mgc29tZSBjb2RlIHRoYXQncyBzbGlnaHRseSBkaWZmZXJlbnQgYmV0d2VlbiB0aGUg
-dHdvLCBhbmQKPiA+ID4gSSd2ZSBub3QgYXR0ZW1wdGVkIHRvIHNoYXJlIHRoYXQgLSB0aGlzIHNo
-b3VsZCBiZSBzdHJpY3RseSBhIG5vCj4gPiA+IGJlaGF2aW91ciBjaGFuZ2Ugc2V0Lgo+ID4gPgo+
-ID4gPiBJbiBhZGRpdGlvbiwgdGhlIHNhbWUgdGFibGVzIGFuZCBjb2RlIGFyZSBzaGFyZWQgaW4g
-amZzLCBob3dldmVyCj4gPiA+IHRoZXJlJ3MgdmVyeSBsaXR0bGUgdGVzdGluZyBhdmFpbGFibGUg
-Zm9yIHRoZSB1bmljb2RlIGluIHRoZXJlLAo+ID4gPiBzbyBqdXN0IHNoYXJlIHRoZSByYXcgZGF0
-YSB0YWJsZXMuCj4gPiA+Cj4gPiA+IEkgc3VzcGVjdCB0aGVyZSdzIG1vcmUgVUNTLTIgY29kZSB0
-aGF0IGNhbiBiZSBzaGFyZWQsIGluIHRoZSBOTFMgY29kZQo+ID4gPiBhbmQgaW4gdGhlIFVDUy0y
-IGNvZGUgdXNlZCBieSB0aGUgRUZJIGludGVyZmFjZXMuCj4gPiA+Cj4gPiA+IExpZ2h0bHkgdGVz
-dGVkIHdpdGggYSBtb2R1bGUgYW5kIGEgbW9ub2xpdGhpYyBidWlsZCwgYW5kIGp1c3QgbW91bnRp
-bmcKPiA+ID4gaXRzZWxmLgo+ID4gPgo+ID4gPiBUaGlzIGR1cGUgd2FzIGZvdW5kIHVzaW5nIFBN
-RDoKPiA+ID4gICBodHRwczovL3BtZC5naXRodWIuaW8vcG1kL3BtZF91c2VyZG9jc19jcGQuaHRt
-bAo+ID4gPgo+ID4gPiBEYXZlCj4gPiA+Cj4gPiA+IFZlcnNpb24gMgo+ID4gPiAgIE1vdmVkIHRo
-ZSBzaGFyZWQgY29kZSB0byBmcy9ubHMgYWZ0ZXIgdjEgZmVlZGJhY2suCj4gPiA+ICAgUmVuYW1l
-ZCBzaGFyZWQgdGFibGVzIGZyb20gU21iIHRvIE5scyBwcmVmaXgKPiA+ID4gICBNb3ZlIFVuaVN0
-cmNhdCBhcyB3ZWxsCj4gPiA+ICAgU2hhcmUgdGhlIEpGUyB0YWJsZXMKPiA+ID4KPiA+ID4gRHIu
-IERhdmlkIEFsYW4gR2lsYmVydCAoNCk6Cj4gPiA+ICAgZnMvc21iOiBSZW1vdmUgdW5pY29kZSAn
-bG93ZXInIHRhYmxlcwo+ID4gPiAgIGZzL3NtYjogU3dpbmcgdW5pY29kZSBjb21tb24gY29kZSBm
-cm9tIHNtYi0+TkxTCj4gPiA+ICAgZnMvc21iL2NsaWVudDogVXNlIGNvbW1vbiBjb2RlIGluIGNs
-aWVudAo+ID4gPiAgIGZzL2pmczogVXNlIGNvbW1vbiB1Y3MyIHVwcGVyIGNhc2UgdGFibGUKPiA+
-ID4KPiA+ID4gIGZzL2pmcy9LY29uZmlnICAgICAgICAgICAgICAgfCAgIDEgKwo+ID4gPiAgZnMv
-amZzL01ha2VmaWxlICAgICAgICAgICAgICB8ICAgMiArLQo+ID4gPiAgZnMvamZzL2pmc191bmlj
-b2RlLmggICAgICAgICB8ICAxNyArLQo+ID4gPiAgZnMvamZzL2pmc191bml1cHIuYyAgICAgICAg
-ICB8IDEyMSAtLS0tLS0tLS0tLS0tCj4gPiA+ICBmcy9ubHMvS2NvbmZpZyAgICAgICAgICAgICAg
-IHwgICA4ICsKPiA+ID4gIGZzL25scy9NYWtlZmlsZSAgICAgICAgICAgICAgfCAgIDEgKwo+ID4g
-PiAgZnMvbmxzL25sc191Y3MyX2RhdGEuaCAgICAgICB8ICAxNSArKwo+ID4gPiAgZnMvbmxzL25s
-c191Y3MyX3V0aWxzLmMgICAgICB8IDE0NCArKysrKysrKysrKysrKysKPiA+ID4gIGZzL25scy9u
-bHNfdWNzMl91dGlscy5oICAgICAgfCAyODUgKysrKysrKysrKysrKysrKysrKysrKysrKysrKysr
-Cj4gPiA+ICBmcy9zbWIvY2xpZW50L0tjb25maWcgICAgICAgIHwgICAxICsKPiA+ID4gIGZzL3Nt
-Yi9jbGllbnQvY2lmc191bmljb2RlLmMgfCAgIDEgLQo+ID4gPiAgZnMvc21iL2NsaWVudC9jaWZz
-X3VuaWNvZGUuaCB8IDMzMCArLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLQo+ID4g
-PiAgZnMvc21iL2NsaWVudC9jaWZzX3VuaXVwci5oICB8IDIzOSAtLS0tLS0tLS0tLS0tLS0tLS0t
-LS0tLS0tCj4gPiA+ICBmcy9zbWIvc2VydmVyL0tjb25maWcgICAgICAgIHwgICAxICsKPiA+ID4g
-IGZzL3NtYi9zZXJ2ZXIvdW5pY29kZS5jICAgICAgfCAgIDEgLQo+ID4gPiAgZnMvc21iL3NlcnZl
-ci91bmljb2RlLmggICAgICB8IDMyNSArLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0t
-Cj4gPiA+ICBmcy9zbWIvc2VydmVyL3VuaXVwci5oICAgICAgIHwgMjY4IC0tLS0tLS0tLS0tLS0t
-LS0tLS0tLS0tLS0tLS0KPiA+ID4gIDE3IGZpbGVzIGNoYW5nZWQsIDQ2NyBpbnNlcnRpb25zKCsp
-LCAxMjkzIGRlbGV0aW9ucygtKQo+ID4gPiAgZGVsZXRlIG1vZGUgMTAwNjQ0IGZzL2pmcy9qZnNf
-dW5pdXByLmMKPiA+ID4gIGNyZWF0ZSBtb2RlIDEwMDY0NCBmcy9ubHMvbmxzX3VjczJfZGF0YS5o
-Cj4gPiA+ICBjcmVhdGUgbW9kZSAxMDA2NDQgZnMvbmxzL25sc191Y3MyX3V0aWxzLmMKPiA+ID4g
-IGNyZWF0ZSBtb2RlIDEwMDY0NCBmcy9ubHMvbmxzX3VjczJfdXRpbHMuaAo+ID4gPiAgZGVsZXRl
-IG1vZGUgMTAwNjQ0IGZzL3NtYi9jbGllbnQvY2lmc191bml1cHIuaAo+ID4gPiAgZGVsZXRlIG1v
-ZGUgMTAwNjQ0IGZzL3NtYi9zZXJ2ZXIvdW5pdXByLmgKPiA+ID4KPiA+ID4gLS0KPiA+ID4gMi40
-MS4wCj4gPiA+Cj4gPiAtLQo+ID4gIC0tLS0tT3BlbiB1cCB5b3VyIGV5ZXMsIG9wZW4gdXAgeW91
-ciBtaW5kLCBvcGVuIHVwIHlvdXIgY29kZSAtLS0tLS0tCj4gPiAvIERyLiBEYXZpZCBBbGFuIEdp
-bGJlcnQgICAgfCAgICAgICBSdW5uaW5nIEdOVS9MaW51eCAgICAgICB8IEhhcHB5ICBcCj4gPiBc
-ICAgICAgICBkYXZlIEAgdHJlYmxpZy5vcmcgfCAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
-ICB8IEluIEhleCAvCj4gPiAgXCBfX19fX19fX19fX19fX19fX19fX19fX19ffF9fX19fIGh0dHA6
-Ly93d3cudHJlYmxpZy5vcmcgICB8X19fX19fXy8KPgo+Cj4KPiAtLQo+IFRoYW5rcywKPgo+IFN0
-ZXZlCgoKCi0tClRoYW5rcywKClN0ZXZlCgoKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX18KSmZzLWRpc2N1c3Npb24gbWFpbGluZyBsaXN0Ckpmcy1kaXNjdXNz
-aW9uQGxpc3RzLnNvdXJjZWZvcmdlLm5ldApodHRwczovL2xpc3RzLnNvdXJjZWZvcmdlLm5ldC9s
-aXN0cy9saXN0aW5mby9qZnMtZGlzY3Vzc2lvbgo=
+Hello,
+
+syzbot has tested the proposed patch and the reproducer did not trigger any issue:
+
+Reported-and-tested-by: syzbot+96eb4e0d727f0ae998a6@syzkaller.appspotmail.com
+
+Tested on:
+
+commit:         6e2bda2c jfs: fix invalid free of JFS_IP(ipimap)->i_im..
+git tree:       https://github.com/kleikamp/linux-shaggy.git
+console output: https://syzkaller.appspot.com/x/log.txt?x=172aecaaa80000
+kernel config:  https://syzkaller.appspot.com/x/.config?x=f631232ee56196bd
+dashboard link: https://syzkaller.appspot.com/bug?extid=96eb4e0d727f0ae998a6
+compiler:       Debian clang version 15.0.6, GNU ld (GNU Binutils for Debian) 2.40
+
+Note: no patches were applied.
+Note: testing is done by a robot and is best-effort only.
+
+
+_______________________________________________
+Jfs-discussion mailing list
+Jfs-discussion@lists.sourceforge.net
+https://lists.sourceforge.net/lists/listinfo/jfs-discussion
