@@ -2,28 +2,28 @@ Return-Path: <jfs-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+jfs-discussion@lfdr.de
 Delivered-To: lists+jfs-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8073C75F9E2
-	for <lists+jfs-discussion@lfdr.de>; Mon, 24 Jul 2023 16:29:00 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D255775F9DF
+	for <lists+jfs-discussion@lfdr.de>; Mon, 24 Jul 2023 16:28:59 +0200 (CEST)
 Received: from [127.0.0.1] (helo=sfs-ml-1.v29.lw.sourceforge.com)
 	by sfs-ml-1.v29.lw.sourceforge.com with esmtp (Exim 4.95)
 	(envelope-from <jfs-discussion-bounces@lists.sourceforge.net>)
-	id 1qNwYD-00019t-4x;
+	id 1qNwYD-0001A3-Cp;
 	Mon, 24 Jul 2023 14:28:42 +0000
 Received: from [172.30.20.202] (helo=mx.sourceforge.net)
- by sfs-ml-3.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
+ by sfs-ml-1.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
  TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (Exim 4.95)
- (envelope-from <halip0503@gmail.com>) id 1qNXnM-0002qs-VW
+ (envelope-from <halip0503@gmail.com>) id 1qNZA6-0006I1-QR
  for jfs-discussion@lists.sourceforge.net;
- Sun, 23 Jul 2023 12:02:40 +0000
+ Sun, 23 Jul 2023 13:30:15 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=sourceforge.net; s=x; h=Content-Transfer-Encoding:MIME-Version:References:
  In-Reply-To:Message-Id:Date:Subject:Cc:To:From:Sender:Reply-To:Content-Type:
  Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
  Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=jp84CK0/t53LIziRQtMnNYNguwF9Niz8BKJjpaj5EsQ=; b=DMGq6KHQh0wsrv4ZtwNV/nayuJ
- /qUQrf5NmABR4O5AElyRim+Av7fER9LbY+yIjqXu6LQ5NG0lMv3HhGBLzb1NYAXhkQ9nnHpjXlGPs
- W9e5T2slQB38NGYCjD1imqJTmcf2Yd8/78LtJC6l5050NpisYXrJSidydOvPVd444pxM=;
+ bh=nzYFzRzP7i0c6DYPDuN0yOXQ/LKGeHJaUfK0vwejrvA=; b=B+KjMm1rT1sgMErwWSBaPiPyII
+ RM5ttYkvKfEVXRUPz20mKErahqC9hfKRFeumj1P3IWtAHFdoBokatZRGZuhFce/7fS8B4JlTz+fWD
+ DFgsSGjqbnRs7/HOFVKBc8xAgeCixsGkd2Ea4RD7XBCHcVMGinKArtz4o3WEOwvWePCA=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
  h=Content-Transfer-Encoding:MIME-Version:References:In-Reply-To:Message-Id:
@@ -31,59 +31,59 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
  :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
  List-Post:List-Owner:List-Archive;
- bh=jp84CK0/t53LIziRQtMnNYNguwF9Niz8BKJjpaj5EsQ=; b=do/mI9eViNbsHcwV9ppIzoH321
- aQwajfBeTstKz9Z36ERZG4Gyxx1+Vu1N9vGwrHzl7QwEkRvF+gs9LSa9D+kXFu7WZF67sjqM3OsiF
- Z4k8aQUNrppI1hFwOpxQBNm1jyPzEraUW5Up7yTKbldvcLxvbqkOpXBZNgYaCd0RX3qY=;
-Received: from mail-lj1-f173.google.com ([209.85.208.173])
- by sfi-mx-2.v28.lw.sourceforge.com with esmtps
+ bh=nzYFzRzP7i0c6DYPDuN0yOXQ/LKGeHJaUfK0vwejrvA=; b=QLxA51xzx0PKhDroh019cfhhpM
+ lkjVslDSkKxr/cWcIQypVlZfGS1BU911JuxCAkNFpV8+zKdutf5wauUZxIWVrVx8sQ9jXDzuBSvnM
+ 6EEj+jYKHBS6S7dXO9iYSPjTCC5AOjsNLyW/TpTsjQIZAItNd773JfvZa7lvyNvBZXR8=;
+Received: from mail-lj1-f172.google.com ([209.85.208.172])
+ by sfi-mx-1.v28.lw.sourceforge.com with esmtps
  (TLS1.2:ECDHE-RSA-AES128-GCM-SHA256:128) (Exim 4.95)
- id 1qNXnI-0006Zj-7O for jfs-discussion@lists.sourceforge.net;
- Sun, 23 Jul 2023 12:02:40 +0000
-Received: by mail-lj1-f173.google.com with SMTP id
- 38308e7fff4ca-2b74310566cso49527341fa.2
+ id 1qNZA3-00HIIs-U9 for jfs-discussion@lists.sourceforge.net;
+ Sun, 23 Jul 2023 13:30:15 +0000
+Received: by mail-lj1-f172.google.com with SMTP id
+ 38308e7fff4ca-2b95d5ee18dso50269321fa.1
  for <jfs-discussion@lists.sourceforge.net>;
- Sun, 23 Jul 2023 05:02:36 -0700 (PDT)
+ Sun, 23 Jul 2023 06:30:11 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=gmail.com; s=20221208; t=1690113746; x=1690718546;
+ d=gmail.com; s=20221208; t=1690119002; x=1690723802;
  h=content-transfer-encoding:mime-version:references:in-reply-to
  :message-id:date:subject:cc:to:from:from:to:cc:subject:date
  :message-id:reply-to;
- bh=jp84CK0/t53LIziRQtMnNYNguwF9Niz8BKJjpaj5EsQ=;
- b=SsQmrSLsSZj31ndKi/URN5NngEUc5GwOSe1IBIddkJfba3p0Hb+/I67WBvzQ8jg3lJ
- OJ1/XT8Yq3mhwdIdbGSxT/gY47hLyzA3nBssatWk2Z0TCiJ1Mo7RPqtAL5lOESKPB3HW
- KqOJ+8nLzr5KIEkhKWrq0CF6ofjSAAjwb6htrdorLUJqHNx5Iu/irqCwPXPuoAxUWtzs
- MK4yFmR8IjRKIQXrVgzfWEHGkANqurMz0GuZtYge5MA3iNDkko1+TAllLueMnlBmRwRX
- jV5nmde+YKtOAUdZw2PCXnXTcOme3rLSA1Ic6y+jRv+zPtrfXUf2gn/B7yeQAJ3lu3Id
- mj5A==
+ bh=nzYFzRzP7i0c6DYPDuN0yOXQ/LKGeHJaUfK0vwejrvA=;
+ b=SuNbWUVBNcoIVYaGMiFhxCT87+Z8Iw8FIsxquqXDTEFGgrzVwzhQYX94n70Q39UsRf
+ fjQ6canVSvU3et2bSgbSGipIVkwIQOIvljyPzqKp8gGEjlJGKn6649TzIcP0MV7DkmHy
+ jRTvozh6JkyioHu96i/lRKZ5banbq4rd2y0K+sL4WdEIxNEZ72obmFGkDxWJZVrxgxQ+
+ te4x2P2Ip8ra7byXZvO9ZoXpHQSY3iJwt++NO+gl5jiucfkZYnq8VhmqZHUYZVTj/z7X
+ 0YD/7IETFslDT5rtWGCqNXIVTLXEu76U5y/r7FFtyn01qehbH6zdNrP4+ISKdvn/Qtaj
+ Kq4Q==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20221208; t=1690113746; x=1690718546;
+ d=1e100.net; s=20221208; t=1690119002; x=1690723802;
  h=content-transfer-encoding:mime-version:references:in-reply-to
  :message-id:date:subject:cc:to:from:x-gm-message-state:from:to:cc
  :subject:date:message-id:reply-to;
- bh=jp84CK0/t53LIziRQtMnNYNguwF9Niz8BKJjpaj5EsQ=;
- b=feZlLG8ljdULKRCX1VvLRH3JUBmxrf6bY56Y+KsXB9Hvi/0chsl3RmtzhnBXQj8UEe
- KB8xzsVG9GbEQ6vkj3vcQUx0bXb5utxXCg55W//4Exh7DjqbQzxGLICXzn1CTi49xDN6
- GBwN9JqvzVRvsGl/I+rSDe+eGvRDLb6IqZ+COG+TykG6PCU1/eIZyncOoRDtZlbNiQUJ
- DcuMeNFwloA82MG7srRphq3cUFfvNRxgxDxEiyP9EKGXX/7SFyRKXw0V39Z3ya4b7pXu
- 5ObyhHFun7/zJDthhW+pfB9PXg0UxSbFP0jNzZBCdkDp9vw3QaTjG/zjN8pO4uWxPpVj
- tIeg==
-X-Gm-Message-State: ABy/qLa0Pq/1Z/WZOzbhMfs9PGXW4JmZFPvazQULZqNOjalUQbEKWkND
- B4IBs6t/TAESq0Kn7cd/AOqJDPX0FLvLtxCvJec=
-X-Google-Smtp-Source: APBJJlHRkKReSufvhMX5SHEhWtQf0LH13mHE4Jd7TZJ7Ubo6R/iTXzxsHoyuVRUdqaNc/tnft7iteg==
-X-Received: by 2002:a2e:b0e2:0:b0:2b6:e13f:cfd7 with SMTP id
- h2-20020a2eb0e2000000b002b6e13fcfd7mr4575889ljl.4.1690113745934; 
- Sun, 23 Jul 2023 05:02:25 -0700 (PDT)
+ bh=nzYFzRzP7i0c6DYPDuN0yOXQ/LKGeHJaUfK0vwejrvA=;
+ b=l9ks1iSjeZDx7aDD4RmJjn7F0jG7/H7Pb0X1vCSC8SLxr3hEm65idMqmpxJNKpglS6
+ 6a2QkMRHwJ95FrnCFD+ksIWATQM1mivJY/aWYzf/H8/coX5gdvRk658hx9cOlqYa19Wn
+ /RvH6ADcFi5RB3M/fdIm8LsKOmk95+EzS6MRE7NesqbkuVC38XNe3hKWwUF99URnzs91
+ qKZ2XaLRgLn1f1nBrf+N5WHYYCsTx4Wu+XcILW7PWYN/ZEVQmzbNUFJ/KYmQQQi69mnG
+ seia1OYhiWb6APUheNvteE7swDVyF9oh9Zxl65NdMNzauxUfp3qcbPQLuVvW26RMWTrG
+ 7idA==
+X-Gm-Message-State: ABy/qLYO8jzWXvuElpFPd2mPWxZOhTEiscpn81ZvTB7OLNN3KoBWC08H
+ dqKhN3mbhY3F/iYRLhs0YCg=
+X-Google-Smtp-Source: APBJJlHAqctAbylZ7n/HbAQDPO4nE2oqQlTJf+9jf9mG/GvyFj5oahtXRZRQ9VBTpMQxtDaeOFk+jA==
+X-Received: by 2002:a2e:9058:0:b0:2b7:4078:13e0 with SMTP id
+ n24-20020a2e9058000000b002b7407813e0mr4742383ljg.43.1690119001589; 
+ Sun, 23 Jul 2023 06:30:01 -0700 (PDT)
 Received: from halip-Pc.42.fr ([93.188.41.70])
  by smtp.gmail.com with ESMTPSA id
- 5-20020a05651c008500b00295a96a0f6csm2043034ljq.102.2023.07.23.05.02.25
+ k15-20020a2e240f000000b002b6eb5db863sm2158270ljk.43.2023.07.23.06.30.00
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Sun, 23 Jul 2023 05:02:25 -0700 (PDT)
+ Sun, 23 Jul 2023 06:30:01 -0700 (PDT)
 To: gregkh@linuxfoundation.org
-Date: Sun, 23 Jul 2023 15:02:09 +0300
-Message-Id: <20230723120209.7963-1-halip0503@gmail.com>
+Date: Sun, 23 Jul 2023 16:29:59 +0300
+Message-Id: <20230723132959.4945-1-halip0503@gmail.com>
 X-Mailer: git-send-email 2.25.1
-In-Reply-To: <2023072251-spokesman-zebra-908d@gregkh>
-References: <2023072251-spokesman-zebra-908d@gregkh>
+In-Reply-To: <2023072318-semantic-payee-0162@gregkh>
+References: <2023072318-semantic-payee-0162@gregkh>
 MIME-Version: 1.0
 X-Spam-Score: 0.1 (/)
 X-Spam-Report: Spam detection software,
@@ -100,8 +100,6 @@ X-Spam-Report: Spam detection software,
  Content analysis details:   (0.1 points, 6.0 required)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.208.173 listed in list.dnswl.org]
  0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
  in digit [halip0503[at]gmail.com]
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
@@ -115,11 +113,13 @@ X-Spam-Report: Spam detection software,
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.208.173 listed in wl.mailspike.net]
-X-Headers-End: 1qNXnI-0006Zj-7O
+ [209.85.208.172 listed in wl.mailspike.net]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.208.172 listed in list.dnswl.org]
+X-Headers-End: 1qNZA3-00HIIs-U9
 X-Mailman-Approved-At: Mon, 24 Jul 2023 14:28:40 +0000
-Subject: [Jfs-discussion] [PATCH] jfs: validate max amount of blocks before
- allocation.
+Subject: [Jfs-discussion] [PATCH v3] jfs: validate max amount of blocks
+ before allocation.
 X-BeenThere: jfs-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -174,6 +174,7 @@ index ae99a7e232ee..a82751e6c47f 100644
 -- 
 2.25.1
 
+Fix commit message.
 
 
 _______________________________________________
