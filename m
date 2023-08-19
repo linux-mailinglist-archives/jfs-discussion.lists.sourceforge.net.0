@@ -2,119 +2,124 @@ Return-Path: <jfs-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+jfs-discussion@lfdr.de
 Delivered-To: lists+jfs-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id B5DA6781758
-	for <lists+jfs-discussion@lfdr.de>; Sat, 19 Aug 2023 06:36:27 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 73ED5781AA6
+	for <lists+jfs-discussion@lfdr.de>; Sat, 19 Aug 2023 19:32:57 +0200 (CEST)
 Received: from [127.0.0.1] (helo=sfs-ml-4.v29.lw.sourceforge.com)
 	by sfs-ml-4.v29.lw.sourceforge.com with esmtp (Exim 4.95)
 	(envelope-from <jfs-discussion-bounces@lists.sourceforge.net>)
-	id 1qXDgu-0001ma-TQ;
-	Sat, 19 Aug 2023 04:36:01 +0000
+	id 1qXPoO-0001Jv-AO;
+	Sat, 19 Aug 2023 17:32:32 +0000
 Received: from [172.30.20.202] (helo=mx.sourceforge.net)
  by sfs-ml-4.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
  TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (Exim 4.95)
- (envelope-from <smfrench@gmail.com>) id 1qXDgt-0001mT-8x
+ (envelope-from <halip0503@gmail.com>) id 1qXPoM-0001Jp-RR
  for jfs-discussion@lists.sourceforge.net;
- Sat, 19 Aug 2023 04:35:59 +0000
+ Sat, 19 Aug 2023 17:32:31 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=sourceforge.net; s=x; h=Content-Transfer-Encoding:Content-Type:Cc:To:
- Subject:Message-ID:Date:From:In-Reply-To:References:MIME-Version:Sender:
- Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender
- :Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
+ d=sourceforge.net; s=x; h=Content-Transfer-Encoding:MIME-Version:References:
+ In-Reply-To:Message-Id:Date:Subject:Cc:To:From:Sender:Reply-To:Content-Type:
+ Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
+ Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=E9RDO+mu4zOwSEJ716yo61Qz/xnDxFXm4Etyq0Z0RWE=; b=KGib9eMh4DsCyXK3dklA6u2Rmk
- KTeuDW7bf+yrBy86rjzq7+9030JAchH8yCHYDqnd7pttJrf5aeb7OiutUERVsasRKmNW9mQ+HRYa4
- nmtvehNQ0wUeQhKDtKNVOGkan56boDkMZgxJz/+GAXH6e+7p2VImphjKpO/2dQj8p5mQ=;
+ bh=wsby/C1UcyJ8rjbjsYf/N7EFvfuqmKzyTlBjmpiFcO8=; b=JwQbdxXO9tlNj4xrQ1bt5L29o2
+ 1EMtwwtpDdXmGNVKdV2N6MofoBKjdHJaJ6oiWl0QGi8qUrNeMdKQgTwHrBllcuLv3DZHjhW84faHC
+ kI6KOeHD7QEjintt2qFeF+HnlO+yKQ0QArMXC5+CPrPRf87TDryUgM53/0TUjLQ1GamU=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
- h=Content-Transfer-Encoding:Content-Type:Cc:To:Subject:Message-ID:Date:From
- :In-Reply-To:References:MIME-Version:Sender:Reply-To:Content-ID:
+ h=Content-Transfer-Encoding:MIME-Version:References:In-Reply-To:Message-Id:
+ Date:Subject:Cc:To:From:Sender:Reply-To:Content-Type:Content-ID:
  Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
  :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
  List-Post:List-Owner:List-Archive;
- bh=E9RDO+mu4zOwSEJ716yo61Qz/xnDxFXm4Etyq0Z0RWE=; b=A/mm92bkohOf/qmbDHC230v1xE
- WUrAx+nOrWUTJhX4DSCyNuy1waMUw9JiyuadZBbNEoQepmuQROvSZQ34MvDF/4B95tWKAg8pjFc9c
- eDth80h3BDr8hzTqsskxiZe4vYcy68HMBFQwcdYl8wUwQ3j17tH9g2nLqy9CA+B7bvwA=;
-Received: from mail-lj1-f182.google.com ([209.85.208.182])
+ bh=wsby/C1UcyJ8rjbjsYf/N7EFvfuqmKzyTlBjmpiFcO8=; b=CablLrkdElEYeJhYOvNopnBFXw
+ hHQGrV3L9WrEkeOF/aOCcovEoBl0PylYy3i7Mcu5bj0bBYnShQurrWgC6QmuSqTaIdDdD90JK/+08
+ ALLpxFr4KRfYWI98+A94MOtsFdNfeFrMzb/4e1J2UvoMLuRqQYikMlerfniSIMKmAZos=;
+Received: from mail-lj1-f177.google.com ([209.85.208.177])
  by sfi-mx-1.v28.lw.sourceforge.com with esmtps
  (TLS1.2:ECDHE-RSA-AES128-GCM-SHA256:128) (Exim 4.95)
- id 1qXDgq-009EC9-0V for jfs-discussion@lists.sourceforge.net;
- Sat, 19 Aug 2023 04:35:59 +0000
-Received: by mail-lj1-f182.google.com with SMTP id
- 38308e7fff4ca-2ba1e9b1fa9so23708761fa.3
+ id 1qXPoK-009iAr-3X for jfs-discussion@lists.sourceforge.net;
+ Sat, 19 Aug 2023 17:32:31 +0000
+Received: by mail-lj1-f177.google.com with SMTP id
+ 38308e7fff4ca-2b9cf2b1309so22869071fa.0
  for <jfs-discussion@lists.sourceforge.net>;
- Fri, 18 Aug 2023 21:35:55 -0700 (PDT)
+ Sat, 19 Aug 2023 10:32:28 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=gmail.com; s=20221208; t=1692419749; x=1693024549;
- h=content-transfer-encoding:cc:to:subject:message-id:date:from
- :in-reply-to:references:mime-version:from:to:cc:subject:date
+ d=gmail.com; s=20221208; t=1692466341; x=1693071141;
+ h=content-transfer-encoding:mime-version:references:in-reply-to
+ :message-id:date:subject:cc:to:from:from:to:cc:subject:date
  :message-id:reply-to;
- bh=E9RDO+mu4zOwSEJ716yo61Qz/xnDxFXm4Etyq0Z0RWE=;
- b=R4WVLmz85gXbiZSANPHdMu3UK92btPoCkKlfVsdjxVVHj6uivXpvlPi5UT3us0hoOX
- MBVKgDBpK+nW/qskN1URjcKwyFtND6PwzOWxXIHDu1qxQEMRq5Pjdf15bbw3CF5GSENN
- cIc24CNROHF3jUvsO/ec03liqyq/xlomEoxULxBkzQASEgT7mywYpkmE5/aSRaE01iY+
- LJ6gOl+qipqLVYfQLrQcYz2mGM5fxUjPNlmwRzRFB9Yf3OVkS9bHsvhPI4ge+bHmhzDJ
- vbQIr9AZK5y2jZbuO9EIYwTvilo4YDGi/eSDf/anSKRqF3PlnH3KS5VqXitqdXQpJ12S
- XFzw==
+ bh=wsby/C1UcyJ8rjbjsYf/N7EFvfuqmKzyTlBjmpiFcO8=;
+ b=E7Ku42Dqqgf+CDj2pZlq2dk1dEzmqfhRCXS4NjHGquGpQgwu27YyTC3vKu6dAjIpkO
+ O5MqfT4DIYHSlKUcQkXrIySHFbjhF8eUChSIeo0YVcKRnsp8pBas3HLi3bzaTnD+kRTn
+ i1HzLj+Rx73kGlbEf9i5faRYtvXaXI/G63nYou/SaA+n1nnFwMdu+WOs+hTVbGAlIHCf
+ /WIEDHLLlinLcAX4l2v3rSUGruvEUunI2VXGbaO48u61Jw2sjZZwUADznQC8/KG5r0d7
+ 5hn/XxUXkcWmmGRI8rV67PjnXcDUQN123YP16ntAkaJMrhdoYznI0lBIQhQ+53t/Mpl5
+ sbtA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20221208; t=1692419749; x=1693024549;
- h=content-transfer-encoding:cc:to:subject:message-id:date:from
- :in-reply-to:references:mime-version:x-gm-message-state:from:to:cc
+ d=1e100.net; s=20221208; t=1692466341; x=1693071141;
+ h=content-transfer-encoding:mime-version:references:in-reply-to
+ :message-id:date:subject:cc:to:from:x-gm-message-state:from:to:cc
  :subject:date:message-id:reply-to;
- bh=E9RDO+mu4zOwSEJ716yo61Qz/xnDxFXm4Etyq0Z0RWE=;
- b=BwF+VVQCtGf1dhkX7QU7vwVLAeP3I6TYR8Yl0ViRZZgmjchwoyDXkS9/Ebp6DAV4IV
- KBOfIRPTZtzKOR0afslWmPZwHVGa8iCEzDjmsT6SQOX0YMziS/Qvlkmyp6E9YFE84s8c
- AIIC314BTUjwb4/3NiCFAd7tlHqTEMFYeq/qSEDFDZWnXYumswNmC7Fq5cxie/2rRqy0
- gyxXbVQIdv3ixZ4kbu83TGyaqz2AdItgQ3aJR+ap29mTV4OwdMZjw1a9qijR3Uj4WGVx
- t0QVtePrOmRP3TXej0hwhD7qBjMb89hF6NEcDuu05TUfwYe7BOxUPZp2vTC0uPEKIo5o
- E+lw==
-X-Gm-Message-State: AOJu0Yxz4vP5wKDX8bnVXzzLqf5mfWmKu+cZI6i68ZcMmzPJxEqxgRwF
- dLWhnjhTKx3/M0xKCAbneGABw12THp0q7cz7pGY=
-X-Google-Smtp-Source: AGHT+IF8OAfn7lkBb+InQvpKMkIb+K37Z90E3TnGBaNlzHc4x7WwpS2lzxlJ6a5y0qpTlajnEBSjEwvtr99f082U4GY=
-X-Received: by 2002:a2e:a309:0:b0:2b5:68ad:291f with SMTP id
- l9-20020a2ea309000000b002b568ad291fmr777624lje.19.1692419748974; Fri, 18 Aug
- 2023 21:35:48 -0700 (PDT)
+ bh=wsby/C1UcyJ8rjbjsYf/N7EFvfuqmKzyTlBjmpiFcO8=;
+ b=kflPhl5+WOySeY6OkeaQO8Zb127KoQKdDnC13A1jmgSFsksW8bvhRfFgg9o7+kyM3s
+ DXNJtNz+2LwzqcVXE9XKCz43co8Whyv7kO3SNS88ej1ORAw+OVJR9NCr/mui7AypfVY3
+ XGhrfiBi/Nl+UNCyIr4f+36bOWwf2gtEYKish2MasKVovfIUpnmNFjTGVxlhBP2sNPZr
+ ASBjvnkDCoTqsSEkBCEMe944auFyaSUkOIDqs6GHdWcw7tdA2yRTqCbO2e674KMtWuqC
+ ksRypF35J3xjhzdsTjxcfTbfgStApiFBDHE7NSghQhFV+kskYKVub4o2hJcSkA41l7lx
+ DWYA==
+X-Gm-Message-State: AOJu0YwKsnU+WL90OTL8rm29gPXHVPbKKJAXGARp3k45zpcvhFgUUMdW
+ cqm1b4zwxRNibGptus6kuHA=
+X-Google-Smtp-Source: AGHT+IFZiCZgMXyyaT8bSAl0dN1Hov0jEgeh6KnXr88hNtN4pYLIACeBqwyy62bSqn/NXHHicik7aA==
+X-Received: by 2002:a2e:9d81:0:b0:2bb:96de:f554 with SMTP id
+ c1-20020a2e9d81000000b002bb96def554mr790077ljj.6.1692466341154; 
+ Sat, 19 Aug 2023 10:32:21 -0700 (PDT)
+Received: from halip-Pc.42.fr (ip-95-221-49-4.bb.netbynet.ru. [95.221.49.4])
+ by smtp.gmail.com with ESMTPSA id
+ h16-20020a2e3a10000000b002b9ccbe074bsm1216522lja.73.2023.08.19.10.32.20
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Sat, 19 Aug 2023 10:32:20 -0700 (PDT)
+To: gregkh@linuxfoundation.org
+Date: Sat, 19 Aug 2023 20:32:16 +0300
+Message-Id: <20230819173216.6098-1-halip0503@gmail.com>
+X-Mailer: git-send-email 2.25.1
+In-Reply-To: <2023072336-seventy-untangled-cbba@gregkh>
+References: <2023072336-seventy-untangled-cbba@gregkh>
 MIME-Version: 1.0
-References: <20230817002232.80079-1-linux@treblig.org>
-In-Reply-To: <20230817002232.80079-1-linux@treblig.org>
-Date: Fri, 18 Aug 2023 23:35:37 -0500
-Message-ID: <CAH2r5mtQCJZj7THQ7Kenx5sRS9frQNsJ7qkG0eKKy31JPcxiPQ@mail.gmail.com>
-To: linux@treblig.org
-X-Spam-Score: -0.2 (/)
-X-Spam-Report: Spam detection software, running on the system "util-spamd-2.v13.lw.sourceforge.com",
+X-Spam-Score: 0.1 (/)
+X-Spam-Report: Spam detection software,
+ running on the system "util-spamd-1.v13.lw.sourceforge.com", 
  has NOT identified this incoming email as spam.  The original
  message has been attached to this so you can view it or label
  similar future email.  If you have any questions, see
  the administrator of that system for details.
- 
- Content preview:  tentatively merged to cifs-2.6.git for-next pending additional
-    testing Let me know if anyone wants to add RB or Acked-by to any of these
-    or spots any issues On Wed, Aug 16, 2023 at 7:22 PM wrote: > > From: "Dr.
-    David Alan Gilbert" > > The smb client and server code have (mostly) duplicated
-    code > for unicode manipulation, in particular upper case ha [...] 
- 
- Content analysis details:   (-0.2 points, 6.0 required)
- 
-  pts rule name              description
+ Content preview: From: Alexei Filippov The lack of checking
+ bmp->db_max_freebud
+ in extBalloc() can lead to shift out of bounds,
+ so this patch prevents undefined
+ behavior, because bmp->db_max_freebud == -1 only if there is no free space.
+ Content analysis details:   (0.1 points, 6.0 required)
+ pts rule name              description
  ---- ---------------------- --------------------------------------------------
-  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
-                             provider
-                             [smfrench[at]gmail.com]
- -0.0 SPF_PASS               SPF: sender matches SPF record
-  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
-                              no trust
-                             [209.85.208.182 listed in list.dnswl.org]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
-                             [209.85.208.182 listed in wl.mailspike.net]
+ no trust [209.85.208.177 listed in list.dnswl.org]
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit [halip0503[at]gmail.com]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [halip0503[at]gmail.com]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
-                             author's domain
-  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
-                             valid
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
-                             envelope-from domain
- -0.1 DKIM_VALID             Message has at least one valid DKIM or DK signature
-X-Headers-End: 1qXDgq-009EC9-0V
-Subject: Re: [Jfs-discussion] [PATCH v5 0/4] dedupe smb unicode files
+ envelope-from domain
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.208.177 listed in wl.mailspike.net]
+X-Headers-End: 1qXPoK-009iAr-3X
+Subject: [Jfs-discussion] [PATCH v5] jfs: validate max amount of blocks
+ before allocation.
 X-BeenThere: jfs-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -126,66 +131,57 @@ List-Post: <mailto:jfs-discussion@lists.sourceforge.net>
 List-Help: <mailto:jfs-discussion-request@lists.sourceforge.net?subject=help>
 List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/jfs-discussion>, 
  <mailto:jfs-discussion-request@lists.sourceforge.net?subject=subscribe>
-From: Steve French via Jfs-discussion <jfs-discussion@lists.sourceforge.net>
-Reply-To: Steve French <smfrench@gmail.com>
-Cc: pc@manguebit.com, linux-cifs@vger.kernel.org,
- jfs-discussion@lists.sourceforge.net, linux-kernel@vger.kernel.org,
- tom@talpey.com, "Dr. David Alan Gilbert" <dave@treblig.org>,
- krisman@collabora.com, linkinjeon@kernel.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+From: Aleksei Filippov via Jfs-discussion
+ <jfs-discussion@lists.sourceforge.net>
+Reply-To: Aleksei Filippov <halip0503@gmail.com>
+Cc: shaggy@kernel.org, halip0503@gmail.com,
+ syzbot+5f088f29593e6b4c8db8@syzkaller.appspotmail.com,
+ jfs-discussion@lists.sourceforge.net, linux-kernel@vger.kernel.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Errors-To: jfs-discussion-bounces@lists.sourceforge.net
 
-dGVudGF0aXZlbHkgbWVyZ2VkIHRvIGNpZnMtMi42LmdpdCBmb3ItbmV4dCBwZW5kaW5nIGFkZGl0
-aW9uYWwgdGVzdGluZwoKTGV0IG1lIGtub3cgaWYgYW55b25lIHdhbnRzIHRvIGFkZCBSQiBvciBB
-Y2tlZC1ieSB0byBhbnkgb2YgdGhlc2Ugb3IKc3BvdHMgYW55IGlzc3VlcwoKT24gV2VkLCBBdWcg
-MTYsIDIwMjMgYXQgNzoyMuKAr1BNIDxsaW51eEB0cmVibGlnLm9yZz4gd3JvdGU6Cj4KPiBGcm9t
-OiAiRHIuIERhdmlkIEFsYW4gR2lsYmVydCIgPGRhdmVAdHJlYmxpZy5vcmc+Cj4KPiBUaGUgc21i
-IGNsaWVudCBhbmQgc2VydmVyIGNvZGUgaGF2ZSAobW9zdGx5KSBkdXBsaWNhdGVkIGNvZGUKPiBm
-b3IgdW5pY29kZSBtYW5pcHVsYXRpb24sIGluIHBhcnRpY3VsYXIgdXBwZXIgY2FzZSBoYW5kbGlu
-Zy4KPgo+IEZsYXR0ZW4gdGhpcyBsb3QgaW50byBzaGFyZWQgY29kZS4KPgo+IFRoZXJlJ3Mgc29t
-ZSBjb2RlIHRoYXQncyBzbGlnaHRseSBkaWZmZXJlbnQgYmV0d2VlbiB0aGUgdHdvLCBhbmQKPiBJ
-J3ZlIG5vdCBhdHRlbXB0ZWQgdG8gc2hhcmUgdGhhdCAtIHRoaXMgc2hvdWxkIGJlIHN0cmljdGx5
-IGEgbm8KPiBiZWhhdmlvdXIgY2hhbmdlIHNldC4KPgo+IEluIGFkZGl0aW9uLCB0aGUgc2FtZSB0
-YWJsZXMgYW5kIGNvZGUgYXJlIHNoYXJlZCBpbiBqZnMsIGhvd2V2ZXIKPiB0aGVyZSdzIHZlcnkg
-bGl0dGxlIHRlc3RpbmcgYXZhaWxhYmxlIGZvciB0aGUgdW5pY29kZSBpbiB0aGVyZSwKPiBzbyBq
-dXN0IHNoYXJlIHRoZSByYXcgZGF0YSB0YWJsZXMuCj4KPiBJIHN1c3BlY3QgdGhlcmUncyBtb3Jl
-IFVDUy0yIGNvZGUgdGhhdCBjYW4gYmUgc2hhcmVkLCBpbiB0aGUgTkxTIGNvZGUKPiBhbmQgaW4g
-dGhlIFVDUy0yIGNvZGUgdXNlZCBieSB0aGUgRUZJIGludGVyZmFjZXMuCj4KPiBMaWdodGx5IHRl
-c3RlZCB3aXRoIGEgbW9kdWxlIGFuZCBhIG1vbm9saXRoaWMgYnVpbGQsIGFuZCBqdXN0IG1vdW50
-aW5nCj4gaXRzZWxmLgo+Cj4gVGhpcyBkdXBlIHdhcyBmb3VuZCB1c2luZyBQTUQ6Cj4gICBodHRw
-czovL3BtZC5naXRodWIuaW8vcG1kL3BtZF91c2VyZG9jc19jcGQuaHRtbAo+Cj4gRGF2ZQo+Cj4g
-VmVyc2lvbiA1Cj4gICBBZGQgc29tZSAod2NoYXJfdCAqKSBjYXN0cyB0byBrZWVwIHNwYXJzZQo+
-ICAgaGFwcHksIGFzIHNwb3R0ZWQgYnkga2VybmVsIHRlc3Qgcm9ib3QKPgo+IERyLiBEYXZpZCBB
-bGFuIEdpbGJlcnQgKDQpOgo+ICAgZnMvc21iOiBSZW1vdmUgdW5pY29kZSAnbG93ZXInIHRhYmxl
-cwo+ICAgZnMvc21iOiBTd2luZyB1bmljb2RlIGNvbW1vbiBjb2RlIGZyb20gc21iLT5OTFMKPiAg
-IGZzL3NtYi9jbGllbnQ6IFVzZSBjb21tb24gY29kZSBpbiBjbGllbnQKPiAgIGZzL2pmczogVXNl
-IGNvbW1vbiB1Y3MyIHVwcGVyIGNhc2UgdGFibGUKPgo+ICBmcy9qZnMvS2NvbmZpZyAgICAgICAg
-ICAgICAgICAgICAgICAgICAgICAgICAgfCAgIDEgKwo+ICBmcy9qZnMvTWFrZWZpbGUgICAgICAg
-ICAgICAgICAgICAgICAgICAgICAgICAgfCAgIDIgKy0KPiAgZnMvamZzL2pmc191bmljb2RlLmgg
-ICAgICAgICAgICAgICAgICAgICAgICAgIHwgIDE3ICstCj4gIGZzL2pmcy9qZnNfdW5pdXByLmMg
-ICAgICAgICAgICAgICAgICAgICAgICAgICB8IDEyMSAtLS0tLS0tCj4gIGZzL25scy9LY29uZmln
-ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICB8ICAgOCArCj4gIGZzL25scy9NYWtlZmls
-ZSAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICB8ICAgMSArCj4gIGZzL25scy9ubHNfdWNz
-Ml9kYXRhLmggICAgICAgICAgICAgICAgICAgICAgICB8ICAxNSArCj4gIC4uLi9zZXJ2ZXIvdW5p
-dXByLmggPT4gbmxzL25sc191Y3MyX3V0aWxzLmN9ICB8IDE1NiArLS0tLS0tLS0KPiAgZnMvbmxz
-L25sc191Y3MyX3V0aWxzLmggICAgICAgICAgICAgICAgICAgICAgIHwgMjg1ICsrKysrKysrKysr
-KysrKwo+ICBmcy9zbWIvY2xpZW50L0tjb25maWcgICAgICAgICAgICAgICAgICAgICAgICAgfCAg
-IDEgKwo+ICBmcy9zbWIvY2xpZW50L2NpZnNfdW5pY29kZS5jICAgICAgICAgICAgICAgICAgfCAg
-IDEgLQo+ICBmcy9zbWIvY2xpZW50L2NpZnNfdW5pY29kZS5oICAgICAgICAgICAgICAgICAgfCAz
-MzAgKy0tLS0tLS0tLS0tLS0tLS0tCj4gIGZzL3NtYi9jbGllbnQvY2lmc191bml1cHIuaCAgICAg
-ICAgICAgICAgICAgICB8IDIzOSAtLS0tLS0tLS0tLS0tCj4gIGZzL3NtYi9jbGllbnQvc21iMnBk
-dS5jICAgICAgICAgICAgICAgICAgICAgICB8ICAgNCArLQo+ICBmcy9zbWIvc2VydmVyL0tjb25m
-aWcgICAgICAgICAgICAgICAgICAgICAgICAgfCAgIDEgKwo+ICBmcy9zbWIvc2VydmVyL3VuaWNv
-ZGUuYyAgICAgICAgICAgICAgICAgICAgICAgfCAgIDEgLQo+ICBmcy9zbWIvc2VydmVyL3VuaWNv
-ZGUuaCAgICAgICAgICAgICAgICAgICAgICAgfCAzMjUgKy0tLS0tLS0tLS0tLS0tLS0KPiAgMTcg
-ZmlsZXMgY2hhbmdlZCwgMzQyIGluc2VydGlvbnMoKyksIDExNjYgZGVsZXRpb25zKC0pCj4gIGRl
-bGV0ZSBtb2RlIDEwMDY0NCBmcy9qZnMvamZzX3VuaXVwci5jCj4gIGNyZWF0ZSBtb2RlIDEwMDY0
-NCBmcy9ubHMvbmxzX3VjczJfZGF0YS5oCj4gIHJlbmFtZSBmcy97c21iL3NlcnZlci91bml1cHIu
-aCA9PiBubHMvbmxzX3VjczJfdXRpbHMuY30gKDUwJSkKPiAgY3JlYXRlIG1vZGUgMTAwNjQ0IGZz
-L25scy9ubHNfdWNzMl91dGlscy5oCj4gIGRlbGV0ZSBtb2RlIDEwMDY0NCBmcy9zbWIvY2xpZW50
-L2NpZnNfdW5pdXByLmgKPgo+IC0tCj4gMi40MS4wCj4KCgotLSAKVGhhbmtzLAoKU3RldmUKCgpf
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpKZnMtZGlzY3Vz
-c2lvbiBtYWlsaW5nIGxpc3QKSmZzLWRpc2N1c3Npb25AbGlzdHMuc291cmNlZm9yZ2UubmV0Cmh0
-dHBzOi8vbGlzdHMuc291cmNlZm9yZ2UubmV0L2xpc3RzL2xpc3RpbmZvL2pmcy1kaXNjdXNzaW9u
-Cg==
+From: Alexei Filippov <halip0503@gmail.com>
+
+The lack of checking bmp->db_max_freebud in extBalloc() can lead to
+shift out of bounds, so this patch prevents undefined behavior, because
+bmp->db_max_freebud == -1 only if there is no free space.
+
+Signed-off-by: Aleksei Filippov <halip0503@gmail.com>
+Fixes: 1da177e4c3f4 ("Linux-2.6.12-rc2")
+Reported-and-tested-by: syzbot+5f088f29593e6b4c8db8@syzkaller.appspotmail.com
+Closes: https://syzkaller.appspot.com/bug?id=01abadbd6ae6a08b1f1987aa61554c6b3ac19ff2
+---
+
+Changes since v1:
+	-Commit message fix. Add Fixes line.
+Changes since v2-v4:
+	-Commit message fixes.
+ fs/jfs/jfs_extent.c | 5 +++++
+ 1 file changed, 5 insertions(+)
+
+diff --git a/fs/jfs/jfs_extent.c b/fs/jfs/jfs_extent.c
+index ae99a7e232ee..a82751e6c47f 100644
+--- a/fs/jfs/jfs_extent.c
++++ b/fs/jfs/jfs_extent.c
+@@ -311,6 +311,11 @@ extBalloc(struct inode *ip, s64 hint, s64 * nblocks, s64 * blkno)
+ 	 * blocks in the map. in that case, we'll start off with the
+ 	 * maximum free.
+ 	 */
++
++	/* give up if no space left */
++	if (bmp->db_maxfreebud == -1)
++		return -ENOSPC;
++
+ 	max = (s64) 1 << bmp->db_maxfreebud;
+ 	if (*nblocks >= max && *nblocks > nbperpage)
+ 		nb = nblks = (max > nbperpage) ? max : nbperpage;
+-- 
+2.25.1
+
+
+
+_______________________________________________
+Jfs-discussion mailing list
+Jfs-discussion@lists.sourceforge.net
+https://lists.sourceforge.net/lists/listinfo/jfs-discussion
