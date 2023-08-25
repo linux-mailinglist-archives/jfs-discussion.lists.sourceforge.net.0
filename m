@@ -2,28 +2,27 @@ Return-Path: <jfs-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+jfs-discussion@lfdr.de
 Delivered-To: lists+jfs-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id DAAB6788775
-	for <lists+jfs-discussion@lfdr.de>; Fri, 25 Aug 2023 14:32:05 +0200 (CEST)
-Received: from [127.0.0.1] (helo=sfs-ml-2.v29.lw.sourceforge.com)
-	by sfs-ml-2.v29.lw.sourceforge.com with esmtp (Exim 4.95)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6FE407888A5
+	for <lists+jfs-discussion@lfdr.de>; Fri, 25 Aug 2023 15:33:34 +0200 (CEST)
+Received: from [127.0.0.1] (helo=sfs-ml-4.v29.lw.sourceforge.com)
+	by sfs-ml-4.v29.lw.sourceforge.com with esmtp (Exim 4.95)
 	(envelope-from <jfs-discussion-bounces@lists.sourceforge.net>)
-	id 1qZVyc-00036s-1P;
-	Fri, 25 Aug 2023 12:31:44 +0000
+	id 1qZWw0-0004CI-4e;
+	Fri, 25 Aug 2023 13:33:08 +0000
 Received: from [172.30.20.202] (helo=mx.sourceforge.net)
- by sfs-ml-2.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
+ by sfs-ml-4.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
  TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (Exim 4.95)
- (envelope-from <brauner@kernel.org>) id 1qZVyb-00036j-2q
- for jfs-discussion@lists.sourceforge.net;
- Fri, 25 Aug 2023 12:31:44 +0000
+ (envelope-from <brauner@kernel.org>) id 1qZWvz-0004C8-90;
+ Fri, 25 Aug 2023 13:33:07 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=sourceforge.net; s=x; h=In-Reply-To:Content-Type:MIME-Version:References:
  Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:Content-Transfer-Encoding:
  Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
  Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=oa2DiKgqinYHGUlfVabFRaa9lCnvdRWonjhld6TJThM=; b=SnYXBqAiSakpH6k74NJsQs53ug
- Af2t1TQX7JKSCbj7mGyHYQSNAacsTQFKJfXDfid68+eaJeTGqj69Lstt43xqkErF5qmKRgf+U7wfo
- E7pTAWrIUexSmjd3+SOZQwRvcjvzU2TS4onwF6ZIw40cubH+13GuRjNQSEXIV5iG474U=;
+ bh=X1l9n2w2msxg9FKnzsUG71D//GbSOHzJh48SLsQSHc4=; b=HaeTgtvivHY5OaeIKK2XpHCFKD
+ gc8qTe552BQ5/VXJt2CVprqdGMsqyWwZ7VXbo8LoEiRfV5jSDvVm1mYPx/nrL5VUiX4DKxHeTmZ1B
+ 6RGyE317hByuMlHoSByWLDO/NZk+QS0hXqAq57EYyl8Iv1grbdH8Pi5Qx0/3ifApP+PY=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
  h=In-Reply-To:Content-Type:MIME-Version:References:Message-ID:Subject:Cc:To
@@ -31,68 +30,66 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
  :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
  List-Post:List-Owner:List-Archive;
- bh=oa2DiKgqinYHGUlfVabFRaa9lCnvdRWonjhld6TJThM=; b=VDMhCONeXAgxK70GHkaK+lbZ2a
- d574D0ZW5pXLnanxUtW6mGQjmEAHQzU6ddoXfWL0iTRo28BYrwtepqs0hy/pUA6TjqhACZNebPa+s
- 2fqcjOkJHn05QO5KMJJV2WlPSjOkwedXjCiX23zSVZb0k+sVNLClsKscy5HNLaYVJxCw=;
+ bh=X1l9n2w2msxg9FKnzsUG71D//GbSOHzJh48SLsQSHc4=; b=ISWkOXhMv3w58DYMwUYJ+GlVZv
+ jcqdJ8t8MiCl+iynN0KIXeXXplBTtx6AcmEOBiHkl5RcsHA1etzrAVatx7l1xmxFzjhRBWFtB2xyC
+ 6HzxaTArZBWrRp9/Juadapy4FBp6w5dMsH1it3adz20a4lF7tjhppIkuyc2pJrnIsfRw=;
 Received: from dfw.source.kernel.org ([139.178.84.217])
- by sfi-mx-2.v28.lw.sourceforge.com with esmtps
+ by sfi-mx-1.v28.lw.sourceforge.com with esmtps
  (TLS1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.95)
- id 1qZVyU-0004IS-R5 for jfs-discussion@lists.sourceforge.net;
- Fri, 25 Aug 2023 12:31:43 +0000
+ id 1qZWvx-00FGVe-M3; Fri, 25 Aug 2023 13:33:07 +0000
 Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
  (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
  key-exchange X25519 server-signature RSA-PSS (2048 bits))
  (No client certificate requested)
- by dfw.source.kernel.org (Postfix) with ESMTPS id 423B567AFF;
- Fri, 25 Aug 2023 12:31:33 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id A4995C433C8;
- Fri, 25 Aug 2023 12:31:30 +0000 (UTC)
+ by dfw.source.kernel.org (Postfix) with ESMTPS id 16F38673FF;
+ Fri, 25 Aug 2023 13:33:00 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id E70AEC433C8;
+ Fri, 25 Aug 2023 13:32:49 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=k20201202; t=1692966692;
- bh=xeeE9OL56szUlQkfE3YZ9y93xazUihAuaZdpblcR+s8=;
+ s=k20201202; t=1692970379;
+ bh=T3WCgKJR+2I3SNciRzSe5NGE9AO6KZcdR6qXwGAgd9M=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=rYxUt/BNCSb8buvXjaAcup2J1SslDw1TyEcVw0oiLcLcsLdknXXkP8H2XqQgoScPa
- 1lmK2CmQ2xFjJxsG4hLP6xL0Xmkr8o8Sj/APOKnOq9h9+Rcz9ClQn9PYhms1g07+8X
- xy8GRvz45I+NOyAIUG0dL3a7fT9YvAWMajZd1FIYzSJH/xg8wy3ZXjkDansQY6jvSM
- 0LdryvUEWBthmCJ1VEX/OPc6HQzuaRc1gLY7qtH61GajBIXvJ7YpdHiESh0V1ev8yl
- InZHsBWQnm3Ph138e17lvinJpfHew3I4JudLlcv5C8PhY1kz5b+2ZNneMZG3ImGsul
- ACFN3zmFmGZXg==
-Date: Fri, 25 Aug 2023 14:31:27 +0200
+ b=BOzM2QQ1MZDAriB3IMOamPdHV+2S3m2FC6tyT1pwI/9DF+WhlbPxDXE6fFDwe1gQn
+ nTHB+ewwdyxJVq1cwfq3lRDi07qJcCHvh+nPPtQwtyRFhMG1ktBk1+a5CxpNbFHlMo
+ Es+8l14bPK+nfmT+9Vs7IvZUfkPWFzk8wOkU0sT7FJdKR3BT4c1FwZN9woHNBuu5tc
+ jHLMCNsuGW/YHncoWpwLVgQ93zfRJ93+ghRIza8tLelTozCObl43Fv+mmuqvzrkB+C
+ SdJZ6/x4IFa4j6NBHHUKQ0uLY4RqtzEgYesuRGMfUi0q6xmwPRpi/3TpKuwt6YF2IT
+ 8BYUF/YAoocgw==
+Date: Fri, 25 Aug 2023 15:32:47 +0200
 To: Jan Kara <jack@suse.cz>
-Message-ID: <20230825-autark-irrgarten-2e76ee966762@brauner>
+Message-ID: <20230825-hubraum-gedreht-8c5c4db9330a@brauner>
 References: <20230818123232.2269-1-jack@suse.cz>
- <20230823104857.11437-24-jack@suse.cz>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20230823104857.11437-24-jack@suse.cz>
+In-Reply-To: <20230818123232.2269-1-jack@suse.cz>
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: Spam detection software,
- running on the system "util-spamd-1.v13.lw.sourceforge.com", 
+ running on the system "util-spamd-2.v13.lw.sourceforge.com", 
  has NOT identified this incoming email as spam.  The original
  message has been attached to this so you can view it or label
  similar future email.  If you have any questions, see
  the administrator of that system for details.
- Content preview:  On Wed, Aug 23, 2023 at 12:48:35PM +0200, Jan Kara wrote:
- > Convert jfs to use bdev_open_by_dev() and pass the handle around. > > CC:
- Dave Kleikamp <shaggy@kernel.org> > CC: jfs-discussion@lists.sourc [...] 
+ Content preview:  On Wed, Aug 23, 2023 at 12:48:11PM +0200, Jan Kara wrote:
+ > Hello, > > this is a v3 of the patch series which implements the idea of
+ blkdev_get_by_*() > calls returning bdev_handle which is then passe [...]
  Content analysis details:   (-5.2 points, 6.0 required)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [139.178.84.217 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [139.178.84.217 listed in list.dnswl.org]
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.0 DKIMWL_WL_HIGH         DKIMwl.org - High trust sender
-X-Headers-End: 1qZVyU-0004IS-R5
-Subject: Re: [Jfs-discussion] [PATCH 24/29] jfs: Convert to
- bdev_open_by_dev()
+X-Headers-End: 1qZWvx-00FGVe-M3
+Subject: Re: [Jfs-discussion] [PATCH v3 0/29] block: Make blkdev_get_by_*()
+ return handle
 X-BeenThere: jfs-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -107,26 +104,63 @@ List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/jfs-discussion>,
 From: Christian Brauner via Jfs-discussion
  <jfs-discussion@lists.sourceforge.net>
 Reply-To: Christian Brauner <brauner@kernel.org>
-Cc: Jens Axboe <axboe@kernel.dk>, Dave Kleikamp <shaggy@kernel.org>,
- jfs-discussion@lists.sourceforge.net, Christoph Hellwig <hch@infradead.org>,
- linux-block@vger.kernel.org, linux-fsdevel@vger.kernel.org,
- Christoph Hellwig <hch@lst.de>
+Cc: Dave Kleikamp <shaggy@kernel.org>, jfs-discussion@lists.sourceforge.net,
+ "Darrick J. Wong" <djwong@kernel.org>, linux-nvme@lists.infradead.org,
+ Joseph Qi <joseph.qi@linux.alibaba.com>, dm-devel@redhat.com,
+ target-devel@vger.kernel.org, linux-mtd@lists.infradead.org,
+ Jack Wang <jinpu.wang@ionos.com>, Alasdair Kergon <agk@redhat.com>,
+ drbd-dev@lists.linbit.com, linux-s390@vger.kernel.org,
+ linux-nilfs@vger.kernel.org, linux-scsi@vger.kernel.org,
+ Sergey Senozhatsky <senozhatsky@chromium.org>,
+ Christoph Hellwig <hch@infradead.org>, xen-devel@lists.xenproject.org,
+ Gao Xiang <xiang@kernel.org>,
+ Christian Borntraeger <borntraeger@linux.ibm.com>,
+ Kent Overstreet <kent.overstreet@gmail.com>,
+ Sven Schnelle <svens@linux.ibm.com>, linux-pm@vger.kernel.org,
+ Mike Snitzer <snitzer@kernel.org>, Chao Yu <chao@kernel.org>,
+ Joern Engel <joern@lazybastard.org>, reiserfs-devel@vger.kernel.org,
+ linux-block@vger.kernel.org, linux-bcache@vger.kernel.org,
+ David Sterba <dsterba@suse.com>, Jaegeuk Kim <jaegeuk@kernel.org>,
+ Trond Myklebust <trond.myklebust@hammerspace.com>,
+ Jens Axboe <axboe@kernel.dk>, linux-raid@vger.kernel.org,
+ linux-nfs@vger.kernel.org, linux-ext4@vger.kernel.org, Ted Tso <tytso@mit.edu>,
+ linux-mm@kvack.org, Song Liu <song@kernel.org>,
+ linux-f2fs-devel@lists.sourceforge.net, linux-xfs@vger.kernel.org,
+ Minchan Kim <minchan@kernel.org>, ocfs2-devel@oss.oracle.com,
+ Anna Schumaker <anna@kernel.org>, linux-fsdevel@vger.kernel.org,
+ "Md. Haris Iqbal" <haris.iqbal@ionos.com>,
+ Andrew Morton <akpm@linux-foundation.org>, linux-erofs@lists.ozlabs.org,
+ linux-btrfs@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Errors-To: jfs-discussion-bounces@lists.sourceforge.net
 
-On Wed, Aug 23, 2023 at 12:48:35PM +0200, Jan Kara wrote:
-> Convert jfs to use bdev_open_by_dev() and pass the handle around.
+On Wed, Aug 23, 2023 at 12:48:11PM +0200, Jan Kara wrote:
+> Hello,
 > 
-> CC: Dave Kleikamp <shaggy@kernel.org>
-> CC: jfs-discussion@lists.sourceforge.net
-> Acked-by: Christoph Hellwig <hch@lst.de>
-> Acked-by: Dave Kleikamp <dave.kleikamp@oracle.com>
-> Signed-off-by: Jan Kara <jack@suse.cz>
-> ---
+> this is a v3 of the patch series which implements the idea of blkdev_get_by_*()
+> calls returning bdev_handle which is then passed to blkdev_put() [1]. This
+> makes the get and put calls for bdevs more obviously matching and allows us to
+> propagate context from get to put without having to modify all the users
+> (again!). In particular I need to propagate used open flags to blkdev_put() to
+> be able count writeable opens and add support for blocking writes to mounted
+> block devices. I'll send that series separately.
+> 
+> The series is based on Christian's vfs tree as of today as there is quite
+> some overlap. Patches have passed some reasonable testing - I've tested block
+> changes, md, dm, bcache, xfs, btrfs, ext4, swap. More testing or review is
+> always welcome. Thanks! I've pushed out the full branch to:
+> 
+> git://git.kernel.org/pub/scm/linux/kernel/git/jack/linux-fs.git bdev_handle
+> 
+> to ease review / testing. Since there were not many comments for v2 and
+> Christoph has acked the series I think we should start discussing how to merge
+> the series. Most collisions with this series seem to happen in the filesystems
+> area so VFS tree would seem as the least painful way to merge this. Jens,
 
-Looks good to me,
-Reviewed-by: Christian Brauner <brauner@kernel.org>
+I really do like this series especially struct bdev_handle and moving
+the mode bits in there. I'll happily take this. So far there have only
+been minor things that can easily be fixed.
 
 
 _______________________________________________
