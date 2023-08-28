@@ -2,124 +2,110 @@ Return-Path: <jfs-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+jfs-discussion@lfdr.de
 Delivered-To: lists+jfs-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0039278B6A7
-	for <lists+jfs-discussion@lfdr.de>; Mon, 28 Aug 2023 19:42:50 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7B05A78B601
+	for <lists+jfs-discussion@lfdr.de>; Mon, 28 Aug 2023 19:08:31 +0200 (CEST)
 Received: from [127.0.0.1] (helo=sfs-ml-2.v29.lw.sourceforge.com)
 	by sfs-ml-2.v29.lw.sourceforge.com with esmtp (Exim 4.95)
 	(envelope-from <jfs-discussion-bounces@lists.sourceforge.net>)
-	id 1qagFz-0004AA-8G;
-	Mon, 28 Aug 2023 17:42:30 +0000
+	id 1qafim-0001r8-Uu;
+	Mon, 28 Aug 2023 17:08:11 +0000
 Received: from [172.30.20.202] (helo=mx.sourceforge.net)
- by sfs-ml-4.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
+ by sfs-ml-2.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
  TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (Exim 4.95)
- (envelope-from <ghandatmanas@gmail.com>) id 1qa7y1-0003eF-NZ
- for jfs-discussion@lists.sourceforge.net;
- Sun, 27 Aug 2023 05:05:42 +0000
+ (envelope-from <jack@suse.cz>) id 1qafiZ-0001qR-Ha;
+ Mon, 28 Aug 2023 17:07:58 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=sourceforge.net; s=x; h=Content-Transfer-Encoding:MIME-Version:Message-Id:
- Date:Subject:Cc:To:From:Sender:Reply-To:Content-Type:Content-ID:
- Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
- :Resent-Message-ID:In-Reply-To:References:List-Id:List-Help:List-Unsubscribe:
+ d=sourceforge.net; s=x; h=In-Reply-To:Content-Type:MIME-Version:References:
+ Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:Content-Transfer-Encoding:
+ Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
+ Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=w0rHx36EtjFL/T0ZOtQOOpsSvLpc8KOUwP8osiOZIL0=; b=XGx4NLfPvfNE6jHNjeScE6pW6N
- oEwUbVu5y/SLdPbIK/HN969HP0/CAV4HjykRLUljoGctLKwWd5+aMG5c//BIDDZW5tQphs1h7r37O
- ho1nmKDs907w9NX1PXL5nz2YAI7ai6aXCncDoTvqcxPhcT5ObZ/DG3lPaZdBUQViLf+g=;
+ bh=gY+yGRa61TK2BR8Nw1XPStAseZID7tr6EzNodmZtwGI=; b=CFb/r1DkbpWfcd+bdoLPlVp7xS
+ asy/DJRLZl6+y75lj9gqaps6ArDpHuwbwuWpWaA1i2BMHEVkO3SMWaDks/xS6N1OrL1hmdcwQ3UWd
+ 8tEpj8HTNQp4SEQ3glI8DT8DGoGsiXRpfoKAVP/oh8AUmHMX+zOS2VwXt33QpC2BDpN8=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
- h=Content-Transfer-Encoding:MIME-Version:Message-Id:Date:Subject:Cc:To:From
- :Sender:Reply-To:Content-Type:Content-ID:Content-Description:Resent-Date:
- Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
- References:List-Id:List-Help:List-Unsubscribe:List-Subscribe:List-Post:
- List-Owner:List-Archive; bh=w0rHx36EtjFL/T0ZOtQOOpsSvLpc8KOUwP8osiOZIL0=; b=g
- pqpZ1D52bSJx48PJmQ7u0pyfGWPqMVtbgkd0NGNFUOctWTsa3SNBot5QrAwXTCYwVDga05NZOWEzO
- GRf+rqwq/IJJi9k0ZkgeiGPQfGSNJnhm6r7FSeZ3YIROdpvGINfa4Ib9SHPUTzgaNTjbT4mf3ZxKL
- HtD7+o/gx9nucu/A=;
-Received: from mail-oa1-f51.google.com ([209.85.160.51])
- by sfi-mx-1.v28.lw.sourceforge.com with esmtps
+ h=In-Reply-To:Content-Type:MIME-Version:References:Message-ID:Subject:Cc:To
+ :From:Date:Sender:Reply-To:Content-Transfer-Encoding:Content-ID:
+ Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+ :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
+ List-Post:List-Owner:List-Archive;
+ bh=gY+yGRa61TK2BR8Nw1XPStAseZID7tr6EzNodmZtwGI=; b=jAhr03btMLlHu4N21ce8rX0YdB
+ iN8zPfDldpeUea9oVYsWMPpy00eLs8hnhHCHzRYuJ2M1PzoppSIkZhxlgVnIkKe9kAoQ+glK9Em2D
+ JzfAnVIr5K8EuLyCXBFT10B90H/ZrFp/A/jJcQA+m2pE6CR0bDO6IgYcg66Bik6cdjPM=;
+Received: from smtp-out2.suse.de ([195.135.220.29])
+ by sfi-mx-2.v28.lw.sourceforge.com with esmtps
  (TLS1.2:ECDHE-RSA-AES128-GCM-SHA256:128) (Exim 4.95)
- id 1qa7y0-00GjKo-BK for jfs-discussion@lists.sourceforge.net;
- Sun, 27 Aug 2023 05:05:42 +0000
-Received: by mail-oa1-f51.google.com with SMTP id
- 586e51a60fabf-1c4d67f493bso1619081fac.2
- for <jfs-discussion@lists.sourceforge.net>;
- Sat, 26 Aug 2023 22:05:40 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=gmail.com; s=20221208; t=1693112731; x=1693717531;
- h=content-transfer-encoding:mime-version:message-id:date:subject:cc
- :to:from:from:to:cc:subject:date:message-id:reply-to;
- bh=w0rHx36EtjFL/T0ZOtQOOpsSvLpc8KOUwP8osiOZIL0=;
- b=i+eBNMdM4lSTpRFP24YehF6M912k+AQEeLx/6M+9vqHdKwP6B9zqoZpsmlTA6ulZgt
- ZxlgfxV7NTGJDSQ8HfDdT8yU6mVYv5uze24oHmDmTNbyJI+KocZt4rdslWqJojrZFWc/
- fA+K4zN2Wb3cr0fBvInfYDO8BwDizMl10AlFDmKIbg7wol02gH5mKC83CwpX7PHJz14o
- jCqiUeVSBOgzEwJKqYDml9pIBczMUjn03ovr1s98tqPoAePz1UnVzFjvWAUIjtyxnadr
- 7mItSjjXIXhf/MBnYTP2zJkaZzWK8IVr52E3oAKGsATe65bLS4K0VI0SwTK+YBdJPI38
- LPhw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20221208; t=1693112731; x=1693717531;
- h=content-transfer-encoding:mime-version:message-id:date:subject:cc
- :to:from:x-gm-message-state:from:to:cc:subject:date:message-id
- :reply-to;
- bh=w0rHx36EtjFL/T0ZOtQOOpsSvLpc8KOUwP8osiOZIL0=;
- b=hgDerMuHqj2RVdhvUd8WqtEtSj+MONxiFuHNSxtMq6+0kiojUnjoN+tvVPOtBGhEqN
- 0wnYgKHDH8HG8clNpf2rDc22S01+5TMtDnG53nWnEcgeb4JcUMTg4Skqq49hQfqHbwkq
- UPO3mJoXcWWvUvasEPxh9xEOtJae7jSZaiqq2w4gA2i+V31vm/ouxgA2yKo+MWLZ5ROW
- BQwYzmTuEJRSNadpazFsTb58Ooh0LxeiYNpGtY3dPC/1OM8L3sKDr/C7UfIw5m7IFEQi
- ERZ93cEI1ozWxVlRm47y63hfNw3tvdAjq0Auvo0HEjz8/+bxl+3LuuSvLXes+KYM92l2
- DRuw==
-X-Gm-Message-State: AOJu0YxBFl9VDy/rucG/yX9J5qqr+d+31cW3YzKcP3nVJgg6ox88ZnT8
- vVbkceqkVcCw2t+SgDdMQyiIBb/PSZaSQ26m7zw=
-X-Google-Smtp-Source: AGHT+IFV5CXGL6h7bvJSFe8twRRVDGSZWHsP7/eN8yNry07I+d213Z5bPkoQHWC2NlucLAqNjQ3NUg==
-X-Received: by 2002:a05:6870:610b:b0:1bb:9846:94ed with SMTP id
- s11-20020a056870610b00b001bb984694edmr8627537oae.3.1693112730149; 
- Sat, 26 Aug 2023 22:05:30 -0700 (PDT)
-Received: from manas-VirtualBox.iitr.ac.in ([103.37.201.178])
- by smtp.gmail.com with ESMTPSA id
- ci24-20020a17090afc9800b00265a7145fe5sm6169383pjb.41.2023.08.26.22.05.27
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Sat, 26 Aug 2023 22:05:29 -0700 (PDT)
-To: shaggy@kernel.org,
-	liushixin2@huawei.com
-Date: Sun, 27 Aug 2023 10:35:13 +0530
-Message-Id: <20230827050513.364567-1-ghandatmanas@gmail.com>
-X-Mailer: git-send-email 2.37.2
+ id 1qafiV-0003Il-Lo; Mon, 28 Aug 2023 17:07:58 +0000
+Received: from imap2.suse-dmz.suse.de (imap2.suse-dmz.suse.de [192.168.254.74])
+ (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+ key-exchange X25519 server-signature ECDSA (P-521) server-digest SHA512)
+ (No client certificate requested)
+ by smtp-out2.suse.de (Postfix) with ESMTPS id 873FB1F37E;
+ Mon, 28 Aug 2023 17:07:45 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=suse.cz; s=susede2_rsa;
+ t=1693242465; h=from:from:reply-to:date:date:message-id:message-id:to:to:cc:cc:
+ mime-version:mime-version:content-type:content-type:
+ in-reply-to:in-reply-to:references:references;
+ bh=gY+yGRa61TK2BR8Nw1XPStAseZID7tr6EzNodmZtwGI=;
+ b=qVtknFwaytxobpauxbbKFuuIVi6tPH4Iq6U6De70imbcWuGOxhftHNb/4FbPSlc5GK5oK7
+ GshsV6S1hXqpxSKPutaEa7H9BjX/0wslT8a/D4qnl6I13zhL54OxmZm3biLLUgjj3B0284
+ RPao+ZPH1kv8DfDq9EfFHRPOBMpXacI=
+DKIM-Signature: v=1; a=ed25519-sha256; c=relaxed/relaxed; d=suse.cz;
+ s=susede2_ed25519; t=1693242465;
+ h=from:from:reply-to:date:date:message-id:message-id:to:to:cc:cc:
+ mime-version:mime-version:content-type:content-type:
+ in-reply-to:in-reply-to:references:references;
+ bh=gY+yGRa61TK2BR8Nw1XPStAseZID7tr6EzNodmZtwGI=;
+ b=R3UkEJ5CJtN+ADS2q+nxkKoBRTSfFifpdVN9hgBj3Kx2evg21jSoeC6uq7LeWXoMGsRfiN
+ pZDyCc1pRe5jtEDQ==
+Received: from imap2.suse-dmz.suse.de (imap2.suse-dmz.suse.de [192.168.254.74])
+ (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+ key-exchange X25519 server-signature ECDSA (P-521) server-digest SHA512)
+ (No client certificate requested)
+ by imap2.suse-dmz.suse.de (Postfix) with ESMTPS id 6A42A139CC;
+ Mon, 28 Aug 2023 17:07:45 +0000 (UTC)
+Received: from dovecot-director2.suse.de ([192.168.254.65])
+ by imap2.suse-dmz.suse.de with ESMTPSA id scxcGWHU7GQMNQAAMHmgww
+ (envelope-from <jack@suse.cz>); Mon, 28 Aug 2023 17:07:45 +0000
+Received: by quack3.suse.cz (Postfix, from userid 1000)
+ id CE101A0774; Mon, 28 Aug 2023 19:07:44 +0200 (CEST)
+Date: Mon, 28 Aug 2023 19:07:44 +0200
+From: Jan Kara <jack@suse.cz>
+To: Christian Brauner <brauner@kernel.org>
+Message-ID: <20230828170744.iifdmaw732cfiauf@quack3>
+References: <20230818123232.2269-1-jack@suse.cz>
+ <20230825-hubraum-gedreht-8c5c4db9330a@brauner>
 MIME-Version: 1.0
-X-Spam-Score: -0.2 (/)
+Content-Disposition: inline
+In-Reply-To: <20230825-hubraum-gedreht-8c5c4db9330a@brauner>
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: Spam detection software,
- running on the system "util-spamd-1.v13.lw.sourceforge.com", 
+ running on the system "util-spamd-2.v13.lw.sourceforge.com", 
  has NOT identified this incoming email as spam.  The original
  message has been attached to this so you can view it or label
  similar future email.  If you have any questions, see
  the administrator of that system for details.
- Content preview: Currently there is no bound check for number of logical
- blocks
- per page (bmp->db_l2nbperpage). Added the required bound check for the
- calculation of dmap. Reported-by:
- https://syzkaller.appspot.com/bug?extid=91ad2b52815a08caf4ea
- Fixes: 4d81715fc5df ("[PATCH] fs/jfs: Conversion to generic boolean")
- Signed-off-by: Manas Ghandat --- fs/jfs/jfs_dmap.c | [...] 
- Content analysis details:   (-0.2 points, 6.0 required)
+ Content preview:  On Fri 25-08-23 15:32:47, Christian Brauner wrote: > On Wed, 
+ Aug 23, 2023 at 12:48:11PM +0200, Jan Kara wrote: > > Hello, > > > > this
+ is a v3 of the patch series which implements the idea of blkdev_g [...] 
+ Content analysis details:   (-2.5 points, 6.0 required)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.160.51 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [195.135.220.29 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [ghandatmanas[at]gmail.com]
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [209.85.160.51 listed in wl.mailspike.net]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
-X-Headers-End: 1qa7y0-00GjKo-BK
-X-Mailman-Approved-At: Mon, 28 Aug 2023 17:42:29 +0000
-Subject: [Jfs-discussion] [PATCH] jfs : fix shift-out-of-bounds in
- dbUpdatePMap
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+X-Headers-End: 1qafiV-0003Il-Lo
+Subject: Re: [Jfs-discussion] [PATCH v3 0/29] block: Make blkdev_get_by_*()
+ return handle
 X-BeenThere: jfs-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -131,46 +117,76 @@ List-Post: <mailto:jfs-discussion@lists.sourceforge.net>
 List-Help: <mailto:jfs-discussion-request@lists.sourceforge.net?subject=help>
 List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/jfs-discussion>, 
  <mailto:jfs-discussion-request@lists.sourceforge.net?subject=subscribe>
-From: Manas Ghandat via Jfs-discussion <jfs-discussion@lists.sourceforge.net>
-Reply-To: Manas Ghandat <ghandatmanas@gmail.com>
-Cc: Linux-kernel-mentees@lists.linuxfoundation.org,
- jfs-discussion@lists.sourceforge.net, Manas Ghandat <ghandatmanas@gmail.com>,
- linux-kernel@vger.kernel.org,
- syzbot+91ad2b52815a08caf4ea@syzkaller.appspotmail.com
+Cc: Dave Kleikamp <shaggy@kernel.org>, jfs-discussion@lists.sourceforge.net,
+ Jan Kara <jack@suse.cz>, "Darrick J. Wong" <djwong@kernel.org>,
+ linux-nvme@lists.infradead.org, Joseph Qi <joseph.qi@linux.alibaba.com>,
+ dm-devel@redhat.com, target-devel@vger.kernel.org,
+ linux-mtd@lists.infradead.org, Jack Wang <jinpu.wang@ionos.com>,
+ Alasdair Kergon <agk@redhat.com>, drbd-dev@lists.linbit.com,
+ linux-s390@vger.kernel.org, linux-nilfs@vger.kernel.org,
+ linux-scsi@vger.kernel.org, Sergey Senozhatsky <senozhatsky@chromium.org>,
+ Christoph Hellwig <hch@infradead.org>, xen-devel@lists.xenproject.org,
+ Gao Xiang <xiang@kernel.org>,
+ Christian Borntraeger <borntraeger@linux.ibm.com>,
+ Kent Overstreet <kent.overstreet@gmail.com>,
+ Sven Schnelle <svens@linux.ibm.com>, linux-pm@vger.kernel.org,
+ Mike Snitzer <snitzer@kernel.org>, Chao Yu <chao@kernel.org>,
+ Joern Engel <joern@lazybastard.org>, reiserfs-devel@vger.kernel.org,
+ linux-block@vger.kernel.org, linux-bcache@vger.kernel.org,
+ David Sterba <dsterba@suse.com>, Jaegeuk Kim <jaegeuk@kernel.org>,
+ Trond Myklebust <trond.myklebust@hammerspace.com>,
+ Jens Axboe <axboe@kernel.dk>, linux-raid@vger.kernel.org,
+ linux-nfs@vger.kernel.org, linux-ext4@vger.kernel.org, Ted Tso <tytso@mit.edu>,
+ linux-mm@kvack.org, Song Liu <song@kernel.org>,
+ linux-f2fs-devel@lists.sourceforge.net, linux-xfs@vger.kernel.org,
+ Minchan Kim <minchan@kernel.org>, ocfs2-devel@oss.oracle.com,
+ Anna Schumaker <anna@kernel.org>, linux-fsdevel@vger.kernel.org,
+ "Md. Haris Iqbal" <haris.iqbal@ionos.com>,
+ Andrew Morton <akpm@linux-foundation.org>, linux-erofs@lists.ozlabs.org,
+ linux-btrfs@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Errors-To: jfs-discussion-bounces@lists.sourceforge.net
 
-Currently there is no bound check for number of logical blocks per
-page (bmp->db_l2nbperpage). Added the required bound check for the
-calculation of dmap.
+On Fri 25-08-23 15:32:47, Christian Brauner wrote:
+> On Wed, Aug 23, 2023 at 12:48:11PM +0200, Jan Kara wrote:
+> > Hello,
+> > 
+> > this is a v3 of the patch series which implements the idea of blkdev_get_by_*()
+> > calls returning bdev_handle which is then passed to blkdev_put() [1]. This
+> > makes the get and put calls for bdevs more obviously matching and allows us to
+> > propagate context from get to put without having to modify all the users
+> > (again!). In particular I need to propagate used open flags to blkdev_put() to
+> > be able count writeable opens and add support for blocking writes to mounted
+> > block devices. I'll send that series separately.
+> > 
+> > The series is based on Christian's vfs tree as of today as there is quite
+> > some overlap. Patches have passed some reasonable testing - I've tested block
+> > changes, md, dm, bcache, xfs, btrfs, ext4, swap. More testing or review is
+> > always welcome. Thanks! I've pushed out the full branch to:
+> > 
+> > git://git.kernel.org/pub/scm/linux/kernel/git/jack/linux-fs.git bdev_handle
+> > 
+> > to ease review / testing. Since there were not many comments for v2 and
+> > Christoph has acked the series I think we should start discussing how to merge
+> > the series. Most collisions with this series seem to happen in the filesystems
+> > area so VFS tree would seem as the least painful way to merge this. Jens,
+> 
+> I really do like this series especially struct bdev_handle and moving
+> the mode bits in there. I'll happily take this. So far there have only
+> been minor things that can easily be fixed.
 
-Reported-by: syzbot+91ad2b52815a08caf4ea@syzkaller.appspotmail.com
-Closes: https://syzkaller.appspot.com/bug?extid=91ad2b52815a08caf4ea
-Fixes: 4d81715fc5df ("[PATCH] fs/jfs: Conversion to generic boolean")
-Signed-off-by: Manas Ghandat <ghandatmanas@gmail.com>
----
- fs/jfs/jfs_dmap.c | 4 ++++
- 1 file changed, 4 insertions(+)
+Thanks. Since Al is fine with just doing a potential conversion to 'struct
+file' as a handle on top of this series (it will be dumb Coccinelle
+replacement) I think we can go ahead with the series as is. As you said
+there will be some conflicts in btrfs and I've learned about f2fs conflicts
+as well so I can rebase & repost the series on top of rc1 to make life
+easier for you.
 
-diff --git a/fs/jfs/jfs_dmap.c b/fs/jfs/jfs_dmap.c
-index a3eb1e826947..6a5df296fdc8 100644
---- a/fs/jfs/jfs_dmap.c
-+++ b/fs/jfs/jfs_dmap.c
-@@ -467,6 +467,10 @@ dbUpdatePMap(struct inode *ipbmap,
- 	lastlblkno = 0;
- 	for (rem = nblocks; rem > 0; rem -= nblks, blkno += nblks) {
- 		/* get the buffer for the current dmap. */
-+
-+		if (bmp->db_l2nbperpage > L2BPERDMAP)
-+			return -EIO;
-+
- 		lblkno = BLKTODMAP(blkno, bmp->db_l2nbperpage);
- 		if (lblkno != lastlblkno) {
- 			if (mp) {
+								Honza
 -- 
-2.37.2
-
+Jan Kara <jack@suse.com>
+SUSE Labs, CR
 
 
 _______________________________________________
