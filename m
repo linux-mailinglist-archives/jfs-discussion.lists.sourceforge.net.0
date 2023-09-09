@@ -2,101 +2,101 @@ Return-Path: <jfs-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+jfs-discussion@lfdr.de
 Delivered-To: lists+jfs-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id BCF48799374
-	for <lists+jfs-discussion@lfdr.de>; Sat,  9 Sep 2023 02:25:09 +0200 (CEST)
-Received: from [127.0.0.1] (helo=sfs-ml-1.v29.lw.sourceforge.com)
-	by sfs-ml-1.v29.lw.sourceforge.com with esmtp (Exim 4.95)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6B28D79A87E
+	for <lists+jfs-discussion@lfdr.de>; Mon, 11 Sep 2023 16:06:25 +0200 (CEST)
+Received: from [127.0.0.1] (helo=sfs-ml-3.v29.lw.sourceforge.com)
+	by sfs-ml-3.v29.lw.sourceforge.com with esmtp (Exim 4.95)
 	(envelope-from <jfs-discussion-bounces@lists.sourceforge.net>)
-	id 1qelmS-0000Qx-SD;
-	Sat, 09 Sep 2023 00:24:57 +0000
+	id 1qfhY8-0000qV-VJ;
+	Mon, 11 Sep 2023 14:05:59 +0000
 Received: from [172.30.20.202] (helo=mx.sourceforge.net)
- by sfs-ml-1.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
- TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (Exim 4.95)
- (envelope-from <sashal@kernel.org>) id 1qelmQ-0000Qn-Iz
- for jfs-discussion@lists.sourceforge.net;
- Sat, 09 Sep 2023 00:24:55 +0000
+ by sfs-ml-3.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
+ TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (Exim 4.95) (envelope-from
+ <3B5P8ZAkbAE48EF0q11u7q55yt.w44w1uA8u7s439u39.s42@M3KW2WVRGUFZ5GODRSRYTGD7.apphosting.bounces.google.com>)
+ id 1qf09B-0005sT-Bn for jfs-discussion@lists.sourceforge.net;
+ Sat, 09 Sep 2023 15:45:20 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=sourceforge.net; s=x; h=Content-Transfer-Encoding:MIME-Version:References:
- In-Reply-To:Message-Id:Date:Subject:Cc:To:From:Sender:Reply-To:Content-Type:
- Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
- Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
+ d=sourceforge.net; s=x; h=Content-Type:To:From:Subject:Message-ID:Date:
+ MIME-Version:Sender:Reply-To:Cc:Content-Transfer-Encoding:Content-ID:
+ Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+ :Resent-Message-ID:In-Reply-To:References:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=0D46z6HDC7wGFKW8pTN9LQjuPKsgKGLTOd9G/Q2xvXY=; b=ERXhWtELQkWPDlLXZlaGUkRmSN
- zJw/iiW10IQl9xTcBJ6zYGV/xDfBhh4kZyBnTG207vxrWJWGeNSVVXEQy6/nAj72Ni9T8IB19l4Wg
- LQvu6JUVgzm0yvMXkqEWDycKAKLeCIWxCEUhhC398JpW+v27rQdbQ12gvIMFmf/RUgDw=;
+ bh=LbWmtI2saoAhWc9NAmAAALAja+o02+Kc4sbFNaTcIA0=; b=NyDVAfgvlOsA3tCGJOJlu0fUqT
+ rn7TnoTQ80DZHAk6oPf6GxIrQmUihwS9QNSQh/yg5IrrwasfqeRu4/OryyTSh6HY2ZyPZ2zcDOyeC
+ cCxaO4KuDzw69jdDJ9BEO7SnadnISu/+TsD6h4dM91ytOzOuiF1iqRd0oSb6cZkBOT4s=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
- h=Content-Transfer-Encoding:MIME-Version:References:In-Reply-To:Message-Id:
- Date:Subject:Cc:To:From:Sender:Reply-To:Content-Type:Content-ID:
- Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
- :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
- List-Post:List-Owner:List-Archive;
- bh=0D46z6HDC7wGFKW8pTN9LQjuPKsgKGLTOd9G/Q2xvXY=; b=HJNC3g/vByN24TLJ3FFODgJaA/
- tw+xQ12DoWDxiEdFf2zqyiYB6+d/aLFlUYNWLugRyz2bOitQyyxd9rCpTBeDCfqWX0FIVvKiQ+Xs6
- V/XBhGW8W+pbJGMO1G1qwn5r7KGz8uG6TsRzdcH+3DYe9SIWN8azrlpGiLlig4LJe0gw=;
-Received: from dfw.source.kernel.org ([139.178.84.217])
- by sfi-mx-2.v28.lw.sourceforge.com with esmtps
- (TLS1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.95)
- id 1qelmQ-00045T-OS for jfs-discussion@lists.sourceforge.net;
- Sat, 09 Sep 2023 00:24:55 +0000
-Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
- (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
- key-exchange X25519 server-signature RSA-PSS (2048 bits))
- (No client certificate requested)
- by dfw.source.kernel.org (Postfix) with ESMTPS id 76B8F615DB;
- Sat,  9 Sep 2023 00:24:49 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 1FDF9C433AB;
- Sat,  9 Sep 2023 00:24:48 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=k20201202; t=1694219089;
- bh=g9AsHig0M6AMH3KkNgQI9TcZzY3r2t9bKtxeAUkvyUc=;
- h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=VR5w/Q5mc/2xI8mD0ZNRPJzZNvKo/J9liMWaPbEdgPsb6XNy6N2od/YTAewE+5W3k
- nbFEhCzLV8dKS8vPJoVTR0owZK9NRSzB7pp0IFlowXYHxLxQ4tg1w/1hE1XhNm/0RC
- brNkNNTlrDU19yMjbsF5CLxi4m+EiM3HY+ebZnnRU9JjPiDm3pvCHKdQqYVrL6ya7H
- nrT8rjcz/XBKMFASi/pvOxmh+JbpYcs/nynfdWD+BJDD97xI0PD4xjLvNw9uREtMwx
- g4PN8/nRjQEBtxV9Yl1g1F2cZYwZVP+O52geJ1jFUOiRB0VYqKQdK2FCTRNjfFSo+G
- c3vaXqU7Gpxaw==
-To: linux-kernel@vger.kernel.org,
-	stable@vger.kernel.org
-Date: Fri,  8 Sep 2023 20:24:37 -0400
-Message-Id: <20230909002442.3578957-2-sashal@kernel.org>
-X-Mailer: git-send-email 2.40.1
-In-Reply-To: <20230909002442.3578957-1-sashal@kernel.org>
-References: <20230909002442.3578957-1-sashal@kernel.org>
+ h=Content-Type:To:From:Subject:Message-ID:Date:MIME-Version:Sender:Reply-To
+ :Cc:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+ Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+ References:List-Id:List-Help:List-Unsubscribe:List-Subscribe:List-Post:
+ List-Owner:List-Archive; bh=LbWmtI2saoAhWc9NAmAAALAja+o02+Kc4sbFNaTcIA0=; b=E
+ QxQp9vXbfB2bL5vi085aYBmmDwRIwgoQ5Lm8+UJ1GH1oS+nLYNNarH/rpae0XCgWJjnC1vkiZMZSz
+ 1a0TYdH19ryjkGXuD6UTjmcz7IIkmOkZTfDMEQv27sV1B6mRfQrUDarWhQ5SBcjNTSWQkymkW/kr0
+ JV7yYnbuxI8RBEdA=;
+Received: from mail-pf1-f206.google.com ([209.85.210.206])
+ by sfi-mx-1.v28.lw.sourceforge.com with esmtps
+ (TLS1.2:ECDHE-RSA-AES128-GCM-SHA256:128) (Exim 4.95)
+ id 1qf096-00FhgD-RS for jfs-discussion@lists.sourceforge.net;
+ Sat, 09 Sep 2023 15:45:20 +0000
+Received: by mail-pf1-f206.google.com with SMTP id
+ d2e1a72fcca58-68fac73c54aso432794b3a.0
+ for <jfs-discussion@lists.sourceforge.net>;
+ Sat, 09 Sep 2023 08:45:16 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20230601; t=1694274311; x=1694879111;
+ h=to:from:subject:message-id:date:mime-version:x-gm-message-state
+ :from:to:cc:subject:date:message-id:reply-to;
+ bh=LbWmtI2saoAhWc9NAmAAALAja+o02+Kc4sbFNaTcIA0=;
+ b=r/AEYvuXIOBL28FRszqo1SzgkP6AOZAdVBSpEUaRcBUCC1yymzDNEH9F8xr4Nga5o4
+ Tv9M0tx+qmZzAMxXSBJ0NGF13IkpwX39FIpwQmISztLg7FZzlDCDXAUcgc/6jmEffYRY
+ OTSHJ//+u8F2jS6yg4kYRSgM+08bNp1PjcFVzH3iguD0oh2Lib2JLHigXicjY46b13EN
+ HLxYNOl8+bQ83wt7yY6rb77paFuYuMen6td9EJMmbhs/CE1/J/q1yLHdI1jiRMiLmVu5
+ 7XKncYE6+Kt+LOHczhLHdeZZNmWn/KdON4vYkhbEFisfXi9E+pmHvz8u/Q3v9fTHX1Zh
+ WWwA==
+X-Gm-Message-State: AOJu0Yz2pdKgriEre78UWdCi66Hm0Tbg2NIlL0gTAc7yndZlLYiWL6L7
+ 5KZQxygAa5zhzHNnh/9jYZNb1imtn47A+oIVEkOWTKJZEIgOVakuTA==
+X-Google-Smtp-Source: AGHT+IGpSGhA2lWuHBjuYLtK/TINlTvWuKPB1acF3vooBe2XeFUBkESDPDNertjqPsTH1HTVryn1Kp9E7e0SNEkbOZV0Trncmeem
 MIME-Version: 1.0
-X-stable: review
-X-Patchwork-Hint: Ignore
-X-stable-base: Linux 4.14.325
-X-Spam-Score: -5.2 (-----)
+X-Received: by 2002:a05:6a00:1989:b0:68e:47fd:4ee9 with SMTP id
+ d9-20020a056a00198900b0068e47fd4ee9mr2087283pfl.6.1694274311273; Sat, 09 Sep
+ 2023 08:45:11 -0700 (PDT)
+Date: Sat, 09 Sep 2023 08:45:11 -0700
+X-Google-Appengine-App-Id: s~syzkaller
+X-Google-Appengine-App-Id-Alias: syzkaller
+Message-ID: <00000000000079c7640604eefa47@google.com>
+To: jfs-discussion@lists.sourceforge.net, linux-fsdevel@vger.kernel.org, 
+ linux-kernel@vger.kernel.org, shaggy@kernel.org, 
+ syzkaller-bugs@googlegroups.com
+X-Spam-Score: 0.6 (/)
 X-Spam-Report: Spam detection software,
- running on the system "util-spamd-2.v13.lw.sourceforge.com", 
+ running on the system "util-spamd-1.v13.lw.sourceforge.com", 
  has NOT identified this incoming email as spam.  The original
  message has been attached to this so you can view it or label
  similar future email.  If you have any questions, see
  the administrator of that system for details.
- Content preview: From: Liu Shixin via Jfs-discussion
- <jfs-discussion@lists.sourceforge.net>
- [ Upstream commit 6e2bda2c192d0244b5a78b787ef20aa10cb319b7 ] syzbot found
- an invalid-free in diUnmount: 
- Content analysis details:   (-5.2 points, 6.0 required)
+ Content preview:  Hello,
+ syzbot found the following issue on: HEAD commit: 65d6e954e378
+ Merge tag 'gfs2-v6.5-rc5-fixes' of git://git... git tree: upstream
+ console+strace:
+ https://syzkaller.appspot.com/x/log.txt?x=15853c0c680000 kernel config:
+ https://syzkaller.a [...] 
+ Content analysis details:   (0.6 points, 6.0 required)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [139.178.84.217 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.3 FROM_LOCAL_HEX         From: localpart has long hexadecimal sequence
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [209.85.210.206 listed in wl.mailspike.net]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.210.206 listed in list.dnswl.org]
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - High trust sender
-X-Headers-End: 1qelmQ-00045T-OS
-Subject: [Jfs-discussion] [PATCH AUTOSEL 4.14 2/5] jfs: fix invalid free of
- JFS_IP(ipimap)->i_imap in diUnmount
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+X-Headers-End: 1qf096-00FhgD-RS
+X-Mailman-Approved-At: Mon, 11 Sep 2023 14:05:58 +0000
+Subject: [Jfs-discussion] [syzbot] [jfs?] kernel BUG in txLock
 X-BeenThere: jfs-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -108,88 +108,135 @@ List-Post: <mailto:jfs-discussion@lists.sourceforge.net>
 List-Help: <mailto:jfs-discussion-request@lists.sourceforge.net?subject=help>
 List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/jfs-discussion>, 
  <mailto:jfs-discussion-request@lists.sourceforge.net?subject=subscribe>
-From: Sasha Levin via Jfs-discussion <jfs-discussion@lists.sourceforge.net>
-Reply-To: Sasha Levin <sashal@kernel.org>
-Cc: syzbot+90a11e6b1e810785c6ff@syzkaller.appspotmail.com, shaggy@kernel.org,
- Liu Shixin via Jfs-discussion <jfs-discussion@lists.sourceforge.net>,
- jack@suse.cz, Sasha Levin <sashal@kernel.org>, jlayton@kernel.org,
- okanatov@gmail.com, Liu Shixin <liushixin2@huawei.com>
+From: syzbot via Jfs-discussion <jfs-discussion@lists.sourceforge.net>
+Reply-To: syzbot <syzbot+451384fb192454e258de@syzkaller.appspotmail.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Errors-To: jfs-discussion-bounces@lists.sourceforge.net
 
-From: Liu Shixin via Jfs-discussion <jfs-discussion@lists.sourceforge.net>
+Hello,
 
-[ Upstream commit 6e2bda2c192d0244b5a78b787ef20aa10cb319b7 ]
+syzbot found the following issue on:
 
-syzbot found an invalid-free in diUnmount:
+HEAD commit:    65d6e954e378 Merge tag 'gfs2-v6.5-rc5-fixes' of git://git...
+git tree:       upstream
+console+strace: https://syzkaller.appspot.com/x/log.txt?x=15853c0c680000
+kernel config:  https://syzkaller.appspot.com/x/.config?x=ff0db7a15ba54ead
+dashboard link: https://syzkaller.appspot.com/bug?extid=451384fb192454e258de
+compiler:       Debian clang version 15.0.6, GNU ld (GNU Binutils for Debian) 2.40
+syz repro:      https://syzkaller.appspot.com/x/repro.syz?x=140b48c8680000
+C reproducer:   https://syzkaller.appspot.com/x/repro.c?x=15276fb8680000
 
-BUG: KASAN: double-free in slab_free mm/slub.c:3661 [inline]
-BUG: KASAN: double-free in __kmem_cache_free+0x71/0x110 mm/slub.c:3674
-Free of addr ffff88806f410000 by task syz-executor131/3632
+Downloadable assets:
+disk image: https://storage.googleapis.com/syzbot-assets/d2f8f959540a/disk-65d6e954.raw.xz
+vmlinux: https://storage.googleapis.com/syzbot-assets/6f0285edec65/vmlinux-65d6e954.xz
+kernel image: https://storage.googleapis.com/syzbot-assets/61d3ef608e62/bzImage-65d6e954.xz
+mounted in repro: https://storage.googleapis.com/syzbot-assets/4db3738411e6/mount_0.gz
 
- CPU: 0 PID: 3632 Comm: syz-executor131 Not tainted 6.1.0-rc7-syzkaller-00012-gca57f02295f1 #0
- Hardware name: Google Google Compute Engine/Google Compute Engine, BIOS Google 10/26/2022
- Call Trace:
-  <TASK>
-  __dump_stack lib/dump_stack.c:88 [inline]
-  dump_stack_lvl+0x1b1/0x28e lib/dump_stack.c:106
-  print_address_description+0x74/0x340 mm/kasan/report.c:284
-  print_report+0x107/0x1f0 mm/kasan/report.c:395
-  kasan_report_invalid_free+0xac/0xd0 mm/kasan/report.c:460
-  ____kasan_slab_free+0xfb/0x120
-  kasan_slab_free include/linux/kasan.h:177 [inline]
-  slab_free_hook mm/slub.c:1724 [inline]
-  slab_free_freelist_hook+0x12e/0x1a0 mm/slub.c:1750
-  slab_free mm/slub.c:3661 [inline]
-  __kmem_cache_free+0x71/0x110 mm/slub.c:3674
-  diUnmount+0xef/0x100 fs/jfs/jfs_imap.c:195
-  jfs_umount+0x108/0x370 fs/jfs/jfs_umount.c:63
-  jfs_put_super+0x86/0x190 fs/jfs/super.c:194
-  generic_shutdown_super+0x130/0x310 fs/super.c:492
-  kill_block_super+0x79/0xd0 fs/super.c:1428
-  deactivate_locked_super+0xa7/0xf0 fs/super.c:332
-  cleanup_mnt+0x494/0x520 fs/namespace.c:1186
-  task_work_run+0x243/0x300 kernel/task_work.c:179
-  exit_task_work include/linux/task_work.h:38 [inline]
-  do_exit+0x664/0x2070 kernel/exit.c:820
-  do_group_exit+0x1fd/0x2b0 kernel/exit.c:950
-  __do_sys_exit_group kernel/exit.c:961 [inline]
-  __se_sys_exit_group kernel/exit.c:959 [inline]
-  __x64_sys_exit_group+0x3b/0x40 kernel/exit.c:959
-  do_syscall_x64 arch/x86/entry/common.c:50 [inline]
-  do_syscall_64+0x3d/0xb0 arch/x86/entry/common.c:80
-  entry_SYSCALL_64_after_hwframe+0x63/0xcd
-[...]
+Bisection is inconclusive: the issue happens on the oldest tested release.
 
-JFS_IP(ipimap)->i_imap is not setting to NULL after free in diUnmount.
-If jfs_remount() free JFS_IP(ipimap)->i_imap but then failed at diMount().
-JFS_IP(ipimap)->i_imap will be freed once again.
-Fix this problem by setting JFS_IP(ipimap)->i_imap to NULL after free.
+bisection log:  https://syzkaller.appspot.com/x/bisect.txt?x=1355caa4680000
+final oops:     https://syzkaller.appspot.com/x/report.txt?x=10d5caa4680000
+console output: https://syzkaller.appspot.com/x/log.txt?x=1755caa4680000
 
-Reported-by: syzbot+90a11e6b1e810785c6ff@syzkaller.appspotmail.com
-Signed-off-by: Liu Shixin <liushixin2@huawei.com>
-Signed-off-by: Dave Kleikamp <dave.kleikamp@oracle.com>
-Signed-off-by: Sasha Levin <sashal@kernel.org>
+IMPORTANT: if you fix the issue, please add the following tag to the commit:
+Reported-by: syzbot+451384fb192454e258de@syzkaller.appspotmail.com
+
+Locker's tblock: ffffc900025f1300: 8b424900 ffffffff 00000200 00000000
+Locker's tblock: ffffc900025f1310: 025f1310 ffffc900 025f1310 ffffc900
+Locker's tblock: ffffc900025f1320: 00000004 0000001c 00000007 00000000
+Tlock: ffffc900028120d8: 00010004 20208040 1cf49d90 ffff8880
+Tlock: ffffc900028120e8: 76f2a930 ffff8880 03140000 05002000
+Tlock: ffffc900028120f8: 06030a00 0000020d 00000000 00000000
+Tlock: ffffc90002812108: 00000000 00000000 00000000 00000000
+Tlock: ffffc90002812118: 00000000 00000000
+------------[ cut here ]------------
+kernel BUG at fs/jfs/jfs_txnmgr.c:834!
+invalid opcode: 0000 [#1] PREEMPT SMP KASAN
+CPU: 1 PID: 5053 Comm: syz-executor131 Not tainted 6.5.0-syzkaller-11938-g65d6e954e378 #0
+Hardware name: Google Google Compute Engine/Google Compute Engine, BIOS Google 07/26/2023
+RIP: 0010:txLock+0x1cd4/0x1fa0 fs/jfs/jfs_txnmgr.c:834
+Code: 8b 48 c7 c6 40 4f 42 8b ba 01 00 00 00 b9 10 00 00 00 41 b8 04 00 00 00 4c 8b 4c 24 20 6a 00 6a 48 e8 a0 2f 2a 01 48 83 c4 10 <0f> 0b e8 55 21 7c fe 4c 89 e7 48 c7 c6 40 57 42 8b e8 36 9f bd fe
+RSP: 0018:ffffc90003a5ef98 EFLAGS: 00010282
+RAX: 8c29e29eae6e2500 RBX: 1ffff9200050241b RCX: ffff88807d4ed940
+RDX: 0000000000000000 RSI: 0000000000000001 RDI: 0000000000000000
+RBP: 0000000000000010 R08: ffffffff8170afec R09: 1ffff9200074bd28
+R10: dffffc0000000000 R11: fffff5200074bd29 R12: ffffc900028120da
+R13: 0000000000000002 R14: 000000000000001b R15: 0000000000002020
+FS:  00007f0a9153a6c0(0000) GS:ffff8880b9900000(0000) knlGS:0000000000000000
+CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033
+CR2: 00007f0a8a119000 CR3: 00000000271f3000 CR4: 00000000003506e0
+DR0: 0000000000000000 DR1: 0000000000000000 DR2: 0000000000000000
+DR3: 0000000000000000 DR6: 00000000fffe0ff0 DR7: 0000000000000400
+Call Trace:
+ <TASK>
+ dtSplitRoot+0x430/0x1920 fs/jfs/jfs_dtree.c:1919
+ dtSplitUp fs/jfs/jfs_dtree.c:985 [inline]
+ dtInsert+0x12fa/0x6b00 fs/jfs/jfs_dtree.c:863
+ jfs_create+0x7b6/0xb90 fs/jfs/namei.c:137
+ lookup_open fs/namei.c:3495 [inline]
+ open_last_lookups fs/namei.c:3563 [inline]
+ path_openat+0x13e7/0x3180 fs/namei.c:3793
+ do_filp_open+0x234/0x490 fs/namei.c:3823
+ do_sys_openat2+0x13e/0x1d0 fs/open.c:1422
+ do_sys_open fs/open.c:1437 [inline]
+ __do_sys_open fs/open.c:1445 [inline]
+ __se_sys_open fs/open.c:1441 [inline]
+ __x64_sys_open+0x225/0x270 fs/open.c:1441
+ do_syscall_x64 arch/x86/entry/common.c:50 [inline]
+ do_syscall_64+0x41/0xc0 arch/x86/entry/common.c:80
+ entry_SYSCALL_64_after_hwframe+0x63/0xcd
+RIP: 0033:0x7f0a91585949
+Code: 28 00 00 00 75 05 48 83 c4 28 c3 e8 91 1b 00 00 90 48 89 f8 48 89 f7 48 89 d6 48 89 ca 4d 89 c2 4d 89 c8 4c 8b 4c 24 08 0f 05 <48> 3d 01 f0 ff ff 73 01 c3 48 c7 c1 b0 ff ff ff f7 d8 64 89 01 48
+RSP: 002b:00007f0a9153a218 EFLAGS: 00000246 ORIG_RAX: 0000000000000002
+RAX: ffffffffffffffda RBX: 00007f0a9160b6c8 RCX: 00007f0a91585949
+RDX: 0000000000000000 RSI: 0000000000000040 RDI: 0000000020000400
+RBP: 00007f0a9160b6c0 R08: 0000000000000000 R09: 0000000000000000
+R10: 0000000000000000 R11: 0000000000000246 R12: 00007f0a915d8210
+R13: 00007f0a915d204d R14: 0030656c69662f2e R15: 6573726168636f69
+ </TASK>
+Modules linked in:
+---[ end trace 0000000000000000 ]---
+RIP: 0010:txLock+0x1cd4/0x1fa0 fs/jfs/jfs_txnmgr.c:834
+Code: 8b 48 c7 c6 40 4f 42 8b ba 01 00 00 00 b9 10 00 00 00 41 b8 04 00 00 00 4c 8b 4c 24 20 6a 00 6a 48 e8 a0 2f 2a 01 48 83 c4 10 <0f> 0b e8 55 21 7c fe 4c 89 e7 48 c7 c6 40 57 42 8b e8 36 9f bd fe
+RSP: 0018:ffffc90003a5ef98 EFLAGS: 00010282
+RAX: 8c29e29eae6e2500 RBX: 1ffff9200050241b RCX: ffff88807d4ed940
+RDX: 0000000000000000 RSI: 0000000000000001 RDI: 0000000000000000
+RBP: 0000000000000010 R08: ffffffff8170afec R09: 1ffff9200074bd28
+R10: dffffc0000000000 R11: fffff5200074bd29 R12: ffffc900028120da
+R13: 0000000000000002 R14: 000000000000001b R15: 0000000000002020
+FS:  00007f0a9153a6c0(0000) GS:ffff8880b9900000(0000) knlGS:0000000000000000
+CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033
+CR2: 00007f0a8a119000 CR3: 00000000271f3000 CR4: 00000000003506e0
+DR0: 0000000000000000 DR1: 0000000000000000 DR2: 0000000000000000
+DR3: 0000000000000000 DR6: 00000000fffe0ff0 DR7: 0000000000000400
+
+
 ---
- fs/jfs/jfs_imap.c | 1 +
- 1 file changed, 1 insertion(+)
+This report is generated by a bot. It may contain errors.
+See https://goo.gl/tpsmEJ for more information about syzbot.
+syzbot engineers can be reached at syzkaller@googlegroups.com.
 
-diff --git a/fs/jfs/jfs_imap.c b/fs/jfs/jfs_imap.c
-index f36ef68905a74..12fc016244581 100644
---- a/fs/jfs/jfs_imap.c
-+++ b/fs/jfs/jfs_imap.c
-@@ -208,6 +208,7 @@ int diUnmount(struct inode *ipimap, int mounterror)
- 	 * free in-memory control structure
- 	 */
- 	kfree(imap);
-+	JFS_IP(ipimap)->i_imap = NULL;
- 
- 	return (0);
- }
--- 
-2.40.1
+syzbot will keep track of this issue. See:
+https://goo.gl/tpsmEJ#status for how to communicate with syzbot.
+For information about bisection process see: https://goo.gl/tpsmEJ#bisection
 
+If the bug is already fixed, let syzbot know by replying with:
+#syz fix: exact-commit-title
+
+If you want syzbot to run the reproducer, reply with:
+#syz test: git://repo/address.git branch-or-commit-hash
+If you attach or paste a git patch, syzbot will apply it before testing.
+
+If you want to overwrite bug's subsystems, reply with:
+#syz set subsystems: new-subsystem
+(See the list of subsystem names on the web dashboard)
+
+If the bug is a duplicate of another bug, reply with:
+#syz dup: exact-subject-of-another-report
+
+If you want to undo deduplication, reply with:
+#syz undup
 
 
 _______________________________________________
