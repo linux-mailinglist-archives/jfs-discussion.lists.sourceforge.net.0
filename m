@@ -2,71 +2,71 @@ Return-Path: <jfs-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+jfs-discussion@lfdr.de
 Delivered-To: lists+jfs-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id 518C57A6A47
-	for <lists+jfs-discussion@lfdr.de>; Tue, 19 Sep 2023 19:54:54 +0200 (CEST)
-Received: from [127.0.0.1] (helo=sfs-ml-1.v29.lw.sourceforge.com)
-	by sfs-ml-1.v29.lw.sourceforge.com with esmtp (Exim 4.95)
+	by mail.lfdr.de (Postfix) with ESMTPS id B51987A6A4D
+	for <lists+jfs-discussion@lfdr.de>; Tue, 19 Sep 2023 19:56:47 +0200 (CEST)
+Received: from [127.0.0.1] (helo=sfs-ml-3.v29.lw.sourceforge.com)
+	by sfs-ml-3.v29.lw.sourceforge.com with esmtp (Exim 4.95)
 	(envelope-from <jfs-discussion-bounces@lists.sourceforge.net>)
-	id 1qievq-0006NS-BK;
-	Tue, 19 Sep 2023 17:54:41 +0000
+	id 1qiexe-0006fg-I6;
+	Tue, 19 Sep 2023 17:56:33 +0000
 Received: from [172.30.20.202] (helo=mx.sourceforge.net)
- by sfs-ml-1.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
+ by sfs-ml-3.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
  TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (Exim 4.95)
- (envelope-from <sashal@kernel.org>) id 1qievp-0006NM-38
+ (envelope-from <sashal@kernel.org>) id 1qiexa-0006fa-Kr
  for jfs-discussion@lists.sourceforge.net;
- Tue, 19 Sep 2023 17:54:40 +0000
+ Tue, 19 Sep 2023 17:56:29 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=sourceforge.net; s=x; h=Content-Transfer-Encoding:MIME-Version:Message-Id:
  Date:Subject:Cc:To:From:Sender:Reply-To:Content-Type:Content-ID:
  Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
  :Resent-Message-ID:In-Reply-To:References:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=WJsAe+Bk+xkX7x0s7abFYPtcFti0GdBSWaGIm0OONL4=; b=Ths0LY5+FJZqPy5vm91Bc1ZWQx
- e5h9IRcKXw7aVc3P9u4zRv+hACviO8zIrpdlKhmMCkNrTzsuwduwCI7h9wxvyiyMXBK+GVkrxKFzl
- DEae1eMN503ed2/bq6hVpWUaddSOeHMtQzaa6u2ti4H25Lxu8b7ykRnniwID7upGzAQ4=;
+ bh=h3q02L6gUc/c5zYRFv/3FpUPStnXZ3T3EFyUzOPu6Ww=; b=Hkxyxgu6bOzHZetpEsWyJU+IiC
+ FItj1Fnn8Izq3+H6e6ZD7Qa8fuKQM1Q6b2kE74QzFX49bkC6HVOhl/BxgX0HFYYylbEXUwpGiEi3b
+ INlQZBloyPghcILs1wN3Jqz1LcuKKOGjavNvU0/RHYtmevg76ATI10WOx3ErCEmObPVA=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
  h=Content-Transfer-Encoding:MIME-Version:Message-Id:Date:Subject:Cc:To:From
  :Sender:Reply-To:Content-Type:Content-ID:Content-Description:Resent-Date:
  Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
  References:List-Id:List-Help:List-Unsubscribe:List-Subscribe:List-Post:
- List-Owner:List-Archive; bh=WJsAe+Bk+xkX7x0s7abFYPtcFti0GdBSWaGIm0OONL4=; b=f
- zEfu2LdgUFNBzdTqySXOuQjdm7tsnmNZDW2virZa9BAiul+m5aPtsYlE0tWcpY/vJuaoDPBKxOC/T
- oElOC2vRSW8eT8geEHNB94F7raoF5c+0BLRgeytJWwxqkZuewcHFra66fl1UCOkV7T2gyoBtuDO6f
- Hka6Fz9iI800DUjk=;
-Received: from ams.source.kernel.org ([145.40.68.75])
- by sfi-mx-2.v28.lw.sourceforge.com with esmtps
+ List-Owner:List-Archive; bh=h3q02L6gUc/c5zYRFv/3FpUPStnXZ3T3EFyUzOPu6Ww=; b=g
+ M7IG0ER70pFj2zutBtGQ6QtkhmUCAZeXz4GFs7OqhPCthH+QjnPSUJRWiZdGPWpn1TJkLrB8CyoSA
+ +V2Db8D8vQx52zilEbYrfsGdtkKZUn/7l2JhUcv7JtS3Qp3JeyGZznIPUNgMWkVe9K8mA/o+TCSKY
+ OFe4u2rshDDf5gKI=;
+Received: from dfw.source.kernel.org ([139.178.84.217])
+ by sfi-mx-1.v28.lw.sourceforge.com with esmtps
  (TLS1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.95)
- id 1qievi-0004Ko-9W for jfs-discussion@lists.sourceforge.net;
- Tue, 19 Sep 2023 17:54:39 +0000
+ id 1qiexY-00FAl2-Dh for jfs-discussion@lists.sourceforge.net;
+ Tue, 19 Sep 2023 17:56:29 +0000
 Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140])
  (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
  key-exchange X25519 server-signature RSA-PSS (2048 bits))
  (No client certificate requested)
- by ams.source.kernel.org (Postfix) with ESMTPS id 3BFC5B816D2
+ by dfw.source.kernel.org (Postfix) with ESMTPS id 01070616BA
  for <jfs-discussion@lists.sourceforge.net>;
- Tue, 19 Sep 2023 17:54:28 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 8894AC433C7;
- Tue, 19 Sep 2023 17:54:26 +0000 (UTC)
+ Tue, 19 Sep 2023 17:56:23 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 0F208C433C8;
+ Tue, 19 Sep 2023 17:56:21 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=k20201202; t=1695146066;
- bh=BPxvbu6A6CEGHBp96h789wU2I5PnKTv/Yxg6mUlZLPI=;
+ s=k20201202; t=1695146182;
+ bh=MyoIoJQpBBDPrI38eKwBY7N0w5DcLDKU8IxYHnVEk7o=;
  h=From:To:Cc:Subject:Date:From;
- b=rMKoSNniruiy/8+oPIb9/U9n9nw67J1sDsgnX3XXPQ2MV1Qh2Y24B3zEYgDeIezwk
- CQb+j19TLw5c+DMEcTNEKkR8u+T4NcRPeVashkBWgIxRH2fTL6WPUrcDixtwGYTgeJ
- NvEuVapmh6XOfbLloMCuYxGz9RkDYD3q2SPdXxcvbUfyGkfZspOLENWSJd0B0C0dlT
- h/bTUIqHn39c4sAlhHbLBhbto0JmJ1wEGqG8ruQVCu2pxUjckb/N23p9HmDL/jzP8e
- PTai2RIS4Ii58EGdXDrB1rUkZfzei6+PJ6BCwrEgA7tCtazKKao30bI1Gl0V0tDhGF
- zAoQnRPY0rXew==
+ b=WupmiKYchOrS8OdKMoPZbGfh4Ap+aL6jZzGIvyj3rJ1S7ipd8oXOP2yxaqHa9lYLf
+ XO1Vs/0AIreaKddCKrr2Q1yD9Pz/VSEDx2F58a/VbAeYM36u3l5tZqHaBB0btpV87u
+ YiOGSZB8V4sEkSyz0wbsFx/bg+SXi3q5C8IQTjjV0w3H3mp9+Ga34Sbb/v2iKAg3By
+ 9T15ZZfk7/FjMnGYKO2cpVpu5Heu9CUuqZxu6jhFjB8MK2xW2uR2A3yucyw1iFMwmV
+ /DETNhuW0YZRuV+zy/lLZ33Zc7GqndMI0PBhbMIslOuMqCA2gN691cyOxzkAzKEltb
+ a8av2Gr4wwNzA==
 To: stable-commits@vger.kernel.org,
 	jfs-discussion@lists.sourceforge.net
-Date: Tue, 19 Sep 2023 13:54:24 -0400
-Message-Id: <20230919175424.878737-1-sashal@kernel.org>
+Date: Tue, 19 Sep 2023 13:56:19 -0400
+Message-Id: <20230919175619.880187-1-sashal@kernel.org>
 X-Mailer: git-send-email 2.40.1
 MIME-Version: 1.0
 X-Patchwork-Hint: ignore
 X-stable: review
-X-Spam-Score: -2.5 (--)
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: Spam detection software,
  running on the system "util-spamd-1.v13.lw.sourceforge.com", 
  has NOT identified this incoming email as spam.  The original
@@ -75,16 +75,16 @@ X-Spam-Report: Spam detection software,
  the administrator of that system for details.
  Content preview: This is a note to let you know that I've just added the patch
  titled jfs: fix invalid free of JFS_IP(ipimap)->i_imap in diUnmount to the
- 5.4-stable tree which can be found at:
+ 4.19-stable tree which can be found at:
  http://www.kernel.org/git/?p=linux/kernel/git/stable/stable-queue.git;
  a=summary
- Content analysis details:   (-2.5 points, 6.0 required)
+ Content analysis details:   (-5.2 points, 6.0 required)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [139.178.84.217 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [145.40.68.75 listed in list.dnswl.org]
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
@@ -93,9 +93,9 @@ X-Spam-Report: Spam detection software,
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.0 DKIMWL_WL_HIGH         DKIMwl.org - High trust sender
-X-Headers-End: 1qievi-0004Ko-9W
+X-Headers-End: 1qiexY-00FAl2-Dh
 Subject: [Jfs-discussion] Patch "jfs: fix invalid free of
- JFS_IP(ipimap)->i_imap in diUnmount" has been added to the 5.4-stable tree
+ JFS_IP(ipimap)->i_imap in diUnmount" has been added to the 4.19-stable tree
 X-BeenThere: jfs-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -118,19 +118,19 @@ This is a note to let you know that I've just added the patch titled
 
     jfs: fix invalid free of JFS_IP(ipimap)->i_imap in diUnmount
 
-to the 5.4-stable tree which can be found at:
+to the 4.19-stable tree which can be found at:
     http://www.kernel.org/git/?p=linux/kernel/git/stable/stable-queue.git;a=summary
 
 The filename of the patch is:
      jfs-fix-invalid-free-of-jfs_ip-ipimap-i_imap-in-diun.patch
-and it can be found in the queue-5.4 subdirectory.
+and it can be found in the queue-4.19 subdirectory.
 
 If you, or anyone else, feels it should not be added to the stable tree,
 please let <stable@vger.kernel.org> know about it.
 
 
 
-commit 88295e5aad2876f0cfea3354809d608a4fa735ad
+commit 91f2737fad46e168eef594fd122536724453bdc6
 Author: Liu Shixin via Jfs-discussion <jfs-discussion@lists.sourceforge.net>
 Date:   Thu Dec 1 20:46:28 2022 +0800
 
@@ -189,10 +189,10 @@ Date:   Thu Dec 1 20:46:28 2022 +0800
     Signed-off-by: Sasha Levin <sashal@kernel.org>
 
 diff --git a/fs/jfs/jfs_imap.c b/fs/jfs/jfs_imap.c
-index 937ca07b58b1d..67c67604b8c85 100644
+index 93e8c590ff5c0..7565e00e88182 100644
 --- a/fs/jfs/jfs_imap.c
 +++ b/fs/jfs/jfs_imap.c
-@@ -195,6 +195,7 @@ int diUnmount(struct inode *ipimap, int mounterror)
+@@ -208,6 +208,7 @@ int diUnmount(struct inode *ipimap, int mounterror)
  	 * free in-memory control structure
  	 */
  	kfree(imap);
