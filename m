@@ -2,91 +2,124 @@ Return-Path: <jfs-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+jfs-discussion@lfdr.de
 Delivered-To: lists+jfs-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id B83987B24AF
-	for <lists+jfs-discussion@lfdr.de>; Thu, 28 Sep 2023 20:02:17 +0200 (CEST)
-Received: from [127.0.0.1] (helo=sfs-ml-1.v29.lw.sourceforge.com)
-	by sfs-ml-1.v29.lw.sourceforge.com with esmtp (Exim 4.95)
+	by mail.lfdr.de (Postfix) with ESMTPS id DBB987B24F8
+	for <lists+jfs-discussion@lfdr.de>; Thu, 28 Sep 2023 20:12:29 +0200 (CEST)
+Received: from [127.0.0.1] (helo=sfs-ml-3.v29.lw.sourceforge.com)
+	by sfs-ml-3.v29.lw.sourceforge.com with esmtp (Exim 4.95)
 	(envelope-from <jfs-discussion-bounces@lists.sourceforge.net>)
-	id 1qlvKs-0001xi-U3;
-	Thu, 28 Sep 2023 18:02:01 +0000
+	id 1qlvUk-0004OO-4C;
+	Thu, 28 Sep 2023 18:12:12 +0000
 Received: from [172.30.20.202] (helo=mx.sourceforge.net)
- by sfs-ml-1.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
+ by sfs-ml-3.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
  TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (Exim 4.95)
- (envelope-from <jlayton@kernel.org>) id 1qlvKr-0001xF-6t;
- Thu, 28 Sep 2023 18:02:00 +0000
+ (envelope-from <torvalds@linuxfoundation.org>) id 1qlvUi-0004OI-Os
+ for jfs-discussion@lists.sourceforge.net;
+ Thu, 28 Sep 2023 18:12:11 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=sourceforge.net; s=x; h=MIME-Version:Content-Transfer-Encoding:Content-Type
- :References:In-Reply-To:Date:Cc:To:From:Subject:Message-ID:Sender:Reply-To:
- Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
+ d=sourceforge.net; s=x; h=Content-Type:Cc:To:Subject:Message-ID:Date:From:
+ In-Reply-To:References:MIME-Version:Sender:Reply-To:Content-Transfer-Encoding
+ :Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
  Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=EAdPFsmHcyWayc69u1pNQGVN/Od37LMkwOOQtSvFBiM=; b=PmlgHAzcB1cvWY5zT919YlC57F
- okmq8vnnuiT4E65HBvOQFFPmnBKL8BxjNigW81bWN9IevqeEdcZbkFgmn03dyGQBTKph3jr7/sHFG
- fnfIc4PGOv91p3UZGObKuAw7P1OrIUW1pyFQTrj3TnSyYJkWMbQelYGIbRq0eAPOuEoU=;
+ bh=UoV8bp+GLn88RdeFyi+3G/jZGwWmlguHsi2KfbyyFTc=; b=VmkHkMzCoUux5UQwoN3WQA+1yH
+ nfXKKt8Cep8/t7PjCh+q7+JklY0Ihf5msz0krnbCmcF2zkbOyXuFeRdpiiravLD8l3Z0Wk5C5IaPs
+ RIzDYpoTTTl2lMrmJ3GDmuvMjQeZCkxW0E+Fnu+76Tj18rglP3/rDsfPE/d2AHnKW8ls=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
- h=MIME-Version:Content-Transfer-Encoding:Content-Type:References:
- In-Reply-To:Date:Cc:To:From:Subject:Message-ID:Sender:Reply-To:Content-ID:
+ h=Content-Type:Cc:To:Subject:Message-ID:Date:From:In-Reply-To:References:
+ MIME-Version:Sender:Reply-To:Content-Transfer-Encoding:Content-ID:
  Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
  :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
  List-Post:List-Owner:List-Archive;
- bh=EAdPFsmHcyWayc69u1pNQGVN/Od37LMkwOOQtSvFBiM=; b=HJ512DuO1+xY/iPK6ELqML1jEA
- BmqzkUltrbeRUVJRbzDxuJWj0GZQoKUdBuCXl4roi5V8FA3W38r1cIwk9O4korKsiexmQFnGm6b4F
- qGOIWybsnyKc33kik8DUoIrm4bhftYiXkjtc7PZk/mnqEeiQWZ3+o35vACX5MWSZ/8IA=;
-Received: from ams.source.kernel.org ([145.40.68.75])
- by sfi-mx-2.v28.lw.sourceforge.com with esmtps
- (TLS1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.95)
- id 1qlvKm-0003mi-7V; Thu, 28 Sep 2023 18:02:00 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
- by ams.source.kernel.org (Postfix) with ESMTP id D6EECB81DC1;
- Thu, 28 Sep 2023 18:01:49 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id A6C1DC433C7;
- Thu, 28 Sep 2023 18:01:34 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=k20201202; t=1695924109;
- bh=EAdPFsmHcyWayc69u1pNQGVN/Od37LMkwOOQtSvFBiM=;
- h=Subject:From:To:Cc:Date:In-Reply-To:References:From;
- b=bfK28RLdLGgKZCUgDzeWTBKaqWs6brrGRaSyPdFXskOVm0On6PlLojE5M/xCgEEY5
- grpUMo2uaqDtijMvKbHWfOGFJG+vQA/tkSyBcl6qHWL3dn3aU/KYO5L4q/l83Nz1PF
- rjm7ECl0slpI4oU4YRq3Il4iqcNMzLzfgVWdoz5lG6ZAiTp3N12KGI95ZvFcFMlTR+
- jbG318WOr9JpuRBEryTb1XBxjEr4Jw9k8E4/FfV1BqWFd1k5jtZEs5n6naq0zoe6ze
- HRJ/cpQFseJro5/YEKgl8SVwodWHkLRLpC8H6rkjRLoCIio3JUF68vh6UiBMp7cQEp
- W7opbVnaB1VbA==
-Message-ID: <00ca2e3997cc86401f7fb65d936fe5403abd5627.camel@kernel.org>
-To: Linus Torvalds <torvalds@linux-foundation.org>
-Date: Thu, 28 Sep 2023 14:01:33 -0400
-In-Reply-To: <CAHk-=wij_42Q9WHY898r-gugmT5c-1JJKRh3C+nTUd1hc1aeqQ@mail.gmail.com>
+ bh=UoV8bp+GLn88RdeFyi+3G/jZGwWmlguHsi2KfbyyFTc=; b=V4sBKm+rpFwhtSd9F3JanBfcKo
+ VjVtM5QO5ReLlCXOPOoWhApE/SZSbqd/FaTL52d3CxhXPS4SGGQtx4eMy3C1HSvYnDsUSjYzH5yLu
+ /f4TpaCfj5DTsrX3voHPdt8ZZksfJ948VSvDLZHlXaRU4HTepRo+BEANoa9SQ+JD3AqM=;
+Received: from mail-ej1-f45.google.com ([209.85.218.45])
+ by sfi-mx-1.v28.lw.sourceforge.com with esmtps
+ (TLS1.2:ECDHE-RSA-AES128-GCM-SHA256:128) (Exim 4.95)
+ id 1qlvUc-00APby-9v for jfs-discussion@lists.sourceforge.net;
+ Thu, 28 Sep 2023 18:12:11 +0000
+Received: by mail-ej1-f45.google.com with SMTP id
+ a640c23a62f3a-9b2a3fd5764so784146166b.3
+ for <jfs-discussion@lists.sourceforge.net>;
+ Thu, 28 Sep 2023 11:12:06 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=linux-foundation.org; s=google; t=1695924719; x=1696529519;
+ darn=lists.sourceforge.net; 
+ h=cc:to:subject:message-id:date:from:in-reply-to:references
+ :mime-version:from:to:cc:subject:date:message-id:reply-to;
+ bh=UoV8bp+GLn88RdeFyi+3G/jZGwWmlguHsi2KfbyyFTc=;
+ b=eTHgYZ+LnV+hyLAM3MrPCYw0jOA4htyhJHqdLklL6koBoHvsW6y8wNK7tzxDK5PZGs
+ 1ZFXQYVmdxBEPqCEUpLkCLWPFDfLk2dsOvHb/V9aMysI9nxs37BJAQ8T3lIk7rzsfhIV
+ /Su90Nde82lsuowS6cTNDVJh9vSNb2DUZnxXg=
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20230601; t=1695924719; x=1696529519;
+ h=cc:to:subject:message-id:date:from:in-reply-to:references
+ :mime-version:x-gm-message-state:from:to:cc:subject:date:message-id
+ :reply-to;
+ bh=UoV8bp+GLn88RdeFyi+3G/jZGwWmlguHsi2KfbyyFTc=;
+ b=O7TMTsAZx1GrKo1vmJ7muQZoI+AEHdR43k1vhS957ni76sIg72PH9gSwk+M9wlh2fR
+ WP/R8QuwS9jLYwQnM3n+WeG3MMASfMOkEerbXI5wtqwv7uq55LBdSU3x8FrpsI44dLmR
+ wYmqfpnwUBAanuw8/Ww/ntnjcjLe0PzfJe3JArWH6T7r4VkYTaaRgv10V8HfXTL8uutN
+ s3Knuvp01c2y6igx8rNbikRE4Pj/X1Ac41JH6OusXUD1HMdbr00bFB/+fyDsu5QtjLJF
+ dhOKca71m6nWuLXTxnm1MO8KzVXoKolGTFu45UkPlRMufKs2+8GVzkVdkcCmgaRiGfHb
+ mLxQ==
+X-Gm-Message-State: AOJu0Yy6EvigN/Cb+TJhF4l0b8VR7EhTtePhlpgKLNwDl+TeHY/WECLp
+ qxutNjk8CchKz122J01jD5QiQZmamydY6MMjTUkALI1q2IM=
+X-Google-Smtp-Source: AGHT+IEqBzWgkbU/KAO8UF6p6yw4W7Cy4ChGBxxw2NYXQS/mo6zNyz+QCe46rpNtd64ppPJLDFwXTA==
+X-Received: by 2002:a17:906:9a:b0:9b2:b974:2d1c with SMTP id
+ 26-20020a170906009a00b009b2b9742d1cmr2110195ejc.54.1695924719617; 
+ Thu, 28 Sep 2023 11:11:59 -0700 (PDT)
+Received: from mail-ed1-f47.google.com (mail-ed1-f47.google.com.
+ [209.85.208.47]) by smtp.gmail.com with ESMTPSA id
+ kg28-20020a17090776fc00b0099b921de301sm11230855ejc.159.2023.09.28.11.11.59
+ for <jfs-discussion@lists.sourceforge.net>
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Thu, 28 Sep 2023 11:11:59 -0700 (PDT)
+Received: by mail-ed1-f47.google.com with SMTP id
+ 4fb4d7f45d1cf-5362bcc7026so1635624a12.1
+ for <jfs-discussion@lists.sourceforge.net>;
+ Thu, 28 Sep 2023 11:11:59 -0700 (PDT)
+X-Received: by 2002:aa7:d899:0:b0:52f:c073:9c77 with SMTP id
+ u25-20020aa7d899000000b0052fc0739c77mr1748627edq.35.1695922912868; Thu, 28
+ Sep 2023 10:41:52 -0700 (PDT)
+MIME-Version: 1.0
 References: <20230928110554.34758-1-jlayton@kernel.org>
  <20230928110554.34758-3-jlayton@kernel.org>
- <CAHk-=wij_42Q9WHY898r-gugmT5c-1JJKRh3C+nTUd1hc1aeqQ@mail.gmail.com>
-User-Agent: Evolution 3.48.4 (3.48.4-1.fc38) 
-MIME-Version: 1.0
-X-Spam-Score: -2.5 (--)
+In-Reply-To: <20230928110554.34758-3-jlayton@kernel.org>
+From: Linus Torvalds <torvalds@linux-foundation.org>
+Date: Thu, 28 Sep 2023 10:41:34 -0700
+X-Gmail-Original-Message-ID: <CAHk-=wij_42Q9WHY898r-gugmT5c-1JJKRh3C+nTUd1hc1aeqQ@mail.gmail.com>
+Message-ID: <CAHk-=wij_42Q9WHY898r-gugmT5c-1JJKRh3C+nTUd1hc1aeqQ@mail.gmail.com>
+To: Jeff Layton <jlayton@kernel.org>
+X-Spam-Score: 0.2 (/)
 X-Spam-Report: Spam detection software,
- running on the system "util-spamd-2.v13.lw.sourceforge.com", 
+ running on the system "util-spamd-1.v13.lw.sourceforge.com", 
  has NOT identified this incoming email as spam.  The original
  message has been attached to this so you can view it or label
  similar future email.  If you have any questions, see
  the administrator of that system for details.
- Content preview:  On Thu, 2023-09-28 at 10:41 -0700, Linus Torvalds wrote: >
- On Thu, 28 Sept 2023 at 04:06, Jeff Layton <jlayton@kernel.org> wrote: >
- > > > Move i_blocks up above the i_lock, which moves the new 4 byte [...] 
- Content analysis details:   (-2.5 points, 6.0 required)
+ Content preview:  On Thu, 28 Sept 2023 at 04:06,
+ Jeff Layton <jlayton@kernel.org>
+ wrote: > > Move i_blocks up above the i_lock, which moves the new 4 byte
+ hole to > just after the timestamps, without changing the size [...] 
+ Content analysis details:   (0.2 points, 6.0 required)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [209.85.218.45 listed in wl.mailspike.net]
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [145.40.68.75 listed in list.dnswl.org]
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.218.45 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - High trust sender
-X-Headers-End: 1qlvKm-0003mi-7V
+ valid 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+X-Headers-End: 1qlvUc-00APby-9v
 Subject: Re: [Jfs-discussion] [PATCH 87/87] fs: move i_blocks up a few
  places in struct inode
 X-BeenThere: jfs-discussion@lists.sourceforge.net
@@ -100,11 +133,9 @@ List-Post: <mailto:jfs-discussion@lists.sourceforge.net>
 List-Help: <mailto:jfs-discussion-request@lists.sourceforge.net?subject=help>
 List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/jfs-discussion>, 
  <mailto:jfs-discussion-request@lists.sourceforge.net?subject=subscribe>
-From: Jeff Layton via Jfs-discussion <jfs-discussion@lists.sourceforge.net>
-Reply-To: Jeff Layton <jlayton@kernel.org>
 Cc: Latchesar Ionkov <lucho@ionkov.net>,
- Konstantin Komarov <almaz.alexandrovich@paragon-software.com>, "Rafael
- J. Wysocki" <rafael@kernel.org>, "Darrick J. Wong" <djwong@kernel.org>,
+ Konstantin Komarov <almaz.alexandrovich@paragon-software.com>,
+ "Rafael J. Wysocki" <rafael@kernel.org>, "Darrick J. Wong" <djwong@kernel.org>,
  Anders Larsen <al@alarsen.net>, Carlos Llamas <cmllamas@google.com>,
  Andrii Nakryiko <andrii@kernel.org>, Mattia Dongili <malattia@linux.it>,
  Hugh Dickins <hughd@google.com>, John Johansen <john.johansen@canonical.com>,
@@ -126,7 +157,7 @@ Cc: Latchesar Ionkov <lucho@ionkov.net>,
  Stephen Smalley <stephen.smalley.work@gmail.com>, linux-usb@vger.kernel.org,
  linux-kernel@vger.kernel.org, Ronnie Sahlberg <lsahlber@redhat.com>,
  Sergey Senozhatsky <senozhatsky@chromium.org>,
- Arve =?ISO-8859-1?Q?Hj=F8nnev=E5g?= <arve@android.com>,
+ =?UTF-8?B?QXJ2ZSBIasO4bm5ldsOlZw==?= <arve@android.com>,
  Chuck Lever <chuck.lever@oracle.com>, Sven Schnelle <svens@linux.ibm.com>,
  Jiri Olsa <jolsa@kernel.org>, Jan Kara <jack@suse.com>,
  Tejun Heo <tj@kernel.org>, Andrew Morton <akpm@linux-foundation.org>,
@@ -159,7 +190,7 @@ Cc: Latchesar Ionkov <lucho@ionkov.net>,
  Naohiro Aota <naohiro.aota@wdc.com>, Daniel Borkmann <daniel@iogearbox.net>,
  Dennis Dalessandro <dennis.dalessandro@cornelisnetworks.com>,
  linux-rdma@vger.kernel.org, coda@cs.cmu.edu,
- Ilpo =?ISO-8859-1?Q?J=E4rvinen?= <ilpo.jarvinen@linux.intel.com>,
+ =?UTF-8?Q?Ilpo_J=C3=A4rvinen?= <ilpo.jarvinen@linux.intel.com>,
  Ilya Dryomov <idryomov@gmail.com>, Paolo Abeni <pabeni@redhat.com>,
  "Serge E. Hallyn" <serge@hallyn.com>,
  Christian Schoenebeck <linux_oss@crudebyte.com>,
@@ -174,10 +205,10 @@ Cc: Latchesar Ionkov <lucho@ionkov.net>,
  Jeremy Kerr <jk@ozlabs.org>, netdev@vger.kernel.org,
  Bob Peterson <rpeterso@redhat.com>, linux-fsdevel@vger.kernel.org,
  bpf@vger.kernel.org, ntfs3@lists.linux.dev, linux-erofs@lists.ozlabs.org,
- "David S.
- Miller" <davem@davemloft.net>, Chandan Babu R <chandan.babu@oracle.com>,
- jfs-discussion@lists.sourceforge.net, Jan Kara <jack@suse.cz>,
- Neil Brown <neilb@suse.de>, Dominique Martinet <asmadeus@codewreck.org>,
+ "David S. Miller" <davem@davemloft.net>,
+ Chandan Babu R <chandan.babu@oracle.com>, jfs-discussion@lists.sourceforge.net,
+ Jan Kara <jack@suse.cz>, Neil Brown <neilb@suse.de>,
+ Dominique Martinet <asmadeus@codewreck.org>,
  Amir Goldstein <amir73il@gmail.com>, Bob Copeland <me@bobcopeland.com>,
  KP Singh <kpsingh@kernel.org>, linux-unionfs@vger.kernel.org,
  David Howells <dhowells@redhat.com>, Joseph Qi <joseph.qi@linux.alibaba.com>,
@@ -210,43 +241,28 @@ Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Errors-To: jfs-discussion-bounces@lists.sourceforge.net
 
-On Thu, 2023-09-28 at 10:41 -0700, Linus Torvalds wrote:
-> On Thu, 28 Sept 2023 at 04:06, Jeff Layton <jlayton@kernel.org> wrote:
-> > 
-> > Move i_blocks up above the i_lock, which moves the new 4 byte hole to
-> > just after the timestamps, without changing the size of the structure.
-> 
-> I'm sure others have mentioned this, but 'struct inode' is marked with
-> __randomize_layout, so the actual layout may end up being very
-> different.
-> 
-> I'm personally not convinced the whole structure randomization is
-> worth it - it's easy enough to figure out for any distro kernel since
-> the seed has to be the same across machines for modules to work, so
-> even if the seed isn't "public", any layout is bound to be fairly
-> easily discoverable.
-> 
-> So the whole randomization only really works for private kernel
-> builds, and it adds this kind of pain where "optimizing" the structure
-> layout is kind of pointless depending on various options.
-> 
-> I certainly *hope* no distro enables that pointless thing, but it's a worry.
-> 
+On Thu, 28 Sept 2023 at 04:06, Jeff Layton <jlayton@kernel.org> wrote:
+>
+> Move i_blocks up above the i_lock, which moves the new 4 byte hole to
+> just after the timestamps, without changing the size of the structure.
 
-I've never enabled struct randomization and don't know anyone who does.
-I figure if you turn that on, you get to keep all of the pieces when you
-start seeing weird performance problems.
+I'm sure others have mentioned this, but 'struct inode' is marked with
+__randomize_layout, so the actual layout may end up being very
+different.
 
-I think that we have to optimize for that being disabled. Even without
-that though, turning on and off options can change the layout...and then
-there are different arches, etc.
+I'm personally not convinced the whole structure randomization is
+worth it - it's easy enough to figure out for any distro kernel since
+the seed has to be the same across machines for modules to work, so
+even if the seed isn't "public", any layout is bound to be fairly
+easily discoverable.
 
-I'm using a config derived from the Fedora x86_64 kernel images and hope
-that represents a reasonably common configuration. The only conditional
-members before the timestamps are based on CONFIG_FS_POSIX_ACL and
-CONFIG_SECURITY, which are almost always turned on with most distros.
--- 
-Jeff Layton <jlayton@kernel.org>
+So the whole randomization only really works for private kernel
+builds, and it adds this kind of pain where "optimizing" the structure
+layout is kind of pointless depending on various options.
+
+I certainly *hope* no distro enables that pointless thing, but it's a worry.
+
+               Linus
 
 
 _______________________________________________
