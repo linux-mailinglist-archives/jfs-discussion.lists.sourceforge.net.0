@@ -2,126 +2,130 @@ Return-Path: <jfs-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+jfs-discussion@lfdr.de
 Delivered-To: lists+jfs-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id DBB987B24F8
-	for <lists+jfs-discussion@lfdr.de>; Thu, 28 Sep 2023 20:12:29 +0200 (CEST)
-Received: from [127.0.0.1] (helo=sfs-ml-3.v29.lw.sourceforge.com)
-	by sfs-ml-3.v29.lw.sourceforge.com with esmtp (Exim 4.95)
+	by mail.lfdr.de (Postfix) with ESMTPS id 80F5E7B2678
+	for <lists+jfs-discussion@lfdr.de>; Thu, 28 Sep 2023 22:22:16 +0200 (CEST)
+Received: from [127.0.0.1] (helo=sfs-ml-4.v29.lw.sourceforge.com)
+	by sfs-ml-4.v29.lw.sourceforge.com with esmtp (Exim 4.95)
 	(envelope-from <jfs-discussion-bounces@lists.sourceforge.net>)
-	id 1qlvUk-0004OO-4C;
-	Thu, 28 Sep 2023 18:12:12 +0000
+	id 1qlxWC-0002Bv-BY;
+	Thu, 28 Sep 2023 20:21:52 +0000
 Received: from [172.30.20.202] (helo=mx.sourceforge.net)
- by sfs-ml-3.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
+ by sfs-ml-4.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
  TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (Exim 4.95)
- (envelope-from <torvalds@linuxfoundation.org>) id 1qlvUi-0004OI-Os
- for jfs-discussion@lists.sourceforge.net;
- Thu, 28 Sep 2023 18:12:11 +0000
+ (envelope-from <arnd@arndb.de>) id 1qlxWA-0002Bf-1k;
+ Thu, 28 Sep 2023 20:21:50 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=sourceforge.net; s=x; h=Content-Type:Cc:To:Subject:Message-ID:Date:From:
- In-Reply-To:References:MIME-Version:Sender:Reply-To:Content-Transfer-Encoding
+ d=sourceforge.net; s=x; h=Content-Type:Subject:Cc:To:From:Date:References:
+ In-Reply-To:Message-Id:MIME-Version:Sender:Reply-To:Content-Transfer-Encoding
  :Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
  Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=UoV8bp+GLn88RdeFyi+3G/jZGwWmlguHsi2KfbyyFTc=; b=VmkHkMzCoUux5UQwoN3WQA+1yH
- nfXKKt8Cep8/t7PjCh+q7+JklY0Ihf5msz0krnbCmcF2zkbOyXuFeRdpiiravLD8l3Z0Wk5C5IaPs
- RIzDYpoTTTl2lMrmJ3GDmuvMjQeZCkxW0E+Fnu+76Tj18rglP3/rDsfPE/d2AHnKW8ls=;
+ bh=35hGd5DtemMMIKF1Zr0cZ5jy7ToQQid1yaZKtlkxNu4=; b=Sov6Exh8AfpA0W3nc3vYOjFEdi
+ C47cUVWWnbL3qQUSl8oRPkW8Xbxq3MUF6qdiEqVxOH0uwy8V9MRFSXqO35LQ6Lfswpg/gehUaHbZ8
+ 2wdiqNYLJZNmu8qxDWmYRICM1+WsAAass+LM50euM3tdqU2973KRRgO5KHBTadFv20Zs=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
- h=Content-Type:Cc:To:Subject:Message-ID:Date:From:In-Reply-To:References:
+ h=Content-Type:Subject:Cc:To:From:Date:References:In-Reply-To:Message-Id:
  MIME-Version:Sender:Reply-To:Content-Transfer-Encoding:Content-ID:
  Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
  :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
  List-Post:List-Owner:List-Archive;
- bh=UoV8bp+GLn88RdeFyi+3G/jZGwWmlguHsi2KfbyyFTc=; b=V4sBKm+rpFwhtSd9F3JanBfcKo
- VjVtM5QO5ReLlCXOPOoWhApE/SZSbqd/FaTL52d3CxhXPS4SGGQtx4eMy3C1HSvYnDsUSjYzH5yLu
- /f4TpaCfj5DTsrX3voHPdt8ZZksfJ948VSvDLZHlXaRU4HTepRo+BEANoa9SQ+JD3AqM=;
-Received: from mail-ej1-f45.google.com ([209.85.218.45])
+ bh=35hGd5DtemMMIKF1Zr0cZ5jy7ToQQid1yaZKtlkxNu4=; b=gOo9FZxfs6AlWqnnedB998+EQe
+ GjnKnVd53J4R4tcDDPDoTOamEA2deMTASfVQ4PeG3WhlB82wP8+J2AI8gd1H+qSUedeA9R/m1wCo0
+ O6fsXxp/2IXSCRY8RHSadb7BU1eSQvq8si0D4NehyLOP8aEE2u+296HGHovK/G+zuu4w=;
+Received: from new2-smtp.messagingengine.com ([66.111.4.224])
  by sfi-mx-1.v28.lw.sourceforge.com with esmtps
- (TLS1.2:ECDHE-RSA-AES128-GCM-SHA256:128) (Exim 4.95)
- id 1qlvUc-00APby-9v for jfs-discussion@lists.sourceforge.net;
- Thu, 28 Sep 2023 18:12:11 +0000
-Received: by mail-ej1-f45.google.com with SMTP id
- a640c23a62f3a-9b2a3fd5764so784146166b.3
- for <jfs-discussion@lists.sourceforge.net>;
- Thu, 28 Sep 2023 11:12:06 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=linux-foundation.org; s=google; t=1695924719; x=1696529519;
- darn=lists.sourceforge.net; 
- h=cc:to:subject:message-id:date:from:in-reply-to:references
- :mime-version:from:to:cc:subject:date:message-id:reply-to;
- bh=UoV8bp+GLn88RdeFyi+3G/jZGwWmlguHsi2KfbyyFTc=;
- b=eTHgYZ+LnV+hyLAM3MrPCYw0jOA4htyhJHqdLklL6koBoHvsW6y8wNK7tzxDK5PZGs
- 1ZFXQYVmdxBEPqCEUpLkCLWPFDfLk2dsOvHb/V9aMysI9nxs37BJAQ8T3lIk7rzsfhIV
- /Su90Nde82lsuowS6cTNDVJh9vSNb2DUZnxXg=
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20230601; t=1695924719; x=1696529519;
- h=cc:to:subject:message-id:date:from:in-reply-to:references
- :mime-version:x-gm-message-state:from:to:cc:subject:date:message-id
- :reply-to;
- bh=UoV8bp+GLn88RdeFyi+3G/jZGwWmlguHsi2KfbyyFTc=;
- b=O7TMTsAZx1GrKo1vmJ7muQZoI+AEHdR43k1vhS957ni76sIg72PH9gSwk+M9wlh2fR
- WP/R8QuwS9jLYwQnM3n+WeG3MMASfMOkEerbXI5wtqwv7uq55LBdSU3x8FrpsI44dLmR
- wYmqfpnwUBAanuw8/Ww/ntnjcjLe0PzfJe3JArWH6T7r4VkYTaaRgv10V8HfXTL8uutN
- s3Knuvp01c2y6igx8rNbikRE4Pj/X1Ac41JH6OusXUD1HMdbr00bFB/+fyDsu5QtjLJF
- dhOKca71m6nWuLXTxnm1MO8KzVXoKolGTFu45UkPlRMufKs2+8GVzkVdkcCmgaRiGfHb
- mLxQ==
-X-Gm-Message-State: AOJu0Yy6EvigN/Cb+TJhF4l0b8VR7EhTtePhlpgKLNwDl+TeHY/WECLp
- qxutNjk8CchKz122J01jD5QiQZmamydY6MMjTUkALI1q2IM=
-X-Google-Smtp-Source: AGHT+IEqBzWgkbU/KAO8UF6p6yw4W7Cy4ChGBxxw2NYXQS/mo6zNyz+QCe46rpNtd64ppPJLDFwXTA==
-X-Received: by 2002:a17:906:9a:b0:9b2:b974:2d1c with SMTP id
- 26-20020a170906009a00b009b2b9742d1cmr2110195ejc.54.1695924719617; 
- Thu, 28 Sep 2023 11:11:59 -0700 (PDT)
-Received: from mail-ed1-f47.google.com (mail-ed1-f47.google.com.
- [209.85.208.47]) by smtp.gmail.com with ESMTPSA id
- kg28-20020a17090776fc00b0099b921de301sm11230855ejc.159.2023.09.28.11.11.59
- for <jfs-discussion@lists.sourceforge.net>
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Thu, 28 Sep 2023 11:11:59 -0700 (PDT)
-Received: by mail-ed1-f47.google.com with SMTP id
- 4fb4d7f45d1cf-5362bcc7026so1635624a12.1
- for <jfs-discussion@lists.sourceforge.net>;
- Thu, 28 Sep 2023 11:11:59 -0700 (PDT)
-X-Received: by 2002:aa7:d899:0:b0:52f:c073:9c77 with SMTP id
- u25-20020aa7d899000000b0052fc0739c77mr1748627edq.35.1695922912868; Thu, 28
- Sep 2023 10:41:52 -0700 (PDT)
+ (TLS1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.95)
+ id 1qlxW4-00AW9d-Bx; Thu, 28 Sep 2023 20:21:50 +0000
+Received: from compute6.internal (compute6.nyi.internal [10.202.2.47])
+ by mailnew.nyi.internal (Postfix) with ESMTP id 9B93D580A36;
+ Thu, 28 Sep 2023 16:21:38 -0400 (EDT)
+Received: from imap51 ([10.202.2.101])
+ by compute6.internal (MEProxy); Thu, 28 Sep 2023 16:21:38 -0400
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=arndb.de; h=cc
+ :cc:content-type:content-type:date:date:from:from:in-reply-to
+ :in-reply-to:message-id:mime-version:references:reply-to:sender
+ :subject:subject:to:to; s=fm1; t=1695932498; x=1695939698; bh=35
+ hGd5DtemMMIKF1Zr0cZ5jy7ToQQid1yaZKtlkxNu4=; b=K2LkXmC6yX3ynAE2K5
+ /mhtV7/yHI27xGtTL+tb9r+L4fdVUWDnu82xAKY2TmrCJ+8HO4u0wsDUyHM7PkX5
+ RxdaBJScyNKevwE2qHYYl18GwcimEUhy4r91Tgkb1ai7ANg9ePFW9FzWILz3hBzH
+ 4FpDGmn+3FUH1qJhrE81Ndv7iGHOu9ByGhh5m5et3uDzYrsKWdtXhHI4NNqFgHIo
+ cTVFj1LQVzzO4soFR+D9JmeyVxyHdIeDaC4sxvMXh10gvy/OQi7ggSzfD0gMLd+T
+ i3Oz6mkUesPK9mKQQdf0FjtDoLzIKL+H/dqp5n2Cwyrn9TD9leXPWz8ARpjB6ZmH
+ AEvg==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
+ messagingengine.com; h=cc:cc:content-type:content-type:date:date
+ :feedback-id:feedback-id:from:from:in-reply-to:in-reply-to
+ :message-id:mime-version:references:reply-to:sender:subject
+ :subject:to:to:x-me-proxy:x-me-proxy:x-me-sender:x-me-sender
+ :x-sasl-enc; s=fm2; t=1695932498; x=1695939698; bh=35hGd5DtemMMI
+ KF1Zr0cZ5jy7ToQQid1yaZKtlkxNu4=; b=LuXVyXF9FXe5kBJhaOeaS1uqYK7h7
+ BcI4Fr0XY/h4GDfVNtYDrCcALYJX8aCQkQpwvubJXgUz+jqnaOdrVFS/QwChYBBE
+ DIzyhrk6oAGoDjuAV/PBO6VodgWy2OI6FZ42RnQ1e2ZaWSX1CLIPYtWyu74lo1lR
+ 2X3qw6Xe9UiToGzRz2GbH9SrpAszmayI6BM/RLK6g4AH8+QLT3Jml1Zy/g0abMBz
+ BrfUrr819af67Qt95mUdz8NarVqJduBWMvpLscrsR25zblIa2hF278ANh73YSnHi
+ A/dC+7wvDk+6OrA7qE1287nIjJSIS4hQtlI5qLZoux6VXsb3XZP0GbNWQ==
+X-ME-Sender: <xms:T-AVZR1ewCLCXJciXTv2KS-VQFM8EZxgmqu8KX5sRw8jOhB8t5mvmg>
+ <xme:T-AVZYE8KNFU-zX2fowtiSk8k5TTEy-zLpg6l7ViaO7u-M9i4sLyeo9mKHRv89wiK
+ kzQfQCBm98jHSFK2M0>
+X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgedvkedrtddtgdduudejucetufdoteggodetrfdotf
+ fvucfrrhhofhhilhgvmecuhfgrshhtofgrihhlpdfqfgfvpdfurfetoffkrfgpnffqhgen
+ uceurghilhhouhhtmecufedttdenucesvcftvggtihhpihgvnhhtshculddquddttddmne
+ cujfgurhepofgfggfkjghffffhvfevufgtsehttdertderredtnecuhfhrohhmpedftehr
+ nhguuceuvghrghhmrghnnhdfuceorghrnhgusegrrhhnuggsrdguvgeqnecuggftrfgrth
+ htvghrnhepffehueegteeihfegtefhjefgtdeugfegjeelheejueethfefgeeghfektdek
+ teffnecuvehluhhsthgvrhfuihiivgeptdenucfrrghrrghmpehmrghilhhfrhhomheprg
+ hrnhgusegrrhhnuggsrdguvg
+X-ME-Proxy: <xmx:T-AVZR4BytDV9lwZdqqjrwhvP5vsz3ug46UBzGAT-ICPIHtzTDxhvA>
+ <xmx:T-AVZe3ZjrPtzvGRB3XDvCcCYDyZkQmX1RQr8DvYh6NceadI1nsPoQ>
+ <xmx:T-AVZUF8XXSEejnBdY9XFbo8HcXvGUcaI9j91XApMIv7k8MhAYrhSQ>
+ <xmx:UuAVZaefJHshgpCzU_sLowO2Cv2ngdqlPUqFPg8bJlwHCV_nHAorAQ>
+Feedback-ID: i56a14606:Fastmail
+Received: by mailuser.nyi.internal (Postfix, from userid 501)
+ id 360CCB60089; Thu, 28 Sep 2023 16:21:35 -0400 (EDT)
+X-Mailer: MessagingEngine.com Webmail Interface
+User-Agent: Cyrus-JMAP/3.9.0-alpha0-958-g1b1b911df8-fm-20230927.002-g1b1b911d
 MIME-Version: 1.0
+Message-Id: <ded0ef74-bdad-42f2-b0a7-5d867e446c19@app.fastmail.com>
+In-Reply-To: <6a6f37d16b55a3003af3f3dbb7778a367f68cd8d.camel@kernel.org>
 References: <20230928110554.34758-1-jlayton@kernel.org>
- <20230928110554.34758-3-jlayton@kernel.org>
-In-Reply-To: <20230928110554.34758-3-jlayton@kernel.org>
-From: Linus Torvalds <torvalds@linux-foundation.org>
-Date: Thu, 28 Sep 2023 10:41:34 -0700
-X-Gmail-Original-Message-ID: <CAHk-=wij_42Q9WHY898r-gugmT5c-1JJKRh3C+nTUd1hc1aeqQ@mail.gmail.com>
-Message-ID: <CAHk-=wij_42Q9WHY898r-gugmT5c-1JJKRh3C+nTUd1hc1aeqQ@mail.gmail.com>
-To: Jeff Layton <jlayton@kernel.org>
-X-Spam-Score: 0.2 (/)
+ <20230928110554.34758-2-jlayton@kernel.org>
+ <6020d6e7-b187-4abb-bf38-dc09d8bd0f6d@app.fastmail.com>
+ <af047e4a1c6947c59d4a13d4ae221c784a5386b4.camel@kernel.org>
+ <20230928171943.GK11439@frogsfrogsfrogs>
+ <6a6f37d16b55a3003af3f3dbb7778a367f68cd8d.camel@kernel.org>
+Date: Thu, 28 Sep 2023 16:21:12 -0400
+From: "Arnd Bergmann" <arnd@arndb.de>
+To: "Jeff Layton" <jlayton@kernel.org>, "Darrick J. Wong" <djwong@kernel.org>
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: Spam detection software,
  running on the system "util-spamd-1.v13.lw.sourceforge.com", 
  has NOT identified this incoming email as spam.  The original
  message has been attached to this so you can view it or label
  similar future email.  If you have any questions, see
  the administrator of that system for details.
- Content preview:  On Thu, 28 Sept 2023 at 04:06,
- Jeff Layton <jlayton@kernel.org>
- wrote: > > Move i_blocks up above the i_lock, which moves the new 4 byte
- hole to > just after the timestamps, without changing the size [...] 
- Content analysis details:   (0.2 points, 6.0 required)
+ Content preview:  On Thu, Sep 28, 2023, at 13:40, Jeff Layton wrote: > On Thu, 
+ 2023-09-28 at 10:19 -0700, Darrick J. Wong wrote: >> >> > I remember seeing
+ those patches go by. I don't remember that change >> > being Na [...] 
+ Content analysis details:   (-0.9 points, 6.0 required)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [209.85.218.45 listed in wl.mailspike.net]
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.218.45 listed in list.dnswl.org]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [66.111.4.224 listed in wl.mailspike.net]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [66.111.4.224 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
-X-Headers-End: 1qlvUc-00APby-9v
-Subject: Re: [Jfs-discussion] [PATCH 87/87] fs: move i_blocks up a few
- places in struct inode
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+X-Headers-End: 1qlxW4-00AW9d-Bx
+Subject: Re: [Jfs-discussion] [PATCH 86/87] fs: switch timespec64 fields in
+ inode to discrete integers
 X-BeenThere: jfs-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -135,10 +139,10 @@ List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/jfs-discussion>,
  <mailto:jfs-discussion-request@lists.sourceforge.net?subject=subscribe>
 Cc: Latchesar Ionkov <lucho@ionkov.net>,
  Konstantin Komarov <almaz.alexandrovich@paragon-software.com>,
- "Rafael J. Wysocki" <rafael@kernel.org>, "Darrick J. Wong" <djwong@kernel.org>,
+ "Rafael J . Wysocki" <rafael@kernel.org>, Hugh Dickins <hughd@google.com>,
  Anders Larsen <al@alarsen.net>, Carlos Llamas <cmllamas@google.com>,
  Andrii Nakryiko <andrii@kernel.org>, Mattia Dongili <malattia@linux.it>,
- Hugh Dickins <hughd@google.com>, John Johansen <john.johansen@canonical.com>,
+ John Johansen <john.johansen@canonical.com>,
  Yonghong Song <yonghong.song@linux.dev>,
  Alexander Gordeev <agordeev@linux.ibm.com>, Christoph Hellwig <hch@lst.de>,
  Mike Marshall <hubcap@omnibond.com>, Paulo Alcantara <pc@manguebit.com>,
@@ -157,16 +161,17 @@ Cc: Latchesar Ionkov <lucho@ionkov.net>,
  Stephen Smalley <stephen.smalley.work@gmail.com>, linux-usb@vger.kernel.org,
  linux-kernel@vger.kernel.org, Ronnie Sahlberg <lsahlber@redhat.com>,
  Sergey Senozhatsky <senozhatsky@chromium.org>,
- =?UTF-8?B?QXJ2ZSBIasO4bm5ldsOlZw==?= <arve@android.com>,
+ =?UTF-8?Q?Arve_Hj=C3=B8nnev=C3=A5g?= <arve@android.com>,
  Chuck Lever <chuck.lever@oracle.com>, Sven Schnelle <svens@linux.ibm.com>,
  Jiri Olsa <jolsa@kernel.org>, Jan Kara <jack@suse.com>,
  Tejun Heo <tj@kernel.org>, Andrew Morton <akpm@linux-foundation.org>,
- linux-trace-kernel@vger.kernel.org, Dave Kleikamp <shaggy@kernel.org>,
- linux-mm@kvack.org, Joel Fernandes <joel@joelfernandes.org>,
- Eric Dumazet <edumazet@google.com>, Stanislav Fomichev <sdf@google.com>,
- linux-s390@vger.kernel.org, linux-nilfs@vger.kernel.org,
- Paul Moore <paul@paul-moore.com>, Leon Romanovsky <leon@kernel.org>,
- John Fastabend <john.fastabend@gmail.com>,
+ linux-trace-kernel@vger.kernel.org,
+ Linus Torvalds <torvalds@linux-foundation.org>,
+ Dave Kleikamp <shaggy@kernel.org>, linux-mm@kvack.org,
+ Joel Fernandes <joel@joelfernandes.org>, Eric Dumazet <edumazet@google.com>,
+ Stanislav Fomichev <sdf@google.com>, linux-s390@vger.kernel.org,
+ linux-nilfs@vger.kernel.org, Paul Moore <paul@paul-moore.com>,
+ Leon Romanovsky <leon@kernel.org>, John Fastabend <john.fastabend@gmail.com>,
  Luis Chamberlain <mcgrof@kernel.org>, codalist@coda.cs.cmu.edu,
  Iurii Zaikin <yzaikin@google.com>, Namjae Jeon <linkinjeon@kernel.org>,
  Masami Hiramatsu <mhiramat@kernel.org>, Todd Kjos <tkjos@android.com>,
@@ -179,7 +184,7 @@ Cc: Latchesar Ionkov <lucho@ionkov.net>,
  Nicolas Pitre <nico@fluxnic.net>, linux-ntfs-dev@lists.sourceforge.net,
  Muchun Song <muchun.song@linux.dev>, linux-f2fs-devel@lists.sourceforge.net,
  "Guilherme G. Piccoli" <gpiccoli@igalia.com>, gfs2@lists.linux.dev,
- Eric Biederman <ebiederm@xmission.com>, Anna Schumaker <anna@kernel.org>,
+ "Eric W. Biederman" <ebiederm@xmission.com>, Anna Schumaker <anna@kernel.org>,
  Brad Warrum <bwarrum@linux.ibm.com>, Mike Kravetz <mike.kravetz@oracle.com>,
  linux-efi@vger.kernel.org, Martin Brandenburg <martin@omnibond.com>,
  ocfs2-devel@lists.linux.dev, Alexei Starovoitov <ast@kernel.org>,
@@ -194,18 +199,17 @@ Cc: Latchesar Ionkov <lucho@ionkov.net>,
  Ilya Dryomov <idryomov@gmail.com>, Paolo Abeni <pabeni@redhat.com>,
  "Serge E. Hallyn" <serge@hallyn.com>,
  Christian Schoenebeck <linux_oss@crudebyte.com>,
- Kees Cook <keescook@chromium.org>, Arnd Bergmann <arnd@arndb.de>,
- autofs@vger.kernel.org, Steven Rostedt <rostedt@goodmis.org>,
- Mark Gross <markgross@kernel.org>, Damien Le Moal <dlemoal@kernel.org>,
- Eric Paris <eparis@parisplace.org>, ceph-devel@vger.kernel.org,
- Gao Xiang <xiang@kernel.org>, Jan Harkes <jaharkes@cs.cmu.edu>,
- linux-nfs@vger.kernel.org, linux-ext4@vger.kernel.org,
- Olga Kornievskaia <kolga@netapp.com>, Song Liu <song@kernel.org>,
- samba-technical@lists.samba.org, Steve French <sfrench@samba.org>,
- Jeremy Kerr <jk@ozlabs.org>, netdev@vger.kernel.org,
- Bob Peterson <rpeterso@redhat.com>, linux-fsdevel@vger.kernel.org,
- bpf@vger.kernel.org, ntfs3@lists.linux.dev, linux-erofs@lists.ozlabs.org,
- "David S. Miller" <davem@davemloft.net>,
+ Kees Cook <keescook@chromium.org>, autofs@vger.kernel.org,
+ Steven Rostedt <rostedt@goodmis.org>, Mark Gross <markgross@kernel.org>,
+ Damien Le Moal <dlemoal@kernel.org>, Eric Paris <eparis@parisplace.org>,
+ ceph-devel@vger.kernel.org, Gao Xiang <xiang@kernel.org>,
+ Jan Harkes <jaharkes@cs.cmu.edu>, linux-nfs@vger.kernel.org,
+ linux-ext4@vger.kernel.org, Olga Kornievskaia <kolga@netapp.com>,
+ Song Liu <song@kernel.org>, samba-technical@lists.samba.org,
+ Steve French <sfrench@samba.org>, Jeremy Kerr <jk@ozlabs.org>,
+ Netdev <netdev@vger.kernel.org>, Bob Peterson <rpeterso@redhat.com>,
+ linux-fsdevel@vger.kernel.org, bpf@vger.kernel.org, ntfs3@lists.linux.dev,
+ linux-erofs@lists.ozlabs.org, "David S . Miller" <davem@davemloft.net>,
  Chandan Babu R <chandan.babu@oracle.com>, jfs-discussion@lists.sourceforge.net,
  Jan Kara <jack@suse.cz>, Neil Brown <neilb@suse.de>,
  Dominique Martinet <asmadeus@codewreck.org>,
@@ -241,28 +245,47 @@ Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Errors-To: jfs-discussion-bounces@lists.sourceforge.net
 
-On Thu, 28 Sept 2023 at 04:06, Jeff Layton <jlayton@kernel.org> wrote:
+On Thu, Sep 28, 2023, at 13:40, Jeff Layton wrote:
+> On Thu, 2023-09-28 at 10:19 -0700, Darrick J. Wong wrote:
+>>
+>> > I remember seeing those patches go by. I don't remember that change
+>> > being NaK'ed, but I wasn't paying close attention at the time 
+>> > 
+>> > Looking at it objectively now, I think it's worth it to recover 8 bytes
+>> > per inode and open a 4 byte hole that Amir can use to grow the
+>> > i_fsnotify_mask. We might even able to shave off another 12 bytes
+>> > eventually if we can move to a single 64-bit word per timestamp. 
+>> 
+>> I don't think you can, since btrfs timestamps utilize s64 seconds
+>> counting in both directions from the Unix epoch.  They also support ns
+>> resolution:
+>> 
+>> 	struct btrfs_timespec {
+>> 		__le64 sec;
+>> 		__le32 nsec;
+>> 	} __attribute__ ((__packed__));
+>> 
 >
-> Move i_blocks up above the i_lock, which moves the new 4 byte hole to
-> just after the timestamps, without changing the size of the structure.
+> Correct. We'd lose some fidelity in currently stored timestamps, but as
+> Linus and Ted pointed out, anything below ~100ns granularity is
+> effectively just noise, as that's the floor overhead for calling into
+> the kernel. It's hard to argue that any application needs that sort of
+> timestamp resolution, at least with contemporary hardware. 
 
-I'm sure others have mentioned this, but 'struct inode' is marked with
-__randomize_layout, so the actual layout may end up being very
-different.
+There are probably applications that have come up with creative
+ways to use the timestamp fields of file systems that 94 bits
+of data, with both the MSB of the seconds and the LSB of the
+nanoseconds carrying information that they expect to be preserved.
 
-I'm personally not convinced the whole structure randomization is
-worth it - it's easy enough to figure out for any distro kernel since
-the seed has to be the same across machines for modules to work, so
-even if the seed isn't "public", any layout is bound to be fairly
-easily discoverable.
+Dropping any information in the nanoseconds other than the top two
+bits would trivially change the 'ls -t' output when two files have
+the same timestamp in one kernel but slightly different timestamps
+in another one. For large values of 'tv_sec', there are fewer
+obvious things that break, but if current kernels are able to
+retrieve arbitrary times that were stored with utimensat(), then we
+should probably make sure future kernels can see the same.
 
-So the whole randomization only really works for private kernel
-builds, and it adds this kind of pain where "optimizing" the structure
-layout is kind of pointless depending on various options.
-
-I certainly *hope* no distro enables that pointless thing, but it's a worry.
-
-               Linus
+        Arnd
 
 
 _______________________________________________
