@@ -2,252 +2,189 @@ Return-Path: <jfs-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+jfs-discussion@lfdr.de
 Delivered-To: lists+jfs-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id A79807B822F
-	for <lists+jfs-discussion@lfdr.de>; Wed,  4 Oct 2023 16:24:08 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5E7857B8B6E
+	for <lists+jfs-discussion@lfdr.de>; Wed,  4 Oct 2023 20:53:17 +0200 (CEST)
 Received: from [127.0.0.1] (helo=sfs-ml-1.v29.lw.sourceforge.com)
 	by sfs-ml-1.v29.lw.sourceforge.com with esmtp (Exim 4.95)
 	(envelope-from <jfs-discussion-bounces@lists.sourceforge.net>)
-	id 1qo2n6-0004Na-R0;
-	Wed, 04 Oct 2023 14:23:55 +0000
+	id 1qo6zR-0008Ek-Sl;
+	Wed, 04 Oct 2023 18:52:56 +0000
 Received: from [172.30.20.202] (helo=mx.sourceforge.net)
  by sfs-ml-1.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
  TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (Exim 4.95)
- (envelope-from <dave.kleikamp@oracle.com>) id 1qo2n5-0004NT-Dj
- for jfs-discussion@lists.sourceforge.net;
- Wed, 04 Oct 2023 14:23:54 +0000
+ (envelope-from <jlayton@kernel.org>) id 1qo6zQ-0008ER-Rw;
+ Wed, 04 Oct 2023 18:52:55 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=sourceforge.net; s=x; h=MIME-Version:Content-Transfer-Encoding:Content-Type
- :In-Reply-To:From:References:Cc:To:Subject:Date:Message-ID:Sender:Reply-To:
- Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
- Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
+ d=sourceforge.net; s=x; h=Content-Transfer-Encoding:MIME-Version:Message-ID:
+ Date:Subject:Cc:To:From:Sender:Reply-To:Content-Type:Content-ID:
+ Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+ :Resent-Message-ID:In-Reply-To:References:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=j7vZ4KBo/1ZD2VgbTPdjLEd+fD6bBbzCepVAyBzkbDI=; b=J957m/aRNRP5Scc34b1yTG0Xan
- pFgh3UJxAmP2W4RdSRSHj5ZnN8Ln7J+A+xeDeW4nVtaL+ZsvZqYwGq5ayEQ9pE3W9L4mUkybU5Wh5
- t0xt7V4Q//8weSIqFbicCGNG3w/DXN1T+MGAIM2yHjcGkyDSzsa9H0xtJh61F6hiQwhI=;
+ bh=JDCKe8hsklE4xztv7pckzePUaNYJdyNs4ouSbwPsdIg=; b=NzUbkGeaQKKtNz/ke949cqsHzO
+ tAaUZ2+xqngs2I6v3Fdyq6SeLIorl7k7nr7Kl91gs/4VPxM9aLAQBIGqKvJC5XNi+062oaZF6MWl5
+ zVeaGldjKQ/1KKvVC+bGV6T1WJT4Xr1aDrgaA84YVYyjHYTJFyDMtyCIDz2wQGMkf8i8=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
- h=MIME-Version:Content-Transfer-Encoding:Content-Type:In-Reply-To:From:
- References:Cc:To:Subject:Date:Message-ID:Sender:Reply-To:Content-ID:
- Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
- :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
- List-Post:List-Owner:List-Archive;
- bh=j7vZ4KBo/1ZD2VgbTPdjLEd+fD6bBbzCepVAyBzkbDI=; b=STr43UJ5m8jX7s3DZMM8u4pgTu
- hlBvbxpopgbOV0lPkCW6JxqWptB2+97XehJW88gax4FA5UNEvAABk5Sl35GaCow7Em2VIMGR2x7mR
- NV2x40nRlk5cQaETlBc+pJae87JW69KayaX7uwOBhI1zv7/Z3i8ShsPGBgWqFOaE1ovE=;
-Received: from mx0a-00069f02.pphosted.com ([205.220.165.32])
+ h=Content-Transfer-Encoding:MIME-Version:Message-ID:Date:Subject:Cc:To:From
+ :Sender:Reply-To:Content-Type:Content-ID:Content-Description:Resent-Date:
+ Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+ References:List-Id:List-Help:List-Unsubscribe:List-Subscribe:List-Post:
+ List-Owner:List-Archive; bh=JDCKe8hsklE4xztv7pckzePUaNYJdyNs4ouSbwPsdIg=; b=M
+ P+bs4Ar7nhSVxgEhyp/YYlVChBraTIXWyHweL17Jdq6/iMsQJpXauOzgh8/9E+vXiHlqgYyheSmrj
+ pp0731ka0Lz/0t5aVghh9z4ou+K5dTYRZ4lsk6gkGrD9iD7uVtbiPnTSQPfmdkYLBrLm3pdxABKYG
+ IUY/HgDBhqCNgD20=;
+Received: from ams.source.kernel.org ([145.40.68.75])
  by sfi-mx-1.v28.lw.sourceforge.com with esmtps
  (TLS1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.95)
- id 1qo2mz-001Q9I-VO for jfs-discussion@lists.sourceforge.net;
- Wed, 04 Oct 2023 14:23:54 +0000
-Received: from pps.filterd (m0246627.ppops.net [127.0.0.1])
- by mx0b-00069f02.pphosted.com (8.17.1.19/8.17.1.19) with ESMTP id
- 3948ixCq008667; Wed, 4 Oct 2023 14:23:40 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=oracle.com;
- h=message-id : date :
- subject : to : cc : references : from : in-reply-to : content-type :
- content-transfer-encoding : mime-version; s=corp-2023-03-30;
- bh=j7vZ4KBo/1ZD2VgbTPdjLEd+fD6bBbzCepVAyBzkbDI=;
- b=P7+oWBweZiUyYNWpYUxhmWbZCsFeUyWby59A8I/wInAn+0zYWW7JrlwXnwFcmqa12+4f
- L8sow7wgZCRiqqZmitQsuk13eCjxgHdXTb+Ey8kkxf3NuikF9f9JJk90xt0mk8vKqx5r
- mqPoDeuTM8tFG1pdymnu8UmstRM2F51zaqAqt9VJTuG6gtwLk3ULqZ8o40xwqjSz+ww7
- xV0OUfGVZP2HqlDqYOngAb8KRPxNCedUtVFtkwrQV1KdOD6MNxoI9ZrTf52PLE59CEF1
- 7vl3T7+P1na7OJHdwbPqkyH6Z4NVJP1WXAqXonXLc6ZGPWzQoea/tcrd//XkDUhnMQKg /Q== 
-Received: from phxpaimrmta02.imrmtpd1.prodappphxaev1.oraclevcn.com
- (phxpaimrmta02.appoci.oracle.com [147.154.114.232])
- by mx0b-00069f02.pphosted.com (PPS) with ESMTPS id 3tea92783g-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
- Wed, 04 Oct 2023 14:23:40 +0000
-Received: from pps.filterd
- (phxpaimrmta02.imrmtpd1.prodappphxaev1.oraclevcn.com [127.0.0.1])
- by phxpaimrmta02.imrmtpd1.prodappphxaev1.oraclevcn.com (8.17.1.19/8.17.1.19)
- with ESMTP id 394DBZFB005814; Wed, 4 Oct 2023 14:23:39 GMT
-Received: from nam10-dm6-obe.outbound.protection.outlook.com
- (mail-dm6nam10lp2100.outbound.protection.outlook.com [104.47.58.100])
- by phxpaimrmta02.imrmtpd1.prodappphxaev1.oraclevcn.com (PPS) with ESMTPS id
- 3tea47p9m3-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
- Wed, 04 Oct 2023 14:23:39 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=kjXpmI7t3SGt/hqi9GitIzIXi14qSWGsr4YumRC/NOcFOfXk+YB8xOe0KhZda29m6VjBHjGlEYphk+6GeDbhlxq1DwFBwXzN9LlUCY6c0CxYWBOL8f2dYaOQK9ci3gFzHMvb7CemhXxNxYv5g/Uy72hn0e3IL183iGXsNMg0PbztWn0Jv0nv3LL7/9qBTTXv7BSjJX/IoGbBleLTkUR0qtIHgbmEAPyvIoESmtkZXJqz/1y2/jSkIPqNHT+G7whL8fpvTbt1FDKaKcBJa3cspCpoQgml7d/1KaVHS3OCWlEQDIzS6vlnjWIBDYZyUvg+RTTARmag+F5mZK59E267vQ==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=j7vZ4KBo/1ZD2VgbTPdjLEd+fD6bBbzCepVAyBzkbDI=;
- b=YxdEgAkwsYgaQ6jjtyXlULyeY8pUxTpGS6omNS+cqU80xNR43Ay/ntnAjws/FoE30Kxd7bdBLmSIUT/+7L6YjVOGdUdDX8l5CPApTTOeOSkMRspVTo7ByMct8PSevG5lhohxZ+e4JyKq8fbXGmgLVPhEeI/eIGUT5wcrg6lj7IjcTCdk8y6+M2NmHtKgxPY9+Jbqgo+pXHTrt7uwlNyWly1p9Ms5KHYbMkioJe7hsQcVHDxRgUZHsWzRL1yYGV+RCgKuP+jurtAiYhunEStQ2y+8CDxkIQ+MKHlmZY/JCXXT42F+hP+qUMvPv4WRnlyns/EYHxcrdhKSUhGEUMdLUA==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=oracle.com; dmarc=pass action=none header.from=oracle.com;
- dkim=pass header.d=oracle.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=oracle.onmicrosoft.com; s=selector2-oracle-onmicrosoft-com;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=j7vZ4KBo/1ZD2VgbTPdjLEd+fD6bBbzCepVAyBzkbDI=;
- b=xk4MKpXu++vRIYxQpjGhpWSZWmOK6xrwEnwvjEGGPjARgr7tbPSu5L+pYQ2U+Ju3XdCd8O+KhFvRZaCzY5t17rkdxUGNUSl43bh990Gz/Pt0sjIfzoEPfsfc2i31utuXVk2BSmmWsbipGbDad5qWeDQ1qocsHmhY0WHdBFrCzro=
-Received: from MW5PR10MB5738.namprd10.prod.outlook.com (2603:10b6:303:19b::14)
- by IA0PR10MB7301.namprd10.prod.outlook.com (2603:10b6:208:404::11)
- with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.6838.31; Wed, 4 Oct
- 2023 14:23:37 +0000
-Received: from MW5PR10MB5738.namprd10.prod.outlook.com
- ([fe80::5943:cf66:5683:21be]) by MW5PR10MB5738.namprd10.prod.outlook.com
- ([fe80::5943:cf66:5683:21be%4]) with mapi id 15.20.6792.024; Wed, 4 Oct 2023
- 14:23:37 +0000
-Message-ID: <b0fcc552-a5b1-44cc-a3f6-da992249acb5@oracle.com>
-Date: Wed, 4 Oct 2023 09:23:36 -0500
-User-Agent: Mozilla Thunderbird
-Content-Language: en-US
-To: Manas Ghandat <ghandatmanas@gmail.com>
-References: <20231004074040.12233-1-ghandatmanas@gmail.com>
-In-Reply-To: <20231004074040.12233-1-ghandatmanas@gmail.com>
-X-ClientProxiedBy: CH2PR05CA0007.namprd05.prod.outlook.com (2603:10b6:610::20)
- To MW5PR10MB5738.namprd10.prod.outlook.com
- (2603:10b6:303:19b::14)
+ id 1qo6zK-001lLr-Ua; Wed, 04 Oct 2023 18:52:55 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+ by ams.source.kernel.org (Postfix) with ESMTP id 0FE67B81FB1;
+ Wed,  4 Oct 2023 18:52:39 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 595D0C433C7;
+ Wed,  4 Oct 2023 18:52:23 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=k20201202; t=1696445558;
+ bh=AuiZB/7uB4CHbwpVaR4tfn4wAgkza1/YpzIo5Foeud0=;
+ h=From:To:Cc:Subject:Date:From;
+ b=KTQOzUChrpg+Z0EAPGR8AruwPNLutqOD//NSnAvvth8GSx0cF37vTHIa1kn8pBEap
+ CYCEzu+xUbfqSXTKhLzm194LHPOsCHdfPucaxUh3YsdQF5IT/WegZ0Qyl+ewr//1vC
+ /daLD8vdiBRwYo5mdVl8W/u+WDb4Rf/GA3sF1WUVvA+ROKAEqgeFBwt995jfGJkwnd
+ bZ7xQj55eTB5JOGQwUoBKyq27+Mv+G7mtdaULwpl3MC+y+DeTTxEVZJKzoTyB+A2rz
+ cSgj8BMhRVNB+D2FYLBc1jsaSFKjQNTuxo16oRqwigPVjwe86Omd0hkOnhsOF92J53
+ mF+huBvz7lhAw==
+To: Alexander Viro <viro@zeniv.linux.org.uk>,
+ Christian Brauner <brauner@kernel.org>,
+ Linus Torvalds <torvalds@linux-foundation.org>,
+ David Sterba <dsterba@suse.cz>, Amir Goldstein <amir73il@gmail.com>,
+ Theodore Ts'o <tytso@mit.edu>, Eric Biederman <ebiederm@xmission.com>,
+ Kees Cook <keescook@chromium.org>, Jeremy Kerr <jk@ozlabs.org>,
+ Arnd Bergmann <arnd@arndb.de>, Michael Ellerman <mpe@ellerman.id.au>,
+ Nicholas Piggin <npiggin@gmail.com>,
+ Christophe Leroy <christophe.leroy@csgroup.eu>,
+ Heiko Carstens <hca@linux.ibm.com>, Vasily Gorbik <gor@linux.ibm.com>,
+ Alexander Gordeev <agordeev@linux.ibm.com>,
+ Christian Borntraeger <borntraeger@linux.ibm.com>,
+ Sven Schnelle <svens@linux.ibm.com>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ =?UTF-8?q?Arve=20Hj=C3=B8nnev=C3=A5g?= <arve@android.com>,
+ Todd Kjos <tkjos@android.com>, Martijn Coenen <maco@android.com>,
+ Joel Fernandes <joel@joelfernandes.org>,
+ Carlos Llamas <cmllamas@google.com>,
+ Suren Baghdasaryan <surenb@google.com>, Mattia Dongili <malattia@linux.it>,
+ Dennis Dalessandro <dennis.dalessandro@cornelisnetworks.com>,
+ Jason Gunthorpe <jgg@ziepe.ca>, Leon Romanovsky <leon@kernel.org>,
+ Brad Warrum <bwarrum@linux.ibm.com>, Ritu Agarwal <rituagar@linux.ibm.com>,
+ Hans de Goede <hdegoede@redhat.com>,
+ =?UTF-8?q?Ilpo=20J=C3=A4rvinen?= <ilpo.jarvinen@linux.intel.com>,
+ Mark Gross <markgross@kernel.org>, Jiri Slaby <jirislaby@kernel.org>,
+ Eric Van Hensbergen <ericvh@kernel.org>,
+ Latchesar Ionkov <lucho@ionkov.net>,
+ Dominique Martinet <asmadeus@codewreck.org>,
+ Christian Schoenebeck <linux_oss@crudebyte.com>,
+ David Sterba <dsterba@suse.com>, David Howells <dhowells@redhat.com>,
+ Marc Dionne <marc.dionne@auristor.com>, Ian Kent <raven@themaw.net>,
+ Luis de Bethencourt <luisbg@kernel.org>,
+ Salah Triki <salah.triki@gmail.com>,
+ "Tigran A. Aivazian" <aivazian.tigran@gmail.com>, Chris Mason <clm@fb.com>,
+ Josef Bacik <josef@toxicpanda.com>, Xiubo Li <xiubli@redhat.com>,
+ Ilya Dryomov <idryomov@gmail.com>, Jan Harkes <jaharkes@cs.cmu.edu>,
+ coda@cs.cmu.edu, Joel Becker <jlbec@evilplan.org>,
+ Christoph Hellwig <hch@lst.de>, Nicolas Pitre <nico@fluxnic.net>,
+ "Rafael J. Wysocki" <rafael@kernel.org>, Ard Biesheuvel <ardb@kernel.org>,
+ Gao Xiang <xiang@kernel.org>, Chao Yu <chao@kernel.org>,
+ Yue Hu <huyue2@coolpad.com>, Jeffle Xu <jefflexu@linux.alibaba.com>,
+ Namjae Jeon <linkinjeon@kernel.org>, Sungjong Seo <sj1557.seo@samsung.com>,
+ Jan Kara <jack@suse.com>, Andreas Dilger <adilger.kernel@dilger.ca>,
+ Jaegeuk Kim <jaegeuk@kernel.org>,
+ OGAWA Hirofumi <hirofumi@mail.parknet.co.jp>,
+ Christoph Hellwig <hch@infradead.org>, Miklos Szeredi <miklos@szeredi.hu>,
+ Bob Peterson <rpeterso@redhat.com>,
+ Andreas Gruenbacher <agruenba@redhat.com>,
+ Richard Weinberger <richard@nod.at>,
+ Anton Ivanov <anton.ivanov@cambridgegreys.com>,
+ Johannes Berg <johannes@sipsolutions.net>,
+ Mikulas Patocka <mikulas@artax.karlin.mff.cuni.cz>,
+ Mike Kravetz <mike.kravetz@oracle.com>,
+ Muchun Song <muchun.song@linux.dev>, Jan Kara <jack@suse.cz>,
+ David Woodhouse <dwmw2@infradead.org>, Dave Kleikamp <shaggy@kernel.org>,
+ Tejun Heo <tj@kernel.org>,
+ Trond Myklebust <trond.myklebust@hammerspace.com>,
+ Anna Schumaker <anna@kernel.org>, Chuck Lever <chuck.lever@oracle.com>,
+ Neil Brown <neilb@suse.de>, Olga Kornievskaia <kolga@netapp.com>,
+ Dai Ngo <Dai.Ngo@oracle.com>, Tom Talpey <tom@talpey.com>,
+ Ryusuke Konishi <konishi.ryusuke@gmail.com>,
+ Anton Altaparmakov <anton@tuxera.com>,
+ Konstantin Komarov <almaz.alexandrovich@paragon-software.com>,
+ Mark Fasheh <mark@fasheh.com>, Joseph Qi <joseph.qi@linux.alibaba.com>,
+ Bob Copeland <me@bobcopeland.com>, Mike Marshall <hubcap@omnibond.com>,
+ Martin Brandenburg <martin@omnibond.com>,
+ Luis Chamberlain <mcgrof@kernel.org>, Iurii Zaikin <yzaikin@google.com>,
+ Tony Luck <tony.luck@intel.com>,
+ "Guilherme G. Piccoli" <gpiccoli@igalia.com>,
+ Anders Larsen <al@alarsen.net>, Steve French <sfrench@samba.org>,
+ Paulo Alcantara <pc@manguebit.com>, Ronnie Sahlberg <lsahlber@redhat.com>,
+ Shyam Prasad N <sprasad@microsoft.com>,
+ Sergey Senozhatsky <senozhatsky@chromium.org>,
+ Phillip Lougher <phillip@squashfs.org.uk>,
+ Steven Rostedt <rostedt@goodmis.org>,
+ Masami Hiramatsu <mhiramat@kernel.org>,
+ Evgeniy Dushistov <dushistov@mail.ru>,
+ Chandan Babu R <chandan.babu@oracle.com>,
+ "Darrick J. Wong" <djwong@kernel.org>, Damien Le Moal <dlemoal@kernel.org>,
+ Naohiro Aota <naohiro.aota@wdc.com>, Johannes Thumshirn <jth@kernel.org>,
+ Alexei Starovoitov <ast@kernel.org>,
+ Daniel Borkmann <daniel@iogearbox.net>,
+ Andrii Nakryiko <andrii@kernel.org>,
+ Martin KaFai Lau <martin.lau@linux.dev>, Song Liu <song@kernel.org>,
+ Yonghong Song <yonghong.song@linux.dev>,
+ John Fastabend <john.fastabend@gmail.com>, KP Singh <kpsingh@kernel.org>,
+ Stanislav Fomichev <sdf@google.com>, Hao Luo <haoluo@google.com>,
+ Jiri Olsa <jolsa@kernel.org>, Hugh Dickins <hughd@google.com>,
+ Andrew Morton <akpm@linux-foundation.org>,
+ "David S. Miller" <davem@davemloft.net>,
+ Eric Dumazet <edumazet@google.com>, Jakub Kicinski <kuba@kernel.org>,
+ Paolo Abeni <pabeni@redhat.com>,
+ John Johansen <john.johansen@canonical.com>,
+ Paul Moore <paul@paul-moore.com>, James Morris <jmorris@namei.org>,
+ "Serge E. Hallyn" <serge@hallyn.com>,
+ Stephen Smalley <stephen.smalley.work@gmail.com>,
+ Eric Paris <eparis@parisplace.org>,
+ Kent Overstreet <kent.overstreet@linux.dev>,
+ Brian Foster <bfoster@redhat.com>
+Date: Wed,  4 Oct 2023 14:52:21 -0400
+Message-ID: <20231004185221.80802-1-jlayton@kernel.org>
+X-Mailer: git-send-email 2.41.0
 MIME-Version: 1.0
-X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: MW5PR10MB5738:EE_|IA0PR10MB7301:EE_
-X-MS-Office365-Filtering-Correlation-Id: 9f5da594-426c-4366-6259-08dbc4e57fa4
-X-MS-Exchange-SenderADCheck: 1
-X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;
-X-Microsoft-Antispam-Message-Info: =?utf-8?B?R2x1THN0cUMrWjlUa3VQRWZzaXFkbE1YMU4wa2V3cXRKWllhWkNCazJyVFFU?=
- =?utf-8?B?UHZYNEpDc2xPK3JRWHpNRGt4NlhHKzFuTVMyMFZRSlV5N1hwMmd2RVpUNUg2?=
- =?utf-8?B?MVJ3VURaWXM2QUhvaXZueGJUZ3JvZGY3a3NkSlU0ajBERHpyTi9nLzF4RjBV?=
- =?utf-8?B?SmpuRG1qSWpqNU5xMit1bXVMZU9YaVBQMThkckU3WXhhc1NtVWZjZVM1MFZV?=
- =?utf-8?B?K04zejFDaDVXRHdYTERnQ2srS0F0TXgyNDhodVhaUVhPeUlVZFNNQm1QRWk3?=
- =?utf-8?B?eU5kUm9pOUtBVnExTXE1U00vRlFNUm9WZktaOXBaWE5CS2F5NVFBT3crOXNM?=
- =?utf-8?B?dW4rRDYrV3U1d3ozVXlyR0MwY3lvZWZjUGJXd1RtaXB1Q3hkb09raWhwWko2?=
- =?utf-8?B?UHRXTEVCaEkxYXg5cXl2ZnFjenBIOURBZjZMZU1FaExweHA1d0JGT1prMUJG?=
- =?utf-8?B?MFIvSSt6TTRveHNCQk90SnFzdTJSdGNuL2VBL2xkQnZqTFhTVjl1MnExU3NC?=
- =?utf-8?B?RDlDMDZpMU9jR1FiZ2U5azdhQ0dvU1hqZHRVVHVMN3F0SXp0T1lJdXAyRGo4?=
- =?utf-8?B?UW5Ec2ZlSW5ZT2dQRVlMWWludXJ5WGZHWkZMWGRmWTJGZVJxUHN2Zy9YRU1t?=
- =?utf-8?B?R3BZc3IvVHdENjlobzRmN2ZLa0RiWUZPWk8rVkVidGx4bmtEbVZjeSs3OHd3?=
- =?utf-8?B?TVRMRUNQeVdnajVtVXdlMmpCSkJ6Qkc1eVZlUGxtUDYvYnFac1hGSk14dWJx?=
- =?utf-8?B?SDl6QnFtTExIV2FKcWZmS21pWGRDTmdtd1gzd3VaMFVnTkF5Mlo3aXVURVZS?=
- =?utf-8?B?bkhVMUpCZytnaTl4aVdIb2FldXROSnc1QllJcHRCKzhMbzFJY3ZVYUVBVW1V?=
- =?utf-8?B?a0hYMmVlanFBbzdRM0ZRZGVVYzhHMWNyWG85ZlB4R2V0VjY3TFh5c2phTE9h?=
- =?utf-8?B?N0g5bjVBYndrc3JHTkdMOWx1dnNIRTBRM25sZXN3SlpaK1cyQ3FBZTBURzFT?=
- =?utf-8?B?eGM3cEJ4SUE0dXUrcElQc09ER1FVQ1J3bVc4NlpCbmF2aGZIcWN5aytSWSs5?=
- =?utf-8?B?SWg5eWx5ZnU3bS9GU0RhTU5vTlpzelNML2hMS0Fzc2gvaVNWWEpRaGFodTIy?=
- =?utf-8?B?SWZ1RHBiNCtUc05KZUo0WC9tTHlJRzd4QVVNT1R0Yyt6Sk8rL2hmVURCTnRO?=
- =?utf-8?B?dGFIQ1RXVmVINkZZYlFGQVQ4RzVCcFZpSGxFY0UyK1JhREk2bXQ0Vno4ak05?=
- =?utf-8?B?a25WSkw2M3pjSkdNK0x3OGlsKzB0b1VRUGdlZWNVL1FYemtIM2hmUnFYUHFN?=
- =?utf-8?Q?NDCorJ6U6Ctpc=3D?=
-X-Forefront-Antispam-Report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
- IPV:NLI; SFV:NSPM; H:MW5PR10MB5738.namprd10.prod.outlook.com; PTR:; CAT:NONE;
- SFS:(13230031)(136003)(346002)(396003)(39860400002)(376002)(366004)(230922051799003)(1800799009)(451199024)(186009)(64100799003)(26005)(6486002)(6512007)(6506007)(83380400001)(2616005)(966005)(4326008)(5660300002)(2906002)(8676002)(44832011)(66556008)(6916009)(316002)(41300700001)(66946007)(8936002)(66476007)(478600001)(31696002)(86362001)(36756003)(38100700002)(31686004)(99710200001)(43740500002)(45980500001);
- DIR:OUT; SFP:1101; 
-X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: =?utf-8?B?VE14Z0svZ3Z6bHErVjVXbjRRS0k4RU8zZTNrcWN4RS9XL2d4MXdVV2VHNzFJ?=
- =?utf-8?B?NkNKK3Y3OUd5RGM1Y1BXb0hWUGo1R0lQS0tKVTJsZWk4K3lERnAvcHBYMEJs?=
- =?utf-8?B?bklBRURrLzJLQ0dHajMrZDRHaGZrTmV5VW1VZ0kyMWc2NngranNTekgyME82?=
- =?utf-8?B?TGhUa3oxM3crWjdhV1YweEtXK2lHTmNWZmpwa2g0b3cxOXlkaHdjMkhBdkdo?=
- =?utf-8?B?Z0Q4YW5VTWovZ05ZdjdzYlROSEUwZnlISy9oWTdjaUlLc0JFMGRxVFFZRlZG?=
- =?utf-8?B?cHEwOG9BR0lVUlhRYWdlZGVwT0k0bzdNQmZTZDh1ekVzWGJuMEU3QWVhY3di?=
- =?utf-8?B?eXRYaEZIelVrTTRBSjM1dVllNzJ0anMyTjFEWWhQaXlhUEgrRlFMYWJ4dStz?=
- =?utf-8?B?S1RoVmR1NlF6eURQRW5hdGt3bjVnMDEwQjROSGsycC9QNStMbEZCUWlReUdC?=
- =?utf-8?B?U05FM3o4a3FMMzEyelU3OGFvUmd0c0s5V1Z5UE1HYWNNaFc3UnR2TVNDcENp?=
- =?utf-8?B?Y2dtRGluMjVjdGhWcDY1VTEyUHRldjZqUDFqR3dkMlUvZmFGUmdBZXVENm5N?=
- =?utf-8?B?ejBwaFo5VnE3Qk9oeWsxUy9DZ1lLZk9pN3ZQd2lWV2VLNHJGeWMxekZ5OHVu?=
- =?utf-8?B?R0JvaVZoZDdDcEsrdmdUVEFGVDBvbU5mM3hRWnd3eUsyZlMybCsvYllaZ0JB?=
- =?utf-8?B?cW9wMXZVVjhOV091aGNJTXFjNy9MRGZIakhkTmNnSVJYaVFQeFFjbjV1SnlK?=
- =?utf-8?B?T2xJOXhjMHFPT0dmQ3hyc0xJdDJTSVVMNWRkM3RMWEdLTWtxSElwb0RHZ05N?=
- =?utf-8?B?Smd3TGlCazd3dWdUWWVCdU5SZFp1azhCcUxaY1V4ZVV2MTZDTW15b0pORWdw?=
- =?utf-8?B?QlNoNnBic0taSEprOTg0SlVtUzFzY0REdzRQQ1JlL0tJSitzWDFRQ01YcURM?=
- =?utf-8?B?Wmh3d3FWUEdXZ3h2ejZJS0dmM0FSS1B3Y0luVVN5YnVJN1RCZUJsdDkyZXFL?=
- =?utf-8?B?UzJ3ampLemk4TVIwUkZnekhYRjBGbmdxd1E1YTRZNzZpTGJnZVN4TmQ4bk9E?=
- =?utf-8?B?WTNlYzdWSWkzODdRbVdsVnoxWlBjQ29jVGRJK3dPZ2xYUis4Sm9TNXlBand1?=
- =?utf-8?B?elcxdUdaYkFiWFZSanEyN0Z3TTE4dXVmbHhaQ0diSW1xZzhaYy9salN3Qy9h?=
- =?utf-8?B?V2VXUGFsZ1poVWtzWE85R0FMK0UzV0p5SUJ0VE9zQ1dicmFrLzkrZ0Y4aEht?=
- =?utf-8?B?dHRrTTE3NEthZDNCZVQ0ZE1zZUJlU1RKNk44dmRHZ2FUd2NkdTF2NHFySGo2?=
- =?utf-8?B?VWpvSkZxTXRXQzBsKzVxTmpaR1ppRDkzeGEvU3Z6bG9FRXpaSyt4SFBUaGww?=
- =?utf-8?B?eHp6UDM0dWZMcldiVkZyN1M5QTRnNGpyemZEOVkyY1JEOU9UMTNiTTYrZTVn?=
- =?utf-8?B?Qy9VVUZpdGtFQkl0VFIrcmlwUXpLVDR4d1JZMVhnUjVrYUd2a3BxMDRpYVFU?=
- =?utf-8?B?ekpmV011Q3dMY3FkbUxaRE9wNEZTa2VxVkVMVXc3QnlEYjFGbjd5QWRCOGlT?=
- =?utf-8?B?SHpSMDN1RzNYMkpLZklRYnp1YTlmNWE2b3IrQ044enRSelhZWjlWeU1tTy9G?=
- =?utf-8?B?UTdIaTY5SGtwSXJVbUdZVmRSYjlJMklXUFZDNW5vUEhLRkFGWGt1SkxiYkhp?=
- =?utf-8?B?ZmtXY0FJbVJFRUp3MXQ2UzV0YWRRUTF1VzBLMmFaTEcveWMwUll5cXFhQUMr?=
- =?utf-8?B?cUJvVnVSdWdWQ3BIeGlDV1Y4ZDdHMUF2SmdBaGhta1k2a3daenZRVVVDZE9h?=
- =?utf-8?B?Z1BIMitrczBhSGtxSHUzUVpQWE9BWXlwQUV5aUlNZ3BkcXNYZjBWa2lVbUhr?=
- =?utf-8?B?eGdjQzZnTjFZRFN4VzFYWHlFYVFIZ0tjaVdOQ2ZrVnI0VGJNZDZpSkRidk9z?=
- =?utf-8?B?WDBqbFdNQWdBa055Vk5PZ0NjVDhPS21sdUtKc2Q0cy9iZzUvRGQ0dHF1dnll?=
- =?utf-8?B?ZGh4VkxNSnRJVlY1WTl0VnJCQWs5K3NmSXUvWVBlOHorWVh2cTVSNHVWTVRU?=
- =?utf-8?B?VGEvR3Y4UVhMcHNEY0lCRm9JclUrVnJXdlVNZEJ6Z1Z6SHFRUHJxK0RGT21n?=
- =?utf-8?B?SHRIZGgzY2s3QkkxYXBDRStXVkFZTjBkZnI0K255V1l1Vk9lSFQ3NW95YkZ0?=
- =?utf-8?B?cFE9PQ==?=
-X-MS-Exchange-AntiSpam-ExternalHop-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-ExternalHop-MessageData-0: =?utf-8?B?K21NRXRKbFFJSGlmZjNjSmdYSjFvSGRzeWpWeTBOUHhQTWwxN05hQk10bEV4?=
- =?utf-8?B?TXRXck9WSW9wTEU2Q2lNTWt3Qk9hODByVE1qNjR3U1JoaDdia1NIQ1IvZ1dv?=
- =?utf-8?B?TEtrbnlmR2VtdXY5cXRlZEg3bDRieUFZcXFwa2VNR1E3emJEMG05a2I4eXdv?=
- =?utf-8?B?T25GSzA5WnBrQU1JS2hoTFNjRzRNa29LUWpWMnFWN1JlcTdZTEJQMnRoOUNo?=
- =?utf-8?B?STliMFBNMFNzQUVXS3Q4SUM0S0JOR2Rva3JEVjloVmJOWDBoV094Ukx1VUZr?=
- =?utf-8?B?LzEyNnBLOFR4cHpLS2hpMzhjdWRqb1N3WnpWSEtnU09mRkp3TVdHc3ZNSW9M?=
- =?utf-8?B?YUdrWW16M0pndUNRNlZvaXZ0SWxaTnJRTC9aaFM1aHhpSThwaExqK2Nwbm9S?=
- =?utf-8?B?dGhmM0psR0hrMGtNalJSZ1ovYjgxV3NQd0FzT2l5c1p5a1dXTTJtVGRkcjRi?=
- =?utf-8?B?UTU0a08rZ1JyUUF1SVFieGkrajQ3Q3JNME9BQTR3eStlRHFIYmExVlBQVGpp?=
- =?utf-8?B?WWlLY3cxNXFVa1dtSUY0SlNFZ1l3TEw5cVNVRE9pSFJ5cTlUNUVYOVdkUmxV?=
- =?utf-8?B?WWh3dVZabXZGcVJtOFd2N2pBK0FydUxGRWZFMjFZeG1PdlhaSXVaaWE3Uk0r?=
- =?utf-8?B?SDdzeWpxc25sRGlHcitLcCtpRzNkSDNDTGFhMC9SeCtIWDRRRnkrRW9KL0ZV?=
- =?utf-8?B?aHJHdTd1M21aTnVIcFFuRlpwL2dadGlVSVU2N21sSFdmTWprRENMWnFDYjhh?=
- =?utf-8?B?WHVUdVdHeklKUHBFTENuZy83eDIydVBEVUdNaU5uckxWZExMWmZJekFuRGFW?=
- =?utf-8?B?RnpjMHBzU0lQWTUvcjM3bG1ETjMyUzlyTnN3T1liTmh6NGh4YzhpMGJKSXRN?=
- =?utf-8?B?MHRPM25HbjhycW9WNUF1Z0E5ck9CSXphZ3J5WGcxNHFLOHhwZUNNZ0hjOXlL?=
- =?utf-8?B?STFrQ1d1eTBQS2Y0RmtXSzUvV1oyZjI2ZFQxcjY2QUhRZVZJM1NUQTZNWVkv?=
- =?utf-8?B?V0IwdzhqTG9Ua05GelJBQmI2NDZTY3Z6WDZVTzVZUlhqY0dON1MzSUtsQlRO?=
- =?utf-8?B?eGJnZUczVFBjWEU2RG8vZUJVK2VIdk9lUGlnc3pVOWpTTmNEWm14QzhwTDlz?=
- =?utf-8?B?UzVKSXcvenplSC9tZ3IvZ1FrRm1iWk0vMjg1MEhmb2ljTkd4Ly90aFNEaFI0?=
- =?utf-8?B?L0ozQU54em1vbFpUZlVOR25lbDhsdkFoT3lYRU9PK0dQR0hYYjJlVmhMWFlT?=
- =?utf-8?B?OEVacEpTcDU3T0lnK2NBZlR3QmFKL2pxdW0wUFM4NnVqMU9vZjRxYjVRcFIw?=
- =?utf-8?Q?osfeezO/kqk7Q=3D?=
-X-OriginatorOrg: oracle.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 9f5da594-426c-4366-6259-08dbc4e57fa4
-X-MS-Exchange-CrossTenant-AuthSource: MW5PR10MB5738.namprd10.prod.outlook.com
-X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 04 Oct 2023 14:23:37.2317 (UTC)
-X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
-X-MS-Exchange-CrossTenant-Id: 4e2c6054-71cb-48f1-bd6c-3a9705aca71b
-X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: vyE335OK1s2JJekjjJUO57F5MPbHb41ncR6SsQyPcCFeXnF3qZwXPyGm70dic7kGOw5qx9nKjtU/gJf14HOngn0jN28g74e6RIDoyf/5qWA=
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: IA0PR10MB7301
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.267,Aquarius:18.0.980,Hydra:6.0.619,FMLib:17.11.176.26
- definitions=2023-10-04_06,2023-10-02_01,2023-05-22_02
-X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 malwarescore=0
- mlxscore=0 bulkscore=0
- adultscore=0 mlxlogscore=999 phishscore=0 spamscore=0 suspectscore=0
- classifier=spam adjust=0 reason=mlx scancount=1 engine=8.12.0-2309180000
- definitions=main-2310040104
-X-Proofpoint-GUID: mFwQzgAitzGw6JAqF5WKUeP0uGL7u3N-
-X-Proofpoint-ORIG-GUID: mFwQzgAitzGw6JAqF5WKUeP0uGL7u3N-
-X-Spam-Score: -0.9 (/)
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: Spam detection software,
- running on the system "util-spamd-2.v13.lw.sourceforge.com", 
+ running on the system "util-spamd-1.v13.lw.sourceforge.com", 
  has NOT identified this incoming email as spam.  The original
  message has been attached to this so you can view it or label
  similar future email.  If you have any questions, see
  the administrator of that system for details.
- Content preview:  On 10/4/23 2:40AM, Manas Ghandat wrote: > Currently there
- is not check against the agno of the iag while > allocating new inodes to
- avoid fragmentation problem. Added the check > which is required. Applied
- to jfs-next 
- Content analysis details:   (-0.9 points, 6.0 required)
+ Content preview: v2: - bugfix in mtime handling - incorporate _sec and _nsec
+ accessor functions (Chuck Lever) - move i_generation to plug hole after
+ changing
+ timestamps (Amir Goldstein) While working on the multigrain timestamp changes, 
+ Linus suggested adding some similar wrappers for accessing the atime and
+ mtime that we have for the ctime. With that, we could then move to using dis
+ [...] Content analysis details:   (-2.5 points, 6.0 required)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [205.220.165.32 listed in list.dnswl.org]
- 0.0 RCVD_IN_MSPIKE_H5      RBL: Excellent reputation (+5)
- [205.220.165.32 listed in wl.mailspike.net]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [145.40.68.75 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
-X-Headers-End: 1qo2mz-001Q9I-VO
-Subject: Re: [Jfs-discussion] [PATCH v2] jfs: fix array-index-out-of-bounds
- in diAlloc
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid -0.0 DKIMWL_WL_HIGH         DKIMwl.org - High trust sender
+X-Headers-End: 1qo6zK-001lLr-Ua
+Subject: [Jfs-discussion] [PATCH v2 00/89] fs: new accessor methods for
+ inode atime and mtime
 X-BeenThere: jfs-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -259,57 +196,372 @@ List-Post: <mailto:jfs-discussion@lists.sourceforge.net>
 List-Help: <mailto:jfs-discussion-request@lists.sourceforge.net?subject=help>
 List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/jfs-discussion>, 
  <mailto:jfs-discussion-request@lists.sourceforge.net?subject=subscribe>
-From: Dave Kleikamp via Jfs-discussion <jfs-discussion@lists.sourceforge.net>
-Reply-To: Dave Kleikamp <dave.kleikamp@oracle.com>
-Cc: syzbot+79d792676d8ac050949f@syzkaller.appspotmail.com,
- jfs-discussion@lists.sourceforge.net,
- Linux-kernel-mentees@lists.linuxfoundation.org, linux-kernel@vger.kernel.org
+From: Jeff Layton via Jfs-discussion <jfs-discussion@lists.sourceforge.net>
+Reply-To: Jeff Layton <jlayton@kernel.org>
+Cc: jfs-discussion@lists.sourceforge.net, linux-efi@vger.kernel.org,
+ platform-driver-x86@vger.kernel.org, gfs2@lists.linux.dev, linux-mm@kvack.org,
+ linux-mtd@lists.infradead.org, linux-hardening@vger.kernel.org,
+ linux-afs@lists.infradead.org, linux-s390@vger.kernel.org,
+ linux-nilfs@vger.kernel.org, linux-rdma@vger.kernel.org,
+ linux-unionfs@vger.kernel.org, codalist@coda.cs.cmu.edu,
+ linux-bcachefs@vger.kernel.org, linux-serial@vger.kernel.org,
+ linux-ext4@vger.kernel.org, devel@lists.orangefs.org,
+ linux-trace-kernel@vger.kernel.org, linux-cifs@vger.kernel.org,
+ selinux@vger.kernel.org, apparmor@lists.ubuntu.com, autofs@vger.kernel.org,
+ linux-um@lists.infradead.org, reiserfs-devel@vger.kernel.org,
+ ocfs2-devel@lists.linux.dev, ceph-devel@vger.kernel.org,
+ linux-nfs@vger.kernel.org, linux-ntfs-dev@lists.sourceforge.net,
+ linuxppc-dev@lists.ozlabs.org, v9fs@lists.linux.dev, linux-usb@vger.kernel.org,
+ samba-technical@lists.samba.org, linux-kernel@vger.kernel.org,
+ linux-f2fs-devel@lists.sourceforge.net, linux-xfs@vger.kernel.org,
+ linux-security-module@vger.kernel.org, netdev@vger.kernel.org,
+ linux-fsdevel@vger.kernel.org, bpf@vger.kernel.org, ntfs3@lists.linux.dev,
+ linux-erofs@lists.ozlabs.org, linux-karma-devel@lists.sourceforge.net,
+ linux-btrfs@vger.kernel.org
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Errors-To: jfs-discussion-bounces@lists.sourceforge.net
 
-On 10/4/23 2:40AM, Manas Ghandat wrote:
-> Currently there is not check against the agno of the iag while
-> allocating new inodes to avoid fragmentation problem. Added the check
-> which is required.
+v2:
+- bugfix in mtime handling
+- incorporate _sec and _nsec accessor functions (Chuck Lever)
+- move i_generation to plug hole after changing timestamps (Amir Goldstein)
 
-Applied to jfs-next
+While working on the multigrain timestamp changes, Linus suggested
+adding some similar wrappers for accessing the atime and mtime that we
+have for the ctime. With that, we could then move to using discrete
+integers instead of struct timespec64 in struct inode and shrink it.
 
-Thanks,
-Shaggy
+This patch implements this. Linus suggested using macros for the new
+accessors, but the existing ctime wrappers were static inlines and since
+there are only 3 different timestamps, I didn't see that trying to
+fiddle with macros would gain us anything (other than less verbosity in
+fs.h).
 
-> 
-> Reported-by: syzbot+79d792676d8ac050949f@syzkaller.appspotmail.com
-> Closes: https://syzkaller.appspot.com/bug?extid=79d792676d8ac050949f
-> Signed-off-by: Manas Ghandat <ghandatmanas@gmail.com>
-> ---
-> V1 -> V2 : Added check for higher bound of agno
->   fs/jfs/jfs_imap.c | 5 ++++-
->   1 file changed, 4 insertions(+), 1 deletion(-)
-> 
-> diff --git a/fs/jfs/jfs_imap.c b/fs/jfs/jfs_imap.c
-> index 799d3837e7c2..c0cf74e7392b 100644
-> --- a/fs/jfs/jfs_imap.c
-> +++ b/fs/jfs/jfs_imap.c
-> @@ -1319,7 +1319,7 @@ diInitInode(struct inode *ip, int iagno, int ino, int extno, struct iag * iagp)
->   int diAlloc(struct inode *pip, bool dir, struct inode *ip)
->   {
->   	int rc, ino, iagno, addext, extno, bitno, sword;
-> -	int nwords, rem, i, agno;
-> +	int nwords, rem, i, agno, dn_numag;
->   	u32 mask, inosmap, extsmap;
->   	struct inode *ipimap;
->   	struct metapage *mp;
-> @@ -1355,6 +1355,9 @@ int diAlloc(struct inode *pip, bool dir, struct inode *ip)
->   
->   	/* get the ag number of this iag */
->   	agno = BLKTOAG(JFS_IP(pip)->agstart, JFS_SBI(pip->i_sb));
-> +	dn_numag = JFS_SBI(pip->i_sb)->bmap->db_numag;
-> +	if (agno < 0 || agno > dn_numag)
-> +		return -EIO;
->   
->   	if (atomic_read(&JFS_SBI(pip->i_sb)->bmap->db_active[agno])) {
->   		/*
+The second to last patch makes the conversion to discrete integers,
+which shaves 8 bytes off of struct inode on my x86_64 kernel. The last
+patch reshuffles things a little to keep the i_lock in the same
+cacheline as the fields it protects.
+
+About 75% of this conversion was done with coccinelle, with the rest
+done by hand.
+
+I think we probably ought to try to get everything but the last two
+patches into v6.7 (though we could consider those too if we're feeling
+lucky).
+
+Jeff Layton (89):
+  fs: new accessor methods for atime and mtime
+  fs: convert core infrastructure to new timestamp accessors
+  spufs: convert to new timestamp accessors
+  hypfs: convert to new timestamp accessors
+  android: convert to new timestamp accessors
+  char: convert to new timestamp accessors
+  qib: convert to new timestamp accessors
+  ibmasm: convert to new timestamp accessors
+  misc: convert to new timestamp accessors
+  x86: convert to new timestamp accessors
+  tty: convert to new timestamp accessors
+  function: convert to new timestamp accessors
+  legacy: convert to new timestamp accessors
+  usb: convert to new timestamp accessors
+  9p: convert to new timestamp accessors
+  adfs: convert to new timestamp accessors
+  affs: convert to new timestamp accessors
+  afs: convert to new timestamp accessors
+  autofs: convert to new timestamp accessors
+  bcachefs: convert to new timestamp accessors
+  befs: convert to new timestamp accessors
+  bfs: convert to new timestamp accessors
+  btrfs: convert to new timestamp accessors
+  ceph: convert to new timestamp accessors
+  coda: convert to new timestamp accessors
+  configfs: convert to new timestamp accessors
+  cramfs: convert to new timestamp accessors
+  debugfs: convert to new timestamp accessors
+  devpts: convert to new timestamp accessors
+  efivarfs: convert to new timestamp accessors
+  efs: convert to new timestamp accessors
+  erofs: convert to new timestamp accessors
+  exfat: convert to new timestamp accessors
+  ext2: convert to new timestamp accessors
+  ext4: convert to new timestamp accessors
+  f2fs: convert to new timestamp accessors
+  fat: convert to new timestamp accessors
+  freevxfs: convert to new timestamp accessors
+  fuse: convert to new timestamp accessors
+  gfs2: convert to new timestamp accessors
+  hfs: convert to new timestamp accessors
+  hfsplus: convert to new timestamp accessors
+  hostfs: convert to new timestamp accessors
+  hpfs: convert to new timestamp accessors
+  hugetlbfs: convert to new timestamp accessors
+  isofs: convert to new timestamp accessors
+  jffs2: convert to new timestamp accessors
+  jfs: convert to new timestamp accessors
+  kernfs: convert to new timestamp accessors
+  minix: convert to new timestamp accessors
+  nfs: convert to new timestamp accessors
+  nfsd: convert to new timestamp accessors
+  nilfs2: convert to new timestamp accessors
+  ntfs: convert to new timestamp accessors
+  ntfs3: convert to new timestamp accessors
+  ocfs2: convert to new timestamp accessors
+  omfs: convert to new timestamp accessors
+  openpromfs: convert to new timestamp accessors
+  orangefs: convert to new timestamp accessors
+  overlayfs: convert to new timestamp accessors
+  proc: convert to new timestamp accessors
+  pstore: convert to new timestamp accessors
+  qnx4: convert to new timestamp accessors
+  qnx6: convert to new timestamp accessors
+  ramfs: convert to new timestamp accessors
+  reiserfs: convert to new timestamp accessors
+  romfs: convert to new timestamp accessors
+  client: convert to new timestamp accessors
+  server: convert to new timestamp accessors
+  squashfs: convert to new timestamp accessors
+  sysv: convert to new timestamp accessors
+  tracefs: convert to new timestamp accessors
+  ubifs: convert to new timestamp accessors
+  udf: convert to new timestamp accessors
+  ufs: convert to new timestamp accessors
+  vboxsf: convert to new timestamp accessors
+  xfs: convert to new timestamp accessors
+  zonefs: convert to new timestamp accessors
+  linux: convert to new timestamp accessors
+  ipc: convert to new timestamp accessors
+  bpf: convert to new timestamp accessors
+  mm: convert to new timestamp accessors
+  sunrpc: convert to new timestamp accessors
+  apparmor: convert to new timestamp accessors
+  selinux: convert to new timestamp accessors
+  security: convert to new timestamp accessors
+  fs: rename inode i_atime and i_mtime fields
+  fs: switch timespec64 fields in inode to discrete integers
+  fs: move i_generation into new hole created after timestamp conversion
+
+ arch/powerpc/platforms/cell/spufs/inode.c |   2 +-
+ arch/s390/hypfs/inode.c                   |   4 +-
+ drivers/android/binderfs.c                |   8 +-
+ drivers/char/sonypi.c                     |   2 +-
+ drivers/infiniband/hw/qib/qib_fs.c        |   4 +-
+ drivers/misc/ibmasm/ibmasmfs.c            |   2 +-
+ drivers/misc/ibmvmc.c                     |   2 +-
+ drivers/platform/x86/sony-laptop.c        |   2 +-
+ drivers/tty/tty_io.c                      |  10 +-
+ drivers/usb/core/devio.c                  |  26 +++--
+ drivers/usb/gadget/function/f_fs.c        |   4 +-
+ drivers/usb/gadget/legacy/inode.c         |   2 +-
+ fs/9p/vfs_inode.c                         |   6 +-
+ fs/9p/vfs_inode_dotl.c                    |  16 +--
+ fs/adfs/inode.c                           |  13 ++-
+ fs/affs/amigaffs.c                        |   4 +-
+ fs/affs/inode.c                           |  17 ++-
+ fs/afs/dynroot.c                          |   2 +-
+ fs/afs/inode.c                            |   8 +-
+ fs/afs/write.c                            |   2 +-
+ fs/attr.c                                 |   4 +-
+ fs/autofs/inode.c                         |   2 +-
+ fs/autofs/root.c                          |   6 +-
+ fs/bad_inode.c                            |   2 +-
+ fs/bcachefs/fs.c                          |  12 +--
+ fs/befs/linuxvfs.c                        |  10 +-
+ fs/bfs/dir.c                              |   9 +-
+ fs/bfs/inode.c                            |  12 +--
+ fs/binfmt_misc.c                          |   2 +-
+ fs/btrfs/delayed-inode.c                  |  20 ++--
+ fs/btrfs/file.c                           |  18 ++--
+ fs/btrfs/inode.c                          |  43 ++++----
+ fs/btrfs/reflink.c                        |   2 +-
+ fs/btrfs/transaction.c                    |   3 +-
+ fs/btrfs/tree-log.c                       |  12 +--
+ fs/ceph/addr.c                            |  10 +-
+ fs/ceph/caps.c                            |   4 +-
+ fs/ceph/file.c                            |   2 +-
+ fs/ceph/inode.c                           |  64 ++++++------
+ fs/ceph/mds_client.c                      |   8 +-
+ fs/ceph/snap.c                            |   4 +-
+ fs/coda/coda_linux.c                      |   6 +-
+ fs/coda/dir.c                             |   2 +-
+ fs/coda/file.c                            |   2 +-
+ fs/configfs/inode.c                       |   8 +-
+ fs/cramfs/inode.c                         |   4 +-
+ fs/debugfs/inode.c                        |   2 +-
+ fs/devpts/inode.c                         |   6 +-
+ fs/efivarfs/file.c                        |   2 +-
+ fs/efivarfs/inode.c                       |   2 +-
+ fs/efs/inode.c                            |   5 +-
+ fs/erofs/inode.c                          |   3 +-
+ fs/exfat/exfat_fs.h                       |   1 +
+ fs/exfat/file.c                           |   7 +-
+ fs/exfat/inode.c                          |  31 +++---
+ fs/exfat/misc.c                           |   8 ++
+ fs/exfat/namei.c                          |  31 +++---
+ fs/exfat/super.c                          |   4 +-
+ fs/ext2/dir.c                             |   6 +-
+ fs/ext2/ialloc.c                          |   2 +-
+ fs/ext2/inode.c                           |  13 ++-
+ fs/ext2/super.c                           |   2 +-
+ fs/ext4/ext4.h                            |  20 +++-
+ fs/ext4/extents.c                         |  11 +-
+ fs/ext4/ialloc.c                          |   4 +-
+ fs/ext4/inline.c                          |   4 +-
+ fs/ext4/inode.c                           |  19 ++--
+ fs/ext4/ioctl.c                           |  13 ++-
+ fs/ext4/namei.c                           |  10 +-
+ fs/ext4/super.c                           |   2 +-
+ fs/ext4/xattr.c                           |   8 +-
+ fs/f2fs/dir.c                             |   6 +-
+ fs/f2fs/f2fs.h                            |  10 +-
+ fs/f2fs/file.c                            |  14 +--
+ fs/f2fs/inline.c                          |   2 +-
+ fs/f2fs/inode.c                           |  24 ++---
+ fs/f2fs/namei.c                           |   4 +-
+ fs/f2fs/recovery.c                        |   8 +-
+ fs/f2fs/super.c                           |   2 +-
+ fs/fat/inode.c                            |  25 +++--
+ fs/fat/misc.c                             |   6 +-
+ fs/freevxfs/vxfs_inode.c                  |   6 +-
+ fs/fuse/control.c                         |   2 +-
+ fs/fuse/dir.c                             |  10 +-
+ fs/fuse/inode.c                           |  29 +++---
+ fs/fuse/readdir.c                         |   6 +-
+ fs/gfs2/bmap.c                            |  10 +-
+ fs/gfs2/dir.c                             |  10 +-
+ fs/gfs2/glops.c                           |  11 +-
+ fs/gfs2/inode.c                           |   7 +-
+ fs/gfs2/quota.c                           |   2 +-
+ fs/gfs2/super.c                           |  12 +--
+ fs/hfs/catalog.c                          |   8 +-
+ fs/hfs/inode.c                            |  16 +--
+ fs/hfs/sysdep.c                           |  10 +-
+ fs/hfsplus/catalog.c                      |   8 +-
+ fs/hfsplus/inode.c                        |  22 ++--
+ fs/hostfs/hostfs_kern.c                   |  12 ++-
+ fs/hpfs/dir.c                             |  12 ++-
+ fs/hpfs/inode.c                           |  16 +--
+ fs/hpfs/namei.c                           |  22 ++--
+ fs/hpfs/super.c                           |  10 +-
+ fs/hugetlbfs/inode.c                      |  10 +-
+ fs/inode.c                                |  35 ++++---
+ fs/isofs/inode.c                          |   4 +-
+ fs/isofs/rock.c                           |  18 ++--
+ fs/jffs2/dir.c                            |  35 ++++---
+ fs/jffs2/file.c                           |   4 +-
+ fs/jffs2/fs.c                             |  20 ++--
+ fs/jffs2/os-linux.h                       |   4 +-
+ fs/jfs/inode.c                            |   2 +-
+ fs/jfs/jfs_imap.c                         |  20 ++--
+ fs/jfs/jfs_inode.c                        |   4 +-
+ fs/jfs/namei.c                            |  20 ++--
+ fs/jfs/super.c                            |   2 +-
+ fs/kernfs/inode.c                         |   6 +-
+ fs/libfs.c                                |  41 ++++++--
+ fs/minix/bitmap.c                         |   2 +-
+ fs/minix/dir.c                            |   6 +-
+ fs/minix/inode.c                          |  17 ++-
+ fs/minix/itree_common.c                   |   2 +-
+ fs/nfs/callback_proc.c                    |   2 +-
+ fs/nfs/fscache.h                          |   4 +-
+ fs/nfs/inode.c                            |  30 +++---
+ fs/nfsd/blocklayout.c                     |   3 +-
+ fs/nfsd/nfs3proc.c                        |   4 +-
+ fs/nfsd/nfs4proc.c                        |   8 +-
+ fs/nfsd/nfsctl.c                          |   2 +-
+ fs/nfsd/vfs.c                             |   2 +-
+ fs/nilfs2/dir.c                           |   6 +-
+ fs/nilfs2/inode.c                         |  20 ++--
+ fs/nsfs.c                                 |   2 +-
+ fs/ntfs/inode.c                           |  25 ++---
+ fs/ntfs/mft.c                             |   2 +-
+ fs/ntfs3/file.c                           |   6 +-
+ fs/ntfs3/frecord.c                        |  11 +-
+ fs/ntfs3/inode.c                          |  25 +++--
+ fs/ntfs3/namei.c                          |   4 +-
+ fs/ocfs2/acl.c                            |   4 +-
+ fs/ocfs2/alloc.c                          |   6 +-
+ fs/ocfs2/aops.c                           |   6 +-
+ fs/ocfs2/dir.c                            |   9 +-
+ fs/ocfs2/dlmfs/dlmfs.c                    |   4 +-
+ fs/ocfs2/dlmglue.c                        |  29 +++---
+ fs/ocfs2/file.c                           |  30 +++---
+ fs/ocfs2/inode.c                          |  28 ++---
+ fs/ocfs2/move_extents.c                   |   4 +-
+ fs/ocfs2/namei.c                          |  16 +--
+ fs/ocfs2/refcounttree.c                   |  12 +--
+ fs/ocfs2/xattr.c                          |   4 +-
+ fs/omfs/inode.c                           |  12 +--
+ fs/openpromfs/inode.c                     |   4 +-
+ fs/orangefs/orangefs-utils.c              |  16 +--
+ fs/overlayfs/file.c                       |   9 +-
+ fs/overlayfs/inode.c                      |   3 +-
+ fs/overlayfs/util.c                       |   4 +-
+ fs/pipe.c                                 |   2 +-
+ fs/proc/base.c                            |   2 +-
+ fs/proc/inode.c                           |   2 +-
+ fs/proc/proc_sysctl.c                     |   2 +-
+ fs/proc/self.c                            |   2 +-
+ fs/proc/thread_self.c                     |   2 +-
+ fs/pstore/inode.c                         |   5 +-
+ fs/qnx4/inode.c                           |   6 +-
+ fs/qnx6/inode.c                           |   6 +-
+ fs/ramfs/inode.c                          |   7 +-
+ fs/reiserfs/inode.c                       |  26 ++---
+ fs/reiserfs/namei.c                       |   8 +-
+ fs/reiserfs/stree.c                       |   5 +-
+ fs/reiserfs/super.c                       |   2 +-
+ fs/romfs/super.c                          |   3 +-
+ fs/smb/client/file.c                      |  18 ++--
+ fs/smb/client/fscache.h                   |   6 +-
+ fs/smb/client/inode.c                     |  17 ++-
+ fs/smb/client/smb2ops.c                   |   6 +-
+ fs/smb/server/smb2pdu.c                   |   8 +-
+ fs/squashfs/inode.c                       |   6 +-
+ fs/stack.c                                |   4 +-
+ fs/stat.c                                 |   4 +-
+ fs/sysv/dir.c                             |   6 +-
+ fs/sysv/ialloc.c                          |   2 +-
+ fs/sysv/inode.c                           |  12 +--
+ fs/sysv/itree.c                           |   2 +-
+ fs/tracefs/inode.c                        |   2 +-
+ fs/ubifs/debug.c                          |  12 +--
+ fs/ubifs/dir.c                            |  23 +++--
+ fs/ubifs/file.c                           |  16 +--
+ fs/ubifs/journal.c                        |  12 +--
+ fs/ubifs/super.c                          |   8 +-
+ fs/udf/ialloc.c                           |   4 +-
+ fs/udf/inode.c                            |  38 ++++---
+ fs/udf/namei.c                            |  16 +--
+ fs/ufs/dir.c                              |   6 +-
+ fs/ufs/ialloc.c                           |   2 +-
+ fs/ufs/inode.c                            |  42 ++++----
+ fs/vboxsf/utils.c                         |  15 +--
+ fs/xfs/libxfs/xfs_inode_buf.c             |  10 +-
+ fs/xfs/libxfs/xfs_rtbitmap.c              |   6 +-
+ fs/xfs/libxfs/xfs_trans_inode.c           |   2 +-
+ fs/xfs/xfs_bmap_util.c                    |   7 +-
+ fs/xfs/xfs_inode.c                        |   4 +-
+ fs/xfs/xfs_inode_item.c                   |   4 +-
+ fs/xfs/xfs_iops.c                         |   8 +-
+ fs/xfs/xfs_itable.c                       |  12 +--
+ fs/xfs/xfs_rtalloc.c                      |  30 +++---
+ fs/zonefs/super.c                         |  10 +-
+ include/linux/fs.h                        | 120 +++++++++++++++++-----
+ include/linux/fs_stack.h                  |   6 +-
+ ipc/mqueue.c                              |  19 ++--
+ kernel/bpf/inode.c                        |   5 +-
+ mm/shmem.c                                |  20 ++--
+ net/sunrpc/rpc_pipe.c                     |   2 +-
+ security/apparmor/apparmorfs.c            |   7 +-
+ security/apparmor/policy_unpack.c         |   4 +-
+ security/inode.c                          |   2 +-
+ security/selinux/selinuxfs.c              |   2 +-
+ 216 files changed, 1220 insertions(+), 1000 deletions(-)
+
+-- 
+2.41.0
+
 
 
 _______________________________________________
