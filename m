@@ -2,28 +2,28 @@ Return-Path: <jfs-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+jfs-discussion@lfdr.de
 Delivered-To: lists+jfs-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5C7627C59C4
-	for <lists+jfs-discussion@lfdr.de>; Wed, 11 Oct 2023 19:01:30 +0200 (CEST)
-Received: from [127.0.0.1] (helo=sfs-ml-2.v29.lw.sourceforge.com)
-	by sfs-ml-2.v29.lw.sourceforge.com with esmtp (Exim 4.95)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4C13D7C5A31
+	for <lists+jfs-discussion@lfdr.de>; Wed, 11 Oct 2023 19:26:38 +0200 (CEST)
+Received: from [127.0.0.1] (helo=sfs-ml-3.v29.lw.sourceforge.com)
+	by sfs-ml-3.v29.lw.sourceforge.com with esmtp (Exim 4.95)
 	(envelope-from <jfs-discussion-bounces@lists.sourceforge.net>)
-	id 1qqca9-00044G-VR;
-	Wed, 11 Oct 2023 17:01:13 +0000
+	id 1qqcyP-0003WM-IE;
+	Wed, 11 Oct 2023 17:26:16 +0000
 Received: from [172.30.20.202] (helo=mx.sourceforge.net)
- by sfs-ml-2.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
+ by sfs-ml-3.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
  TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (Exim 4.95)
- (envelope-from <tytso@mit.edu>) id 1qqca8-000442-DJ
+ (envelope-from <jack@suse.cz>) id 1qqcyN-0003WG-TU
  for jfs-discussion@lists.sourceforge.net;
- Wed, 11 Oct 2023 17:01:12 +0000
+ Wed, 11 Oct 2023 17:26:14 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=sourceforge.net; s=x; h=In-Reply-To:Content-Type:MIME-Version:References:
  Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:Content-Transfer-Encoding:
  Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
  Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=q/lSedKb7lshx7k2rQEAeRvB6s5o1LR/9RTjMM0Pa84=; b=W1/Uobxsl46Q9IBeWju8E4azaP
- nJDaH9L5VWnWGtvrxnuym26Whvb+xPMzSvSVXTqpI/CzhAVKFuzEuBpMP5yS/E5s1nMehKKsKAIS/
- pUt2kglhMyrOScjE7CNJ/wLh3BaI1YpH/kkf73taRsuUS9z7+isgEwmPyRqo/u03PUlE=;
+ bh=PfP83Apuioc6QwrQ9hjnsK+t+FQBcuvjUeVK6xfxlsI=; b=nGbEcF1aeruFHobg/Cl46czzj4
+ 24QOcu7z/rp/evIzogDz9DZc2o+CfNBittqcCIncxp3Dez0EgmcKPxfp00sZLNbtKcaujtFxGMQZ8
+ LCAqI29wPZpdZN+6knNcva9QkQRMm5i8G4Vx7GzVLZ+XHxrIrv1+/Osl9b/qIAwG9ewc=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
  h=In-Reply-To:Content-Type:MIME-Version:References:Message-ID:Subject:Cc:To
@@ -31,36 +31,52 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
  :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
  List-Post:List-Owner:List-Archive;
- bh=q/lSedKb7lshx7k2rQEAeRvB6s5o1LR/9RTjMM0Pa84=; b=ZiYAAMs3O8zktJ3BzGKjsUXcZ8
- Pcq0m4jdL0/7wEUC0gA0IfyGd2O7kUrQyNoOjPRFsxCJXD+DDvzDjvTCnrkzHM12qCn22HUOXRWMW
- UQIBm5YMJyhtD7utkjxp87lUkaA1UyPJi/t93/QKEui5mNKtCKu715RTp4Qdg44arozs=;
-Received: from outgoing-auth-1.mit.edu ([18.9.28.11] helo=outgoing.mit.edu)
- by sfi-mx-1.v28.lw.sourceforge.com with esmtps
- (TLS1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.95)
- id 1qqca2-00BzG5-Ui for jfs-discussion@lists.sourceforge.net;
- Wed, 11 Oct 2023 17:01:12 +0000
-Received: from cwcc.thunk.org (pool-173-48-102-152.bstnma.fios.verizon.net
- [173.48.102.152]) (authenticated bits=0)
- (User authenticated as tytso@ATHENA.MIT.EDU)
- by outgoing.mit.edu (8.14.7/8.12.4) with ESMTP id 39BH0gc9026643
- (version=TLSv1/SSLv3 cipher=DHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
- Wed, 11 Oct 2023 13:00:43 -0400
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=mit.edu; s=outgoing;
- t=1697043645; bh=q/lSedKb7lshx7k2rQEAeRvB6s5o1LR/9RTjMM0Pa84=;
- h=Date:From:Subject:Message-ID:MIME-Version:Content-Type;
- b=Rc2/C7WGlgIGRQErNzCcxSMHogE9oGRHAvNB2j3dbxswtI5n+kyI7gEaZ4G3t2XYD
- vgniCaTIjxuF5Kn7l7kN/sUqVEHVEphiRz6No2c+NguixtNdFguU5pxTAVFEMmRa7L
- mozXISoF8mD2gcTwwtoeTz0QTTpMTQy1dztVf/zBgg2ojvpJ30NPfFgfDc6EY8550C
- Vm6FKhIsyR0nd2gUYgV1vJ/bziErXOw/85jjMF7e91VuNXCjdk66m8RcrcHnr/7iJ4
- FcCSVVDBDUK9Hs1TLdx1HefX/oATTG+BHWGjmGUqVFW+iTE4PM8rEmDqGvJMrxTcHh
- r5JIaMzoS4H6w==
-Received: by cwcc.thunk.org (Postfix, from userid 15806)
- id 4C0C715C0255; Wed, 11 Oct 2023 13:00:42 -0400 (EDT)
-Date: Wed, 11 Oct 2023 13:00:42 -0400
-To: Christian Brauner <brauner@kernel.org>
-Message-ID: <20231011170042.GA267994@mit.edu>
-References: <20231009144340.418904-1-max.kellermann@ionos.com>
- <20231010131125.3uyfkqbcetfcqsve@quack3>
+ bh=PfP83Apuioc6QwrQ9hjnsK+t+FQBcuvjUeVK6xfxlsI=; b=fb/PkHennyX7mL3q6V19mVYYo7
+ w72oPPbiRjfqTGotBoXHY8bvmwJckXm0OkGLChDhnB05doqhQGqIub1iQZVrmPjZxFjzSLlh7uvkS
+ 6Rvh+s3fjEX0iyO8g7ZDUfvPVccr+B5rVh/AZPT4PORDTZ8BNL1kpI1nzCdipEpuvPvc=;
+Received: from smtp-out2.suse.de ([195.135.220.29])
+ by sfi-mx-2.v28.lw.sourceforge.com with esmtps
+ (TLS1.2:ECDHE-RSA-AES128-GCM-SHA256:128) (Exim 4.95)
+ id 1qqcyL-0001lr-9s for jfs-discussion@lists.sourceforge.net;
+ Wed, 11 Oct 2023 17:26:14 +0000
+Received: from imap2.suse-dmz.suse.de (imap2.suse-dmz.suse.de [192.168.254.74])
+ (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+ key-exchange X25519 server-signature ECDSA (P-521) server-digest SHA512)
+ (No client certificate requested)
+ by smtp-out2.suse.de (Postfix) with ESMTPS id 41B8B1F88E;
+ Wed, 11 Oct 2023 17:26:07 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=suse.cz; s=susede2_rsa;
+ t=1697045167; h=from:from:reply-to:date:date:message-id:message-id:to:to:cc:cc:
+ mime-version:mime-version:content-type:content-type:
+ in-reply-to:in-reply-to:references:references;
+ bh=PfP83Apuioc6QwrQ9hjnsK+t+FQBcuvjUeVK6xfxlsI=;
+ b=kr/n4ozJKeSRcTxUWkUDER9ANl5ysmCMwwn5jTIuXq6Nu6vMj5OGtVTIryyeXynEv0QmeO
+ Zhy+dX2NbiLj0xRMv3bNuTJxiIJCI00Tiw9klfnKBnexnxlLzGEBQtIuhmfuMsb7Thyr4o
+ /FFuqr7fTzjwGe4evj+VqWiwjBiUb1M=
+DKIM-Signature: v=1; a=ed25519-sha256; c=relaxed/relaxed; d=suse.cz;
+ s=susede2_ed25519; t=1697045167;
+ h=from:from:reply-to:date:date:message-id:message-id:to:to:cc:cc:
+ mime-version:mime-version:content-type:content-type:
+ in-reply-to:in-reply-to:references:references;
+ bh=PfP83Apuioc6QwrQ9hjnsK+t+FQBcuvjUeVK6xfxlsI=;
+ b=vFckiP0JXcsJIYzBmUMHSKggcqEdsHzRu7vUKBWvlkifhsnhO+PiVl4DK8F327TFpVj4hK
+ kaJA6pmCJtZVKrBQ==
+Received: from imap2.suse-dmz.suse.de (imap2.suse-dmz.suse.de [192.168.254.74])
+ (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+ key-exchange X25519 server-signature ECDSA (P-521) server-digest SHA512)
+ (No client certificate requested)
+ by imap2.suse-dmz.suse.de (Postfix) with ESMTPS id 2D9E9138EF;
+ Wed, 11 Oct 2023 17:26:07 +0000 (UTC)
+Received: from dovecot-director2.suse.de ([192.168.254.65])
+ by imap2.suse-dmz.suse.de with ESMTPSA id hsYaC6/aJmWpSAAAMHmgww
+ (envelope-from <jack@suse.cz>); Wed, 11 Oct 2023 17:26:07 +0000
+Received: by quack3.suse.cz (Postfix, from userid 1000)
+ id B0F75A06B0; Wed, 11 Oct 2023 19:26:06 +0200 (CEST)
+Date: Wed, 11 Oct 2023 19:26:06 +0200
+From: Jan Kara <jack@suse.cz>
+To: Theodore Ts'o <tytso@mit.edu>
+Message-ID: <20231011172606.mztqyvclq6hq2qa2@quack3>
+References: <20231010131125.3uyfkqbcetfcqsve@quack3>
  <CAKPOu+-nC2bQTZYL0XTzJL6Tx4Pi1gLfNWCjU2Qz1f_5CbJc1w@mail.gmail.com>
  <20231011100541.sfn3prgtmp7hk2oj@quack3>
  <CAKPOu+_xdFALt9sgdd5w66Ab6KTqiy8+Z0Yd3Ss4+92jh8nCwg@mail.gmail.com>
@@ -69,34 +85,35 @@ References: <20231009144340.418904-1-max.kellermann@ionos.com>
  <CAKPOu+_0yjg=PrwAR8jKok8WskjdDEJOBtu3uKR_4Qtp8b7H1Q@mail.gmail.com>
  <20231011135922.4bij3ittlg4ujkd7@quack3>
  <20231011-braumeister-anrufen-62127dc64de0@brauner>
+ <20231011170042.GA267994@mit.edu>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20231011-braumeister-anrufen-62127dc64de0@brauner>
+In-Reply-To: <20231011170042.GA267994@mit.edu>
 X-Spam-Score: -2.5 (--)
 X-Spam-Report: Spam detection software,
- running on the system "util-spamd-1.v13.lw.sourceforge.com", 
+ running on the system "util-spamd-2.v13.lw.sourceforge.com", 
  has NOT identified this incoming email as spam.  The original
  message has been attached to this so you can view it or label
  similar future email.  If you have any questions, see
  the administrator of that system for details.
- Content preview:  On Wed, Oct 11, 2023 at 05:27:37PM +0200, Christian Brauner
- wrote: > Aside from that, the problem had been that filesystems like nfs
- v4 > intentionally raised SB_POSIXACL to prevent umask stripping in [...] 
+ Content preview:  On Wed 11-10-23 13:00:42, Theodore Ts'o wrote: > On Wed, Oct
+ 11, 2023 at 05:27:37PM +0200, Christian Brauner wrote: > > Aside from that,
+ the problem had been that filesystems like nfs v4 > > intention [...] 
  Content analysis details:   (-2.5 points, 6.0 required)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [18.9.28.11 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ medium trust [195.135.220.29 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
-X-Headers-End: 1qqca2-00BzG5-Ui
+X-Headers-End: 1qqcyL-0001lr-9s
 Subject: Re: [Jfs-discussion] [PATCH v2] fs/{posix_acl, ext2, jfs,
  ceph}: apply umask if ACL support is disabled
 X-BeenThere: jfs-discussion@lists.sourceforge.net
@@ -110,11 +127,9 @@ List-Post: <mailto:jfs-discussion@lists.sourceforge.net>
 List-Help: <mailto:jfs-discussion-request@lists.sourceforge.net?subject=help>
 List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/jfs-discussion>, 
  <mailto:jfs-discussion-request@lists.sourceforge.net?subject=subscribe>
-From: Theodore Ts'o via Jfs-discussion <jfs-discussion@lists.sourceforge.net>
-Reply-To: Theodore Ts'o <tytso@mit.edu>
-Cc: Dave Kleikamp <shaggy@kernel.org>,
- Max Kellermann <max.kellermann@ionos.com>, linux-ext4@vger.kernel.org,
- Jan Kara <jack@suse.cz>, Jeff Layton <jlayton@kernel.org>,
+Cc: Dave Kleikamp <shaggy@kernel.org>, Christian Brauner <brauner@kernel.org>,
+ linux-ext4@vger.kernel.org, Jan Kara <jack@suse.cz>,
+ Jeff Layton <jlayton@kernel.org>, Max Kellermann <max.kellermann@ionos.com>,
  linux-kernel@vger.kernel.org, Jan Kara <jack@suse.com>,
  linux-fsdevel@vger.kernel.org, Yang Xu <xuyang2018.jy@fujitsu.com>,
  Ilya Dryomov <idryomov@gmail.com>, Xiubo Li <xiubli@redhat.com>,
@@ -123,27 +138,40 @@ Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Errors-To: jfs-discussion-bounces@lists.sourceforge.net
 
-On Wed, Oct 11, 2023 at 05:27:37PM +0200, Christian Brauner wrote:
-> Aside from that, the problem had been that filesystems like nfs v4
-> intentionally raised SB_POSIXACL to prevent umask stripping in the VFS.
-> IOW, for them SB_POSIXACL was equivalent to "don't apply any umask".
+On Wed 11-10-23 13:00:42, Theodore Ts'o wrote:
+> On Wed, Oct 11, 2023 at 05:27:37PM +0200, Christian Brauner wrote:
+> > Aside from that, the problem had been that filesystems like nfs v4
+> > intentionally raised SB_POSIXACL to prevent umask stripping in the VFS.
+> > IOW, for them SB_POSIXACL was equivalent to "don't apply any umask".
+> > 
+> > And afaict nfs v4 has it's own thing going on how and where umasks are
+> > applied. However, since we now have the following commit in vfs.misc:
+> > 
+> >     fs: add a new SB_I_NOUMASK flag
 > 
-> And afaict nfs v4 has it's own thing going on how and where umasks are
-> applied. However, since we now have the following commit in vfs.misc:
+> To summarize, just to make sure I understand where we're going.  Since
+> normally (excepting unusual cases like NFS), it's fine to strip the
+> umask bits twice (once in the VFS, and once in the file system, for
+> those file systems that are doing it), once we have SB_I_NOUMASK and
+> NFS starts using it, then the VFS can just unconditionally strip the
+> umask bits, and then we can gradually clean up the file system umask
+> handling (which would then be harmlessly duplicative).
 > 
->     fs: add a new SB_I_NOUMASK flag
+> Did I get this right?
 
-To summarize, just to make sure I understand where we're going.  Since
-normally (excepting unusual cases like NFS), it's fine to strip the
-umask bits twice (once in the VFS, and once in the file system, for
-those file systems that are doing it), once we have SB_I_NOUMASK and
-NFS starts using it, then the VFS can just unconditionally strip the
-umask bits, and then we can gradually clean up the file system umask
-handling (which would then be harmlessly duplicative).
+I don't think this is accurate. posix_acl_create() needs unmasked 'mode'
+because instead of using current_umask() for masking it wants to use
+whatever is stored in the ACLs as an umask.
 
-Did I get this right?
+So I still think we need to keep umask handling in both posix_acl_create()
+and vfs_prepare_mode(). But filesystem's only obligation would be to call
+posix_acl_create() if the inode is IS_POSIXACL. No more caring about when
+to apply umask and when not based on config or mount options.
 
-					- Ted
+								Honza
+-- 
+Jan Kara <jack@suse.com>
+SUSE Labs, CR
 
 
 _______________________________________________
