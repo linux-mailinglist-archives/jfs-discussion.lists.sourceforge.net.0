@@ -2,125 +2,122 @@ Return-Path: <jfs-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+jfs-discussion@lfdr.de
 Delivered-To: lists+jfs-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id B17BD7C560C
-	for <lists+jfs-discussion@lfdr.de>; Wed, 11 Oct 2023 15:59:58 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id EC80B7C5728
+	for <lists+jfs-discussion@lfdr.de>; Wed, 11 Oct 2023 16:40:19 +0200 (CEST)
 Received: from [127.0.0.1] (helo=sfs-ml-3.v29.lw.sourceforge.com)
 	by sfs-ml-3.v29.lw.sourceforge.com with esmtp (Exim 4.95)
 	(envelope-from <jfs-discussion-bounces@lists.sourceforge.net>)
-	id 1qqZkP-0000hy-Fn;
-	Wed, 11 Oct 2023 13:59:36 +0000
+	id 1qqaNY-0001KR-BA;
+	Wed, 11 Oct 2023 14:40:02 +0000
 Received: from [172.30.20.202] (helo=mx.sourceforge.net)
  by sfs-ml-3.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
  TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (Exim 4.95)
- (envelope-from <jack@suse.cz>) id 1qqZkN-0000hs-LG
+ (envelope-from <ghandatmanas@gmail.com>) id 1qqaNW-0001KJ-Pr
  for jfs-discussion@lists.sourceforge.net;
- Wed, 11 Oct 2023 13:59:34 +0000
+ Wed, 11 Oct 2023 14:40:01 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=sourceforge.net; s=x; h=In-Reply-To:Content-Transfer-Encoding:Content-Type:
- MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:
- Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
- Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
+ d=sourceforge.net; s=x; h=Content-Transfer-Encoding:MIME-Version:Message-Id:
+ Date:Subject:Cc:To:From:Sender:Reply-To:Content-Type:Content-ID:
+ Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+ :Resent-Message-ID:In-Reply-To:References:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=zDxQm9+A2hHDdkBqBnjxp+FzgrU9wEMk6rAhmb/Kp9s=; b=Smb7p3DLQYkJxQygGTYccY7Dje
- qnqMzBkYci5wGqaHiN440jbufi0yQj1gGzAiDAb3xmMDYnekxRHAdox32hdoUOoxlLpkxsJTj2cum
- hPQ3cqXBRAfv/2qUSbnGRUXxL32tTtcuVE2ZmyGpkyOEgPnS9GfAOJLqS9BLaEegPvGo=;
+ bh=fQNK4cZppGs8Y8rM4h3XQeL/bSmNLB40k5aLUnjJJ7g=; b=kQ56V/WJaBH3DLaLOsdo3DFSem
+ 0VX5DIQ43C4kuUhKPclUXtngQ/ekXPr11iDSBqzuk0N4P24XCT4EuQL4qp8MVQYJLku9vmPsxx070
+ eQDPJYzR8/MeYYIz0zi0bDKx1Bp8VL5877SG+lFietC2CSR3PCZo+gUtQHGKA90oDrw0=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
- h=In-Reply-To:Content-Transfer-Encoding:Content-Type:MIME-Version:
- References:Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:Content-ID:
- Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
- :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
- List-Post:List-Owner:List-Archive;
- bh=zDxQm9+A2hHDdkBqBnjxp+FzgrU9wEMk6rAhmb/Kp9s=; b=MxFUVQR37iKPOapbNMA1tZ2wAG
- vbjiYtnjAXK3GWp1JcBHBfAlp4dnDVGmA7JcrpJaN2lkBAyTXGNpAEHMfzM2GBEUT3nmCKAq+bbFF
- YWJ3FJUpSBYumCWRaO2AHU1Z3h32pLnLNpsBb7ykzoi3lSnyutvNZD7UuTSuSBLg3Zjw=;
-Received: from smtp-out2.suse.de ([195.135.220.29])
+ h=Content-Transfer-Encoding:MIME-Version:Message-Id:Date:Subject:Cc:To:From
+ :Sender:Reply-To:Content-Type:Content-ID:Content-Description:Resent-Date:
+ Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+ References:List-Id:List-Help:List-Unsubscribe:List-Subscribe:List-Post:
+ List-Owner:List-Archive; bh=fQNK4cZppGs8Y8rM4h3XQeL/bSmNLB40k5aLUnjJJ7g=; b=Z
+ 7Y0cbRsozFqQ7GZThdepEzhVwuHmvdyxe74npTnwNLaCJh19UoHgGrgm1Q9aUGz1JoaRlOZUKr8Ty
+ ES26mDVTx1Y2oW2XVxMLz6d7PhdFkwXmoAg5tH9UJBo7xQEzfvCNdbnv8dc4hgrpWvqgOpiGrMOvX
+ +7kmSHXzeaqcJ/m8=;
+Received: from mail-pf1-f195.google.com ([209.85.210.195])
  by sfi-mx-2.v28.lw.sourceforge.com with esmtps
  (TLS1.2:ECDHE-RSA-AES128-GCM-SHA256:128) (Exim 4.95)
- id 1qqZkH-0002cq-Uj for jfs-discussion@lists.sourceforge.net;
- Wed, 11 Oct 2023 13:59:34 +0000
-Received: from imap2.suse-dmz.suse.de (imap2.suse-dmz.suse.de [192.168.254.74])
- (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
- key-exchange X25519 server-signature ECDSA (P-521) server-digest SHA512)
- (No client certificate requested)
- by smtp-out2.suse.de (Postfix) with ESMTPS id 336291FEC2;
- Wed, 11 Oct 2023 13:59:23 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=suse.cz; s=susede2_rsa;
- t=1697032763; h=from:from:reply-to:date:date:message-id:message-id:to:to:cc:cc:
- mime-version:mime-version:content-type:content-type:
- content-transfer-encoding:content-transfer-encoding:
- in-reply-to:in-reply-to:references:references;
- bh=zDxQm9+A2hHDdkBqBnjxp+FzgrU9wEMk6rAhmb/Kp9s=;
- b=MX4GRXweEU3+XM4fNlEs3A+BqRtzzpgxMiAftXX6g9ZLS7hPaiN+NUwB7O5nTNbKpYHb32
- U2Ic/NoBvQHpy8Sp5DZKfmeZu81zDEqY07sNYBpyp1bl1n5s5KVSwg4rpKjfCv/ym0im0G
- 22H6oXZpsKvuGNOGhE5Gg45Aib50FlU=
-DKIM-Signature: v=1; a=ed25519-sha256; c=relaxed/relaxed; d=suse.cz;
- s=susede2_ed25519; t=1697032763;
- h=from:from:reply-to:date:date:message-id:message-id:to:to:cc:cc:
- mime-version:mime-version:content-type:content-type:
- content-transfer-encoding:content-transfer-encoding:
- in-reply-to:in-reply-to:references:references;
- bh=zDxQm9+A2hHDdkBqBnjxp+FzgrU9wEMk6rAhmb/Kp9s=;
- b=ap3Cb6XIdQHU9oUjKWllUwJlGo0UHKGx1/ng4FjeRG8qvIt+eT1khKU6uQlMCvzv9NGAp1
- 8vfCNRaX2LGHl6AA==
-Received: from imap2.suse-dmz.suse.de (imap2.suse-dmz.suse.de [192.168.254.74])
- (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
- key-exchange X25519 server-signature ECDSA (P-521) server-digest SHA512)
- (No client certificate requested)
- by imap2.suse-dmz.suse.de (Postfix) with ESMTPS id 1E436134F5;
- Wed, 11 Oct 2023 13:59:23 +0000 (UTC)
-Received: from dovecot-director2.suse.de ([192.168.254.65])
- by imap2.suse-dmz.suse.de with ESMTPSA id 3XNmBzuqJmWcXQAAMHmgww
- (envelope-from <jack@suse.cz>); Wed, 11 Oct 2023 13:59:23 +0000
-Received: by quack3.suse.cz (Postfix, from userid 1000)
- id 78020A05BC; Wed, 11 Oct 2023 15:59:22 +0200 (CEST)
-Date: Wed, 11 Oct 2023 15:59:22 +0200
-From: Jan Kara <jack@suse.cz>
-To: Max Kellermann <max.kellermann@ionos.com>
-Message-ID: <20231011135922.4bij3ittlg4ujkd7@quack3>
-References: <69dda7be-d7c8-401f-89f3-7a5ca5550e2f@oracle.com>
- <20231009144340.418904-1-max.kellermann@ionos.com>
- <20231010131125.3uyfkqbcetfcqsve@quack3>
- <CAKPOu+-nC2bQTZYL0XTzJL6Tx4Pi1gLfNWCjU2Qz1f_5CbJc1w@mail.gmail.com>
- <20231011100541.sfn3prgtmp7hk2oj@quack3>
- <CAKPOu+_xdFALt9sgdd5w66Ab6KTqiy8+Z0Yd3Ss4+92jh8nCwg@mail.gmail.com>
- <20231011120655.ndb7bfasptjym3wl@quack3>
- <CAKPOu+-hLrrpZShHh0o6uc_KMW91suEd0_V_uzp5vMf4NM-8yw@mail.gmail.com>
- <CAKPOu+_0yjg=PrwAR8jKok8WskjdDEJOBtu3uKR_4Qtp8b7H1Q@mail.gmail.com>
+ id 1qqaNS-00044S-MW for jfs-discussion@lists.sourceforge.net;
+ Wed, 11 Oct 2023 14:40:01 +0000
+Received: by mail-pf1-f195.google.com with SMTP id
+ d2e1a72fcca58-68fb85afef4so5355140b3a.1
+ for <jfs-discussion@lists.sourceforge.net>;
+ Wed, 11 Oct 2023 07:39:58 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=gmail.com; s=20230601; t=1697035193; x=1697639993; darn=lists.sourceforge.net;
+ h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+ :to:from:from:to:cc:subject:date:message-id:reply-to;
+ bh=fQNK4cZppGs8Y8rM4h3XQeL/bSmNLB40k5aLUnjJJ7g=;
+ b=JT5mPOOIHHbXE1Tla1pts7yWr+/lCRyNwjd3hwIY8gGAPay+rzRAUUqchPdn7ZtW/A
+ X+sP3haKPpxtuEO6tLuC8WOFCcJz3My8/oh+o/41AunsT6ceUllhciVEXg2QoiCk641W
+ W4qwP/Qi2k2u+vv4QMQSfpPm/RQ4PECfT3N8oOPKYfhM6lpvnN4R4ADNSKBYBeKIbgYq
+ q3nWYQVo1UsWSm0jHd8ze46j4ZTs1Tftk0d6AXnMGcmZVSY/nVc+wyV4WblnKfAA7dQ7
+ litiQdfFaXN1w3isQvMobQPQeCQRbTET+BvjkLyA/P+xYT/BmwID/njuvmf2lQ0F+hXx
+ mkTw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20230601; t=1697035193; x=1697639993;
+ h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+ :to:from:x-gm-message-state:from:to:cc:subject:date:message-id
+ :reply-to;
+ bh=fQNK4cZppGs8Y8rM4h3XQeL/bSmNLB40k5aLUnjJJ7g=;
+ b=IQyFKdHiX3ouQhE1VaVem4c0xETEAD8WBXndL50xCV2Ksvu2wPHqgFQGaISug82Mq6
+ 61NSt06KhHzQP4PkWbvb0E+rllOAWAJT4GdLUg1+1KfVT0JMJP10UkbSRrz9kqJj9Ck7
+ ykYwze96s7xBeLvpvrHtUUfpsutzTxhFxicvFmLOmGcUkGiAWsztqkhG7anVzCApoV45
+ Q5szhonGfK5OfXeWtQxwGMVpf3CHSNG50KzJddYmK/ZGfmV+No3cLpOB2mHoLh2g/g8y
+ J0JsOF54/YHTQfXsa2jdRiDFnp61WmAWltIMXgzQt/v4iR3sYQj3zzAEqwG/7ULVUUW1
+ cKCw==
+X-Gm-Message-State: AOJu0Yz31WpThUgn2s/p3lNVIb8ncq5Utgpmk00Llh9W5LPBIz4Wxe7o
+ ZBMU6kWep2djWifU0VBSCX0=
+X-Google-Smtp-Source: AGHT+IE6Ikt3sjADpcL2G+goBGqBF7/yE9bydDfjiJ4t5gPY9YMYFFqsRsWWbZrdhK57fjiyveTMXA==
+X-Received: by 2002:a05:6a21:788a:b0:125:517c:4f18 with SMTP id
+ bf10-20020a056a21788a00b00125517c4f18mr22055418pzc.8.1697035193173; 
+ Wed, 11 Oct 2023 07:39:53 -0700 (PDT)
+Received: from manas-VirtualBox.iitr.ac.in ([103.37.201.179])
+ by smtp.gmail.com with ESMTPSA id
+ x16-20020a170902ec9000b001c61901ed2esm13874266plg.219.2023.10.11.07.39.50
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Wed, 11 Oct 2023 07:39:52 -0700 (PDT)
+To: dave.kleikamp@oracle.com,
+	shaggy@kernel.org
+Date: Wed, 11 Oct 2023 20:09:37 +0530
+Message-Id: <20231011143937.31996-1-ghandatmanas@gmail.com>
+X-Mailer: git-send-email 2.37.2
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <CAKPOu+_0yjg=PrwAR8jKok8WskjdDEJOBtu3uKR_4Qtp8b7H1Q@mail.gmail.com>
-X-Spam-Score: -2.5 (--)
-X-Spam-Report: Spam detection software, running on the system "util-spamd-1.v13.lw.sourceforge.com",
+X-Spam-Score: 3.4 (+++)
+X-Spam-Report: Spam detection software,
+ running on the system "util-spamd-2.v13.lw.sourceforge.com", 
  has NOT identified this incoming email as spam.  The original
  message has been attached to this so you can view it or label
  similar future email.  If you have any questions, see
  the administrator of that system for details.
- 
- Content preview:  On Wed 11-10-23 14:27:49, Max Kellermann wrote: > On Wed,
-   Oct 11, 2023 at 2:18 PM Max Kellermann <max.kellermann@ionos.com> wrote:
-    > > But without the other filesystems. I'll resend it with just the [...]
-    
- 
- Content analysis details:   (-2.5 points, 6.0 required)
- 
-  pts rule name              description
+ Content preview: Currently while joining the leaf in a buddy system there is
+ shift out of bound error in calculation of BUDSIZE. Added the required check
+ to the BUDSIZE and fixed the documentation as well. Reported-by:
+ https://syzkaller.appspot.com/bug?extid=411debe54d318eaed386
+ Signed-off-by: Manas Ghandat --- fs/jfs/jfs_dmap.c | 8 +++++++- 1 file changed,
+ 7 insertions(+), 1 deletion(-) 
+ Content analysis details:   (3.4 points, 6.0 required)
+ pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
-                             medium trust
-                             [195.135.220.29 listed in list.dnswl.org]
+ 3.6 RCVD_IN_SBL_CSS        RBL: Received via a relay in Spamhaus SBL-CSS
+ [103.37.201.179 listed in zen.spamhaus.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [ghandatmanas[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
-  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
-                             author's domain
+ author's domain
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
-                             envelope-from domain
- -0.1 DKIM_VALID             Message has at least one valid DKIM or DK signature
-  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
-                             valid
-X-Headers-End: 1qqZkH-0002cq-Uj
-Subject: Re: [Jfs-discussion] [PATCH v2] fs/{posix_acl, ext2, jfs,
- ceph}: apply umask if ACL support is disabled
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [209.85.210.195 listed in wl.mailspike.net]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.210.195 listed in list.dnswl.org]
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+X-Headers-End: 1qqaNS-00044S-MW
+Subject: [Jfs-discussion] [PATCH] jfs: fix shift-out-of-bounds in dbJoin
 X-BeenThere: jfs-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -132,41 +129,59 @@ List-Post: <mailto:jfs-discussion@lists.sourceforge.net>
 List-Help: <mailto:jfs-discussion-request@lists.sourceforge.net?subject=help>
 List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/jfs-discussion>, 
  <mailto:jfs-discussion-request@lists.sourceforge.net?subject=subscribe>
-Cc: Dave Kleikamp <shaggy@kernel.org>, jfs-discussion@lists.sourceforge.net,
- linux-ext4@vger.kernel.org, Jan Kara <jack@suse.cz>,
- Jeff Layton <jlayton@kernel.org>, linux-kernel@vger.kernel.org,
- Christian Brauner <brauner@kernel.org>, Jan Kara <jack@suse.com>,
- linux-fsdevel@vger.kernel.org, Yang Xu <xuyang2018.jy@fujitsu.com>,
- Ilya Dryomov <idryomov@gmail.com>, Xiubo Li <xiubli@redhat.com>,
- ceph-devel@vger.kernel.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+From: Manas Ghandat via Jfs-discussion <jfs-discussion@lists.sourceforge.net>
+Reply-To: Manas Ghandat <ghandatmanas@gmail.com>
+Cc: Linux-kernel-mentees@lists.linuxfoundation.org,
+ jfs-discussion@lists.sourceforge.net, Manas Ghandat <ghandatmanas@gmail.com>,
+ linux-kernel@vger.kernel.org,
+ syzbot+411debe54d318eaed386@syzkaller.appspotmail.com
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Errors-To: jfs-discussion-bounces@lists.sourceforge.net
 
-T24gV2VkIDExLTEwLTIzIDE0OjI3OjQ5LCBNYXggS2VsbGVybWFubiB3cm90ZToKPiBPbiBXZWQs
-IE9jdCAxMSwgMjAyMyBhdCAyOjE44oCvUE0gTWF4IEtlbGxlcm1hbm4gPG1heC5rZWxsZXJtYW5u
-QGlvbm9zLmNvbT4gd3JvdGU6Cj4gPiBCdXQgd2l0aG91dCB0aGUgb3RoZXIgZmlsZXN5c3RlbXMu
-IEknbGwgcmVzZW5kIGl0IHdpdGgganVzdCB0aGUKPiA+IHBvc2l4X2FjbC5oIGh1bmsuCj4gCj4g
-VGhpbmtpbmcgYWdhaW4sIEkgZG9uJ3QgdGhpbmsgdGhpcyBpcyB0aGUgcHJvcGVyIHNvbHV0aW9u
-LiBUaGlzIG1heQo+IHNlcnZlciBhcyBhIHdvcmthcm91bmQgc28gdGhvc2UgYnJva2VuIGZpbGVz
-eXN0ZW1zIGRvbid0IHN1ZmZlciBmcm9tCj4gdGhpcyBidWcsIGJ1dCBpdCdzIG5vdCBwcm9wZXIu
-Cj4gCj4gcG9zaXhfYWNsX2NyZWF0ZSgpIGlzIG9ubHkgc3VwcG9zZWQgdG8gYXBweSB0aGUgdW1h
-c2sgaWYgdGhlIGlub2RlCj4gc3VwcG9ydHMgQUNMczsgaWYgbm90LCB0aGUgVkZTIGlzIHN1cHBv
-c2VkIHRvIGRvIGl0LiBCdXQgaWYgdGhlCj4gZmlsZXN5c3RlbSBwcmV0ZW5kcyB0byBoYXZlIEFD
-TCBzdXBwb3J0IGJ1dCB0aGUga2VybmVsIGRvZXMgbm90LCBpdCdzCj4gcmVhbGx5IGEgZmlsZXN5
-c3RlbSBidWcuIEhhY2tpbmcgdGhlIHVtYXNrIGNvZGUgaW50bwo+IHBvc2l4X2FjbF9jcmVhdGUo
-KSBmb3IgdGhhdCBpbmNvbnNpc3RlbnQgY2FzZSBkb2Vzbid0IHNvdW5kIHJpZ2h0Lgo+IAo+IEEg
-YmV0dGVyIHdvcmthcm91bmQgd291bGQgYmUgdGhpcyBwYXRjaDoKPiBodHRwczovL3BhdGNod29y
-ay5rZXJuZWwub3JnL3Byb2plY3QvbGludXgtbmZzL3BhdGNoLzE1MTYwMzc0NDY2Mi4yOTAzNS40
-OTEwMTYxMjY0MTI0ODc1NjU4LnN0Z2l0QHJhYmJpdC5pbnRlcm4uY20tYWcvCj4gSSBzdWJtaXR0
-ZWQgaXQgbW9yZSB0aGFuIDUgeWVhcnMgYWdvLCBpdCBnb3Qgb25lIHBvc2l0aXZlIHJldmlldywg
-YnV0Cj4gd2FzIG5ldmVyIG1lcmdlZC4KPiAKPiBUaGlzIHBhdGNoIGVuYWJsZXMgdGhlIFZGUydz
-IHVtYXNrIGNvZGUgZXZlbiBpZiB0aGUgZmlsZXN5c3RlbQo+IHByZXJlbnRzIHRvIHN1cHBvcnQg
-QUNMcy4gVGhpcyBzdGlsbCBkb2Vzbid0IGZpeCB0aGUgZmlsZXN5c3RlbSBidWcsCj4gYnV0IG1h
-a2VzIFZGUydzIGJlaGF2aW9yIGNvbnNpc3RlbnQuCgpPSywgdGhhdCBzb2x1dGlvbiB3b3JrcyBm
-b3IgbWUgYXMgd2VsbC4gSSBhZ3JlZSBpdCBzZWVtcyBhIHRhZCBiaXQgY2xlYW5lci4KQ2hyaXN0
-aWFuLCB3aGljaCBvbmUgd291bGQgeW91IHByZWZlcj8KCgkJCQkJCQkJSG9uemEKLS0gCkphbiBL
-YXJhIDxqYWNrQHN1c2UuY29tPgpTVVNFIExhYnMsIENSCgoKX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX18KSmZzLWRpc2N1c3Npb24gbWFpbGluZyBsaXN0Ckpm
-cy1kaXNjdXNzaW9uQGxpc3RzLnNvdXJjZWZvcmdlLm5ldApodHRwczovL2xpc3RzLnNvdXJjZWZv
-cmdlLm5ldC9saXN0cy9saXN0aW5mby9qZnMtZGlzY3Vzc2lvbgo=
+Currently while joining the leaf in a buddy system there is shift out
+of bound error in calculation of BUDSIZE. Added the required check 
+to the BUDSIZE and fixed the documentation as well.
+
+Reported-by: syzbot+411debe54d318eaed386@syzkaller.appspotmail.com
+Closes: https://syzkaller.appspot.com/bug?extid=411debe54d318eaed386
+Signed-off-by: Manas Ghandat <ghandatmanas@gmail.com>
+---
+ fs/jfs/jfs_dmap.c | 8 +++++++-
+ 1 file changed, 7 insertions(+), 1 deletion(-)
+
+diff --git a/fs/jfs/jfs_dmap.c b/fs/jfs/jfs_dmap.c
+index 6b838d3ae7c2..baa97bda1c7a 100644
+--- a/fs/jfs/jfs_dmap.c
++++ b/fs/jfs/jfs_dmap.c
+@@ -2730,7 +2730,9 @@ static int dbBackSplit(dmtree_t * tp, int leafno)
+  *	leafno	- the number of the leaf to be updated.
+  *	newval	- the new value for the leaf.
+  *
+- * RETURN VALUES: none
++ * RETURN VALUES:
++ *  0		- success
++ *	-EIO	- i/o error
+  */
+ static int dbJoin(dmtree_t * tp, int leafno, int newval)
+ {
+@@ -2757,6 +2759,10 @@ static int dbJoin(dmtree_t * tp, int leafno, int newval)
+ 		 * get the buddy size (number of words covered) of
+ 		 * the new value.
+ 		 */
++
++		if ((newval - tp->dmt_budmin) > BUDMIN)
++			return -EIO;
++
+ 		budsz = BUDSIZE(newval, tp->dmt_budmin);
+ 
+ 		/* try to join.
+-- 
+2.37.2
+
+
+
+_______________________________________________
+Jfs-discussion mailing list
+Jfs-discussion@lists.sourceforge.net
+https://lists.sourceforge.net/lists/listinfo/jfs-discussion
