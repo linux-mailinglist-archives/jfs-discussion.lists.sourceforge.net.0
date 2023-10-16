@@ -2,124 +2,123 @@ Return-Path: <jfs-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+jfs-discussion@lfdr.de
 Delivered-To: lists+jfs-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7B13D7CACD5
-	for <lists+jfs-discussion@lfdr.de>; Mon, 16 Oct 2023 17:02:36 +0200 (CEST)
-Received: from [127.0.0.1] (helo=sfs-ml-4.v29.lw.sourceforge.com)
-	by sfs-ml-4.v29.lw.sourceforge.com with esmtp (Exim 4.95)
+	by mail.lfdr.de (Postfix) with ESMTPS id 976557CB145
+	for <lists+jfs-discussion@lfdr.de>; Mon, 16 Oct 2023 19:22:52 +0200 (CEST)
+Received: from [127.0.0.1] (helo=sfs-ml-1.v29.lw.sourceforge.com)
+	by sfs-ml-1.v29.lw.sourceforge.com with esmtp (Exim 4.95)
 	(envelope-from <jfs-discussion-bounces@lists.sourceforge.net>)
-	id 1qsP6c-00036H-RY;
-	Mon, 16 Oct 2023 15:02:07 +0000
+	id 1qsRIa-0003r8-5j;
+	Mon, 16 Oct 2023 17:22:35 +0000
 Received: from [172.30.20.202] (helo=mx.sourceforge.net)
- by sfs-ml-4.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
+ by sfs-ml-1.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
  TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (Exim 4.95)
- (envelope-from <ghandatmanas@gmail.com>) id 1qsP6Z-00036A-Nk
+ (envelope-from <ghandatmanas@gmail.com>) id 1qsRIY-0003r1-MU
  for jfs-discussion@lists.sourceforge.net;
- Mon, 16 Oct 2023 15:02:04 +0000
+ Mon, 16 Oct 2023 17:22:33 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=sourceforge.net; s=x; h=Content-Transfer-Encoding:Content-Type:In-Reply-To:
- From:References:Cc:To:Subject:MIME-Version:Date:Message-ID:Sender:Reply-To:
- Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
- Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
+ d=sourceforge.net; s=x; h=Content-Transfer-Encoding:MIME-Version:Message-Id:
+ Date:Subject:Cc:To:From:Sender:Reply-To:Content-Type:Content-ID:
+ Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+ :Resent-Message-ID:In-Reply-To:References:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=JnnS58IgMMW37G00hlv3uANnt69yT13t13Z0Wl0btSI=; b=ZDu59RS9gJ0CQQR8iHcKyitADL
- wjX0ozA8mYMEbqAL61j0im2I1EKAtz5ZhWtpYL9tYWtm4uUFDBypckiDFoymPRuOtXaylIU8sDcH5
- BTU0C1o1DFvAW85FQpXZYTbqiQCp4Z+UYe2LWZXj8IoPmnhIUaBWXDpIQwkL4wyguaWg=;
+ bh=fzazQLMiElf0E2rTzrIHqd72McOV2ajmxD+aMmf7vqY=; b=Zsqv2OS+zXfgYGctND/vJ2inOx
+ cw+vRIqSo6B3uVrV8Rd3fUsxXlMtx/7gioFVavXwoiMOC/62Kx9L3hNWFJ+Od/AmiE74djJNAoMQC
+ TkMOJXJZfVZRKye++KxrUdoVsvebrnYJkifeDDk1KOrz+AB+gZCwqtHX56kiHew7ihN4=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
- h=Content-Transfer-Encoding:Content-Type:In-Reply-To:From:References:Cc:To:
- Subject:MIME-Version:Date:Message-ID:Sender:Reply-To:Content-ID:
- Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
- :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
- List-Post:List-Owner:List-Archive;
- bh=JnnS58IgMMW37G00hlv3uANnt69yT13t13Z0Wl0btSI=; b=VQGywaeMW+4T9BtBIz6CfTRK4n
- G4M3KNtN8Axdr5RTT555z5bZOcT8V60dn78yL/2k5gSJtobZTUm0K+dKllHfWqt4sxkCNqzZzSawt
- 1keN8RLa++YU296rzrok7156vlfribtQuB6q0HaWeO6/JOb13+7JZo/wPEn2u7weWVDg=;
-Received: from mail-pl1-f195.google.com ([209.85.214.195])
- by sfi-mx-1.v28.lw.sourceforge.com with esmtps
+ h=Content-Transfer-Encoding:MIME-Version:Message-Id:Date:Subject:Cc:To:From
+ :Sender:Reply-To:Content-Type:Content-ID:Content-Description:Resent-Date:
+ Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+ References:List-Id:List-Help:List-Unsubscribe:List-Subscribe:List-Post:
+ List-Owner:List-Archive; bh=fzazQLMiElf0E2rTzrIHqd72McOV2ajmxD+aMmf7vqY=; b=N
+ DHjlrHNmlRJwX7b7lNi6XkZ5Yn8xfnOD0u0h4je75MsLTxtB7X+UACHdPOHUG+7tdcbsdPKp8pi1F
+ wOX6PKKVB6AeY+zk/BO6wgugMMMqSlp7/bnXjb2NNlN1FYTAG2leFifrtrZhrN0WjYpg2zbmTVumm
+ Gqg4BsOM/dc8LNyw=;
+Received: from mail-pl1-f196.google.com ([209.85.214.196])
+ by sfi-mx-2.v28.lw.sourceforge.com with esmtps
  (TLS1.2:ECDHE-RSA-AES128-GCM-SHA256:128) (Exim 4.95)
- id 1qsP6W-00Gi0u-EI for jfs-discussion@lists.sourceforge.net;
- Mon, 16 Oct 2023 15:02:04 +0000
-Received: by mail-pl1-f195.google.com with SMTP id
- d9443c01a7336-1ca215cc713so10021275ad.3
+ id 1qsRIV-0000nC-LQ for jfs-discussion@lists.sourceforge.net;
+ Mon, 16 Oct 2023 17:22:33 +0000
+Received: by mail-pl1-f196.google.com with SMTP id
+ d9443c01a7336-1c87a85332bso40961605ad.2
  for <jfs-discussion@lists.sourceforge.net>;
- Mon, 16 Oct 2023 08:02:00 -0700 (PDT)
+ Mon, 16 Oct 2023 10:22:31 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=gmail.com; s=20230601; t=1697468515; x=1698073315; darn=lists.sourceforge.net;
- h=content-transfer-encoding:in-reply-to:from:references:cc:to
- :content-language:subject:user-agent:mime-version:date:message-id
- :from:to:cc:subject:date:message-id:reply-to;
- bh=JnnS58IgMMW37G00hlv3uANnt69yT13t13Z0Wl0btSI=;
- b=PS45ndYhtK4YL3DzHBYxw8LwSZPmz79kAMyN6MRBdgsPXShnDjdRCGQ/X+ptOWdL8+
- 9eMi21A6cxXQMVY58rUSzzONZBdGZOc66ZLhEAO32PPaH7CEBtt4ml2Uz0o4DFpxaBHH
- NtAUT3/D8GEqvLdA4LAjYjpusvs10f1GZn2VvKfm55AKTM25n95AIhqPI6WTCo0+U+BD
- XjWh/N7j4N72I9K3DUJzHzy3yvqZaCTDqnyMmSy03Kn5II0+MUuPGslVD4m6gNToa+9g
- e1ljL2/V6R9fuFDogYg2AVeYphd6Hqazet1V1LD/9VBWSwQ4MqYJL93qPy7iKhkqSfjf
- lVnQ==
+ d=gmail.com; s=20230601; t=1697476946; x=1698081746; darn=lists.sourceforge.net;
+ h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+ :to:from:from:to:cc:subject:date:message-id:reply-to;
+ bh=fzazQLMiElf0E2rTzrIHqd72McOV2ajmxD+aMmf7vqY=;
+ b=BK7gl9Oy3MHU5rC9GswAKoK7uW5c0LMkjQ93cgoYTSPM1IekEFEf5ZSMlS5V8Fp2dw
+ Z2RbcYImcsneXAej9zORUqu0E0l1bQrMWDAQXvSdfsmgEJWvzi+ubN1BTsaUf/jZ7BvO
+ X5EQaIdvB2zKCQqPEN1lMM6oztAjHnrDEnbDma485jSZdVHGAEWaGe5+efHDEHyx0kCB
+ VZVRx1vOrkQ7zxQGKvlfxlKlveWUUPgy/Do7jVbUNXeJcDNRns+4bf2R2qe6rNByQcVm
+ 9jv/VcHBoYFK91+qYsGNLGXrrHgNOIwl1XuSVTa+gINc7i8MTgqQ/3Cql0Soe0l+mKCq
+ Lmrg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20230601; t=1697468515; x=1698073315;
- h=content-transfer-encoding:in-reply-to:from:references:cc:to
- :content-language:subject:user-agent:mime-version:date:message-id
- :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
- bh=JnnS58IgMMW37G00hlv3uANnt69yT13t13Z0Wl0btSI=;
- b=qt7emFwgYQneQ7MLNcaLCpkbtb3vyNeEzGVfQfXhXFyVWgwo96Pbfjnl07e7MIZUR1
- JFwhxiSfJvDsmzinciE/cOWxWceQ74aLuS6c/119gi5cn4Blfl+VV5gdWf8TSC+ORGEP
- 0px6jOxvibADLInQ7+E4BGLhkOa9eOuCnuRkdXRvI3tZ/aKHngcEs5oNTny6e79rD6er
- BNw3P1dSuekPFy6fuvNddVKbKAAPRaUkZ/lueHdzMgzCrfAxz9jNFXABjKyu5IV8CzaR
- SMEPJyJ7rADDWUuf9ZzYIx2H6pMGbDZBjGUmo2s9uOyhFkgd2uJnmtkwpJzk585LIwCa
- oWpw==
-X-Gm-Message-State: AOJu0YzP+B2ZyCh2LOkdNApvZIptf1Nm+vCORsFPCZkRx+U7dhvldlfj
- BeEiJfxRq09IXc5hcyG/4dg=
-X-Google-Smtp-Source: AGHT+IFT6Dq4J/EVcOv+em6QWTH7/Ht//OA+UE5IFyVPLa0/LDab/gjnaYbmFu2DaSdjzjdENCEB5A==
-X-Received: by 2002:a17:902:988d:b0:1c9:b207:d412 with SMTP id
- s13-20020a170902988d00b001c9b207d412mr15460340plp.37.1697468514526; 
- Mon, 16 Oct 2023 08:01:54 -0700 (PDT)
-Received: from [10.0.2.15] ([103.37.201.178]) by smtp.gmail.com with ESMTPSA id
- l13-20020a170902eb0d00b001b890009634sm8574379plb.139.2023.10.16.08.01.51
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Mon, 16 Oct 2023 08:01:54 -0700 (PDT)
-Message-ID: <c4af0ef6-56e2-089e-e1b3-55574f6964c6@gmail.com>
-Date: Mon, 16 Oct 2023 20:31:50 +0530
+ d=1e100.net; s=20230601; t=1697476946; x=1698081746;
+ h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+ :to:from:x-gm-message-state:from:to:cc:subject:date:message-id
+ :reply-to;
+ bh=fzazQLMiElf0E2rTzrIHqd72McOV2ajmxD+aMmf7vqY=;
+ b=DZMYRrHsmcCYqX7LWLa5QRPmC91jxRtTd4U/JoVHm/1awKK3kwMzD7k1rJtgioigTv
+ cMUzHXhRFb9ok4DP9VSF3x0hBmdgEdcs/Vd3IDvuJZLOTWJ/JlmV+/eepPpsiUfEU71M
+ pQSqOgqEFDVK7SRT3GRx6OEc7OXsJQwI+hc4Riv1u6xDB2dLUHdL6YxzztIeKaNBM74o
+ jS7qP2JMSKLIxyW8GSU+qdNcbC5ANbOm5GTXQWtEC9jdb2E3XTtgluPREQe400BbOMM7
+ hGDLAJ1eRhkuREETIjFuk9OZRRQJfaoQuFMaSUVl+jubUngMUVqs3Jz9na+/okMdon36
+ ShlQ==
+X-Gm-Message-State: AOJu0Yw5Vt43Czy9pLboDr1v1p0k/tJOMHdVB3Q5HLo6IaShQ8jIWYjY
+ c4IMEpOxGYtCXlZW9fumEHMu4RamjceYopTbduI=
+X-Google-Smtp-Source: AGHT+IFu32FXclE93vnrfHvsUnNd7aLyilrnezvtfZPodtmCbOs68G8/SX15ddka7PWiK1VxXkXDQA==
+X-Received: by 2002:a17:903:2445:b0:1ca:2497:554 with SMTP id
+ l5-20020a170903244500b001ca24970554mr9560472pls.8.1697476945945; 
+ Mon, 16 Oct 2023 10:22:25 -0700 (PDT)
+Received: from manas-VirtualBox.iitr.ac.in ([103.37.201.178])
+ by smtp.gmail.com with ESMTPSA id
+ ik5-20020a170902ab0500b001b8622c1ad2sm8926936plb.130.2023.10.16.10.22.23
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Mon, 16 Oct 2023 10:22:25 -0700 (PDT)
+To: dave.kleikamp@oracle.com,
+	shaggy@kernel.org
+Date: Mon, 16 Oct 2023 22:41:30 +0530
+Message-Id: <20231016171130.15952-1-ghandatmanas@gmail.com>
+X-Mailer: git-send-email 2.37.2
 MIME-Version: 1.0
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
- Thunderbird/102.13.0
-Content-Language: en-US
-To: dave.kleikamp@oracle.com, shaggy@kernel.org
-References: <20231008174745.27342-1-ghandatmanas@gmail.com>
-In-Reply-To: <20231008174745.27342-1-ghandatmanas@gmail.com>
-X-Spam-Score: -3.5 (---)
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: Spam detection software,
- running on the system "util-spamd-1.v13.lw.sourceforge.com", 
+ running on the system "util-spamd-2.v13.lw.sourceforge.com", 
  has NOT identified this incoming email as spam.  The original
  message has been attached to this so you can view it or label
  similar future email.  If you have any questions, see
  the administrator of that system for details.
- Content preview:  Just a friendly ping :) On 08/10/23 23:17,
- Manas Ghandat wrote:
- > Currently while copying dtree root from inode to dnode in the xp slot >
- there is a out of bound memcpy. Added a bound check to the memcpy. > >
- Reported-by: sy [...] 
- Content analysis details:   (-3.5 points, 6.0 required)
+ Content preview: Currently while searching for current page in the sorted
+ entry
+ table of the page there is a out of bound access. Added a bound check to
+ fix the error. Reported-by:
+ https://syzkaller.appspot.com/bug?extid=9924e2a08d9ba0fd4ce2
+ Signed-off-by: Manas Ghandat --- fs/jfs/jfs_dtree.c | 3 +++ 1 file changed,
+ 3 insertions(+) 
+ Content analysis details:   (-0.2 points, 6.0 required)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.214.195 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider [ghandatmanas[at]gmail.com]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [209.85.214.195 listed in wl.mailspike.net]
+ [209.85.214.196 listed in wl.mailspike.net]
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
- -3.3 NICE_REPLY_A           Looks like a legit reply (A)
-X-Headers-End: 1qsP6W-00Gi0u-EI
-Subject: Re: [Jfs-discussion] [PATCH] jfs : fix array-index-out-of-bounds in
- diWrite
+ valid
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.214.196 listed in list.dnswl.org]
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+X-Headers-End: 1qsRIV-0000nC-LQ
+Subject: [Jfs-discussion] [PATCH] jfs: fix slab-out-of-bounds Read in
+ dtSearch
 X-BeenThere: jfs-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -133,40 +132,42 @@ List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/jfs-discussion>,
  <mailto:jfs-discussion-request@lists.sourceforge.net?subject=subscribe>
 From: Manas Ghandat via Jfs-discussion <jfs-discussion@lists.sourceforge.net>
 Reply-To: Manas Ghandat <ghandatmanas@gmail.com>
-Cc: jfs-discussion@lists.sourceforge.net,
- syzbot+c1056fdfe414463fdb33@syzkaller.appspotmail.com,
- Linux-kernel-mentees@lists.linuxfoundation.org, linux-kernel@vger.kernel.org
+Cc: Linux-kernel-mentees@lists.linuxfoundation.org,
+ jfs-discussion@lists.sourceforge.net, Manas Ghandat <ghandatmanas@gmail.com>,
+ linux-kernel@vger.kernel.org,
+ syzbot+9924e2a08d9ba0fd4ce2@syzkaller.appspotmail.com
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Errors-To: jfs-discussion-bounces@lists.sourceforge.net
 
-Just a friendly ping :)
+Currently while searching for current page in the sorted entry table
+of the page there is a out of bound access. Added a bound check to fix
+the error.
 
-On 08/10/23 23:17, Manas Ghandat wrote:
-> Currently while copying dtree root from inode to dnode in the xp slot
-> there is a out of bound memcpy. Added a bound check to the memcpy.
->
-> Reported-by: syzbot+c1056fdfe414463fdb33@syzkaller.appspotmail.com
-> Fixes: https://syzkaller.appspot.com/bug?extid=c1056fdfe414463fdb33
-> Signed-off-by: Manas Ghandat <ghandatmanas@gmail.com>
-> ---
->   fs/jfs/jfs_imap.c | 3 ++-
->   1 file changed, 2 insertions(+), 1 deletion(-)
->
-> diff --git a/fs/jfs/jfs_imap.c b/fs/jfs/jfs_imap.c
-> index 799d3837e7c2..d1f897848be0 100644
-> --- a/fs/jfs/jfs_imap.c
-> +++ b/fs/jfs/jfs_imap.c
-> @@ -746,7 +746,8 @@ int diWrite(tid_t tid, struct inode *ip)
->   		xp = (dtpage_t *) & dp->di_dtroot;
->   		lv = ilinelock->lv;
->   		for (n = 0; n < ilinelock->index; n++, lv++) {
-> -			memcpy(&xp->slot[lv->offset], &p->slot[lv->offset],
-> +			if (lv->offset < 128)
-> +				memcpy(&xp->slot[lv->offset], &p->slot[lv->offset],
->   			       lv->length << L2DTSLOTSIZE);
->   		}
->   	} else {
+Reported-by: syzbot+9924e2a08d9ba0fd4ce2@syzkaller.appspotmail.com
+Fixes: https://syzkaller.appspot.com/bug?extid=9924e2a08d9ba0fd4ce2
+Signed-off-by: Manas Ghandat <ghandatmanas@gmail.com>
+---
+ fs/jfs/jfs_dtree.c | 3 +++
+ 1 file changed, 3 insertions(+)
+
+diff --git a/fs/jfs/jfs_dtree.c b/fs/jfs/jfs_dtree.c
+index 92b7c533407c..cf67d32d5b7f 100644
+--- a/fs/jfs/jfs_dtree.c
++++ b/fs/jfs/jfs_dtree.c
+@@ -633,6 +633,9 @@ int dtSearch(struct inode *ip, struct component_name * key, ino_t * data,
+ 		for (base = 0, lim = p->header.nextindex; lim; lim >>= 1) {
+ 			index = base + (lim >> 1);
+ 
++			if (stbl[index] > 128 || stbl[index] < 0)
++				goto out;
++
+ 			if (p->header.flag & BT_LEAF) {
+ 				/* uppercase leaf name to compare */
+ 				cmp =
+-- 
+2.37.2
+
 
 
 _______________________________________________
