@@ -2,28 +2,28 @@ Return-Path: <jfs-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+jfs-discussion@lfdr.de
 Delivered-To: lists+jfs-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id EB1227E4453
-	for <lists+jfs-discussion@lfdr.de>; Tue,  7 Nov 2023 16:52:24 +0100 (CET)
-Received: from [127.0.0.1] (helo=sfs-ml-3.v29.lw.sourceforge.com)
-	by sfs-ml-3.v29.lw.sourceforge.com with esmtp (Exim 4.95)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2D1817E4458
+	for <lists+jfs-discussion@lfdr.de>; Tue,  7 Nov 2023 16:52:33 +0100 (CET)
+Received: from [127.0.0.1] (helo=sfs-ml-1.v29.lw.sourceforge.com)
+	by sfs-ml-1.v29.lw.sourceforge.com with esmtp (Exim 4.95)
 	(envelope-from <jfs-discussion-bounces@lists.sourceforge.net>)
-	id 1r0ONB-0006PQ-Sd;
-	Tue, 07 Nov 2023 15:52:12 +0000
+	id 1r0ONK-0006Je-V0;
+	Tue, 07 Nov 2023 15:52:22 +0000
 Received: from [172.30.20.202] (helo=mx.sourceforge.net)
- by sfs-ml-3.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
+ by sfs-ml-1.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
  TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (Exim 4.95)
- (envelope-from <sashal@kernel.org>) id 1r0ONA-0006PJ-N3
+ (envelope-from <sashal@kernel.org>) id 1r0ONJ-0006JY-1Y
  for jfs-discussion@lists.sourceforge.net;
- Tue, 07 Nov 2023 15:52:11 +0000
+ Tue, 07 Nov 2023 15:52:21 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=sourceforge.net; s=x; h=Content-Transfer-Encoding:MIME-Version:References:
  In-Reply-To:Message-ID:Date:Subject:Cc:To:From:Sender:Reply-To:Content-Type:
  Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
  Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=V4OaMnle54rlCzN/9XLs4pCtjBt6sZM/d0aDQhn6OF4=; b=dPoGiSkNP1K6l6W4FNlX/N5+9+
- exACRbEuaxqmO4m2h3ghmOwtegwwpjRRqmhLq9XTAdWpCzSvYqt0/znUSS6+l7GiNBKc5f+edNg2F
- l6weIb7PFgjj5FEWDuqCTSNCkcbnGXj8kcAkN8nv91/6ER1l1KsYNpA2BAbMhjnMbEbE=;
+ bh=Tw7hteh3rRNZZReV6yLoWsIu/N9E1HB3kmMuZI9hQNc=; b=AtE8g3Hb8jmXR3lwMb+ZWU7qpl
+ b8LKcKWNCqb7g6eMD2Oe3/Bmo1Y4nYiSgFTBRTdPMkqqWEtD0ITIhyEzfgIDVlcO4991uDnGDIR5w
+ jjtNdJPJYdveZwjsYCqfFvmsy3VCyYzrOem8o7kIG8KB49CmpaemyA6kP57YTY/7O94g=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
  h=Content-Transfer-Encoding:MIME-Version:References:In-Reply-To:Message-ID:
@@ -31,33 +31,33 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
  :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
  List-Post:List-Owner:List-Archive;
- bh=V4OaMnle54rlCzN/9XLs4pCtjBt6sZM/d0aDQhn6OF4=; b=j2yJAjiO8a8+0vCBxFe7uVlaCh
- 947M6QMujXD2ESfH+QxT+Ic87IkIofLs0hnwr5aI6hyGRuxjv9qVwzAmuVQTWScLILSNIExpRsVI6
- W1pinysDJnRqLXiwVUwT1sKEl4QFoSdGD0/KidgJI3eskjuBwqb4UP8mZcfefMk0GGPQ=;
+ bh=Tw7hteh3rRNZZReV6yLoWsIu/N9E1HB3kmMuZI9hQNc=; b=C0H8lWrxzRsQxKRpeF+MgQ4qmf
+ 5JRXUjKDr9cAcBHyYvtUTb+axEDFmG7FQZXsUj7U+ze7J2oNW+NViA7rdt2458MH+pPn0WJvy50aA
+ EgwDs/v2Do0Bd+D4gwRoN6ObOdp5RdHp32gvtz0tLOLHZ3txeIACGMgLm+hNT7dMv6Bw=;
 Received: from ams.source.kernel.org ([145.40.68.75])
  by sfi-mx-2.v28.lw.sourceforge.com with esmtps
  (TLS1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.95)
- id 1r0ON8-0005iQ-4U for jfs-discussion@lists.sourceforge.net;
- Tue, 07 Nov 2023 15:52:10 +0000
+ id 1r0OND-0005kT-I6 for jfs-discussion@lists.sourceforge.net;
+ Tue, 07 Nov 2023 15:52:18 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
- by ams.source.kernel.org (Postfix) with ESMTP id D8193B817E7;
- Tue,  7 Nov 2023 15:52:03 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id B3735C433C7;
- Tue,  7 Nov 2023 15:52:01 +0000 (UTC)
+ by ams.source.kernel.org (Postfix) with ESMTP id 4CA0AB8165B;
+ Tue,  7 Nov 2023 15:52:09 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 5786CC433C7;
+ Tue,  7 Nov 2023 15:52:05 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=k20201202; t=1699372323;
- bh=mkk37DpoUpPoDjSWnvbdSNbSxO0JGzJx4NpLJi6p1Sk=;
+ s=k20201202; t=1699372326;
+ bh=VM3LF8oTczM43emEKz04yeevNrGEzw4mxRz6bgcmsoY=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=LD9ya4F+LWU+2WwlhQy39KEvL7qFURenNcDV/d1DeJVo7OVK4QSsi0SfBW9XUbjGr
- tjRtR5IG7qqC2jwQUN4jNP2ZV1kAYdpH1kDX1js+xLH2kEnw8cSrMC0mynm6jX13rK
- r6+wjHraiX56r5yEvwFFrlG1CMAtGPwbSkqQcuym6LCsazaawW/+uZKsbT23dEnCDb
- eZX6WoqEsY7rrCjIj+mjlJdwkS51Y6Jgu2UrZzMg1jETrxqhw/Rp00Y1oicP5sJWPZ
- nA0J8YS5uSGDzWjupJvbUcVFOn/JvrRG2XdyYFXlPDsRovD5NrGu7uO5piT89BImMW
- BbFFP/ix51+Og==
+ b=PrlN7a71hGeU4oF9SMbCRh/RwA0p6E+WZFuUQ/IMpPsPtSN7uzESA/jvmCQ/BGIMQ
+ 5/JQSkNMPxzzEAaDlhXkvjKxOWKyW7KVoJTN3Z9tScoDpAPzi0FlH33kFvKFLJmanA
+ e9ufB4sIM3IJ+sA9pn1mUQoxCgzTJzaX/LYUulrn4hFSO5/eb28ayLKLqqX7oN1gk6
+ hcU/4nm6HOKcLD2bJ10sHWoIyvSuENmN7kNcsNoSGeGuv/XL12QFYxLY7Qvkt5c3N4
+ B4YoWFvRuVNZTTlJ1kQ4F+HjlFpGaftlqLx0EC2k1+pQP6uwG9PQm5jcFOwV6pf1iN
+ fJs4xYxxO/0eg==
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Date: Tue,  7 Nov 2023 10:51:16 -0500
-Message-ID: <20231107155146.3767610-7-sashal@kernel.org>
+Date: Tue,  7 Nov 2023 10:51:17 -0500
+Message-ID: <20231107155146.3767610-8-sashal@kernel.org>
 X-Mailer: git-send-email 2.42.0
 In-Reply-To: <20231107155146.3767610-1-sashal@kernel.org>
 References: <20231107155146.3767610-1-sashal@kernel.org>
@@ -72,11 +72,12 @@ X-Spam-Report: Spam detection software,
  message has been attached to this so you can view it or label
  similar future email.  If you have any questions, see
  the administrator of that system for details.
- Content preview: From: Juntong Deng <juntong.deng@outlook.com> [ Upstream
+ Content preview: From: Manas Ghandat <ghandatmanas@gmail.com> [ Upstream
  commit
- 64933ab7b04881c6c18b21ff206c12278341c72e ] Both db_maxag and db_agpref are
- used as the index of the db_agfree array, but there is currently no validity
- check for db_maxag and db_agpref, which can lead to errors. 
+ 22cad8bc1d36547cdae0eef316c47d917ce3147c ] Currently while searching for
+ dmtree_t for sufficient free blocks there is an array out of bounds while
+ getting element in tp->dm_stree. To add the required check for out of bound
+ we first need to det [...] 
  Content analysis details:   (-2.5 points, 6.0 required)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
@@ -93,9 +94,9 @@ X-Spam-Report: Spam detection software,
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.0 T_SCC_BODY_TEXT_LINE   No description available.
  -0.0 DKIMWL_WL_HIGH         DKIMwl.org - High trust sender
-X-Headers-End: 1r0ON8-0005iQ-4U
-Subject: [Jfs-discussion] [PATCH AUTOSEL 5.15 07/22] fs/jfs: Add validity
- check for db_maxag and db_agpref
+X-Headers-End: 1r0OND-0005kT-I6
+Subject: [Jfs-discussion] [PATCH AUTOSEL 5.15 08/22] jfs: fix
+ array-index-out-of-bounds in dbFindLeaf
 X-BeenThere: jfs-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -109,57 +110,95 @@ List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/jfs-discussion>,
  <mailto:jfs-discussion-request@lists.sourceforge.net?subject=subscribe>
 From: Sasha Levin via Jfs-discussion <jfs-discussion@lists.sourceforge.net>
 Reply-To: Sasha Levin <sashal@kernel.org>
-Cc: Sasha Levin <sashal@kernel.org>, Juntong Deng <juntong.deng@outlook.com>,
- wonguk.lee1023@gmail.com, code@siddh.me, shaggy@kernel.org,
- syzbot+38e876a8aa44b7115c76@syzkaller.appspotmail.com, yogi.kernel@gmail.com,
+Cc: Sasha Levin <sashal@kernel.org>, shaggy@kernel.org,
+ wonguk.lee1023@gmail.com, Manas Ghandat <ghandatmanas@gmail.com>,
+ juntong.deng@outlook.com, yogi.kernel@gmail.com,
  jfs-discussion@lists.sourceforge.net, liushixin2@huawei.com,
- andrew.kanner@gmail.com, ghandatmanas@gmail.com
+ andrew.kanner@gmail.com, code@siddh.me,
+ syzbot+aea1ad91e854d0a83e04@syzkaller.appspotmail.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Errors-To: jfs-discussion-bounces@lists.sourceforge.net
 
-From: Juntong Deng <juntong.deng@outlook.com>
+From: Manas Ghandat <ghandatmanas@gmail.com>
 
-[ Upstream commit 64933ab7b04881c6c18b21ff206c12278341c72e ]
+[ Upstream commit 22cad8bc1d36547cdae0eef316c47d917ce3147c ]
 
-Both db_maxag and db_agpref are used as the index of the
-db_agfree array, but there is currently no validity check for
-db_maxag and db_agpref, which can lead to errors.
+Currently while searching for dmtree_t for sufficient free blocks there
+is an array out of bounds while getting element in tp->dm_stree. To add
+the required check for out of bound we first need to determine the type
+of dmtree. Thus added an extra parameter to dbFindLeaf so that the type
+of tree can be determined and the required check can be applied.
 
-The following is related bug reported by Syzbot:
-
-UBSAN: array-index-out-of-bounds in fs/jfs/jfs_dmap.c:639:20
-index 7936 is out of range for type 'atomic_t[128]'
-
-Add checking that the values of db_maxag and db_agpref are valid
-indexes for the db_agfree array.
-
-Reported-by: syzbot+38e876a8aa44b7115c76@syzkaller.appspotmail.com
-Closes: https://syzkaller.appspot.com/bug?extid=38e876a8aa44b7115c76
-Signed-off-by: Juntong Deng <juntong.deng@outlook.com>
+Reported-by: syzbot+aea1ad91e854d0a83e04@syzkaller.appspotmail.com
+Closes: https://syzkaller.appspot.com/bug?extid=aea1ad91e854d0a83e04
+Signed-off-by: Manas Ghandat <ghandatmanas@gmail.com>
 Signed-off-by: Dave Kleikamp <dave.kleikamp@oracle.com>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- fs/jfs/jfs_dmap.c | 6 ++++++
- 1 file changed, 6 insertions(+)
+ fs/jfs/jfs_dmap.c | 14 ++++++++++----
+ 1 file changed, 10 insertions(+), 4 deletions(-)
 
 diff --git a/fs/jfs/jfs_dmap.c b/fs/jfs/jfs_dmap.c
-index a700950429c5f..217a673b751ef 100644
+index 217a673b751ef..5b01026fff9bf 100644
 --- a/fs/jfs/jfs_dmap.c
 +++ b/fs/jfs/jfs_dmap.c
-@@ -195,6 +195,12 @@ int dbMount(struct inode *ipbmap)
- 	bmp->db_maxlevel = le32_to_cpu(dbmp_le->dn_maxlevel);
- 	bmp->db_maxag = le32_to_cpu(dbmp_le->dn_maxag);
- 	bmp->db_agpref = le32_to_cpu(dbmp_le->dn_agpref);
-+	if (bmp->db_maxag >= MAXAG || bmp->db_maxag < 0 ||
-+		bmp->db_agpref >= MAXAG || bmp->db_agpref < 0) {
-+		err = -EINVAL;
-+		goto err_release_metapage;
-+	}
+@@ -87,7 +87,7 @@ static int dbAllocCtl(struct bmap * bmp, s64 nblocks, int l2nb, s64 blkno,
+ static int dbExtend(struct inode *ip, s64 blkno, s64 nblocks, s64 addnblocks);
+ static int dbFindBits(u32 word, int l2nb);
+ static int dbFindCtl(struct bmap * bmp, int l2nb, int level, s64 * blkno);
+-static int dbFindLeaf(dmtree_t * tp, int l2nb, int *leafidx);
++static int dbFindLeaf(dmtree_t *tp, int l2nb, int *leafidx, bool is_ctl);
+ static int dbFreeBits(struct bmap * bmp, struct dmap * dp, s64 blkno,
+ 		      int nblocks);
+ static int dbFreeDmap(struct bmap * bmp, struct dmap * dp, s64 blkno,
+@@ -1785,7 +1785,7 @@ static int dbFindCtl(struct bmap * bmp, int l2nb, int level, s64 * blkno)
+ 		 * dbFindLeaf() returns the index of the leaf at which
+ 		 * free space was found.
+ 		 */
+-		rc = dbFindLeaf((dmtree_t *) dcp, l2nb, &leafidx);
++		rc = dbFindLeaf((dmtree_t *) dcp, l2nb, &leafidx, true);
+ 
+ 		/* release the buffer.
+ 		 */
+@@ -2032,7 +2032,7 @@ dbAllocDmapLev(struct bmap * bmp,
+ 	 * free space.  if sufficient free space is found, dbFindLeaf()
+ 	 * returns the index of the leaf at which free space was found.
+ 	 */
+-	if (dbFindLeaf((dmtree_t *) & dp->tree, l2nb, &leafidx))
++	if (dbFindLeaf((dmtree_t *) &dp->tree, l2nb, &leafidx, false))
+ 		return -ENOSPC;
+ 
+ 	if (leafidx < 0)
+@@ -2996,14 +2996,18 @@ static void dbAdjTree(dmtree_t * tp, int leafno, int newval)
+  *	leafidx	- return pointer to be set to the index of the leaf
+  *		  describing at least l2nb free blocks if sufficient
+  *		  free blocks are found.
++ *	is_ctl	- determines if the tree is of type ctl
+  *
+  * RETURN VALUES:
+  *	0	- success
+  *	-ENOSPC	- insufficient free blocks.
+  */
+-static int dbFindLeaf(dmtree_t * tp, int l2nb, int *leafidx)
++static int dbFindLeaf(dmtree_t *tp, int l2nb, int *leafidx, bool is_ctl)
+ {
+ 	int ti, n = 0, k, x = 0;
++	int max_size;
 +
- 	bmp->db_aglevel = le32_to_cpu(dbmp_le->dn_aglevel);
- 	bmp->db_agheight = le32_to_cpu(dbmp_le->dn_agheight);
- 	bmp->db_agwidth = le32_to_cpu(dbmp_le->dn_agwidth);
++	max_size = is_ctl ? CTLTREESIZE : TREESIZE;
+ 
+ 	/* first check the root of the tree to see if there is
+ 	 * sufficient free space.
+@@ -3024,6 +3028,8 @@ static int dbFindLeaf(dmtree_t * tp, int l2nb, int *leafidx)
+ 			/* sufficient free space found.  move to the next
+ 			 * level (or quit if this is the last level).
+ 			 */
++			if (x + n > max_size)
++				return -ENOSPC;
+ 			if (l2nb <= tp->dmt_stree[x + n])
+ 				break;
+ 		}
 -- 
 2.42.0
 
