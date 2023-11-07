@@ -2,28 +2,28 @@ Return-Path: <jfs-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+jfs-discussion@lfdr.de
 Delivered-To: lists+jfs-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id A81857E4434
+	by mail.lfdr.de (Postfix) with ESMTPS id B3D127E4435
 	for <lists+jfs-discussion@lfdr.de>; Tue,  7 Nov 2023 16:51:09 +0100 (CET)
-Received: from [127.0.0.1] (helo=sfs-ml-4.v29.lw.sourceforge.com)
-	by sfs-ml-4.v29.lw.sourceforge.com with esmtp (Exim 4.95)
+Received: from [127.0.0.1] (helo=sfs-ml-1.v29.lw.sourceforge.com)
+	by sfs-ml-1.v29.lw.sourceforge.com with esmtp (Exim 4.95)
 	(envelope-from <jfs-discussion-bounces@lists.sourceforge.net>)
-	id 1r0OLw-0006S1-3W;
-	Tue, 07 Nov 2023 15:50:56 +0000
+	id 1r0OLy-0006IS-JR;
+	Tue, 07 Nov 2023 15:50:58 +0000
 Received: from [172.30.20.202] (helo=mx.sourceforge.net)
- by sfs-ml-4.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
+ by sfs-ml-1.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
  TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (Exim 4.95)
- (envelope-from <sashal@kernel.org>) id 1r0OLs-0006Rr-4X
+ (envelope-from <sashal@kernel.org>) id 1r0OLw-0006IK-MG
  for jfs-discussion@lists.sourceforge.net;
- Tue, 07 Nov 2023 15:50:52 +0000
+ Tue, 07 Nov 2023 15:50:56 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=sourceforge.net; s=x; h=Content-Transfer-Encoding:MIME-Version:References:
  In-Reply-To:Message-ID:Date:Subject:Cc:To:From:Sender:Reply-To:Content-Type:
  Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
  Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=XhmzDX4d7fxNOseh5sFsdReivMFChygp3pfuynzmmlU=; b=TRxvfQRsS0D+ds6Tw7baFbst+P
- cz8FSkzXbFgqPwiORjT1gVuNra2ve28aN7kHmS2ZYR+UPMlBsfn8SZqKCYdvILEU683CtbJ4Hk2B8
- MBCPpIXMzch7FzL5wviIaZMQHE2b5wx7n4YboDEsqTTkg79zTUZEogUreAix18F+7BDc=;
+ bh=Am7b9xO8iZkuN6lXdNF0PSu9f4X+inT/DeCRuz5Z4j4=; b=INPaLw83G4gxo9sJYKlQeUqVly
+ U50g1/m/RZurBFtmUbuln81UKS79D2xvrM5D/QlTPE/RqSkjxmnSpatp2KWEyeFnSl65FMC2jafKQ
+ mvJnqUfuumkmAysi5rL0NpZlJZsCfK/97/WFq4PHB5KrG+mNn+QWZf8fpSN/JFW83VbM=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
  h=Content-Transfer-Encoding:MIME-Version:References:In-Reply-To:Message-ID:
@@ -31,33 +31,33 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
  :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
  List-Post:List-Owner:List-Archive;
- bh=XhmzDX4d7fxNOseh5sFsdReivMFChygp3pfuynzmmlU=; b=clWW4pSW6WqmJ8XD9NdivA4Oc3
- 9HbR9chQPRs0GJeYRp6zvtduYVyv7Aq2x8dFXAh4F0n20ZyYPnquRxh0a1zBDFltzttcP+8SltWO4
- coNnoVL7NEzqGPA/rKWUrBEf8tncCQ7NE604sws1ZP6RTSqVvyaFQ00Y7uO/ZhHEaPls=;
-Received: from ams.source.kernel.org ([145.40.68.75])
+ bh=Am7b9xO8iZkuN6lXdNF0PSu9f4X+inT/DeCRuz5Z4j4=; b=EoFOiliM5wHEBrvlw1d1DtFTwA
+ zXWyZSKMrGI3ONc9bCqIGEle+3qSJMUCNukExqwRVcek0L0/nlAeTdSAiqpRzh/K0CTOJQXz+uyZ+
+ vqjwYON0fRmIVA3hRyJrlDgojmALtxEFvHaDxLMCMU42L7gCSXx0F5et0pXMEQ7G1Qig=;
+Received: from dfw.source.kernel.org ([139.178.84.217])
  by sfi-mx-2.v28.lw.sourceforge.com with esmtps
  (TLS1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.95)
- id 1r0OLs-0005JC-1k for jfs-discussion@lists.sourceforge.net;
- Tue, 07 Nov 2023 15:50:52 +0000
+ id 1r0OLv-0005KP-Ka for jfs-discussion@lists.sourceforge.net;
+ Tue, 07 Nov 2023 15:50:56 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
- by ams.source.kernel.org (Postfix) with ESMTP id C75D7B8165B;
- Tue,  7 Nov 2023 15:50:45 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 2B642C433C8;
- Tue,  7 Nov 2023 15:50:44 +0000 (UTC)
+ by dfw.source.kernel.org (Postfix) with ESMTP id 3E3CB6126E;
+ Tue,  7 Nov 2023 15:50:50 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 8C097C433C7;
+ Tue,  7 Nov 2023 15:50:47 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=k20201202; t=1699372245;
- bh=37cWrf7Ywq4ghZ3/bOcqL06Eey9mU1tzsLZ7Ue4ZBkg=;
+ s=k20201202; t=1699372248;
+ bh=zPuj+7wJ/fJkRDsF0PJO5Pdp5Gu5+SHumWVG27THUqc=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=ZEa2Lwal+t9NC8Rvw2O2lcTnWajKzcaslxjYNnET4yoE5WUAiqxXYQshdq8EAbgU4
- 6Mf1v6JFahfsj9l38iK/j6C/Pmua8pJk5B0bBXiRDoZVW570u33U5+Rfd5nDjOcx4/
- +U4nNPH2bIGsVuLY9pXuid1CL2kFvR5IeKaF6Nb3YGyQMiWgsX9wo4xYAEV85f22Ap
- vVwVdctBwBxC+dftl9fBpPpvmwtst+GVf1CgimCz75Nsl7MOHGUUMJ37ePkLduFiYQ
- 7Spsh7mhgTWSlONn8VbYsDqBry7OH/ogYNDCJIa+cnb5soCkHNBgbE40+PZ7V9fCSy
- 1pn6JQjEJe5AQ==
+ b=fprYvFw+ubEXqzFPtRGJdNuBPoAdthecR8/vwEQ5drVJp00u+AXCRzUkfxTYl+pVA
+ t0N5Rg8rltZj5YolPnRUtRotlkFWsxdpm1lHq0ET58AauH8lUt0+pZbKFemyA06rZQ
+ SU4oHjpJEluI3f22HLNFKiNv+8dbjaTZwBgyfP6G3YWgl4cX+KMrT3fhzfdYLVMmLP
+ YJuou3aGyB8Q+GRog+oATRgDoGbTVjfivsnDkKuW9D5ih7GmgvrB9zq2VsWnUvmTTu
+ WEnmKKyWOatV2D0dwohBSVT5fafbBK4lWGH911sWOxfocqyc7IsB1/S2y28tOBUhT0
+ 3c5EEfEXce7gQ==
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Date: Tue,  7 Nov 2023 10:49:43 -0500
-Message-ID: <20231107155024.3766950-9-sashal@kernel.org>
+Date: Tue,  7 Nov 2023 10:49:44 -0500
+Message-ID: <20231107155024.3766950-10-sashal@kernel.org>
 X-Mailer: git-send-email 2.42.0
 In-Reply-To: <20231107155024.3766950-1-sashal@kernel.org>
 References: <20231107155024.3766950-1-sashal@kernel.org>
@@ -65,7 +65,7 @@ MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-stable-base: Linux 6.1.61
-X-Spam-Score: -2.5 (--)
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: Spam detection software,
  running on the system "util-spamd-2.v13.lw.sourceforge.com", 
  has NOT identified this incoming email as spam.  The original
@@ -74,13 +74,14 @@ X-Spam-Report: Spam detection software,
  the administrator of that system for details.
  Content preview: From: Juntong Deng <juntong.deng@outlook.com> [ Upstream
  commit
- 525b861a008143048535011f3816d407940f4bfa ] l2nbperpage is log2(number of
- blks per page), and the minimum legal value should be 0, not negative. 
- Content analysis details:   (-2.5 points, 6.0 required)
+ 64933ab7b04881c6c18b21ff206c12278341c72e ] Both db_maxag and db_agpref are
+ used as the index of the db_agfree array, but there is currently no validity
+ check for db_maxag and db_agpref, which can lead to errors. 
+ Content analysis details:   (-5.2 points, 6.0 required)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [145.40.68.75 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [139.178.84.217 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -91,9 +92,9 @@ X-Spam-Report: Spam detection software,
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid -0.0 T_SCC_BODY_TEXT_LINE   No description available.
  -0.0 DKIMWL_WL_HIGH         DKIMwl.org - High trust sender
-X-Headers-End: 1r0OLs-0005JC-1k
-Subject: [Jfs-discussion] [PATCH AUTOSEL 6.1 09/30] fs/jfs: Add check for
- negative db_l2nbperpage
+X-Headers-End: 1r0OLv-0005KP-Ka
+Subject: [Jfs-discussion] [PATCH AUTOSEL 6.1 10/30] fs/jfs: Add validity
+ check for db_maxag and db_agpref
 X-BeenThere: jfs-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -108,52 +109,55 @@ List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/jfs-discussion>,
 From: Sasha Levin via Jfs-discussion <jfs-discussion@lists.sourceforge.net>
 Reply-To: Sasha Levin <sashal@kernel.org>
 Cc: Sasha Levin <sashal@kernel.org>, Juntong Deng <juntong.deng@outlook.com>,
- wonguk.lee1023@gmail.com, ghandatmanas@gmail.com, shaggy@kernel.org,
- yogi.kernel@gmail.com, jfs-discussion@lists.sourceforge.net,
- liushixin2@huawei.com, syzbot+debee9ab7ae2b34b0307@syzkaller.appspotmail.com,
- code@siddh.me
+ jfs-discussion@lists.sourceforge.net, code@siddh.me, shaggy@kernel.org,
+ syzbot+38e876a8aa44b7115c76@syzkaller.appspotmail.com, yogi.kernel@gmail.com,
+ wonguk.lee1023@gmail.com, liushixin2@huawei.com, ghandatmanas@gmail.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Errors-To: jfs-discussion-bounces@lists.sourceforge.net
 
 From: Juntong Deng <juntong.deng@outlook.com>
 
-[ Upstream commit 525b861a008143048535011f3816d407940f4bfa ]
+[ Upstream commit 64933ab7b04881c6c18b21ff206c12278341c72e ]
 
-l2nbperpage is log2(number of blks per page), and the minimum legal
-value should be 0, not negative.
+Both db_maxag and db_agpref are used as the index of the
+db_agfree array, but there is currently no validity check for
+db_maxag and db_agpref, which can lead to errors.
 
-In the case of l2nbperpage being negative, an error will occur
-when subsequently used as shift exponent.
+The following is related bug reported by Syzbot:
 
-Syzbot reported this bug:
+UBSAN: array-index-out-of-bounds in fs/jfs/jfs_dmap.c:639:20
+index 7936 is out of range for type 'atomic_t[128]'
 
-UBSAN: shift-out-of-bounds in fs/jfs/jfs_dmap.c:799:12
-shift exponent -16777216 is negative
+Add checking that the values of db_maxag and db_agpref are valid
+indexes for the db_agfree array.
 
-Reported-by: syzbot+debee9ab7ae2b34b0307@syzkaller.appspotmail.com
-Closes: https://syzkaller.appspot.com/bug?extid=debee9ab7ae2b34b0307
+Reported-by: syzbot+38e876a8aa44b7115c76@syzkaller.appspotmail.com
+Closes: https://syzkaller.appspot.com/bug?extid=38e876a8aa44b7115c76
 Signed-off-by: Juntong Deng <juntong.deng@outlook.com>
 Signed-off-by: Dave Kleikamp <dave.kleikamp@oracle.com>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- fs/jfs/jfs_dmap.c | 3 ++-
- 1 file changed, 2 insertions(+), 1 deletion(-)
+ fs/jfs/jfs_dmap.c | 6 ++++++
+ 1 file changed, 6 insertions(+)
 
 diff --git a/fs/jfs/jfs_dmap.c b/fs/jfs/jfs_dmap.c
-index e9d075cbd71ad..ee949e329c6e0 100644
+index ee949e329c6e0..e2927d1f3d1d3 100644
 --- a/fs/jfs/jfs_dmap.c
 +++ b/fs/jfs/jfs_dmap.c
-@@ -180,7 +180,8 @@ int dbMount(struct inode *ipbmap)
- 	bmp->db_nfree = le64_to_cpu(dbmp_le->dn_nfree);
- 
- 	bmp->db_l2nbperpage = le32_to_cpu(dbmp_le->dn_l2nbperpage);
--	if (bmp->db_l2nbperpage > L2PSIZE - L2MINBLOCKSIZE) {
-+	if (bmp->db_l2nbperpage > L2PSIZE - L2MINBLOCKSIZE ||
-+		bmp->db_l2nbperpage < 0) {
- 		err = -EINVAL;
- 		goto err_release_metapage;
- 	}
+@@ -195,6 +195,12 @@ int dbMount(struct inode *ipbmap)
+ 	bmp->db_maxlevel = le32_to_cpu(dbmp_le->dn_maxlevel);
+ 	bmp->db_maxag = le32_to_cpu(dbmp_le->dn_maxag);
+ 	bmp->db_agpref = le32_to_cpu(dbmp_le->dn_agpref);
++	if (bmp->db_maxag >= MAXAG || bmp->db_maxag < 0 ||
++		bmp->db_agpref >= MAXAG || bmp->db_agpref < 0) {
++		err = -EINVAL;
++		goto err_release_metapage;
++	}
++
+ 	bmp->db_aglevel = le32_to_cpu(dbmp_le->dn_aglevel);
+ 	bmp->db_agheight = le32_to_cpu(dbmp_le->dn_agheight);
+ 	bmp->db_agwidth = le32_to_cpu(dbmp_le->dn_agwidth);
 -- 
 2.42.0
 
