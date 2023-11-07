@@ -2,28 +2,28 @@ Return-Path: <jfs-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+jfs-discussion@lfdr.de
 Delivered-To: lists+jfs-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id E69B47E4483
-	for <lists+jfs-discussion@lfdr.de>; Tue,  7 Nov 2023 16:54:17 +0100 (CET)
-Received: from [127.0.0.1] (helo=sfs-ml-2.v29.lw.sourceforge.com)
-	by sfs-ml-2.v29.lw.sourceforge.com with esmtp (Exim 4.95)
+	by mail.lfdr.de (Postfix) with ESMTPS id 49F177E4487
+	for <lists+jfs-discussion@lfdr.de>; Tue,  7 Nov 2023 16:54:21 +0100 (CET)
+Received: from [127.0.0.1] (helo=sfs-ml-4.v29.lw.sourceforge.com)
+	by sfs-ml-4.v29.lw.sourceforge.com with esmtp (Exim 4.95)
 	(envelope-from <jfs-discussion-bounces@lists.sourceforge.net>)
-	id 1r0OP1-0003or-Gx;
-	Tue, 07 Nov 2023 15:54:07 +0000
+	id 1r0OP4-0006WR-MH;
+	Tue, 07 Nov 2023 15:54:11 +0000
 Received: from [172.30.20.202] (helo=mx.sourceforge.net)
- by sfs-ml-2.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
+ by sfs-ml-4.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
  TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (Exim 4.95)
- (envelope-from <sashal@kernel.org>) id 1r0OP0-0003ol-O6
+ (envelope-from <sashal@kernel.org>) id 1r0OP3-0006WL-7L
  for jfs-discussion@lists.sourceforge.net;
- Tue, 07 Nov 2023 15:54:06 +0000
+ Tue, 07 Nov 2023 15:54:09 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=sourceforge.net; s=x; h=Content-Transfer-Encoding:MIME-Version:References:
  In-Reply-To:Message-ID:Date:Subject:Cc:To:From:Sender:Reply-To:Content-Type:
  Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
  Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=Sw27suWaeRnLWSs3q5Bqs/Eaf3U5WsYD2XgjuI18eOw=; b=jq/Rg2M7ZX+aFnkpej+om6WJRV
- ATSi2vjBkxmh4nNRy5g0PoXfp2Mt5yUT8WQNCFiUYA0GWB5+u6G5iEPKeK13j6G3wVu4SawvzPvdQ
- VhstA7kzwuFRD85oZXK4Aamihi2B+ubMuqPmAsKmJWUcjucG30QgWughcBkGznR04eHY=;
+ bh=bvWobPisrffM1gDfTQ8MkIa3oIzjwNigogZ5QO3TxkQ=; b=Jk5r8opBgdRrrqzzX8TwlT0OEj
+ tR4wERFum5YTO0duopNVo41AsrSxk0yYr+unMuz2kBoRmTaupJZZKEz/nw9T5gQHDZZwD4b461oh4
+ Pc5HztMbyKg+udd7dkJMXUoYa18Wqr9DGz+atGeA5ZjN25b5i7xagdVO4O2sjXhbmxoM=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
  h=Content-Transfer-Encoding:MIME-Version:References:In-Reply-To:Message-ID:
@@ -31,33 +31,33 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
  :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
  List-Post:List-Owner:List-Archive;
- bh=Sw27suWaeRnLWSs3q5Bqs/Eaf3U5WsYD2XgjuI18eOw=; b=DYtD81cb5PI+b2md62ddlJO/MO
- uZY3MQ22YqpNiLumVVcqmxL9ifiN6FtMyKPt9xJJeULLF2MsBQVcoGRg3jYWEjn08TZ5I9UPkqUyz
- O4VpDa5C5ryDVow/dH+vZM7zxL1LilXjDWwiV44Tg3b2TZOiN++VOieOwyMa0/vPiayo=;
-Received: from dfw.source.kernel.org ([139.178.84.217])
- by sfi-mx-1.v28.lw.sourceforge.com with esmtps
+ bh=bvWobPisrffM1gDfTQ8MkIa3oIzjwNigogZ5QO3TxkQ=; b=CtOlWYtnoK6LYSkjHQXb87H3R1
+ WRi1knYf0kKcRn3PvbhvZY9e/p5cg52zbkJDqHmZ1TPCNw83Qpysjkx1Uqgzob0p/ejJs0Dd1EwkP
+ qZeUAHafQ/WKcA2Q5IqS2+IZtejsQA9PEndVGYJ38aDvj2eO1vEZqc0AxOl+DpidQbPQ=;
+Received: from ams.source.kernel.org ([145.40.68.75])
+ by sfi-mx-2.v28.lw.sourceforge.com with esmtps
  (TLS1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.95)
- id 1r0OOy-00AexW-Om for jfs-discussion@lists.sourceforge.net;
- Tue, 07 Nov 2023 15:54:05 +0000
+ id 1r0OP3-0006Lw-4d for jfs-discussion@lists.sourceforge.net;
+ Tue, 07 Nov 2023 15:54:09 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
- by dfw.source.kernel.org (Postfix) with ESMTP id 4A88E611F5;
- Tue,  7 Nov 2023 15:53:59 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 736ECC433C7;
- Tue,  7 Nov 2023 15:53:57 +0000 (UTC)
+ by ams.source.kernel.org (Postfix) with ESMTP id DBDFFB816C7;
+ Tue,  7 Nov 2023 15:54:02 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 0C915C433C7;
+ Tue,  7 Nov 2023 15:54:00 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=k20201202; t=1699372439;
- bh=SNKAzwnb2gokCznSGZ31gAf0LcEGM/4nnwpD/NOXYBI=;
+ s=k20201202; t=1699372442;
+ bh=ceHWTVGA9EM/EhI1jzMe9yw9hKsuwFG7Yh+OAwZf3QE=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=WRI68NXCfMtBeCTVgTyt3VdfLJeIsJeRmLlfQXXKlnQ0eZu+SmQ03fFSuHJYHGFUE
- fmm6vorFYWvYp6xk2X1Gt7PR8ycDLYWh9kqaFifGDUqwlBUPIo2qsBlcgMhSxuvWHt
- m+goRBjzmYGvewYxjLK0FjdL54G/Hu6URsROrmv7avxDBeuGLF9PD+kSIIJvEEEs8b
- E7BxaVMqZhDZD0Urn2AB48pSNHPAilPTtms2JIygRjQarliy0ypPa6h6D19PPyGIZZ
- A9hGMHWTJyWmEpksorzv1hFJQXD4yeR4+iWLeiN9NUwUbcHQTLlrIyN7qAmV41cYRq
- RfAU6ykxrdWiQ==
+ b=QNahZaIv81TlF69d6XNQya4t4jTkAfp438vzqR68S895/V/Pz4SvB/6+kyaHTulEJ
+ /gloPF1/MriEwyi5703lg9La6mnMZyiQompHxHju9d0AkCdi7yQROuKOMeN9EG7LzB
+ BMGetcBkOA23Z/5H0pDE7SNpwqmM7OeHuI8NCE5ac4uyxNzUdlRwbRzhWs59mB94Q9
+ 3TPf+/Br/1LQLUXbm34MxRkhk0P02REjIWJKqDkia3uOlRO3xlIx+gmtppCEkalBvp
+ f66JnHAK1TACRvyYUGQ9VviuelxyKQxyHVDHo/5v0PYrzVG7HG8S3md9dFHe7tDaln
+ BXObsJoLVwspQ==
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Date: Tue,  7 Nov 2023 10:53:23 -0500
-Message-ID: <20231107155343.3768464-5-sashal@kernel.org>
+Date: Tue,  7 Nov 2023 10:53:24 -0500
+Message-ID: <20231107155343.3768464-6-sashal@kernel.org>
 X-Mailer: git-send-email 2.42.0
 In-Reply-To: <20231107155343.3768464-1-sashal@kernel.org>
 References: <20231107155343.3768464-1-sashal@kernel.org>
@@ -65,38 +65,37 @@ MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-stable-base: Linux 5.4.259
-X-Spam-Score: -5.2 (-----)
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: Spam detection software,
- running on the system "util-spamd-1.v13.lw.sourceforge.com", 
+ running on the system "util-spamd-2.v13.lw.sourceforge.com", 
  has NOT identified this incoming email as spam.  The original
  message has been attached to this so you can view it or label
  similar future email.  If you have any questions, see
  the administrator of that system for details.
  Content preview: From: Manas Ghandat <ghandatmanas@gmail.com> [ Upstream
  commit
- 22cad8bc1d36547cdae0eef316c47d917ce3147c ] Currently while searching for
- dmtree_t for sufficient free blocks there is an array out of bounds while
- getting element in tp->dm_stree. To add the required check for out of bound
- we first need to det [...] 
- Content analysis details:   (-5.2 points, 6.0 required)
+ 05d9ea1ceb62a55af6727a69269a4fd310edf483 ] Currently there is not check
+ against
+ the agno of the iag while allocating new inodes to avoid fragmentation
+ problem. Added the check which is required. 
+ Content analysis details:   (-2.5 points, 6.0 required)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [139.178.84.217 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [145.40.68.75 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 T_SCC_BODY_TEXT_LINE   No description available.
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid -0.0 T_SCC_BODY_TEXT_LINE   No description available.
  -0.0 DKIMWL_WL_HIGH         DKIMwl.org - High trust sender
-X-Headers-End: 1r0OOy-00AexW-Om
-Subject: [Jfs-discussion] [PATCH AUTOSEL 5.4 05/12] jfs: fix
- array-index-out-of-bounds in dbFindLeaf
+X-Headers-End: 1r0OP3-0006Lw-4d
+Subject: [Jfs-discussion] [PATCH AUTOSEL 5.4 06/12] jfs: fix
+ array-index-out-of-bounds in diAlloc
 X-BeenThere: jfs-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -110,94 +109,55 @@ List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/jfs-discussion>,
  <mailto:jfs-discussion-request@lists.sourceforge.net?subject=subscribe>
 From: Sasha Levin via Jfs-discussion <jfs-discussion@lists.sourceforge.net>
 Reply-To: Sasha Levin <sashal@kernel.org>
-Cc: Sasha Levin <sashal@kernel.org>, shaggy@kernel.org,
- wonguk.lee1023@gmail.com, Manas Ghandat <ghandatmanas@gmail.com>,
- juntong.deng@outlook.com, yogi.kernel@gmail.com,
- jfs-discussion@lists.sourceforge.net, andrew.kanner@gmail.com, code@siddh.me,
- syzbot+aea1ad91e854d0a83e04@syzkaller.appspotmail.com
+Cc: Sasha Levin <sashal@kernel.org>, shaggy@kernel.org, brauner@kernel.org,
+ Manas Ghandat <ghandatmanas@gmail.com>,
+ syzbot+79d792676d8ac050949f@syzkaller.appspotmail.com, jlayton@kernel.org,
+ jfs-discussion@lists.sourceforge.net, okanatov@gmail.com,
+ liushixin2@huawei.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Errors-To: jfs-discussion-bounces@lists.sourceforge.net
 
 From: Manas Ghandat <ghandatmanas@gmail.com>
 
-[ Upstream commit 22cad8bc1d36547cdae0eef316c47d917ce3147c ]
+[ Upstream commit 05d9ea1ceb62a55af6727a69269a4fd310edf483 ]
 
-Currently while searching for dmtree_t for sufficient free blocks there
-is an array out of bounds while getting element in tp->dm_stree. To add
-the required check for out of bound we first need to determine the type
-of dmtree. Thus added an extra parameter to dbFindLeaf so that the type
-of tree can be determined and the required check can be applied.
+Currently there is not check against the agno of the iag while
+allocating new inodes to avoid fragmentation problem. Added the check
+which is required.
 
-Reported-by: syzbot+aea1ad91e854d0a83e04@syzkaller.appspotmail.com
-Closes: https://syzkaller.appspot.com/bug?extid=aea1ad91e854d0a83e04
+Reported-by: syzbot+79d792676d8ac050949f@syzkaller.appspotmail.com
+Closes: https://syzkaller.appspot.com/bug?extid=79d792676d8ac050949f
 Signed-off-by: Manas Ghandat <ghandatmanas@gmail.com>
 Signed-off-by: Dave Kleikamp <dave.kleikamp@oracle.com>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- fs/jfs/jfs_dmap.c | 14 ++++++++++----
- 1 file changed, 10 insertions(+), 4 deletions(-)
+ fs/jfs/jfs_imap.c | 5 ++++-
+ 1 file changed, 4 insertions(+), 1 deletion(-)
 
-diff --git a/fs/jfs/jfs_dmap.c b/fs/jfs/jfs_dmap.c
-index b23b219b20aab..ea330ce921b1a 100644
---- a/fs/jfs/jfs_dmap.c
-+++ b/fs/jfs/jfs_dmap.c
-@@ -87,7 +87,7 @@ static int dbAllocCtl(struct bmap * bmp, s64 nblocks, int l2nb, s64 blkno,
- static int dbExtend(struct inode *ip, s64 blkno, s64 nblocks, s64 addnblocks);
- static int dbFindBits(u32 word, int l2nb);
- static int dbFindCtl(struct bmap * bmp, int l2nb, int level, s64 * blkno);
--static int dbFindLeaf(dmtree_t * tp, int l2nb, int *leafidx);
-+static int dbFindLeaf(dmtree_t *tp, int l2nb, int *leafidx, bool is_ctl);
- static int dbFreeBits(struct bmap * bmp, struct dmap * dp, s64 blkno,
- 		      int nblocks);
- static int dbFreeDmap(struct bmap * bmp, struct dmap * dp, s64 blkno,
-@@ -1785,7 +1785,7 @@ static int dbFindCtl(struct bmap * bmp, int l2nb, int level, s64 * blkno)
- 		 * dbFindLeaf() returns the index of the leaf at which
- 		 * free space was found.
- 		 */
--		rc = dbFindLeaf((dmtree_t *) dcp, l2nb, &leafidx);
-+		rc = dbFindLeaf((dmtree_t *) dcp, l2nb, &leafidx, true);
- 
- 		/* release the buffer.
- 		 */
-@@ -2032,7 +2032,7 @@ dbAllocDmapLev(struct bmap * bmp,
- 	 * free space.  if sufficient free space is found, dbFindLeaf()
- 	 * returns the index of the leaf at which free space was found.
- 	 */
--	if (dbFindLeaf((dmtree_t *) & dp->tree, l2nb, &leafidx))
-+	if (dbFindLeaf((dmtree_t *) &dp->tree, l2nb, &leafidx, false))
- 		return -ENOSPC;
- 
- 	if (leafidx < 0)
-@@ -2992,14 +2992,18 @@ static void dbAdjTree(dmtree_t * tp, int leafno, int newval)
-  *	leafidx	- return pointer to be set to the index of the leaf
-  *		  describing at least l2nb free blocks if sufficient
-  *		  free blocks are found.
-+ *	is_ctl	- determines if the tree is of type ctl
-  *
-  * RETURN VALUES:
-  *	0	- success
-  *	-ENOSPC	- insufficient free blocks.
-  */
--static int dbFindLeaf(dmtree_t * tp, int l2nb, int *leafidx)
-+static int dbFindLeaf(dmtree_t *tp, int l2nb, int *leafidx, bool is_ctl)
+diff --git a/fs/jfs/jfs_imap.c b/fs/jfs/jfs_imap.c
+index 67c67604b8c85..14f918a4831d3 100644
+--- a/fs/jfs/jfs_imap.c
++++ b/fs/jfs/jfs_imap.c
+@@ -1322,7 +1322,7 @@ diInitInode(struct inode *ip, int iagno, int ino, int extno, struct iag * iagp)
+ int diAlloc(struct inode *pip, bool dir, struct inode *ip)
  {
- 	int ti, n = 0, k, x = 0;
-+	int max_size;
-+
-+	max_size = is_ctl ? CTLTREESIZE : TREESIZE;
+ 	int rc, ino, iagno, addext, extno, bitno, sword;
+-	int nwords, rem, i, agno;
++	int nwords, rem, i, agno, dn_numag;
+ 	u32 mask, inosmap, extsmap;
+ 	struct inode *ipimap;
+ 	struct metapage *mp;
+@@ -1358,6 +1358,9 @@ int diAlloc(struct inode *pip, bool dir, struct inode *ip)
  
- 	/* first check the root of the tree to see if there is
- 	 * sufficient free space.
-@@ -3020,6 +3024,8 @@ static int dbFindLeaf(dmtree_t * tp, int l2nb, int *leafidx)
- 			/* sufficient free space found.  move to the next
- 			 * level (or quit if this is the last level).
- 			 */
-+			if (x + n > max_size)
-+				return -ENOSPC;
- 			if (l2nb <= tp->dmt_stree[x + n])
- 				break;
- 		}
+ 	/* get the ag number of this iag */
+ 	agno = BLKTOAG(JFS_IP(pip)->agstart, JFS_SBI(pip->i_sb));
++	dn_numag = JFS_SBI(pip->i_sb)->bmap->db_numag;
++	if (agno < 0 || agno > dn_numag)
++		return -EIO;
+ 
+ 	if (atomic_read(&JFS_SBI(pip->i_sb)->bmap->db_active[agno])) {
+ 		/*
 -- 
 2.42.0
 
