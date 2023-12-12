@@ -2,103 +2,113 @@ Return-Path: <jfs-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+jfs-discussion@lfdr.de
 Delivered-To: lists+jfs-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id AF4B880CF19
-	for <lists+jfs-discussion@lfdr.de>; Mon, 11 Dec 2023 16:12:23 +0100 (CET)
-Received: from [127.0.0.1] (helo=sfs-ml-3.v29.lw.sourceforge.com)
-	by sfs-ml-3.v29.lw.sourceforge.com with esmtp (Exim 4.95)
+	by mail.lfdr.de (Postfix) with ESMTPS id E092480E0F2
+	for <lists+jfs-discussion@lfdr.de>; Tue, 12 Dec 2023 02:43:17 +0100 (CET)
+Received: from [127.0.0.1] (helo=sfs-ml-1.v29.lw.sourceforge.com)
+	by sfs-ml-1.v29.lw.sourceforge.com with esmtp (Exim 4.95)
 	(envelope-from <jfs-discussion-bounces@lists.sourceforge.net>)
-	id 1rChws-00039m-Fu;
-	Mon, 11 Dec 2023 15:11:57 +0000
+	id 1rCrnP-00010r-Pl;
+	Tue, 12 Dec 2023 01:42:52 +0000
 Received: from [172.30.20.202] (helo=mx.sourceforge.net)
- by sfs-ml-2.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
- TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (Exim 4.95) (envelope-from
- <3VV11ZQkbABgGMN8y992FyDD61.4CC492IG2F0CBH2BH.0CA@M3KW2WVRGUFZ5GODRSRYTGD7.apphosting.bounces.google.com>)
- id 1rCDUI-0002HQ-P2 for jfs-discussion@lists.sourceforge.net;
- Sun, 10 Dec 2023 06:40:27 +0000
+ by sfs-ml-1.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
+ TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (Exim 4.95)
+ (envelope-from <eadavis@qq.com>) id 1rCrnO-00010l-4N
+ for jfs-discussion@lists.sourceforge.net;
+ Tue, 12 Dec 2023 01:42:50 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=sourceforge.net; s=x; h=Content-Type:To:From:Subject:Message-ID:Date:
- MIME-Version:Sender:Reply-To:Cc:Content-Transfer-Encoding:Content-ID:
- Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
- :Resent-Message-ID:In-Reply-To:References:List-Id:List-Help:List-Unsubscribe:
+ d=sourceforge.net; s=x; h=Content-Transfer-Encoding:MIME-Version:References:
+ In-Reply-To:Date:Subject:Cc:To:From:Message-ID:Sender:Reply-To:Content-Type:
+ Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
+ Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=xFFwRy2N/0G7JtfDFizFJ6sDME0Agg87dHPC6Ukv4hA=; b=ZBki16kMDsYgi7imb5EIHyQHLE
- 8BrpHwxtixFsd9g5Qbg4HMS8yV9kvl2PJ13L8xoXw+j/2m6uUrWYcE0Z6gj6Co1QANqZvTzOuAojH
- BPD/M+WvZA34qWhBy2pmwp6UOKCMO29Rfzd0OenFXxuuj7EdiRmkw/eGz1acON9IE/eo=;
+ bh=FD7duTuFK+lQgjiTKG+9TgQ2tzx4vfTI1j+uY0lwi8Y=; b=EGk3fdD2ObwhnzdHOZDaeyba18
+ JjxajrKtpy8u+sea+4ym59k5cVM21riTxV1s3APkhO5INkrDQ4RoZvYMdrade8u1kXPIOfSPdS8At
+ 3/9XqCQwu0QCX6z2Cq/0wu4/a04+y8DaH2Dc8SY08v/bY6vKO6bd0jfPZ+qWuCy7jtno=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
- h=Content-Type:To:From:Subject:Message-ID:Date:MIME-Version:Sender:Reply-To
- :Cc:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
- Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
- References:List-Id:List-Help:List-Unsubscribe:List-Subscribe:List-Post:
- List-Owner:List-Archive; bh=xFFwRy2N/0G7JtfDFizFJ6sDME0Agg87dHPC6Ukv4hA=; b=l
- YEeQ1P7/HPPdxX7w2pK1pKQieyLeCcegs+UJrXfJTsxXz/AQcq/gn1nLBt3eU+Gv3bITVyyT3IAEI
- DRbb70C4kHPnUDVwRJkuLSf400UPUVo5n5pqyfrAZvgg8h7oH2BWjaR1u15W6JLRw4uiIm3TTIygt
- qTZT11R2oVe4xtkQ=;
-Received: from mail-oa1-f70.google.com ([209.85.160.70])
+ h=Content-Transfer-Encoding:MIME-Version:References:In-Reply-To:Date:
+ Subject:Cc:To:From:Message-ID:Sender:Reply-To:Content-Type:Content-ID:
+ Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+ :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
+ List-Post:List-Owner:List-Archive;
+ bh=FD7duTuFK+lQgjiTKG+9TgQ2tzx4vfTI1j+uY0lwi8Y=; b=mmev3kfoOG9przsvx5mYumNvCn
+ bLy2u8Mr4XlRLUfwHm9cCkLHyGNF3BkQX2EJoT3+CMWRjZmLqGHoeVEsvqFoEcdEaCU+2xSODiN0N
+ abkgnNiAvl0s/zeOKNRuWYio3xTUkCBlbLPapgaZck2yvF3q9LqSj6/yDO/TnGoMZfNU=;
+Received: from out203-205-251-73.mail.qq.com ([203.205.251.73])
  by sfi-mx-2.v28.lw.sourceforge.com with esmtps
- (TLS1.2:ECDHE-RSA-AES128-GCM-SHA256:128) (Exim 4.95)
- id 1rCDUI-0000rN-Hv for jfs-discussion@lists.sourceforge.net;
- Sun, 10 Dec 2023 06:40:27 +0000
-Received: by mail-oa1-f70.google.com with SMTP id
- 586e51a60fabf-1fafbf42404so6447597fac.1
- for <jfs-discussion@lists.sourceforge.net>;
- Sat, 09 Dec 2023 22:40:26 -0800 (PST)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20230601; t=1702190421; x=1702795221;
- h=to:from:subject:message-id:date:mime-version:x-gm-message-state
- :from:to:cc:subject:date:message-id:reply-to;
- bh=xFFwRy2N/0G7JtfDFizFJ6sDME0Agg87dHPC6Ukv4hA=;
- b=VnwQz0Whoiv4Z4S/chQeVLue09a8ZsenLnwxb9j4/bHO3ozBwMD0Le48CaoE4uWwdG
- r+afNENid4tgrWxcUflELIYTjHPMkPX+GhGITp6oDhrdt938EpCTiCk7vu/cTkJV0tnv
- 9umECFOKcaLmW8AQjUiGvGwJs+zGjRkVe1f0kl3kM52pRr0EAbyqHjqEcyKYHIYo4lsk
- dtbiswzn4fC9UbqG+bqNiQQJ1TyAWjumaL1eoC/HmCaO5ALeTgYQgqmmcPUzf8KTd+fd
- AWA0c2f7UcdVH83ACsr58SPrie9SWUJQWqQ+J5D2o1+oKtTxMQ/niyA7GR02ExE65S3z
- CEtA==
-X-Gm-Message-State: AOJu0YzGYLTLcdqIPYYTthWSYHpsFEL/FvmlgGm4TRgWpe1qCRxr/ESn
- dlZSNFairJl8NDFaYZOTmPOQ1+vy3JzQJkD3fss3S8T/j6ug2fk=
-X-Google-Smtp-Source: AGHT+IGCIyoxMIK1pCg+Sf7WO5ZlCiJNt87mIJLCEcZMeArss0IgicVboiTl5pslJEOrUZg0to1SjbN+qQuRVEqyia8ytryejc1/
+ (TLS1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.95)
+ id 1rCrnM-0003xs-HE for jfs-discussion@lists.sourceforge.net;
+ Tue, 12 Dec 2023 01:42:50 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qq.com; s=s201512;
+ t=1702345355; bh=FD7duTuFK+lQgjiTKG+9TgQ2tzx4vfTI1j+uY0lwi8Y=;
+ h=From:To:Cc:Subject:Date:In-Reply-To:References;
+ b=qTMHue2/abKBXlxEGLkRwyYlOQ4s+j8EARUxvwnwO6nrdvic8kWX+ihlzFVtTlrvg
+ L8RwcqbiriSjaiXD8mZcCregfprjcpEFQkTAYuwDZJwyFTwFYaFu/9RjrdkHMwa94m
+ m6T8S39BBqnzMLGqV51uQ8bH1jwuBkhbcy8FYHJM=
+Received: from pek-lxu-l1.wrs.com ([111.198.225.215])
+ by newxmesmtplogicsvrszc5-2.qq.com (NewEsmtp) with SMTP
+ id 915A4E59; Tue, 12 Dec 2023 09:36:21 +0800
+X-QQ-mid: xmsmtpt1702344981t7qa9e586
+Message-ID: <tencent_B86ECD2ECECC92A7ED86EF92D0064A499206@qq.com>
+X-QQ-XMAILINFO: NyTsQ4JOu2J2zOZ5ZNYHLqT4KfOHLzba1FvVOT7bRfSrE8dwbJH2SiwehFmpQn
+ 76d7hNEbFs9hUl7z7ICNcOFl1JD7IImxGHSv8oMYzQDgkbSSKRR0r6xzbsb4Bh0jiFADOgsJEE3x
+ TWdXfWm4Eo7SU6xF4yNgyGRjz5Um7gxZiYNdb7IByhy+owTzPpIxllnLPrKfaD8vL7ZbRDYtAKxe
+ SAx7plUbfsn32bOA+v/6lnvenN4YeGYawJQvGSYOjlHsBgVjXriPdkAAFKo8VcrQRdCy/XfK1vUF
+ naI5zjRXVAAZRU5IqrQqc4mTzmDMN7Epfk5Iz2TRT795vyofaTxGlWikWCTumVx+9cO1KWghHrpf
+ XQ2Xay0oQJNszywQAt0jb6PHGdqGTbdYJMIW4JMBcxWN482XUYZ7/Eik1mr6XcUdikFn7rH8uhvJ
+ TGdLpfbqeknDxxB3YeIvt6gYL0LcTPd6verJq60Mk19x3tBIth2Th+nji7hwA9pGzcfbcpx15arJ
+ 9foVcX8rfCotnGBYCP/7rDLssOhO6CqX/YOML0TyIzuzhuQZpX2ixFuiLiUPP0B6gW9FUhtJckuv
+ LbgCFyVn2PO+0rW3l8yBHWEo2RrECCNBueXMY+A19c8hwxcEQlRR/LfNfyRV/A5cDeEeDufYP841
+ 9Q6OmOIlqFDN3vBB2zv5/sn6ExFZjWfd8rP0+VFcFUywqwhDYJ4RzvxJ3lwmXaBazYRyeUvmZJO1
+ Bs/bzob2W+06LxlhOVxs+WnQ+S6Ppu+Etm4DcrVSqZiIOPCe/h3PRj8XL85l7v/0vj7xvQr3G25a
+ 0j0jfeP+e5ky0AT3iUiIVdweE+kQxLvhia8TLgL59I8LCca6hu/ZsAcOJnkKXr66Ufe34Jj002O4
+ /sGKqqpWqNv+x6VSVNmzmVN5breqdB37U2BJXD2I6t4iP5J8j8+VlTf8kHD0O2Ip4KHxiCig0I
+X-QQ-XMRINFO: NS+P29fieYNw95Bth2bWPxk=
+To: syzbot+553d90297e6d2f50dbc7@syzkaller.appspotmail.com
+Date: Tue, 12 Dec 2023 09:36:22 +0800
+X-OQ-MSGID: <20231212013621.2119245-2-eadavis@qq.com>
+X-Mailer: git-send-email 2.42.0
+In-Reply-To: <00000000000062a4cc060c2217de@google.com>
+References: <00000000000062a4cc060c2217de@google.com>
 MIME-Version: 1.0
-X-Received: by 2002:a05:6871:5214:b0:1fa:f432:231 with SMTP id
- ht20-20020a056871521400b001faf4320231mr3318822oac.3.1702190421024; Sat, 09
- Dec 2023 22:40:21 -0800 (PST)
-Date: Sat, 09 Dec 2023 22:40:20 -0800
-X-Google-Appengine-App-Id: s~syzkaller
-X-Google-Appengine-App-Id-Alias: syzkaller
-Message-ID: <00000000000062a4cc060c2217de@google.com>
-To: jfs-discussion@lists.sourceforge.net, linux-fsdevel@vger.kernel.org, 
- linux-kernel@vger.kernel.org, shaggy@kernel.org, 
- syzkaller-bugs@googlegroups.com
-X-Spam-Score: 0.6 (/)
+X-Spam-Score: 3.4 (+++)
 X-Spam-Report: Spam detection software,
- running on the system "util-spamd-2.v13.lw.sourceforge.com", 
+ running on the system "util-spamd-1.v13.lw.sourceforge.com", 
  has NOT identified this incoming email as spam.  The original
  message has been attached to this so you can view it or label
  similar future email.  If you have any questions, see
  the administrator of that system for details.
- Content preview:  Hello,
- syzbot found the following issue on: HEAD commit: bee0e7762ad2
- Merge tag 'for-linus-iommufd' of git://git.ke.. git tree: upstream
- console+strace:
- https://syzkaller.appspot.com/x/log.txt?x=1088351ce80000 kernel config:
- https://syzkaller.a [...] 
- Content analysis details:   (0.6 points, 6.0 required)
+ Content preview: [Syz report] UBSAN: array-index-out-of-bounds in
+ fs/jfs/jfs_imap.c:2360:2
+ index -878706688 is out of range for type 'struct iagctl[128]' CPU: 1 PID:
+ 5065 Comm: syz-executor282 Not tainted 6.7.0-rc4-sy [...] 
+ Content analysis details:   (3.4 points, 6.0 required)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.160.70 listed in list.dnswl.org]
- 0.3 FROM_LOCAL_HEX         From: localpart has long hexadecimal sequence
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [209.85.160.70 listed in wl.mailspike.net]
+ no trust [203.205.251.73 listed in list.dnswl.org]
+ 0.0 RCVD_IN_MSPIKE_H4      RBL: Very Good reputation (+4)
+ [203.205.251.73 listed in wl.mailspike.net]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [eadavis[at]qq.com]
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.4 RDNS_DYNAMIC           Delivered to internal network by host with
+ dynamic-looking rDNS
  -0.0 T_SCC_BODY_TEXT_LINE   No description available.
-X-Headers-End: 1rCDUI-0000rN-Hv
-X-Mailman-Approved-At: Mon, 11 Dec 2023 15:11:56 +0000
-Subject: [Jfs-discussion] [syzbot] [jfs?] UBSAN: array-index-out-of-bounds
- in diNewExt
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ 3.2 HELO_DYNAMIC_IPADDR    Relay HELO'd using suspicious hostname (IP
+ addr 1)
+X-Headers-End: 1rCrnM-0003xs-HE
+Subject: [Jfs-discussion] [PATCH] jfs: fix array-index-out-of-bounds in
+ diNewExt
 X-BeenThere: jfs-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -110,42 +120,17 @@ List-Post: <mailto:jfs-discussion@lists.sourceforge.net>
 List-Help: <mailto:jfs-discussion-request@lists.sourceforge.net?subject=help>
 List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/jfs-discussion>, 
  <mailto:jfs-discussion-request@lists.sourceforge.net?subject=subscribe>
-From: syzbot via Jfs-discussion <jfs-discussion@lists.sourceforge.net>
-Reply-To: syzbot <syzbot+553d90297e6d2f50dbc7@syzkaller.appspotmail.com>
+From: Edward Adam Davis via Jfs-discussion
+ <jfs-discussion@lists.sourceforge.net>
+Reply-To: Edward Adam Davis <eadavis@qq.com>
+Cc: linux-fsdevel@vger.kernel.org, shaggy@kernel.org,
+ jfs-discussion@lists.sourceforge.net, syzkaller-bugs@googlegroups.com,
+ linux-kernel@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Errors-To: jfs-discussion-bounces@lists.sourceforge.net
 
-Hello,
-
-syzbot found the following issue on:
-
-HEAD commit:    bee0e7762ad2 Merge tag 'for-linus-iommufd' of git://git.ke..
-git tree:       upstream
-console+strace: https://syzkaller.appspot.com/x/log.txt?x=1088351ce80000
-kernel config:  https://syzkaller.appspot.com/x/.config?x=b45dfd882e46ec91
-dashboard link: https://syzkaller.appspot.com/bug?extid=553d90297e6d2f50dbc7
-compiler:       Debian clang version 15.0.6, GNU ld (GNU Binutils for Debian) 2.40
-syz repro:      https://syzkaller.appspot.com/x/repro.syz?x=122acc3ce80000
-C reproducer:   https://syzkaller.appspot.com/x/repro.c?x=110a49b4e80000
-
-Downloadable assets:
-disk image: https://storage.googleapis.com/syzbot-assets/af357ba4767f/disk-bee0e776.raw.xz
-vmlinux: https://storage.googleapis.com/syzbot-assets/ae4d50206171/vmlinux-bee0e776.xz
-kernel image: https://storage.googleapis.com/syzbot-assets/e12203376a9f/bzImage-bee0e776.xz
-mounted in repro: https://storage.googleapis.com/syzbot-assets/d8974c833f6f/mount_0.gz
-
-Bisection is inconclusive: the issue happens on the oldest tested release.
-
-bisection log:  https://syzkaller.appspot.com/x/bisect.txt?x=133caf54e80000
-final oops:     https://syzkaller.appspot.com/x/report.txt?x=10bcaf54e80000
-console output: https://syzkaller.appspot.com/x/log.txt?x=173caf54e80000
-
-IMPORTANT: if you fix the issue, please add the following tag to the commit:
-Reported-by: syzbot+553d90297e6d2f50dbc7@syzkaller.appspotmail.com
-
-loop0: detected capacity change from 0 to 32768
-================================================================================
+[Syz report]
 UBSAN: array-index-out-of-bounds in fs/jfs/jfs_imap.c:2360:2
 index -878706688 is out of range for type 'struct iagctl[128]'
 CPU: 1 PID: 5065 Comm: syz-executor282 Not tainted 6.7.0-rc4-syzkaller-00009-gbee0e7762ad2 #0
@@ -178,35 +163,36 @@ RDX: 00000000000a1020 RSI: 00000000000001ff RDI: 0000000020000140
 RBP: 0000000020000140 R08: 0000000000000000 R09: 0000000000000000
 R10: 0000000000000000 R11: 0000000000000286 R12: 00007ffd830230d0
 R13: 0000000000000000 R14: 0000000000000000 R15: 0000000000000000
- </TASK>
-================================================================================
 
+[Analysis]
+When the agstart is too large, it can cause agno overflow.
 
+[Fix]
+After obtaining agno, if the value is invalid, exit the subsequent process.
+
+Reported-and-tested-by: syzbot+553d90297e6d2f50dbc7@syzkaller.appspotmail.com
+Signed-off-by: Edward Adam Davis <eadavis@qq.com>
 ---
-This report is generated by a bot. It may contain errors.
-See https://goo.gl/tpsmEJ for more information about syzbot.
-syzbot engineers can be reached at syzkaller@googlegroups.com.
+ fs/jfs/jfs_imap.c | 3 +++
+ 1 file changed, 3 insertions(+)
 
-syzbot will keep track of this issue. See:
-https://goo.gl/tpsmEJ#status for how to communicate with syzbot.
-For information about bisection process see: https://goo.gl/tpsmEJ#bisection
+diff --git a/fs/jfs/jfs_imap.c b/fs/jfs/jfs_imap.c
+index a037ee59e398..cc5819b3ec9a 100644
+--- a/fs/jfs/jfs_imap.c
++++ b/fs/jfs/jfs_imap.c
+@@ -2179,6 +2179,9 @@ static int diNewExt(struct inomap * imap, struct iag * iagp, int extno)
+ 	/* get the ag and iag numbers for this iag.
+ 	 */
+ 	agno = BLKTOAG(le64_to_cpu(iagp->agstart), sbi);
++	if (agno > MAXAG || agno < 0)
++		return -EIO;
++
+ 	iagno = le32_to_cpu(iagp->iagnum);
+ 
+ 	/* check if this is the last free extent within the
+-- 
+2.43.0
 
-If the report is already addressed, let syzbot know by replying with:
-#syz fix: exact-commit-title
-
-If you want syzbot to run the reproducer, reply with:
-#syz test: git://repo/address.git branch-or-commit-hash
-If you attach or paste a git patch, syzbot will apply it before testing.
-
-If you want to overwrite report's subsystems, reply with:
-#syz set subsystems: new-subsystem
-(See the list of subsystem names on the web dashboard)
-
-If the report is a duplicate of another one, reply with:
-#syz dup: exact-subject-of-another-report
-
-If you want to undo deduplication, reply with:
-#syz undup
 
 
 _______________________________________________
