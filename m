@@ -2,73 +2,120 @@ Return-Path: <jfs-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+jfs-discussion@lfdr.de
 Delivered-To: lists+jfs-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id CFEEE814116
-	for <lists+jfs-discussion@lfdr.de>; Fri, 15 Dec 2023 06:00:26 +0100 (CET)
-Received: from [127.0.0.1] (helo=sfs-ml-1.v29.lw.sourceforge.com)
-	by sfs-ml-1.v29.lw.sourceforge.com with esmtp (Exim 4.95)
+	by mail.lfdr.de (Postfix) with ESMTPS id 799E181A782
+	for <lists+jfs-discussion@lfdr.de>; Wed, 20 Dec 2023 21:13:11 +0100 (CET)
+Received: from [127.0.0.1] (helo=sfs-ml-4.v29.lw.sourceforge.com)
+	by sfs-ml-4.v29.lw.sourceforge.com with esmtp (Exim 4.95)
 	(envelope-from <jfs-discussion-bounces@lists.sourceforge.net>)
-	id 1rE0Iw-00064k-5m;
-	Fri, 15 Dec 2023 05:00:06 +0000
+	id 1rG2w4-0002dR-DC;
+	Wed, 20 Dec 2023 20:12:56 +0000
 Received: from [172.30.20.202] (helo=mx.sourceforge.net)
- by sfs-ml-1.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
+ by sfs-ml-2.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
  TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (Exim 4.95)
- (envelope-from <hch@lst.de>) id 1rE0Iq-00063u-Rl;
- Fri, 15 Dec 2023 05:00:01 +0000
+ (envelope-from <haokexin@gmail.com>) id 1rF66I-0006uW-W3
+ for jfs-discussion@lists.sourceforge.net;
+ Mon, 18 Dec 2023 05:23:35 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=sourceforge.net; s=x; h=In-Reply-To:Content-Type:MIME-Version:References:
- Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:Content-Transfer-Encoding:
- Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
- Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
+ d=sourceforge.net; s=x; h=Content-Transfer-Encoding:MIME-Version:Message-Id:
+ Date:Subject:Cc:To:From:Sender:Reply-To:Content-Type:Content-ID:
+ Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+ :Resent-Message-ID:In-Reply-To:References:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=T7x3FN5fRWZWsVxSFvjyofZy8lz4H9ag+5p6y1pv8wM=; b=lUGc9ISa6efWJ7bp8GpbtLBaLt
- X4hgnmwEG2hFVtRO9W6gcykmjZyXpOExS/3ZfpjIZzAYyEXkM0RSjlOr+jOWKSaN1amD44uV9N78j
- UinL3zxTeMMxo0dB2Lk7GoCK3wZvUmYml5D5kRywMNoNdRSn8SbiJA2FA1sT3vNw4rek=;
+ bh=0drJHYYDD5E7qsYsj8DpMF7783xVm2/8gXDSMs30oH4=; b=RWa130CNNhnXtqHape8uoy8FE4
+ tV4GP2dAFE4f8eeU+8MbsYggssOjLO5+HJlaqFe9/gNKDEK/V7NeT71EnoJQHiDsepJuStoOrgcJG
+ rN849+b9qYK35UEIOYW6IXHmT3YZm/WMRxk3U3pQ7OcT0B1jhwZeUXcMkQXPAqU8/HVs=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
- h=In-Reply-To:Content-Type:MIME-Version:References:Message-ID:Subject:Cc:To
- :From:Date:Sender:Reply-To:Content-Transfer-Encoding:Content-ID:
- Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
- :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
- List-Post:List-Owner:List-Archive;
- bh=T7x3FN5fRWZWsVxSFvjyofZy8lz4H9ag+5p6y1pv8wM=; b=fBWahzPGAmEydncYVXaYfn3Hn8
- Nm4mKxkILa+9v7VBzLYRXGKx9/mGJBXTsvpOIzB+DRZ/AzlArAbhczNsbDy0FXPjEVp/U/HSfj+tz
- RWLbAszjgZcXkoLCR9diZbyrowuEa9x6i0w/ZirEIZ/N8Lo3WZS8IJUF5E0pprkCfEQo=;
-Received: from verein.lst.de ([213.95.11.211])
+ h=Content-Transfer-Encoding:MIME-Version:Message-Id:Date:Subject:Cc:To:From
+ :Sender:Reply-To:Content-Type:Content-ID:Content-Description:Resent-Date:
+ Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+ References:List-Id:List-Help:List-Unsubscribe:List-Subscribe:List-Post:
+ List-Owner:List-Archive; bh=0drJHYYDD5E7qsYsj8DpMF7783xVm2/8gXDSMs30oH4=; b=N
+ EW5sZcyHvMIGznZlOtBzRCYOxnXXA/twQ5e1deoHKDzCD8nLX+WaEBOFW/7A8tpGN/ud8wyETfzx2
+ i5c0JArQM3f8wSLOFhqjSYB1AEiiihgToehX8GMa+SJjWPzp+jKC0QsKx5YL+c/8ZDaKRNAljX4Oo
+ pdvE9e0fFRHIejQI=;
+Received: from mail-pj1-f44.google.com ([209.85.216.44])
  by sfi-mx-2.v28.lw.sourceforge.com with esmtps
- (TLS1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.95)
- id 1rE0In-0000lz-Hs; Fri, 15 Dec 2023 05:00:00 +0000
-Received: by verein.lst.de (Postfix, from userid 2407)
- id 2584568D05; Fri, 15 Dec 2023 05:59:44 +0100 (CET)
-Date: Fri, 15 Dec 2023 05:59:43 +0100
-From: Christoph Hellwig <hch@lst.de>
-To: Matthew Wilcox <willy@infradead.org>
-Message-ID: <20231215045943.GA16040@lst.de>
-References: <20221113162902.883850-1-hch@lst.de>
- <20221113162902.883850-5-hch@lst.de> <ZXtRBarvgSVN5zPx@casper.infradead.org>
+ (TLS1.2:ECDHE-RSA-AES128-GCM-SHA256:128) (Exim 4.95)
+ id 1rF66I-0004oS-Vv for jfs-discussion@lists.sourceforge.net;
+ Mon, 18 Dec 2023 05:23:35 +0000
+Received: by mail-pj1-f44.google.com with SMTP id
+ 98e67ed59e1d1-28abca51775so877826a91.1
+ for <jfs-discussion@lists.sourceforge.net>;
+ Sun, 17 Dec 2023 21:23:34 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=gmail.com; s=20230601; t=1702877009; x=1703481809; darn=lists.sourceforge.net;
+ h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+ :to:from:from:to:cc:subject:date:message-id:reply-to;
+ bh=0drJHYYDD5E7qsYsj8DpMF7783xVm2/8gXDSMs30oH4=;
+ b=lAl+frXbJPh/qkmuJj8i1ntOLWxAxK0BRYuqM7+y7yzK8AvCBawhrDtzBj54ZWniAa
+ eJIO+gm4l3/J4CTXnH+s5NHgKYIXPESVcDcL+okD7jnpFS+UScCrP8BvBUSM8ipVHUxa
+ G2vZnbrOUzCVdjQN2BFzj/8GNd+uwimOpZbcLUbyd1j9mjQu6e3HIl7RuuwB+l+n3SzW
+ SnRfkf2fCHpz5DGeMdoMrta6FReLGjHqQzFXqX4ggU6qivagGmfwuEnBwCRu1gtvHRrx
+ KO0lC8Ns9Thr7TQugY9pgc3ihIJDN/reHBeXAdFhZe7Rg2c9M/JDbI5x6yPPFd+J2uyn
+ m3gg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20230601; t=1702877009; x=1703481809;
+ h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+ :to:from:x-gm-message-state:from:to:cc:subject:date:message-id
+ :reply-to;
+ bh=0drJHYYDD5E7qsYsj8DpMF7783xVm2/8gXDSMs30oH4=;
+ b=Sl7Szvp5hEU1F7pu+joWarZ4zC/MTRn0hHRe0ONeJTghiFPW8tfDOoMT+7Ki0zboCq
+ P9fYY+ikbPCV48tyUfFjShclpvRrlCgyzOyTHj8c+/C2Tt8KeZUkHIJlOLARR32egPoh
+ zu66MF6NM4J8CeDTazpeK2WsioiNiLtITpffjLbObyQErsr8wXp8oHVDkQ7vPD8caUw/
+ 7JYSiZ67Phg9VBbTeaxd/6vH3dlHTgWEXce28OF3+7zvPzKS6IA2k2ECl9saY+g0q4xE
+ jAzvpw8uewyTxb889/giVx7onlJEhUT2BPBVlg14F/AT1W8yY3pf0SLywmJrWMWyqWwo
+ rpWg==
+X-Gm-Message-State: AOJu0YxIHJnxhtvs/UvkWBFm1bQQOouBJygOgN1vCRugQeShi/EtgMhu
+ I+d04yM8d4H66RpLTNBVQsU=
+X-Google-Smtp-Source: AGHT+IF67mJy/ao9ConSgLvzrfp47KcSGux8F41muhQdwTZ6xSouRYqHhG1VQYxMW8ibRU11yXiIng==
+X-Received: by 2002:a17:90a:f2d3:b0:28b:43e6:e601 with SMTP id
+ gt19-20020a17090af2d300b0028b43e6e601mr642721pjb.98.1702877009218; 
+ Sun, 17 Dec 2023 21:23:29 -0800 (PST)
+Received: from pek-lpggp6.wrs.com (unknown-105-121.windriver.com.
+ [147.11.105.121]) by smtp.gmail.com with ESMTPSA id
+ u14-20020a170902e5ce00b001d3acb7d4e2sm818560plf.166.2023.12.17.21.23.26
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Sun, 17 Dec 2023 21:23:28 -0800 (PST)
+To: Dave Kleikamp <shaggy@kernel.org>
+Date: Mon, 18 Dec 2023 13:23:23 +0800
+Message-Id: <20231218052323.1193276-1-haokexin@gmail.com>
+X-Mailer: git-send-email 2.39.2
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <ZXtRBarvgSVN5zPx@casper.infradead.org>
-User-Agent: Mutt/1.5.17 (2007-11-01)
-X-Spam-Score: -0.0 (/)
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: Spam detection software,
- running on the system "util-spamd-1.v13.lw.sourceforge.com", 
+ running on the system "util-spamd-2.v13.lw.sourceforge.com", 
  has NOT identified this incoming email as spam.  The original
  message has been attached to this so you can view it or label
  similar future email.  If you have any questions, see
  the administrator of that system for details.
- Content preview:  On Thu, Dec 14, 2023 at 07:01:25PM +0000,
- Matthew Wilcox wrote:
- > Was there a reason you only did this for hfs_aops and not for >
- hfs_btree_aops?
- It feels like anything that just calls > block_write_f [...] 
- Content analysis details:   (-0.0 points, 6.0 required)
+ Content preview:  The kernel thread function jfs_lazycommit() and jfs_sync()
+ invoke the try_to_freeze() in its loop. But all the kernel threads are
+ no-freezable
+ by default. So if we want to make a kernel thread to be f [...] 
+ Content analysis details:   (-0.2 points, 6.0 required)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.216.44 listed in list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [haokexin[at]gmail.com]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid -0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [209.85.216.44 listed in wl.mailspike.net]
+ -0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
  -0.0 T_SCC_BODY_TEXT_LINE   No description available.
-X-Headers-End: 1rE0In-0000lz-Hs
-Subject: Re: [Jfs-discussion] [PATCH 4/9] hfs: remove ->writepage
+X-Headers-End: 1rF66I-0004oS-Vv
+X-Mailman-Approved-At: Wed, 20 Dec 2023 20:12:54 +0000
+Subject: [Jfs-discussion] [PATCH] jfs: Add missing set_freezable() for
+ freezable kthread
 X-BeenThere: jfs-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -80,30 +127,47 @@ List-Post: <mailto:jfs-discussion@lists.sourceforge.net>
 List-Help: <mailto:jfs-discussion-request@lists.sourceforge.net?subject=help>
 List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/jfs-discussion>, 
  <mailto:jfs-discussion-request@lists.sourceforge.net?subject=subscribe>
-Cc: Dave Kleikamp <shaggy@kernel.org>, jfs-discussion@lists.sourceforge.net,
- linux-ext4@vger.kernel.org, linux-karma-devel@lists.sourceforge.net,
- Bob Copeland <me@bobcopeland.com>, Namjae Jeon <linkinjeon@kernel.org>,
- linux-mm@kvack.org, Mikulas Patocka <mikulas@artax.karlin.mff.cuni.cz>,
- Jan Kara <jack@suse.com>, linux-fsdevel@vger.kernel.org,
- Sungjong Seo <sj1557.seo@samsung.com>, Christoph Hellwig <hch@lst.de>,
- OGAWA Hirofumi <hirofumi@mail.parknet.co.jp>
+From: Kevin Hao via Jfs-discussion <jfs-discussion@lists.sourceforge.net>
+Reply-To: Kevin Hao <haokexin@gmail.com>
+Cc: jfs-discussion@lists.sourceforge.net, Pavel Machek <pavel@ucw.cz>,
+ "Rafael J. Wysocki" <rafael@kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Errors-To: jfs-discussion-bounces@lists.sourceforge.net
 
-On Thu, Dec 14, 2023 at 07:01:25PM +0000, Matthew Wilcox wrote:
-> Was there a reason you only did this for hfs_aops and not for
-> hfs_btree_aops?  It feels like anything that just calls
-> block_write_full_page() in the writepage handler should be converted
-> to just calling mpage_writepages() in the writepages handler.
-> I have a few of those conversions done, but obviously they're in
-> filesystems that are basically untestable.
+The kernel thread function jfs_lazycommit() and jfs_sync() invoke the
+try_to_freeze() in its loop. But all the kernel threads are no-freezable
+by default. So if we want to make a kernel thread to be freezable, we have
+to invoke set_freezable() explicitly.
 
-Probably.  I remember I had a good reason to skip, and the lack of
-testability might have been it.  Note that for hfsplus in particular
-we should actually be able to test now that the port of the hfs
-userspace has returned to distros.  I haven't actually gotten to
-see what the test baseline looks like, though.
+Signed-off-by: Kevin Hao <haokexin@gmail.com>
+---
+ fs/jfs/jfs_txnmgr.c | 2 ++
+ 1 file changed, 2 insertions(+)
+
+diff --git a/fs/jfs/jfs_txnmgr.c b/fs/jfs/jfs_txnmgr.c
+index dccc8b3f1045..be17e3c43582 100644
+--- a/fs/jfs/jfs_txnmgr.c
++++ b/fs/jfs/jfs_txnmgr.c
+@@ -2702,6 +2702,7 @@ int jfs_lazycommit(void *arg)
+ 	unsigned long flags;
+ 	struct jfs_sb_info *sbi;
+ 
++	set_freezable();
+ 	do {
+ 		LAZY_LOCK(flags);
+ 		jfs_commit_thread_waking = 0;	/* OK to wake another thread */
+@@ -2884,6 +2885,7 @@ int jfs_sync(void *arg)
+ 	struct jfs_inode_info *jfs_ip;
+ 	tid_t tid;
+ 
++	set_freezable();
+ 	do {
+ 		/*
+ 		 * write each inode on the anonymous inode list
+-- 
+2.39.2
+
 
 
 _______________________________________________
