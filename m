@@ -2,73 +2,87 @@ Return-Path: <jfs-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+jfs-discussion@lfdr.de
 Delivered-To: lists+jfs-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2C43A820192
-	for <lists+jfs-discussion@lfdr.de>; Fri, 29 Dec 2023 22:14:31 +0100 (CET)
-Received: from [127.0.0.1] (helo=sfs-ml-2.v29.lw.sourceforge.com)
-	by sfs-ml-2.v29.lw.sourceforge.com with esmtp (Exim 4.95)
+	by mail.lfdr.de (Postfix) with ESMTPS id D38AB821D70
+	for <lists+jfs-discussion@lfdr.de>; Tue,  2 Jan 2024 15:11:50 +0100 (CET)
+Received: from [127.0.0.1] (helo=sfs-ml-1.v29.lw.sourceforge.com)
+	by sfs-ml-1.v29.lw.sourceforge.com with esmtp (Exim 4.95)
 	(envelope-from <jfs-discussion-bounces@lists.sourceforge.net>)
-	id 1rJKBF-00079o-Mg;
-	Fri, 29 Dec 2023 21:14:10 +0000
+	id 1rKfUP-0004WD-S1;
+	Tue, 02 Jan 2024 14:11:30 +0000
 Received: from [172.30.20.202] (helo=mx.sourceforge.net)
- by sfs-ml-2.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
+ by sfs-ml-1.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
  TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (Exim 4.95)
- (envelope-from <lists@nerdbynature.de>) id 1rJKBC-00079S-ED
+ (envelope-from <dan.carpenter@linaro.org>) id 1rKfUN-0004W7-NH
  for jfs-discussion@lists.sourceforge.net;
- Fri, 29 Dec 2023 21:14:07 +0000
+ Tue, 02 Jan 2024 14:11:28 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=sourceforge.net; s=x; h=Content-Type:MIME-Version:References:Message-ID:
- In-Reply-To:Subject:cc:To:From:Date:Sender:Reply-To:Content-Transfer-Encoding
- :Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
- Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
+ d=sourceforge.net; s=x; h=In-Reply-To:Content-Type:MIME-Version:Message-ID:
+ Subject:Cc:To:From:Date:Sender:Reply-To:Content-Transfer-Encoding:Content-ID:
+ Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+ :Resent-Message-ID:References:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=Ppu78V10sZ2jRO8ZOKkrBw4CdreL+OKe3UacQw/K5cg=; b=WJo1XiSCRuZf/Z5w9ZY+RXx8r+
- 8IJZnYDe96ioUnyjumM2IqXw0haYEM2/q8nDy+er8mZy0lTIhUu7eM3xnOZyhMvz5IgT/vvh8FvuF
- GXNrloxSf3S1V4ukMoYJjsQe4Dbe9hO8OS6MhiZ3/Jzv6tjcFsGIhgkRt2arR4zFvEZA=;
+ bh=GeJuJizoWeAs29loa6MRIjI0gunccegFhfT3lI/DWIs=; b=Hj2R+YB69txfZ7punT+ooQplfD
+ KTMmRzhJ8zq0Rvmht9VvZe/pnnHU+ENSgynFoidizHpUFCTwpAT0T8tbbv/G72BJS6RhAbrDsfoma
+ W2JoKqv9gljc6ltQKSrS6J2PSRjChyfx/HgZQuwW2GDhU7una4RM7n67vN+W2XNSnYv8=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
- h=Content-Type:MIME-Version:References:Message-ID:In-Reply-To:Subject:cc:To
- :From:Date:Sender:Reply-To:Content-Transfer-Encoding:Content-ID:
- Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
- :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
- List-Post:List-Owner:List-Archive;
- bh=Ppu78V10sZ2jRO8ZOKkrBw4CdreL+OKe3UacQw/K5cg=; b=iMHKwAyvrhYcAukQHacfHpZrWV
- 0s3y17GgrogIN3Q5cqiVfSgaR5UJhuaPjN8gg7bnN/t5vS2CNeu5hS+SC9xmChA+JymPJjGyDeiFO
- x5DyzazJ2kysB3Wdx1W9FRkp5aq8hQd9uBFPRm6iFzuqPB9NybWX9uG8Hu5oW1Q2BR8I=;
-Received: from trent.utfs.org ([94.185.90.103])
+ h=In-Reply-To:Content-Type:MIME-Version:Message-ID:Subject:Cc:To:From:Date:
+ Sender:Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:
+ Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+ References:List-Id:List-Help:List-Unsubscribe:List-Subscribe:List-Post:
+ List-Owner:List-Archive; bh=GeJuJizoWeAs29loa6MRIjI0gunccegFhfT3lI/DWIs=; b=U
+ jsilKKJnFMLYjJWol2+qqMSbjUCtsLyLMK2TLLAYb0NZJ2H/FLGRGs49ACgFW00Gj2pSoppNL05Zg
+ ozCPlvyGUvfc3lHkaM5pa0+8H1QuNYMpKIXiGXI62u6akjKJ3O4zSxVsOn53OKytbMUjTd7t9e+C2
+ UfK/RhyXNdPNWiYk=;
+Received: from mail-ed1-f47.google.com ([209.85.208.47])
  by sfi-mx-2.v28.lw.sourceforge.com with esmtps
- (TLS1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.95)
- id 1rJKB8-0002fg-E6 for jfs-discussion@lists.sourceforge.net;
- Fri, 29 Dec 2023 21:14:06 +0000
-DKIM-Signature: v=1; a=ed25519-sha256; c=relaxed/simple;
- d=nerdbynature.de; i=@nerdbynature.de; q=dns/txt; s=key1;
- t=1703882935; h=date : from : to : cc : subject : in-reply-to :
- message-id : references : mime-version : content-type : from;
- bh=GMUDd5r6nKSw+Pu9RRn8T1ZPAI7ve8pTZ0H5aGv/UKI=;
- b=S68MrsgRLszT64vcZJ4Yny72i9Ceh6q0QcN4d6V/yoaS2XxfsMchzXaOx7rUDNNoyZNhw
- ZL5CXT95siGoPIzCg==
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=nerdbynature.de;
- i=@nerdbynature.de; q=dns/txt; s=key0; t=1703882935; h=date : from :
- to : cc : subject : in-reply-to : message-id : references :
- mime-version : content-type : from;
- bh=GMUDd5r6nKSw+Pu9RRn8T1ZPAI7ve8pTZ0H5aGv/UKI=;
- b=YDgX7jwNKC/4ryTQspfGSEWXx1QoIw3cIh1HeQXfK3qYx8IvYWtWc0H0n8e2DOG+CGEcn
- Tx6uy/1aZjcBFsfU+oEK4kxSt9I4Ic0pUcCnhuSX8aJsRveMJkpsRnbHTOyT7QE3nS0Gtzg
- C6vU6SqnrcG/RwjwTjR5/qGOP0gbN18JpnCZ5jd2tgIsdyggRS2svB0O/iWZwsIkguqMs8s
- MiE5OnZnK3BqJUPZ0ytVShwoEViT2H3oznx7fj25y6lcZtQZr3SmzK1AUGYdiA+u9Ml23+0
- TSp4rxU+kO9+DFMXhQc+7URLKfaLA2hQScKX6Y4IJKeS+ty3MLmZtvxbox+g==
-Received: from localhost (localhost [IPv6:::1])
- (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
- key-exchange X25519 server-signature RSA-PSS (4096 bits) server-digest SHA256)
- (No client certificate requested)
- by trent.utfs.org (Postfix) with ESMTPS id 833E360243;
- Fri, 29 Dec 2023 21:48:55 +0100 (CET)
-Date: Fri, 29 Dec 2023 21:48:55 +0100 (CET)
-To: Linus Torvalds <torvalds@linuxfoundation.org>
-In-Reply-To: <CAHk-=wid2p3NXUtg=iDo1B3urpJT4OWo7-o5OaQ2A6qRCpa39A@mail.gmail.com>
-Message-ID: <eb985ad1-2f8e-35cf-69e9-8d4e7394bc0d@nerdbynature.de>
-References: <3d428c1b-c11d-4f9a-8f0d-85daf0c2a4cb.bugreport@ubisectech.com>
- <CAHk-=wid2p3NXUtg=iDo1B3urpJT4OWo7-o5OaQ2A6qRCpa39A@mail.gmail.com>
+ (TLS1.2:ECDHE-RSA-AES128-GCM-SHA256:128) (Exim 4.95)
+ id 1rKfUG-0002mH-Vd for jfs-discussion@lists.sourceforge.net;
+ Tue, 02 Jan 2024 14:11:28 +0000
+Received: by mail-ed1-f47.google.com with SMTP id
+ 4fb4d7f45d1cf-5553f251e3cso3964034a12.2
+ for <jfs-discussion@lists.sourceforge.net>;
+ Tue, 02 Jan 2024 06:11:20 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=linaro.org; s=google; t=1704204674; x=1704809474; darn=lists.sourceforge.net;
+ h=in-reply-to:content-disposition:mime-version:message-id:subject:cc
+ :to:from:date:from:to:cc:subject:date:message-id:reply-to;
+ bh=GeJuJizoWeAs29loa6MRIjI0gunccegFhfT3lI/DWIs=;
+ b=pd/HINYOmMHE//iMTOo7fmL4rWtHWUUqMPfunY6El6PAOGtH5IrffqjITOjodeZ+0i
+ VRpiU1yKcQfNig3Xd5CP6pr+XdfFmx8TXYXZs3W0s5hTCPuA6Jj/r51Z6l2nImetkJv7
+ 2Nt+vJKu9MAXBNUetNhG53ZUTMUT4SmmysnWJ051hOAWOYL/T3B+C608LUFvdsw15ucd
+ tCofRo9eFExuOFGFKu9V/OSoq6uHqtJPfyuooJRAWCoRwrFH4lzx3gzUe1W6XC6Xsy2O
+ gVjHCyOSYoIK2VsLMjFgD4T7qITWnSORarG3YgXlelWQgYrbchR8uWwUxaH/EcoyD3jH
+ Xj0g==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20230601; t=1704204674; x=1704809474;
+ h=in-reply-to:content-disposition:mime-version:message-id:subject:cc
+ :to:from:date:x-gm-message-state:from:to:cc:subject:date:message-id
+ :reply-to;
+ bh=GeJuJizoWeAs29loa6MRIjI0gunccegFhfT3lI/DWIs=;
+ b=BrPzmOONnmN7EWYxwcBgCbP+k218OfL84HxG34cogMoBDlLlcmKy1/R8uEF5ClMZNW
+ 0HoMUc3a7BOofTz0b/XH7pmHrZTUrON5zCw3jk6UJm4rS9Wj/O5ge6pa+i50yQIy8ClM
+ FzlhV05LqkSlLbVzOHyvZc9+4I7MMYOToSyU3AAnGc86d/M3lWue8chgTu/vB3Fk7Vdr
+ ynsZxitX7q8ssup4Bovss3Y3ML3Gd7cB3Xa2hOXdvPX4pzArJdaSyxVXQDDFm/wbAuoe
+ iCQueaWBjk0t6Y0DOKGBnI5H2k88OpxMVD5hF8qrWqCGdaxdRdUPquQgDZ5+f9zj9mLE
+ aiFw==
+X-Gm-Message-State: AOJu0YzUJEESg0ReeGeVDnPr1aum2IG92ocRA/j/j1F6dR2Ql0e2Px9/
+ AM89Ec/Lf220GFv1ZZdD/rMzfSzGfBTljyj0OGB0wkUhbE8=
+X-Google-Smtp-Source: AGHT+IE/lxBI2psr/eyrLZFMSVyOi8+3ecJpLXDxAYrw3nUMQDDIqSUNcdGH6FQb1H0HxA0PUgdCHw==
+X-Received: by 2002:a5d:5145:0:b0:336:7f03:4af with SMTP id
+ u5-20020a5d5145000000b003367f0304afmr10379008wrt.123.1704204226988; 
+ Tue, 02 Jan 2024 06:03:46 -0800 (PST)
+Received: from localhost ([102.140.209.237]) by smtp.gmail.com with ESMTPSA id
+ q17-20020adfcd91000000b003362d0eefd3sm28380018wrj.20.2024.01.02.06.03.45
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Tue, 02 Jan 2024 06:03:46 -0800 (PST)
+Date: Tue, 2 Jan 2024 16:29:12 +0300
+To: oe-kbuild@lists.linux.dev, Edward Adam Davis <eadavis@qq.com>,
+ syzbot+553d90297e6d2f50dbc7@syzkaller.appspotmail.com
+Message-ID: <828db1e9-9b98-4797-bd23-08fbae1260d3@suswa.mountain>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <tencent_B86ECD2ECECC92A7ED86EF92D0064A499206@qq.com>
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: Spam detection software,
  running on the system "util-spamd-2.v13.lw.sourceforge.com", 
@@ -76,24 +90,28 @@ X-Spam-Report: Spam detection software,
  message has been attached to this so you can view it or label
  similar future email.  If you have any questions, see
  the administrator of that system for details.
- Content preview:  > > [ 119.560427][ T7975] general protection fault, probably
- for non-canonical address 0xdffffc0000000006: 0000 [#1] PREEMPT SMP KASAN
- > > [ 119.561982][ T7975] KASAN: null-ptr-deref in range [0x00000 [...] 
+ Content preview:  Hi Edward,
+ kernel test robot noticed the following build warnings:
+ https://git-scm.com/docs/git-format-patch#_base_tree_information] 
  Content analysis details:   (-0.2 points, 6.0 required)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.208.47 listed in wl.mailspike.net]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.208.47 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 T_SCC_BODY_TEXT_LINE   No description available.
-X-Headers-End: 1rJKB8-0002fg-E6
-Subject: Re: [Jfs-discussion] poc.c
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid -0.0 T_SCC_BODY_TEXT_LINE   No description available.
+X-Headers-End: 1rKfUG-0002mH-Vd
+Subject: Re: [Jfs-discussion] [PATCH] jfs: fix array-index-out-of-bounds in
+ diNewExt
 X-BeenThere: jfs-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -105,32 +123,131 @@ List-Post: <mailto:jfs-discussion@lists.sourceforge.net>
 List-Help: <mailto:jfs-discussion-request@lists.sourceforge.net?subject=help>
 List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/jfs-discussion>, 
  <mailto:jfs-discussion-request@lists.sourceforge.net?subject=subscribe>
-From: Christian Kujau via Jfs-discussion <jfs-discussion@lists.sourceforge.net>
-Reply-To: Christian Kujau <lists@nerdbynature.de>
-Cc: shaggy <shaggy@kernel.org>, jfs-discussion@lists.sourceforge.net,
- Ubisectech Sirius <bugreport@ubisectech.com>
+From: Dan Carpenter via Jfs-discussion <jfs-discussion@lists.sourceforge.net>
+Reply-To: Dan Carpenter <dan.carpenter@linaro.org>
+Cc: shaggy@kernel.org, jfs-discussion@lists.sourceforge.net, lkp@intel.com,
+ syzkaller-bugs@googlegroups.com, linux-kernel@vger.kernel.org,
+ oe-kbuild-all@lists.linux.dev, linux-fsdevel@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Errors-To: jfs-discussion-bounces@lists.sourceforge.net
 
-> > [  119.560427][ T7975] general protection fault, probably for non-canonical address 0xdffffc0000000006: 0000 [#1] PREEMPT SMP KASAN
-> > [  119.561982][ T7975] KASAN: null-ptr-deref in range [0x0000000000000030-0x0000000000000037]
-> > [  119.563081][ T7975] CPU: 1 PID: 7975 Comm: poc Not tainted 6.7.0-rc7-00003-gfbafc3e621c3 #3
-> > [  119.564139][ T7975] Hardware name: QEMU Standard PC (i440FX + PIIX, 1996), BIOS 1.15.0-1 04/01/2014
-> > [  119.565257][ T7975] RIP: 0010:write_special_inodes+0xa6/0x170
-> > [  119.565951][ T7975] Code: 8b 7d 30 41 ff d4 48 8d 7b 28 48 89 f8 48 c1 e8 03 80 3c 28 00 0f 85 ab 00 00 00 4c 8b 6b 28 49 8d 7d 30 48 89 f8 48 c1 e8 03 <80> 3c 28 00 0f 85 88 00 00 00 49 8b 7d 30 41 ff d4 48 8d bb b0 00
+Hi Edward,
 
+kernel test robot noticed the following build warnings:
 
-FWIW, this has been reported by Syzkaller some time ago:
+https://git-scm.com/docs/git-format-patch#_base_tree_information]
 
- > general protection fault in write_special_inodes
- > https://syzkaller.appspot.com/bug?extid=c732e285f8fc38d15916
+url:    https://github.com/intel-lab-lkp/linux/commits/Edward-Adam-Davis/jfs-fix-array-index-out-of-bounds-in-diNewExt/20231212-095530
+base:   https://github.com/kleikamp/linux-shaggy jfs-next
+patch link:    https://lore.kernel.org/r/tencent_B86ECD2ECECC92A7ED86EF92D0064A499206%40qq.com
+patch subject: [PATCH] jfs: fix array-index-out-of-bounds in diNewExt
+config: i386-randconfig-141-20231212 (https://download.01.org/0day-ci/archive/20231214/202312142348.6HRZtXTB-lkp@intel.com/config)
+compiler: gcc-7 (Ubuntu 7.5.0-6ubuntu2) 7.5.0
+reproduce: (https://download.01.org/0day-ci/archive/20231214/202312142348.6HRZtXTB-lkp@intel.com/reproduce)
 
-C.
+If you fix the issue in a separate patch/commit (i.e. not just a new version of
+the same patch/commit), kindly add following tags
+| Reported-by: kernel test robot <lkp@intel.com>
+| Reported-by: Dan Carpenter <dan.carpenter@linaro.org>
+| Closes: https://lore.kernel.org/r/202312142348.6HRZtXTB-lkp@intel.com/
+
+New smatch warnings:
+fs/jfs/jfs_imap.c:2213 diNewExt() error: buffer overflow 'imap->im_imap.in_agctl' 128 <= 128
+
+Old smatch warnings:
+fs/jfs/jfs_imap.c:2229 diNewExt() error: buffer overflow 'imap->im_imap.in_agctl' 128 <= 128
+fs/jfs/jfs_imap.c:2304 diNewExt() error: buffer overflow 'imap->im_imap.in_agctl' 128 <= 128
+fs/jfs/jfs_imap.c:2318 diNewExt() error: buffer overflow 'imap->im_imap.in_agctl' 128 <= 128
+fs/jfs/jfs_imap.c:2330 diNewExt() error: buffer overflow 'imap->im_imap.in_agctl' 128 <= 128
+fs/jfs/jfs_imap.c:2332 diNewExt() error: buffer overflow 'imap->im_imap.in_agctl' 128 <= 128
+fs/jfs/jfs_imap.c:2363 diNewExt() error: buffer overflow 'imap->im_imap.in_agctl' 128 <= 128
+fs/jfs/jfs_imap.c:2364 diNewExt() error: buffer overflow 'imap->im_imap.in_agctl' 128 <= 128
+
+vim +2213 fs/jfs/jfs_imap.c
+
+^1da177e4c3f41 Linus Torvalds    2005-04-16  2152  static int diNewExt(struct inomap * imap, struct iag * iagp, int extno)
+^1da177e4c3f41 Linus Torvalds    2005-04-16  2153  {
+^1da177e4c3f41 Linus Torvalds    2005-04-16  2154  	int agno, iagno, fwd, back, freei = 0, sword, rc;
+^1da177e4c3f41 Linus Torvalds    2005-04-16  2155  	struct iag *aiagp = NULL, *biagp = NULL, *ciagp = NULL;
+^1da177e4c3f41 Linus Torvalds    2005-04-16  2156  	struct metapage *amp, *bmp, *cmp, *dmp;
+^1da177e4c3f41 Linus Torvalds    2005-04-16  2157  	struct inode *ipimap;
+^1da177e4c3f41 Linus Torvalds    2005-04-16  2158  	s64 blkno, hint;
+^1da177e4c3f41 Linus Torvalds    2005-04-16  2159  	int i, j;
+^1da177e4c3f41 Linus Torvalds    2005-04-16  2160  	u32 mask;
+^1da177e4c3f41 Linus Torvalds    2005-04-16  2161  	ino_t ino;
+^1da177e4c3f41 Linus Torvalds    2005-04-16  2162  	struct dinode *dp;
+^1da177e4c3f41 Linus Torvalds    2005-04-16  2163  	struct jfs_sb_info *sbi;
+^1da177e4c3f41 Linus Torvalds    2005-04-16  2164  
+^1da177e4c3f41 Linus Torvalds    2005-04-16  2165  	/* better have free extents.
+^1da177e4c3f41 Linus Torvalds    2005-04-16  2166  	 */
+^1da177e4c3f41 Linus Torvalds    2005-04-16  2167  	if (!iagp->nfreeexts) {
+eb8630d7d2fd13 Joe Perches       2013-06-04  2168  		jfs_error(imap->im_ipimap->i_sb, "no free extents\n");
+^1da177e4c3f41 Linus Torvalds    2005-04-16  2169  		return -EIO;
+^1da177e4c3f41 Linus Torvalds    2005-04-16  2170  	}
+^1da177e4c3f41 Linus Torvalds    2005-04-16  2171  
+^1da177e4c3f41 Linus Torvalds    2005-04-16  2172  	/* get the inode map inode.
+^1da177e4c3f41 Linus Torvalds    2005-04-16  2173  	 */
+^1da177e4c3f41 Linus Torvalds    2005-04-16  2174  	ipimap = imap->im_ipimap;
+^1da177e4c3f41 Linus Torvalds    2005-04-16  2175  	sbi = JFS_SBI(ipimap->i_sb);
+^1da177e4c3f41 Linus Torvalds    2005-04-16  2176  
+^1da177e4c3f41 Linus Torvalds    2005-04-16  2177  	amp = bmp = cmp = NULL;
+^1da177e4c3f41 Linus Torvalds    2005-04-16  2178  
+^1da177e4c3f41 Linus Torvalds    2005-04-16  2179  	/* get the ag and iag numbers for this iag.
+^1da177e4c3f41 Linus Torvalds    2005-04-16  2180  	 */
+^1da177e4c3f41 Linus Torvalds    2005-04-16  2181  	agno = BLKTOAG(le64_to_cpu(iagp->agstart), sbi);
+f93b91b82fcf16 Edward Adam Davis 2023-12-12  2182  	if (agno > MAXAG || agno < 0)
+
+The commit introduces this agno > MAXAG comparison.  But Smatch says
+that it should be agno >= MAXAG.
+
+f93b91b82fcf16 Edward Adam Davis 2023-12-12  2183  		return -EIO;
+f93b91b82fcf16 Edward Adam Davis 2023-12-12  2184  
+^1da177e4c3f41 Linus Torvalds    2005-04-16  2185  	iagno = le32_to_cpu(iagp->iagnum);
+^1da177e4c3f41 Linus Torvalds    2005-04-16  2186  
+^1da177e4c3f41 Linus Torvalds    2005-04-16  2187  	/* check if this is the last free extent within the
+^1da177e4c3f41 Linus Torvalds    2005-04-16  2188  	 * iag.  if so, the iag must be removed from the ag
+25985edcedea63 Lucas De Marchi   2011-03-30  2189  	 * free extent list, so get the iags preceding and
+^1da177e4c3f41 Linus Torvalds    2005-04-16  2190  	 * following the iag on this list.
+^1da177e4c3f41 Linus Torvalds    2005-04-16  2191  	 */
+^1da177e4c3f41 Linus Torvalds    2005-04-16  2192  	if (iagp->nfreeexts == cpu_to_le32(1)) {
+^1da177e4c3f41 Linus Torvalds    2005-04-16  2193  		if ((fwd = le32_to_cpu(iagp->extfreefwd)) >= 0) {
+^1da177e4c3f41 Linus Torvalds    2005-04-16  2194  			if ((rc = diIAGRead(imap, fwd, &amp)))
+^1da177e4c3f41 Linus Torvalds    2005-04-16  2195  				return (rc);
+^1da177e4c3f41 Linus Torvalds    2005-04-16  2196  			aiagp = (struct iag *) amp->data;
+^1da177e4c3f41 Linus Torvalds    2005-04-16  2197  		}
+^1da177e4c3f41 Linus Torvalds    2005-04-16  2198  
+^1da177e4c3f41 Linus Torvalds    2005-04-16  2199  		if ((back = le32_to_cpu(iagp->extfreeback)) >= 0) {
+^1da177e4c3f41 Linus Torvalds    2005-04-16  2200  			if ((rc = diIAGRead(imap, back, &bmp)))
+^1da177e4c3f41 Linus Torvalds    2005-04-16  2201  				goto error_out;
+^1da177e4c3f41 Linus Torvalds    2005-04-16  2202  			biagp = (struct iag *) bmp->data;
+^1da177e4c3f41 Linus Torvalds    2005-04-16  2203  		}
+^1da177e4c3f41 Linus Torvalds    2005-04-16  2204  	} else {
+^1da177e4c3f41 Linus Torvalds    2005-04-16  2205  		/* the iag has free extents.  if all extents are free
+^1da177e4c3f41 Linus Torvalds    2005-04-16  2206  		 * (as is the case for a newly allocated iag), the iag
+^1da177e4c3f41 Linus Torvalds    2005-04-16  2207  		 * must be added to the ag free extent list, so get
+^1da177e4c3f41 Linus Torvalds    2005-04-16  2208  		 * the iag at the head of the list in preparation for
+^1da177e4c3f41 Linus Torvalds    2005-04-16  2209  		 * adding this iag to this list.
+^1da177e4c3f41 Linus Torvalds    2005-04-16  2210  		 */
+^1da177e4c3f41 Linus Torvalds    2005-04-16  2211  		fwd = back = -1;
+^1da177e4c3f41 Linus Torvalds    2005-04-16  2212  		if (iagp->nfreeexts == cpu_to_le32(EXTSPERIAG)) {
+^1da177e4c3f41 Linus Torvalds    2005-04-16 @2213  			if ((fwd = imap->im_agctl[agno].extfree) >= 0) {
+
+If agno == MAXAG then we're out of bounds here.
+
+^1da177e4c3f41 Linus Torvalds    2005-04-16  2214  				if ((rc = diIAGRead(imap, fwd, &amp)))
+^1da177e4c3f41 Linus Torvalds    2005-04-16  2215  					goto error_out;
+^1da177e4c3f41 Linus Torvalds    2005-04-16  2216  				aiagp = (struct iag *) amp->data;
+^1da177e4c3f41 Linus Torvalds    2005-04-16  2217  			}
+^1da177e4c3f41 Linus Torvalds    2005-04-16  2218  		}
+^1da177e4c3f41 Linus Torvalds    2005-04-16  2219  	}
+^1da177e4c3f41 Linus Torvalds    2005-04-16  2220  
+^1da177e4c3f41 Linus Torvalds    2005-04-16  2221  	/* check if the iag has no free inodes.  if so, the iag
+
 -- 
-BOFH excuse #274:
+0-DAY CI Kernel Test Service
+https://github.com/intel/lkp-tests/wiki
 
-It was OK before you touched it.
 
 
 _______________________________________________
