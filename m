@@ -2,211 +2,104 @@ Return-Path: <jfs-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+jfs-discussion@lfdr.de
 Delivered-To: lists+jfs-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id 599CB822022
-	for <lists+jfs-discussion@lfdr.de>; Tue,  2 Jan 2024 18:11:08 +0100 (CET)
-Received: from [127.0.0.1] (helo=sfs-ml-4.v29.lw.sourceforge.com)
-	by sfs-ml-4.v29.lw.sourceforge.com with esmtp (Exim 4.95)
+	by mail.lfdr.de (Postfix) with ESMTPS id E2AC18271A5
+	for <lists+jfs-discussion@lfdr.de>; Mon,  8 Jan 2024 15:41:44 +0100 (CET)
+Received: from [127.0.0.1] (helo=sfs-ml-3.v29.lw.sourceforge.com)
+	by sfs-ml-3.v29.lw.sourceforge.com with esmtp (Exim 4.95)
 	(envelope-from <jfs-discussion-bounces@lists.sourceforge.net>)
-	id 1rKiHx-0008Je-1Z;
-	Tue, 02 Jan 2024 17:10:49 +0000
+	id 1rMqof-00066E-89;
+	Mon, 08 Jan 2024 14:41:25 +0000
 Received: from [172.30.20.202] (helo=mx.sourceforge.net)
- by sfs-ml-4.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
- TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (Exim 4.95)
- (envelope-from <dave.kleikamp@oracle.com>) id 1rKiHu-0008JX-8v
- for jfs-discussion@lists.sourceforge.net;
- Tue, 02 Jan 2024 17:10:46 +0000
+ by sfs-ml-3.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
+ TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (Exim 4.95) (envelope-from
+ <3XJaWZQkbABcFLM7x881ExCC50.3BB381HF1EzBAG1AG.zB9@M3KW2WVRGUFZ5GODRSRYTGD7.apphosting.bounces.google.com>)
+ id 1rLLtz-0002nG-EA for jfs-discussion@lists.sourceforge.net;
+ Thu, 04 Jan 2024 11:28:42 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=sourceforge.net; s=x; h=MIME-Version:Content-Transfer-Encoding:Content-Type
- :In-Reply-To:From:References:Cc:To:Subject:Date:Message-ID:Sender:Reply-To:
- Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
- Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
+ d=sourceforge.net; s=x; h=Content-Type:To:From:Subject:Message-ID:In-Reply-To
+ :Date:MIME-Version:Sender:Reply-To:Cc:Content-Transfer-Encoding:Content-ID:
+ Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+ :Resent-Message-ID:References:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=cu+m3YOnuPexoBHA7mEWSRcpGkL8k88MGvwslZEUHwA=; b=bqfDa4iNeiAPD6sYPAnWMVjgfo
- /bkR9W32nEMFeffoFhyGaQF21lu5vzlvEwir1PgiNOqoI/Siu7uvo0D2FVp0NugEezm7kKMQToXcD
- dKOWdfp2eBEYks9kWZN62ZmfFCEqWrISBdNvTMG12GqUtOUm0mFYKaDBa2FJO0a2k214=;
+ bh=2AeD8S49PpVPc/MfX2hJlH7o8ZjT7dzTos6trOKHcGU=; b=PdJ5nx2s28N/hGQ3DL5xe9oAbf
+ xi699prdKMc+fTSe9beE7pRfUWU/JIBd7obNBV2C9LQM1wwfsKDdiUSTecS6ncry5cucBK26IAvNE
+ fSHM8xdte2HVp+Vyrl6L7K6j6q6C4w02FwARKnNTXMcr2KnLcqJaPK2zcLPVqroOGeJw=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
- h=MIME-Version:Content-Transfer-Encoding:Content-Type:In-Reply-To:From:
- References:Cc:To:Subject:Date:Message-ID:Sender:Reply-To:Content-ID:
- Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
- :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
- List-Post:List-Owner:List-Archive;
- bh=cu+m3YOnuPexoBHA7mEWSRcpGkL8k88MGvwslZEUHwA=; b=ObnAOd7TtJkW/phzfntc+P9QFW
- oyP5F1u0lAGdlixh4dsyragnxA7elU+NQ/8NoOnaEVffjjxlea+RabkNjEhgGybCcjUpDdTtThinK
- DUFKOOVJ1KSfJE9E9XQLjdd1nqWRY1cz2PmQsgifi0DJJFbp3q9sy7GR1WOVec1wwf8k=;
-Received: from mx0b-00069f02.pphosted.com ([205.220.177.32])
+ h=Content-Type:To:From:Subject:Message-ID:In-Reply-To:Date:MIME-Version:
+ Sender:Reply-To:Cc:Content-Transfer-Encoding:Content-ID:Content-Description:
+ Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+ References:List-Id:List-Help:List-Unsubscribe:List-Subscribe:List-Post:
+ List-Owner:List-Archive; bh=2AeD8S49PpVPc/MfX2hJlH7o8ZjT7dzTos6trOKHcGU=; b=N
+ GxeUSRBhKDMHDYf15Gb7WMsXfp6SLlEa/5cOCLt6JWdzRCPzjieoFleLiOEaFPAUe6tFSJHl4qUYB
+ U9FCOIrTafhcprH3VN2j9N9xeMvrNaZpyBglijrnW5Sk3JJUP7EvQnaQws8xsZ3sWjYFkGST5MxGx
+ FoRouomW9X2xAo1k=;
+Received: from mail-io1-f72.google.com ([209.85.166.72])
  by sfi-mx-2.v28.lw.sourceforge.com with esmtps
- (TLS1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.95)
- id 1rKiHl-0003lA-T4 for jfs-discussion@lists.sourceforge.net;
- Tue, 02 Jan 2024 17:10:43 +0000
-Received: from pps.filterd (m0246631.ppops.net [127.0.0.1])
- by mx0b-00069f02.pphosted.com (8.17.1.19/8.17.1.19) with ESMTP id
- 4029SuS7027880; Tue, 2 Jan 2024 17:10:22 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=oracle.com;
- h=message-id : date :
- subject : to : cc : references : from : in-reply-to : content-type :
- content-transfer-encoding : mime-version; s=corp-2023-11-20;
- bh=cu+m3YOnuPexoBHA7mEWSRcpGkL8k88MGvwslZEUHwA=;
- b=ZY9jdDSwosS06SzYUqp/cTj9/zcRd14vAJTw58PcT6cSFxum2Mis8v06Ip5v6ZlGGwcB
- xNDvIoSX5SjqC31ZYbhwl7wdDdvyzDGyLziyVFR+uRfTeF6Wz9dnxen3MnAh1Fk/bT+G
- cSU/VNapsha7Ll1I8TN3kPcrXohYkqZf0WDhmxI/Wdy2ixxMJXV+n547ETmb0PrRJb8o
- iiqSvS02xt/yFOL086hk6Dtgw6dFiLAQ/hC4isKVyPrr0CQDu+iIeaAus5JIDNs97Izk
- 6IaXjKnASkuCnEWmc46iF/vQmgdTOHKVp5bPJlgtMshUmfU+lg18v356GYKXrDm6pOwJ eA== 
-Received: from iadpaimrmta01.imrmtpd1.prodappiadaev1.oraclevcn.com
- (iadpaimrmta01.appoci.oracle.com [130.35.100.223])
- by mx0b-00069f02.pphosted.com (PPS) with ESMTPS id 3vaa03ueyh-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
- Tue, 02 Jan 2024 17:10:22 +0000
-Received: from pps.filterd
- (iadpaimrmta01.imrmtpd1.prodappiadaev1.oraclevcn.com [127.0.0.1])
- by iadpaimrmta01.imrmtpd1.prodappiadaev1.oraclevcn.com (8.17.1.19/8.17.1.19)
- with ESMTP id 402GRaBB013865; Tue, 2 Jan 2024 17:10:21 GMT
-Received: from nam04-mw2-obe.outbound.protection.outlook.com
- (mail-mw2nam04lp2168.outbound.protection.outlook.com [104.47.73.168])
- by iadpaimrmta01.imrmtpd1.prodappiadaev1.oraclevcn.com (PPS) with ESMTPS id
- 3va9ndqy7b-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
- Tue, 02 Jan 2024 17:10:21 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=ogz3R1wWlsyEw8avoIop/JV2QYCkya7XZNriNgmZX89/Z/GZ7T+kvqkvLJs2++A4AaZqYnoOWTTwtaO5q+VFMu739CvxIMHnQDjnZD7IJ4nn5Bg3ZoBcVUjTo07EuEvrZ+qSyWiT/NUhXn0/JHXnJnCFGZmmRo+hquwGg1sWyD8Iwa5X7/P1o8uaH41qfScxnXORev39tir/5niX3ZGu8P+gBxO6xk1kwwU7OIIERVTyiZI6H1sFnN3TVfUCkxVYpUp1i5NFhMm3O7ZQmn6ywLuWmFaM4dmsgI0vw6suyU/voTZG/CEYE6gsHT90f4Oc5Zw5GLS7mfMAVGvjnUrT9A==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=cu+m3YOnuPexoBHA7mEWSRcpGkL8k88MGvwslZEUHwA=;
- b=Ya9e/Y2iBJjC16KyKGLUieVuVGoj2Em4qTGRbd1Z66oW8SQz4IyGJovWorLz15Ci1IttIK2sD2jaXSFU6kckJE1VFnS3l6uPNN7gRyAalcR46m0Ny8KZd2xjo3uEp1rcmg3EVCj7J/jFbwcj5V71QbvTHtFPfACjzIAY6JMdWJ3BrtVOxxcd35BC9lUbx4lxW+LhIQSNVw+uajgr8YBQSHHgMsC4WR7bSUfSPmfZmAJj3EhQq0c38YSPv61T0qrisyOc6rasGDJwBUjxPpt7QVBKo3oHS+S7hlTaYmhoHIIqXhJvC9ygOgEEdqltdVChsmbcFso8z/qgqwvIF6Zz9g==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=oracle.com; dmarc=pass action=none header.from=oracle.com;
- dkim=pass header.d=oracle.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=oracle.onmicrosoft.com; s=selector2-oracle-onmicrosoft-com;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=cu+m3YOnuPexoBHA7mEWSRcpGkL8k88MGvwslZEUHwA=;
- b=d86QoFZfWItJyaUanptuNwk+W2MKxrEdaJ/F2jdq6N+CvB9zsDXuBHqDkgjARultl8oBAyOMApEyL7yHgZASR960vaDdJxd+IQnTJAx8FHktxYk2bfBhg1bvu6asuSXFdO3aN8NFUQ1xL/6CPvIBNi51P2/cGeM1u0WB39O/GdA=
-Received: from MW5PR10MB5738.namprd10.prod.outlook.com (2603:10b6:303:19b::14)
- by MW4PR10MB5704.namprd10.prod.outlook.com (2603:10b6:303:18e::8)
- with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.7135.25; Tue, 2 Jan
- 2024 17:10:18 +0000
-Received: from MW5PR10MB5738.namprd10.prod.outlook.com
- ([fe80::bd88:5306:d287:afb0]) by MW5PR10MB5738.namprd10.prod.outlook.com
- ([fe80::bd88:5306:d287:afb0%6]) with mapi id 15.20.7135.023; Tue, 2 Jan 2024
- 17:10:18 +0000
-Message-ID: <50be9574-b9b6-4752-861f-3e4b4e251207@oracle.com>
-Date: Tue, 2 Jan 2024 11:10:15 -0600
-User-Agent: Mozilla Thunderbird
-To: Dan Carpenter <dan.carpenter@linaro.org>, oe-kbuild@lists.linux.dev,
- Edward Adam Davis <eadavis@qq.com>,
- syzbot+553d90297e6d2f50dbc7@syzkaller.appspotmail.com
-References: <828db1e9-9b98-4797-bd23-08fbae1260d3@suswa.mountain>
-Content-Language: en-US
-In-Reply-To: <828db1e9-9b98-4797-bd23-08fbae1260d3@suswa.mountain>
-X-ClientProxiedBy: CH0PR03CA0255.namprd03.prod.outlook.com
- (2603:10b6:610:e5::20) To MW5PR10MB5738.namprd10.prod.outlook.com
- (2603:10b6:303:19b::14)
+ (TLS1.2:ECDHE-RSA-AES128-GCM-SHA256:128) (Exim 4.95)
+ id 1rLLtu-0006ji-PS for jfs-discussion@lists.sourceforge.net;
+ Thu, 04 Jan 2024 11:28:42 +0000
+Received: by mail-io1-f72.google.com with SMTP id
+ ca18e2360f4ac-7bb454e1d64so29701139f.3
+ for <jfs-discussion@lists.sourceforge.net>;
+ Thu, 04 Jan 2024 03:28:38 -0800 (PST)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20230601; t=1704367708; x=1704972508;
+ h=to:from:subject:message-id:in-reply-to:date:mime-version
+ :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+ bh=2AeD8S49PpVPc/MfX2hJlH7o8ZjT7dzTos6trOKHcGU=;
+ b=fQmvVJXmdibpDhNyxWdMEmrtye0eIhZf0Ww9t7cIyidLU2jahLmOkHuqjyZ/vPtBQ/
+ t7uNUZ9YryGwx25qdT3+CgCSbWoPKq87xOAc7dggmiKC8JePn7bFMMWImXMcaL7CLCWq
+ eXfaaaQgvR+lxz45a4LTDZRxJJH1EGBwy85OoMv520jbtm2rX/Ja1pIj5qYFnUtj0ZPE
+ 96HRms6gxHKIrHtsXOlDzWPTdjlUsEelvM2RyODsiO0VRjjbaAquWXsZWHNx36dC+5eJ
+ aE7eQ8PX0c0L7QOeblfRJGWjemsmO7VWIITsPi7gmt3d3NEFc19sKF3tfkTAJIqZaZZo
+ HbZg==
+X-Gm-Message-State: AOJu0Yxx3IaDj9oNsgbizFf4VP4UXfeG/W2MvInVhlK0InX/jutl1naK
+ CV9WsLoG90ROU9i2g9cvEaiLDLhdjPOiHyvFgT2GjywLk2um
+X-Google-Smtp-Source: AGHT+IG/rrP2kV05eXyUwnh3Km8mdoV9q+WU45NJ5XikpxUSkzdE6q1qOCWOBsBQW5PpJTEoXqV38fHuKLHcXte58s8j8rf5Z39A
 MIME-Version: 1.0
-X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: MW5PR10MB5738:EE_|MW4PR10MB5704:EE_
-X-MS-Office365-Filtering-Correlation-Id: f5288d17-f42d-4cdc-627c-08dc0bb5b1c7
-X-MS-Exchange-SenderADCheck: 1
-X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;
-X-Microsoft-Antispam-Message-Info: 8yP1aXI70432/B07QdVuloSjyG+cIrOXMML11Y5xtQ8ujbHKpuYCrCAW4i4TKKv8PXxSf00Bp1mIvzSk4W89HIxFfJXGAtqWMCzp4VoiJLAKxCVr1bMkO4XMK5pF2UxoTCO3Uqtm6QkcTtBVYz0ENgGUl3wFSM5v8s/FrZvWvcWmecPcyX6GsQdWIhiBAMDZXM9USBMYT2v3pi6NgLvPx7JiPqadZ/b7DK2xsFzRf0bfe+i+uJc1QaL8bgNv1hEOXyS1MvfbV60EqcicFtMGAr/Am5I9SM79+/wgbqEPSD8XEBnFVnWmAlrP6d5KuXJOD7oV31xJM4vB3ODovhiAwPjiKSYSj+NV7bzzOIJZoXUBsz0lLqUMcxG/j7rIKguLRJ/8x7eDOLSP8HzF2NqPBIS76gKqDteowL/fLtkBlA3zGlhsBCS354CQ3tbpvNAHHwYpHBsvza4CLMrbDIj7PYkjMt8aOUqtABzlIev8UI2CPK5qpdlTrFNWJ9me5+OSzhiiV+/mlZUT4b0IsVBt7ouHMoxTI5SZVcq7X4BhJ3Ry+p0M0yjOQULCUVPJ7ZJ8pkCg0az0s/HO3nuZBEaCZ/iDeCFa5MOyMrVO4BtDmjPHJFunAwVTahgH/68FoerJSgV1D+aGP/LhFTQdybjNfLMAbdtOQgfeaEKelKvYED0oVC5tUjjUUIfU4T5rUl2/uKlbtXZZLiy9/X7cmlfXcMM89XUeOKXG2fWXW/o+y5w=
-X-Forefront-Antispam-Report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
- IPV:NLI; SFV:NSPM; H:MW5PR10MB5738.namprd10.prod.outlook.com; PTR:; CAT:NONE;
- SFS:(13230031)(136003)(39860400002)(366004)(396003)(346002)(376002)(230173577357003)(230922051799003)(230273577357003)(186009)(64100799003)(1800799012)(451199024)(31686004)(41300700001)(4001150100001)(2906002)(5660300002)(7416002)(44832011)(8676002)(4326008)(316002)(66556008)(110136005)(66946007)(66476007)(36756003)(6506007)(8936002)(38100700002)(31696002)(478600001)(966005)(6486002)(86362001)(6666004)(2616005)(6512007)(26005)(83380400001)(45980500001)(43740500002);
- DIR:OUT; SFP:1101; 
-X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: =?utf-8?B?ckZYRG5xckt3bjJYV2VvcFFINm1udjJFVStneGtkVnVMcWVwbDF3eUJWbU5i?=
- =?utf-8?B?bG1tMnhQWWE3SkVGQVBQT0ltWVFKK0IrTDE5Tk11bDUwbk94a3NwT1hMV0Jo?=
- =?utf-8?B?QTFnTUFZVVFvY1hXblhGVmhyT3phOEdERTJ1dUQzZ2lyK3M0QjNzUExlRmc2?=
- =?utf-8?B?aG50NkdVQWQ5WW9hWXZtQmtsdFBNb0R2VVRnRGYrNjdLejB6NFNSVC9Rc1Ey?=
- =?utf-8?B?UVBLK0V1d01USCtyRDZWUnZtOTdFdXNmaDNZUWY4MUVTbTFhL2xBK0lWUGhC?=
- =?utf-8?B?R2E1TU56eXY5bFJaR3ZlVi9wbXREL2RiTmJBV1lMZ3Zlbll1U09LUmtMNzZj?=
- =?utf-8?B?ZkxxWFFJZlR5bTFHMW92MjFzM2tZZ05qQ084dTJaWmMwakUwSVlWbkt3S3Nj?=
- =?utf-8?B?akxseXVSZzNjYVpzcUVhbkNIVGtXYTU4REJrWWhmQTE2SFJzMjZYVEgyTkNX?=
- =?utf-8?B?alNreXdCbDBCZzZHemFhYU83a2lkWDVQa2hPaVZHQXplUmIraHBKeTR2emwx?=
- =?utf-8?B?VTBiaXNZbXFYS0dERXM1dUFmcUJEbVIrSVVtcWNTVGgyaVpkVUpkblFEcUN5?=
- =?utf-8?B?dlo1MVZCNUhtZGdFQ2VLejVWenIrcEs3U1gxUjE4Tk05cklJL1pzNVNBVEtw?=
- =?utf-8?B?dDMrWDY4a2h4WkhDREZWbU1IRXNrWVl4b1FaN0NpRVBZdDZzWnZUZXpVUlNm?=
- =?utf-8?B?RU1oMkl2UmZXRUxMRldWSXBsT244NXBocUMwcWFkM3FuNkVHUit4T1haaEUw?=
- =?utf-8?B?WiswRG9yaFluczRmTHdONFdhTDJvY2JGUXJXY1hDNnppNUt6NUR1dmJmTUsy?=
- =?utf-8?B?KzVaZkdXdTUvTFNXYkluV0pDK3hVVHhSbWNoT0M0MHdnMXZuTmRUUkVqOGF6?=
- =?utf-8?B?VTVSb1lIWkxuVXVhdVRyYmJBWFNGSU5FZ1dITm1VdVZya1dOQ29BaFZ4dDJt?=
- =?utf-8?B?aThkZlh4U1hMd3pQOEpqc2JvWlRiTG1aNkNnMWdvb2poQjFISjVTSGwxazNU?=
- =?utf-8?B?STRKMUNNZjF1U1pCYjZIdEdtV29WZVplYWJvSlJBZGNZaE1UYW5NVDcxWjha?=
- =?utf-8?B?S3BISFVZcW9zMUdwOXpPUmV4eTRnZjZUQ2lLZnBjMDNXcTFISjRaWG1KdCtR?=
- =?utf-8?B?K0hRRDVzaWpoT2NqQ0lyaktQWnJvd1NqdncxSnd3M3VXanVrVGhKbXJ4dTJu?=
- =?utf-8?B?bWt0c2xrUmRXTDJTcHBtUlJaSFBhR1c5MXlwM1lMUzNHZnN6cDV1d1Vva0J0?=
- =?utf-8?B?dnF6Uk9rak9kUDBSQU1zbEpMYUVrcUZSQXRrVmZLZURCUFY1R3ZsMFV4Yzdh?=
- =?utf-8?B?NjhyUUk2bTVHWU5ycTNmN0QxeUpHQjhzbkNZWVlxMmtjTzhRNUV2QWx3UTl2?=
- =?utf-8?B?UjZPWXUxN0J6MkVuNi9TUXFzaHFzdk01Zlk5ZkNxYWE1TjRJelRKK3pOb0JR?=
- =?utf-8?B?Tnh1VmJFVC9aR25KVlFMem5BZldMSGJ0NkZDQlJSTUhGeU5BdWlNRHZ4NTg1?=
- =?utf-8?B?cmg5Umt0NWlNTDV1OStLaUFXLyt3V0x1Y0hkWktOSDZiOFNKT1hDOGVRd3hJ?=
- =?utf-8?B?V2VyR0xrTFVSRzBwUDJNUW1IaWZ3WitTOTZheDhxQ2tBeDlSWlJWaTFwdDFQ?=
- =?utf-8?B?Mm5WSDZpSC9lUDBHR2U4MzEraDRaM0s3T0w0YXIrRVpCb2dXYmNaK2RRVmo1?=
- =?utf-8?B?YTA1Tml0b3J1TG5QV0JjemRwam5iSGFzM25kbXVmRE5Wc3lOeE9nMFJrOTh2?=
- =?utf-8?B?R2R5QjNFVjhhYWpwTTNheDhNRUhIMVdId1lNdU92NDNCS1l1RlRKNG14Y3Ru?=
- =?utf-8?B?Z1lRWUVBbG1vZVdKT2p6bmZSOVo5eW5mbVlQUEJLSmZ1SS81WDFrOUtqYkZP?=
- =?utf-8?B?Q1ByNlNiTEVrNzVpZHE1enJrcU9HVmNFYTF6TmtJUkVVU3crWldOMzlvc0JX?=
- =?utf-8?B?SFVyeExlOXR4cFBqZCtMTDZLWGNKaXBTWmJuQ056MWRMRDNEL3prM3YwRW9S?=
- =?utf-8?B?dlFSbjJ3SDc5UVJSUFJDRTVUNFN4SlVWdjNUU09jZk5RdVdKcHoyRjBDSTh3?=
- =?utf-8?B?YlRTTUR0WmlJeU9YQjJrbXB6eEVuRjJKeUQxWnBzV2NpNXNsVjh2U3hUc1Bx?=
- =?utf-8?B?R3NxVFhpTGNhSUVTZ0RJWWlXaFlsYzFhUmhVSzZhRmU0ZDlxVGN5NWlpN2FV?=
- =?utf-8?B?Z1E9PQ==?=
-X-MS-Exchange-AntiSpam-ExternalHop-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-ExternalHop-MessageData-0: xoRkMDL7rfd1T1tBkgQZzO9DnYi0YVkwj868VIRZMi9L/zBqepIhPaDSygwl89VBRLuKIYw/u4uKvfyIQir9thARl2x5kM2favnvm9T+EOWcJGuEsO1G3qNA8n0jTuM55iucGeX437R+t4hWXyj8bI70NXp5h/v6XSbYzd7/awPj3OmVc/gJfbYHjBTvTSPeexeroCbL62FMcDv/H1gdO3HNjyk6RVDMOh/NdrOHnyOuqbrsKqeRXVZE8psxFvnAeBah8xAbbRzdeF8d5TTKX9vIOSnUmoLXQlxzfB0KLCZSygkCCcId21auX2AkzHooWcgQnuEM6XZaPj6AH4WfLXY0g7wpel84F4j8iIXv7xr8J9eRIADllbdG8ZUcXMOJuTsAttcVU1vi8EpIbUB+Ui6+d3a4WRTXCujUklq8caRy/+5UswF7/PUocrqIQBz1lIJTk/0UyBoxpumE4/1kE2U3UVoSG8w7oDEeDq3aoM8hppFmMKhYBVwNFCEr7EdjV8UOHwNUADTpcAGOZHiqta0PMqEy7ccvfqknl5pXQKRE5g8kMbJJmi3WM6koPayBRfyp6cJC+kBg9bdgHNlEpKHCOZpvwTgD6RpLV7k3C+s=
-X-OriginatorOrg: oracle.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: f5288d17-f42d-4cdc-627c-08dc0bb5b1c7
-X-MS-Exchange-CrossTenant-AuthSource: MW5PR10MB5738.namprd10.prod.outlook.com
-X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 02 Jan 2024 17:10:18.1414 (UTC)
-X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
-X-MS-Exchange-CrossTenant-Id: 4e2c6054-71cb-48f1-bd6c-3a9705aca71b
-X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: 2ewSOKaGMEMuDKTK0qiVap38yfTZN4iIQh0v4Px53SBj/thoUlnRVoe0Xs/z+Wcfq+hHCzl2dbx1OQuCyTXR7lvbMzkLDFPvO7Pj4ayaaDE=
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: MW4PR10MB5704
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.272,Aquarius:18.0.997,Hydra:6.0.619,FMLib:17.11.176.26
- definitions=2024-01-02_06,2024-01-02_01,2023-05-22_02
-X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 mlxlogscore=999
- malwarescore=0
- mlxscore=0 bulkscore=0 adultscore=0 suspectscore=0 spamscore=0
- phishscore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.12.0-2311290000 definitions=main-2401020129
-X-Proofpoint-ORIG-GUID: IHw2F50pCP-Ncijus5LD1ANDwhCmPS3n
-X-Proofpoint-GUID: IHw2F50pCP-Ncijus5LD1ANDwhCmPS3n
-X-Spam-Score: -0.9 (/)
+X-Received: by 2002:a05:6e02:18cc:b0:35f:ff56:c0fe with SMTP id
+ s12-20020a056e0218cc00b0035fff56c0femr70631ilu.1.1704367708200; Thu, 04 Jan
+ 2024 03:28:28 -0800 (PST)
+Date: Thu, 04 Jan 2024 03:28:28 -0800
+In-Reply-To: <00000000000082de1c05f81467ed@google.com>
+X-Google-Appengine-App-Id: s~syzkaller
+X-Google-Appengine-App-Id-Alias: syzkaller
+Message-ID: <000000000000d06740060e1d074d@google.com>
+To: jack@suse.com, jfs-discussion@lists.sourceforge.net, 
+ linux-fsdevel@vger.kernel.org, linux-kernel@vger.kernel.org, 
+ reiserfs-devel@vger.kernel.org, shaggy@kernel.org, 
+ syzkaller-bugs@googlegroups.com
+X-Spam-Score: 3.0 (+++)
 X-Spam-Report: Spam detection software,
  running on the system "util-spamd-1.v13.lw.sourceforge.com", 
  has NOT identified this incoming email as spam.  The original
  message has been attached to this so you can view it or label
  similar future email.  If you have any questions, see
  the administrator of that system for details.
- Content preview:  On 1/2/24 7:29AM, Dan Carpenter wrote: > Hi Edward,
- > > kernel test robot noticed the following build warnings: > >
- https://git-scm.com/docs/git-format-patch#_base_tree_information]
- > > url: https://g [...] 
- Content analysis details:   (-0.9 points, 6.0 required)
+ Content preview:  syzbot has found a reproducer for the following issue on:
+ HEAD commit: ac865f00af29 Merge tag 'pci-v6.7-fixes-2' of git://git.ker..
+ git tree: upstream console+strace:
+ https://syzkaller.appspot.com/x/log.txt?x=11f14c55e80000
+ kernel config: https://syzkaller.a [...] 
+ Content analysis details:   (3.0 points, 6.0 required)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 RCVD_IN_MSPIKE_H5      RBL: Excellent reputation (+5)
- [205.220.177.32 listed in wl.mailspike.net]
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [205.220.177.32 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.3 FROM_LOCAL_HEX         From: localpart has long hexadecimal sequence
+ 2.5 SORTED_RECIPS          Recipient list is sorted by address
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.166.72 listed in wl.mailspike.net]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.166.72 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  -0.0 T_SCC_BODY_TEXT_LINE   No description available.
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
-X-Headers-End: 1rKiHl-0003lA-T4
-Subject: Re: [Jfs-discussion] [PATCH] jfs: fix array-index-out-of-bounds in
- diNewExt
+X-Headers-End: 1rLLtu-0006ji-PS
+X-Mailman-Approved-At: Mon, 08 Jan 2024 14:41:23 +0000
+Subject: Re: [Jfs-discussion] [syzbot] [reiserfs?] INFO: task hung in
+ deactivate_super (2)
 X-BeenThere: jfs-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -218,135 +111,299 @@ List-Post: <mailto:jfs-discussion@lists.sourceforge.net>
 List-Help: <mailto:jfs-discussion-request@lists.sourceforge.net?subject=help>
 List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/jfs-discussion>, 
  <mailto:jfs-discussion-request@lists.sourceforge.net?subject=subscribe>
-From: Dave Kleikamp via Jfs-discussion <jfs-discussion@lists.sourceforge.net>
-Reply-To: Dave Kleikamp <dave.kleikamp@oracle.com>
-Cc: jfs-discussion@lists.sourceforge.net, lkp@intel.com,
- syzkaller-bugs@googlegroups.com, linux-kernel@vger.kernel.org,
- oe-kbuild-all@lists.linux.dev, linux-fsdevel@vger.kernel.org
+From: syzbot via Jfs-discussion <jfs-discussion@lists.sourceforge.net>
+Reply-To: syzbot <syzbot+aa7397130ec6a8c2e2d9@syzkaller.appspotmail.com>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Errors-To: jfs-discussion-bounces@lists.sourceforge.net
 
-On 1/2/24 7:29AM, Dan Carpenter wrote:
-> Hi Edward,
-> 
-> kernel test robot noticed the following build warnings:
-> 
-> https://git-scm.com/docs/git-format-patch#_base_tree_information]
-> 
-> url:    https://github.com/intel-lab-lkp/linux/commits/Edward-Adam-Davis/jfs-fix-array-index-out-of-bounds-in-diNewExt/20231212-095530
-> base:   https://github.com/kleikamp/linux-shaggy jfs-next
-> patch link:    https://lore.kernel.org/r/tencent_B86ECD2ECECC92A7ED86EF92D0064A499206%40qq.com
-> patch subject: [PATCH] jfs: fix array-index-out-of-bounds in diNewExt
-> config: i386-randconfig-141-20231212 (https://download.01.org/0day-ci/archive/20231214/202312142348.6HRZtXTB-lkp@intel.com/config)
-> compiler: gcc-7 (Ubuntu 7.5.0-6ubuntu2) 7.5.0
-> reproduce: (https://download.01.org/0day-ci/archive/20231214/202312142348.6HRZtXTB-lkp@intel.com/reproduce)
-> 
-> If you fix the issue in a separate patch/commit (i.e. not just a new version of
-> the same patch/commit), kindly add following tags
-> | Reported-by: kernel test robot <lkp@intel.com>
-> | Reported-by: Dan Carpenter <dan.carpenter@linaro.org>
-> | Closes: https://lore.kernel.org/r/202312142348.6HRZtXTB-lkp@intel.com/
+syzbot has found a reproducer for the following issue on:
 
-I modified Edward's patch in the jfs-next branch with the corrected test.
+HEAD commit:    ac865f00af29 Merge tag 'pci-v6.7-fixes-2' of git://git.ker..
+git tree:       upstream
+console+strace: https://syzkaller.appspot.com/x/log.txt?x=11f14c55e80000
+kernel config:  https://syzkaller.appspot.com/x/.config?x=655f8abe9fe69b3b
+dashboard link: https://syzkaller.appspot.com/bug?extid=aa7397130ec6a8c2e2d9
+compiler:       Debian clang version 15.0.6, GNU ld (GNU Binutils for Debian) 2.40
+syz repro:      https://syzkaller.appspot.com/x/repro.syz?x=1669644de80000
+C reproducer:   https://syzkaller.appspot.com/x/repro.c?x=137d7db5e80000
 
-Thanks for catching this.
+Downloadable assets:
+disk image: https://storage.googleapis.com/syzbot-assets/9a1f24b8b8e9/disk-ac865f00.raw.xz
+vmlinux: https://storage.googleapis.com/syzbot-assets/b09904d69477/vmlinux-ac865f00.xz
+kernel image: https://storage.googleapis.com/syzbot-assets/8130ed70d938/bzImage-ac865f00.xz
+mounted in repro: https://storage.googleapis.com/syzbot-assets/ea2e844115b1/mount_1.gz
 
-Shaggy
+IMPORTANT: if you fix the issue, please add the following tag to the commit:
+Reported-by: syzbot+aa7397130ec6a8c2e2d9@syzkaller.appspotmail.com
 
-> 
-> New smatch warnings:
-> fs/jfs/jfs_imap.c:2213 diNewExt() error: buffer overflow 'imap->im_imap.in_agctl' 128 <= 128
-> 
-> Old smatch warnings:
-> fs/jfs/jfs_imap.c:2229 diNewExt() error: buffer overflow 'imap->im_imap.in_agctl' 128 <= 128
-> fs/jfs/jfs_imap.c:2304 diNewExt() error: buffer overflow 'imap->im_imap.in_agctl' 128 <= 128
-> fs/jfs/jfs_imap.c:2318 diNewExt() error: buffer overflow 'imap->im_imap.in_agctl' 128 <= 128
-> fs/jfs/jfs_imap.c:2330 diNewExt() error: buffer overflow 'imap->im_imap.in_agctl' 128 <= 128
-> fs/jfs/jfs_imap.c:2332 diNewExt() error: buffer overflow 'imap->im_imap.in_agctl' 128 <= 128
-> fs/jfs/jfs_imap.c:2363 diNewExt() error: buffer overflow 'imap->im_imap.in_agctl' 128 <= 128
-> fs/jfs/jfs_imap.c:2364 diNewExt() error: buffer overflow 'imap->im_imap.in_agctl' 128 <= 128
-> 
-> vim +2213 fs/jfs/jfs_imap.c
-> 
-> ^1da177e4c3f41 Linus Torvalds    2005-04-16  2152  static int diNewExt(struct inomap * imap, struct iag * iagp, int extno)
-> ^1da177e4c3f41 Linus Torvalds    2005-04-16  2153  {
-> ^1da177e4c3f41 Linus Torvalds    2005-04-16  2154  	int agno, iagno, fwd, back, freei = 0, sword, rc;
-> ^1da177e4c3f41 Linus Torvalds    2005-04-16  2155  	struct iag *aiagp = NULL, *biagp = NULL, *ciagp = NULL;
-> ^1da177e4c3f41 Linus Torvalds    2005-04-16  2156  	struct metapage *amp, *bmp, *cmp, *dmp;
-> ^1da177e4c3f41 Linus Torvalds    2005-04-16  2157  	struct inode *ipimap;
-> ^1da177e4c3f41 Linus Torvalds    2005-04-16  2158  	s64 blkno, hint;
-> ^1da177e4c3f41 Linus Torvalds    2005-04-16  2159  	int i, j;
-> ^1da177e4c3f41 Linus Torvalds    2005-04-16  2160  	u32 mask;
-> ^1da177e4c3f41 Linus Torvalds    2005-04-16  2161  	ino_t ino;
-> ^1da177e4c3f41 Linus Torvalds    2005-04-16  2162  	struct dinode *dp;
-> ^1da177e4c3f41 Linus Torvalds    2005-04-16  2163  	struct jfs_sb_info *sbi;
-> ^1da177e4c3f41 Linus Torvalds    2005-04-16  2164
-> ^1da177e4c3f41 Linus Torvalds    2005-04-16  2165  	/* better have free extents.
-> ^1da177e4c3f41 Linus Torvalds    2005-04-16  2166  	 */
-> ^1da177e4c3f41 Linus Torvalds    2005-04-16  2167  	if (!iagp->nfreeexts) {
-> eb8630d7d2fd13 Joe Perches       2013-06-04  2168  		jfs_error(imap->im_ipimap->i_sb, "no free extents\n");
-> ^1da177e4c3f41 Linus Torvalds    2005-04-16  2169  		return -EIO;
-> ^1da177e4c3f41 Linus Torvalds    2005-04-16  2170  	}
-> ^1da177e4c3f41 Linus Torvalds    2005-04-16  2171
-> ^1da177e4c3f41 Linus Torvalds    2005-04-16  2172  	/* get the inode map inode.
-> ^1da177e4c3f41 Linus Torvalds    2005-04-16  2173  	 */
-> ^1da177e4c3f41 Linus Torvalds    2005-04-16  2174  	ipimap = imap->im_ipimap;
-> ^1da177e4c3f41 Linus Torvalds    2005-04-16  2175  	sbi = JFS_SBI(ipimap->i_sb);
-> ^1da177e4c3f41 Linus Torvalds    2005-04-16  2176
-> ^1da177e4c3f41 Linus Torvalds    2005-04-16  2177  	amp = bmp = cmp = NULL;
-> ^1da177e4c3f41 Linus Torvalds    2005-04-16  2178
-> ^1da177e4c3f41 Linus Torvalds    2005-04-16  2179  	/* get the ag and iag numbers for this iag.
-> ^1da177e4c3f41 Linus Torvalds    2005-04-16  2180  	 */
-> ^1da177e4c3f41 Linus Torvalds    2005-04-16  2181  	agno = BLKTOAG(le64_to_cpu(iagp->agstart), sbi);
-> f93b91b82fcf16 Edward Adam Davis 2023-12-12  2182  	if (agno > MAXAG || agno < 0)
-> 
-> The commit introduces this agno > MAXAG comparison.  But Smatch says
-> that it should be agno >= MAXAG.
-> 
-> f93b91b82fcf16 Edward Adam Davis 2023-12-12  2183  		return -EIO;
-> f93b91b82fcf16 Edward Adam Davis 2023-12-12  2184
-> ^1da177e4c3f41 Linus Torvalds    2005-04-16  2185  	iagno = le32_to_cpu(iagp->iagnum);
-> ^1da177e4c3f41 Linus Torvalds    2005-04-16  2186
-> ^1da177e4c3f41 Linus Torvalds    2005-04-16  2187  	/* check if this is the last free extent within the
-> ^1da177e4c3f41 Linus Torvalds    2005-04-16  2188  	 * iag.  if so, the iag must be removed from the ag
-> 25985edcedea63 Lucas De Marchi   2011-03-30  2189  	 * free extent list, so get the iags preceding and
-> ^1da177e4c3f41 Linus Torvalds    2005-04-16  2190  	 * following the iag on this list.
-> ^1da177e4c3f41 Linus Torvalds    2005-04-16  2191  	 */
-> ^1da177e4c3f41 Linus Torvalds    2005-04-16  2192  	if (iagp->nfreeexts == cpu_to_le32(1)) {
-> ^1da177e4c3f41 Linus Torvalds    2005-04-16  2193  		if ((fwd = le32_to_cpu(iagp->extfreefwd)) >= 0) {
-> ^1da177e4c3f41 Linus Torvalds    2005-04-16  2194  			if ((rc = diIAGRead(imap, fwd, &amp)))
-> ^1da177e4c3f41 Linus Torvalds    2005-04-16  2195  				return (rc);
-> ^1da177e4c3f41 Linus Torvalds    2005-04-16  2196  			aiagp = (struct iag *) amp->data;
-> ^1da177e4c3f41 Linus Torvalds    2005-04-16  2197  		}
-> ^1da177e4c3f41 Linus Torvalds    2005-04-16  2198
-> ^1da177e4c3f41 Linus Torvalds    2005-04-16  2199  		if ((back = le32_to_cpu(iagp->extfreeback)) >= 0) {
-> ^1da177e4c3f41 Linus Torvalds    2005-04-16  2200  			if ((rc = diIAGRead(imap, back, &bmp)))
-> ^1da177e4c3f41 Linus Torvalds    2005-04-16  2201  				goto error_out;
-> ^1da177e4c3f41 Linus Torvalds    2005-04-16  2202  			biagp = (struct iag *) bmp->data;
-> ^1da177e4c3f41 Linus Torvalds    2005-04-16  2203  		}
-> ^1da177e4c3f41 Linus Torvalds    2005-04-16  2204  	} else {
-> ^1da177e4c3f41 Linus Torvalds    2005-04-16  2205  		/* the iag has free extents.  if all extents are free
-> ^1da177e4c3f41 Linus Torvalds    2005-04-16  2206  		 * (as is the case for a newly allocated iag), the iag
-> ^1da177e4c3f41 Linus Torvalds    2005-04-16  2207  		 * must be added to the ag free extent list, so get
-> ^1da177e4c3f41 Linus Torvalds    2005-04-16  2208  		 * the iag at the head of the list in preparation for
-> ^1da177e4c3f41 Linus Torvalds    2005-04-16  2209  		 * adding this iag to this list.
-> ^1da177e4c3f41 Linus Torvalds    2005-04-16  2210  		 */
-> ^1da177e4c3f41 Linus Torvalds    2005-04-16  2211  		fwd = back = -1;
-> ^1da177e4c3f41 Linus Torvalds    2005-04-16  2212  		if (iagp->nfreeexts == cpu_to_le32(EXTSPERIAG)) {
-> ^1da177e4c3f41 Linus Torvalds    2005-04-16 @2213  			if ((fwd = imap->im_agctl[agno].extfree) >= 0) {
-> 
-> If agno == MAXAG then we're out of bounds here.
-> 
-> ^1da177e4c3f41 Linus Torvalds    2005-04-16  2214  				if ((rc = diIAGRead(imap, fwd, &amp)))
-> ^1da177e4c3f41 Linus Torvalds    2005-04-16  2215  					goto error_out;
-> ^1da177e4c3f41 Linus Torvalds    2005-04-16  2216  				aiagp = (struct iag *) amp->data;
-> ^1da177e4c3f41 Linus Torvalds    2005-04-16  2217  			}
-> ^1da177e4c3f41 Linus Torvalds    2005-04-16  2218  		}
-> ^1da177e4c3f41 Linus Torvalds    2005-04-16  2219  	}
-> ^1da177e4c3f41 Linus Torvalds    2005-04-16  2220
-> ^1da177e4c3f41 Linus Torvalds    2005-04-16  2221  	/* check if the iag has no free inodes.  if so, the iag
-> 
+INFO: task syz-executor393:5056 blocked for more than 143 seconds.
+      Not tainted 6.7.0-rc8-syzkaller-00024-gac865f00af29 #0
+"echo 0 > /proc/sys/kernel/hung_task_timeout_secs" disables this message.
+task:syz-executor393 state:D stack:25016 pid:5056  tgid:5056  ppid:5055   flags:0x00004002
+Call Trace:
+ <TASK>
+ context_switch kernel/sched/core.c:5376 [inline]
+ __schedule+0x1961/0x4ab0 kernel/sched/core.c:6688
+ __schedule_loop kernel/sched/core.c:6763 [inline]
+ schedule+0x149/0x260 kernel/sched/core.c:6778
+ schedule_preempt_disabled+0x13/0x20 kernel/sched/core.c:6835
+ rwsem_down_write_slowpath+0xeea/0x13b0 kernel/locking/rwsem.c:1178
+ __down_write_common+0x1aa/0x200 kernel/locking/rwsem.c:1306
+ __super_lock fs/super.c:56 [inline]
+ __super_lock_excl fs/super.c:71 [inline]
+ deactivate_super+0xad/0xf0 fs/super.c:516
+ cleanup_mnt+0x426/0x4c0 fs/namespace.c:1256
+ task_work_run+0x24a/0x300 kernel/task_work.c:180
+ ptrace_notify+0x2cd/0x380 kernel/signal.c:2399
+ ptrace_report_syscall include/linux/ptrace.h:411 [inline]
+ ptrace_report_syscall_exit include/linux/ptrace.h:473 [inline]
+ syscall_exit_work kernel/entry/common.c:251 [inline]
+ syscall_exit_to_user_mode_prepare kernel/entry/common.c:278 [inline]
+ __syscall_exit_to_user_mode_work kernel/entry/common.c:283 [inline]
+ syscall_exit_to_user_mode+0x168/0x2a0 kernel/entry/common.c:296
+ do_syscall_64+0x52/0x110 arch/x86/entry/common.c:89
+ entry_SYSCALL_64_after_hwframe+0x63/0x6b
+RIP: 0033:0x7f4ae237a577
+RSP: 002b:00007fffedd426b8 EFLAGS: 00000206 ORIG_RAX: 00000000000000a6
+RAX: 0000000000000000 RBX: 000000000000daf5 RCX: 00007f4ae237a577
+RDX: 0000000000000000 RSI: 000000000000000a RDI: 00007fffedd42770
+RBP: 00007fffedd42770 R08: 0000000000000000 R09: 0000000000000000
+R10: 00000000ffffffff R11: 0000000000000206 R12: 00007fffedd437e0
+R13: 000055555600b6c0 R14: 431bde82d7b634db R15: 00007fffedd43800
+ </TASK>
+INFO: task syz-executor393:5082 blocked for more than 143 seconds.
+      Not tainted 6.7.0-rc8-syzkaller-00024-gac865f00af29 #0
+"echo 0 > /proc/sys/kernel/hung_task_timeout_secs" disables this message.
+task:syz-executor393 state:D stack:27056 pid:5082  tgid:5082  ppid:5059   flags:0x00004006
+Call Trace:
+ <TASK>
+ context_switch kernel/sched/core.c:5376 [inline]
+ __schedule+0x1961/0x4ab0 kernel/sched/core.c:6688
+ __schedule_loop kernel/sched/core.c:6763 [inline]
+ schedule+0x149/0x260 kernel/sched/core.c:6778
+ schedule_preempt_disabled+0x13/0x20 kernel/sched/core.c:6835
+ rwsem_down_read_slowpath kernel/locking/rwsem.c:1086 [inline]
+ __down_read_common kernel/locking/rwsem.c:1250 [inline]
+ __down_read kernel/locking/rwsem.c:1263 [inline]
+ down_read+0x703/0xa40 kernel/locking/rwsem.c:1528
+ __super_lock fs/super.c:58 [inline]
+ super_lock+0x176/0x3a0 fs/super.c:117
+ super_lock_shared fs/super.c:146 [inline]
+ iterate_supers+0x8c/0x180 fs/super.c:969
+ quota_sync_all fs/quota/quota.c:69 [inline]
+ __do_sys_quotactl fs/quota/quota.c:938 [inline]
+ __se_sys_quotactl+0x391/0xa30 fs/quota/quota.c:917
+ do_syscall_x64 arch/x86/entry/common.c:52 [inline]
+ do_syscall_64+0x45/0x110 arch/x86/entry/common.c:83
+ entry_SYSCALL_64_after_hwframe+0x63/0x6b
+RIP: 0033:0x7f4ae2379319
+RSP: 002b:00007fffedd437a8 EFLAGS: 00000246 ORIG_RAX: 00000000000000b3
+RAX: ffffffffffffffda RBX: 0000000000000003 RCX: 00007f4ae2379319
+RDX: 0000000000000000 RSI: 0000000000000000 RDI: ffffffff80000100
+RBP: 0000000000000000 R08: 0000000000000000 R09: 00007fffedd437e0
+R10: 0000000000000000 R11: 0000000000000246 R12: 00007fffedd437cc
+R13: 0000000000000001 R14: 431bde82d7b634db R15: 00007fffedd43800
+ </TASK>
+INFO: task syz-executor393:5083 blocked for more than 143 seconds.
+      Not tainted 6.7.0-rc8-syzkaller-00024-gac865f00af29 #0
+"echo 0 > /proc/sys/kernel/hung_task_timeout_secs" disables this message.
+task:syz-executor393 state:D stack:26736 pid:5083  tgid:5083  ppid:5060   flags:0x00004006
+Call Trace:
+ <TASK>
+ context_switch kernel/sched/core.c:5376 [inline]
+ __schedule+0x1961/0x4ab0 kernel/sched/core.c:6688
+ __schedule_loop kernel/sched/core.c:6763 [inline]
+ schedule+0x149/0x260 kernel/sched/core.c:6778
+ schedule_preempt_disabled+0x13/0x20 kernel/sched/core.c:6835
+ rwsem_down_read_slowpath kernel/locking/rwsem.c:1086 [inline]
+ __down_read_common kernel/locking/rwsem.c:1250 [inline]
+ __down_read kernel/locking/rwsem.c:1263 [inline]
+ down_read+0x703/0xa40 kernel/locking/rwsem.c:1528
+ __super_lock fs/super.c:58 [inline]
+ super_lock+0x176/0x3a0 fs/super.c:117
+ super_lock_shared fs/super.c:146 [inline]
+ iterate_supers+0x8c/0x180 fs/super.c:969
+ quota_sync_all fs/quota/quota.c:69 [inline]
+ __do_sys_quotactl fs/quota/quota.c:938 [inline]
+ __se_sys_quotactl+0x391/0xa30 fs/quota/quota.c:917
+ do_syscall_x64 arch/x86/entry/common.c:52 [inline]
+ do_syscall_64+0x45/0x110 arch/x86/entry/common.c:83
+ entry_SYSCALL_64_after_hwframe+0x63/0x6b
+RIP: 0033:0x7f4ae2379319
+RSP: 002b:00007fffedd437a8 EFLAGS: 00000246 ORIG_RAX: 00000000000000b3
+RAX: ffffffffffffffda RBX: 0000000000000003 RCX: 00007f4ae2379319
+RDX: 0000000000000000 RSI: 0000000000000000 RDI: ffffffff80000100
+RBP: 0000000000000000 R08: 0000000000000000 R09: 00007fffedd437e0
+R10: 0000000000000000 R11: 0000000000000246 R12: 00007fffedd437cc
+R13: 0000000000000001 R14: 431bde82d7b634db R15: 00007fffedd43800
+ </TASK>
+INFO: task syz-executor393:5084 blocked for more than 144 seconds.
+      Not tainted 6.7.0-rc8-syzkaller-00024-gac865f00af29 #0
+"echo 0 > /proc/sys/kernel/hung_task_timeout_secs" disables this message.
+task:syz-executor393 state:D stack:27056 pid:5084  tgid:5084  ppid:5061   flags:0x00004006
+Call Trace:
+ <TASK>
+ context_switch kernel/sched/core.c:5376 [inline]
+ __schedule+0x1961/0x4ab0 kernel/sched/core.c:6688
+ __schedule_loop kernel/sched/core.c:6763 [inline]
+ schedule+0x149/0x260 kernel/sched/core.c:6778
+ schedule_preempt_disabled+0x13/0x20 kernel/sched/core.c:6835
+ rwsem_down_read_slowpath kernel/locking/rwsem.c:1086 [inline]
+ __down_read_common kernel/locking/rwsem.c:1250 [inline]
+ __down_read kernel/locking/rwsem.c:1263 [inline]
+ down_read+0x703/0xa40 kernel/locking/rwsem.c:1528
+ __super_lock fs/super.c:58 [inline]
+ super_lock+0x176/0x3a0 fs/super.c:117
+ super_lock_shared fs/super.c:146 [inline]
+ iterate_supers+0x8c/0x180 fs/super.c:969
+ quota_sync_all fs/quota/quota.c:69 [inline]
+ __do_sys_quotactl fs/quota/quota.c:938 [inline]
+ __se_sys_quotactl+0x391/0xa30 fs/quota/quota.c:917
+ do_syscall_x64 arch/x86/entry/common.c:52 [inline]
+ do_syscall_64+0x45/0x110 arch/x86/entry/common.c:83
+ entry_SYSCALL_64_after_hwframe+0x63/0x6b
+RIP: 0033:0x7f4ae2379319
+RSP: 002b:00007fffedd437a8 EFLAGS: 00000246 ORIG_RAX: 00000000000000b3
+RAX: ffffffffffffffda RBX: 0000000000000003 RCX: 00007f4ae2379319
+RDX: 0000000000000000 RSI: 0000000000000000 RDI: ffffffff80000100
+RBP: 0000000000000000 R08: 0000000000000000 R09: 00007fffedd437e0
+R10: 0000000000000000 R11: 0000000000000246 R12: 00007fffedd437cc
+R13: 0000000000000001 R14: 431bde82d7b634db R15: 00007fffedd43800
+ </TASK>
+
+Showing all locks held in the system:
+1 lock held by khungtaskd/29:
+ #0: ffffffff8d92dae0 (rcu_read_lock){....}-{1:2}, at: rcu_lock_acquire include/linux/rcupdate.h:301 [inline]
+ #0: ffffffff8d92dae0 (rcu_read_lock){....}-{1:2}, at: rcu_read_lock include/linux/rcupdate.h:747 [inline]
+ #0: ffffffff8d92dae0 (rcu_read_lock){....}-{1:2}, at: debug_show_all_locks+0x55/0x2a0 kernel/locking/lockdep.c:6614
+2 locks held by getty/4808:
+ #0: ffff88802667c0a0 (&tty->ldisc_sem){++++}-{0:0}, at: tty_ldisc_ref_wait+0x25/0x70 drivers/tty/tty_ldisc.c:243
+ #1: ffffc90002f062f0 (&ldata->atomic_read_lock){+.+.}-{3:3}, at: n_tty_read+0x6b4/0x1e10 drivers/tty/n_tty.c:2201
+1 lock held by syz-executor393/5056:
+ #0: ffff888029d1e0e0 (&type->s_umount_key#24){++++}-{3:3}, at: __super_lock fs/super.c:56 [inline]
+ #0: ffff888029d1e0e0 (&type->s_umount_key#24){++++}-{3:3}, at: __super_lock_excl fs/super.c:71 [inline]
+ #0: ffff888029d1e0e0 (&type->s_umount_key#24){++++}-{3:3}, at: deactivate_super+0xad/0xf0 fs/super.c:516
+4 locks held by syz-executor393/5078:
+ #0: ffff888029d1e0e0 (&type->s_umount_key#24){++++}-{3:3}, at: __super_lock fs/super.c:58 [inline]
+ #0: ffff888029d1e0e0 (&type->s_umount_key#24){++++}-{3:3}, at: super_lock+0x176/0x3a0 fs/super.c:117
+ #1: ffffc90003b890f0 (&journal->j_mutex){+.+.}-{3:3}, at: reiserfs_mutex_lock_safe fs/reiserfs/reiserfs.h:813 [inline]
+ #1: ffffc90003b890f0 (&journal->j_mutex){+.+.}-{3:3}, at: lock_journal fs/reiserfs/journal.c:533 [inline]
+ #1: ffffc90003b890f0 (&journal->j_mutex){+.+.}-{3:3}, at: do_journal_begin_r+0x352/0x1030 fs/reiserfs/journal.c:3047
+ #2: ffff8880b993c358 (&rq->__lock){-.-.}-{2:2}, at: raw_spin_rq_lock_nested+0x2a/0x140 kernel/sched/core.c:558
+ #3: ffff8880b993c358 (&rq->__lock){-.-.}-{2:2}, at: raw_spin_rq_lock_nested+0x2a/0x140 kernel/sched/core.c:558
+2 locks held by syz-executor393/5079:
+ #0: ffff888029d1e0e0 (&type->s_umount_key#24){++++}-{3:3}, at: __super_lock fs/super.c:58 [inline]
+ #0: ffff888029d1e0e0 (&type->s_umount_key#24){++++}-{3:3}, at: super_lock+0x176/0x3a0 fs/super.c:117
+ #1: ffffc90003b890f0 (&journal->j_mutex){+.+.}-{3:3}, at: reiserfs_mutex_lock_safe fs/reiserfs/reiserfs.h:813 [inline]
+ #1: ffffc90003b890f0 (&journal->j_mutex){+.+.}-{3:3}, at: lock_journal fs/reiserfs/journal.c:533 [inline]
+ #1: ffffc90003b890f0 (&journal->j_mutex){+.+.}-{3:3}, at: do_journal_begin_r+0x352/0x1030 fs/reiserfs/journal.c:3047
+1 lock held by syz-executor393/5082:
+ #0: ffff888029d1e0e0 (&type->s_umount_key#24){++++}-{3:3}, at: __super_lock fs/super.c:58 [inline]
+ #0: ffff888029d1e0e0 (&type->s_umount_key#24){++++}-{3:3}, at: super_lock+0x176/0x3a0 fs/super.c:117
+1 lock held by syz-executor393/5083:
+ #0: ffff888029d1e0e0 (&type->s_umount_key#24){++++}-{3:3}, at: __super_lock fs/super.c:58 [inline]
+ #0: ffff888029d1e0e0 (&type->s_umount_key#24){++++}-{3:3}, at: super_lock+0x176/0x3a0 fs/super.c:117
+1 lock held by syz-executor393/5084:
+ #0: ffff888029d1e0e0 (&type->s_umount_key#24){++++}-{3:3}, at: __super_lock fs/super.c:58 [inline]
+ #0: ffff888029d1e0e0 (&type->s_umount_key#24){++++}-{3:3}, at: super_lock+0x176/0x3a0 fs/super.c:117
+
+=============================================
+
+NMI backtrace for cpu 0
+CPU: 0 PID: 29 Comm: khungtaskd Not tainted 6.7.0-rc8-syzkaller-00024-gac865f00af29 #0
+Hardware name: Google Google Compute Engine/Google Compute Engine, BIOS Google 11/17/2023
+Call Trace:
+ <TASK>
+ __dump_stack lib/dump_stack.c:88 [inline]
+ dump_stack_lvl+0x1e7/0x2d0 lib/dump_stack.c:106
+ nmi_cpu_backtrace+0x498/0x4d0 lib/nmi_backtrace.c:113
+ nmi_trigger_cpumask_backtrace+0x198/0x310 lib/nmi_backtrace.c:62
+ trigger_all_cpu_backtrace include/linux/nmi.h:160 [inline]
+ check_hung_uninterruptible_tasks kernel/hung_task.c:222 [inline]
+ watchdog+0xfaf/0xff0 kernel/hung_task.c:379
+ kthread+0x2d3/0x370 kernel/kthread.c:388
+ ret_from_fork+0x48/0x80 arch/x86/kernel/process.c:147
+ ret_from_fork_asm+0x11/0x20 arch/x86/entry/entry_64.S:242
+ </TASK>
+Sending NMI from CPU 0 to CPUs 1:
+NMI backtrace for cpu 1
+CPU: 1 PID: 5078 Comm: syz-executor393 Not tainted 6.7.0-rc8-syzkaller-00024-gac865f00af29 #0
+Hardware name: Google Google Compute Engine/Google Compute Engine, BIOS Google 11/17/2023
+RIP: 0010:kasan_check_range+0x7/0x290 mm/kasan/generic.c:186
+Code: 84 47 ff ff ff 48 ff c8 48 39 d8 0f 84 3b ff ff ff 48 89 df 48 c7 c6 02 91 12 8d e8 83 0a e7 ff 90 0f 0b 66 0f 1f 00 55 41 57 <41> 56 41 54 53 b0 01 48 85 f6 0f 84 a0 01 00 00 4c 8d 04 37 49 39
+RSP: 0018:ffffc90003a5e838 EFLAGS: 00000046
+RAX: 0000000000000002 RBX: 00000000000000a5 RCX: ffffffff816d37ac
+RDX: 0000000000000000 RSI: 0000000000000008 RDI: ffffffff90dd9370
+RBP: ffff88802451c780 R08: ffffffff90dd9377 R09: 1ffffffff21bb26e
+R10: dffffc0000000000 R11: fffffbfff21bb26f R12: 0000000000000001
+R13: ffff88802451bb80 R14: 1ffff110048a38f4 R15: ffff88802451c7a0
+FS:  000055555600a380(0000) GS:ffff8880b9900000(0000) knlGS:0000000000000000
+CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033
+CR2: 00007f934ceb7580 CR3: 0000000023d95000 CR4: 00000000003506f0
+DR0: 0000000000000000 DR1: 0000000000000000 DR2: 0000000000000000
+DR3: 0000000000000000 DR6: 00000000fffe0ff0 DR7: 0000000000000400
+Call Trace:
+ <NMI>
+ </NMI>
+ <TASK>
+ instrument_atomic_read include/linux/instrumented.h:68 [inline]
+ _test_bit include/asm-generic/bitops/instrumented-non-atomic.h:141 [inline]
+ __lock_acquire+0xc5c/0x1fd0 kernel/locking/lockdep.c:5107
+ lock_acquire+0x1e3/0x530 kernel/locking/lockdep.c:5754
+ do_write_seqcount_begin_nested include/linux/seqlock.h:525 [inline]
+ do_write_seqcount_begin include/linux/seqlock.h:551 [inline]
+ psi_group_change+0x113/0x12d0 kernel/sched/psi.c:787
+ psi_task_change+0xfd/0x280 kernel/sched/psi.c:912
+ psi_enqueue kernel/sched/stats.h:139 [inline]
+ enqueue_task+0x29c/0x2f0 kernel/sched/core.c:2091
+ activate_task kernel/sched/core.c:2125 [inline]
+ ttwu_do_activate+0x1d7/0x760 kernel/sched/core.c:3770
+ ttwu_queue kernel/sched/core.c:4021 [inline]
+ try_to_wake_up+0x86d/0x1440 kernel/sched/core.c:4342
+ kick_pool+0x2f4/0x3d0 kernel/workqueue.c:1142
+ __queue_work+0xbfc/0x1000 kernel/workqueue.c:1797
+ mod_delayed_work_on+0x105/0x250 kernel/workqueue.c:2021
+ kblockd_mod_delayed_work_on+0x29/0x40 block/blk-core.c:1046
+ blk_insert_flush+0x3cb/0x4e0 block/blk-flush.c:456
+ blk_mq_submit_bio+0xff6/0x2140 block/blk-mq.c:3004
+ __submit_bio+0x239/0x2e0 block/blk-core.c:607
+ __submit_bio_noacct_mq block/blk-core.c:686 [inline]
+ submit_bio_noacct_nocheck+0x91d/0xc70 block/blk-core.c:715
+ submit_bh fs/buffer.c:2826 [inline]
+ __sync_dirty_buffer+0x23b/0x390 fs/buffer.c:2864
+ _update_journal_header_block+0x401/0x540 fs/reiserfs/journal.c:1270
+ update_journal_header_block fs/reiserfs/journal.c:1289 [inline]
+ flush_journal_list+0x106f/0x1c80 fs/reiserfs/journal.c:1589
+ flush_used_journal_lists+0x1256/0x15d0 fs/reiserfs/journal.c:1828
+ do_journal_end+0x3d51/0x4b40
+ do_journal_begin_r+0x970/0x1030
+ journal_begin+0x14c/0x360 fs/reiserfs/journal.c:3254
+ reiserfs_sync_fs+0xb0/0x150 fs/reiserfs/super.c:77
+ dquot_quota_sync+0xdb/0x490 fs/quota/dquot.c:753
+ iterate_supers+0xc2/0x180 fs/super.c:971
+ quota_sync_all fs/quota/quota.c:69 [inline]
+ __do_sys_quotactl fs/quota/quota.c:938 [inline]
+ __se_sys_quotactl+0x391/0xa30 fs/quota/quota.c:917
+ do_syscall_x64 arch/x86/entry/common.c:52 [inline]
+ do_syscall_64+0x45/0x110 arch/x86/entry/common.c:83
+ entry_SYSCALL_64_after_hwframe+0x63/0x6b
+RIP: 0033:0x7f4ae2379319
+Code: 28 00 00 00 75 05 48 83 c4 28 c3 e8 21 18 00 00 90 48 89 f8 48 89 f7 48 89 d6 48 89 ca 4d 89 c2 4d 89 c8 4c 8b 4c 24 08 0f 05 <48> 3d 01 f0 ff ff 73 01 c3 48 c7 c1 b8 ff ff ff f7 d8 64 89 01 48
+RSP: 002b:00007fffedd437a8 EFLAGS: 00000246 ORIG_RAX: 00000000000000b3
+RAX: ffffffffffffffda RBX: 0000000000000003 RCX: 00007f4ae2379319
+RDX: 0000000000000000 RSI: 0000000000000000 RDI: ffffffff80000100
+RBP: 0000000000000000 R08: 0000000000000000 R09: 00007fffedd437e0
+R10: 0000000000000000 R11: 0000000000000246 R12: 00007fffedd437cc
+R13: 0000000000000001 R14: 431bde82d7b634db R15: 00007fffedd43800
+ </TASK>
+INFO: NMI handler (nmi_cpu_backtrace_handler) took too long to run: 2.090 msecs
+
+
+---
+If you want syzbot to run the reproducer, reply with:
+#syz test: git://repo/address.git branch-or-commit-hash
+If you attach or paste a git patch, syzbot will apply it before testing.
 
 
 _______________________________________________
