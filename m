@@ -2,92 +2,102 @@ Return-Path: <jfs-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+jfs-discussion@lfdr.de
 Delivered-To: lists+jfs-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9CC2582C600
-	for <lists+jfs-discussion@lfdr.de>; Fri, 12 Jan 2024 20:48:04 +0100 (CET)
-Received: from [127.0.0.1] (helo=sfs-ml-1.v29.lw.sourceforge.com)
-	by sfs-ml-1.v29.lw.sourceforge.com with esmtp (Exim 4.95)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2056882D1F6
+	for <lists+jfs-discussion@lfdr.de>; Sun, 14 Jan 2024 20:12:40 +0100 (CET)
+Received: from [127.0.0.1] (helo=sfs-ml-2.v29.lw.sourceforge.com)
+	by sfs-ml-2.v29.lw.sourceforge.com with esmtp (Exim 4.95)
 	(envelope-from <jfs-discussion-bounces@lists.sourceforge.net>)
-	id 1rONVK-00049r-OM;
-	Fri, 12 Jan 2024 19:47:46 +0000
+	id 1rP5u2-0005Wk-VV;
+	Sun, 14 Jan 2024 19:12:14 +0000
 Received: from [172.30.20.202] (helo=mx.sourceforge.net)
- by sfs-ml-1.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
- TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (Exim 4.95)
- (envelope-from <gregkh@linuxfoundation.org>) id 1rONVJ-00049j-NR
- for jfs-discussion@lists.sourceforge.net;
- Fri, 12 Jan 2024 19:47:45 +0000
+ by sfs-ml-3.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
+ TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (Exim 4.95) (envelope-from
+ <3JOehZQkbAK0flmXNYYReNccVQ.TbbTYRhfRePbagRag.PbZ@M3KW2WVRGUFZ5GODRSRYTGD7.apphosting.bounces.google.com>)
+ id 1rOSol-0003xu-Au for jfs-discussion@lists.sourceforge.net;
+ Sat, 13 Jan 2024 01:28:11 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=sourceforge.net; s=x; h=In-Reply-To:Content-Type:MIME-Version:References:
- Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:Content-Transfer-Encoding:
- Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
- Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
+ d=sourceforge.net; s=x; h=Content-Type:To:From:Subject:Message-ID:In-Reply-To
+ :Date:MIME-Version:Sender:Reply-To:Cc:Content-Transfer-Encoding:Content-ID:
+ Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+ :Resent-Message-ID:References:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=YFQmx/a3iiDm1MzmbUG+dHarXEG4XZFrZQQPcp0hA3w=; b=JuHq1S3/3JiNruKdtWfekkegpw
- /jlbdmy+dNTnpMEg5sHEG5vwP+2asy1Xv7aASvwAG+ZQ0wi/MFhSN/WammeZ2NcE+fwsVzgJZOgvw
- kEHQ17hLkK/UgQtJM9f+bFMk+xUWnbR7szmPbT0RShiwop9sK1PAV8VrUXWfdGERejsw=;
+ bh=yO/xdw8mUiUeRo79DAK0wxdvi30bQpvVBNatj0IZ9bQ=; b=VhflVlatS07uK83+tSlDA8lNIa
+ iaruLml+EMizPmJDR9f8nB52FDpL1VW00DTO1UBH9J+5rBkRY0EnlCmmsCwWHOL/FP9lR9OLu1VEm
+ vCLd0G16SFjkAqJTa4uugIQ616SE7u4Oi3EqSsN+Kyy20fH8ukb/ZJypGQc++Mjv5xdA=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
- h=In-Reply-To:Content-Type:MIME-Version:References:Message-ID:Subject:Cc:To
- :From:Date:Sender:Reply-To:Content-Transfer-Encoding:Content-ID:
- Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
- :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
- List-Post:List-Owner:List-Archive;
- bh=YFQmx/a3iiDm1MzmbUG+dHarXEG4XZFrZQQPcp0hA3w=; b=kkxu+sLSLzuWKsYQX2KkysQ6M4
- DuX83v2ZF2mxMaFB3lJOOmTtre7Qv6r3S0lzV9nh5Ldq5VuVAt9TGJwNw9q8uPPBDwQThSOfg0RvE
- 5n71FaquUojnrOuxn0mm0DWS2/vMEME+g8/CUimVqlMJTbGqX+na41GYgl/s7qMVHrWU=;
-Received: from ams.source.kernel.org ([145.40.68.75])
+ h=Content-Type:To:From:Subject:Message-ID:In-Reply-To:Date:MIME-Version:
+ Sender:Reply-To:Cc:Content-Transfer-Encoding:Content-ID:Content-Description:
+ Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+ References:List-Id:List-Help:List-Unsubscribe:List-Subscribe:List-Post:
+ List-Owner:List-Archive; bh=yO/xdw8mUiUeRo79DAK0wxdvi30bQpvVBNatj0IZ9bQ=; b=L
+ Yeyb2UqD8Yspg3KWy8sZiyGvgVRMxPCGKLjP/SDSibIwYdW1cNahuLdLyMjausxVP4SALEouQTK8R
+ zlzeuari6OaVQfKrVayzyl9LgAQ82dBrSsjxNdiwlsKj0Udo10bm/0g/IoamCM6RP8M8IQypXaqvE
+ hpsVlipSu7GKCGjo=;
+Received: from mail-il1-f198.google.com ([209.85.166.198])
  by sfi-mx-2.v28.lw.sourceforge.com with esmtps
- (TLS1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.95)
- id 1rONVC-0001DY-Mt for jfs-discussion@lists.sourceforge.net;
- Fri, 12 Jan 2024 19:47:45 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
- by ams.source.kernel.org (Postfix) with ESMTP id 3210BB82379;
- Fri, 12 Jan 2024 19:31:35 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 5C207C433F1;
- Fri, 12 Jan 2024 19:31:33 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=linuxfoundation.org;
- s=korg; t=1705087893;
- bh=FvQJcr9tDVeV5tst8ttPoAR1yrrsKUrGxfwyN8pTbuM=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=hv2Wyt/S8vaNTb/tchv5D88XUyCfkJBo6JFVkePkT93GwR2Rl9JY2ky40Ld7UulEi
- 9bivVJUyX7QGDVhUNOqNyzPFkK26QvLlYJFb3UAsENrWVme9bzr+JJyBISw+cTlcft
- VLwK0VeqxJfHiuSpYUOgL4R2qWQFwxJ5lkc7ljIg=
-Date: Fri, 12 Jan 2024 20:31:30 +0100
-To: Mikhail Ukhin <mish.uxin2012@yandex.ru>
-Message-ID: <2024011216-rubdown-buddhist-6d1e@gregkh>
-References: <20240112165007.4764-1-mish.uxin2012@yandex.ru>
+ (TLS1.2:ECDHE-RSA-AES128-GCM-SHA256:128) (Exim 4.95)
+ id 1rOSoj-0006zB-Dd for jfs-discussion@lists.sourceforge.net;
+ Sat, 13 Jan 2024 01:28:11 +0000
+Received: by mail-il1-f198.google.com with SMTP id
+ e9e14a558f8ab-3604ae9e876so61401615ab.0
+ for <jfs-discussion@lists.sourceforge.net>;
+ Fri, 12 Jan 2024 17:28:09 -0800 (PST)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20230601; t=1705109284; x=1705714084;
+ h=to:from:subject:message-id:in-reply-to:date:mime-version
+ :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+ bh=yO/xdw8mUiUeRo79DAK0wxdvi30bQpvVBNatj0IZ9bQ=;
+ b=i9npeOcRmIbzUczsouDHIeh7UMHuwTZc5GKHoCxWTUcf8VeHlubMIkDaLOBBm1gLx5
+ 0mPKQF++9EJmX5Z+fG7wjLpZHZAxNE1NnjrQTrSSsFJRoX5/X60qvm+cSRIEqWzeD6hl
+ o0zYj5LJv7rczr1+6cGB6E+BQb3y+H1zOC9rI8iXP9B4qMA373BQaFRNQRJz+EkIkQyZ
+ xgGGJJJ4fEHsJQmWaliDpaP8uhsxgGw+l8YJpQ25/7l06PdaEV7ImfCMIIoztgi2+5lC
+ wNJh6m66FdtIEBc67/3UpU1NiaVExBQM9FaI1nn/NgygCZlXFDlQYWcfaBxfYtMdZVmO
+ 5i/w==
+X-Gm-Message-State: AOJu0Ywx8oreAjpt1igFdIgebZhZLeuArPTHF4q0nSLDv793vtyw3TaQ
+ 33usFacQF27lsBVyc01K1EgFBrxZmqTuv5VEC5WZUpl46w2J
+X-Google-Smtp-Source: AGHT+IGcMUlOs/Tzd0+a1Uuk+acyfi90LBsot4shAq3B70+iVAprve0XWavepzODdBa0BESDLdRg+h02+m2jOZGlDkT26zifC63/
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20240112165007.4764-1-mish.uxin2012@yandex.ru>
-X-Spam-Score: -4.6 (----)
+X-Received: by 2002:a05:6e02:1a07:b0:35f:d5ea:8a86 with SMTP id
+ s7-20020a056e021a0700b0035fd5ea8a86mr194343ild.5.1705109284375; Fri, 12 Jan
+ 2024 17:28:04 -0800 (PST)
+Date: Fri, 12 Jan 2024 17:28:04 -0800
+In-Reply-To: <0000000000009e798305fe8e95ac@google.com>
+X-Google-Appengine-App-Id: s~syzkaller
+X-Google-Appengine-App-Id-Alias: syzkaller
+Message-ID: <00000000000032d485060ec9b172@google.com>
+To: axboe@kernel.dk, brauner@kernel.org, jack@suse.cz, 
+ jfs-discussion@lists.sourceforge.net, linux-fsdevel@vger.kernel.org, 
+ linux-kernel@vger.kernel.org, shaggy@kernel.org, 
+ syzkaller-bugs@googlegroups.com
+X-Spam-Score: 3.0 (+++)
 X-Spam-Report: Spam detection software,
- running on the system "util-spamd-1.v13.lw.sourceforge.com", 
+ running on the system "util-spamd-2.v13.lw.sourceforge.com", 
  has NOT identified this incoming email as spam.  The original
  message has been attached to this so you can view it or label
  similar future email.  If you have any questions, see
  the administrator of that system for details.
- Content preview:  On Fri, Jan 12, 2024 at 07:50:07PM +0300,
- Mikhail Ukhin wrote:
- > Fuzzing of 5.10 stable branch shows NULL pointer dereference happens in
- > lbmStartIO() on log->bdev pointer. The reason for bdev being [...] 
- Content analysis details:   (-4.6 points, 6.0 required)
+ Content preview: syzbot suspects this issue was fixed by commit: commit
+ 6f861765464f43a71462d52026fbddfc858239a5
+ Author: Jan Kara <jack@suse.cz> Date: Wed Nov 1 17:43:10 2023 +0000 fs: Block
+ writes to mounted block devices 
+ Content analysis details:   (3.0 points, 6.0 required)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [145.40.68.75 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.3 FROM_LOCAL_HEX         From: localpart has long hexadecimal sequence
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
+ 2.5 SORTED_RECIPS          Recipient list is sorted by address
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.166.198 listed in wl.mailspike.net]
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.166.198 listed in list.dnswl.org]
  -0.0 T_SCC_BODY_TEXT_LINE   No description available.
- -2.1 DKIMWL_WL_HIGH         DKIMwl.org - High trust sender
-X-Headers-End: 1rONVC-0001DY-Mt
-Subject: Re: [Jfs-discussion] [PATCH 5.10/5.15] jfs: add check if log->bdev
- is NULL in lbmStartIO()
+X-Headers-End: 1rOSoj-0006zB-Dd
+X-Mailman-Approved-At: Sun, 14 Jan 2024 19:12:12 +0000
+Subject: Re: [Jfs-discussion] [syzbot] [jfs?] kernel BUG in txEnd
 X-BeenThere: jfs-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -99,52 +109,33 @@ List-Post: <mailto:jfs-discussion@lists.sourceforge.net>
 List-Help: <mailto:jfs-discussion-request@lists.sourceforge.net?subject=help>
 List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/jfs-discussion>, 
  <mailto:jfs-discussion-request@lists.sourceforge.net?subject=subscribe>
-From: Greg Kroah-Hartman via Jfs-discussion
- <jfs-discussion@lists.sourceforge.net>
-Reply-To: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
-Cc: Jens Axboe <axboe@kernel.dk>, Dave Kleikamp <shaggy@kernel.org>,
- Christian Brauner <brauner@kernel.org>, Jan Kara <jack@suse.cz>,
- lvc-project@linuxtesting.org, Pavel Koshutin <koshutin.pavel@yandex.ru>,
- jfs-discussion@lists.sourceforge.net, stable@vger.kernel.org,
- linux-kernel@vger.kernel.org, Artem Sadovnikov <ancowi69@gmail.com>,
- Mikhail Ivanov <iwanov-23@bk.ru>
+From: syzbot via Jfs-discussion <jfs-discussion@lists.sourceforge.net>
+Reply-To: syzbot <syzbot+3699edf4da1e736b317b@syzkaller.appspotmail.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Errors-To: jfs-discussion-bounces@lists.sourceforge.net
 
-On Fri, Jan 12, 2024 at 07:50:07PM +0300, Mikhail Ukhin wrote:
-> Fuzzing of 5.10 stable branch shows NULL pointer dereference happens in 
-> lbmStartIO() on log->bdev pointer. The reason for bdev being NULL is the 
-> JFS_NOINTEGRITY flag is set on mount of this fs. When this flag is enabled,
-> it results in the open_dummy_log function being called, which initializes a
-> new dummy_log, but does not assign a value to bdev.
-> 
-> The error is fixed in 5.18 by commit
-> 07888c665b405b1cd3577ddebfeb74f4717a84c4.
-> Backport of this commit is too intrusive, so it is more reasonable to apply
-> a small patch to fix this issue.
-> 
-> Found by Linux Verification Center (linuxtesting.org) with syzkaller.
-> 
-> Signed-off-by: Mikhail Ukhin <mish.uxin2012@yandex.ru>
-> Signed-off-by: Mikhail Ivanov <iwanov-23@bk.ru>
-> Signed-off-by: Pavel Koshutin <koshutin.pavel@yandex.ru>
-> Signed-off-by: Artem Sadovnikov <ancowi69@gmail.com>
-> ---
->  fs/jfs/jfs_logmgr.c | 6 ++++--
->  1 file changed, 4 insertions(+), 2 deletions(-)
+syzbot suspects this issue was fixed by commit:
 
-Who is using jfs in 5.10 and 5.15?  Why not just mark the filesystem as
-BROKEN there instead?  If you need to access your ancient filesystem
-image just use a newer kernel.
+commit 6f861765464f43a71462d52026fbddfc858239a5
+Author: Jan Kara <jack@suse.cz>
+Date:   Wed Nov 1 17:43:10 2023 +0000
 
-For filesystems that are not used in older kernels, work like this feels
-odd, especially for something just like a NULL dereference which doesn't
-do much, right?
+    fs: Block writes to mounted block devices
 
-thanks,
+bisection log:  https://syzkaller.appspot.com/x/bisect.txt?x=1280b62be80000
+start commit:   692b7dc87ca6 Merge tag 'hyperv-fixes-signed-20230619' of g..
+git tree:       upstream
+kernel config:  https://syzkaller.appspot.com/x/.config?x=e74b395fe4978721
+dashboard link: https://syzkaller.appspot.com/bug?extid=3699edf4da1e736b317b
+syz repro:      https://syzkaller.appspot.com/x/repro.syz?x=16b373a7280000
+C reproducer:   https://syzkaller.appspot.com/x/repro.c?x=1749e8f3280000
 
-greg k-h
+If the result looks correct, please mark the issue as fixed by replying with:
+
+#syz fix: fs: Block writes to mounted block devices
+
+For information about bisection process see: https://goo.gl/tpsmEJ#bisection
 
 
 _______________________________________________
