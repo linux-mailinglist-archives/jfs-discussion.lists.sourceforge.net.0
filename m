@@ -2,63 +2,65 @@ Return-Path: <jfs-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+jfs-discussion@lfdr.de
 Delivered-To: lists+jfs-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id DD63882E500
-	for <lists+jfs-discussion@lfdr.de>; Tue, 16 Jan 2024 01:28:41 +0100 (CET)
-Received: from [127.0.0.1] (helo=sfs-ml-3.v29.lw.sourceforge.com)
-	by sfs-ml-3.v29.lw.sourceforge.com with esmtp (Exim 4.95)
+	by mail.lfdr.de (Postfix) with ESMTPS id 377E882E504
+	for <lists+jfs-discussion@lfdr.de>; Tue, 16 Jan 2024 01:28:50 +0100 (CET)
+Received: from [127.0.0.1] (helo=sfs-ml-1.v29.lw.sourceforge.com)
+	by sfs-ml-1.v29.lw.sourceforge.com with esmtp (Exim 4.95)
 	(envelope-from <jfs-discussion-bounces@lists.sourceforge.net>)
-	id 1rPXJd-0003sz-MR;
-	Tue, 16 Jan 2024 00:28:30 +0000
+	id 1rPXJm-0001Z0-2n;
+	Tue, 16 Jan 2024 00:28:38 +0000
 Received: from [172.30.20.202] (helo=mx.sourceforge.net)
- by sfs-ml-3.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
+ by sfs-ml-1.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
  TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (Exim 4.95)
- (envelope-from <sashal@kernel.org>) id 1rPXJc-0003st-Jf
+ (envelope-from <sashal@kernel.org>) id 1rPXJk-0001Yu-O3
  for jfs-discussion@lists.sourceforge.net;
- Tue, 16 Jan 2024 00:28:29 +0000
+ Tue, 16 Jan 2024 00:28:36 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=sourceforge.net; s=x; h=Content-Transfer-Encoding:MIME-Version:Message-ID:
- Date:Subject:Cc:To:From:Sender:Reply-To:Content-Type:Content-ID:
- Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
- :Resent-Message-ID:In-Reply-To:References:List-Id:List-Help:List-Unsubscribe:
+ d=sourceforge.net; s=x; h=Content-Transfer-Encoding:MIME-Version:References:
+ In-Reply-To:Message-ID:Date:Subject:Cc:To:From:Sender:Reply-To:Content-Type:
+ Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
+ Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=1XhnwNmccZlPWLaysxI9OXteZ4bX7l2PypaVzblrco4=; b=aEwe7fxO8CHs02ThIM7euk9QeB
- NLGKo8iKemEKVQ23HpXdQwrzkEiHuN1a0G/j3cLR3vylfkhV9cQM5AMIdaFUuC7sNP/MmYrDFwmUL
- AP59/IRKQBQ+De1m8BpNfzPIJjwVHe/z7kvCt08no5a/CYoXS5BufFFYxA1e+BEAL94I=;
+ bh=TxVMzj2x1MAybc/oXC2swSGEeWeteAXgGB6pclz/SMk=; b=Au3/jS+0aO3f7cbWkdBbVH9KjR
+ XSBbTrO0K2b5IlX0kK+DY/X8qWMRZ08x9P48g9W3QqOLNSF0MkuEXGcag29zJ0FLeeAm03xZEDvo9
+ 6pTinWGCkSwbOHJOyCiylz2Z5a9d+KdWuuu/NDq8bYf7+WS/4ASCk6i7iCpAlLXraC6k=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
- h=Content-Transfer-Encoding:MIME-Version:Message-ID:Date:Subject:Cc:To:From
- :Sender:Reply-To:Content-Type:Content-ID:Content-Description:Resent-Date:
- Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
- References:List-Id:List-Help:List-Unsubscribe:List-Subscribe:List-Post:
- List-Owner:List-Archive; bh=1XhnwNmccZlPWLaysxI9OXteZ4bX7l2PypaVzblrco4=; b=Q
- AFGhDRpTYh+DMi0dlXsGvVpM++99/B1OQNdInd5pRxqehCs5sJhn1JWvr1QikdBdSWOsaDd9Ccu/P
- 5siKOJdm8c6loponifzcazL15gqtpsiaWBg+F6sg7XZIPOkSge2vtAk53OFGgFOg5iAXqlhBquaNF
- tSUfZGxRWcXATA2A=;
-Received: from sin.source.kernel.org ([145.40.73.55])
+ h=Content-Transfer-Encoding:MIME-Version:References:In-Reply-To:Message-ID:
+ Date:Subject:Cc:To:From:Sender:Reply-To:Content-Type:Content-ID:
+ Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+ :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
+ List-Post:List-Owner:List-Archive;
+ bh=TxVMzj2x1MAybc/oXC2swSGEeWeteAXgGB6pclz/SMk=; b=ZZgESodfAoQf+uyVmM19dKe1CR
+ LI7fDAwy7NhC9cKYpoHvs7X5u5nf92lUdWBFBJZ7TmNNRFiqurcaw56nZo+uP8BemDKbY4MK1Fyq1
+ MUJaEoAuP0MVkBDTaGwr/4kvtdLt4mX8udwVqaJo6n0TBsQ0ZpngpX8HWYE45SXzdzOM=;
+Received: from ams.source.kernel.org ([145.40.68.75])
  by sfi-mx-2.v28.lw.sourceforge.com with esmtps
  (TLS1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.95)
- id 1rPXJb-00038o-Ao for jfs-discussion@lists.sourceforge.net;
- Tue, 16 Jan 2024 00:28:29 +0000
+ id 1rPXJi-000394-2B for jfs-discussion@lists.sourceforge.net;
+ Tue, 16 Jan 2024 00:28:35 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
- by sin.source.kernel.org (Postfix) with ESMTP id 17BB6CE18BA;
+ by ams.source.kernel.org (Postfix) with ESMTP id 79A18B80D56;
+ Tue, 16 Jan 2024 00:28:23 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id CAC94C43390;
  Tue, 16 Jan 2024 00:28:21 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 01AD9C433C7;
- Tue, 16 Jan 2024 00:28:18 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=k20201202; t=1705364900;
- bh=oNOyt95J7fHroB9Uye/aHS/cv8825YcumRyvq8ynEF0=;
- h=From:To:Cc:Subject:Date:From;
- b=p4VjGUqoC54UD/p3hX9sPX1JysNMp2cRrmNWBsIqFTvC258zMoxBuheP3UNqrCv/+
- aYjbbojvgtyLRPcmbjUZ+RusIllwkkVDUA/QA/ZRqn5BjqtwSfaX5I9WUKlVxNPiGs
- ugWBy3IfSRMiiF2OTI63F+6aYjWM5sg1Mu42w0HY4C8eP7yCusoFqlE/A4sCMDPl3P
- 62sTwKW53j/by8T8zk7uEuiS0mlv6HdKVGzU007AvBY5IpnAgJjs4lPr0ZnH2MQBUR
- 6FNU5dZYWYj3st+y5NbF5+Ih5ao4UTaC+KxGE+a9pygivfPIaOxM+X8k8Iltb/80ep
- XnWNG5VRBn+yA==
+ s=k20201202; t=1705364902;
+ bh=G1+Kz6wm8TUtpEjb5QAYNP3xd7WEZwzP2zhO7HAhPlA=;
+ h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
+ b=jpPWTiUMOvBmJ79PTEuTlMg8BNW1NIHZdUroo4zyVcMS0szYal6EtXPFs1dOPW9Ke
+ oEcqmrsUuCNt+60X8bUTI5uKHv/VwzC18X0B/ioW7DiSiHxHny8BgXJiuvWotb6sD6
+ BKnMKh89a1GTh3yu+rLNM9/RwucIWsAJypNizM+ATsQkoXUJslKIS5js4eLi9k+ZmE
+ DDkxKJNiTypmK6ghyNqKJgb0vJ37Z3UAR9otwtKmdIsCcEWwiD7oOS4F7pJvElg8Qb
+ 5viiF8oWkJu4A4P+GhE7TkzZtkweFTqfzGK+DBO9aoxmsXxUqq7S0CUNhVvf9FZBve
+ A1kECMy4FHbbg==
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Date: Mon, 15 Jan 2024 19:27:54 -0500
-Message-ID: <20240116002817.216837-1-sashal@kernel.org>
+Date: Mon, 15 Jan 2024 19:27:55 -0500
+Message-ID: <20240116002817.216837-2-sashal@kernel.org>
 X-Mailer: git-send-email 2.43.0
+In-Reply-To: <20240116002817.216837-1-sashal@kernel.org>
+References: <20240116002817.216837-1-sashal@kernel.org>
 MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
@@ -71,12 +73,12 @@ X-Spam-Report: Spam detection software,
  similar future email.  If you have any questions, see
  the administrator of that system for details.
  Content preview: From: Osama Muhammad <osmtendev@gmail.com> [ Upstream commit
- 9862ec7ac1cbc6eb5ee4a045b5d5b8edbb2f7e68 ] Syzkaller reported the following
+ 27e56f59bab5ddafbcfe69ad7a4a6ea1279c1b16 ] Syzkaller reported the following
  issue: Content analysis details:   (-4.0 points, 6.0 required)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [145.40.73.55 listed in list.dnswl.org]
+ medium trust [145.40.68.75 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -88,9 +90,9 @@ X-Spam-Report: Spam detection software,
  author's domain
  -0.0 T_SCC_BODY_TEXT_LINE   No description available.
  -1.5 DKIMWL_WL_HIGH         DKIMwl.org - High trust sender
-X-Headers-End: 1rPXJb-00038o-Ao
-Subject: [Jfs-discussion] [PATCH AUTOSEL 4.19 01/12]
- FS:JFS:UBSAN:array-index-out-of-bounds in dbAdjTree
+X-Headers-End: 1rPXJi-000394-2B
+Subject: [Jfs-discussion] [PATCH AUTOSEL 4.19 02/12] UBSAN:
+ array-index-out-of-bounds in dtSplitRoot
 X-BeenThere: jfs-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -106,103 +108,80 @@ From: Sasha Levin via Jfs-discussion <jfs-discussion@lists.sourceforge.net>
 Reply-To: Sasha Levin <sashal@kernel.org>
 Cc: Sasha Levin <sashal@kernel.org>, Osama Muhammad <osmtendev@gmail.com>,
  jfs-discussion@lists.sourceforge.net, ghandatmanas@gmail.com,
- shaggy@kernel.org, yogi.kernel@gmail.com, juntong.deng@outlook.com,
- syzbot+39ba34a099ac2e9bd3cb@syzkaller.appspotmail.com, code@siddh.me
+ shaggy@kernel.org, syzbot+d4b1df2e9d4ded6488ec@syzkaller.appspotmail.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Errors-To: jfs-discussion-bounces@lists.sourceforge.net
 
 From: Osama Muhammad <osmtendev@gmail.com>
 
-[ Upstream commit 9862ec7ac1cbc6eb5ee4a045b5d5b8edbb2f7e68 ]
+[ Upstream commit 27e56f59bab5ddafbcfe69ad7a4a6ea1279c1b16 ]
 
 Syzkaller reported the following issue:
 
-UBSAN: array-index-out-of-bounds in fs/jfs/jfs_dmap.c:2867:6
-index 196694 is out of range for type 's8[1365]' (aka 'signed char[1365]')
-CPU: 1 PID: 109 Comm: jfsCommit Not tainted 6.6.0-rc3-syzkaller #0
-Hardware name: Google Google Compute Engine/Google Compute Engine, BIOS Google 08/04/2023
+oop0: detected capacity change from 0 to 32768
+
+UBSAN: array-index-out-of-bounds in fs/jfs/jfs_dtree.c:1971:9
+index -2 is out of range for type 'struct dtslot [128]'
+CPU: 0 PID: 3613 Comm: syz-executor270 Not tainted 6.0.0-syzkaller-09423-g493ffd6605b2 #0
+Hardware name: Google Google Compute Engine/Google Compute Engine, BIOS Google 09/22/2022
 Call Trace:
  <TASK>
  __dump_stack lib/dump_stack.c:88 [inline]
- dump_stack_lvl+0x1e7/0x2d0 lib/dump_stack.c:106
- ubsan_epilogue lib/ubsan.c:217 [inline]
- __ubsan_handle_out_of_bounds+0x11c/0x150 lib/ubsan.c:348
- dbAdjTree+0x474/0x4f0 fs/jfs/jfs_dmap.c:2867
- dbJoin+0x210/0x2d0 fs/jfs/jfs_dmap.c:2834
- dbFreeBits+0x4eb/0xda0 fs/jfs/jfs_dmap.c:2331
- dbFreeDmap fs/jfs/jfs_dmap.c:2080 [inline]
- dbFree+0x343/0x650 fs/jfs/jfs_dmap.c:402
- txFreeMap+0x798/0xd50 fs/jfs/jfs_txnmgr.c:2534
- txUpdateMap+0x342/0x9e0
- txLazyCommit fs/jfs/jfs_txnmgr.c:2664 [inline]
- jfs_lazycommit+0x47a/0xb70 fs/jfs/jfs_txnmgr.c:2732
- kthread+0x2d3/0x370 kernel/kthread.c:388
- ret_from_fork+0x48/0x80 arch/x86/kernel/process.c:147
- ret_from_fork_asm+0x11/0x20 arch/x86/entry/entry_64.S:304
+ dump_stack_lvl+0x1b1/0x28e lib/dump_stack.c:106
+ ubsan_epilogue lib/ubsan.c:151 [inline]
+ __ubsan_handle_out_of_bounds+0xdb/0x130 lib/ubsan.c:283
+ dtSplitRoot+0x8d8/0x1900 fs/jfs/jfs_dtree.c:1971
+ dtSplitUp fs/jfs/jfs_dtree.c:985 [inline]
+ dtInsert+0x1189/0x6b80 fs/jfs/jfs_dtree.c:863
+ jfs_mkdir+0x757/0xb00 fs/jfs/namei.c:270
+ vfs_mkdir+0x3b3/0x590 fs/namei.c:4013
+ do_mkdirat+0x279/0x550 fs/namei.c:4038
+ __do_sys_mkdirat fs/namei.c:4053 [inline]
+ __se_sys_mkdirat fs/namei.c:4051 [inline]
+ __x64_sys_mkdirat+0x85/0x90 fs/namei.c:4051
+ do_syscall_x64 arch/x86/entry/common.c:50 [inline]
+ do_syscall_64+0x3d/0xb0 arch/x86/entry/common.c:80
+ entry_SYSCALL_64_after_hwframe+0x63/0xcd
+RIP: 0033:0x7fcdc0113fd9
+Code: ff ff c3 66 2e 0f 1f 84 00 00 00 00 00 0f 1f 40 00 48 89 f8 48 89 f7 48 89 d6 48 89 ca 4d 89 c2 4d 89 c8 4c 8b 4c 24 08 0f 05 <48> 3d 01 f0 ff ff 73 01 c3 48 c7 c1 c0 ff ff ff f7 d8 64 89 01 48
+RSP: 002b:00007ffeb8bc67d8 EFLAGS: 00000246 ORIG_RAX: 0000000000000102
+RAX: ffffffffffffffda RBX: 0000000000000000 RCX: 00007fcdc0113fd9
+RDX: 0000000000000000 RSI: 0000000020000340 RDI: 0000000000000003
+RBP: 00007fcdc00d37a0 R08: 0000000000000000 R09: 00007fcdc00d37a0
+R10: 00005555559a72c0 R11: 0000000000000246 R12: 00000000f8008000
+R13: 0000000000000000 R14: 00083878000000f8 R15: 0000000000000000
  </TASK>
-================================================================================
-Kernel panic - not syncing: UBSAN: panic_on_warn set ...
-CPU: 1 PID: 109 Comm: jfsCommit Not tainted 6.6.0-rc3-syzkaller #0
-Hardware name: Google Google Compute Engine/Google Compute Engine, BIOS Google 08/04/2023
-Call Trace:
- <TASK>
- __dump_stack lib/dump_stack.c:88 [inline]
- dump_stack_lvl+0x1e7/0x2d0 lib/dump_stack.c:106
- panic+0x30f/0x770 kernel/panic.c:340
- check_panic_on_warn+0x82/0xa0 kernel/panic.c:236
- ubsan_epilogue lib/ubsan.c:223 [inline]
- __ubsan_handle_out_of_bounds+0x13c/0x150 lib/ubsan.c:348
- dbAdjTree+0x474/0x4f0 fs/jfs/jfs_dmap.c:2867
- dbJoin+0x210/0x2d0 fs/jfs/jfs_dmap.c:2834
- dbFreeBits+0x4eb/0xda0 fs/jfs/jfs_dmap.c:2331
- dbFreeDmap fs/jfs/jfs_dmap.c:2080 [inline]
- dbFree+0x343/0x650 fs/jfs/jfs_dmap.c:402
- txFreeMap+0x798/0xd50 fs/jfs/jfs_txnmgr.c:2534
- txUpdateMap+0x342/0x9e0
- txLazyCommit fs/jfs/jfs_txnmgr.c:2664 [inline]
- jfs_lazycommit+0x47a/0xb70 fs/jfs/jfs_txnmgr.c:2732
- kthread+0x2d3/0x370 kernel/kthread.c:388
- ret_from_fork+0x48/0x80 arch/x86/kernel/process.c:147
- ret_from_fork_asm+0x11/0x20 arch/x86/entry/entry_64.S:304
- </TASK>
-Kernel Offset: disabled
-Rebooting in 86400 seconds..
 
-The issue is caused when the value of lp becomes greater than
-CTLTREESIZE which is the max size of stree. Adding a simple check
-solves this issue.
-
-Dave:
-As the function returns a void, good error handling
-would require a more intrusive code reorganization, so I modified
-Osama's patch at use WARN_ON_ONCE for lack of a cleaner option.
+The issue is caused when the value of fsi becomes less than -1.
+The check to break the loop when fsi value becomes -1 is present
+but syzbot was able to produce value less than -1 which cause the error.
+This patch simply add the change for the values less than 0.
 
 The patch is tested via syzbot.
 
-Reported-by: syzbot+39ba34a099ac2e9bd3cb@syzkaller.appspotmail.com
-Link: https://syzkaller.appspot.com/bug?extid=39ba34a099ac2e9bd3cb
+Reported-and-tested-by: syzbot+d4b1df2e9d4ded6488ec@syzkaller.appspotmail.com
+Link: https://syzkaller.appspot.com/bug?extid=d4b1df2e9d4ded6488ec
 Signed-off-by: Osama Muhammad <osmtendev@gmail.com>
 Signed-off-by: Dave Kleikamp <dave.kleikamp@oracle.com>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- fs/jfs/jfs_dmap.c | 3 +++
- 1 file changed, 3 insertions(+)
+ fs/jfs/jfs_dtree.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
-diff --git a/fs/jfs/jfs_dmap.c b/fs/jfs/jfs_dmap.c
-index 2f452b5ee731..b7fc47907d96 100644
---- a/fs/jfs/jfs_dmap.c
-+++ b/fs/jfs/jfs_dmap.c
-@@ -2948,6 +2948,9 @@ static void dbAdjTree(dmtree_t * tp, int leafno, int newval)
- 	/* is the current value the same as the old value ?  if so,
- 	 * there is nothing to do.
- 	 */
-+	if (WARN_ON_ONCE(lp >= CTLTREESIZE))
-+		return;
-+
- 	if (tp->dmt_stree[lp] == newval)
- 		return;
+diff --git a/fs/jfs/jfs_dtree.c b/fs/jfs/jfs_dtree.c
+index 52bae3f5c914..320c9f42b65b 100644
+--- a/fs/jfs/jfs_dtree.c
++++ b/fs/jfs/jfs_dtree.c
+@@ -1983,7 +1983,7 @@ static int dtSplitRoot(tid_t tid,
+ 		do {
+ 			f = &rp->slot[fsi];
+ 			fsi = f->next;
+-		} while (fsi != -1);
++		} while (fsi >= 0);
  
+ 		f->next = n;
+ 	}
 -- 
 2.43.0
 
