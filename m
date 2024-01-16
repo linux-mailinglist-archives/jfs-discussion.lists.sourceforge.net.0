@@ -2,28 +2,28 @@ Return-Path: <jfs-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+jfs-discussion@lfdr.de
 Delivered-To: lists+jfs-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4441B82E4F7
-	for <lists+jfs-discussion@lfdr.de>; Tue, 16 Jan 2024 01:28:12 +0100 (CET)
-Received: from [127.0.0.1] (helo=sfs-ml-2.v29.lw.sourceforge.com)
-	by sfs-ml-2.v29.lw.sourceforge.com with esmtp (Exim 4.95)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2A01C82E4F4
+	for <lists+jfs-discussion@lfdr.de>; Tue, 16 Jan 2024 01:28:09 +0100 (CET)
+Received: from [127.0.0.1] (helo=sfs-ml-3.v29.lw.sourceforge.com)
+	by sfs-ml-3.v29.lw.sourceforge.com with esmtp (Exim 4.95)
 	(envelope-from <jfs-discussion-bounces@lists.sourceforge.net>)
-	id 1rPXJ6-0002tc-Es;
-	Tue, 16 Jan 2024 00:27:56 +0000
+	id 1rPXJ7-0003s1-TR;
+	Tue, 16 Jan 2024 00:27:58 +0000
 Received: from [172.30.20.202] (helo=mx.sourceforge.net)
- by sfs-ml-2.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
+ by sfs-ml-3.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
  TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (Exim 4.95)
- (envelope-from <sashal@kernel.org>) id 1rPXJ5-0002tQ-3D
+ (envelope-from <sashal@kernel.org>) id 1rPXJ5-0003rq-S4
  for jfs-discussion@lists.sourceforge.net;
- Tue, 16 Jan 2024 00:27:55 +0000
+ Tue, 16 Jan 2024 00:27:56 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=sourceforge.net; s=x; h=Content-Transfer-Encoding:MIME-Version:References:
  In-Reply-To:Message-ID:Date:Subject:Cc:To:From:Sender:Reply-To:Content-Type:
  Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
  Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=E+9WzKvvUIqZ1+/rbmtV+JNBxCQnklpEIICMXWxROJY=; b=I8MK6LmgPuw9fWEEVnrhBD3FOP
- QdmWtuRR3boJbYLnOiaQXknY1OxcXN6GDiW3VHHM3wHvzS9SAk7MNLoOyl2ELhiwm2IzP2xNCBWDq
- 7GrYCZDf+h7/1V2IMEpwjEAo7Z8Fd6TfpidAvbm3IGnjQc9RlyEnSVY5SPAXu0yNY/Dk=;
+ bh=Nwz6kPWO1dH4Ecol0fZJDBvEQRLnisIq5BbqqNdP5MQ=; b=bT8vaHxeVfMjnp6KooRPaJO3Yo
+ pP3cYBy+Cyndb6gfXPvDew5qGFTWo5iWLYp2F9EAqAfA1NzFlWObOsnM/JKCUZLHqrZ2RCxm7O2MJ
+ 8XyNQlemg6n1e2xg7QH5bbT7hOG+DDeVODaDxeBvXF52xyJL+ET20pJAzANZIvWlL0iA=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
  h=Content-Transfer-Encoding:MIME-Version:References:In-Reply-To:Message-ID:
@@ -31,33 +31,33 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
  :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
  List-Post:List-Owner:List-Archive;
- bh=E+9WzKvvUIqZ1+/rbmtV+JNBxCQnklpEIICMXWxROJY=; b=gOXQ176+mC60GkBCNACnNEFsVZ
- yMhg3lv5oRJmGLCrMZErDxlJ3qgwndWqa2Vb86z0PwZ63swtxoWDuID6Ju3QO+dbxET3YkRIivyO9
- dL6/cF1XHalHiQXrofTMdEIW6VeqsD2g+2zZcsFhBVbOFfz+8U01inflN0zQT6BkeYMo=;
-Received: from ams.source.kernel.org ([145.40.68.75])
+ bh=Nwz6kPWO1dH4Ecol0fZJDBvEQRLnisIq5BbqqNdP5MQ=; b=kholSR1HfO5FHGcRVPxExy5WTs
+ JbjMHDJiUUkcbLnsYf/w7WCC17Lma9efhSwQxJ1f1MP3TqATvWywWCO9X451eGLVBn/0H3MYTsaYw
+ Xi/QSijtgTDz/DFJ6SM0Dczbj3hU2Xe8sbRNpr2BXd9faSG0iTqdTPwcBk1aThYeNGU0=;
+Received: from dfw.source.kernel.org ([139.178.84.217])
  by sfi-mx-2.v28.lw.sourceforge.com with esmtps
  (TLS1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.95)
- id 1rPXJ3-00037P-Fi for jfs-discussion@lists.sourceforge.net;
- Tue, 16 Jan 2024 00:27:55 +0000
+ id 1rPXJ4-00037Y-VJ for jfs-discussion@lists.sourceforge.net;
+ Tue, 16 Jan 2024 00:27:56 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
- by ams.source.kernel.org (Postfix) with ESMTP id DE551B80D57;
- Tue, 16 Jan 2024 00:27:42 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 4F2D4C433F1;
- Tue, 16 Jan 2024 00:27:41 +0000 (UTC)
+ by dfw.source.kernel.org (Postfix) with ESMTP id 4251260BA3;
+ Tue, 16 Jan 2024 00:27:45 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id DE27FC43394;
+ Tue, 16 Jan 2024 00:27:43 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=k20201202; t=1705364862;
- bh=N6zSjxfT33HjZK1KAF2FFLK1rFywu/O9WvsTYXE8eBw=;
+ s=k20201202; t=1705364864;
+ bh=kdhhXEJc9HdVp/h1emxwajwaH4zcDSobKJF9ZQkHgTg=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=NpDD4kvt9i3VVfBpy4obNkR1UgI3QBiI+VbzZcBz1bkXhrvTU9wdyR2B5A6H5tLj+
- ncnaJyj+SDyoaFK9oKFVJ9mKytShsgZHzXyknpFXibMr7NQnx1bbCuZ77tlxWqyAvR
- LLd5zZ4BWrFrdavPe4kqi4vMo72u3r722Gvq9cFCF/lmJt+/azMqZ/Zp314bowFY01
- muvTOPuxVuwSuM/KX215okQMV6RfxNQio+OTdFVONCYbE02OimUgwd5RgHlK4PVSmd
- WN7MU4ZJqpRTUQt4x9VATukkYp5rRMosi9jhxrZpJjs5My0gyrqX38/mKXCRjQj4Zy
- CqrAmWCg1uqLg==
+ b=Tk4FDrxQeeE5fNm9UVb7PTvnO7ZVpedBBCtDRuE86ynM1mSFA2wrtuhnMDmUwW55M
+ uJuLZl3tG8y7tWYdK60QnGk9mjFCMsf+uh3QODTwa44qAsYryh/p/dJYjfp8E/Jcfr
+ fzi9WMXrcunp1TMI4nFCKLySHSRTtcMOP5e68sIPOHXtR5eChvlgwlfXek6/rRgBHF
+ 1PlobVJskfvSyaeKyNTsxZ7wpU8xde/CSte2PoOlmun/+OIgxGg8wAp3lvK8aFkR3Y
+ UZl28kTClqZsgrxoOJlggEWWhK/50sB1Rl0m51Xtx3BHJT6sd2DdP/l2rnsn6YxaKl
+ Vjwzk3gv4AGpQ==
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Date: Mon, 15 Jan 2024 19:27:08 -0500
-Message-ID: <20240116002731.216549-2-sashal@kernel.org>
+Date: Mon, 15 Jan 2024 19:27:09 -0500
+Message-ID: <20240116002731.216549-3-sashal@kernel.org>
 X-Mailer: git-send-email 2.43.0
 In-Reply-To: <20240116002731.216549-1-sashal@kernel.org>
 References: <20240116002731.216549-1-sashal@kernel.org>
@@ -65,20 +65,23 @@ MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-stable-base: Linux 5.4.267
-X-Spam-Score: -4.0 (----)
+X-Spam-Score: -6.7 (------)
 X-Spam-Report: Spam detection software,
  running on the system "util-spamd-1.v13.lw.sourceforge.com", 
  has NOT identified this incoming email as spam.  The original
  message has been attached to this so you can view it or label
  similar future email.  If you have any questions, see
  the administrator of that system for details.
- Content preview: From: Osama Muhammad <osmtendev@gmail.com> [ Upstream commit
- 27e56f59bab5ddafbcfe69ad7a4a6ea1279c1b16 ] Syzkaller reported the following
- issue: Content analysis details:   (-4.0 points, 6.0 required)
+ Content preview: From: Manas Ghandat <ghandatmanas@gmail.com> [ Upstream
+ commit
+ fa5492ee89463a7590a1449358002ff7ef63529f ] Currently while searching for
+ current page in the sorted entry table of the page there is a out of bound
+ access. Added a bound check to fix the error. 
+ Content analysis details:   (-6.7 points, 6.0 required)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [145.40.68.75 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [139.178.84.217 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -90,9 +93,9 @@ X-Spam-Report: Spam detection software,
  author's domain
  -0.0 T_SCC_BODY_TEXT_LINE   No description available.
  -1.5 DKIMWL_WL_HIGH         DKIMwl.org - High trust sender
-X-Headers-End: 1rPXJ3-00037P-Fi
-Subject: [Jfs-discussion] [PATCH AUTOSEL 5.4 02/12] UBSAN:
- array-index-out-of-bounds in dtSplitRoot
+X-Headers-End: 1rPXJ4-00037Y-VJ
+Subject: [Jfs-discussion] [PATCH AUTOSEL 5.4 03/12] jfs: fix
+ slab-out-of-bounds Read in dtSearch
 X-BeenThere: jfs-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -106,82 +109,51 @@ List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/jfs-discussion>,
  <mailto:jfs-discussion-request@lists.sourceforge.net?subject=subscribe>
 From: Sasha Levin via Jfs-discussion <jfs-discussion@lists.sourceforge.net>
 Reply-To: Sasha Levin <sashal@kernel.org>
-Cc: Sasha Levin <sashal@kernel.org>, Osama Muhammad <osmtendev@gmail.com>,
- jfs-discussion@lists.sourceforge.net, ghandatmanas@gmail.com,
- shaggy@kernel.org, syzbot+d4b1df2e9d4ded6488ec@syzkaller.appspotmail.com
+Cc: Sasha Levin <sashal@kernel.org>, shaggy@kernel.org,
+ jfs-discussion@lists.sourceforge.net, Manas Ghandat <ghandatmanas@gmail.com>,
+ kernel test robot <lkp@intel.com>, osmtendev@gmail.com,
+ Dan Carpenter <dan.carpenter@linaro.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Errors-To: jfs-discussion-bounces@lists.sourceforge.net
 
-From: Osama Muhammad <osmtendev@gmail.com>
+From: Manas Ghandat <ghandatmanas@gmail.com>
 
-[ Upstream commit 27e56f59bab5ddafbcfe69ad7a4a6ea1279c1b16 ]
+[ Upstream commit fa5492ee89463a7590a1449358002ff7ef63529f ]
 
-Syzkaller reported the following issue:
+Currently while searching for current page in the sorted entry table
+of the page there is a out of bound access. Added a bound check to fix
+the error.
 
-oop0: detected capacity change from 0 to 32768
+Dave:
+Set return code to -EIO
 
-UBSAN: array-index-out-of-bounds in fs/jfs/jfs_dtree.c:1971:9
-index -2 is out of range for type 'struct dtslot [128]'
-CPU: 0 PID: 3613 Comm: syz-executor270 Not tainted 6.0.0-syzkaller-09423-g493ffd6605b2 #0
-Hardware name: Google Google Compute Engine/Google Compute Engine, BIOS Google 09/22/2022
-Call Trace:
- <TASK>
- __dump_stack lib/dump_stack.c:88 [inline]
- dump_stack_lvl+0x1b1/0x28e lib/dump_stack.c:106
- ubsan_epilogue lib/ubsan.c:151 [inline]
- __ubsan_handle_out_of_bounds+0xdb/0x130 lib/ubsan.c:283
- dtSplitRoot+0x8d8/0x1900 fs/jfs/jfs_dtree.c:1971
- dtSplitUp fs/jfs/jfs_dtree.c:985 [inline]
- dtInsert+0x1189/0x6b80 fs/jfs/jfs_dtree.c:863
- jfs_mkdir+0x757/0xb00 fs/jfs/namei.c:270
- vfs_mkdir+0x3b3/0x590 fs/namei.c:4013
- do_mkdirat+0x279/0x550 fs/namei.c:4038
- __do_sys_mkdirat fs/namei.c:4053 [inline]
- __se_sys_mkdirat fs/namei.c:4051 [inline]
- __x64_sys_mkdirat+0x85/0x90 fs/namei.c:4051
- do_syscall_x64 arch/x86/entry/common.c:50 [inline]
- do_syscall_64+0x3d/0xb0 arch/x86/entry/common.c:80
- entry_SYSCALL_64_after_hwframe+0x63/0xcd
-RIP: 0033:0x7fcdc0113fd9
-Code: ff ff c3 66 2e 0f 1f 84 00 00 00 00 00 0f 1f 40 00 48 89 f8 48 89 f7 48 89 d6 48 89 ca 4d 89 c2 4d 89 c8 4c 8b 4c 24 08 0f 05 <48> 3d 01 f0 ff ff 73 01 c3 48 c7 c1 c0 ff ff ff f7 d8 64 89 01 48
-RSP: 002b:00007ffeb8bc67d8 EFLAGS: 00000246 ORIG_RAX: 0000000000000102
-RAX: ffffffffffffffda RBX: 0000000000000000 RCX: 00007fcdc0113fd9
-RDX: 0000000000000000 RSI: 0000000020000340 RDI: 0000000000000003
-RBP: 00007fcdc00d37a0 R08: 0000000000000000 R09: 00007fcdc00d37a0
-R10: 00005555559a72c0 R11: 0000000000000246 R12: 00000000f8008000
-R13: 0000000000000000 R14: 00083878000000f8 R15: 0000000000000000
- </TASK>
-
-The issue is caused when the value of fsi becomes less than -1.
-The check to break the loop when fsi value becomes -1 is present
-but syzbot was able to produce value less than -1 which cause the error.
-This patch simply add the change for the values less than 0.
-
-The patch is tested via syzbot.
-
-Reported-and-tested-by: syzbot+d4b1df2e9d4ded6488ec@syzkaller.appspotmail.com
-Link: https://syzkaller.appspot.com/bug?extid=d4b1df2e9d4ded6488ec
-Signed-off-by: Osama Muhammad <osmtendev@gmail.com>
+Reported-by: kernel test robot <lkp@intel.com>
+Reported-by: Dan Carpenter <dan.carpenter@linaro.org>
+Closes: https://lore.kernel.org/r/202310241724.Ed02yUz9-lkp@intel.com/
+Signed-off-by: Manas Ghandat <ghandatmanas@gmail.com>
 Signed-off-by: Dave Kleikamp <dave.kleikamp@oracle.com>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- fs/jfs/jfs_dtree.c | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+ fs/jfs/jfs_dtree.c | 5 +++++
+ 1 file changed, 5 insertions(+)
 
 diff --git a/fs/jfs/jfs_dtree.c b/fs/jfs/jfs_dtree.c
-index 3acc954f7c04..a6d42e49d156 100644
+index a6d42e49d156..077a87e53020 100644
 --- a/fs/jfs/jfs_dtree.c
 +++ b/fs/jfs/jfs_dtree.c
-@@ -1970,7 +1970,7 @@ static int dtSplitRoot(tid_t tid,
- 		do {
- 			f = &rp->slot[fsi];
- 			fsi = f->next;
--		} while (fsi != -1);
-+		} while (fsi >= 0);
+@@ -633,6 +633,11 @@ int dtSearch(struct inode *ip, struct component_name * key, ino_t * data,
+ 		for (base = 0, lim = p->header.nextindex; lim; lim >>= 1) {
+ 			index = base + (lim >> 1);
  
- 		f->next = n;
- 	}
++			if (stbl[index] < 0) {
++				rc = -EIO;
++				goto out;
++			}
++
+ 			if (p->header.flag & BT_LEAF) {
+ 				/* uppercase leaf name to compare */
+ 				cmp =
 -- 
 2.43.0
 
