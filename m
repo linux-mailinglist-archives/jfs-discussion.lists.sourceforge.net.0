@@ -2,61 +2,63 @@ Return-Path: <jfs-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+jfs-discussion@lfdr.de
 Delivered-To: lists+jfs-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3CC5B8463AC
-	for <lists+jfs-discussion@lfdr.de>; Thu,  1 Feb 2024 23:46:43 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 63C5F8463B2
+	for <lists+jfs-discussion@lfdr.de>; Thu,  1 Feb 2024 23:46:45 +0100 (CET)
 Received: from [127.0.0.1] (helo=sfs-ml-1.v29.lw.sourceforge.com)
 	by sfs-ml-1.v29.lw.sourceforge.com with esmtp (Exim 4.95)
 	(envelope-from <jfs-discussion-bounces@lists.sourceforge.net>)
-	id 1rVfpA-0001SW-1l;
+	id 1rVfpA-0001Sg-B4;
 	Thu, 01 Feb 2024 22:46:25 +0000
 Received: from [172.30.20.202] (helo=mx.sourceforge.net)
  by sfs-ml-1.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
  TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (Exim 4.95)
- (envelope-from <willy@infradead.org>) id 1rVfp7-0001Ry-Bl
+ (envelope-from <willy@infradead.org>) id 1rVfp8-0001SC-5H
  for jfs-discussion@lists.sourceforge.net;
- Thu, 01 Feb 2024 22:46:22 +0000
+ Thu, 01 Feb 2024 22:46:23 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=sourceforge.net; s=x; h=Content-Transfer-Encoding:MIME-Version:Message-ID:
- Date:Subject:Cc:To:From:Sender:Reply-To:Content-Type:Content-ID:
- Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
- :Resent-Message-ID:In-Reply-To:References:List-Id:List-Help:List-Unsubscribe:
+ d=sourceforge.net; s=x; h=Content-Transfer-Encoding:MIME-Version:References:
+ In-Reply-To:Message-ID:Date:Subject:Cc:To:From:Sender:Reply-To:Content-Type:
+ Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
+ Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=uY3jkLhiexqL48YQijgmCwLqm6c2z6t+bClzCpkyU7w=; b=d1CifVsgT2H67dxzjZ2EKkFj7U
- ODweGUFbJkaLbcSKyPJH/vbWYlvZMshsF3i2SgmjlRX/L5tnBTkSvRijrn5/MRm/GcRKZJ/jpUcmM
- ZLudOsP50ikomjkss0yAE8ZGWU7JiHUr3gu1auKegfN+p8/7OQz/KVshWQwvwF3oJFjM=;
+ bh=tuAP8Pj11A6vSLLksQ3sdzEDeykXyvIK9phb2ySpPEM=; b=CRWHfMKXNkVeL8aHryZfjDcGLK
+ 8mTmpRxcZhnUDKd4HAAPwm30lTXAErzGAY5wzVrPkKe6sSVyqOavarfRpdGM/oPi5v90L1ekSS7FK
+ mgm9tYlzzQfuSnIIrkeLZ7/lnvL9KntsUghBlnKfA3YRVnnhXaYWa3iPQXUgSbk8feXw=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
- h=Content-Transfer-Encoding:MIME-Version:Message-ID:Date:Subject:Cc:To:From
- :Sender:Reply-To:Content-Type:Content-ID:Content-Description:Resent-Date:
- Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
- References:List-Id:List-Help:List-Unsubscribe:List-Subscribe:List-Post:
- List-Owner:List-Archive; bh=uY3jkLhiexqL48YQijgmCwLqm6c2z6t+bClzCpkyU7w=; b=d
- hfUDmOD+nkDcKeZV3+6c7AtrApNki7d2RA/Zy+teGNR+N1y1lt3dyHSRGjq9t6nhbqOTIL0uyIlrN
- nTP/Dk/i708gLUAE8DybqvPl+chfDWEalNA6Rv0hkpINWVWTAgdAP7nuZhCru0rcy2OszWVe/o4Z2
- rvWB484HTgnU86kw=;
+ h=Content-Transfer-Encoding:MIME-Version:References:In-Reply-To:Message-ID:
+ Date:Subject:Cc:To:From:Sender:Reply-To:Content-Type:Content-ID:
+ Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+ :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
+ List-Post:List-Owner:List-Archive;
+ bh=tuAP8Pj11A6vSLLksQ3sdzEDeykXyvIK9phb2ySpPEM=; b=dBdPl7SaWbNfjNX0dKZ15pbXND
+ gN1ofuIujFrqrS6XmuWObt1o5P2eI2oqHRpWSD5SfX0YfiAtHYQAm2PkM2VC84P6yVK4Sqh0q8rYk
+ BBZfww/x5ovgEp/aPDKrqbF9j6iGi9/D2Mk9fULisaQvvXAuoz3I79OyFSeUnOKN3NnM=;
 Received: from casper.infradead.org ([90.155.50.34])
  by sfi-mx-2.v28.lw.sourceforge.com with esmtps
  (TLS1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.95)
- id 1rVfp0-0001Q0-C3 for jfs-discussion@lists.sourceforge.net;
- Thu, 01 Feb 2024 22:46:22 +0000
+ id 1rVfp6-0001Qw-MA for jfs-discussion@lists.sourceforge.net;
+ Thu, 01 Feb 2024 22:46:23 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=infradead.org; s=casper.20170209; h=Content-Transfer-Encoding:MIME-Version:
- Message-ID:Date:Subject:Cc:To:From:Sender:Reply-To:Content-Type:Content-ID:
- Content-Description:In-Reply-To:References;
- bh=uY3jkLhiexqL48YQijgmCwLqm6c2z6t+bClzCpkyU7w=; b=rQ2iWEln8n9Ge2PpI2MGKpDmwJ
- m/DaYU9WGf/I51onKklH4m2c45fiUau1/e0myVrOr7GDa0DJ1bwB7RdOiUb5vfiHDS6WZG8cm1J+5
- k//vsahdLH9ZYY7rtRAqTirr1krwDRNGOSOihisU1QdX6XqxoqPC7I9JSZSqynkyzAzGVfItccFO0
- 9BtW1iLhEiVmNsg8xRPSUOa2nH09XhyD/mzbdUktI7Iujx0sVNey6RaL3kTZ+0T3rw/6Tmq2pfpZZ
- F3ck80KwQT8btBxb0ITHF01YFE5a/EmY2nE+EG9ly7qrjfUbHpU/2QoedyhRzj5XLlsFtzzDBjL+C
- k/Qy4wYw==;
+ References:In-Reply-To:Message-ID:Date:Subject:Cc:To:From:Sender:Reply-To:
+ Content-Type:Content-ID:Content-Description;
+ bh=tuAP8Pj11A6vSLLksQ3sdzEDeykXyvIK9phb2ySpPEM=; b=GzlACinSFCeCGzFag6Heiw3MTU
+ Bw6zuKdIx7FQshrTq8nsfUA9nPCUXmIkBcgGTQH39UH8Iqq+HG2rglvmNTfcmShGyd/dHEhtqxIjp
+ nBv2ECH2AfhURNHF2VOJ46iI8Ufz/CV1dN0V2uPyF06efE+6gi57Nk1rm9UicLybLHF0l+h24Scly
+ KrR2GQd5QrIo2Vx9pLjYgc/QSp+1D1HR/gFa/H+JWZkBwAcueujMXz0VEpN+K37jNr40rq60VTg+y
+ TVZ7yQIbf+GEeXIz0uwkl/PH4rcCc8TqcUuupiujfSDwe5Yt1PRKLCV5HJOjD952Rg1LXBj4SVEwn
+ q9zZLIkg==;
 Received: from willy by casper.infradead.org with local (Exim 4.97.1 #2 (Red
- Hat Linux)) id 1rVfos-0000000H17v-41vt;
+ Hat Linux)) id 1rVfot-0000000H17x-0L7o;
  Thu, 01 Feb 2024 22:46:07 +0000
 From: "Matthew Wilcox (Oracle)" <willy@infradead.org>
 To: Dave Kleikamp <shaggy@kernel.org>
-Date: Thu,  1 Feb 2024 22:45:49 +0000
-Message-ID: <20240201224605.4055895-1-willy@infradead.org>
+Date: Thu,  1 Feb 2024 22:45:50 +0000
+Message-ID: <20240201224605.4055895-2-willy@infradead.org>
 X-Mailer: git-send-email 2.43.0
+In-Reply-To: <20240201224605.4055895-1-willy@infradead.org>
+References: <20240201224605.4055895-1-willy@infradead.org>
 MIME-Version: 1.0
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: Spam detection software,
@@ -65,9 +67,12 @@ X-Spam-Report: Spam detection software,
  message has been attached to this so you can view it or label
  similar future email.  If you have any questions, see
  the administrator of that system for details.
- Content preview: This patchset removes uses of struct page from the I/O paths
- of JFS. write_begin and write_end are still passed a struct page, but they
- convert to a folio as their first thing. The logmgr still uses a [...] 
+ Content preview: Use bio_add_folio_nofail() as we just allocated the bio and
+ know it cannot fail. Other than that, this is a 1:1 conversion from page
+ APIs to folio APIs. Signed-off-by: Matthew Wilcox (Oracle)
+ <willy@infradead.org>
+ --- fs/jfs/jfs_metapage.c | 35 +++++++++++++ 1 file changed, 13 insertions(+), 
+ 22 deletions(-) 
  Content analysis details:   (-0.2 points, 6.0 required)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
@@ -81,8 +86,9 @@ X-Spam-Report: Spam detection software,
  author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.0 T_SCC_BODY_TEXT_LINE   No description available.
-X-Headers-End: 1rVfp0-0001Q0-C3
-Subject: [Jfs-discussion] [PATCH 00/13] JFS folio conversion
+X-Headers-End: 1rVfp6-0001Qw-MA
+Subject: [Jfs-discussion] [PATCH 01/13] jfs: Convert metapage_read_folio to
+ use folio APIs
 X-BeenThere: jfs-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -100,40 +106,106 @@ Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Errors-To: jfs-discussion-bounces@lists.sourceforge.net
 
-This patchset removes uses of struct page from the I/O paths of JFS.
-write_begin and write_end are still passed a struct page, but they convert
-to a folio as their first thing.  The logmgr still uses a struct page,
-but I think that's one we actually don't want to convert since it's
-never inserted into the page cache.
+Use bio_add_folio_nofail() as we just allocated the bio and know
+it cannot fail.  Other than that, this is a 1:1 conversion from
+page APIs to folio APIs.
 
-I've included the removal of i_blocks_per_page() in this series as JFS
-is the last user.
+Signed-off-by: Matthew Wilcox (Oracle) <willy@infradead.org>
+---
+ fs/jfs/jfs_metapage.c | 35 +++++++++++++----------------------
+ 1 file changed, 13 insertions(+), 22 deletions(-)
 
-Tested with xfstests; some failures observed, but they don't seem to be
-related to these patches.  I haven't tried with PAGE_SIZE > 4kB, so the
-MPS_PER_PAGE > 1 paths are untested.
-
-Matthew Wilcox (Oracle) (13):
-  jfs: Convert metapage_read_folio to use folio APIs
-  jfs: Convert metapage_writepage to metapage_write_folio
-  jfs: Convert __get_metapage to use a folio
-  jfs: Convert insert_metapage() to take a folio
-  jfs; Convert release_metapage to use a folio
-  jfs: Convert drop_metapage and remove_metapage to take a folio
-  jfs: Convert dec_io to take a folio
-  jfs; Convert __invalidate_metapages to use a folio
-  jfs: Convert page_to_mp to folio_to_mp
-  jfs: Convert inc_io and mp_anchor to take a folio
-  jfs: Convert force_metapage to use a folio
-  jfs: Change metapage->page to metapage->folio
-  fs: Remove i_blocks_per_page
-
- fs/jfs/jfs_logmgr.c     |   2 +-
- fs/jfs/jfs_metapage.c   | 298 ++++++++++++++++++++--------------------
- fs/jfs/jfs_metapage.h   |  16 +--
- include/linux/pagemap.h |   6 -
- 4 files changed, 155 insertions(+), 167 deletions(-)
-
+diff --git a/fs/jfs/jfs_metapage.c b/fs/jfs/jfs_metapage.c
+index 961569c11159..8266c43ec728 100644
+--- a/fs/jfs/jfs_metapage.c
++++ b/fs/jfs/jfs_metapage.c
+@@ -266,14 +266,14 @@ static void last_read_complete(struct page *page)
+ 
+ static void metapage_read_end_io(struct bio *bio)
+ {
+-	struct page *page = bio->bi_private;
++	struct folio *folio = bio->bi_private;
+ 
+ 	if (bio->bi_status) {
+ 		printk(KERN_ERR "metapage_read_end_io: I/O error\n");
+-		SetPageError(page);
++		folio_set_error(folio);
+ 	}
+ 
+-	dec_io(page, last_read_complete);
++	dec_io(&folio->page, last_read_complete);
+ 	bio_put(bio);
+ }
+ 
+@@ -469,20 +469,18 @@ static int metapage_writepage(struct page *page, struct writeback_control *wbc)
+ 
+ static int metapage_read_folio(struct file *fp, struct folio *folio)
+ {
+-	struct page *page = &folio->page;
+-	struct inode *inode = page->mapping->host;
++	struct inode *inode = folio->mapping->host;
+ 	struct bio *bio = NULL;
+ 	int block_offset;
+-	int blocks_per_page = i_blocks_per_page(inode, page);
++	int blocks_per_page = i_blocks_per_folio(inode, folio);
+ 	sector_t page_start;	/* address of page in fs blocks */
+ 	sector_t pblock;
+ 	int xlen;
+ 	unsigned int len;
+ 	int offset;
+ 
+-	BUG_ON(!PageLocked(page));
+-	page_start = (sector_t)page->index <<
+-		     (PAGE_SHIFT - inode->i_blkbits);
++	BUG_ON(!folio_test_locked(folio));
++	page_start = folio_pos(folio) >> inode->i_blkbits;
+ 
+ 	block_offset = 0;
+ 	while (block_offset < blocks_per_page) {
+@@ -490,9 +488,9 @@ static int metapage_read_folio(struct file *fp, struct folio *folio)
+ 		pblock = metapage_get_blocks(inode, page_start + block_offset,
+ 					     &xlen);
+ 		if (pblock) {
+-			if (!PagePrivate(page))
+-				insert_metapage(page, NULL);
+-			inc_io(page);
++			if (!folio->private)
++				insert_metapage(&folio->page, NULL);
++			inc_io(&folio->page);
+ 			if (bio)
+ 				submit_bio(bio);
+ 
+@@ -501,11 +499,10 @@ static int metapage_read_folio(struct file *fp, struct folio *folio)
+ 			bio->bi_iter.bi_sector =
+ 				pblock << (inode->i_blkbits - 9);
+ 			bio->bi_end_io = metapage_read_end_io;
+-			bio->bi_private = page;
++			bio->bi_private = folio;
+ 			len = xlen << inode->i_blkbits;
+ 			offset = block_offset << inode->i_blkbits;
+-			if (bio_add_page(bio, page, len, offset) < len)
+-				goto add_failed;
++			bio_add_folio_nofail(bio, folio, len, offset);
+ 			block_offset += xlen;
+ 		} else
+ 			block_offset++;
+@@ -513,15 +510,9 @@ static int metapage_read_folio(struct file *fp, struct folio *folio)
+ 	if (bio)
+ 		submit_bio(bio);
+ 	else
+-		unlock_page(page);
++		folio_unlock(folio);
+ 
+ 	return 0;
+-
+-add_failed:
+-	printk(KERN_ERR "JFS: bio_add_page failed unexpectedly\n");
+-	bio_put(bio);
+-	dec_io(page, last_read_complete);
+-	return -EIO;
+ }
+ 
+ static bool metapage_release_folio(struct folio *folio, gfp_t gfp_mask)
 -- 
 2.43.0
 
