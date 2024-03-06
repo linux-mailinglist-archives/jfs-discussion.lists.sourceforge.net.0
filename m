@@ -2,101 +2,101 @@ Return-Path: <jfs-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+jfs-discussion@lfdr.de
 Delivered-To: lists+jfs-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1523987381F
-	for <lists+jfs-discussion@lfdr.de>; Wed,  6 Mar 2024 14:51:00 +0100 (CET)
-Received: from [127.0.0.1] (helo=sfs-ml-2.v29.lw.sourceforge.com)
-	by sfs-ml-2.v29.lw.sourceforge.com with esmtp (Exim 4.95)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3C934874277
+	for <lists+jfs-discussion@lfdr.de>; Wed,  6 Mar 2024 23:10:19 +0100 (CET)
+Received: from [127.0.0.1] (helo=sfs-ml-3.v29.lw.sourceforge.com)
+	by sfs-ml-3.v29.lw.sourceforge.com with esmtp (Exim 4.95)
 	(envelope-from <jfs-discussion-bounces@lists.sourceforge.net>)
-	id 1rhrfP-0003KN-NV;
-	Wed, 06 Mar 2024 13:50:44 +0000
+	id 1rhzSa-0001xa-OE;
+	Wed, 06 Mar 2024 22:10:01 +0000
 Received: from [172.30.20.202] (helo=mx.sourceforge.net)
- by sfs-ml-2.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
- TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (Exim 4.95)
- (envelope-from <mish.uxin2012@yandex.ru>) id 1rhrfN-0003K5-KK
- for jfs-discussion@lists.sourceforge.net;
- Wed, 06 Mar 2024 13:50:42 +0000
+ by sfs-ml-3.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
+ TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (Exim 4.95) (envelope-from
+ <3XenoZQkbAAo289ukvvo1kzzsn.qyyqvo42o1myx3ox3.myw@M3KW2WVRGUFZ5GODRSRYTGD7.apphosting.bounces.google.com>)
+ id 1rhzRI-0001w5-NJ for jfs-discussion@lists.sourceforge.net;
+ Wed, 06 Mar 2024 22:08:41 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=sourceforge.net; s=x; h=Content-Transfer-Encoding:MIME-Version:Message-Id:
- Date:Subject:Cc:To:From:Sender:Reply-To:Content-Type:Content-ID:
+ d=sourceforge.net; s=x; h=Content-Type:To:From:Subject:Message-ID:Date:
+ MIME-Version:Sender:Reply-To:Cc:Content-Transfer-Encoding:Content-ID:
  Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
  :Resent-Message-ID:In-Reply-To:References:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=si9CmxfbTTi+fzS7ZgV1gg2/IENW5eLorkGc5P/t0aU=; b=RtRul3QwIdH8YsHzC4o/S8oT9V
- 4ZmXoVsui9fimucMPPbYsaTm1IeIGzR5jyti3hP8/p5tmuSCn+ywg3I7+33mksGnWJNH1z3ybSRVS
- m3LHTFCSflhemD5JX27UnaPS/q6ZDv67ztXcSpVrr1ETN5CFP2dYdRT7lMEtINwqKUI0=;
+ bh=dP5mf6ppaJeeeqDuDdgoLYu4nUp5wMZfTV0hczsj3VE=; b=kostxiSCHKjtzaaTDbARMrgd0g
+ OPAnmIHrTqM4yRnQdOasEmw4Q08aRtCDLsnmmiCbtD9hEVIEbXeybava5Gco+UZ0vS8Uyti6OS+dj
+ wky0PAigIgYagUpuvbJNWxq+qPrIUdox/Y7Qoy08OWcSwiLe8TkvwLS7Olzpeg6ogpvY=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
- h=Content-Transfer-Encoding:MIME-Version:Message-Id:Date:Subject:Cc:To:From
- :Sender:Reply-To:Content-Type:Content-ID:Content-Description:Resent-Date:
+ h=Content-Type:To:From:Subject:Message-ID:Date:MIME-Version:Sender:Reply-To
+ :Cc:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
  Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
  References:List-Id:List-Help:List-Unsubscribe:List-Subscribe:List-Post:
- List-Owner:List-Archive; bh=si9CmxfbTTi+fzS7ZgV1gg2/IENW5eLorkGc5P/t0aU=; b=N
- pesaCyN7pbjQSEKVJ1DKuwdO2pRJOJJUVZutSdObN9Sit7jgTxAMLXw1gGLIUFY0A93Owa3qsyN2u
- /cj/60SMrBX1GoVRZ8dzffiLiuPrK5qr5tRMJgTKRf1PBryeNk28SLFzeXktsYzcL9l737C9de323
- BQLtzeU6vMlg/lLQ=;
-Received: from forward102b.mail.yandex.net ([178.154.239.149])
+ List-Owner:List-Archive; bh=dP5mf6ppaJeeeqDuDdgoLYu4nUp5wMZfTV0hczsj3VE=; b=D
+ ovCiqIjXdE2bDy+VkTsTykubsGxIKa87mwNnms8DE2TvBa1VASuXARUpVCCbm9A9shypdCHqLWn6+
+ RAUiX9VSf6WVg7BSv7pHCc4YNqJ2hn/qCP7krPi6X+pti1lyYAvUhKqAQ4Vs/ZiWtXpFoodaxJRlk
+ vzhp2l/Aj+NDGvz0=;
+Received: from mail-io1-f70.google.com ([209.85.166.70])
  by sfi-mx-2.v28.lw.sourceforge.com with esmtps
- (TLS1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.95)
- id 1rhrfF-0002lj-HZ for jfs-discussion@lists.sourceforge.net;
- Wed, 06 Mar 2024 13:50:41 +0000
-Received: from mail-nwsmtp-smtp-production-main-38.myt.yp-c.yandex.net
- (mail-nwsmtp-smtp-production-main-38.myt.yp-c.yandex.net
- [IPv6:2a02:6b8:c12:601e:0:640:ac7:0])
- by forward102b.mail.yandex.net (Yandex) with ESMTPS id E70F16090D;
- Wed,  6 Mar 2024 16:50:26 +0300 (MSK)
-Received: by mail-nwsmtp-smtp-production-main-38.myt.yp-c.yandex.net
- (smtp/Yandex) with ESMTPSA id Bogo8U46U0U0-5x8x78mU; 
- Wed, 06 Mar 2024 16:50:25 +0300
-X-Yandex-Fwd: 1
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=yandex.ru; s=mail;
- t=1709733025; bh=si9CmxfbTTi+fzS7ZgV1gg2/IENW5eLorkGc5P/t0aU=;
- h=Message-Id:Date:Cc:Subject:To:From;
- b=D1VN1cyuNsIj1u2ombhbQGZLwl6NLZWBoBjvpgF+oBQ0bDbD0i8wrI8SljgXvkQyj
- 2Vba3U5tDUZqR7YBvxEzfLgA3EL9TI32Roii1o59KBOcyR+ZHoPEuG4d7vhHNF5CDf
- aDXNkMROmIdi0tuSn0/SyooTY7XBsmqJ6li6omLw=
-Authentication-Results: mail-nwsmtp-smtp-production-main-38.myt.yp-c.yandex.net;
- dkim=pass header.i=@yandex.ru
-To: Dave Kleikamp <shaggy@kernel.org>, Christian Brauner <brauner@kernel.org>,
- Jens Axboe <axboe@kernel.dk>, Jan Kara <jack@suse.cz>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>
-Date: Wed,  6 Mar 2024 16:50:10 +0300
-Message-Id: <20240306135010.9250-1-mish.uxin2012@yandex.ru>
-X-Mailer: git-send-email 2.25.1
+ (TLS1.2:ECDHE-RSA-AES128-GCM-SHA256:128) (Exim 4.95)
+ id 1rhzRC-0001wv-6B for jfs-discussion@lists.sourceforge.net;
+ Wed, 06 Mar 2024 22:08:41 +0000
+Received: by mail-io1-f70.google.com with SMTP id
+ ca18e2360f4ac-7c874fb2baaso35493039f.3
+ for <jfs-discussion@lists.sourceforge.net>;
+ Wed, 06 Mar 2024 14:08:40 -0800 (PST)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20230601; t=1709762909; x=1710367709;
+ h=to:from:subject:message-id:date:mime-version:x-gm-message-state
+ :from:to:cc:subject:date:message-id:reply-to;
+ bh=dP5mf6ppaJeeeqDuDdgoLYu4nUp5wMZfTV0hczsj3VE=;
+ b=dkdB2Nc32kZNDZ8fmPxtqmazG4XJre1Yas/Q+XtTPNTk+yAOlrbJ2vZQvYJ76jmgfb
+ /9bVB9dVCFTUXia+JXJQUBzCfg6YkSF1XLo55tUEEeH09/vgg960L6c0xbL2rZbnt7Zl
+ EqZbHX8snZDK76KeldKvYYbkr4oXKBPN6OpTwWJ22ph4M+MgeZylkuhjhYFNyPeTPyJb
+ zIhFicIP8A8GPESdkVG2K2URpyaYR60se/y3NBVDqD/NezZc1jnx+RYRlbigfbkA0l9Y
+ ypwPJWpw8zt1L5FLvRQOM4TMLsRMgTCIuflqHUZx1PUQIR4pn/GO0/EIO8jen01BkamJ
+ pORw==
+X-Gm-Message-State: AOJu0YwCcrBo9Q+2XJ5/ZKqPuOtq9Yg2jXelGh6sOgLVz0scu4rWgSCo
+ MEHhW3hpJSa7VzllPPp2FmMJBcUXrunJtxSlsZViQPaXz1qo0qx5jWfhgdRN5Ch8nmPw/GioQgw
+ 0U8MioJ0VG8MoPp2aLlE7oPRg83n7UasiOLhXpnPmBfbDCMpiLeb3gJcHHg==
+X-Google-Smtp-Source: AGHT+IFPqSCvF/0U8pDf7pIswMxHcFHvDUPvrvqAjK+q5PYCkNfskzE7xmuQEyTGAK8OtumE6ovM9gu4ZydBpcx5uQUSMQs6fwxE
 MIME-Version: 1.0
-X-Spam-Score: 0.0 (/)
+X-Received: by 2002:a05:6638:2584:b0:474:76c9:b667 with SMTP id
+ s4-20020a056638258400b0047476c9b667mr877556jat.6.1709762909035; Wed, 06 Mar
+ 2024 14:08:29 -0800 (PST)
+Date: Wed, 06 Mar 2024 14:08:29 -0800
+X-Google-Appengine-App-Id: s~syzkaller
+X-Google-Appengine-App-Id-Alias: syzkaller
+Message-ID: <000000000000d7ecf606130532ae@google.com>
+To: jfs-discussion@lists.sourceforge.net, linux-fsdevel@vger.kernel.org, 
+ linux-kernel@vger.kernel.org, shaggy@kernel.org, 
+ syzkaller-bugs@googlegroups.com
+X-Spam-Score: 0.6 (/)
 X-Spam-Report: Spam detection software,
  running on the system "util-spamd-1.v13.lw.sourceforge.com", 
  has NOT identified this incoming email as spam.  The original
  message has been attached to this so you can view it or label
  similar future email.  If you have any questions, see
  the administrator of that system for details.
- Content preview:  Fuzzing of 5.10 stable branch reports a slab-out-of-bounds
- error in ata_scsi_pass_thru. The error is fixed in 5.18 by commit
- ce70fd9a551af7424a7dace2a1ba05a7de8eae27.
- Backporting this commit would require significant changes to the code so
- it is bettter to use a simple fix for that parti [...] 
- Content analysis details:   (0.0 points, 6.0 required)
+ Content preview:  Hello jfs maintainers/developers, This is a 31-day syzbot
+ report for the jfs subsystem. All related reports/information can be found
+ at: https://syzkaller.appspot.com/upstream/s/jfs During the period, 2 new
+ issues were detected and 0 were fixed. In total, 28 issues are still open
+ and 36 have been fixed so far. 
+ Content analysis details:   (0.6 points, 6.0 required)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [178.154.239.149 listed in list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [mish.uxin2012[at]yandex.ru]
+ no trust [209.85.166.70 listed in list.dnswl.org]
+ 0.3 FROM_LOCAL_HEX         From: localpart has long hexadecimal sequence
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.166.70 listed in wl.mailspike.net]
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit [mish.uxin2012[at]yandex.ru]
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
  -0.0 T_SCC_BODY_TEXT_LINE   No description available.
-X-Headers-End: 1rhrfF-0002lj-HZ
-Subject: [Jfs-discussion] [PATCH 5.10/5.15] scsi: add a length check for
- VARIABLE_LENGTH_CMD commands
+X-Headers-End: 1rhzRC-0001wv-6B
+X-Mailman-Approved-At: Wed, 06 Mar 2024 22:09:59 +0000
+Subject: [Jfs-discussion] [syzbot] Monthly jfs report (Mar 2024)
 X-BeenThere: jfs-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -108,54 +108,57 @@ List-Post: <mailto:jfs-discussion@lists.sourceforge.net>
 List-Help: <mailto:jfs-discussion-request@lists.sourceforge.net?subject=help>
 List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/jfs-discussion>, 
  <mailto:jfs-discussion-request@lists.sourceforge.net?subject=subscribe>
-From: Mikhail Ukhin via Jfs-discussion <jfs-discussion@lists.sourceforge.net>
-Reply-To: Mikhail Ukhin <mish.uxin2012@yandex.ru>
-Cc: jfs-discussion@lists.sourceforge.net, lvc-project@linuxtesting.org,
- Pavel Koshutin <koshutin.pavel@yandex.ru>, linux-kernel@vger.kernel.org,
- stable@vger.kernel.org, Artem Sadovnikov <ancowi69@gmail.com>,
- Mikhail Ukhin <mish.uxin2012@yandex.ru>, Mikhail Ivanov <iwanov-23@bk.ru>
+From: syzbot via Jfs-discussion <jfs-discussion@lists.sourceforge.net>
+Reply-To: syzbot <syzbot+list454fdd6114742843b8e5@syzkaller.appspotmail.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Errors-To: jfs-discussion-bounces@lists.sourceforge.net
 
-Fuzzing of 5.10 stable branch reports a slab-out-of-bounds error in
-ata_scsi_pass_thru.
+Hello jfs maintainers/developers,
 
-The error is fixed in 5.18 by commit
-ce70fd9a551af7424a7dace2a1ba05a7de8eae27.
-Backporting this commit would require significant changes to the code so
-it is bettter to use a simple fix for that particular error.
+This is a 31-day syzbot report for the jfs subsystem.
+All related reports/information can be found at:
+https://syzkaller.appspot.com/upstream/s/jfs
 
-The problem is that the length of the received SCSI command is not
-validated if scsi_op == VARIABLE_LENGTH_CMD. It can lead to out-of-bounds
-reading if the user sends a request with SCSI command of length less than
-32.
+During the period, 2 new issues were detected and 0 were fixed.
+In total, 28 issues are still open and 36 have been fixed so far.
 
-Found by Linux Verification Center (linuxtesting.org) with Syzkaller.
+Some of the still happening issues:
 
-Signed-off-by: Artem Sadovnikov <ancowi69@gmail.com>
-Signed-off-by: Mikhail Ivanov <iwanov-23@bk.ru>
+Ref  Crashes Repro Title
+<1>  1815    Yes   general protection fault in lmLogSync (2)
+                   https://syzkaller.appspot.com/bug?extid=e14b1036481911ae4d77
+<2>  1621    Yes   kernel BUG in jfs_evict_inode
+                   https://syzkaller.appspot.com/bug?extid=9c0c58ea2e4887ab502e
+<3>  1031    Yes   general protection fault in write_special_inodes
+                   https://syzkaller.appspot.com/bug?extid=c732e285f8fc38d15916
+<4>  576     Yes   kernel BUG in txUnlock
+                   https://syzkaller.appspot.com/bug?extid=a63afa301d1258d09267
+<5>  390     Yes   general protection fault in jfs_flush_journal
+                   https://syzkaller.appspot.com/bug?extid=194bfe3476f96782c0b6
+<6>  299     Yes   KASAN: use-after-free Read in release_metapage
+                   https://syzkaller.appspot.com/bug?extid=f1521383cec5f7baaa94
+<7>  252     Yes   KASAN: null-ptr-deref Read in drop_buffers (2)
+                   https://syzkaller.appspot.com/bug?extid=d285c6d0b23c6033d520
+<8>  144     Yes   KASAN: user-memory-access Write in __destroy_inode
+                   https://syzkaller.appspot.com/bug?extid=dcc068159182a4c31ca3
+<9>  130     Yes   kernel BUG in dbFindLeaf
+                   https://syzkaller.appspot.com/bug?extid=dcea2548c903300a400e
+<10> 87      Yes   kernel BUG in lbmIODone
+                   https://syzkaller.appspot.com/bug?extid=52ddb6c83a04ca55f975
+
 ---
- drivers/ata/libata-scsi.c | 3 +++
- 1 file changed, 3 insertions(+)
+This report is generated by a bot. It may contain errors.
+See https://goo.gl/tpsmEJ for more information about syzbot.
+syzbot engineers can be reached at syzkaller@googlegroups.com.
 
-diff --git a/drivers/ata/libata-scsi.c b/drivers/ata/libata-scsi.c
-index dfa090ccd21c..77589e911d3d 100644
---- a/drivers/ata/libata-scsi.c
-+++ b/drivers/ata/libata-scsi.c
-@@ -4065,6 +4065,9 @@ int __ata_scsi_queuecmd(struct scsi_cmnd *scmd, struct ata_device *dev)
- 
- 	if (unlikely(!scmd->cmd_len))
- 		goto bad_cdb_len;
-+
-+	if (scsi_op == VARIABLE_LENGTH_CMD && scmd->cmd_len < 32)
-+		goto bad_cdb_len;
- 
- 	if (dev->class == ATA_DEV_ATA || dev->class == ATA_DEV_ZAC) {
- 		if (unlikely(scmd->cmd_len > dev->cdb_len))
--- 
-2.25.1
+To disable reminders for individual bugs, reply with the following command:
+#syz set <Ref> no-reminders
 
+To change bug's subsystems, reply with:
+#syz set <Ref> subsystems: new-subsystem
+
+You may send multiple commands in a single email message.
 
 
 _______________________________________________
