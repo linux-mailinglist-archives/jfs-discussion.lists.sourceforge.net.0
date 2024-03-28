@@ -2,101 +2,100 @@ Return-Path: <jfs-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+jfs-discussion@lfdr.de
 Delivered-To: lists+jfs-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id 84EC587FD6B
-	for <lists+jfs-discussion@lfdr.de>; Tue, 19 Mar 2024 13:15:36 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id BA08989061A
+	for <lists+jfs-discussion@lfdr.de>; Thu, 28 Mar 2024 17:47:30 +0100 (CET)
 Received: from [127.0.0.1] (helo=sfs-ml-2.v29.lw.sourceforge.com)
 	by sfs-ml-2.v29.lw.sourceforge.com with esmtp (Exim 4.95)
 	(envelope-from <jfs-discussion-bounces@lists.sourceforge.net>)
-	id 1rmYN9-0001wz-VY;
-	Tue, 19 Mar 2024 12:15:16 +0000
+	id 1rpsuF-0001Fi-Fh;
+	Thu, 28 Mar 2024 16:47:12 +0000
 Received: from [172.30.20.202] (helo=mx.sourceforge.net)
  by sfs-ml-3.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
  TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (Exim 4.95) (envelope-from
- <3QGX5ZQkbACcVbcNDOOHUDSSLG.JRRJOHXVHUFRQWHQW.FRP@M3KW2WVRGUFZ5GODRSRYTGD7.apphosting.bounces.google.com>)
- id 1rmWTL-000220-N2 for jfs-discussion@lists.sourceforge.net;
- Tue, 19 Mar 2024 10:13:32 +0000
+ <3rSkFZgkbAEw6CDyozzs5o33wr.u22uzs86s5q217s17.q20@M3KW2WVRGUFZ5GODRSRYTGD7.apphosting.bounces.google.com>)
+ id 1rpl5k-0005nr-BZ for jfs-discussion@lists.sourceforge.net;
+ Thu, 28 Mar 2024 08:26:32 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=sourceforge.net; s=x; h=Content-Type:To:From:Subject:Message-ID:Date:
  MIME-Version:Sender:Reply-To:Cc:Content-Transfer-Encoding:Content-ID:
  Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
  :Resent-Message-ID:In-Reply-To:References:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=yVWo3OW7v6RM8KpVjlOclZLMZCa5nPUC4vsLf0Mpl6Y=; b=lXUDQDrkCR2djbZzI3h8JtGKyG
- Q920COADJhbEA1ECRsznewmtoi/2x6nNkLFXZb8SCWQLESWnkLex6SFMxPVvEQKidOCdizt+QJ9cI
- PMSjgyH76+TAauiDrX8JM1SxSUU0u9d4054ACnykBTwsT2M/YNyK93fdcHGHhIVt77eU=;
+ bh=bAoSgmgvBXbxtYx8pCIlrNKsK43NOKCP92pCO6ltbP4=; b=Ks+YUP298cIrnl34Ra6HBFqUJW
+ 1QmOtAfBas3c0U20AAuL5TKxUcoYUJzbndhV75rcw5JzRzYPEmA03R0EsAob2xQOju6dbjYeDsqDC
+ GrUgIC/ptlmP7zihvYoCTbg7TUfa9vE3pblp5VjmStUlOaZ1NoJXFoyIVEdwwKRUJArU=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
  h=Content-Type:To:From:Subject:Message-ID:Date:MIME-Version:Sender:Reply-To
  :Cc:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
  Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
  References:List-Id:List-Help:List-Unsubscribe:List-Subscribe:List-Post:
- List-Owner:List-Archive; bh=yVWo3OW7v6RM8KpVjlOclZLMZCa5nPUC4vsLf0Mpl6Y=; b=G
- 5OMEjMA18JVicb4Wz59a6zaXmM5B7pmpBmBwFMnyr9cOdrHmyYkV58hm/lAsUFQ+5RfZ8KqmuE6SC
- Ef6qiORAnUbCFwmH05ycupvqofs9braUIOqdh3Tay/458b6oju0QfcAAg3qPjnq590QeJS69eh6l+
- uquw7vF21HfdoZc8=;
-Received: from mail-io1-f72.google.com ([209.85.166.72])
+ List-Owner:List-Archive; bh=bAoSgmgvBXbxtYx8pCIlrNKsK43NOKCP92pCO6ltbP4=; b=j
+ Vp1qzD1WnrVQ0uwC/XJDornyt0htfEWBW/DmECi/3rWhnMIj5lGb+fxU/KX6VT6eqwBcySTqT/fTl
+ iny1SBxP8Z3RKxfLB331s1bsNRrXdf5kYV0X9VXEMMLl/bQStIzt4gvPV/lm6MC5OL5hQGZfSUKQ7
+ Kz/aKedsco2neUzI=;
+Received: from mail-il1-f197.google.com ([209.85.166.197])
  by sfi-mx-2.v28.lw.sourceforge.com with esmtps
  (TLS1.2:ECDHE-RSA-AES128-GCM-SHA256:128) (Exim 4.95)
- id 1rmWT9-00053q-0R for jfs-discussion@lists.sourceforge.net;
- Tue, 19 Mar 2024 10:13:30 +0000
-Received: by mail-io1-f72.google.com with SMTP id
- ca18e2360f4ac-7cb806fc9f7so528927339f.2
+ id 1rpl5j-0004US-Da for jfs-discussion@lists.sourceforge.net;
+ Thu, 28 Mar 2024 08:26:32 +0000
+Received: by mail-il1-f197.google.com with SMTP id
+ e9e14a558f8ab-3665991058fso5748635ab.1
  for <jfs-discussion@lists.sourceforge.net>;
- Tue, 19 Mar 2024 03:13:26 -0700 (PDT)
+ Thu, 28 Mar 2024 01:26:31 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20230601; t=1710843201; x=1711448001;
+ d=1e100.net; s=20230601; t=1711614381; x=1712219181;
  h=to:from:subject:message-id:date:mime-version:x-gm-message-state
  :from:to:cc:subject:date:message-id:reply-to;
- bh=yVWo3OW7v6RM8KpVjlOclZLMZCa5nPUC4vsLf0Mpl6Y=;
- b=rRHQX9fyqU7AMs+XTOwtn3BQX1KQ+SOqiaDPeQlMrV3i0QfH8hIiUIYwdS9TNfqmZv
- 9g49L1G21kSH4aFtN8P4NndSfpxpDVFZUBBEFmFKimPmfSSX9DfizcS1yheLRoxSoFl+
- 54MdEe/OIgo8pbb73WIPPeqISvuVuOlthem7xesjWxzSDoYPRszwxoIHibLOHSVzcpwr
- I7Q711Ort/HoFUQmMCCSxYMpv6lJYDJiLe8nC2qg981EtPSZOTJetLKrzO1NaDTgz54D
- VTmoFM5sEc/5I+e0ZESBLNtjg1eKQLq9h7JeI9k1ykrKFoeB6I9zOAAJjiS5v8EtOo6e
- OhDA==
-X-Gm-Message-State: AOJu0YxzbezDGqqhyZP7WaTaZuUxRwwxQgESeYHzV5QRv6WEY1saL3JK
- Hi+Vv/LjxdKPtox3LKQEwr8sQqO5NZfyVI7rFrbBEH/8FmvN8MaDtTvAs/1sNOYahPIEDp7Fe+P
- 4iLporL8Hwi9KQNJvoXZVS5v2XYDGwKVuHymhjp9d562PBmhEC7hDo5b+pA==
-X-Google-Smtp-Source: AGHT+IFnYwDPpTN7Zf+grtyBlIIPEncHbUppHOcyRUbwdQF9ibbiDo8FPnl26e7BKuD66ggGekHqZ+eH8AquJ5YCpHnslbLSr5Xt
+ bh=bAoSgmgvBXbxtYx8pCIlrNKsK43NOKCP92pCO6ltbP4=;
+ b=F91rTCCWKYi7RLaD2eapAhHRUNI7EUiuMBC/JsnaRsdg5Sf4uH0cqOiWtUM3Rkd8LM
+ 2rongQwwifZNnhuZg4dFOwDtGO5THNlv3JKryKDRmAcSswaSnL8Qo516VdZ9ect0GLMN
+ irNtgst1BtH8YhA5RN71RAS1J42gI02tvb5A92FW/BFthW4ZDmIBk0o/msupC8xb+q28
+ Qf2H/3D+CMSJmLtXXu5he+FsFOHJXvRx3DmFz3xDfTf8lb05ZbAHGor7ktPouezzCd0v
+ aZelhH+xZgM/+QbVuG8r2xt2H0nZpzE8YvNAZQkbuCnjS7EhNqzOXH5DwA7+1nigjjSV
+ YEPQ==
+X-Gm-Message-State: AOJu0Yz/RSP2Qscj1OR3EWGanhXVeOnguDIRs49zah4/FjZ4/00kgJf+
+ 1u7+ePTh/BiMQ+JDNLksdCtB9l/mRmamQdG8livXojKAnjtfrTuSMi7N7/rSw1m1yU1VOvHcKD7
+ fwA/8Zrrg9eBhQlwhhNzKdrULuY+hWSRmBvRCoY5Eoob3O2yPzh/PCITyng==
+X-Google-Smtp-Source: AGHT+IHgK5viOd0F+bDHqRYdcaYQ6s8+oCcIoWMtxdMcRU+n/HwfVQ5of75lvk5RAQ44Nz4GNM99q0PodqUqNOfhVuEhp/lNFdgN
 MIME-Version: 1.0
-X-Received: by 2002:a05:6638:3711:b0:47b:cbf1:9064 with SMTP id
- k17-20020a056638371100b0047bcbf19064mr77340jav.0.1710843200902; Tue, 19 Mar
- 2024 03:13:20 -0700 (PDT)
-Date: Tue, 19 Mar 2024 03:13:20 -0700
+X-Received: by 2002:a92:d744:0:b0:368:72f7:a102 with SMTP id
+ e4-20020a92d744000000b0036872f7a102mr39355ilq.0.1711614381036; Thu, 28 Mar
+ 2024 01:26:21 -0700 (PDT)
+Date: Thu, 28 Mar 2024 01:26:21 -0700
 X-Google-Appengine-App-Id: s~syzkaller
 X-Google-Appengine-App-Id-Alias: syzkaller
-Message-ID: <00000000000041ac86061400b95d@google.com>
+Message-ID: <0000000000002cabeb0614b447e9@google.com>
 To: jfs-discussion@lists.sourceforge.net, linux-fsdevel@vger.kernel.org, 
  linux-kernel@vger.kernel.org, shaggy@kernel.org, 
  syzkaller-bugs@googlegroups.com
 X-Spam-Score: 0.6 (/)
 X-Spam-Report: Spam detection software,
- running on the system "util-spamd-1.v13.lw.sourceforge.com", 
+ running on the system "util-spamd-2.v13.lw.sourceforge.com", 
  has NOT identified this incoming email as spam.  The original
  message has been attached to this so you can view it or label
  similar future email.  If you have any questions, see
  the administrator of that system for details.
  Content preview:  Hello,
- syzbot found the following issue on: HEAD commit: 707081b61156
- Merge branch 'for-next/core', remote-tracking.. git tree:
- git://git.kernel.org/pub/scm/linux/kernel/git/arm64/linux.git
- for-kernelci console output: https://syzkaller.appspot [...] 
+ syzbot found the following issue on: HEAD commit: fe46a7dd189e
+ Merge tag 'sound-6.9-rc1' of git://git.kernel.. git tree: upstream console
+ output: https://syzkaller.appspot.com/x/log.txt?x=130728b5180000 kernel
+ config: https://syzkaller.a [...] 
  Content analysis details:   (0.6 points, 6.0 required)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  0.3 FROM_LOCAL_HEX         From: localpart has long hexadecimal sequence
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.166.72 listed in wl.mailspike.net]
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.166.72 listed in list.dnswl.org]
+ no trust [209.85.166.197 listed in list.dnswl.org]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.166.197 listed in wl.mailspike.net]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
  mail domains are different
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 T_SCC_BODY_TEXT_LINE   No description available.
-X-Headers-End: 1rmWT9-00053q-0R
-X-Mailman-Approved-At: Tue, 19 Mar 2024 12:15:15 +0000
-Subject: [Jfs-discussion] [syzbot] [jfs?] INFO: task hung in lmLogClose (3)
+X-Headers-End: 1rpl5j-0004US-Da
+X-Mailman-Approved-At: Thu, 28 Mar 2024 16:47:11 +0000
+Subject: [Jfs-discussion] [syzbot] [jfs?] kernel BUG in txLock (2)
 X-BeenThere: jfs-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -109,7 +108,7 @@ List-Help: <mailto:jfs-discussion-request@lists.sourceforge.net?subject=help>
 List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/jfs-discussion>, 
  <mailto:jfs-discussion-request@lists.sourceforge.net?subject=subscribe>
 From: syzbot via Jfs-discussion <jfs-discussion@lists.sourceforge.net>
-Reply-To: syzbot <syzbot+c824290332add8067111@syzkaller.appspotmail.com>
+Reply-To: syzbot <syzbot+a843f6ae2130a987d63b@syzkaller.appspotmail.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Errors-To: jfs-discussion-bounces@lists.sourceforge.net
@@ -118,121 +117,89 @@ Hello,
 
 syzbot found the following issue on:
 
-HEAD commit:    707081b61156 Merge branch 'for-next/core', remote-tracking..
-git tree:       git://git.kernel.org/pub/scm/linux/kernel/git/arm64/linux.git for-kernelci
-console output: https://syzkaller.appspot.com/x/log.txt?x=126c764e180000
-kernel config:  https://syzkaller.appspot.com/x/.config?x=caeac3f3565b057a
-dashboard link: https://syzkaller.appspot.com/bug?extid=c824290332add8067111
+HEAD commit:    fe46a7dd189e Merge tag 'sound-6.9-rc1' of git://git.kernel..
+git tree:       upstream
+console output: https://syzkaller.appspot.com/x/log.txt?x=130728b5180000
+kernel config:  https://syzkaller.appspot.com/x/.config?x=4d90a36f0cab495a
+dashboard link: https://syzkaller.appspot.com/bug?extid=a843f6ae2130a987d63b
 compiler:       Debian clang version 15.0.6, GNU ld (GNU Binutils for Debian) 2.40
-userspace arch: arm64
-syz repro:      https://syzkaller.appspot.com/x/repro.syz?x=101e05be180000
-C reproducer:   https://syzkaller.appspot.com/x/repro.c?x=151ec2a5180000
+syz repro:      https://syzkaller.appspot.com/x/repro.syz?x=1068ec51180000
+C reproducer:   https://syzkaller.appspot.com/x/repro.c?x=10c6f0ce180000
 
 Downloadable assets:
-disk image: https://storage.googleapis.com/syzbot-assets/6cad68bf7532/disk-707081b6.raw.xz
-vmlinux: https://storage.googleapis.com/syzbot-assets/1a27e5400778/vmlinux-707081b6.xz
-kernel image: https://storage.googleapis.com/syzbot-assets/67dfc53755d0/Image-707081b6.gz.xz
-mounted in repro: https://storage.googleapis.com/syzbot-assets/e14a3937c758/mount_0.gz
+disk image: https://storage.googleapis.com/syzbot-assets/f6c04726a2ae/disk-fe46a7dd.raw.xz
+vmlinux: https://storage.googleapis.com/syzbot-assets/09c26ce901ea/vmlinux-fe46a7dd.xz
+kernel image: https://storage.googleapis.com/syzbot-assets/134acf7f5322/bzImage-fe46a7dd.xz
+mounted in repro: https://storage.googleapis.com/syzbot-assets/60c8566d11a7/mount_0.gz
 
 IMPORTANT: if you fix the issue, please add the following tag to the commit:
-Reported-by: syzbot+c824290332add8067111@syzkaller.appspotmail.com
+Reported-by: syzbot+a843f6ae2130a987d63b@syzkaller.appspotmail.com
 
-INFO: task syz-executor394:6204 blocked for more than 143 seconds.
-      Not tainted 6.8.0-rc7-syzkaller-g707081b61156 #0
-"echo 0 > /proc/sys/kernel/hung_task_timeout_secs" disables this message.
-task:syz-executor394 state:D stack:0     pid:6204  tgid:6204  ppid:6201   flags:0x0000000c
-Call trace:
- __switch_to+0x314/0x560 arch/arm64/kernel/process.c:553
- context_switch kernel/sched/core.c:5400 [inline]
- __schedule+0x1498/0x24b4 kernel/sched/core.c:6727
- __schedule_loop kernel/sched/core.c:6802 [inline]
- schedule+0xb8/0x19c kernel/sched/core.c:6817
- schedule_preempt_disabled+0x18/0x2c kernel/sched/core.c:6874
- __mutex_lock_common+0xbd8/0x21a0 kernel/locking/mutex.c:684
- __mutex_lock kernel/locking/mutex.c:752 [inline]
- mutex_lock_nested+0x2c/0x38 kernel/locking/mutex.c:804
- lmLogClose+0xc8/0x4d4 fs/jfs/jfs_logmgr.c:1444
- jfs_umount+0x274/0x360 fs/jfs/jfs_umount.c:114
- jfs_put_super+0x90/0x188 fs/jfs/super.c:194
- generic_shutdown_super+0x128/0x2b8 fs/super.c:641
- kill_block_super+0x44/0x90 fs/super.c:1675
- deactivate_locked_super+0xc4/0x12c fs/super.c:472
- deactivate_super+0xe0/0x100 fs/super.c:505
- cleanup_mnt+0x34c/0x3dc fs/namespace.c:1267
- __cleanup_mnt+0x20/0x30 fs/namespace.c:1274
- task_work_run+0x230/0x2e0 kernel/task_work.c:180
- resume_user_mode_work include/linux/resume_user_mode.h:50 [inline]
- do_notify_resume+0x178/0x1f4 arch/arm64/kernel/entry-common.c:151
- exit_to_user_mode_prepare arch/arm64/kernel/entry-common.c:169 [inline]
- exit_to_user_mode arch/arm64/kernel/entry-common.c:178 [inline]
- el0_svc+0xac/0x168 arch/arm64/kernel/entry-common.c:713
- el0t_64_sync_handler+0x84/0xfc arch/arm64/kernel/entry-common.c:730
- el0t_64_sync+0x190/0x194 arch/arm64/kernel/entry.S:598
-INFO: task syz-executor394:6205 blocked for more than 143 seconds.
-      Not tainted 6.8.0-rc7-syzkaller-g707081b61156 #0
-"echo 0 > /proc/sys/kernel/hung_task_timeout_secs" disables this message.
-task:syz-executor394 state:D stack:0     pid:6205  tgid:6205  ppid:6201   flags:0x0000000c
-Call trace:
- __switch_to+0x314/0x560 arch/arm64/kernel/process.c:553
- context_switch kernel/sched/core.c:5400 [inline]
- __schedule+0x1498/0x24b4 kernel/sched/core.c:6727
- __schedule_loop kernel/sched/core.c:6802 [inline]
- schedule+0xb8/0x19c kernel/sched/core.c:6817
- schedule_preempt_disabled+0x18/0x2c kernel/sched/core.c:6874
- __mutex_lock_common+0xbd8/0x21a0 kernel/locking/mutex.c:684
- __mutex_lock kernel/locking/mutex.c:752 [inline]
- mutex_lock_nested+0x2c/0x38 kernel/locking/mutex.c:804
- lmLogClose+0xc8/0x4d4 fs/jfs/jfs_logmgr.c:1444
- jfs_umount+0x274/0x360 fs/jfs/jfs_umount.c:114
- jfs_put_super+0x90/0x188 fs/jfs/super.c:194
- generic_shutdown_super+0x128/0x2b8 fs/super.c:641
- kill_block_super+0x44/0x90 fs/super.c:1675
- deactivate_locked_super+0xc4/0x12c fs/super.c:472
- deactivate_super+0xe0/0x100 fs/super.c:505
- cleanup_mnt+0x34c/0x3dc fs/namespace.c:1267
- __cleanup_mnt+0x20/0x30 fs/namespace.c:1274
- task_work_run+0x230/0x2e0 kernel/task_work.c:180
- resume_user_mode_work include/linux/resume_user_mode.h:50 [inline]
- do_notify_resume+0x178/0x1f4 arch/arm64/kernel/entry-common.c:151
- exit_to_user_mode_prepare arch/arm64/kernel/entry-common.c:169 [inline]
- exit_to_user_mode arch/arm64/kernel/entry-common.c:178 [inline]
- el0_svc+0xac/0x168 arch/arm64/kernel/entry-common.c:713
- el0t_64_sync_handler+0x84/0xfc arch/arm64/kernel/entry-common.c:730
- el0t_64_sync+0x190/0x194 arch/arm64/kernel/entry.S:598
-
-Showing all locks held in the system:
-1 lock held by khungtaskd/29:
- #0: ffff80008ee74ac0 (rcu_read_lock){....}-{1:2}, at: rcu_lock_acquire+0xc/0x44 include/linux/rcupdate.h:297
-2 locks held by getty/5927:
- #0: ffff0000d2e810a0 (&tty->ldisc_sem){++++}-{0:0}, at: ldsem_down_read+0x3c/0x4c drivers/tty/tty_ldsem.c:340
- #1: ffff800093fe02f0 (&ldata->atomic_read_lock){+.+.}-{3:3}, at: n_tty_read+0x41c/0x1228 drivers/tty/n_tty.c:2201
-2 locks held by syz-executor394/6202:
- #0: ffff0000d98900e0 (&type->s_umount_key#42){+.+.}-{3:3}, at: __super_lock fs/super.c:56 [inline]
- #0: ffff0000d98900e0 (&type->s_umount_key#42){+.+.}-{3:3}, at: __super_lock_excl fs/super.c:71 [inline]
- #0: ffff0000d98900e0 (&type->s_umount_key#42){+.+.}-{3:3}, at: deactivate_super+0xd8/0x100 fs/super.c:504
- #1: ffff80008f2586e8 (jfs_log_mutex){+.+.}-{3:3}, at: lmLogClose+0xc8/0x4d4 fs/jfs/jfs_logmgr.c:1444
-1 lock held by syz-executor394/6203:
- #0: ffff0000c25c00e0 (&type->s_umount_key#42){+.+.}-{3:3}, at: __super_lock fs/super.c:56 [inline]
- #0: ffff0000c25c00e0 (&type->s_umount_key#42){+.+.}-{3:3}, at: __super_lock_excl fs/super.c:71 [inline]
- #0: ffff0000c25c00e0 (&type->s_umount_key#42){+.+.}-{3:3}, at: deactivate_super+0xd8/0x100 fs/super.c:504
-2 locks held by syz-executor394/6204:
- #0: ffff0000d60740e0 (&type->s_umount_key#42){+.+.}-{3:3}, at: __super_lock fs/super.c:56 [inline]
- #0: ffff0000d60740e0 (&type->s_umount_key#42){+.+.}-{3:3}, at: __super_lock_excl fs/super.c:71 [inline]
- #0: ffff0000d60740e0 (&type->s_umount_key#42){+.+.}-{3:3}, at: deactivate_super+0xd8/0x100 fs/super.c:504
- #1: ffff80008f2586e8 (jfs_log_mutex){+.+.}-{3:3}, at: lmLogClose+0xc8/0x4d4 fs/jfs/jfs_logmgr.c:1444
-2 locks held by syz-executor394/6205:
- #0: ffff0000d95420e0 (&type->s_umount_key#42){+.+.}-{3:3}, at: __super_lock fs/super.c:56 [inline]
- #0: ffff0000d95420e0 (&type->s_umount_key#42){+.+.}-{3:3}, at: __super_lock_excl fs/super.c:71 [inline]
- #0: ffff0000d95420e0 (&type->s_umount_key#42){+.+.}-{3:3}, at: deactivate_super+0xd8/0x100 fs/super.c:504
- #1: ffff80008f2586e8 (jfs_log_mutex){+.+.}-{3:3}, at: lmLogClose+0xc8/0x4d4 fs/jfs/jfs_logmgr.c:1444
-2 locks held by syz-executor394/6206:
- #0: ffff0000d5cb80e0 (&type->s_umount_key#42){+.+.}-{3:3}, at: __super_lock fs/super.c:56 [inline]
- #0: ffff0000d5cb80e0 (&type->s_umount_key#42){+.+.}-{3:3}, at: __super_lock_excl fs/super.c:71 [inline]
- #0: ffff0000d5cb80e0 (&type->s_umount_key#42){+.+.}-{3:3}, at: deactivate_super+0xd8/0x100 fs/super.c:504
- #1: ffff80008f2586e8 (jfs_log_mutex){+.+.}-{3:3}, at: lmLogClose+0xc8/0x4d4 fs/jfs/jfs_logmgr.c:1444
-
-=============================================
-
+Locker's tblock: ffffc90002631850: 8be235c0 ffffffff 00000200 00000000
+Locker's tblock: ffffc90002631860: 02631860 ffffc900 02631860 ffffc900
+Locker's tblock: ffffc90002631870: 00000004 0000001c 00000008 00000000
+Tlock: ffffc900028522d0: 0003000e 20208040 229bc9b0 ffff8880
+Tlock: ffffc900028522e0: 775896b0 ffff8880 03140000 05002000
+Tlock: ffffc900028522f0: 06030a00 0000020d 00000000 00000000
+Tlock: ffffc90002852300: 00000000 00000000 00000000 00000000
+Tlock: ffffc90002852310: 00000000 00000000
+------------[ cut here ]------------
+kernel BUG at fs/jfs/jfs_txnmgr.c:834!
+invalid opcode: 0000 [#1] PREEMPT SMP KASAN PTI
+CPU: 1 PID: 5076 Comm: syz-executor283 Not tainted 6.8.0-syzkaller-08951-gfe46a7dd189e #0
+Hardware name: Google Google Compute Engine/Google Compute Engine, BIOS Google 02/29/2024
+RIP: 0010:txLock+0x1ed3/0x21a0 fs/jfs/jfs_txnmgr.c:834
+Code: 48 c7 c6 00 3c e2 8b ba 01 00 00 00 b9 10 00 00 00 41 b8 04 00 00 00 4c 8b 4c 24 20 6a 00 6a 48 e8 52 e6 7a 01 48 83 c4 10 90 <0f> 0b e8 56 4e 72 fe 4c 89 f7 48 c7 c6 00 44 e2 8b e8 67 33 b8 fe
+RSP: 0018:ffffc900045070c0 EFLAGS: 00010286
+RAX: 30bbfa8826d96700 RBX: 0000000000000010 RCX: ffff888028011e00
+RDX: 0000000000000000 RSI: 0000000000000001 RDI: 0000000000000000
+RBP: ffffc90004507210 R08: ffffffff8175c06c R09: fffffbfff1bf9650
+R10: dffffc0000000000 R11: fffffbfff1bf9650 R12: 1ffff9200050a45a
+R13: ffff888077586f00 R14: 000000000000005a R15: ffffc900028522d2
+FS:  00007f6aa27586c0(0000) GS:ffff8880b9500000(0000) knlGS:0000000000000000
+CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033
+CR2: 00007f6aa2758d58 CR3: 000000007b84e000 CR4: 00000000003506f0
+DR0: 0000000000000000 DR1: 0000000000000000 DR2: 0000000000000000
+DR3: 0000000000000000 DR6: 00000000fffe0ff0 DR7: 0000000000000400
+Call Trace:
+ <TASK>
+ dtInsert+0xb0a/0x6b00 fs/jfs/jfs_dtree.c:881
+ jfs_create+0x7ba/0xb90 fs/jfs/namei.c:137
+ lookup_open fs/namei.c:3497 [inline]
+ open_last_lookups fs/namei.c:3566 [inline]
+ path_openat+0x1425/0x3240 fs/namei.c:3796
+ do_filp_open+0x235/0x490 fs/namei.c:3826
+ do_sys_openat2+0x13e/0x1d0 fs/open.c:1406
+ do_sys_open fs/open.c:1421 [inline]
+ __do_sys_openat fs/open.c:1437 [inline]
+ __se_sys_openat fs/open.c:1432 [inline]
+ __x64_sys_openat+0x247/0x2a0 fs/open.c:1432
+ do_syscall_64+0xfb/0x240
+ entry_SYSCALL_64_after_hwframe+0x6d/0x75
+RIP: 0033:0x7f6aa27c2879
+Code: 28 00 00 00 75 05 48 83 c4 28 c3 e8 81 18 00 00 90 48 89 f8 48 89 f7 48 89 d6 48 89 ca 4d 89 c2 4d 89 c8 4c 8b 4c 24 08 0f 05 <48> 3d 01 f0 ff ff 73 01 c3 48 c7 c1 b0 ff ff ff f7 d8 64 89 01 48
+RSP: 002b:00007f6aa2758218 EFLAGS: 00000246 ORIG_RAX: 0000000000000101
+RAX: ffffffffffffffda RBX: 00007f6aa284f6d8 RCX: 00007f6aa27c2879
+RDX: 000000000000275a RSI: 00000000200010c0 RDI: 00000000ffffff9c
+RBP: 00007f6aa284f6d0 R08: 00007fff5a3c9dc7 R09: 0000000000000000
+R10: 0000000000000000 R11: 0000000000000246 R12: 00007f6aa281c190
+R13: 0030656c69662f2e R14: 00007f6aa281607e R15: 3d6469672c647261
+ </TASK>
+Modules linked in:
+---[ end trace 0000000000000000 ]---
+RIP: 0010:txLock+0x1ed3/0x21a0 fs/jfs/jfs_txnmgr.c:834
+Code: 48 c7 c6 00 3c e2 8b ba 01 00 00 00 b9 10 00 00 00 41 b8 04 00 00 00 4c 8b 4c 24 20 6a 00 6a 48 e8 52 e6 7a 01 48 83 c4 10 90 <0f> 0b e8 56 4e 72 fe 4c 89 f7 48 c7 c6 00 44 e2 8b e8 67 33 b8 fe
+RSP: 0018:ffffc900045070c0 EFLAGS: 00010286
+RAX: 30bbfa8826d96700 RBX: 0000000000000010 RCX: ffff888028011e00
+RDX: 0000000000000000 RSI: 0000000000000001 RDI: 0000000000000000
+RBP: ffffc90004507210 R08: ffffffff8175c06c R09: fffffbfff1bf9650
+R10: dffffc0000000000 R11: fffffbfff1bf9650 R12: 1ffff9200050a45a
+R13: ffff888077586f00 R14: 000000000000005a R15: ffffc900028522d2
+FS:  00007f6aa27586c0(0000) GS:ffff8880b9500000(0000) knlGS:0000000000000000
+CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033
+CR2: 00007f6aa2758d58 CR3: 000000007b84e000 CR4: 00000000003506f0
+DR0: 0000000000000000 DR1: 0000000000000000 DR2: 0000000000000000
+DR3: 0000000000000000 DR6: 00000000fffe0ff0 DR7: 0000000000000400
 
 
 ---
