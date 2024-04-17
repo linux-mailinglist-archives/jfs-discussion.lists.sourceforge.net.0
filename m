@@ -2,28 +2,28 @@ Return-Path: <jfs-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+jfs-discussion@lfdr.de
 Delivered-To: lists+jfs-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6827E8A8AA5
-	for <lists+jfs-discussion@lfdr.de>; Wed, 17 Apr 2024 19:57:40 +0200 (CEST)
-Received: from [127.0.0.1] (helo=sfs-ml-4.v29.lw.sourceforge.com)
-	by sfs-ml-4.v29.lw.sourceforge.com with esmtp (Exim 4.95)
+	by mail.lfdr.de (Postfix) with ESMTPS id B69388A8A9D
+	for <lists+jfs-discussion@lfdr.de>; Wed, 17 Apr 2024 19:57:32 +0200 (CEST)
+Received: from [127.0.0.1] (helo=sfs-ml-3.v29.lw.sourceforge.com)
+	by sfs-ml-3.v29.lw.sourceforge.com with esmtp (Exim 4.95)
 	(envelope-from <jfs-discussion-bounces@lists.sourceforge.net>)
-	id 1rx9X7-00012K-7r;
-	Wed, 17 Apr 2024 17:57:21 +0000
+	id 1rx9Wz-0003NG-3f;
+	Wed, 17 Apr 2024 17:57:13 +0000
 Received: from [172.30.20.202] (helo=mx.sourceforge.net)
- by sfs-ml-4.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
+ by sfs-ml-3.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
  TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (Exim 4.95)
- (envelope-from <willy@infradead.org>) id 1rx9Wz-00011j-0j
+ (envelope-from <willy@infradead.org>) id 1rx9Wu-0003Mz-HS
  for jfs-discussion@lists.sourceforge.net;
- Wed, 17 Apr 2024 17:57:13 +0000
+ Wed, 17 Apr 2024 17:57:08 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=sourceforge.net; s=x; h=Content-Transfer-Encoding:MIME-Version:References:
  In-Reply-To:Message-ID:Date:Subject:Cc:To:From:Sender:Reply-To:Content-Type:
  Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
  Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=1hiBfCsxHjQnrQb499TeqPNt73gL1h2Ah7TqxU7+CxY=; b=ShU8pASgmBnfRGarAafLJhxmTo
- pkCK/GVr/FPbPOObITAph+QRYyTHSgd6yqhZZdDJww5lQRoUE9uBNXEZCb4cELUdBblWvIjSsLJJI
- ZD5zEvwS5jhPyn/3gc36kk0qmg6uj0vnxO5qt9E5iHzyd3Q0cyURXtJ6GeXw+jNgSR5w=;
+ bh=0PCgY0pKLRJKEtVUcAJOm71vipyZh1XinEayZbDdllk=; b=RHaC9VaanY5vx5jtcB8Z3HuwnA
+ X6F1xKgUCVH7mA4wYZJh9oYHKkIIXFNOGk8xlP/59GionKQWkao+fNztqtvdvjwvk5hP0BNfggp73
+ NZKW6HsrHnmTsoqZCbebLTT1WufyuTb8riM9LPUQoZ2YbFoRe9ev42Z/a4kG8Xljn09c=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
  h=Content-Transfer-Encoding:MIME-Version:References:In-Reply-To:Message-ID:
@@ -31,31 +31,31 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
  :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
  List-Post:List-Owner:List-Archive;
- bh=1hiBfCsxHjQnrQb499TeqPNt73gL1h2Ah7TqxU7+CxY=; b=HYeCbDAQnrPxnLctz66rv+f/Qf
- NmofnoLSVrUqO980uRbxd/ssd84I01nsLmhmWy0N8dRvzKbUWRr3obMIrqT7nRYQHR3DO4V3QlHOb
- S+s6zqru68HLYYm9WSkdzG2rJTNfOll31C5tlN5iLJxC6/aTNZrXT6KuGM3ZoXn8RkN0=;
+ bh=0PCgY0pKLRJKEtVUcAJOm71vipyZh1XinEayZbDdllk=; b=citf+5M76ixz7enVmtM0sz9qL5
+ e/UldGegcgUX2oiOzpKBNB9AFUPKZJMsiuO0AxjTEMJqFR/CFm3hVUE88sIwqZYuYB5SWoHx9XPeL
+ a6QQOZW7X3QHWkWYBY7Ngm5UQaCQw69Rf35apEldcNLwu5mOWxlYHKl2SfY8jVBuGqtY=;
 Received: from casper.infradead.org ([90.155.50.34])
  by sfi-mx-2.v28.lw.sourceforge.com with esmtps
  (TLS1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.95)
- id 1rx9Wy-0000lM-Kp for jfs-discussion@lists.sourceforge.net;
- Wed, 17 Apr 2024 17:57:13 +0000
+ id 1rx9Wu-0000ku-8K for jfs-discussion@lists.sourceforge.net;
+ Wed, 17 Apr 2024 17:57:08 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=infradead.org; s=casper.20170209; h=Content-Transfer-Encoding:MIME-Version:
  References:In-Reply-To:Message-ID:Date:Subject:Cc:To:From:Sender:Reply-To:
  Content-Type:Content-ID:Content-Description;
- bh=1hiBfCsxHjQnrQb499TeqPNt73gL1h2Ah7TqxU7+CxY=; b=CEdoqhRIG3rbUmX+HBTnIVn6li
- SK0HQpAFyLD3gWNDbBu3VHF2GOotjGc7JTjX4B9vBZDkXMPLM4Hai40Ru4xJmCHiuIxnPcvSFtHhH
- D2sfCYPTglSO8QjvAYW5B8LVTXpgLH/y/3NUrlM3ZYydB30wu+ESEZqW9PVe35iGxMzPEfS7LsyQh
- Ax/RQqqIK//JwknJ6AiRVif6dMuinatvQl9t2v4h+ds/dSFAaI8Z9YWN8CME54fCA45xulWj3hD0j
- SeJ5Xe35fZOuZ1tl9XbII2VwxBpSWLCLfH3GD2wZhxBP5pOJBRMNiinnKGSlfHMtbi5+3t8kyNaXG
- kkLnII7Q==;
+ bh=0PCgY0pKLRJKEtVUcAJOm71vipyZh1XinEayZbDdllk=; b=wBRSrmZj7H5v53cuCpt7dhDGvF
+ 7dtIPP9HiqsHJlioKZugckk3kdpqdA6TmimP2JD7Bl+THXU4Lb42LjxEr11e/poxNoRQR004amI7P
+ Vtmf0BJEn7hVRLwqWWMlXoB06lS4XIvfVGTah+QJeA6v8hp/KN5bS8tBwZlKRWcByvT9vIJPqkwfe
+ ht7tFCFZA0/6omv0d0i10VsFGeXC3v5yM5Z0NeR1dtb8hn5q1+XGHSwzjEyMR8TRFLwmP+ED47hkk
+ TqmFBpaPCR2DOPWTKxPiitnlj/oX4QOrSvMF5KdE9rRNS/vSljgbTYqgxTM0sljciBDbmpnMF1f+t
+ jv0x63fQ==;
 Received: from willy by casper.infradead.org with local (Exim 4.97.1 #2 (Red
- Hat Linux)) id 1rx9Wn-00000003Qss-0eVL;
+ Hat Linux)) id 1rx9Wn-00000003Qsz-1DxV;
  Wed, 17 Apr 2024 17:57:01 +0000
 From: "Matthew Wilcox (Oracle)" <willy@infradead.org>
 To: Dave Kleikamp <shaggy@kernel.org>
-Date: Wed, 17 Apr 2024 18:56:47 +0100
-Message-ID: <20240417175659.818299-4-willy@infradead.org>
+Date: Wed, 17 Apr 2024 18:56:48 +0100
+Message-ID: <20240417175659.818299-5-willy@infradead.org>
 X-Mailer: git-send-email 2.44.0
 In-Reply-To: <20240417175659.818299-1-willy@infradead.org>
 References: <20240417175659.818299-1-willy@infradead.org>
@@ -67,9 +67,12 @@ X-Spam-Report: Spam detection software,
  message has been attached to this so you can view it or label
  similar future email.  If you have any questions, see
  the administrator of that system for details.
- Content preview: Remove four hidden calls to compound_head(). Signed-off-by:
- Matthew Wilcox (Oracle) <willy@infradead.org> --- fs/jfs/jfs_metapage.c |
- 28 ++++++++++++++ 1 file changed, 14 insertions(+), 14 deletions(-) 
+ Content preview:  Both of its callers now have a folio,
+ so convert this function.
+ Use folio_attach_private() instead of manually setting folio->private. This
+ also gets the expected refcount of the folio correct. Signed-off-by: Matthew
+ Wilcox (Oracle) <willy@infradead.org> --- fs/jfs/jfs_metapage.c | 31
+ +++++++++++++ 1 file changed, 13 insertions(+), 18 deletions(-) 
  Content analysis details:   (-0.2 points, 6.0 required)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
@@ -77,6 +80,10 @@ X-Spam-Report: Spam detection software,
  blocked.  See
  http://wiki.apache.org/spamassassin/DnsBlocklists#dnsbl-block
  for more information. [URIs: infradead.org]
+ 0.0 RCVD_IN_DNSWL_BLOCKED  RBL: ADMINISTRATOR NOTICE: The query to
+ DNSWL was blocked.  See
+ http://wiki.apache.org/spamassassin/DnsBlocklists#dnsbl-block
+ for more information. [90.155.50.34 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -86,9 +93,9 @@ X-Spam-Report: Spam detection software,
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
-X-Headers-End: 1rx9Wy-0000lM-Kp
-Subject: [Jfs-discussion] [PATCH v2 03/13] jfs: Convert __get_metapage to
- use a folio
+X-Headers-End: 1rx9Wu-0000ku-8K
+Subject: [Jfs-discussion] [PATCH v2 04/13] jfs: Convert insert_metapage() to
+ take a folio
 X-BeenThere: jfs-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -106,92 +113,104 @@ Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Errors-To: jfs-discussion-bounces@lists.sourceforge.net
 
-Remove four hidden calls to compound_head().
+Both of its callers now have a folio, so convert this function.
+Use folio_attach_private() instead of manually setting folio->private.
+This also gets the expected refcount of the folio correct.
 
 Signed-off-by: Matthew Wilcox (Oracle) <willy@infradead.org>
 ---
- fs/jfs/jfs_metapage.c | 28 ++++++++++++++--------------
- 1 file changed, 14 insertions(+), 14 deletions(-)
+ fs/jfs/jfs_metapage.c | 31 +++++++++++++------------------
+ 1 file changed, 13 insertions(+), 18 deletions(-)
 
 diff --git a/fs/jfs/jfs_metapage.c b/fs/jfs/jfs_metapage.c
-index beecc9ad656e..4ef85e264f51 100644
+index 4ef85e264f51..6fa7023f5bc9 100644
 --- a/fs/jfs/jfs_metapage.c
 +++ b/fs/jfs/jfs_metapage.c
-@@ -577,7 +577,7 @@ struct metapage *__get_metapage(struct inode *inode, unsigned long lblock,
- 	int l2bsize;
- 	struct address_space *mapping;
- 	struct metapage *mp = NULL;
--	struct page *page;
-+	struct folio *folio;
- 	unsigned long page_index;
- 	unsigned long page_offset;
+@@ -87,25 +87,23 @@ static inline struct metapage *page_to_mp(struct page *page, int offset)
+ 	return mp_anchor(page)->mp[offset >> L2PSIZE];
+ }
  
-@@ -608,22 +608,22 @@ struct metapage *__get_metapage(struct inode *inode, unsigned long lblock,
+-static inline int insert_metapage(struct page *page, struct metapage *mp)
++static inline int insert_metapage(struct folio *folio, struct metapage *mp)
+ {
+ 	struct meta_anchor *a;
+ 	int index;
+ 	int l2mp_blocks;	/* log2 blocks per metapage */
+ 
+-	if (PagePrivate(page))
+-		a = mp_anchor(page);
+-	else {
++	a = folio->private;
++	if (!a) {
+ 		a = kzalloc(sizeof(struct meta_anchor), GFP_NOFS);
+ 		if (!a)
+ 			return -ENOMEM;
+-		set_page_private(page, (unsigned long)a);
+-		SetPagePrivate(page);
+-		kmap(page);
++		folio_attach_private(folio, a);
++		kmap(&folio->page);
  	}
  
- 	if (new && (PSIZE == PAGE_SIZE)) {
--		page = grab_cache_page(mapping, page_index);
--		if (!page) {
--			jfs_err("grab_cache_page failed!");
-+		folio = filemap_grab_folio(mapping, page_index);
-+		if (IS_ERR(folio)) {
-+			jfs_err("filemap_grab_folio failed!");
- 			return NULL;
- 		}
--		SetPageUptodate(page);
-+		folio_mark_uptodate(folio);
- 	} else {
--		page = read_mapping_page(mapping, page_index, NULL);
--		if (IS_ERR(page)) {
-+		folio = read_mapping_folio(mapping, page_index, NULL);
-+		if (IS_ERR(folio)) {
- 			jfs_err("read_mapping_page failed!");
- 			return NULL;
- 		}
--		lock_page(page);
-+		folio_lock(folio);
- 	}
- 
--	mp = page_to_mp(page, page_offset);
-+	mp = page_to_mp(&folio->page, page_offset);
  	if (mp) {
- 		if (mp->logical_size != size) {
- 			jfs_error(inode->i_sb,
-@@ -649,16 +649,16 @@ struct metapage *__get_metapage(struct inode *inode, unsigned long lblock,
- 		mp = alloc_metapage(GFP_NOFS);
- 		if (!mp)
- 			goto unlock;
--		mp->page = page;
-+		mp->page = &folio->page;
- 		mp->sb = inode->i_sb;
- 		mp->flag = 0;
- 		mp->xflag = COMMIT_PAGE;
- 		mp->count = 1;
- 		mp->nohomeok = 0;
+-		l2mp_blocks = L2PSIZE - page->mapping->host->i_blkbits;
++		l2mp_blocks = L2PSIZE - folio->mapping->host->i_blkbits;
+ 		index = (mp->index >> l2mp_blocks) & (MPS_PER_PAGE - 1);
+ 		a->mp_count++;
+ 		a->mp[index] = mp;
+@@ -127,8 +125,7 @@ static inline void remove_metapage(struct page *page, struct metapage *mp)
+ 	a->mp[index] = NULL;
+ 	if (--a->mp_count == 0) {
+ 		kfree(a);
+-		set_page_private(page, 0);
+-		ClearPagePrivate(page);
++		detach_page_private(page);
+ 		kunmap(page);
+ 	}
+ }
+@@ -150,20 +147,18 @@ static inline struct metapage *page_to_mp(struct page *page, int offset)
+ 	return PagePrivate(page) ? (struct metapage *)page_private(page) : NULL;
+ }
+ 
+-static inline int insert_metapage(struct page *page, struct metapage *mp)
++static inline int insert_metapage(struct folio *folio, struct metapage *mp)
+ {
+ 	if (mp) {
+-		set_page_private(page, (unsigned long)mp);
+-		SetPagePrivate(page);
+-		kmap(page);
++		folio_attach_private(folio, mp);
++		kmap(&folio->page);
+ 	}
+ 	return 0;
+ }
+ 
+ static inline void remove_metapage(struct page *page, struct metapage *mp)
+ {
+-	set_page_private(page, 0);
+-	ClearPagePrivate(page);
++	detach_page_private(page);
+ 	kunmap(page);
+ }
+ 
+@@ -496,7 +491,7 @@ static int metapage_read_folio(struct file *fp, struct folio *folio)
+ 					     &xlen);
+ 		if (pblock) {
+ 			if (!folio->private)
+-				insert_metapage(&folio->page, NULL);
++				insert_metapage(folio, NULL);
+ 			inc_io(&folio->page);
+ 			if (bio)
+ 				submit_bio(bio);
+@@ -658,7 +653,7 @@ struct metapage *__get_metapage(struct inode *inode, unsigned long lblock,
  		mp->logical_size = size;
--		mp->data = page_address(page) + page_offset;
-+		mp->data = folio_address(folio) + page_offset;
+ 		mp->data = folio_address(folio) + page_offset;
  		mp->index = lblock;
--		if (unlikely(insert_metapage(page, mp))) {
-+		if (unlikely(insert_metapage(&folio->page, mp))) {
+-		if (unlikely(insert_metapage(&folio->page, mp))) {
++		if (unlikely(insert_metapage(folio, mp))) {
  			free_metapage(mp);
  			goto unlock;
  		}
-@@ -670,12 +670,12 @@ struct metapage *__get_metapage(struct inode *inode, unsigned long lblock,
- 		memset(mp->data, 0, PSIZE);
- 	}
- 
--	unlock_page(page);
-+	folio_unlock(folio);
- 	jfs_info("__get_metapage: returning = 0x%p data = 0x%p", mp, mp->data);
- 	return mp;
- 
- unlock:
--	unlock_page(page);
-+	folio_unlock(folio);
- 	return NULL;
- }
- 
 -- 
 2.43.0
 
