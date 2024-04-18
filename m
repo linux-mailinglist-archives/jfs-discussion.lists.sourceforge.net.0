@@ -2,109 +2,96 @@ Return-Path: <jfs-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+jfs-discussion@lfdr.de
 Delivered-To: lists+jfs-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9865F8A9BE0
-	for <lists+jfs-discussion@lfdr.de>; Thu, 18 Apr 2024 15:58:08 +0200 (CEST)
-Received: from [127.0.0.1] (helo=sfs-ml-3.v29.lw.sourceforge.com)
-	by sfs-ml-3.v29.lw.sourceforge.com with esmtp (Exim 4.95)
+	by mail.lfdr.de (Postfix) with ESMTPS id B7B0F8A9D40
+	for <lists+jfs-discussion@lfdr.de>; Thu, 18 Apr 2024 16:38:33 +0200 (CEST)
+Received: from [127.0.0.1] (helo=sfs-ml-4.v29.lw.sourceforge.com)
+	by sfs-ml-4.v29.lw.sourceforge.com with esmtp (Exim 4.95)
 	(envelope-from <jfs-discussion-bounces@lists.sourceforge.net>)
-	id 1rxSGv-0001u7-KR;
-	Thu, 18 Apr 2024 13:57:54 +0000
+	id 1rxStx-0008RF-U2;
+	Thu, 18 Apr 2024 14:38:14 +0000
 Received: from [172.30.20.202] (helo=mx.sourceforge.net)
  by sfs-ml-4.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
- TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (Exim 4.95) (envelope-from
- <3z8ogZgkbACAOUVG6HHAN6LLE9.CKKCHAQOAN8KJPAJP.8KI@M3KW2WVRGUFZ5GODRSRYTGD7.apphosting.bounces.google.com>)
- id 1rxM8w-0005DJ-Lv for jfs-discussion@lists.sourceforge.net;
- Thu, 18 Apr 2024 07:25:14 +0000
+ TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (Exim 4.95)
+ (envelope-from <willy@infradead.org>) id 1rxStw-0008R9-DI
+ for jfs-discussion@lists.sourceforge.net;
+ Thu, 18 Apr 2024 14:38:12 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=sourceforge.net; s=x; h=Content-Type:To:From:Subject:Message-ID:In-Reply-To
- :Date:MIME-Version:Sender:Reply-To:Cc:Content-Transfer-Encoding:Content-ID:
- Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
- :Resent-Message-ID:References:List-Id:List-Help:List-Unsubscribe:
+ d=sourceforge.net; s=x; h=In-Reply-To:Content-Type:MIME-Version:References:
+ Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:Content-Transfer-Encoding:
+ Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
+ Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=emqYNM6uPXqfGXvH8IFE1wN5OYo8rRqGNB03LA9Oayo=; b=aWIaOR6h/5eyU+kZF02seQfa9I
- Mb7OLlbfTIp0JtEeFmpxgFfYq176YvG0lOXo7W5YN1FWq/OUFl9rcXREBxk2lANBsIaKxIclpV4A4
- QpuvuTDeJtPv3vWGMntrCUiJMUbSUzAYoPLiRWuZnVErQ6kfM1ZyHVWwmLUgO72kFWtc=;
+ bh=QmzrnFm2hYgFZI9nVWXU3Upsx9CwQLwwmsJrr2bs+0E=; b=Q5zXL1tlrAzj0usK9HHdaB0vtF
+ +fxb0pleNuweBWvQDpKU1dJLXioOzOQPabc+izmOxNmT37WBUmTptkkd392bnlEAViU0ei4n0/Xlh
+ /Gb1dqlyqmh0nedL6+XSPoD600dYx3AFQF2BYhDSPZ/4RPYIgg+9iFvjK8VWOhSNMgrk=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
- h=Content-Type:To:From:Subject:Message-ID:In-Reply-To:Date:MIME-Version:
- Sender:Reply-To:Cc:Content-Transfer-Encoding:Content-ID:Content-Description:
- Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
- References:List-Id:List-Help:List-Unsubscribe:List-Subscribe:List-Post:
- List-Owner:List-Archive; bh=emqYNM6uPXqfGXvH8IFE1wN5OYo8rRqGNB03LA9Oayo=; b=m
- B78uj4Mtipf6qkgM74ErDdC3bsqYeRiJ2xjjy3eoUO1qJ6eh827Zc0BQnqzl+KkYbSLCAYkTAgqat
- 2ZZIFLcKyk9gJJRUhKkx+dzgVXuwoFDwPNuF5cTsZ821ybX6ExjLqyxcXdwKB+zwSlfgzO54NVG44
- 33oiwYQ06x2JYsyA=;
-Received: from mail-io1-f71.google.com ([209.85.166.71])
+ h=In-Reply-To:Content-Type:MIME-Version:References:Message-ID:Subject:Cc:To
+ :From:Date:Sender:Reply-To:Content-Transfer-Encoding:Content-ID:
+ Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+ :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
+ List-Post:List-Owner:List-Archive;
+ bh=QmzrnFm2hYgFZI9nVWXU3Upsx9CwQLwwmsJrr2bs+0E=; b=WDJHjrb40XJffL9xvf6lbvkCzy
+ 7hPx/3CqPX8+RR8GsbNQCLn0prYaNrvv/WBZkw+6Nw9VRbma5KcVGvtJi1wvtw/V6LEfZkvjFNCP3
+ y3RVdekW/3rDlg8t/PnxWopgxPm7znaigiEb2Gi048C/PTVMG36CAn0/ZAmJI9BK+H7c=;
+Received: from casper.infradead.org ([90.155.50.34])
  by sfi-mx-2.v28.lw.sourceforge.com with esmtps
- (TLS1.2:ECDHE-RSA-AES128-GCM-SHA256:128) (Exim 4.95)
- id 1rxM8w-0001zC-90 for jfs-discussion@lists.sourceforge.net;
- Thu, 18 Apr 2024 07:25:14 +0000
-Received: by mail-io1-f71.google.com with SMTP id
- ca18e2360f4ac-7da1e2fc445so56272439f.1
- for <jfs-discussion@lists.sourceforge.net>;
- Thu, 18 Apr 2024 00:25:14 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20230601; t=1713425103; x=1714029903;
- h=to:from:subject:message-id:in-reply-to:date:mime-version
- :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
- bh=emqYNM6uPXqfGXvH8IFE1wN5OYo8rRqGNB03LA9Oayo=;
- b=bK8adlYX9W1oro1MDLSKi/9+/A5HRemiH/EkRgQhxhKbqTAZhVaA7fv1ghAse48h6U
- R7uK3C3ws4lYsdzWGbctFPw3QDfvgnaJ0e2QNjAcPSTWhT4eSoidWnqMtSe3mw7Y2nwb
- 581XHa3E2rYRIG/lQkB7lrT9E595MwqlizLmlxbvVqfpzkPKTkG79W5JE2VtOpr5iWCp
- LJQLjLcrl/zH7asuxAeqce/g/xEDnaums6OOKdB/nXuxUCpiNzOr28wJbEYJE+v9itzc
- sBXjue7L0cK/aOQvmYXSDtBqsJu/MenB8eMulgB3tGogoqOqxI7r9FjNtSqpI+9BIR4k
- S/3w==
-X-Forwarded-Encrypted: i=1;
- AJvYcCWfMdOEV1fxFsnE7OvdeCyEE/+4pDy2JRYKlZH+ZkUOvQq/cCNii7TfVQt/EAIk2OmGtf/cpirmbzg2rHia6tCJMFD4sXTd4+obfFtC6yMnIsxeDN8=
-X-Gm-Message-State: AOJu0YyQ1rLHMB8CE3Mo2ypvOzJHhYD1zij78s6i0XMidV7TWEmtmap0
- GOXhCwQKosT7ACaFhP6/AQyDjeLoo5BRavRvQRj8gKFSCLTQDOYINKSO7DDOPD6zNK8JTEiTtbp
- SnSCCMmQLhR6cSMSAM/HEOZ4fNPbXZ6fqb35o5DIGh6+jITt1koNNlXI=
-X-Google-Smtp-Source: AGHT+IGF7JBT1SXcfdi6VGIsYxKj6xCHnV9Ax77U49+mdHX7Gx1j4+mnLdCI3KvBBHJuH4ka95TKOzduhybc14CQuB94/6DNyKVL
+ (TLS1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.95)
+ id 1rxStv-0002Hz-ON for jfs-discussion@lists.sourceforge.net;
+ Thu, 18 Apr 2024 14:38:12 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=infradead.org; s=casper.20170209; h=In-Reply-To:Content-Type:MIME-Version:
+ References:Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:
+ Content-Transfer-Encoding:Content-ID:Content-Description;
+ bh=QmzrnFm2hYgFZI9nVWXU3Upsx9CwQLwwmsJrr2bs+0E=; b=ugFWRl7HzO/eGM2/AYgWdIgtNr
+ W/fjYU0Ti6h5xMhS/GptgLhp5u14Ux2NMpwU3t5V9f4KlLPsuBX+MtCTOeUbTVuJn6KP2jYN2ugLR
+ tOJ2i86ZZZuNPShGSlFz5lQrzw/822ykcewe3Z+L7rIL4h41P6sJliEvBfPdd0E44ikDe38yakR1Q
+ wcCY4BQ0IR6iMXmqz6mmIuP3ZdPAjQ/yYzs5qgW1M/3tyH9dYg4gjQOBZEVm44FPMKptgHyENwT+k
+ STlt0i1aSTNM/nxfYRY2lxRmzGam4krf3yHnRAtctKWuwGYi77D9obLiMxysjKBK+d9ApUvETBvzB
+ uGcn6Gnw==;
+Received: from willy by casper.infradead.org with local (Exim 4.97.1 #2 (Red
+ Hat Linux)) id 1rxStj-00000005X6O-2dI2;
+ Thu, 18 Apr 2024 14:37:59 +0000
+Date: Thu, 18 Apr 2024 15:37:59 +0100
+From: Matthew Wilcox <willy@infradead.org>
+To: Dave Kleikamp <shaggy@kernel.org>
+Message-ID: <ZiEwRzu_H3pfs5pa@casper.infradead.org>
+References: <20240417175659.818299-1-willy@infradead.org>
 MIME-Version: 1.0
-X-Received: by 2002:a05:6638:22d4:b0:482:fa29:27fa with SMTP id
- j20-20020a05663822d400b00482fa2927famr103840jat.1.1713425103510; Thu, 18 Apr
- 2024 00:25:03 -0700 (PDT)
-Date: Thu, 18 Apr 2024 00:25:03 -0700
-In-Reply-To: <000000000000e21aa80604153281@google.com>
-X-Google-Appengine-App-Id: s~syzkaller
-X-Google-Appengine-App-Id-Alias: syzkaller
-Message-ID: <000000000000a4f241061659def0@google.com>
-To: axboe@kernel.dk, brauner@kernel.org, jack@suse.cz, 
- jfs-discussion@lists.sourceforge.net, linux-fsdevel@vger.kernel.org, 
- linux-kernel@vger.kernel.org, shaggy@kernel.org, 
- syzkaller-bugs@googlegroups.com
-X-Spam-Score: 3.1 (+++)
+Content-Disposition: inline
+In-Reply-To: <20240417175659.818299-1-willy@infradead.org>
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: Spam detection software,
- running on the system "util-spamd-2.v13.lw.sourceforge.com", 
+ running on the system "util-spamd-1.v13.lw.sourceforge.com", 
  has NOT identified this incoming email as spam.  The original
  message has been attached to this so you can view it or label
  similar future email.  If you have any questions, see
  the administrator of that system for details.
- Content preview: syzbot suspects this issue was fixed by commit: commit
- 6f861765464f43a71462d52026fbddfc858239a5
- Author: Jan Kara <jack@suse.cz> Date: Wed Nov 1 17:43:10 2023 +0000 fs: Block
- writes to mounted block devices 
- Content analysis details:   (3.1 points, 6.0 required)
+ Content preview: Jan pointed out that I'm really close to being able to remove
+ PG_error entirely with just jfs and btrfs still testing the flag. So here's
+ an attempt to remove use of the PG_error from JFS. We only nee [...] 
+ Content analysis details:   (-0.2 points, 6.0 required)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  0.0 URIBL_BLOCKED          ADMINISTRATOR NOTICE: The query to URIBL was
  blocked.  See
  http://wiki.apache.org/spamassassin/DnsBlocklists#dnsbl-block
- for more information. [URIs: goo.gl]
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.166.71 listed in list.dnswl.org]
- 0.3 FROM_LOCAL_HEX         From: localpart has long hexadecimal sequence
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
+ for more information. [URIs: infradead.org]
+ 0.0 RCVD_IN_DNSWL_BLOCKED  RBL: ADMINISTRATOR NOTICE: The query to
+ DNSWL was blocked.  See
+ http://wiki.apache.org/spamassassin/DnsBlocklists#dnsbl-block
+ for more information. [90.155.50.34 listed in list.dnswl.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 2.5 SORTED_RECIPS          Recipient list is sorted by address
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.166.71 listed in wl.mailspike.net]
-X-Headers-End: 1rxM8w-0001zC-90
-X-Mailman-Approved-At: Thu, 18 Apr 2024 13:57:52 +0000
-Subject: Re: [Jfs-discussion] [syzbot] [jfs?] INFO: task hung in
- jfs_commit_inode (2)
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+X-Headers-End: 1rxStv-0002Hz-ON
+Subject: [Jfs-discussion] [PATCH v2 14/13] jfs: Stop using PG_error
 X-BeenThere: jfs-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -116,33 +103,137 @@ List-Post: <mailto:jfs-discussion@lists.sourceforge.net>
 List-Help: <mailto:jfs-discussion-request@lists.sourceforge.net?subject=help>
 List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/jfs-discussion>, 
  <mailto:jfs-discussion-request@lists.sourceforge.net?subject=subscribe>
-From: syzbot via Jfs-discussion <jfs-discussion@lists.sourceforge.net>
-Reply-To: syzbot <syzbot+9157524e62303fd7b21c@syzkaller.appspotmail.com>
+Cc: linux-fsdevel@vger.kernel.org, jfs-discussion@lists.sourceforge.net,
+ Jan Kara <jack@suse.cz>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Errors-To: jfs-discussion-bounces@lists.sourceforge.net
 
-syzbot suspects this issue was fixed by commit:
+Jan pointed out that I'm really close to being able to remove PG_error
+entirely with just jfs and btrfs still testing the flag.  So here's an
+attempt to remove use of the PG_error from JFS.  We only need to
+remember the 'status' if we have multiple metapage blocks per host page,
+so I keep it in the meta_anchor.
 
-commit 6f861765464f43a71462d52026fbddfc858239a5
-Author: Jan Kara <jack@suse.cz>
-Date:   Wed Nov 1 17:43:10 2023 +0000
+What do you think?
 
-    fs: Block writes to mounted block devices
-
-bisection log:  https://syzkaller.appspot.com/x/bisect.txt?x=155eb8f7180000
-start commit:   4f9e7fabf864 Merge tag 'trace-v6.5-rc6' of git://git.kerne..
-git tree:       upstream
-kernel config:  https://syzkaller.appspot.com/x/.config?x=1b32f62c755c3a9c
-dashboard link: https://syzkaller.appspot.com/bug?extid=9157524e62303fd7b21c
-syz repro:      https://syzkaller.appspot.com/x/repro.syz?x=101aff5ba80000
-C reproducer:   https://syzkaller.appspot.com/x/repro.c?x=14d78db0680000
-
-If the result looks correct, please mark the issue as fixed by replying with:
-
-#syz fix: fs: Block writes to mounted block devices
-
-For information about bisection process see: https://goo.gl/tpsmEJ#bisection
+diff --git a/fs/jfs/jfs_metapage.c b/fs/jfs/jfs_metapage.c
+index 19854bd8dfea..df575a873ec6 100644
+--- a/fs/jfs/jfs_metapage.c
++++ b/fs/jfs/jfs_metapage.c
+@@ -76,6 +76,7 @@ static mempool_t *metapage_mempool;
+ struct meta_anchor {
+ 	int mp_count;
+ 	atomic_t io_count;
++	blk_status_t status;
+ 	struct metapage *mp[MPS_PER_PAGE];
+ };
+ 
+@@ -138,12 +139,16 @@ static inline void inc_io(struct folio *folio)
+ 	atomic_inc(&anchor->io_count);
+ }
+ 
+-static inline void dec_io(struct folio *folio, void (*handler) (struct folio *))
++static inline void dec_io(struct folio *folio, blk_status_t status,
++		void (*handler)(struct folio *, blk_status_t))
+ {
+ 	struct meta_anchor *anchor = folio->private;
+ 
++	if (anchor->status == BLK_STS_OK)
++		anchor->status = status;
++
+ 	if (atomic_dec_and_test(&anchor->io_count))
+-		handler(folio);
++		handler(folio, anchor->status);
+ }
+ 
+ #else
+@@ -168,7 +173,7 @@ static inline void remove_metapage(struct folio *folio, struct metapage *mp)
+ }
+ 
+ #define inc_io(folio) do {} while(0)
+-#define dec_io(folio, handler) handler(folio)
++#define dec_io(folio, status, handler) handler(folio, status)
+ 
+ #endif
+ 
+@@ -258,23 +263,20 @@ static sector_t metapage_get_blocks(struct inode *inode, sector_t lblock,
+ 	return lblock;
+ }
+ 
+-static void last_read_complete(struct folio *folio)
++static void last_read_complete(struct folio *folio, blk_status_t status)
+ {
+-	if (!folio_test_error(folio))
+-		folio_mark_uptodate(folio);
+-	folio_unlock(folio);
++	if (status)
++		printk(KERN_ERR "Read error %d at %#llx\n", status,
++				folio_pos(folio));
++
++	folio_end_read(folio, status == 0);
+ }
+ 
+ static void metapage_read_end_io(struct bio *bio)
+ {
+ 	struct folio *folio = bio->bi_private;
+ 
+-	if (bio->bi_status) {
+-		printk(KERN_ERR "metapage_read_end_io: I/O error\n");
+-		folio_set_error(folio);
+-	}
+-
+-	dec_io(folio, last_read_complete);
++	dec_io(folio, bio->bi_status, last_read_complete);
+ 	bio_put(bio);
+ }
+ 
+@@ -300,11 +302,17 @@ static void remove_from_logsync(struct metapage *mp)
+ 	LOGSYNC_UNLOCK(log, flags);
+ }
+ 
+-static void last_write_complete(struct folio *folio)
++static void last_write_complete(struct folio *folio, blk_status_t status)
+ {
+ 	struct metapage *mp;
+ 	unsigned int offset;
+ 
++	if (status) {
++		int err = blk_status_to_errno(status);
++		printk(KERN_ERR "metapage_write_end_io: I/O error\n");
++		mapping_set_error(folio->mapping, err);
++	}
++
+ 	for (offset = 0; offset < PAGE_SIZE; offset += PSIZE) {
+ 		mp = folio_to_mp(folio, offset);
+ 		if (mp && test_bit(META_io, &mp->flag)) {
+@@ -326,12 +334,7 @@ static void metapage_write_end_io(struct bio *bio)
+ 
+ 	BUG_ON(!folio->private);
+ 
+-	if (bio->bi_status) {
+-		int err = blk_status_to_errno(bio->bi_status);
+-		printk(KERN_ERR "metapage_write_end_io: I/O error\n");
+-		mapping_set_error(folio->mapping, err);
+-	}
+-	dec_io(folio, last_write_complete);
++	dec_io(folio, bio->bi_status, last_write_complete);
+ 	bio_put(bio);
+ }
+ 
+@@ -454,10 +457,10 @@ static int metapage_write_folio(struct folio *folio,
+ 		       4, bio, sizeof(*bio), 0);
+ 	bio_put(bio);
+ 	folio_unlock(folio);
+-	dec_io(folio, last_write_complete);
++	dec_io(folio, BLK_STS_OK, last_write_complete);
+ err_out:
+ 	while (bad_blocks--)
+-		dec_io(folio, last_write_complete);
++		dec_io(folio, BLK_STS_OK, last_write_complete);
+ 	return -EIO;
+ }
+ 
 
 
 _______________________________________________
