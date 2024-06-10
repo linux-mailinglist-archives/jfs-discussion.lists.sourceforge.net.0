@@ -2,133 +2,114 @@ Return-Path: <jfs-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+jfs-discussion@lfdr.de
 Delivered-To: lists+jfs-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0EAEB9027F5
-	for <lists+jfs-discussion@lfdr.de>; Mon, 10 Jun 2024 19:46:40 +0200 (CEST)
-Received: from [127.0.0.1] (helo=sfs-ml-2.v29.lw.sourceforge.com)
-	by sfs-ml-2.v29.lw.sourceforge.com with esmtp (Exim 4.95)
+	by mail.lfdr.de (Postfix) with ESMTPS id 873B5902BE0
+	for <lists+jfs-discussion@lfdr.de>; Tue, 11 Jun 2024 00:52:10 +0200 (CEST)
+Received: from [127.0.0.1] (helo=sfs-ml-4.v29.lw.sourceforge.com)
+	by sfs-ml-4.v29.lw.sourceforge.com with esmtp (Exim 4.95)
 	(envelope-from <jfs-discussion-bounces@lists.sourceforge.net>)
-	id 1sGj66-00086e-Ke;
-	Mon, 10 Jun 2024 17:46:22 +0000
+	id 1sGnrk-0003Qt-5t;
+	Mon, 10 Jun 2024 22:51:52 +0000
 Received: from [172.30.29.66] (helo=mx.sourceforge.net)
  by sfs-ml-3.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
- TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (Exim 4.95)
- (envelope-from <zhiyuzhang999@gmail.com>) id 1sGj4r-0002Tq-8M
- for jfs-discussion@lists.sourceforge.net;
- Mon, 10 Jun 2024 17:45:04 +0000
+ TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (Exim 4.95) (envelope-from
+ <3OoNnZgkbABkHNO9zAA3GzEE72.5DD5A3JH3G1DCI3CI.1DB@M3KW2WVRGUFZ5GODRSRYTGD7.apphosting.bounces.google.com>)
+ id 1sGnqb-0001to-Np for jfs-discussion@lists.sourceforge.net;
+ Mon, 10 Jun 2024 22:50:41 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=sourceforge.net; s=x; h=Content-Type:To:Subject:Message-ID:Date:From:
+ d=sourceforge.net; s=x; h=Content-Type:To:From:Subject:Message-ID:Date:
  MIME-Version:Sender:Reply-To:Cc:Content-Transfer-Encoding:Content-ID:
  Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
  :Resent-Message-ID:In-Reply-To:References:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=X4Ar6Y+IfYfYh/Lslpr1g6uSdKMpAIwXMh69kGy9PdQ=; b=TUpBU3hVGkDlIlEE9Hed95wIuH
- gnfSkcrFrykd2IfTR1Oa3mbz+zxWmqGQPMoOk+hkuIUnbte5K1QFTn6LfZZp0kTiwTwM5rm6HbZCI
- yLeWDmuhffPcTP2yMjlvq64QMJyKXcTIWGRq6WP07ZlOiOBIv6d3nWzRwoNvQYmSg0fM=;
+ bh=Y5utWOrdfx8y7ZVnfXaC1Ab6azeYl0T2mqo58QFjZGs=; b=KjLxK2q1DgTBZ5U7oajEpTmeFc
+ mxbbbjoSl2cuKomjFAbHttAEyqBV/p8WNtishpchpvFTjLt5zOyxDoi+gbWJfuDABCJNy1KznsvJV
+ LUIjzMcoyUGGZcX1wmVPePk/ni3YGRncqjeNh4KZWOosJNjO9wiZeoy/k1VYdT6hIOCc=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
- h=Content-Type:To:Subject:Message-ID:Date:From:MIME-Version:Sender:Reply-To
+ h=Content-Type:To:From:Subject:Message-ID:Date:MIME-Version:Sender:Reply-To
  :Cc:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
  Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
  References:List-Id:List-Help:List-Unsubscribe:List-Subscribe:List-Post:
- List-Owner:List-Archive; bh=X4Ar6Y+IfYfYh/Lslpr1g6uSdKMpAIwXMh69kGy9PdQ=; b=b
- nY4PaJjPstDOVM1NVKXXRRA5eEm1o3+Ml2isTgm4KKr9Or9wbUpn12qDRHw+pAYHWMpAUJwpAPVEo
- OpMzl+NVjxdfKf8zTfrJk+lIuln+jzbNyThf8SLCgLSK2kXMATa0j9chs+rNwC9Mq+uuUD8Z2/vIq
- L0I4GqEVGIri1/LA=;
-Received: from mail-qt1-f171.google.com ([209.85.160.171])
+ List-Owner:List-Archive; bh=Y5utWOrdfx8y7ZVnfXaC1Ab6azeYl0T2mqo58QFjZGs=; b=Q
+ 4cL9eXygM/jcf0SyrN0VOAxyT3uuuTFCSaUMwq82fUo11v2e4nkNnbu8Q/gf4aYokCTFnyZ2fJgOH
+ 5Q2z2d3vlPXBg66EGPuRpva9pl2YI++y/PlonjJmbc/l08pCEMPaLvCkODLZlMS353PQ2MKrSrhsM
+ TcqLn213VOpDaiDM=;
+Received: from mail-io1-f77.google.com ([209.85.166.77])
  by sfi-mx-2.v28.lw.sourceforge.com with esmtps
  (TLS1.2:ECDHE-RSA-AES128-GCM-SHA256:128) (Exim 4.95)
- id 1sGj4q-000243-Hl for jfs-discussion@lists.sourceforge.net;
- Mon, 10 Jun 2024 17:45:04 +0000
-Received: by mail-qt1-f171.google.com with SMTP id
- d75a77b69052e-4405743ac19so17380911cf.0
+ id 1sGnqa-0001FM-P1 for jfs-discussion@lists.sourceforge.net;
+ Mon, 10 Jun 2024 22:50:41 +0000
+Received: by mail-io1-f77.google.com with SMTP id
+ ca18e2360f4ac-7e8e5d55441so40362839f.1
  for <jfs-discussion@lists.sourceforge.net>;
- Mon, 10 Jun 2024 10:45:03 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=gmail.com; s=20230601; t=1718041493; x=1718646293; darn=lists.sourceforge.net;
- h=to:subject:message-id:date:from:mime-version:from:to:cc:subject
- :date:message-id:reply-to;
- bh=X4Ar6Y+IfYfYh/Lslpr1g6uSdKMpAIwXMh69kGy9PdQ=;
- b=UfeWhCUYWZ4VWDzMiKlifBtskohYfF6T/BsVUSJI5KzT23bugoT6RUucPpGdnRQpBY
- 9MZn8tXgCnMON2d0sMjIFtbglcyw23SoIcGdY0LndzE5tx4LorkCytwum4Jbd4wLRX6Y
- w+yts52lH9hwbDY/tCkC77m4dBMPOAp5StJJYkrWVhKHVYpL/5ArIIm7RqtZGUBZkime
- YJn8LPg3tFdZ2XkqFJqDPSsAnPO8fV5lBNvIvwH+Rpbpw+ZcMQ/dXk5D49t3zro4SB33
- ccVczAzg5S8H0cJEUzCqeN9KzMuNp1zCdF4XKoqmPNE9Y/7F0LPejn/o1nWtboS4tBm/
- XWng==
+ Mon, 10 Jun 2024 15:50:39 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20230601; t=1718041493; x=1718646293;
- h=to:subject:message-id:date:from:mime-version:x-gm-message-state
+ d=1e100.net; s=20230601; t=1718059834; x=1718664634;
+ h=to:from:subject:message-id:date:mime-version:x-gm-message-state
  :from:to:cc:subject:date:message-id:reply-to;
- bh=X4Ar6Y+IfYfYh/Lslpr1g6uSdKMpAIwXMh69kGy9PdQ=;
- b=DhCMJDacRxaKAXnr43mdvAhZxlT+cZV5uQNOEQTx6BpKvQYKjoApaIRmCvfLtvrHcI
- 686qEe/8R7epor52qp6P8bmUyxgdbV1mUdi18ppmuTmYCzk0KvXoqy+Cks7qql8Fsn+R
- G+WBI5rrm7H0H+qDE3wT2cz2dQYiQKaLrfZxmAH6qj5KQ0iNv6sE6rGAmY5rKSvroMHs
- tqtvHXNJKD/IR5teC1m/lgZx2xkZCwiwkHr88rvHlW4MnEyN7XPESF3Xf6wZhA14wt2X
- KNDSwD4dpB/i/uFNMGBYJySWWJsMTo22MGiwIJ/9E1Kkqc67UwKEdLjB/4hBeBPphjPC
- 25EQ==
-X-Forwarded-Encrypted: i=1;
- AJvYcCUZ4xLbRZ2AplP1LYtSZpXh9mOFBniZBoh8CTbr7/jxN7VHJVz1RMig1zacd/GX/jwC8TX8SMOQbFdZOvNDe5OBRZ04WX167c4b3mYuqJm9L/+qq3E=
-X-Gm-Message-State: AOJu0YwPPMGujbH5lQjAOCfzOLwib1O7bzz9Bw/jCB4sfM0Ygrr6uMw4
- C4vrDsJxsb9WZUXHXWJFK7uNgcet2aIzlmcnLwfQGcbqv6qatmgugNkk8wp4+lZ0UcZeyGDYY5R
- ApEPm2wATLaI7AzHbMDm+7yMU4cwRJWSDQpgR0A==
-X-Google-Smtp-Source: AGHT+IFjgBI/thOToXIANuiSeCxT+5iVxixXL9tS7e/k7l8+pc+A1/0UmJLxiagGeYXPpPUuD5Pbn1n7mhTCHzgbzjk=
-X-Received: by 2002:ac8:5a86:0:b0:440:f54d:1bbb with SMTP id
- d75a77b69052e-4413ab6eac9mr6663441cf.4.1718041492648; Mon, 10 Jun 2024
- 10:44:52 -0700 (PDT)
+ bh=Y5utWOrdfx8y7ZVnfXaC1Ab6azeYl0T2mqo58QFjZGs=;
+ b=MVuRorn7U9sTFhE8iv+X9m9EEux6oO96hjyv0cVSXGgDHKSAvjPghG6fjeWdQOAYy1
+ uDMg5HZpotllBTY/B86D2lo+dkj+On4GW77vPuTc1XfRfCHqVr4NNMHrt0MnxG9snIMC
+ VIRk3sggooNuAi1axN0TquSUH9MriljzPA3ua/cCuf3uu2Vv68yFF1uReZjuV/LwIfn3
+ uzdrepFsyMtROWgLuawPemKdqqR5nZ4AnYyVZwrWnsTxCiFyiJOcWy3tqR2r+3tdXKbg
+ 8A1j5VUFtEPgOB6HllN8kXJkniuabiP6bWdhRktJSQ7R2LFxDNtjv44X/oG6mhP/Sb65
+ auMg==
+X-Gm-Message-State: AOJu0YyQuYVtszYZVCQwvZz8IxOvR7fwoJt4HpMoIRODx0ZXB8U/735G
+ +QTLfCfAJploj7IMvSOEKSzczx0tWGHr1JDQA4xH++6crZ+/61rW91ttubUWIR3j2gu8HZp9OJm
+ WjcgAQ3ld7woalS+LMJkwkVyZIMiOqo5fCBICYuFyxeBCHztOOGixOfTxVg==
+X-Google-Smtp-Source: AGHT+IEgnkEeTzAAujFvGhZVTwtDaAaMV++DF9ZGuEopf7IM6+K2SaA8IwvzjiQwKOApQjNAqbnEok7Zg+BuQY1c8BgMpjcH9bCE
 MIME-Version: 1.0
-Date: Tue, 11 Jun 2024 01:44:41 +0800
-Message-ID: <CALf2hKuFn3g3Mg3kC1PiyGYZ5WdScF=+n-8DnYdsAuSLh48amQ@mail.gmail.com>
-To: shaggy@kernel.org, jfs-discussion@lists.sourceforge.net, 
- linux-kernel@vger.kernel.org, syzkaller@googlegroups.com
-X-Spam-Score: 0.0 (/)
+X-Received: by 2002:a05:6638:40a7:b0:4b9:165a:ffbe with SMTP id
+ 8926c6da1cb9f-4b9165b0475mr233722173.0.1718059834254; Mon, 10 Jun 2024
+ 15:50:34 -0700 (PDT)
+Date: Mon, 10 Jun 2024 15:50:34 -0700
+X-Google-Appengine-App-Id: s~syzkaller
+X-Google-Appengine-App-Id-Alias: syzkaller
+Message-ID: <0000000000001fb6bb061a90fa73@google.com>
+To: jfs-discussion@lists.sourceforge.net, linux-kernel@vger.kernel.org, 
+ shaggy@kernel.org, syzkaller-bugs@googlegroups.com
+X-Spam-Score: -4.4 (----)
 X-Spam-Report: Spam detection software,
- running on the system "util-spamd-2.v13.lw.sourceforge.com", 
+ running on the system "util-spamd-1.v13.lw.sourceforge.com", 
  has NOT identified this incoming email as spam.  The original
  message has been attached to this so you can view it or label
  similar future email.  If you have any questions, see
  the administrator of that system for details.
- Content preview:  Hi upstream maintainers and community,
- We found a Linux kernel
- bug with our modified Syzkaller. ===================== Meta info
- =====================
- Found version: 6.8 Affected files: fs/jfs/ioctl.c:131, fs/jfs/super.c:194
- Reproduced version: 6.8 ~ 6.9.3 ~ 6.10-rc3 (with or without sanitizers) [...]
- Content analysis details:   (0.0 points, 6.0 required)
+ Content preview:  Hello,
+ syzbot found the following issue on: HEAD commit: d30d0e49da71
+ Merge tag 'net-6.10-rc3' of git://git.kernel... git tree: upstream console
+ output: https://syzkaller.appspot.com/x/log.txt?x=17f4bfd6980000 kernel
+ config: https://syzkaller.a [...] 
+ Content analysis details:   (-4.4 points, 6.0 required)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ 0.0 URIBL_BLOCKED          ADMINISTRATOR NOTICE: The query to URIBL was
+ blocked.  See
+ http://wiki.apache.org/spamassassin/DnsBlocklists#dnsbl-block
+ for more information. [URIs: googleapis.com]
+ 0.3 FROM_LOCAL_HEX         From: localpart has long hexadecimal sequence
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  0.0 RCVD_IN_VALIDITY_RPBL_BLOCKED RBL: ADMINISTRATOR NOTICE: The
  query to Validity was blocked.  See
  https://knowledge.validity.com/hc/en-us/articles/20961730681243
  for more information.
- [209.85.160.171 listed in bl.score.senderscore.com]
- 0.0 URIBL_BLOCKED          ADMINISTRATOR NOTICE: The query to URIBL was
- blocked.  See
- http://wiki.apache.org/spamassassin/DnsBlocklists#dnsbl-block
- for more information. [URIs: create-image.sh]
+ [209.85.166.77 listed in bl.score.senderscore.com]
  0.0 RCVD_IN_VALIDITY_SAFE_BLOCKED RBL: ADMINISTRATOR NOTICE: The
  query to Validity was blocked.  See
  https://knowledge.validity.com/hc/en-us/articles/20961730681243
  for more information.
- [209.85.160.171 listed in sa-accredit.habeas.com]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit [zhiyuzhang999[at]gmail.com]
+ [209.85.166.77 listed in sa-trusted.bondedsender.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [zhiyuzhang999[at]gmail.com]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.160.171 listed in wl.mailspike.net]
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ [209.85.166.77 listed in wl.mailspike.net]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [209.85.166.77 listed in list.dnswl.org]
  -0.0 T_SCC_BODY_TEXT_LINE   No description available.
-X-Headers-End: 1sGj4q-000243-Hl
-X-Mailman-Approved-At: Mon, 10 Jun 2024 17:46:21 +0000
-Subject: [Jfs-discussion] [Kernel 6.9.3 BUG] general protection fault in
- jfs_ioc_trim (bad page state)
+X-Headers-End: 1sGnqa-0001FM-P1
+X-Mailman-Approved-At: Mon, 10 Jun 2024 22:51:50 +0000
+Subject: [Jfs-discussion] [syzbot] [jfs?] possible deadlock in jfs_rename
 X-BeenThere: jfs-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -140,145 +121,301 @@ List-Post: <mailto:jfs-discussion@lists.sourceforge.net>
 List-Help: <mailto:jfs-discussion-request@lists.sourceforge.net?subject=help>
 List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/jfs-discussion>, 
  <mailto:jfs-discussion-request@lists.sourceforge.net?subject=subscribe>
-From: Zhang Zhiyu via Jfs-discussion <jfs-discussion@lists.sourceforge.net>
-Reply-To: Zhang Zhiyu <zhiyuzhang999@gmail.com>
+From: syzbot via Jfs-discussion <jfs-discussion@lists.sourceforge.net>
+Reply-To: syzbot <syzbot+456e180af22874103cc8@syzkaller.appspotmail.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Errors-To: jfs-discussion-bounces@lists.sourceforge.net
 
-Hi upstream maintainers and community,
+Hello,
 
-We found a Linux kernel bug with our modified Syzkaller.
+syzbot found the following issue on:
 
-===================== Meta info =====================
-Found version: 6.8
-Affected files: fs/jfs/ioctl.c:131, fs/jfs/super.c:194
-Reproduced version: 6.8 ~ 6.9.3 ~ 6.10-rc3 (with or without sanitizers)
-Kernel config (e.g. for 6.9.3 with sanitizers disabled):
-https://drive.google.com/file/d/1pJS6B2cMVX1XYIBUgSwpcG-vsb8MCQ-g/view?usp=sharing
-Syz reproducer:
-https://drive.google.com/file/d/1nz0jTx3-9FYGJ9ePyNmp46IuO-10WGZQ/view?usp=sharing
-C reproducer: https://drive.google.com/file/d/1vqXhsSPDQX1l5DkaJYI92dEYwCnbDCqs/view?usp=sharing
-Reproduction console output:
-https://drive.google.com/file/d/1daq8GayqgVavEdofVLQQhyeLdU-jPm6H/view?usp=sharing
+HEAD commit:    d30d0e49da71 Merge tag 'net-6.10-rc3' of git://git.kernel...
+git tree:       upstream
+console output: https://syzkaller.appspot.com/x/log.txt?x=17f4bfd6980000
+kernel config:  https://syzkaller.appspot.com/x/.config?x=96fd46a1ee1615e0
+dashboard link: https://syzkaller.appspot.com/bug?extid=456e180af22874103cc8
+compiler:       gcc (Debian 12.2.0-14) 12.2.0, GNU ld (GNU Binutils for Debian) 2.40
+userspace arch: i386
 
-================== How to reproduce ==================
-1. Create a image with syzkaller create-image.sh and boot it (or using
-an existing one is ok)
-2. Compile the repro.c with gcc and scp to qemu vm
-3. Execute the repro and observe the bug backtrace looping.
+Unfortunately, I don't have any reproducer for this issue yet.
 
-======================= Report ======================
-[copy from console output]
- [?2004hroot@syzkaller:~# ./bd08f46
- [?2004l
-[  282.651266][   T30] audit: type=1400 audit(1718036000.960:9): avc:
-denied  { execmem } for  pid=7748 comm="bd08f46"
-scontext=system_u:system_r:kernel_t:s0
-tcontext=system_u:system_r:kernel_t:s0 tclass=process permissive=1
-[  282.836121][ T7749] loop0: detected capacity change from 0 to 32768
-[  282.927686][ T7748] BUG: Bad page state in process bd08f46  pfn:5e2ab
-[  282.928954][ T7748] page: refcount:0 mapcount:0
-mapping:0000000000000000 index:0x3 pfn:0x5e2ab
-[  282.930357][ T7748] flags:
-0x4fff1800000820c(referenced|uptodate|workingset|private|node=1|zone=1|lastcpupid=0x7ff)
-[  282.935368][ T7748] page_type: 0xffffffff()
-[  282.936424][ T7748] raw: 04fff1800000820c dead000000000100
-dead000000000122 0000000000000000
-[  282.938473][ T7748] raw: 0000000000000003 ffff8880614fd558
-00000000ffffffff 0000000000000000
-[  282.940469][ T7748] page dumped because: PAGE_FLAGS_CHECK_AT_FREE flag(s) set
-[  282.941989][ T7748] page_owner tracks the page as allocated
-[  282.943817][ T7748] page last allocated via order 0, migratetype
-Unmovable, gfp_mask 0x40c40(GFP_NOFS|__GFP_COMP), pid 7749, tgid 7749
-(bd08f46), ts 282878748769, free_ts 282874052762
-[  282.946592][ T7748]  post_alloc_hook+0x15c/0x180
-[  282.947449][ T7748]  get_page_from_freelist+0x19d2/0x1b40
-[  282.948414][ T7748]  __alloc_pages+0x117/0x2d0
-[  282.949224][ T7748]  alloc_pages_mpol+0x266/0x380
-[  282.950079][ T7748]  folio_alloc+0xd7/0x100
-[  282.950832][ T7748]  do_read_cache_folio+0x8e/0x550
-[  282.951711][ T7748]  do_read_cache_page+0x31/0x150
-[  282.952644][ T7748]  __get_metapage+0x16f/0x8f0
-[  282.953472][ T7748]  dbAdjCtl+0xa2/0x400
-[  282.954196][ T7748]  dbAllocDmapLev+0x1f2/0x2d0
-[  282.955018][ T7748]  dbAllocCtl+0x8c/0x4e0
-[  282.955754][ T7748]  dbAllocAG+0xe5/0x590
-[  282.956480][ T7748]  dbDiscardAG+0x1e4/0x500
-[  282.957257][ T7748]  jfs_ioc_trim+0x161/0x1b0
-[  282.958055][ T7748]  jfs_ioctl+0x13a/0x1c0
-[  282.958776][ T7748]  __se_sys_ioctl+0xc0/0x130
-[  282.959591][ T7748] page last free pid 7749 tgid 7749 stack trace:
-[  282.960700][ T7748]  free_unref_page_prepare+0x433/0x4d0
-[  282.961651][ T7748]  free_unref_page+0x35/0x250
-[  282.965020][ T7748]  lmLogShutdown+0x1a2/0x2c0
-[  282.965827][ T7748]  lmLogClose+0xf9/0x200
-[  282.966574][ T7748]  jfs_remount+0x1e6/0x2b0
-[  282.967358][ T7748]  reconfigure_super+0x1da/0x3e0
-[  282.968225][ T7748]  __se_sys_fsconfig+0x6a6/0x860
-[  282.969094][ T7748]  do_syscall_64+0xf8/0x240
-[  282.969897][ T7748]  entry_SYSCALL_64_after_hwframe+0x77/0x7f
-[  282.971238][ T7748] Modules linked in:
-[  282.971914][ T7748] CPU: 1 PID: 7748 Comm: bd08f46 Not tainted 6.9.3 #1
-[  282.973065][ T7748] Hardware name: QEMU Standard PC (i440FX + PIIX,
-1996), BIOS 1.13.0-1ubuntu1.1 04/01/2014
-[  282.974753][ T7748] Call Trace:
-[  282.975319][ T7748]  <TASK>
-[  282.975821][ T7748]  dump_stack_lvl+0x12e/0x1e0
-[  282.976645][ T7748]  bad_page+0xde/0xf0
-[  282.977339][ T7748]  free_unref_page_prepare+0x4a9/0x4d0
-[  282.978283][ T7748]  free_unref_folios+0x116/0x580
-[  282.979127][ T7748]  folios_put_refs+0x417/0x480
-[  282.979970][ T7748]  truncate_inode_pages_range+0x1ed/0x9d0
-[  282.980977][ T7748]  ? debug_object_active_state+0x53/0x150
-[  282.981988][ T7748]  dbUnmount+0x60/0x90
-[  282.982710][ T7748]  jfs_umount+0xe3/0x1a0
-[  282.983454][ T7748]  jfs_put_super+0x63/0xf0
-[  282.984226][ T7748]  ? __pfx_jfs_put_super+0x10/0x10
-[  282.985124][ T7748]  generic_shutdown_super+0x9b/0x180
-[  282.986024][ T7748]  kill_block_super+0x1e/0x50
-[  282.986850][ T7748]  deactivate_locked_super+0x5f/0xd0
-[  282.987764][ T7748]  cleanup_mnt+0x1a0/0x210
-[  282.988541][ T7748]  task_work_run+0x106/0x150
-[  282.989314][ T7748]  syscall_exit_to_user_mode+0x170/0x370
-[  282.990290][ T7748]  do_syscall_64+0x105/0x240
-[  282.991096][ T7748]  entry_SYSCALL_64_after_hwframe+0x77/0x7f
-[  282.992106][ T7748] RIP: 0033:0x7fdf212d8aa7
-[  282.992875][ T7748] Code: 23 0d 00 f7 d8 64 89 01 48 83 c8 ff c3 66
-0f 1f 44 00 00 31 f6 e9 09 00 00 00 66 0f 1f 84 00 00 00 00 00 b8 a6
-00 00 00 0f 05 <48> 3d 01 f0 ff ff 73 01 c3 48 8b 0d b9 23 0d 00 f7 d8
-64 89 01 48
-[  282.996131][ T7748] RSP: 002b:00007ffecb179c38 EFLAGS: 00000202
-ORIG_RAX: 00000000000000a6
-[  282.997553][ T7748] RAX: 0000000000000000 RBX: 0000000000000000
-RCX: 00007fdf212d8aa7
-[  282.998903][ T7748] RDX: 0000000000000009 RSI: 0000000000000009
-RDI: 00007ffecb179ce0
-[  283.000244][ T7748] RBP: 00007ffecb17ad20 R08: 00007fdf2136c040
-R09: 00007ffecb179ad0
-[  283.001579][ T7748] R10: 00007fdf2136bfc0 R11: 0000000000000202
-R12: 00000000004012c0
-[  283.002925][ T7748] R13: 0000000000000000 R14: 0000000000000000
-R15: 0000000000000000
-[  283.004275][ T7748]  </TASK>
+Downloadable assets:
+disk image (non-bootable): https://storage.googleapis.com/syzbot-assets/7bc7510fe41f/non_bootable_disk-d30d0e49.raw.xz
+vmlinux: https://storage.googleapis.com/syzbot-assets/970e3906a552/vmlinux-d30d0e49.xz
+kernel image: https://storage.googleapis.com/syzbot-assets/d80af4a76ff6/bzImage-d30d0e49.xz
 
-====================== Analysis ======================
-gdb debug screenshots:
-1. gdb backtrace:
-https://drive.google.com/file/d/14KDOYjUtVxe-ugYPc_MTmlCGHydOQav1/view?usp=sharing
-2. gdb print page->flags:
-https://drive.google.com/file/d/1tMiAkb1DjJ-YkaEyPkMWAVnt1AgrMx58/view?usp=sharing
+IMPORTANT: if you fix the issue, please add the following tag to the commit:
+Reported-by: syzbot+456e180af22874103cc8@syzkaller.appspotmail.com
 
-Possible root cause: A page was marked as allocated by page_owner
-during page releasing in jfs_umount by mistake, which leads to the
-badpage check through free_page_prepare.
+======================================================
+WARNING: possible circular locking dependency detected
+6.10.0-rc2-syzkaller-00222-gd30d0e49da71 #0 Not tainted
+------------------------------------------------------
+syz-executor.1/17764 is trying to acquire lock:
+ffff888000379448 (&jfs_ip->commit_mutex/1){+.+.}-{3:3}, at: jfs_rename+0x602/0x19d0 fs/jfs/namei.c:1163
 
-Unfortunately, we did not find more information about the root cause.
-Hope the attached files would be of help for addressing this bug. And
-please let me know for anything I can help.
+but task is already holding lock:
+ffff88804844f0c8 (&jfs_ip->commit_mutex){+.+.}-{3:3}, at: jfs_rename+0x5e6/0x19d0 fs/jfs/namei.c:1162
 
-Best,
-Zhiyu Zhang
+which lock already depends on the new lock.
+
+
+the existing dependency chain (in reverse order) is:
+
+-> #5 (&jfs_ip->commit_mutex){+.+.}-{3:3}:
+       __mutex_lock_common kernel/locking/mutex.c:608 [inline]
+       __mutex_lock+0x175/0x9c0 kernel/locking/mutex.c:752
+       diNewIAG fs/jfs/jfs_imap.c:2519 [inline]
+       diAllocExt fs/jfs/jfs_imap.c:1902 [inline]
+       diAllocAG+0xc59/0x2300 fs/jfs/jfs_imap.c:1666
+       diAlloc+0x8f7/0x1a70 fs/jfs/jfs_imap.c:1587
+       ialloc+0x84/0x9e0 fs/jfs/jfs_inode.c:56
+       jfs_mkdir+0x244/0xb30 fs/jfs/namei.c:225
+       vfs_mkdir+0x57d/0x860 fs/namei.c:4131
+       do_mkdirat+0x301/0x3a0 fs/namei.c:4154
+       __do_sys_mkdir fs/namei.c:4174 [inline]
+       __se_sys_mkdir fs/namei.c:4172 [inline]
+       __ia32_sys_mkdir+0xf0/0x140 fs/namei.c:4172
+       do_syscall_32_irqs_on arch/x86/entry/common.c:165 [inline]
+       __do_fast_syscall_32+0x73/0x120 arch/x86/entry/common.c:386
+       do_fast_syscall_32+0x32/0x80 arch/x86/entry/common.c:411
+       entry_SYSENTER_compat_after_hwframe+0x84/0x8e
+
+-> #4 (&jfs_ip->rdwrlock/1){++++}-{3:3}:
+       down_read_nested+0x9e/0x330 kernel/locking/rwsem.c:1651
+       diAlloc+0x3ea/0x1a70 fs/jfs/jfs_imap.c:1385
+       ialloc+0x84/0x9e0 fs/jfs/jfs_inode.c:56
+       jfs_create+0x23e/0xb40 fs/jfs/namei.c:92
+       lookup_open.isra.0+0x10a1/0x13c0 fs/namei.c:3505
+       open_last_lookups fs/namei.c:3574 [inline]
+       path_openat+0x92f/0x29f0 fs/namei.c:3804
+       do_filp_open+0x1dc/0x430 fs/namei.c:3834
+       do_sys_openat2+0x17a/0x1e0 fs/open.c:1405
+       do_sys_open fs/open.c:1420 [inline]
+       __do_sys_creat fs/open.c:1496 [inline]
+       __se_sys_creat fs/open.c:1490 [inline]
+       __ia32_sys_creat+0xcc/0x120 fs/open.c:1490
+       do_syscall_32_irqs_on arch/x86/entry/common.c:165 [inline]
+       __do_fast_syscall_32+0x73/0x120 arch/x86/entry/common.c:386
+       do_fast_syscall_32+0x32/0x80 arch/x86/entry/common.c:411
+       entry_SYSENTER_compat_after_hwframe+0x84/0x8e
+
+-> #3 (&(imap->im_aglock[index])){+.+.}-{3:3}:
+       __mutex_lock_common kernel/locking/mutex.c:608 [inline]
+       __mutex_lock+0x175/0x9c0 kernel/locking/mutex.c:752
+       diFree+0x2ff/0x2770 fs/jfs/jfs_imap.c:886
+       jfs_evict_inode+0x3d4/0x4b0 fs/jfs/inode.c:156
+       evict+0x2ed/0x6c0 fs/inode.c:667
+       iput_final fs/inode.c:1741 [inline]
+       iput.part.0+0x5a8/0x7f0 fs/inode.c:1767
+       iput+0x5c/0x80 fs/inode.c:1757
+       dentry_unlink_inode+0x295/0x480 fs/dcache.c:400
+       __dentry_kill+0x1d0/0x600 fs/dcache.c:603
+       shrink_kill fs/dcache.c:1048 [inline]
+       shrink_dentry_list+0x140/0x5d0 fs/dcache.c:1075
+       prune_dcache_sb+0xeb/0x150 fs/dcache.c:1156
+       super_cache_scan+0x32a/0x550 fs/super.c:221
+       do_shrink_slab+0x44f/0x11c0 mm/shrinker.c:435
+       shrink_slab_memcg mm/shrinker.c:548 [inline]
+       shrink_slab+0xa87/0x1310 mm/shrinker.c:626
+       shrink_one+0x493/0x7c0 mm/vmscan.c:4790
+       shrink_many mm/vmscan.c:4851 [inline]
+       lru_gen_shrink_node+0x89f/0x1750 mm/vmscan.c:4951
+       shrink_node mm/vmscan.c:5910 [inline]
+       kswapd_shrink_node mm/vmscan.c:6720 [inline]
+       balance_pgdat+0x1105/0x1970 mm/vmscan.c:6911
+       kswapd+0x5ea/0xbf0 mm/vmscan.c:7180
+       kthread+0x2c1/0x3a0 kernel/kthread.c:389
+       ret_from_fork+0x45/0x80 arch/x86/kernel/process.c:147
+       ret_from_fork_asm+0x1a/0x30 arch/x86/entry/entry_64.S:244
+
+-> #2 (fs_reclaim){+.+.}-{0:0}:
+       __fs_reclaim_acquire mm/page_alloc.c:3783 [inline]
+       fs_reclaim_acquire+0x102/0x160 mm/page_alloc.c:3797
+       might_alloc include/linux/sched/mm.h:334 [inline]
+       slab_pre_alloc_hook mm/slub.c:3890 [inline]
+       slab_alloc_node mm/slub.c:3980 [inline]
+       __do_kmalloc_node mm/slub.c:4120 [inline]
+       __kmalloc_noprof+0xb5/0x420 mm/slub.c:4134
+       kmalloc_noprof include/linux/slab.h:664 [inline]
+       ea_get+0x21f/0x12c0 fs/jfs/xattr.c:487
+       __jfs_setxattr+0x1ed/0xfb0 fs/jfs/xattr.c:718
+       __jfs_xattr_set+0xc6/0x150 fs/jfs/xattr.c:917
+       __vfs_setxattr+0x173/0x1e0 fs/xattr.c:200
+       __vfs_setxattr_noperm+0x127/0x660 fs/xattr.c:234
+       __vfs_setxattr_locked+0x182/0x260 fs/xattr.c:295
+       vfs_setxattr+0x146/0x350 fs/xattr.c:321
+       do_setxattr+0x146/0x170 fs/xattr.c:629
+       setxattr+0x15d/0x180 fs/xattr.c:652
+       path_setxattr+0x179/0x1e0 fs/xattr.c:671
+       __do_sys_lsetxattr fs/xattr.c:694 [inline]
+       __se_sys_lsetxattr fs/xattr.c:690 [inline]
+       __ia32_sys_lsetxattr+0xbd/0x160 fs/xattr.c:690
+       do_syscall_32_irqs_on arch/x86/entry/common.c:165 [inline]
+       __do_fast_syscall_32+0x73/0x120 arch/x86/entry/common.c:386
+       do_fast_syscall_32+0x32/0x80 arch/x86/entry/common.c:411
+       entry_SYSENTER_compat_after_hwframe+0x84/0x8e
+
+-> #1 (&jfs_ip->xattr_sem){++++}-{3:3}:
+       down_read+0x9a/0x330 kernel/locking/rwsem.c:1526
+       __jfs_getxattr+0xee/0x360 fs/jfs/xattr.c:805
+       jfs_get_acl+0x7c/0x170 fs/jfs/acl.c:38
+       __get_acl+0x378/0x4e0 fs/posix_acl.c:159
+       get_inode_acl fs/posix_acl.c:184 [inline]
+       posix_acl_create+0x14c/0x5f0 fs/posix_acl.c:647
+       jfs_init_acl+0x9a/0x3a0 fs/jfs/acl.c:135
+       jfs_create+0x2d9/0xb40 fs/jfs/namei.c:103
+       lookup_open.isra.0+0x10a1/0x13c0 fs/namei.c:3505
+       open_last_lookups fs/namei.c:3574 [inline]
+       path_openat+0x92f/0x29f0 fs/namei.c:3804
+       do_filp_open+0x1dc/0x430 fs/namei.c:3834
+       do_sys_openat2+0x17a/0x1e0 fs/open.c:1405
+       do_sys_open fs/open.c:1420 [inline]
+       __do_sys_creat fs/open.c:1496 [inline]
+       __se_sys_creat fs/open.c:1490 [inline]
+       __ia32_sys_creat+0xcc/0x120 fs/open.c:1490
+       do_syscall_32_irqs_on arch/x86/entry/common.c:165 [inline]
+       __do_fast_syscall_32+0x73/0x120 arch/x86/entry/common.c:386
+       do_fast_syscall_32+0x32/0x80 arch/x86/entry/common.c:411
+       entry_SYSENTER_compat_after_hwframe+0x84/0x8e
+
+-> #0 (&jfs_ip->commit_mutex/1){+.+.}-{3:3}:
+       check_prev_add kernel/locking/lockdep.c:3134 [inline]
+       check_prevs_add kernel/locking/lockdep.c:3253 [inline]
+       validate_chain kernel/locking/lockdep.c:3869 [inline]
+       __lock_acquire+0x2478/0x3b30 kernel/locking/lockdep.c:5137
+       lock_acquire kernel/locking/lockdep.c:5754 [inline]
+       lock_acquire+0x1b1/0x560 kernel/locking/lockdep.c:5719
+       __mutex_lock_common kernel/locking/mutex.c:608 [inline]
+       __mutex_lock+0x175/0x9c0 kernel/locking/mutex.c:752
+       jfs_rename+0x602/0x19d0 fs/jfs/namei.c:1163
+       vfs_rename+0xf84/0x20a0 fs/namei.c:4887
+       do_renameat2+0xc54/0xdc0 fs/namei.c:5044
+       __do_sys_renameat2 fs/namei.c:5078 [inline]
+       __se_sys_renameat2 fs/namei.c:5075 [inline]
+       __ia32_sys_renameat2+0xeb/0x130 fs/namei.c:5075
+       do_syscall_32_irqs_on arch/x86/entry/common.c:165 [inline]
+       __do_fast_syscall_32+0x73/0x120 arch/x86/entry/common.c:386
+       do_fast_syscall_32+0x32/0x80 arch/x86/entry/common.c:411
+       entry_SYSENTER_compat_after_hwframe+0x84/0x8e
+
+other info that might help us debug this:
+
+Chain exists of:
+  &jfs_ip->commit_mutex/1 --> &jfs_ip->rdwrlock/1 --> &jfs_ip->commit_mutex
+
+ Possible unsafe locking scenario:
+
+       CPU0                    CPU1
+       ----                    ----
+  lock(&jfs_ip->commit_mutex);
+                               lock(&jfs_ip->rdwrlock/1);
+                               lock(&jfs_ip->commit_mutex);
+  lock(&jfs_ip->commit_mutex/1);
+
+ *** DEADLOCK ***
+
+8 locks held by syz-executor.1/17764:
+ #0: ffff88801bb26420 (sb_writers#22){.+.+}-{0:0}, at: do_renameat2+0x3d6/0xdc0 fs/namei.c:4974
+ #1: ffff88801bb26730 (&type->s_vfs_rename_key#8){+.+.}-{3:3}, at: lock_rename fs/namei.c:3078 [inline]
+ #1: ffff88801bb26730 (&type->s_vfs_rename_key#8){+.+.}-{3:3}, at: do_renameat2+0x4ef/0xdc0 fs/namei.c:4979
+ #2: ffff88804844f480 (&type->i_mutex_dir_key#17/1){+.+.}-{3:3}, at: inode_lock_nested include/linux/fs.h:826 [inline]
+ #2: ffff88804844f480 (&type->i_mutex_dir_key#17/1){+.+.}-{3:3}, at: lock_two_directories+0x162/0x2d0 fs/namei.c:3054
+ #3: ffff88804844a140 (&type->i_mutex_dir_key#17/5){+.+.}-{3:3}, at: inode_lock_nested include/linux/fs.h:826 [inline]
+ #3: ffff88804844a140 (&type->i_mutex_dir_key#17/5){+.+.}-{3:3}, at: lock_two_directories+0x199/0x2d0 fs/namei.c:3055
+ #4: ffff888000379800 (&sb->s_type->i_mutex_key#29){+.+.}-{3:3}, at: inode_lock include/linux/fs.h:791 [inline]
+ #4: ffff888000379800 (&sb->s_type->i_mutex_key#29){+.+.}-{3:3}, at: lock_two_nondirectories+0x195/0x200 fs/inode.c:1111
+ #5: ffff88804844aa80 (&sb->s_type->i_mutex_key#29/4){+.+.}-{3:3}, at: inode_lock_nested include/linux/fs.h:826 [inline]
+ #5: ffff88804844aa80 (&sb->s_type->i_mutex_key#29/4){+.+.}-{3:3}, at: lock_two_nondirectories+0xed/0x200 fs/inode.c:1113
+ #6: ffff88804844a638 (&jfs_ip->rdwrlock#3){++++}-{3:3}, at: jfs_rename+0xf08/0x19d0 fs/jfs/namei.c:1144
+ #7: ffff88804844f0c8 (&jfs_ip->commit_mutex){+.+.}-{3:3}, at: jfs_rename+0x5e6/0x19d0 fs/jfs/namei.c:1162
+
+stack backtrace:
+CPU: 0 PID: 17764 Comm: syz-executor.1 Not tainted 6.10.0-rc2-syzkaller-00222-gd30d0e49da71 #0
+Hardware name: QEMU Standard PC (Q35 + ICH9, 2009), BIOS 1.16.2-debian-1.16.2-1 04/01/2014
+Call Trace:
+ <TASK>
+ __dump_stack lib/dump_stack.c:88 [inline]
+ dump_stack_lvl+0x116/0x1f0 lib/dump_stack.c:114
+ check_noncircular+0x31a/0x400 kernel/locking/lockdep.c:2187
+ check_prev_add kernel/locking/lockdep.c:3134 [inline]
+ check_prevs_add kernel/locking/lockdep.c:3253 [inline]
+ validate_chain kernel/locking/lockdep.c:3869 [inline]
+ __lock_acquire+0x2478/0x3b30 kernel/locking/lockdep.c:5137
+ lock_acquire kernel/locking/lockdep.c:5754 [inline]
+ lock_acquire+0x1b1/0x560 kernel/locking/lockdep.c:5719
+ __mutex_lock_common kernel/locking/mutex.c:608 [inline]
+ __mutex_lock+0x175/0x9c0 kernel/locking/mutex.c:752
+ jfs_rename+0x602/0x19d0 fs/jfs/namei.c:1163
+ vfs_rename+0xf84/0x20a0 fs/namei.c:4887
+ do_renameat2+0xc54/0xdc0 fs/namei.c:5044
+ __do_sys_renameat2 fs/namei.c:5078 [inline]
+ __se_sys_renameat2 fs/namei.c:5075 [inline]
+ __ia32_sys_renameat2+0xeb/0x130 fs/namei.c:5075
+ do_syscall_32_irqs_on arch/x86/entry/common.c:165 [inline]
+ __do_fast_syscall_32+0x73/0x120 arch/x86/entry/common.c:386
+ do_fast_syscall_32+0x32/0x80 arch/x86/entry/common.c:411
+ entry_SYSENTER_compat_after_hwframe+0x84/0x8e
+RIP: 0023:0xf730b579
+Code: b8 01 10 06 03 74 b4 01 10 07 03 74 b0 01 10 08 03 74 d8 01 00 00 00 00 00 00 00 00 00 00 00 00 00 51 52 55 89 e5 0f 34 cd 80 <5d> 5a 59 c3 90 90 90 90 8d b4 26 00 00 00 00 8d b4 26 00 00 00 00
+RSP: 002b:00000000f5efd5ac EFLAGS: 00000292 ORIG_RAX: 0000000000000161
+RAX: ffffffffffffffda RBX: 0000000000000004 RCX: 0000000020000340
+RDX: 0000000000000005 RSI: 00000000200003c0 RDI: 0000000000000000
+RBP: 0000000000000000 R08: 0000000000000000 R09: 0000000000000000
+R10: 0000000000000000 R11: 0000000000000292 R12: 0000000000000000
+R13: 0000000000000000 R14: 0000000000000000 R15: 0000000000000000
+ </TASK>
+find_entry called with index = 0
+read_mapping_page failed!
+ERROR: (device loop1): txAbort: 
+
+----------------
+Code disassembly (best guess), 2 bytes skipped:
+   0:	10 06                	adc    %al,(%rsi)
+   2:	03 74 b4 01          	add    0x1(%rsp,%rsi,4),%esi
+   6:	10 07                	adc    %al,(%rdi)
+   8:	03 74 b0 01          	add    0x1(%rax,%rsi,4),%esi
+   c:	10 08                	adc    %cl,(%rax)
+   e:	03 74 d8 01          	add    0x1(%rax,%rbx,8),%esi
+  1e:	00 51 52             	add    %dl,0x52(%rcx)
+  21:	55                   	push   %rbp
+  22:	89 e5                	mov    %esp,%ebp
+  24:	0f 34                	sysenter
+  26:	cd 80                	int    $0x80
+* 28:	5d                   	pop    %rbp <-- trapping instruction
+  29:	5a                   	pop    %rdx
+  2a:	59                   	pop    %rcx
+  2b:	c3                   	ret
+  2c:	90                   	nop
+  2d:	90                   	nop
+  2e:	90                   	nop
+  2f:	90                   	nop
+  30:	8d b4 26 00 00 00 00 	lea    0x0(%rsi,%riz,1),%esi
+  37:	8d b4 26 00 00 00 00 	lea    0x0(%rsi,%riz,1),%esi
+
+
+---
+This report is generated by a bot. It may contain errors.
+See https://goo.gl/tpsmEJ for more information about syzbot.
+syzbot engineers can be reached at syzkaller@googlegroups.com.
+
+syzbot will keep track of this issue. See:
+https://goo.gl/tpsmEJ#status for how to communicate with syzbot.
+
+If the report is already addressed, let syzbot know by replying with:
+#syz fix: exact-commit-title
+
+If you want to overwrite report's subsystems, reply with:
+#syz set subsystems: new-subsystem
+(See the list of subsystem names on the web dashboard)
+
+If the report is a duplicate of another one, reply with:
+#syz dup: exact-subject-of-another-report
+
+If you want to undo deduplication, reply with:
+#syz undup
 
 
 _______________________________________________
