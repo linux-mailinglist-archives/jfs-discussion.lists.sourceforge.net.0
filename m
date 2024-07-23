@@ -2,112 +2,116 @@ Return-Path: <jfs-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+jfs-discussion@lfdr.de
 Delivered-To: lists+jfs-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id D3D5293A950
-	for <lists+jfs-discussion@lfdr.de>; Wed, 24 Jul 2024 00:27:20 +0200 (CEST)
-Received: from [127.0.0.1] (helo=sfs-ml-2.v29.lw.sourceforge.com)
-	by sfs-ml-2.v29.lw.sourceforge.com with esmtp (Exim 4.95)
+	by mail.lfdr.de (Postfix) with ESMTPS id CA4BB93B193
+	for <lists+jfs-discussion@lfdr.de>; Wed, 24 Jul 2024 15:25:49 +0200 (CEST)
+Received: from [127.0.0.1] (helo=sfs-ml-1.v29.lw.sourceforge.com)
+	by sfs-ml-1.v29.lw.sourceforge.com with esmtp (Exim 4.95)
 	(envelope-from <jfs-discussion-bounces@lists.sourceforge.net>)
-	id 1sWNyH-0002q1-6a;
-	Tue, 23 Jul 2024 22:27:01 +0000
+	id 1sWbzo-0001RV-Re;
+	Wed, 24 Jul 2024 13:25:33 +0000
 Received: from [172.30.29.67] (helo=mx.sourceforge.net)
- by sfs-ml-2.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
- TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (Exim 4.95)
- (envelope-from <pr-tracker-bot@kernel.org>) id 1sWNyF-0002ps-OB
- for jfs-discussion@lists.sourceforge.net;
- Tue, 23 Jul 2024 22:26:59 +0000
+ by sfs-ml-1.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
+ TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (Exim 4.95) (envelope-from
+ <3WzGgZgkbAHoqwxiYjjcpYnngb.emmejcsqcpamlrclr.amk@M3KW2WVRGUFZ5GODRSRYTGD7.apphosting.bounces.google.com>)
+ id 1sWOBS-00030y-I9 for jfs-discussion@lists.sourceforge.net;
+ Tue, 23 Jul 2024 22:40:39 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=sourceforge.net; s=x; h=Cc:To:Date:Message-Id:References:In-Reply-To:From:
- Subject:Sender:Reply-To:MIME-Version:Content-Type:Content-Transfer-Encoding:
- Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
- Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
+ d=sourceforge.net; s=x; h=Content-Type:To:From:Subject:Message-ID:In-Reply-To
+ :Date:MIME-Version:Sender:Reply-To:Cc:Content-Transfer-Encoding:Content-ID:
+ Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+ :Resent-Message-ID:References:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=roNOSsz1dfS5DV6JhwSF1YVvvHGlMUSMYxxHOk8l/Ic=; b=g0pVyxocPZxMYPN5DyLblmlhWF
- QEbxcKQ2O4siRZhpRwpADhpjhZ7o+jt7K3YM4V9LxPBL3BzBE1/pzsjE0cWumFfIa7NQcA419ZgXD
- DK+XrV4oHyfCxfeKHyGYvhqR4i8UwmLd98RPrhoAc7Y+juba376g2MQqDT3NTk0MLTU8=;
+ bh=tuj23c4ClzVXWf4TxC/cdJVB/gE1ITlvKVJTRiCxwf8=; b=Zp8N66d8/O1lvpsscwgXRtqD92
+ 8BUHQUV3Q8hQDVfeeAgmGVJLWkTv7PveyQfnfdZlcbbu8ZwkB+Xt3e2n8woXubaVM0Djs/+2VTD/N
+ OpwaF0M1VwDz4OA4iQg1bgJ69C704kjtoefzxIT7d7FuGcOvh/kZnF9G5ryF6K3VnkOQ=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
- h=Cc:To:Date:Message-Id:References:In-Reply-To:From:Subject:Sender:Reply-To
- :MIME-Version:Content-Type:Content-Transfer-Encoding:Content-ID:
- Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
- :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
- List-Post:List-Owner:List-Archive;
- bh=roNOSsz1dfS5DV6JhwSF1YVvvHGlMUSMYxxHOk8l/Ic=; b=JfOyEpprgv82Sj9pItmdcAQxCx
- URLRl2hzepJZykDNOD/Pu5Y7yFIbsuMyZtYqZEjufWryohVzrGqJQUornbbAfZv2aY9RvkFDE3NOa
- JfhadrsFs5KB2Xq306/n0Qcjnk736sqk3dBs9uncUIMbtGbFAQMLLZPgRf3+7WF8HwVA=;
-Received: from dfw.source.kernel.org ([139.178.84.217])
+ h=Content-Type:To:From:Subject:Message-ID:In-Reply-To:Date:MIME-Version:
+ Sender:Reply-To:Cc:Content-Transfer-Encoding:Content-ID:Content-Description:
+ Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+ References:List-Id:List-Help:List-Unsubscribe:List-Subscribe:List-Post:
+ List-Owner:List-Archive; bh=tuj23c4ClzVXWf4TxC/cdJVB/gE1ITlvKVJTRiCxwf8=; b=W
+ b2f+syRnwBWTKbV0LR+27T4R1qYTgKJxOUM4k3TCXu0wIguiHUUUh9YVRKUHcXN0AUiEAgu5xZjGB
+ 4n22XTBnhDpGB1Io1FE3sdiEzHInc+6wLXepdVJm6J3Msy0j/iG9lPwNhrd4Ot5xly956iMlC+zzK
+ i+J6L5dgfSAZ4REI=;
+Received: from mail-io1-f72.google.com ([209.85.166.72])
  by sfi-mx-2.v28.lw.sourceforge.com with esmtps
- (TLS1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.95)
- id 1sWNyF-00089L-4W for jfs-discussion@lists.sourceforge.net;
- Tue, 23 Jul 2024 22:26:59 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
- by dfw.source.kernel.org (Postfix) with ESMTP id C4A3360DC1;
- Tue, 23 Jul 2024 22:26:53 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPS id 7B84FC4AF09;
- Tue, 23 Jul 2024 22:26:53 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=k20201202; t=1721773613;
- bh=qZ8wkkdS1/6f9bjx9ZaeHKYGJN0LmsRm2iUhVulcDDs=;
- h=Subject:From:In-Reply-To:References:Date:To:Cc:From;
- b=Du8I+pFk543uRMNWBeZx56BYuFcDEE8TazJ8DlhKXWeUwI1VM3cJmaPUvQuFP4ePY
- M+DgaxgyPXF/tJVjZHinkTY8Qzo3W0TD7wD7VW8rRVaVaC357vQgKE1jIUxWWtpEUL
- pRxaQVZ+SUyfOqvx35z/X8s2AzqyWyFbRMo/KNtUpbfDA8JIA42q9i7Ge9kHQGLJ4C
- nnY+Q+dafVMVBJcgtdujF42N9wMCRrV6bzcWC2BbzREAnlJhNNTdvQufBa4b7mYwYr
- 5J5bQODehIsavCNIG/PF0uZZbeYB89L5i2Tsa4D5wGirw4zFf/dqSKKzo9h/dOb2b1
- DUMqPRf4m198A==
-Received: from aws-us-west-2-korg-oddjob-1.ci.codeaurora.org
- (localhost.localdomain [127.0.0.1])
- by aws-us-west-2-korg-oddjob-1.ci.codeaurora.org (Postfix) with ESMTP id
- 72A16C43443; Tue, 23 Jul 2024 22:26:53 +0000 (UTC)
-In-Reply-To: <4a4e7343-3af8-499f-8a7c-544848a71f14@oracle.com>
-References: <4a4e7343-3af8-499f-8a7c-544848a71f14@oracle.com>
-X-PR-Tracked-List-Id: <linux-kernel.vger.kernel.org>
-X-PR-Tracked-Message-Id: <4a4e7343-3af8-499f-8a7c-544848a71f14@oracle.com>
-X-PR-Tracked-Remote: git@github.com:kleikamp/linux-shaggy.git tags/jfs-6.11
-X-PR-Tracked-Commit-Id: d0fa70aca54c8643248e89061da23752506ec0d4
-X-PR-Merge-Tree: torvalds/linux.git
-X-PR-Merge-Refname: refs/heads/master
-X-PR-Merge-Commit-Id: 371c141464b8312ee4a298fad6d17ee26654b7d6
-Message-Id: <172177361345.759.5687463486651349295.pr-tracker-bot@kernel.org>
-Date: Tue, 23 Jul 2024 22:26:53 +0000
-To: Dave Kleikamp <dave.kleikamp@oracle.com>
-X-Spam-Score: -5.3 (-----)
+ (TLS1.2:ECDHE-RSA-AES128-GCM-SHA256:128) (Exim 4.95)
+ id 1sWOBS-0000aN-Di for jfs-discussion@lists.sourceforge.net;
+ Tue, 23 Jul 2024 22:40:39 +0000
+Received: by mail-io1-f72.google.com with SMTP id
+ ca18e2360f4ac-8152f0c4e1bso1067090039f.1
+ for <jfs-discussion@lists.sourceforge.net>;
+ Tue, 23 Jul 2024 15:40:38 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20230601; t=1721774427; x=1722379227;
+ h=to:from:subject:message-id:in-reply-to:date:mime-version
+ :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+ bh=tuj23c4ClzVXWf4TxC/cdJVB/gE1ITlvKVJTRiCxwf8=;
+ b=rUxt3ggu54UJo2dGgVQnZBwGAIlCLCgYd29XpEd+kf1e+5YMClhAm6XuKBkmti7xPK
+ xUR2M7gx5OCY7m3Y+GY66fm+RPnXlSoQ4vUs6Xd+Lho1qVCVrpshK0jlXUmJTrr7bwD4
+ e8fSz6ectoQd/W0r90MFrDzTaxG6zU3neZbQdptkIGFz1pX/rkvJDG4w/jG3ofDTZ6Y/
+ NYsC5ISchwCIRqvfWIJMUCPq7ZXIHZe5SRe1a1etE3Xs12D2hhkQrZe5hM8bLIFW01rw
+ VWfa2sCdWyIr01DAuQRBTd7gARX87cjgN+g2PpX/5/hO8/ssAgdDzC44w3V/DhIUUVcV
+ Tt3g==
+X-Gm-Message-State: AOJu0Yw5Jmj5lnO/tjvF5YJRdZ4IUl8gScHtBUmthOI0Ko5OHQvoZp/h
+ xl0Ql4ZP0tTuxpJ67ZlmEuVPVGSOzSGfTyt2/uhFK37TxXZC7pRpdEoKil74dRUvqqju2SFHvN1
+ o6zgkYG3V6cMnva0fXnBlduMBGySzy1+9+LkdnikViTJZBOUfHDzvSXc=
+X-Google-Smtp-Source: AGHT+IFAaPm9UajL6GXF7/pDH0JqTHiu3mXQYr4xniz5kwvXqYfladgB1ToZ2a08YupRumup6tA11VQCsqYcn6nz0h30N3sSP7/t
+MIME-Version: 1.0
+X-Received: by 2002:a05:6638:148d:b0:4c2:7f96:6f4 with SMTP id
+ 8926c6da1cb9f-4c28eed1b0emr9492173.4.1721774427680; Tue, 23 Jul 2024 15:40:27
+ -0700 (PDT)
+Date: Tue, 23 Jul 2024 15:40:27 -0700
+In-Reply-To: <000000000000264c0d0617d88912@google.com>
+X-Google-Appengine-App-Id: s~syzkaller
+X-Google-Appengine-App-Id-Alias: syzkaller
+Message-ID: <00000000000025403d061df1d927@google.com>
+To: jfs-discussion@lists.sourceforge.net, linux-fsdevel@vger.kernel.org, 
+ linux-kernel@vger.kernel.org, shaggy@kernel.org, 
+ syzkaller-bugs@googlegroups.com
+X-Spam-Score: -4.7 (----)
 X-Spam-Report: Spam detection software,
- running on the system "util-spamd-1.v13.lw.sourceforge.com", 
+ running on the system "util-spamd-2.v13.lw.sourceforge.com", 
  has NOT identified this incoming email as spam.  The original
  message has been attached to this so you can view it or label
  similar future email.  If you have any questions, see
  the administrator of that system for details.
- Content preview:  The pull request you sent on Mon, 22 Jul 2024 15:08:00 -0500:
- > git@github.com:kleikamp/linux-shaggy.git tags/jfs-6.11 has been merged
- into torvalds/linux.git:
- https://git.kernel.org/torvalds/c/371c141464b8312ee4a298fad6d17ee26654b7d6
- Content analysis details:   (-5.3 points, 6.0 required)
+ Content preview:  syzbot has found a reproducer for the following issue on:
+ HEAD commit: 28bbe4ea686a Merge tag 'i2c-for-6.11-rc1-second-batch' of ..
+ git tree: upstream console+strace:
+ https://syzkaller.appspot.com/x/log.txt?x=157aa8e3980000
+ kernel config: https://syzkaller.a [...] 
+ Content analysis details:   (-4.7 points, 6.0 required)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 URIBL_BLOCKED          ADMINISTRATOR NOTICE: The query to URIBL was
+ blocked.  See
+ http://wiki.apache.org/spamassassin/DnsBlocklists#dnsbl-block
+ for more information. [URIs: googleapis.com]
+ 0.3 FROM_LOCAL_HEX         From: localpart has long hexadecimal sequence
+ 0.0 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  0.0 RCVD_IN_VALIDITY_RPBL_BLOCKED RBL: ADMINISTRATOR NOTICE: The
  query to Validity was blocked.  See
  https://knowledge.validity.com/hc/en-us/articles/20961730681243
  for more information.
- [139.178.84.217 listed in bl.score.senderscore.com]
+ [209.85.166.72 listed in bl.score.senderscore.com]
  0.0 RCVD_IN_VALIDITY_CERTIFIED_BLOCKED RBL: ADMINISTRATOR NOTICE:
  The query to Validity was blocked.  See
  https://knowledge.validity.com/hc/en-us/articles/20961730681243
  for more information.
- [139.178.84.217 listed in sa-accredit.habeas.com]
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
+ [209.85.166.72 listed in sa-trusted.bondedsender.org]
  -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [139.178.84.217 listed in list.dnswl.org]
- -0.1 DKIMWL_WL_HIGH         DKIMwl.org - High trust sender
-X-Headers-End: 1sWNyF-00089L-4W
-Subject: Re: [Jfs-discussion] [GIT PULL] jfs updates for v6.11
+ high trust [209.85.166.72 listed in list.dnswl.org]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.166.72 listed in wl.mailspike.net]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+X-Headers-End: 1sWOBS-0000aN-Di
+X-Mailman-Approved-At: Wed, 24 Jul 2024 13:25:31 +0000
+Subject: Re: [Jfs-discussion] [syzbot] [jfs?] KASAN: user-memory-access Read
+ in jfs_statfs
 X-BeenThere: jfs-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -119,29 +123,75 @@ List-Post: <mailto:jfs-discussion@lists.sourceforge.net>
 List-Help: <mailto:jfs-discussion-request@lists.sourceforge.net?subject=help>
 List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/jfs-discussion>, 
  <mailto:jfs-discussion-request@lists.sourceforge.net?subject=subscribe>
-From: pr-tracker-bot--- via Jfs-discussion
- <jfs-discussion@lists.sourceforge.net>
-Reply-To: pr-tracker-bot@kernel.org
-Cc: "jfs-discussion@lists.sourceforge.net"
- <jfs-discussion@lists.sourceforge.net>,
- Linus Torvalds <torvalds@linux-foundation.org>, linux-kernel@vger.kernel.org
-MIME-Version: 1.0
+From: syzbot via Jfs-discussion <jfs-discussion@lists.sourceforge.net>
+Reply-To: syzbot <syzbot+cea4fad5485bc30243a9@syzkaller.appspotmail.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Errors-To: jfs-discussion-bounces@lists.sourceforge.net
 
-The pull request you sent on Mon, 22 Jul 2024 15:08:00 -0500:
+syzbot has found a reproducer for the following issue on:
 
-> git@github.com:kleikamp/linux-shaggy.git tags/jfs-6.11
+HEAD commit:    28bbe4ea686a Merge tag 'i2c-for-6.11-rc1-second-batch' of ..
+git tree:       upstream
+console+strace: https://syzkaller.appspot.com/x/log.txt?x=157aa8e3980000
+kernel config:  https://syzkaller.appspot.com/x/.config?x=9d240b438cabdc8e
+dashboard link: https://syzkaller.appspot.com/bug?extid=cea4fad5485bc30243a9
+compiler:       Debian clang version 15.0.6, GNU ld (GNU Binutils for Debian) 2.40
+syz repro:      https://syzkaller.appspot.com/x/repro.syz?x=13d35b1d980000
+C reproducer:   https://syzkaller.appspot.com/x/repro.c?x=120152b1980000
 
-has been merged into torvalds/linux.git:
-https://git.kernel.org/torvalds/c/371c141464b8312ee4a298fad6d17ee26654b7d6
+Downloadable assets:
+disk image: https://storage.googleapis.com/syzbot-assets/cd50d9d26f43/disk-28bbe4ea.raw.xz
+vmlinux: https://storage.googleapis.com/syzbot-assets/5cc17b9d307f/vmlinux-28bbe4ea.xz
+kernel image: https://storage.googleapis.com/syzbot-assets/bfb78d6d09b6/bzImage-28bbe4ea.xz
+mounted in repro: https://storage.googleapis.com/syzbot-assets/0522d99a5f0b/mount_0.gz
 
-Thank you!
+IMPORTANT: if you fix the issue, please add the following tag to the commit:
+Reported-by: syzbot+cea4fad5485bc30243a9@syzkaller.appspotmail.com
 
--- 
-Deet-doot-dot, I am a bot.
-https://korg.docs.kernel.org/prtracker.html
+==================================================================
+BUG: KASAN: user-memory-access in instrument_atomic_read include/linux/instrumented.h:68 [inline]
+BUG: KASAN: user-memory-access in atomic_read include/linux/atomic/atomic-instrumented.h:32 [inline]
+BUG: KASAN: user-memory-access in jfs_statfs+0x20e/0x510 fs/jfs/super.c:140
+Read of size 4 at addr 00000000000050c0 by task syz-executor415/5092
+
+CPU: 1 UID: 0 PID: 5092 Comm: syz-executor415 Not tainted 6.10.0-syzkaller-12084-g28bbe4ea686a #0
+Hardware name: Google Google Compute Engine/Google Compute Engine, BIOS Google 06/27/2024
+Call Trace:
+ <TASK>
+ __dump_stack lib/dump_stack.c:93 [inline]
+ dump_stack_lvl+0x241/0x360 lib/dump_stack.c:119
+ print_report+0xe8/0x550 mm/kasan/report.c:491
+ kasan_report+0x143/0x180 mm/kasan/report.c:601
+ kasan_check_range+0x282/0x290 mm/kasan/generic.c:189
+ instrument_atomic_read include/linux/instrumented.h:68 [inline]
+ atomic_read include/linux/atomic/atomic-instrumented.h:32 [inline]
+ jfs_statfs+0x20e/0x510 fs/jfs/super.c:140
+ statfs_by_dentry fs/statfs.c:66 [inline]
+ vfs_statfs fs/statfs.c:90 [inline]
+ user_statfs+0x213/0x460 fs/statfs.c:105
+ __do_sys_statfs fs/statfs.c:195 [inline]
+ __se_sys_statfs fs/statfs.c:192 [inline]
+ __x64_sys_statfs+0xe8/0x1a0 fs/statfs.c:192
+ do_syscall_x64 arch/x86/entry/common.c:52 [inline]
+ do_syscall_64+0xf3/0x230 arch/x86/entry/common.c:83
+ entry_SYSCALL_64_after_hwframe+0x77/0x7f
+RIP: 0033:0x7fa111cece59
+Code: 28 00 00 00 75 05 48 83 c4 28 c3 e8 b1 18 00 00 90 48 89 f8 48 89 f7 48 89 d6 48 89 ca 4d 89 c2 4d 89 c8 4c 8b 4c 24 08 0f 05 <48> 3d 01 f0 ff ff 73 01 c3 48 c7 c1 b0 ff ff ff f7 d8 64 89 01 48
+RSP: 002b:00007fa111c82218 EFLAGS: 00000246 ORIG_RAX: 0000000000000089
+RAX: ffffffffffffffda RBX: 00007fa111d7b718 RCX: 00007fa111cece59
+RDX: 00007fa111cece59 RSI: 0000000000000000 RDI: 00000000200003c0
+RBP: 00007fa111d7b710 R08: 0000000000000000 R09: 0000000000000000
+R10: 0000000000000000 R11: 0000000000000246 R12: 00007fa111d4829c
+R13: 0032656c69662f2e R14: a92483129444e42d R15: 00007ffecd531438
+ </TASK>
+==================================================================
+
+
+---
+If you want syzbot to run the reproducer, reply with:
+#syz test: git://repo/address.git branch-or-commit-hash
+If you attach or paste a git patch, syzbot will apply it before testing.
 
 
 _______________________________________________
