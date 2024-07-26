@@ -2,113 +2,124 @@ Return-Path: <jfs-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+jfs-discussion@lfdr.de
 Delivered-To: lists+jfs-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6B34B93D40F
-	for <lists+jfs-discussion@lfdr.de>; Fri, 26 Jul 2024 15:21:17 +0200 (CEST)
-Received: from [127.0.0.1] (helo=sfs-ml-3.v29.lw.sourceforge.com)
-	by sfs-ml-3.v29.lw.sourceforge.com with esmtp (Exim 4.95)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3767593D507
+	for <lists+jfs-discussion@lfdr.de>; Fri, 26 Jul 2024 16:23:02 +0200 (CEST)
+Received: from [127.0.0.1] (helo=sfs-ml-4.v29.lw.sourceforge.com)
+	by sfs-ml-4.v29.lw.sourceforge.com with esmtp (Exim 4.95)
 	(envelope-from <jfs-discussion-bounces@lists.sourceforge.net>)
-	id 1sXKsY-0002Af-AP;
-	Fri, 26 Jul 2024 13:21:01 +0000
+	id 1sXLqI-0004XN-DN;
+	Fri, 26 Jul 2024 14:22:46 +0000
 Received: from [172.30.29.67] (helo=mx.sourceforge.net)
- by sfs-ml-2.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
- TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (Exim 4.95) (envelope-from
- <38TejZgkbACoYefQGRRKXGVVOJ.MUUMRKaYKXIUTZKTZ.IUS@M3KW2WVRGUFZ5GODRSRYTGD7.apphosting.bounces.google.com>)
- id 1sXDll-0000eq-Ea for jfs-discussion@lists.sourceforge.net;
- Fri, 26 Jul 2024 05:45:33 +0000
+ by sfs-ml-4.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
+ TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (Exim 4.95)
+ (envelope-from <eadavis@qq.com>) id 1sXLqG-0004XE-3s
+ for jfs-discussion@lists.sourceforge.net;
+ Fri, 26 Jul 2024 14:22:44 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=sourceforge.net; s=x; h=Content-Type:To:From:Subject:Message-ID:Date:
- MIME-Version:Sender:Reply-To:Cc:Content-Transfer-Encoding:Content-ID:
- Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
- :Resent-Message-ID:In-Reply-To:References:List-Id:List-Help:List-Unsubscribe:
+ d=sourceforge.net; s=x; h=Content-Transfer-Encoding:MIME-Version:References:
+ In-Reply-To:Date:Subject:Cc:To:From:Message-ID:Sender:Reply-To:Content-Type:
+ Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
+ Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=DZcaH5okJTNj2VAL4oorr93ZBcU8Ex5+owgFpt6K9nc=; b=SCQeSAwcFcbHkNsNIs6eR7/8cV
- hgF9AetUuckSUbI3uWd8SRJRk6tmCtKFT/qzmMCFeUWNY2Zx0YoYD+5oyVOlehwmAqGqwqLo/CS3b
- UKj7D0W9wDYcbg4/4dWFZIWhUb9zEdjGpDKfmaqy8x5+J/NsegRC3L1VmjV+2ysPwao0=;
+ bh=RYy2lkXdrqvvRQ6HUau4IEEmxjZjv7SYZfEboVOissk=; b=HZ+elE6FSLnNympchxBjQnsKC6
+ 9y6/3BAgwayVeSy6KPb1SeGuBrvBJxzlRk6PtP5rE1yNHbai+/OP7HH6WuEC8xnKKM0I9gKCGDQDL
+ u/RmWrhTnqddiNLD9h5zCPOVD7bxIYA6yc5rrWlj/nl+btH3BmHZzFQSF9VTThZ+93Rk=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
- h=Content-Type:To:From:Subject:Message-ID:Date:MIME-Version:Sender:Reply-To
- :Cc:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
- Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
- References:List-Id:List-Help:List-Unsubscribe:List-Subscribe:List-Post:
- List-Owner:List-Archive; bh=DZcaH5okJTNj2VAL4oorr93ZBcU8Ex5+owgFpt6K9nc=; b=N
- /oxBciVD7eWfsVRwJ+7q0E0bFBVqe7Kpdc//LnHOl/taMQUpxMJwKRe2B/9ykkTL8A3WZ6w+Rfm6q
- M25VZBO5qaHsWsgazpMrWWNhnAVJIrrFQEM92WN2OY7KJUjAxM+T/LyRLlCjw5rd6yr5pXlku2eyE
- HwjP0LbXMJ71fpVY=;
-Received: from mail-il1-f198.google.com ([209.85.166.198])
+ h=Content-Transfer-Encoding:MIME-Version:References:In-Reply-To:Date:
+ Subject:Cc:To:From:Message-ID:Sender:Reply-To:Content-Type:Content-ID:
+ Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+ :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
+ List-Post:List-Owner:List-Archive;
+ bh=RYy2lkXdrqvvRQ6HUau4IEEmxjZjv7SYZfEboVOissk=; b=itJsrdFwlm1gX3UTVGqxyOQ3FS
+ 0a6XWaGtzSE5MvE4UcHlvW8HMZSz7DsXkcIVMuUJZJBfFNJe5/Qb+KpoPFTm+K9Gw26rync9HpQhR
+ Ac+p+Fql21BWKb7sUnRtTp7rjYG+8Rf2+uj+4h68RYbB/pxWOsvhvxkGhM1zhHzqv4Pw=;
+Received: from out162-62-58-211.mail.qq.com ([162.62.58.211])
  by sfi-mx-2.v28.lw.sourceforge.com with esmtps
- (TLS1.2:ECDHE-RSA-AES128-GCM-SHA256:128) (Exim 4.95)
- id 1sXDlk-0007ob-Jo for jfs-discussion@lists.sourceforge.net;
- Fri, 26 Jul 2024 05:45:33 +0000
-Received: by mail-il1-f198.google.com with SMTP id
- e9e14a558f8ab-3988d01a236so20777875ab.1
- for <jfs-discussion@lists.sourceforge.net>;
- Thu, 25 Jul 2024 22:45:32 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20230601; t=1721972722; x=1722577522;
- h=to:from:subject:message-id:date:mime-version:x-gm-message-state
- :from:to:cc:subject:date:message-id:reply-to;
- bh=DZcaH5okJTNj2VAL4oorr93ZBcU8Ex5+owgFpt6K9nc=;
- b=flyEEZROG5asbb9MhmOUpfnHVGNM0U4pYtNC5zzypPFS7hzoLk/xfNqdUerXURDXFJ
- UztwmZXPnJ4JuHweSbW8BTJiXImGHX17C76JM3l04+sVMFRdCxuXMn/PsbMeRz+PH7im
- 6xWUU5qAeCraQUIZCnVKfSnYpan3NwaPF00Y/8SY9Azf/TiDw8rppuNP8lH8Si8W3egZ
- UUzkC3rU0W8MvTMoRJvNnfWbvaFLrixFIzDtJsno7fnMqulfIdmCNSmXEOhPqEjDiTbF
- WZwtk1eyegNEhF6d8l+NyWI6KdzpIyQ1kLwYLOaUa3gb59Vla4Wzi+MJrXqSDLBhXGv2
- Ow5w==
-X-Gm-Message-State: AOJu0YwV4+PWgCrcvZTUZed4HHNvH3SWm2WJ9IzxHqYT/E9BctA/C/9Q
- zMNNJR81EtjsxC+TAE8xNs6J/2g45DU6Vov2gDeAQvtZzxts+aVpRIhel0Sgv0KmCKl/ojl3ERb
- 2+A65/aBIjj9A93T+QNKCQdXNSoKYbjfcgEjXDUFlxIIaVdS/Y72WRn0=
-X-Google-Smtp-Source: AGHT+IEMOt5qA+PaIFHYI84FHgyOcl+1QMlA8NhttYDLRzsq7P4g3brP7Zcp0/Gnv89zLWybjo6PttkopSA5q6nI8EzmHdZv6P4H
+ (TLS1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.95)
+ id 1sXLqD-0000iu-QM for jfs-discussion@lists.sourceforge.net;
+ Fri, 26 Jul 2024 14:22:44 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qq.com; s=s201512;
+ t=1722003746; bh=RYy2lkXdrqvvRQ6HUau4IEEmxjZjv7SYZfEboVOissk=;
+ h=From:To:Cc:Subject:Date:In-Reply-To:References;
+ b=Xy2Ak7Obugg5GMT3Q9FhFovR438OKLy/jKPY2bQ58KOI2eEtsYwop54o8pll/xrtE
+ NRzJNoF4MsSIftuaiwDpTlz7VEICrdufPS9bfgpGsUiOGFcAL3NL9hRlNrUxQpJ5vu
+ gd8FeMC1onVwJ5QzCilaD3siVsft9Vd4C9t3L6Jo=
+Received: from pek-lxu-l1.wrs.com ([111.198.228.103])
+ by newxmesmtplogicsvrszb9-0.qq.com (NewEsmtp) with SMTP
+ id 59215058; Fri, 26 Jul 2024 22:22:18 +0800
+X-QQ-mid: xmsmtpt1722003738terxm588f
+Message-ID: <tencent_8FB36BE36BC97A03AE44421765577706C905@qq.com>
+X-QQ-XMAILINFO: NvKyM24IHTKSSrukGyLZFBr6AF0D5OZmp3rvMMXqB0ntwiSTCqE/LPUMPeQxGO
+ 8kSCg5zMjGQDAHC/y0XqQAb+HLFxf6C+kXDz+8rShCQEQYZJ01MszrWZrYWwjtFs8rV1W5yeD3zV
+ lUJUCeALR60JuVawf5Sh10wjc/HJceUiF0VMcwGMHBt91fzrDLKacDAlhSVuwlPAvjVoaZMJ7tjJ
+ KGv5SctVuAT483fIiSLRF45/7SLHhfkmBZD3zgFAogSsvsU41u5cqK2rYTVqWXXU9NueELhRSQH/
+ JJESbHEdJjmsMEY8DQHjaaSdfU4Vep/L12uc1k8zYyR5uo29rlpKsl6Y08NsMEl8Q04D6sBhxpFs
+ cWN7WV+uRp4+DIb46gJm5GJWFhaV0EAdUI2o0QurLalh0G42iZBKvYOINBgqKIrbRUuGXrcJGQ+Z
+ 2XUhCeJf3JkEh0r6AA8aAfPE61cruSKlcO3G/5oWixsZtLgL2CzBGpmnL8D+0Wg3Utlk5dVFH8RQ
+ Wx1Ka9R0mn48yDEH6n7TFPEwGRyTe1vm2eHzg6+kE5wsDLKivhgu6nPHwVFQrzy7pHIChY6LPwEN
+ c7usomrPGQ71OPhuqpAHOmc7JdyBc+MiFJIhqCYJfI8GoDpyWDT5tZ3RPchofrd0MGhE0kl0T7um
+ nT09DdU9/zGAPMgocpm0qnT9YDiq+3E8DJ6+aDKeHhoP2VYQc3gO6DSxu/UDer+kcrPoyi/sOdbt
+ e+zirI+Xc+Z2R9x0+5AD0uoaDOW8xMgHJnRel1/Qcbkg7E+p74deLlHtw9OAvDF0xJN2OYM+/FKQ
+ j4zq9XQagQorS5J7tcvxTmn6Z53MoMXDO+tABQS9kJvupltz/E3b6hWDk5q8iLmTjXaUYqRSKmUh
+ uckJRN1kgaDE/Is7dmm3XnM5f3JVFGjuliuXq4HdOndqHSfrDWKFr24k/GaXGc2w==
+X-QQ-XMRINFO: OWPUhxQsoeAVDbp3OJHYyFg=
+To: syzbot+dca05492eff41f604890@syzkaller.appspotmail.com
+Date: Fri, 26 Jul 2024 22:22:19 +0800
+X-OQ-MSGID: <20240726142218.2293706-2-eadavis@qq.com>
+X-Mailer: git-send-email 2.43.0
+In-Reply-To: <00000000000064c7a0061e2004d6@google.com>
+References: <00000000000064c7a0061e2004d6@google.com>
 MIME-Version: 1.0
-X-Received: by 2002:a05:6e02:1d90:b0:396:2d57:b1cb with SMTP id
- e9e14a558f8ab-39a23d14de9mr3124455ab.0.1721972721759; Thu, 25 Jul 2024
- 22:45:21 -0700 (PDT)
-Date: Thu, 25 Jul 2024 22:45:21 -0700
-X-Google-Appengine-App-Id: s~syzkaller
-X-Google-Appengine-App-Id-Alias: syzkaller
-Message-ID: <00000000000064c7a0061e2004d6@google.com>
-To: jfs-discussion@lists.sourceforge.net, linux-kernel@vger.kernel.org, 
- shaggy@kernel.org, syzkaller-bugs@googlegroups.com
-X-Spam-Score: 0.3 (/)
+X-Spam-Score: -1.6 (-)
 X-Spam-Report: Spam detection software,
  running on the system "util-spamd-1.v13.lw.sourceforge.com", 
  has NOT identified this incoming email as spam.  The original
  message has been attached to this so you can view it or label
  similar future email.  If you have any questions, see
  the administrator of that system for details.
- Content preview:  Hello,
- syzbot found the following issue on: HEAD commit: 7846b618e0a4
- Merge tag 'rtc-6.11' of git://git.kernel.org/.. git tree: upstream
- console+strace:
- https://syzkaller.appspot.com/x/log.txt?x=169ade0d980000 kernel config:
- https://syzkaller.a [...] 
- Content analysis details:   (0.3 points, 6.0 required)
+ Content preview:  syzbot report a out of bounds in dbSplit,
+ it because dmt_leafidx
+ less than 0, add a checking for dmt_leafidx in dbAllocDmapLev. Reported-by:
+ https://syzkaller.appspot.com/bug?extid=dca05492eff41f604890 Signed-off-by:
+ Edward Adam Davis --- fs/jfs/jfs_dmap.c | 5 +++-- 1 file changed,
+ 3 insertions(+), 2 deletions(-) 
+ Content analysis details:   (-1.6 points, 6.0 required)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  0.0 URIBL_BLOCKED          ADMINISTRATOR NOTICE: The query to URIBL was
  blocked.  See
  http://wiki.apache.org/spamassassin/DnsBlocklists#dnsbl-block
- for more information. [URIs: googleapis.com]
- 0.3 FROM_LOCAL_HEX         From: localpart has long hexadecimal sequence
- 0.0 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- 0.0 RCVD_IN_VALIDITY_SAFE_BLOCKED RBL: ADMINISTRATOR NOTICE: The
- query to Validity was blocked.  See
- https://knowledge.validity.com/hc/en-us/articles/20961730681243
- for more information.
- [209.85.166.198 listed in sa-trusted.bondedsender.org]
+ for more information. [URIs: qq.com]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [162.62.58.211 listed in list.dnswl.org]
  0.0 RCVD_IN_VALIDITY_RPBL_BLOCKED RBL: ADMINISTRATOR NOTICE: The
  query to Validity was blocked.  See
  https://knowledge.validity.com/hc/en-us/articles/20961730681243
  for more information.
- [209.85.166.198 listed in bl.score.senderscore.com]
+ [162.62.58.211 listed in bl.score.senderscore.com]
+ 0.0 RCVD_IN_VALIDITY_CERTIFIED_BLOCKED RBL: ADMINISTRATOR NOTICE:
+ The query to Validity was blocked.  See
+ https://knowledge.validity.com/hc/en-us/articles/20961730681243
+ for more information.
+ [162.62.58.211 listed in sa-accredit.habeas.com]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [eadavis[at]qq.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.166.198 listed in wl.mailspike.net]
-X-Headers-End: 1sXDlk-0007ob-Jo
-X-Mailman-Approved-At: Fri, 26 Jul 2024 13:20:59 +0000
-Subject: [Jfs-discussion] [syzbot] [jfs?] UBSAN: array-index-out-of-bounds
- in dbSplit
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.4 RDNS_DYNAMIC           Delivered to internal network by host with
+ dynamic-looking rDNS
+ 3.2 HELO_DYNAMIC_IPADDR    Relay HELO'd using suspicious hostname (IP
+ addr 1)
+X-Headers-End: 1sXLqD-0000iu-QM
+Subject: [Jfs-discussion] [PATCH] jfs: check if dmt_leafidx is less than zero
 X-BeenThere: jfs-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -120,111 +131,53 @@ List-Post: <mailto:jfs-discussion@lists.sourceforge.net>
 List-Help: <mailto:jfs-discussion-request@lists.sourceforge.net?subject=help>
 List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/jfs-discussion>, 
  <mailto:jfs-discussion-request@lists.sourceforge.net?subject=subscribe>
-From: syzbot via Jfs-discussion <jfs-discussion@lists.sourceforge.net>
-Reply-To: syzbot <syzbot+dca05492eff41f604890@syzkaller.appspotmail.com>
+From: Edward Adam Davis via Jfs-discussion
+ <jfs-discussion@lists.sourceforge.net>
+Reply-To: Edward Adam Davis <eadavis@qq.com>
+Cc: shaggy@kernel.org, jfs-discussion@lists.sourceforge.net,
+ syzkaller-bugs@googlegroups.com, linux-kernel@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Errors-To: jfs-discussion-bounces@lists.sourceforge.net
 
-Hello,
+syzbot report a out of bounds in dbSplit, it because dmt_leafidx less
+than 0, add a checking for dmt_leafidx in dbAllocDmapLev.
 
-syzbot found the following issue on:
-
-HEAD commit:    7846b618e0a4 Merge tag 'rtc-6.11' of git://git.kernel.org/..
-git tree:       upstream
-console+strace: https://syzkaller.appspot.com/x/log.txt?x=169ade0d980000
-kernel config:  https://syzkaller.appspot.com/x/.config?x=f4925140c45a2a50
-dashboard link: https://syzkaller.appspot.com/bug?extid=dca05492eff41f604890
-compiler:       Debian clang version 15.0.6, GNU ld (GNU Binutils for Debian) 2.40
-syz repro:      https://syzkaller.appspot.com/x/repro.syz?x=165876b5980000
-C reproducer:   https://syzkaller.appspot.com/x/repro.c?x=1453ee95980000
-
-Downloadable assets:
-disk image: https://storage.googleapis.com/syzbot-assets/43e8dc30bfe7/disk-7846b618.raw.xz
-vmlinux: https://storage.googleapis.com/syzbot-assets/2563411f0b58/vmlinux-7846b618.xz
-kernel image: https://storage.googleapis.com/syzbot-assets/19d3b69b2212/bzImage-7846b618.xz
-mounted in repro: https://storage.googleapis.com/syzbot-assets/97777a7e85e9/mount_0.gz
-
-Bisection is inconclusive: the issue happens on the oldest tested release.
-
-bisection log:  https://syzkaller.appspot.com/x/bisect.txt?x=13f21c65980000
-console output: https://syzkaller.appspot.com/x/log.txt?x=17f21c65980000
-
-IMPORTANT: if you fix the issue, please add the following tag to the commit:
 Reported-by: syzbot+dca05492eff41f604890@syzkaller.appspotmail.com
-
-loop0: detected capacity change from 0 to 32768
-loop0: detected capacity change from 32768 to 32745
-------------[ cut here ]------------
-UBSAN: array-index-out-of-bounds in fs/jfs/jfs_dmap.c:2628:27
-index 4294967295 is out of range for type 's8[1365]' (aka 'signed char[1365]')
-CPU: 0 PID: 5087 Comm: syz-executor157 Not tainted 6.10.0-syzkaller-11323-g7846b618e0a4 #0
-Hardware name: Google Google Compute Engine/Google Compute Engine, BIOS Google 06/27/2024
-Call Trace:
- <TASK>
- __dump_stack lib/dump_stack.c:88 [inline]
- dump_stack_lvl+0x241/0x360 lib/dump_stack.c:114
- ubsan_epilogue lib/ubsan.c:231 [inline]
- __ubsan_handle_out_of_bounds+0x121/0x150 lib/ubsan.c:429
- dbSplit+0x1fd/0x220 fs/jfs/jfs_dmap.c:2628
- dbAllocBits+0x4e5/0x9a0 fs/jfs/jfs_dmap.c:2191
- dbAllocDmap fs/jfs/jfs_dmap.c:2032 [inline]
- dbAllocDmapLev+0x250/0x4a0 fs/jfs/jfs_dmap.c:1986
- dbAllocCtl+0x113/0x920 fs/jfs/jfs_dmap.c:1823
- dbAllocAG+0x28f/0x10b0 fs/jfs/jfs_dmap.c:1364
- dbAlloc+0x658/0xca0 fs/jfs/jfs_dmap.c:888
- dtSplitUp fs/jfs/jfs_dtree.c:979 [inline]
- dtInsert+0xda7/0x6b00 fs/jfs/jfs_dtree.c:868
- jfs_create+0x7ba/0xbb0 fs/jfs/namei.c:137
- lookup_open fs/namei.c:3578 [inline]
- open_last_lookups fs/namei.c:3647 [inline]
- path_openat+0x1a9a/0x3470 fs/namei.c:3883
- do_filp_open+0x235/0x490 fs/namei.c:3913
- do_sys_openat2+0x13e/0x1d0 fs/open.c:1416
- do_sys_open fs/open.c:1431 [inline]
- __do_sys_openat fs/open.c:1447 [inline]
- __se_sys_openat fs/open.c:1442 [inline]
- __x64_sys_openat+0x247/0x2a0 fs/open.c:1442
- do_syscall_x64 arch/x86/entry/common.c:52 [inline]
- do_syscall_64+0xf3/0x230 arch/x86/entry/common.c:83
- entry_SYSCALL_64_after_hwframe+0x77/0x7f
-RIP: 0033:0x7ff80ad14019
-Code: 28 00 00 00 75 05 48 83 c4 28 c3 e8 f1 17 00 00 90 48 89 f8 48 89 f7 48 89 d6 48 89 ca 4d 89 c2 4d 89 c8 4c 8b 4c 24 08 0f 05 <48> 3d 01 f0 ff ff 73 01 c3 48 c7 c1 b8 ff ff ff f7 d8 64 89 01 48
-RSP: 002b:00007ffcebdf6708 EFLAGS: 00000246 ORIG_RAX: 0000000000000101
-RAX: ffffffffffffffda RBX: 00007ff80ad5d095 RCX: 00007ff80ad14019
-RDX: 000000000000275a RSI: 0000000020000080 RDI: 00000000ffffff9c
-RBP: 00007ff80ad8e5f0 R08: 00005555712cc4c0 R09: 00005555712cc4c0
-R10: 0000000000000000 R11: 0000000000000246 R12: 00007ffcebdf6730
-R13: 00007ffcebdf6958 R14: 431bde82d7b634db R15: 00007ff80ad5d03b
- </TASK>
----[ end trace ]---
-
-
+Closes: https://syzkaller.appspot.com/bug?extid=dca05492eff41f604890
+Signed-off-by: Edward Adam Davis <eadavis@qq.com>
 ---
-This report is generated by a bot. It may contain errors.
-See https://goo.gl/tpsmEJ for more information about syzbot.
-syzbot engineers can be reached at syzkaller@googlegroups.com.
+ fs/jfs/jfs_dmap.c | 5 +++--
+ 1 file changed, 3 insertions(+), 2 deletions(-)
 
-syzbot will keep track of this issue. See:
-https://goo.gl/tpsmEJ#status for how to communicate with syzbot.
-For information about bisection process see: https://goo.gl/tpsmEJ#bisection
+diff --git a/fs/jfs/jfs_dmap.c b/fs/jfs/jfs_dmap.c
+index cb3cda1390ad..c5b8883599e3 100644
+--- a/fs/jfs/jfs_dmap.c
++++ b/fs/jfs/jfs_dmap.c
+@@ -1956,6 +1956,7 @@ dbAllocDmapLev(struct bmap * bmp,
+ {
+ 	s64 blkno;
+ 	int leafidx, rc;
++	dmtree_t *tp = (dmtree_t *) &dp->tree;
+ 
+ 	/* can't be more than a dmaps worth of blocks */
+ 	assert(l2nb <= L2BPERDMAP);
+@@ -1964,10 +1965,10 @@ dbAllocDmapLev(struct bmap * bmp,
+ 	 * free space.  if sufficient free space is found, dbFindLeaf()
+ 	 * returns the index of the leaf at which free space was found.
+ 	 */
+-	if (dbFindLeaf((dmtree_t *) &dp->tree, l2nb, &leafidx, false))
++	if (dbFindLeaf(tp, l2nb, &leafidx, false))
+ 		return -ENOSPC;
+ 
+-	if (leafidx < 0)
++	if (leafidx < 0 || le32_to_cpu(tp->dmt_leafidx) < 0)
+ 		return -EIO;
+ 
+ 	/* determine the block number within the file system corresponding
+-- 
+2.43.0
 
-If the report is already addressed, let syzbot know by replying with:
-#syz fix: exact-commit-title
-
-If you want syzbot to run the reproducer, reply with:
-#syz test: git://repo/address.git branch-or-commit-hash
-If you attach or paste a git patch, syzbot will apply it before testing.
-
-If you want to overwrite report's subsystems, reply with:
-#syz set subsystems: new-subsystem
-(See the list of subsystem names on the web dashboard)
-
-If the report is a duplicate of another one, reply with:
-#syz dup: exact-subject-of-another-report
-
-If you want to undo deduplication, reply with:
-#syz undup
 
 
 _______________________________________________
