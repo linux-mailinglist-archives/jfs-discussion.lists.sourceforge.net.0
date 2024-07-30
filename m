@@ -2,28 +2,28 @@ Return-Path: <jfs-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+jfs-discussion@lfdr.de
 Delivered-To: lists+jfs-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id B2B4C941235
-	for <lists+jfs-discussion@lfdr.de>; Tue, 30 Jul 2024 14:46:06 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C45B6941239
+	for <lists+jfs-discussion@lfdr.de>; Tue, 30 Jul 2024 14:46:17 +0200 (CEST)
 Received: from [127.0.0.1] (helo=sfs-ml-1.v29.lw.sourceforge.com)
 	by sfs-ml-1.v29.lw.sourceforge.com with esmtp (Exim 4.95)
 	(envelope-from <jfs-discussion-bounces@lists.sourceforge.net>)
-	id 1sYmEi-0004GD-C1;
-	Tue, 30 Jul 2024 12:45:53 +0000
+	id 1sYmEw-0004Ic-WD;
+	Tue, 30 Jul 2024 12:46:07 +0000
 Received: from [172.30.29.66] (helo=mx.sourceforge.net)
  by sfs-ml-1.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
  TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (Exim 4.95)
- (envelope-from <sashal@kernel.org>) id 1sYmEV-0004Fv-QV
+ (envelope-from <sashal@kernel.org>) id 1sYmEv-0004IT-QJ
  for jfs-discussion@lists.sourceforge.net;
- Tue, 30 Jul 2024 12:45:40 +0000
+ Tue, 30 Jul 2024 12:46:06 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=sourceforge.net; s=x; h=Content-Transfer-Encoding:MIME-Version:References:
  In-Reply-To:Message-ID:Date:Subject:Cc:To:From:Sender:Reply-To:Content-Type:
  Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
  Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=Jqf0MgKNEWkQBnt69NnRhd1Lr8U9GtOzjfNRf4yoh1Q=; b=VxHCftPveXi2Y4ROw1eoINWBQD
- /VqceGDwDY3erK+rBM3KXJb5YPz8yG5vK8ydYDQi1Os4fJ9G4SrGzIjE0UVcwfPyb/mQkZZMYHirX
- Ztq0iYJFtkH8FvmIbxuRYIbJj+Q2A5LeQLTQDlq44e+pKZbz4mNkPxyJ8Mqu4eph/v+M=;
+ bh=Q4WT+I7tLN4cZPCgLlU43Q/iMUnU2Z+rwaBOPjJ1kVo=; b=isDvw+TzgEzQE4PxOO5Mfhz6pz
+ KxM/yJSTjC8/muSY3Mn2DKHvZO5c1zmOptJQb9CgTlij3L0pL8lUe2C95yPjNejZWT72yuUlDDTd0
+ gv+D3pWcmcTUASektMUSGnwY3iRA6lYpWXYa6k/Pw9qGSX3uMp0WWRt/EiNHXfbgEbHE=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
  h=Content-Transfer-Encoding:MIME-Version:References:In-Reply-To:Message-ID:
@@ -31,40 +31,40 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
  :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
  List-Post:List-Owner:List-Archive;
- bh=Jqf0MgKNEWkQBnt69NnRhd1Lr8U9GtOzjfNRf4yoh1Q=; b=B0PnemPbpx9ydy7+iEahYSpzdE
- TEI3uKMy5LM2BD0s64Sw+lR9MsXs+0kRGEx6l8fHPqSN1/uH6a+KpTOc3ucCmflkkNn7f8KaqDFNm
- 4bMdvS4SPu4cbX8GF4HLm5CmzZ3o3a9Igtmiy8nE8br2COKsPibpTAl542YWKHIXRPVQ=;
-Received: from dfw.source.kernel.org ([139.178.84.217])
+ bh=Q4WT+I7tLN4cZPCgLlU43Q/iMUnU2Z+rwaBOPjJ1kVo=; b=GOLVpJzXgGox4J2v2S3c8Ljce7
+ D4GigaewgI5If9pO4Mt/5LXwMyXwCo7D89Ax9OTaH003Oqwx3XqdJZn59YYtA9S4lfXP3jJfGhQZ1
+ YKJ3A9KWRq61mNZqoFBGeDD7D3ZmBckDoDAlWSlpy6sV3Qea0UvQBe5vnK0Qz/5+N4YM=;
+Received: from sin.source.kernel.org ([145.40.73.55])
  by sfi-mx-2.v28.lw.sourceforge.com with esmtps
  (TLS1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.95)
- id 1sYmEV-0007Ag-Ub for jfs-discussion@lists.sourceforge.net;
- Tue, 30 Jul 2024 12:45:40 +0000
+ id 1sYmEv-0007Cb-P3 for jfs-discussion@lists.sourceforge.net;
+ Tue, 30 Jul 2024 12:46:06 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
- by dfw.source.kernel.org (Postfix) with ESMTP id 973EF61C3A;
- Tue, 30 Jul 2024 12:45:34 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id BFB7AC4AF09;
- Tue, 30 Jul 2024 12:45:32 +0000 (UTC)
+ by sin.source.kernel.org (Postfix) with ESMTP id 12DD6CE1011;
+ Tue, 30 Jul 2024 12:45:54 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 6F704C4AF0A;
+ Tue, 30 Jul 2024 12:45:51 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=k20201202; t=1722343534;
- bh=dj3ZUdCBqrSs5hApOQfY89TE70ROrZ696r/pf9VlDAc=;
+ s=k20201202; t=1722343553;
+ bh=MVz/znc9I233RgIM9zDHWcICToeODo3lTIKp9s5T8N4=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=crcuVciVHq5ToUAF6rseBBn0DKLrnqpVniSsUCDq2vYt4VECYWFp+L37c3SdsUNvL
- wUthBQvIFuGM2X7ShFi1ypiD8ZwXd32M4Ha/tDJF67E7V4BrfUVnwce4XJ53vBTmrI
- lvda12X/fXnMRVpkx2Ze+WA5VjeJRkjfLEUdIRTYxZZtEtccibYt0eKLoBRwmsQWWk
- tHgBfSjuk3kFxFYm7dl+jJD9gmBbv5QIJrW8wIgds/Yk7O0p25ohdmdxtYyGd40QQk
- qUD4BLYrhcPIyP/iuoLeWNpz2D8xcmA/APsp9tmp58BoOH745S2mdKCShwfz+c1Nfz
- uiSk8XWeEtejg==
+ b=JEjy4JjQTw5cJTiui8/BHM9eV+6tdadhjXlLg5ZaYkbFbFI4/CdF2vuouLG6acr/Z
+ lYa05AchDidLpEuOvEXzEtLbN6lVjQSlZ3Gp9oTNXVWw5G5Adgs0MlENFhrF4ZBOwX
+ qYsAMeHihnQxGiIzw8jQ8XTwTv72FiaYGAnKknsoiZ+NHSnWM8c2zzQvFUrhc7mTs1
+ Y4h75LQPbpLSH/fBXc2CIhFHe2gk48/otAdqucCioLr7qZJVg+WMOK/JAXM13wvleb
+ /9049C+P/F8UUHAp/uOBB9AJ9eTT/aik1nM3LMRF5eRNGXVEi0ALmGwshfsRRiqD2M
+ HJdcolMD1BvLg==
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Date: Tue, 30 Jul 2024 08:45:12 -0400
-Message-ID: <20240730124519.3093607-6-sashal@kernel.org>
+Date: Tue, 30 Jul 2024 08:45:35 -0400
+Message-ID: <20240730124542.3095044-5-sashal@kernel.org>
 X-Mailer: git-send-email 2.43.0
-In-Reply-To: <20240730124519.3093607-1-sashal@kernel.org>
-References: <20240730124519.3093607-1-sashal@kernel.org>
+In-Reply-To: <20240730124542.3095044-1-sashal@kernel.org>
+References: <20240730124542.3095044-1-sashal@kernel.org>
 MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
-X-stable-base: Linux 6.10.2
+X-stable-base: Linux 6.6.43
 X-Spam-Score: -5.3 (-----)
 X-Spam-Report: Spam detection software,
  running on the system "util-spamd-1.v13.lw.sourceforge.com", 
@@ -72,29 +72,27 @@ X-Spam-Report: Spam detection software,
  message has been attached to this so you can view it or label
  similar future email.  If you have any questions, see
  the administrator of that system for details.
- Content preview: From: Pei Li <peili.dev@gmail.com> [ Upstream commit
- 7063b80268e2593e58bee8a8d709c2f3ff93e2f2
- ] When searching for the next smaller log2 block, BLKSTOL2() returned 0,
- causing shift exponent -1 to be negative. 
+ Content preview:  From: Edward Adam Davis <eadavis@qq.com> [ Upstream commit
+ ce6dede912f064a855acf6f04a04cbb2c25b8c8c ] [syzbot reported] general
+ protection
+ fault, probably for non-canonical address 0xdffffc0000000001: 0000 [#1] PREEMPT
+ SMP KASAN PTI KASAN: null-ptr-deref in range
+ [0x0000000000000008-0x000000000000000f [...] 
  Content analysis details:   (-5.3 points, 6.0 required)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 URIBL_BLOCKED          ADMINISTRATOR NOTICE: The query to URIBL was
- blocked.  See
- http://wiki.apache.org/spamassassin/DnsBlocklists#dnsbl-block
- for more information. [URIs: syzkaller.appspot.com]
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [139.178.84.217 listed in list.dnswl.org]
- 0.0 RCVD_IN_VALIDITY_RPBL_BLOCKED RBL: ADMINISTRATOR NOTICE: The
- query to Validity was blocked.  See
- https://knowledge.validity.com/hc/en-us/articles/20961730681243
- for more information.
- [139.178.84.217 listed in bl.score.senderscore.com]
  0.0 RCVD_IN_VALIDITY_CERTIFIED_BLOCKED RBL: ADMINISTRATOR NOTICE:
  The query to Validity was blocked.  See
  https://knowledge.validity.com/hc/en-us/articles/20961730681243
  for more information.
- [139.178.84.217 listed in sa-accredit.habeas.com]
+ [145.40.73.55 listed in sa-trusted.bondedsender.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [145.40.73.55 listed in list.dnswl.org]
+ 0.0 RCVD_IN_VALIDITY_RPBL_BLOCKED RBL: ADMINISTRATOR NOTICE: The
+ query to Validity was blocked.  See
+ https://knowledge.validity.com/hc/en-us/articles/20961730681243
+ for more information.
+ [145.40.73.55 listed in bl.score.senderscore.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -105,9 +103,9 @@ X-Spam-Report: Spam detection software,
  envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIMWL_WL_HIGH         DKIMwl.org - High trust sender
-X-Headers-End: 1sYmEV-0007Ag-Ub
-Subject: [Jfs-discussion] [PATCH AUTOSEL 6.10 6/7] jfs: Fix
- shift-out-of-bounds in dbDiscardAG
+X-Headers-End: 1sYmEv-0007Cb-P3
+Subject: [Jfs-discussion] [PATCH AUTOSEL 6.6 5/7] jfs: fix null ptr deref in
+ dtInsertEntry
 X-BeenThere: jfs-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -123,45 +121,55 @@ From: Sasha Levin via Jfs-discussion <jfs-discussion@lists.sourceforge.net>
 Reply-To: Sasha Levin <sashal@kernel.org>
 Cc: Sasha Levin <sashal@kernel.org>, shaggy@kernel.org,
  jfs-discussion@lists.sourceforge.net, ghandatmanas@gmail.com,
- juntong.deng@outlook.com,
- syzbot+61be3359d2ee3467e7e4@syzkaller.appspotmail.com,
- Pei Li <peili.dev@gmail.com>, osmtendev@gmail.com
+ osmtendev@gmail.com, Edward Adam Davis <eadavis@qq.com>,
+ syzbot+bba84aef3a26fb93deb9@syzkaller.appspotmail.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Errors-To: jfs-discussion-bounces@lists.sourceforge.net
 
-From: Pei Li <peili.dev@gmail.com>
+From: Edward Adam Davis <eadavis@qq.com>
 
-[ Upstream commit 7063b80268e2593e58bee8a8d709c2f3ff93e2f2 ]
+[ Upstream commit ce6dede912f064a855acf6f04a04cbb2c25b8c8c ]
 
-When searching for the next smaller log2 block, BLKSTOL2() returned 0,
-causing shift exponent -1 to be negative.
+[syzbot reported]
+general protection fault, probably for non-canonical address 0xdffffc0000000001: 0000 [#1] PREEMPT SMP KASAN PTI
+KASAN: null-ptr-deref in range [0x0000000000000008-0x000000000000000f]
+CPU: 0 PID: 5061 Comm: syz-executor404 Not tainted 6.8.0-syzkaller-08951-gfe46a7dd189e #0
+Hardware name: Google Google Compute Engine/Google Compute Engine, BIOS Google 03/27/2024
+RIP: 0010:dtInsertEntry+0xd0c/0x1780 fs/jfs/jfs_dtree.c:3713
+...
+[Analyze]
+In dtInsertEntry(), when the pointer h has the same value as p, after writing
+name in UniStrncpy_to_le(), p->header.flag will be cleared. This will cause the
+previously true judgment "p->header.flag & BT-LEAF" to change to no after writing
+the name operation, this leads to entering an incorrect branch and accessing the
+uninitialized object ih when judging this condition for the second time.
 
-This patch fixes the issue by exiting the loop directly when negative
-shift is found.
+[Fix]
+After got the page, check freelist first, if freelist == 0 then exit dtInsert()
+and return -EINVAL.
 
-Reported-by: syzbot+61be3359d2ee3467e7e4@syzkaller.appspotmail.com
-Closes: https://syzkaller.appspot.com/bug?extid=61be3359d2ee3467e7e4
-Signed-off-by: Pei Li <peili.dev@gmail.com>
+Reported-by: syzbot+bba84aef3a26fb93deb9@syzkaller.appspotmail.com
+Signed-off-by: Edward Adam Davis <eadavis@qq.com>
 Signed-off-by: Dave Kleikamp <dave.kleikamp@oracle.com>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- fs/jfs/jfs_dmap.c | 2 ++
+ fs/jfs/jfs_dtree.c | 2 ++
  1 file changed, 2 insertions(+)
 
-diff --git a/fs/jfs/jfs_dmap.c b/fs/jfs/jfs_dmap.c
-index cb3cda1390adb..5713994328cbc 100644
---- a/fs/jfs/jfs_dmap.c
-+++ b/fs/jfs/jfs_dmap.c
-@@ -1626,6 +1626,8 @@ s64 dbDiscardAG(struct inode *ip, int agno, s64 minlen)
- 		} else if (rc == -ENOSPC) {
- 			/* search for next smaller log2 block */
- 			l2nb = BLKSTOL2(nblocks) - 1;
-+			if (unlikely(l2nb < 0))
-+				break;
- 			nblocks = 1LL << l2nb;
- 		} else {
- 			/* Trim any already allocated blocks */
+diff --git a/fs/jfs/jfs_dtree.c b/fs/jfs/jfs_dtree.c
+index 031d8f570f581..5d3127ca68a42 100644
+--- a/fs/jfs/jfs_dtree.c
++++ b/fs/jfs/jfs_dtree.c
+@@ -834,6 +834,8 @@ int dtInsert(tid_t tid, struct inode *ip,
+ 	 * the full page.
+ 	 */
+ 	DT_GETSEARCH(ip, btstack->top, bn, mp, p, index);
++	if (p->header.freelist == 0)
++		return -EINVAL;
+ 
+ 	/*
+ 	 *	insert entry for new key
 -- 
 2.43.0
 
