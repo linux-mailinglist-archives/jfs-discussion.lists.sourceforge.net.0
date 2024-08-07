@@ -2,27 +2,27 @@ Return-Path: <jfs-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+jfs-discussion@lfdr.de
 Delivered-To: lists+jfs-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id 69A33949E9A
-	for <lists+jfs-discussion@lfdr.de>; Wed,  7 Aug 2024 05:46:58 +0200 (CEST)
-Received: from [127.0.0.1] (helo=sfs-ml-2.v29.lw.sourceforge.com)
-	by sfs-ml-2.v29.lw.sourceforge.com with esmtp (Exim 4.95)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0D18A94A477
+	for <lists+jfs-discussion@lfdr.de>; Wed,  7 Aug 2024 11:36:27 +0200 (CEST)
+Received: from [127.0.0.1] (helo=sfs-ml-4.v29.lw.sourceforge.com)
+	by sfs-ml-4.v29.lw.sourceforge.com with esmtp (Exim 4.95)
 	(envelope-from <jfs-discussion-bounces@lists.sourceforge.net>)
-	id 1sbXdH-0006tt-V6;
-	Wed, 07 Aug 2024 03:46:39 +0000
+	id 1sbd5X-0005oL-T2;
+	Wed, 07 Aug 2024 09:36:11 +0000
 Received: from [172.30.29.66] (helo=mx.sourceforge.net)
- by sfs-ml-2.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
+ by sfs-ml-4.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
  TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (Exim 4.95)
- (envelope-from <willy@infradead.org>) id 1sbXdG-0006tR-57;
- Wed, 07 Aug 2024 03:46:38 +0000
+ (envelope-from <brauner@kernel.org>) id 1sbd5W-0005o8-LC;
+ Wed, 07 Aug 2024 09:36:10 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=sourceforge.net; s=x; h=In-Reply-To:Content-Type:MIME-Version:References:
  Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:Content-Transfer-Encoding:
  Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
  Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=Jy5sBXXGr2voNP18guOdqKk17MKFMl8ptCuzk1nlp0Q=; b=N1SW6z63RenxgiO8rEsxLhDf33
- TfFtF4OeT3TgDEZez0f4Xk0oe+gcMkEZu1DJSrDL5ufZnzK8dkwFzclVmK3BlPWlXdsTUzBIij4yK
- 2+2zOYnLubFQQAk093pqSAUJn4AGmQB280rgkWtMNAMaOZSPSlWcCBc3kAW9BSgANafk=;
+ bh=60H60kILv9Bav9pTakzp3GjJPhswXxdFsUwDJslrUzY=; b=JM4UjAgzeg8eykM5cAZzvzVNL8
+ sO0923Mbo1fRLq5GZWmHMoExJg3mQFZPZ5vvbrI0Joh8XzE3E9/pEBOv4TY2dkOnXwVXONwblowrK
+ sRQiQIo+X1ZzgmEcazzQndyJsmUrb+/rzhv8j3O0AftK8Hb209Do7X7TBuL7nYvKQKVU=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
  h=In-Reply-To:Content-Type:MIME-Version:References:Message-ID:Subject:Cc:To
@@ -30,62 +30,59 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
  :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
  List-Post:List-Owner:List-Archive;
- bh=Jy5sBXXGr2voNP18guOdqKk17MKFMl8ptCuzk1nlp0Q=; b=aOLsL2s4SFHkxoine04O2BVo/r
- PiUjjKiOkPtwPcDcOJ5XNSGJs4LmHsdTvmNrXKb1BrSVKG+FHG4B73ZXIcOita5EN4+oQzyA6VUoD
- uHQO7qvNv4RcZYKeOaXMurnAGFB4zjOqhQIP7vuvv+NSmsLqUWV8u4GLFtWhZuNy7z8w=;
-Received: from casper.infradead.org ([90.155.50.34])
+ bh=60H60kILv9Bav9pTakzp3GjJPhswXxdFsUwDJslrUzY=; b=EmuZk3Gd73h4pYw5hphr6J6fjd
+ PAhCjDmlYMXHepJZjxPeBC8Y7dwE/g65rSLpkMrS2/q825Di4DE4CGtZfjTuaihoc1+7N7KDA0CCM
+ FFCcDTmkgzZ8CyBUXB40RYNY7Md8gpZFXRExiTEk0UVKvdZkfbYjzKTFxfuJcG4NC8L0=;
+Received: from dfw.source.kernel.org ([139.178.84.217])
  by sfi-mx-2.v28.lw.sourceforge.com with esmtps
  (TLS1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.95)
- id 1sbXdF-00039d-Aq; Wed, 07 Aug 2024 03:46:38 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=infradead.org; s=casper.20170209; h=In-Reply-To:Content-Type:MIME-Version:
- References:Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:
- Content-Transfer-Encoding:Content-ID:Content-Description;
- bh=Jy5sBXXGr2voNP18guOdqKk17MKFMl8ptCuzk1nlp0Q=; b=kBpsMhbZ+1Pgy99WHBD3YzI4XG
- Hqy0KiWbREOfNTGd4D85Ztw2vyfymYiId0v/fTjNdlVAQK/i5x/NoKEy/QsyytCQ29qGuUAPcq9Qm
- vjWq9+4BtI6nienJ8u7m7JMTT8t8SpdKlmHFaOFuyV61i2voDWVr/HNRi6uBFNEFEKkv5wF5jsRT4
- QsFXi0/Oqo98Wx1ic4RCpOZYs5IrLeuD9EiwRoO7eiq16UpiiqcAEe8uXB9oQygLNDqEwGOxHUSal
- larh/IiUtXsxc/JN3FDf2sNmqYdwc6o9DNqJ+ZGljoforqQ0namjXayDrOo23zksSQNAh0C4Om5cd
- UgGbrBrg==;
-Received: from willy by casper.infradead.org with local (Exim 4.97.1 #2 (Red
- Hat Linux)) id 1sbXct-00000006gRT-3Off;
- Wed, 07 Aug 2024 03:46:16 +0000
-Date: Wed, 7 Aug 2024 04:46:15 +0100
-From: Matthew Wilcox <willy@infradead.org>
-To: kernel test robot <oliver.sang@intel.com>,
- Ryan Roberts <ryan.roberts@arm.com>, Christian Brauner <brauner@kernel.org>
-Message-ID: <ZrLuBz1eBdgFzIyC@casper.infradead.org>
+ id 1sbd5W-0003SJ-0e; Wed, 07 Aug 2024 09:36:10 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+ by dfw.source.kernel.org (Postfix) with ESMTP id A161561127;
+ Wed,  7 Aug 2024 09:36:04 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id E42EDC4AF0B;
+ Wed,  7 Aug 2024 09:35:58 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=k20201202; t=1723023364;
+ bh=SIN474AVw4y1MoDQyBN2l9zLDxAG8yJpM+IZg/xSlBk=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=btbhCRAZArjLvUl8j5Ej+vHzQoO1vTjwqrNsQBIT0/x406nNG6tlbPi9O+sN17d4Y
+ QICBpuxQ5Bjmn0gXNfW6CQYVZcH8G9ejnTHAA9QFo2zZkYlDWAI6Ot2tDmga9anM+b
+ WGgtBA/ZIv47FtykXIpoPT2AFtuvlcGoPU21CF4LWL98hI/ZRbIPlQfOtpM6SjubXy
+ OlCR91eQljQjrJdxLmEtfQYDLsvKApDB3/uWNI88bc+X4QiyQeaPCNomUP+ive0rEL
+ gGm3BEKgE3wm60LcEtCDTOpcEofl8MTOn6i7t19oigLeiBJBu3URtJDBmLKsiEuJyf
+ nO0JARebaxVPA==
+Date: Wed, 7 Aug 2024 11:35:56 +0200
+To: Matthew Wilcox <willy@infradead.org>
+Message-ID: <20240807-fazit-bergbahn-25781f6167b7@brauner>
 References: <202408062249.2194d51b-lkp@intel.com>
+ <ZrLuBz1eBdgFzIyC@casper.infradead.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <202408062249.2194d51b-lkp@intel.com>
-X-Spam-Score: -0.2 (/)
+In-Reply-To: <ZrLuBz1eBdgFzIyC@casper.infradead.org>
+X-Spam-Score: -0.3 (/)
 X-Spam-Report: Spam detection software,
- running on the system "util-spamd-1.v13.lw.sourceforge.com", 
+ running on the system "util-spamd-2.v13.lw.sourceforge.com", 
  has NOT identified this incoming email as spam.  The original
  message has been attached to this so you can view it or label
  similar future email.  If you have any questions, see
  the administrator of that system for details.
- Content preview:  On Tue, Aug 06, 2024 at 10:26:17PM +0800, kernel test robot
- wrote: > kernel test robot noticed "kernel_BUG_at_include/linux/page-flags.h"
- on: > > commit: cdc4ad36a871b7ac43fcc6b2891058d332ce60ce ("fs: [...] 
- Content analysis details:   (-0.2 points, 6.0 required)
+ Content preview:  On Wed, Aug 07, 2024 at 04:46:15AM GMT, Matthew Wilcox wrote:
+ > On Tue, Aug 06, 2024 at 10:26:17PM +0800, kernel test robot wrote: > >
+ kernel test robot noticed "kernel_BUG_at_include/linux/page-flags [...] 
+ Content analysis details:   (-0.3 points, 6.0 required)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 URIBL_BLOCKED          ADMINISTRATOR NOTICE: The query to URIBL was
- blocked.  See
- http://wiki.apache.org/spamassassin/DnsBlocklists#dnsbl-block
- for more information. [URIs: infradead.org]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
-X-Headers-End: 1sbXdF-00039d-Aq
+ valid -0.1 DKIMWL_WL_HIGH         DKIMwl.org - High trust sender
+X-Headers-End: 1sbd5W-0003SJ-0e
 Subject: Re: [Jfs-discussion] [linux-next:master] [fs] cdc4ad36a8:
  kernel_BUG_at_include/linux/page-flags.h
 X-BeenThere: jfs-discussion@lists.sourceforge.net
@@ -99,51 +96,41 @@ List-Post: <mailto:jfs-discussion@lists.sourceforge.net>
 List-Help: <mailto:jfs-discussion-request@lists.sourceforge.net?subject=help>
 List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/jfs-discussion>, 
  <mailto:jfs-discussion-request@lists.sourceforge.net?subject=subscribe>
-Cc: jfs-discussion@lists.sourceforge.net,
+From: Christian Brauner via Jfs-discussion
+ <jfs-discussion@lists.sourceforge.net>
+Reply-To: Christian Brauner <brauner@kernel.org>
+Cc: jfs-discussion@lists.sourceforge.net, oe-lkp@lists.linux.dev,
  Linux Memory Management List <linux-mm@kvack.org>,
  linux-mtd@lists.infradead.org, linux-nilfs@vger.kernel.org, lkp@intel.com,
  linux-bcachefs@vger.kernel.org, linux-ext4@vger.kernel.org,
- devel@lists.orangefs.org, intel-gfx@lists.freedesktop.org,
- ecryptfs@vger.kernel.org, linux-um@lists.infradead.org,
- reiserfs-devel@vger.kernel.org, linux-block@vger.kernel.org,
- ocfs2-devel@lists.linux.dev, ceph-devel@vger.kernel.org,
- linux-nfs@vger.kernel.org, linux-kernel@vger.kernel.org,
- linux-f2fs-devel@lists.sourceforge.net, oe-lkp@lists.linux.dev,
- linux-fsdevel@vger.kernel.org, ntfs3@lists.linux.dev,
- linux-karma-devel@lists.sourceforge.net
+ devel@lists.orangefs.org, Ryan Roberts <ryan.roberts@arm.com>,
+ intel-gfx@lists.freedesktop.org, ecryptfs@vger.kernel.org,
+ linux-um@lists.infradead.org, reiserfs-devel@vger.kernel.org,
+ linux-block@vger.kernel.org, ocfs2-devel@lists.linux.dev,
+ ceph-devel@vger.kernel.org, linux-nfs@vger.kernel.org,
+ linux-kernel@vger.kernel.org, linux-f2fs-devel@lists.sourceforge.net,
+ kernel test robot <oliver.sang@intel.com>, linux-fsdevel@vger.kernel.org,
+ ntfs3@lists.linux.dev, linux-karma-devel@lists.sourceforge.net
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Errors-To: jfs-discussion-bounces@lists.sourceforge.net
 
-On Tue, Aug 06, 2024 at 10:26:17PM +0800, kernel test robot wrote:
-> kernel test robot noticed "kernel_BUG_at_include/linux/page-flags.h" on:
+On Wed, Aug 07, 2024 at 04:46:15AM GMT, Matthew Wilcox wrote:
+> On Tue, Aug 06, 2024 at 10:26:17PM +0800, kernel test robot wrote:
+> > kernel test robot noticed "kernel_BUG_at_include/linux/page-flags.h" on:
+> > 
+> > commit: cdc4ad36a871b7ac43fcc6b2891058d332ce60ce ("fs: Convert aops->write_begin to take a folio")
+> > https://git.kernel.org/cgit/linux/kernel/git/next/linux-next.git master
+> > 
+> > [test failed on linux-next/master 1e391b34f6aa043c7afa40a2103163a0ef06d179]
+> > 
+> > in testcase: boot
 > 
-> commit: cdc4ad36a871b7ac43fcc6b2891058d332ce60ce ("fs: Convert aops->write_begin to take a folio")
-> https://git.kernel.org/cgit/linux/kernel/git/next/linux-next.git master
+> This patch should fix it.
 > 
-> [test failed on linux-next/master 1e391b34f6aa043c7afa40a2103163a0ef06d179]
-> 
-> in testcase: boot
+> Christian, can you squash the fix in?
 
-This patch should fix it.
-
-Christian, can you squash the fix in?
-
-
-diff --git a/mm/shmem.c b/mm/shmem.c
-index 7d28304aea0f..66ff87417090 100644
---- a/mm/shmem.c
-+++ b/mm/shmem.c
-@@ -2904,7 +2904,8 @@ shmem_write_begin(struct file *file, struct address_space *mapping,
- 	if (ret)
- 		return ret;
- 
--	if (folio_test_has_hwpoisoned(folio)) {
-+	if (folio_test_hwpoison(folio) ||
-+	    (folio_test_large(folio) && folio_test_has_hwpoisoned(folio))) {
- 		folio_unlock(folio);
- 		folio_put(folio);
- 		return -EIO;
+Yep, done!
 
 
 _______________________________________________
