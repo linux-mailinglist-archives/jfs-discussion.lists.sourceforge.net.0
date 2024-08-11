@@ -2,80 +2,109 @@ Return-Path: <jfs-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+jfs-discussion@lfdr.de
 Delivered-To: lists+jfs-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3B3FF94C015
-	for <lists+jfs-discussion@lfdr.de>; Thu,  8 Aug 2024 16:46:53 +0200 (CEST)
-Received: from [127.0.0.1] (helo=sfs-ml-3.v29.lw.sourceforge.com)
-	by sfs-ml-3.v29.lw.sourceforge.com with esmtp (Exim 4.95)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8541F94EF06
+	for <lists+jfs-discussion@lfdr.de>; Mon, 12 Aug 2024 15:59:07 +0200 (CEST)
+Received: from [127.0.0.1] (helo=sfs-ml-2.v29.lw.sourceforge.com)
+	by sfs-ml-2.v29.lw.sourceforge.com with esmtp (Exim 4.95)
 	(envelope-from <jfs-discussion-bounces@lists.sourceforge.net>)
-	id 1sc4PS-0005nw-HP;
-	Thu, 08 Aug 2024 14:46:33 +0000
+	id 1sdVZO-0001aU-2h;
+	Mon, 12 Aug 2024 13:58:46 +0000
 Received: from [172.30.29.66] (helo=mx.sourceforge.net)
- by sfs-ml-1.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
- TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (Exim 4.95)
- (envelope-from <ryan.roberts@arm.com>) id 1sbbXh-0004CJ-TJ;
- Wed, 07 Aug 2024 07:57:10 +0000
+ by sfs-ml-3.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
+ TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (Exim 4.95) (envelope-from
+ <39B64ZgkbAE89FG1r22v8r66zu.x55x2vB9v8t54Av4A.t53@M3KW2WVRGUFZ5GODRSRYTGD7.apphosting.bounces.google.com>)
+ id 1scy8H-0003cP-59 for jfs-discussion@lists.sourceforge.net;
+ Sun, 11 Aug 2024 02:16:32 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=sourceforge.net; s=x; h=Content-Transfer-Encoding:Content-Type:In-Reply-To:
- From:References:Cc:To:Subject:MIME-Version:Date:Message-ID:Sender:Reply-To:
- Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
- Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
+ d=sourceforge.net; s=x; h=Content-Type:To:From:Subject:Message-ID:In-Reply-To
+ :Date:MIME-Version:Sender:Reply-To:Cc:Content-Transfer-Encoding:Content-ID:
+ Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+ :Resent-Message-ID:References:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=mqvL9kVCgzj7U7irHa2ORnVHw0WuVj0xvWQ+gN18bsg=; b=fva2hF/2JyTnYzrjpNdp0Rd7Ni
- pGqYz3B5wqIe+2qv5YFBk0RyoobI6riesnXhr+WJmy2Ovf1xWDC1JEfGQFuX5GicjlK3xnJGcbPiS
- IABul81MYI39QamklmTKX5nHmo6FJd6ARUNuZ0YADQg3ONDx3GcppWMlhCARI8ya9bt0=;
+ bh=HsKAC2w8OIj8E2V22o2IjRuSBUakLf2Sx3QWeN5iaxE=; b=diIPYyQvtx3MGxtGgY//9maPqV
+ VWYUBfwks52bRz+bCium5WITca2zfX9x1bGLw7MM0PZJ5NizjpyiFX7rfFl2h5uXzyO7qPiPfhirQ
+ I3VEU1f60ziwuiP6Ql0mRU2vTJVtvXfwef2kBIt9xWN4LMwTmhy7y3NuSHn7FxIqEgL8=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
- h=Content-Transfer-Encoding:Content-Type:In-Reply-To:From:References:Cc:To:
- Subject:MIME-Version:Date:Message-ID:Sender:Reply-To:Content-ID:
- Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
- :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
- List-Post:List-Owner:List-Archive;
- bh=mqvL9kVCgzj7U7irHa2ORnVHw0WuVj0xvWQ+gN18bsg=; b=DIt2IsF2cj8NaDNFKik4X1z97E
- slfcujXjyWAQfiPIiBsaxy6E0/BAju4sQz+ej7RNyJ++8SbP6gMPDM+JQCr1e+dFT9o6Jh8r4306t
- iROnNENXxvtniBDQ1T18U51MmSHaxAN66fYbvwkzhVfQSXj+U6eyWNv5+CpnOJ9cMwsw=;
-Received: from foss.arm.com ([217.140.110.172])
- by sfi-mx-2.v28.lw.sourceforge.com with esmtp (Exim 4.95)
- id 1sbbXh-0003Ao-Ue; Wed, 07 Aug 2024 07:57:10 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 6FBB2FEC;
- Wed,  7 Aug 2024 00:38:55 -0700 (PDT)
-Received: from [10.57.81.112] (unknown [10.57.81.112])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 687A53F5A1;
- Wed,  7 Aug 2024 00:38:25 -0700 (PDT)
-Message-ID: <e693ed7a-97bf-486b-84fb-f57e44a399b4@arm.com>
-Date: Wed, 7 Aug 2024 08:38:23 +0100
+ h=Content-Type:To:From:Subject:Message-ID:In-Reply-To:Date:MIME-Version:
+ Sender:Reply-To:Cc:Content-Transfer-Encoding:Content-ID:Content-Description:
+ Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+ References:List-Id:List-Help:List-Unsubscribe:List-Subscribe:List-Post:
+ List-Owner:List-Archive; bh=HsKAC2w8OIj8E2V22o2IjRuSBUakLf2Sx3QWeN5iaxE=; b=V
+ xn8k53/nQiRCnW6vSupTyfgq98zSRFKe5TLjHViN/ae4tPdUj3uM88GisDl7x4fFX1i2nimSQKs20
+ QQGEMEN/Xgu0Iq5OsG//m7h5QXDsP9G/VJtsmE5PJqLFZFYfgBfPsXOIN8OzvRa8Ba0CfHni1ejbj
+ PMpzBnFWtUMdg6c4=;
+Received: from mail-il1-f197.google.com ([209.85.166.197])
+ by sfi-mx-2.v28.lw.sourceforge.com with esmtps
+ (TLS1.2:ECDHE-RSA-AES128-GCM-SHA256:128) (Exim 4.95)
+ id 1scy8F-0003lN-Q1 for jfs-discussion@lists.sourceforge.net;
+ Sun, 11 Aug 2024 02:16:32 +0000
+Received: by mail-il1-f197.google.com with SMTP id
+ e9e14a558f8ab-39b3cd180ffso41914925ab.1
+ for <jfs-discussion@lists.sourceforge.net>;
+ Sat, 10 Aug 2024 19:16:31 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20230601; t=1723342581; x=1723947381;
+ h=to:from:subject:message-id:in-reply-to:date:mime-version
+ :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+ bh=HsKAC2w8OIj8E2V22o2IjRuSBUakLf2Sx3QWeN5iaxE=;
+ b=tMCGvsPeVR9deljFUfpmwXHdai+De4aickpYTsQDf3s7WOF3QQV5ZGIoQKo6frgDNc
+ CPPXd7doMsa4JmEo8bySaPKwkiz54h1J4NdRwCvKCNgzekOOBWe3qXSfW3Xky+SV7UOo
+ c13FdkXU85Zair46Iy3hEbcWf1UwN8Y6xBRLqSs5GCazlwiu2C07Vu1FCFp0iOB6ndqg
+ 2HSFKI6T93/NXW724DvhketE74ZvV3BmBdGkXmZNBPEinZXHnBaaveAvGZwVXmdXkv4Q
+ 60XMZX9I/4BxZKfsXwLW68hiKc7Yd+GvP/4IRZZV44gEtI7VOvJarozuvokIYqK2MeqE
+ BsCw==
+X-Forwarded-Encrypted: i=1;
+ AJvYcCUiQh0+Xd0h/xylC26R2ymFS1bR3vPd8HMw0ekXFio3e/De0E8eEyQn5MScPGuqpSEAr9A03D6HK41h9IkgV11PGJSAnkG+n69naIOJeFTTSjk/HD0=
+X-Gm-Message-State: AOJu0YzhFyZwBw6HfE6v3FYtOYAY3KQQ8O1D4CMGoHMts3SL/hLn29VS
+ W1cxUQYfJ/lmNCh+uOS0cn2uUhs9y7iLHmkgPmXjhQpHEPptNpmWrr3wKEHL3YnsfsQcc6lbFNs
+ FBLhXf7A7SW5hKmgQbS2Z2kHdpiGvhcfPkIbEe9RgBKTKTweBStqoFPU=
+X-Google-Smtp-Source: AGHT+IGpR5OwATLInzqEwF5W5qNe9mvZBRGoTkNxRNNJqDDfxDORIbmTqQL2eKomEF4w7lml2Wa3LrJmR+KLE35arAnW0IfHzjUD
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Content-Language: en-GB
-To: Matthew Wilcox <willy@infradead.org>,
- kernel test robot <oliver.sang@intel.com>,
- Christian Brauner <brauner@kernel.org>
-References: <202408062249.2194d51b-lkp@intel.com>
- <ZrLuBz1eBdgFzIyC@casper.infradead.org>
-In-Reply-To: <ZrLuBz1eBdgFzIyC@casper.infradead.org>
-X-Spam-Score: 0.0 (/)
+X-Received: by 2002:a05:6e02:1d0b:b0:398:d1fe:9868 with SMTP id
+ e9e14a558f8ab-39b7a75252dmr4874335ab.4.1723342580929; Sat, 10 Aug 2024
+ 19:16:20 -0700 (PDT)
+Date: Sat, 10 Aug 2024 19:16:20 -0700
+In-Reply-To: <0000000000006fc563061cbc7f9c@google.com>
+X-Google-Appengine-App-Id: s~syzkaller
+X-Google-Appengine-App-Id-Alias: syzkaller
+Message-ID: <0000000000005cea8e061f5ef6da@google.com>
+To: andrew.kanner@gmail.com, ghandatmanas@gmail.com, 
+ jfs-discussion@lists.sourceforge.net, juntong.deng@outlook.com, 
+ linux-kernel-mentees@lists.linuxfoundation.org, linux-kernel@vger.kernel.org, 
+ osmtendev@gmail.com, rbrasga@uci.edu, shaggy@kernel.org, 
+ skhan@linuxfoundation.org, syzkaller-bugs@googlegroups.com
+X-Spam-Score: 2.8 (++)
 X-Spam-Report: Spam detection software,
  running on the system "util-spamd-1.v13.lw.sourceforge.com", 
  has NOT identified this incoming email as spam.  The original
  message has been attached to this so you can view it or label
  similar future email.  If you have any questions, see
  the administrator of that system for details.
- Content preview:  On 07/08/2024 04:46, Matthew Wilcox wrote: > On Tue, Aug 06, 
- 2024 at 10:26:17PM +0800, kernel test robot wrote: >> kernel test robot noticed
- "kernel_BUG_at_include/linux/page-flags.h" on: >> >> commit [...] 
- Content analysis details:   (0.0 points, 6.0 required)
+ Content preview:  syzbot has found a reproducer for the following issue on:
+ HEAD commit: 34ac1e82e5a7 Merge tag '6.11-rc2-smb3-client-fixes' of git..
+ git tree: upstream console+strace:
+ https://syzkaller.appspot.com/x/log.txt?x=15f035d9980000
+ kernel config: https://syzkaller.a [...] 
+ Content analysis details:   (2.8 points, 6.0 required)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- 0.0 RCVD_IN_DNSWL_BLOCKED  RBL: ADMINISTRATOR NOTICE: The query to
- DNSWL was blocked.  See
+ 0.0 URIBL_BLOCKED          ADMINISTRATOR NOTICE: The query to URIBL was
+ blocked.  See
  http://wiki.apache.org/spamassassin/DnsBlocklists#dnsbl-block
- for more information. [217.140.110.172 listed in list.dnswl.org]
-X-Headers-End: 1sbbXh-0003Ao-Ue
-X-Mailman-Approved-At: Thu, 08 Aug 2024 14:46:32 +0000
-Subject: Re: [Jfs-discussion] [linux-next:master] [fs] cdc4ad36a8:
- kernel_BUG_at_include/linux/page-flags.h
+ for more information. [URIs: googleapis.com]
+ 0.3 FROM_LOCAL_HEX         From: localpart has long hexadecimal sequence
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ 2.5 SORTED_RECIPS          Recipient list is sorted by address
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.166.197 listed in wl.mailspike.net]
+X-Headers-End: 1scy8F-0003lN-Q1
+X-Mailman-Approved-At: Mon, 12 Aug 2024 13:58:44 +0000
+Subject: Re: [Jfs-discussion] [syzbot] [jfs?] UBSAN: shift-out-of-bounds in
+ dbFindBits
 X-BeenThere: jfs-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -87,60 +116,76 @@ List-Post: <mailto:jfs-discussion@lists.sourceforge.net>
 List-Help: <mailto:jfs-discussion-request@lists.sourceforge.net?subject=help>
 List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/jfs-discussion>, 
  <mailto:jfs-discussion-request@lists.sourceforge.net?subject=subscribe>
-From: Ryan Roberts via Jfs-discussion <jfs-discussion@lists.sourceforge.net>
-Reply-To: Ryan Roberts <ryan.roberts@arm.com>
-Cc: jfs-discussion@lists.sourceforge.net,
- Linux Memory Management List <linux-mm@kvack.org>,
- linux-mtd@lists.infradead.org, linux-nilfs@vger.kernel.org, lkp@intel.com,
- linux-bcachefs@vger.kernel.org, linux-ext4@vger.kernel.org,
- devel@lists.orangefs.org, intel-gfx@lists.freedesktop.org,
- ecryptfs@vger.kernel.org, linux-um@lists.infradead.org,
- reiserfs-devel@vger.kernel.org, linux-block@vger.kernel.org,
- ocfs2-devel@lists.linux.dev, ceph-devel@vger.kernel.org,
- linux-nfs@vger.kernel.org, linux-kernel@vger.kernel.org,
- linux-f2fs-devel@lists.sourceforge.net, oe-lkp@lists.linux.dev,
- linux-fsdevel@vger.kernel.org, ntfs3@lists.linux.dev,
- linux-karma-devel@lists.sourceforge.net
+From: syzbot via Jfs-discussion <jfs-discussion@lists.sourceforge.net>
+Reply-To: syzbot <syzbot+e38d703eeb410b17b473@syzkaller.appspotmail.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Errors-To: jfs-discussion-bounces@lists.sourceforge.net
 
-On 07/08/2024 04:46, Matthew Wilcox wrote:
-> On Tue, Aug 06, 2024 at 10:26:17PM +0800, kernel test robot wrote:
->> kernel test robot noticed "kernel_BUG_at_include/linux/page-flags.h" on:
->>
->> commit: cdc4ad36a871b7ac43fcc6b2891058d332ce60ce ("fs: Convert aops->write_begin to take a folio")
->> https://git.kernel.org/cgit/linux/kernel/git/next/linux-next.git master
->>
->> [test failed on linux-next/master 1e391b34f6aa043c7afa40a2103163a0ef06d179]
->>
->> in testcase: boot
-> 
-> This patch should fix it.
-> 
-> Christian, can you squash the fix in?
-> 
-> 
-> diff --git a/mm/shmem.c b/mm/shmem.c
-> index 7d28304aea0f..66ff87417090 100644
-> --- a/mm/shmem.c
-> +++ b/mm/shmem.c
-> @@ -2904,7 +2904,8 @@ shmem_write_begin(struct file *file, struct address_space *mapping,
->  	if (ret)
->  		return ret;
->  
-> -	if (folio_test_has_hwpoisoned(folio)) {
-> +	if (folio_test_hwpoison(folio) ||
-> +	    (folio_test_large(folio) && folio_test_has_hwpoisoned(folio))) {
+syzbot has found a reproducer for the following issue on:
 
-Reviewed-by: Ryan Roberts <ryan.roberts@arm.com>
-Tested-by: Ryan Roberts <ryan.roberts@arm.com>
+HEAD commit:    34ac1e82e5a7 Merge tag '6.11-rc2-smb3-client-fixes' of git..
+git tree:       upstream
+console+strace: https://syzkaller.appspot.com/x/log.txt?x=15f035d9980000
+kernel config:  https://syzkaller.appspot.com/x/.config?x=9358cc4a2e37fd30
+dashboard link: https://syzkaller.appspot.com/bug?extid=e38d703eeb410b17b473
+compiler:       Debian clang version 15.0.6, GNU ld (GNU Binutils for Debian) 2.40
+syz repro:      https://syzkaller.appspot.com/x/repro.syz?x=161cc96d980000
+C reproducer:   https://syzkaller.appspot.com/x/repro.c?x=15f899d9980000
+
+Downloadable assets:
+disk image: https://storage.googleapis.com/syzbot-assets/2c13802fbda4/disk-34ac1e82.raw.xz
+vmlinux: https://storage.googleapis.com/syzbot-assets/74423353023b/vmlinux-34ac1e82.xz
+kernel image: https://storage.googleapis.com/syzbot-assets/61da8b25f42a/bzImage-34ac1e82.xz
+mounted in repro #1: https://storage.googleapis.com/syzbot-assets/4d2d380a51d6/mount_0.gz
+mounted in repro #2: https://storage.googleapis.com/syzbot-assets/53f5a740bbef/mount_2.gz
+
+IMPORTANT: if you fix the issue, please add the following tag to the commit:
+Reported-by: syzbot+e38d703eeb410b17b473@syzkaller.appspotmail.com
+
+ERROR: (device loop0): remounting filesystem as read-only
+jfs_rename: dtInsert returned -EIO
+ERROR: (device loop0): dbAllocBits: leaf page corrupt
+------------[ cut here ]------------
+UBSAN: shift-out-of-bounds in fs/jfs/jfs_dmap.c:3025:47
+shift exponent 32 is too large for 32-bit type 'u32' (aka 'unsigned int')
+CPU: 0 UID: 0 PID: 5213 Comm: syz-executor267 Not tainted 6.11.0-rc2-syzkaller-00239-g34ac1e82e5a7 #0
+Hardware name: Google Google Compute Engine/Google Compute Engine, BIOS Google 06/27/2024
+Call Trace:
+ <TASK>
+ __dump_stack lib/dump_stack.c:93 [inline]
+ dump_stack_lvl+0x241/0x360 lib/dump_stack.c:119
+ ubsan_epilogue lib/ubsan.c:231 [inline]
+ __ubsan_handle_shift_out_of_bounds+0x3c8/0x420 lib/ubsan.c:468
+ dbFindBits+0x11a/0x1d0 fs/jfs/jfs_dmap.c:3025
+ dbAllocDmapLev+0x1e9/0x4a0 fs/jfs/jfs_dmap.c:1985
+ dbAllocCtl+0x113/0x920 fs/jfs/jfs_dmap.c:1825
+ dbAllocAG+0x28f/0x10b0 fs/jfs/jfs_dmap.c:1364
+ dbDiscardAG+0x352/0xa20 fs/jfs/jfs_dmap.c:1613
+ jfs_ioc_trim+0x433/0x670 fs/jfs/jfs_discard.c:100
+ jfs_ioctl+0x2d0/0x3e0 fs/jfs/ioctl.c:131
+ vfs_ioctl fs/ioctl.c:51 [inline]
+ __do_sys_ioctl fs/ioctl.c:907 [inline]
+ __se_sys_ioctl+0xfc/0x170 fs/ioctl.c:893
+ do_syscall_x64 arch/x86/entry/common.c:52 [inline]
+ do_syscall_64+0xf3/0x230 arch/x86/entry/common.c:83
+ entry_SYSCALL_64_after_hwframe+0x77/0x7f
+RIP: 0033:0x7fbb2632d059
+Code: 28 00 00 00 75 05 48 83 c4 28 c3 e8 f1 17 00 00 90 48 89 f8 48 89 f7 48 89 d6 48 89 ca 4d 89 c2 4d 89 c8 4c 8b 4c 24 08 0f 05 <48> 3d 01 f0 ff ff 73 01 c3 48 c7 c1 b8 ff ff ff f7 d8 64 89 01 48
+RSP: 002b:00007ffe933950b8 EFLAGS: 00000246 ORIG_RAX: 0000000000000010
+RAX: ffffffffffffffda RBX: 00007fbb26376095 RCX: 00007fbb2632d059
+RDX: 0000000020000080 RSI: 00000000c0185879 RDI: 0000000000000006
+RBP: 00007fbb263a85f0 R08: 000055555ee264c0 R09: 000055555ee264c0
+R10: 000055555ee264c0 R11: 0000000000000246 R12: 00007ffe933950e0
+R13: 00007ffe93395308 R14: 431bde82d7b634db R15: 00007fbb2637603b
+ </TASK>
+---[ end trace ]---
 
 
->  		folio_unlock(folio);
->  		folio_put(folio);
->  		return -EIO;
-
+---
+If you want syzbot to run the reproducer, reply with:
+#syz test: git://repo/address.git branch-or-commit-hash
+If you attach or paste a git patch, syzbot will apply it before testing.
 
 
 _______________________________________________
