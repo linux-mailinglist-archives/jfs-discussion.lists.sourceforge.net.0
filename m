@@ -2,118 +2,135 @@ Return-Path: <jfs-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+jfs-discussion@lfdr.de
 Delivered-To: lists+jfs-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id 88BE9955927
-	for <lists+jfs-discussion@lfdr.de>; Sat, 17 Aug 2024 19:16:30 +0200 (CEST)
-Received: from [127.0.0.1] (helo=sfs-ml-2.v29.lw.sourceforge.com)
-	by sfs-ml-2.v29.lw.sourceforge.com with esmtp (Exim 4.95)
+	by mail.lfdr.de (Postfix) with ESMTPS id 925DE956253
+	for <lists+jfs-discussion@lfdr.de>; Mon, 19 Aug 2024 06:06:20 +0200 (CEST)
+Received: from [127.0.0.1] (helo=sfs-ml-4.v29.lw.sourceforge.com)
+	by sfs-ml-4.v29.lw.sourceforge.com with esmtp (Exim 4.95)
 	(envelope-from <jfs-discussion-bounces@lists.sourceforge.net>)
-	id 1sfN2D-0004MU-M6;
-	Sat, 17 Aug 2024 17:16:13 +0000
+	id 1sfteZ-0001Zl-Ns;
+	Mon, 19 Aug 2024 04:05:59 +0000
 Received: from [172.30.29.66] (helo=mx.sourceforge.net)
- by sfs-ml-3.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
- TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (Exim 4.95) (envelope-from
- <35Om_ZgkbAPMntufVggZmVkkdY.bjjbgZpnZmXjioZio.Xjh@M3KW2WVRGUFZ5GODRSRYTGD7.apphosting.bounces.google.com>)
- id 1sf6zM-0008GF-1Q for jfs-discussion@lists.sourceforge.net;
- Sat, 17 Aug 2024 00:08:11 +0000
+ by sfs-ml-4.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
+ TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (Exim 4.95)
+ (envelope-from <aha310510@gmail.com>) id 1sfteX-0001Zb-UU
+ for jfs-discussion@lists.sourceforge.net;
+ Mon, 19 Aug 2024 04:05:57 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=sourceforge.net; s=x; h=Content-Type:To:From:Subject:Message-ID:In-Reply-To
- :Date:MIME-Version:Sender:Reply-To:Cc:Content-Transfer-Encoding:Content-ID:
+ d=sourceforge.net; s=x; h=Content-Transfer-Encoding:MIME-Version:Message-Id:
+ Date:Subject:Cc:To:From:Sender:Reply-To:Content-Type:Content-ID:
  Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
- :Resent-Message-ID:References:List-Id:List-Help:List-Unsubscribe:
+ :Resent-Message-ID:In-Reply-To:References:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=q8+h+UYhIgx6SA9dj67GwMpfszzUP7FwDAYj8kWtHvE=; b=YhmbR4rbbMD40z27hPz4cWhtXD
- MDV5k4aIwIjDmgnbeNdnVeuSQb0/yxVy64SRx2hSK5a6ibOEbfQX2I2fXQTzsu1ODPjgHESuCjAcA
- Xj5E6QmpkPvxlgiScQxT4mRvj8oJeczwwSrAo34HCeK8gOj4fxOA9PjdAOYjQIV56kfA=;
+ bh=+4LdY4h9yDY+hKUVhC9nqU4DzmhWAha2389eTWEX1II=; b=j7WYNqj7ER/ZM8ul2PKbGH7tm6
+ /o13DXDF34KIJqLTEiQlC1Qd8Uj11ItYlcWisBeo+PbRXiAiYX3LJh2hvafpM+a90f6R+38uFCN27
+ 9kMLXeoLwgfrXIRQ00T2ei3SuOHo/B+JHl3BIEAgSlFMKwW0uWAoUoSby6MhfVTdVF00=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
- h=Content-Type:To:From:Subject:Message-ID:In-Reply-To:Date:MIME-Version:
- Sender:Reply-To:Cc:Content-Transfer-Encoding:Content-ID:Content-Description:
- Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+ h=Content-Transfer-Encoding:MIME-Version:Message-Id:Date:Subject:Cc:To:From
+ :Sender:Reply-To:Content-Type:Content-ID:Content-Description:Resent-Date:
+ Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
  References:List-Id:List-Help:List-Unsubscribe:List-Subscribe:List-Post:
- List-Owner:List-Archive; bh=q8+h+UYhIgx6SA9dj67GwMpfszzUP7FwDAYj8kWtHvE=; b=h
- V+W//FIpz3VbUn7UFX9wcfGskRzCoawzRbZGZvqPUAkfC7s8jUOZ7batHMTqDm412tguNH1yCGJOZ
- Ea1DcDGAuT77V7vSjHxdb6iyc5dSpU2Qm0nQUyTtt3hdNmqEf28JpSkd2yCW3ukqCZJIQkzL5/SVg
- WMl0ZYMlI29L2HR0=;
-Received: from mail-il1-f200.google.com ([209.85.166.200])
+ List-Owner:List-Archive; bh=+4LdY4h9yDY+hKUVhC9nqU4DzmhWAha2389eTWEX1II=; b=e
+ 1Gaq6u7dZhSJZbR3s0l8M78fby2RKp8LTCP9qw5IBt0+fm/gRjZE4Qtxof4SlOPSEfKmwP2E44nyk
+ yyLJem9nT0emu1PaOqyTU55kdS+w59JiTDSNXpm7xfhU1M9LVZal1n3bLYK1jffgoSvkZ1hCJbRWG
+ nEaPn4fKXinRsiv0=;
+Received: from mail-il1-f182.google.com ([209.85.166.182])
  by sfi-mx-2.v28.lw.sourceforge.com with esmtps
  (TLS1.2:ECDHE-RSA-AES128-GCM-SHA256:128) (Exim 4.95)
- id 1sf6zK-0008E1-Qa for jfs-discussion@lists.sourceforge.net;
- Sat, 17 Aug 2024 00:08:11 +0000
-Received: by mail-il1-f200.google.com with SMTP id
- e9e14a558f8ab-39b3cd1813aso25626915ab.0
+ id 1sfteX-0005ee-77 for jfs-discussion@lists.sourceforge.net;
+ Mon, 19 Aug 2024 04:05:57 +0000
+Received: by mail-il1-f182.google.com with SMTP id
+ e9e14a558f8ab-39d47a9ffb9so4370575ab.1
  for <jfs-discussion@lists.sourceforge.net>;
- Fri, 16 Aug 2024 17:08:10 -0700 (PDT)
+ Sun, 18 Aug 2024 21:05:57 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=gmail.com; s=20230601; t=1724040351; x=1724645151; darn=lists.sourceforge.net;
+ h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+ :to:from:from:to:cc:subject:date:message-id:reply-to;
+ bh=+4LdY4h9yDY+hKUVhC9nqU4DzmhWAha2389eTWEX1II=;
+ b=HPiLF9gp6krkSZzgmMWNssxgQcK3v5qsK7GqRSHrqYDjToZs71nbKdJFxgUgUeg0XM
+ dKGavcaGCqd+Tm4/tfDSgg2YNoipOzK7h9f5rdiBlB3eT3LPzTNg6gw/+lkgIRXhNzLt
+ 1V9yXCEacd4uu4lmKNRpiIfjKEzTLYUavry6Rc4x1iWCq0+z0GX+ibL3WtdHrhjZILb7
+ fEtIAdmljsiVYX6S+zk+6MV3R+mBmb5LggffWrEPLlyy5De1MwQXvkJDomDAmLeFMvr+
+ C2sr+J69HSvDh+EahEHkejBJwLzGik3Lvxc5E2SP6oWMNk7Q5xyn/jnlLQEAlSG1/W0x
+ C1mg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20230601; t=1723853285; x=1724458085;
- h=to:from:subject:message-id:in-reply-to:date:mime-version
- :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
- bh=q8+h+UYhIgx6SA9dj67GwMpfszzUP7FwDAYj8kWtHvE=;
- b=tyQ+GX7cXrF2ZvvIgZaBskbDlPig5r6NJwtwsNY1wH0pVEgFOFXLrO5TyA1WM4ouxz
- u2aN8XtPXfZ3O9pnoYaRTsZexSM8kcQSUFFV0hdrnEDEnhPAiUU5c1wCDpoaisolS5Jl
- zxjq6Dods/HNCdBU2Tpn5iwFj/8lMJ2Kbgsn++u4wK6bzt0iKF4mnUCc/NfqCm+PYoFJ
- fhxNLDJhEYLRY6F5eKbTS6K98MCLxp1ekZ6ghBv1cjz8WrS+Syiee79dvg+6kXhMp2TG
- EGMTJePCWnYozhyGWuc2IRpY1RJPw8y+q3odCku+yKYYINdIrfjaDIcamV++/kcO+gcF
- JUTA==
-X-Forwarded-Encrypted: i=1;
- AJvYcCWiiBp/IM9LSiH6VpjggoSewPO9ia33VFyMra59A0hhU5uMG3soN/rb5vxpY9jdFyIB18TvgUOwIECaJ7nsrTIaOzxYZ8YuSVpq810A5+JAJVC0Bgg=
-X-Gm-Message-State: AOJu0Yz3zlH/Y3VExePwVxiH6gr7ut7XkCJV1ca6tEukrhfSp4kYGn1h
- wMgMJPYKNfSwXEnJVBgajin0uvIDGE6xFbicotALdwcm7gcqIat9o7XngZ1l0RA0DHwPh83siVU
- HgZX2M4xDatQ19LA+6ozuS+Le/VFHIsxO8dtD0RG9uL1w5pyP+LbKjDI=
-X-Google-Smtp-Source: AGHT+IE4e/l8ryHrMJHbK42ym5lVt+Ue8iZ5+aOCXbtbdZsNfLBaLvJ+NnXDWMXIWC5jTOID/up/26bmXmsuhbcipqOIFdkBmzIc
+ d=1e100.net; s=20230601; t=1724040351; x=1724645151;
+ h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+ :to:from:x-gm-message-state:from:to:cc:subject:date:message-id
+ :reply-to;
+ bh=+4LdY4h9yDY+hKUVhC9nqU4DzmhWAha2389eTWEX1II=;
+ b=OIrleCLcz86XpE0Cr5jNygjWtwWgNLX0rh7hNIlFQ2F8K8bI1CO0aF5XgcJ70wRwX2
+ WS78Bbt5Gk6ZvCLY579xOq6cVkAH07YIX71bL+jaSn5NnJVl6opd8xTIUj8Yqw98wRAC
+ ZKoJVQgOvNHF4osWAEro9LW378BPLiwydbmPR9gBkkpl195a8pe2t08jM15TeJCAuHqn
+ 5LcmMTHsVyBJr+lvfT+FuBj9TRETwaZmTNznMYD0yXIjyXwiMfriKyINvvLsP8c/KW/h
+ 4CN+pC5AvaRDWY2/9apnMwMcfU9fogDBnltLdnuS3vN9ywoNGkAYQeMPBwaefghBlJkN
+ OTYw==
+X-Gm-Message-State: AOJu0YzRmnxeHHjUU9RsGP0Cb1Rs3J0R1sOgxXbKasKuLGMqbUiCld1E
+ A9T344GHpA26I1Q64SrhDZ1m+qWOnroloSj6BAgwK3x3c92IzJsS
+X-Google-Smtp-Source: AGHT+IEAjUCYT3zvHCA5MNy3LVXViK+m5Io+GneJY2cR8IqEQqYk4M3N0sbqa1ZdqpP75SHBKW+CiA==
+X-Received: by 2002:a05:6e02:1a41:b0:39a:ebcd:f2fa with SMTP id
+ e9e14a558f8ab-39d26d64460mr124287575ab.20.1724040351297; 
+ Sun, 18 Aug 2024 21:05:51 -0700 (PDT)
+Received: from kernelexploit-virtual-machine.localdomain ([121.185.186.233])
+ by smtp.gmail.com with ESMTPSA id
+ d2e1a72fcca58-7127ae0e246sm5855581b3a.70.2024.08.18.21.05.49
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Sun, 18 Aug 2024 21:05:50 -0700 (PDT)
+To: shaggy@kernel.org,
+	dave.kleikamp@oracle.com
+Date: Mon, 19 Aug 2024 13:05:46 +0900
+Message-Id: <20240819040546.182577-1-aha310510@gmail.com>
+X-Mailer: git-send-email 2.34.1
 MIME-Version: 1.0
-X-Received: by 2002:a05:6e02:1989:b0:39b:2133:8ee5 with SMTP id
- e9e14a558f8ab-39d26ce2d21mr3786475ab.1.1723853284994; Fri, 16 Aug 2024
- 17:08:04 -0700 (PDT)
-Date: Fri, 16 Aug 2024 17:08:04 -0700
-In-Reply-To: <00000000000012a63d061fccab65@google.com>
-X-Google-Appengine-App-Id: s~syzkaller
-X-Google-Appengine-App-Id-Alias: syzkaller
-Message-ID: <000000000000b28361061fd5de24@google.com>
-To: akpm@linux-foundation.org, axboe@kernel.dk, eadavis@qq.com, 
- jfs-discussion@lists.sourceforge.net, kristian@klausen.dk, 
- linux-kernel@vger.kernel.org, linux-mm@kvack.org, shaggy@kernel.org, 
- syzkaller-bugs@googlegroups.com
-X-Spam-Score: 3.0 (+++)
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: Spam detection software,
- running on the system "util-spamd-1.v13.lw.sourceforge.com", 
+ running on the system "util-spamd-2.v13.lw.sourceforge.com", 
  has NOT identified this incoming email as spam.  The original
  message has been attached to this so you can view it or label
  similar future email.  If you have any questions, see
  the administrator of that system for details.
- Content preview: syzbot has bisected this issue to: commit
- 2b9ac22b12a266eb4fec246a07b504dd4983b16b
- Author: Kristian Klausen <kristian@klausen.dk> Date: Fri Jun 18 11:51:57
- 2021 +0000 loop: Fix missing discard support when using LOOP_CONFIGURE 
- Content analysis details:   (3.0 points, 6.0 required)
+ Content preview:  In dbNextAG() ,
+ there is no check for the case where bmp->db_numag
+ is greater or same than MAXAG due to a polluted image,
+ which causes an out-of-bounds.
+ Therefore, a bounds check should be added in db [...] 
+ Content analysis details:   (0.0 points, 6.0 required)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 URIBL_BLOCKED          ADMINISTRATOR NOTICE: The query to URIBL was
- blocked.  See
- http://wiki.apache.org/spamassassin/DnsBlocklists#dnsbl-block
- for more information. [URIs: syzkaller.appspot.com]
- 0.3 FROM_LOCAL_HEX         From: localpart has long hexadecimal sequence
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
+ 0.0 RCVD_IN_VALIDITY_CERTIFIED_BLOCKED RBL: ADMINISTRATOR NOTICE:
+ The query to Validity was blocked.  See
+ https://knowledge.validity.com/hc/en-us/articles/20961730681243
+ for more information.
+ [209.85.166.182 listed in sa-accredit.habeas.com]
  0.0 RCVD_IN_VALIDITY_RPBL_BLOCKED RBL: ADMINISTRATOR NOTICE: The
  query to Validity was blocked.  See
  https://knowledge.validity.com/hc/en-us/articles/20961730681243
  for more information.
- [209.85.166.200 listed in bl.score.senderscore.com]
- 0.0 RCVD_IN_VALIDITY_SAFE_BLOCKED RBL: ADMINISTRATOR NOTICE: The
- query to Validity was blocked.  See
- https://knowledge.validity.com/hc/en-us/articles/20961730681243
- for more information.
- [209.85.166.200 listed in sa-trusted.bondedsender.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ [209.85.166.182 listed in bl.score.senderscore.com]
+ 0.0 RCVD_IN_DNSWL_BLOCKED  RBL: ADMINISTRATOR NOTICE: The query to
+ DNSWL was blocked.  See
+ http://wiki.apache.org/spamassassin/DnsBlocklists#dnsbl-block
+ for more information. [209.85.166.182 listed in list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [aha310510[at]gmail.com]
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit [aha310510[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 2.5 SORTED_RECIPS          Recipient list is sorted by address
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.166.200 listed in wl.mailspike.net]
+ [209.85.166.182 listed in wl.mailspike.net]
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
  -0.0 T_SCC_BODY_TEXT_LINE   No description available.
-X-Headers-End: 1sf6zK-0008E1-Qa
-X-Mailman-Approved-At: Sat, 17 Aug 2024 17:16:12 +0000
-Subject: Re: [Jfs-discussion] [syzbot] [jfs?] KASAN: slab-use-after-free
- Read in dbFreeBits
+X-Headers-End: 1sfteX-0005ee-77
+Subject: [Jfs-discussion] [PATCH] jfs: fix out-of-bounds in dbNextAG() and
+ diAlloc()
 X-BeenThere: jfs-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -125,34 +142,69 @@ List-Post: <mailto:jfs-discussion@lists.sourceforge.net>
 List-Help: <mailto:jfs-discussion-request@lists.sourceforge.net?subject=help>
 List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/jfs-discussion>, 
  <mailto:jfs-discussion-request@lists.sourceforge.net?subject=subscribe>
-From: syzbot via Jfs-discussion <jfs-discussion@lists.sourceforge.net>
-Reply-To: syzbot <syzbot+3c010e21296f33a5dc16@syzkaller.appspotmail.com>
+From: Jeongjun Park via Jfs-discussion <jfs-discussion@lists.sourceforge.net>
+Reply-To: Jeongjun Park <aha310510@gmail.com>
+Cc: Jeongjun Park <aha310510@gmail.com>, jfs-discussion@lists.sourceforge.net,
+ linux-kernel@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Errors-To: jfs-discussion-bounces@lists.sourceforge.net
 
-syzbot has bisected this issue to:
+In dbNextAG() , there is no check for the case where bmp->db_numag is 
+greater or same than MAXAG due to a polluted image, which causes an 
+out-of-bounds. Therefore, a bounds check should be added in dbMount().
 
-commit 2b9ac22b12a266eb4fec246a07b504dd4983b16b
-Author: Kristian Klausen <kristian@klausen.dk>
-Date:   Fri Jun 18 11:51:57 2021 +0000
+And in dbNextAG(), a check for the case where agpref is greater than 
+bmp->db_numag should be added, so an out-of-bounds exception should be 
+prevented.
 
-    loop: Fix missing discard support when using LOOP_CONFIGURE
+Additionally, a check for the case where agno is greater or same than 
+MAXAG should be added in diAlloc() to prevent out-of-bounds.
 
-bisection log:  https://syzkaller.appspot.com/x/bisect.txt?x=16f44605980000
-start commit:   d7a5aa4b3c00 Merge tag 'perf-tools-fixes-for-v6.11-2024-08..
-git tree:       upstream
-final oops:     https://syzkaller.appspot.com/x/report.txt?x=15f44605980000
-console output: https://syzkaller.appspot.com/x/log.txt?x=11f44605980000
-kernel config:  https://syzkaller.appspot.com/x/.config?x=92c0312151c4e32e
-dashboard link: https://syzkaller.appspot.com/bug?extid=3c010e21296f33a5dc16
-syz repro:      https://syzkaller.appspot.com/x/repro.syz?x=139469f5980000
-C reproducer:   https://syzkaller.appspot.com/x/repro.c?x=100f7713980000
+Reported-by: Jeongjun Park <aha310510@gmail.com>
+Fixes: 1da177e4c3f4 ("Linux-2.6.12-rc2")
+Signed-off-by: Jeongjun Park <aha310510@gmail.com>
+---
+ fs/jfs/jfs_dmap.c | 4 ++--
+ fs/jfs/jfs_imap.c | 2 +-
+ 2 files changed, 3 insertions(+), 3 deletions(-)
 
-Reported-by: syzbot+3c010e21296f33a5dc16@syzkaller.appspotmail.com
-Fixes: 2b9ac22b12a2 ("loop: Fix missing discard support when using LOOP_CONFIGURE")
-
-For information about bisection process see: https://goo.gl/tpsmEJ#bisection
+diff --git a/fs/jfs/jfs_dmap.c b/fs/jfs/jfs_dmap.c
+index 5713994328cb..0625d1c0d064 100644
+--- a/fs/jfs/jfs_dmap.c
++++ b/fs/jfs/jfs_dmap.c
+@@ -187,7 +187,7 @@ int dbMount(struct inode *ipbmap)
+ 	}
+ 
+ 	bmp->db_numag = le32_to_cpu(dbmp_le->dn_numag);
+-	if (!bmp->db_numag) {
++	if (!bmp->db_numag || bmp->db_numag >= MAXAG) {
+ 		err = -EINVAL;
+ 		goto err_release_metapage;
+ 	}
+@@ -652,7 +652,7 @@ int dbNextAG(struct inode *ipbmap)
+ 	 * average free space.
+ 	 */
+ 	for (i = 0 ; i < bmp->db_numag; i++, agpref++) {
+-		if (agpref == bmp->db_numag)
++		if (agpref >= bmp->db_numag)
+ 			agpref = 0;
+ 
+ 		if (atomic_read(&bmp->db_active[agpref]))
+diff --git a/fs/jfs/jfs_imap.c b/fs/jfs/jfs_imap.c
+index 1407feccbc2d..a360b24ed320 100644
+--- a/fs/jfs/jfs_imap.c
++++ b/fs/jfs/jfs_imap.c
+@@ -1360,7 +1360,7 @@ int diAlloc(struct inode *pip, bool dir, struct inode *ip)
+ 	/* get the ag number of this iag */
+ 	agno = BLKTOAG(JFS_IP(pip)->agstart, JFS_SBI(pip->i_sb));
+ 	dn_numag = JFS_SBI(pip->i_sb)->bmap->db_numag;
+-	if (agno < 0 || agno > dn_numag)
++	if (agno < 0 || agno > dn_numag || agno >= MAXAG)
+ 		return -EIO;
+ 
+ 	if (atomic_read(&JFS_SBI(pip->i_sb)->bmap->db_active[agno])) {
+--
 
 
 _______________________________________________
