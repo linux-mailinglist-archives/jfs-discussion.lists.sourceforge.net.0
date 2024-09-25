@@ -2,103 +2,108 @@ Return-Path: <jfs-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+jfs-discussion@lfdr.de
 Delivered-To: lists+jfs-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id 29644985D5D
-	for <lists+jfs-discussion@lfdr.de>; Wed, 25 Sep 2024 15:08:52 +0200 (CEST)
-Received: from [127.0.0.1] (helo=sfs-ml-4.v29.lw.sourceforge.com)
-	by sfs-ml-4.v29.lw.sourceforge.com with esmtp (Exim 4.95)
+	by mail.lfdr.de (Postfix) with ESMTPS id DF31F985F40
+	for <lists+jfs-discussion@lfdr.de>; Wed, 25 Sep 2024 15:53:58 +0200 (CEST)
+Received: from [127.0.0.1] (helo=sfs-ml-2.v29.lw.sourceforge.com)
+	by sfs-ml-2.v29.lw.sourceforge.com with esmtp (Exim 4.95)
 	(envelope-from <jfs-discussion-bounces@lists.sourceforge.net>)
-	id 1stRl1-0006B2-6k;
-	Wed, 25 Sep 2024 13:08:39 +0000
+	id 1stSSd-0007BR-1t;
+	Wed, 25 Sep 2024 13:53:43 +0000
 Received: from [172.30.29.66] (helo=mx.sourceforge.net)
  by sfs-ml-2.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
- TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (Exim 4.95) (envelope-from
- <3kbrzZgkbABQCIJ4u55yBu992x.08805yECyBw87Dy7D.w86@M3KW2WVRGUFZ5GODRSRYTGD7.apphosting.bounces.google.com>)
- id 1stMNh-0000XM-F5 for jfs-discussion@lists.sourceforge.net;
- Wed, 25 Sep 2024 07:24:13 +0000
+ TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (Exim 4.95)
+ (envelope-from <eadavis@qq.com>) id 1stSSc-0007BG-5a
+ for jfs-discussion@lists.sourceforge.net;
+ Wed, 25 Sep 2024 13:53:42 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=sourceforge.net; s=x; h=Content-Type:To:From:Subject:Message-ID:In-Reply-To
- :Date:MIME-Version:Sender:Reply-To:Cc:Content-Transfer-Encoding:Content-ID:
- Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
- :Resent-Message-ID:References:List-Id:List-Help:List-Unsubscribe:
+ d=sourceforge.net; s=x; h=Content-Transfer-Encoding:MIME-Version:References:
+ In-Reply-To:Date:Subject:Cc:To:From:Message-ID:Sender:Reply-To:Content-Type:
+ Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
+ Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=z/A3o4UVQs5NAn318rkcVw0SNvHvy2CSk8QVGSxPhsQ=; b=cyIoW3HRyhSJcWOPP5EZ5ZGUZI
- kE3yhTRI+Sarsxr+C86ZutcpLnHUnRDDvwdqN2NU2yNwHyyM6qRhI6IcFhUz0+U+xrUxQSajhiE4g
- QmPxSih0fHyeeeVNuO1XATvm+8AVJbGHJR24bXRTLup4yZYQsJt35JDwTDheKGsFe1FE=;
+ bh=xDQ/047YH46qDRI7w0LS7iGSEzIWbAIopOEzW3KNye8=; b=i2LGwjx4PyMS87blBDq+ujFonB
+ VUUXs7WrhXqTP60cxio52JOei+elq8ffa8L9OSnpkpApyryzElg9VwlF66T+tTNBCJewodv2rOvJd
+ T3pF3i23w9jtJn8bX1sQutEugN2WkzotBSAncpYms/BESxLkJcND/pOlEFza709WUpQA=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
- h=Content-Type:To:From:Subject:Message-ID:In-Reply-To:Date:MIME-Version:
- Sender:Reply-To:Cc:Content-Transfer-Encoding:Content-ID:Content-Description:
- Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
- References:List-Id:List-Help:List-Unsubscribe:List-Subscribe:List-Post:
- List-Owner:List-Archive; bh=z/A3o4UVQs5NAn318rkcVw0SNvHvy2CSk8QVGSxPhsQ=; b=f
- fD23mFEIcHiDwR1cw4AkJbq+abK9FUjA6giuuVOdvt74sx/jfZ7RQmarN7M0P7Tus26j4Ols39wEp
- WpX+qusKsaNTtnyxP5YO58Gin5oZTHqXD4cQb4lQ4mDCw88MWYOI1onSlyk6MmtweHFDG/DYP1//I
- wkpZN9hROuBKBz/k=;
-Received: from mail-io1-f71.google.com ([209.85.166.71])
+ h=Content-Transfer-Encoding:MIME-Version:References:In-Reply-To:Date:
+ Subject:Cc:To:From:Message-ID:Sender:Reply-To:Content-Type:Content-ID:
+ Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+ :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
+ List-Post:List-Owner:List-Archive;
+ bh=xDQ/047YH46qDRI7w0LS7iGSEzIWbAIopOEzW3KNye8=; b=TR2S8GvIzqbvrzodkDgigrC9tc
+ LNIhGmZkyk7pr+JC76cYdDUIZk2ZOzkmo+Ykzd2iKQq4hZRqG9VAfIcJNA6Gyvs5QmQRV0ipp+sMn
+ ejhoJzr75mfPtLKFkeObRcO8ubYMeR3b4bmzwMZ4wgrUuAoZLXe0Qyl+OWU/9RdFPnKI=;
+Received: from out203-205-221-164.mail.qq.com ([203.205.221.164])
  by sfi-mx-2.v28.lw.sourceforge.com with esmtps
- (TLS1.2:ECDHE-RSA-AES128-GCM-SHA256:128) (Exim 4.95)
- id 1stMNg-0007sG-Oo for jfs-discussion@lists.sourceforge.net;
- Wed, 25 Sep 2024 07:24:13 +0000
-Received: by mail-io1-f71.google.com with SMTP id
- ca18e2360f4ac-82cd9c20b2bso862510039f.1
- for <jfs-discussion@lists.sourceforge.net>;
- Wed, 25 Sep 2024 00:24:12 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20230601; t=1727249042; x=1727853842;
- h=to:from:subject:message-id:in-reply-to:date:mime-version
- :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
- bh=z/A3o4UVQs5NAn318rkcVw0SNvHvy2CSk8QVGSxPhsQ=;
- b=sFbtDd05iKIozrbh1gFck2vAsEml72yspmrcwkHIXgab8MKApmdJqe0pn8K/gg4Pr8
- gV0qqwNxx2Pkc7dK1JwtbYc9P9AWttoo3fpFaCa0YZiBG+1fKdYxK5w8k/fxEtP9RfkB
- YRb6y42DZSdgh0lAoAcG3NqRXb8HSTuxyJo/bYpKTw3F+tO8olGVeq8cZN/jcRz+gwgT
- 31KAPCjcHE7ddnAwid6VQjNNo+tquUT32GG8cCef42WheFEedmxU6GwD9XV3r/gQ2n9d
- DHyo9kOQoIhOSuCvCkHbOHdCbYxM6bJKnMUrj2klOZhBZullw7p2fJCQtDUoLkd2qiy8
- /hBQ==
-X-Forwarded-Encrypted: i=1;
- AJvYcCVWT4S7JDGyL1ALS/wOqEh/RgchAssLo2fk0GxpF4eedrmfThntjhB6kRNqvwHQlr372pEikMZk0chwCEjfXA==@lists.sourceforge.net
-X-Gm-Message-State: AOJu0Yw15VxNiVg50X+yBT4ls7CSOYdAy/jQ8n/5VP9IkrmuorqtHgqp
- jr3SHVFm3jQ1SDEDN+VRxoW4AOP/43wqUeDiUyZJWOzYqtD8013U5DFGsEyiNpwMVQlxTMGV1lN
- H3eFPknoulHaBaR3ZHPU5hahobA7G1YB6f/+D0aFt6G5jnkiFJj++ECw=
-X-Google-Smtp-Source: AGHT+IEPpJLOMCaCb92K68J/cy1pD5OdA22rcpbcvYEB5cQSsPAy9r/VXZbw5kMVeJw+fKgDc5Tgm4uxiRh5RTa1mGOndjSeboQb
+ (TLS1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.95)
+ id 1stSSY-00044p-AD for jfs-discussion@lists.sourceforge.net;
+ Wed, 25 Sep 2024 13:53:42 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qq.com; s=s201512;
+ t=1727272404; bh=xDQ/047YH46qDRI7w0LS7iGSEzIWbAIopOEzW3KNye8=;
+ h=From:To:Cc:Subject:Date:In-Reply-To:References;
+ b=d6fD4eogMBxlh8vVoxKXl2OXj97wHL512mXjQUoYgTsauh7NzMvSQA1wrxmLtqdD4
+ AsYRZQGHdegLPPWgiZDXrQzWgMDDxYr5Ye1Lk8huq0kC0bHLhVzAFnxfq0Xhgoc8q/
+ lWfisscYNY3CC1UJdPJ3DdZv/g1nIwMM3hupQe/c=
+Received: from pek-lxu-l1.wrs.com ([111.198.224.50])
+ by newxmesmtplogicsvrsza29-0.qq.com (NewEsmtp) with SMTP
+ id D402DE7B; Wed, 25 Sep 2024 21:53:00 +0800
+X-QQ-mid: xmsmtpt1727272380tbx63wbr1
+Message-ID: <tencent_4A8FBB4133EA9E461B0C4B2C1B2425FFBA08@qq.com>
+X-QQ-XMAILINFO: NY3HYYTs4gYSCD4BjJa3oLj2wgetdTniRHGpPBJX6dm2difxmsv/fwTkOwmJY5
+ jt6PpNTqYy5rI38TJLLAuCSkY9gVU7Q9eiFK6tOPRHW+31HToo0IeL9lZyo0XXXcimsazmvxSkDU
+ XsppQQ+lej3dGDsGYjcz9Z08yBJUjda5SL4rMt1d1cXVHFgfCSPofoHQAMIwwua3bZgglf/2fTJw
+ xuva/rW5nYj7cLej6f+agYfo1K4Jd8lmwlDaz90B6FatPhiCWahiQQMk5syEUo1GtcCAtBSS7Rgw
+ rBSa8TEPCMvN1MavC1SapZm9spMn/wQqFM033aokDKbrrPktRBuHT8AZSPSkSDRVgWboMxmvBxMX
+ ekLHmFDkJEeDNKscbmtad1u3WHrP5TcGft0y06HnSDNW+y0AYGL1b49jWnDtiZRdJW50hntyYd0N
+ sOpUrOaR0n9yKJc+YykZIdNC2gl1yL0noZWUlgWkw0cQ0etXcVT6NUlA8JOPM6UlmYJjkaLdq85R
+ x4lcUzbzuewh0jinBtzNh19RyTs282HQ1RIFzFor4QViHsDAf/WtbTzR1bpk5X9s7k/HcWIDy185
+ lygJYt2/BZCw0Cf9LlNZVdop+HbUSXAXbduPEy3s53lwUdYzELuE72EXJkYfrS7DYoWz48HEz5Jc
+ IN6eB9GzQO/fjMGyo0ejV53kUdAU35ydnwuYV0FH3Ve3siXTDuqhGJMD5J5VHTjj814m3n7Hkbx7
+ fdfR+id0RUI/Dg5gA35pOZHciygL2fMkXpUGuCIIYuZM3UhXsdEKMA4W9VdxgJSh4OcGqUUPBFUB
+ vKYjJ1FNJFlQ9ShemPz6QYdIPX4C4dxThAuTeQe7gceAyVgGfkcE4XwNJQqGYNGjPJ5Jr9aJh9RN
+ K1BcHgb5UrMqPm28AnpE8Z1NLhhBjFLGC/rI9hrf8e6BDFb31tb9YjGQ2In0U8WL2M9OS/fwlG+L
+ Fr9Wtq65s=
+X-QQ-XMRINFO: MSVp+SPm3vtS1Vd6Y4Mggwc=
+To: syzbot+c0360e8367d6d8d04a66@syzkaller.appspotmail.com
+Date: Wed, 25 Sep 2024 21:53:00 +0800
+X-OQ-MSGID: <20240925135259.1575815-2-eadavis@qq.com>
+X-Mailer: git-send-email 2.46.0
+In-Reply-To: <66f33aad.050a0220.457fc.0030.GAE@google.com>
+References: <66f33aad.050a0220.457fc.0030.GAE@google.com>
 MIME-Version: 1.0
-X-Received: by 2002:a05:6e02:1566:b0:3a1:a179:bb54 with SMTP id
- e9e14a558f8ab-3a26d5e8bf2mr23514285ab.0.1727249041866; Wed, 25 Sep 2024
- 00:24:01 -0700 (PDT)
-Date: Wed, 25 Sep 2024 00:24:01 -0700
-In-Reply-To: <000000000000dbda9806203851ba@google.com>
-X-Google-Appengine-App-Id: s~syzkaller
-X-Google-Appengine-App-Id-Alias: syzkaller
-Message-ID: <66f3ba91.050a0220.30ac7d.0010.GAE@google.com>
-To: brauner@kernel.org, eadavis@qq.com, jack@suse.cz, 
- jfs-discussion@lists.sourceforge.net, kent.overstreet@linux.dev, 
- linux-bcachefs@vger.kernel.org, linux-fsdevel@vger.kernel.org, 
- linux-kernel@vger.kernel.org, shaggy@kernel.org, 
- syzkaller-bugs@googlegroups.com, viro@zeniv.linux.org.uk
-X-Spam-Score: 2.2 (++)
+X-Spam-Score: 3.4 (+++)
 X-Spam-Report: Spam detection software,
  running on the system "util-spamd-1.v13.lw.sourceforge.com", 
  has NOT identified this incoming email as spam.  The original
  message has been attached to this so you can view it or label
  similar future email.  If you have any questions, see
  the administrator of that system for details.
- Content preview: syzbot has bisected this issue to: commit
- d97de0d017cde0d442c3d144b4f969f43064cc0f
- Author: Kent Overstreet <kent.overstreet@linux.dev> Date: Tue Aug 13 01:31:25
- 2024 +0000 bcachefs: Make bkey_fsck_err() a wrapper around fsck_err() 
- Content analysis details:   (2.2 points, 6.0 required)
+ Content preview:  Syzbot report a kernel BUG in vfs_get_tree. The root cause
+ is that read_btree_nodes() returned 1 and returned -EINTR due to kthread_run()
+ execution failure. The -EINTR needs to be returnned to bch2_fs_recovery(),
+ not return to "ret = IS_ERR_OR_NULL(t)". 
+ Content analysis details:   (3.4 points, 6.0 required)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.3 FROM_LOCAL_HEX         From: localpart has long hexadecimal sequence
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 2.5 SORTED_RECIPS          Recipient list is sorted by address
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [eadavis[at]qq.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- -0.8 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.166.71 listed in wl.mailspike.net]
-X-Headers-End: 1stMNg-0007sG-Oo
-X-Mailman-Approved-At: Wed, 25 Sep 2024 13:08:37 +0000
-Subject: Re: [Jfs-discussion] [syzbot] [bcachefs?] kernel BUG in vfs_get_tree
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.4 RDNS_DYNAMIC           Delivered to internal network by host with
+ dynamic-looking rDNS
+ 3.2 HELO_DYNAMIC_IPADDR    Relay HELO'd using suspicious hostname (IP
+ addr 1)
+X-Headers-End: 1stSSY-00044p-AD
+Subject: [Jfs-discussion] [PATCH] bcachefs: return the error code instead of
+ the return value of IS_ERR_OR_NULL
 X-BeenThere: jfs-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -110,33 +115,50 @@ List-Post: <mailto:jfs-discussion@lists.sourceforge.net>
 List-Help: <mailto:jfs-discussion-request@lists.sourceforge.net?subject=help>
 List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/jfs-discussion>, 
  <mailto:jfs-discussion-request@lists.sourceforge.net?subject=subscribe>
-From: syzbot via Jfs-discussion <jfs-discussion@lists.sourceforge.net>
-Reply-To: syzbot <syzbot+c0360e8367d6d8d04a66@syzkaller.appspotmail.com>
+From: Edward Adam Davis via Jfs-discussion
+ <jfs-discussion@lists.sourceforge.net>
+Reply-To: Edward Adam Davis <eadavis@qq.com>
+Cc: shaggy@kernel.org, brauner@kernel.org, jack@suse.cz,
+ kent.overstreet@linux.dev, syzkaller-bugs@googlegroups.com,
+ jfs-discussion@lists.sourceforge.net, linux-kernel@vger.kernel.org,
+ linux-bcachefs@vger.kernel.org, viro@zeniv.linux.org.uk,
+ linux-fsdevel@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Errors-To: jfs-discussion-bounces@lists.sourceforge.net
 
-syzbot has bisected this issue to:
+Syzbot report a kernel BUG in vfs_get_tree.
+The root cause is that read_btree_nodes() returned 1 and returned -EINTR
+due to kthread_run() execution failure.
 
-commit d97de0d017cde0d442c3d144b4f969f43064cc0f
-Author: Kent Overstreet <kent.overstreet@linux.dev>
-Date:   Tue Aug 13 01:31:25 2024 +0000
+The -EINTR needs to be returnned to bch2_fs_recovery(), not return to
+"ret = IS_ERR_OR_NULL(t)".
 
-    bcachefs: Make bkey_fsck_err() a wrapper around fsck_err()
+Reported-and-tested-by: syzbot+c0360e8367d6d8d04a66@syzkaller.appspotmail.com
+Closes: https://syzkaller.appspot.com/bug?extid=c0360e8367d6d8d04a66
+Signed-off-by: Edward Adam Davis <eadavis@qq.com>
+---
+ fs/bcachefs/btree_node_scan.c | 4 ++++
+ 1 file changed, 4 insertions(+)
 
-bisection log:  https://syzkaller.appspot.com/x/bisect.txt?x=147a0989980000
-start commit:   2004cef11ea0 Merge tag 'sched-core-2024-09-19' of git://gi..
-git tree:       upstream
-final oops:     https://syzkaller.appspot.com/x/report.txt?x=167a0989980000
-console output: https://syzkaller.appspot.com/x/log.txt?x=127a0989980000
-kernel config:  https://syzkaller.appspot.com/x/.config?x=38d475ce6711b8b4
-dashboard link: https://syzkaller.appspot.com/bug?extid=c0360e8367d6d8d04a66
-syz repro:      https://syzkaller.appspot.com/x/repro.syz?x=171f769f980000
+diff --git a/fs/bcachefs/btree_node_scan.c b/fs/bcachefs/btree_node_scan.c
+index b28c649c6838..df7090ca1e81 100644
+--- a/fs/bcachefs/btree_node_scan.c
++++ b/fs/bcachefs/btree_node_scan.c
+@@ -281,6 +281,10 @@ static int read_btree_nodes(struct find_btree_nodes *f)
+ 			closure_put(&cl);
+ 			f->ret = ret;
+ 			bch_err(c, "error starting kthread: %i", ret);
++			if (IS_ERR(t)) {
++				closure_sync(&cl);
++				return PTR_ERR(t);
++			}
+ 			break;
+ 		}
+ 	}
+-- 
+2.43.0
 
-Reported-by: syzbot+c0360e8367d6d8d04a66@syzkaller.appspotmail.com
-Fixes: d97de0d017cd ("bcachefs: Make bkey_fsck_err() a wrapper around fsck_err()")
-
-For information about bisection process see: https://goo.gl/tpsmEJ#bisection
 
 
 _______________________________________________
