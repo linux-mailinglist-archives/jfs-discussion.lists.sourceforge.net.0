@@ -2,86 +2,87 @@ Return-Path: <jfs-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+jfs-discussion@lfdr.de
 Delivered-To: lists+jfs-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5CE3A989C53
-	for <lists+jfs-discussion@lfdr.de>; Mon, 30 Sep 2024 10:13:15 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 531B698B419
+	for <lists+jfs-discussion@lfdr.de>; Tue,  1 Oct 2024 08:06:30 +0200 (CEST)
 Received: from [127.0.0.1] (helo=sfs-ml-2.v29.lw.sourceforge.com)
 	by sfs-ml-2.v29.lw.sourceforge.com with esmtp (Exim 4.95)
 	(envelope-from <jfs-discussion-bounces@lists.sourceforge.net>)
-	id 1svBWb-0004Ea-HC;
-	Mon, 30 Sep 2024 08:12:57 +0000
+	id 1svW1U-0005Xp-Kv;
+	Tue, 01 Oct 2024 06:06:12 +0000
 Received: from [172.30.29.66] (helo=mx.sourceforge.net)
  by sfs-ml-2.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
  TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (Exim 4.95)
- (envelope-from <ghanshyam1898@gmail.com>) id 1svBWa-0004ED-2n
+ (envelope-from <ghanshyam1898@gmail.com>) id 1svW1T-0005Xd-HB
  for jfs-discussion@lists.sourceforge.net;
- Mon, 30 Sep 2024 08:12:56 +0000
+ Tue, 01 Oct 2024 06:06:11 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=sourceforge.net; s=x; h=Content-Transfer-Encoding:MIME-Version:Message-Id:
  Date:Subject:Cc:To:From:Sender:Reply-To:Content-Type:Content-ID:
  Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
  :Resent-Message-ID:In-Reply-To:References:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=nKf47q4qzBnZJUXqLq9Cg9vwr1MLw2EnMAazJatgi74=; b=i7jD09RMC3zU/X7ePXSMEn7xOw
- F02BsZ6osuBxtpKwCUlBsyUplFzxxUY3CruDjT0zUSP/9oGSeUkhsGDE1NqOetZZiJCxVvTAGbvrW
- gAeIhu45ZhgfjQtuzIiN/w0IupSYygDyBewvv+85oQCIFBu7di7T0fBSjIjY7A9vMJh8=;
+ bh=S3JnPQ592saNCClwG2EAIaq+vjHVmf3dkbYasmw5RK0=; b=O5/v0wgap3XSYoO051hmXMrrHq
+ 3UUBAQsypWJQrwtnuqQiQnYS90o/JJ5WiOCkcMFL6HD8MSfHFLzOLvxaMSUI1hZVsTniU6wSt2wzN
+ Ff2brwQ4CieR5JQfNwrlNvB02ambOg5vdP5yAvrrk1qEe5OrPfyUOIGT5x+kVnU13UUo=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
  h=Content-Transfer-Encoding:MIME-Version:Message-Id:Date:Subject:Cc:To:From
  :Sender:Reply-To:Content-Type:Content-ID:Content-Description:Resent-Date:
  Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
  References:List-Id:List-Help:List-Unsubscribe:List-Subscribe:List-Post:
- List-Owner:List-Archive; bh=nKf47q4qzBnZJUXqLq9Cg9vwr1MLw2EnMAazJatgi74=; b=K
- onoLraXDyw27btliBUdF/qR84L6TlPjljl/l58NXnXmFRcF66CpjPlYkrAMCZChwEzUcGiWTkJZjc
- q/+DY1+At3TbzAvLv3NUBId8Znwx9u/eoPrsFI568536RsWo5z4X6Xc0A/8Jht9ktt8oUtHKqlOjc
- 816fZdsXK4YLhTKw=;
-Received: from mail-pl1-f177.google.com ([209.85.214.177])
+ List-Owner:List-Archive; bh=S3JnPQ592saNCClwG2EAIaq+vjHVmf3dkbYasmw5RK0=; b=S
+ QyQ6ufqKNuNkkLkeYrbwIekY8618sX/jf7Ke0dBBcGf0TRBpy+CX7Nk0ptAce5xk4mYCTfbrII/Xm
+ EZXe7HG7VpAZMZdBW5EWmyB66IfBw9mWEGbTzIVFqH4O5ibB9hKspEtjJrYbyOaaG77YV2LloPqTQ
+ Brrr4Jo523i6Tb3o=;
+Received: from mail-pg1-f181.google.com ([209.85.215.181])
  by sfi-mx-2.v28.lw.sourceforge.com with esmtps
  (TLS1.2:ECDHE-RSA-AES128-GCM-SHA256:128) (Exim 4.95)
- id 1svBWZ-0001XH-FP for jfs-discussion@lists.sourceforge.net;
- Mon, 30 Sep 2024 08:12:56 +0000
-Received: by mail-pl1-f177.google.com with SMTP id
- d9443c01a7336-20b90984971so4459325ad.3
+ id 1svW1S-0008Hb-Od for jfs-discussion@lists.sourceforge.net;
+ Tue, 01 Oct 2024 06:06:11 +0000
+Received: by mail-pg1-f181.google.com with SMTP id
+ 41be03b00d2f7-7e6cbf6cd1dso3478082a12.3
  for <jfs-discussion@lists.sourceforge.net>;
- Mon, 30 Sep 2024 01:12:55 -0700 (PDT)
+ Mon, 30 Sep 2024 23:06:10 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=gmail.com; s=20230601; t=1727683970; x=1728288770; darn=lists.sourceforge.net;
+ d=gmail.com; s=20230601; t=1727762765; x=1728367565; darn=lists.sourceforge.net;
  h=content-transfer-encoding:mime-version:message-id:date:subject:cc
  :to:from:from:to:cc:subject:date:message-id:reply-to;
- bh=nKf47q4qzBnZJUXqLq9Cg9vwr1MLw2EnMAazJatgi74=;
- b=Yb/DEpt55ZqdCGH9e0wOHbF6e+/o8yz3BefK7JXGA/1yIFJuWCQ41S6rshkplAj5uz
- 0h40FsDE4RRBq2Ue7VzxP7nNfbPs+GGu7WoNQ3ngWBl8RUoavTpMza1WJFSwZJHoIyfd
- QYWpTW2li9LnW9DPBTr1PuvU0IhzJulv8bEidJv+IYqzeJVr88PdSKJ8pYuq9QUVbVNN
- rrxxE9EYMlmVIBkiyRjpp9oWLu5zhTQUYZxnFjbpqDeIXsFMJB8c//zwBzJY+AetRuCD
- sR8fQUFJmnaCOFqRrOBrDDwYFh5aAQe4BZAKh8YNAEhx1LA/7uydKAdwzqoIhFdBM+L2
- 0JWw==
+ bh=S3JnPQ592saNCClwG2EAIaq+vjHVmf3dkbYasmw5RK0=;
+ b=Ngfhm1Pk+RFwGkrjzH2qknci4uNdTiWb2EKbTYpwV7d8zfR5ZUcq+B+/QnwsPodYcB
+ vRlXzPMXgX6yNhYh4OcQKY7J2Z+fkIiM7oZUj+dwPxQJdXUdCHOVpDrd74fVJj9ZtXjK
+ U16phP4tIeyhYUwadoe4Dz40zLAiSM5kYtXPXKjNYxRC2k8QZuPrKVQEPL8IWBL0MIZA
+ pdRJ6OcaKiZTQbaYrznqbiehTpfEgUeJdH58J94AigOiA8pMf82W50n7nt1uGkQnDQCJ
+ SkrzQ55Dmnv/V4z1VcmoyIYYiludLQPjkaWMUNi8olilGmn5PAln9xnPLGQsSspV6gJ/
+ FCoA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20230601; t=1727683970; x=1728288770;
+ d=1e100.net; s=20230601; t=1727762765; x=1728367565;
  h=content-transfer-encoding:mime-version:message-id:date:subject:cc
  :to:from:x-gm-message-state:from:to:cc:subject:date:message-id
  :reply-to;
- bh=nKf47q4qzBnZJUXqLq9Cg9vwr1MLw2EnMAazJatgi74=;
- b=q69ycWjueybunXeAR/tOHYV4IUrDb1dL4SleR/4g9hqPug6gpwmuKyhLyZvqOqx2ZN
- /ZtnaUwtEI4o44/7pp1ETnmz5rrJyb95dsv8xegIm1DVzwZiYWSPZfJignJfsC+IvojI
- jkvD95ATV2vPFJ4LxOpGx15VP3YRzCtQUspoGUEmXY06sYOQiERjNoEEejluCFC0KjpW
- Os2faaRRv/AzucZC+wnYwyKtd23Mm1GOhhtneBabBobqmqEM95cnVR8+52ppzg3V3h2N
- tYz7fwWTKTIxBlt6rtpdBwTX9CfRsfN3l5V4oMRvo5voljx6Er1mUKn+h1nS3rl7xr97
- qyew==
-X-Gm-Message-State: AOJu0YzIbbqjhyOEltlzOsPM9ess+1CxZu9D9sTmzBP3Wa6m2Pz6DzgL
- gFa2IEPiHSzVBraWfBA7gDS4qofyVlaptLe0Pi2bwnYlwUF7QSgK
-X-Google-Smtp-Source: AGHT+IEvB7nEgYPcyext9HcfeNP/SQZqPskXRD17yWTaQoiKzyunJTitrYT4WJQmKOowOIy6+NmG7Q==
-X-Received: by 2002:a17:902:dacc:b0:20b:8ef3:68a with SMTP id
- d9443c01a7336-20b8ef30b87mr29858625ad.59.1727683969675; 
- Mon, 30 Sep 2024 01:12:49 -0700 (PDT)
-Received: from dell-xps.. ([2405:201:3036:a902:439e:137:a1fb:3127])
+ bh=S3JnPQ592saNCClwG2EAIaq+vjHVmf3dkbYasmw5RK0=;
+ b=c7RdonnLNb46Q+ajDqIUoiV6ZYSgFTHLqNdFEAf8lgWrtooe6Z0q2d/O6aS5YUTNGw
+ BguLiuzMu/7MzqwCx5wNF1UYUTmH7gai4HgUzd5vkLewcV3pZaZk5NgWz3eKJK9LcU15
+ xqm+x5jEFsZBIm0kxhHYIn8tVZLEZZujxq9apYBA6b6i9q7xDbcvU0VqRQTZtegqL389
+ BkZsoMUMPYmnLvPAoCV/aYop0HVfgXYLO/KrcjHuIupePcrTBrgPlxCaLKCncjNXb27B
+ FORt3WNkYc0SqdozkdhCAAAyGoX23KZTgjcoXfi3hblD76Bqy0r0g50OAJ++NGAcZmm/
+ a1Yw==
+X-Forwarded-Encrypted: i=1;
+ AJvYcCWLuGa25xEGy49/Xt/ypfJN7PRoz+0PG7EUj6KQniQN73Y4OIskI92IyQvy0ldFQVEl73KRI85QTz4DllzqfA==@lists.sourceforge.net
+X-Gm-Message-State: AOJu0YysIjpT8GGfk5kiODKg3em1sWKpBn84J+4YPtYhHqfigT+QNAoJ
+ vzMC5qCUNhcfsLBmbE2NkqGf8uYwEb7jx2snXMGfm6Im27PEZyJs
+X-Google-Smtp-Source: AGHT+IFzh2uSZT0RhPv2Tnh/OMQvJbm6z27RebTeTUBWaAplciMMLoSvwWnHda+XCtUlhuYcyU1eow==
+X-Received: by 2002:a05:6a21:164a:b0:1d3:d40:2060 with SMTP id
+ adf61e73a8af0-1d4fa64d7ebmr20122127637.5.1727762765014; 
+ Mon, 30 Sep 2024 23:06:05 -0700 (PDT)
+Received: from dell-xps.. ([2405:201:3036:a902:b102:83da:252:ac85])
  by smtp.gmail.com with ESMTPSA id
- d9443c01a7336-20b37e4e61csm50105825ad.237.2024.09.30.01.12.45
+ d9443c01a7336-20b37e421f0sm62963435ad.212.2024.09.30.23.06.01
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 30 Sep 2024 01:12:49 -0700 (PDT)
-To: shaggy@kernel.org, ghandatmanas@gmail.com, juntong.deng@outlook.com,
- aha310510@gmail.com, peili.dev@gmail.com, ghanshyam1898@gmail.com,
- eadavis@qq.com
-Date: Mon, 30 Sep 2024 13:42:18 +0530
-Message-Id: <20240930081218.2992648-1-ghanshyam1898@gmail.com>
+ Mon, 30 Sep 2024 23:06:04 -0700 (PDT)
+To: shaggy@kernel.org, eadavis@qq.com, osmtendev@gmail.com,
+ ghandatmanas@gmail.com
+Date: Tue,  1 Oct 2024 11:35:47 +0530
+Message-Id: <20241001060548.3090738-1-ghanshyam1898@gmail.com>
 X-Mailer: git-send-email 2.34.1
 MIME-Version: 1.0
 X-Spam-Score: 0.1 (/)
@@ -91,12 +92,11 @@ X-Spam-Report: Spam detection software,
  message has been attached to this so you can view it or label
  similar future email.  If you have any questions, see
  the administrator of that system for details.
- Content preview:  When dmt_budmin is less than zero, it causes errors in the
- later stages. Added a check to return an error beforehand in dbAllocCtl
- itself.
- Reported-by: https://syzkaller.appspot.com/bug?extid=b5ca8a249162c4b9a7d0
- Signed-off-by: Ghanshyam Agrawal --- fs/jfs/jfs_dmap.c | 5 +++++ 1 file
- changed, 5 insertions(+) 
+ Content preview:  The stbl might contain some invalid values. Added a check
+ to return error code in that case. Reported-by:
+ https://syzkaller.appspot.com/bug?extid=0315f8fe99120601ba88
+ Signed-off-by: Ghanshyam Agrawal --- fs/jfs/jfs_dtree.c | 8 ++++++++ 1 file
+ changed, 8 insertions(+) 
  Content analysis details:   (0.1 points, 6.0 required)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
@@ -114,12 +114,13 @@ X-Spam-Report: Spam detection software,
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.214.177 listed in list.dnswl.org]
+ no trust [209.85.215.181 listed in list.dnswl.org]
  0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [209.85.214.177 listed in wl.mailspike.net]
+ [209.85.215.181 listed in wl.mailspike.net]
  0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
-X-Headers-End: 1svBWZ-0001XH-FP
-Subject: [Jfs-discussion] [PATCH] jfs: fix shift-out-of-bounds in dbSplit
+X-Headers-End: 1svW1S-0008Hb-Od
+Subject: [Jfs-discussion] [PATCH] jfs: fix array-index-out-of-bounds in
+ jfs_readdir
 X-BeenThere: jfs-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -134,46 +135,42 @@ List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/jfs-discussion>,
 From: Ghanshyam Agrawal via Jfs-discussion
  <jfs-discussion@lists.sourceforge.net>
 Reply-To: Ghanshyam Agrawal <ghanshyam1898@gmail.com>
-Cc: jfs-discussion@lists.sourceforge.net, linux-kernel@vger.kernel.org,
- syzbot+b5ca8a249162c4b9a7d0@syzkaller.appspotmail.com
+Cc: jfs-discussion@lists.sourceforge.net,
+ Ghanshyam Agrawal <ghanshyam1898@gmail.com>, linux-kernel@vger.kernel.org,
+ syzbot+0315f8fe99120601ba88@syzkaller.appspotmail.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Errors-To: jfs-discussion-bounces@lists.sourceforge.net
 
-When dmt_budmin is less than zero, it causes errors
-in the later stages. Added a check to return an error beforehand
-in dbAllocCtl itself.
+The stbl might contain some invalid values. Added a check to
+return error code in that case.
 
-Reported-by: syzbot+b5ca8a249162c4b9a7d0@syzkaller.appspotmail.com
-Closes: https://syzkaller.appspot.com/bug?extid=b5ca8a249162c4b9a7d0
+Reported-by: syzbot+0315f8fe99120601ba88@syzkaller.appspotmail.com
+Closes: https://syzkaller.appspot.com/bug?extid=0315f8fe99120601ba88
 Signed-off-by: Ghanshyam Agrawal <ghanshyam1898@gmail.com>
 ---
- fs/jfs/jfs_dmap.c | 5 +++++
- 1 file changed, 5 insertions(+)
+ fs/jfs/jfs_dtree.c | 8 ++++++++
+ 1 file changed, 8 insertions(+)
 
-diff --git a/fs/jfs/jfs_dmap.c b/fs/jfs/jfs_dmap.c
-index 974ecf5e0d95..f65a07252c22 100644
---- a/fs/jfs/jfs_dmap.c
-+++ b/fs/jfs/jfs_dmap.c
-@@ -1808,6 +1808,7 @@ dbAllocCtl(struct bmap * bmp, s64 nblocks, int l2nb, s64 blkno, s64 * results)
- 	s64 b, lblkno, n;
- 	struct metapage *mp;
- 	struct dmap *dp;
-+	dmtree_t *tp;
+diff --git a/fs/jfs/jfs_dtree.c b/fs/jfs/jfs_dtree.c
+index 5d3127ca68a4..c8f6e51ac047 100644
+--- a/fs/jfs/jfs_dtree.c
++++ b/fs/jfs/jfs_dtree.c
+@@ -2891,6 +2891,14 @@ int jfs_readdir(struct file *file, struct dir_context *ctx)
+ 		stbl = DT_GETSTBL(p);
  
- 	/* check if the allocation request is confined to a single dmap.
- 	 */
-@@ -1819,6 +1820,10 @@ dbAllocCtl(struct bmap * bmp, s64 nblocks, int l2nb, s64 blkno, s64 * results)
- 		if (mp == NULL)
- 			return -EIO;
- 		dp = (struct dmap *) mp->data;
-+		tp = (dmtree_t *) &dp->tree;
+ 		for (i = index; i < p->header.nextindex; i++) {
++			if (stbl[i] < 0 || stbl[i] > 127) {
++				DT_PUTPAGE(mp);
++				free_page(dirent_buf);
++				jfs_err("JFS: Invalid stbl[%d] = %d for inode %ld, block = %lld",
++				i, stbl[i], (long)ip->i_ino, (long long)bn);
++				return -EIO;
++			}
 +
-+		if (tp->dmt_budmin < 0)
-+			return -EIO;
+ 			d = (struct ldtentry *) & p->slot[stbl[i]];
  
- 		/* try to allocate the blocks.
- 		 */
+ 			if (((long) jfs_dirent + d->namlen + 1) >
 -- 
 2.34.1
 
