@@ -2,132 +2,149 @@ Return-Path: <jfs-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+jfs-discussion@lfdr.de
 Delivered-To: lists+jfs-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id 05CC498D58A
-	for <lists+jfs-discussion@lfdr.de>; Wed,  2 Oct 2024 15:31:38 +0200 (CEST)
-Received: from [127.0.0.1] (helo=sfs-ml-4.v29.lw.sourceforge.com)
-	by sfs-ml-4.v29.lw.sourceforge.com with esmtp (Exim 4.95)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3115098D66E
+	for <lists+jfs-discussion@lfdr.de>; Wed,  2 Oct 2024 15:41:11 +0200 (CEST)
+Received: from [127.0.0.1] (helo=sfs-ml-3.v29.lw.sourceforge.com)
+	by sfs-ml-3.v29.lw.sourceforge.com with esmtp (Exim 4.95)
 	(envelope-from <jfs-discussion-bounces@lists.sourceforge.net>)
-	id 1svzRp-0007sb-QP;
-	Wed, 02 Oct 2024 13:31:21 +0000
+	id 1svzb9-0006ds-94;
+	Wed, 02 Oct 2024 13:40:58 +0000
 Received: from [172.30.29.66] (helo=mx.sourceforge.net)
- by sfs-ml-4.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
+ by sfs-ml-3.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
  TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (Exim 4.95)
- (envelope-from <sandeen@redhat.com>) id 1svzRo-0007sU-P1
+ (envelope-from <jack@suse.cz>) id 1svzb7-0006dh-Qj
  for jfs-discussion@lists.sourceforge.net;
- Wed, 02 Oct 2024 13:31:20 +0000
+ Wed, 02 Oct 2024 13:40:57 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=sourceforge.net; s=x; h=Content-Transfer-Encoding:Content-Type:In-Reply-To:
- From:References:Cc:To:Subject:MIME-Version:Date:Message-ID:Sender:Reply-To:
+ d=sourceforge.net; s=x; h=In-Reply-To:Content-Type:MIME-Version:References:
+ Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:Content-Transfer-Encoding:
  Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
  Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=kG31EDHNs4XBvMsZ9DeD8Jl6inKN8cIGFR2fYCg/NOY=; b=CjN0Jjm3vkth1+KAYc4Ds3KveK
- Yst40CSMmrBlmSmvAskJ8YkH6alOYEO1PbFUwCENxLnIJiP2JI3C7nti3/XtdDyiqL9jOOx7YKtO3
- Bni4SyZ/NGwsn8JIlWxj5x0v9kSqKJrY5X8PTHsk+1vXoWKbHYC1KLeO8z7uYwRt8XLE=;
+ bh=qN4jdMdYc3XrKwX0MrXijGkE/HH5JkxIjoq4ke+SNt4=; b=IM9R/wVLCJy/LbdnvkzLKjLqNn
+ U0pD9RlF7HHO4tb4Uh/zoDBpKl6YZBnO3yODUMlvz6EWEnBZo0HlH5CbzSBD25hAf6bh8W+RWTTyy
+ mxCOb4XRHEAHpvNQ33Tq8KHskxey73YHAQ34S2gjOh96foxMhlc6Ng3BaS2im2vvjlNA=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
- h=Content-Transfer-Encoding:Content-Type:In-Reply-To:From:References:Cc:To:
- Subject:MIME-Version:Date:Message-ID:Sender:Reply-To:Content-ID:
+ h=In-Reply-To:Content-Type:MIME-Version:References:Message-ID:Subject:Cc:To
+ :From:Date:Sender:Reply-To:Content-Transfer-Encoding:Content-ID:
  Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
  :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
  List-Post:List-Owner:List-Archive;
- bh=kG31EDHNs4XBvMsZ9DeD8Jl6inKN8cIGFR2fYCg/NOY=; b=H1TpIibcVJTDAIaWEYwoIjY+EW
- zp1IpqpxK82fID/NyahRDkH7bAxE7Dc4zfFM1UbTCBEyHTtdMWBFY5Tr/sOjEurNVituYdGUsusou
- 3BF7HXJ7GEacNeuNk227QxQYaQR57yDaDhxACQob3jtc6fpXT9Kvnz5Or+OXn7GiPf7Q=;
-Received: from us-smtp-delivery-124.mimecast.com ([170.10.129.124])
+ bh=qN4jdMdYc3XrKwX0MrXijGkE/HH5JkxIjoq4ke+SNt4=; b=BqLG9iKLTY45a79j82IL6um8W6
+ 0D6y1vpwK3Wliz44L1Vny+rLUKIBMP9n2hIusgQb081bVkXcQyWnmTPoyH+lLGaWHzkM1Ntyscrtf
+ surv5VObKydG8wnDDQH5hjhc7m7s2wxJkInrw9A+DVuZJQZZDr4H5fBmJWsn7vry1+zw=;
+Received: from smtp-out2.suse.de ([195.135.223.131])
  by sfi-mx-2.v28.lw.sourceforge.com with esmtps
- (TLS1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.95)
- id 1svzRn-0007oL-Tn for jfs-discussion@lists.sourceforge.net;
- Wed, 02 Oct 2024 13:31:20 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
- s=mimecast20190719; t=1727875873;
- h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
- to:to:cc:cc:mime-version:mime-version:content-type:content-type:
- content-transfer-encoding:content-transfer-encoding:
+ (TLS1.2:ECDHE-RSA-AES128-GCM-SHA256:128) (Exim 4.95)
+ id 1svzb6-0008Q0-1U for jfs-discussion@lists.sourceforge.net;
+ Wed, 02 Oct 2024 13:40:57 +0000
+Received: from imap1.dmz-prg2.suse.org (unknown [10.150.64.97])
+ (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+ key-exchange X25519 server-signature RSA-PSS (4096 bits) server-digest SHA256)
+ (No client certificate requested)
+ by smtp-out2.suse.de (Postfix) with ESMTPS id 382071FD63;
+ Wed,  2 Oct 2024 13:40:44 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=suse.cz; s=susede2_rsa;
+ t=1727876444; h=from:from:reply-to:date:date:message-id:message-id:to:to:cc:cc:
+ mime-version:mime-version:content-type:content-type:
  in-reply-to:in-reply-to:references:references;
- bh=kG31EDHNs4XBvMsZ9DeD8Jl6inKN8cIGFR2fYCg/NOY=;
- b=OCGQO0vMdytMY6fWt+8ZgaE4cLvf2/bzs5AaxfbHfme23zNs/D/WQNh87t8GiAxgXlYTAa
- sLvl7/2rSFtm8cXXtiDm3jv2TMV1ADEXacukNSL6fuN4GX0WNwf/b6fX1xAHwtu2KsoSLc
- TnczXF6S/oTDRwjrBhnenTiTiC0ab7s=
-Received: from mail-io1-f69.google.com (mail-io1-f69.google.com
- [209.85.166.69]) by relay.mimecast.com with ESMTP with STARTTLS
- (version=TLSv1.3, cipher=TLS_AES_256_GCM_SHA384) id
- us-mta-515-q8_JYgUZN7in3sXHKObJWg-1; Wed, 02 Oct 2024 09:31:10 -0400
-X-MC-Unique: q8_JYgUZN7in3sXHKObJWg-1
-Received: by mail-io1-f69.google.com with SMTP id
- ca18e2360f4ac-82cf30e0092so600119639f.3
- for <jfs-discussion@lists.sourceforge.net>;
- Wed, 02 Oct 2024 06:31:10 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20230601; t=1727875869; x=1728480669;
- h=content-transfer-encoding:in-reply-to:from:content-language
- :references:cc:to:subject:user-agent:mime-version:date:message-id
- :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
- bh=kG31EDHNs4XBvMsZ9DeD8Jl6inKN8cIGFR2fYCg/NOY=;
- b=pSzKN+GVPNNwoslvfYYypZiROmeUkgpSsO1K9MzmUs5ZUW88u60Hu7oqLDezvP4dEC
- LvtTUnCYelL0JEVnwTjpbgpfGXXGWu48f6dxpQIz0PGcriuhNXZgd6ySgD2zd9CGSkFS
- wX+acooy0ZgL5IGkejAixdR7b9BLkWICo1fkPtoBRokQOe9sJP7raaOenp0pqz7nRjsj
- O94rBZSX80L11OANhD6ZRJJ+qhuhZIPNGavaZ9Vg8/5oy1n78mNR4nwVcttcXiPLtaL6
- Pm7wo98cNleZnmjhj5dIOYlDiel+jA1SDKetEapgc+CN/sA6L0EurrMlzL07BaT4j1Eb
- LKOA==
-X-Forwarded-Encrypted: i=1;
- AJvYcCX0BBcSfvWdHMmtpHmRhhkg5KA1sNo41O/YAXtfp0kqZt6VJHAA48CID//nftY/fLgXRzmJktnmMVTkIREDMw==@lists.sourceforge.net
-X-Gm-Message-State: AOJu0YyuSNNe55nOeA+MFTmUpAMnKxgjqVYmo272pe4ELCkO3XiF7lEq
- PBouuj0xUrk+f/cko2TUrbKcGCJqr+Js8sJTcbG8gkUuQyhsKBgBmaQAGz4CR/KbmL6As1leEJV
- NFmO7A4baGUX7vLIjsRyiG9QEyEN9paUYExRVE/wbTTQAXGaVIJJFj3yzn5ubUYgvmjg3Rmfb
-X-Received: by 2002:a05:6e02:1a89:b0:3a0:915d:a4a7 with SMTP id
- e9e14a558f8ab-3a3659148c2mr28330605ab.2.1727875869309; 
- Wed, 02 Oct 2024 06:31:09 -0700 (PDT)
-X-Google-Smtp-Source: AGHT+IHAdwEKr6plwqFuxmM9ma1CDchXeNSljjdg/khGqhkhWXUo0hb9PQuzdqRTOYWHtaAWvdfBEg==
-X-Received: by 2002:a05:6e02:1a89:b0:3a0:915d:a4a7 with SMTP id
- e9e14a558f8ab-3a3659148c2mr28330275ab.2.1727875868936; 
- Wed, 02 Oct 2024 06:31:08 -0700 (PDT)
-Received: from [10.0.0.71] (67-4-202-127.mpls.qwest.net. [67.4.202.127])
- by smtp.gmail.com with ESMTPSA id
- e9e14a558f8ab-3a344bff8d4sm36646195ab.0.2024.10.02.06.31.07
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Wed, 02 Oct 2024 06:31:07 -0700 (PDT)
-Message-ID: <09db55b6-385b-46e1-92e7-ee4dbfe439de@redhat.com>
-Date: Wed, 2 Oct 2024 08:31:06 -0500
+ bh=qN4jdMdYc3XrKwX0MrXijGkE/HH5JkxIjoq4ke+SNt4=;
+ b=TnzRLz4wyBRrAd/SRoVhfy79zNrs0HGerb4290Wa41zekCbCvDy4L9rxcnZ+mXvugbfFTX
+ KCLJTSlrLOWlrQAXblhefVK2oWRLMQ3VUyhU+nQLT6EyC+NeOc/Yoop6Cu4sYevnELBi2D
+ 9P/+c8y6owZak/YRNt7s7ghKItcB+Bo=
+DKIM-Signature: v=1; a=ed25519-sha256; c=relaxed/relaxed; d=suse.cz;
+ s=susede2_ed25519; t=1727876444;
+ h=from:from:reply-to:date:date:message-id:message-id:to:to:cc:cc:
+ mime-version:mime-version:content-type:content-type:
+ in-reply-to:in-reply-to:references:references;
+ bh=qN4jdMdYc3XrKwX0MrXijGkE/HH5JkxIjoq4ke+SNt4=;
+ b=E2EB3bn2CHboFzcxEQ5RrhbOjVJ8rMRz6+NPt6ePzB1JvQNHQjmk3I9GiR2kSwfAbBfEbN
+ CLZmd2ExkWya1uCg==
+Authentication-Results: smtp-out2.suse.de;
+	none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=suse.cz; s=susede2_rsa;
+ t=1727876444; h=from:from:reply-to:date:date:message-id:message-id:to:to:cc:cc:
+ mime-version:mime-version:content-type:content-type:
+ in-reply-to:in-reply-to:references:references;
+ bh=qN4jdMdYc3XrKwX0MrXijGkE/HH5JkxIjoq4ke+SNt4=;
+ b=TnzRLz4wyBRrAd/SRoVhfy79zNrs0HGerb4290Wa41zekCbCvDy4L9rxcnZ+mXvugbfFTX
+ KCLJTSlrLOWlrQAXblhefVK2oWRLMQ3VUyhU+nQLT6EyC+NeOc/Yoop6Cu4sYevnELBi2D
+ 9P/+c8y6owZak/YRNt7s7ghKItcB+Bo=
+DKIM-Signature: v=1; a=ed25519-sha256; c=relaxed/relaxed; d=suse.cz;
+ s=susede2_ed25519; t=1727876444;
+ h=from:from:reply-to:date:date:message-id:message-id:to:to:cc:cc:
+ mime-version:mime-version:content-type:content-type:
+ in-reply-to:in-reply-to:references:references;
+ bh=qN4jdMdYc3XrKwX0MrXijGkE/HH5JkxIjoq4ke+SNt4=;
+ b=E2EB3bn2CHboFzcxEQ5RrhbOjVJ8rMRz6+NPt6ePzB1JvQNHQjmk3I9GiR2kSwfAbBfEbN
+ CLZmd2ExkWya1uCg==
+Received: from imap1.dmz-prg2.suse.org (localhost [127.0.0.1])
+ (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+ key-exchange X25519 server-signature RSA-PSS (4096 bits) server-digest SHA256)
+ (No client certificate requested)
+ by imap1.dmz-prg2.suse.org (Postfix) with ESMTPS id 2AA0913974;
+ Wed,  2 Oct 2024 13:40:44 +0000 (UTC)
+Received: from dovecot-director2.suse.de ([2a07:de40:b281:106:10:150:64:167])
+ by imap1.dmz-prg2.suse.org with ESMTPSA id CJJhClxN/WacIQAAD6G6ig
+ (envelope-from <jack@suse.cz>); Wed, 02 Oct 2024 13:40:44 +0000
+Received: by quack3.suse.cz (Postfix, from userid 1000)
+ id D4080A08CB; Wed,  2 Oct 2024 15:40:43 +0200 (CEST)
+Date: Wed, 2 Oct 2024 15:40:43 +0200
+From: Jan Kara <jack@suse.cz>
+To: syzbot <syzbot+de1498ff3a934ac5e8b4@syzkaller.appspotmail.com>
+Message-ID: <20241002134043.4wyvsahhhsrtem2g@quack3>
+References: <66fcb7f9.050a0220.f28ec.04e8.GAE@google.com>
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-To: Dan Carpenter <dan.carpenter@linaro.org>
-References: <12768f55-47e6-4bfa-aa63-0a82b911e098@stanley.mountain>
-In-Reply-To: <12768f55-47e6-4bfa-aa63-0a82b911e098@stanley.mountain>
-X-Mimecast-Spam-Score: 0
-X-Mimecast-Originator: redhat.com
-Content-Language: en-US
-X-Spam-Score: -0.3 (/)
+Content-Disposition: inline
+In-Reply-To: <66fcb7f9.050a0220.f28ec.04e8.GAE@google.com>
+X-Spam-Score: -1.30
+X-Spamd-Result: default: False [-1.30 / 50.00]; BAYES_HAM(-3.00)[100.00%];
+ SUSPICIOUS_RECIPS(1.50)[];
+ URI_HIDDEN_PATH(1.00)[https://syzkaller.appspot.com/x/.config?x=286b31f2cf1c36b5];
+ NEURAL_HAM_LONG(-1.00)[-1.000]; MID_RHS_NOT_FQDN(0.50)[];
+ NEURAL_HAM_SHORT(-0.20)[-1.000]; MIME_GOOD(-0.10)[text/plain];
+ RCVD_VIA_SMTP_AUTH(0.00)[]; REDIRECTOR_URL(0.00)[goo.gl];
+ MISSING_XM_UA(0.00)[]; TAGGED_RCPT(0.00)[de1498ff3a934ac5e8b4];
+ ARC_NA(0.00)[]; MIME_TRACE(0.00)[0:+];
+ RCPT_COUNT_SEVEN(0.00)[10];
+ DBL_BLOCKED_OPENRESOLVER(0.00)[imap1.dmz-prg2.suse.org:helo,suse.com:email];
+ TO_DN_SOME(0.00)[]; FROM_EQ_ENVFROM(0.00)[];
+ FROM_HAS_DN(0.00)[]; RCVD_COUNT_THREE(0.00)[3];
+ TO_MATCH_ENVRCPT_ALL(0.00)[]; FUZZY_BLOCKED(0.00)[rspamd.com];
+ RCVD_TLS_LAST(0.00)[];
+ DKIM_SIGNED(0.00)[suse.cz:s=susede2_rsa,suse.cz:s=susede2_ed25519];
+ SUBJECT_HAS_QUESTION(0.00)[]
+X-Spam-Flag: NO
+X-Spam-Level: 
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: Spam detection software,
- running on the system "util-spamd-1.v13.lw.sourceforge.com", 
+ running on the system "util-spamd-2.v13.lw.sourceforge.com", 
  has NOT identified this incoming email as spam.  The original
  message has been attached to this so you can view it or label
  similar future email.  If you have any questions, see
  the administrator of that system for details.
- Content preview:  On 10/2/24 3:37 AM, Dan Carpenter wrote: > This is just a
- small white space cleanup. The conversion to the new > mount api accidentally
- added an extra indent on these lines. > > Signed-off-by: Dan Car [...] 
- Content analysis details:   (-0.3 points, 6.0 required)
+ Content preview:  On Tue 01-10-24 20:03:21, syzbot wrote: > Hello, > > syzbot
+ found the following issue on: > > HEAD commit: e32cde8d2bd7 Merge tag
+ 'sched_ext-for-6.12-rc1-fixes-1'
+ of.. > git tree: upstream > console o [...] 
+ Content analysis details:   (-2.5 points, 6.0 required)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [170.10.129.124 listed in wl.mailspike.net]
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [170.10.129.124 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [195.135.223.131 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
- -0.1 DKIMWL_WL_HIGH         DKIMwl.org - High trust sender
-X-Headers-End: 1svzRn-0007oL-Tn
-Subject: Re: [Jfs-discussion] [PATCH] jfs: Delete a couple tabs in
- jfs_reconfigure()
+X-Headers-End: 1svzb6-0008Q0-1U
+Subject: Re: [Jfs-discussion] [syzbot] [jfs?] KASAN: null-ptr-deref Read in
+ drop_buffers (3)
 X-BeenThere: jfs-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -139,47 +156,111 @@ List-Post: <mailto:jfs-discussion@lists.sourceforge.net>
 List-Help: <mailto:jfs-discussion-request@lists.sourceforge.net?subject=help>
 List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/jfs-discussion>, 
  <mailto:jfs-discussion-request@lists.sourceforge.net?subject=subscribe>
-From: Eric Sandeen via Jfs-discussion <jfs-discussion@lists.sourceforge.net>
-Reply-To: Eric Sandeen <sandeen@redhat.com>
-Cc: Dave Kleikamp <shaggy@kernel.org>, Christian Brauner <brauner@kernel.org>,
- Jan Kara <jack@suse.cz>, kernel-janitors@vger.kernel.org,
- Amir Goldstein <amir73il@gmail.com>, Jeff Layton <jlayton@kernel.org>,
- jfs-discussion@lists.sourceforge.net, linux-kernel@vger.kernel.org,
- Chengming Zhou <zhouchengming@bytedance.com>
+Cc: shaggy@kernel.org, brauner@kernel.org, jack@suse.cz,
+ syzkaller-bugs@googlegroups.com, jfs-discussion@lists.sourceforge.net,
+ linux-kernel@vger.kernel.org, viro@zeniv.linux.org.uk,
+ linux-fsdevel@vger.kernel.org, OGAWA Hirofumi <hirofumi@mail.parknet.co.jp>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Errors-To: jfs-discussion-bounces@lists.sourceforge.net
 
-On 10/2/24 3:37 AM, Dan Carpenter wrote:
-> This is just a small white space cleanup.  The conversion to the new
-> mount api accidentally added an extra indent on these lines.
+On Tue 01-10-24 20:03:21, syzbot wrote:
+> Hello,
 > 
-> Signed-off-by: Dan Carpenter <dan.carpenter@linaro.org>
+> syzbot found the following issue on:
+> 
+> HEAD commit:    e32cde8d2bd7 Merge tag 'sched_ext-for-6.12-rc1-fixes-1' of..
+> git tree:       upstream
+> console output: https://syzkaller.appspot.com/x/log.txt?x=17b18307980000
+> kernel config:  https://syzkaller.appspot.com/x/.config?x=286b31f2cf1c36b5
+> dashboard link: https://syzkaller.appspot.com/bug?extid=de1498ff3a934ac5e8b4
+> compiler:       Debian clang version 15.0.6, GNU ld (GNU Binutils for Debian) 2.40
+> syz repro:      https://syzkaller.appspot.com/x/repro.syz?x=10718307980000
+> C reproducer:   https://syzkaller.appspot.com/x/repro.c?x=12f3939f980000
+> 
+> Downloadable assets:
+> disk image (non-bootable): https://storage.googleapis.com/syzbot-assets/7feb34a89c2a/non_bootable_disk-e32cde8d.raw.xz
+> vmlinux: https://storage.googleapis.com/syzbot-assets/9c681f5609bc/vmlinux-e32cde8d.xz
+> kernel image: https://storage.googleapis.com/syzbot-assets/00b4d54de1d9/bzImage-e32cde8d.xz
+> mounted in repro: https://storage.googleapis.com/syzbot-assets/14b0b7eafa4c/mount_0.gz
+> 
+> IMPORTANT: if you fix the issue, please add the following tag to the commit:
+> Reported-by: syzbot+de1498ff3a934ac5e8b4@syzkaller.appspotmail.com
+> 
+> ==================================================================
+> BUG: KASAN: null-ptr-deref in instrument_atomic_read include/linux/instrumented.h:68 [inline]
+> BUG: KASAN: null-ptr-deref in atomic_read include/linux/atomic/atomic-instrumented.h:32 [inline]
+> BUG: KASAN: null-ptr-deref in buffer_busy fs/buffer.c:2881 [inline]
+> BUG: KASAN: null-ptr-deref in drop_buffers+0x6f/0x710 fs/buffer.c:2893
+> Read of size 4 at addr 0000000000000060 by task kswapd0/74
 
-Ugh, oops, thanks.
+Weird. This shows bh has been NULL in drop_buffers() which can happen only
+when the buffer_head circular list on the page has been corrupted
+(otherwise page_buffers() would have BUGed earlier). The reproducer does
+only mount of JFS and FAT filesystems so likely suitably corrupted
+filesystem for one of these is causing memory corruption. Added relevant
+maintainers to CC to have a look.
 
-Reviewed-by: Eric Sandeen <sandeen@redhat.com>
+								Honza
 
+> CPU: 0 UID: 0 PID: 74 Comm: kswapd0 Not tainted 6.12.0-rc1-syzkaller-00031-ge32cde8d2bd7 #0
+> Hardware name: QEMU Standard PC (Q35 + ICH9, 2009), BIOS 1.16.3-debian-1.16.3-2~bpo12+1 04/01/2014
+> Call Trace:
+>  <TASK>
+>  __dump_stack lib/dump_stack.c:94 [inline]
+>  dump_stack_lvl+0x241/0x360 lib/dump_stack.c:120
+>  print_report+0xe8/0x550 mm/kasan/report.c:491
+>  kasan_report+0x143/0x180 mm/kasan/report.c:601
+>  kasan_check_range+0x282/0x290 mm/kasan/generic.c:189
+>  instrument_atomic_read include/linux/instrumented.h:68 [inline]
+>  atomic_read include/linux/atomic/atomic-instrumented.h:32 [inline]
+>  buffer_busy fs/buffer.c:2881 [inline]
+>  drop_buffers+0x6f/0x710 fs/buffer.c:2893
+>  try_to_free_buffers+0x295/0x5f0 fs/buffer.c:2947
+>  shrink_folio_list+0x240c/0x8cc0 mm/vmscan.c:1432
+>  evict_folios+0x549b/0x7b50 mm/vmscan.c:4583
+>  try_to_shrink_lruvec+0x9ab/0xbb0 mm/vmscan.c:4778
+>  shrink_one+0x3b9/0x850 mm/vmscan.c:4816
+>  shrink_many mm/vmscan.c:4879 [inline]
+>  lru_gen_shrink_node mm/vmscan.c:4957 [inline]
+>  shrink_node+0x3799/0x3de0 mm/vmscan.c:5937
+>  kswapd_shrink_node mm/vmscan.c:6765 [inline]
+>  balance_pgdat mm/vmscan.c:6957 [inline]
+>  kswapd+0x1ca3/0x3700 mm/vmscan.c:7226
+>  kthread+0x2f0/0x390 kernel/kthread.c:389
+>  ret_from_fork+0x4b/0x80 arch/x86/kernel/process.c:147
+>  ret_from_fork_asm+0x1a/0x30 arch/x86/entry/entry_64.S:244
+>  </TASK>
+> ==================================================================
+> 
+> 
 > ---
->  fs/jfs/super.c | 4 ++--
->  1 file changed, 2 insertions(+), 2 deletions(-)
+> This report is generated by a bot. It may contain errors.
+> See https://goo.gl/tpsmEJ for more information about syzbot.
+> syzbot engineers can be reached at syzkaller@googlegroups.com.
 > 
-> diff --git a/fs/jfs/super.c b/fs/jfs/super.c
-> index 223d9ac59839..508666d4ed01 100644
-> --- a/fs/jfs/super.c
-> +++ b/fs/jfs/super.c
-> @@ -389,8 +389,8 @@ static int jfs_reconfigure(struct fs_context *fc)
->  
->  		if (!ctx->newLVSize) {
->  			ctx->newLVSize = sb_bdev_nr_blocks(sb);
-> -				if (ctx->newLVSize == 0)
-> -					pr_err("JFS: Cannot determine volume size\n");
-> +			if (ctx->newLVSize == 0)
-> +				pr_err("JFS: Cannot determine volume size\n");
->  		}
->  
->  		rc = jfs_extendfs(sb, ctx->newLVSize, 0);
-
+> syzbot will keep track of this issue. See:
+> https://goo.gl/tpsmEJ#status for how to communicate with syzbot.
+> 
+> If the report is already addressed, let syzbot know by replying with:
+> #syz fix: exact-commit-title
+> 
+> If you want syzbot to run the reproducer, reply with:
+> #syz test: git://repo/address.git branch-or-commit-hash
+> If you attach or paste a git patch, syzbot will apply it before testing.
+> 
+> If you want to overwrite report's subsystems, reply with:
+> #syz set subsystems: new-subsystem
+> (See the list of subsystem names on the web dashboard)
+> 
+> If the report is a duplicate of another one, reply with:
+> #syz dup: exact-subject-of-another-report
+> 
+> If you want to undo deduplication, reply with:
+> #syz undup
+-- 
+Jan Kara <jack@suse.com>
+SUSE Labs, CR
 
 
 _______________________________________________
