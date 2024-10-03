@@ -2,76 +2,73 @@ Return-Path: <jfs-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+jfs-discussion@lfdr.de
 Delivered-To: lists+jfs-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id 43DC098DC53
-	for <lists+jfs-discussion@lfdr.de>; Wed,  2 Oct 2024 16:40:16 +0200 (CEST)
-Received: from [127.0.0.1] (helo=sfs-ml-1.v29.lw.sourceforge.com)
-	by sfs-ml-1.v29.lw.sourceforge.com with esmtp (Exim 4.95)
+	by mail.lfdr.de (Postfix) with ESMTPS id 612F39905AA
+	for <lists+jfs-discussion@lfdr.de>; Fri,  4 Oct 2024 16:13:52 +0200 (CEST)
+Received: from [127.0.0.1] (helo=sfs-ml-2.v29.lw.sourceforge.com)
+	by sfs-ml-2.v29.lw.sourceforge.com with esmtp (Exim 4.95)
 	(envelope-from <jfs-discussion-bounces@lists.sourceforge.net>)
-	id 1sw0WG-0005J6-7h;
-	Wed, 02 Oct 2024 14:40:00 +0000
+	id 1swj3n-0003nK-E7;
+	Fri, 04 Oct 2024 14:13:35 +0000
 Received: from [172.30.29.66] (helo=mx.sourceforge.net)
  by sfs-ml-4.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
  TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (Exim 4.95) (envelope-from
- <3-bf8ZgkbAJoMSTE4FF8L4JJC7.AIIAF8OM8L6IHN8HN.6IG@M3KW2WVRGUFZ5GODRSRYTGD7.apphosting.bounces.google.com>)
- id 1svpeG-0002yc-Mt for jfs-discussion@lists.sourceforge.net;
- Wed, 02 Oct 2024 03:03:32 +0000
+ <3I-z-ZgkbADYkqrcSddWjShhaV.YggYdWmkWjUgflWfl.Uge@M3KW2WVRGUFZ5GODRSRYTGD7.apphosting.bounces.google.com>)
+ id 1swRDj-0004Nx-5Z for jfs-discussion@lists.sourceforge.net;
+ Thu, 03 Oct 2024 19:10:39 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=sourceforge.net; s=x; h=Content-Type:To:From:Subject:Message-ID:Date:
  MIME-Version:Sender:Reply-To:Cc:Content-Transfer-Encoding:Content-ID:
  Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
  :Resent-Message-ID:In-Reply-To:References:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=I0QD8jg5SHtvvNbrGQIb1AX0c7yX5HrvNXSq3nfIERw=; b=AyGV18TvovRByO+GIAbp9uHRpG
- 8y1LwHsvwvkOGqsmpd1Heg2F8HVqxx/lsBNAl0Pty6zfK2FF0DWVRZ5EmESd6TsRyXsvtf5d/5uSc
- 5XFGFWAPXmdARzq1d/D0os4H1Iu0OOqyFr1sFUqaSiJZywCQosmrHOZmqT0km+FtNdvA=;
+ bh=hDlR7B+s3yTh+LBBOJNrKl0WkULGNN+JmGj33uBpDo4=; b=fONi2Yr8Bjp9yqq1By3tPFzGWV
+ rWMiiYyDZNAzumh3DkOh7JW72YlJUUQqMvHyj+UN1Z2IVVLqH/UNrCnDMd97sXGEPGy/9Wfp/qES6
+ p/9yfPUmbUq8Bcwsr2DA1li4e+ek6cZWKQrY/A1O1ryCWVJIlEckbYw26/J8l+uoMl+4=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
  h=Content-Type:To:From:Subject:Message-ID:Date:MIME-Version:Sender:Reply-To
  :Cc:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
  Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
  References:List-Id:List-Help:List-Unsubscribe:List-Subscribe:List-Post:
- List-Owner:List-Archive; bh=I0QD8jg5SHtvvNbrGQIb1AX0c7yX5HrvNXSq3nfIERw=; b=V
- 0bYdvOZITJX1adwcK+DJxAk/3aMfTpNJpaYY9RN50BV4VeBwp+Ak9gcTbEemSFFJvdJ9FO6xGaHH2
- bTMK2QEu0uHMFhu2IBSNH5lLca7yyLnP6Nw7+jIJzrR58bppHasy6Pr23FWaU19pMRAU1+3i1WLov
- imeL3nDn434KbyFU=;
+ List-Owner:List-Archive; bh=hDlR7B+s3yTh+LBBOJNrKl0WkULGNN+JmGj33uBpDo4=; b=h
+ odpqEhv/ZetOze6yRaP8FOka/kxENZa66Oe1y07TXA7cycAsuq9pNo41ql9/Ot3W5KbB1YGM+Bk0L
+ yxgrflGLPGgnXW3ecdMCNT734JnbjAGysPuuyOXlFRTIJyvPdUzYLrnayZkctNzDn+yOdKdRd5gwk
+ b4i4lt+drpNeRs/I=;
 Received: from mail-il1-f200.google.com ([209.85.166.200])
  by sfi-mx-2.v28.lw.sourceforge.com with esmtps
  (TLS1.2:ECDHE-RSA-AES128-GCM-SHA256:128) (Exim 4.95)
- id 1svpeF-0008Nd-Vw for jfs-discussion@lists.sourceforge.net;
- Wed, 02 Oct 2024 03:03:32 +0000
+ id 1swRDi-0005Z0-BF for jfs-discussion@lists.sourceforge.net;
+ Thu, 03 Oct 2024 19:10:39 +0000
 Received: by mail-il1-f200.google.com with SMTP id
- e9e14a558f8ab-3a345a02c23so51111985ab.1
+ e9e14a558f8ab-3a36a8fa836so11543635ab.3
  for <jfs-discussion@lists.sourceforge.net>;
- Tue, 01 Oct 2024 20:03:31 -0700 (PDT)
+ Thu, 03 Oct 2024 12:10:38 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20230601; t=1727838201; x=1728443001;
+ d=1e100.net; s=20230601; t=1727982627; x=1728587427;
  h=to:from:subject:message-id:date:mime-version:x-gm-message-state
  :from:to:cc:subject:date:message-id:reply-to;
- bh=I0QD8jg5SHtvvNbrGQIb1AX0c7yX5HrvNXSq3nfIERw=;
- b=FrpYpa3Jk+ojZgNyIOD5+iunEDcYYYsmMnO4XFjr3e1eKsXSO6GZxzdmB/MpyBiT/H
- 6jvILP+CWOBdKR5tOntp3ZmLxXMZqKWyeXjsY+rKkQ/DCf7Lm//oFyqn2yAKHVrHvZVU
- dvDK7zsIz7pBIGNg2ExGeq7NqPx6GyOV/O9BRkl+6hRn0cJIKUmG1L3IIWMIgof4avR0
- WTcdPg1PT770Mf8SFyKxYOG++QWB7Fe31bKILE5uudojrhLKjay6xNdnubVhoKbnNVbP
- tJALRxp1b/iKHfvXdOQCibhrjf34H+O8HBhipdXxtmUvIt31vWN+oikylPSiAaH4K4U/
- +hvg==
-X-Forwarded-Encrypted: i=1;
- AJvYcCWLuRLFvBWqCDOY3R3HxaEH7bXbV4jpJLsXVzk0qnc6m2adSdieHwSE1+D6VxTWr7lKaCjk+mR+vOGNKJVXSw==@lists.sourceforge.net
-X-Gm-Message-State: AOJu0YzFDP65EgsLtqY5XsT2u7mSNEVR1n6L8sG/SQotRXYTQ3zqehbM
- 4DRgO98NnXMYB0XExVon9H3HsS3r6B9IiSpKts3v0ktMIg3nPbDLYRfxzsBU4zPzbYSJ2AHeCTB
- YsixSJ+BDqLVOY3HPEx6n8XqzkeqeBCeuFO6EPD2/RmGJjdIr3rQD0gY=
-X-Google-Smtp-Source: AGHT+IFiIUvUFVooEkm6DK801RPXnKK/MAoiUl347FytOqjzPOsO0LYWomMfHfbqgU+SmKrWRdSroPfkV1veBA/QGAONVDs8kOj8
+ bh=hDlR7B+s3yTh+LBBOJNrKl0WkULGNN+JmGj33uBpDo4=;
+ b=kXl3YwYC1mLqYJmH6/2I5u32DgvJZnPJtEylCxSvtLqfZl7CrkWx3WV14jsMTo7N5Q
+ lEIyZHQGfoQ9LhMUH0WVcDEyFuNdk012SHKGpANVjXjDkRNb1G1k/AC1XqEOOhVMJ2GP
+ SvRBwT8vwB88pbMj+VGNPPlKd/ORP5edjA1NYIkmzIXN9A4d5B0ctCgpW5cp/tqyPTTs
+ YlRo+nzK4MgO96MdSbTuigtEgP/1foeM1Gb8Wq4jwXDngWrkvH7uJCgO/w/ZzXDm4PZm
+ GnBH7of7593MVW7o6gITrtiF/h7Q6yLc7fyeIk4S1JZZfBW3nUubBSrOin2yg7rvRueH
+ DdkQ==
+X-Gm-Message-State: AOJu0YzXBjuN5ANFFB3uID6LD3ZjM9YS4G0fmXj+8POPf0pGyV1PUvTb
+ FpBZ1o2rIq5Ne8RP9vAMG8p+a+V7LBhtBc4zrbJFw5UxOWhI9FqHaWPj35lB4Evnaog39xeRk2K
+ 4TQ150ovbdlRwNtEMmf1DdZ9JaIaIRV0CqwyV4Kba2wK/VPTuR/MhFdA=
+X-Google-Smtp-Source: AGHT+IE0siJiLWIH8n/SO8mPn6X3uCZ9RtjNk7UsJqNla/63RlbC80qmifd0FxO7JjAMcbd2Xeh8zUsHaPetEELlkln9+4Flx1/L
 MIME-Version: 1.0
-X-Received: by 2002:a92:cda8:0:b0:3a0:9aef:4c2 with SMTP id
- e9e14a558f8ab-3a36594454fmr16660945ab.19.1727838201198; Tue, 01 Oct 2024
- 20:03:21 -0700 (PDT)
-Date: Tue, 01 Oct 2024 20:03:21 -0700
+X-Received: by 2002:a05:6e02:1ca1:b0:3a0:9fc6:5437 with SMTP id
+ e9e14a558f8ab-3a375bb7c44mr2383345ab.18.1727982627496; Thu, 03 Oct 2024
+ 12:10:27 -0700 (PDT)
+Date: Thu, 03 Oct 2024 12:10:27 -0700
 X-Google-Appengine-App-Id: s~syzkaller
 X-Google-Appengine-App-Id-Alias: syzkaller
-Message-ID: <66fcb7f9.050a0220.f28ec.04e8.GAE@google.com>
-To: brauner@kernel.org, jack@suse.cz, jfs-discussion@lists.sourceforge.net, 
- linux-fsdevel@vger.kernel.org, linux-kernel@vger.kernel.org, 
- shaggy@kernel.org, syzkaller-bugs@googlegroups.com, viro@zeniv.linux.org.uk
-X-Spam-Score: 3.1 (+++)
+Message-ID: <66feec23.050a0220.9ec68.0059.GAE@google.com>
+To: jfs-discussion@lists.sourceforge.net, linux-kernel@vger.kernel.org, 
+ shaggy@kernel.org, syzkaller-bugs@googlegroups.com
+X-Spam-Score: 0.6 (/)
 X-Spam-Report: Spam detection software,
  running on the system "util-spamd-2.v13.lw.sourceforge.com", 
  has NOT identified this incoming email as spam.  The original
@@ -79,27 +76,26 @@ X-Spam-Report: Spam detection software,
  similar future email.  If you have any questions, see
  the administrator of that system for details.
  Content preview:  Hello,
- syzbot found the following issue on: HEAD commit: e32cde8d2bd7
- Merge tag 'sched_ext-for-6.12-rc1-fixes-1' of.. git tree: upstream console
- output: https://syzkaller.appspot.com/x/log.txt?x=17b18307980000 kernel
+ syzbot found the following issue on: HEAD commit: e7ed34365879
+ Merge tag 'mailbox-v6.12' of git://git.kernel.. git tree: upstream console
+ output: https://syzkaller.appspot.com/x/log.txt?x=164e8127980000 kernel
  config: https://syzkaller.a [...] 
- Content analysis details:   (3.1 points, 6.0 required)
+ Content analysis details:   (0.6 points, 6.0 required)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ 0.3 FROM_LOCAL_HEX         From: localpart has long hexadecimal sequence
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
  no trust [209.85.166.200 listed in list.dnswl.org]
- 0.3 FROM_LOCAL_HEX         From: localpart has long hexadecimal sequence
- 2.5 SORTED_RECIPS          Recipient list is sorted by address
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
  mail domains are different
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
  [209.85.166.200 listed in wl.mailspike.net]
-X-Headers-End: 1svpeF-0008Nd-Vw
-X-Mailman-Approved-At: Wed, 02 Oct 2024 14:40:00 +0000
-Subject: [Jfs-discussion] [syzbot] [jfs?] KASAN: null-ptr-deref Read in
- drop_buffers (3)
+X-Headers-End: 1swRDi-0005Z0-BF
+X-Mailman-Approved-At: Fri, 04 Oct 2024 14:13:34 +0000
+Subject: [Jfs-discussion] [syzbot] [jfs?] UBSAN: array-index-out-of-bounds
+ in dtInsertEntry
 X-BeenThere: jfs-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -112,7 +108,7 @@ List-Help: <mailto:jfs-discussion-request@lists.sourceforge.net?subject=help>
 List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/jfs-discussion>, 
  <mailto:jfs-discussion-request@lists.sourceforge.net?subject=subscribe>
 From: syzbot via Jfs-discussion <jfs-discussion@lists.sourceforge.net>
-Reply-To: syzbot <syzbot+de1498ff3a934ac5e8b4@syzkaller.appspotmail.com>
+Reply-To: syzbot <syzbot+5f7f0caf9979e9d09ff8@syzkaller.appspotmail.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Errors-To: jfs-discussion-bounces@lists.sourceforge.net
@@ -121,60 +117,61 @@ Hello,
 
 syzbot found the following issue on:
 
-HEAD commit:    e32cde8d2bd7 Merge tag 'sched_ext-for-6.12-rc1-fixes-1' of..
+HEAD commit:    e7ed34365879 Merge tag 'mailbox-v6.12' of git://git.kernel..
 git tree:       upstream
-console output: https://syzkaller.appspot.com/x/log.txt?x=17b18307980000
-kernel config:  https://syzkaller.appspot.com/x/.config?x=286b31f2cf1c36b5
-dashboard link: https://syzkaller.appspot.com/bug?extid=de1498ff3a934ac5e8b4
+console output: https://syzkaller.appspot.com/x/log.txt?x=164e8127980000
+kernel config:  https://syzkaller.appspot.com/x/.config?x=84a3f3ed29aaafa0
+dashboard link: https://syzkaller.appspot.com/bug?extid=5f7f0caf9979e9d09ff8
 compiler:       Debian clang version 15.0.6, GNU ld (GNU Binutils for Debian) 2.40
-syz repro:      https://syzkaller.appspot.com/x/repro.syz?x=10718307980000
-C reproducer:   https://syzkaller.appspot.com/x/repro.c?x=12f3939f980000
+
+Unfortunately, I don't have any reproducer for this issue yet.
 
 Downloadable assets:
-disk image (non-bootable): https://storage.googleapis.com/syzbot-assets/7feb34a89c2a/non_bootable_disk-e32cde8d.raw.xz
-vmlinux: https://storage.googleapis.com/syzbot-assets/9c681f5609bc/vmlinux-e32cde8d.xz
-kernel image: https://storage.googleapis.com/syzbot-assets/00b4d54de1d9/bzImage-e32cde8d.xz
-mounted in repro: https://storage.googleapis.com/syzbot-assets/14b0b7eafa4c/mount_0.gz
+disk image: https://storage.googleapis.com/syzbot-assets/eb021424c7db/disk-e7ed3436.raw.xz
+vmlinux: https://storage.googleapis.com/syzbot-assets/2f5f0d22ea96/vmlinux-e7ed3436.xz
+kernel image: https://storage.googleapis.com/syzbot-assets/47176809b11c/bzImage-e7ed3436.xz
 
 IMPORTANT: if you fix the issue, please add the following tag to the commit:
-Reported-by: syzbot+de1498ff3a934ac5e8b4@syzkaller.appspotmail.com
+Reported-by: syzbot+5f7f0caf9979e9d09ff8@syzkaller.appspotmail.com
 
-==================================================================
-BUG: KASAN: null-ptr-deref in instrument_atomic_read include/linux/instrumented.h:68 [inline]
-BUG: KASAN: null-ptr-deref in atomic_read include/linux/atomic/atomic-instrumented.h:32 [inline]
-BUG: KASAN: null-ptr-deref in buffer_busy fs/buffer.c:2881 [inline]
-BUG: KASAN: null-ptr-deref in drop_buffers+0x6f/0x710 fs/buffer.c:2893
-Read of size 4 at addr 0000000000000060 by task kswapd0/74
-
-CPU: 0 UID: 0 PID: 74 Comm: kswapd0 Not tainted 6.12.0-rc1-syzkaller-00031-ge32cde8d2bd7 #0
-Hardware name: QEMU Standard PC (Q35 + ICH9, 2009), BIOS 1.16.3-debian-1.16.3-2~bpo12+1 04/01/2014
+------------[ cut here ]------------
+UBSAN: array-index-out-of-bounds in fs/jfs/jfs_dtree.c:3632:9
+index 27 is out of range for type 'struct lv[20]'
+CPU: 1 UID: 0 PID: 5469 Comm: syz.1.37 Not tainted 6.11.0-syzkaller-12113-ge7ed34365879 #0
+Hardware name: Google Google Compute Engine/Google Compute Engine, BIOS Google 09/13/2024
 Call Trace:
  <TASK>
  __dump_stack lib/dump_stack.c:94 [inline]
  dump_stack_lvl+0x241/0x360 lib/dump_stack.c:120
- print_report+0xe8/0x550 mm/kasan/report.c:491
- kasan_report+0x143/0x180 mm/kasan/report.c:601
- kasan_check_range+0x282/0x290 mm/kasan/generic.c:189
- instrument_atomic_read include/linux/instrumented.h:68 [inline]
- atomic_read include/linux/atomic/atomic-instrumented.h:32 [inline]
- buffer_busy fs/buffer.c:2881 [inline]
- drop_buffers+0x6f/0x710 fs/buffer.c:2893
- try_to_free_buffers+0x295/0x5f0 fs/buffer.c:2947
- shrink_folio_list+0x240c/0x8cc0 mm/vmscan.c:1432
- evict_folios+0x549b/0x7b50 mm/vmscan.c:4583
- try_to_shrink_lruvec+0x9ab/0xbb0 mm/vmscan.c:4778
- shrink_one+0x3b9/0x850 mm/vmscan.c:4816
- shrink_many mm/vmscan.c:4879 [inline]
- lru_gen_shrink_node mm/vmscan.c:4957 [inline]
- shrink_node+0x3799/0x3de0 mm/vmscan.c:5937
- kswapd_shrink_node mm/vmscan.c:6765 [inline]
- balance_pgdat mm/vmscan.c:6957 [inline]
- kswapd+0x1ca3/0x3700 mm/vmscan.c:7226
- kthread+0x2f0/0x390 kernel/kthread.c:389
- ret_from_fork+0x4b/0x80 arch/x86/kernel/process.c:147
- ret_from_fork_asm+0x1a/0x30 arch/x86/entry/entry_64.S:244
+ ubsan_epilogue lib/ubsan.c:231 [inline]
+ __ubsan_handle_out_of_bounds+0x121/0x150 lib/ubsan.c:429
+ dtInsertEntry+0x174e/0x1780 fs/jfs/jfs_dtree.c:3632
+ dtSplitPage+0x2d99/0x3ed0 fs/jfs/jfs_dtree.c:1595
+ dtSplitUp fs/jfs/jfs_dtree.c:1091 [inline]
+ dtInsert+0x14bd/0x6c10 fs/jfs/jfs_dtree.c:870
+ jfs_create+0x7ba/0xbb0 fs/jfs/namei.c:137
+ lookup_open fs/namei.c:3595 [inline]
+ open_last_lookups fs/namei.c:3694 [inline]
+ path_openat+0x1c03/0x3590 fs/namei.c:3930
+ do_filp_open+0x235/0x490 fs/namei.c:3960
+ do_sys_openat2+0x13e/0x1d0 fs/open.c:1415
+ do_sys_open fs/open.c:1430 [inline]
+ __do_sys_creat fs/open.c:1506 [inline]
+ __se_sys_creat fs/open.c:1500 [inline]
+ __x64_sys_creat+0x123/0x170 fs/open.c:1500
+ do_syscall_x64 arch/x86/entry/common.c:52 [inline]
+ do_syscall_64+0xf3/0x230 arch/x86/entry/common.c:83
+ entry_SYSCALL_64_after_hwframe+0x77/0x7f
+RIP: 0033:0x7f2c1f97dff9
+Code: ff ff c3 66 2e 0f 1f 84 00 00 00 00 00 0f 1f 40 00 48 89 f8 48 89 f7 48 89 d6 48 89 ca 4d 89 c2 4d 89 c8 4c 8b 4c 24 08 0f 05 <48> 3d 01 f0 ff ff 73 01 c3 48 c7 c1 a8 ff ff ff f7 d8 64 89 01 48
+RSP: 002b:00007f2c20746038 EFLAGS: 00000246 ORIG_RAX: 0000000000000055
+RAX: ffffffffffffffda RBX: 00007f2c1fb35f80 RCX: 00007f2c1f97dff9
+RDX: 0000000000000000 RSI: 0000000000000000 RDI: 0000000020000e00
+RBP: 00007f2c1f9f0296 R08: 0000000000000000 R09: 0000000000000000
+R10: 0000000000000000 R11: 0000000000000246 R12: 0000000000000000
+R13: 0000000000000000 R14: 00007f2c1fb35f80 R15: 00007ffdc44cf8d8
  </TASK>
-==================================================================
+---[ end trace ]---
 
 
 ---
@@ -187,10 +184,6 @@ https://goo.gl/tpsmEJ#status for how to communicate with syzbot.
 
 If the report is already addressed, let syzbot know by replying with:
 #syz fix: exact-commit-title
-
-If you want syzbot to run the reproducer, reply with:
-#syz test: git://repo/address.git branch-or-commit-hash
-If you attach or paste a git patch, syzbot will apply it before testing.
 
 If you want to overwrite report's subsystems, reply with:
 #syz set subsystems: new-subsystem
