@@ -2,100 +2,122 @@ Return-Path: <jfs-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+jfs-discussion@lfdr.de
 Delivered-To: lists+jfs-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id 612F39905AA
-	for <lists+jfs-discussion@lfdr.de>; Fri,  4 Oct 2024 16:13:52 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2C555995684
+	for <lists+jfs-discussion@lfdr.de>; Tue,  8 Oct 2024 20:27:23 +0200 (CEST)
 Received: from [127.0.0.1] (helo=sfs-ml-2.v29.lw.sourceforge.com)
 	by sfs-ml-2.v29.lw.sourceforge.com with esmtp (Exim 4.95)
 	(envelope-from <jfs-discussion-bounces@lists.sourceforge.net>)
-	id 1swj3n-0003nK-E7;
-	Fri, 04 Oct 2024 14:13:35 +0000
+	id 1syEvK-0001as-Hu;
+	Tue, 08 Oct 2024 18:27:06 +0000
 Received: from [172.30.29.66] (helo=mx.sourceforge.net)
- by sfs-ml-4.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
- TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (Exim 4.95) (envelope-from
- <3I-z-ZgkbADYkqrcSddWjShhaV.YggYdWmkWjUgflWfl.Uge@M3KW2WVRGUFZ5GODRSRYTGD7.apphosting.bounces.google.com>)
- id 1swRDj-0004Nx-5Z for jfs-discussion@lists.sourceforge.net;
- Thu, 03 Oct 2024 19:10:39 +0000
+ by sfs-ml-1.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
+ TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (Exim 4.95)
+ (envelope-from <ancowi69@gmail.com>) id 1sx1hB-0001vg-0i
+ for jfs-discussion@lists.sourceforge.net;
+ Sat, 05 Oct 2024 10:07:29 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=sourceforge.net; s=x; h=Content-Type:To:From:Subject:Message-ID:Date:
- MIME-Version:Sender:Reply-To:Cc:Content-Transfer-Encoding:Content-ID:
+ d=sourceforge.net; s=x; h=Content-Transfer-Encoding:MIME-Version:Message-ID:
+ Date:Subject:Cc:To:From:Sender:Reply-To:Content-Type:Content-ID:
  Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
  :Resent-Message-ID:In-Reply-To:References:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=hDlR7B+s3yTh+LBBOJNrKl0WkULGNN+JmGj33uBpDo4=; b=fONi2Yr8Bjp9yqq1By3tPFzGWV
- rWMiiYyDZNAzumh3DkOh7JW72YlJUUQqMvHyj+UN1Z2IVVLqH/UNrCnDMd97sXGEPGy/9Wfp/qES6
- p/9yfPUmbUq8Bcwsr2DA1li4e+ek6cZWKQrY/A1O1ryCWVJIlEckbYw26/J8l+uoMl+4=;
+ bh=wgmZynwG71OocyO0thzm1PkveGyf/L6c+8DunhW8BTE=; b=hxNhktg+o7vLNUvThHbhHj0aKu
+ e7NbsDj0Kdhdm6BS9W7y67uMKJKecG2U6EbWzF2kz3IV8VQ7/oAQuYipe55qLFI6J623QUdLwoFwK
+ uHgQCOleRtZAIFemVHPMrzGp/1dZO+a2gJNQjYUPl3gdz7OFg5HPhkLYxO5TqnwAkDGc=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
- h=Content-Type:To:From:Subject:Message-ID:Date:MIME-Version:Sender:Reply-To
- :Cc:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+ h=Content-Transfer-Encoding:MIME-Version:Message-ID:Date:Subject:Cc:To:From
+ :Sender:Reply-To:Content-Type:Content-ID:Content-Description:Resent-Date:
  Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
  References:List-Id:List-Help:List-Unsubscribe:List-Subscribe:List-Post:
- List-Owner:List-Archive; bh=hDlR7B+s3yTh+LBBOJNrKl0WkULGNN+JmGj33uBpDo4=; b=h
- odpqEhv/ZetOze6yRaP8FOka/kxENZa66Oe1y07TXA7cycAsuq9pNo41ql9/Ot3W5KbB1YGM+Bk0L
- yxgrflGLPGgnXW3ecdMCNT734JnbjAGysPuuyOXlFRTIJyvPdUzYLrnayZkctNzDn+yOdKdRd5gwk
- b4i4lt+drpNeRs/I=;
-Received: from mail-il1-f200.google.com ([209.85.166.200])
+ List-Owner:List-Archive; bh=wgmZynwG71OocyO0thzm1PkveGyf/L6c+8DunhW8BTE=; b=E
+ Bs+ctdox59fvXUwiG5D3WTe1kVW37jyRBNxFl7aReDkH4Vm/TsqxWG3tirQr992BD7h1JX/+POr6C
+ CGgy0ay2ANKCy+I/l31IyX0wX2WxE5tvFfS52xcodSaBRMQ0iOBeN9F7JyjzAZylBIsNOuzQTcnno
+ P8xFqhE8mgEFCtdI=;
+Received: from mail-lf1-f41.google.com ([209.85.167.41])
  by sfi-mx-2.v28.lw.sourceforge.com with esmtps
  (TLS1.2:ECDHE-RSA-AES128-GCM-SHA256:128) (Exim 4.95)
- id 1swRDi-0005Z0-BF for jfs-discussion@lists.sourceforge.net;
- Thu, 03 Oct 2024 19:10:39 +0000
-Received: by mail-il1-f200.google.com with SMTP id
- e9e14a558f8ab-3a36a8fa836so11543635ab.3
+ id 1sx1hB-0000oB-3T for jfs-discussion@lists.sourceforge.net;
+ Sat, 05 Oct 2024 10:07:29 +0000
+Received: by mail-lf1-f41.google.com with SMTP id
+ 2adb3069b0e04-53959a88668so3686731e87.2
  for <jfs-discussion@lists.sourceforge.net>;
- Thu, 03 Oct 2024 12:10:38 -0700 (PDT)
+ Sat, 05 Oct 2024 03:07:28 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=gmail.com; s=20230601; t=1728122837; x=1728727637; darn=lists.sourceforge.net;
+ h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+ :to:from:from:to:cc:subject:date:message-id:reply-to;
+ bh=wgmZynwG71OocyO0thzm1PkveGyf/L6c+8DunhW8BTE=;
+ b=T4PeaDgIqEymYsC43BJgCIzcRiFmwElKhsaXunuBFJRoZnSd65Sc5IHUqEVBdfDMUU
+ H7YfU1xNdM48YS4K81bNkKg0eWdBQGH6Gx0PUBNGDYW8USEqmvHCQKLrn/lceFXUnXAf
+ Pz2QQLHHmehhe/udp2jhYeBDkl2/5Fi/24EQzOLt7QHAgpxl5ZtjHRnrTo5pViXAdBu5
+ UyOuuJHIBGGjlvzh8xMHLu6s4v9oQNl0Ehc76KjPMJsrdklMtEWiSaxAYwLnEetFZiux
+ Yjo8cMdsdQ1Jk4i7lG1wd+nvZSOfZeDlnpsQOEp/wgcGnUyeBnk4JMOx0I3nvWgHLWtl
+ Vpkw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20230601; t=1727982627; x=1728587427;
- h=to:from:subject:message-id:date:mime-version:x-gm-message-state
- :from:to:cc:subject:date:message-id:reply-to;
- bh=hDlR7B+s3yTh+LBBOJNrKl0WkULGNN+JmGj33uBpDo4=;
- b=kXl3YwYC1mLqYJmH6/2I5u32DgvJZnPJtEylCxSvtLqfZl7CrkWx3WV14jsMTo7N5Q
- lEIyZHQGfoQ9LhMUH0WVcDEyFuNdk012SHKGpANVjXjDkRNb1G1k/AC1XqEOOhVMJ2GP
- SvRBwT8vwB88pbMj+VGNPPlKd/ORP5edjA1NYIkmzIXN9A4d5B0ctCgpW5cp/tqyPTTs
- YlRo+nzK4MgO96MdSbTuigtEgP/1foeM1Gb8Wq4jwXDngWrkvH7uJCgO/w/ZzXDm4PZm
- GnBH7of7593MVW7o6gITrtiF/h7Q6yLc7fyeIk4S1JZZfBW3nUubBSrOin2yg7rvRueH
- DdkQ==
-X-Gm-Message-State: AOJu0YzXBjuN5ANFFB3uID6LD3ZjM9YS4G0fmXj+8POPf0pGyV1PUvTb
- FpBZ1o2rIq5Ne8RP9vAMG8p+a+V7LBhtBc4zrbJFw5UxOWhI9FqHaWPj35lB4Evnaog39xeRk2K
- 4TQ150ovbdlRwNtEMmf1DdZ9JaIaIRV0CqwyV4Kba2wK/VPTuR/MhFdA=
-X-Google-Smtp-Source: AGHT+IE0siJiLWIH8n/SO8mPn6X3uCZ9RtjNk7UsJqNla/63RlbC80qmifd0FxO7JjAMcbd2Xeh8zUsHaPetEELlkln9+4Flx1/L
+ d=1e100.net; s=20230601; t=1728122837; x=1728727637;
+ h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+ :to:from:x-gm-message-state:from:to:cc:subject:date:message-id
+ :reply-to;
+ bh=wgmZynwG71OocyO0thzm1PkveGyf/L6c+8DunhW8BTE=;
+ b=H+UrxEVEjjlN42ecwiN/S/X81DdAEdboe96shzoA6lZwlrG0QAm4HOXvkwiDxTC9mg
+ 6HgSTOqwC1bKU0ItSyKbdd59QsjL99/HT3RjbCHfiAP1HNxQ330YcWqeKXD+D6tUv/gR
+ ILmznBkYoEVnigx1hgnZ8jHGNrSMEgfoHQA1qCSDr6+4mnHrqIFfiYLBsd5V97qvbOuv
+ Mt0lFgMK4mNiHtHGhLDBGA2dAXz6FAsWebyQ2+H4kazZ72zJQFVsuJDSKVaqoZoFavCf
+ R4/UapmJBrpN1YNB5JR3Q97km5lFCnhyX3SgMPr9KedUmZA6NSxLDiqTsvFRZ3jPx7Xf
+ davw==
+X-Forwarded-Encrypted: i=1;
+ AJvYcCVI5ESbtA05xO8zmeoilAAlLqPq4UhrQOh2xQCEGKcOzfv2uwbHMvOiRhD0hS0Z4mO7GdelGompsWNUUDgYRA==@lists.sourceforge.net
+X-Gm-Message-State: AOJu0Yz6W1ef78Xo6AeXJzAJW43O6kZsrkOiabcA37kalw23rr0SJvXQ
+ eVY1/txswjHwddj2GIodLhZc64yu/Wlz/eTrbUs5Qcwki5IjixY6
+X-Google-Smtp-Source: AGHT+IGNYuQkErgECfD7RtrsNs0x0faBAPGYH1Yw0W5OTZRp9TC9znXQ0J+EMz4L/KmxiThpg7fNAw==
+X-Received: by 2002:a05:6512:baa:b0:536:53fc:e8fc with SMTP id
+ 2adb3069b0e04-539ab877139mr3473922e87.16.1728122836676; 
+ Sat, 05 Oct 2024 03:07:16 -0700 (PDT)
+Received: from localhost.localdomain ([178.69.224.101])
+ by smtp.gmail.com with ESMTPSA id
+ 2adb3069b0e04-539afec1240sm186305e87.55.2024.10.05.03.07.15
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Sat, 05 Oct 2024 03:07:16 -0700 (PDT)
+To: Dave Kleikamp <shaggy@kernel.org>
+Date: Sat,  5 Oct 2024 10:06:57 +0000
+Message-ID: <20241005100658.2102-1-ancowi69@gmail.com>
+X-Mailer: git-send-email 2.43.0
 MIME-Version: 1.0
-X-Received: by 2002:a05:6e02:1ca1:b0:3a0:9fc6:5437 with SMTP id
- e9e14a558f8ab-3a375bb7c44mr2383345ab.18.1727982627496; Thu, 03 Oct 2024
- 12:10:27 -0700 (PDT)
-Date: Thu, 03 Oct 2024 12:10:27 -0700
-X-Google-Appengine-App-Id: s~syzkaller
-X-Google-Appengine-App-Id-Alias: syzkaller
-Message-ID: <66feec23.050a0220.9ec68.0059.GAE@google.com>
-To: jfs-discussion@lists.sourceforge.net, linux-kernel@vger.kernel.org, 
- shaggy@kernel.org, syzkaller-bugs@googlegroups.com
-X-Spam-Score: 0.6 (/)
+X-Spam-Score: 0.1 (/)
 X-Spam-Report: Spam detection software,
  running on the system "util-spamd-2.v13.lw.sourceforge.com", 
  has NOT identified this incoming email as spam.  The original
  message has been attached to this so you can view it or label
  similar future email.  If you have any questions, see
  the administrator of that system for details.
- Content preview:  Hello,
- syzbot found the following issue on: HEAD commit: e7ed34365879
- Merge tag 'mailbox-v6.12' of git://git.kernel.. git tree: upstream console
- output: https://syzkaller.appspot.com/x/log.txt?x=164e8127980000 kernel
- config: https://syzkaller.a [...] 
- Content analysis details:   (0.6 points, 6.0 required)
+ Content preview:  Commit 7c55b78818cf ("jfs: xattr: fix buffer overflow for
+ invalid xattr") also addresses this issue but it only fixes it for positive
+ values, while ea_size is an integer type and can take negative val [...] 
+ Content analysis details:   (0.1 points, 6.0 required)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.3 FROM_LOCAL_HEX         From: localpart has long hexadecimal sequence
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.166.200 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
+ no trust [209.85.167.41 listed in list.dnswl.org]
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit [ancowi69[at]gmail.com]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [ancowi69[at]gmail.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
  -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.166.200 listed in wl.mailspike.net]
-X-Headers-End: 1swRDi-0005Z0-BF
-X-Mailman-Approved-At: Fri, 04 Oct 2024 14:13:34 +0000
-Subject: [Jfs-discussion] [syzbot] [jfs?] UBSAN: array-index-out-of-bounds
- in dtInsertEntry
+ [209.85.167.41 listed in wl.mailspike.net]
+X-Headers-End: 1sx1hB-0000oB-3T
+X-Mailman-Approved-At: Tue, 08 Oct 2024 18:27:05 +0000
+Subject: [Jfs-discussion] [PATCH] jfs: xattr: check invalid xattr size more
+ strictly
 X-BeenThere: jfs-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -107,93 +129,50 @@ List-Post: <mailto:jfs-discussion@lists.sourceforge.net>
 List-Help: <mailto:jfs-discussion-request@lists.sourceforge.net?subject=help>
 List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/jfs-discussion>, 
  <mailto:jfs-discussion-request@lists.sourceforge.net?subject=subscribe>
-From: syzbot via Jfs-discussion <jfs-discussion@lists.sourceforge.net>
-Reply-To: syzbot <syzbot+5f7f0caf9979e9d09ff8@syzkaller.appspotmail.com>
+From: Artem Sadovnikov via Jfs-discussion
+ <jfs-discussion@lists.sourceforge.net>
+Reply-To: Artem Sadovnikov <ancowi69@gmail.com>
+Cc: Christian Brauner <brauner@kernel.org>, lvc-project@linuxtesting.org,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ jfs-discussion@lists.sourceforge.net, stable@vger.kernel.org,
+ linux-kernel@vger.kernel.org, Artem Sadovnikov <ancowi69@gmail.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Errors-To: jfs-discussion-bounces@lists.sourceforge.net
 
-Hello,
+Commit 7c55b78818cf ("jfs: xattr: fix buffer overflow for invalid xattr")
+also addresses this issue but it only fixes it for positive values, while
+ea_size is an integer type and can take negative values, e.g. in case of
+a corrupted filesystem. This still breaks validation and would overflow
+because of implicit conversion from int to size_t in print_hex_dump().
 
-syzbot found the following issue on:
+Fix this issue by clamping the ea_size value instead.
 
-HEAD commit:    e7ed34365879 Merge tag 'mailbox-v6.12' of git://git.kernel..
-git tree:       upstream
-console output: https://syzkaller.appspot.com/x/log.txt?x=164e8127980000
-kernel config:  https://syzkaller.appspot.com/x/.config?x=84a3f3ed29aaafa0
-dashboard link: https://syzkaller.appspot.com/bug?extid=5f7f0caf9979e9d09ff8
-compiler:       Debian clang version 15.0.6, GNU ld (GNU Binutils for Debian) 2.40
+Found by Linux Verification Center (linuxtesting.org) with Syzkaller.
 
-Unfortunately, I don't have any reproducer for this issue yet.
-
-Downloadable assets:
-disk image: https://storage.googleapis.com/syzbot-assets/eb021424c7db/disk-e7ed3436.raw.xz
-vmlinux: https://storage.googleapis.com/syzbot-assets/2f5f0d22ea96/vmlinux-e7ed3436.xz
-kernel image: https://storage.googleapis.com/syzbot-assets/47176809b11c/bzImage-e7ed3436.xz
-
-IMPORTANT: if you fix the issue, please add the following tag to the commit:
-Reported-by: syzbot+5f7f0caf9979e9d09ff8@syzkaller.appspotmail.com
-
-------------[ cut here ]------------
-UBSAN: array-index-out-of-bounds in fs/jfs/jfs_dtree.c:3632:9
-index 27 is out of range for type 'struct lv[20]'
-CPU: 1 UID: 0 PID: 5469 Comm: syz.1.37 Not tainted 6.11.0-syzkaller-12113-ge7ed34365879 #0
-Hardware name: Google Google Compute Engine/Google Compute Engine, BIOS Google 09/13/2024
-Call Trace:
- <TASK>
- __dump_stack lib/dump_stack.c:94 [inline]
- dump_stack_lvl+0x241/0x360 lib/dump_stack.c:120
- ubsan_epilogue lib/ubsan.c:231 [inline]
- __ubsan_handle_out_of_bounds+0x121/0x150 lib/ubsan.c:429
- dtInsertEntry+0x174e/0x1780 fs/jfs/jfs_dtree.c:3632
- dtSplitPage+0x2d99/0x3ed0 fs/jfs/jfs_dtree.c:1595
- dtSplitUp fs/jfs/jfs_dtree.c:1091 [inline]
- dtInsert+0x14bd/0x6c10 fs/jfs/jfs_dtree.c:870
- jfs_create+0x7ba/0xbb0 fs/jfs/namei.c:137
- lookup_open fs/namei.c:3595 [inline]
- open_last_lookups fs/namei.c:3694 [inline]
- path_openat+0x1c03/0x3590 fs/namei.c:3930
- do_filp_open+0x235/0x490 fs/namei.c:3960
- do_sys_openat2+0x13e/0x1d0 fs/open.c:1415
- do_sys_open fs/open.c:1430 [inline]
- __do_sys_creat fs/open.c:1506 [inline]
- __se_sys_creat fs/open.c:1500 [inline]
- __x64_sys_creat+0x123/0x170 fs/open.c:1500
- do_syscall_x64 arch/x86/entry/common.c:52 [inline]
- do_syscall_64+0xf3/0x230 arch/x86/entry/common.c:83
- entry_SYSCALL_64_after_hwframe+0x77/0x7f
-RIP: 0033:0x7f2c1f97dff9
-Code: ff ff c3 66 2e 0f 1f 84 00 00 00 00 00 0f 1f 40 00 48 89 f8 48 89 f7 48 89 d6 48 89 ca 4d 89 c2 4d 89 c8 4c 8b 4c 24 08 0f 05 <48> 3d 01 f0 ff ff 73 01 c3 48 c7 c1 a8 ff ff ff f7 d8 64 89 01 48
-RSP: 002b:00007f2c20746038 EFLAGS: 00000246 ORIG_RAX: 0000000000000055
-RAX: ffffffffffffffda RBX: 00007f2c1fb35f80 RCX: 00007f2c1f97dff9
-RDX: 0000000000000000 RSI: 0000000000000000 RDI: 0000000020000e00
-RBP: 00007f2c1f9f0296 R08: 0000000000000000 R09: 0000000000000000
-R10: 0000000000000000 R11: 0000000000000246 R12: 0000000000000000
-R13: 0000000000000000 R14: 00007f2c1fb35f80 R15: 00007ffdc44cf8d8
- </TASK>
----[ end trace ]---
-
-
+Cc: stable@vger.kernel.org
+Signed-off-by: Artem Sadovnikov <ancowi69@gmail.com>
 ---
-This report is generated by a bot. It may contain errors.
-See https://goo.gl/tpsmEJ for more information about syzbot.
-syzbot engineers can be reached at syzkaller@googlegroups.com.
+ fs/jfs/xattr.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
-syzbot will keep track of this issue. See:
-https://goo.gl/tpsmEJ#status for how to communicate with syzbot.
+diff --git a/fs/jfs/xattr.c b/fs/jfs/xattr.c
+index 8ef8dfc3c194..95bcbbf7359c 100644
+--- a/fs/jfs/xattr.c
++++ b/fs/jfs/xattr.c
+@@ -557,7 +557,7 @@ static int ea_get(struct inode *inode, struct ea_buffer *ea_buf, int min_size)
+ 
+       size_check:
+ 	if (EALIST_SIZE(ea_buf->xattr) != ea_size) {
+-		int size = min_t(int, EALIST_SIZE(ea_buf->xattr), ea_size);
++		int size = clamp_t(int, ea_size, 0, EALIST_SIZE(ea_buf->xattr));
+ 
+ 		printk(KERN_ERR "ea_get: invalid extended attribute\n");
+ 		print_hex_dump(KERN_ERR, "", DUMP_PREFIX_ADDRESS, 16, 1,
+-- 
+2.43.0
 
-If the report is already addressed, let syzbot know by replying with:
-#syz fix: exact-commit-title
 
-If you want to overwrite report's subsystems, reply with:
-#syz set subsystems: new-subsystem
-(See the list of subsystem names on the web dashboard)
-
-If the report is a duplicate of another one, reply with:
-#syz dup: exact-subject-of-another-report
-
-If you want to undo deduplication, reply with:
-#syz undup
 
 
 _______________________________________________
