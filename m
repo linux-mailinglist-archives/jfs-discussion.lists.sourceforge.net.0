@@ -2,120 +2,123 @@ Return-Path: <jfs-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+jfs-discussion@lfdr.de
 Delivered-To: lists+jfs-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3ADD7995C9A
-	for <lists+jfs-discussion@lfdr.de>; Wed,  9 Oct 2024 02:59:09 +0200 (CEST)
-Received: from [127.0.0.1] (helo=sfs-ml-1.v29.lw.sourceforge.com)
-	by sfs-ml-1.v29.lw.sourceforge.com with esmtp (Exim 4.95)
+	by mail.lfdr.de (Postfix) with ESMTPS id BC9B799881A
+	for <lists+jfs-discussion@lfdr.de>; Thu, 10 Oct 2024 15:44:49 +0200 (CEST)
+Received: from [127.0.0.1] (helo=sfs-ml-4.v29.lw.sourceforge.com)
+	by sfs-ml-4.v29.lw.sourceforge.com with esmtp (Exim 4.95)
 	(envelope-from <jfs-discussion-bounces@lists.sourceforge.net>)
-	id 1syL2T-0001iy-H7;
-	Wed, 09 Oct 2024 00:58:54 +0000
+	id 1sytSx-0008Ao-LD;
+	Thu, 10 Oct 2024 13:44:31 +0000
 Received: from [172.30.29.66] (helo=mx.sourceforge.net)
- by sfs-ml-1.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
+ by sfs-ml-4.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
  TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (Exim 4.95)
- (envelope-from <niharchaithanya@gmail.com>) id 1syGmG-0002Uh-6c
+ (envelope-from <ghanshyam1898@gmail.com>) id 1sytSn-0008Aa-JC
  for jfs-discussion@lists.sourceforge.net;
- Tue, 08 Oct 2024 20:25:52 +0000
+ Thu, 10 Oct 2024 13:44:21 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=sourceforge.net; s=x; h=Content-Transfer-Encoding:MIME-Version:Message-Id:
  Date:Subject:Cc:To:From:Sender:Reply-To:Content-Type:Content-ID:
  Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
  :Resent-Message-ID:In-Reply-To:References:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=fHFfcjP7e63aVrsj9S3xIwQfv9rNqIN8h79VM6VgqSw=; b=S9M4O+9Cp9Ghf+qs306XAp32fk
- 6FO1D3iUDDYmLCxiKMkO4+xUmdfU5I8iz/8h8/3gLOayIpDloq0CwB6+ygY7YEg75efLAnwNfxUKP
- A6f8Oz2AklAyeAOdgLwgaqjdH9HMMwpRWPJrE6K4aVdkFJfhrPnKz251qg3NQcxUCTJ4=;
+ bh=NZYsBI4rHRPGslnn0OIAOPnwZIxsjJhLtfW4Z5UU62w=; b=ZmaACXwISVpljSXF2EzdwagJcv
+ KuCn7x7+UrtMdmxZGW/VwL4cQrxrE8Kcg0ss12jmjk/TURDiIGb/IrTIexpAuKe18BEpdwSsvSOHK
+ H1J3UIrYVCvMw0coX4rcAln5LcTD1maqrzqG8LaXOAivvvJgu/Bz9PhL4ZYbBJGbm8eM=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
  h=Content-Transfer-Encoding:MIME-Version:Message-Id:Date:Subject:Cc:To:From
  :Sender:Reply-To:Content-Type:Content-ID:Content-Description:Resent-Date:
  Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
  References:List-Id:List-Help:List-Unsubscribe:List-Subscribe:List-Post:
- List-Owner:List-Archive; bh=fHFfcjP7e63aVrsj9S3xIwQfv9rNqIN8h79VM6VgqSw=; b=i
- pigmaDIwGxZ/LJo7FC5sOVOg/mzcz43Nnrm11068O/VLe2xdHgbrrVZMR1JY0JxVt2WYe3XE9Hy5y
- fwVRccQdl8Ay26xsrZeeEPm5zLdsfBcHMsoBgMIg0cnJr2b5UMF0tXWdl1tigBVskPfV3AVsfejuG
- CbwJE4C6DH+PMPZw=;
-Received: from mail-pl1-f179.google.com ([209.85.214.179])
+ List-Owner:List-Archive; bh=NZYsBI4rHRPGslnn0OIAOPnwZIxsjJhLtfW4Z5UU62w=; b=J
+ /Kf1AiBIVJdHMDvqSIgQJ9t96yUYgRYJ8XNmm5+Ey0/pjs43EuV5qXL8GuH7IK0QRBw4FievCTSVw
+ 4RkrUyOmZig4BK2EZX5HtWFa8oJLP7bmPK3AV5qTBzLSttIB44zShP0wSZO/MHa/mfTMmw8rSft4F
+ cxo1Uu571odj+dNY=;
+Received: from mail-pf1-f173.google.com ([209.85.210.173])
  by sfi-mx-2.v28.lw.sourceforge.com with esmtps
  (TLS1.2:ECDHE-RSA-AES128-GCM-SHA256:128) (Exim 4.95)
- id 1syGmG-0000JP-AQ for jfs-discussion@lists.sourceforge.net;
- Tue, 08 Oct 2024 20:25:52 +0000
-Received: by mail-pl1-f179.google.com with SMTP id
- d9443c01a7336-20c5ff7df98so443515ad.3
+ id 1sytSl-00079c-AS for jfs-discussion@lists.sourceforge.net;
+ Thu, 10 Oct 2024 13:44:21 +0000
+Received: by mail-pf1-f173.google.com with SMTP id
+ d2e1a72fcca58-71e01eff831so712459b3a.2
  for <jfs-discussion@lists.sourceforge.net>;
- Tue, 08 Oct 2024 13:25:52 -0700 (PDT)
+ Thu, 10 Oct 2024 06:44:19 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=gmail.com; s=20230601; t=1728419142; x=1729023942; darn=lists.sourceforge.net;
+ d=gmail.com; s=20230601; t=1728567849; x=1729172649; darn=lists.sourceforge.net;
  h=content-transfer-encoding:mime-version:message-id:date:subject:cc
  :to:from:from:to:cc:subject:date:message-id:reply-to;
- bh=fHFfcjP7e63aVrsj9S3xIwQfv9rNqIN8h79VM6VgqSw=;
- b=ahxCCtmaT7jIBeODGBUeSLGtFnAEOiyyBYo1cFsl4RYxkczEmeGWE3r92lfRtkuidJ
- 2Xwq84Vm1R/h+mZVPOhzXKgz2cl8fzxFIgEB5ZxyhH5QtNQTSi0ZvUtoTtQgtQuPAS+6
- ROppUX+DEqJHQthRm4AtPRTD7X0QsgQOG1ZE+/kpXmKPoFgB2HJ3k3GnVuVzXvfl/I2r
- 5vTsC2Rojz9ya+w7SUQ2UcGVP+aIAFopMaVRex5S5QUZbWVpiq/hFV6m2RSWSmwewj3W
- zOgEg8aY4nAOB0o3B0yq4aYONbuZfS7ifIsVGNn43NXZpct5aaNi7M4qZeajyzrQGz6l
- wKYg==
+ bh=NZYsBI4rHRPGslnn0OIAOPnwZIxsjJhLtfW4Z5UU62w=;
+ b=jvckQwSSK8kySoeNX9lb/xpOed6f1YJ7WB1n+wJlooE5Rk3x83WqnbgwHZZwc9WUfS
+ vFWKCqTzm9g9lwqarPTcUTB0F19nV0yLyB/g5ectnAjyzDw8ZEjqJjt6M677Z8AyWlCB
+ CkaRMfhmRSpx9aZMQuHQaBYAhkVllfBu8sqsT1EHLWh8Kjcot6cx7W4ZQs9axRA/GU85
+ 2mj5eBoYoxC1lj55hXMSKl+9dgPPHjp7JZfhwwtE3dG7UE2LtBZSOkcMNqetxBw7hTq0
+ ot9k1duQKjjQ7CYfHs35tBFVCVnfV7bIwCxMFougKKy5zkiwrBxqte5MhoWs8aGA07Z+
+ GL3g==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20230601; t=1728419142; x=1729023942;
+ d=1e100.net; s=20230601; t=1728567849; x=1729172649;
  h=content-transfer-encoding:mime-version:message-id:date:subject:cc
  :to:from:x-gm-message-state:from:to:cc:subject:date:message-id
  :reply-to;
- bh=fHFfcjP7e63aVrsj9S3xIwQfv9rNqIN8h79VM6VgqSw=;
- b=XLfirP/xrpUNn5TpTDDvgjtlnNBq5Kv09NeqD7zGhVSSq6oUyniyARcgnL6M58kxjU
- ZV9u0tNujh7pyp2/AaT35WEI91Hab91bzBb2FocC1fxxBKOnqFMffiiomK+MZjQEUX4y
- U5byhhDZqQ9OdhFM7hJ+eNOg1bD2TRXsdWg0K9Z5LNWVuPzKYZ1QGL6NS2aqCvvt7ya/
- TSc11yASHw8njto5A4o7t3a6UAQocXxUA8i7F29Twrus+14PV77c8o/67Lu+WO7CD/tE
- Sd5um2WY4g6WhZP5NNXJzaERSX+ZN+oAMxr+IiB/v/1UfRd9R6cIGTp7xmjfcM4tYbGi
- ui8g==
-X-Gm-Message-State: AOJu0Yxq616pzJvSK4cipqKgyuIO1IWy4QdKbfoAWwcbsLx3PE+/FJqi
- WEPaq/7fJsxHbZAjhDt2iK8uxYNKwvoQkpuDtcGHQfDK677zguJo
-X-Google-Smtp-Source: AGHT+IFODThhy7hNypCxLh2wteGm9CvuNfcjriQqFrwNXwNktxCk0xzdBP2KCGYk7wxShucokLRKTA==
-X-Received: by 2002:a17:903:18a:b0:20b:7a2d:c543 with SMTP id
- d9443c01a7336-20c6358f83cmr1687775ad.0.1728419141603; 
- Tue, 08 Oct 2024 13:25:41 -0700 (PDT)
-Received: from ice.. ([171.76.85.17]) by smtp.gmail.com with ESMTPSA id
- d9443c01a7336-20c62f11757sm1054145ad.19.2024.10.08.13.25.39
+ bh=NZYsBI4rHRPGslnn0OIAOPnwZIxsjJhLtfW4Z5UU62w=;
+ b=R1cD9iplERQLGydBC5Sly1hHt34bCL2NtCJP3xLvabfQc8mIS+y3qqKhRN3Iq8dR2j
+ m+iJzYlTe2Xb9V2hGF4sZcncL7DliYUsfa2t47hB7eNSYCvGb62dKY5m9ll/IDDEvDH6
+ Pgchxp8rvlyx3TlChO6GwxzdF9XBbdglE/3tmimKVA8vWa2UsYdYLlcD/qyFZCXXZMyF
+ Pt3k02/vcZLSAspmGgXJUOGFt2ypoRbGLg/qjErwNSBzpSOqCbw0xBZDtfi7pouVMm4Z
+ 7ipLJAbaR7YKqzJQ9rJjBDnwZzDsBfBbrPPtvwFhBMbVRqzoz6YK54xTCQFTZeF99nJK
+ raPg==
+X-Gm-Message-State: AOJu0YzMDPeUS1gUDr/vUtQtJPQOC47HyUl+SlzrzWkITFGm+4wQ/KpT
+ yop2gQ6eN+lYkofYSDAQscB9QvrrLGqcs5BMaEzZKvmWJmKv+p4d
+X-Google-Smtp-Source: AGHT+IFDRhRD26iK9dbGob0ICijU5Wrp2L8RYyhXI1JN9HjKNoxD2M9E1WTsM6tZ6EDS/EKycS/+Og==
+X-Received: by 2002:a05:6a00:cc2:b0:71e:a3:935b with SMTP id
+ d2e1a72fcca58-71e1dbcab26mr10435507b3a.25.1728567848504; 
+ Thu, 10 Oct 2024 06:44:08 -0700 (PDT)
+Received: from dell-xps.. ([2405:201:3036:a902:cb38:efef:96cc:3acf])
+ by smtp.gmail.com with ESMTPSA id
+ d2e1a72fcca58-71e2a9e95f9sm1034508b3a.39.2024.10.10.06.44.05
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 08 Oct 2024 13:25:41 -0700 (PDT)
-To: shaggy@kernel.org
-Date: Wed,  9 Oct 2024 01:51:38 +0530
-Message-Id: <20241008202137.8577-1-niharchaithanya@gmail.com>
+ Thu, 10 Oct 2024 06:44:08 -0700 (PDT)
+To: shaggy@kernel.org, osmtendev@gmail.com, ghandatmanas@gmail.com,
+ eadavis@qq.com, ghanshyam1898@gmail.com
+Date: Thu, 10 Oct 2024 19:13:51 +0530
+Message-Id: <20241010134351.1884580-1-ghanshyam1898@gmail.com>
 X-Mailer: git-send-email 2.34.1
 MIME-Version: 1.0
-X-Spam-Score: -0.2 (/)
+X-Spam-Score: 0.1 (/)
 X-Spam-Report: Spam detection software,
  running on the system "util-spamd-2.v13.lw.sourceforge.com", 
  has NOT identified this incoming email as spam.  The original
  message has been attached to this so you can view it or label
  similar future email.  If you have any questions, see
  the administrator of that system for details.
- Content preview: When the value of lp is 1 at the end of the iteration in the
- for loop, lp is modified in the next iteration to a negative value. Add a
- check to prevent this condition. Reported-by:
- https://syzkaller.appspot.com/bug?extid=412dea214d8baa3f7483
- Tested-by: syzbot+412dea214d8baa3f7483@syzkaller.appspotmail.com
- Signed-off-by: Nihar Chaithanya --- fs/jfs/jfs_dmap.c | 6 [...] 
- Content analysis details:   (-0.2 points, 6.0 required)
+ Content preview: The value of p->header.freelist can be less than zero which
+ causes an error in dtInsertEntry. Added a check in dtInsert to address it.
+ Reported-by: https://syzkaller.appspot.com/bug?extid=5f7f0caf9979e9d09ff8
+ Signed-off-by: Ghanshyam Agrawal --- fs/jfs/jfs_dtree.c | 2 +- 1 file changed, 
+ 1 insertion(+), 1 deletion(-) 
+ Content analysis details:   (0.1 points, 6.0 required)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.214.179 listed in list.dnswl.org]
+ no trust [209.85.210.173 listed in list.dnswl.org]
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [niharchaithanya[at]gmail.com]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ provider [ghanshyam1898[at]gmail.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit [ghanshyam1898[at]gmail.com]
  0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [209.85.214.179 listed in wl.mailspike.net]
+ [209.85.210.173 listed in wl.mailspike.net]
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
-X-Headers-End: 1syGmG-0000JP-AQ
-X-Mailman-Approved-At: Wed, 09 Oct 2024 00:58:52 +0000
-Subject: [Jfs-discussion] [PATCH] jfs: add a check to prevent
- array-index-out-of-bounds
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+X-Headers-End: 1sytSl-00079c-AS
+Subject: [Jfs-discussion] [PATCH] jfs: fix array-index-out-of-bounds in
+ dtInsertEntry
 X-BeenThere: jfs-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -127,46 +130,39 @@ List-Post: <mailto:jfs-discussion@lists.sourceforge.net>
 List-Help: <mailto:jfs-discussion-request@lists.sourceforge.net?subject=help>
 List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/jfs-discussion>, 
  <mailto:jfs-discussion-request@lists.sourceforge.net?subject=subscribe>
-From: Nihar Chaithanya via Jfs-discussion
+From: Ghanshyam Agrawal via Jfs-discussion
  <jfs-discussion@lists.sourceforge.net>
-Reply-To: Nihar Chaithanya <niharchaithanya@gmail.com>
+Reply-To: Ghanshyam Agrawal <ghanshyam1898@gmail.com>
 Cc: jfs-discussion@lists.sourceforge.net, linux-kernel@vger.kernel.org,
- linux-bcachefs@vger.kernel.org,
- syzbot+412dea214d8baa3f7483@syzkaller.appspotmail.com,
- skhan@linuxfoundation.org, Nihar Chaithanya <niharchaithanya@gmail.com>
+ syzbot+5f7f0caf9979e9d09ff8@syzkaller.appspotmail.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Errors-To: jfs-discussion-bounces@lists.sourceforge.net
 
-When the value of lp is 1 at the end of the iteration in the for loop,
-lp is modified in the next iteration to a negative value.
-Add a check to prevent this condition.
+The value of p->header.freelist can be less than zero which
+causes an error in dtInsertEntry. Added a check in dtInsert
+to address it.
 
-Reported-by: syzbot+412dea214d8baa3f7483@syzkaller.appspotmail.com
-Closes: https://syzkaller.appspot.com/bug?extid=412dea214d8baa3f7483
-Tested-by: syzbot+412dea214d8baa3f7483@syzkaller.appspotmail.com
-Signed-off-by: Nihar Chaithanya <niharchaithanya@gmail.com>
+Reported-by: syzbot+5f7f0caf9979e9d09ff8@syzkaller.appspotmail.com
+Closes: https://syzkaller.appspot.com/bug?extid=5f7f0caf9979e9d09ff8
+Signed-off-by: Ghanshyam Agrawal <ghanshyam1898@gmail.com>
 ---
- fs/jfs/jfs_dmap.c | 6 ++++++
- 1 file changed, 6 insertions(+)
+ fs/jfs/jfs_dtree.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
-diff --git a/fs/jfs/jfs_dmap.c b/fs/jfs/jfs_dmap.c
-index 5713994328cb..3ebb2dfdd0b3 100644
---- a/fs/jfs/jfs_dmap.c
-+++ b/fs/jfs/jfs_dmap.c
-@@ -2911,6 +2911,12 @@ static void dbAdjTree(dmtree_t *tp, int leafno, int newval, bool is_ctl)
- 		 */
- 		tp->dmt_stree[pp] = max;
+diff --git a/fs/jfs/jfs_dtree.c b/fs/jfs/jfs_dtree.c
+index 5d3127ca68a4..51bb3e14551b 100644
+--- a/fs/jfs/jfs_dtree.c
++++ b/fs/jfs/jfs_dtree.c
+@@ -834,7 +834,7 @@ int dtInsert(tid_t tid, struct inode *ip,
+ 	 * the full page.
+ 	 */
+ 	DT_GETSEARCH(ip, btstack->top, bn, mp, p, index);
+-	if (p->header.freelist == 0)
++	if (p->header.freelist <= 0)
+ 		return -EINVAL;
  
-+		/* check to prevent negative value of lp on the
-+		 * next iteration.
-+		 */
-+		if (lp == 1)
-+			break;
-+
- 		/* parent becomes leaf for next go-round.
- 		 */
- 		lp = pp;
+ 	/*
 -- 
 2.34.1
 
