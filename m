@@ -2,98 +2,99 @@ Return-Path: <jfs-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+jfs-discussion@lfdr.de
 Delivered-To: lists+jfs-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7712099F46E
+	by mail.lfdr.de (Postfix) with ESMTPS id 1CDEE99F46D
 	for <lists+jfs-discussion@lfdr.de>; Tue, 15 Oct 2024 19:53:36 +0200 (CEST)
 Received: from [127.0.0.1] (helo=sfs-ml-4.v29.lw.sourceforge.com)
 	by sfs-ml-4.v29.lw.sourceforge.com with esmtp (Exim 4.95)
 	(envelope-from <jfs-discussion-bounces@lists.sourceforge.net>)
-	id 1t0ljW-0002gl-LD;
+	id 1t0ljW-0002gv-UJ;
 	Tue, 15 Oct 2024 17:53:22 +0000
 Received: from [172.30.29.66] (helo=mx.sourceforge.net)
- by sfs-ml-4.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
- TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (Exim 4.95)
- (envelope-from <qianqiang.liu@163.com>) id 1szrk7-0000AD-Dj
- for jfs-discussion@lists.sourceforge.net;
- Sun, 13 Oct 2024 06:06:15 +0000
+ by sfs-ml-3.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
+ TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (Exim 4.95) (envelope-from
+ <393INZwkbAFICIJ4u55yBu992x.08805yECyBw87Dy7D.w86@M3KW2WVRGUFZ5GODRSRYTGD7.apphosting.bounces.google.com>)
+ id 1t0Qst-0002lR-Ei for jfs-discussion@lists.sourceforge.net;
+ Mon, 14 Oct 2024 19:37:38 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=sourceforge.net; s=x; h=In-Reply-To:Content-Type:MIME-Version:References:
- Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:Content-Transfer-Encoding:
- Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
- Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
+ d=sourceforge.net; s=x; h=Content-Type:To:From:Subject:Message-ID:Date:
+ MIME-Version:Sender:Reply-To:Cc:Content-Transfer-Encoding:Content-ID:
+ Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+ :Resent-Message-ID:In-Reply-To:References:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=wkk6DJRhizZPLhSQxX5dUpPZTlU/n6LDIhPssTWtIR4=; b=iRvjO94QlioJJ577gH9GXwNkgv
- wBrLQ+BiEAF6YI3eDABSzxz26hiJIyRJANPeltTcGtZutSiqLotBojuTlrV8QFeuRqJpe7+v2URlh
- YemOmkudjFR+fLD0pmQknPlOhFx8YqrTsq4N82Kix89qgUbG2FiSwIgOKcAj0R5Q4CS0=;
+ bh=ZtM4iEdHicrMwv5gQKudIG1n3DgEExvY3relJ9nM2LY=; b=IgxGZYeO7ndKzms+gYmp/bqaGa
+ e79WWYTib+X3X7fVOH2haLsYbcs3T7jTSJ2xd3YQKmHAXC3QHy0c3l7aPs7kas+yFffNZc19ets+h
+ 9+44/5SkjmWtced/iDLJgYx39sNwM/xnM6tIHBoeSFcN40472IagOaJCaLLejDBc6fnk=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
- h=In-Reply-To:Content-Type:MIME-Version:References:Message-ID:Subject:Cc:To
- :From:Date:Sender:Reply-To:Content-Transfer-Encoding:Content-ID:
- Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
- :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
- List-Post:List-Owner:List-Archive;
- bh=wkk6DJRhizZPLhSQxX5dUpPZTlU/n6LDIhPssTWtIR4=; b=IPuWJ9ZELFqL8dToVcYXE6c6uP
- ByUF33HlCyLhzyZnh1KBMdrJEuIyN974/z/wrQ7RmkPIibvDtjMsHJzfjsn3NokqorM1yNtg0WTrm
- 2UYRt9ZYkrEmuQmJ8OtWuOf+m0usrxULfyuWuRU2lyn5noOCEUirXLiuLNvRpiqjb84Q=;
-Received: from m16.mail.163.com ([117.135.210.5])
- by sfi-mx-2.v28.lw.sourceforge.com with esmtp (Exim 4.95)
- id 1szrk4-0008KU-RP for jfs-discussion@lists.sourceforge.net;
- Sun, 13 Oct 2024 06:06:15 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=163.com;
- s=s110527; h=Date:From:Subject:Message-ID:MIME-Version:
- Content-Type; bh=wkk6DJRhizZPLhSQxX5dUpPZTlU/n6LDIhPssTWtIR4=;
- b=KLfr8CELtuA9jQPn08TLcTH2vaxhCskVuJsljmtsLvfr3REaxRj4OO2KGPq42U
- tMq+sKUFcnXub8pu62nw289SXIVZ4h0sL8bfjQw+6JUYYKBadC0uyn7OBwVg52gP
- NbAg1JoZvPU7PGhea1wT6D3rzm5OCIDJVeS25bBkHYess=
-Received: from localhost (unknown [58.243.42.186])
- by gzga-smtp-mtada-g1-0 (Coremail) with SMTP id
- _____wBX3441YwtnuRtYAw--.22898S2; 
- Sun, 13 Oct 2024 14:05:42 +0800 (CST)
-Date: Sun, 13 Oct 2024 14:05:41 +0800
-To: dave.kleikamp@oracle.com
-Message-ID: <ZwtjNd_koDuU_MT_@fedora>
-References: <Zws-so-6TnY_FUFH@fedora>
- <670b513e.050a0220.3e960.0033.GAE@google.com>
+ h=Content-Type:To:From:Subject:Message-ID:Date:MIME-Version:Sender:Reply-To
+ :Cc:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+ Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+ References:List-Id:List-Help:List-Unsubscribe:List-Subscribe:List-Post:
+ List-Owner:List-Archive; bh=ZtM4iEdHicrMwv5gQKudIG1n3DgEExvY3relJ9nM2LY=; b=g
+ 9jZX+hxnpQ+WMHKqOdgu9136vloqcekwduHnIkEzKwCMyMLVKJPwjmz3BX6j3yhS7XRx+UFGptm7n
+ 3Aj9n9XA1UYI6KNSIvqy27AKdMaLuBKwqT5ooRkUwiaAG1nsVyGupeDhZBoZaziLifKTKXCt+EPIb
+ cUOVEyQL299mKiYk=;
+Received: from mail-il1-f198.google.com ([209.85.166.198])
+ by sfi-mx-2.v28.lw.sourceforge.com with esmtps
+ (TLS1.2:ECDHE-RSA-AES128-GCM-SHA256:128) (Exim 4.95)
+ id 1t0Qss-0001zA-1z for jfs-discussion@lists.sourceforge.net;
+ Mon, 14 Oct 2024 19:37:38 +0000
+Received: by mail-il1-f198.google.com with SMTP id
+ e9e14a558f8ab-3a3c3ecaaabso19920985ab.0
+ for <jfs-discussion@lists.sourceforge.net>;
+ Mon, 14 Oct 2024 12:37:37 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20230601; t=1728934647; x=1729539447;
+ h=to:from:subject:message-id:date:mime-version:x-gm-message-state
+ :from:to:cc:subject:date:message-id:reply-to;
+ bh=ZtM4iEdHicrMwv5gQKudIG1n3DgEExvY3relJ9nM2LY=;
+ b=a88mdLF7Tt1WaRWvGa16HNVWIGbPt9iqv3uFTThujuyl/FY+B5zS0tYpQA/Z7rtc2b
+ I0CgHotBHZJ7PGEOG2rIIUuo3Mt83Vn7YKcerFhlFg5g8lqVJtqq2eNyjaEzldlaegau
+ oLGTG4Tf6Czm1WC+5dc+32d4Z/ftnYeE96SRrwHrgkBNiWSt5WSFU8fJOmeoQ3MJ8cfU
+ SCTr4/mC/zO3Est1ARroeD/HbWedrKc+TiaTJIQEEYLuCeXr7Wff6vNfWLU3nG1mUuIp
+ UK3IUZC7+PDMw2c+2pq19CQfgvdABH03vgxYby1/vzGyf14QHfJa+HuU9SEWH+cmv14j
+ enTg==
+X-Gm-Message-State: AOJu0Ywg9x+zforX1cTdhP/3qOStCQuirKHzv+kG1irHBsRDTHT4+HV2
+ W+ldX3VvUFWbCIpzaoclDgo458RhoMwyRs5eNXR17xY947imV4JSAo7TvGBbUhMDYXsgj2W/ORp
+ dcXXjAG49cYYxeUGF14lUj9+nEb5NiuhWfb3kTZqESjGcdB1M3Cb5vpQ=
+X-Google-Smtp-Source: AGHT+IGQAbrgLL/TFdTYt+kTOkUzdaVBuNTQWBtfMLsc9tG4vaMPBwq/rKyRYlwo9GaQi42No11RzEdircxZekonHXhuR6ddScGe
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <670b513e.050a0220.3e960.0033.GAE@google.com>
-X-CM-TRANSID: _____wBX3441YwtnuRtYAw--.22898S2
-X-Coremail-Antispam: 1Uf129KBjvJXoWxXFy7GF1DAr1UXF45XFyfCrg_yoWrXrW7pa
- 95AF47G3yDJr1UWF97J3y8Wa4rK3sYkayUWrW8tw1av3Wqqr1fCrsrt3WSyr1UXrZ2q34U
- XF90y34DXr4Ik3DanT9S1TB71UUUUU7qnTZGkaVYY2UrUUUUjbIjqfuFe4nvWSU5nxnvy2
- 9KBjDUYxBIdaVFxhVjvjDU0xZFpf9x07jwzVbUUUUU=
-X-Originating-IP: [58.243.42.186]
-X-CM-SenderInfo: xtld01pldqwhxolxqiywtou0bp/1tbiRRx3amcLUmTmQgAAs6
-X-Spam-Score: -0.2 (/)
+X-Received: by 2002:a05:6e02:b2b:b0:3a0:9952:5fcb with SMTP id
+ e9e14a558f8ab-3a3b5fb6490mr95978835ab.17.1728934647268; Mon, 14 Oct 2024
+ 12:37:27 -0700 (PDT)
+Date: Mon, 14 Oct 2024 12:37:27 -0700
+X-Google-Appengine-App-Id: s~syzkaller
+X-Google-Appengine-App-Id-Alias: syzkaller
+Message-ID: <670d72f7.050a0220.3e960.00db.GAE@google.com>
+To: jfs-discussion@lists.sourceforge.net, linux-kernel@vger.kernel.org, 
+ shaggy@kernel.org, syzkaller-bugs@googlegroups.com
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: Spam detection software,
- running on the system "util-spamd-1.v13.lw.sourceforge.com", 
+ running on the system "util-spamd-2.v13.lw.sourceforge.com", 
  has NOT identified this incoming email as spam.  The original
  message has been attached to this so you can view it or label
  similar future email.  If you have any questions, see
  the administrator of that system for details.
- Content preview:  The jfsCommit kernel thread uses the sbi->commit_state flag, 
- and sbi may be freed in jfs_put_super() by another thread. To prevent this,
- move commit_state to struct tblock, eliminating the need to access the sbi
- variable. 
- Content analysis details:   (-0.2 points, 6.0 required)
+ Content preview:  Hello jfs maintainers/developers, This is a 31-day syzbot
+ report for the jfs subsystem. All related reports/information can be found
+ at: https://syzkaller.appspot.com/upstream/s/jfs During the period, 5 new
+ issues were detected and 0 were fixed. In total, 53 issues are still open
+ and 47 have been fixed so far. 
+ Content analysis details:   (-0.7 points, 6.0 required)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [qianqiang.liu[at]163.com]
+ 0.3 FROM_LOCAL_HEX         From: localpart has long hexadecimal sequence
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [117.135.210.5 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ no trust [209.85.166.198 listed in list.dnswl.org]
+ -1.3 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.166.198 listed in wl.mailspike.net]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
-X-Headers-End: 1szrk4-0008KU-RP
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+X-Headers-End: 1t0Qss-0001zA-1z
 X-Mailman-Approved-At: Tue, 15 Oct 2024 17:53:20 +0000
-Subject: [Jfs-discussion] [PATCH] jfs: Fix use-after-free read issue in
- jfs_lazycommit
+Subject: [Jfs-discussion] [syzbot] Monthly jfs report (Oct 2024)
 X-BeenThere: jfs-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -105,136 +106,57 @@ List-Post: <mailto:jfs-discussion@lists.sourceforge.net>
 List-Help: <mailto:jfs-discussion-request@lists.sourceforge.net?subject=help>
 List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/jfs-discussion>, 
  <mailto:jfs-discussion-request@lists.sourceforge.net?subject=subscribe>
-From: Qianqiang Liu via Jfs-discussion <jfs-discussion@lists.sourceforge.net>
-Reply-To: Qianqiang Liu <qianqiang.liu@163.com>
-Cc: syzbot+885a4f3281b8d99c48d8@syzkaller.appspotmail.com, shaggy@kernel.org,
- jfs-discussion@lists.sourceforge.net, syzkaller-bugs@googlegroups.com,
- linux-kernel@vger.kernel.org
+From: syzbot via Jfs-discussion <jfs-discussion@lists.sourceforge.net>
+Reply-To: syzbot <syzbot+list47b21a48b702e3bbf3ac@syzkaller.appspotmail.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Errors-To: jfs-discussion-bounces@lists.sourceforge.net
 
-The jfsCommit kernel thread uses the sbi->commit_state flag,
-and sbi may be freed in jfs_put_super() by another thread.
+Hello jfs maintainers/developers,
 
-To prevent this, move commit_state to struct tblock,
-eliminating the need to access the sbi variable.
+This is a 31-day syzbot report for the jfs subsystem.
+All related reports/information can be found at:
+https://syzkaller.appspot.com/upstream/s/jfs
 
-Reported-by: syzbot+885a4f3281b8d99c48d8@syzkaller.appspotmail.com
-Closes: https://syzkaller.appspot.com/bug?extid=885a4f3281b8d99c48d8
-Tested-by: syzbot+885a4f3281b8d99c48d8@syzkaller.appspotmail.com
-Signed-off-by: Qianqiang Liu <qianqiang.liu@163.com>
+During the period, 5 new issues were detected and 0 were fixed.
+In total, 53 issues are still open and 47 have been fixed so far.
+
+Some of the still happening issues:
+
+Ref  Crashes Repro Title
+<1>  21984   Yes   kernel BUG in jfs_evict_inode
+                   https://syzkaller.appspot.com/bug?extid=9c0c58ea2e4887ab502e
+<2>  9592    Yes   kernel BUG in txUnlock
+                   https://syzkaller.appspot.com/bug?extid=a63afa301d1258d09267
+<3>  4135    Yes   general protection fault in lmLogSync (2)
+                   https://syzkaller.appspot.com/bug?extid=e14b1036481911ae4d77
+<4>  3333    Yes   WARNING in dbAdjTree
+                   https://syzkaller.appspot.com/bug?extid=ab18fa9c959320611727
+<5>  2354    Yes   INFO: task hung in lock_metapage
+                   https://syzkaller.appspot.com/bug?extid=1d84a1682e4673d5c4fb
+<6>  2169    Yes   general protection fault in write_special_inodes
+                   https://syzkaller.appspot.com/bug?extid=c732e285f8fc38d15916
+<7>  2031    Yes   kernel BUG in dbFindLeaf
+                   https://syzkaller.appspot.com/bug?extid=dcea2548c903300a400e
+<8>  1946    Yes   KASAN: user-memory-access Write in __destroy_inode
+                   https://syzkaller.appspot.com/bug?extid=dcc068159182a4c31ca3
+<9>  1021    Yes   KASAN: use-after-free Read in release_metapage
+                   https://syzkaller.appspot.com/bug?extid=f1521383cec5f7baaa94
+<10> 907     Yes   general protection fault in jfs_flush_journal
+                   https://syzkaller.appspot.com/bug?extid=194bfe3476f96782c0b6
+
 ---
- fs/jfs/jfs_incore.h |  8 --------
- fs/jfs/jfs_txnmgr.c | 10 ++++------
- fs/jfs/jfs_txnmgr.h |  8 ++++++++
- 3 files changed, 12 insertions(+), 14 deletions(-)
+This report is generated by a bot. It may contain errors.
+See https://goo.gl/tpsmEJ for more information about syzbot.
+syzbot engineers can be reached at syzkaller@googlegroups.com.
 
-diff --git a/fs/jfs/jfs_incore.h b/fs/jfs/jfs_incore.h
-index 10934f9a11be..7b75c801b239 100644
---- a/fs/jfs/jfs_incore.h
-+++ b/fs/jfs/jfs_incore.h
-@@ -177,11 +177,6 @@ struct jfs_sb_info {
- 	pxd_t		ait2;		/* pxd describing AIT copy	*/
- 	uuid_t		uuid;		/* 128-bit uuid for volume	*/
- 	uuid_t		loguuid;	/* 128-bit uuid for log	*/
--	/*
--	 * commit_state is used for synchronization of the jfs_commit
--	 * threads.  It is protected by LAZY_LOCK().
--	 */
--	int		commit_state;	/* commit state */
- 	/* Formerly in ipimap */
- 	uint		gengen;		/* inode generation generator*/
- 	uint		inostamp;	/* shows inode belongs to fileset*/
-@@ -199,9 +194,6 @@ struct jfs_sb_info {
- 	uint		minblks_trim;	/* minimum blocks, for online trim */
- };
- 
--/* jfs_sb_info commit_state */
--#define IN_LAZYCOMMIT 1
--
- static inline struct jfs_inode_info *JFS_IP(struct inode *inode)
- {
- 	return container_of(inode, struct jfs_inode_info, vfs_inode);
-diff --git a/fs/jfs/jfs_txnmgr.c b/fs/jfs/jfs_txnmgr.c
-index be17e3c43582..a4817229d573 100644
---- a/fs/jfs/jfs_txnmgr.c
-+++ b/fs/jfs/jfs_txnmgr.c
-@@ -2700,7 +2700,6 @@ int jfs_lazycommit(void *arg)
- 	int WorkDone;
- 	struct tblock *tblk;
- 	unsigned long flags;
--	struct jfs_sb_info *sbi;
- 
- 	set_freezable();
- 	do {
-@@ -2711,17 +2710,16 @@ int jfs_lazycommit(void *arg)
- 			list_for_each_entry(tblk, &TxAnchor.unlock_queue,
- 					    cqueue) {
- 
--				sbi = JFS_SBI(tblk->sb);
- 				/*
- 				 * For each volume, the transactions must be
- 				 * handled in order.  If another commit thread
- 				 * is handling a tblk for this superblock,
- 				 * skip it
- 				 */
--				if (sbi->commit_state & IN_LAZYCOMMIT)
-+				if (tblk->commit_state & IN_LAZYCOMMIT)
- 					continue;
- 
--				sbi->commit_state |= IN_LAZYCOMMIT;
-+				tblk->commit_state |= IN_LAZYCOMMIT;
- 				WorkDone = 1;
- 
- 				/*
-@@ -2733,7 +2731,7 @@ int jfs_lazycommit(void *arg)
- 				txLazyCommit(tblk);
- 				LAZY_LOCK(flags);
- 
--				sbi->commit_state &= ~IN_LAZYCOMMIT;
-+				tblk->commit_state &= ~IN_LAZYCOMMIT;
- 				/*
- 				 * Don't continue in the for loop.  (We can't
- 				 * anyway, it's unsafe!)  We want to go back to
-@@ -2781,7 +2779,7 @@ void txLazyUnlock(struct tblock * tblk)
- 	 * Don't wake up a commit thread if there is already one servicing
- 	 * this superblock, or if the last one we woke up hasn't started yet.
- 	 */
--	if (!(JFS_SBI(tblk->sb)->commit_state & IN_LAZYCOMMIT) &&
-+	if (!(tblk->commit_state & IN_LAZYCOMMIT) &&
- 	    !jfs_commit_thread_waking) {
- 		jfs_commit_thread_waking = 1;
- 		wake_up(&jfs_commit_thread_wait);
-diff --git a/fs/jfs/jfs_txnmgr.h b/fs/jfs/jfs_txnmgr.h
-index ba71eb5ced56..3a0ee53f17cb 100644
---- a/fs/jfs/jfs_txnmgr.h
-+++ b/fs/jfs/jfs_txnmgr.h
-@@ -32,6 +32,11 @@ struct tblock {
- 
- 	/* lock management */
- 	struct super_block *sb;	/* super block */
-+	/*
-+	 * commit_state is used for synchronization of the jfs_commit
-+	 * threads.  It is protected by LAZY_LOCK().
-+	 */
-+	int commit_state;	/* commit state */
- 	lid_t next;		/* index of first tlock of tid */
- 	lid_t last;		/* index of last tlock of tid */
- 	wait_queue_head_t waitor;	/* tids waiting on this tid */
-@@ -56,6 +61,9 @@ struct tblock {
- 	u32 ino;		/* inode number being created */
- };
- 
-+/* tblock commit_state */
-+#define IN_LAZYCOMMIT 1
-+
- extern struct tblock *TxBlock;	/* transaction block table */
- 
- /* commit flags: tblk->xflag */
--- 
-2.47.0
+To disable reminders for individual bugs, reply with the following command:
+#syz set <Ref> no-reminders
 
+To change bug's subsystems, reply with:
+#syz set <Ref> subsystems: new-subsystem
+
+You may send multiple commands in a single email message.
 
 
 _______________________________________________
