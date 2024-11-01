@@ -2,126 +2,100 @@ Return-Path: <jfs-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+jfs-discussion@lfdr.de
 Delivered-To: lists+jfs-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4EFF49B8E6D
-	for <lists+jfs-discussion@lfdr.de>; Fri,  1 Nov 2024 11:00:36 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4C24B9B9323
+	for <lists+jfs-discussion@lfdr.de>; Fri,  1 Nov 2024 15:27:22 +0100 (CET)
 Received: from [127.0.0.1] (helo=sfs-ml-3.v29.lw.sourceforge.com)
 	by sfs-ml-3.v29.lw.sourceforge.com with esmtp (Exim 4.95)
 	(envelope-from <jfs-discussion-bounces@lists.sourceforge.net>)
-	id 1t6oS6-00010z-2o;
-	Fri, 01 Nov 2024 10:00:21 +0000
+	id 1t6scG-0006S8-5M;
+	Fri, 01 Nov 2024 14:27:07 +0000
 Received: from [172.30.29.66] (helo=mx.sourceforge.net)
- by sfs-ml-3.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
- TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (Exim 4.95)
- (envelope-from <zoo868e@gmail.com>) id 1t6oS4-00010s-Kp
- for jfs-discussion@lists.sourceforge.net;
- Fri, 01 Nov 2024 10:00:20 +0000
+ by sfs-ml-2.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
+ TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (Exim 4.95) (envelope-from
+ <3UqskZwkbAHsrxyjZkkdqZoohc.fnnfkdtrdqbnmsdms.bnl@M3KW2WVRGUFZ5GODRSRYTGD7.apphosting.bounces.google.com>)
+ id 1t6olK-0004Wz-FK for jfs-discussion@lists.sourceforge.net;
+ Fri, 01 Nov 2024 10:20:14 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=sourceforge.net; s=x; h=Content-Transfer-Encoding:MIME-Version:References:
- In-Reply-To:Message-Id:Date:Subject:Cc:To:From:Sender:Reply-To:Content-Type:
- Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
- Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
+ d=sourceforge.net; s=x; h=Content-Type:To:From:Subject:Message-ID:In-Reply-To
+ :Date:MIME-Version:Sender:Reply-To:Cc:Content-Transfer-Encoding:Content-ID:
+ Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+ :Resent-Message-ID:References:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=kXE+qi0LSm8ODysTE3U4uCY5bjtR4TQVd3Ql3XOl3gw=; b=YOqjwvNZMNT2bDKj6x0vPJsJHA
- ltkkF0og4gx0zZ+3+RWkXz6w6b9AapKFAgS+4yRLdPcgW3ysHU59XqvY3lS8lNjTSODIooQnP8JUi
- Tnh+ooQR0tagcXqbH/VZmwhEmUb+rkF7aadydGQAurgwAF5rGwz/dJptzfctJzbPEjAs=;
+ bh=3eGCsrach8NHm1xot36+n5aQ0Y9q1AeV+fvWgjGpOpI=; b=EBt/+npWZS5dv/JI78bo4Nbv5U
+ XQpojOvv1ZP8YBgR2lTkI17N6vkf+KbNxGS6c8nllvmR5AL7xzLR3u0h7F1Wxja1Um104zm9U82u4
+ rst5IDA2zDcqvvyKVosUCgMva/zFz+yfBFUXAVmYZgEfoNANQ2z7aGIhuN8+AHXT9dsY=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
- h=Content-Transfer-Encoding:MIME-Version:References:In-Reply-To:Message-Id:
- Date:Subject:Cc:To:From:Sender:Reply-To:Content-Type:Content-ID:
- Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
- :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
- List-Post:List-Owner:List-Archive;
- bh=kXE+qi0LSm8ODysTE3U4uCY5bjtR4TQVd3Ql3XOl3gw=; b=KNrRLGT9o8yGz4jFsASdrQSVh3
- HzVOcPqZ+4yaBmSEExXbUNzz0cE/5V7CCmdB6P+BLjeJr3KHi3nGkOeu0PIiiftSOBeCixihVANuJ
- +HQ0vWjKBsqA3kz8e88YQ6ipNRWt/D2qNcQjk/HoXGWoiMUVAehT/urBtQ/L7MiL88So=;
-Received: from mail-pg1-f169.google.com ([209.85.215.169])
+ h=Content-Type:To:From:Subject:Message-ID:In-Reply-To:Date:MIME-Version:
+ Sender:Reply-To:Cc:Content-Transfer-Encoding:Content-ID:Content-Description:
+ Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+ References:List-Id:List-Help:List-Unsubscribe:List-Subscribe:List-Post:
+ List-Owner:List-Archive; bh=3eGCsrach8NHm1xot36+n5aQ0Y9q1AeV+fvWgjGpOpI=; b=W
+ 3uUE3j3mXUK5WuEMIm/eWLgan/J+wMOMcYwJFOhTVFeGGuyHQAs01LF8i91iXJs5zpqJy8fiuFGau
+ +znZjW9QBzPhYUy8tPJyPr3mTQ7QFEaCxAhpl7L/tqIm61vVUvLBnbIHYvVwCZmU+Q+QtNkkCoyA6
+ kvpI6m4OW6MU7v9A=;
+Received: from mail-il1-f198.google.com ([209.85.166.198])
  by sfi-mx-2.v28.lw.sourceforge.com with esmtps
  (TLS1.2:ECDHE-RSA-AES128-GCM-SHA256:128) (Exim 4.95)
- id 1t6oS2-00040K-DT for jfs-discussion@lists.sourceforge.net;
- Fri, 01 Nov 2024 10:00:19 +0000
-Received: by mail-pg1-f169.google.com with SMTP id
- 41be03b00d2f7-7db238d07b3so1425432a12.2
+ id 1t6olJ-0005Um-QC for jfs-discussion@lists.sourceforge.net;
+ Fri, 01 Nov 2024 10:20:14 +0000
+Received: by mail-il1-f198.google.com with SMTP id
+ e9e14a558f8ab-3a3b7d1e8a0so17199025ab.0
  for <jfs-discussion@lists.sourceforge.net>;
- Fri, 01 Nov 2024 03:00:18 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=gmail.com; s=20230601; t=1730455208; x=1731060008; darn=lists.sourceforge.net;
- h=content-transfer-encoding:mime-version:references:in-reply-to
- :message-id:date:subject:cc:to:from:from:to:cc:subject:date
- :message-id:reply-to;
- bh=kXE+qi0LSm8ODysTE3U4uCY5bjtR4TQVd3Ql3XOl3gw=;
- b=lH9FqXov6SBcE6Tc4y+ahXhxOyiHnVoCjZB40rqAZXWJOjBoMYtsdcFMCKyFGoIWBG
- W2x+jMHzQUc+bOiq5V/hTMgU4H4seEsu5vnZgV3tj7WH0+ufpyw/ithBcMIPeo6I55Kk
- +jOj/TuYDQowLgMbccI7OWuwBPu09vhTEY/LWJ7IedlwPpbnDq+1NR1Yu3c9qkT3JmZA
- asO3U/aBB88y3vESI6GeS3U0NeuQlW8kQP3X1/dXf/2MO5AWR97M9pyn1mj+8PfBGiTH
- LCeVRH8mx9xYiWBXODS9aHwLPHIMSQe3wTV0q+jXlfNgpQPquQAbKnPklvA79c8Y5kNl
- TPgQ==
+ Fri, 01 Nov 2024 03:20:13 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20230601; t=1730455208; x=1731060008;
- h=content-transfer-encoding:mime-version:references:in-reply-to
- :message-id:date:subject:cc:to:from:x-gm-message-state:from:to:cc
- :subject:date:message-id:reply-to;
- bh=kXE+qi0LSm8ODysTE3U4uCY5bjtR4TQVd3Ql3XOl3gw=;
- b=SYDpv6LQCDR1eStmHfVp2/cN1XzQqKbPA1W7glpLaNDmPNXrXRUUAxGqWHthHMPGBb
- E2dSgq0fDwcOcWngWiaMJ/ELp5mHSIm+na9EuvD39bRIO/e7kHAshzUq4E4od+MIxAhJ
- fvcfFF7v07GNvrcsJtbTbs2OgSPTbsLWqXpXO8caeU1e23/+ObYUiCwY738JSedWpY2+
- rUY7ffuUXzzraxmtd0ka95jv3RIGU+Z1c/EmrsRFbroKYSQBm7FVvxSYGTPkrSWYRcMU
- 0xNXv3uoljr7gRD38WS7d8tniMhw7WTV4Q5O6cQiTRLlMx7snPbwNSdaXDdQC6epAgdf
- Vzkw==
-X-Forwarded-Encrypted: i=1;
- AJvYcCXdOztQR4ya27zyEq1dM9UCyYVCDlJn9k/T9tpMjB5WcZUVoSP5zEbhx8dgjU4SbOWLPpLYmTgAQmrZYf0Cww==@lists.sourceforge.net
-X-Gm-Message-State: AOJu0Yz9b/Nx/ZVZPh/cC3j8XFMnRGsY+v2d/TIGwroJFNgFc8O0CoKc
- m5sznwhJPKTp9oyDX45M/+pH75Xqk2N0Hrtk8r9t95KLQt1UcBLC65aHjtrN
-X-Google-Smtp-Source: AGHT+IH+qDmPE014XFSIXoWs+bf29PK2M0J/yz6dZkz/5vEdYvX38kp2/2dRiZcLu/cOq6W9GxN86A==
-X-Received: by 2002:a17:902:f684:b0:206:fd9d:b88d with SMTP id
- d9443c01a7336-210c6d291e5mr258001815ad.61.1730455207493; 
- Fri, 01 Nov 2024 03:00:07 -0700 (PDT)
-Received: from TW-MATTJAN1.eu.trendnet.org (61-216-130-235.hinet-ip.hinet.net.
- [61.216.130.235]) by smtp.gmail.com with ESMTPSA id
- 98e67ed59e1d1-2e92fa4850esm4595553a91.27.2024.11.01.03.00.05
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Fri, 01 Nov 2024 03:00:06 -0700 (PDT)
-To: Dave Kleikamp <shaggy@kernel.org>, jfs-discussion@lists.sourceforge.net,
- linux-kernel@vger.kernel.org, Shuan Khan <skhan@linuxfoundation.org>
-Date: Fri,  1 Nov 2024 17:59:55 +0800
-Message-Id: <20241101095955.9786-1-zoo868e@gmail.com>
-X-Mailer: git-send-email 2.25.1
-In-Reply-To: <671b3f75.050a0220.2eb763.00d7.GAE@google.com>
-References: <671b3f75.050a0220.2eb763.00d7.GAE@google.com>
+ d=1e100.net; s=20230601; t=1730456403; x=1731061203;
+ h=to:from:subject:message-id:in-reply-to:date:mime-version
+ :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+ bh=3eGCsrach8NHm1xot36+n5aQ0Y9q1AeV+fvWgjGpOpI=;
+ b=lX0xtdQvdEAHEWGyl/ErWt4kPEDDFaftKzeRVXqPDiuFZ0Tw+Gcr3PCJIHkhlUHtK4
+ 2Gbn1vm3UzmCZ6iV9DoGqk/3rOPX4omkr94QMwbqS/7ehsLks+55NTclg+nIi9m54TO/
+ /9BOFqSMJ+5nw6vxeZkGEKpr+uweArY6jzzP07/4F6ARXmLisk3U68i013NYgzq3EM5w
+ G85dv+i2IwRrqmIZU1SlfveSPxRvXgJsUX5nV8j5lVatX+Q8QERIeuDOoO4M7pNZNBlJ
+ pAXbuImTrt8ES6miCbfJDvRiEPR0fZIGEWuN6wAl/2ykjngreTbjMQXgdr6VAM8vM9sK
+ ui1A==
+X-Gm-Message-State: AOJu0Yx2oWCWS9Oo1TeSdFShsYcbbitvLQ3tqOqp73LIwzVuVaQkH+j8
+ lDBw4h5TKUn1AT4dzJkTy1qsE5Nk3k/Cgb6+y7tZob2S6W4KeOlhMh2myNspxCSjzEm03bKovtk
+ ZG2qY2AFnN0o4UMlqaTNT5c7qF8WiaXw75duev06yTPQNNT4fqSb6aD0=
+X-Google-Smtp-Source: AGHT+IHUsB82AaDjlT/CUOuqkmMdDgqswU2rNhtr97SeQuwsmoASOHwnTSF3josRU0bHWz0+r3ZbMdkjgaXa8XaBNi9BItssMb8F
 MIME-Version: 1.0
-X-Spam-Score: -0.2 (/)
+X-Received: by 2002:a92:c24a:0:b0:3a0:9f85:d74f with SMTP id
+ e9e14a558f8ab-3a6b031a257mr35476215ab.16.1730456402996; Fri, 01 Nov 2024
+ 03:20:02 -0700 (PDT)
+Date: Fri, 01 Nov 2024 03:20:02 -0700
+In-Reply-To: <20241101095955.9786-1-zoo868e@gmail.com>
+X-Google-Appengine-App-Id: s~syzkaller
+X-Google-Appengine-App-Id-Alias: syzkaller
+Message-ID: <6724ab52.050a0220.3c8d68.0886.GAE@google.com>
+To: jfs-discussion@lists.sourceforge.net, linux-kernel@vger.kernel.org, 
+ shaggy@kernel.org, skhan@linuxfoundation.org, syzkaller-bugs@googlegroups.com, 
+ zoo868e@gmail.com
+X-Spam-Score: 0.6 (/)
 X-Spam-Report: Spam detection software,
  running on the system "util-spamd-2.v13.lw.sourceforge.com", 
  has NOT identified this incoming email as spam.  The original
  message has been attached to this so you can view it or label
  similar future email.  If you have any questions, see
  the administrator of that system for details.
- Content preview: Ensure l2nb is less than BUDMIN by performing a sanity check
- in the caller. Return -EIO if the check fails. #syz test Reported-by:
+ Content preview:  Hello,
+ syzbot has tested the proposed patch and the reproducer
+ did not trigger any issue: Reported-by:
  syzbot+9e90a1c5eedb9dc4c6cc@syzkaller.appspotmail.com
- Signed-off-by: Matt Jan --- Changes in v4: Thanks to Shaggy for the review.
- We now perform a sanity check instead of continuing as [...] 
- Content analysis details:   (-0.2 points, 6.0 required)
+ Tested-by: syzbot+9e90a1c5eedb9dc4c6cc@syzkaller.appspotmail.com 
+ Content analysis details:   (0.6 points, 6.0 required)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [zoo868e[at]gmail.com]
+ 0.3 FROM_LOCAL_HEX         From: localpart has long hexadecimal sequence
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.215.169 listed in list.dnswl.org]
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [209.85.215.169 listed in wl.mailspike.net]
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
-X-Headers-End: 1t6oS2-00040K-DT
-Subject: [Jfs-discussion] [PATCH v4] jfs: UBSAN: shift-out-of-bounds in
- dbFindBits
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.166.198 listed in wl.mailspike.net]
+X-Headers-End: 1t6olJ-0005Um-QC
+X-Mailman-Approved-At: Fri, 01 Nov 2024 14:27:05 +0000
+Subject: Re: [Jfs-discussion] [syzbot] [jfs?] UBSAN: shift-out-of-bounds in
+ dbFindBits (2)
 X-BeenThere: jfs-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -133,54 +107,30 @@ List-Post: <mailto:jfs-discussion@lists.sourceforge.net>
 List-Help: <mailto:jfs-discussion-request@lists.sourceforge.net?subject=help>
 List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/jfs-discussion>, 
  <mailto:jfs-discussion-request@lists.sourceforge.net?subject=subscribe>
-From: Matt Jan via Jfs-discussion <jfs-discussion@lists.sourceforge.net>
-Reply-To: Matt Jan <zoo868e@gmail.com>
-Cc: Matt Jan <zoo868e@gmail.com>,
- syzbot+9e90a1c5eedb9dc4c6cc@syzkaller.appspotmail.com
+From: syzbot via Jfs-discussion <jfs-discussion@lists.sourceforge.net>
+Reply-To: syzbot <syzbot+9e90a1c5eedb9dc4c6cc@syzkaller.appspotmail.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Errors-To: jfs-discussion-bounces@lists.sourceforge.net
 
-Ensure l2nb is less than BUDMIN by performing a sanity check in the caller.
-Return -EIO if the check fails.
+Hello,
 
-#syz test
+syzbot has tested the proposed patch and the reproducer did not trigger any issue:
 
 Reported-by: syzbot+9e90a1c5eedb9dc4c6cc@syzkaller.appspotmail.com
-Signed-off-by: Matt Jan <zoo868e@gmail.com>
----
-Changes in v4: Thanks to Shaggy for the review. We now perform a sanity check instead of continuing as if nothing is wrong.
-Changes in v3: Return the result earlier instead of assert it
-Changes in v2: Test if the patch resolve the issue through syzbot and reference the reporter
+Tested-by: syzbot+9e90a1c5eedb9dc4c6cc@syzkaller.appspotmail.com
 
- fs/jfs/jfs_dmap.c | 4 ++--
- 1 file changed, 2 insertions(+), 2 deletions(-)
+Tested on:
 
-diff --git a/fs/jfs/jfs_dmap.c b/fs/jfs/jfs_dmap.c
-index 974ecf5e0d95..89c22a18314f 100644
---- a/fs/jfs/jfs_dmap.c
-+++ b/fs/jfs/jfs_dmap.c
-@@ -1217,7 +1217,7 @@ dbAllocNear(struct bmap * bmp,
- 	int word, lword, rc;
- 	s8 *leaf;
- 
--	if (dp->tree.leafidx != cpu_to_le32(LEAFIND)) {
-+	if (dp->tree.leafidx != cpu_to_le32(LEAFIND) || l2nb >= L2DBWORD) {
- 		jfs_error(bmp->db_ipbmap->i_sb, "Corrupt dmap page\n");
- 		return -EIO;
- 	}
-@@ -1969,7 +1969,7 @@ dbAllocDmapLev(struct bmap * bmp,
- 	if (dbFindLeaf((dmtree_t *) &dp->tree, l2nb, &leafidx, false))
- 		return -ENOSPC;
- 
--	if (leafidx < 0)
-+	if (leafidx < 0 || l2nb >= L2DBWORD)
- 		return -EIO;
- 
- 	/* determine the block number within the file system corresponding
--- 
-2.25.1
+commit:         6c52d4da Merge tag 'for-linus' of git://git.kernel.org..
+git tree:       upstream
+console output: https://syzkaller.appspot.com/x/log.txt?x=116eb2a7980000
+kernel config:  https://syzkaller.appspot.com/x/.config?x=35698c25466f388c
+dashboard link: https://syzkaller.appspot.com/bug?extid=9e90a1c5eedb9dc4c6cc
+compiler:       Debian clang version 15.0.6, GNU ld (GNU Binutils for Debian) 2.40
+patch:          https://syzkaller.appspot.com/x/patch.diff?x=1293e6f7980000
 
+Note: testing is done by a robot and is best-effort only.
 
 
 _______________________________________________
