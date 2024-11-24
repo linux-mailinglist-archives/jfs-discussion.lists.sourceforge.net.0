@@ -2,28 +2,28 @@ Return-Path: <jfs-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+jfs-discussion@lfdr.de
 Delivered-To: lists+jfs-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id A29FF9D70AA
-	for <lists+jfs-discussion@lfdr.de>; Sun, 24 Nov 2024 14:37:47 +0100 (CET)
-Received: from [127.0.0.1] (helo=sfs-ml-4.v29.lw.sourceforge.com)
-	by sfs-ml-4.v29.lw.sourceforge.com with esmtp (Exim 4.95)
+	by mail.lfdr.de (Postfix) with ESMTPS id B888E9D70AD
+	for <lists+jfs-discussion@lfdr.de>; Sun, 24 Nov 2024 14:37:50 +0100 (CET)
+Received: from [127.0.0.1] (helo=sfs-ml-1.v29.lw.sourceforge.com)
+	by sfs-ml-1.v29.lw.sourceforge.com with esmtp (Exim 4.95)
 	(envelope-from <jfs-discussion-bounces@lists.sourceforge.net>)
-	id 1tFCnr-00023E-Ee;
-	Sun, 24 Nov 2024 13:37:31 +0000
+	id 1tFCnu-0007i6-Jz;
+	Sun, 24 Nov 2024 13:37:35 +0000
 Received: from [172.30.29.66] (helo=mx.sourceforge.net)
- by sfs-ml-4.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
+ by sfs-ml-1.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
  TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (Exim 4.95)
- (envelope-from <sashal@kernel.org>) id 1tFCnq-000234-Kf
+ (envelope-from <sashal@kernel.org>) id 1tFCns-0007hz-QF
  for jfs-discussion@lists.sourceforge.net;
- Sun, 24 Nov 2024 13:37:30 +0000
+ Sun, 24 Nov 2024 13:37:33 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=sourceforge.net; s=x; h=Content-Transfer-Encoding:MIME-Version:References:
  In-Reply-To:Message-ID:Date:Subject:Cc:To:From:Sender:Reply-To:Content-Type:
  Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
  Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=s6A+4GoDEZlU1iB+fbd2kk5Z2L0awiOqz04d1QkG2w8=; b=l/hhARZZhaJBXZpJnvfNZmC/OR
- DF2BWRuKhKnvkm2kyDrMoi6tLP8Yda60Kyraz8pXjVw9JO8rFsg9W7zhFqa/ALxJactEosWp9L7YN
- XByiBDeQUM7SOHZmUUyTLQDwwIR/pULLRhz6RElA/2D3ogPjxPpZdK3sJFotcX+gLCQo=;
+ bh=H2BelSdJ9dvQpWvGHngE0xC3YescQ6sr/+sekzOK7GM=; b=kxsvHUh2zDz+KBB6G2qYZenpcn
+ q6Dp4Jrm8H+jGppKiysvoetn586JGjB9Wm6fel0qFG1ggh7azS/s4gp1UYHhki0aAX11VyICu5hKT
+ kcbOzYYzcjznhpOFGzIsVtXPe5eh3ybGjd0KB6uvcQsR3kI30hLh0k9FQltMTK0Dl6gw=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
  h=Content-Transfer-Encoding:MIME-Version:References:In-Reply-To:Message-ID:
@@ -31,33 +31,33 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
  :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
  List-Post:List-Owner:List-Archive;
- bh=s6A+4GoDEZlU1iB+fbd2kk5Z2L0awiOqz04d1QkG2w8=; b=ZYSrlShKvud14h5UcBKB64Q/Ed
- AhiPVDBbtj0tItljxIvO7lMUlxYZ2gQCpXaR8hIvVhLc3GMBjvGIMTchOqh4OuSPrl3qxiCkxAsjx
- 2t+ry/esM8+o+Q6vZsb0l7HR6Ig1cdEecYOIxR2RBv2yXYFNIJgMFOyuzlOAHivSqm6o=;
-Received: from nyc.source.kernel.org ([147.75.193.91])
+ bh=H2BelSdJ9dvQpWvGHngE0xC3YescQ6sr/+sekzOK7GM=; b=I6xJJl5MNhin9Y0RN1bS7IrkXF
+ x/eOZG+gTMt+JZYgIJoCuYka1n9mqGjAi/qGnpl88sU+g9ekcmMPQp8Cka4Ih0wVR3tc/oG/cqEGo
+ yXhHdw6JpgVWKeT5Lx5azVykgdXpDiI5qPyHE4/s8hD8XOip5EnohBsycjFW9WdPGbK8=;
+Received: from dfw.source.kernel.org ([139.178.84.217])
  by sfi-mx-2.v28.lw.sourceforge.com with esmtps
  (TLS1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.95)
- id 1tFCnp-0000rB-Ug for jfs-discussion@lists.sourceforge.net;
- Sun, 24 Nov 2024 13:37:30 +0000
+ id 1tFCns-0000rX-S7 for jfs-discussion@lists.sourceforge.net;
+ Sun, 24 Nov 2024 13:37:33 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
- by nyc.source.kernel.org (Postfix) with ESMTP id 330C3A40B48;
- Sun, 24 Nov 2024 13:35:26 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id E668FC4CED1;
- Sun, 24 Nov 2024 13:37:17 +0000 (UTC)
+ by dfw.source.kernel.org (Postfix) with ESMTP id EA8C65C55B5;
+ Sun, 24 Nov 2024 13:36:38 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id A2A38C4CECC;
+ Sun, 24 Nov 2024 13:37:20 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=k20201202; t=1732455439;
- bh=Cm48ydr7HuUmpf8NLPZ0xlI3ymdHuP7sWgbwamctBOM=;
+ s=k20201202; t=1732455442;
+ bh=7SeF0gTH/JLCX/yvCisAO4zHQS3KiWhTn9A9Mtcwta8=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=KvlwYeudmg9EfwB+UgYycUExatdR0rHRLQmeyPmoTdHhDrdsfn2hSA30n4yBTDMhB
- +OFMO3wtW6uL3zsoy85eLEAgJedngY5/rpnaBKlGKoULCJB92Crk0nOYCGuT9qaqj5
- Zcf7LMNwUYuJD4kRjuE8/yvjcegKw10VKycqVZvbZGiIuHheeGx4r8EnQRRWcJs7Q0
- M/HawW4qu7Xv+A6EGpzYqIkGxW2ldxRO5VBvl7n8ouz8KqMG2ugv7T99+2GqEsNy0m
- ixBZbyhdM0Or+e5g7qanNb3M6TCHXXDEgOa5ibP7+uW+3lZ91d2rjMSUDzwWGRsKV7
- 0Ie5EvSIftSmg==
+ b=ksguemwagzjILW0X3+l2fqowqtwQ6AfJUD7Wzll/ImzQWaLiSUZyrCHgUubVYII9x
+ k0ultHRYwzZPFdvcLu3jiCwp6/TZp+IxCoxSyJ/6vc5crc3RYl4P1YHkIWhoVgkNkk
+ 9gYyVtvAQ8W0s7u6ztBNawzMocj/fb/VkIX54gmpRwrLdFI2hrqZT8E23wiSu1hzDV
+ 4B7ko4d9LrXXm1RUxofSScmfJ+Pplb3O7U8Htne27i7IPlQyviv5MO280BE1+9LWZ3
+ DQIDmzkeHxNhCl5xvmWKe1PCZlwnknvh6b8ILxSM8VpWM/ByrQ9WXgvqSGg4r84SII
+ LclD3s3jpPpTA==
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Date: Sun, 24 Nov 2024 08:29:30 -0500
-Message-ID: <20241124133301.3341829-70-sashal@kernel.org>
+Date: Sun, 24 Nov 2024 08:29:31 -0500
+Message-ID: <20241124133301.3341829-71-sashal@kernel.org>
 X-Mailer: git-send-email 2.43.0
 In-Reply-To: <20241124133301.3341829-1-sashal@kernel.org>
 References: <20241124133301.3341829-1-sashal@kernel.org>
@@ -65,34 +65,34 @@ MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-stable-base: Linux 6.12.1
-X-Spam-Score: -2.5 (--)
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: Spam detection software,
- running on the system "util-spamd-1.v13.lw.sourceforge.com", 
+ running on the system "util-spamd-2.v13.lw.sourceforge.com", 
  has NOT identified this incoming email as spam.  The original
  message has been attached to this so you can view it or label
  similar future email.  If you have any questions, see
  the administrator of that system for details.
  Content preview: From: Ghanshyam Agrawal <ghanshyam1898@gmail.com> [ Upstream
- commit ca84a2c9be482836b86d780244f0357e5a778c46 ] The value of stbl can be
- sometimes out of bounds due to a bad filesystem. Added a check with appopriate
- return of error code in that case. 
- Content analysis details:   (-2.5 points, 6.0 required)
+ commit a5f5e4698f8abbb25fe4959814093fb5bfa1aa9d ] When dmt_budmin is less
+ than zero, it causes errors in the later stages. Added a check to return
+ an error beforehand in dbAllocCtl itself. 
+ Content analysis details:   (-5.2 points, 6.0 required)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [139.178.84.217 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 RCVD_IN_VALIDITY_RPBL_BLOCKED RBL: ADMINISTRATOR NOTICE: The
  query to Validity was blocked.  See
  https://knowledge.validity.com/hc/en-us/articles/20961730681243
  for more information.
- [147.75.193.91 listed in bl.score.senderscore.com]
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [147.75.193.91 listed in list.dnswl.org]
+ [139.178.84.217 listed in bl.score.senderscore.com]
  0.0 RCVD_IN_VALIDITY_SAFE_BLOCKED RBL: ADMINISTRATOR NOTICE: The
  query to Validity was blocked.  See
  https://knowledge.validity.com/hc/en-us/articles/20961730681243
  for more information.
- [147.75.193.91 listed in sa-accredit.habeas.com]
+ [139.178.84.217 listed in sa-accredit.habeas.com]
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
@@ -101,9 +101,9 @@ X-Spam-Report: Spam detection software,
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.0 DKIMWL_WL_HIGH         DKIMwl.org - High trust sender
-X-Headers-End: 1tFCnp-0000rB-Ug
-Subject: [Jfs-discussion] [PATCH AUTOSEL 6.12 070/107] jfs:
- array-index-out-of-bounds fix in dtReadFirst
+X-Headers-End: 1tFCns-0000rX-S7
+Subject: [Jfs-discussion] [PATCH AUTOSEL 6.12 071/107] jfs: fix
+ shift-out-of-bounds in dbSplit
 X-BeenThere: jfs-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -119,47 +119,44 @@ From: Sasha Levin via Jfs-discussion <jfs-discussion@lists.sourceforge.net>
 Reply-To: Sasha Levin <sashal@kernel.org>
 Cc: Sasha Levin <sashal@kernel.org>, shaggy@kernel.org,
  jfs-discussion@lists.sourceforge.net,
- syzbot+65fa06e29859e41a83f3@syzkaller.appspotmail.com,
- Ghanshyam Agrawal <ghanshyam1898@gmail.com>, eadavis@qq.com
+ Ghanshyam Agrawal <ghanshyam1898@gmail.com>, aha310510@gmail.com,
+ eadavis@qq.com, syzbot+b5ca8a249162c4b9a7d0@syzkaller.appspotmail.com,
+ peili.dev@gmail.com, niharchaithanya@gmail.com, rbrasga@uci.edu
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Errors-To: jfs-discussion-bounces@lists.sourceforge.net
 
 From: Ghanshyam Agrawal <ghanshyam1898@gmail.com>
 
-[ Upstream commit ca84a2c9be482836b86d780244f0357e5a778c46 ]
+[ Upstream commit a5f5e4698f8abbb25fe4959814093fb5bfa1aa9d ]
 
-The value of stbl can be sometimes out of bounds due
-to a bad filesystem. Added a check with appopriate return
-of error code in that case.
+When dmt_budmin is less than zero, it causes errors
+in the later stages. Added a check to return an error beforehand
+in dbAllocCtl itself.
 
-Reported-by: syzbot+65fa06e29859e41a83f3@syzkaller.appspotmail.com
-Closes: https://syzkaller.appspot.com/bug?extid=65fa06e29859e41a83f3
+Reported-by: syzbot+b5ca8a249162c4b9a7d0@syzkaller.appspotmail.com
+Closes: https://syzkaller.appspot.com/bug?extid=b5ca8a249162c4b9a7d0
 Signed-off-by: Ghanshyam Agrawal <ghanshyam1898@gmail.com>
 Signed-off-by: Dave Kleikamp <dave.kleikamp@oracle.com>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- fs/jfs/jfs_dtree.c | 7 +++++++
- 1 file changed, 7 insertions(+)
+ fs/jfs/jfs_dmap.c | 3 +++
+ 1 file changed, 3 insertions(+)
 
-diff --git a/fs/jfs/jfs_dtree.c b/fs/jfs/jfs_dtree.c
-index 5d3127ca68a42..69fd936fbdb37 100644
---- a/fs/jfs/jfs_dtree.c
-+++ b/fs/jfs/jfs_dtree.c
-@@ -3086,6 +3086,13 @@ static int dtReadFirst(struct inode *ip, struct btstack * btstack)
+diff --git a/fs/jfs/jfs_dmap.c b/fs/jfs/jfs_dmap.c
+index 3ab410059dc20..39957361a7eed 100644
+--- a/fs/jfs/jfs_dmap.c
++++ b/fs/jfs/jfs_dmap.c
+@@ -1820,6 +1820,9 @@ dbAllocCtl(struct bmap * bmp, s64 nblocks, int l2nb, s64 blkno, s64 * results)
+ 			return -EIO;
+ 		dp = (struct dmap *) mp->data;
  
- 		/* get the leftmost entry */
- 		stbl = DT_GETSTBL(p);
-+
-+		if (stbl[0] < 0 || stbl[0] > 127) {
-+			DT_PUTPAGE(mp);
-+			jfs_error(ip->i_sb, "stbl[0] out of bound\n");
++		if (dp->tree.budmin < 0)
 +			return -EIO;
-+		}
 +
- 		xd = (pxd_t *) & p->slot[stbl[0]];
- 
- 		/* get the child page block address */
+ 		/* try to allocate the blocks.
+ 		 */
+ 		rc = dbAllocDmapLev(bmp, dp, (int) nblocks, l2nb, results);
 -- 
 2.43.0
 
