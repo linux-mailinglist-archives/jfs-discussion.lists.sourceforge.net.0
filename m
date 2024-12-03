@@ -2,244 +2,142 @@ Return-Path: <jfs-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+jfs-discussion@lfdr.de
 Delivered-To: lists+jfs-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id 364329E0DF2
-	for <lists+jfs-discussion@lfdr.de>; Mon,  2 Dec 2024 22:36:07 +0100 (CET)
-Received: from [127.0.0.1] (helo=sfs-ml-1.v29.lw.sourceforge.com)
-	by sfs-ml-1.v29.lw.sourceforge.com with esmtp (Exim 4.95)
+	by mail.lfdr.de (Postfix) with ESMTPS id 210059E1266
+	for <lists+jfs-discussion@lfdr.de>; Tue,  3 Dec 2024 05:26:05 +0100 (CET)
+Received: from [127.0.0.1] (helo=sfs-ml-2.v29.lw.sourceforge.com)
+	by sfs-ml-2.v29.lw.sourceforge.com with esmtp (Exim 4.95)
 	(envelope-from <jfs-discussion-bounces@lists.sourceforge.net>)
-	id 1tIE59-0003EH-9x;
-	Mon, 02 Dec 2024 21:35:52 +0000
+	id 1tIKTt-0005ke-Sa;
+	Tue, 03 Dec 2024 04:25:49 +0000
 Received: from [172.30.29.66] (helo=mx.sourceforge.net)
- by sfs-ml-1.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
+ by sfs-ml-2.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
  TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (Exim 4.95)
- (envelope-from <dave.kleikamp@oracle.com>) id 1tIE57-0003E8-7s
+ (envelope-from <dmantipov@yandex.ru>) id 1tIKTr-0005kJ-Dv
  for jfs-discussion@lists.sourceforge.net;
- Mon, 02 Dec 2024 21:35:49 +0000
+ Tue, 03 Dec 2024 04:25:47 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=sourceforge.net; s=x; h=MIME-Version:Content-Transfer-Encoding:Content-Type
- :In-Reply-To:From:References:Cc:To:Subject:Date:Message-ID:Sender:Reply-To:
+ d=sourceforge.net; s=x; h=Content-Transfer-Encoding:Content-Type:In-Reply-To:
+ From:References:Cc:To:Subject:MIME-Version:Date:Message-ID:Sender:Reply-To:
  Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
  Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=GYqkA+rFzMk2V2+is3Q681es0PyDVMqu7JtQs0i8wzs=; b=GUu3a1l+yhGAFPluwjKmDU6slH
- SQx1ff+fP4Y4TdmJglAMoxQ8nMHiKsq2gS+tf/R3JBWT2WJWoTxP6vrLjZ7qj5dJDs1MKfPtDrXCM
- vPX2ELXSttDx+0xjePHP4Qjv+wq6FzoLWSgWHN9mpPWC1snDSUzprkkNOwyureFSVfYs=;
+ bh=SUZ+kVUVQWy5bQxCLplY6iHgaLepIEf5QhTojxg8OTw=; b=RiEiNRxjIGyl/9A/arIo7AGq/a
+ n3BBScv8k7OoSFL6+Rl02B2a+hzCJBsmV/xroXd8jJP8NH5Xbk7rSgE9ugvKCT47mwYzPzc7svXbA
+ N7tbLZnBN+ZnRRKdgCREik752yX/c2LmPvp7peh/aHbv84VpSCOTACUxjTnWTXxVarnw=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
- h=MIME-Version:Content-Transfer-Encoding:Content-Type:In-Reply-To:From:
- References:Cc:To:Subject:Date:Message-ID:Sender:Reply-To:Content-ID:
+ h=Content-Transfer-Encoding:Content-Type:In-Reply-To:From:References:Cc:To:
+ Subject:MIME-Version:Date:Message-ID:Sender:Reply-To:Content-ID:
  Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
  :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
  List-Post:List-Owner:List-Archive;
- bh=GYqkA+rFzMk2V2+is3Q681es0PyDVMqu7JtQs0i8wzs=; b=GChDaPqXa2iqGNbtUXUis91zn9
- 5XUbudyzHD/iRrj1o/AWl0KOi+bXsJNiaOQdhbXZjsXXjJkbjRmD2vsiEJU5vmjMOvNG8N4PxP+u5
- DAEKN/RmY5UXd3OMK0EhetzyZENH1BWEXH4JRFYyjRfAFUkj69MFhBfWF/gqxZxhdEdA=;
-Received: from mx0b-00069f02.pphosted.com ([205.220.177.32])
+ bh=SUZ+kVUVQWy5bQxCLplY6iHgaLepIEf5QhTojxg8OTw=; b=gah6YCNrsmg88STvzRwIo519iO
+ S1HDkGHbsMpWIUUev9V7/jiy5fspKImhqguGzvA2F97pktMIYQFdC3RuHBGCrT9OXMOeomW78m9Q1
+ fpgwMz0hsraAsQ8FoNCN0qY7Z1xGw2D7VQOqgIKYLhguYb1nIuHo68lEKSFj1SPjtNEw=;
+Received: from forward500d.mail.yandex.net ([178.154.239.208])
  by sfi-mx-2.v28.lw.sourceforge.com with esmtps
  (TLS1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.95)
- id 1tIE56-0001BD-SH for jfs-discussion@lists.sourceforge.net;
- Mon, 02 Dec 2024 21:35:49 +0000
-Received: from pps.filterd (m0246630.ppops.net [127.0.0.1])
- by mx0b-00069f02.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 4B2KtYO4013765;
- Mon, 2 Dec 2024 21:35:41 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=oracle.com; h=cc
- :content-transfer-encoding:content-type:date:from:in-reply-to
- :message-id:mime-version:references:subject:to; s=
- corp-2023-11-20; bh=GYqkA+rFzMk2V2+is3Q681es0PyDVMqu7JtQs0i8wzs=; b=
- YLtCJDxvqyEi22wRojGM7VXaardZ0gGI9gVc09oNrWCf3+l/S6VwF2/OzoHV6jPX
- O3dyZany+P6ajkU3u53aJ5Ps+eiwBr3YCm/Kr5nrzMvmPnNN6e/O3Dg/fsTK8LfZ
- jJVtGK6UDGsqJn4bp3PseNgfGWzt+826bJyBR8UpmdXH5mP45QA64pOaTJLH3wCU
- I5cJO6D/aRQYElI+BBNhcGbscFRRPYtKgrsQn2rTpV4mA/irh4B1VDKODNumF/Bx
- RBjkKIReZ9Sv3GC5GuyuFl1gn1VpnqXoieIpd2C7V/hDua0c36F1xbcoegxBdMHr
- jyyW5b+JrQvuSEP0DZtyBw==
-Received: from iadpaimrmta01.imrmtpd1.prodappiadaev1.oraclevcn.com
- (iadpaimrmta01.appoci.oracle.com [130.35.100.223])
- by mx0b-00069f02.pphosted.com (PPS) with ESMTPS id 437s4c4qxt-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
- Mon, 02 Dec 2024 21:35:40 +0000 (GMT)
-Received: from pps.filterd
- (iadpaimrmta01.imrmtpd1.prodappiadaev1.oraclevcn.com [127.0.0.1])
- by iadpaimrmta01.imrmtpd1.prodappiadaev1.oraclevcn.com (8.18.1.2/8.18.1.2)
- with ESMTP id 4B2L4TCh001117; Mon, 2 Dec 2024 21:35:40 GMT
-Received: from nam12-dm6-obe.outbound.protection.outlook.com
- (mail-dm6nam12lp2169.outbound.protection.outlook.com [104.47.59.169])
- by iadpaimrmta01.imrmtpd1.prodappiadaev1.oraclevcn.com (PPS) with ESMTPS id
- 437s572h32-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
- Mon, 02 Dec 2024 21:35:40 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=KoyqXEZES6r5nJwMADLsVs/hMwcy8kXsWle/PsqROJYgThoKFvtnXn8pkVj0mApu3Ezfx8a+/reTfDtJnDQeGe7XmvhfkIJ4zGD6XXvoY2P5ksGpYLnqbawJpdLA56sxTmXZEq0zzRpVou9otXd0OYsIrDLFahTynIXXLAB0Xj5QEn0evI3grXO/bcHoTmiYkQm1a1hyv70kOlIhyFYrQ7+yn07x6m6xq6tANjmJCPzEEeTcEH6891l+QeMhwAiagAt6UFnUPu/YRZvyNewUQSi6gbkVOrm429HJZyhae+q203znKFcb6mRdfHbAb77ez3au6AjXeBa9gV46p/tlFw==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector10001;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=GYqkA+rFzMk2V2+is3Q681es0PyDVMqu7JtQs0i8wzs=;
- b=IAQZUSsrr21FG0CHh3jN1xY/xQqk/Ut4MQdxZ/l2Dvungue09pArHtaCbR9VXr7whGh1FVH2haVoZRFBAuLsw4THxjxJMTehZj9DDl7jNExkgZIYVy7us9k3v4ph+pzrSKLQ57W8edVtdnk9UFB55BfmFnNNSfOSwb/eHpYgNhUqtEcdHLOq8yrwIVTRugJMUwFF7lyhr+xVBn6rIFMhvJNj7kdO/drzPapxX/hpn2oFWRM3LbBva4Smq15Hbf9VF8J/VgVWsFEL8YihC/YRF0nNkpN8BqDVu/k11F03Be8Ozn1VhvkVcu85QSjMkzK2uK0V7M7C3veXbr15SEwJEw==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=oracle.com; dmarc=pass action=none header.from=oracle.com;
- dkim=pass header.d=oracle.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=oracle.onmicrosoft.com; s=selector2-oracle-onmicrosoft-com;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=GYqkA+rFzMk2V2+is3Q681es0PyDVMqu7JtQs0i8wzs=;
- b=ZCyHbqDSMylUoN4liXrcchTdDop4M/ZTulh2/nnk5TmBieV9KbYlE68FhMfsEjinHwdwyaQSEKFDHBtEWvr7KZcxv5K1zaMfVLZaoC4gDlkislBiOt55+NWEFgzAlRTAenfCdOKtl6SoK/wHaAwy2W1ETX5K0OTQvqhI/W+EVy0=
-Received: from MW5PR10MB5738.namprd10.prod.outlook.com (2603:10b6:303:19b::14)
- by BN0PR10MB5029.namprd10.prod.outlook.com (2603:10b6:408:115::16)
- with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.8207.19; Mon, 2 Dec
- 2024 21:35:37 +0000
-Received: from MW5PR10MB5738.namprd10.prod.outlook.com
- ([fe80::187b:b241:398b:50eb]) by MW5PR10MB5738.namprd10.prod.outlook.com
- ([fe80::187b:b241:398b:50eb%6]) with mapi id 15.20.8207.017; Mon, 2 Dec 2024
- 21:35:37 +0000
-Message-ID: <9ec6ea5a-2722-4560-8e1a-95c725c62b87@oracle.com>
-Date: Mon, 2 Dec 2024 15:35:35 -0600
-User-Agent: Mozilla Thunderbird
-To: Dmitry Antipov <dmantipov@yandex.ru>
-References: <20241107054228.26540-1-dmantipov@yandex.ru>
-Content-Language: en-US
-In-Reply-To: <20241107054228.26540-1-dmantipov@yandex.ru>
-X-ClientProxiedBy: CH0P221CA0018.NAMP221.PROD.OUTLOOK.COM
- (2603:10b6:610:11c::19) To MW5PR10MB5738.namprd10.prod.outlook.com
- (2603:10b6:303:19b::14)
+ id 1tIKTp-0002kK-CD for jfs-discussion@lists.sourceforge.net;
+ Tue, 03 Dec 2024 04:25:47 +0000
+Received: from mail-nwsmtp-smtp-production-main-37.myt.yp-c.yandex.net
+ (mail-nwsmtp-smtp-production-main-37.myt.yp-c.yandex.net
+ [IPv6:2a02:6b8:c12:3e2b:0:640:9b37:0])
+ by forward500d.mail.yandex.net (Yandex) with ESMTPS id 1B421610F3;
+ Tue,  3 Dec 2024 07:25:38 +0300 (MSK)
+Received: by mail-nwsmtp-smtp-production-main-37.myt.yp-c.yandex.net
+ (smtp/Yandex) with ESMTPSA id ZPWXsF3OkqM0-k2tuEIND; 
+ Tue, 03 Dec 2024 07:25:37 +0300
+X-Yandex-Fwd: 1
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=yandex.ru; s=mail;
+ t=1733199937; bh=SUZ+kVUVQWy5bQxCLplY6iHgaLepIEf5QhTojxg8OTw=;
+ h=In-Reply-To:To:From:Cc:Date:References:Subject:Message-ID;
+ b=HeC0JXBLqZRfPTfwSP9RN3KBfdzQRNqMNNAhbP9wsivIr17beZw1VvtF+9+CsitHw
+ G4BbvjAERXesgEwfeXuiO4XWAiOQoduPe52OcGiLSb40gOL3psNe6NsuNPu/hygMSv
+ mebtBs1JiRAFnzshUD/6gZWMftYXic3BOgtbWflE=
+Authentication-Results: mail-nwsmtp-smtp-production-main-37.myt.yp-c.yandex.net;
+ dkim=pass header.i=@yandex.ru
+Message-ID: <3d4868ec-8047-4ae3-9e7e-6df6e32e8a5a@yandex.ru>
+Date: Tue, 3 Dec 2024 07:25:35 +0300
 MIME-Version: 1.0
-X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: MW5PR10MB5738:EE_|BN0PR10MB5029:EE_
-X-MS-Office365-Filtering-Correlation-Id: ea24c92a-5b7a-478f-a7ca-08dd131942d3
-X-MS-Exchange-SenderADCheck: 1
-X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;ARA:13230040|1800799024|366016|376014;
-X-Microsoft-Antispam-Message-Info: =?utf-8?B?aVhVNW5ockIyRWd5TCtndzJPM0VzMHQ2MnpHaExDdDNuUmRLVUFCT1dFR3FY?=
- =?utf-8?B?MXk2cTh0NmZpWFlid1FMTDNFekpKN29ZZDArdXRzRWpXdytGRTdHQ2ttbXFF?=
- =?utf-8?B?NmprcHMwTURjWDNQZ1JWTGhJUWlMTzVFRUhya2hkRzNmdTVIWlRER0tWMUlx?=
- =?utf-8?B?Q1UvV2VSdEdJY1BGdlFmNkp2NlV4T1dWaVpVTGlqYnE2YldOQVFaL1hkQzlQ?=
- =?utf-8?B?Vkp1UlphQndtaWVoWEg0VktSYmxSdFgvckREUjVJb0ZDZEZtTXgrVlNhbyti?=
- =?utf-8?B?MGd1Z3VDakZTWmppT1V5a0xYU0xrNU04L0ZGMG5pYUpvNHpzbjQ5NTFna1pv?=
- =?utf-8?B?VmZhVG9TODBmYTA5QXZFWjRpeHI5SFRCZFJIUW9xTktxdVlTdmNQZG9YV3RX?=
- =?utf-8?B?dU4wVy90L3U5WEtObFNKaVNHWGp0OFh4Y1RsTzlGRXBhazBSRXo2c2ZObnhI?=
- =?utf-8?B?VXZ0UkRpU1lDSjhybnRCbC9sOFBLVUc0cGF0R0pGbmU5U1BMRkF3Z3lNNGt3?=
- =?utf-8?B?STdEQlFGb25RZUhiK1BTVWgwS0h3b3FmOEVPSUVKN3FpSlhIUGh5ZjYyb0xD?=
- =?utf-8?B?aWUzU1FzOTBOcGRXejNRR09Vdnd6d3hXVjREY0VoVGUzWUMxSjZlQjhpS0Fl?=
- =?utf-8?B?QzdSSHhLMFNkNm5GMUhNb1hWSklGcDRuNXFtRTQ2T2FINDJsTjRSVm4zVTdw?=
- =?utf-8?B?UFdQUjVIcEtTVVZNU0t6bzZFM3h5dXZGNHFqUUZxdlQ5WnB0NUpWWS91K2R2?=
- =?utf-8?B?bXFWdWFjZERuT2Q4SXRhMVRSdmgyR1Q3TnNuR0Q2WnJuWEpQUEVhRXZRUmQ4?=
- =?utf-8?B?bEJadDQ1cmF6T1BDdS9CK1F6SFBvNVovdmk4QUh4bER2dWx1Yi9rdXQyb3VL?=
- =?utf-8?B?RStLbnpFNFRJR0lRTS8wWnhneVlHa0pyanZ2VHkzbkN3a05LVnQyd3kxL3g1?=
- =?utf-8?B?SG1HVEZ5S2VzeG1LMTJraktQbloxNmwxSEZHdjBlY1Y4Zm0vb3VMT1k0MllT?=
- =?utf-8?B?a3g5WVNFSWRhZ3kwazZuM0RKYkFZcG04UncrOFRRYzdHWE5JRjFCdHhPNG5E?=
- =?utf-8?B?d2VmbDJUdlJNd01USEhzRUtZc3J6eVhsWEttcUFkZlkxdnlDNEh0L3dGZEk4?=
- =?utf-8?B?eFI0MndQVUlNUHU0YXpsOW9EQTNHLzU4QnBVL0lHVTdhU2ZLdTE1cDhCeVNK?=
- =?utf-8?B?ZkozRTF2UVJBb2ltcXpjazVHQ3p5V3Mwd3VLQmplQVJUSEcxbUwyeUUrK3A2?=
- =?utf-8?B?dXNoRHFhK09WTWlYNERiZ0ZjbWg2SlVXMDJsS2xlTW5BejJUeCtaR2s4SXla?=
- =?utf-8?B?N3N0eGl2aXpLenNuNmNTNHkydVlGdzZzWFQ1MjJwdDg4T29SNkY1Q3dQeUZv?=
- =?utf-8?B?TUZLU0YycVlLTXBBT1FCVHd0L2JxUVRIYi8zNU9jZjZoTytVbkVocm0zOUxL?=
- =?utf-8?B?a1JMOEovZlBrdDBQdVo2QkhaTTlOakRSZHZnblFXMWRZMXZtL1RZbXBhNUkw?=
- =?utf-8?B?REUvb25pSWlTOHg1N0U0blIwWkVHS3JYeHpuUFhFWStPRUJTL3RPUkdaQmIx?=
- =?utf-8?B?V0owbWpnWEFrbEtwV3ZnRkJoRjRVOW0vaUVadXhyMW5oZ0NsN2VxeDA1WDhC?=
- =?utf-8?B?eFRzZVhGblc2RGQyczRzSGwyc0VLWEZSUnllSEhxVWRhK0tMNmpzY1pIZHcv?=
- =?utf-8?B?MVl0OFBId3A2alE4ekpNcTVBVmpsd3l1Y0NVWEdpdG5nb2M3clZoRzlWdTYx?=
- =?utf-8?Q?+HxKEEhzP544CMbgO8=3D?=
-X-Forefront-Antispam-Report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
- IPV:NLI; SFV:NSPM; H:MW5PR10MB5738.namprd10.prod.outlook.com; PTR:; CAT:NONE;
- SFS:(13230040)(1800799024)(366016)(376014); DIR:OUT; SFP:1101; 
-X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: =?utf-8?B?Kzh6RWFxSTNLQ0wreDJNWWo5MjRTZlJPa0wzWUZxZDZXcC9xSUxicWdWMUw2?=
- =?utf-8?B?K1FJZ1ZZbXlmU29QVVZiM2Y2MWVkYVNFV0x4eWZPZlN3TWpWTEpzdGlScGJm?=
- =?utf-8?B?eDRUYXcrQSt0Yk1oV2NqbWRZMk1ZVFprZFRFNGlqc1l3YnNJTGlmNXVxSkEv?=
- =?utf-8?B?NFR0Y204OU13dlRHb0RTYlF6eWQwb0lkV2hFNDFBVllFenloNitxK2l6ekxV?=
- =?utf-8?B?MDJkKzRvTDNXOEY2STRncy9velFEVFYydW01MFh2aUd3R3B0Ty83TExkRjhk?=
- =?utf-8?B?c1JMaWRYYnB5d3lqaitFemkwNC9GMmFvR3dJV2VZWnJmWHRZRlNFRFlKK001?=
- =?utf-8?B?YUY3bkFPaVN0c0M1WHNUeDcxTTU2amhMYkpqVzJwUnFhUXJQcEFZYlh0L2Jo?=
- =?utf-8?B?WERHU3FyeG1vYnA1RlNhVGJVcGJTVXM3a2VHWWtQeDd2aEZ6c2lMYlNXU1Ex?=
- =?utf-8?B?bC9SVndXMUpRSVZkSFNhaC9vRVVvdHJubEdlVDIxTncrTVdybkxhbU5LUVJv?=
- =?utf-8?B?YlFTQy9wekhDeFhXazdsUG9rV3JTNkt0Vm5TVVJUemwwbVl6ZTdFZnFmZFdJ?=
- =?utf-8?B?Um16V203WFp3R1ZEU1FkMC9SRFpVZTF5dnNtazd0M3RybTVBdnFib3lka0dv?=
- =?utf-8?B?SE5aTmgxa0tSNTYxbWdhS1d2dmU1dGY2R2pPZ2VCblpiVzd6amNVTUxqRFhq?=
- =?utf-8?B?L3k3KzJDQndxSU1KVzVkLy9DRnN4TTBhSWJsOHNPRS8zOFRZVXJCTTBOTzBr?=
- =?utf-8?B?M2VBOTJwQnU4MEFvdk5KcW9kVWI5M1BkaTdMT0hZZmJVRWprdTFUeWQ3Y2ZJ?=
- =?utf-8?B?cytubGxaSWs4WjdSMHV3OVFjTTk0V3Z1ZzNhZlZsTzBTcnYxdU5xZnVXbXZr?=
- =?utf-8?B?YUV2Y2dmNU83akpvUy9hSGc2T3pLWWZaazVHTnZNYlNqL2k2WTR6NTVCZG1G?=
- =?utf-8?B?Mi82RDEvR1NTcG0xU29kMjlmcWE4VEtQRDIvdDVENmRBTml6OVJoTTc1Wklo?=
- =?utf-8?B?S3hyZE0yUm8rcDVMYlJmNVJPRjNLQ1ZQSFpFMDVZaHQ2bi9PdnhRQUFmZjQ0?=
- =?utf-8?B?MTBOMFZ1Vjg5TmZUZWc1R0s0dzl5VlFla1VvUWtpbjRPTUlHQ0o4OGh6K1kx?=
- =?utf-8?B?alBYTk9PNkt2VnR1NFJPS0J3cGUzSE5LNXZBWG9qYzNiN3Z0L01LaTl4SE1q?=
- =?utf-8?B?dFFaWkdwOFBOQVYzTDJjRzBMeCtyTEV6aTJYYUxTbEgyWHIxU0dnaWMyMXlI?=
- =?utf-8?B?bjg0VEQ0QUFOdTY3bml2VS91U1lCa1NiTm1pMFdiQitRekw3MmRVMmxXVDIy?=
- =?utf-8?B?aEd4cXgrQTZaTDZ0Ulg1UHBHSWt6SWJFbE1Cd1NPa1ZoSkFjQWZEblhPNzlx?=
- =?utf-8?B?NlNmVDdXN0V0cU9IZmZOZTdodFVObHp0cUZZRnB2UG9JbHFRTEhBM09HL29o?=
- =?utf-8?B?THg3NmRTb0I3SkRjT3NnZnRDYW5FMUdRYndJaGxZeXhzZVhQVVB6a3JiQzVr?=
- =?utf-8?B?L0EwY1gvZDJqcnUrTlZDSjNaS3BFK1oyNFoyY1dFem1DemtPcHVlcW5FSEIw?=
- =?utf-8?B?S0I1TWRtWjZ3c2d6Zk9PV3BsdUtoQytRN2Q1YnpvVTc2TEp2UWpmcXQzaXRx?=
- =?utf-8?B?V1A2RmlqWWdtMDJLQlFhL05hRlhZckF0RFhsQmliRWxkUVRiSXBIY1pHbk1W?=
- =?utf-8?B?QXd2WE5ja1pRUUhyL3BwaG1iYWRNcUFBbWE2Sngzc09Sc25hRjRjMzExQTg4?=
- =?utf-8?B?bGdTTG44b3ROckdKRXJrSGFwWW9YNkkzcUJ0R05sQXFnUVlEV25FTlFlWXZQ?=
- =?utf-8?B?eC94VE5XdThTM1NsYi9sVTFOYzB0UnRVd3BMK1NjaVl2SmNodndOU0RrdHpP?=
- =?utf-8?B?QjhFMlNobFRPZyttTUNlMGpFVzEzZjlNaUxhM1EvdUVMWU9zRFpKb2RrYlRR?=
- =?utf-8?B?R1R2cHUyWnJQc1BoNGhsQmE3SjlCZG5ydzJoZGc3Z2xPZjU3REhEVFNpaHFI?=
- =?utf-8?B?bWdTUmJ4Nkt3SldZdmI4aE53NXNDZ1pEenFmaDN3RllGQitTeGpuVEd3ZHZB?=
- =?utf-8?B?b1ltYm8weCsyY1k5dTFvcEZrQ0FmTmQvRkhxWHVhUmtUMEhzMGpZN0g2ZlVr?=
- =?utf-8?B?TWcydkoranViblRmdGpmbUE3Q1NNWTVRZmR3bjRaYklqRTBnYVhIM3dlcnNo?=
- =?utf-8?B?Rmc9PQ==?=
-X-MS-Exchange-AntiSpam-ExternalHop-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-ExternalHop-MessageData-0: T7VvHQ6RqPINFdwvuMTg5hOOOeVLXV9wlvfrgs3u6oJxmxw1v9tarv9W0gKnL0eN+ZKvQpekPOqI2eHhqPh532DS2/Kf0dZIDH3ok+lH7qiSIzuZCOMKKwuVScKSLxJvqOLg44dqP+DbC6H41B4VKsUgewTZT6LK1HncMOP1oISETs4Tl7fU8OgRO/EAYvirLfvY9dp7kamAkOR9Em2DQixI993esaBiENqyOhK9buy5wNZiaG1zBQfitNKjwSrt4cq6pwtrgj98d31s0qA4swkffLFPuKXi6zPz+SDUIYzjuifzb6HDdiKgM5NZ1u/WeKwXOvGdhAnn8IjR+vsyXOkIAS3GVLiiCqPXx+046AwlPDs/5RHGcUDW9hEXSEirpFhwQXE3/7Hwidc7EuAmKJVUyOIlTowqrbY9AjnqxQCAwVrYlbOw84eBErT5pnu6E4MwFrdJ+nvyLgAwvsXlJ1NvM4Z/ScwVOPUFn0/z4G3SXzTFiorvHNF2Bwizgb5L+sRXky3hZL/fTtOwiTQGpjYVID3UVeGkHyXs5zsCh16DScN06DR0lv3UJFhtn2gRM6KPVamrrNZSjgyhQYKoXcYcNt7R+rLPrFvS6gU7lXw=
-X-OriginatorOrg: oracle.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: ea24c92a-5b7a-478f-a7ca-08dd131942d3
-X-MS-Exchange-CrossTenant-AuthSource: MW5PR10MB5738.namprd10.prod.outlook.com
-X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 02 Dec 2024 21:35:37.4275 (UTC)
-X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
-X-MS-Exchange-CrossTenant-Id: 4e2c6054-71cb-48f1-bd6c-3a9705aca71b
-X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: I68wPbcxMY4P9joxR50R+YH6rRtqOjVFnp80Dc2ycV34kakemqc8slB6R96W0cR3HIhAzX+XSPR8qujFro0y8N3XevtW8GB67SDi5aPkD8w=
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: BN0PR10MB5029
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1057,Hydra:6.0.680,FMLib:17.12.68.34
- definitions=2024-12-02_14,2024-12-02_01,2024-11-22_01
-X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 bulkscore=0
- mlxlogscore=999
- adultscore=0 mlxscore=0 spamscore=0 suspectscore=0 malwarescore=0
- phishscore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.12.0-2411120000 definitions=main-2412020180
-X-Proofpoint-ORIG-GUID: MLOQBJ40YbWv9H_J3xxB_rxLkxsMwtDd
-X-Proofpoint-GUID: MLOQBJ40YbWv9H_J3xxB_rxLkxsMwtDd
-X-Spam-Score: -0.9 (/)
+User-Agent: Mozilla Thunderbird
+To: Dave Kleikamp <dave.kleikamp@oracle.com>
+References: <20241107054228.26540-1-dmantipov@yandex.ru>
+ <9ec6ea5a-2722-4560-8e1a-95c725c62b87@oracle.com>
+Content-Language: en-MW
+Autocrypt: addr=dmantipov@yandex.ru; keydata=
+ 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
+ A/UwwXBRuvydGV0=
+In-Reply-To: <9ec6ea5a-2722-4560-8e1a-95c725c62b87@oracle.com>
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: Spam detection software,
- running on the system "util-spamd-1.v13.lw.sourceforge.com", 
+ running on the system "util-spamd-2.v13.lw.sourceforge.com", 
  has NOT identified this incoming email as spam.  The original
  message has been attached to this so you can view it or label
  similar future email.  If you have any questions, see
  the administrator of that system for details.
- Content preview:  On 11/6/24 11:42PM,
- Dmitry Antipov wrote: > Syzbot has reported
- the following BUG: > > kernel BUG at fs/inode.c:668! > Oops: invalid opcode:
- 0000 [#1] PREEMPT SMP KASAN PTI > CPU: 3 UID: 0 PID: 139 Co [...] 
- Content analysis details:   (-0.9 points, 6.0 required)
+ Content preview:  On 12/3/24 12:35 AM, Dave Kleikamp wrote: > I like the first
+ part of this patch,
+ but I don't see the need for the second part. d_splice_alias()
+ handles IS_ERR(ip) just fine. > > Would you object to me just keeping the
+ change to jfs_imap.c? 
+ Content analysis details:   (-0.2 points, 6.0 required)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [205.220.177.32 listed in list.dnswl.org]
  0.0 RCVD_IN_VALIDITY_SAFE_BLOCKED RBL: ADMINISTRATOR NOTICE: The
  query to Validity was blocked.  See
  https://knowledge.validity.com/hc/en-us/articles/20961730681243
  for more information.
- [205.220.177.32 listed in sa-trusted.bondedsender.org]
+ [178.154.239.208 listed in sa-trusted.bondedsender.org]
  0.0 RCVD_IN_VALIDITY_RPBL_BLOCKED RBL: ADMINISTRATOR NOTICE: The
  query to Validity was blocked.  See
  https://knowledge.validity.com/hc/en-us/articles/20961730681243
  for more information.
- [205.220.177.32 listed in bl.score.senderscore.com]
+ [178.154.239.208 listed in bl.score.senderscore.com]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [178.154.239.208 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [205.220.177.32 listed in wl.mailspike.net]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [dmantipov[at]yandex.ru]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
-X-Headers-End: 1tIE56-0001BD-SH
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+X-Headers-End: 1tIKTp-0002kK-CD
 Subject: Re: [Jfs-discussion] [PATCH] jfs: reject on-disk inodes of an
  unsupported type
 X-BeenThere: jfs-discussion@lists.sourceforge.net
@@ -253,8 +151,8 @@ List-Post: <mailto:jfs-discussion@lists.sourceforge.net>
 List-Help: <mailto:jfs-discussion-request@lists.sourceforge.net?subject=help>
 List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/jfs-discussion>, 
  <mailto:jfs-discussion-request@lists.sourceforge.net?subject=subscribe>
-From: Dave Kleikamp via Jfs-discussion <jfs-discussion@lists.sourceforge.net>
-Reply-To: Dave Kleikamp <dave.kleikamp@oracle.com>
+From: Dmitry Antipov via Jfs-discussion <jfs-discussion@lists.sourceforge.net>
+Reply-To: Dmitry Antipov <dmantipov@yandex.ru>
 Cc: linux-fsdevel@vger.kernel.org, jfs-discussion@lists.sourceforge.net,
  syzbot+ac2116e48989e84a2893@syzkaller.appspotmail.com,
  lvc-project@linuxtesting.org
@@ -262,140 +160,16 @@ Content-Transfer-Encoding: 7bit
 Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Errors-To: jfs-discussion-bounces@lists.sourceforge.net
 
-On 11/6/24 11:42PM, Dmitry Antipov wrote:
-> Syzbot has reported the following BUG:
-> 
-> kernel BUG at fs/inode.c:668!
-> Oops: invalid opcode: 0000 [#1] PREEMPT SMP KASAN PTI
-> CPU: 3 UID: 0 PID: 139 Comm: jfsCommit Not tainted 6.12.0-rc4-syzkaller-00085-g4e46774408d9 #0
-> Hardware name: QEMU Standard PC (i440FX + PIIX, 1996), BIOS 1.16.3-3.fc41 04/01/2014
-> RIP: 0010:clear_inode+0x168/0x190
-> Code: 4c 89 f7 e8 ba fe e5 ff e9 61 ff ff ff 44 89 f1 80 e1 07 80 c1 03 38 c1 7c c1 4c 89 f7 e8 90 ff e5 ff eb b7
->   0b e8 01 5d 7f ff 90 0f 0b e8 f9 5c 7f ff 90 0f 0b e8 f1 5c 7f
-> RSP: 0018:ffffc900027dfae8 EFLAGS: 00010093
-> RAX: ffffffff82157a87 RBX: 0000000000000001 RCX: ffff888104d4b980
-> RDX: 0000000000000000 RSI: 0000000000000001 RDI: 0000000000000000
-> RBP: ffffc900027dfc90 R08: ffffffff82157977 R09: fffff520004fbf38
-> R10: dffffc0000000000 R11: fffff520004fbf38 R12: dffffc0000000000
-> R13: ffff88811315bc00 R14: ffff88811315bda8 R15: ffff88811315bb80
-> FS:  0000000000000000(0000) GS:ffff888135f00000(0000) knlGS:0000000000000000
-> CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033
-> CR2: 00005565222e0578 CR3: 0000000026ef0000 CR4: 00000000000006f0
-> Call Trace:
->   <TASK>
->   ? __die_body+0x5f/0xb0
->   ? die+0x9e/0xc0
->   ? do_trap+0x15a/0x3a0
->   ? clear_inode+0x168/0x190
->   ? do_error_trap+0x1dc/0x2c0
->   ? clear_inode+0x168/0x190
->   ? __pfx_do_error_trap+0x10/0x10
->   ? report_bug+0x3cd/0x500
->   ? handle_invalid_op+0x34/0x40
->   ? clear_inode+0x168/0x190
->   ? exc_invalid_op+0x38/0x50
->   ? asm_exc_invalid_op+0x1a/0x20
->   ? clear_inode+0x57/0x190
->   ? clear_inode+0x167/0x190
->   ? clear_inode+0x168/0x190
->   ? clear_inode+0x167/0x190
->   jfs_evict_inode+0xb5/0x440
->   ? __pfx_jfs_evict_inode+0x10/0x10
->   evict+0x4ea/0x9b0
->   ? __pfx_evict+0x10/0x10
->   ? iput+0x713/0xa50
->   txUpdateMap+0x931/0xb10
->   ? __pfx_txUpdateMap+0x10/0x10
->   jfs_lazycommit+0x49a/0xb80
->   ? _raw_spin_unlock_irqrestore+0x8f/0x140
->   ? lockdep_hardirqs_on+0x99/0x150
->   ? __pfx_jfs_lazycommit+0x10/0x10
->   ? __pfx_default_wake_function+0x10/0x10
->   ? __kthread_parkme+0x169/0x1d0
->   ? __pfx_jfs_lazycommit+0x10/0x10
->   kthread+0x2f2/0x390
->   ? __pfx_jfs_lazycommit+0x10/0x10
->   ? __pfx_kthread+0x10/0x10
->   ret_from_fork+0x4d/0x80
->   ? __pfx_kthread+0x10/0x10
->   ret_from_fork_asm+0x1a/0x30
->   </TASK>
-> 
-> This happens when 'clear_inode()' makes an attempt to finalize an underlying
-> JFS inode of unknown type. According to JFS layout description from
-> https://jfs.sourceforge.net/project/pub/jfslayout.pdf, inode types from 5 to
-> 15 are reserved for future extensions and should not be encountered on a valid
-> filesystem. So add an extra check for valid inode type in 'copy_from_dinode()'
-> and fix 'jfs_lookup()' to handle possible -EINVAL.
+On 12/3/24 12:35 AM, Dave Kleikamp wrote:
 
-I like the first part of this patch, but I don't see the need for the 
-second part. d_splice_alias() handles IS_ERR(ip) just fine.
-
-Would you object to me just keeping the change to jfs_imap.c?
-
-Shaggy
-
+> I like the first part of this patch, but I don't see the need for the second part. d_splice_alias() handles IS_ERR(ip) just fine.
 > 
-> Reported-by: syzbot+ac2116e48989e84a2893@syzkaller.appspotmail.com
-> Closes: https://syzkaller.appspot.com/bug?extid=ac2116e48989e84a2893
-> Fixes: 79ac5a46c5c1 ("jfs_lookup(): don't bother with . or ..")
-> Signed-off-by: Dmitry Antipov <dmantipov@yandex.ru>
-> ---
->   fs/jfs/jfs_imap.c | 13 +++++++++++--
->   fs/jfs/namei.c    | 10 ++++++++--
->   2 files changed, 19 insertions(+), 4 deletions(-)
-> 
-> diff --git a/fs/jfs/jfs_imap.c b/fs/jfs/jfs_imap.c
-> index a360b24ed320..debfc1389cb3 100644
-> --- a/fs/jfs/jfs_imap.c
-> +++ b/fs/jfs/jfs_imap.c
-> @@ -3029,14 +3029,23 @@ static void duplicateIXtree(struct super_block *sb, s64 blkno,
->    *
->    * RETURN VALUES:
->    *	0	- success
-> - *	-ENOMEM	- insufficient memory
-> + *	-EINVAL	- unexpected inode type
->    */
->   static int copy_from_dinode(struct dinode * dip, struct inode *ip)
->   {
->   	struct jfs_inode_info *jfs_ip = JFS_IP(ip);
->   	struct jfs_sb_info *sbi = JFS_SBI(ip->i_sb);
-> +	int fileset = le32_to_cpu(dip->di_fileset);
-> +
-> +	switch (fileset) {
-> +	case AGGR_RESERVED_I: case AGGREGATE_I: case BMAP_I:
-> +	case LOG_I: case BADBLOCK_I: case FILESYSTEM_I:
-> +		break;
-> +	default:
-> +		return -EINVAL;
-> +	}
->   
-> -	jfs_ip->fileset = le32_to_cpu(dip->di_fileset);
-> +	jfs_ip->fileset = fileset;
->   	jfs_ip->mode2 = le32_to_cpu(dip->di_mode);
->   	jfs_set_inode_flags(ip);
->   
-> diff --git a/fs/jfs/namei.c b/fs/jfs/namei.c
-> index d68a4e6ac345..845abc598334 100644
-> --- a/fs/jfs/namei.c
-> +++ b/fs/jfs/namei.c
-> @@ -1467,8 +1467,14 @@ static struct dentry *jfs_lookup(struct inode *dip, struct dentry *dentry, unsig
->   		ip = ERR_PTR(rc);
->   	} else {
->   		ip = jfs_iget(dip->i_sb, inum);
-> -		if (IS_ERR(ip))
-> -			jfs_err("jfs_lookup: iget failed on inum %d", (uint)inum);
-> +		if (IS_ERR(ip)) {
-> +			long err = PTR_ERR(ip);
-> +
-> +			jfs_err("%s: iget failed on inum %d with error"
-> +				" %ld, consider running 'jfs_fsck -f /dev/%s'",
-> +				__func__, (uint)inum, err, dip->i_sb->s_id);
-> +			return ERR_PTR(err);
-> +		}
->   	}
->   
->   	return d_splice_alias(ip, dentry);
+> Would you object to me just keeping the change to jfs_imap.c?
+
+Well you're the maintainer :-).
+
+Dmitry
+
 
 
 _______________________________________________
