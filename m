@@ -2,110 +2,121 @@ Return-Path: <jfs-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+jfs-discussion@lfdr.de
 Delivered-To: lists+jfs-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id CB1A19FA13E
-	for <lists+jfs-discussion@lfdr.de>; Sat, 21 Dec 2024 16:02:45 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 049389FBA73
+	for <lists+jfs-discussion@lfdr.de>; Tue, 24 Dec 2024 09:22:18 +0100 (CET)
 Received: from [127.0.0.1] (helo=sfs-ml-1.v29.lw.sourceforge.com)
 	by sfs-ml-1.v29.lw.sourceforge.com with esmtp (Exim 4.95)
 	(envelope-from <jfs-discussion-bounces@lists.sourceforge.net>)
-	id 1tP0zb-0004d3-4E;
-	Sat, 21 Dec 2024 15:02:11 +0000
+	id 1tQ0Aj-0003yR-US;
+	Tue, 24 Dec 2024 08:21:46 +0000
 Received: from [172.30.29.66] (helo=mx.sourceforge.net)
- by sfs-ml-4.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
- TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (Exim 4.95) (envelope-from
- <3aGlmZwkbABcFLM7x881ExCC50.3BB381HF1EzBAG1AG.zB9@M3KW2WVRGUFZ5GODRSRYTGD7.apphosting.bounces.google.com>)
- id 1tOtbI-00055b-3k for jfs-discussion@lists.sourceforge.net;
- Sat, 21 Dec 2024 07:08:36 +0000
+ by sfs-ml-1.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
+ TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (Exim 4.95)
+ (envelope-from <eadavis@qq.com>) id 1tQ0Ai-0003y2-VC
+ for jfs-discussion@lists.sourceforge.net;
+ Tue, 24 Dec 2024 08:21:45 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=sourceforge.net; s=x; h=Content-Type:To:From:Subject:Message-ID:Date:
- MIME-Version:Sender:Reply-To:Cc:Content-Transfer-Encoding:Content-ID:
- Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
- :Resent-Message-ID:In-Reply-To:References:List-Id:List-Help:List-Unsubscribe:
+ d=sourceforge.net; s=x; h=Content-Transfer-Encoding:MIME-Version:References:
+ In-Reply-To:Date:Subject:Cc:To:From:Message-ID:Sender:Reply-To:Content-Type:
+ Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
+ Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=SvBnzJ0lhNuHKQPD6lds4yQBh2uuuHJdnQuJXvEZxEo=; b=bZiJmq0lUCw+W8LI3ykVrWy0/Y
- voWqShqusyB9X3FXYZnP4p5+jcpAQrrDqziRuCTqAEp7MrcPuti8wvAk9h0eCogEmv5Z7CFE+Pm78
- Q9XhdI3F6WkcQcvU/q+/nvJb6oL3Rx3TSRHdrF1ZunK/h7cmAhCxmijxlsQ71fA2t22M=;
+ bh=OENROdS91U3MaRFQWf1vp2tgnQhTDtvIlRV417kF+l4=; b=gCpeB5z5Sm0XDi1vOhF1Vb5/vo
+ 57GNik4aPQo3Kj/4eZwjEFORUhpFaahk0cRs316U/D3fVrIPrYGVFMd3SPsGAOVAg+IaLxZ61KgAv
+ +jhxQz1Lp5PE8K1eIU6k6YOyy0YIJaU4WCOwtd/pNO/MJp673NKOXcSEoj3h/H7Q4Bqs=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
- h=Content-Type:To:From:Subject:Message-ID:Date:MIME-Version:Sender:Reply-To
- :Cc:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
- Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
- References:List-Id:List-Help:List-Unsubscribe:List-Subscribe:List-Post:
- List-Owner:List-Archive; bh=SvBnzJ0lhNuHKQPD6lds4yQBh2uuuHJdnQuJXvEZxEo=; b=R
- Cw4BA4FOoG3lMndEoU2g5kOX18cwhlegPnUZNg+xicFFi3XGAz9EqfBlvWmRgyckq7TKhq4NZ7uCX
- O8i/Vd8iAfx61kW1gbw68XY/XWXQaATl3DSS1c6S74iefHFNoBarKzJbAh6mpMZGO6vZ8yYgLTvug
- 51CYrWMUQN16iSqE=;
-Received: from mail-il1-f208.google.com ([209.85.166.208])
+ h=Content-Transfer-Encoding:MIME-Version:References:In-Reply-To:Date:
+ Subject:Cc:To:From:Message-ID:Sender:Reply-To:Content-Type:Content-ID:
+ Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+ :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
+ List-Post:List-Owner:List-Archive;
+ bh=OENROdS91U3MaRFQWf1vp2tgnQhTDtvIlRV417kF+l4=; b=JzDrcB0gy2pw8phb2ThbbwmYTQ
+ gOVlG46dBqEfVdq7rKE6i8B7coLdZZOQqjMLSdKegZYg0mPlrZQZGZ6FikFlgIIS9XDFtMfQEr0Mx
+ acCUNSecrsdQdiYD2zhHIga6zV/ThKIG0uEvf/2pplA9GEYkl14w6QYN/lKVBs1aa5SI=;
+Received: from out203-205-221-235.mail.qq.com ([203.205.221.235])
  by sfi-mx-2.v28.lw.sourceforge.com with esmtps
- (TLS1.2:ECDHE-RSA-AES128-GCM-SHA256:128) (Exim 4.95)
- id 1tOtbH-000728-AI for jfs-discussion@lists.sourceforge.net;
- Sat, 21 Dec 2024 07:08:36 +0000
-Received: by mail-il1-f208.google.com with SMTP id
- e9e14a558f8ab-3abe7375ba6so47216625ab.3
- for <jfs-discussion@lists.sourceforge.net>;
- Fri, 20 Dec 2024 23:08:35 -0800 (PST)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20230601; t=1734764904; x=1735369704;
- h=to:from:subject:message-id:date:mime-version:x-gm-message-state
- :from:to:cc:subject:date:message-id:reply-to;
- bh=SvBnzJ0lhNuHKQPD6lds4yQBh2uuuHJdnQuJXvEZxEo=;
- b=oTT0KWLCE4xDAnVOasrvJzSe4I/qYUx2bfEfa7hJzWhJtOsOvHoYYCmhu7g4GyrCgJ
- OFvKuPnv6ga9KhK6Ngaj0EYEzKEbfV7tRLb6L6InQCedQrBpX4ynP9ga7wDpRu2aU+PK
- sPM1/fm8MjMMBQO1fsWmeJg1cRTCYHyimp6nt8Hx74jrGgjw5M0uylnpeBRJMyxTKw4i
- E889RAiQjPGqq6RlI/TJADXRWWoT9q8z8sNsdzelF59i5U/jHd+AdidTQa3r36b3RoGy
- Ko3ZHGUIcQ1DKqzvGl+T9gRreV+3LKgZTTXptHCI262ZeU4kas0Y/UVDg95fl6RbsyOE
- 6INw==
-X-Gm-Message-State: AOJu0YzrsMVSe8v5ROSubOmH4SauEPj2kr12E4uiq+1PdfqEjiJZPOLx
- FjEn+uKvq/ZIoDiXJFsrjXKFnq+rjjpRUJtX6Wel5xNlcuOoFUt/s6EIXMzEkxfAGhvTiqJXDZP
- c1FBw4jYQ8V3BYYwcpy6L8B5WY8L5O+pAmWfcnLBz7QKCh8AGTyJmTS+Vfw==
-X-Google-Smtp-Source: AGHT+IE22SX3YeQbFC4p5xHr6RBBnt1HbUPzte6Vs9+6To4c1omPskd8/v5GNqXXJi29vdz91URssecWqF8WBLJTsdEGr4WGXA9U
+ (TLS1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.95)
+ id 1tQ0Ah-0003Fg-2J for jfs-discussion@lists.sourceforge.net;
+ Tue, 24 Dec 2024 08:21:45 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qq.com; s=s201512;
+ t=1735028485; bh=OENROdS91U3MaRFQWf1vp2tgnQhTDtvIlRV417kF+l4=;
+ h=From:To:Cc:Subject:Date:In-Reply-To:References;
+ b=pfhwCSjq1N5Avly7dgUPL6J1VonkLGN9UBDMcjgKGfopZ4g3E58Ej1U1rtWU5YPtc
+ SYgJGS0Yxdyod2JjEf4HL0t7SHbzYJjtflJHVuPtBSvmiEUqtELAfXEUH5cUj699un
+ AA8Z32VYFUgvM3SDT6EToxRzRfxXRBWtx0Ilxm7g=
+Received: from pek-lxu-l1.wrs.com ([114.244.57.34])
+ by newxmesmtplogicsvrszb21-0.qq.com (NewEsmtp) with SMTP
+ id 4540BCBE; Tue, 24 Dec 2024 16:17:20 +0800
+X-QQ-mid: xmsmtpt1735028240tsfvcsy7k
+Message-ID: <tencent_2E3A9E9B1B664BE21BCD2541BA63BB6E3308@qq.com>
+X-QQ-XMAILINFO: NyTsQ4JOu2J2O9KT6n6/13avCetYvEZm+8BUOXnOIHaZ6NcvBzHZ8butcen3Rx
+ 8kIZTqnK7/vraUzv6/kCu3aHnb30WU+SWe9PZdtVB6tuOGLT/HrbgLf+TTg+BIf/JoDz1R+h5d66
+ HO5n4S+C1tJXIi0TNDh4gquT7weGq7WeBznoO6Oa9BdVXIUNFmEAZo+pjGgEcBbKMpSAta62VU8P
+ VRIKUZoiHiaxhGcCbMVQlswt9SJsLKetIeykdffXNk9H7+Kk/KgTUtZjvUoe/k9teG3wH/fqN1l1
+ LPJP5aha/wzOkH0gd8vqI4kwhPs3NiHuIEowD0Cku9P3uYDrdsOmeeLMml2JTDOTHzMAQDOoNsVw
+ ELpP+aZZXdbHL2XVMWstJusLZl4BxRGjvB+bPhr0kIJ+838hS+7EcVfV/ARrskxg64RIuJ4DFMDe
+ VNNTQc1bSE83ReeBLOwEii6dx1C2FiE9a2eMSd87cSawTpZ+Y6ICKI3+q9qkFtfnBGqxTyRMGdip
+ rm3QeWNRmoMdZL0Fx24xTnzEa3jWHWYai3q3erqOQUsqtFnOvib73Nv2WJL/Rprw7kL/BGt962Ip
+ 7K+DF6Fd9kbucZ9Q5SVpfkTqyU7OFJba7omPpTesCavo+2YabE52bOLf1XymZWnlvQWO69G+AHsi
+ y50cd17w9oQrHpJXpzuNYFBX1qDF/JzA60oYjMlBhHKFbvlnNCTZ/CJf2yQQEfURWcvCkS9hjBDr
+ 4fNipxI4oYtM9q4IhnISP14zSXNuWTvpqpCMwXoBfweHeCehYTFUjPPRAr0x9w21w8ZBc6+RSk/1
+ qAvJ+uQ8ONGBWybyP0iOPrGlsamVnMVA6poDQq/kQUovQaSNKPKd/ayfW4nCKLJR47R3B4zUseV6
+ iMwClFK981o7a7qe8T6vkC0CUGVMNdaTsRBjjcBWd/IDYzb8IQRyn5E68XXGeJJuDoqvcGUlFh
+X-QQ-XMRINFO: OD9hHCdaPRBwq3WW+NvGbIU=
+To: eadavis@qq.com
+Date: Tue, 24 Dec 2024 16:17:20 +0800
+X-OQ-MSGID: <20241224081719.2610500-2-eadavis@qq.com>
+X-Mailer: git-send-email 2.47.0
+In-Reply-To: <tencent_9D234F848D9AA5F68DB912075DB4DDDC1907@qq.com>
+References: <tencent_9D234F848D9AA5F68DB912075DB4DDDC1907@qq.com>
 MIME-Version: 1.0
-X-Received: by 2002:a05:6e02:17cd:b0:3a6:b783:3c06 with SMTP id
- e9e14a558f8ab-3c2d51528b4mr57727635ab.19.1734764904614; Fri, 20 Dec 2024
- 23:08:24 -0800 (PST)
-Date: Fri, 20 Dec 2024 23:08:24 -0800
-X-Google-Appengine-App-Id: s~syzkaller
-X-Google-Appengine-App-Id-Alias: syzkaller
-Message-ID: <67666968.050a0220.25abdd.0127.GAE@google.com>
-To: jfs-discussion@lists.sourceforge.net, linux-kernel@vger.kernel.org, 
- shaggy@kernel.org, syzkaller-bugs@googlegroups.com
-X-Spam-Score: -0.6 (/)
+X-Spam-Score: 3.4 (+++)
 X-Spam-Report: Spam detection software,
  running on the system "util-spamd-1.v13.lw.sourceforge.com", 
  has NOT identified this incoming email as spam.  The original
  message has been attached to this so you can view it or label
  similar future email.  If you have any questions, see
  the administrator of that system for details.
- Content preview:  Hello,
- syzbot found the following issue on: HEAD commit: 59dbb9d81adf
- Merge tag 'xsa465+xsa466-6.13-tag' of git://g.. git tree: upstream console
- output: https://syzkaller.appspot.com/x/log.txt?x=15a64b44580000 kernel
- config: https://syzkaller.a [...] 
- Content analysis details:   (-0.6 points, 6.0 required)
+ Content preview: syzbot report a deadlock in diFree. [1] When calling
+ "ioctl$LOOP_SET_STATUS64", 
+ the offset value passed in is 4, which does not match the mounted loop device, 
+ causing the mapping of the mounted loop device to be invalidated. 
+ Content analysis details:   (3.4 points, 6.0 required)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.166.208 listed in list.dnswl.org]
- 0.3 FROM_LOCAL_HEX         From: localpart has long hexadecimal sequence
- 0.0 RCVD_IN_VALIDITY_CERTIFIED_BLOCKED RBL: ADMINISTRATOR NOTICE:
- The query to Validity was blocked.  See
+ 0.0 RCVD_IN_VALIDITY_SAFE_BLOCKED RBL: ADMINISTRATOR NOTICE: The
+ query to Validity was blocked.  See
  https://knowledge.validity.com/hc/en-us/articles/20961730681243
  for more information.
- [209.85.166.208 listed in sa-accredit.habeas.com]
+ [203.205.221.235 listed in sa-trusted.bondedsender.org]
  0.0 RCVD_IN_VALIDITY_RPBL_BLOCKED RBL: ADMINISTRATOR NOTICE: The
  query to Validity was blocked.  See
  https://knowledge.validity.com/hc/en-us/articles/20961730681243
  for more information.
- [209.85.166.208 listed in bl.score.senderscore.com]
+ [203.205.221.235 listed in bl.score.senderscore.com]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [203.205.221.235 listed in list.dnswl.org]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [203.205.221.235 listed in wl.mailspike.net]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [eadavis[at]qq.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- -1.2 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.166.208 listed in wl.mailspike.net]
-X-Headers-End: 1tOtbH-000728-AI
-X-Mailman-Approved-At: Sat, 21 Dec 2024 15:02:11 +0000
-Subject: [Jfs-discussion] [syzbot] [jfs?] UBSAN: array-index-out-of-bounds
- in dtReadFirst (2)
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.4 RDNS_DYNAMIC           Delivered to internal network by host with
+ dynamic-looking rDNS
+ 3.2 HELO_DYNAMIC_IPADDR    Relay HELO'd using suspicious hostname (IP
+ addr 1)
+X-Headers-End: 1tQ0Ah-0003Fg-2J
+Subject: [Jfs-discussion] [PATCH V2] jfs: Prevent copying of nlink with
+ value 0 from disk inode
 X-BeenThere: jfs-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -117,97 +128,136 @@ List-Post: <mailto:jfs-discussion@lists.sourceforge.net>
 List-Help: <mailto:jfs-discussion-request@lists.sourceforge.net?subject=help>
 List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/jfs-discussion>, 
  <mailto:jfs-discussion-request@lists.sourceforge.net?subject=subscribe>
-From: syzbot via Jfs-discussion <jfs-discussion@lists.sourceforge.net>
-Reply-To: syzbot <syzbot+9120834fc227768625ba@syzkaller.appspotmail.com>
+From: Edward Adam Davis via Jfs-discussion
+ <jfs-discussion@lists.sourceforge.net>
+Reply-To: Edward Adam Davis <eadavis@qq.com>
+Cc: shaggy@kernel.org, jfs-discussion@lists.sourceforge.net,
+ syzkaller-bugs@googlegroups.com, linux-kernel@vger.kernel.org,
+ syzbot+355da3b3a74881008e8f@syzkaller.appspotmail.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Errors-To: jfs-discussion-bounces@lists.sourceforge.net
 
-Hello,
+syzbot report a deadlock in diFree. [1]
 
-syzbot found the following issue on:
+When calling "ioctl$LOOP_SET_STATUS64", the offset value passed in is 4,
+which does not match the mounted loop device, causing the mapping of the
+mounted loop device to be invalidated.
 
-HEAD commit:    59dbb9d81adf Merge tag 'xsa465+xsa466-6.13-tag' of git://g..
-git tree:       upstream
-console output: https://syzkaller.appspot.com/x/log.txt?x=15a64b44580000
-kernel config:  https://syzkaller.appspot.com/x/.config?x=6a2b862bf4a5409f
-dashboard link: https://syzkaller.appspot.com/bug?extid=9120834fc227768625ba
-compiler:       Debian clang version 15.0.6, GNU ld (GNU Binutils for Debian) 2.40
+When creating the directory and creating the inode of iag in diReadSpecial(),
+read the page of fixed disk inode (AIT) in raw mode in read_metapage(), the
+metapage data it returns is corrupted, which causes the nlink value of 0 to be
+assigned to the iag inode when executing copy_from_dinode(), which ultimately
+causes a deadlock when entering diFree().
 
-Unfortunately, I don't have any reproducer for this issue yet.
+To avoid this, first check the nlink value of dinode before setting iag inode.
 
-Downloadable assets:
-disk image (non-bootable): https://storage.googleapis.com/syzbot-assets/7feb34a89c2a/non_bootable_disk-59dbb9d8.raw.xz
-vmlinux: https://storage.googleapis.com/syzbot-assets/e0cc89779297/vmlinux-59dbb9d8.xz
-kernel image: https://storage.googleapis.com/syzbot-assets/5e6c895062cb/bzImage-59dbb9d8.xz
+[1]
+WARNING: possible recursive locking detected
+6.12.0-rc7-syzkaller-00212-g4a5df3796467 #0 Not tainted
+--------------------------------------------
+syz-executor301/5309 is trying to acquire lock:
+ffff888044548920 (&(imap->im_aglock[index])){+.+.}-{3:3}, at: diFree+0x37c/0x2fb0 fs/jfs/jfs_imap.c:889
 
-IMPORTANT: if you fix the issue, please add the following tag to the commit:
-Reported-by: syzbot+9120834fc227768625ba@syzkaller.appspotmail.com
+but task is already holding lock:
+ffff888044548920 (&(imap->im_aglock[index])){+.+.}-{3:3}, at: diAlloc+0x1b6/0x1630
 
-loop0: detected capacity change from 0 to 32768
-syz.0.0: attempt to access beyond end of device
-loop0: rw=1, sector=4680032, nr_sectors = 8 limit=32768
-metapage_write_end_io: I/O error
-ERROR: (device loop0): release_metapage: metapage_write_one() failed
-ERROR: (device loop0): remounting filesystem as read-only
-blkno = 8ed2c, nblocks = 1
-ERROR: (device loop0): dbUpdatePMap: blocks are outside the map
-blkno = 8ed2c, nblocks = 1
-ERROR: (device loop0): dbUpdatePMap: blocks are outside the map
-UFO tlock:0xffffc90001537090
-------------[ cut here ]------------
-UBSAN: array-index-out-of-bounds in fs/jfs/jfs_dtree.c:3096:10
-index 237 is out of range for type 'struct dtslot[128]'
-CPU: 0 UID: 0 PID: 5314 Comm: syz.0.0 Not tainted 6.13.0-rc3-syzkaller-00026-g59dbb9d81adf #0
+other info that might help us debug this:
+ Possible unsafe locking scenario:
+
+       CPU0
+       ----
+  lock(&(imap->im_aglock[index]));
+  lock(&(imap->im_aglock[index]));
+
+ *** DEADLOCK ***
+
+ May be due to missing lock nesting notation
+
+5 locks held by syz-executor301/5309:
+ #0: ffff8880422a4420 (sb_writers#9){.+.+}-{0:0}, at: mnt_want_write+0x3f/0x90 fs/namespace.c:515
+ #1: ffff88804755b390 (&type->i_mutex_dir_key#6/1){+.+.}-{3:3}, at: inode_lock_nested include/linux/fs.h:850 [inline]
+ #1: ffff88804755b390 (&type->i_mutex_dir_key#6/1){+.+.}-{3:3}, at: filename_create+0x260/0x540 fs/namei.c:4026
+ #2: ffff888044548920 (&(imap->im_aglock[index])){+.+.}-{3:3}, at: diAlloc+0x1b6/0x1630
+ #3: ffff888044548890 (&imap->im_freelock){+.+.}-{3:3}, at: diNewIAG fs/jfs/jfs_imap.c:2460 [inline]
+ #3: ffff888044548890 (&imap->im_freelock){+.+.}-{3:3}, at: diAllocExt fs/jfs/jfs_imap.c:1905 [inline]
+ #3: ffff888044548890 (&imap->im_freelock){+.+.}-{3:3}, at: diAllocAG+0x4b7/0x1e50 fs/jfs/jfs_imap.c:1669
+ #4: ffff88804755a618 (&jfs_ip->rdwrlock/1){++++}-{3:3}, at: diNewIAG fs/jfs/jfs_imap.c:2477 [inline]
+ #4: ffff88804755a618 (&jfs_ip->rdwrlock/1){++++}-{3:3}, at: diAllocExt fs/jfs/jfs_imap.c:1905 [inline]
+ #4: ffff88804755a618 (&jfs_ip->rdwrlock/1){++++}-{3:3}, at: diAllocAG+0x869/0x1e50 fs/jfs/jfs_imap.c:1669
+
+stack backtrace:
+CPU: 0 UID: 0 PID: 5309 Comm: syz-executor301 Not tainted 6.12.0-rc7-syzkaller-00212-g4a5df3796467 #0
 Hardware name: QEMU Standard PC (Q35 + ICH9, 2009), BIOS 1.16.3-debian-1.16.3-2~bpo12+1 04/01/2014
 Call Trace:
  <TASK>
  __dump_stack lib/dump_stack.c:94 [inline]
  dump_stack_lvl+0x241/0x360 lib/dump_stack.c:120
- ubsan_epilogue lib/ubsan.c:231 [inline]
- __ubsan_handle_out_of_bounds+0x121/0x150 lib/ubsan.c:429
- dtReadFirst+0x622/0xc50 fs/jfs/jfs_dtree.c:3096
- dtReadNext fs/jfs/jfs_dtree.c:3147 [inline]
- jfs_readdir+0x9aa/0x3c50 fs/jfs/jfs_dtree.c:2862
- wrap_directory_iterator+0x91/0xd0 fs/readdir.c:65
- iterate_dir+0x571/0x800 fs/readdir.c:108
- __do_sys_getdents fs/readdir.c:322 [inline]
- __se_sys_getdents+0x1fd/0x4e0 fs/readdir.c:308
+ print_deadlock_bug+0x483/0x620 kernel/locking/lockdep.c:3037
+ check_deadlock kernel/locking/lockdep.c:3089 [inline]
+ validate_chain+0x15e2/0x5920 kernel/locking/lockdep.c:3891
+ __lock_acquire+0x1384/0x2050 kernel/locking/lockdep.c:5202
+ lock_acquire+0x1ed/0x550 kernel/locking/lockdep.c:5825
+ __mutex_lock_common kernel/locking/mutex.c:608 [inline]
+ __mutex_lock+0x136/0xd70 kernel/locking/mutex.c:752
+ diFree+0x37c/0x2fb0 fs/jfs/jfs_imap.c:889
+ jfs_evict_inode+0x32d/0x440 fs/jfs/inode.c:156
+ evict+0x4e8/0x9b0 fs/inode.c:725
+ diFreeSpecial fs/jfs/jfs_imap.c:552 [inline]
+ duplicateIXtree+0x3c6/0x550 fs/jfs/jfs_imap.c:3022
+ diNewIAG fs/jfs/jfs_imap.c:2597 [inline]
+ diAllocExt fs/jfs/jfs_imap.c:1905 [inline]
+ diAllocAG+0x17dc/0x1e50 fs/jfs/jfs_imap.c:1669
+ diAlloc+0x1d2/0x1630 fs/jfs/jfs_imap.c:1590
+ ialloc+0x8f/0x900 fs/jfs/jfs_inode.c:56
+ jfs_mkdir+0x1c5/0xba0 fs/jfs/namei.c:225
+ vfs_mkdir+0x2f9/0x4f0 fs/namei.c:4257
+ do_mkdirat+0x264/0x3a0 fs/namei.c:4280
+ __do_sys_mkdirat fs/namei.c:4295 [inline]
+ __se_sys_mkdirat fs/namei.c:4293 [inline]
+ __x64_sys_mkdirat+0x87/0xa0 fs/namei.c:4293
  do_syscall_x64 arch/x86/entry/common.c:52 [inline]
  do_syscall_64+0xf3/0x230 arch/x86/entry/common.c:83
  entry_SYSCALL_64_after_hwframe+0x77/0x7f
-RIP: 0033:0x7f6e27385d29
-Code: ff ff c3 66 2e 0f 1f 84 00 00 00 00 00 0f 1f 40 00 48 89 f8 48 89 f7 48 89 d6 48 89 ca 4d 89 c2 4d 89 c8 4c 8b 4c 24 08 0f 05 <48> 3d 01 f0 ff ff 73 01 c3 48 c7 c1 a8 ff ff ff f7 d8 64 89 01 48
-RSP: 002b:00007f6e28204038 EFLAGS: 00000246 ORIG_RAX: 000000000000004e
-RAX: ffffffffffffffda RBX: 00007f6e27575fa0 RCX: 00007f6e27385d29
-RDX: 00000000000000b8 RSI: 0000000020001fc0 RDI: 0000000000000005
-RBP: 00007f6e27401a20 R08: 0000000000000000 R09: 0000000000000000
-R10: 0000000000000000 R11: 0000000000000246 R12: 0000000000000000
-R13: 0000000000000000 R14: 00007f6e27575fa0 R15: 00007ffdef535ad8
- </TASK>
----[ end trace ]---
 
-
+Reported-by: syzbot+355da3b3a74881008e8f@syzkaller.appspotmail.com
+Closes: https://syzkaller.appspot.com/bug?extid=355da3b3a74881008e8f
+Signed-off-by: Edward Adam Davis <eadavis@qq.com>
 ---
-This report is generated by a bot. It may contain errors.
-See https://goo.gl/tpsmEJ for more information about syzbot.
-syzbot engineers can be reached at syzkaller@googlegroups.com.
+V1 -> V2: if the nlink of disk inode is 0 return -EIO
 
-syzbot will keep track of this issue. See:
-https://goo.gl/tpsmEJ#status for how to communicate with syzbot.
+ fs/jfs/jfs_imap.c | 8 +++++++-
+ 1 file changed, 7 insertions(+), 1 deletion(-)
 
-If the report is already addressed, let syzbot know by replying with:
-#syz fix: exact-commit-title
+diff --git a/fs/jfs/jfs_imap.c b/fs/jfs/jfs_imap.c
+index a360b24ed320..b3146e335782 100644
+--- a/fs/jfs/jfs_imap.c
++++ b/fs/jfs/jfs_imap.c
+@@ -3035,6 +3035,7 @@ static int copy_from_dinode(struct dinode * dip, struct inode *ip)
+ {
+ 	struct jfs_inode_info *jfs_ip = JFS_IP(ip);
+ 	struct jfs_sb_info *sbi = JFS_SBI(ip->i_sb);
++	u32 di_nlink;
+ 
+ 	jfs_ip->fileset = le32_to_cpu(dip->di_fileset);
+ 	jfs_ip->mode2 = le32_to_cpu(dip->di_mode);
+@@ -3053,7 +3054,12 @@ static int copy_from_dinode(struct dinode * dip, struct inode *ip)
+ 				ip->i_mode |= 0001;
+ 		}
+ 	}
+-	set_nlink(ip, le32_to_cpu(dip->di_nlink));
++
++	di_nlink = le32_to_cpu(dip->di_nlink);
++	if (!di_nlink)
++		return -EIO;
++
++	set_nlink(ip, di_nlink);
+ 
+ 	jfs_ip->saved_uid = make_kuid(&init_user_ns, le32_to_cpu(dip->di_uid));
+ 	if (!uid_valid(sbi->uid))
+-- 
+2.47.0
 
-If you want to overwrite report's subsystems, reply with:
-#syz set subsystems: new-subsystem
-(See the list of subsystem names on the web dashboard)
-
-If the report is a duplicate of another one, reply with:
-#syz dup: exact-subject-of-another-report
-
-If you want to undo deduplication, reply with:
-#syz undup
 
 
 _______________________________________________
