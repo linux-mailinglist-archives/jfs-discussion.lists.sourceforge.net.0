@@ -2,110 +2,136 @@ Return-Path: <jfs-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+jfs-discussion@lfdr.de
 Delivered-To: lists+jfs-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id D2390A3289F
-	for <lists+jfs-discussion@lfdr.de>; Wed, 12 Feb 2025 15:38:11 +0100 (CET)
-Received: from [127.0.0.1] (helo=sfs-ml-2.v29.lw.sourceforge.com)
-	by sfs-ml-2.v29.lw.sourceforge.com with esmtp (Exim 4.95)
+	by mail.lfdr.de (Postfix) with ESMTPS id E08C0A33569
+	for <lists+jfs-discussion@lfdr.de>; Thu, 13 Feb 2025 03:18:23 +0100 (CET)
+Received: from [127.0.0.1] (helo=sfs-ml-3.v29.lw.sourceforge.com)
+	by sfs-ml-3.v29.lw.sourceforge.com with esmtp (Exim 4.95)
 	(envelope-from <jfs-discussion-bounces@lists.sourceforge.net>)
-	id 1tiDrv-0004yP-ML;
-	Wed, 12 Feb 2025 14:37:40 +0000
+	id 1tiOnb-0007dd-Rl;
+	Thu, 13 Feb 2025 02:17:55 +0000
 Received: from [172.30.29.66] (helo=mx.sourceforge.net)
- by sfs-ml-4.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
- TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (Exim 4.95) (envelope-from
- <3mn6sZwkbAI09FG1r22v8r66zu.x55x2vB9v8t54Av4A.t53@M3KW2WVRGUFZ5GODRSRYTGD7.apphosting.bounces.google.com>)
- id 1tiAR4-0002iN-Ae for jfs-discussion@lists.sourceforge.net;
- Wed, 12 Feb 2025 10:57:42 +0000
+ by sfs-ml-3.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
+ TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (Exim 4.95)
+ (envelope-from <qasdev00@gmail.com>) id 1tiMyP-0005Qq-Sn
+ for jfs-discussion@lists.sourceforge.net;
+ Thu, 13 Feb 2025 00:20:57 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=sourceforge.net; s=x; h=Content-Type:To:From:Subject:Message-ID:Date:
- MIME-Version:Sender:Reply-To:Cc:Content-Transfer-Encoding:Content-ID:
+ d=sourceforge.net; s=x; h=Content-Transfer-Encoding:MIME-Version:Message-Id:
+ Date:Subject:Cc:To:From:Sender:Reply-To:Content-Type:Content-ID:
  Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
  :Resent-Message-ID:In-Reply-To:References:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=H+vnwAF68RHU4ZynhNRDv2ih1IafQUFhBsL9H42yE/U=; b=im9cFRNBW3H+/BC3mRGghpHx9L
- AhLS3sZVqReiSMhgQtem/xy0/DSs3guO4t9o7867/d8vLVptPK5EP01aMz8AGroOIoPgCsMKnBSGM
- pyNgOnJ9MQujrFUyKgUlUlahaOlda/+OaZ4LelbLaV8qzx5fjgsPPyvaVxURKbfSUCPE=;
+ bh=X84lYtUnaPKcu+sxp9VlxXdEt5jePr1I7AgWIclWzJo=; b=J2G0COjJg4ZmexFLSCHGFA2mrD
+ 3wipA6lNLjFRpTwQ3eJebDKaOKcSgjpjnny66lrDWhPkz7u0bNYzDwHWAkRr9DfATGhU7fpoJMaNr
+ VHMDq8So+u5/uHibSE/ZZIEckos8aqb8n50gvl916tJq1RIBCuf04c2dslA8O5JmYnL0=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
- h=Content-Type:To:From:Subject:Message-ID:Date:MIME-Version:Sender:Reply-To
- :Cc:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+ h=Content-Transfer-Encoding:MIME-Version:Message-Id:Date:Subject:Cc:To:From
+ :Sender:Reply-To:Content-Type:Content-ID:Content-Description:Resent-Date:
  Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
  References:List-Id:List-Help:List-Unsubscribe:List-Subscribe:List-Post:
- List-Owner:List-Archive; bh=H+vnwAF68RHU4ZynhNRDv2ih1IafQUFhBsL9H42yE/U=; b=A
- vqILCoFn3wqbMerIA4RWpZO8qGT6ULhMqm5UchaezxeMtY6mqlH250sgJ1FxpVo9nhH9njWet7hko
- TyCShtlfpb4SgMANA1J3WY55Yqn94CGeZozdvOgylP4RuvXUKg7yuiaYcrcPuSB57Pof+vTmbXzL6
- YccF8cic089ssx4o=;
-Received: from mail-io1-f79.google.com ([209.85.166.79])
+ List-Owner:List-Archive; bh=X84lYtUnaPKcu+sxp9VlxXdEt5jePr1I7AgWIclWzJo=; b=O
+ dqmsOlCwdgB1jTcEJRWUTAuPWGO9MGXKujAuXFhWABq/KOciQrf4ZeR46Ae/rRrbhm0XXeOglX05c
+ hnqjXM4S1d9ADZE2WwknauFY5nsQxN5cRCJPHk/jmYbrNAgpGyqUCMhLR09sLMHdP4VMc5zIw9HeL
+ PySOER/0alMfALE4=;
+Received: from mail-wr1-f49.google.com ([209.85.221.49])
  by sfi-mx-2.v28.lw.sourceforge.com with esmtps
  (TLS1.2:ECDHE-RSA-AES128-GCM-SHA256:128) (Exim 4.95)
- id 1tiAR3-0000O7-A3 for jfs-discussion@lists.sourceforge.net;
- Wed, 12 Feb 2025 10:57:42 +0000
-Received: by mail-io1-f79.google.com with SMTP id
- ca18e2360f4ac-8555eff9e0dso4165739f.2
+ id 1tiMyO-0005ls-JM for jfs-discussion@lists.sourceforge.net;
+ Thu, 13 Feb 2025 00:20:57 +0000
+Received: by mail-wr1-f49.google.com with SMTP id
+ ffacd0b85a97d-38f1e8efe82so310916f8f.0
  for <jfs-discussion@lists.sourceforge.net>;
- Wed, 12 Feb 2025 02:57:41 -0800 (PST)
+ Wed, 12 Feb 2025 16:20:56 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=gmail.com; s=20230601; t=1739406045; x=1740010845; darn=lists.sourceforge.net;
+ h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+ :to:from:from:to:cc:subject:date:message-id:reply-to;
+ bh=X84lYtUnaPKcu+sxp9VlxXdEt5jePr1I7AgWIclWzJo=;
+ b=ProutzjeuBwUrHt8wjdOW8KtZVHdHMqMMfuhz7x0pLwY1JxQqBUz16DHf0DQfDovKL
+ zF6+X4S91bAnWT/65L7KoLciA/h6UcB0Y4Lu3L6ojylj6+9anFW1EdWt3BdbjuA3u9wk
+ GyhOWL6phn337T7ttAe7gbmucr93sPCUUooTd8Iq64WX3n/roK0QYkENfBw8da8+kiCr
+ yzuifTeAnQgDdjG81gmastIWpfOdtJsSbdEWSnInqhUGzdc+Lxy4taCM/9lT5a+CY1rS
+ +9PKcPpNxHgGboSK8n2Qpyuv1GCdD80q0xqWkWH5wrZ1moNSn+wrJvyjqLgyCitD5dMS
+ pCoQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20230601; t=1739357850; x=1739962650;
- h=to:from:subject:message-id:date:mime-version:x-gm-message-state
- :from:to:cc:subject:date:message-id:reply-to;
- bh=H+vnwAF68RHU4ZynhNRDv2ih1IafQUFhBsL9H42yE/U=;
- b=SS209VV6D9gQ4HtfEsdz7KjJcWFJkkbg2/zQOJuDsDqm3W2U7PO41t4Oh3JJm5Tk4q
- 5tDHbCs6KmCC7TB2wky1el0XdPr/ey+FfdctFIgl2/AlQosVLbFEwB6VSGgVIbxYO+Io
- sHoUSOqAkK4seH6m5xxGFfpZr2et8zM91atLuXUEu7JlvneC3yMnWALWGfn51vKav7RV
- eM9Tj9aahs85zvuFKLLJwKCq4fWACqPkFA/Lt/eWtly7vSM4z9+t0krQPEyy93F6h1ln
- /IhCbnB9MEA00ZEPG+32SenHE4xHEat5q1yGdxi+Zr5VpupUDysq94PUNSTCZ0JtGIai
- 2Qwg==
-X-Gm-Message-State: AOJu0YwSfHwpnr9PXI/2f22lSrnGWo2sghK4kFlCzePqm3bUtOul5R9X
- TiUdmX7+u3kGvg5XTpmrCLB60j1TTMTPU/a4yvleXRtYQB9X/S4uav8mAPeHXVnmyWdtPtj6pTJ
- 4NTpwsnSspRBbp6sLDBS+dGxDulN96KdWlhh4yRacwOUliWij6G/ut8gKWw==
-X-Google-Smtp-Source: AGHT+IEo/NNPEtaA7SrgcHVxqZvzthgRG4gD03QiFAMNwRi92u8PGd3e3tplGSTdJ4BVvcDxXbHWymcvW28Fojro2KVuft+erZHf
+ d=1e100.net; s=20230601; t=1739406045; x=1740010845;
+ h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+ :to:from:x-gm-message-state:from:to:cc:subject:date:message-id
+ :reply-to;
+ bh=X84lYtUnaPKcu+sxp9VlxXdEt5jePr1I7AgWIclWzJo=;
+ b=R6smepFmlPVDIAowrzRWjXwWshItIanFbuG1eyKynfdLsD6KKo1EdejCfpTmWid/Ec
+ 4Nd5JA8wCm8ILheHhpHcStWy/agVgqs04gQPU1dknVR6BGorrCxe4QZ6FL3jlKcFqZMd
+ W0Oc7URcSz1bQ3pGCW4xU2Uln0xsygOa56NZ06RboAQ9grO78yiQPtfCT0mAV0FQwaOf
+ wvZHSGTr46/sYFWzOnnUEfHO9I0SW85wYubgNy8zSsmZB1mzMZHQUlkfFfwArC7Hp+sC
+ txXxqD2Yl+os4pTFElM975RJJnUTyNa55UAWwgwc9OGtp+iswlipXwcfQFXV74fr+1bW
+ zMgA==
+X-Gm-Message-State: AOJu0Yz6aJ9pRhNawVJHzmXEEIfNwxRspiV7BxYlpRV8k+SSWh2PdnYj
+ 0KjtTn25CzoIz3dG5XJsDNuOWKQlPV8+VUk0z5UxyFpvxVTJY2E2
+X-Gm-Gg: ASbGncul+D2QJ+klUGYSXVOU0Q9YPsgcEApWthKrVjAkyILqOJ+p4HGaMSyOhy7TYdB
+ Bf0GWhGtfD5IbZP53IXdwvW3RA2couUPFUH4nk0JrgKN0rWttoxtYGG0e4iOLiK7jxVy9YUaPze
+ 6mTCKrLpunWqW5p5T+1TG9gEgbnxRQ7Wp53C1lbIV1oMx+UVuDx6MDuLxVEt/97kFDiOSnnH93h
+ vdUqomT3xqP4AsD3g4W0knYKsczbzsrh68H78uDea5Fp6FhdSwyIm1DJ86ZxFqsr9llENmdzAYh
+ AglGWpmm9rJiT49q
+X-Google-Smtp-Source: AGHT+IF9zrFLHKVKmPSx9KGxXSoCk0hMnf8jkpOryo17zak+fTnqo0TeSRGwZkokpw4GpxYL4MZ87g==
+X-Received: by 2002:a5d:588a:0:b0:38f:2073:14a7 with SMTP id
+ ffacd0b85a97d-38f24526be2mr1294596f8f.47.1739406044857; 
+ Wed, 12 Feb 2025 16:20:44 -0800 (PST)
+Received: from qasdev.Home ([2a02:c7c:6696:8300:a5eb:311f:6a00:dedb])
+ by smtp.gmail.com with ESMTPSA id
+ ffacd0b85a97d-38f2591570esm332014f8f.59.2025.02.12.16.20.42
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Wed, 12 Feb 2025 16:20:43 -0800 (PST)
+To: shaggy@kernel.org, zhaomengmeng@kylinos.cn, llfamsec@gmail.com,
+ gregkh@linuxfoundation.org, ancowi69@gmail.com
+Date: Thu, 13 Feb 2025 00:20:25 +0000
+Message-Id: <20250213002025.6602-1-qasdev00@gmail.com>
+X-Mailer: git-send-email 2.39.5
 MIME-Version: 1.0
-X-Received: by 2002:a05:6e02:1a0d:b0:3d0:10ec:cc36 with SMTP id
- e9e14a558f8ab-3d17bf3acdamr22126015ab.11.1739357850608; Wed, 12 Feb 2025
- 02:57:30 -0800 (PST)
-Date: Wed, 12 Feb 2025 02:57:30 -0800
-X-Google-Appengine-App-Id: s~syzkaller
-X-Google-Appengine-App-Id-Alias: syzkaller
-Message-ID: <67ac7e9a.050a0220.3d72c.0150.GAE@google.com>
-To: jfs-discussion@lists.sourceforge.net, linux-kernel@vger.kernel.org, 
- shaggy@kernel.org, syzkaller-bugs@googlegroups.com
-X-Spam-Score: 0.3 (/)
+X-Spam-Score: 0.1 (/)
 X-Spam-Report: Spam detection software,
  running on the system "util-spamd-2.v13.lw.sourceforge.com", 
  has NOT identified this incoming email as spam.  The original
  message has been attached to this so you can view it or label
  similar future email.  If you have any questions, see
  the administrator of that system for details.
- Content preview:  Hello,
- syzbot found the following issue on: HEAD commit: 7ee983c850b4
- Merge tag 'drm-fixes-2025-02-08' of https://g.. git tree: upstream console
- output: https://syzkaller.appspot.com/x/log.txt?x=14a8dca4580000 kernel
- config: https://syzkaller.a [...] 
- Content analysis details:   (0.3 points, 6.0 required)
+ Content preview:  During the "size_check" label in ea_get(), the code checks
+ if the extended attribute list (xattr) size matches ea_size. If not, it logs
+ "ea_get: invalid extended attribute" and calls print_hex_dump(). 
+ Content analysis details:   (0.1 points, 6.0 required)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.3 FROM_LOCAL_HEX         From: localpart has long hexadecimal sequence
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 RCVD_IN_VALIDITY_CERTIFIED_BLOCKED RBL: ADMINISTRATOR NOTICE:
  The query to Validity was blocked.  See
  https://knowledge.validity.com/hc/en-us/articles/20961730681243
  for more information.
- [209.85.166.79 listed in sa-accredit.habeas.com]
+ [209.85.221.49 listed in sa-accredit.habeas.com]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.221.49 listed in list.dnswl.org]
  0.0 RCVD_IN_VALIDITY_RPBL_BLOCKED RBL: ADMINISTRATOR NOTICE: The
  query to Validity was blocked.  See
  https://knowledge.validity.com/hc/en-us/articles/20961730681243
  for more information.
- [209.85.166.79 listed in bl.score.senderscore.com]
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.166.79 listed in list.dnswl.org]
+ [209.85.221.49 listed in bl.score.senderscore.com]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [qasdev00[at]gmail.com]
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit [qasdev00[at]gmail.com]
  0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.166.79 listed in wl.mailspike.net]
- 0.0 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
-X-Headers-End: 1tiAR3-0000O7-A3
-X-Mailman-Approved-At: Wed, 12 Feb 2025 14:37:39 +0000
-Subject: [Jfs-discussion] [syzbot] [jfs?] KASAN: slab-out-of-bounds Read in
- ea_get (4)
+ [209.85.221.49 listed in wl.mailspike.net]
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+X-Headers-End: 1tiMyO-0005ls-JM
+X-Mailman-Approved-At: Thu, 13 Feb 2025 02:17:54 +0000
+Subject: [Jfs-discussion] [PATCH] jfs: fix slab-out-of-bounds read in
+ ea_get()
 X-BeenThere: jfs-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -117,187 +143,102 @@ List-Post: <mailto:jfs-discussion@lists.sourceforge.net>
 List-Help: <mailto:jfs-discussion-request@lists.sourceforge.net?subject=help>
 List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/jfs-discussion>, 
  <mailto:jfs-discussion-request@lists.sourceforge.net?subject=subscribe>
-From: syzbot via Jfs-discussion <jfs-discussion@lists.sourceforge.net>
-Reply-To: syzbot <syzbot+4e6e7e4279d046613bc5@syzkaller.appspotmail.com>
+From: Qasim Ijaz via Jfs-discussion <jfs-discussion@lists.sourceforge.net>
+Reply-To: Qasim Ijaz <qasdev00@gmail.com>
+Cc: jfs-discussion@lists.sourceforge.net,
+ syzbot <syzbot+4e6e7e4279d046613bc5@syzkaller.appspotmail.com>,
+ linux-kernel@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Errors-To: jfs-discussion-bounces@lists.sourceforge.net
 
-Hello,
+During the "size_check" label in ea_get(), the code checks if the extended 
+attribute list (xattr) size matches ea_size. If not, it logs 
+"ea_get: invalid extended attribute" and calls print_hex_dump().
 
-syzbot found the following issue on:
+Here, EALIST_SIZE(ea_buf->xattr) returns 4110417968, which exceeds 
+INT_MAX (2,147,483,647). Then ea_size is clamped:
 
-HEAD commit:    7ee983c850b4 Merge tag 'drm-fixes-2025-02-08' of https://g..
-git tree:       upstream
-console output: https://syzkaller.appspot.com/x/log.txt?x=14a8dca4580000
-kernel config:  https://syzkaller.appspot.com/x/.config?x=1909f2f0d8e641ce
-dashboard link: https://syzkaller.appspot.com/bug?extid=4e6e7e4279d046613bc5
-compiler:       Debian clang version 15.0.6, GNU ld (GNU Binutils for Debian) 2.40
-syz repro:      https://syzkaller.appspot.com/x/repro.syz?x=11bf61b0580000
-C reproducer:   https://syzkaller.appspot.com/x/repro.c?x=12a8dca4580000
+	int size = clamp_t(int, ea_size, 0, EALIST_SIZE(ea_buf->xattr));
 
-Downloadable assets:
-disk image (non-bootable): https://storage.googleapis.com/syzbot-assets/7feb34a89c2a/non_bootable_disk-7ee983c8.raw.xz
-vmlinux: https://storage.googleapis.com/syzbot-assets/f2f78699fc41/vmlinux-7ee983c8.xz
-kernel image: https://storage.googleapis.com/syzbot-assets/ca55e6e8dd01/bzImage-7ee983c8.xz
-mounted in repro: https://storage.googleapis.com/syzbot-assets/b234819f8863/mount_0.gz
-  fsck result: failed (log: https://syzkaller.appspot.com/x/fsck.log?x=10a8dca4580000)
+Although clamp_t aims to bound ea_size between 0 and 4110417968, the upper 
+limit is treated as an int, causing an overflow above 2^31 - 1. This leads 
+"size" to wrap around and become negative (-184549328).
 
-IMPORTANT: if you fix the issue, please add the following tag to the commit:
-Reported-by: syzbot+4e6e7e4279d046613bc5@syzkaller.appspotmail.com
+The "size" is then passed to print_hex_dump() (called "len" in 
+print_hex_dump()), it is passed as type size_t (an unsigned 
+type), this is then stored inside a variable called 
+"int remaining", which is then assigned to "int linelen" which 
+is then passed to hex_dump_to_buffer(). In print_hex_dump() 
+the for loop, iterates through 0 to len-1, where len is 
+18446744073525002176, calling hex_dump_to_buffer() 
+on each iteration:
 
-ffff88804566b698: 90 b6 66 45 80 88 ff ff 00 00 00 00 00 00 00 00  ..fE............
-ffff88804566b6a8: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
-ffff88804566b6b8: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
-==================================================================
-BUG: KASAN: slab-out-of-bounds in hex_dump_to_buffer+0x731/0xba0 lib/hexdump.c:193
-Read of size 1 at addr ffff88804566b6d0 by task syz-executor271/5307
+	for (i = 0; i < len; i += rowsize) {
+		linelen = min(remaining, rowsize);
+		remaining -= rowsize;
 
-CPU: 0 UID: 0 PID: 5307 Comm: syz-executor271 Not tainted 6.14.0-rc1-syzkaller-00181-g7ee983c850b4 #0
-Hardware name: QEMU Standard PC (Q35 + ICH9, 2009), BIOS 1.16.3-debian-1.16.3-2~bpo12+1 04/01/2014
-Call Trace:
- <TASK>
- __dump_stack lib/dump_stack.c:94 [inline]
- dump_stack_lvl+0x241/0x360 lib/dump_stack.c:120
- print_address_description mm/kasan/report.c:378 [inline]
- print_report+0x169/0x550 mm/kasan/report.c:489
- kasan_report+0x143/0x180 mm/kasan/report.c:602
- hex_dump_to_buffer+0x731/0xba0 lib/hexdump.c:193
- print_hex_dump+0x13f/0x250 lib/hexdump.c:276
- ea_get+0xd30/0x12e0 fs/jfs/xattr.c:565
- __jfs_setxattr+0xfc/0x1190 fs/jfs/xattr.c:675
- __jfs_xattr_set+0xf9/0x180 fs/jfs/xattr.c:936
- __vfs_setxattr+0x468/0x4a0 fs/xattr.c:200
- __vfs_setxattr_noperm+0x12e/0x660 fs/xattr.c:234
- vfs_setxattr+0x221/0x430 fs/xattr.c:321
- do_setxattr fs/xattr.c:636 [inline]
- filename_setxattr+0x2af/0x430 fs/xattr.c:665
- path_setxattrat+0x440/0x510 fs/xattr.c:713
- __do_sys_lsetxattr fs/xattr.c:754 [inline]
- __se_sys_lsetxattr fs/xattr.c:750 [inline]
- __x64_sys_lsetxattr+0xbf/0xe0 fs/xattr.c:750
- do_syscall_x64 arch/x86/entry/common.c:52 [inline]
- do_syscall_64+0xf3/0x230 arch/x86/entry/common.c:83
- entry_SYSCALL_64_after_hwframe+0x77/0x7f
-RIP: 0033:0x7fee5a1fde19
-Code: 28 00 00 00 75 05 48 83 c4 28 c3 e8 f1 17 00 00 90 48 89 f8 48 89 f7 48 89 d6 48 89 ca 4d 89 c2 4d 89 c8 4c 8b 4c 24 08 0f 05 <48> 3d 01 f0 ff ff 73 01 c3 48 c7 c1 b8 ff ff ff f7 d8 64 89 01 48
-RSP: 002b:00007fff6b319538 EFLAGS: 00000246 ORIG_RAX: 00000000000000bd
-RAX: ffffffffffffffda RBX: 00007fee5a247095 RCX: 00007fee5a1fde19
-RDX: 0000000000000000 RSI: 0000400000002580 RDI: 0000400000000080
-RBP: 00007fee5a27a5f0 R08: 0000000000000001 R09: 00005555596ac4c0
-R10: 0000000000000000 R11: 0000000000000246 R12: 00007fff6b319560
-R13: 00007fff6b319788 R14: 431bde82d7b634db R15: 00007fee5a24703b
- </TASK>
+		hex_dump_to_buffer(ptr + i, linelen, rowsize, groupsize,
+				   linebuf, sizeof(linebuf), ascii);
+	
+		...
+	}
+	
+The expected stopping condition (i < len) is effectively broken 
+since len is corrupted and very large. This eventually leads to 
+the "ptr+i" being passed to hex_dump_to_buffer() to get closer 
+to the end of the actual bounds of "ptr", eventually an out of 
+bounds access is done in hex_dump_to_buffer() in the following 
+for loop:
 
-Allocated by task 5307:
- kasan_save_stack mm/kasan/common.c:47 [inline]
- kasan_save_track+0x3f/0x80 mm/kasan/common.c:68
- unpoison_slab_object mm/kasan/common.c:319 [inline]
- __kasan_slab_alloc+0x66/0x80 mm/kasan/common.c:345
- kasan_slab_alloc include/linux/kasan.h:250 [inline]
- slab_post_alloc_hook mm/slub.c:4115 [inline]
- slab_alloc_node mm/slub.c:4164 [inline]
- kmem_cache_alloc_lru_noprof+0x1dd/0x390 mm/slub.c:4183
- jfs_alloc_inode+0x28/0x70 fs/jfs/super.c:105
- alloc_inode+0x65/0x1a0 fs/inode.c:336
- iget_locked+0xf1/0x5a0 fs/inode.c:1487
- jfs_iget+0x23/0x3e0 fs/jfs/inode.c:29
- jfs_lookup+0x226/0x410 fs/jfs/namei.c:1469
- __lookup_slow+0x296/0x400 fs/namei.c:1793
- lookup_slow+0x53/0x70 fs/namei.c:1810
- walk_component+0x2e1/0x410 fs/namei.c:2114
- lookup_last fs/namei.c:2612 [inline]
- path_lookupat+0x16f/0x450 fs/namei.c:2636
- filename_lookup+0x2a3/0x670 fs/namei.c:2665
- filename_setxattr+0xb9/0x430 fs/xattr.c:660
- path_setxattrat+0x440/0x510 fs/xattr.c:713
- __do_sys_lsetxattr fs/xattr.c:754 [inline]
- __se_sys_lsetxattr fs/xattr.c:750 [inline]
- __x64_sys_lsetxattr+0xbf/0xe0 fs/xattr.c:750
- do_syscall_x64 arch/x86/entry/common.c:52 [inline]
- do_syscall_64+0xf3/0x230 arch/x86/entry/common.c:83
- entry_SYSCALL_64_after_hwframe+0x77/0x7f
+	for (j = 0; j < len; j++) {
+			if (linebuflen < lx + 2)
+				goto overflow2;
+			ch = ptr[j];
+		...
+	}
 
-The buggy address belongs to the object at ffff88804566ae18
- which belongs to the cache jfs_ip of size 2232
-The buggy address is located 0 bytes to the right of
- allocated 2232-byte region [ffff88804566ae18, ffff88804566b6d0)
+To fix this we should validate "EALIST_SIZE(ea_buf->xattr)" 
+before it is utilised.
 
-The buggy address belongs to the physical page:
-page: refcount:0 mapcount:0 mapping:0000000000000000 index:0x0 pfn:0x45668
-head: order:3 mapcount:0 entire_mapcount:0 nr_pages_mapped:0 pincount:0
-flags: 0x4fff00000000040(head|node=1|zone=1|lastcpupid=0x7ff)
-page_type: f5(slab)
-raw: 04fff00000000040 ffff88801f64b780 dead000000000122 0000000000000000
-raw: 0000000000000000 00000000800d000d 00000000f5000000 0000000000000000
-head: 04fff00000000040 ffff88801f64b780 dead000000000122 0000000000000000
-head: 0000000000000000 00000000800d000d 00000000f5000000 0000000000000000
-head: 04fff00000000003 ffffea0001159a01 ffffffffffffffff 0000000000000000
-head: 0000000000000008 0000000000000000 00000000ffffffff 0000000000000000
-page dumped because: kasan: bad access detected
-page_owner tracks the page as allocated
-page last allocated via order 3, migratetype Reclaimable, gfp_mask 0xd2050(__GFP_IO|__GFP_NOWARN|__GFP_NORETRY|__GFP_COMP|__GFP_NOMEMALLOC|__GFP_RECLAIMABLE), pid 5307, tgid 5307 (syz-executor271), ts 63066622694, free_ts 0
- set_page_owner include/linux/page_owner.h:32 [inline]
- post_alloc_hook+0x1f4/0x240 mm/page_alloc.c:1551
- prep_new_page mm/page_alloc.c:1559 [inline]
- get_page_from_freelist+0x365c/0x37a0 mm/page_alloc.c:3477
- __alloc_frozen_pages_noprof+0x292/0x710 mm/page_alloc.c:4739
- alloc_pages_mpol+0x311/0x660 mm/mempolicy.c:2270
- alloc_slab_page mm/slub.c:2423 [inline]
- allocate_slab+0x8f/0x3a0 mm/slub.c:2587
- new_slab mm/slub.c:2640 [inline]
- ___slab_alloc+0xc27/0x14a0 mm/slub.c:3826
- __slab_alloc+0x58/0xa0 mm/slub.c:3916
- __slab_alloc_node mm/slub.c:3991 [inline]
- slab_alloc_node mm/slub.c:4152 [inline]
- kmem_cache_alloc_lru_noprof+0x26c/0x390 mm/slub.c:4183
- jfs_alloc_inode+0x28/0x70 fs/jfs/super.c:105
- alloc_inode+0x65/0x1a0 fs/inode.c:336
- new_inode_pseudo fs/inode.c:1174 [inline]
- new_inode+0x22/0x1d0 fs/inode.c:1193
- jfs_fill_super+0x570/0xd90 fs/jfs/super.c:511
- get_tree_bdev_flags+0x48c/0x5c0 fs/super.c:1636
- vfs_get_tree+0x90/0x2b0 fs/super.c:1814
- do_new_mount+0x2be/0xb40 fs/namespace.c:3560
- do_mount fs/namespace.c:3900 [inline]
- __do_sys_mount fs/namespace.c:4111 [inline]
- __se_sys_mount+0x2d6/0x3c0 fs/namespace.c:4088
-page_owner free stack trace missing
-
-Memory state around the buggy address:
- ffff88804566b580: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
- ffff88804566b600: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
->ffff88804566b680: 00 00 00 00 00 00 00 00 00 00 fc fc fc fc fc fc
-                                                 ^
- ffff88804566b700: fc fc fc fc fc fc fc fc fc fc fc fc fc fc fc fc
- ffff88804566b780: fc fc fc fc fc fc fc fc fc fc fc fc fc fc fc fc
-==================================================================
-
-
+Reported-by: syzbot <syzbot+4e6e7e4279d046613bc5@syzkaller.appspotmail.com>
+Tested-by: syzbot <syzbot+4e6e7e4279d046613bc5@syzkaller.appspotmail.com>
+Closes: https://syzkaller.appspot.com/bug?extid=4e6e7e4279d046613bc5
+Fixes: d9f9d96136cb ("jfs: xattr: check invalid xattr size more strictly")
+Signed-off-by: Qasim Ijaz <qasdev00@gmail.com>
 ---
-This report is generated by a bot. It may contain errors.
-See https://goo.gl/tpsmEJ for more information about syzbot.
-syzbot engineers can be reached at syzkaller@googlegroups.com.
+ fs/jfs/xattr.c | 15 ++++++++++-----
+ 1 file changed, 10 insertions(+), 5 deletions(-)
 
-syzbot will keep track of this issue. See:
-https://goo.gl/tpsmEJ#status for how to communicate with syzbot.
+diff --git a/fs/jfs/xattr.c b/fs/jfs/xattr.c
+index 24afbae87225..7575c51cce9b 100644
+--- a/fs/jfs/xattr.c
++++ b/fs/jfs/xattr.c
+@@ -559,11 +555,16 @@ static int ea_get(struct inode *inode, struct ea_buffer *ea_buf, int min_size)
+ 
+       size_check:
+ 	if (EALIST_SIZE(ea_buf->xattr) != ea_size) {
+-		int size = clamp_t(int, ea_size, 0, EALIST_SIZE(ea_buf->xattr));
+-
+-		printk(KERN_ERR "ea_get: invalid extended attribute\n");
+-		print_hex_dump(KERN_ERR, "", DUMP_PREFIX_ADDRESS, 16, 1,
+-				     ea_buf->xattr, size, 1);
++		if (unlikely(EALIST_SIZE(ea_buf->xattr) > INT_MAX)) {
++			printk(KERN_ERR "ea_get: extended attribute size too large: %u > INT_MAX\n",
++			       EALIST_SIZE(ea_buf->xattr));
++		} else {
++			int size = clamp_t(int, ea_size, 0, EALIST_SIZE(ea_buf->xattr));
++
++			printk(KERN_ERR "ea_get: invalid extended attribute\n");
++			print_hex_dump(KERN_ERR, "", DUMP_PREFIX_ADDRESS, 16, 1,
++				       ea_buf->xattr, size, 1);
++		}
+ 		ea_release(inode, ea_buf);
+ 		rc = -EIO;
+ 		goto clean_up;
+-- 
+2.39.5
 
-If the report is already addressed, let syzbot know by replying with:
-#syz fix: exact-commit-title
-
-If you want syzbot to run the reproducer, reply with:
-#syz test: git://repo/address.git branch-or-commit-hash
-If you attach or paste a git patch, syzbot will apply it before testing.
-
-If you want to overwrite report's subsystems, reply with:
-#syz set subsystems: new-subsystem
-(See the list of subsystem names on the web dashboard)
-
-If the report is a duplicate of another one, reply with:
-#syz dup: exact-subject-of-another-report
-
-If you want to undo deduplication, reply with:
-#syz undup
 
 
 _______________________________________________
