@@ -2,102 +2,100 @@ Return-Path: <jfs-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+jfs-discussion@lfdr.de
 Delivered-To: lists+jfs-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id C4758A3C237
-	for <lists+jfs-discussion@lfdr.de>; Wed, 19 Feb 2025 15:34:31 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id B2DBEA3C23A
+	for <lists+jfs-discussion@lfdr.de>; Wed, 19 Feb 2025 15:34:32 +0100 (CET)
 Received: from [127.0.0.1] (helo=sfs-ml-4.v29.lw.sourceforge.com)
 	by sfs-ml-4.v29.lw.sourceforge.com with esmtp (Exim 4.95)
 	(envelope-from <jfs-discussion-bounces@lists.sourceforge.net>)
-	id 1tkl8r-0003bh-3U;
+	id 1tkl8r-0003bn-D5;
 	Wed, 19 Feb 2025 14:33:37 +0000
 Received: from [172.30.29.66] (helo=mx.sourceforge.net)
  by sfs-ml-2.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
  TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (Exim 4.95)
- (envelope-from <secalert@redhat.com>) id 1tkf8V-0006Hu-QQ
+ (envelope-from <pchelkin@ispras.ru>) id 1tkhiy-0002vO-Ek
  for jfs-discussion@lists.sourceforge.net;
- Wed, 19 Feb 2025 08:08:52 +0000
+ Wed, 19 Feb 2025 10:54:41 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=sourceforge.net; s=x; h=List-Unsubscribe:Content-Type:MIME-Version:Subject:
- Message-ID:To:Reply-To:From:Date:Sender:Cc:Content-Transfer-Encoding:
+ d=sourceforge.net; s=x; h=In-Reply-To:Content-Type:MIME-Version:References:
+ Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:Content-Transfer-Encoding:
  Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
- Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Id:
- List-Help:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=xyLKKoZPz9q2kk+7f+eYUvaIEie+iOj/PFAsIy7OFKo=; b=RJbaTEwrXIZ7wOTyBI6LMSIDC5
- r/Dw/jt4g5g3u+IpCZFceftN/n7s3UMeAH2/p+VD6cRBrm+i+CwiKKaEiprJEWE1gV6HQpKPViQXn
- cUuhRxhxT0E4PXJaYjMh7bIPK+aPXdGfMcXLWo+c4RZcfz/GU8f+sOGhXJ2jVyWvAn50=;
+ Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
+ List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=zjgeQsz7/p1g7niY9RKs+VeS1ek73XCgN0EtVLw+AO4=; b=BMc0tShzWnVf691CZ/hXfFVxPI
+ V6Ax8Cbga/u94WNdLi50lU1d5q3IfKHXjCGzNYZv8MRkqHv8PGfuUtUNqbOLXUP44j3uVwlTOLaHj
+ deC2019jCrquJfUNO6LaXER9hM97gokmu2p9qg9THoxV+iv/RRuS5m5TWPQMx1OHLfoc=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
- h=List-Unsubscribe:Content-Type:MIME-Version:Subject:Message-ID:To:Reply-To
- :From:Date:Sender:Cc:Content-Transfer-Encoding:Content-ID:Content-Description
- :Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
- In-Reply-To:References:List-Id:List-Help:List-Subscribe:List-Post:List-Owner:
- List-Archive; bh=xyLKKoZPz9q2kk+7f+eYUvaIEie+iOj/PFAsIy7OFKo=; b=Q0slO9kQP47P
- +PeRP8F264nXlQkHKgtIxD/xM/xfpKW99McOmuVrOMUGcBy7lCbSiE9Z9OourTZtfpaF2QNl8p2cU
- dUZs2/i1+OHvjo6Ynl18F5NLs4+AjR0sHQvg40WMfCtwS4BeI/3JhvjNGeJiuoio1xELrklaKxkAN
- 0uTxQ=;
-Received: from outbound403.service-now.com ([149.96.6.209])
+ h=In-Reply-To:Content-Type:MIME-Version:References:Message-ID:Subject:Cc:To
+ :From:Date:Sender:Reply-To:Content-Transfer-Encoding:Content-ID:
+ Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+ :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
+ List-Post:List-Owner:List-Archive;
+ bh=zjgeQsz7/p1g7niY9RKs+VeS1ek73XCgN0EtVLw+AO4=; b=KICYQTPH4EDTVGJzlcvVjY+nem
+ dHcbRIS5xXcd6mM0a/ESy1eLOK064hkYU/32D3Ne+pFK4FnsDRgDWlGVGguDzO2sEd1eD0Cp9tm6Q
+ Ou8yF95EL3JixU4B/gF8wzSauCL3odEfVGWmZuD41bepINHnnmq/FZGSEdk65A4calrY=;
+Received: from mail.ispras.ru ([83.149.199.84])
  by sfi-mx-2.v28.lw.sourceforge.com with esmtps
- (TLS1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.95)
- id 1tkf8V-0003OK-C2 for jfs-discussion@lists.sourceforge.net;
- Wed, 19 Feb 2025 08:08:52 +0000
-Received: from outbound22.service-now.com (unknown [10.248.3.211])
- by outbound403.service-now.com (Postfix) with ESMTPS id 4D3C236E0
- for <jfs-discussion@lists.sourceforge.net>;
- Wed, 19 Feb 2025 00:08:40 -0800 (PST)
-Received: from app132146.ycg201.service-now.com (unknown [10.248.3.236])
- by outbound22.service-now.com (Postfix) with ESMTP id E36D46000089;
- Wed, 19 Feb 2025 00:08:36 -0800 (PST)
-DKIM-Filter: OpenDKIM Filter v2.11.0 outbound22.service-now.com E36D46000089
-Date: Wed, 19 Feb 2025 00:08:36 -0800 (PST)
-To: syzkaller@googlegroups.com, liujingfeng@qianxin.com, shaggy@kernel.org,
- rkeshri@redhat.com, security@kernel.org,
- jfs-discussion@lists.sourceforge.net, linux-kernel@vger.kernel.org
-Message-ID: <1097140732.33089.1739952516920@app132146.ycg201.service-now.com>
+ (TLS1.2:DHE-RSA-AES256-GCM-SHA384:256) (Exim 4.95)
+ id 1tkhix-0007rI-Kx for jfs-discussion@lists.sourceforge.net;
+ Wed, 19 Feb 2025 10:54:41 +0000
+Received: from localhost (unknown [10.10.165.7])
+ by mail.ispras.ru (Postfix) with ESMTPSA id DA89B40777D3;
+ Wed, 19 Feb 2025 10:38:49 +0000 (UTC)
+DKIM-Filter: OpenDKIM Filter v2.11.0 mail.ispras.ru DA89B40777D3
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ispras.ru;
+ s=default; t=1739961529;
+ bh=zjgeQsz7/p1g7niY9RKs+VeS1ek73XCgN0EtVLw+AO4=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=CUNKKQZkNxRoniJFILfsEOusbi2eYxqB5sXZ6JlcrGjei/hq94Ynrixuefq+uWIJl
+ 7/tRfChbMvReUEiGEM0HPm0/D8H5HQA6wYKTQOhLIHY4CKYZtlM/N0MNcP6Yp4u13g
+ hlsdED+MQQamzpWFaoa8GOAJqwud4EW+g4ej+ucI=
+Date: Wed, 19 Feb 2025 13:38:49 +0300
+To: Rand Deeb <rand.sec96@gmail.com>
+Message-ID: <v3rsldvzq4ujgcxamjwcmmfm62wgdgjscg25c6t6xph3itjedp@sbuayguprw2i>
+References: <20250219072504.1655151-1-rand.sec96@gmail.com>
 MIME-Version: 1.0
-Content-Type: multipart/mixed; 
- boundary="----=_Part_33087_55735206.1739952516920"
-X-ServiceNow-Source: Notification-ec04d32213ede300196f7e276144b04e
-X-ServiceNow-SysEmail-Version: 2
-Precedence: bulk
-Auto-Submitted: auto-generated
-X-ServiceNow-Generated: true
-X-Spam-Score: -2.3 (--)
+Content-Disposition: inline
+In-Reply-To: <20250219072504.1655151-1-rand.sec96@gmail.com>
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: Spam detection software,
- running on the system "util-spamd-2.v13.lw.sourceforge.com", 
+ running on the system "util-spamd-1.v13.lw.sourceforge.com", 
  has NOT identified this incoming email as spam.  The original
  message has been attached to this so you can view it or label
  similar future email.  If you have any questions, see
  the administrator of that system for details.
- Content preview: Hello! INC3389413 (FW: GPF and null-ptr-deref caused by
- uninitialization
- of jfs module(INC3342348)) has been updated. Opened for:
- liujingfeng@qianxin.com
- Followers: security@kernel.org, shaggy@kernel.org,
- jfs-discussion@lists.sourceforge.net, 
- linux-kernel@vger.kernel.org, Rohit Keshri, syzkaller@googlegroups.com 
- Content analysis details:   (-2.3 points, 6.0 required)
+ Content preview:  Hi, On Wed, 19. Feb 10:25, Rand Deeb wrote: > The expression
+ "inactags << bmp->db_agl2size" in the function > dbFinalizeBmap() is computed
+ using int operands. Although the > values (inactags and db_agl2si [...] 
+ Content analysis details:   (-0.2 points, 6.0 required)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 RCVD_IN_VALIDITY_CERTIFIED_BLOCKED RBL: ADMINISTRATOR NOTICE:
- The query to Validity was blocked.  See
- https://knowledge.validity.com/hc/en-us/articles/20961730681243
- for more information.
- [149.96.6.209 listed in sa-accredit.habeas.com]
  0.0 RCVD_IN_VALIDITY_RPBL_BLOCKED RBL: ADMINISTRATOR NOTICE: The
  query to Validity was blocked.  See
  https://knowledge.validity.com/hc/en-us/articles/20961730681243
  for more information.
- [149.96.6.209 listed in bl.score.senderscore.com]
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [149.96.6.209 listed in list.dnswl.org]
+ [83.149.199.84 listed in bl.score.senderscore.com]
+ 0.0 RCVD_IN_VALIDITY_SAFE_BLOCKED RBL: ADMINISTRATOR NOTICE: The
+ query to Validity was blocked.  See
+ https://knowledge.validity.com/hc/en-us/articles/20961730681243
+ for more information.
+ [83.149.199.84 listed in sa-trusted.bondedsender.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 HTML_MESSAGE           BODY: HTML included in message
-X-Headers-End: 1tkf8V-0003OK-C2
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+X-Headers-End: 1tkhix-0007rI-Kx
 X-Mailman-Approved-At: Wed, 19 Feb 2025 14:33:34 +0000
-Subject: Re: [Jfs-discussion] FW: GPF and null-ptr-deref caused by
- uninitialization of jfs module(INC3342348)
+Subject: Re: [Jfs-discussion] [PATCH 5.10.y] fs/jfs: cast inactags to s64 to
+ prevent potential overflow
 X-BeenThere: jfs-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
+Precedence: list
 List-Id: <jfs-discussion.lists.sourceforge.net>
 List-Unsubscribe: <https://lists.sourceforge.net/lists/options/jfs-discussion>, 
  <mailto:jfs-discussion-request@lists.sourceforge.net?subject=unsubscribe>
@@ -106,143 +104,66 @@ List-Post: <mailto:jfs-discussion@lists.sourceforge.net>
 List-Help: <mailto:jfs-discussion-request@lists.sourceforge.net?subject=help>
 List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/jfs-discussion>, 
  <mailto:jfs-discussion-request@lists.sourceforge.net?subject=subscribe>
-From: Red Hat Product Security via Jfs-discussion
- <jfs-discussion@lists.sourceforge.net>
-Reply-To: Red Hat Product Security <secalert@redhat.com>
+From: Fedor Pchelkin via Jfs-discussion <jfs-discussion@lists.sourceforge.net>
+Reply-To: Fedor Pchelkin <pchelkin@ispras.ru>
+Cc: voskresenski.stanislav@confident.ru, Dave Kleikamp <shaggy@kernel.org>,
+ jfs-discussion@lists.sourceforge.net, lvc-project@linuxtesting.org,
+ linux-kernel@vger.kernel.org, deeb.rand@confident.ru
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Errors-To: jfs-discussion-bounces@lists.sourceforge.net
 
-------=_Part_33087_55735206.1739952516920
-Content-Type: multipart/alternative; 
-	boundary="----=_Part_33088_26762839.1739952516920"
+Hi,
 
-------=_Part_33088_26762839.1739952516920
-Content-Transfer-Encoding: quoted-printable
-Content-Type: text/plain; charset=UTF-8
+On Wed, 19. Feb 10:25, Rand Deeb wrote:
+> The expression "inactags << bmp->db_agl2size" in the function
+> dbFinalizeBmap() is computed using int operands. Although the
+> values (inactags and db_agl2size) are derived from filesystem
+> parameters and are usually small, there is a theoretical risk that
+> the shift could overflow a 32-bit int if extreme values occur.
+> 
+> According to the C standard, shifting a signed 32-bit int can lead
+> to undefined behavior if the result exceeds its range. In our
+> case, an overflow could miscalculate free blocks, potentially
+> leading to erroneous filesystem accounting.
+> 
+> To ensure the arithmetic is performed in 64-bit space, we cast
+> "inactags" to s64 before shifting. This defensive fix prevents any
+> risk of overflow and complies with kernel coding best practices.
+> 
+> Found by Linux Verification Center (linuxtesting.org) with SVACE.
+> 
+> Signed-off-by: Rand Deeb <rand.sec96@gmail.com>
+> ---
 
-Hello!
+Why is the patch targeted only to 5.10.y? It should go to the mainline
+first, no?
 
-INC3389413 (FW: GPF and null-ptr-deref caused by uninitialization of jfs mo=
-dule(INC3342348)) has been updated.
+Please check https://www.kernel.org/doc/html/latest/process/stable-kernel-rules.html
 
-Opened for: liujingfeng@qianxin.com
-Followers: security@kernel.org, shaggy@kernel.org, jfs-discussion@lists.sou=
-rceforge.net, linux-kernel@vger.kernel.org, Rohit Keshri, syzkaller@googleg=
-roups.com
+>  fs/jfs/jfs_dmap.c | 4 ++--
+>  1 file changed, 2 insertions(+), 2 deletions(-)
+> 
+> diff --git a/fs/jfs/jfs_dmap.c b/fs/jfs/jfs_dmap.c
+> index eedea23d70ff..3cc10f9bf9f8 100644
+> --- a/fs/jfs/jfs_dmap.c
+> +++ b/fs/jfs/jfs_dmap.c
+> @@ -3728,8 +3728,8 @@ void dbFinalizeBmap(struct inode *ipbmap)
+>  	 * system size is not a multiple of the group size).
+>  	 */
+>  	inactfree = (inactags && ag_rem) ?
+> -	    ((inactags - 1) << bmp->db_agl2size) + ag_rem
+> -	    : inactags << bmp->db_agl2size;
+> +	    (((s64)inactags - 1) << bmp->db_agl2size) + ag_rem
+> +	    : ((s64)inactags << bmp->db_agl2size);
+>  
+>  	/* determine how many free blocks are in the active
+>  	 * allocation groups plus the average number of free blocks
+> -- 
+> 2.34.1
 
-A Guest updated your request with the following comments:
-
-Reply from: liujingfeng@qianxin.com [mailto:liujingfeng@qianxin.com]
- > On Mon, Feb 10, 2025 at 10:09:54AM +0800, =E6=9F=B3=E8=8F=81=E5=B3=B0 wr=
-ote:
-> > Hello,Here is forward INC3342348 origin message
-> >
-> > I hope to receive updated response regarding this issue.
->=20
-> We have no lack of syzbot reported issues, what we do have is a lack of p=
-eople
-> fixing them, so patches are always welcome, especially as you already hav=
-e a
-> working reproducer for the problem to test against.
->=20
-> thanks,
->=20
-> greg k-h
- Hello,I try to do it.
- TxBegin returns 0 because the file system is read-only, and TxBlock [tid=
-=3D0] is a reserved block, so I tried to perform a read-only file system ch=
-eck in the jfs_create function. This should prevent crashes, but I'm not su=
-re if it affects the original logic. I hope developers can help check this =
-patch.
-  diff --git a/fs/jfs/namei.c b/fs/jfs/namei.c
-index d68a4e6ac345..4b6d85d47c3a 100644
---- a/fs/jfs/namei.c
-+++ b/fs/jfs/namei.c
-@@ -77,6 +77,10 @@ static int jfs_create(struct mnt_idmap *idmap, struct in=
-oded,
- if (rc)
- goto out1;
-+ if (isReadOnly(dip)){
-+ rc=3D-EROFS;
-+ goto out1;
-+ }
- /*
- * search parent directory for entry/freespace
- * (dtSearch() returns parent directory page pinned)
-
-How can I track and update my request?
-
-To respond, reply to this email. You may also create a new email and includ=
-e the request number (INC3389413) in the subject.
-
-Thank you,
-Product Security
-
-Ref:MSG101796497
-------=_Part_33088_26762839.1739952516920
-Content-Transfer-Encoding: quoted-printable
-Content-Type: text/html; charset=UTF-8
-
-<html><head></head><body><div><p style=3D"margin-top:0;margin-bottom:10px;"=
->Hello!</p><p style=3D"margin-top:0;margin-bottom:10px;">INC3389413 (FW: GP=
-F and null-ptr-deref caused by uninitialization of jfs module(INC3342348)) =
-has been updated.</p><p style=3D"margin-top:0;margin-bottom:10px;">Opened f=
-or:&nbsp;liujingfeng@qianxin.com<br>Followers:&nbsp;security@kernel.org, sh=
-aggy@kernel.org, jfs-discussion@lists.sourceforge.net, linux-kernel@vger.ke=
-rnel.org, Rohit Keshri, syzkaller@googlegroups.com</p></div>
-<p style=3D"margin-top: 10px; margin-bottom: 10px;">A Guest updated your re=
-quest with the following comments:</p>
-<div style=3D"padding: 10px 0 10px 10px; background-color: ivory;"><div>Rep=
-ly from: <a target=3D"_blank" href=3D"mailto:liujingfeng@qianxin.com" rel=
-=3D"noopener noreferrer nofollow">liujingfeng@qianxin.com</a></div><div>&nb=
-sp;</div><div>&gt; On Mon, Feb 10, 2025 at 10:09:54AM +0800, =E6=9F=B3=E8=
-=8F=81=E5=B3=B0 wrote:</div><div>&gt; &gt; Hello,Here is forward INC3342348=
- origin message</div><div>&gt; &gt;</div><div>&gt; &gt; I hope to receive u=
-pdated response regarding this issue.</div><div>&gt; </div><div>&gt; We hav=
-e no lack of syzbot reported issues, what we do have is a lack of people</d=
-iv><div>&gt; fixing them, so patches are always welcome, especially as you =
-already have a</div><div>&gt; working reproducer for the problem to test ag=
-ainst.</div><div>&gt; </div><div>&gt; thanks,</div><div>&gt; </div><div>&gt=
-; greg k-h</div><div>&nbsp;</div><div>Hello,I try to do it.</div><div>&nbsp=
-;</div><div>TxBegin returns 0 because the file system is read-only, and TxB=
-lock [tid=3D0] is a reserved block, so I tried to perform a read-only file =
-system check in the jfs_create function. This should prevent crashes, but I=
-'m not sure if it affects the original logic. I hope developers can help ch=
-eck this patch.</div><div>&nbsp;</div><div>&nbsp;</div><div>diff --git a/fs=
-/jfs/namei.c b/fs/jfs/namei.c</div><div>index d68a4e6ac345..4b6d85d47c3a 10=
-0644</div><div>--- a/fs/jfs/namei.c</div><div>+++ b/fs/jfs/namei.c</div><di=
-v>@@ -77,6 +77,10 @@ static int jfs_create(struct mnt_idmap *idmap, struct =
-inoded,</div><div>        if (rc)</div><div>                goto out1;</div=
-><div> </div><div>+       if (isReadOnly(dip)){</div><div>+               r=
-c=3D-EROFS;</div><div>+               goto out1;</div><div>+       }</div><=
-div>        /*</div><div>         * search parent directory for entry/frees=
-pace</div><div>         * (dtSearch() returns parent directory page pinned)=
-</div></div>
-<div><p style=3D"margin-top:20px;margin-bottom:10px;"><strong>How can I tra=
-ck and update my request?</strong></p><p style=3D"margin-top:0;margin-botto=
-m:10px;">To respond, reply to this email. You may also create a new email a=
-nd include the request number (INC3389413) in the subject.</p></div>
-<p style=3D"margin-top: 14px; margin-bottom: 0;">Thank you,<br>Product Secu=
-rity</p><div>&nbsp;</div><div style=3D"display:inline">Ref:MSG101796497</di=
-v></body></html>
-------=_Part_33088_26762839.1739952516920--
-
-------=_Part_33087_55735206.1739952516920
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
-
-
-------=_Part_33087_55735206.1739952516920
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
 
 _______________________________________________
 Jfs-discussion mailing list
 Jfs-discussion@lists.sourceforge.net
 https://lists.sourceforge.net/lists/listinfo/jfs-discussion
-
-------=_Part_33087_55735206.1739952516920--
-
