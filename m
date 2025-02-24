@@ -2,119 +2,110 @@ Return-Path: <jfs-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+jfs-discussion@lfdr.de
 Delivered-To: lists+jfs-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id 207D0A4040A
-	for <lists+jfs-discussion@lfdr.de>; Sat, 22 Feb 2025 01:22:08 +0100 (CET)
-Received: from [127.0.0.1] (helo=sfs-ml-4.v29.lw.sourceforge.com)
-	by sfs-ml-4.v29.lw.sourceforge.com with esmtp (Exim 4.95)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2CFB7A423E8
+	for <lists+jfs-discussion@lfdr.de>; Mon, 24 Feb 2025 15:50:20 +0100 (CET)
+Received: from [127.0.0.1] (helo=sfs-ml-2.v29.lw.sourceforge.com)
+	by sfs-ml-2.v29.lw.sourceforge.com with esmtp (Exim 4.95)
 	(envelope-from <jfs-discussion-bounces@lists.sourceforge.net>)
-	id 1tldGw-00070l-Lx;
-	Sat, 22 Feb 2025 00:21:34 +0000
+	id 1tmZmA-0000GZ-2N;
+	Mon, 24 Feb 2025 14:49:42 +0000
 Received: from [172.30.29.66] (helo=mx.sourceforge.net)
  by sfs-ml-4.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
- TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (Exim 4.95)
- (envelope-from <eadavis@qq.com>) id 1tldGv-00070e-60
- for jfs-discussion@lists.sourceforge.net;
- Sat, 22 Feb 2025 00:21:33 +0000
+ TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (Exim 4.95) (envelope-from
+ <3W_27ZwkbAIo6CDyozzs5o33wr.u22uzs86s5q217s17.q20@M3KW2WVRGUFZ5GODRSRYTGD7.apphosting.bounces.google.com>)
+ id 1tmQbq-00007t-KO for jfs-discussion@lists.sourceforge.net;
+ Mon, 24 Feb 2025 05:02:26 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=sourceforge.net; s=x; h=Content-Transfer-Encoding:MIME-Version:References:
- In-Reply-To:Date:Subject:Cc:To:From:Message-ID:Sender:Reply-To:Content-Type:
- Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
- Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
+ d=sourceforge.net; s=x; h=Content-Type:To:From:Subject:Message-ID:Date:
+ MIME-Version:Sender:Reply-To:Cc:Content-Transfer-Encoding:Content-ID:
+ Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+ :Resent-Message-ID:In-Reply-To:References:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=tqMJWLY2AJcG1vhotFh2tnfe3QF/WPOAV93LjSptfqw=; b=IFNlAfURBIzUXybN/JHn2ETjL2
- OG6fdIvRxfsZQ9/hckZVDdCFu6r8XzxnhwmgSwRc5Ed6f3CzlXOW7dgD2sIFeDZR4yO+wQkYTCP2q
- L0E+jcsJsHHbExeD4YvH83ANBE6AFvJrWykAxGJcPGf4102TxTSiewuXhbd6E8UaSRWs=;
+ bh=d1LuiwTnhxFqGKXEvdeoIsjmOesyDtr4398x5Mxpx4c=; b=jmgOnNnnTjHelSLw40D9y1m2/K
+ b71KKxlgJEsVJBZ5FPEsO4ESde3iW/WWP/GwVJQfqPViHEHwCAxDQVGz7mAQvBrxfJ+e9fQVQyG5C
+ ogaiY7xqRTY+OA7nmu7jDfarpK0wHJAql1ozARo7jlI2dCwAOShglamQi8E/2wJypNV0=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
- h=Content-Transfer-Encoding:MIME-Version:References:In-Reply-To:Date:
- Subject:Cc:To:From:Message-ID:Sender:Reply-To:Content-Type:Content-ID:
- Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
- :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
- List-Post:List-Owner:List-Archive;
- bh=tqMJWLY2AJcG1vhotFh2tnfe3QF/WPOAV93LjSptfqw=; b=Jww5Tt2IBmsxpb2njEea+5Zth6
- uKeCsxmC5soaTzg2h8WGkLlGpt3wa8NZs/+j0HuqLGAbSPCMF5Eo+U5P0nnzykbC+UsHMTyRXr2Qk
- THhXHCGqsX4h8X+GvJhZrTFsy5Ae1qKcj5R2LD6zdzlSYjLE/82/zQafJ0raipNG1UGM=;
-Received: from out203-205-221-149.mail.qq.com ([203.205.221.149])
+ h=Content-Type:To:From:Subject:Message-ID:Date:MIME-Version:Sender:Reply-To
+ :Cc:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+ Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+ References:List-Id:List-Help:List-Unsubscribe:List-Subscribe:List-Post:
+ List-Owner:List-Archive; bh=d1LuiwTnhxFqGKXEvdeoIsjmOesyDtr4398x5Mxpx4c=; b=V
+ sKqG04iXoDNa1eTECmCHmfCco0l1sz03Sh4YJIolQk+iY6jZXdfITK+oS1+9b+SdBIAJkOxGE2b5x
+ HpTSJbXHzHEGSjKNJ52f/yg+QPjEPTMzQG0nkOUB2+zb5R+LXPsJ2ZJb35fXHbbuLCXR2LJUQNhBU
+ aDrkgLEIditZpJ3o=;
+Received: from mail-io1-f78.google.com ([209.85.166.78])
  by sfi-mx-2.v28.lw.sourceforge.com with esmtps
- (TLS1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.95)
- id 1tldGs-0006b5-NJ for jfs-discussion@lists.sourceforge.net;
- Sat, 22 Feb 2025 00:21:33 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qq.com; s=s201512;
- t=1740183368; bh=tqMJWLY2AJcG1vhotFh2tnfe3QF/WPOAV93LjSptfqw=;
- h=From:To:Cc:Subject:Date:In-Reply-To:References;
- b=in+xjCzTxW9tBaU+uyYuvZ0eNy/R2BdGKkw35YOXmxzfwiL46Ot+wA4jaC901IQ/N
- yyNzjJyOw+KEy8U0SRgeLjCiC3eRSHSZ3h4YczMiH5UCAfEeG8TxfKBV4TovKOVK4Q
- 916sxLbJOz1qvLLeQEfFosJkymEY2CUG4bNhxj1I=
-Received: from pek-lxu-l1.wrs.com ([114.244.57.157])
- by newxmesmtplogicsvrszb21-0.qq.com (NewEsmtp) with SMTP
- id 4061A0EE; Sat, 22 Feb 2025 08:16:06 +0800
-X-QQ-mid: xmsmtpt1740183366thlxdkpk8
-Message-ID: <tencent_93C98D8F12295DADDDAC19654FE30DB6A507@qq.com>
-X-QQ-XMAILINFO: MyirvGjpKb1jkbSe83BGyeCjKig4IdtbxxGGCBS1vx8UozaaMrug00xgDZLXl7
- ADKOVaTK4yzyVmNosx/5bzfaX3WyA6BXNFLwtbEK3dAIIKLiu/Cc/jWiL8f9I5JfUAzn5/Gp0Vt0
- EYUZxMQErP3QUrOk0d0G6e3IWij21amL9jHZcM9zXMdTA0GrRO8/1E+laRDYWzMTtdY7rtAj+loL
- dt5ymlPRQ0fD7hVS/7RsQdixPzZLo5/o4xnksYQa+DPY7kDejJ4ysu/qd+0icla1RN8elYNei+eU
- 16jIfALI5lHC/XZJf1gjLBFOKZ7cnZk07U7ag0J7uLt3Y/16+exZ2rnf6/aQBpB+uowaDYZBMB2o
- WpZ2nS2j4kOON90xImeHh4+VS5CgLCERV6wSHqg1lJVJOGZy7nSNr1HsQ4XZYXcWev0vQ2s5FqfL
- sFiiztI0YGDMsGHuYxsX39PJCmt9Ueyny7YYq9pGI8njxbR7zTh9h12yjynJR4QJlGFKSqcznZSp
- MEv4pel0AKLdSOz3FlnT1RPgsotrBcb4vrCBKmVu+oc7bubgpEb5fCDovKKIEamIK3n6aNKFW2jj
- QWeuQtde3R/eiYbZHqHs27q+wWbwASdZXwox4menftZY/pI0XbSP4ZznK8aFfsaiCsFjHGtJBdhQ
- Cns7QROVGFn07134KHq0UmSoKR6zV2Ya6Wj8SCm2pNgFYlqKM9D+oHrqeskDcpvs0FgpfhqhFJfu
- BrApMutH9Kp1JtkqaFDGlyLdqvLDV/oHMt186H4+9k4sz4Do3d165pPi2CVfCB9DjdfrGK5Cc/02
- Si2Na+flPVZqVUbEg1pXvJXogXOEvVgbVR0DbTE52wR4/qDncYgO2/osycqnvNMhicq2gHqYltcI
- wnlpxYB4/SSaH5QqXqzvv5BxF/U790qjCyxt9u0REqH8hDbjqKKl+66pjuMCRTy/4g5+2yYTrSEk
- 5ImfeEHccLs9+V9mOT3g==
-X-QQ-XMRINFO: Nq+8W0+stu50PRdwbJxPCL0=
-To: dave.kleikamp@oracle.com
-Date: Sat, 22 Feb 2025 08:16:06 +0800
-X-OQ-MSGID: <20250222001605.3397199-2-eadavis@qq.com>
-X-Mailer: git-send-email 2.48.1
-In-Reply-To: <47c49424-e24b-498a-9115-ace3fa4880e3@oracle.com>
-References: <47c49424-e24b-498a-9115-ace3fa4880e3@oracle.com>
+ (TLS1.2:ECDHE-RSA-AES128-GCM-SHA256:128) (Exim 4.95)
+ id 1tmQbp-00067K-Ab for jfs-discussion@lists.sourceforge.net;
+ Mon, 24 Feb 2025 05:02:26 +0000
+Received: by mail-io1-f78.google.com with SMTP id
+ ca18e2360f4ac-851c4ef08b9so970927439f.0
+ for <jfs-discussion@lists.sourceforge.net>;
+ Sun, 23 Feb 2025 21:02:25 -0800 (PST)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20230601; t=1740373339; x=1740978139;
+ h=to:from:subject:message-id:date:mime-version:x-gm-message-state
+ :from:to:cc:subject:date:message-id:reply-to;
+ bh=d1LuiwTnhxFqGKXEvdeoIsjmOesyDtr4398x5Mxpx4c=;
+ b=Ah64/T+0ETUVUiX9svraKH7JlMG8lFoG4JPo+pcNf2Oniwp54bdovR9+PjwprgnYW8
+ /+b1Da5l7h+a7rWlIiDh3fNe9PKQzk7USe79FU1RsXVhbjFVaOL+h0pqTFCQ8hrCWoq0
+ fXAR7AbDFaDJ9z+OukkHJN58wXV+TDbJOKsYQV06q/66ctYjErNeAjfjwOHPtEyw4uud
+ 3zqFxPfX2/U+uZ6qTpogOE68+UMWzmHTNKsQYgW37QIQq3tlJDZwnOQL71tHoPAnbz3K
+ gcxT2G1SOy7zpmCjyx86KsSo++AAi+Q31vAUsdjDuxkC7mLo6qfeS9qov40u7d8/o0O3
+ OB0g==
+X-Gm-Message-State: AOJu0Yw4fJjNfykwabRcXRDWc/d/9U8OxM+q045ba5BsAy9eWlnLLSzw
+ cm0xe138pe63c+si+LgWgSfwHDEZSbGuDY243Ie6Au4WNIL60MyT2vM8aAU+yVeW+YXpIKYqLqR
+ +axg/lFvmumFJSYrv9IRo+ZmXvkUsx3dvXnWPynKfXAYUICsEmMin0v3vXg==
+X-Google-Smtp-Source: AGHT+IEpL3v2O47v3i5h7Bz+0lgtzzU4Ps7/WJX/9OPRy7ZiAry+N/vyb9lsybQwruzAU37//2ygcsamUeA0RBrXoqLtp2wg61hc
 MIME-Version: 1.0
-X-Spam-Score: 3.4 (+++)
+X-Received: by 2002:a05:6e02:1c0f:b0:3d2:b34d:a264 with SMTP id
+ e9e14a558f8ab-3d2cb492863mr123676185ab.12.1740373339625; Sun, 23 Feb 2025
+ 21:02:19 -0800 (PST)
+Date: Sun, 23 Feb 2025 21:02:19 -0800
+X-Google-Appengine-App-Id: s~syzkaller
+X-Google-Appengine-App-Id-Alias: syzkaller
+Message-ID: <67bbfd5b.050a0220.bbfd1.0043.GAE@google.com>
+To: jfs-discussion@lists.sourceforge.net, linux-kernel@vger.kernel.org, 
+ shaggy@kernel.org, syzkaller-bugs@googlegroups.com
+X-Spam-Score: 0.3 (/)
 X-Spam-Report: Spam detection software,
  running on the system "util-spamd-2.v13.lw.sourceforge.com", 
  has NOT identified this incoming email as spam.  The original
  message has been attached to this so you can view it or label
  similar future email.  If you have any questions, see
  the administrator of that system for details.
- Content preview:  On Thu, 20 Feb 2025 17:28:49 -0600, Dave Kleikamp wrote: >On
- 2/20/25 5:22PM, Edward Adam Davis wrote: >> On Thu, 20 Feb 2025 10:15:04
- -0600, Dave Kleikamp wrote: >>>> syzbot report a deadlock in diFre [...] 
- Content analysis details:   (3.4 points, 6.0 required)
+ Content preview:  Hello,
+ syzbot found the following issue on: HEAD commit: e6747d19291c
+ Merge branch 'for-next/el2-enable-feat-pmuv3p.. git tree:
+ git://git.kernel.org/pub/scm/linux/kernel/git/arm64/linux.git
+ for-kernelci console output: https://syzkaller.appspot [...] 
+ Content analysis details:   (0.3 points, 6.0 required)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [203.205.221.149 listed in list.dnswl.org]
+ no trust [209.85.166.78 listed in list.dnswl.org]
+ 0.3 FROM_LOCAL_HEX         From: localpart has long hexadecimal sequence
+ 0.0 RCVD_IN_VALIDITY_SAFE_BLOCKED RBL: ADMINISTRATOR NOTICE: The
+ query to Validity was blocked.  See
+ https://knowledge.validity.com/hc/en-us/articles/20961730681243
+ for more information.
+ [209.85.166.78 listed in sa-trusted.bondedsender.org]
  0.0 RCVD_IN_VALIDITY_RPBL_BLOCKED RBL: ADMINISTRATOR NOTICE: The
  query to Validity was blocked.  See
  https://knowledge.validity.com/hc/en-us/articles/20961730681243
  for more information.
- [203.205.221.149 listed in bl.score.senderscore.com]
- 0.0 RCVD_IN_VALIDITY_CERTIFIED_BLOCKED RBL: ADMINISTRATOR NOTICE:
- The query to Validity was blocked.  See
- https://knowledge.validity.com/hc/en-us/articles/20961730681243
- for more information.
- [203.205.221.149 listed in sa-accredit.habeas.com]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [eadavis[at]qq.com]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ [209.85.166.78 listed in bl.score.senderscore.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.4 RDNS_DYNAMIC           Delivered to internal network by host with
- dynamic-looking rDNS
- 3.2 HELO_DYNAMIC_IPADDR    Relay HELO'd using suspicious hostname (IP
- addr 1)
-X-Headers-End: 1tldGs-0006b5-NJ
-Subject: Re: [Jfs-discussion] [PATCH V3] jfs: Prevent copying of nlink with
- value 0 from disk inode
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.166.78 listed in wl.mailspike.net]
+ 0.0 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+X-Headers-End: 1tmQbp-00067K-Ab
+X-Mailman-Approved-At: Mon, 24 Feb 2025 14:49:42 +0000
+Subject: [Jfs-discussion] [syzbot] [jfs?] BUG: sleeping function called from
+ invalid context in jfs_fsync
 X-BeenThere: jfs-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -126,155 +117,283 @@ List-Post: <mailto:jfs-discussion@lists.sourceforge.net>
 List-Help: <mailto:jfs-discussion-request@lists.sourceforge.net?subject=help>
 List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/jfs-discussion>, 
  <mailto:jfs-discussion-request@lists.sourceforge.net?subject=subscribe>
-From: Edward Adam Davis via Jfs-discussion
- <jfs-discussion@lists.sourceforge.net>
-Reply-To: Edward Adam Davis <eadavis@qq.com>
-Cc: syzkaller-bugs@googlegroups.com,
- syzbot+355da3b3a74881008e8f@syzkaller.appspotmail.com,
- jfs-discussion@lists.sourceforge.net, eadavis@qq.com,
- linux-kernel@vger.kernel.org
+From: syzbot via Jfs-discussion <jfs-discussion@lists.sourceforge.net>
+Reply-To: syzbot <syzbot+c266ffd7d9f1769517ec@syzkaller.appspotmail.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Errors-To: jfs-discussion-bounces@lists.sourceforge.net
 
-On Thu, 20 Feb 2025 17:28:49 -0600, Dave Kleikamp wrote:
->On 2/20/25 5:22PM, Edward Adam Davis wrote:
->> On Thu, 20 Feb 2025 10:15:04 -0600, Dave Kleikamp wrote:
->>>> syzbot report a deadlock in diFree. [1]
->>>>
->>>> When calling "ioctl$LOOP_SET_STATUS64", the offset value passed in is 4,
->>>> which does not match the mounted loop device, causing the mapping of the
->>>> mounted loop device to be invalidated.
->>>>
->>>> When creating the directory and creating the inode of iag in diReadSpecial(),
->>>> read the page of fixed disk inode (AIT) in raw mode in read_metapage(), the
->>>> metapage data it returns is corrupted, which causes the nlink value of 0 to be
->>>> assigned to the iag inode when executing copy_from_dinode(), which ultimately
->>>> causes a deadlock when entering diFree().
->>>>
->>>> To avoid this, first check the nlink value of dinode before setting iag inode.
->>>>
->>>> [1]
->>>> WARNING: possible recursive locking detected
->>>> 6.12.0-rc7-syzkaller-00212-g4a5df3796467 #0 Not tainted
->>>> --------------------------------------------
->>>> syz-executor301/5309 is trying to acquire lock:
->>>> ffff888044548920 (&(imap->im_aglock[index])){+.+.}-{3:3}, at: diFree+0x37c/0x2fb0 fs/jfs/jfs_imap.c:889
->>>>
->>>> but task is already holding lock:
->>>> ffff888044548920 (&(imap->im_aglock[index])){+.+.}-{3:3}, at: diAlloc+0x1b6/0x1630
->>>>
->>>> other info that might help us debug this:
->>>>    Possible unsafe locking scenario:
->>>>
->>>>          CPU0
->>>>          ----
->>>>     lock(&(imap->im_aglock[index]));
->>>>     lock(&(imap->im_aglock[index]));
->>>>
->>>>    *** DEADLOCK ***
->>>>
->>>>    May be due to missing lock nesting notation
->>>>
->>>> 5 locks held by syz-executor301/5309:
->>>>    #0: ffff8880422a4420 (sb_writers#9){.+.+}-{0:0}, at: mnt_want_write+0x3f/0x90 fs/namespace.c:515
->>>>    #1: ffff88804755b390 (&type->i_mutex_dir_key#6/1){+.+.}-{3:3}, at: inode_lock_nested include/linux/fs.h:850 [inline]
->>>>    #1: ffff88804755b390 (&type->i_mutex_dir_key#6/1){+.+.}-{3:3}, at: filename_create+0x260/0x540 fs/namei.c:4026
->>>>    #2: ffff888044548920 (&(imap->im_aglock[index])){+.+.}-{3:3}, at: diAlloc+0x1b6/0x1630
->>>>    #3: ffff888044548890 (&imap->im_freelock){+.+.}-{3:3}, at: diNewIAG fs/jfs/jfs_imap.c:2460 [inline]
->>>>    #3: ffff888044548890 (&imap->im_freelock){+.+.}-{3:3}, at: diAllocExt fs/jfs/jfs_imap.c:1905 [inline]
->>>>    #3: ffff888044548890 (&imap->im_freelock){+.+.}-{3:3}, at: diAllocAG+0x4b7/0x1e50 fs/jfs/jfs_imap.c:1669
->>>>    #4: ffff88804755a618 (&jfs_ip->rdwrlock/1){++++}-{3:3}, at: diNewIAG fs/jfs/jfs_imap.c:2477 [inline]
->>>>    #4: ffff88804755a618 (&jfs_ip->rdwrlock/1){++++}-{3:3}, at: diAllocExt fs/jfs/jfs_imap.c:1905 [inline]
->>>>    #4: ffff88804755a618 (&jfs_ip->rdwrlock/1){++++}-{3:3}, at: diAllocAG+0x869/0x1e50 fs/jfs/jfs_imap.c:1669
->>>>
->>>> stack backtrace:
->>>> CPU: 0 UID: 0 PID: 5309 Comm: syz-executor301 Not tainted 6.12.0-rc7-syzkaller-00212-g4a5df3796467 #0
->>>> Hardware name: QEMU Standard PC (Q35 + ICH9, 2009), BIOS 1.16.3-debian-1.16.3-2~bpo12+1 04/01/2014
->>>> Call Trace:
->>>>    <TASK>
->>>>    __dump_stack lib/dump_stack.c:94 [inline]
->>>>    dump_stack_lvl+0x241/0x360 lib/dump_stack.c:120
->>>>    print_deadlock_bug+0x483/0x620 kernel/locking/lockdep.c:3037
->>>>    check_deadlock kernel/locking/lockdep.c:3089 [inline]
->>>>    validate_chain+0x15e2/0x5920 kernel/locking/lockdep.c:3891
->>>>    __lock_acquire+0x1384/0x2050 kernel/locking/lockdep.c:5202
->>>>    lock_acquire+0x1ed/0x550 kernel/locking/lockdep.c:5825
->>>>    __mutex_lock_common kernel/locking/mutex.c:608 [inline]
->>>>    __mutex_lock+0x136/0xd70 kernel/locking/mutex.c:752
->>>>    diFree+0x37c/0x2fb0 fs/jfs/jfs_imap.c:889
->>>>    jfs_evict_inode+0x32d/0x440 fs/jfs/inode.c:156
->>>>    evict+0x4e8/0x9b0 fs/inode.c:725
->>>>    diFreeSpecial fs/jfs/jfs_imap.c:552 [inline]
->>>>    duplicateIXtree+0x3c6/0x550 fs/jfs/jfs_imap.c:3022
->>>>    diNewIAG fs/jfs/jfs_imap.c:2597 [inline]
->>>>    diAllocExt fs/jfs/jfs_imap.c:1905 [inline]
->>>>    diAllocAG+0x17dc/0x1e50 fs/jfs/jfs_imap.c:1669
->>>>    diAlloc+0x1d2/0x1630 fs/jfs/jfs_imap.c:1590
->>>>    ialloc+0x8f/0x900 fs/jfs/jfs_inode.c:56
->>>>    jfs_mkdir+0x1c5/0xba0 fs/jfs/namei.c:225
->>>>    vfs_mkdir+0x2f9/0x4f0 fs/namei.c:4257
->>>>    do_mkdirat+0x264/0x3a0 fs/namei.c:4280
->>>>    __do_sys_mkdirat fs/namei.c:4295 [inline]
->>>>    __se_sys_mkdirat fs/namei.c:4293 [inline]
->>>>    __x64_sys_mkdirat+0x87/0xa0 fs/namei.c:4293
->>>>    do_syscall_x64 arch/x86/entry/common.c:52 [inline]
->>>>    do_syscall_64+0xf3/0x230 arch/x86/entry/common.c:83
->>>>    entry_SYSCALL_64_after_hwframe+0x77/0x7f
->>>
->>> I'm taking this patch, but making a change. It's a little cleaner to check ip->i_nlink after calling copy_from_dinode.
->>>
->>>>
->>>> Reported-by: syzbot+355da3b3a74881008e8f@syzkaller.appspotmail.com
->>>> Closes: https://syzkaller.appspot.com/bug?extid=355da3b3a74881008e8f
->>>> Signed-off-by: Edward Adam Davis <eadavis@qq.com>
->>>> ---
->>>> V1 -> V2: if the nlink of disk inode is 0 return -EIO
->>>> V2 -> V3: move the checking to diReadSpecial
->>>>
->>>> ---
->>>>    fs/jfs/jfs_imap.c | 2 +-
->>>>    1 file changed, 1 insertion(+), 1 deletion(-)
->>>>
->>>> diff --git a/fs/jfs/jfs_imap.c b/fs/jfs/jfs_imap.c
->>>> index 0cedaccb7218..25bb3485da3b 100644
->>>> --- a/fs/jfs/jfs_imap.c
->>>> +++ b/fs/jfs/jfs_imap.c
->>>> @@ -460,7 +460,7 @@ struct inode *diReadSpecial(struct super_block *sb, ino_t inum, int secondary)
->>>>    	dp += inum % 8;		/* 8 inodes per 4K page */
->>>>    
->>>>    	/* copy on-disk inode to in-memory inode */
->>>> -	if ((copy_from_dinode(dp, ip)) != 0) {
->>>> +	if (!le32_to_cpu(dp->di_nlink) || (copy_from_dinode(dp, ip)) != 0) {
->>>>    		/* handle bad return by returning NULL for ip */
->>>>    		set_nlink(ip, 1);	/* Don't want iput() deleting it */
->>>>    		iput(ip);
->>>
->>> My change:
->>>
->>> diff --git a/fs/jfs/jfs_imap.c b/fs/jfs/jfs_imap.c
->>> index 298445f6d3d4..ecb8e05b8b84 100644
->>> --- a/fs/jfs/jfs_imap.c
->>> +++ b/fs/jfs/jfs_imap.c
->>> @@ -456,7 +456,7 @@ struct inode *diReadSpecial(struct super_block *sb, ino_t inum, int secondary)
->>>    	dp += inum % 8;		/* 8 inodes per 4K page */
->>>    
->>>    	/* copy on-disk inode to in-memory inode */
->>> -	if ((copy_from_dinode(dp, ip)) != 0) {
->>> +	if ((copy_from_dinode(dp, ip) != 0) || (ip->i_nlink == 0)) {
->> This is incorrect. The purpose of adding this check is to prevent copy_from_dinode()
->> from using dip->i_nlink with a value of 0 to assign to ip.
->>>    		/* handle bad return by returning NULL for ip */
->>>    		set_nlink(ip, 1);	/* Don't want iput() deleting it */
->
->It will get set  to 1 right here ^^^
-Things that can be determined by "di_nlink" before executing copy_from_dinode(),
-Why let the CPU run copy_from_dinode() for an extra time before checking?
-Isn't this a waste of CPU?
+Hello,
 
-BR,
-Edward
+syzbot found the following issue on:
 
+HEAD commit:    e6747d19291c Merge branch 'for-next/el2-enable-feat-pmuv3p..
+git tree:       git://git.kernel.org/pub/scm/linux/kernel/git/arm64/linux.git for-kernelci
+console output: https://syzkaller.appspot.com/x/log.txt?x=12435ae4580000
+kernel config:  https://syzkaller.appspot.com/x/.config?x=f6b108de97771157
+dashboard link: https://syzkaller.appspot.com/bug?extid=c266ffd7d9f1769517ec
+compiler:       Debian clang version 15.0.6, GNU ld (GNU Binutils for Debian) 2.40
+userspace arch: arm64
+syz repro:      https://syzkaller.appspot.com/x/repro.syz?x=157c6fdf980000
+C reproducer:   https://syzkaller.appspot.com/x/repro.c?x=137bddb8580000
+
+Downloadable assets:
+disk image: https://storage.googleapis.com/syzbot-assets/874063395a28/disk-e6747d19.raw.xz
+vmlinux: https://storage.googleapis.com/syzbot-assets/f707e2e6b743/vmlinux-e6747d19.xz
+kernel image: https://storage.googleapis.com/syzbot-assets/57c934b7f0e8/Image-e6747d19.gz.xz
+mounted in repro: https://storage.googleapis.com/syzbot-assets/fdad6db15ae6/mount_0.gz
+  fsck result: failed (log: https://syzkaller.appspot.com/x/fsck.log?x=106fdba4580000)
+
+IMPORTANT: if you fix the issue, please add the following tag to the commit:
+Reported-by: syzbot+c266ffd7d9f1769517ec@syzkaller.appspotmail.com
+
+BUG: sleeping function called from invalid context at kernel/locking/rwsem.c:1576
+in_atomic(): 1, irqs_disabled(): 0, non_block: 0, pid: 16, name: ksoftirqd/0
+preempt_count: 100, expected: 0
+RCU nest depth: 0, expected: 0
+no locks held by ksoftirqd/0/16.
+Preemption disabled at:
+[<ffff8000803110e4>] softirq_handle_begin kernel/softirq.c:402 [inline]
+[<ffff8000803110e4>] handle_softirqs+0xe0/0xd34 kernel/softirq.c:537
+CPU: 0 UID: 0 PID: 16 Comm: ksoftirqd/0 Not tainted 6.14.0-rc3-syzkaller-ge6747d19291c #0
+Hardware name: Google Google Compute Engine/Google Compute Engine, BIOS Google 12/27/2024
+Call trace:
+ show_stack+0x2c/0x3c arch/arm64/kernel/stacktrace.c:466 (C)
+ __dump_stack lib/dump_stack.c:94 [inline]
+ dump_stack_lvl+0xe4/0x150 lib/dump_stack.c:120
+ dump_stack+0x1c/0x28 lib/dump_stack.c:129
+ __might_resched+0x374/0x4d0 kernel/sched/core.c:8767
+ __might_sleep+0x90/0xe4 kernel/sched/core.c:8696
+ down_write+0x28/0xc0 kernel/locking/rwsem.c:1576
+ inode_lock include/linux/fs.h:877 [inline]
+ jfs_fsync+0xa0/0x1d4 fs/jfs/file.c:28
+ vfs_fsync_range+0x160/0x19c fs/sync.c:187
+ generic_write_sync include/linux/fs.h:2970 [inline]
+ dio_complete+0x510/0x6b8 fs/direct-io.c:313
+ dio_bio_end_aio+0x488/0x550 fs/direct-io.c:368
+ bio_endio+0x840/0x87c block/bio.c:1548
+ blk_update_request+0x4ac/0xda0 block/blk-mq.c:983
+ blk_mq_end_request+0x54/0x88 block/blk-mq.c:1145
+ lo_complete_rq+0x188/0x2f4 drivers/block/loop.c:395
+ blk_complete_reqs block/blk-mq.c:1220 [inline]
+ blk_done_softirq+0x11c/0x168 block/blk-mq.c:1225
+ handle_softirqs+0x320/0xd34 kernel/softirq.c:561
+ run_ksoftirqd+0x70/0xc0 kernel/softirq.c:950
+ smpboot_thread_fn+0x4b0/0x90c kernel/smpboot.c:164
+ kthread+0x65c/0x7b0 kernel/kthread.c:464
+ ret_from_fork+0x10/0x20 arch/arm64/kernel/entry.S:862
+
+=============================
+[ BUG: Invalid wait context ]
+6.14.0-rc3-syzkaller-ge6747d19291c #0 Tainted: G        W         
+-----------------------------
+ksoftirqd/0/16 is trying to lock:
+ffff0000dd220578 (&sb->s_type->i_mutex_key#18){+.+.}-{4:4}, at: inode_lock include/linux/fs.h:877 [inline]
+ffff0000dd220578 (&sb->s_type->i_mutex_key#18){+.+.}-{4:4}, at: jfs_fsync+0xa0/0x1d4 fs/jfs/file.c:28
+other info that might help us debug this:
+context-{3:3}
+no locks held by ksoftirqd/0/16.
+stack backtrace:
+CPU: 0 UID: 0 PID: 16 Comm: ksoftirqd/0 Tainted: G        W          6.14.0-rc3-syzkaller-ge6747d19291c #0
+Tainted: [W]=WARN
+Hardware name: Google Google Compute Engine/Google Compute Engine, BIOS Google 12/27/2024
+Call trace:
+ show_stack+0x2c/0x3c arch/arm64/kernel/stacktrace.c:466 (C)
+ __dump_stack lib/dump_stack.c:94 [inline]
+ dump_stack_lvl+0xe4/0x150 lib/dump_stack.c:120
+ dump_stack+0x1c/0x28 lib/dump_stack.c:129
+ print_lock_invalid_wait_context kernel/locking/lockdep.c:4828 [inline]
+ check_wait_context kernel/locking/lockdep.c:4900 [inline]
+ __lock_acquire+0x2034/0x7904 kernel/locking/lockdep.c:5178
+ lock_acquire+0x23c/0x724 kernel/locking/lockdep.c:5851
+ down_write+0x50/0xc0 kernel/locking/rwsem.c:1577
+ inode_lock include/linux/fs.h:877 [inline]
+ jfs_fsync+0xa0/0x1d4 fs/jfs/file.c:28
+ vfs_fsync_range+0x160/0x19c fs/sync.c:187
+ generic_write_sync include/linux/fs.h:2970 [inline]
+ dio_complete+0x510/0x6b8 fs/direct-io.c:313
+ dio_bio_end_aio+0x488/0x550 fs/direct-io.c:368
+ bio_endio+0x840/0x87c block/bio.c:1548
+ blk_update_request+0x4ac/0xda0 block/blk-mq.c:983
+ blk_mq_end_request+0x54/0x88 block/blk-mq.c:1145
+ lo_complete_rq+0x188/0x2f4 drivers/block/loop.c:395
+ blk_complete_reqs block/blk-mq.c:1220 [inline]
+ blk_done_softirq+0x11c/0x168 block/blk-mq.c:1225
+ handle_softirqs+0x320/0xd34 kernel/softirq.c:561
+ run_ksoftirqd+0x70/0xc0 kernel/softirq.c:950
+ smpboot_thread_fn+0x4b0/0x90c kernel/smpboot.c:164
+ kthread+0x65c/0x7b0 kernel/kthread.c:464
+ ret_from_fork+0x10/0x20 arch/arm64/kernel/entry.S:862
+BUG: sleeping function called from invalid context at kernel/locking/rwsem.c:1576
+in_atomic(): 1, irqs_disabled(): 0, non_block: 0, pid: 16, name: ksoftirqd/0
+preempt_count: 100, expected: 0
+RCU nest depth: 0, expected: 0
+INFO: lockdep is turned off.
+Preemption disabled at:
+[<ffff8000803110e4>] softirq_handle_begin kernel/softirq.c:402 [inline]
+[<ffff8000803110e4>] handle_softirqs+0xe0/0xd34 kernel/softirq.c:537
+CPU: 0 UID: 0 PID: 16 Comm: ksoftirqd/0 Tainted: G        W          6.14.0-rc3-syzkaller-ge6747d19291c #0
+Tainted: [W]=WARN
+Hardware name: Google Google Compute Engine/Google Compute Engine, BIOS Google 12/27/2024
+Call trace:
+ show_stack+0x2c/0x3c arch/arm64/kernel/stacktrace.c:466 (C)
+ __dump_stack lib/dump_stack.c:94 [inline]
+ dump_stack_lvl+0xe4/0x150 lib/dump_stack.c:120
+ dump_stack+0x1c/0x28 lib/dump_stack.c:129
+ __might_resched+0x374/0x4d0 kernel/sched/core.c:8767
+ __might_sleep+0x90/0xe4 kernel/sched/core.c:8696
+ down_write+0x28/0xc0 kernel/locking/rwsem.c:1576
+ inode_lock include/linux/fs.h:877 [inline]
+ jfs_fsync+0xa0/0x1d4 fs/jfs/file.c:28
+ vfs_fsync_range+0x160/0x19c fs/sync.c:187
+ generic_write_sync include/linux/fs.h:2970 [inline]
+ dio_complete+0x510/0x6b8 fs/direct-io.c:313
+ dio_bio_end_aio+0x488/0x550 fs/direct-io.c:368
+ bio_endio+0x840/0x87c block/bio.c:1548
+ blk_update_request+0x4ac/0xda0 block/blk-mq.c:983
+ blk_mq_end_request+0x54/0x88 block/blk-mq.c:1145
+ lo_complete_rq+0x188/0x2f4 drivers/block/loop.c:395
+ blk_complete_reqs block/blk-mq.c:1220 [inline]
+ blk_done_softirq+0x11c/0x168 block/blk-mq.c:1225
+ handle_softirqs+0x320/0xd34 kernel/softirq.c:561
+ run_ksoftirqd+0x70/0xc0 kernel/softirq.c:950
+ smpboot_thread_fn+0x4b0/0x90c kernel/smpboot.c:164
+ kthread+0x65c/0x7b0 kernel/kthread.c:464
+ ret_from_fork+0x10/0x20 arch/arm64/kernel/entry.S:862
+BUG: sleeping function called from invalid context at kernel/locking/rwsem.c:1576
+in_atomic(): 1, irqs_disabled(): 0, non_block: 0, pid: 16, name: ksoftirqd/0
+preempt_count: 100, expected: 0
+RCU nest depth: 0, expected: 0
+INFO: lockdep is turned off.
+Preemption disabled at:
+[<ffff8000803110e4>] softirq_handle_begin kernel/softirq.c:402 [inline]
+[<ffff8000803110e4>] handle_softirqs+0xe0/0xd34 kernel/softirq.c:537
+CPU: 0 UID: 0 PID: 16 Comm: ksoftirqd/0 Tainted: G        W          6.14.0-rc3-syzkaller-ge6747d19291c #0
+Tainted: [W]=WARN
+Hardware name: Google Google Compute Engine/Google Compute Engine, BIOS Google 12/27/2024
+Call trace:
+ show_stack+0x2c/0x3c arch/arm64/kernel/stacktrace.c:466 (C)
+ __dump_stack lib/dump_stack.c:94 [inline]
+ dump_stack_lvl+0xe4/0x150 lib/dump_stack.c:120
+ dump_stack+0x1c/0x28 lib/dump_stack.c:129
+ __might_resched+0x374/0x4d0 kernel/sched/core.c:8767
+ __might_sleep+0x90/0xe4 kernel/sched/core.c:8696
+ down_write+0x28/0xc0 kernel/locking/rwsem.c:1576
+ inode_lock include/linux/fs.h:877 [inline]
+ jfs_fsync+0xa0/0x1d4 fs/jfs/file.c:28
+ vfs_fsync_range+0x160/0x19c fs/sync.c:187
+ generic_write_sync include/linux/fs.h:2970 [inline]
+ dio_complete+0x510/0x6b8 fs/direct-io.c:313
+ dio_bio_end_aio+0x488/0x550 fs/direct-io.c:368
+ bio_endio+0x840/0x87c block/bio.c:1548
+ blk_update_request+0x4ac/0xda0 block/blk-mq.c:983
+ blk_mq_end_request+0x54/0x88 block/blk-mq.c:1145
+ lo_complete_rq+0x188/0x2f4 drivers/block/loop.c:395
+ blk_complete_reqs block/blk-mq.c:1220 [inline]
+ blk_done_softirq+0x11c/0x168 block/blk-mq.c:1225
+ handle_softirqs+0x320/0xd34 kernel/softirq.c:561
+ run_ksoftirqd+0x70/0xc0 kernel/softirq.c:950
+ smpboot_thread_fn+0x4b0/0x90c kernel/smpboot.c:164
+ kthread+0x65c/0x7b0 kernel/kthread.c:464
+ ret_from_fork+0x10/0x20 arch/arm64/kernel/entry.S:862
+BUG: sleeping function called from invalid context at kernel/locking/rwsem.c:1576
+in_atomic(): 1, irqs_disabled(): 0, non_block: 0, pid: 16, name: ksoftirqd/0
+preempt_count: 100, expected: 0
+RCU nest depth: 0, expected: 0
+INFO: lockdep is turned off.
+Preemption disabled at:
+[<ffff8000803110e4>] softirq_handle_begin kernel/softirq.c:402 [inline]
+[<ffff8000803110e4>] handle_softirqs+0xe0/0xd34 kernel/softirq.c:537
+CPU: 0 UID: 0 PID: 16 Comm: ksoftirqd/0 Tainted: G        W          6.14.0-rc3-syzkaller-ge6747d19291c #0
+Tainted: [W]=WARN
+Hardware name: Google Google Compute Engine/Google Compute Engine, BIOS Google 12/27/2024
+Call trace:
+ show_stack+0x2c/0x3c arch/arm64/kernel/stacktrace.c:466 (C)
+ __dump_stack lib/dump_stack.c:94 [inline]
+ dump_stack_lvl+0xe4/0x150 lib/dump_stack.c:120
+ dump_stack+0x1c/0x28 lib/dump_stack.c:129
+ __might_resched+0x374/0x4d0 kernel/sched/core.c:8767
+ __might_sleep+0x90/0xe4 kernel/sched/core.c:8696
+ down_write+0x28/0xc0 kernel/locking/rwsem.c:1576
+ inode_lock include/linux/fs.h:877 [inline]
+ jfs_fsync+0xa0/0x1d4 fs/jfs/file.c:28
+ vfs_fsync_range+0x160/0x19c fs/sync.c:187
+ generic_write_sync include/linux/fs.h:2970 [inline]
+ dio_complete+0x510/0x6b8 fs/direct-io.c:313
+ dio_bio_end_aio+0x488/0x550 fs/direct-io.c:368
+ bio_endio+0x840/0x87c block/bio.c:1548
+ blk_update_request+0x4ac/0xda0 block/blk-mq.c:983
+ blk_mq_end_request+0x54/0x88 block/blk-mq.c:1145
+ lo_complete_rq+0x188/0x2f4 drivers/block/loop.c:395
+ blk_complete_reqs block/blk-mq.c:1220 [inline]
+ blk_done_softirq+0x11c/0x168 block/blk-mq.c:1225
+ handle_softirqs+0x320/0xd34 kernel/softirq.c:561
+ run_ksoftirqd+0x70/0xc0 kernel/softirq.c:950
+ smpboot_thread_fn+0x4b0/0x90c kernel/smpboot.c:164
+ kthread+0x65c/0x7b0 kernel/kthread.c:464
+ ret_from_fork+0x10/0x20 arch/arm64/kernel/entry.S:862
+BUG: sleeping function called from invalid context at kernel/locking/rwsem.c:1576
+in_atomic(): 1, irqs_disabled(): 0, non_block: 0, pid: 16, name: ksoftirqd/0
+preempt_count: 100, expected: 0
+RCU nest depth: 0, expected: 0
+INFO: lockdep is turned off.
+Preemption disabled at:
+[<ffff8000803110e4>] softirq_handle_begin kernel/softirq.c:402 [inline]
+[<ffff8000803110e4>] handle_softirqs+0xe0/0xd34 kernel/softirq.c:537
+CPU: 0 UID: 0 PID: 16 Comm: ksoftirqd/0 Tainted: G        W          6.14.0-rc3-syzkaller-ge6747d19291c #0
+Tainted: [W]=WARN
+Hardware name: Google Google Compute Engine/Google Compute Engine, BIOS Google 12/27/2024
+Call trace:
+ show_stack+0x2c/0x3c arch/arm64/kernel/stacktrace.c:466 (C)
+ __dump_stack lib/dump_stack.c:94 [inline]
+ dump_stack_lvl+0xe4/0x150 lib/dump_stack.c:120
+ dump_stack+0x1c/0x28 lib/dump_stack.c:129
+ __might_resched+0x374/0x4d0 kernel/sched/core.c:8767
+ __might_sleep+0x90/0xe4 kernel/sched/core.c:8696
+ down_write+0x28/0xc0 kernel/locking/rwsem.c:1576
+ inode_lock include/linux/fs.h:877 [inline]
+ jfs_fsync+0xa0/0x1d4 fs/jfs/file.c:28
+ vfs_fsync_range+0x160/0x19c fs/sync.c:187
+ generic_write_sync include/linux/fs.h:2970 [inline]
+ dio_complete+0x510/0x6b8 fs/direct-io.c:313
+ dio_bio_end_aio+0x488/0x550 fs/direct-io.c:368
+ bio_endio+0x840/0x87c block/bio.c:1548
+ blk_update_request+0x4ac/0xda0 block/blk-mq.c:983
+ blk_mq_end_request+0x54/0x88 block/blk-mq.c:1145
+ lo_complete_rq+0x188/0x2f4 drivers/block/loop.c:395
+ blk_complete_reqs block/blk-mq.c:1220 [inline]
+ blk_done_softirq+0x11c/0x168 block/blk-mq.c:1225
+ handle_softirqs+0x320/0xd34 kernel/softirq.c:561
+ run_ksoftirqd+0x70/0xc0 kernel/softirq.c:950
+ smpboot_thread_fn+0x4b0/0x90c kernel/smpboot.c:164
+ kthread+0x65c/0x7b0 kernel/kthread.c:464
+ ret_from_fork+0x10/0x20 arch/arm64/kernel/entry.S:862
+
+
+---
+This report is generated by a bot. It may contain errors.
+See https://goo.gl/tpsmEJ for more information about syzbot.
+syzbot engineers can be reached at syzkaller@googlegroups.com.
+
+syzbot will keep track of this issue. See:
+https://goo.gl/tpsmEJ#status for how to communicate with syzbot.
+
+If the report is already addressed, let syzbot know by replying with:
+#syz fix: exact-commit-title
+
+If you want syzbot to run the reproducer, reply with:
+#syz test: git://repo/address.git branch-or-commit-hash
+If you attach or paste a git patch, syzbot will apply it before testing.
+
+If you want to overwrite report's subsystems, reply with:
+#syz set subsystems: new-subsystem
+(See the list of subsystem names on the web dashboard)
+
+If the report is a duplicate of another one, reply with:
+#syz dup: exact-subject-of-another-report
+
+If you want to undo deduplication, reply with:
+#syz undup
 
 
 _______________________________________________
