@@ -2,138 +2,97 @@ Return-Path: <jfs-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+jfs-discussion@lfdr.de
 Delivered-To: lists+jfs-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id D81DCA43DF3
-	for <lists+jfs-discussion@lfdr.de>; Tue, 25 Feb 2025 12:42:28 +0100 (CET)
-Received: from [127.0.0.1] (helo=sfs-ml-1.v29.lw.sourceforge.com)
-	by sfs-ml-1.v29.lw.sourceforge.com with esmtp (Exim 4.95)
+	by mail.lfdr.de (Postfix) with ESMTPS id A7F18A44BDD
+	for <lists+jfs-discussion@lfdr.de>; Tue, 25 Feb 2025 20:52:55 +0100 (CET)
+Received: from [127.0.0.1] (helo=sfs-ml-4.v29.lw.sourceforge.com)
+	by sfs-ml-4.v29.lw.sourceforge.com with esmtp (Exim 4.95)
 	(envelope-from <jfs-discussion-bounces@lists.sourceforge.net>)
-	id 1tmtJt-0006Cp-Q5;
-	Tue, 25 Feb 2025 11:41:50 +0000
+	id 1tn0yY-0004am-Eh;
+	Tue, 25 Feb 2025 19:52:18 +0000
 Received: from [172.30.29.66] (helo=mx.sourceforge.net)
- by sfs-ml-1.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
+ by sfs-ml-4.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
  TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (Exim 4.95)
- (envelope-from <rand.sec96@gmail.com>) id 1tmtJk-0006C2-Sk
+ (envelope-from <pchelkin@ispras.ru>) id 1tn0yX-0004ag-Bw
  for jfs-discussion@lists.sourceforge.net;
- Tue, 25 Feb 2025 11:41:41 +0000
+ Tue, 25 Feb 2025 19:52:17 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=sourceforge.net; s=x; h=Content-Transfer-Encoding:MIME-Version:Message-Id:
- Date:Subject:Cc:To:From:Sender:Reply-To:Content-Type:Content-ID:
- Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
- :Resent-Message-ID:In-Reply-To:References:List-Id:List-Help:List-Unsubscribe:
+ d=sourceforge.net; s=x; h=In-Reply-To:Content-Type:MIME-Version:References:
+ Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:Content-Transfer-Encoding:
+ Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
+ Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=8XaDH+/IUdzUxU3rKSG4BJ2f9MD4nYgc4l0NxVp6Pfc=; b=BliiuMJ3f7HyAGTYX569E8DDDM
- Hxuc05LrXSQhI96zEFnKaJbjiqz7r1A83jDYQJxNoqJ6ge3IqR8Gz8J4mv4sYwZq9TglznDXcXWkE
- bUVMWu/dF0EbY1Y7eVM583UVN5N8S0yvTTczs5hpfccTHv7Noatt3I259EClwPpXMdPY=;
+ bh=RnyRVlBxxF2Db7vHMzwHnkqqdRWAY2Xsx2UsXn//kvI=; b=Ip3IdVhaKJWzdcIrY112D74RDY
+ 1eD4PAiFhVfC6lK1Rzyf1xZGEvuKq2Lim0d2TFfavrlAazFvid08dSHUwUOV9E5AFDKwwmpmV8IfN
+ BTdAVCPDB+tIZk2/Hg3qhQ8xJkBlvq9y4poxOXQz4fzXLNonZiB7jQe0E6W/UGzX4cgA=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
- h=Content-Transfer-Encoding:MIME-Version:Message-Id:Date:Subject:Cc:To:From
- :Sender:Reply-To:Content-Type:Content-ID:Content-Description:Resent-Date:
- Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
- References:List-Id:List-Help:List-Unsubscribe:List-Subscribe:List-Post:
- List-Owner:List-Archive; bh=8XaDH+/IUdzUxU3rKSG4BJ2f9MD4nYgc4l0NxVp6Pfc=; b=X
- scj3TLKr0OiClZFQIIfSBMjYE+z20gf/+WS3kbAXu58LWdYoeBsB4wziADSKNeyXeHfdYzprQK3px
- zLcd6eQ9+YmbGJfNqp+pvYPFMuk7glRVOUoJjzjRYFSRSvRjZ6UGlF/lYZmKacUpvR+8ULek6Epcf
- Jj27/zIv9HYr1djE=;
-Received: from mail-lj1-f172.google.com ([209.85.208.172])
+ h=In-Reply-To:Content-Type:MIME-Version:References:Message-ID:Subject:Cc:To
+ :From:Date:Sender:Reply-To:Content-Transfer-Encoding:Content-ID:
+ Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+ :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
+ List-Post:List-Owner:List-Archive;
+ bh=RnyRVlBxxF2Db7vHMzwHnkqqdRWAY2Xsx2UsXn//kvI=; b=hN5C3ve80iU8mkD1Ce1Da5a31S
+ WVZ8VFf5wMIEHlXMTVMnPr/+tMzrmVWsIg6Eyllbs5mmBktRakHi4b3oBbshgDluGimGxTqCdvBhA
+ Rob0waKDKMhnVswegSMOw/2PWFqqLwoBhFpkPjNCh6SO0x7tUYlOHKUK1EzbmHHFWO6A=;
+Received: from mail.ispras.ru ([83.149.199.84])
  by sfi-mx-2.v28.lw.sourceforge.com with esmtps
- (TLS1.2:ECDHE-RSA-AES128-GCM-SHA256:128) (Exim 4.95)
- id 1tmtJh-0006MP-3T for jfs-discussion@lists.sourceforge.net;
- Tue, 25 Feb 2025 11:41:37 +0000
-Received: by mail-lj1-f172.google.com with SMTP id
- 38308e7fff4ca-30a2cdb2b98so55105191fa.0
- for <jfs-discussion@lists.sourceforge.net>;
- Tue, 25 Feb 2025 03:41:37 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=gmail.com; s=20230601; t=1740483690; x=1741088490; darn=lists.sourceforge.net;
- h=content-transfer-encoding:mime-version:message-id:date:subject:cc
- :to:from:from:to:cc:subject:date:message-id:reply-to;
- bh=8XaDH+/IUdzUxU3rKSG4BJ2f9MD4nYgc4l0NxVp6Pfc=;
- b=etmN8Q+y8ToHDQeZalVESJdy4VoLZjfhWqW2LYgAmjYDmegfVqV2c5O3dPfNauSHl+
- pyOTJFjCSNs36A9/JUpxp6eFqSV3TfY5Z1vunHAf2iV+9FkrnNjHoz/BcoVasLeJHWJb
- Am+KDC3uHh3mCEYgLhPnWV+tT0HAqz+D6Xcix5kBmFym9cWN/1PBzgaZRJmz0it+R9wM
- ncjeC9nTl0rJaC5W8uNAjqKENbO0SPncZO5Vq7hy0vVwWJoCCaZ3wGHTfWYESxrvQdNf
- 2zcSkmAonxXh/hMj1rce0X0l4CCCabLHznJ2XkYsB0LAMeVg0Jw25agX4gu137UfM7me
- 9JwQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20230601; t=1740483690; x=1741088490;
- h=content-transfer-encoding:mime-version:message-id:date:subject:cc
- :to:from:x-gm-message-state:from:to:cc:subject:date:message-id
- :reply-to;
- bh=8XaDH+/IUdzUxU3rKSG4BJ2f9MD4nYgc4l0NxVp6Pfc=;
- b=BZyCM8FvQv2S+wbBsECPqm1qRJD7RPrrCTOoyObM9xzzJPr1zIH3M/upfAlWSgqq/P
- HWQqBdg6VoqoeOfms2PSbev698E92irB/Cb1fDipLUVIMZEzBtpmKDqWep57NnDqWgT1
- XO48jhdhh/tqZsUj9drTJiaaUrGvDjVfbZJSD10NIcXr+lTF6eSnJvCNJKmWf5o7CffL
- zebPPVGlpLLfgCDCY981a6MeUBS7VcaWcrzW9nF4hIpOtnEqYxBBLH9hLuxtagsDM594
- ohNbhtVXMW/XNovnYHvG3y+cf2lFrTDNcerdtzJS+nHhdAJxeyLIHqVuHNxMEgmzWBPY
- YlfA==
-X-Forwarded-Encrypted: i=1;
- AJvYcCUYWXfzutLCWs/awrovU9CqhaYKKA3hTO+eU4xTtGX2O0kP9D7tHihNyVaTBOwEVNSUShKDfU0ehlJ6jVStVg==@lists.sourceforge.net
-X-Gm-Message-State: AOJu0Yw1GV2cGjxqS8UcbvcBTY6zWpbPV7ZJ7QnjVoQmaCzmC6xxTu3g
- k2MrSea+FPDJpCP9NNSg83zwiLK6do1R5BtX09R1pwT8WBFgES4s
-X-Gm-Gg: ASbGncvhKi7IDs61i9ReWT/8/GtsWDK2zu0CFDD3A1/AsdfJwAKUhHevGVtqX3RE7au
- 8Y4K0kkYSh8sajOBUymh4j+O/Gr1ZOWTL8vqhPnY7OaZLwdqtnKGjBLL26XMi7zj2ORTHSFDJgR
- XYj+r7V/RJgQaL0DUJn+vG8Axnh1WgS19tU/RJ0bm3XoirFvPzkfoU0pV79ZRIsA1D5IhrR0HFR
- 4o/AvHlTIp9TZgg17zp8PHrzzVCddrkQWStCURO/jF76EP1Hkny8gnDBmJegv/tsjcoYOIwJh/c
- 13XOcOcjLSzRE91MjhJKC5mSmQRxufLAmEEokaw1bqgRJulGh/T5/CRgikeuGY0X/fdi
-X-Google-Smtp-Source: AGHT+IGXH3QhYImzslzT4d+BYSdlO38JoErquXF3tDK1WvkYjwRybP9spHTVyKnKE2ZXhilgfqU5GA==
-X-Received: by 2002:a2e:9cc9:0:b0:300:2ddb:aaa5 with SMTP id
- 38308e7fff4ca-30a5b20d7b5mr55610181fa.30.1740483689963; 
- Tue, 25 Feb 2025 03:41:29 -0800 (PST)
-Received: from rand-ubuntu-development.dl.local (mail.confident.ru.
- [85.114.29.218]) by smtp.gmail.com with ESMTPSA id
- 38308e7fff4ca-30a819e1462sm2107311fa.21.2025.02.25.03.41.29
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 25 Feb 2025 03:41:29 -0800 (PST)
-To: Dave Kleikamp <shaggy@kernel.org>, jfs-discussion@lists.sourceforge.net,
- linux-kernel@vger.kernel.org
-Date: Tue, 25 Feb 2025 14:41:10 +0300
-Message-Id: <20250225114110.1775745-1-rand.sec96@gmail.com>
-X-Mailer: git-send-email 2.34.1
+ (TLS1.2:DHE-RSA-AES256-GCM-SHA384:256) (Exim 4.95)
+ id 1tn0yT-0008S1-0g for jfs-discussion@lists.sourceforge.net;
+ Tue, 25 Feb 2025 19:52:17 +0000
+Received: from localhost (unknown [10.10.165.7])
+ by mail.ispras.ru (Postfix) with ESMTPSA id 5B08040B2278;
+ Tue, 25 Feb 2025 19:52:04 +0000 (UTC)
+DKIM-Filter: OpenDKIM Filter v2.11.0 mail.ispras.ru 5B08040B2278
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ispras.ru;
+ s=default; t=1740513124;
+ bh=RnyRVlBxxF2Db7vHMzwHnkqqdRWAY2Xsx2UsXn//kvI=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=pGNnBYJDBWtH2SSTXYass+V0GFg2OQ2RDG9Lq5tCNjl2QfytPJ4zy+dLkuUOtLaem
+ DOg57L888w9yvJ0nZOrWDaGUmKjJ5FZzVIfrWpk/aOgDx54fRHYS54EbwasF6/uiDv
+ tATru1BKg9RRXUY9iCtn8P1n5HsFxr8ZHldrPNzg=
+Date: Tue, 25 Feb 2025 22:52:04 +0300
+To: Rand Deeb <rand.sec96@gmail.com>
+Message-ID: <yogb3soaqqg5vnon6ogryhdmmatrvrc2xwlh2exwlhyf6gnfw7@7tybsy2s52qb>
+References: <20250225114110.1775745-1-rand.sec96@gmail.com>
 MIME-Version: 1.0
-X-Spam-Score: 0.1 (/)
+Content-Disposition: inline
+In-Reply-To: <20250225114110.1775745-1-rand.sec96@gmail.com>
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: Spam detection software,
- running on the system "util-spamd-2.v13.lw.sourceforge.com", 
+ running on the system "util-spamd-1.v13.lw.sourceforge.com", 
  has NOT identified this incoming email as spam.  The original
  message has been attached to this so you can view it or label
  similar future email.  If you have any questions, see
  the administrator of that system for details.
- Content preview:  In dbMapFileSizeToMapSize(),
- the calculation involving 'complete'
- and 'LPERCTL' can result in a 32-bit integer overflow when handling large
- filesystems. Specifically, multiplying 'complete' by LPERCTL [...] 
- Content analysis details:   (0.1 points, 6.0 required)
+ Content preview:  On Tue, 25. Feb 14:41,
+ Rand Deeb wrote: > In dbMapFileSizeToMapSize(), 
+ the calculation involving 'complete' and > 'LPERCTL' can result in a 32-bit
+ integer overflow when handling large > filesystems. S [...] 
+ Content analysis details:   (-0.2 points, 6.0 required)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.208.172 listed in list.dnswl.org]
- 0.0 RCVD_IN_VALIDITY_SAFE_BLOCKED RBL: ADMINISTRATOR NOTICE: The
- query to Validity was blocked.  See
+ 0.0 RCVD_IN_VALIDITY_CERTIFIED_BLOCKED RBL: ADMINISTRATOR NOTICE:
+ The query to Validity was blocked.  See
  https://knowledge.validity.com/hc/en-us/articles/20961730681243
  for more information.
- [209.85.208.172 listed in sa-trusted.bondedsender.org]
+ [83.149.199.84 listed in sa-trusted.bondedsender.org]
  0.0 RCVD_IN_VALIDITY_RPBL_BLOCKED RBL: ADMINISTRATOR NOTICE: The
  query to Validity was blocked.  See
  https://knowledge.validity.com/hc/en-us/articles/20961730681243
  for more information.
- [209.85.208.172 listed in bl.score.senderscore.com]
+ [83.149.199.84 listed in bl.score.senderscore.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit [rand.sec96[at]gmail.com]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [rand.sec96[at]gmail.com]
- 0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.208.172 listed in wl.mailspike.net]
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
-X-Headers-End: 1tmtJh-0006MP-3T
-Subject: [Jfs-discussion] [PATCH] fs/jfs: prevent potential integer overflow
- in dbMapFileSizeToMapSize
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+X-Headers-End: 1tn0yT-0008S1-0g
+Subject: Re: [Jfs-discussion] [PATCH] fs/jfs: prevent potential integer
+ overflow in dbMapFileSizeToMapSize
 X-BeenThere: jfs-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -145,52 +104,63 @@ List-Post: <mailto:jfs-discussion@lists.sourceforge.net>
 List-Help: <mailto:jfs-discussion-request@lists.sourceforge.net?subject=help>
 List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/jfs-discussion>, 
  <mailto:jfs-discussion-request@lists.sourceforge.net?subject=subscribe>
-From: Rand Deeb via Jfs-discussion <jfs-discussion@lists.sourceforge.net>
-Reply-To: Rand Deeb <rand.sec96@gmail.com>
-Cc: voskresenski.stanislav@confident.ru, deeb.rand@confident.ru,
- lvc-project@linuxtesting.org, Rand Deeb <rand.sec96@gmail.com>
+From: Fedor Pchelkin via Jfs-discussion <jfs-discussion@lists.sourceforge.net>
+Reply-To: Fedor Pchelkin <pchelkin@ispras.ru>
+Cc: voskresenski.stanislav@confident.ru, Dave Kleikamp <shaggy@kernel.org>,
+ jfs-discussion@lists.sourceforge.net, lvc-project@linuxtesting.org,
+ linux-kernel@vger.kernel.org, deeb.rand@confident.ru
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Errors-To: jfs-discussion-bounces@lists.sourceforge.net
 
-In dbMapFileSizeToMapSize(), the calculation involving 'complete' and
-'LPERCTL' can result in a 32-bit integer overflow when handling large
-filesystems. Specifically, multiplying 'complete' by LPERCTL * LPERCTL
-(1,048,576) can exceed the 32-bit integer limit if 'complete' is greater
-than approximately 2,047.
+On Tue, 25. Feb 14:41, Rand Deeb wrote:
+> In dbMapFileSizeToMapSize(), the calculation involving 'complete' and
+> 'LPERCTL' can result in a 32-bit integer overflow when handling large
+> filesystems. Specifically, multiplying 'complete' by LPERCTL * LPERCTL
+> (1,048,576) can exceed the 32-bit integer limit if 'complete' is greater
+> than approximately 2,047.
+> 
+> While there is no evidence that 'complete' can exceed this threshold,
+> theoretically, this is possible. To ensure robustness and maintainability,
+> this patch casts only 'complete' to s64 (64-bit integer) before performing
+> the multiplication. This guarantees that the arithmetic is conducted in
+> 64-bit space, accommodating larger values without overflow.
+> 
+> This change enhances the reliability of the JFS filesystem when managing
+> large volumes and preemptively addresses potential overflow issues.
+> 
+> Found by Linux Verification Center (linuxtesting.org) with SVACE.
+> 
+> Signed-off-by: Rand Deeb <rand.sec96@gmail.com>
+> ---
+>  fs/jfs/jfs_dmap.c | 2 +-
+>  1 file changed, 1 insertion(+), 1 deletion(-)
+> 
+> diff --git a/fs/jfs/jfs_dmap.c b/fs/jfs/jfs_dmap.c
+> index edb22cf9521a..380e73c516ee 100644
+> --- a/fs/jfs/jfs_dmap.c
+> +++ b/fs/jfs/jfs_dmap.c
+> @@ -4059,7 +4059,7 @@ s64 dbMapFileSizeToMapSize(struct inode * ipbmap)
+>  		factor =
+>  		    (i == 2) ? MAXL1PAGES : ((i == 1) ? MAXL0PAGES : 1);
+>  		complete = (u32) npages / factor;
 
-While there is no evidence that 'complete' can exceed this threshold,
-theoretically, this is possible. To ensure robustness and maintainability,
-this patch casts only 'complete' to s64 (64-bit integer) before performing
-the multiplication. This guarantees that the arithmetic is conducted in
-64-bit space, accommodating larger values without overflow.
+Can it really overflow the 32bit arithmetic considering how 'factor' and
+'complete' values are calculated above?
 
-This change enhances the reliability of the JFS filesystem when managing
-large volumes and preemptively addresses potential overflow issues.
+/*
+ * maximum number of map pages at each level including control pages
+ */
+#define MAXL0PAGES	(1 + LPERCTL)
+#define MAXL1PAGES	(1 + LPERCTL * MAXL0PAGES)
 
-Found by Linux Verification Center (linuxtesting.org) with SVACE.
-
-Signed-off-by: Rand Deeb <rand.sec96@gmail.com>
----
- fs/jfs/jfs_dmap.c | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
-
-diff --git a/fs/jfs/jfs_dmap.c b/fs/jfs/jfs_dmap.c
-index edb22cf9521a..380e73c516ee 100644
---- a/fs/jfs/jfs_dmap.c
-+++ b/fs/jfs/jfs_dmap.c
-@@ -4059,7 +4059,7 @@ s64 dbMapFileSizeToMapSize(struct inode * ipbmap)
- 		factor =
- 		    (i == 2) ? MAXL1PAGES : ((i == 1) ? MAXL0PAGES : 1);
- 		complete = (u32) npages / factor;
--		ndmaps += complete * ((i == 2) ? LPERCTL * LPERCTL :
-+		ndmaps += (s64)complete * ((i == 2) ? LPERCTL * LPERCTL :
- 				      ((i == 1) ? LPERCTL : 1));
- 
- 		/* pages in last/incomplete child */
--- 
-2.34.1
-
+> -		ndmaps += complete * ((i == 2) ? LPERCTL * LPERCTL :
+> +		ndmaps += (s64)complete * ((i == 2) ? LPERCTL * LPERCTL :
+>  				      ((i == 1) ? LPERCTL : 1));
+>  
+>  		/* pages in last/incomplete child */
+> -- 
+> 2.34.1
 
 
 _______________________________________________
