@@ -2,28 +2,28 @@ Return-Path: <jfs-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+jfs-discussion@lfdr.de
 Delivered-To: lists+jfs-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id 78A34A4B546
-	for <lists+jfs-discussion@lfdr.de>; Sun,  2 Mar 2025 23:25:29 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0D152A4B58E
+	for <lists+jfs-discussion@lfdr.de>; Mon,  3 Mar 2025 01:08:42 +0100 (CET)
 Received: from [127.0.0.1] (helo=sfs-ml-4.v29.lw.sourceforge.com)
 	by sfs-ml-4.v29.lw.sourceforge.com with esmtp (Exim 4.95)
 	(envelope-from <jfs-discussion-bounces@lists.sourceforge.net>)
-	id 1torjy-0005hD-81;
-	Sun, 02 Mar 2025 22:24:54 +0000
+	id 1totLw-0007vl-UX;
+	Mon, 03 Mar 2025 00:08:12 +0000
 Received: from [172.30.29.66] (helo=mx.sourceforge.net)
  by sfs-ml-4.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
  TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (Exim 4.95)
- (envelope-from <lkp@intel.com>) id 1torjx-0005h7-68
+ (envelope-from <lkp@intel.com>) id 1totLu-0007vc-Tu
  for jfs-discussion@lists.sourceforge.net;
- Sun, 02 Mar 2025 22:24:53 +0000
+ Mon, 03 Mar 2025 00:08:11 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=sourceforge.net; s=x; h=In-Reply-To:Content-Type:MIME-Version:References:
  Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:Content-Transfer-Encoding:
  Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
  Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=Emn1VKDyr1qrmmAkrwy7YkSlSWed8WH2HhMJajuNnqw=; b=IgtQ6HIF5IgRLmEhNxFJJO7c9x
- UYa4Sko+aKx2ovTJBQOnsUiRwOecq5VzQRws/rTMTXRdXdJoYn9xdHXVN3DI5zvRyLSbMRi6eL6jr
- rXv3W/w+hiAxvoDt8lx0xOxeA0fccUGAfDPtgQOXEGZaVSzGFHlzwESbgynSLbEXbNCc=;
+ bh=vbUHpt0tZtBIuE9VFS+g75EMsPQvATPdA0/tVGKnAMg=; b=HdcpMLPnHSE40fu5ksaBN18CGa
+ sVkShTdOD2g/2kKd3yJA5pQAVWFGETSUCD16w9vV74KwD/l94WuIV05tyBhgSsR0u680HECfhKvfg
+ CJoa4B4qpY5iM3GBla9Ad7lye/NJuTnv4cYvpXsstHn4TW/x01VEOfgxlfRhyCBBWJFM=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
  h=In-Reply-To:Content-Type:MIME-Version:References:Message-ID:Subject:Cc:To
@@ -31,53 +31,53 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
  :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
  List-Post:List-Owner:List-Archive;
- bh=Emn1VKDyr1qrmmAkrwy7YkSlSWed8WH2HhMJajuNnqw=; b=lF/S4jBlSu4ard+tlNnicfImE4
- JxUVUOA86Zw/bQ0ajNOTDOWiYT/LfRAQSps/GW/qDh09cse4KUeluZpVZrbh52yhsSYJJILmMYVKK
- hQ4U4j9m/8niAxGTo8H50r3wh9aqlC1XXrPQDxkUeYAjj7GeBivHfjacJ6abcTrwMt7Y=;
-Received: from mgamail.intel.com ([192.198.163.14])
+ bh=vbUHpt0tZtBIuE9VFS+g75EMsPQvATPdA0/tVGKnAMg=; b=ZDhz0ETyBbGjnPy/9lGZLUm0L5
+ 4qfDggFCDfKzSGygDXMQoLujrJYVOPRZU7ubckqLviiXw9sYLT0sEEGw32hwg4hpGBP5YWapLlvb/
+ UEsuChSnv3ygBDcXb/kdTyDxkcWD3qyBgmMQdDPB9/TSxHbslllLCJzNmxVRSYpc1vfU=;
+Received: from mgamail.intel.com ([192.198.163.8])
  by sfi-mx-2.v28.lw.sourceforge.com with esmtps
  (TLS1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.95)
- id 1torjn-00023o-9n for jfs-discussion@lists.sourceforge.net;
- Sun, 02 Mar 2025 22:24:53 +0000
+ id 1totLf-0006nV-Uc for jfs-discussion@lists.sourceforge.net;
+ Mon, 03 Mar 2025 00:08:10 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
  d=intel.com; i=@intel.com; q=dns/txt; s=Intel;
- t=1740954283; x=1772490283;
+ t=1740960476; x=1772496476;
  h=date:from:to:cc:subject:message-id:references:
  mime-version:in-reply-to;
- bh=gWhrY+dgKT08hc4CNnDYn7RoRvEP/QAz6z/9BcCiB4U=;
- b=lYjlGwq0D09rcZ5e2v3kB77Up2kaltSQdfRHr8WrJCGJlNNUmmRWIIw9
- KT2g57PFyYMiR1KMK0pFTS+XRphPF/KR1HgglcnC29vKdqsFYoRNv7Q4I
- UcAzbMG8WP+LhYHojrhFb4l779EKu46gEO0iP4k1SiULa5Jt7gnKLb+/m
- uyyJEGxQHQMc08632eZqUn1Pve8D+WaIK14H7j7M02MxbuDeYALBjMQ4q
- hOS52lCWeLmEws5TQlTYI+dfka05G0wNzwefFdsq/xtlUlqsAuCSBe3hl
- 6ze0fG2rHqjpEil8YfWvVKS/fY0F5pZrMaLNNZL6HC0LATQndZk9c3t1g A==;
-X-CSE-ConnectionGUID: ONvoOwHfRPypr7nG7uVmPg==
-X-CSE-MsgGUID: ex2DZFBZRFuOybomKsWJ1w==
-X-IronPort-AV: E=McAfee;i="6700,10204,11361"; a="42076493"
-X-IronPort-AV: E=Sophos;i="6.13,328,1732608000"; d="scan'208";a="42076493"
-Received: from orviesa007.jf.intel.com ([10.64.159.147])
- by fmvoesa108.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384;
- 02 Mar 2025 14:24:32 -0800
-X-CSE-ConnectionGUID: BptH+XKfT2uJlXj0CNETJA==
-X-CSE-MsgGUID: 5Z7VeKH0Q26Jp3TPhr2XcA==
+ bh=7RGrpAtIJqZAVLDDaGEFNWD2pGHJkFBJUzgsjzD3zZM=;
+ b=PhhiSBBEu0ByhIiUQdqFTKfxzAqvCj1GmBaDQj/4NZ2hkxHOk0pxHQDQ
+ J/VnYKRDW6I0OtkkkFg28Sb/SvSqXczUJrVO3LlK2KMl/i9W7JnOBceaX
+ LfVguTFFX7A/t42jjVDLR80AbbyfTMfh8Urw9jUCtuhcNs0pBceHrp174
+ 3W45bGFpX6YpLhRti9rBGR/Q+d4ZEbhavk3SGf43CCg4f7n6Re2scZkOY
+ RyAbLRQatSs3mFgYkYcw7S2ilWKubzoV17rAqHQPvFZgCos9Sx3bNT27r
+ ECO6HCNiXLcFUlEdbzPlmi7j4WdbQ/Ql6LNBao5tx+mK/NozD3Ron3tQM w==;
+X-CSE-ConnectionGUID: hJnmZ8/TRo6ELrnEepkjHA==
+X-CSE-MsgGUID: BE+3RPY6QfiqTLdbWrCxBA==
+X-IronPort-AV: E=McAfee;i="6700,10204,11361"; a="59368575"
+X-IronPort-AV: E=Sophos;i="6.13,328,1732608000"; d="scan'208";a="59368575"
+Received: from orviesa001.jf.intel.com ([10.64.159.141])
+ by fmvoesa102.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384;
+ 02 Mar 2025 16:07:50 -0800
+X-CSE-ConnectionGUID: juIZpgmFRc28ldW3Xc75ug==
+X-CSE-MsgGUID: ScVFxlG2Q0ymg1gA3hti+g==
 X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="6.12,224,1728975600"; d="scan'208";a="118378754"
+X-IronPort-AV: E=Sophos;i="6.12,224,1728975600"; d="scan'208";a="155034243"
 Received: from lkp-server02.sh.intel.com (HELO 76cde6cc1f07) ([10.239.97.151])
- by orviesa007.jf.intel.com with ESMTP; 02 Mar 2025 14:24:30 -0800
+ by orviesa001.jf.intel.com with ESMTP; 02 Mar 2025 16:07:47 -0800
 Received: from kbuild by 76cde6cc1f07 with local (Exim 4.96)
- (envelope-from <lkp@intel.com>) id 1torjX-000Hgw-2S;
- Sun, 02 Mar 2025 22:24:27 +0000
-Date: Mon, 3 Mar 2025 06:23:28 +0800
+ (envelope-from <lkp@intel.com>) id 1totLV-000Hjq-1h;
+ Mon, 03 Mar 2025 00:07:45 +0000
+Date: Mon, 3 Mar 2025 08:07:43 +0800
 To: Suchit Karunakaran <suchitkarunakaran@gmail.com>, shaggy@kernel.org,
  jfs-discussion@lists.sourceforge.net
-Message-ID: <202503030642.jn4Teav7-lkp@intel.com>
+Message-ID: <202503030707.dKjJdF6z-lkp@intel.com>
 References: <20250302191558.47180-1-suchitkarunakaran@gmail.com>
 MIME-Version: 1.0
 Content-Disposition: inline
 In-Reply-To: <20250302191558.47180-1-suchitkarunakaran@gmail.com>
 X-Spam-Score: -2.5 (--)
 X-Spam-Report: Spam detection software,
- running on the system "util-spamd-2.v13.lw.sourceforge.com", 
+ running on the system "util-spamd-1.v13.lw.sourceforge.com", 
  has NOT identified this incoming email as spam.  The original
  message has been attached to this so you can view it or label
  similar future email.  If you have any questions, see
@@ -94,24 +94,24 @@ X-Spam-Report: Spam detection software,
  The query to Validity was blocked.  See
  https://knowledge.validity.com/hc/en-us/articles/20961730681243
  for more information.
- [192.198.163.14 listed in sa-accredit.habeas.com]
+ [192.198.163.8 listed in sa-trusted.bondedsender.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [192.198.163.8 listed in list.dnswl.org]
  0.0 RCVD_IN_VALIDITY_RPBL_BLOCKED RBL: ADMINISTRATOR NOTICE: The
  query to Validity was blocked.  See
  https://knowledge.validity.com/hc/en-us/articles/20961730681243
  for more information.
- [192.198.163.14 listed in bl.score.senderscore.com]
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [192.198.163.14 listed in list.dnswl.org]
+ [192.198.163.8 listed in bl.score.senderscore.com]
  0.0 T_SPF_TEMPERROR        SPF: test of record failed (temperror)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid -0.0 DKIMWL_WL_HIGH         DKIMwl.org - High trust sender
-X-Headers-End: 1torjn-00023o-9n
+X-Headers-End: 1totLf-0006nV-Uc
 Subject: Re: [Jfs-discussion] [PATCH] jfs: jfs_xtree: replace XT_GETPAGE
  macro with xt_getpage() function
 X-BeenThere: jfs-discussion@lists.sourceforge.net
@@ -129,8 +129,7 @@ From: kernel test robot via Jfs-discussion
  <jfs-discussion@lists.sourceforge.net>
 Reply-To: kernel test robot <lkp@intel.com>
 Cc: Suchit Karunakaran <suchitkarunakaran@gmail.com>, skhan@linuxfoundation.org,
- llvm@lists.linux.dev, linux-kernel@vger.kernel.org,
- oe-kbuild-all@lists.linux.dev
+ linux-kernel@vger.kernel.org, oe-kbuild-all@lists.linux.dev
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Errors-To: jfs-discussion-bounces@lists.sourceforge.net
@@ -149,154 +148,167 @@ url:    https://github.com/intel-lab-lkp/linux/commits/Suchit-Karunakaran/jfs-jf
 base:   https://github.com/kleikamp/linux-shaggy jfs-next
 patch link:    https://lore.kernel.org/r/20250302191558.47180-1-suchitkarunakaran%40gmail.com
 patch subject: [PATCH] jfs: jfs_xtree: replace XT_GETPAGE macro with xt_getpage() function
-config: arm-randconfig-001-20250303 (https://download.01.org/0day-ci/archive/20250303/202503030642.jn4Teav7-lkp@intel.com/config)
-compiler: clang version 15.0.7 (https://github.com/llvm/llvm-project 8dfdcc7b7bf66834a761bd8de445840ef68e4d1a)
-reproduce (this is a W=1 build): (https://download.01.org/0day-ci/archive/20250303/202503030642.jn4Teav7-lkp@intel.com/reproduce)
+config: i386-buildonly-randconfig-001-20250303 (https://download.01.org/0day-ci/archive/20250303/202503030707.dKjJdF6z-lkp@intel.com/config)
+compiler: gcc-12 (Debian 12.2.0-14) 12.2.0
+reproduce (this is a W=1 build): (https://download.01.org/0day-ci/archive/20250303/202503030707.dKjJdF6z-lkp@intel.com/reproduce)
 
 If you fix the issue in a separate patch/commit (i.e. not just a new version of
 the same patch/commit), kindly add following tags
 | Reported-by: kernel test robot <lkp@intel.com>
-| Closes: https://lore.kernel.org/oe-kbuild-all/202503030642.jn4Teav7-lkp@intel.com/
+| Closes: https://lore.kernel.org/oe-kbuild-all/202503030707.dKjJdF6z-lkp@intel.com/
 
 All errors (new ones prefixed by >>):
 
->> fs/jfs/jfs_xtree.c:118:13: error: incompatible pointer types passing 'struct inode **' to parameter of type 'struct inode *'; dereference with * [-Werror,-Wincompatible-pointer-types]
-           BT_GETPAGE(ip, bn, *mp, xtpage_t, size, *p, rc, i_xtroot);
-                      ^~
-                      *
-   fs/jfs/jfs_btree.h:58:35: note: expanded from macro 'BT_GETPAGE'
-                   MP = (struct metapage *)&JFS_IP(IP)->bxflag;\
-                                                   ^~
-   fs/jfs/jfs_incore.h:205:59: note: passing argument to parameter 'inode' here
-   static inline struct jfs_inode_info *JFS_IP(struct inode *inode)
-                                                             ^
->> fs/jfs/jfs_xtree.c:118:13: error: incompatible pointer types passing 'struct inode **' to parameter of type 'struct inode *'; dereference with * [-Werror,-Wincompatible-pointer-types]
-           BT_GETPAGE(ip, bn, *mp, xtpage_t, size, *p, rc, i_xtroot);
-                      ^~
-                      *
-   fs/jfs/jfs_btree.h:59:23: note: expanded from macro 'BT_GETPAGE'
-                   P = (TYPE *)&JFS_IP(IP)->ROOT;\
-                                       ^~
-   fs/jfs/jfs_incore.h:205:59: note: passing argument to parameter 'inode' here
-   static inline struct jfs_inode_info *JFS_IP(struct inode *inode)
-                                                             ^
-   fs/jfs/jfs_xtree.c:118:2: error: incompatible pointer types passing 'struct inode **' to parameter of type 'struct inode *'; dereference with * [-Werror,-Wincompatible-pointer-types]
-           BT_GETPAGE(ip, bn, *mp, xtpage_t, size, *p, rc, i_xtroot);
-           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-   fs/jfs/jfs_btree.h:64:22: note: expanded from macro 'BT_GETPAGE'
-                   MP = read_metapage((IP), BN, SIZE, 1);\
-                        ~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~
-   fs/jfs/jfs_metapage.h:55:18: note: expanded from macro 'read_metapage'
-            __get_metapage(inode, lblock, size, absolute, false)
-                           ^~~~~
-   fs/jfs/jfs_metapage.h:50:54: note: passing argument to parameter 'inode' here
-   extern struct metapage *__get_metapage(struct inode *inode,
-                                                        ^
->> fs/jfs/jfs_xtree.c:126:16: error: member reference base type 'struct inode *' is not a structure or union
-                           jfs_error(ip->i_sb, "xt_getpage: xtree page corrupt\n");
-                                     ~~^ ~~~~
->> fs/jfs/jfs_xtree.c:273:19: error: incompatible pointer types passing 'struct inode *' to parameter of type 'struct inode **'; take the address with & [-Werror,-Wincompatible-pointer-types]
-                   rc = xt_getpage(ip, bn, &mp, PSIZE, &p);
-                                   ^~
-                                   &
-   fs/jfs/jfs_xtree.c:113:45: note: passing argument to parameter 'ip' here
-   static inline int xt_getpage(struct inode **ip, s64 bn, struct metapage **mp,
-                                               ^
-   fs/jfs/jfs_xtree.c:828:19: error: incompatible pointer types passing 'struct inode *' to parameter of type 'struct inode **'; take the address with & [-Werror,-Wincompatible-pointer-types]
-                   rc = xt_getpage(ip, parent->bn, &smp, PSIZE, &sp);
-                                   ^~
-                                   &
-   fs/jfs/jfs_xtree.c:113:45: note: passing argument to parameter 'ip' here
-   static inline int xt_getpage(struct inode **ip, s64 bn, struct metapage **mp,
-                                               ^
-   fs/jfs/jfs_xtree.c:1083:19: error: incompatible pointer types passing 'struct inode *' to parameter of type 'struct inode **'; take the address with & [-Werror,-Wincompatible-pointer-types]
-                   rc = xt_getpage(ip, nextbn, &mp, PSIZE, &p);
-                                   ^~
-                                   &
-   fs/jfs/jfs_xtree.c:113:45: note: passing argument to parameter 'ip' here
-   static inline int xt_getpage(struct inode **ip, s64 bn, struct metapage **mp,
-                                               ^
-   fs/jfs/jfs_xtree.c:1438:19: error: incompatible pointer types passing 'struct inode *' to parameter of type 'struct inode **'; take the address with & [-Werror,-Wincompatible-pointer-types]
-                   rc = xt_getpage(ip, bn, &mp, PSIZE, &p);
-                                   ^~
-                                   &
-   fs/jfs/jfs_xtree.c:113:45: note: passing argument to parameter 'ip' here
-   static inline int xt_getpage(struct inode **ip, s64 bn, struct metapage **mp,
-                                               ^
-   fs/jfs/jfs_xtree.c:1454:20: error: incompatible pointer types passing 'struct inode *' to parameter of type 'struct inode **'; take the address with & [-Werror,-Wincompatible-pointer-types]
-                           rc = xt_getpage(ip, bn, &mp, PSIZE, &p);
-                                           ^~
-                                           &
-   fs/jfs/jfs_xtree.c:113:45: note: passing argument to parameter 'ip' here
-   static inline int xt_getpage(struct inode **ip, s64 bn, struct metapage **mp,
-                                               ^
-   fs/jfs/jfs_xtree.c:1732:19: error: incompatible pointer types passing 'struct inode *' to parameter of type 'struct inode **'; take the address with & [-Werror,-Wincompatible-pointer-types]
-                   rc = xt_getpage(ip, bn, &mp, PSIZE, &p);
-                                   ^~
-                                   &
-   fs/jfs/jfs_xtree.c:113:45: note: passing argument to parameter 'ip' here
-   static inline int xt_getpage(struct inode **ip, s64 bn, struct metapage **mp,
-                                               ^
-   fs/jfs/jfs_xtree.c:1748:20: error: incompatible pointer types passing 'struct inode *' to parameter of type 'struct inode **'; take the address with & [-Werror,-Wincompatible-pointer-types]
-                           rc = xt_getpage(ip, bn, &mp, PSIZE, &p);
-                                           ^~
-                                           &
-   fs/jfs/jfs_xtree.c:113:45: note: passing argument to parameter 'ip' here
-   static inline int xt_getpage(struct inode **ip, s64 bn, struct metapage **mp,
-                                               ^
-   fs/jfs/jfs_xtree.c:1809:19: error: incompatible pointer types passing 'struct inode *' to parameter of type 'struct inode **'; take the address with & [-Werror,-Wincompatible-pointer-types]
-                   rc = xt_getpage(ip, bn, &mp, PSIZE, &p);
-                                   ^~
-                                   &
-   fs/jfs/jfs_xtree.c:113:45: note: passing argument to parameter 'ip' here
-   static inline int xt_getpage(struct inode **ip, s64 bn, struct metapage **mp,
-                                               ^
-   fs/jfs/jfs_xtree.c:1885:19: error: incompatible pointer types passing 'struct inode *' to parameter of type 'struct inode **'; take the address with & [-Werror,-Wincompatible-pointer-types]
-                   rc = xt_getpage(ip, bn, &mp, PSIZE, &p);
-                                   ^~
-                                   &
-   fs/jfs/jfs_xtree.c:113:45: note: passing argument to parameter 'ip' here
-   static inline int xt_getpage(struct inode **ip, s64 bn, struct metapage **mp,
-                                               ^
-   fs/jfs/jfs_xtree.c:1902:20: error: incompatible pointer types passing 'struct inode *' to parameter of type 'struct inode **'; take the address with & [-Werror,-Wincompatible-pointer-types]
-                           rc = xt_getpage(ip, bn, &mp, PSIZE, &p);
-                                           ^~
-                                           &
-   fs/jfs/jfs_xtree.c:113:45: note: passing argument to parameter 'ip' here
-   static inline int xt_getpage(struct inode **ip, s64 bn, struct metapage **mp,
-                                               ^
-   fs/jfs/jfs_xtree.c:2289:18: error: incompatible pointer types passing 'struct inode *' to parameter of type 'struct inode **'; take the address with & [-Werror,-Wincompatible-pointer-types]
-           rc = xt_getpage(ip, bn, &mp, PSIZE, &p);
-                           ^~
-                           &
-   fs/jfs/jfs_xtree.c:113:45: note: passing argument to parameter 'ip' here
-   static inline int xt_getpage(struct inode **ip, s64 bn, struct metapage **mp,
-                                               ^
-   fs/jfs/jfs_xtree.c:2527:18: error: incompatible pointer types passing 'struct inode *' to parameter of type 'struct inode **'; take the address with & [-Werror,-Wincompatible-pointer-types]
-           rc = xt_getpage(ip, bn, &mp, PSIZE, &p);
-                           ^~
-                           &
-   fs/jfs/jfs_xtree.c:113:45: note: passing argument to parameter 'ip' here
-   static inline int xt_getpage(struct inode **ip, s64 bn, struct metapage **mp,
-                                               ^
-   fs/jfs/jfs_xtree.c:2812:19: error: incompatible pointer types passing 'struct inode *' to parameter of type 'struct inode **'; take the address with & [-Werror,-Wincompatible-pointer-types]
-                   rc = xt_getpage(ip, bn, &mp, PSIZE, &p);
-                                   ^~
-                                   &
-   fs/jfs/jfs_xtree.c:113:45: note: passing argument to parameter 'ip' here
-   static inline int xt_getpage(struct inode **ip, s64 bn, struct metapage **mp,
-                                               ^
-   fs/jfs/jfs_xtree.c:2857:18: error: incompatible pointer types passing 'struct inode *' to parameter of type 'struct inode **'; take the address with & [-Werror,-Wincompatible-pointer-types]
-           rc = xt_getpage(ip, bn, &mp, PSIZE, &p);
-                           ^~
-                           &
-   fs/jfs/jfs_xtree.c:113:45: note: passing argument to parameter 'ip' here
-   static inline int xt_getpage(struct inode **ip, s64 bn, struct metapage **mp,
-                                               ^
-   18 errors generated.
+   In file included from fs/jfs/jfs_xtree.h:12,
+                    from fs/jfs/jfs_incore.h:16,
+                    from fs/jfs/jfs_xtree.c:13:
+   fs/jfs/jfs_xtree.c: In function 'xt_getpage':
+>> fs/jfs/jfs_xtree.c:118:20: error: passing argument 1 of 'JFS_IP' from incompatible pointer type [-Werror=incompatible-pointer-types]
+     118 |         BT_GETPAGE(ip, bn, *mp, xtpage_t, size, *p, rc, i_xtroot);
+         |                    ^~
+         |                    |
+         |                    struct inode **
+   fs/jfs/jfs_btree.h:58:49: note: in definition of macro 'BT_GETPAGE'
+      58 |                 MP = (struct metapage *)&JFS_IP(IP)->bxflag;\
+         |                                                 ^~
+   fs/jfs/jfs_incore.h:205:59: note: expected 'struct inode *' but argument is of type 'struct inode **'
+     205 | static inline struct jfs_inode_info *JFS_IP(struct inode *inode)
+         |                                             ~~~~~~~~~~~~~~^~~~~
+>> fs/jfs/jfs_xtree.c:118:20: error: passing argument 1 of 'JFS_IP' from incompatible pointer type [-Werror=incompatible-pointer-types]
+     118 |         BT_GETPAGE(ip, bn, *mp, xtpage_t, size, *p, rc, i_xtroot);
+         |                    ^~
+         |                    |
+         |                    struct inode **
+   fs/jfs/jfs_btree.h:59:37: note: in definition of macro 'BT_GETPAGE'
+      59 |                 P = (TYPE *)&JFS_IP(IP)->ROOT;\
+         |                                     ^~
+   fs/jfs/jfs_incore.h:205:59: note: expected 'struct inode *' but argument is of type 'struct inode **'
+     205 | static inline struct jfs_inode_info *JFS_IP(struct inode *inode)
+         |                                             ~~~~~~~~~~~~~~^~~~~
+   In file included from fs/jfs/jfs_xtree.c:15:
+>> fs/jfs/jfs_btree.h:64:36: error: passing argument 1 of '__get_metapage' from incompatible pointer type [-Werror=incompatible-pointer-types]
+      64 |                 MP = read_metapage((IP), BN, SIZE, 1);\
+         |                                    ^~~~
+         |                                    |
+         |                                    struct inode **
+   fs/jfs/jfs_metapage.h:55:25: note: in definition of macro 'read_metapage'
+      55 |          __get_metapage(inode, lblock, size, absolute, false)
+         |                         ^~~~~
+   fs/jfs/jfs_xtree.c:118:9: note: in expansion of macro 'BT_GETPAGE'
+     118 |         BT_GETPAGE(ip, bn, *mp, xtpage_t, size, *p, rc, i_xtroot);
+         |         ^~~~~~~~~~
+   fs/jfs/jfs_metapage.h:50:54: note: expected 'struct inode *' but argument is of type 'struct inode **'
+      50 | extern struct metapage *__get_metapage(struct inode *inode,
+         |                                        ~~~~~~~~~~~~~~^~~~~
+>> fs/jfs/jfs_xtree.c:126:37: error: '*ip' is a pointer; did you mean to use '->'?
+     126 |                         jfs_error(ip->i_sb, "xt_getpage: xtree page corrupt\n");
+         |                                     ^~
+         |                                     ->
+   fs/jfs/jfs_xtree.c: In function 'xtSearch':
+>> fs/jfs/jfs_xtree.c:273:33: error: passing argument 1 of 'xt_getpage' from incompatible pointer type [-Werror=incompatible-pointer-types]
+     273 |                 rc = xt_getpage(ip, bn, &mp, PSIZE, &p);
+         |                                 ^~
+         |                                 |
+         |                                 struct inode *
+   fs/jfs/jfs_xtree.c:113:45: note: expected 'struct inode **' but argument is of type 'struct inode *'
+     113 | static inline int xt_getpage(struct inode **ip, s64 bn, struct metapage **mp,
+         |                              ~~~~~~~~~~~~~~~^~
+   fs/jfs/jfs_xtree.c: In function 'xtSplitUp':
+   fs/jfs/jfs_xtree.c:828:33: error: passing argument 1 of 'xt_getpage' from incompatible pointer type [-Werror=incompatible-pointer-types]
+     828 |                 rc = xt_getpage(ip, parent->bn, &smp, PSIZE, &sp);
+         |                                 ^~
+         |                                 |
+         |                                 struct inode *
+   fs/jfs/jfs_xtree.c:113:45: note: expected 'struct inode **' but argument is of type 'struct inode *'
+     113 | static inline int xt_getpage(struct inode **ip, s64 bn, struct metapage **mp,
+         |                              ~~~~~~~~~~~~~~~^~
+   fs/jfs/jfs_xtree.c: In function 'xtSplitPage':
+   fs/jfs/jfs_xtree.c:1083:33: error: passing argument 1 of 'xt_getpage' from incompatible pointer type [-Werror=incompatible-pointer-types]
+    1083 |                 rc = xt_getpage(ip, nextbn, &mp, PSIZE, &p);
+         |                                 ^~
+         |                                 |
+         |                                 struct inode *
+   fs/jfs/jfs_xtree.c:113:45: note: expected 'struct inode **' but argument is of type 'struct inode *'
+     113 | static inline int xt_getpage(struct inode **ip, s64 bn, struct metapage **mp,
+         |                              ~~~~~~~~~~~~~~~^~
+   fs/jfs/jfs_xtree.c: In function 'xtExtend':
+   fs/jfs/jfs_xtree.c:1438:33: error: passing argument 1 of 'xt_getpage' from incompatible pointer type [-Werror=incompatible-pointer-types]
+    1438 |                 rc = xt_getpage(ip, bn, &mp, PSIZE, &p);
+         |                                 ^~
+         |                                 |
+         |                                 struct inode *
+   fs/jfs/jfs_xtree.c:113:45: note: expected 'struct inode **' but argument is of type 'struct inode *'
+     113 | static inline int xt_getpage(struct inode **ip, s64 bn, struct metapage **mp,
+         |                              ~~~~~~~~~~~~~~~^~
+   fs/jfs/jfs_xtree.c:1454:41: error: passing argument 1 of 'xt_getpage' from incompatible pointer type [-Werror=incompatible-pointer-types]
+    1454 |                         rc = xt_getpage(ip, bn, &mp, PSIZE, &p);
+         |                                         ^~
+         |                                         |
+         |                                         struct inode *
+   fs/jfs/jfs_xtree.c:113:45: note: expected 'struct inode **' but argument is of type 'struct inode *'
+     113 | static inline int xt_getpage(struct inode **ip, s64 bn, struct metapage **mp,
+         |                              ~~~~~~~~~~~~~~~^~
+   fs/jfs/jfs_xtree.c: In function 'xtUpdate':
+   fs/jfs/jfs_xtree.c:1732:33: error: passing argument 1 of 'xt_getpage' from incompatible pointer type [-Werror=incompatible-pointer-types]
+    1732 |                 rc = xt_getpage(ip, bn, &mp, PSIZE, &p);
+         |                                 ^~
+         |                                 |
+         |                                 struct inode *
+   fs/jfs/jfs_xtree.c:113:45: note: expected 'struct inode **' but argument is of type 'struct inode *'
+     113 | static inline int xt_getpage(struct inode **ip, s64 bn, struct metapage **mp,
+         |                              ~~~~~~~~~~~~~~~^~
+   fs/jfs/jfs_xtree.c:1748:41: error: passing argument 1 of 'xt_getpage' from incompatible pointer type [-Werror=incompatible-pointer-types]
+    1748 |                         rc = xt_getpage(ip, bn, &mp, PSIZE, &p);
+         |                                         ^~
+         |                                         |
+         |                                         struct inode *
+   fs/jfs/jfs_xtree.c:113:45: note: expected 'struct inode **' but argument is of type 'struct inode *'
+     113 | static inline int xt_getpage(struct inode **ip, s64 bn, struct metapage **mp,
+         |                              ~~~~~~~~~~~~~~~^~
+   fs/jfs/jfs_xtree.c:1809:33: error: passing argument 1 of 'xt_getpage' from incompatible pointer type [-Werror=incompatible-pointer-types]
+    1809 |                 rc = xt_getpage(ip, bn, &mp, PSIZE, &p);
+         |                                 ^~
+         |                                 |
+         |                                 struct inode *
+   fs/jfs/jfs_xtree.c:113:45: note: expected 'struct inode **' but argument is of type 'struct inode *'
+     113 | static inline int xt_getpage(struct inode **ip, s64 bn, struct metapage **mp,
+         |                              ~~~~~~~~~~~~~~~^~
+   fs/jfs/jfs_xtree.c:1885:33: error: passing argument 1 of 'xt_getpage' from incompatible pointer type [-Werror=incompatible-pointer-types]
+    1885 |                 rc = xt_getpage(ip, bn, &mp, PSIZE, &p);
+         |                                 ^~
+         |                                 |
+         |                                 struct inode *
+   fs/jfs/jfs_xtree.c:113:45: note: expected 'struct inode **' but argument is of type 'struct inode *'
+     113 | static inline int xt_getpage(struct inode **ip, s64 bn, struct metapage **mp,
+         |                              ~~~~~~~~~~~~~~~^~
+   fs/jfs/jfs_xtree.c:1902:41: error: passing argument 1 of 'xt_getpage' from incompatible pointer type [-Werror=incompatible-pointer-types]
+    1902 |                         rc = xt_getpage(ip, bn, &mp, PSIZE, &p);
+         |                                         ^~
+         |                                         |
+         |                                         struct inode *
+   fs/jfs/jfs_xtree.c:113:45: note: expected 'struct inode **' but argument is of type 'struct inode *'
+     113 | static inline int xt_getpage(struct inode **ip, s64 bn, struct metapage **mp,
+         |                              ~~~~~~~~~~~~~~~^~
+   fs/jfs/jfs_xtree.c: In function 'xtTruncate':
+   fs/jfs/jfs_xtree.c:2289:25: error: passing argument 1 of 'xt_getpage' from incompatible pointer type [-Werror=incompatible-pointer-types]
+    2289 |         rc = xt_getpage(ip, bn, &mp, PSIZE, &p);
+         |                         ^~
+         |                         |
+         |                         struct inode *
+   fs/jfs/jfs_xtree.c:113:45: note: expected 'struct inode **' but argument is of type 'struct inode *'
+     113 | static inline int xt_getpage(struct inode **ip, s64 bn, struct metapage **mp,
+         |                              ~~~~~~~~~~~~~~~^~
+   fs/jfs/jfs_xtree.c:2527:25: error: passing argument 1 of 'xt_getpage' from incompatible pointer type [-Werror=incompatible-pointer-types]
+    2527 |         rc = xt_getpage(ip, bn, &mp, PSIZE, &p);
+         |                         ^~
+         |                         |
+         |                         struct inode *
+   fs/jfs/jfs_xtree.c:113:45: note: expected 'struct inode **' but argument is of type 'struct inode *'
+     113 | static inline int xt_getpage(struct inode **ip, s64 bn, struct metapage **mp,
+         |                              ~~~~~~~~~~~~~~~^~
 
 
-vim +118 fs/jfs/jfs_xtree.c
+vim +/JFS_IP +118 fs/jfs/jfs_xtree.c
 
     79	
     80	
