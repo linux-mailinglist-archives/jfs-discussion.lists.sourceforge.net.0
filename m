@@ -2,94 +2,85 @@ Return-Path: <jfs-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+jfs-discussion@lfdr.de
 Delivered-To: lists+jfs-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6A321A685E8
-	for <lists+jfs-discussion@lfdr.de>; Wed, 19 Mar 2025 08:40:07 +0100 (CET)
-Received: from [127.0.0.1] (helo=sfs-ml-4.v29.lw.sourceforge.com)
-	by sfs-ml-4.v29.lw.sourceforge.com with esmtp (Exim 4.95)
+	by mail.lfdr.de (Postfix) with ESMTPS id D0D7CA68DE4
+	for <lists+jfs-discussion@lfdr.de>; Wed, 19 Mar 2025 14:33:13 +0100 (CET)
+Received: from [127.0.0.1] (helo=sfs-ml-1.v29.lw.sourceforge.com)
+	by sfs-ml-1.v29.lw.sourceforge.com with esmtp (Exim 4.95)
 	(envelope-from <jfs-discussion-bounces@lists.sourceforge.net>)
-	id 1tuo1T-0000c7-DD;
-	Wed, 19 Mar 2025 07:39:31 +0000
+	id 1tutX1-0000MU-FK;
+	Wed, 19 Mar 2025 13:32:27 +0000
 Received: from [172.30.29.66] (helo=mx.sourceforge.net)
  by sfs-ml-4.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
  TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (Exim 4.95)
- (envelope-from <suchitkarunakaran@gmail.com>) id 1tuo1S-0000c1-2C
+ (envelope-from <leo.fthirata@gmail.com>) id 1tuj8f-0003Ed-OV
  for jfs-discussion@lists.sourceforge.net;
- Wed, 19 Mar 2025 07:39:30 +0000
+ Wed, 19 Mar 2025 02:26:37 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=sourceforge.net; s=x; h=Content-Transfer-Encoding:MIME-Version:Message-ID:
- Date:Subject:Cc:To:From:Sender:Reply-To:Content-Type:Content-ID:
+ d=sourceforge.net; s=x; h=Content-Type:Cc:To:Subject:Message-ID:Date:From:
+ MIME-Version:Sender:Reply-To:Content-Transfer-Encoding:Content-ID:
  Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
  :Resent-Message-ID:In-Reply-To:References:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=zxDRI3yy3kbzuN5qeoEHV0+lf0cRz3kjqm00o+lSz2c=; b=l7oLFzFmucJXzfv8xCPCHUadyQ
- CNKAgqigPs1djW6Sbeg+aicYkUzA6PXhPokgKS2PH+61f7xOj2f8H1kqZHuRjdZEUzl0BHESP0hU0
- EizM4I+3v0fTeFFpotjBbG64NqyxG0ULxR0H1lN08uuRaV+kUoR8qRB2Ash4duLF1m3Y=;
+ bh=U4vsXeepUEeOxZqJcsKC+HZWnLPWtFYoYFR/7gQya3w=; b=bEDd/mwo8jEy59JZ+qRk8c/eMG
+ dkw+BG+vdW2vZRS/xjjoVFkQW9fsTm/89xgibDR0pDYEemVsBPGpWJiq9TqKK2n2seXWbtQFt/xcg
+ ENRHzZskRVXL+Cbp6jbbCL1229NYw5BStZZneEU+1QA02d62IMoHAXv+Ysm8gTeXzNqU=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
- h=Content-Transfer-Encoding:MIME-Version:Message-ID:Date:Subject:Cc:To:From
- :Sender:Reply-To:Content-Type:Content-ID:Content-Description:Resent-Date:
- Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+ h=Content-Type:Cc:To:Subject:Message-ID:Date:From:MIME-Version:Sender:
+ Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
+ :Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
  References:List-Id:List-Help:List-Unsubscribe:List-Subscribe:List-Post:
- List-Owner:List-Archive; bh=zxDRI3yy3kbzuN5qeoEHV0+lf0cRz3kjqm00o+lSz2c=; b=c
- HcdOoSOMLJv848KICdd7A3PO+Dw0ixiYzbpzO5kkO53huGuGurrAh/7wlf5aHJBtpvgSJawcrw2AQ
- 2iQAaqrTNtYfp3FWLXG2+GTWyEXT9vatsKZ7PGONTlbtUZFizm6nkIDoTG1AYRqWfz/KAk+GIG0GC
- XT9AwVrQ/XSOrK8E=;
-Received: from mail-pl1-f172.google.com ([209.85.214.172])
+ List-Owner:List-Archive; bh=U4vsXeepUEeOxZqJcsKC+HZWnLPWtFYoYFR/7gQya3w=; b=f
+ G9qAmGZTc3ZyTC8corOzafg0FjYd54ceJ8YH0CeUa895oQVjhefUd7XwviubKT9Z81vcn77rf+53Z
+ aectEq+VLgkqalA82WDVQ9bRnBVLSNTWyoPwxpSCOOQLKUnNhMsp/0ih1y/JiV9Q1H6Nm3CTbO+xZ
+ qFVodExdH7WANp4Y=;
+Received: from mail-ed1-f52.google.com ([209.85.208.52])
  by sfi-mx-2.v28.lw.sourceforge.com with esmtps
  (TLS1.2:ECDHE-RSA-AES128-GCM-SHA256:128) (Exim 4.95)
- id 1tuo1R-0005pB-6r for jfs-discussion@lists.sourceforge.net;
- Wed, 19 Mar 2025 07:39:30 +0000
-Received: by mail-pl1-f172.google.com with SMTP id
- d9443c01a7336-224191d92e4so125909185ad.3
+ id 1tuj8f-0000gR-5B for jfs-discussion@lists.sourceforge.net;
+ Wed, 19 Mar 2025 02:26:37 +0000
+Received: by mail-ed1-f52.google.com with SMTP id
+ 4fb4d7f45d1cf-5e6f4b3ebe5so10723468a12.0
  for <jfs-discussion@lists.sourceforge.net>;
- Wed, 19 Mar 2025 00:39:29 -0700 (PDT)
+ Tue, 18 Mar 2025 19:26:37 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=gmail.com; s=20230601; t=1742369958; x=1742974758; darn=lists.sourceforge.net;
- h=content-transfer-encoding:mime-version:message-id:date:subject:cc
- :to:from:from:to:cc:subject:date:message-id:reply-to;
- bh=zxDRI3yy3kbzuN5qeoEHV0+lf0cRz3kjqm00o+lSz2c=;
- b=V2WXwOGrl2I7XaXcKUMByebqcPdrJUvcRxKIaLI/7NLZs4knH0wF7BQbtMy1jEecbb
- /g/LztrguNUQU1A2k2Lv+hEg943Tuz6IO2LXnEaYSzXKhgwkc/Jr9mac/mVZUkOvX/IB
- MHKfUwWt4IdiW8iUCZBUNv7FZ2FiLqOeuwY/jsCRsbVuQnqR2ZHRnUwwViJZvDx9vW4D
- CBu0fjHSX0CWfJqVwRky8cft/vEu1t8jUE+hVHnTnK8FFxhhz9g85W7Kko6Q/Zm19bsu
- bMLYfBgsnBJwvt1TmynrmgGmAbT+5owY0hF0UoZKG/+BtENATQi1zaH+ZLeUBasCkBDt
- 98uQ==
+ d=gmail.com; s=20230601; t=1742351185; x=1742955985; darn=lists.sourceforge.net;
+ h=cc:to:subject:message-id:date:from:mime-version:from:to:cc:subject
+ :date:message-id:reply-to;
+ bh=U4vsXeepUEeOxZqJcsKC+HZWnLPWtFYoYFR/7gQya3w=;
+ b=IhODtb1vwf1P/x80pjOTrJtINXCzQWNS24BXvL/FU3Ry/teq9t54m0Kaq75gm/OxhS
+ x6W+ILyR2FsCqi4KVuAt0hAQ/b4+Fm705zXMSMkYrFHmaK653h+zJvXHS2Wnv5Dkz3Z/
+ +UFcZqovKYtVTqEi9R1wwktmS59w+nTZfdmpM80YoMXFnfm/xgfO1k9ei2UERgJfjrA+
+ nCjTvRyDjEvYSivNKrGQQOQA7paO1/ZWqDhA6tg2mNownqE442V4UL9urPFPH2fBm+Ku
+ Ik3SdJruCM83zUv8jPDiUEU+qEEukJW4vJ9GVpUxqSbb9VzKfr1s16+hp7zUE8szikSv
+ MwDw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20230601; t=1742369958; x=1742974758;
- h=content-transfer-encoding:mime-version:message-id:date:subject:cc
- :to:from:x-gm-message-state:from:to:cc:subject:date:message-id
- :reply-to;
- bh=zxDRI3yy3kbzuN5qeoEHV0+lf0cRz3kjqm00o+lSz2c=;
- b=KNzNrbdpzwox8XX2GLm9x+dQIPB+nem9dSEFaVx/WTY2nJKzs7nctbRWxiy1hcJaoW
- BvLU6n+wI733snCGxWwlfXhGn2O4JV6pH1FRzLLT6WyEYhx6MLJ5zPcYK5gVURj36GPv
- RColK+Och56aYDB5Z0XoLNOQAHgctVVmKeNCBbYN2yNJFAZNfjptrVXI7lrNb957ftvN
- Sd6/dfDOHUsCAEJT+C77XVTqTlryS5h9w2Xf13/7JFncpAZqpG+o67KbU06vJuQDTyc/
- GnSVtYXASgLCUYAeYWAg4XATA940kv+atdZPyi2W+DtMGYA377L03viOlX9nAnETCwON
- zY7A==
-X-Forwarded-Encrypted: i=1;
- AJvYcCXQdgynuFpY7CqJSv+/lkitJz0snCkBrEO3DyY+hQA/llbIEtppfQAvszDoNfshyroUx7xnHA+cjbu2e4WPNQ==@lists.sourceforge.net
-X-Gm-Message-State: AOJu0YzS/ucJXz+Gb60IebjrGB/zV0cahzk+g7I77J9JPTlqS5mvlLh7
- x/5z0ApXHCE+4js+60qkTrZJP1H//2QqF67VpUH3Vc18cp0mIZzJ
-X-Gm-Gg: ASbGncvS9HpgQai40hu0ca1NAqsqC8MeSVm27mde9Mk9dvXIi8T6GFs4EWagPJPHJeh
- GuJyE7ATBgiNDRFLVP6cb0vx4EKcy5cSv1tcBBJJl8p2XEymRL8dA/603YY0AW9elHAKR8u7Kpv
- 2V7JbJit0P3JH9GrP1N7vw2h6np3GNsdeHM2zoPQ/qtFQkBvZJlcA0yiyp5xMO8qmdaASdLgWTd
- H1PMMNY+4nuyb+lnRXW9YI8kn7wJXUQHt6iJp/Px0B21XGs0IMqNpx3KVfI39FEwGMD9A25HwcI
- bfG/Izm5vH4xS3qo3v0C+HIrZJXeOgsG8BTskd1c0sc2o5lg4D10JQ==
-X-Google-Smtp-Source: AGHT+IH7w54kbrZ4KACEo/HNZuJdpE+uY4oEwrMSF7BbiB75U+3UDroYU+kXdh1GJBNXlIS0Aq57SQ==
-X-Received: by 2002:aa7:8885:0:b0:736:4fe0:2661 with SMTP id
- d2e1a72fcca58-7376d645d8cmr3026676b3a.11.1742369958356; 
- Wed, 19 Mar 2025 00:39:18 -0700 (PDT)
-Received: from archlinux.nitk.ac.in ([2400:4f20:11:c00::103:25cc])
- by smtp.gmail.com with ESMTPSA id
- d2e1a72fcca58-737115295e5sm10923556b3a.23.2025.03.19.00.39.16
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 19 Mar 2025 00:39:17 -0700 (PDT)
-To: shaggy@kernel.org,
-	jfs-discussion@lists.sourceforge.net
-Date: Wed, 19 Mar 2025 13:09:12 +0530
-Message-ID: <20250319073912.6849-1-suchitkarunakaran@gmail.com>
-X-Mailer: git-send-email 2.48.1
+ d=1e100.net; s=20230601; t=1742351185; x=1742955985;
+ h=cc:to:subject:message-id:date:from:mime-version:x-gm-message-state
+ :from:to:cc:subject:date:message-id:reply-to;
+ bh=U4vsXeepUEeOxZqJcsKC+HZWnLPWtFYoYFR/7gQya3w=;
+ b=Qiu7yyUi7w/nka3djtpDnAm3CLpzIK9/s+DamCiXKc3QA79J4n8o+v2TowrXiAIjsi
+ fAJ2j9Gaz+NriFQD+i9lubRTWSXMdsEuKh05+siqzZcNSd+gWttRlZB08Uqe0Y2FNCSf
+ eOInSxruvZBJGg7I8TCWs7rI9B6HNf4uK2paJfjPX1lBy411Njxtr6aPwBFLSJEiA7u6
+ T2nCYM2v40DK0fJb07+j+8uGYW4m9WrHzAC4GLpwu+GmaFuOluQ5Tg/IQBqfjJigaMcu
+ 5oLbS0oc5kjelHOcJXrt03/e1J0jeQgmjniLfqPUZ+Oo2nFFdHV/VpgLO8W0XX35YN79
+ momg==
+X-Gm-Message-State: AOJu0YxThOnsYCdSSX9/F8IVsrEhWTp6fcNsqZ+cF4BQlkoQ1aNt5QaN
+ cMcqRNWS/fPZ8ApbJFNsG3jlyM+dKuaT0xRLnywmRYR56I427hHwr2Jb4qFKdL1NBNj5GPIIngi
+ DPeUKsB5hLbBla2qjcE1jHt4abR8=
+X-Gm-Gg: ASbGncvxv1bAzqPHw7IA1J2qIiBN4GvQtJ+j9K60m0YCBIvHHCB8pgG7woL2CL5n1vj
+ vOJQWbtiYgnudSBCU46ce/E03p5VO1i8oKJh9PzFG8pbzAeApNPV+6qYl8WBeCMRpBBF0wVdGhq
+ q432OLr5fK0UQgK6gizm/hEbhnSgrMYmaPUJMn4mSL3XGvZD370KJ+ILXLBQ==
+X-Google-Smtp-Source: AGHT+IFsG3fmL3Hguq5glwa/DW+tCUwqRDNICUy1/upZyz49sCZT2EcJ3eibobo87bcUwByQlvJhIRv/KJBoPaxisNE=
+X-Received: by 2002:a05:6402:354c:b0:5e6:1353:1319 with SMTP id
+ 4fb4d7f45d1cf-5eb80d156f3mr728522a12.12.1742351185221; Tue, 18 Mar 2025
+ 19:26:25 -0700 (PDT)
 MIME-Version: 1.0
+Date: Tue, 18 Mar 2025 23:26:13 -0300
+X-Gm-Features: AQ5f1Jp5fB_vAw4l9MAoMzV08w9YPFb-wDcDpoFxf4kfNEyuUG1HEIG7El-IgKw
+Message-ID: <CAN-A22rSAtYqRNA_OtFUViY44fjV=sKRbnYHonEJtm2eSN8vyA@mail.gmail.com>
+To: syzbot+4f9c823a6f63d87491ba@syzkaller.appspotmail.com
+Content-Type: multipart/mixed; boundary="000000000000784c0e0630a8bf86"
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: Spam detection software,
  running on the system "util-spamd-1.v13.lw.sourceforge.com", 
@@ -97,43 +88,44 @@ X-Spam-Report: Spam detection software,
  message has been attached to this so you can view it or label
  similar future email.  If you have any questions, see
  the administrator of that system for details.
- Content preview: Replace legacy XT_GETPAGE macro with an inline function and
- update all instances of XT_GETPAGE in jfs_xtree.c file to use the new
- function.
- Signed-off-by: Suchit Karunakaran --- fs/jfs/jfs_xtree.c | 86
- ++++++++++++++++++++++++++++
- 1 file changed, 52 insertions(+), 34 deletions(-) 
+ Content preview: #syz test #syz test From
+ d2015dde38d6f730eabdc613eb26f7c59daa9cab
+ Mon Sep 17 00:00:00 2001 From: Leonardo Felipe Takao Hirata Date: Tue, 18
+ Mar 2025 22:03:57 -0300 Subject: [PATCH] jfs: Add check for array bounds
+ in dt [...] 
  Content analysis details:   (-0.2 points, 6.0 required)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 RCVD_IN_VALIDITY_SAFE_BLOCKED RBL: ADMINISTRATOR NOTICE: The
- query to Validity was blocked.  See
+ 0.0 RCVD_IN_VALIDITY_CERTIFIED_BLOCKED RBL: ADMINISTRATOR NOTICE:
+ The query to Validity was blocked.  See
  https://knowledge.validity.com/hc/en-us/articles/20961730681243
  for more information.
- [209.85.214.172 listed in sa-trusted.bondedsender.org]
+ [209.85.208.52 listed in sa-trusted.bondedsender.org]
  0.0 RCVD_IN_VALIDITY_RPBL_BLOCKED RBL: ADMINISTRATOR NOTICE: The
  query to Validity was blocked.  See
  https://knowledge.validity.com/hc/en-us/articles/20961730681243
  for more information.
- [209.85.214.172 listed in bl.score.senderscore.com]
+ [209.85.208.52 listed in bl.score.senderscore.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [suchitkarunakaran[at]gmail.com]
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.214.172 listed in list.dnswl.org]
- 0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.214.172 listed in wl.mailspike.net]
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
+ provider [leo.fthirata[at]gmail.com]
+ 0.0 HTML_MESSAGE           BODY: HTML included in message
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
-X-Headers-End: 1tuo1R-0005pB-6r
-Subject: [Jfs-discussion] [PATCH REPOST] jfs: jfs_xtree: replace XT_GETPAGE
- macro with xt_getpage() function
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.208.52 listed in wl.mailspike.net]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.208.52 listed in list.dnswl.org]
+X-Headers-End: 1tuj8f-0000gR-5B
+X-Mailman-Approved-At: Wed, 19 Mar 2025 13:32:26 +0000
+Subject: Re: [Jfs-discussion] [syzbot] [jfs?] UBSAN:
+ array-index-out-of-bounds in dtDelete
 X-BeenThere: jfs-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -145,232 +137,68 @@ List-Post: <mailto:jfs-discussion@lists.sourceforge.net>
 List-Help: <mailto:jfs-discussion-request@lists.sourceforge.net?subject=help>
 List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/jfs-discussion>, 
  <mailto:jfs-discussion-request@lists.sourceforge.net?subject=subscribe>
-From: Suchit Karunakaran via Jfs-discussion
- <jfs-discussion@lists.sourceforge.net>
-Reply-To: Suchit Karunakaran <suchitkarunakaran@gmail.com>
-Cc: Suchit Karunakaran <suchitkarunakaran@gmail.com>,
- linux-kernel@vger.kernel.org, linux-kernel-mentees@lists.linux.dev,
- skhan@linuxfoundation.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+From: Leonardo Hirata via Jfs-discussion <jfs-discussion@lists.sourceforge.net>
+Reply-To: Leonardo Hirata <leo.fthirata@gmail.com>
+Cc: shaggy@kernel.org, jfs-discussion@lists.sourceforge.net,
+ syzkaller-bugs@googlegroups.com, linux-kernel@vger.kernel.org
 Errors-To: jfs-discussion-bounces@lists.sourceforge.net
 
-Replace legacy XT_GETPAGE macro with an inline function and update all
-instances of XT_GETPAGE in jfs_xtree.c file to use the new function.
+--000000000000784c0e0630a8bf86
+Content-Type: multipart/alternative; boundary="000000000000784c0d0630a8bf84"
 
-Signed-off-by: Suchit Karunakaran <suchitkarunakaran@gmail.com>
----
- fs/jfs/jfs_xtree.c | 86 ++++++++++++++++++++++++++++------------------
- 1 file changed, 52 insertions(+), 34 deletions(-)
+--000000000000784c0d0630a8bf84
+Content-Type: text/plain; charset="UTF-8"
 
-diff --git a/fs/jfs/jfs_xtree.c b/fs/jfs/jfs_xtree.c
-index 5ee618d17e77..4fea5e90e29b 100644
---- a/fs/jfs/jfs_xtree.c
-+++ b/fs/jfs/jfs_xtree.c
-@@ -49,26 +49,6 @@
- 
- #define XT_PAGE(IP, MP) BT_PAGE(IP, MP, xtpage_t, i_xtroot)
- 
--/* get page buffer for specified block address */
--/* ToDo: Replace this ugly macro with a function */
--#define XT_GETPAGE(IP, BN, MP, SIZE, P, RC)				\
--do {									\
--	BT_GETPAGE(IP, BN, MP, xtpage_t, SIZE, P, RC, i_xtroot);	\
--	if (!(RC)) {							\
--		if ((le16_to_cpu((P)->header.nextindex) < XTENTRYSTART) || \
--		    (le16_to_cpu((P)->header.nextindex) >		\
--		     le16_to_cpu((P)->header.maxentry)) ||		\
--		    (le16_to_cpu((P)->header.maxentry) >		\
--		     (((BN) == 0) ? XTROOTMAXSLOT : PSIZE >> L2XTSLOTSIZE))) { \
--			jfs_error((IP)->i_sb,				\
--				  "XT_GETPAGE: xtree page corrupt\n");	\
--			BT_PUTPAGE(MP);					\
--			MP = NULL;					\
--			RC = -EIO;					\
--		}							\
--	}								\
--} while (0)
--
- /* for consistency */
- #define XT_PUTPAGE(MP) BT_PUTPAGE(MP)
- 
-@@ -114,6 +94,44 @@ static int xtSplitPage(tid_t tid, struct inode *ip, struct xtsplit * split,
- static int xtSplitRoot(tid_t tid, struct inode *ip,
- 		       struct xtsplit * split, struct metapage ** rmpp);
- 
-+/*
-+ *	xt_getpage()
-+ *
-+ * function:	get the page buffer for a specified block address.
-+ *
-+ * parameters:
-+ *	ip      - pointer to the inode
-+ *	bn      - block number (s64) of the xtree page to be retrieved;
-+ *	mp      - pointer to a metapage pointer where the page buffer is returned;
-+ *	size    - size parameter to pass to BT_GETPAGE;
-+ *	p       - pointer to an xtpage_t pointer mapping the page's data.
-+ *
-+ * returns:
-+ *	0 on success, or -EIO if the page is corrupt or an error occurs.
-+ */
-+
-+static inline int xt_getpage(struct inode *ip, s64 bn, struct metapage **mp,
-+			unsigned int size, xtpage_t **p)
-+{
-+	int rc;
-+
-+	BT_GETPAGE(ip, bn, *mp, xtpage_t, size, *p, rc, i_xtroot);
-+
-+	if (!rc) {
-+		if ((le16_to_cpu((*p)->header.nextindex) < XTENTRYSTART) ||
-+			(le16_to_cpu((*p)->header.nextindex) >
-+				le16_to_cpu((*p)->header.maxentry)) ||
-+			(le16_to_cpu((*p)->header.maxentry) >
-+				((bn == 0) ? XTROOTMAXSLOT : PSIZE >> L2XTSLOTSIZE))) {
-+			jfs_error(ip->i_sb, "xt_getpage: xtree page corrupt\n");
-+			BT_PUTPAGE(*mp);
-+			*mp = NULL;
-+			rc = -EIO;
-+		}
-+	}
-+	return rc;
-+}
-+
- /*
-  *	xtLookup()
-  *
-@@ -252,7 +270,7 @@ static int xtSearch(struct inode *ip, s64 xoff,	s64 *nextp,
- 	 */
- 	for (bn = 0;;) {
- 		/* get/pin the page to search */
--		XT_GETPAGE(ip, bn, mp, PSIZE, p, rc);
-+		rc = xt_getpage(ip, bn, &mp, PSIZE, &p);
- 		if (rc)
- 			return rc;
- 
-@@ -807,7 +825,7 @@ xtSplitUp(tid_t tid,
- 		 * insert router entry in parent for new right child page <rp>
- 		 */
- 		/* get/pin the parent page <sp> */
--		XT_GETPAGE(ip, parent->bn, smp, PSIZE, sp, rc);
-+		rc = xt_getpage(ip, parent->bn, &smp, PSIZE, &sp);
- 		if (rc) {
- 			XT_PUTPAGE(rcmp);
- 			return rc;
-@@ -1062,7 +1080,7 @@ xtSplitPage(tid_t tid, struct inode *ip,
- 	 * update previous pointer of old next/right page of <sp>
- 	 */
- 	if (nextbn != 0) {
--		XT_GETPAGE(ip, nextbn, mp, PSIZE, p, rc);
-+		rc = xt_getpage(ip, nextbn, &mp, PSIZE, &p);
- 		if (rc) {
- 			XT_PUTPAGE(rmp);
- 			goto clean_up;
-@@ -1417,7 +1435,7 @@ int xtExtend(tid_t tid,		/* transaction id */
- 			return rc;
- 
- 		/* get back old page */
--		XT_GETPAGE(ip, bn, mp, PSIZE, p, rc);
-+		rc = xt_getpage(ip, bn, &mp, PSIZE, &p);
- 		if (rc)
- 			return rc;
- 		/*
-@@ -1433,7 +1451,7 @@ int xtExtend(tid_t tid,		/* transaction id */
- 			XT_PUTPAGE(mp);
- 
- 			/* get new child page */
--			XT_GETPAGE(ip, bn, mp, PSIZE, p, rc);
-+			rc = xt_getpage(ip, bn, &mp, PSIZE, &p);
- 			if (rc)
- 				return rc;
- 
-@@ -1711,7 +1729,7 @@ int xtUpdate(tid_t tid, struct inode *ip, xad_t * nxad)
- 			return rc;
- 
- 		/* get back old page */
--		XT_GETPAGE(ip, bn, mp, PSIZE, p, rc);
-+		rc = xt_getpage(ip, bn, &mp, PSIZE, &p);
- 		if (rc)
- 			return rc;
- 		/*
-@@ -1727,7 +1745,7 @@ int xtUpdate(tid_t tid, struct inode *ip, xad_t * nxad)
- 			XT_PUTPAGE(mp);
- 
- 			/* get new child page */
--			XT_GETPAGE(ip, bn, mp, PSIZE, p, rc);
-+			rc = xt_getpage(ip, bn, &mp, PSIZE, &p);
- 			if (rc)
- 				return rc;
- 
-@@ -1788,7 +1806,7 @@ int xtUpdate(tid_t tid, struct inode *ip, xad_t * nxad)
- 		XT_PUTPAGE(mp);
- 
- 		/* get new right page */
--		XT_GETPAGE(ip, bn, mp, PSIZE, p, rc);
-+		rc = xt_getpage(ip, bn, &mp, PSIZE, &p);
- 		if (rc)
- 			return rc;
- 
-@@ -1864,7 +1882,7 @@ printf("xtUpdate.updateLeft.split p:0x%p\n", p);
- 			return rc;
- 
- 		/* get back old page */
--		XT_GETPAGE(ip, bn, mp, PSIZE, p, rc);
-+		rc = xt_getpage(ip, bn, &mp, PSIZE, &p);
- 		if (rc)
- 			return rc;
- 
-@@ -1881,7 +1899,7 @@ printf("xtUpdate.updateLeft.split p:0x%p\n", p);
- 			XT_PUTPAGE(mp);
- 
- 			/* get new child page */
--			XT_GETPAGE(ip, bn, mp, PSIZE, p, rc);
-+			rc = xt_getpage(ip, bn, &mp, PSIZE, &p);
- 			if (rc)
- 				return rc;
- 
-@@ -2268,7 +2286,7 @@ s64 xtTruncate(tid_t tid, struct inode *ip, s64 newsize, int flag)
- 	 * first access of each page:
- 	 */
-       getPage:
--	XT_GETPAGE(ip, bn, mp, PSIZE, p, rc);
-+	rc = xt_getpage(ip, bn, &mp, PSIZE, &p);
- 	if (rc)
- 		return rc;
- 
-@@ -2506,7 +2524,7 @@ s64 xtTruncate(tid_t tid, struct inode *ip, s64 newsize, int flag)
- 
- 	/* get back the parent page */
- 	bn = parent->bn;
--	XT_GETPAGE(ip, bn, mp, PSIZE, p, rc);
-+	rc = xt_getpage(ip, bn, &mp, PSIZE, &p);
- 	if (rc)
- 		return rc;
- 
-@@ -2791,7 +2809,7 @@ s64 xtTruncate_pmap(tid_t tid, struct inode *ip, s64 committed_size)
- 		 * first access of each page:
- 		 */
-       getPage:
--		XT_GETPAGE(ip, bn, mp, PSIZE, p, rc);
-+		rc = xt_getpage(ip, bn, &mp, PSIZE, &p);
- 		if (rc)
- 			return rc;
- 
-@@ -2836,7 +2854,7 @@ s64 xtTruncate_pmap(tid_t tid, struct inode *ip, s64 committed_size)
- 
- 	/* get back the parent page */
- 	bn = parent->bn;
--	XT_GETPAGE(ip, bn, mp, PSIZE, p, rc);
-+	rc = xt_getpage(ip, bn, &mp, PSIZE, &p);
- 	if (rc)
- 		return rc;
- 
--- 
-2.48.1
+#syz test
+
+--000000000000784c0d0630a8bf84
+Content-Type: text/html; charset="UTF-8"
+
+<div dir="ltr">#syz test</div>
+
+--000000000000784c0d0630a8bf84--
+--000000000000784c0e0630a8bf86
+Content-Type: text/x-patch; charset="US-ASCII"; 
+	name="0001-jfs-Add-check-for-array-bounds-in-dtReadFirst.patch"
+Content-Disposition: attachment; 
+	filename="0001-jfs-Add-check-for-array-bounds-in-dtReadFirst.patch"
+Content-Transfer-Encoding: base64
+Content-ID: <f_m8fasjvs0>
+X-Attachment-Id: f_m8fasjvs0
+
+RnJvbSBkMjAxNWRkZTM4ZDZmNzMwZWFiZGM2MTNlYjI2ZjdjNTlkYWE5Y2FiIE1vbiBTZXAgMTcg
+MDA6MDA6MDAgMjAwMQpGcm9tOiBMZW9uYXJkbyBGZWxpcGUgVGFrYW8gSGlyYXRhIDxsZW8uZnRo
+aXJhdGFAZ21haWwuY29tPgpEYXRlOiBUdWUsIDE4IE1hciAyMDI1IDIyOjAzOjU3IC0wMzAwClN1
+YmplY3Q6IFtQQVRDSF0gamZzOiBBZGQgY2hlY2sgZm9yIGFycmF5IGJvdW5kcyBpbiBkdFJlYWRG
+aXJzdAoKQWRkIGEgY2hlY2sgZm9yIGluZGV4IG91dCBvZiBib3VuZC4KClNpZ25lZC1vZmYtYnk6
+IExlb25hcmRvIEZlbGlwZSBUYWthbyBIaXJhdGEgPGxlby5mdGhpcmF0YUBnbWFpbC5jb20+Ci0t
+LQogZnMvamZzL2pmc19kdHJlZS5jIHwgNyArKysrKysrCiAxIGZpbGUgY2hhbmdlZCwgNyBpbnNl
+cnRpb25zKCspCgpkaWZmIC0tZ2l0IGEvZnMvamZzL2pmc19kdHJlZS5jIGIvZnMvamZzL2pmc19k
+dHJlZS5jCmluZGV4IDhmODUxNzdmMjg0Yi4uNGUyOWY4YzdkNjI0IDEwMDY0NAotLS0gYS9mcy9q
+ZnMvamZzX2R0cmVlLmMKKysrIGIvZnMvamZzL2pmc19kdHJlZS5jCkBAIC0yMTI4LDYgKzIxMjgs
+MTMgQEAgaW50IGR0RGVsZXRlKHRpZF90IHRpZCwKIAkJCQkJbmV4dF9pbmRleCA9IC0xOwogCQkJ
+CWVsc2UgewogCQkJCQlzdGJsID0gRFRfR0VUU1RCTChucCk7CisKKwkJCQkJaWYgKHN0YmxbMF0g
+PCAwIHx8IHN0YmxbMF0gPiAxMjcpIHsKKwkJCQkJCURUX1BVVFBBR0UobXApOworCQkJCQkJamZz
+X2Vycm9yKGlwLT5pX3NiLCAic3RibFswXSBvdXQgb2YgYm91bmRcbiIpOworCQkJCQkJcmV0dXJu
+IC1FSU87CisJCQkJCX0KKwogCQkJCQlsZHRlbnRyeSA9CiAJCQkJCSAgICAoc3RydWN0IGxkdGVu
+dHJ5ICopICYgbnAtPgogCQkJCQkgICAgc2xvdFtzdGJsWzBdXTsKLS0gCjIuNDMuMAoK
+--000000000000784c0e0630a8bf86
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 
+--000000000000784c0e0630a8bf86
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 Jfs-discussion mailing list
 Jfs-discussion@lists.sourceforge.net
 https://lists.sourceforge.net/lists/listinfo/jfs-discussion
+
+--000000000000784c0e0630a8bf86--
+
