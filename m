@@ -2,116 +2,141 @@ Return-Path: <jfs-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+jfs-discussion@lfdr.de
 Delivered-To: lists+jfs-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id A4A05A6CA74
-	for <lists+jfs-discussion@lfdr.de>; Sat, 22 Mar 2025 15:07:41 +0100 (CET)
-Received: from [127.0.0.1] (helo=sfs-ml-1.v29.lw.sourceforge.com)
-	by sfs-ml-1.v29.lw.sourceforge.com with esmtp (Exim 4.95)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2BCE6A6CA8C
+	for <lists+jfs-discussion@lfdr.de>; Sat, 22 Mar 2025 15:23:05 +0100 (CET)
+Received: from [127.0.0.1] (helo=sfs-ml-4.v29.lw.sourceforge.com)
+	by sfs-ml-4.v29.lw.sourceforge.com with esmtp (Exim 4.95)
 	(envelope-from <jfs-discussion-bounces@lists.sourceforge.net>)
-	id 1tvzV8-0006E5-Ij;
-	Sat, 22 Mar 2025 14:07:03 +0000
+	id 1tvzkJ-0001tv-2K;
+	Sat, 22 Mar 2025 14:22:43 +0000
 Received: from [172.30.29.66] (helo=mx.sourceforge.net)
  by sfs-ml-3.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
- TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (Exim 4.95) (envelope-from
- <3wbzeZwkbAPou01mcnngtcrrkf.iqqingwugteqpvgpv.eqo@M3KW2WVRGUFZ5GODRSRYTGD7.apphosting.bounces.google.com>)
- id 1tvz1J-0003Be-NM for jfs-discussion@lists.sourceforge.net;
- Sat, 22 Mar 2025 13:36:13 +0000
+ TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (Exim 4.95)
+ (envelope-from <purvayeshi550@gmail.com>) id 1tvzje-000427-4Y
+ for jfs-discussion@lists.sourceforge.net;
+ Sat, 22 Mar 2025 14:22:01 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=sourceforge.net; s=x; h=Content-Type:To:From:Subject:Message-ID:In-Reply-To
- :Date:MIME-Version:Sender:Reply-To:Cc:Content-Transfer-Encoding:Content-ID:
+ d=sourceforge.net; s=x; h=Content-Transfer-Encoding:MIME-Version:Message-Id:
+ Date:Subject:Cc:To:From:Sender:Reply-To:Content-Type:Content-ID:
  Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
- :Resent-Message-ID:References:List-Id:List-Help:List-Unsubscribe:
+ :Resent-Message-ID:In-Reply-To:References:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=3VCs3rYR1RXuALBtHU1ly+1tslqdrRFfmevHbIa5hCw=; b=GLrAZFmlsEfQQQng/9V6Z7OotA
- ii4rFKzVY8vEYA+shR3rS4C75dHfK6LT8o3dF/aMXBE23t9lrrzoCM06DLKgMVuotglzw/MjoOBsc
- uhAreWAJvjAelcG2KQsm3IViRfIWQh37JPOx6Q5dhEcMcp+1vA+6UhLi5EN5B/skLX5Q=;
+ bh=cBSQsRnQ4TfM2tTeKw5HNlKo6byh7HY//NkZMVTFY8I=; b=ZQ5aphQ7v3UMDfAfG1R75swpKW
+ MyU/kOCPOGa8vlZ79zl/Krii9W6wU6s5locbTd6dzHRqNHG6FhAxOu5fSzBySTkAg9adgtVJ12tbg
+ HEt/nUoIjRKo8obSO+fQAs3h5NhfUoZyd+ni27FaSNl2kVBBgCChs+4tqIV89i02dFcU=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
- h=Content-Type:To:From:Subject:Message-ID:In-Reply-To:Date:MIME-Version:
- Sender:Reply-To:Cc:Content-Transfer-Encoding:Content-ID:Content-Description:
- Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+ h=Content-Transfer-Encoding:MIME-Version:Message-Id:Date:Subject:Cc:To:From
+ :Sender:Reply-To:Content-Type:Content-ID:Content-Description:Resent-Date:
+ Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
  References:List-Id:List-Help:List-Unsubscribe:List-Subscribe:List-Post:
- List-Owner:List-Archive; bh=3VCs3rYR1RXuALBtHU1ly+1tslqdrRFfmevHbIa5hCw=; b=T
- GhMogSpzWsanqpmIgrPslAmgH6la5CX8eyY9ncqWy3VjWZCe15x/qA8nBBxiizjryuc9TA33dLqLx
- vHjdErEiQfKIkqy2q96SftmrVW6Yhi8S4Ndg1Uc/bIgK5urbLsE1VXZHehMF6nKCVpQXceS2mBTt7
- 8B+TeANreWGkplZQ=;
-Received: from mail-io1-f72.google.com ([209.85.166.72])
+ List-Owner:List-Archive; bh=cBSQsRnQ4TfM2tTeKw5HNlKo6byh7HY//NkZMVTFY8I=; b=R
+ Dx3E+3n5kxJltl4f46DuZ2y1qcV4RC4PTZ+j7je9A7m2rsshrY51WJrOCHZyhwJpt8oXYS1yAx0Af
+ LtvtX+M7oKQUjmMJWGJgZSF9J7euzJrwUMbJfmLZWj6wqvz6ZsORFJLxA048BagpeXNVmkAl/7L8e
+ gDw88NDwfOtU7RU0=;
+Received: from mail-pj1-f42.google.com ([209.85.216.42])
  by sfi-mx-2.v28.lw.sourceforge.com with esmtps
  (TLS1.2:ECDHE-RSA-AES128-GCM-SHA256:128) (Exim 4.95)
- id 1tvz1D-0006DZ-Ed for jfs-discussion@lists.sourceforge.net;
- Sat, 22 Mar 2025 13:36:13 +0000
-Received: by mail-io1-f72.google.com with SMTP id
- ca18e2360f4ac-85b5a7981ccso228160339f.2
+ id 1tvzjb-0000nO-Hx for jfs-discussion@lists.sourceforge.net;
+ Sat, 22 Mar 2025 14:22:01 +0000
+Received: by mail-pj1-f42.google.com with SMTP id
+ 98e67ed59e1d1-301d6cbbd5bso5147443a91.3
  for <jfs-discussion@lists.sourceforge.net>;
- Sat, 22 Mar 2025 06:36:07 -0700 (PDT)
+ Sat, 22 Mar 2025 07:21:59 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=gmail.com; s=20230601; t=1742653314; x=1743258114; darn=lists.sourceforge.net;
+ h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+ :to:from:from:to:cc:subject:date:message-id:reply-to;
+ bh=cBSQsRnQ4TfM2tTeKw5HNlKo6byh7HY//NkZMVTFY8I=;
+ b=QOGJjSDVsE0cmp3acvXEi1YUMsEewFIhbY/WwyMIFRUnLmTw6S5xlAlX/ShXHe8FfY
+ 2V3G9oxhc26adVcbk19fFFvmio9ByQ5qxSYyqMB0du3SooFVz8w19+FXVWywFfIucaZG
+ aIbVjj7iAcRwR1NVV569tUGsH6KySdTu0s33VM8RFUUNE9gibRBgDgXW6cHmGIxv0aeb
+ leeCsf3UJnU1lbcImlIGAOGLzmV3/ilmUU83i1SSU4aJzaB7SQdY/kxwp1tijwPN7nyh
+ 8DR+Buuc1QYi5It0ywK3uqLKdHsyTWG2hHfZNb4Wj4gt+cvzOYgQ3cJow2Lc0z6AylRW
+ XTMQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20230601; t=1742650562; x=1743255362;
- h=to:from:subject:message-id:in-reply-to:date:mime-version
- :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
- bh=3VCs3rYR1RXuALBtHU1ly+1tslqdrRFfmevHbIa5hCw=;
- b=qTxXf3PG3nZofe1WRpVpqIJWclQtiPQeOXre89sAoy0bIuNrqZC4tZs3LJskVdPAvY
- ib6stVGCyxRoMMyugPiQweTbd94Ue9qoP/bPOVdkraYDPSQaJFEkMgnq1SaafxvRpO/c
- /il0Qyze+X0BjlIpfH6nd3yzeYWdnptvf+Fbeu/I9VHUSDN6LQ/MzGagmmoDlNCYspVJ
- 4uvUEYFH733wzdRca5yiuw8HquYr/FmI9/9r+ZjHkDTUqYDZwUrZMFgIyEDTPGTvWylM
- 1W3+bJkpKrEYHAVB1JectxqrZu58yNZ/0HUfbGo8VazFXwpagvMPF7/nSZEft46vYODW
- jU/Q==
-X-Forwarded-Encrypted: i=1;
- AJvYcCVrsWFG2qypKtgagmyB2einkOelgEdrPnkWv6x7sl/bRuEwT6N1gWFD3mlqB28z6Do+Rddo64oQGvdqG+CyQg==@lists.sourceforge.net
-X-Gm-Message-State: AOJu0YxCm1DfZAYmTX42pfjv/60k0QPZCpRuXqv0l8bP7MW5O0hHs1Eh
- HiG8qwjo0QED9PS4gOyg6T9dkrgb/FlScXl3QShIT03UyGOySh0hmw187KQyxa03ubowevVldae
- wOsbypmYOmhlnwhhwYIu4csrTBqjlEp3RIlOaFE7KK/lmqQLgllm9xHU=
-X-Google-Smtp-Source: AGHT+IGQ+n/ImAHnW7kHW2+2kxgz9xjMfSmeDNJfVxY2gojDkg7zTSpFly6eLNFM6zKl0/Wu7MzOKLag5retUIQAC6wnLZJsf+zo
+ d=1e100.net; s=20230601; t=1742653314; x=1743258114;
+ h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+ :to:from:x-gm-message-state:from:to:cc:subject:date:message-id
+ :reply-to;
+ bh=cBSQsRnQ4TfM2tTeKw5HNlKo6byh7HY//NkZMVTFY8I=;
+ b=pYGagLcIwAaWHhUXzTN1HaitrySsBHQk4pjOLbCTcCYNRGfW8HWvjRinOlLmlupWBr
+ KqI1Nkvi3TNu2c3te/ciBVkxfO/qjTVgLdRuZLaLGHCW5/Nh8mNHNbPC3J8N/i3oZ8so
+ 7kZESv/A8jgEEPOSOPpqSTaTLFpmTOpq6Y4CX8r6xoX4wH0lcemCl5u0EAkeGErGhJtI
+ kZ1K/evl4Mieq9I/hZnVZf9W5Asn/lPMgXQRz/aaUY51rbucvfb7QNs/ZOWsFoTHZ8ce
+ RnL+oEPFkeDvOfjCbSK3WSbMhjgVN1GgxFZV9gtLaWvCUKsfj67FdJpZVFkoPbbQSYJ2
+ t6gA==
+X-Gm-Message-State: AOJu0Yxx7vsPyjijhYLxG07ufZxzrx578Mh2pxpcRB2uEQ/X0ZcDyO7x
+ pQbLxh4RcuFU40c/UyKDj0W3WFtbVe9jSOefRblA8e+zAR1j0d5P
+X-Gm-Gg: ASbGncu78diWNq3hKstkNmJoUayoC7yIImZ2prSzi87yOurTV2GQ/oZeatclyjq96KX
+ cvvYeA3vMkgACHA/TboeXXEVhiRskqMqRWSGjWNQJpdorVkHsGpBoh2vwwCLJ8OgFK+8T2B53FA
+ OT8e8O4vK/HmqjTds7gDzQdUa6OSLSJ2ixmdCJK0NW5YKtMekr2zPzItCBQ/YcVlQr40l5OY6vj
+ gVFYYG/ZabLG6gypNObu1m8jJWLR/Fgsya904Y+su9q5SjTDV+uxX/NryE42bmSNZmMhW2UKqGx
+ dEZnlIrcVsxeI2mbexfqlOyfb7MT1V4thNZT00+kAhhVNw4bq8agM+2TCYNjYtcxNbj1+gI47fX
+ tJSs=
+X-Google-Smtp-Source: AGHT+IGws1/9iRhkXC7aE71u9g4HMMNT2JBajE79EbnG73qOrwoibxoVv6T+IuIZEpjcoyEUslDBkQ==
+X-Received: by 2002:a17:90b:1d46:b0:2fa:1851:a023 with SMTP id
+ 98e67ed59e1d1-3030ff11268mr11568556a91.35.1742653313676; 
+ Sat, 22 Mar 2025 07:21:53 -0700 (PDT)
+Received: from purva-IdeaPad-Gaming-3-15IHU6..
+ ([2409:4080:215:18d5:84f8:e760:1d0f:700b])
+ by smtp.gmail.com with ESMTPSA id
+ d9443c01a7336-22780f3bbedsm36231605ad.3.2025.03.22.07.21.50
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Sat, 22 Mar 2025 07:21:53 -0700 (PDT)
+To: Dave Kleikamp <shaggy@kernel.org>,
+	Al Viro <viro@zeniv.linux.org.uk>
+Date: Sat, 22 Mar 2025 19:51:34 +0530
+Message-Id: <20250322142134.35325-1-purvayeshi550@gmail.com>
+X-Mailer: git-send-email 2.34.1
 MIME-Version: 1.0
-X-Received: by 2002:a05:6e02:1646:b0:3d5:890b:8db with SMTP id
- e9e14a558f8ab-3d5960f4df6mr77522235ab.8.1742650561674; Sat, 22 Mar 2025
- 06:36:01 -0700 (PDT)
-Date: Sat, 22 Mar 2025 06:36:01 -0700
-In-Reply-To: <20250322130257.227256-1-duttaditya18@gmail.com>
-X-Google-Appengine-App-Id: s~syzkaller
-X-Google-Appengine-App-Id-Alias: syzkaller
-Message-ID: <67debcc1.050a0220.31a16b.003c.GAE@google.com>
-To: duttaditya18@gmail.com, jfs-discussion@lists.sourceforge.net, 
- linux-kernel@vger.kernel.org, shaggy@kernel.org, 
- syzkaller-bugs@googlegroups.com
-X-Spam-Score: 0.3 (/)
+X-Spam-Score: 0.1 (/)
 X-Spam-Report: Spam detection software,
- running on the system "util-spamd-1.v13.lw.sourceforge.com", 
+ running on the system "util-spamd-2.v13.lw.sourceforge.com", 
  has NOT identified this incoming email as spam.  The original
  message has been attached to this so you can view it or label
  similar future email.  If you have any questions, see
  the administrator of that system for details.
- Content preview:  Hello,
- syzbot has tested the proposed patch but the reproducer
- is still triggering an issue: BUG: unable to handle kernel paging request
- in lmLogSync Unable to handle kernel paging request at virtual address
- dfff800000000006
- KASAN: null-ptr-deref in range [0x0000000000000030-0x0000000000000037] Mem
- abort info: ESR = 0x0000000096000005 EC = 0x25: DA [...] 
- Content analysis details:   (0.3 points, 6.0 required)
+ Content preview:  Bug detected by Syzbot: BUG: sleeping function called from
+ invalid context in jfs_fsync Fix jfs_fsync() to avoid sleeping in
+ softirq/atomic, 
+ preventing crash. Skip execution in softirq/atomic and return -EWOULDBLOCK
+ to prevent issues. Correct generic_file_fsync() call to pass the require
+ [...] Content analysis details:   (0.1 points, 6.0 required)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.3 FROM_LOCAL_HEX         From: localpart has long hexadecimal sequence
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.166.72 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit [purvayeshi550[at]gmail.com]
  0.0 RCVD_IN_VALIDITY_SAFE_BLOCKED RBL: ADMINISTRATOR NOTICE: The
  query to Validity was blocked.  See
  https://knowledge.validity.com/hc/en-us/articles/20961730681243
  for more information.
- [209.85.166.72 listed in sa-trusted.bondedsender.org]
+ [209.85.216.42 listed in sa-accredit.habeas.com]
  0.0 RCVD_IN_VALIDITY_RPBL_BLOCKED RBL: ADMINISTRATOR NOTICE: The
  query to Validity was blocked.  See
  https://knowledge.validity.com/hc/en-us/articles/20961730681243
  for more information.
- [209.85.166.72 listed in bl.score.senderscore.com]
- 0.0 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
+ [209.85.216.42 listed in bl.score.senderscore.com]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [purvayeshi550[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.166.72 listed in wl.mailspike.net]
-X-Headers-End: 1tvz1D-0006DZ-Ed
-X-Mailman-Approved-At: Sat, 22 Mar 2025 14:06:58 +0000
-Subject: Re: [Jfs-discussion] [syzbot] [jfs?] UBSAN:
- array-index-out-of-bounds in add_missing_indices
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.216.42 listed in list.dnswl.org]
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [209.85.216.42 listed in wl.mailspike.net]
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+X-Headers-End: 1tvzjb-0000nO-Hx
+X-Mailman-Approved-At: Sat, 22 Mar 2025 14:22:42 +0000
+Subject: [Jfs-discussion] [PATCH] fs: jfs: Avoid sleeping function call in
+ softirq
 X-BeenThere: jfs-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -123,79 +148,69 @@ List-Post: <mailto:jfs-discussion@lists.sourceforge.net>
 List-Help: <mailto:jfs-discussion-request@lists.sourceforge.net?subject=help>
 List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/jfs-discussion>, 
  <mailto:jfs-discussion-request@lists.sourceforge.net?subject=subscribe>
-From: syzbot via Jfs-discussion <jfs-discussion@lists.sourceforge.net>
-Reply-To: syzbot <syzbot+b974bd41515f770c608b@syzkaller.appspotmail.com>
+From: Purva Yeshi via Jfs-discussion <jfs-discussion@lists.sourceforge.net>
+Reply-To: Purva Yeshi <purvayeshi550@gmail.com>
+Cc: syzbot+219127d0a3bce650e1b6@syzkaller.appspotmail.com,
+ jfs-discussion@lists.sourceforge.net, Purva Yeshi <purvayeshi550@gmail.com>,
+ linux-kernel@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Errors-To: jfs-discussion-bounces@lists.sourceforge.net
 
-Hello,
+Bug detected by Syzbot:
+BUG: sleeping function called from invalid context in jfs_fsync
 
-syzbot has tested the proposed patch but the reproducer is still triggering an issue:
-BUG: unable to handle kernel paging request in lmLogSync
+Fix jfs_fsync() to avoid sleeping in softirq/atomic, preventing crash.
+Skip execution in softirq/atomic and return -EWOULDBLOCK to prevent issues.
+Correct generic_file_fsync() call to pass the required arguments properly.
 
-Unable to handle kernel paging request at virtual address dfff800000000006
-KASAN: null-ptr-deref in range [0x0000000000000030-0x0000000000000037]
-Mem abort info:
-  ESR = 0x0000000096000005
-  EC = 0x25: DABT (current EL), IL = 32 bits
-  SET = 0, FnV = 0
-  EA = 0, S1PTW = 0
-  FSC = 0x05: level 1 translation fault
-Data abort info:
-  ISV = 0, ISS = 0x00000005, ISS2 = 0x00000000
-  CM = 0, WnR = 0, TnD = 0, TagAccess = 0
-  GCS = 0, Overlay = 0, DirtyBit = 0, Xs = 0
-[dfff800000000006] address between user and kernel address ranges
-Internal error: Oops: 0000000096000005 [#1] PREEMPT SMP
-Modules linked in:
-CPU: 0 UID: 0 PID: 102 Comm: jfsCommit Not tainted 6.14.0-rc7-syzkaller-ga2392f333575-dirty #0
-Hardware name: Google Google Compute Engine/Google Compute Engine, BIOS Google 02/12/2025
-pstate: 20400005 (nzCv daif +PAN -UAO -TCO -DIT -SSBS BTYPE=--)
-pc : write_special_inodes fs/jfs/jfs_logmgr.c:207 [inline]
-pc : lmLogSync+0xec/0x978 fs/jfs/jfs_logmgr.c:935
-lr : lmLogSync+0xa4/0x978 fs/jfs/jfs_logmgr.c:934
-sp : ffff80009ba17aa0
-x29: ffff80009ba17b70 x28: ffff80009b359000 x27: dfff800000000000
-x26: dfff800000000000 x25: ffff80009ba17ac0 x24: 1ffff0001202ba48
-x23: 0000000000000002 x22: 0000000000000006 x21: 0000000000000030
-x20: ffff0000edad3838 x19: ffff0000e80de000 x18: 1fffe000366f8886
-x17: ffff80008fb6d000 x16: ffff80008b74b408 x15: ffff700013742f60
-x14: 1ffff00013742f5d x13: 0000000000000004 x12: ffffffffffffffff
-x11: ffff700013742f60 x10: 0000000000ff0100 x9 : 0000000000000000
-x8 : 0000000000000006 x7 : 0000000000000000 x6 : 0000000000000000
-x5 : 0000000000000001 x4 : 0000000000000004 x3 : 0000000000000010
-x2 : 0000000000000004 x1 : 0000000000000001 x0 : 0000000000000000
-Call trace:
- write_special_inodes fs/jfs/jfs_logmgr.c:207 [inline] (P)
- lmLogSync+0xec/0x978 fs/jfs/jfs_logmgr.c:935 (P)
- jfs_syncpt+0x74/0x98 fs/jfs/jfs_logmgr.c:1041
- txEnd+0x2ec/0x558 fs/jfs/jfs_txnmgr.c:549
- txLazyCommit fs/jfs/jfs_txnmgr.c:2684 [inline]
- jfs_lazycommit+0x4e0/0x9a8 fs/jfs/jfs_txnmgr.c:2733
- kthread+0x65c/0x7b0 kernel/kthread.c:464
- ret_from_fork+0x10/0x20 arch/arm64/kernel/entry.S:862
-Code: 97bd83a8 f94002a8 9100c115 d343fea8 (387b6908) 
----[ end trace 0000000000000000 ]---
-----------------
-Code disassembly (best guess):
-   0:	97bd83a8 	bl	0xfffffffffef60ea0
-   4:	f94002a8 	ldr	x8, [x21]
-   8:	9100c115 	add	x21, x8, #0x30
-   c:	d343fea8 	lsr	x8, x21, #3
-* 10:	387b6908 	ldrb	w8, [x8, x27] <-- trapping instruction
+Reported-by: syzbot+219127d0a3bce650e1b6@syzkaller.appspotmail.com
+Closes: https://syzkaller.appspot.com/bug?extid=219127d0a3bce650e1b6
+Tested-by: syzbot+219127d0a3bce650e1b6@syzkaller.appspotmail.com
+Fixes: 5955102c9984 ("wrappers for ->i_mutex access")
+Signed-off-by: Purva Yeshi <purvayeshi550@gmail.com>
+---
+ fs/jfs/file.c | 20 ++++++--------------
+ 1 file changed, 6 insertions(+), 14 deletions(-)
 
-
-Tested on:
-
-commit:         a2392f33 drm/panthor: Clean up FW version information ..
-git tree:       git://git.kernel.org/pub/scm/linux/kernel/git/arm64/linux.git for-kernelci
-console output: https://syzkaller.appspot.com/x/log.txt?x=12ae95e4580000
-kernel config:  https://syzkaller.appspot.com/x/.config?x=5f4c5deae8cc60fe
-dashboard link: https://syzkaller.appspot.com/bug?extid=b974bd41515f770c608b
-compiler:       Debian clang version 15.0.6, GNU ld (GNU Binutils for Debian) 2.40
-userspace arch: arm64
-patch:          https://syzkaller.appspot.com/x/patch.diff?x=11c7043f980000
+diff --git a/fs/jfs/file.c b/fs/jfs/file.c
+index 93a3e7a45b0f..fc93376eb1e6 100644
+--- a/fs/jfs/file.c
++++ b/fs/jfs/file.c
+@@ -19,25 +19,17 @@
+ int jfs_fsync(struct file *file, loff_t start, loff_t end, int datasync)
+ {
+ 	struct inode *inode = file->f_mapping->host;
+-	int rc = 0;
+ 
+-	rc = file_write_and_wait_range(file, start, end);
+-	if (rc)
+-		return rc;
+-
+-	inode_lock(inode);
+-	if (!(inode->i_state & I_DIRTY_ALL) ||
+-		(datasync && !(inode->i_state & I_DIRTY_DATASYNC))) {
+-		/* Make sure committed changes hit the disk */
+-		jfs_flush_journal(JFS_SBI(inode->i_sb)->log, 1);
+-		inode_unlock(inode);
+-		return rc;
++	if (in_softirq() || in_atomic()) {
++		pr_warn("jfs_fsync() called in softirq/atomic context, skipping execution.\n");
++		return -EWOULDBLOCK;
+ 	}
+ 
+-	rc |= jfs_commit_inode(inode, 1);
++	inode_lock(inode);
++	generic_file_fsync(file, start, end, datasync);
+ 	inode_unlock(inode);
+ 
+-	return rc ? -EIO : 0;
++	return 0;
+ }
+ 
+ static int jfs_open(struct inode *inode, struct file *file)
+-- 
+2.34.1
 
 
 
