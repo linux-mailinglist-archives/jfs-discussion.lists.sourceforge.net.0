@@ -2,139 +2,114 @@ Return-Path: <jfs-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+jfs-discussion@lfdr.de
 Delivered-To: lists+jfs-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id 81199A6CA70
-	for <lists+jfs-discussion@lfdr.de>; Sat, 22 Mar 2025 15:07:40 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id A4A05A6CA74
+	for <lists+jfs-discussion@lfdr.de>; Sat, 22 Mar 2025 15:07:41 +0100 (CET)
 Received: from [127.0.0.1] (helo=sfs-ml-1.v29.lw.sourceforge.com)
 	by sfs-ml-1.v29.lw.sourceforge.com with esmtp (Exim 4.95)
 	(envelope-from <jfs-discussion-bounces@lists.sourceforge.net>)
-	id 1tvzV8-0006Dt-9G;
-	Sat, 22 Mar 2025 14:07:02 +0000
+	id 1tvzV8-0006E5-Ij;
+	Sat, 22 Mar 2025 14:07:03 +0000
 Received: from [172.30.29.66] (helo=mx.sourceforge.net)
- by sfs-ml-1.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
- TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (Exim 4.95)
- (envelope-from <duttaditya18@gmail.com>) id 1tvyVY-0002Np-94
- for jfs-discussion@lists.sourceforge.net;
- Sat, 22 Mar 2025 13:03:24 +0000
+ by sfs-ml-3.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
+ TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (Exim 4.95) (envelope-from
+ <3wbzeZwkbAPou01mcnngtcrrkf.iqqingwugteqpvgpv.eqo@M3KW2WVRGUFZ5GODRSRYTGD7.apphosting.bounces.google.com>)
+ id 1tvz1J-0003Be-NM for jfs-discussion@lists.sourceforge.net;
+ Sat, 22 Mar 2025 13:36:13 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=sourceforge.net; s=x; h=Content-Transfer-Encoding:MIME-Version:References:
- In-Reply-To:Message-Id:Date:Subject:Cc:To:From:Sender:Reply-To:Content-Type:
- Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
- Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
+ d=sourceforge.net; s=x; h=Content-Type:To:From:Subject:Message-ID:In-Reply-To
+ :Date:MIME-Version:Sender:Reply-To:Cc:Content-Transfer-Encoding:Content-ID:
+ Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+ :Resent-Message-ID:References:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=Jp3f+m8hDUdzwFKD8WssiJEprIkmH8XOlrFoJxIL6lY=; b=ehU/JbVAETZDkyliNCN41GL/yM
- qq6X5e3y8faebFGCY2JYinypR8LpNtMENVY1bMCKgzYZX2An2EKkLblAhRz6c5//z+701Tg3jPDTw
- bi1rI+qEVr7r2uX6LrMJ+zjx8b7x2zIPtvG5buV1LmyN3Jekp1yQngRekEQeUkXESgAY=;
+ bh=3VCs3rYR1RXuALBtHU1ly+1tslqdrRFfmevHbIa5hCw=; b=GLrAZFmlsEfQQQng/9V6Z7OotA
+ ii4rFKzVY8vEYA+shR3rS4C75dHfK6LT8o3dF/aMXBE23t9lrrzoCM06DLKgMVuotglzw/MjoOBsc
+ uhAreWAJvjAelcG2KQsm3IViRfIWQh37JPOx6Q5dhEcMcp+1vA+6UhLi5EN5B/skLX5Q=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
- h=Content-Transfer-Encoding:MIME-Version:References:In-Reply-To:Message-Id:
- Date:Subject:Cc:To:From:Sender:Reply-To:Content-Type:Content-ID:
- Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
- :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
- List-Post:List-Owner:List-Archive;
- bh=Jp3f+m8hDUdzwFKD8WssiJEprIkmH8XOlrFoJxIL6lY=; b=box1jBUUkm1/I1f6sP+yK0vC46
- GgxYiQTyUBhOET0TtqyrAtMz+haN/7k35an38L6ZN+asLRZP4NnpPShQ0/otR6UjHYpfs0rTq0qEl
- +660du4NVI6zBF3elM4h/odVZZWdx6SV08t+G3dI7DCrBpKJIbhutzeqW/UCj7ZBSlP4=;
-Received: from mail-pj1-f50.google.com ([209.85.216.50])
+ h=Content-Type:To:From:Subject:Message-ID:In-Reply-To:Date:MIME-Version:
+ Sender:Reply-To:Cc:Content-Transfer-Encoding:Content-ID:Content-Description:
+ Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+ References:List-Id:List-Help:List-Unsubscribe:List-Subscribe:List-Post:
+ List-Owner:List-Archive; bh=3VCs3rYR1RXuALBtHU1ly+1tslqdrRFfmevHbIa5hCw=; b=T
+ GhMogSpzWsanqpmIgrPslAmgH6la5CX8eyY9ncqWy3VjWZCe15x/qA8nBBxiizjryuc9TA33dLqLx
+ vHjdErEiQfKIkqy2q96SftmrVW6Yhi8S4Ndg1Uc/bIgK5urbLsE1VXZHehMF6nKCVpQXceS2mBTt7
+ 8B+TeANreWGkplZQ=;
+Received: from mail-io1-f72.google.com ([209.85.166.72])
  by sfi-mx-2.v28.lw.sourceforge.com with esmtps
  (TLS1.2:ECDHE-RSA-AES128-GCM-SHA256:128) (Exim 4.95)
- id 1tvyVT-0004Ge-4r for jfs-discussion@lists.sourceforge.net;
- Sat, 22 Mar 2025 13:03:24 +0000
-Received: by mail-pj1-f50.google.com with SMTP id
- 98e67ed59e1d1-30332dfc821so92161a91.3
+ id 1tvz1D-0006DZ-Ed for jfs-discussion@lists.sourceforge.net;
+ Sat, 22 Mar 2025 13:36:13 +0000
+Received: by mail-io1-f72.google.com with SMTP id
+ ca18e2360f4ac-85b5a7981ccso228160339f.2
  for <jfs-discussion@lists.sourceforge.net>;
- Sat, 22 Mar 2025 06:03:19 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=gmail.com; s=20230601; t=1742648588; x=1743253388; darn=lists.sourceforge.net;
- h=content-transfer-encoding:mime-version:references:in-reply-to
- :message-id:date:subject:cc:to:from:from:to:cc:subject:date
- :message-id:reply-to;
- bh=Jp3f+m8hDUdzwFKD8WssiJEprIkmH8XOlrFoJxIL6lY=;
- b=K0csEGH0VJ8skNqBpzkNEo69pU87xCoSv1lr3l/Um3RYVjCDhiwcWB4L0CIE4+rEmE
- LrvpqAdk5cY7Rs60p2tamZIxKqrq0glKGLHlPWWR8anp6dpVanDLDWJabZGwnesRpZqY
- Sym2aGImzeMJXTSAZguw7IQ1JWC6gjZnBGt2IP1qYlA51icCFFvGvXZj0iUw6Nn7JiYy
- 2DVBFEpbItUU8kqEfNFjzb7WGNtH4MIxPAl1BKjKZl1pLmmGC+KMD9G7XHmR7XEUUqiL
- WlHPWXmee7unHyW5xlcPjy/rKJYZlQa4D67sws3Aro2oIpGbKgpS3jpiztTlt+LGNZVx
- V+xw==
+ Sat, 22 Mar 2025 06:36:07 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20230601; t=1742648588; x=1743253388;
- h=content-transfer-encoding:mime-version:references:in-reply-to
- :message-id:date:subject:cc:to:from:x-gm-message-state:from:to:cc
- :subject:date:message-id:reply-to;
- bh=Jp3f+m8hDUdzwFKD8WssiJEprIkmH8XOlrFoJxIL6lY=;
- b=vRNBaDEQWIg74Pj01oDfDaOoEB22a2OmDkhMMHptNlxNmdeHmDUaSIFCiVCiQh4gw6
- ye6NDIdIOlNHP7RLwSden7JrTh+POU7aMghJpe07V7MnJCyPbRMM9FovR/lNszdliq1V
- +TSgUucI6Zh0R9Owh6Ep6HQO3X6U+WMto1IdRSHV7ROJabOWbt9DpyCLpJr8E4reZHqm
- GzscmPGTkxD66YOePOAKbCEIZpf/TZUIGcbZ2i2RTD7cQMQvspim+OSMBbT4qwsKaWGF
- tgLZHEI6VQeMgwJWs6U6+mFiayuTtk23a2fWWK8Yk52KSdZ5G3inssXQOQH+2MPyILHJ
- KFwQ==
-X-Gm-Message-State: AOJu0YxeP6wWKTKMvHccel7Gy155Lf0H2zRQEzXLv0CqYy2pSp2Z+ZUE
- I8YWp8PWG3T73m+XJjQQ8ojS4NAfErFnX+qQUh3BebHG7O0bCxj+
-X-Gm-Gg: ASbGncu2UkHfTT4A0gEa5kkrNwWvUYzat4h3fFOk0wnwdn8piAjo9NB+qeDhNZzVZHN
- TOxDUHYAhp2DIYJMnYNeTUqJUo0PLrJLVNDCVkQQ0moFnSM1PRF5tq8KlTHJId/2lJoDHJcvQ2l
- a2GZ2P06J1D+sAaHW5D2um4j28tJjFsRob2SPWZkZnvoDLhBtizY3pBocWvDyzUnicKJ/iPle05
- o2IHAYCfR7R6MHr8ZUO387PuRgbWwR5bLIi1+Vxj3RwRBEaqJUSwEWI14gv2BtBS1hosU+VEBFt
- +Xo0NSL6Aq+wrDAVAKzZUxx8tiTKEagv59U0BHYoI/l4cbI=
-X-Google-Smtp-Source: AGHT+IHs/wSMhvLrY1D4gAEYACP9WT0SUj0yyR8NCytlkMYsN4hnlgObgoaTOHCTE4yHuX6v3BXyYw==
-X-Received: by 2002:a17:90b:2dd2:b0:2f6:d266:f45e with SMTP id
- 98e67ed59e1d1-3030fe8d517mr12298088a91.2.1742648588196; 
- Sat, 22 Mar 2025 06:03:08 -0700 (PDT)
-Received: from pop-os.. ([2409:40f2:103b:bee1:9075:e78a:e271:6953])
- by smtp.gmail.com with ESMTPSA id
- 98e67ed59e1d1-3030f60b919sm4028792a91.27.2025.03.22.06.03.06
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Sat, 22 Mar 2025 06:03:07 -0700 (PDT)
-To: syzbot+b974bd41515f770c608b@syzkaller.appspotmail.com
-Date: Sat, 22 Mar 2025 18:32:57 +0530
-Message-Id: <20250322130257.227256-1-duttaditya18@gmail.com>
-X-Mailer: git-send-email 2.34.1
-In-Reply-To: <6745ebeb.050a0220.21d33d.001a.GAE@google.com>
-References: <6745ebeb.050a0220.21d33d.001a.GAE@google.com>
+ d=1e100.net; s=20230601; t=1742650562; x=1743255362;
+ h=to:from:subject:message-id:in-reply-to:date:mime-version
+ :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+ bh=3VCs3rYR1RXuALBtHU1ly+1tslqdrRFfmevHbIa5hCw=;
+ b=qTxXf3PG3nZofe1WRpVpqIJWclQtiPQeOXre89sAoy0bIuNrqZC4tZs3LJskVdPAvY
+ ib6stVGCyxRoMMyugPiQweTbd94Ue9qoP/bPOVdkraYDPSQaJFEkMgnq1SaafxvRpO/c
+ /il0Qyze+X0BjlIpfH6nd3yzeYWdnptvf+Fbeu/I9VHUSDN6LQ/MzGagmmoDlNCYspVJ
+ 4uvUEYFH733wzdRca5yiuw8HquYr/FmI9/9r+ZjHkDTUqYDZwUrZMFgIyEDTPGTvWylM
+ 1W3+bJkpKrEYHAVB1JectxqrZu58yNZ/0HUfbGo8VazFXwpagvMPF7/nSZEft46vYODW
+ jU/Q==
+X-Forwarded-Encrypted: i=1;
+ AJvYcCVrsWFG2qypKtgagmyB2einkOelgEdrPnkWv6x7sl/bRuEwT6N1gWFD3mlqB28z6Do+Rddo64oQGvdqG+CyQg==@lists.sourceforge.net
+X-Gm-Message-State: AOJu0YxCm1DfZAYmTX42pfjv/60k0QPZCpRuXqv0l8bP7MW5O0hHs1Eh
+ HiG8qwjo0QED9PS4gOyg6T9dkrgb/FlScXl3QShIT03UyGOySh0hmw187KQyxa03ubowevVldae
+ wOsbypmYOmhlnwhhwYIu4csrTBqjlEp3RIlOaFE7KK/lmqQLgllm9xHU=
+X-Google-Smtp-Source: AGHT+IGQ+n/ImAHnW7kHW2+2kxgz9xjMfSmeDNJfVxY2gojDkg7zTSpFly6eLNFM6zKl0/Wu7MzOKLag5retUIQAC6wnLZJsf+zo
 MIME-Version: 1.0
-X-Spam-Score: 0.1 (/)
+X-Received: by 2002:a05:6e02:1646:b0:3d5:890b:8db with SMTP id
+ e9e14a558f8ab-3d5960f4df6mr77522235ab.8.1742650561674; Sat, 22 Mar 2025
+ 06:36:01 -0700 (PDT)
+Date: Sat, 22 Mar 2025 06:36:01 -0700
+In-Reply-To: <20250322130257.227256-1-duttaditya18@gmail.com>
+X-Google-Appengine-App-Id: s~syzkaller
+X-Google-Appengine-App-Id-Alias: syzkaller
+Message-ID: <67debcc1.050a0220.31a16b.003c.GAE@google.com>
+To: duttaditya18@gmail.com, jfs-discussion@lists.sourceforge.net, 
+ linux-kernel@vger.kernel.org, shaggy@kernel.org, 
+ syzkaller-bugs@googlegroups.com
+X-Spam-Score: 0.3 (/)
 X-Spam-Report: Spam detection software,
  running on the system "util-spamd-1.v13.lw.sourceforge.com", 
  has NOT identified this incoming email as spam.  The original
  message has been attached to this so you can view it or label
  similar future email.  If you have any questions, see
  the administrator of that system for details.
- Content preview: #syz test diff --git i/fs/jfs/jfs_dtree.c
- w/fs/jfs/jfs_dtree.c
- index 93db6eec4465..de33026d18d2 100644 --- i/fs/jfs/jfs_dtree.c +++
- w/fs/jfs/jfs_dtree.c
- @@ -2613,7 +2613,7 @@ void dtInitRoot(tid_t tid, struct i [...] 
- Content analysis details:   (0.1 points, 6.0 required)
+ Content preview:  Hello,
+ syzbot has tested the proposed patch but the reproducer
+ is still triggering an issue: BUG: unable to handle kernel paging request
+ in lmLogSync Unable to handle kernel paging request at virtual address
+ dfff800000000006
+ KASAN: null-ptr-deref in range [0x0000000000000030-0x0000000000000037] Mem
+ abort info: ESR = 0x0000000096000005 EC = 0x25: DA [...] 
+ Content analysis details:   (0.3 points, 6.0 required)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [duttaditya18[at]gmail.com]
+ 0.3 FROM_LOCAL_HEX         From: localpart has long hexadecimal sequence
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.166.72 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 RCVD_IN_VALIDITY_RPBL_BLOCKED RBL: ADMINISTRATOR NOTICE: The
- query to Validity was blocked.  See
- https://knowledge.validity.com/hc/en-us/articles/20961730681243
- for more information.
- [209.85.216.50 listed in bl.score.senderscore.com]
  0.0 RCVD_IN_VALIDITY_SAFE_BLOCKED RBL: ADMINISTRATOR NOTICE: The
  query to Validity was blocked.  See
  https://knowledge.validity.com/hc/en-us/articles/20961730681243
  for more information.
- [209.85.216.50 listed in sa-trusted.bondedsender.org]
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit [duttaditya18[at]gmail.com]
+ [209.85.166.72 listed in sa-trusted.bondedsender.org]
+ 0.0 RCVD_IN_VALIDITY_RPBL_BLOCKED RBL: ADMINISTRATOR NOTICE: The
+ query to Validity was blocked.  See
+ https://knowledge.validity.com/hc/en-us/articles/20961730681243
+ for more information.
+ [209.85.166.72 listed in bl.score.senderscore.com]
+ 0.0 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.216.50 listed in list.dnswl.org]
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [209.85.216.50 listed in wl.mailspike.net]
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
-X-Headers-End: 1tvyVT-0004Ge-4r
-X-Mailman-Approved-At: Sat, 22 Mar 2025 14:06:59 +0000
+ 0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.166.72 listed in wl.mailspike.net]
+X-Headers-End: 1tvz1D-0006DZ-Ed
+X-Mailman-Approved-At: Sat, 22 Mar 2025 14:06:58 +0000
 Subject: Re: [Jfs-discussion] [syzbot] [jfs?] UBSAN:
  array-index-out-of-bounds in add_missing_indices
 X-BeenThere: jfs-discussion@lists.sourceforge.net
@@ -148,74 +123,80 @@ List-Post: <mailto:jfs-discussion@lists.sourceforge.net>
 List-Help: <mailto:jfs-discussion-request@lists.sourceforge.net?subject=help>
 List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/jfs-discussion>, 
  <mailto:jfs-discussion-request@lists.sourceforge.net?subject=subscribe>
-From: Aditya Dutt via Jfs-discussion <jfs-discussion@lists.sourceforge.net>
-Reply-To: Aditya Dutt <duttaditya18@gmail.com>
-Cc: shaggy@kernel.org, jfs-discussion@lists.sourceforge.net,
- syzkaller-bugs@googlegroups.com, linux-kernel@vger.kernel.org
+From: syzbot via Jfs-discussion <jfs-discussion@lists.sourceforge.net>
+Reply-To: syzbot <syzbot+b974bd41515f770c608b@syzkaller.appspotmail.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Errors-To: jfs-discussion-bounces@lists.sourceforge.net
 
-#syz test
+Hello,
 
-diff --git i/fs/jfs/jfs_dtree.c w/fs/jfs/jfs_dtree.c
-index 93db6eec4465..de33026d18d2 100644
---- i/fs/jfs/jfs_dtree.c
-+++ w/fs/jfs/jfs_dtree.c
-@@ -2613,7 +2613,7 @@ void dtInitRoot(tid_t tid, struct inode *ip, u32 idotdot)
-  *	     fsck.jfs should really fix this, but it currently does not.
-  *	     Called from jfs_readdir when bad index is detected.
-  */
--static void add_missing_indices(struct inode *inode, s64 bn)
-+static int add_missing_indices(struct inode *inode, s64 bn)
- {
- 	struct ldtentry *d;
- 	struct dt_lock *dtlck;
-@@ -2622,7 +2622,7 @@ static void add_missing_indices(struct inode *inode, s64 bn)
- 	struct lv *lv;
- 	struct metapage *mp;
- 	dtpage_t *p;
--	int rc;
-+	int rc = 0;
- 	s8 *stbl;
- 	tid_t tid;
- 	struct tlock *tlck;
-@@ -2647,6 +2647,16 @@ static void add_missing_indices(struct inode *inode, s64 bn)
- 
- 	stbl = DT_GETSTBL(p);
- 	for (i = 0; i < p->header.nextindex; i++) {
-+		if (stbl[i] < 0) {
-+			jfs_err("jfs: add_missing_indices: Invalid stbl[%d] = %d for inode %ld, block = %lld",
-+				i, stbl[i], (long)inode->i_ino, (long long)bn);
-+			rc = -EIO;
-+
-+			DT_PUTPAGE(mp);
-+			txAbort(tid, 0);
-+			goto end;
-+		}
-+
- 		d = (struct ldtentry *) &p->slot[stbl[i]];
- 		index = le32_to_cpu(d->index);
- 		if ((index < 2) || (index >= JFS_IP(inode)->next_index)) {
-@@ -2664,6 +2674,7 @@ static void add_missing_indices(struct inode *inode, s64 bn)
- 	(void) txCommit(tid, 1, &inode, 0);
- end:
- 	txEnd(tid);
-+	return rc;
- }
- 
- /*
-@@ -3017,7 +3028,10 @@ int jfs_readdir(struct file *file, struct dir_context *ctx)
- 		}
- 
- 		if (fix_page) {
--			add_missing_indices(ip, bn);
-+			if ((rc = add_missing_indices(ip, bn))) {
-+				jfs_err("jfs_readdir: add_missing_indices returned %d", rc);
-+				goto out;
-+			}
- 			page_fixed = 1;
- 		}
+syzbot has tested the proposed patch but the reproducer is still triggering an issue:
+BUG: unable to handle kernel paging request in lmLogSync
+
+Unable to handle kernel paging request at virtual address dfff800000000006
+KASAN: null-ptr-deref in range [0x0000000000000030-0x0000000000000037]
+Mem abort info:
+  ESR = 0x0000000096000005
+  EC = 0x25: DABT (current EL), IL = 32 bits
+  SET = 0, FnV = 0
+  EA = 0, S1PTW = 0
+  FSC = 0x05: level 1 translation fault
+Data abort info:
+  ISV = 0, ISS = 0x00000005, ISS2 = 0x00000000
+  CM = 0, WnR = 0, TnD = 0, TagAccess = 0
+  GCS = 0, Overlay = 0, DirtyBit = 0, Xs = 0
+[dfff800000000006] address between user and kernel address ranges
+Internal error: Oops: 0000000096000005 [#1] PREEMPT SMP
+Modules linked in:
+CPU: 0 UID: 0 PID: 102 Comm: jfsCommit Not tainted 6.14.0-rc7-syzkaller-ga2392f333575-dirty #0
+Hardware name: Google Google Compute Engine/Google Compute Engine, BIOS Google 02/12/2025
+pstate: 20400005 (nzCv daif +PAN -UAO -TCO -DIT -SSBS BTYPE=--)
+pc : write_special_inodes fs/jfs/jfs_logmgr.c:207 [inline]
+pc : lmLogSync+0xec/0x978 fs/jfs/jfs_logmgr.c:935
+lr : lmLogSync+0xa4/0x978 fs/jfs/jfs_logmgr.c:934
+sp : ffff80009ba17aa0
+x29: ffff80009ba17b70 x28: ffff80009b359000 x27: dfff800000000000
+x26: dfff800000000000 x25: ffff80009ba17ac0 x24: 1ffff0001202ba48
+x23: 0000000000000002 x22: 0000000000000006 x21: 0000000000000030
+x20: ffff0000edad3838 x19: ffff0000e80de000 x18: 1fffe000366f8886
+x17: ffff80008fb6d000 x16: ffff80008b74b408 x15: ffff700013742f60
+x14: 1ffff00013742f5d x13: 0000000000000004 x12: ffffffffffffffff
+x11: ffff700013742f60 x10: 0000000000ff0100 x9 : 0000000000000000
+x8 : 0000000000000006 x7 : 0000000000000000 x6 : 0000000000000000
+x5 : 0000000000000001 x4 : 0000000000000004 x3 : 0000000000000010
+x2 : 0000000000000004 x1 : 0000000000000001 x0 : 0000000000000000
+Call trace:
+ write_special_inodes fs/jfs/jfs_logmgr.c:207 [inline] (P)
+ lmLogSync+0xec/0x978 fs/jfs/jfs_logmgr.c:935 (P)
+ jfs_syncpt+0x74/0x98 fs/jfs/jfs_logmgr.c:1041
+ txEnd+0x2ec/0x558 fs/jfs/jfs_txnmgr.c:549
+ txLazyCommit fs/jfs/jfs_txnmgr.c:2684 [inline]
+ jfs_lazycommit+0x4e0/0x9a8 fs/jfs/jfs_txnmgr.c:2733
+ kthread+0x65c/0x7b0 kernel/kthread.c:464
+ ret_from_fork+0x10/0x20 arch/arm64/kernel/entry.S:862
+Code: 97bd83a8 f94002a8 9100c115 d343fea8 (387b6908) 
+---[ end trace 0000000000000000 ]---
+----------------
+Code disassembly (best guess):
+   0:	97bd83a8 	bl	0xfffffffffef60ea0
+   4:	f94002a8 	ldr	x8, [x21]
+   8:	9100c115 	add	x21, x8, #0x30
+   c:	d343fea8 	lsr	x8, x21, #3
+* 10:	387b6908 	ldrb	w8, [x8, x27] <-- trapping instruction
+
+
+Tested on:
+
+commit:         a2392f33 drm/panthor: Clean up FW version information ..
+git tree:       git://git.kernel.org/pub/scm/linux/kernel/git/arm64/linux.git for-kernelci
+console output: https://syzkaller.appspot.com/x/log.txt?x=12ae95e4580000
+kernel config:  https://syzkaller.appspot.com/x/.config?x=5f4c5deae8cc60fe
+dashboard link: https://syzkaller.appspot.com/bug?extid=b974bd41515f770c608b
+compiler:       Debian clang version 15.0.6, GNU ld (GNU Binutils for Debian) 2.40
+userspace arch: arm64
+patch:          https://syzkaller.appspot.com/x/patch.diff?x=11c7043f980000
+
 
 
 _______________________________________________
