@@ -2,28 +2,28 @@ Return-Path: <jfs-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+jfs-discussion@lfdr.de
 Delivered-To: lists+jfs-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5AE39A7AA43
-	for <lists+jfs-discussion@lfdr.de>; Thu,  3 Apr 2025 21:10:28 +0200 (CEST)
-Received: from [127.0.0.1] (helo=sfs-ml-1.v29.lw.sourceforge.com)
-	by sfs-ml-1.v29.lw.sourceforge.com with esmtp (Exim 4.95)
+	by mail.lfdr.de (Postfix) with ESMTPS id E214DA7AA4D
+	for <lists+jfs-discussion@lfdr.de>; Thu,  3 Apr 2025 21:10:59 +0200 (CEST)
+Received: from [127.0.0.1] (helo=sfs-ml-4.v29.lw.sourceforge.com)
+	by sfs-ml-4.v29.lw.sourceforge.com with esmtp (Exim 4.95)
 	(envelope-from <jfs-discussion-bounces@lists.sourceforge.net>)
-	id 1u0Px5-0006FC-39;
-	Thu, 03 Apr 2025 19:10:11 +0000
+	id 1u0PxY-00007w-Hb;
+	Thu, 03 Apr 2025 19:10:40 +0000
 Received: from [172.30.29.66] (helo=mx.sourceforge.net)
- by sfs-ml-1.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
+ by sfs-ml-4.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
  TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (Exim 4.95)
- (envelope-from <sashal@kernel.org>) id 1u0Px3-0006Ey-VT
+ (envelope-from <sashal@kernel.org>) id 1u0PxW-00007l-NI
  for jfs-discussion@lists.sourceforge.net;
- Thu, 03 Apr 2025 19:10:10 +0000
+ Thu, 03 Apr 2025 19:10:38 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=sourceforge.net; s=x; h=Content-Transfer-Encoding:MIME-Version:References:
  In-Reply-To:Message-Id:Date:Subject:Cc:To:From:Sender:Reply-To:Content-Type:
  Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
  Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=ZXJz66Zg9bmX3iE9EbfSHisVX92Ltx/fxQBezH3PIe4=; b=C+3TETyKctb8PfIC22eW3bb5aa
- lR6M5zr4O2jlkUHNmnDpSVxE/eO4YdzbsKJhBwXyST6mnpTrI+8xVejJhBiT7fyA+tsLOvlSmBhNq
- mL/H10CoQuMwQq7IVt/1Ng6uFOVZYXKXBbMb3sQZljkEkZA9UB+Wilz1eWM+8Dv3cY1Y=;
+ bh=Pr5zytDWvE9vnqjlaHUlF6tdY9f/NzmSuyn80rdah4Q=; b=Tr/5sLYftDYLoZ6qwPM/6uJw+M
+ Fq8f08plb2gkZbbuTmRxALmcXdg13vDYHJ5CUTY6rXuXNp3m7B4rialxIixS2J5ZF/GYHS6slbKvu
+ ZfVwX5PNbASNAaiY37uxABRF1KOu8faR2Ark4r0iUEekiDxR1i2/14oSnUcRMSabkZk0=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
  h=Content-Transfer-Encoding:MIME-Version:References:In-Reply-To:Message-Id:
@@ -31,79 +31,79 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
  :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
  List-Post:List-Owner:List-Archive;
- bh=ZXJz66Zg9bmX3iE9EbfSHisVX92Ltx/fxQBezH3PIe4=; b=aMnOBAYiykNqIK5OzewYVzXPw8
- qDk53Lo06+2CEUTPQV8K1psS5MtuRg+QqQL7fPEMDgZ1HTz904yK2Ma615ZehmnZdHEy1fu9hKpJq
- vr3uKCy+ddZYqG+GZAULGPnIY6QOLwpSH2O0jp9tvIbZ751nAWJ9ywrluYFiJmMnswhw=;
-Received: from dfw.source.kernel.org ([139.178.84.217])
+ bh=Pr5zytDWvE9vnqjlaHUlF6tdY9f/NzmSuyn80rdah4Q=; b=JtTWqF8FLQy8q4H0y+xiejhsP5
+ 3h9BKuW3kYp12OmB1GGg4aU8ZQn8NiUzhCTOOln3rkW+LXXD2PN8V9tCUrMRer85xpTycGSt7vw/1
+ E+rXgqptzIm9vMZ7G6zchWQkIkBJmKMsc5djyLlanDDqwWTWahYKxb0IMUO4Ggj4bcdE=;
+Received: from sea.source.kernel.org ([172.234.252.31])
  by sfi-mx-2.v28.lw.sourceforge.com with esmtps
  (TLS1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.95)
- id 1u0Pwo-0003KT-Pz for jfs-discussion@lists.sourceforge.net;
- Thu, 03 Apr 2025 19:10:10 +0000
+ id 1u0PxE-0003Oa-HU for jfs-discussion@lists.sourceforge.net;
+ Thu, 03 Apr 2025 19:10:36 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
- by dfw.source.kernel.org (Postfix) with ESMTP id 6DD835C68FE;
- Thu,  3 Apr 2025 19:07:27 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id B7565C4CEE3;
- Thu,  3 Apr 2025 19:09:42 +0000 (UTC)
+ by sea.source.kernel.org (Postfix) with ESMTP id B718B44BFD;
+ Thu,  3 Apr 2025 19:10:09 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id DAA63C4CEE3;
+ Thu,  3 Apr 2025 19:10:08 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=k20201202; t=1743707384;
- bh=a/lWEcq4MvOXq8Dm2qBzh3SjI227vcmWnqwL602uVt0=;
+ s=k20201202; t=1743707410;
+ bh=fK2ogpiXpRoYoMpAwWAjaO9nttY7dsX12awqv0nZ1XQ=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=AQDwaMl1AXnhdQEAeSzpEKk1VgGqISLZ3vurm3GrrsCMOEzKbE9pTqB4aMfe9NiTW
- CVYtEQwgojUlEGl4DzxhN602k0VJDYiF+mDfGQ8kYhdrWOgA0Im3FhWOs+07maxb+w
- YMh+c5gE848oOpQxAzR3UWSpZ5WM1XzG95sl8lkov5gP0yarnT/uZmZO2qEpy7x7h6
- 30aue7xJQdf16K9h+NtYTiH+3jDlsc1Gd/8vrz7t+1pyZ/ff+djN8vSYMbB+aOqDvf
- RTfS2MoSzxVdjOMUiB3DySRrlYDp+Gs3Y5IjG+F+LdKU+5mWk8eeSOm4Wia6sA1X8K
- EnDxyVoopaZBw==
+ b=MRrIXOojZD5ltBgUIz3oZlqyZ0A2yZkf7ExDbc/4rhaqt8B4O8krbqzMKCbVwSaXi
+ V0mfY8etoCJNTphiZq1DWmV4m7Iyxn4tDtlaw0oaQm5AKAVC5/woTyW1g5qrHG+bIv
+ Wo5xr51fwa5OJlVkNpWFV2uWYp9fvtmCPsqo8uMdpk8Gxri6xec35+UsMkbS6qKlrr
+ 1Y510j6c+8Vq7rjH5uqi29cV8yBnptm+hUVykce9KbdnwkdiLhqNRzL/oXt+vqx2r3
+ Cf0RFwAdEmaNpu5v4+eFMOAn23wwMi5Ql5JoTXeNmvMSC3+kyHCnc7hULLzlLxW8Kl
+ 5f43uOmxDdppg==
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Date: Thu,  3 Apr 2025 15:09:14 -0400
-Message-Id: <20250403190924.2678291-6-sashal@kernel.org>
+Date: Thu,  3 Apr 2025 15:09:49 -0400
+Message-Id: <20250403191002.2678588-2-sashal@kernel.org>
 X-Mailer: git-send-email 2.39.5
-In-Reply-To: <20250403190924.2678291-1-sashal@kernel.org>
-References: <20250403190924.2678291-1-sashal@kernel.org>
+In-Reply-To: <20250403191002.2678588-1-sashal@kernel.org>
+References: <20250403191002.2678588-1-sashal@kernel.org>
 MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
-X-stable-base: Linux 5.15.179
-X-Spam-Score: -5.8 (-----)
+X-stable-base: Linux 5.10.235
+X-Spam-Score: -0.8 (/)
 X-Spam-Report: Spam detection software,
- running on the system "util-spamd-2.v13.lw.sourceforge.com", 
+ running on the system "util-spamd-1.v13.lw.sourceforge.com", 
  has NOT identified this incoming email as spam.  The original
  message has been attached to this so you can view it or label
  similar future email.  If you have any questions, see
  the administrator of that system for details.
- Content preview:  From: Edward Adam Davis <eadavis@qq.com> [ Upstream commit
- ddf2846f22e8575d6b4b6a66f2100f168b8cd73d ] The width in dmapctl of the AG
- is zero, it trigger a divide error when calculating the control page level
- in dbAllocAG. 
- Content analysis details:   (-5.8 points, 6.0 required)
+ Content preview: From: Rand Deeb <rand.sec96@gmail.com> [ Upstream commit
+ 70ca3246ad201b53a9f09380b3f29d8bac320383
+ ] The expression "inactags << bmp->db_agl2size" in the function
+ dbFinalizeBmap()
+ is computed using int operands. Although the values (inactags and db_agl2size)
+ are derived from filesystem parameters and [...] 
+ Content analysis details:   (-0.8 points, 6.0 required)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [139.178.84.217 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 RCVD_IN_VALIDITY_SAFE_BLOCKED RBL: ADMINISTRATOR NOTICE: The
+ query to Validity was blocked.  See
+ https://knowledge.validity.com/hc/en-us/articles/20961730681243
+ for more information.
+ [172.234.252.31 listed in sa-trusted.bondedsender.org]
  0.0 RCVD_IN_VALIDITY_RPBL_BLOCKED RBL: ADMINISTRATOR NOTICE: The
  query to Validity was blocked.  See
  https://knowledge.validity.com/hc/en-us/articles/20961730681243
  for more information.
- [139.178.84.217 listed in bl.score.senderscore.com]
- 0.0 RCVD_IN_VALIDITY_CERTIFIED_BLOCKED RBL: ADMINISTRATOR NOTICE:
- The query to Validity was blocked.  See
- https://knowledge.validity.com/hc/en-us/articles/20961730681243
- for more information.
- [139.178.84.217 listed in sa-accredit.habeas.com]
+ [172.234.252.31 listed in bl.score.senderscore.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.6 DKIMWL_WL_HIGH         DKIMwl.org - High trust sender
-X-Headers-End: 1u0Pwo-0003KT-Pz
-Subject: [Jfs-discussion] [PATCH AUTOSEL 5.15 06/16] jfs: add sanity check
- for agwidth in dbMount
+X-Headers-End: 1u0PxE-0003Oa-HU
+Subject: [Jfs-discussion] [PATCH AUTOSEL 5.10 02/15] fs/jfs: cast inactags
+ to s64 to prevent potential overflow
 X-BeenThere: jfs-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -117,48 +117,57 @@ List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/jfs-discussion>,
  <mailto:jfs-discussion-request@lists.sourceforge.net?subject=subscribe>
 From: Sasha Levin via Jfs-discussion <jfs-discussion@lists.sourceforge.net>
 Reply-To: Sasha Levin <sashal@kernel.org>
-Cc: syzbot+7c808908291a569281a9@syzkaller.appspotmail.com,
- Sasha Levin <sashal@kernel.org>, jfs-discussion@lists.sourceforge.net,
- shaggy@kernel.org, ghanshyam1898@gmail.com, aha310510@gmail.com,
- Edward Adam Davis <eadavis@qq.com>, rbrasga@uci.edu, niharchaithanya@gmail.com,
- rand.sec96@gmail.com
+Cc: Sasha Levin <sashal@kernel.org>, shaggy@kernel.org,
+ jfs-discussion@lists.sourceforge.net, ghanshyam1898@gmail.com,
+ aha310510@gmail.com, eadavis@qq.com, Rand Deeb <rand.sec96@gmail.com>,
+ niharchaithanya@gmail.com, rbrasga@uci.edu
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Errors-To: jfs-discussion-bounces@lists.sourceforge.net
 
-From: Edward Adam Davis <eadavis@qq.com>
+From: Rand Deeb <rand.sec96@gmail.com>
 
-[ Upstream commit ddf2846f22e8575d6b4b6a66f2100f168b8cd73d ]
+[ Upstream commit 70ca3246ad201b53a9f09380b3f29d8bac320383 ]
 
-The width in dmapctl of the AG is zero, it trigger a divide error when
-calculating the control page level in dbAllocAG.
+The expression "inactags << bmp->db_agl2size" in the function
+dbFinalizeBmap() is computed using int operands. Although the
+values (inactags and db_agl2size) are derived from filesystem
+parameters and are usually small, there is a theoretical risk that
+the shift could overflow a 32-bit int if extreme values occur.
 
-To avoid this issue, add a check for agwidth in dbAllocAG.
+According to the C standard, shifting a signed 32-bit int can lead
+to undefined behavior if the result exceeds its range. In our
+case, an overflow could miscalculate free blocks, potentially
+leading to erroneous filesystem accounting.
 
-Reported-and-tested-by: syzbot+7c808908291a569281a9@syzkaller.appspotmail.com
-Closes: https://syzkaller.appspot.com/bug?extid=7c808908291a569281a9
-Signed-off-by: Edward Adam Davis <eadavis@qq.com>
+To ensure the arithmetic is performed in 64-bit space, we cast
+"inactags" to s64 before shifting. This defensive fix prevents any
+risk of overflow and complies with kernel coding best practices.
+
+Found by Linux Verification Center (linuxtesting.org) with SVACE.
+
+Signed-off-by: Rand Deeb <rand.sec96@gmail.com>
 Signed-off-by: Dave Kleikamp <dave.kleikamp@oracle.com>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- fs/jfs/jfs_dmap.c | 4 ++++
- 1 file changed, 4 insertions(+)
+ fs/jfs/jfs_dmap.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
 
 diff --git a/fs/jfs/jfs_dmap.c b/fs/jfs/jfs_dmap.c
-index 99e9885cbb444..cd6ba0c96d77b 100644
+index ef220709c7f51..389dafd23d15e 100644
 --- a/fs/jfs/jfs_dmap.c
 +++ b/fs/jfs/jfs_dmap.c
-@@ -204,6 +204,10 @@ int dbMount(struct inode *ipbmap)
- 	bmp->db_aglevel = le32_to_cpu(dbmp_le->dn_aglevel);
- 	bmp->db_agheight = le32_to_cpu(dbmp_le->dn_agheight);
- 	bmp->db_agwidth = le32_to_cpu(dbmp_le->dn_agwidth);
-+	if (!bmp->db_agwidth) {
-+		err = -EINVAL;
-+		goto err_release_metapage;
-+	}
- 	bmp->db_agstart = le32_to_cpu(dbmp_le->dn_agstart);
- 	bmp->db_agl2size = le32_to_cpu(dbmp_le->dn_agl2size);
- 	if (bmp->db_agl2size > L2MAXL2SIZE - L2MAXAG ||
+@@ -3728,8 +3728,8 @@ void dbFinalizeBmap(struct inode *ipbmap)
+ 	 * system size is not a multiple of the group size).
+ 	 */
+ 	inactfree = (inactags && ag_rem) ?
+-	    ((inactags - 1) << bmp->db_agl2size) + ag_rem
+-	    : inactags << bmp->db_agl2size;
++	    (((s64)inactags - 1) << bmp->db_agl2size) + ag_rem
++	    : ((s64)inactags << bmp->db_agl2size);
+ 
+ 	/* determine how many free blocks are in the active
+ 	 * allocation groups plus the average number of free blocks
 -- 
 2.39.5
 
