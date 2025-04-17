@@ -2,202 +2,123 @@ Return-Path: <jfs-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+jfs-discussion@lfdr.de
 Delivered-To: lists+jfs-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id 95A71A91F6A
+	by mail.lfdr.de (Postfix) with ESMTPS id B8568A91F6B
 	for <lists+jfs-discussion@lfdr.de>; Thu, 17 Apr 2025 16:21:57 +0200 (CEST)
 Received: from [127.0.0.1] (helo=sfs-ml-1.v29.lw.sourceforge.com)
 	by sfs-ml-1.v29.lw.sourceforge.com with esmtp (Exim 4.95)
 	(envelope-from <jfs-discussion-bounces@lists.sourceforge.net>)
-	id 1u5Q7E-0005GW-9j;
-	Thu, 17 Apr 2025 14:21:20 +0000
+	id 1u5Q7E-0005Ge-Ja;
+	Thu, 17 Apr 2025 14:21:21 +0000
 Received: from [172.30.29.66] (helo=mx.sourceforge.net)
- by sfs-ml-2.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
- TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (Exim 4.95)
- (envelope-from <david@redhat.com>) id 1u5Ko2-0004e3-4R
- for jfs-discussion@lists.sourceforge.net;
- Thu, 17 Apr 2025 08:41:10 +0000
+ by sfs-ml-3.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
+ TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (Exim 4.95) (envelope-from
+ <3CsAAaAkbANMHNO9zAA3GzEE72.5DD5A3JH3G1DCI3CI.1DB@M3KW2WVRGUFZ5GODRSRYTGD7.apphosting.bounces.google.com>)
+ id 1u5Ku9-0001YE-2G for jfs-discussion@lists.sourceforge.net;
+ Thu, 17 Apr 2025 08:47:28 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=sourceforge.net; s=x; h=Content-Transfer-Encoding:Content-Type:In-Reply-To:
- From:References:Cc:To:Subject:MIME-Version:Date:Message-ID:Sender:Reply-To:
+ d=sourceforge.net; s=x; h=Content-Transfer-Encoding:Content-Type:To:From:
+ Subject:Message-ID:In-Reply-To:Date:MIME-Version:Sender:Reply-To:Cc:
  Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
- Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
- List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=2HM15lSIcwJz1/Tn8IohqE330i22WhecFHOPITsT+xA=; b=ZWIemGT9P8+CbjIrQgiTAV/fIz
- vAepLIkp3GyXnM3gd+EOZDbW/WCskIllnWG8JUi486CdCllr9g7jYD9mEyuzgrhWDaBoUcgLeSDry
- L7qt9wZIiQTmZCXUvbpboc7rPo9KOmr3IDOUoeee/wl03LHKkquU4Hdd+YHcZEvPOTQU=;
+ Resent-To:Resent-Cc:Resent-Message-ID:References:List-Id:List-Help:
+ List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=6elf1Co+y5uicUbwOZw4K+kLsTMX1wXmczsFW31DvRo=; b=KsUk1r7wF7AWRXvjeZwv7SoStX
+ XXMxWgfJRSqveKAsFK73W98I6Vryz4Lc18Yzs6TTzEguvA/+DkrsjpxutJfYLgCJ3vQ1oUoR8mtVY
+ KIuxGxGwRpbAYmzPx/mskEFQwLPqiZP3cQ90KsOC06E6vk9iaeR3o7KYXFOiBbRvFhu4=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
- h=Content-Transfer-Encoding:Content-Type:In-Reply-To:From:References:Cc:To:
- Subject:MIME-Version:Date:Message-ID:Sender:Reply-To:Content-ID:
+ h=Content-Transfer-Encoding:Content-Type:To:From:Subject:Message-ID:
+ In-Reply-To:Date:MIME-Version:Sender:Reply-To:Cc:Content-ID:
  Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
- :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
- List-Post:List-Owner:List-Archive;
- bh=2HM15lSIcwJz1/Tn8IohqE330i22WhecFHOPITsT+xA=; b=Yy6TahzuSdsdI1B3Ya8xLS1JSr
- uiwT0qQlo6WWEuZr5GAsPhNOWAkljR7aoLb4fOXXXLEefaRo8K/1EuA+ll0Q1jayDY0/exAm0xVtp
- OWYoRZkND5tZBzWfeWmgHIHMJ2Y8vAM0u6U90cXLVPvWSWNhG0V1UjOhYs0JQVPnlNHA=;
-Received: from us-smtp-delivery-124.mimecast.com ([170.10.133.124])
- by sfi-mx-2.v28.lw.sourceforge.com with esmtp (Exim 4.95)
- id 1u5Knh-0002so-QH for jfs-discussion@lists.sourceforge.net;
- Thu, 17 Apr 2025 08:41:08 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
- s=mimecast20190719; t=1744879228;
- h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
- to:to:cc:cc:mime-version:mime-version:content-type:content-type:
- content-transfer-encoding:content-transfer-encoding:
- in-reply-to:in-reply-to:references:references:autocrypt:autocrypt;
- bh=2HM15lSIcwJz1/Tn8IohqE330i22WhecFHOPITsT+xA=;
- b=A2wfOquLiwBizl77FWU1T40ejtYXyOeBGGPDETWO5yLRrp2hXoOD3aEuACxKLXx/cAx0R9
- gJ/bsnEukOdI14ggMy+iaE9VrUSEfOT9o0NL8Oy4/oaxcgWOHaHTZFYFiuV0VSgwJyAmqA
- v9mL9I+uYqFwum5MFJ5202Xdt53tAhY=
-Received: from mail-wr1-f69.google.com (mail-wr1-f69.google.com
- [209.85.221.69]) by relay.mimecast.com with ESMTP with STARTTLS
- (version=TLSv1.3, cipher=TLS_AES_256_GCM_SHA384) id
- us-mta-462-v9SIojEwOzKGV9Aw5qxpvQ-1; Thu, 17 Apr 2025 04:40:27 -0400
-X-MC-Unique: v9SIojEwOzKGV9Aw5qxpvQ-1
-X-Mimecast-MFC-AGG-ID: v9SIojEwOzKGV9Aw5qxpvQ_1744879226
-Received: by mail-wr1-f69.google.com with SMTP id
- ffacd0b85a97d-39c1b1c0969so315578f8f.1
+ :Resent-Message-ID:References:List-Id:List-Help:List-Unsubscribe:
+ List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=6elf1Co+y5uicUbwOZw4K+kLsTMX1wXmczsFW31DvRo=; b=bWPo8YEuCZBGQB5Nb2sfRKwlM3
+ vRz5Bc8xDACjuxD4j6kAJz95kHUNPK+0WkeKEKPypM3GMkGFxRgOYQYEiGLLKNjaaWg/ITHFCdPI9
+ wxx23KnoisyJIcE1FqWdQgMvVnyn2XbMsPXyoFxDQN5bUJB/pDBKMOk/M5JHCWe1sHzY=;
+Received: from mail-io1-f70.google.com ([209.85.166.70])
+ by sfi-mx-2.v28.lw.sourceforge.com with esmtps
+ (TLS1.2:ECDHE-RSA-AES128-GCM-SHA256:128) (Exim 4.95)
+ id 1u5Kts-0003ge-4m for jfs-discussion@lists.sourceforge.net;
+ Thu, 17 Apr 2025 08:47:28 +0000
+Received: by mail-io1-f70.google.com with SMTP id
+ ca18e2360f4ac-851a991cf8bso139140239f.0
  for <jfs-discussion@lists.sourceforge.net>;
- Thu, 17 Apr 2025 01:40:27 -0700 (PDT)
+ Thu, 17 Apr 2025 01:47:12 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20230601; t=1744879226; x=1745484026;
- h=content-transfer-encoding:in-reply-to:organization:autocrypt
- :content-language:from:references:cc:to:subject:user-agent
- :mime-version:date:message-id:x-gm-message-state:from:to:cc:subject
- :date:message-id:reply-to;
- bh=2HM15lSIcwJz1/Tn8IohqE330i22WhecFHOPITsT+xA=;
- b=HDsQC+8A62xXnIJQ4VIF+B3emsVDwd/iJZecxEqte9YnEg3Z/R7JZLSf467IZX0voH
- 9o+/q/PyHlCO/+tuBJVnna8f4oXnhahVoc89Sf58FnNM4darCEY/X8j36ehf/l9aglBc
- vLw8/90Vt8WULF073DmrnSqOOLVUI2Ll+u43lcqo0qKwOt4MWTBQyyK1WduRAXb4XJEC
- avl5VGsa6xmas278aPHpu88dLkOdpCpn1+jY+fC7RMlTa+CRs+hF9KQClvZkJ8Mk0/YT
- NcrqdnxfT0puMwijPc6zgjjYm1vCeaieYA2kdDKm/F0/pZbRT25AwFnKcBUsrBBrYfYz
- IKWQ==
+ d=1e100.net; s=20230601; t=1744879626; x=1745484426;
+ h=content-transfer-encoding:to:from:subject:message-id:in-reply-to
+ :date:mime-version:x-gm-message-state:from:to:cc:subject:date
+ :message-id:reply-to;
+ bh=6elf1Co+y5uicUbwOZw4K+kLsTMX1wXmczsFW31DvRo=;
+ b=u+xK6nzYTM2nVrQwdK2YV1TlcMIB3OHuf2O3dBgbebhWuZTBDVYiI39HYG6oN6i016
+ m++iolf+Dpco0qISY+sJ7Q0kkcDsZLIVEL6jQAkYKwOcPKhDKA26AwYCYgwhjlsTEYYX
+ ZhGIPBXc+Q9OBK26JimX0AZ2TFvHfpPqgF3wytD7to9QMTkn8uu0vHKes6tFE4qYgbTk
+ Tsv+VuVqLLkOv1FEA18vmJpVaYmgFYPkg+CYA33U1pw6O2S4m5chWXnJqXGBUb1B2f9i
+ PC6vXP0rC4FZs1uWmXff5lCe5Q8OUrBr1N1v99g+KIc4SQ0UHe6K8ctjd2NrTkzHUoCa
+ drOQ==
 X-Forwarded-Encrypted: i=1;
- AJvYcCX4d57iAW8zNYi3t7MonoQAjKStQXDmiq/aPuGoE9aW4mkzo4becujPqKIQGrtMVE+o3Xid7Fm5kP8/dnrb+g==@lists.sourceforge.net
-X-Gm-Message-State: AOJu0YxRVnxx//SS0CuWNFkrGEHKu/4FEiN4EC17uptwmNIecNHk3rY3
- QWqo43ruZmFwdZd3k9o21+pKsaZ2as+tEflsDRQ1F0Ge5qkJB1eAmdexruo7mkjSevPsMGpY21i
- WCYR/X7X0b2FgWRD2v1b6sV+12wWnK5EkDVcpFZd38Qts4uiopHawxVDyw/d3CM8Fu8Hfwl7U
-X-Gm-Gg: ASbGncsEZP8EmRUPunmeroFhcCsFhzaLjX+gyVw3qfRhgGA+z5sNkBqFgDFLln+f4e3
- F9v+Gp4Q6ozTufqTD9I9p60j9QTEXHxL3eVdE7oaM2nKoBVghUGQboNiLp4v6w+jDbKqQebxuKI
- 9sP0+TyAGTK4YYtPycWhe/zNkUKE992wEVxIyBdmx67SK43wfAzJGeVVgfUd8yyKDTEsm/1GDgr
- sgff05LcYv042zDEm58a0bix7TK2YdQltuJ6oI1RrLy2Hj+xyQ4FFGfcNQxaGDMCqEA+Q8jvdyQ
- nG+6LnlP1GZEWzb7hWURhHTyBO/o6N2mCu+e/aRga6pXHrO4Il1drfkugcKZ3DzCM6Da2IUYqgt
- 3wH0tIOTdn/UUT2MoZaIPvOVIz77UCv2SHMma5fE=
-X-Received: by 2002:a05:6000:2911:b0:399:6dc0:f134 with SMTP id
- ffacd0b85a97d-39ee5bad76emr4379723f8f.51.1744879225955; 
- Thu, 17 Apr 2025 01:40:25 -0700 (PDT)
-X-Google-Smtp-Source: AGHT+IHQeRaBf4AjgQTFoutEd6jXROHhB1GPjNf97Ew+mL54HY9MIlxAHk/+IocWI7W3ZkjJTLahOQ==
-X-Received: by 2002:a05:6000:2911:b0:399:6dc0:f134 with SMTP id
- ffacd0b85a97d-39ee5bad76emr4379705f8f.51.1744879225578; 
- Thu, 17 Apr 2025 01:40:25 -0700 (PDT)
-Received: from ?IPV6:2003:cb:c706:2700:abf9:4eac:588c:adab?
- (p200300cbc7062700abf94eac588cadab.dip0.t-ipconnect.de.
- [2003:cb:c706:2700:abf9:4eac:588c:adab])
- by smtp.gmail.com with ESMTPSA id
- ffacd0b85a97d-39ee3f12dc9sm4168115f8f.8.2025.04.17.01.40.24
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Thu, 17 Apr 2025 01:40:25 -0700 (PDT)
-Message-ID: <75dc1299-8a83-4ce8-a715-cf1a8d43e0f9@redhat.com>
-Date: Thu, 17 Apr 2025 10:40:23 +0200
+ AJvYcCXDFj//NofZPe2iECpKPLt2Yhowq3B0D2pWalPwMieFXi6COlyTVORuKnXnO7nHpPHu/RzkiZYHqJJnVKx0AA==@lists.sourceforge.net
+X-Gm-Message-State: AOJu0YzLgSoBHeVvsLL4fB4HkmROduxkO/J+GIzeTHORVt5GXDPDD8f5
+ nZ0pufcpgf2x2uDVbvfazPqVkArjq8JkAy1lPWLukDWEhxP0TFWCA8A43AKk72xy6MV17VQ+stZ
+ kFiOLAazjY+80XkdnlpiOL0vBb7OLoyi2roZ0QzgnFVn4E59SuWRKpQc=
+X-Google-Smtp-Source: AGHT+IFmYqQD/SJTjUnM54wVFqxJZJkYfJVm3MC9mvtyT1QW2gt+0kp7ud+/6d/EsTLOTHPLtRsFPYLJfAv5z49h8kv4Dwpbz9Dk
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-To: Shivank Garg <shivankg@amd.com>, shaggy@kernel.org,
- akpm@linux-foundation.org
-References: <20250417060630.197278-1-shivankg@amd.com>
- <20250417060630.197278-2-shivankg@amd.com>
-Autocrypt: addr=david@redhat.com; keydata=
- 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
- WNyWQQ==
-Organization: Red Hat
-In-Reply-To: <20250417060630.197278-2-shivankg@amd.com>
-X-Mimecast-Spam-Score: 0
-X-Mimecast-MFC-PROC-ID: 6g2GUgJhpIkshxh5XqBitJ-wIORprKZ3iEEhlW9ME4M_1744879226
-X-Mimecast-Originator: redhat.com
-Content-Language: en-US
-X-Spam-Score: -0.2 (/)
+X-Received: by 2002:a05:6e02:1949:b0:3d5:890b:d9e1 with SMTP id
+ e9e14a558f8ab-3d81b661d23mr18618945ab.1.1744879626433; Thu, 17 Apr 2025
+ 01:47:06 -0700 (PDT)
+Date: Thu, 17 Apr 2025 01:47:06 -0700
+In-Reply-To: <20250417060630.197278-1-shivankg@amd.com>
+X-Google-Appengine-App-Id: s~syzkaller
+X-Google-Appengine-App-Id-Alias: syzkaller
+Message-ID: <6800c00a.050a0220.5cdb3.000f.GAE@google.com>
+To: akpm@linux-foundation.org, apopple@nvidia.com, david@redhat.com, 
+ donettom@linux.ibm.com, jane.chu@oracle.com, 
+ jfs-discussion@lists.sourceforge.net, linux-kernel@vger.kernel.org, 
+ linux-mm@kvack.org, shaggy@kernel.org, shivankg@amd.com, 
+ syzkaller-bugs@googlegroups.com, wangkefeng.wang@huawei.com, 
+ willy@infradead.org, ziy@nvidia.com
+X-Spam-Score: 2.8 (++)
 X-Spam-Report: Spam detection software,
  running on the system "util-spamd-2.v13.lw.sourceforge.com", 
  has NOT identified this incoming email as spam.  The original
  message has been attached to this so you can view it or label
  similar future email.  If you have any questions, see
  the administrator of that system for details.
- Content preview:  On 17.04.25 08:06,
- Shivank Garg wrote: > Export folio_expected_refs()
- to allow filesystem-specific migration > handlers like JFS
- metapage_migrate_folio
- to properly verify reference > counts before mig [...] 
- Content analysis details:   (-0.2 points, 6.0 required)
+ Content preview:  Hello,
+ syzbot tried to test the proposed patch but the build/boot
+ failed: tes for 255 objects at 0xffff88823be00000-0xffff88823c000000 [
+ 1.925837][
+ T0] Console: colour VGA+ 80x25 [ 1.926854][ T0] printk: legacy console [ttyS0]
+ enabled [ 1.926854][ T0] printk: legacy console [...] 
+ Content analysis details:   (2.8 points, 6.0 required)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ 0.3 FROM_LOCAL_HEX         From: localpart has long hexadecimal sequence
  0.0 RCVD_IN_VALIDITY_SAFE_BLOCKED RBL: ADMINISTRATOR NOTICE: The
  query to Validity was blocked.  See
  https://knowledge.validity.com/hc/en-us/articles/20961730681243
  for more information.
- [170.10.133.124 listed in sa-accredit.habeas.com]
+ [209.85.166.70 listed in sa-accredit.habeas.com]
  0.0 RCVD_IN_VALIDITY_RPBL_BLOCKED RBL: ADMINISTRATOR NOTICE: The
  query to Validity was blocked.  See
  https://knowledge.validity.com/hc/en-us/articles/20961730681243
  for more information.
- [170.10.133.124 listed in bl.score.senderscore.com]
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [170.10.133.124 listed in list.dnswl.org]
- 0.0 RCVD_IN_MSPIKE_H5      RBL: Excellent reputation (+5)
- [170.10.133.124 listed in wl.mailspike.net]
+ [209.85.166.70 listed in bl.score.senderscore.com]
+ 2.5 SORTED_RECIPS          Recipient list is sorted by address
+ 0.0 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - High trust sender
-X-Headers-End: 1u5Knh-0002so-QH
+ 0.0 URIBL_BLOCKED          ADMINISTRATOR NOTICE: The query to URIBL was
+ blocked.  See
+ http://wiki.apache.org/spamassassin/DnsBlocklists#dnsbl-block
+ for more information. [URIs: executor.cc]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.166.70 listed in list.dnswl.org]
+ 0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.166.70 listed in wl.mailspike.net]
+X-Headers-End: 1u5Kts-0003ge-4m
 X-Mailman-Approved-At: Thu, 17 Apr 2025 14:21:19 +0000
-Subject: Re: [Jfs-discussion] [PATCH V3 1/2] mm: export folio_expected_refs
- for JFS migration handler
+Subject: Re: [Jfs-discussion] [syzbot] [mm?] WARNING in move_to_new_folio
 X-BeenThere: jfs-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -209,83 +130,299 @@ List-Post: <mailto:jfs-discussion@lists.sourceforge.net>
 List-Help: <mailto:jfs-discussion-request@lists.sourceforge.net?subject=help>
 List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/jfs-discussion>, 
  <mailto:jfs-discussion-request@lists.sourceforge.net?subject=subscribe>
-From: David Hildenbrand via Jfs-discussion
- <jfs-discussion@lists.sourceforge.net>
-Reply-To: David Hildenbrand <david@redhat.com>
-Cc: jane.chu@oracle.com, wangkefeng.wang@huawei.com,
- syzbot+8bb6fd945af4e0ad9299@syzkaller.appspotmail.com, apopple@nvidia.com,
- jfs-discussion@lists.sourceforge.net, willy@infradead.org,
- linux-kernel@vger.kernel.org, linux-mm@kvack.org, donettom@linux.ibm.com,
- ziy@nvidia.com
+From: syzbot via Jfs-discussion <jfs-discussion@lists.sourceforge.net>
+Reply-To: syzbot <syzbot+8bb6fd945af4e0ad9299@syzkaller.appspotmail.com>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Errors-To: jfs-discussion-bounces@lists.sourceforge.net
 
-On 17.04.25 08:06, Shivank Garg wrote:
-> Export folio_expected_refs() to allow filesystem-specific migration
-> handlers like JFS metapage_migrate_folio to properly verify reference
-> counts before migration.
-> 
-> Signed-off-by: Shivank Garg <shivankg@amd.com>
-> ---
->   include/linux/migrate.h | 1 +
->   mm/migrate.c            | 3 ++-
->   2 files changed, 3 insertions(+), 1 deletion(-)
-> 
-> diff --git a/include/linux/migrate.h b/include/linux/migrate.h
-> index aaa2114498d6..cb31c5b1eb6a 100644
-> --- a/include/linux/migrate.h
-> +++ b/include/linux/migrate.h
-> @@ -60,6 +60,7 @@ struct movable_operations {
->   /* Defined in mm/debug.c: */
->   extern const char *migrate_reason_names[MR_TYPES];
->   
-> +int folio_expected_refs(struct address_space *mapping, struct folio *folio);
->   #ifdef CONFIG_MIGRATION
->   
->   void putback_movable_pages(struct list_head *l);
-> diff --git a/mm/migrate.c b/mm/migrate.c
-> index 6e2488e5dbe4..0f01b8a87dec 100644
-> --- a/mm/migrate.c
-> +++ b/mm/migrate.c
-> @@ -445,7 +445,7 @@ void pmd_migration_entry_wait(struct mm_struct *mm, pmd_t *pmd)
->   }
->   #endif
->   
-> -static int folio_expected_refs(struct address_space *mapping,
-> +int folio_expected_refs(struct address_space *mapping,
->   		struct folio *folio)
->   {
->   	int refs = 1;
-> @@ -458,6 +458,7 @@ static int folio_expected_refs(struct address_space *mapping,
->   
->   	return refs;
->   }
-> +EXPORT_SYMBOL_GPL(folio_expected_refs);
->   
->   /*
->    * Replace the folio in the mapping.
+Hello,
 
-Can we make that an inline function instead, and add some documentation?
+syzbot tried to test the proposed patch but the build/boot failed:
 
-This function is only suitable if we know the folio is unmapped from 
-page tables (no references from page table mappings: !folio_mapped()).
+tes for 255 objects at 0xffff88823be00000-0xffff88823c000000
+[    1.925837][    T0] Console: colour VGA+ 80x25
+[    1.926854][    T0] printk: legacy console [ttyS0] enabled
+[    1.926854][    T0] printk: legacy console [ttyS0] enabled
+[    1.928807][    T0] printk: legacy bootconsole [earlyser0] disabled
+[    1.928807][    T0] printk: legacy bootconsole [earlyser0] disabled
+[    1.931060][    T0] Lock dependency validator: Copyright (c) 2006 Red Hat, Inc., Ingo Molnar
+[    1.932421][    T0] ... MAX_LOCKDEP_SUBCLASSES:  8
+[    1.933470][    T0] ... MAX_LOCK_DEPTH:          48
+[    1.934392][    T0] ... MAX_LOCKDEP_KEYS:        8192
+[    1.935279][    T0] ... CLASSHASH_SIZE:          4096
+[    1.936068][    T0] ... MAX_LOCKDEP_ENTRIES:     1048576
+[    1.937188][    T0] ... MAX_LOCKDEP_CHAINS:      1048576
+[    1.938022][    T0] ... CHAINHASH_SIZE:          524288
+[    1.938854][    T0]  memory used by lock dependency info: 106625 kB
+[    1.940170][    T0]  memory used for stack traces: 8320 kB
+[    1.941640][    T0]  per task-struct memory footprint: 1920 bytes
+[    1.942814][    T0] mempolicy: Enabling automatic NUMA balancing. Configure with numa_balancing= or the kernel.numa_balancing sysctl
+[    1.945209][    T0] ACPI: Core revision 20241212
+[    1.946927][    T0] APIC: Switch to symmetric I/O mode setup
+[    1.948578][    T0] x2apic enabled
+[    1.953337][    T0] APIC: Switched APIC routing to: physical x2apic
+[    1.960868][    T0] ..TIMER: vector=0x30 apic1=0 pin1=0 apic2=-1 pin2=-1
+[    1.963220][    T0] clocksource: tsc-early: mask: 0xffffffffffffffff max_cycles: 0x1fb6f76ef03, max_idle_ns: 440795255960 ns
+[    1.965573][    T0] Calibrating delay loop (skipped) preset value.. 4400.41 BogoMIPS (lpj=22002080)
+[    1.976248][    T0] Last level iTLB entries: 4KB 64, 2MB 8, 4MB 8
+[    1.977543][    T0] Last level dTLB entries: 4KB 64, 2MB 32, 4MB 32, 1GB 4
+[    1.978831][    T0] Spectre V1 : Mitigation: usercopy/swapgs barriers and __user pointer sanitization
+[    1.981126][    T0] Spectre V2 : Spectre BHI mitigation: SW BHB clearing on syscall and VM exit
+[    1.983233][    T0] Spectre V2 : Mitigation: IBRS
+[    1.983963][    T0] Spectre V2 : Spectre v2 / SpectreRSB: Filling RSB on context switch and VMEXIT
+[    1.985668][    T0] RETBleed: Mitigation: IBRS
+[    1.986468][    T0] Spectre V2 : mitigation: Enabling conditional Indirect Branch Prediction Barrier
+[    1.987833][    T0] Spectre V2 : User space: Mitigation: STIBP via prctl
+[    1.989023][    T0] Speculative Store Bypass: Mitigation: Speculative Store Bypass disabled via prctl
+[    1.990381][    T0] MDS: Mitigation: Clear CPU buffers
+[    1.991105][    T0] TAA: Mitigation: Clear CPU buffers
+[    1.992276][    T0] MMIO Stale Data: Vulnerable: Clear CPU buffers attempted, no microcode
+[    1.993752][    T0] x86/fpu: Supporting XSAVE feature 0x001: 'x87 floating point registers'
+[    1.994963][    T0] x86/fpu: Supporting XSAVE feature 0x002: 'SSE registers'
+[    1.995572][    T0] x86/fpu: Supporting XSAVE feature 0x004: 'AVX registers'
+[    1.996652][    T0] x86/fpu: xstate_offset[2]:  576, xstate_sizes[2]:  256
+[    1.997837][    T0] x86/fpu: Enabled xstate features 0x7, context size is 832 bytes, using 'standard' format.
+[    2.295143][    T0] Freeing SMP alternatives memory: 132K
+[    2.295587][    T0] pid_max: default: 32768 minimum: 301
+[    2.297541][    T0] LSM: initializing lsm=lockdown,capability,landlock,yama,safesetid,tomoyo,apparmor,bpf,ima,evm
+[    2.300386][    T0] landlock: Up and running.
+[    2.301189][    T0] Yama: becoming mindful.
+[    2.302225][    T0] TOMOYO Linux initialized
+[    2.303858][    T0] AppArmor: AppArmor initialized
+[    2.307123][    T0] LSM support for eBPF active
+[    2.314189][    T0] Dentry cache hash table entries: 1048576 (order: 11, 8388608 bytes, vmalloc hugepage)
+[    2.318576][    T0] Inode-cache hash table entries: 524288 (order: 10, 4194304 bytes, vmalloc hugepage)
+[    2.320554][    T0] Mount-cache hash table entries: 16384 (order: 5, 131072 bytes, vmalloc)
+[    2.322439][    T0] Mountpoint-cache hash table entries: 16384 (order: 5, 131072 bytes, vmalloc)
+[    2.330329][    T0] Running RCU synchronous self tests
+[    2.331252][    T0] Running RCU synchronous self tests
+[    2.453357][    T1] smpboot: CPU0: Intel(R) Xeon(R) CPU @ 2.20GHz (family: 0x6, model: 0x4f, stepping: 0x0)
+[    2.455556][    T9] ------------[ cut here ]------------
+[    2.455556][    T9] WARNING: CPU: 0 PID: 9 at arch/x86/mm/tlb.c:919 switch_mm_irqs_off+0x686/0x810
+[    2.455556][    T9] Modules linked in:
+[    2.455556][    T9] CPU: 0 UID: 0 PID: 9 Comm: kworker/0:0 Not tainted 6.15.0-rc2-next-20250416-syzkaller-04531-g07246f14ea38 #0 PREEMPT(full) 
+[    2.455556][    T9] Hardware name: Google Google Compute Engine/Google Compute Engine, BIOS Google 02/12/2025
+[    2.455556][    T9] Workqueue: events once_deferred
+[    2.455556][    T9] RIP: 0010:switch_mm_irqs_off+0x686/0x810
+[    2.455556][    T9] Code: 90 41 f7 c5 00 08 00 00 0f 84 ee fa ff ff 90 0f 0b 90 e9 e5 fa ff ff 90 0f 0b 90 e9 76 fe ff ff 90 0f 0b 90 e9 cc fb ff ff 90 <0f> 0b 90 4d 39 f4 0f 85 eb fb ff ff e9 31 fc ff ff 90 0f 0b 90 e9
+[    2.455556][    T9] RSP: 0000:ffffc900000e7680 EFLAGS: 00010056
+[    2.455556][    T9] RAX: 0000000000000001 RBX: 0000000000000000 RCX: ffffffff816ffd4d
+[    2.455556][    T9] RDX: 0000000000000000 RSI: 0000000000000008 RDI: ffff88801b070940
+[    2.455556][    T9] RBP: ffffc900000e7750 R08: ffff88801b070947 R09: 1ffff1100360e128
+[    2.455556][    T9] R10: dffffc0000000000 R11: ffffed100360e129 R12: ffffffff8ee492c0
+[    2.455556][    T9] R13: ffff88801b070940 R14: ffffffff8ee492c0 R15: 0000000000000000
+[    2.455556][    T9] FS:  0000000000000000(0000) GS:ffff888124f9c000(0000) knlGS:0000000000000000
+[    2.455556][    T9] CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033
+[    2.455556][    T9] CR2: ffff88823ffff000 CR3: 000000001b078000 CR4: 00000000003506f0
+[    2.455556][    T9] DR0: 0000000000000000 DR1: 0000000000000000 DR2: 0000000000000000
+[    2.455556][    T9] DR3: 0000000000000000 DR6: 00000000fffe0ff0 DR7: 0000000000000400
+[    2.455556][    T9] Call Trace:
+[    2.455556][    T9]  <TASK>
+[    2.455556][    T9]  ? __pfx_switch_mm_irqs_off+0x10/0x10
+[    2.455556][    T9]  ? __text_poke+0x6bb/0xb40
+[    2.455556][    T9]  ? kasan_check_range+0x28f/0x2a0
+[    2.455556][    T9]  ? serial8250_isa_init_ports+0x6b/0x110
+[    2.455556][    T9]  unuse_temporary_mm+0x9f/0x100
+[    2.455556][    T9]  __text_poke+0x7b6/0xb40
+[    2.455556][    T9]  ? serial8250_isa_init_ports+0x6b/0x110
+[    2.455556][    T9]  ? __pfx_text_poke_memcpy+0x10/0x10
+[    2.455556][    T9]  ? __pfx___text_poke+0x10/0x10
+[    2.455556][    T9]  ? __pfx___mutex_trylock_common+0x10/0x10
+[    2.455556][    T9]  ? __pfx___might_resched+0x10/0x10
+[    2.455556][    T9]  ? rcu_is_watching+0x15/0xb0
+[    2.455556][    T9]  smp_text_poke_batch_finish+0x3e7/0x12c0
+[    2.455556][    T9]  ? arch_jump_label_transform_apply+0x17/0x30
+[    2.455556][    T9]  ? __pfx___mutex_lock+0x10/0x10
+[    2.455556][    T9]  ? __pfx_smp_text_poke_batch_finish+0x10/0x10
+[    2.455556][    T9]  ? arch_jump_label_transform_queue+0x9b/0x100
+[    2.455556][    T9]  ? __jump_label_update+0x387/0x3b0
+[    2.455556][    T9]  arch_jump_label_transform_apply+0x1c/0x30
+[    2.455556][    T9]  static_key_disable_cpuslocked+0xd2/0x1c0
+[    2.455556][    T9]  static_key_disable+0x1a/0x20
+[    2.455556][    T9]  once_deferred+0x70/0xb0
+[    2.455556][    T9]  ? process_scheduled_works+0x9cb/0x18e0
+[    2.455556][    T9]  process_scheduled_works+0xac3/0x18e0
+[    2.455556][    T9]  ? __pfx_process_scheduled_works+0x10/0x10
+[    2.455556][    T9]  ? assign_work+0x367/0x3d0
+[    2.455556][    T9]  worker_thread+0x870/0xd50
+[    2.455556][    T9]  ? __kthread_parkme+0x1a8/0x200
+[    2.455556][    T9]  ? __pfx_worker_thread+0x10/0x10
+[    2.455556][    T9]  kthread+0x7b7/0x940
+[    2.455556][    T9]  ? __pfx_worker_thread+0x10/0x10
+[    2.455556][    T9]  ? __pfx_kthread+0x10/0x10
+[    2.455556][    T9]  ? __pfx_kthread+0x10/0x10
+[    2.455556][    T9]  ? __pfx_kthread+0x10/0x10
+[    2.455556][    T9]  ? __pfx_kthread+0x10/0x10
+[    2.455556][    T9]  ? _raw_spin_unlock_irq+0x23/0x50
+[    2.455556][    T9]  ? lockdep_hardirqs_on+0x9d/0x150
+[    2.455556][    T9]  ? __pfx_kthread+0x10/0x10
+[    2.455556][    T9]  ret_from_fork+0x4b/0x80
+[    2.455556][    T9]  ? __pfx_kthread+0x10/0x10
+[    2.455556][    T9]  ret_from_fork_asm+0x1a/0x30
+[    2.455556][    T9]  </TASK>
+[    2.455556][    T9] Kernel panic - not syncing: kernel: panic_on_warn set ...
+[    2.455556][    T9] CPU: 0 UID: 0 PID: 9 Comm: kworker/0:0 Not tainted 6.15.0-rc2-next-20250416-syzkaller-04531-g07246f14ea38 #0 PREEMPT(full) 
+[    2.455556][    T9] Hardware name: Google Google Compute Engine/Google Compute Engine, BIOS Google 02/12/2025
+[    2.455556][    T9] Workqueue: events once_deferred
+[    2.455556][    T9] Call Trace:
+[    2.455556][    T9]  <TASK>
+[    2.455556][    T9]  dump_stack_lvl+0x241/0x360
+[    2.455556][    T9]  ? __pfx_dump_stack_lvl+0x10/0x10
+[    2.455556][    T9]  ? __pfx__printk+0x10/0x10
+[    2.455556][    T9]  ? vscnprintf+0x5d/0x90
+[    2.455556][    T9]  panic+0x349/0x880
+[    2.455556][    T9]  ? __warn+0x174/0x4d0
+[    2.455556][    T9]  ? __pfx_panic+0x10/0x10
+[    2.455556][    T9]  ? ret_from_fork_asm+0x1a/0x30
+[    2.455556][    T9]  __warn+0x344/0x4d0
+[    2.455556][    T9]  ? switch_mm_irqs_off+0x686/0x810
+[    2.455556][    T9]  report_bug+0x2b3/0x500
+[    2.455556][    T9]  ? switch_mm_irqs_off+0x686/0x810
+[    2.455556][    T9]  ? switch_mm_irqs_off+0x686/0x810
+[    2.455556][    T9]  ? switch_mm_irqs_off+0x688/0x810
+[    2.455556][    T9]  handle_bug+0x89/0x170
+[    2.455556][    T9]  exc_invalid_op+0x1a/0x50
+[    2.455556][    T9]  asm_exc_invalid_op+0x1a/0x20
+[    2.455556][    T9] RIP: 0010:switch_mm_irqs_off+0x686/0x810
+[    2.455556][    T9] Code: 90 41 f7 c5 00 08 00 00 0f 84 ee fa ff ff 90 0f 0b 90 e9 e5 fa ff ff 90 0f 0b 90 e9 76 fe ff ff 90 0f 0b 90 e9 cc fb ff ff 90 <0f> 0b 90 4d 39 f4 0f 85 eb fb ff ff e9 31 fc ff ff 90 0f 0b 90 e9
+[    2.455556][    T9] RSP: 0000:ffffc900000e7680 EFLAGS: 00010056
+[    2.455556][    T9] RAX: 0000000000000001 RBX: 0000000000000000 RCX: ffffffff816ffd4d
+[    2.455556][    T9] RDX: 0000000000000000 RSI: 0000000000000008 RDI: ffff88801b070940
+[    2.455556][    T9] RBP: ffffc900000e7750 R08: ffff88801b070947 R09: 1ffff1100360e128
+[    2.455556][    T9] R10: dffffc0000000000 R11: ffffed100360e129 R12: ffffffff8ee492c0
+[    2.455556][    T9] R13: ffff88801b070940 R14: ffffffff8ee492c0 R15: 0000000000000000
+[    2.455556][    T9]  ? switch_mm_irqs_off+0x26d/0x810
+[    2.455556][    T9]  ? __pfx_switch_mm_irqs_off+0x10/0x10
+[    2.455556][    T9]  ? __text_poke+0x6bb/0xb40
+[    2.455556][    T9]  ? kasan_check_range+0x28f/0x2a0
+[    2.455556][    T9]  ? serial8250_isa_init_ports+0x6b/0x110
+[    2.455556][    T9]  unuse_temporary_mm+0x9f/0x100
+[    2.455556][    T9]  __text_poke+0x7b6/0xb40
+[    2.455556][    T9]  ? serial8250_isa_init_ports+0x6b/0x110
+[    2.455556][    T9]  ? __pfx_text_poke_memcpy+0x10/0x10
+[    2.455556][    T9]  ? __pfx___text_poke+0x10/0x10
+[    2.455556][    T9]  ? __pfx___mutex_trylock_common+0x10/0x10
+[    2.455556][    T9]  ? __pfx___might_resched+0x10/0x10
+[    2.455556][    T9]  ? rcu_is_watching+0x15/0xb0
+[    2.455556][    T9]  smp_text_poke_batch_finish+0x3e7/0x12c0
+[    2.455556][    T9]  ? arch_jump_label_transform_apply+0x17/0x30
+[    2.455556][    T9]  ? __pfx___mutex_lock+0x10/0x10
+[    2.455556][    T9]  ? __pfx_smp_text_poke_batch_finish+0x10/0x10
+[    2.455556][    T9]  ? arch_jump_label_transform_queue+0x9b/0x100
+[    2.455556][    T9]  ? __jump_label_update+0x387/0x3b0
+[    2.455556][    T9]  arch_jump_label_transform_apply+0x1c/0x30
+[    2.455556][    T9]  static_key_disable_cpuslocked+0xd2/0x1c0
+[    2.455556][    T9]  static_key_disable+0x1a/0x20
+[    2.455556][    T9]  once_deferred+0x70/0xb0
+[    2.455556][    T9]  ? process_scheduled_works+0x9cb/0x18e0
+[    2.455556][    T9]  process_scheduled_works+0xac3/0x18e0
+[    2.455556][    T9]  ? __pfx_process_scheduled_works+0x10/0x10
+[    2.455556][    T9]  ? assign_work+0x367/0x3d0
+[    2.455556][    T9]  worker_thread+0x870/0xd50
+[    2.455556][    T9]  ? __kthread_parkme+0x1a8/0x200
+[    2.455556][    T9]  ? __pfx_worker_thread+0x10/0x10
+[    2.455556][    T9]  kthread+0x7b7/0x940
+[    2.455556][    T9]  ? __pfx_worker_thread+0x10/0x10
+[    2.455556][    T9]  ? __pfx_kthread+0x10/0x10
+[    2.455556][    T9]  ? __pfx_kthread+0x10/0x10
+[    2.455556][    T9]  ? __pfx_kthread+0x10/0x10
+[    2.455556][    T9]  ? __pfx_kthread+0x10/0x10
+[    2.455556][    T9]  ? _raw_spin_unlock_irq+0x23/0x50
+[    2.455556][    T9]  ? lockdep_hardirqs_on+0x9d/0x150
+[    2.455556][    T9]  ? __pfx_kthread+0x10/0x10
+[    2.455556][    T9]  ret_from_fork+0x4b/0x80
+[    2.455556][    T9]  ? __pfx_kthread+0x10/0x10
+[    2.455556][    T9]  ret_from_fork_asm+0x1a/0x30
+[    2.455556][    T9]  </TASK>
+[    2.455556][    T9] Rebooting in 86400 seconds..
 
-So when exporting this function we either
 
-a) Need a clearer name
+syzkaller build log:
+go env (err=<nil>)
+GO111MODULE='auto'
+GOARCH='amd64'
+GOBIN=''
+GOCACHE='/syzkaller/.cache/go-build'
+GOENV='/syzkaller/.config/go/env'
+GOEXE=''
+GOEXPERIMENT=''
+GOFLAGS=''
+GOHOSTARCH='amd64'
+GOHOSTOS='linux'
+GOINSECURE=''
+GOMODCACHE='/syzkaller/jobs/linux/gopath/pkg/mod'
+GONOPROXY=''
+GONOSUMDB=''
+GOOS='linux'
+GOPATH='/syzkaller/jobs/linux/gopath'
+GOPRIVATE=''
+GOPROXY='https://proxy.golang.org,direct'
+GOROOT='/syzkaller/jobs/linux/gopath/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.7.linux-amd64'
+GOSUMDB='sum.golang.org'
+GOTMPDIR=''
+GOTOOLCHAIN='auto'
+GOTOOLDIR='/syzkaller/jobs/linux/gopath/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.7.linux-amd64/pkg/tool/linux_amd64'
+GOVCS=''
+GOVERSION='go1.23.7'
+GODEBUG=''
+GOTELEMETRY='local'
+GOTELEMETRYDIR='/syzkaller/.config/go/telemetry'
+GCCGO='gccgo'
+GOAMD64='v1'
+AR='ar'
+CC='gcc'
+CXX='g++'
+CGO_ENABLED='1'
+GOMOD='/syzkaller/jobs/linux/gopath/src/github.com/google/syzkaller/go.mod'
+GOWORK=''
+CGO_CFLAGS='-O2 -g'
+CGO_CPPFLAGS=''
+CGO_CXXFLAGS='-O2 -g'
+CGO_FFLAGS='-O2 -g'
+CGO_LDFLAGS='-O2 -g'
+PKG_CONFIG='pkg-config'
+GOGCCFLAGS='-fPIC -m64 -pthread -Wl,--no-gc-sections -fmessage-length=0 -ffile-prefix-map=/tmp/go-build1450323150=/tmp/go-build -gno-record-gcc-switches'
 
-b) Should generalize it to consider folio_mapcount() etc, and lookup the
-    mapping from the folio.
+git status (err=<nil>)
+HEAD detached at 0bd6db4180
+nothing to commit, working tree clean
 
-For your use case, a) might be easier. Maybe call  it something like 
-"folio_migration_expected_refs" ?
 
--- 
-Cheers,
+tput: No value for $TERM and no -T specified
+tput: No value for $TERM and no -T specified
+Makefile:31: run command via tools/syz-env for best compatibility, see:
+Makefile:32: https://github.com/google/syzkaller/blob/master/docs/contributing.md#using-syz-env
+go list -f '{{.Stale}}' ./sys/syz-sysgen | grep -q false || go install ./sys/syz-sysgen
+make .descriptions
+tput: No value for $TERM and no -T specified
+tput: No value for $TERM and no -T specified
+Makefile:31: run command via tools/syz-env for best compatibility, see:
+Makefile:32: https://github.com/google/syzkaller/blob/master/docs/contributing.md#using-syz-env
+bin/syz-sysgen
+touch .descriptions
+GOOS=linux GOARCH=amd64 go build "-ldflags=-s -w -X github.com/google/syzkaller/prog.GitRevision=0bd6db418098e2d98a2edf948b41410d3d9f9e70 -X 'github.com/google/syzkaller/prog.gitRevisionDate=20250411-130225'" -o ./bin/linux_amd64/syz-execprog github.com/google/syzkaller/tools/syz-execprog
+mkdir -p ./bin/linux_amd64
+g++ -o ./bin/linux_amd64/syz-executor executor/executor.cc \
+	-m64 -O2 -pthread -Wall -Werror -Wparentheses -Wunused-const-variable -Wframe-larger-than=16384 -Wno-stringop-overflow -Wno-array-bounds -Wno-format-overflow -Wno-unused-but-set-variable -Wno-unused-command-line-argument -static-pie -std=c++17 -I. -Iexecutor/_include   -DGOOS_linux=1 -DGOARCH_amd64=1 \
+	-DHOSTGOOS_linux=1 -DGIT_REVISION=\"0bd6db418098e2d98a2edf948b41410d3d9f9e70\"
+/usr/bin/ld: /tmp/ccXxW6Eo.o: in function `Connection::Connect(char const*, char const*)':
+executor.cc:(.text._ZN10Connection7ConnectEPKcS1_[_ZN10Connection7ConnectEPKcS1_]+0x104): warning: Using 'gethostbyname' in statically linked applications requires at runtime the shared libraries from the glibc version used for linking
 
-David / dhildenb
 
+Error text is too large and was truncated, full error text is at:
+https://syzkaller.appspot.com/x/error.txt?x=14fe3a3f980000
+
+
+Tested on:
+
+commit:         07246f14 jfs: implement migrate_folio for jfs_metapage..
+git tree:       https://github.com/AMDESE/linux-mm.git
+kernel config:  https://syzkaller.appspot.com/x/.config?x=361d80851af850ed
+dashboard link: https://syzkaller.appspot.com/bug?extid=8bb6fd945af4e0ad9299
+compiler:       Debian clang version 15.0.6, GNU ld (GNU Binutils for Debian) 2.40
+
+Note: no patches were applied.
 
 
 _______________________________________________
