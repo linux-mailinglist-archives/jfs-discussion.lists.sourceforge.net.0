@@ -2,28 +2,28 @@ Return-Path: <jfs-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+jfs-discussion@lfdr.de
 Delivered-To: lists+jfs-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id 39575A9705C
-	for <lists+jfs-discussion@lfdr.de>; Tue, 22 Apr 2025 17:19:58 +0200 (CEST)
-Received: from [127.0.0.1] (helo=sfs-ml-2.v29.lw.sourceforge.com)
-	by sfs-ml-2.v29.lw.sourceforge.com with esmtp (Exim 4.95)
+	by mail.lfdr.de (Postfix) with ESMTPS id 963E0A97083
+	for <lists+jfs-discussion@lfdr.de>; Tue, 22 Apr 2025 17:25:03 +0200 (CEST)
+Received: from [127.0.0.1] (helo=sfs-ml-3.v29.lw.sourceforge.com)
+	by sfs-ml-3.v29.lw.sourceforge.com with esmtp (Exim 4.95)
 	(envelope-from <jfs-discussion-bounces@lists.sourceforge.net>)
-	id 1u7FP8-0006Cf-Of;
-	Tue, 22 Apr 2025 15:19:23 +0000
+	id 1u7FUB-0005LM-6a;
+	Tue, 22 Apr 2025 15:24:34 +0000
 Received: from [172.30.29.66] (helo=mx.sourceforge.net)
- by sfs-ml-2.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
+ by sfs-ml-3.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
  TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (Exim 4.95)
- (envelope-from <david@redhat.com>) id 1u7FP7-0006CT-Nh
+ (envelope-from <david@redhat.com>) id 1u7FU9-0005LA-Fg
  for jfs-discussion@lists.sourceforge.net;
- Tue, 22 Apr 2025 15:19:22 +0000
+ Tue, 22 Apr 2025 15:24:32 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=sourceforge.net; s=x; h=Content-Transfer-Encoding:Content-Type:In-Reply-To:
  From:References:Cc:To:Subject:MIME-Version:Date:Message-ID:Sender:Reply-To:
  Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
  Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=+G9Cy5Doy+79S4Imbry+Il93p84CW35Nb4NlHcxcntU=; b=k4N2CcgYhn5P3jkUEqxHtm6ad7
- IwIKNE/1kb1YBc6puxu+MpUJWoFMJHb1mzAxLeoPOv6USRA8CeYnT59l0rfT8NVhMur/U4SOIQRUq
- QTdv82qYq0skJQzofrSPF6UYjLx3h+hQUmeREIqRB/foxZFUupdYnB4ospDZAWC+DDWc=;
+ bh=WF7KbuLAZBa24Gp2tTkzynSQqLU+PgyoQ8Ium/89xGc=; b=hZcimB0H2GIXI8CdjcnONBj5BZ
+ vvcrbP9aE0wDmF9whIr0YXNepQsTt8IlmrCmJ71wrRlfqbDdioes5QKziu+SAp6ec0OECKnPvgcgw
+ KuBUccjS91RxiXFtGUAE+P4DbTSece8C61h9ttAEijFpIr9i2sciz9b2zxJCRrcP7l28=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
  h=Content-Transfer-Encoding:Content-Type:In-Reply-To:From:References:Cc:To:
@@ -31,79 +31,79 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
  :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
  List-Post:List-Owner:List-Archive;
- bh=+G9Cy5Doy+79S4Imbry+Il93p84CW35Nb4NlHcxcntU=; b=TGmbhiZIQSdBKfXpkL+MSVRlwF
- x5bVDojonFR3DnT19ANVzeNYO4Tm3nHel6ZPJA6UvRzkOgdSEkOS3i5jwm76+369maxqIlGsxXkqZ
- kkioYl35Cn2a6+ChS9dPfzkSUUSPVOsiSgZgW1IX17797jRNQR3AfoMB3oZ2yPki71yA=;
-Received: from us-smtp-delivery-124.mimecast.com ([170.10.133.124])
+ bh=WF7KbuLAZBa24Gp2tTkzynSQqLU+PgyoQ8Ium/89xGc=; b=Tpd3tTd6+HZ8Z1TULxCLI0J05p
+ Qt08CwBzh7ma6WOELd5EiqKTRh8El/CkncGx+OkLyyAKfLz8+eKZ0gxAxSKz3G/bVr94JycAoYOhK
+ FZlz+0PEl3bg5kKXKrTpRjvRWaV/zacoQjyaXgudh4SzhLk/Mux8qpmpx6WLKD3KGqmo=;
+Received: from us-smtp-delivery-124.mimecast.com ([170.10.129.124])
  by sfi-mx-2.v28.lw.sourceforge.com with esmtp (Exim 4.95)
- id 1u7FOs-0001w8-HE for jfs-discussion@lists.sourceforge.net;
- Tue, 22 Apr 2025 15:19:22 +0000
+ id 1u7FTs-0002In-Vo for jfs-discussion@lists.sourceforge.net;
+ Tue, 22 Apr 2025 15:24:32 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
- s=mimecast20190719; t=1745335130;
+ s=mimecast20190719; t=1745335435;
  h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
  to:to:cc:cc:mime-version:mime-version:content-type:content-type:
  content-transfer-encoding:content-transfer-encoding:
  in-reply-to:in-reply-to:references:references:autocrypt:autocrypt;
- bh=+G9Cy5Doy+79S4Imbry+Il93p84CW35Nb4NlHcxcntU=;
- b=Lgb4LcVGFU2C/5ASg44uFJ1+cnCto6gSXRlDV09gSg3dVcfjY+RUF7hdze7XtG5XHp3apC
- j82d2xJlWKRr2AyE0kslQYygZH7EQLbL9x9Rt5lnx3yolJW8UDVTJ0ODbtoSE0yzdq3hRu
- XhpPib0JXiror+s0bSpZIw4Y+RssVc0=
-Received: from mail-wm1-f69.google.com (mail-wm1-f69.google.com
- [209.85.128.69]) by relay.mimecast.com with ESMTP with STARTTLS
+ bh=WF7KbuLAZBa24Gp2tTkzynSQqLU+PgyoQ8Ium/89xGc=;
+ b=F4rrWaIQva3QFtMZLrIVo+0iJvHn5orzcBccEiPB7/651gpWdA6sV0H2vS8HulpV8G3pE2
+ mjfWMIgbD4WMedhLxpMXpw4MlZ6kSY73E+/IhrkmWi1SzARkTJg5v7MiDAIrvgAueO8THK
+ zySw08Dwuv0aW07KtA45BjhVZF3DxzA=
+Received: from mail-wr1-f69.google.com (mail-wr1-f69.google.com
+ [209.85.221.69]) by relay.mimecast.com with ESMTP with STARTTLS
  (version=TLSv1.3, cipher=TLS_AES_256_GCM_SHA384) id
- us-mta-120-Sj1_lySQOg-vjflamHscdA-1; Tue, 22 Apr 2025 11:18:46 -0400
-X-MC-Unique: Sj1_lySQOg-vjflamHscdA-1
-X-Mimecast-MFC-AGG-ID: Sj1_lySQOg-vjflamHscdA_1745335126
-Received: by mail-wm1-f69.google.com with SMTP id
- 5b1f17b1804b1-43eed325461so30857105e9.3
+ us-mta-657-qvmxThV1PbiZgrvF-J7icw-1; Tue, 22 Apr 2025 11:23:54 -0400
+X-MC-Unique: qvmxThV1PbiZgrvF-J7icw-1
+X-Mimecast-MFC-AGG-ID: qvmxThV1PbiZgrvF-J7icw_1745335433
+Received: by mail-wr1-f69.google.com with SMTP id
+ ffacd0b85a97d-391492acb59so2462374f8f.3
  for <jfs-discussion@lists.sourceforge.net>;
- Tue, 22 Apr 2025 08:18:46 -0700 (PDT)
+ Tue, 22 Apr 2025 08:23:54 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20230601; t=1745335125; x=1745939925;
+ d=1e100.net; s=20230601; t=1745335433; x=1745940233;
  h=content-transfer-encoding:in-reply-to:organization:autocrypt
  :content-language:from:references:cc:to:subject:user-agent
  :mime-version:date:message-id:x-gm-message-state:from:to:cc:subject
  :date:message-id:reply-to;
- bh=+G9Cy5Doy+79S4Imbry+Il93p84CW35Nb4NlHcxcntU=;
- b=dA82LTJnhOkJkfAtqZXVsWVTZsMv9Y0oXJgO9/cLEMLczuX3a2fC9GXTjpONXqR87W
- v+ZL9poUzrNO8veUaTcRYdvwyaD1g9GCdSyf1X6l7TBnX/tFli0A4BbC9y3DDwpSas0X
- atdBla0eP7V7/KS9kOTV918p5i2YGaq1eNlcfJXoZUb86dI/eGbUdjnCfGfYyEA0p+Xz
- dz13hHNt0O9vA68NkJdeJ99F8INVfLuFU7qDEou+4iesFy6zxrNRCe55gJNdAuUZot4O
- LQYry52laVKxdVEzAnwH60N47GFFjKVfnFOZ4dybg3mijSHlCo4AjCjk9hGYmIKrzgDL
- X/bg==
+ bh=WF7KbuLAZBa24Gp2tTkzynSQqLU+PgyoQ8Ium/89xGc=;
+ b=BQ7mePGc+KWvKIdcIMIlSWntSJQpWJzGdUHhudHqEhygcyEvd+Rnmj3Vo9bAVGNDwf
+ VTzTqFJy1eFJD0mIntohgssCsbOM3ESJ9SDKmcwT+NJP2J6ZW1X8/M+SJ5ZZcIDsJXan
+ IHfQrNIaxm/eERopkJvNYHNwzzkMmEEwhHHIlWyE8gIrqNedkCpwhIAJz6uFNbjCrDJu
+ ewFjl5EOuGKIZQLN24y99fRl5wd11AHl24SLWk1Zp/wrXW+5BY68TJYP9qVH+je4yUOX
+ xbgH9H1lEinsM1/Qi6LTRJs64DEXSKueqwhSAApDMQ7hQSH3JbY6RFWxxQxdqpeUdM8+
+ +LcQ==
 X-Forwarded-Encrypted: i=1;
- AJvYcCVrJy2N0cAbuRtwsAWh2dxDqZFcziaClfn4kCn1yGy8UOJLC7qwF+8pTwsADZmInimJjO2cAumF6ds7wIGfOg==@lists.sourceforge.net
-X-Gm-Message-State: AOJu0YzHe+mcVsQRI7zQkMdcYrF75BqEHdueat5F+l9bstyXTANi5/3t
- 3HM4fDTcxOCPooy0fwL5RMYtXLD19x002NUOd/952qHw5OwbyxnopzMn/dnKy3nyG4MSQacv34g
- /fTfDcqAD+bcfmAlS9FhxFfkaQSUSjahg78xrD13uSh3lg0tK5f7wPT0PQzKEYKgqjOH2EziW
-X-Gm-Gg: ASbGncuT6NkQzv0xT44bqCOO5dP6VI0DYmXflft0KzdDE8isihDnc6SVFq/TCjf/3mL
- tL/cVbRswBAfJaGsGGWc2V2894ObKSD+Q/Wh7YfdxRmFZKki3Zvf7PBJ385f9pa0YPbWvKvC4cK
- pc0Uj1m4FSMWMwDj448pOxKW60yv/RHwAbjdQpqI+9br+N0DexQCve1RHcm/gV1euYKZR6oCd+k
- Fly5WC28MuSL3n2RbP4FF3TWnoJ1kMSiU3de8f2NMs9iZLQKDui0CA2oBSnK1VbQ9j0N/I2VvEX
- AJ6OfIUf59THAw4hu3HTtlHdSVlpQtaWmo25FHz4ZZDYaKnA03IquPIpzWMS3MqAuv/WXzR6tX5
- qwrATjR2LfQrIxx5ficFsn1zO1yf+qjlchp1C
-X-Received: by 2002:a05:600c:5110:b0:43c:fded:9654 with SMTP id
- 5b1f17b1804b1-4406aba7088mr133655495e9.19.1745335125618; 
- Tue, 22 Apr 2025 08:18:45 -0700 (PDT)
-X-Google-Smtp-Source: AGHT+IGMryMb7OCN5dZWHmN4IAH0EUIubtU3a+AQxU/uTieg3Jy0zIfW4bAMlDO7kljQWcQfzvnQKA==
-X-Received: by 2002:a05:600c:5110:b0:43c:fded:9654 with SMTP id
- 5b1f17b1804b1-4406aba7088mr133655215e9.19.1745335125271; 
- Tue, 22 Apr 2025 08:18:45 -0700 (PDT)
+ AJvYcCU+5YhLa38eN1CsCjF2LJzVEFqb+A5rpd6RE0nM4jZzxMH2Y26EkqAHqHkTT54nU8zo/Fpvq+NocicJiyH+Jg==@lists.sourceforge.net
+X-Gm-Message-State: AOJu0YwZNnHrXLpBmFFPvEMsi+pVYDdq1yLTIMZ0Z1Nw2vbdEVFTA7gZ
+ DeYiVVpwaBpO5aEmBada2oa1LUZca4HpN3tY6nJMes6rONkiy8FcwCibkM9E9bhgtzuq6jVvtpb
+ 66Z3sKhVbS2GrZ0ShXGO2oDm2vIZP9qCZmcmVBfbVyf9mlyAfe2n5XOxhgdO+n9l0CqcXQ8BY
+X-Gm-Gg: ASbGncsGmp6flabiyQVNqg0UhN0Kcta8s1OwgZT6Iz+nQ9vOH9uaGv/QIotdt+bIPeb
+ Ey59lXadU4s9klCZBgy1boqUlRdZTnV1Od+EC2ymGalNN0rs5PbKvxIiG/4o36hqTm+/Na0/Dn+
+ Q6TNSaiAY2XlZEFhDdgf4S3qcuuy90ko8jTwtqjtAfcLoOwVzg4uIPCrrDhkYoYgnZRx1JM6RhI
+ EdqP2ceHNGvJ3KldFbAUOkqvp1af+oAN30dF5cdk2wgnJmAOPPssTGddyW336Cmu81Cjo9wUkNO
+ JQMqZI8e8768Yc8RAXUuhNPnRIXvtfy1VFp2JIjAf6JmyWZ20J/5sdEoqBs55qxcDnolyvcgNxI
+ vkByh51Ie0152+Soq7ooSgmv1Bi4zZ0UTCZju
+X-Received: by 2002:a05:6000:240d:b0:39c:13fd:e50e with SMTP id
+ ffacd0b85a97d-39efba2ca32mr12874435f8f.10.1745335433008; 
+ Tue, 22 Apr 2025 08:23:53 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IHueBAUwYTFgWq3aFYVageJU081iIqdMXlLimeK94dkMas7owys6I0xlQdmWLwcRD9uuCsvOQ==
+X-Received: by 2002:a05:6000:240d:b0:39c:13fd:e50e with SMTP id
+ ffacd0b85a97d-39efba2ca32mr12874409f8f.10.1745335432573; 
+ Tue, 22 Apr 2025 08:23:52 -0700 (PDT)
 Received: from ?IPV6:2003:cb:c731:8700:3969:7786:322:9641?
  (p200300cbc73187003969778603229641.dip0.t-ipconnect.de.
  [2003:cb:c731:8700:3969:7786:322:9641])
  by smtp.gmail.com with ESMTPSA id
- ffacd0b85a97d-39efa43315esm15353186f8f.26.2025.04.22.08.18.44
+ ffacd0b85a97d-39efa43bf2csm15728851f8f.51.2025.04.22.08.23.51
  (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Tue, 22 Apr 2025 08:18:44 -0700 (PDT)
-Message-ID: <d2a1009f-d55a-4282-95cb-6efffc008186@redhat.com>
-Date: Tue, 22 Apr 2025 17:18:43 +0200
+ Tue, 22 Apr 2025 08:23:52 -0700 (PDT)
+Message-ID: <67f0669d-1063-486f-a995-f8d18634a1be@redhat.com>
+Date: Tue, 22 Apr 2025 17:23:51 +0200
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
 To: Shivank Garg <shivankg@amd.com>, shaggy@kernel.org,
  akpm@linux-foundation.org
 References: <20250422114000.15003-1-shivankg@amd.com>
- <20250422114000.15003-2-shivankg@amd.com>
+ <20250422114000.15003-3-shivankg@amd.com>
 Autocrypt: addr=david@redhat.com; keydata=
  xsFNBFXLn5EBEAC+zYvAFJxCBY9Tr1xZgcESmxVNI/0ffzE/ZQOiHJl6mGkmA1R7/uUpiCjJ
  dBrn+lhhOYjjNefFQou6478faXE6o2AhmebqT4KiQoUQFV4R7y1KMEKoSyy8hQaK1umALTdL
@@ -149,53 +149,53 @@ Autocrypt: addr=david@redhat.com; keydata=
  jPrnvUsUUsjRoRNJjKKA/REq+sAnhkNPPZ/NNMjaZ5b8Tovi8C0tmxiCHaQYqj7G2rgnT0kt
  WNyWQQ==
 Organization: Red Hat
-In-Reply-To: <20250422114000.15003-2-shivankg@amd.com>
+In-Reply-To: <20250422114000.15003-3-shivankg@amd.com>
 X-Mimecast-Spam-Score: 0
-X-Mimecast-MFC-PROC-ID: 5hICIL583H6b7chv-OLEn6959mQFbktoxQw7WoBNIuY_1745335126
+X-Mimecast-MFC-PROC-ID: X30mUv1B4f8F4fbUWavIMsxsoKEbpR2dxTmozO3dB5Y_1745335433
 X-Mimecast-Originator: redhat.com
 Content-Language: en-US
 X-Spam-Score: -0.6 (/)
 X-Spam-Report: Spam detection software,
- running on the system "util-spamd-2.v13.lw.sourceforge.com", 
+ running on the system "util-spamd-1.v13.lw.sourceforge.com", 
  has NOT identified this incoming email as spam.  The original
  message has been attached to this so you can view it or label
  similar future email.  If you have any questions, see
  the administrator of that system for details.
  Content preview:  On 22.04.25 13:40,
- Shivank Garg wrote: > Rename the previously
- static folio_expected_refs() to clarify its > purpose and scope, making it
- an inline function > folio_migration_expected_refs() to calcul [...] 
+ Shivank Garg wrote: > Add the missing migrate_folio
+ operation to jfs_metapage_aops to fix > warnings during memory compaction.
+ These warnings were introduced by > commit 7ee3647243e [...] 
  Content analysis details:   (-0.6 points, 6.0 required)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [170.10.133.124 listed in list.dnswl.org]
- 0.0 RCVD_IN_VALIDITY_SAFE_BLOCKED RBL: ADMINISTRATOR NOTICE: The
- query to Validity was blocked.  See
- https://knowledge.validity.com/hc/en-us/articles/20961730681243
- for more information.
- [170.10.133.124 listed in sa-accredit.habeas.com]
+ no trust [170.10.129.124 listed in list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 RCVD_IN_VALIDITY_RPBL_BLOCKED RBL: ADMINISTRATOR NOTICE: The
  query to Validity was blocked.  See
  https://knowledge.validity.com/hc/en-us/articles/20961730681243
  for more information.
- [170.10.133.124 listed in bl.score.senderscore.com]
- 0.0 RCVD_IN_MSPIKE_H5      RBL: Excellent reputation (+5)
- [170.10.133.124 listed in wl.mailspike.net]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ [170.10.129.124 listed in bl.score.senderscore.com]
+ 0.0 RCVD_IN_VALIDITY_CERTIFIED_BLOCKED RBL: ADMINISTRATOR NOTICE:
+ The query to Validity was blocked.  See
+ https://knowledge.validity.com/hc/en-us/articles/20961730681243
+ for more information.
+ [170.10.129.124 listed in sa-accredit.habeas.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
+ 0.0 RCVD_IN_MSPIKE_H5      RBL: Excellent reputation (+5)
+ [170.10.129.124 listed in wl.mailspike.net]
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
  0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
  -0.4 DKIMWL_WL_HIGH         DKIMwl.org - High trust sender
-X-Headers-End: 1u7FOs-0001w8-HE
-Subject: Re: [Jfs-discussion] [PATCH V4 1/2] mm: add
- folio_migration_expected_refs() as inline function
+X-Headers-End: 1u7FTs-0002In-Vo
+Subject: Re: [Jfs-discussion] [PATCH V4 2/2] jfs: implement migrate_folio
+ for jfs_metapage_aops
 X-BeenThere: jfs-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -220,18 +220,152 @@ Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Errors-To: jfs-discussion-bounces@lists.sourceforge.net
 
 On 22.04.25 13:40, Shivank Garg wrote:
-> Rename the previously static folio_expected_refs() to clarify its
-> purpose and scope, making it an inline function
-> folio_migration_expected_refs() to calculate expected folio references
-> during migration. The function is only suitable for folios unmapped from
-> page tables.
+> Add the missing migrate_folio operation to jfs_metapage_aops to fix
+> warnings during memory compaction. These warnings were introduced by
+> commit 7ee3647243e5 ("migrate: Remove call to ->writepage") which
+> added explicit warnings when filesystems don't implement migrate_folio.
 > 
+> System reports following warnings:
+>    jfs_metapage_aops does not implement migrate_folio
+>    WARNING: CPU: 0 PID: 6870 at mm/migrate.c:955 fallback_migrate_folio mm/migrate.c:953 [inline]
+>    WARNING: CPU: 0 PID: 6870 at mm/migrate.c:955 move_to_new_folio+0x70e/0x840 mm/migrate.c:1007
+> 
+> Implement metapage_migrate_folio which handles both single and multiple
+> metapages per page configurations.
+> 
+> Fixes: 35474d52c605 ("jfs: Convert metapage_writepage to metapage_write_folio")
+> Reported-by: syzbot+8bb6fd945af4e0ad9299@syzkaller.appspotmail.com
+> Closes: https://lore.kernel.org/all/67faff52.050a0220.379d84.001b.GAE@google.com
 > Signed-off-by: Shivank Garg <shivankg@amd.com>
 > ---
+>   fs/jfs/jfs_metapage.c | 94 +++++++++++++++++++++++++++++++++++++++++++
+>   1 file changed, 94 insertions(+)
+> 
+> diff --git a/fs/jfs/jfs_metapage.c b/fs/jfs/jfs_metapage.c
+> index df575a873ec6..a12fbd92cc69 100644
+> --- a/fs/jfs/jfs_metapage.c
+> +++ b/fs/jfs/jfs_metapage.c
+> @@ -15,6 +15,7 @@
+>   #include <linux/mempool.h>
+>   #include <linux/seq_file.h>
+>   #include <linux/writeback.h>
+> +#include <linux/migrate.h>
+>   #include "jfs_incore.h"
+>   #include "jfs_superblock.h"
+>   #include "jfs_filsys.h"
+> @@ -151,6 +152,54 @@ static inline void dec_io(struct folio *folio, blk_status_t status,
+>   		handler(folio, anchor->status);
+>   }
+>   
+> +static int __metapage_migrate_folio(struct address_space *mapping, struct folio *dst,
+> +				    struct folio *src, enum migrate_mode mode)
+> +{
+> +	struct meta_anchor *src_anchor = src->private;
+> +	struct metapage *mps[MPS_PER_PAGE] = {0};
+> +	struct metapage *mp;
+> +	int i, rc;
+> +
+> +	for (i = 0; i < MPS_PER_PAGE; i++) {
+> +		mp = src_anchor->mp[i];
+> +		if (mp && metapage_locked(mp))
+> +			return -EAGAIN;
+> +	}
+> +
+> +	rc = filemap_migrate_folio(mapping, dst, src, mode);
+> +	if (rc != MIGRATEPAGE_SUCCESS)
+> +		return rc;
+> +
+> +	for (i = 0; i < MPS_PER_PAGE; i++) {
+> +		mp = src_anchor->mp[i];
+> +		if (!mp)
+> +			continue;
+> +		if (unlikely(insert_metapage(dst, mp))) {
+> +			/* If error, roll-back previosly inserted pages */
+> +			for (int j = 0 ; j < i; j++) {
+> +				if (mps[j])
+> +					remove_metapage(dst, mps[j]);
+> +			}
+> +			return -EAGAIN;
+> +		}
+> +		mps[i] = mp;
+> +	}
+> +
+> +	/* Update the metapage and remove it from src */
+> +	for (i = 0; i < MPS_PER_PAGE; i++) {
+> +		mp = mps[i];
+> +		if (mp) {
+> +			int page_offset = mp->data - folio_address(src);
+> +
+> +			mp->data = folio_address(dst) + page_offset;
+> +			mp->folio = dst;
+> +			remove_metapage(src, mp);
+> +		}
+> +	}
+> +
+> +	return MIGRATEPAGE_SUCCESS;
+> +}
+> +
+>   #else
+>   static inline struct metapage *folio_to_mp(struct folio *folio, int offset)
+>   {
+> @@ -175,6 +224,32 @@ static inline void remove_metapage(struct folio *folio, struct metapage *mp)
+>   #define inc_io(folio) do {} while(0)
+>   #define dec_io(folio, status, handler) handler(folio, status)
+>   
+> +static int __metapage_migrate_folio(struct address_space *mapping, struct folio *dst,
+> +				    struct folio *src, enum migrate_mode mode)
+> +{
+> +	struct metapage *mp;
+> +	int page_offset;
+> +	int rc;
+> +
+> +	mp = folio_to_mp(src, 0);
+> +	if (mp && metapage_locked(mp))
+> +		return -EAGAIN;
+> +
+> +	rc = filemap_migrate_folio(mapping, dst, src, mode);
+> +	if (rc != MIGRATEPAGE_SUCCESS)
+> +		return rc;
+> +
+> +	if (unlikely(insert_metapage(dst, mp)))
+> +		return -EAGAIN;
+> +
+> +	page_offset = mp->data - folio_address(src);
+> +	mp->data = folio_address(dst) + page_offset;
+> +	mp->folio = dst;
+> +	remove_metapage(src, mp);
+> +
+> +	return MIGRATEPAGE_SUCCESS;
+> +}
+> +
+>   #endif
+>   
+>   static inline struct metapage *alloc_metapage(gfp_t gfp_mask)
+> @@ -554,6 +629,24 @@ static bool metapage_release_folio(struct folio *folio, gfp_t gfp_mask)
+>   	return ret;
+>   }
+>   
+> +/**
+> + * metapage_migrate_folio - Migration function for JFS metapages
+> + */
+> +static int metapage_migrate_folio(struct address_space *mapping, struct folio *dst,
+> +				  struct folio *src, enum migrate_mode mode)
+> +{
+> +	int expected_count;
+> +
+> +	if (!src->private)
+> +		return filemap_migrate_folio(mapping, dst, src, mode);
+> +
+> +	/* Check whether page does not have extra refs before we do more work */
+> +	expected_count = folio_migration_expected_refs(mapping, src);
+> +	if (folio_ref_count(src) != expected_count)
 
-Thanks!
+Probably no need for the temporary variable.
 
-Acked-by: David Hildenbrand <david@redhat.com>
+Hm, makes me wonder if it should be called 
+folio_migration_expected_ref_count() ... :)
+
+Bit it's even longer, whatever you think is best.
 
 -- 
 Cheers,
