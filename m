@@ -2,126 +2,122 @@ Return-Path: <jfs-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+jfs-discussion@lfdr.de
 Delivered-To: lists+jfs-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id 85608AB3CD1
-	for <lists+jfs-discussion@lfdr.de>; Mon, 12 May 2025 17:58:13 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1188EABF93D
+	for <lists+jfs-discussion@lfdr.de>; Wed, 21 May 2025 17:28:55 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.sourceforge.net; s=beta; h=Content-Transfer-Encoding:Content-Type:Cc:
+	d=lists.sourceforge.net; s=beta; h=Content-Transfer-Encoding:Content-Type:
 	Reply-To:From:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:Subject:To:Message-ID:Date:MIME-Version:Sender:
+	List-Unsubscribe:List-Id:Subject:To:Message-ID:Date:MIME-Version:Sender:Cc:
 	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
 	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
-	bh=RDH2s8Jl3PQGml+afr7dE3FyeEAEZq0+yyvpVPqSdrk=; b=i3DcfJAGl4V21CjdU/IPFHA7+y
-	JoRRYQTd1RUJO320b2yocnq/67FkX3/yeu1NEqZNaz5B/aKDauCZoeBNPgt+bhGQUCAjLYvlTabJG
-	J625/1TGucDXd6hZhnALHGRyRMcA6GOS5BpD9l2IfQiqGW/gJzk5fXVdxaewd0Ayrk0Q=;
-Received: from [127.0.0.1] (helo=sfs-ml-4.v29.lw.sourceforge.com)
-	by sfs-ml-4.v29.lw.sourceforge.com with esmtp (Exim 4.95)
+	bh=47ciUys+/W8DAVFZLCD/fDKErwnzsXiR+WyqaBN3c1c=; b=WgIB0kbxzsfdot9BuseT7PdaSa
+	zBJDAWiZA8rGCTZlDqpFoCf1bLMP7XIFd2zN2cXyIBcKiIlUtrwALKpVu3gS4FuUGx5y1p3M4bFHG
+	dcORGDTIoq4Y5ePPFohUDjFzgByc1YWgxiyskqwo5jRFPXr9Jp8g2x/o/uq/fQ03okFg=;
+Received: from [127.0.0.1] (helo=sfs-ml-1.v29.lw.sourceforge.com)
+	by sfs-ml-1.v29.lw.sourceforge.com with esmtp (Exim 4.95)
 	(envelope-from <jfs-discussion-bounces@lists.sourceforge.net>)
-	id 1uEVX4-0007VT-KR;
-	Mon, 12 May 2025 15:57:34 +0000
+	id 1uHlMT-0005BP-Ja;
+	Wed, 21 May 2025 15:28:05 +0000
 Received: from [172.30.29.66] (helo=mx.sourceforge.net)
  by sfs-ml-3.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
- TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (Exim 4.95)
- (envelope-from <zzzccc427@gmail.com>) id 1uEK8e-0000bG-KR
- for jfs-discussion@lists.sourceforge.net;
- Mon, 12 May 2025 03:47:36 +0000
+ TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (Exim 4.95) (envelope-from
+ <3l-ktaAkbAGoaghSITTMZIXXQL.OWWOTMcaMZKWVbMVb.KWU@M3KW2WVRGUFZ5GODRSRYTGD7.apphosting.bounces.google.com>)
+ id 1uHkru-0001Vl-8a for jfs-discussion@lists.sourceforge.net;
+ Wed, 21 May 2025 14:56:30 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=sourceforge.net; s=x; h=Content-Transfer-Encoding:Content-Type:Cc:To:
- Subject:Message-ID:Date:From:MIME-Version:Sender:Reply-To:Content-ID:
+ d=sourceforge.net; s=x; h=Content-Type:To:From:Subject:Message-ID:Date:
+ MIME-Version:Sender:Reply-To:Cc:Content-Transfer-Encoding:Content-ID:
  Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
  :Resent-Message-ID:In-Reply-To:References:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=NL+yU8DQX37Je7KjgdKfp+OiEdWzsk8Nawd3p2oxSjc=; b=aC9+iY/Qqoi32JiInXbO1EP32E
- 5QDlhbUeX6WgrrFpJQNFsV6aiY6+9QMwkfCD4g/8qnNRig0Pi9JaA2ojpSsOMgjbkhPXvVimt9G4n
- WunCyAfoK8pMqjOBmywUfUfckytTkqsikiV42OAofKl76ogZwmlOQDi4ksj7eVMB0AIM=;
+ bh=0olR8O5HiA8HNUIc6t8hwoBdi9YUjVcD7dob8mUdSJc=; b=ajdwXxCzFebyigg6y3mFUQ0dV4
+ bYOS9xkIHs+2tOw4NeeqtB3zMYEpcgR8kYWajYMyrhuE+/MzuHSExSuKJWneNeD+EWaYsCyYQLR38
+ ODVtgHenjOcdI2r8gJeo9L3bfMp27UMK0/+vFtCd35gFY4j8960P/J35/oW4x5cXnSsY=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
- h=Content-Transfer-Encoding:Content-Type:Cc:To:Subject:Message-ID:Date:From
- :MIME-Version:Sender:Reply-To:Content-ID:Content-Description:Resent-Date:
+ h=Content-Type:To:From:Subject:Message-ID:Date:MIME-Version:Sender:Reply-To
+ :Cc:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
  Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
  References:List-Id:List-Help:List-Unsubscribe:List-Subscribe:List-Post:
- List-Owner:List-Archive; bh=NL+yU8DQX37Je7KjgdKfp+OiEdWzsk8Nawd3p2oxSjc=; b=J
- p1hyJFSpVzYg4beojaOOa8cy7jYRvvoyfRQlrttKOlO/zUeWK4UGAUyFBJK/33PpeQ7r4atR1Ankm
- 6hU4Czmz2GtL4CQeHBUFle7ii112lr/nCL2u+8POmFRo61/C3BxsVB9nvbdcJKwlREnuRImfv1SYg
- 0R/1k3DQepOOj+MQ=;
-Received: from mail-yb1-f180.google.com ([209.85.219.180])
+ List-Owner:List-Archive; bh=0olR8O5HiA8HNUIc6t8hwoBdi9YUjVcD7dob8mUdSJc=; b=K
+ Hrl5xtuVwc33lkRrWhp/eKz1sKE6xym415SgsSaqrNhTUPW3n3BEpaM4giD6C4JNBZBD+8LVFdP9V
+ BWkHY5rlkv+7docLGKN+Ev3B0H2l7eBktLFJhzsgQIXCB0v5+HfPmL/kctCcZ6Snc04lMpkKyAc9n
+ vm05YvsYEWkV+MVc=;
+Received: from mail-il1-f200.google.com ([209.85.166.200])
  by sfi-mx-2.v28.lw.sourceforge.com with esmtps
  (TLS1.2:ECDHE-RSA-AES128-GCM-SHA256:128) (Exim 4.95)
- id 1uEK8d-0007ve-WC for jfs-discussion@lists.sourceforge.net;
- Mon, 12 May 2025 03:47:36 +0000
-Received: by mail-yb1-f180.google.com with SMTP id
- 3f1490d57ef6-e694601f624so2935106276.1
+ id 1uHkrt-0006tB-JD for jfs-discussion@lists.sourceforge.net;
+ Wed, 21 May 2025 14:56:30 +0000
+Received: by mail-il1-f200.google.com with SMTP id
+ e9e14a558f8ab-3ce8dadfb67so68490375ab.1
  for <jfs-discussion@lists.sourceforge.net>;
- Sun, 11 May 2025 20:47:35 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=gmail.com; s=20230601; t=1747021650; x=1747626450; darn=lists.sourceforge.net;
- h=content-transfer-encoding:cc:to:subject:message-id:date:from
- :mime-version:from:to:cc:subject:date:message-id:reply-to;
- bh=NL+yU8DQX37Je7KjgdKfp+OiEdWzsk8Nawd3p2oxSjc=;
- b=dg4iz5EMaPJvlQZpDi+MqYhdkMX8ospprrxwPQydXLJ35uG+YlAsg8tJSvB4rUsun8
- m8VHvZuBco/vT2ePGuBvsNxOjlFf7LV4R41HSeYX66vYbWfNSu9mU7G54G57ibkrgQPb
- khA29YxS/zD33DbrmB1mCMuZRuqRRnate1GcFbws4ZWFPYkcnP9/pvxS4wTgQcUkABlD
- j7vsRm/Lh8iE+FhUXmVMVVfASTgXwokMWo3a0+zxTibY5mHUzH4xzYW3pAmp8wRuwIzD
- S2h8F0rVZNtHHuKalB4GX5Wbc68ZB+iaJfUG8ut6INnHolk6+Nl9NAqdWCailu92cNNG
- F+0A==
+ Wed, 21 May 2025 07:56:29 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20230601; t=1747021650; x=1747626450;
- h=content-transfer-encoding:cc:to:subject:message-id:date:from
- :mime-version:x-gm-message-state:from:to:cc:subject:date:message-id
- :reply-to;
- bh=NL+yU8DQX37Je7KjgdKfp+OiEdWzsk8Nawd3p2oxSjc=;
- b=sag4muTrBH5oObWM26P1+BUQaj6xoeFlVB+nG432VUwaGGp++Sy5zcYO4JZVesmDBa
- MwpxYTunXYUNBgien/tKmYAksM0l/oE7Zv9D8E6g69HtKUFxJlEKTgutYX5FosR1ppXe
- oObI9Xqe/y/3OABykS5LzL/PGFo7E7US0cCFjFDVCIbtAZRUh3T923XXnMjLTy84T4mj
- J5BtClCW3ACRol1h5fc+PxeTqWXQybJDDcLuZ3m5yD4LbIHC6k2+uuEKFSk+mmvlel3h
- MwqTFBjVqberACZ+C9UrP3f0yEWPEyLU6zKXMP3fS8eszp5oLIl77fDcwXOT2vCLyifV
- 4D2A==
-X-Gm-Message-State: AOJu0YwGtUyf9BON4K9jcvak7hQpLWJ3FU+WNZ6FPQZecaR7NdiwBbeY
- ZCSpeuFymslduMJwLFW4BegIamsiZVAnSZhYwni3mvSxdHvrHGwVxlId7lNCPz06tSoMEA8qlz0
- UlGrDQBN+Mth27tH3aDutolh7HWU=
-X-Gm-Gg: ASbGncuvZti4G/D/rs4oEalo1khlzxRyc6ztOYF2/u50wGOCyeduWSgboJF+4Oi5rPk
- hThX3IQcpTLQ3blTK7ZtaY4X3Wp4uqakro1jrU1CPuyOaV0y6WPLEj9bR644E9HVyMazuqylhQc
- Rrbq4s7JcoWwgogNshYDLFu6qy768Rienk1+dFpwKa
-X-Google-Smtp-Source: AGHT+IFPFw+gJ/bQF2EwthAafjiLOofQU+haxcT+mEDKtNeE7L2EguezzCE/O54eia+EP/Bq1tvfjjLJZedEgYEvHLw=
-X-Received: by 2002:a05:6902:2085:b0:e78:ed39:f4e3 with SMTP id
- 3f1490d57ef6-e78fdd72b54mr15432447276.45.1747021650188; Sun, 11 May 2025
- 20:47:30 -0700 (PDT)
+ d=1e100.net; s=20230601; t=1747839384; x=1748444184;
+ h=to:from:subject:message-id:date:mime-version:x-gm-message-state
+ :from:to:cc:subject:date:message-id:reply-to;
+ bh=0olR8O5HiA8HNUIc6t8hwoBdi9YUjVcD7dob8mUdSJc=;
+ b=T+6hHwmTFZF7bHY3KmBapyvbvixzY1GTZOLco4tDBn4PN9MoMke6dD024ab9PTETNs
+ /in4FzRf7+80zvRHoEuf34fDa4wU0ltXm5C40DYrz3/6XC9tvoLO8ZJRqmDh4bMcBA3J
+ GKH/qOO+8ShnBXWGP9iuGW2GWO8FoZkSqvE0J41t9qb1T2AXJuu3WJKU9AXk6U1iomNs
+ UAkyGYW1S5NVgCZS+AXjtmIq0NJ6oaMJmMW8bXmy26FHvdV9IvfUKx5aYmrOkg2kr9JU
+ 2Wsd3r8WrkREcH7sWX1/8clckMKJVhyxeXJ84AjtS1B3EunrV+oHooKK9SgmAaejl8nL
+ wc2A==
+X-Gm-Message-State: AOJu0Yw3vKAP0yOBpxoKhhsJ/lIAfbYiz0Bdxz/lHuFFueOCfkbPEjYa
+ JdV2y7QZmLES2oRMb/fl8RTe0yp5omdqSuHIFSRg5SuITvRYyXK8wGwVeGn0gmyvLLblhlI6u5u
+ 1ZmR+TJl0Ril5CAcBhcRdZg9HMnpa9+vFXqJta8DpO7aCv0BByC4M1i77R4Y=
+X-Google-Smtp-Source: AGHT+IHFilunlwHcwb0PkB0yDlSFdRbTj//8BkuCJ/F+lEEbP4rj7Dnkh2cZoV2gSElNyhVrxWISv1VMVtmSsxlrnnWri6VazGxD
 MIME-Version: 1.0
-Date: Mon, 12 May 2025 11:47:17 +0800
-X-Gm-Features: AX0GCFs8C_LhWlDacxAZHsu0N81IK8AEzzpyvWqGqBP64pef1298kKQjrfTrU70
-Message-ID: <CAFRLqsVpY4EtBKoJHwafoeTfd3wF2Q2ga924FTNBG5pVLCBnKw@mail.gmail.com>
-To: shaggy@kernel.org
-X-Spam-Score: 1.1 (+)
-X-Spam-Report: Spam detection software, running on the system "6901ab67b84d", 
+X-Received: by 2002:a05:6e02:4506:20b0:3dc:7240:94a6 with SMTP id
+ e9e14a558f8ab-3dc72409e86mr72031465ab.3.1747839383860; Wed, 21 May 2025
+ 07:56:23 -0700 (PDT)
+Date: Wed, 21 May 2025 07:56:23 -0700
+X-Google-Appengine-App-Id: s~syzkaller
+X-Google-Appengine-App-Id-Alias: syzkaller
+Message-ID: <682de997.050a0220.ade60.09ce.GAE@google.com>
+To: jfs-discussion@lists.sourceforge.net, linux-kernel@vger.kernel.org, 
+ shaggy@kernel.org, syzkaller-bugs@googlegroups.com
+X-Spam-Score: 3.0 (+++)
+X-Spam-Report: Spam detection software,
+ running on the system "util-spamd-1.v13.lw.sourceforge.com", 
  has NOT identified this incoming email as spam.  The original
  message has been attached to this so you can view it or label
  similar future email.  If you have any questions, see
  the administrator of that system for details.
- Content preview:  I would like to report a data race bug detected in the jfs
- filesystem on Linux kernel 6.14-rc4. The issue was discovered by our tools,
- which identified unsynchronized concurrent accesses to `jfs_ip->b [...] 
- Content analysis details:   (1.1 points, 5.0 required)
+ Content preview:  Hello jfs maintainers/developers, This is a 31-day syzbot
+ report for the jfs subsystem. All related reports/information can be found
+ at: https://syzkaller.appspot.com/upstream/s/jfs During the period, 4 new
+ issues were detected and 0 were fixed. In total, 52 issues are still open
+ and 58 have already been fixed. 
+ Content analysis details:   (3.0 points, 6.0 required)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.1 DKIM_VALID_AU Message has a valid DKIM or DK signature from author's
- domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature,
- not necessarily valid
- 1.0 HK_RANDOM_FROM         From username looks random
- 0.0 HK_RANDOM_ENVFROM      Envelope sender username looks random
- 0.0 FREEMAIL_FROM Sender email is commonly abused enduser mail provider
- [zzzccc427(at)gmail.com]
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends in
- digit [zzzccc427(at)gmail.com]
+ 0.0 URIBL_BLOCKED          ADMINISTRATOR NOTICE: The query to URIBL was
+ blocked.  See
+ http://wiki.apache.org/spamassassin/DnsBlocklists#dnsbl-block
+ for more information. [URIs: syzkaller.appspot.com]
+ 0.3 FROM_LOCAL_HEX         From: localpart has long hexadecimal sequence
+ 0.0 RCVD_IN_VALIDITY_CERTIFIED_BLOCKED RBL: ADMINISTRATOR NOTICE:
+ The query to Validity was blocked.  See
+ https://knowledge.validity.com/hc/en-us/articles/20961730681243
+ for more information.
+ [209.85.166.200 listed in sa-trusted.bondedsender.org]
+ 0.0 RCVD_IN_VALIDITY_RPBL_BLOCKED RBL: ADMINISTRATOR NOTICE: The
+ query to Validity was blocked.  See
+ https://knowledge.validity.com/hc/en-us/articles/20961730681243
+ for more information.
+ [209.85.166.200 listed in bl.score.senderscore.com]
+ 2.7 RCVD_IN_PSBL           RBL: Received via a relay in PSBL
+ [209.85.166.200 listed in psbl.surriel.com]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.219.180 listed in wl.mailspike.net]
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/, no
- trust [209.85.219.180 listed in list.dnswl.org]
-X-Headers-End: 1uEK8d-0007ve-WC
-X-Mailman-Approved-At: Mon, 12 May 2025 15:57:33 +0000
-Subject: [Jfs-discussion] [BUG] Data race on xtSearch about jfs_ip->btindex
+ [209.85.166.200 listed in wl.mailspike.net]
+X-Headers-End: 1uHkrt-0006tB-JD
+X-Mailman-Approved-At: Wed, 21 May 2025 15:28:03 +0000
+Subject: [Jfs-discussion] [syzbot] Monthly jfs report (May 2025)
 X-BeenThere: jfs-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -133,52 +129,60 @@ List-Post: <mailto:jfs-discussion@lists.sourceforge.net>
 List-Help: <mailto:jfs-discussion-request@lists.sourceforge.net?subject=help>
 List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/jfs-discussion>, 
  <mailto:jfs-discussion-request@lists.sourceforge.net?subject=subscribe>
-From: cen zhang via Jfs-discussion <jfs-discussion@lists.sourceforge.net>
-Reply-To: cen zhang <zzzccc427@gmail.com>
-Cc: jfs-discussion@lists.sourceforge.net, baijiaju1990@gmail.com,
- linux-kernel@vger.kernel.org, zhenghaoran154@gmail.com
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+From: syzbot via Jfs-discussion <jfs-discussion@lists.sourceforge.net>
+Reply-To: syzbot <syzbot+listb820ab440d2c475644a6@syzkaller.appspotmail.com>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Errors-To: jfs-discussion-bounces@lists.sourceforge.net
 
-SSB3b3VsZCBsaWtlIHRvIHJlcG9ydCBhIGRhdGEgcmFjZSBidWcgZGV0ZWN0ZWQgaW4KdGhlIGpm
-cyBmaWxlc3lzdGVtIG9uIExpbnV4IGtlcm5lbCA2LjE0LXJjNC4KVGhlIGlzc3VlIHdhcyBkaXNj
-b3ZlcmVkIGJ5IG91ciB0b29scywKd2hpY2ggaWRlbnRpZmllZCB1bnN5bmNocm9uaXplZCBjb25j
-dXJyZW50IGFjY2Vzc2VzIHRvCmBqZnNfaXAtPmJ0aW5kZXhgLgo9PT09PT09PT09PT0gREFUQVJB
-Q0UgPT09PT09PT09PT09CkZ1bmN0aW9uOiB4dFNlYXJjaCsweDI2OGMvMHgzZDYwIGZzL2pmcy9q
-ZnNfeHRyZWUuYzo0NTEKRnVuY3Rpb246IHh0TG9va3VwKzB4NGQ3LzB4MTQ5MCBmcy9qZnMvamZz
-X3h0cmVlLmM6MTUyCkZ1bmN0aW9uOiBqZnNfZ2V0X2Jsb2NrKzB4NTIwLzB4MjEzMCBmcy9qZnMv
-aW5vZGUuYzoyMTgKRnVuY3Rpb246IF9fYmxvY2tkZXZfZGlyZWN0X0lPKzB4MTYyOS8weDNlMjAK
-RnVuY3Rpb246IGpmc19kaXJlY3RfSU8rMHgzMDQvMHg2MTAgaW5jbHVkZS9saW51eC9mcy5oOjM0
-MTIKRnVuY3Rpb246IGdlbmVyaWNfZmlsZV9yZWFkX2l0ZXIrMHgyZDIvMHg0MTAKRnVuY3Rpb246
-IHZmc19yZWFkKzB4NzQ1LzB4YWEwCkZ1bmN0aW9uOiBrc3lzX3JlYWQrMHgxMTYvMHgyMDAKRnVu
-Y3Rpb246IGRvX3N5c2NhbGxfNjQrMHhjOS8weDFhMApGdW5jdGlvbjogZW50cnlfU1lTQ0FMTF82
-NF9hZnRlcl9od2ZyYW1lKzB4NzcvMHg3ZgpGdW5jdGlvbjogMHgwCj09PT09PT09PT09PU9USEVS
-X0lORk89PT09PT09PT09PT0KRnVuY3Rpb246IHh0U2VhcmNoKzB4MjU5My8weDNkNjAgZnMvamZz
-L2pmc194dHJlZS5jOjQ0NgpGdW5jdGlvbjogeHRMb29rdXArMHg0ZDcvMHgxNDkwIGZzL2pmcy9q
-ZnNfeHRyZWUuYzoxNTIKRnVuY3Rpb246IGpmc19nZXRfYmxvY2srMHg1MjAvMHgyMTMwIGZzL2pm
-cy9pbm9kZS5jOjIxOApGdW5jdGlvbjogYmxvY2tfcmVhZF9mdWxsX2ZvbGlvKzB4MzVlLzB4OWIw
-CkZ1bmN0aW9uOiBkb19tcGFnZV9yZWFkcGFnZSsweGVkMy8weDEwNzAKRnVuY3Rpb246IG1wYWdl
-X3JlYWRfZm9saW8rMHhiOC8weDE2MApGdW5jdGlvbjogamZzX3JlYWRfZm9saW8rMHgzYS8weDYw
-IGZzL2pmcy9pbm9kZS5jOjI3NQpGdW5jdGlvbjogZmlsZW1hcF9yZWFkX2ZvbGlvKzB4NTQvMHgx
-NDAKRnVuY3Rpb246IGZpbGVtYXBfZ2V0X3BhZ2VzKzB4MTAyYi8weDE0YzAKRnVuY3Rpb246IGZp
-bGVtYXBfcmVhZCsweDM0ZS8weGI5MApGdW5jdGlvbjogdmZzX3JlYWQrMHg3NDUvMHhhYTAKRnVu
-Y3Rpb246IGtzeXNfcmVhZCsweDExNi8weDIwMApGdW5jdGlvbjogZG9fc3lzY2FsbF82NCsweGM5
-LzB4MWEwCkZ1bmN0aW9uOiBlbnRyeV9TWVNDQUxMXzY0X2FmdGVyX2h3ZnJhbWUrMHg3Ny8weDdm
-Cj09PT09PT09PT09PT09PT09RU5EPT09PT09PT09PT09PT0KClRoZSBjb2RlIGxvY2F0aW9ucyBp
-bnZvbHZlZCBpbiB0aGUgZGF0YSByYWNlIGFyZToKClJlYWQgKGZzL2pmcy9qZnNfeHRyZWUuYyk6
-CnN0YXRpYyBpbnQgeHRTZWFyY2goc3RydWN0IGlub2RlICppcCwgczY0IHhvZmYsIHM2NCAqbmV4
-dHAsCiAgICAgICAgICAgIGludCAqY21wcCwgc3RydWN0IGJ0c3RhY2sgKiBidHN0YWNrLCBpbnQg
-ZmxhZykKewogICAgICAgICAgICAuLi4KICAgICAgICAgICAgLyogaW5pdCBzZXF1ZW50aWFsIGFj
-Y2VzcyBoZXVyaXN0aWNzICovCiAgICAgICAgICAgIGJ0aW5kZXggPSBqZnNfaXAtPmJ0aW5kZXg7
-CiAgICAgICAgICAgIC4uLgp9CgpXcml0ZSAoZnMvamZzL2pmc194dHJlZS5jKToKc3RhdGljIGlu
-dCB4dFNlYXJjaChzdHJ1Y3QgaW5vZGUgKmlwLCBzNjQgeG9mZiwgczY0ICpuZXh0cCwKICAgICAg
-ICAgICAgaW50ICpjbXBwLCBzdHJ1Y3QgYnRzdGFjayAqIGJ0c3RhY2ssIGludCBmbGFnKQp7CiAg
-ICAgICAgICAgIC4uLgogICAgICAgICAgICAgICAgamZzX2lwLT5idG9yZGVyID0gQlRfUkFORE9N
-OwogICAgICAgICAgICBqZnNfaXAtPmJ0aW5kZXggPSBiYXNlOwogICAgICAgICAgICAuLi4KfQpJ
-4oCZdmUgdmVyaWZpZWQgdGhhdCB0aGlzIGlzc3VlIHN0aWxsIGV4aXN0cyBpbiB0aGUgbGF0ZXN0
-IHNvdXJjZSB0cmVlClRoYW5rIHlvdSBmb3IgeW91ciBhdHRlbnRpb24gdG8gdGhpcyBtYXR0ZXIu
-CkJlc3QgcmVnYXJkcywKQ2VuIFpoYW5nCgoKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX18KSmZzLWRpc2N1c3Npb24gbWFpbGluZyBsaXN0Ckpmcy1kaXNjdXNz
-aW9uQGxpc3RzLnNvdXJjZWZvcmdlLm5ldApodHRwczovL2xpc3RzLnNvdXJjZWZvcmdlLm5ldC9s
-aXN0cy9saXN0aW5mby9qZnMtZGlzY3Vzc2lvbgo=
+Hello jfs maintainers/developers,
+
+This is a 31-day syzbot report for the jfs subsystem.
+All related reports/information can be found at:
+https://syzkaller.appspot.com/upstream/s/jfs
+
+During the period, 4 new issues were detected and 0 were fixed.
+In total, 52 issues are still open and 58 have already been fixed.
+
+Some of the still happening issues:
+
+Ref  Crashes Repro Title
+<1>  47298   Yes   kernel BUG in jfs_evict_inode
+                   https://syzkaller.appspot.com/bug?extid=9c0c58ea2e4887ab502e
+<2>  23836   Yes   kernel BUG in txUnlock
+                   https://syzkaller.appspot.com/bug?extid=a63afa301d1258d09267
+<3>  21946   Yes   WARNING in dbAdjTree
+                   https://syzkaller.appspot.com/bug?extid=ab18fa9c959320611727
+<4>  6265    Yes   general protection fault in lmLogSync (2)
+                   https://syzkaller.appspot.com/bug?extid=e14b1036481911ae4d77
+<5>  3646    Yes   kernel BUG in dbFindLeaf
+                   https://syzkaller.appspot.com/bug?extid=dcea2548c903300a400e
+<6>  3260    Yes   INFO: task hung in lock_metapage
+                   https://syzkaller.appspot.com/bug?extid=1d84a1682e4673d5c4fb
+<7>  3173    Yes   KASAN: user-memory-access Write in __destroy_inode
+                   https://syzkaller.appspot.com/bug?extid=dcc068159182a4c31ca3
+<8>  2411    Yes   INFO: trying to register non-static key in txEnd (2)
+                   https://syzkaller.appspot.com/bug?extid=5b27962d84feb4acb5c1
+<9>  2325    Yes   general protection fault in write_special_inodes
+                   https://syzkaller.appspot.com/bug?extid=c732e285f8fc38d15916
+<10> 2253    Yes   general protection fault in jfs_flush_journal
+                   https://syzkaller.appspot.com/bug?extid=194bfe3476f96782c0b6
+
+---
+This report is generated by a bot. It may contain errors.
+See https://goo.gl/tpsmEJ for more information about syzbot.
+syzbot engineers can be reached at syzkaller@googlegroups.com.
+
+To disable reminders for individual bugs, reply with the following command:
+#syz set <Ref> no-reminders
+
+To change bug's subsystems, reply with:
+#syz set <Ref> subsystems: new-subsystem
+
+You may send multiple commands in a single email message.
+
+
+_______________________________________________
+Jfs-discussion mailing list
+Jfs-discussion@lists.sourceforge.net
+https://lists.sourceforge.net/lists/listinfo/jfs-discussion
