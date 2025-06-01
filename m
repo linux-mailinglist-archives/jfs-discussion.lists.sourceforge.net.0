@@ -2,71 +2,71 @@ Return-Path: <jfs-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+jfs-discussion@lfdr.de
 Delivered-To: lists+jfs-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id CEFD2ACA1F8
-	for <lists+jfs-discussion@lfdr.de>; Mon,  2 Jun 2025 01:32:18 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id ECB0CACA207
+	for <lists+jfs-discussion@lfdr.de>; Mon,  2 Jun 2025 01:32:59 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.sourceforge.net; s=beta; h=Content-Transfer-Encoding:Content-Type:Cc:
 	Reply-To:From:List-Subscribe:List-Help:List-Post:List-Archive:
 	List-Unsubscribe:List-Id:Subject:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:To:Sender:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=Ktd6Lb6SPi90Ems/J7w55nHr4JA9Dmmy7tFaXEPQ4+A=; b=Mp2kUD4DQG8+N4CmdqRejbWKJI
-	ssTPNBQRRWdQmFRx0vwjjfoOKWrfq4UpZ+FmenK5Roy8zdf4SvLiskhJmyZKwEy0wbVc0vhZM3+R6
-	lm/amFhfRIBFxYrlgTj2TpesbtzdRZNCZGqJB/iTbBxyYKSLYACEXX84rn0KUer1nz+g=;
-Received: from [127.0.0.1] (helo=sfs-ml-3.v29.lw.sourceforge.com)
-	by sfs-ml-3.v29.lw.sourceforge.com with esmtp (Exim 4.95)
+	bh=R9N9E75e6LN26gaMVtR6TS+GQslHUV8khR7ctgkZAYY=; b=jV4y0e+VvXXftzVx/FQwqDu5IM
+	i5e23RPTf/KOpx/MxOgF0mT2V66Tbd5fl31IvVBE0XLKSIaW1ArtvRqftoLTGN6B0rcs7qIbis0ld
+	bkBfH8GjM2mR6zrywXWvva0YHfTBQchttWK2YvJSOovklGPfNxJ7jsA0n7fKHSWu2GXU=;
+Received: from [127.0.0.1] (helo=sfs-ml-1.v29.lw.sourceforge.com)
+	by sfs-ml-1.v29.lw.sourceforge.com with esmtp (Exim 4.95)
 	(envelope-from <jfs-discussion-bounces@lists.sourceforge.net>)
-	id 1uLs9V-0001S5-Uj;
-	Sun, 01 Jun 2025 23:31:41 +0000
+	id 1uLsAP-0003Ow-CA;
+	Sun, 01 Jun 2025 23:32:37 +0000
 Received: from [172.30.29.66] (helo=mx.sourceforge.net)
- by sfs-ml-3.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
+ by sfs-ml-1.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
  TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (Exim 4.95)
- (envelope-from <sashal@kernel.org>) id 1uLs9U-0001Rw-I8
+ (envelope-from <sashal@kernel.org>) id 1uLsAO-0003Op-AX
  for jfs-discussion@lists.sourceforge.net;
- Sun, 01 Jun 2025 23:31:40 +0000
+ Sun, 01 Jun 2025 23:32:36 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=sourceforge.net; s=x; h=Content-Transfer-Encoding:Content-Type:MIME-Version
- :References:In-Reply-To:Message-Id:Date:Subject:Cc:To:From:Sender:Reply-To:
+ d=sourceforge.net; s=x; h=Content-Transfer-Encoding:MIME-Version:References:
+ In-Reply-To:Message-Id:Date:Subject:Cc:To:From:Sender:Reply-To:Content-Type:
  Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
  Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=XktHDOVNiuiB3kjFlOqYn92BA8z1UFuB8H9tcyORrSc=; b=XUUBCALDlOAS1ItHWLyRCNPaTn
- 2LzC4Z2Ymam72/SIX41L5LQ0Vhfg+TgeQiUOwhMftV5eip8KHr4CFORkHcUCDOUpwmNgY6vE4Hql5
- z+NaB1ycuRNsmugLXnJfDeKo1AnK+AXKjQMl8ND1vBQLTg9rKYyOQ/ZKwpcxu8o2PXN0=;
+ bh=UN57r75QyRpftHb+JBFf/D16sV8rZlOG8KmcE4uSUfw=; b=M6TQeVsnxnWrvvdLoZBfqQ890V
+ NWBqDLXRMbKnZ4Kb5RCBv5cJxxcDpR4jwMk7016QkgUfL7F3JcnTlJxXaTWpVQ5EOqCIypwEcDIbz
+ dseQAbBXXhtdIRf8g7gmLY6McED5OMD50+G7TsHClhMzL8+9KZDDUuLz/mOzVpn1+9mc=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
- h=Content-Transfer-Encoding:Content-Type:MIME-Version:References:
- In-Reply-To:Message-Id:Date:Subject:Cc:To:From:Sender:Reply-To:Content-ID:
+ h=Content-Transfer-Encoding:MIME-Version:References:In-Reply-To:Message-Id:
+ Date:Subject:Cc:To:From:Sender:Reply-To:Content-Type:Content-ID:
  Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
  :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
  List-Post:List-Owner:List-Archive;
- bh=XktHDOVNiuiB3kjFlOqYn92BA8z1UFuB8H9tcyORrSc=; b=VJOSmPFIcxxvo+E1ACMhQd0oZj
- 6IHICZCkzVaPMVHU/MXbHEzaJKQ8KCcoxcen091iT+Hom7VdwziWboTIPUS8bhjv9sJ4Xq6NaDKks
- Yw5VTzp2VdtyG+ubr3sAr3TeQb57T/GMTMUPxs50RYjDXyGORR6Ko8QgbTna3OWn0TZ8=;
-Received: from nyc.source.kernel.org ([147.75.193.91])
+ bh=UN57r75QyRpftHb+JBFf/D16sV8rZlOG8KmcE4uSUfw=; b=TLgWS/zgV7bsOWudQc0AGLOgdf
+ 8jJcjOviBVsaj8YYRjzwkMb0hDPFaeXjCBrVQdibuUrkI1BWWamhfLqSFH3A4HRIeoKKukHyZ7IQO
+ OxiG13wO001S6Az9wLqXxB2U9cz1PZKG4wdJiWtVRBCU4rT6McYhSDXb5Cz23at+TtDc=;
+Received: from dfw.source.kernel.org ([139.178.84.217])
  by sfi-mx-2.v28.lw.sourceforge.com with esmtps
  (TLS1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.95)
- id 1uLs9T-0000O1-LT for jfs-discussion@lists.sourceforge.net;
- Sun, 01 Jun 2025 23:31:40 +0000
+ id 1uLsAI-0000Ov-DP for jfs-discussion@lists.sourceforge.net;
+ Sun, 01 Jun 2025 23:32:36 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
- by nyc.source.kernel.org (Postfix) with ESMTP id 00611A4F858;
- Sun,  1 Jun 2025 23:31:29 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 5B81DC4CEE7;
- Sun,  1 Jun 2025 23:31:27 +0000 (UTC)
+ by dfw.source.kernel.org (Postfix) with ESMTP id 18EF25C5761;
+ Sun,  1 Jun 2025 23:30:03 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 8A0ECC4CEE7;
+ Sun,  1 Jun 2025 23:32:18 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=k20201202; t=1748820688;
- bh=O40NOxv/cbMvwp8e6JnE7yFQyeGP5k32sfavIm7BbIE=;
+ s=k20201202; t=1748820739;
+ bh=lx0sLTxwVKT7MceorPuxK8d6JHSF7evmGLh8BNW5m1s=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=bIh43mt4oBZEW8npRbKbTavlONZlUxq2y715myozj02Id/XZ8UR1bdtK8tuBOC5JJ
- Hkvc5kF9qBIgFZ3Uzr6nhvEqMqDWWm1qjcgGpY/MnDWxgGqpXA+haDPPs3nAwL9bYR
- mFdYcSY0liwjiJSkW3ZZO4uQ1RPrf1xlsN5Tra9qu9Oad3kfHl5utxi5jVOkDRgBjQ
- Mhe6vF1KGlzFbRsOI4hN2Z3yY8WUb9wPC4AGmc8TeZaUeLR/0SxRqYbrtcw3tRAgLn
- YaVHwBpFEXhE3vKigp9mzFGqmMBKes+o577FSssXnSv7cQsefH5zEAOgpVmgPyoCbv
- Mbi0eU/kOjzAw==
+ b=A7lZLC0JPuEAiahUFPcqBUEqrVlO8ufb2swKuLF9U2xCd2dkBMkKveGKXVLv5VAos
+ +tVys8FAXgKiH8rJXeR7dLidvm0qONAHayG+QiX1lBeG4Eve1RQhWszG5nvU3GtNHY
+ oIqfQRhOzF4u0Gz8IspkiRUNVzZi/YuetewpEMJOHprZ58RS0rCWaE5TxxF8t5ctuF
+ 1PPIEIB7SIJdFrqWSITEcLYb4h7A5ldGteCrDq4LM4BofMj6qy+kEOIurHaEJmDXRd
+ ReF0RYQ29n+0ZcYsavOf7zy0V4Y+yikaLmiIySSdZJtb0kGbDfaxviTzRWoRy8+bRn
+ HBMgEGR1Afv/w==
 To: patches@lists.linux.dev,
 	stable@vger.kernel.org
-Date: Sun,  1 Jun 2025 19:28:36 -0400
-Message-Id: <20250601232937.3510379-44-sashal@kernel.org>
+Date: Sun,  1 Jun 2025 19:28:51 -0400
+Message-Id: <20250601232937.3510379-59-sashal@kernel.org>
 X-Mailer: git-send-email 2.39.5
 In-Reply-To: <20250601232937.3510379-1-sashal@kernel.org>
 References: <20250601232937.3510379-1-sashal@kernel.org>
@@ -74,33 +74,32 @@ MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-stable-base: Linux 6.14.9
-X-Spam-Score: -2.6 (--)
+X-Spam-Score: -5.3 (-----)
 X-Spam-Report: Spam detection software,
  running on the system "util-spamd-1.v13.lw.sourceforge.com", 
  has NOT identified this incoming email as spam.  The original
  message has been attached to this so you can view it or label
  similar future email.  If you have any questions, see
  the administrator of that system for details.
- Content preview: From: Aditya Dutt <duttaditya18@gmail.com> [ Upstream commit
- 5dff41a86377563f7a2b968aae00d25b4ceb37c9 ] stbl is s8 but it must contain
- offsets into slot which can go from 0 to 127. 
- Content analysis details:   (-2.6 points, 6.0 required)
+ Content preview: From: Dylan Wolff <wolffd@comp.nus.edu.sg> [ Upstream commit
+ a4685408ff6c3e2af366ad9a7274f45ff3f394ee ] [ Syzkaller Report ] 
+ Content analysis details:   (-5.3 points, 6.0 required)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [147.75.193.91 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [139.178.84.217 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 RCVD_IN_VALIDITY_CERTIFIED_BLOCKED RBL: ADMINISTRATOR NOTICE:
  The query to Validity was blocked.  See
  https://knowledge.validity.com/hc/en-us/articles/20961730681243
  for more information.
- [147.75.193.91 listed in sa-trusted.bondedsender.org]
+ [139.178.84.217 listed in sa-trusted.bondedsender.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 RCVD_IN_VALIDITY_RPBL_BLOCKED RBL: ADMINISTRATOR NOTICE: The
  query to Validity was blocked.  See
  https://knowledge.validity.com/hc/en-us/articles/20961730681243
  for more information.
- [147.75.193.91 listed in bl.score.senderscore.com]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ [139.178.84.217 listed in bl.score.senderscore.com]
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -109,9 +108,9 @@ X-Spam-Report: Spam detection software,
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIMWL_WL_HIGH         DKIMwl.org - High trust sender
-X-Headers-End: 1uLs9T-0000O1-LT
-Subject: [Jfs-discussion] [PATCH AUTOSEL 6.14 044/102] jfs: fix
- array-index-out-of-bounds read in add_missing_indices
+X-Headers-End: 1uLsAI-0000Ov-DP
+Subject: [Jfs-discussion] [PATCH AUTOSEL 6.14 059/102] jfs: Fix
+ null-ptr-deref in jfs_ioc_trim
 X-BeenThere: jfs-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -126,111 +125,178 @@ List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/jfs-discussion>,
 From: Sasha Levin via Jfs-discussion <jfs-discussion@lists.sourceforge.net>
 Reply-To: Sasha Levin <sashal@kernel.org>
 Cc: Sasha Levin <sashal@kernel.org>, shaggy@kernel.org,
- jfs-discussion@lists.sourceforge.net, eadavis@qq.com, ghanshyam1898@gmail.com,
- linux-kernel@vger.kernel.org,
- syzbot+b974bd41515f770c608b@syzkaller.appspotmail.com, r.smirnov@omp.ru
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+ jfs-discussion@lists.sourceforge.net, eadavis@qq.com,
+ Dylan Wolff <wolffd@comp.nus.edu.sg>, linux-kernel@vger.kernel.org,
+ Jiacheng Xu <stitch@zju.edu.cn>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Errors-To: jfs-discussion-bounces@lists.sourceforge.net
 
-RnJvbTogQWRpdHlhIER1dHQgPGR1dHRhZGl0eWExOEBnbWFpbC5jb20+CgpbIFVwc3RyZWFtIGNv
-bW1pdCA1ZGZmNDFhODYzNzc1NjNmN2EyYjk2OGFhZTAwZDI1YjRjZWIzN2M5IF0KCnN0YmwgaXMg
-czggYnV0IGl0IG11c3QgY29udGFpbiBvZmZzZXRzIGludG8gc2xvdCB3aGljaCBjYW4gZ28gZnJv
-bSAwIHRvCjEyNy4KCkFkZGVkIGEgYm91bmQgY2hlY2sgZm9yIHRoYXQgZXJyb3IgYW5kIHJldHVy
-biAtRUlPIGlmIHRoZSBjaGVjayBmYWlscy4KQWxzbyBtYWtlIGpmc19yZWFkZGlyIHJldHVybiB3
-aXRoIGVycm9yIGlmIGFkZF9taXNzaW5nX2luZGljZXMgcmV0dXJucwp3aXRoIGFuIGVycm9yLgoK
-UmVwb3J0ZWQtYnk6IHN5emJvdCtiOTc0YmQ0MTUxNWY3NzBjNjA4YkBzeXprYWxsZXIuYXBwc3Bv
-dG1haWwuY29tCkNsb3NlczogaHR0cHM6Ly9zeXprYWxsZXIuYXBwc3BvdC5jb20uL2J1Zz9leHRp
-ZD1iOTc0YmQ0MTUxNWY3NzBjNjA4YgpTaWduZWQtb2ZmLWJ5OiBBZGl0eWEgRHV0dCA8ZHV0dGFk
-aXR5YTE4QGdtYWlsLmNvbT4KU2lnbmVkLW9mZi1ieTogRGF2ZSBLbGVpa2FtcCA8ZGF2ZS5rbGVp
-a2FtcEBvcmFjbGUuY29tPgpTaWduZWQtb2ZmLWJ5OiBTYXNoYSBMZXZpbiA8c2FzaGFsQGtlcm5l
-bC5vcmc+Ci0tLQoKKipZRVMqKiBUaGlzIGNvbW1pdCBzaG91bGQgYmUgYmFja3BvcnRlZCB0byBz
-dGFibGUga2VybmVsIHRyZWVzLiBIZXJlJ3MKbXkgZGV0YWlsZWQgYW5hbHlzaXM6ICMjIFNlY3Vy
-aXR5IGFuZCBTdGFiaWxpdHkgSW1wYWN0IDEuICoqQ3JpdGljYWwKQXJyYXktSW5kZXgtT3V0LW9m
-LUJvdW5kcyBGaXgqKjogVGhlIGNvbW1pdCBhZGRyZXNzZXMgYSBzZXJpb3VzIGFycmF5LQppbmRl
-eC1vdXQtb2YtYm91bmRzIHZ1bG5lcmFiaWxpdHkgaW4gdGhlIEpGUyBmaWxlc3lzdGVtJ3MKYGFk
-ZF9taXNzaW5nX2luZGljZXMoKWAgZnVuY3Rpb24gYXQgYGZzL2pmcy9qZnNfZHRyZWUuYzoyNjQ4
-YC4gVGhlIGNvZGUKd2FzIGFjY2Vzc2luZyBgcC0+c2xvdFtzdGJsW2ldXWAgd2l0aG91dCB2YWxp
-ZGF0aW5nIHRoYXQgYHN0YmxbaV1gIGlzCndpdGhpbiB2YWxpZCBib3VuZHMgKDAtMTI3KS4gMi4g
-KipDb25zaXN0ZW50IHdpdGggRXN0YWJsaXNoZWQgUGF0dGVybioqOgpUaGlzIGZpeCBmb2xsb3dz
-IHRoZSBleGFjdCBzYW1lIHBhdHRlcm4gYXMgKiphbGwgNSBzaW1pbGFyIGNvbW1pdHMqKgp0aGF0
-IHdlcmUgbWFya2VkIGFzICJCYWNrcG9ydCBTdGF0dXM6IFlFUyI6IC0gU2ltaWxhciBDb21taXRz
-ICMxLCAjMiwgIzMKYWxsIGFkZCBib3VuZHMgY2hlY2tpbmcgZm9yIGBzdGJsW2ldIDwgMCB8fCBz
-dGJsW2ldID4gMTI3YCAtIFNpbWlsYXIKQ29tbWl0cyAjNCwgIzUgYWRkIGJvdW5kcyBjaGVja2lu
-ZyBmb3IgYXJyYXkgaW5kaWNlcyBpbiBKRlMgLSBBbGwgd2VyZQpzdWNjZXNzZnVsbHkgYmFja3Bv
-cnRlZCBkdWUgdG8gdGhlaXIgc2VjdXJpdHkgaW1wb3J0YW5jZSAzLiAqKlN5emJvdC0KUmVwb3J0
-ZWQgVnVsbmVyYWJpbGl0eSoqOiBUaGUgY29tbWl0IGZpeGVzIGEgdnVsbmVyYWJpbGl0eSByZXBv
-cnRlZCBieQpzeXpib3QgKGBzeXpib3QrYjk3NGJkNDE1MTVmNzcwYzYwOGJAc3l6a2FsbGVyLmFw
-cHNwb3RtYWlsLmNvbWApLAppbmRpY2F0aW5nIHRoaXMgaXMgYSByZWFsIGV4cGxvaXRhYmxlIGlz
-c3VlIGZvdW5kIHRocm91Z2ggZnV6emluZy4gIyMKQ29kZSBBbmFseXNpcyAqKktleSBDaGFuZ2Vz
-IE1hZGU6KiogMS4gKipCb3VuZHMgQ2hlY2sgQWRkaXRpb24qKjogQWRkZWQKdmFsaWRhdGlvbiBg
-aWYgKHN0YmxbaV0gPCAwKWAgYmVmb3JlIGFjY2Vzc2luZyBgcC0+c2xvdFtzdGJsW2ldXWAgMi4K
-KipFcnJvciBIYW5kbGluZyoqOiBDaGFuZ2VkIGBhZGRfbWlzc2luZ19pbmRpY2VzKClgIGZyb20g
-YHZvaWRgIHRvIGBpbnRgCnJldHVybiB0eXBlIHRvIHByb3BhZ2F0ZSBlcnJvcnMgMy4gKipQcm9w
-ZXIgRXJyb3IgUHJvcGFnYXRpb24qKjoKTW9kaWZpZWQgYGpmc19yZWFkZGlyKClgIHRvIGNoZWNr
-IHJldHVybiB2YWx1ZSBhbmQgZXhpdCBvbiBlcnJvcjogYGlmCigocmMgPSBhZGRfbWlzc2luZ19p
-bmRpY2VzKGlwLCBibikpKSBnb3RvIG91dDtgIDQuICoqVHJhbnNhY3Rpb24KQ2xlYW51cCoqOiBB
-ZGRlZCBgdHhBYm9ydCh0aWQsIDApYCBvbiBlcnJvciBwYXRoIHRvIHByb3Blcmx5IGNsZWFuIHVw
-CnRoZSB0cmFuc2FjdGlvbiAqKlRlY2huaWNhbCBDb250ZXh0OioqIC0gYHN0YmxgIGlzIGRlY2xh
-cmVkIGFzIGBzOCAqYAooc2lnbmVkIDgtYml0IGFycmF5KSBidXQgbXVzdCBjb250YWluIHZhbGlk
-IHNsb3QgaW5kaWNlcyAoMC0xMjcpIC0KYERUUEFHRU1BWFNMT1RgIGlzIGRlZmluZWQgYXMgMTI4
-LCBzbyB2YWxpZCBpbmRpY2VzIGFyZSAwLTEyNyAtIE5lZ2F0aXZlCnZhbHVlcyBpbiBgc3RibFtp
-XWAgY2F1c2UgYXJyYXktaW5kZXgtb3V0LW9mLWJvdW5kcyB3aGVuIGFjY2Vzc2luZwpgcC0+c2xv
-dFtzdGJsW2ldXWAgIyMgQmFja3BvcnQgQ3JpdGVyaWEgQXNzZXNzbWVudCDinIUgKipGaXhlcyBJ
-bXBvcnRhbnQKQnVnKio6IFByZXZlbnRzIHBvdGVudGlhbCBrZXJuZWwgY3Jhc2hlcyBhbmQgc2Vj
-dXJpdHkgaXNzdWVzIOKchSAqKlNtYWxsCmFuZCBDb250YWluZWQqKjogTGltaXRlZCB0byBvbmUg
-ZnVuY3Rpb24gd2l0aCBjbGVhciwgbWluaW1hbCBjaGFuZ2VzIOKchQoqKk5vIFNpZGUgRWZmZWN0
-cyoqOiBPbmx5IGFkZHMgYm91bmRzIGNoZWNraW5nIGFuZCBlcnJvciBoYW5kbGluZyDinIUgKipO
-bwpBcmNoaXRlY3R1cmFsIENoYW5nZXMqKjogUHJlc2VydmVzIGV4aXN0aW5nIGxvZ2ljIGZsb3cg
-4pyFICoqQ3JpdGljYWwKU3Vic3lzdGVtKio6IEZpbGVzeXN0ZW0gY29ycnVwdGlvbi9jcmFzaGVz
-IGFmZmVjdCBzeXN0ZW0gc3RhYmlsaXR5IOKchQoqKkNsZWFyIFBhdHRlcm4qKjogSWRlbnRpY2Fs
-IHRvIDUgb3RoZXIgc3VjY2Vzc2Z1bGx5IGJhY2twb3J0ZWQgSkZTCmZpeGVzIOKchSAqKk1pbmlt
-YWwgUmVncmVzc2lvbiBSaXNrKio6IE9ubHkgYWRkcyBzYWZldHkgY2hlY2tzLCBkb2Vzbid0CmNo
-YW5nZSBjb3JlIGxvZ2ljIOKchSAqKkNvbmZpbmVkIHRvIFN1YnN5c3RlbSoqOiBDaGFuZ2VzIGlz
-b2xhdGVkIHRvIEpGUwpkdHJlZSBoYW5kbGluZyAjIyBFeGlzdGluZyBJbmZyYXN0cnVjdHVyZSBU
-aGUga2VybmVsIGFscmVhZHkgaGFzCmV4dGVuc2l2ZSBib3VuZHMgY2hlY2tpbmcgZm9yIGBzdGJs
-YCBpbmRpY2VzIHRocm91Z2hvdXQgYGpmc19kdHJlZS5jYDogLQpMaW5lIDI4OTUtMjg5ODogYGlm
-IChzdGJsW2ldIDwgMCB8fCBzdGJsW2ldID4gMTI3KWAgaW4gYGpmc19yZWFkZGlyKClgIC0KTGlu
-ZSAzMDk5LTMxMDI6IGBpZiAoc3RibFswXSA8IDAgfHwgc3RibFswXSA+IDEyNylgIGluIGBkdFJl
-YWRGaXJzdCgpYCAtCkxpbmUgNjM3LTY0MDogYGlmIChzdGJsW2luZGV4XSA8IDApYCBpbiBzZWFy
-Y2ggZnVuY3Rpb25zIFRoaXMgY29tbWl0CnNpbXBseSBleHRlbmRzIHRoZSBzYW1lIHBhdHRlcm4g
-dG8gdGhlIHByZXZpb3VzbHkgbWlzc2VkCmBhZGRfbWlzc2luZ19pbmRpY2VzKClgIGZ1bmN0aW9u
-LCBtYWludGFpbmluZyBjb25zaXN0ZW5jeSB3aXRoIHRoZQpleGlzdGluZyBjb2RlYmFzZSBzZWN1
-cml0eSBtZWFzdXJlcy4gVGhlIGZpeCBpcyBlc3NlbnRpYWwgZm9yIHByZXZlbnRpbmcKcG90ZW50
-aWFsIGtlcm5lbCBjcmFzaGVzIGFuZCBtYWludGFpbmluZyBmaWxlc3lzdGVtIGludGVncml0eSwg
-bWFraW5nIGl0CmFuIGlkZWFsIGNhbmRpZGF0ZSBmb3Igc3RhYmxlIHRyZWUgYmFja3BvcnRpbmcu
-CgogZnMvamZzL2pmc19kdHJlZS5jIHwgMTggKysrKysrKysrKysrKysrLS0tCiAxIGZpbGUgY2hh
-bmdlZCwgMTUgaW5zZXJ0aW9ucygrKSwgMyBkZWxldGlvbnMoLSkKCmRpZmYgLS1naXQgYS9mcy9q
-ZnMvamZzX2R0cmVlLmMgYi9mcy9qZnMvamZzX2R0cmVlLmMKaW5kZXggOTNkYjZlZWM0NDY1NS4u
-YWIxMTg0OWNmOWNjMyAxMDA2NDQKLS0tIGEvZnMvamZzL2pmc19kdHJlZS5jCisrKyBiL2ZzL2pm
-cy9qZnNfZHRyZWUuYwpAQCAtMjYxMyw3ICsyNjEzLDcgQEAgdm9pZCBkdEluaXRSb290KHRpZF90
-IHRpZCwgc3RydWN0IGlub2RlICppcCwgdTMyIGlkb3Rkb3QpCiAgKgkgICAgIGZzY2suamZzIHNo
-b3VsZCByZWFsbHkgZml4IHRoaXMsIGJ1dCBpdCBjdXJyZW50bHkgZG9lcyBub3QuCiAgKgkgICAg
-IENhbGxlZCBmcm9tIGpmc19yZWFkZGlyIHdoZW4gYmFkIGluZGV4IGlzIGRldGVjdGVkLgogICov
-Ci1zdGF0aWMgdm9pZCBhZGRfbWlzc2luZ19pbmRpY2VzKHN0cnVjdCBpbm9kZSAqaW5vZGUsIHM2
-NCBibikKK3N0YXRpYyBpbnQgYWRkX21pc3NpbmdfaW5kaWNlcyhzdHJ1Y3QgaW5vZGUgKmlub2Rl
-LCBzNjQgYm4pCiB7CiAJc3RydWN0IGxkdGVudHJ5ICpkOwogCXN0cnVjdCBkdF9sb2NrICpkdGxj
-azsKQEAgLTI2MjIsNyArMjYyMiw3IEBAIHN0YXRpYyB2b2lkIGFkZF9taXNzaW5nX2luZGljZXMo
-c3RydWN0IGlub2RlICppbm9kZSwgczY0IGJuKQogCXN0cnVjdCBsdiAqbHY7CiAJc3RydWN0IG1l
-dGFwYWdlICptcDsKIAlkdHBhZ2VfdCAqcDsKLQlpbnQgcmM7CisJaW50IHJjID0gMDsKIAlzOCAq
-c3RibDsKIAl0aWRfdCB0aWQ7CiAJc3RydWN0IHRsb2NrICp0bGNrOwpAQCAtMjY0Nyw2ICsyNjQ3
-LDE2IEBAIHN0YXRpYyB2b2lkIGFkZF9taXNzaW5nX2luZGljZXMoc3RydWN0IGlub2RlICppbm9k
-ZSwgczY0IGJuKQogCiAJc3RibCA9IERUX0dFVFNUQkwocCk7CiAJZm9yIChpID0gMDsgaSA8IHAt
-PmhlYWRlci5uZXh0aW5kZXg7IGkrKykgeworCQlpZiAoc3RibFtpXSA8IDApIHsKKwkJCWpmc19l
-cnIoImpmczogYWRkX21pc3NpbmdfaW5kaWNlczogSW52YWxpZCBzdGJsWyVkXSA9ICVkIGZvciBp
-bm9kZSAlbGQsIGJsb2NrID0gJWxsZCIsCisJCQkJaSwgc3RibFtpXSwgKGxvbmcpaW5vZGUtPmlf
-aW5vLCAobG9uZyBsb25nKWJuKTsKKwkJCXJjID0gLUVJTzsKKworCQkJRFRfUFVUUEFHRShtcCk7
-CisJCQl0eEFib3J0KHRpZCwgMCk7CisJCQlnb3RvIGVuZDsKKwkJfQorCiAJCWQgPSAoc3RydWN0
-IGxkdGVudHJ5ICopICZwLT5zbG90W3N0YmxbaV1dOwogCQlpbmRleCA9IGxlMzJfdG9fY3B1KGQt
-PmluZGV4KTsKIAkJaWYgKChpbmRleCA8IDIpIHx8IChpbmRleCA+PSBKRlNfSVAoaW5vZGUpLT5u
-ZXh0X2luZGV4KSkgewpAQCAtMjY2NCw2ICsyNjc0LDcgQEAgc3RhdGljIHZvaWQgYWRkX21pc3Np
-bmdfaW5kaWNlcyhzdHJ1Y3QgaW5vZGUgKmlub2RlLCBzNjQgYm4pCiAJKHZvaWQpIHR4Q29tbWl0
-KHRpZCwgMSwgJmlub2RlLCAwKTsKIGVuZDoKIAl0eEVuZCh0aWQpOworCXJldHVybiByYzsKIH0K
-IAogLyoKQEAgLTMwMTcsNyArMzAyOCw4IEBAIGludCBqZnNfcmVhZGRpcihzdHJ1Y3QgZmlsZSAq
-ZmlsZSwgc3RydWN0IGRpcl9jb250ZXh0ICpjdHgpCiAJCX0KIAogCQlpZiAoZml4X3BhZ2UpIHsK
-LQkJCWFkZF9taXNzaW5nX2luZGljZXMoaXAsIGJuKTsKKwkJCWlmICgocmMgPSBhZGRfbWlzc2lu
-Z19pbmRpY2VzKGlwLCBibikpKQorCQkJCWdvdG8gb3V0OwogCQkJcGFnZV9maXhlZCA9IDE7CiAJ
-CX0KIAotLSAKMi4zOS41CgoKCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fCkpmcy1kaXNjdXNzaW9uIG1haWxpbmcgbGlzdApKZnMtZGlzY3Vzc2lvbkBsaXN0
-cy5zb3VyY2Vmb3JnZS5uZXQKaHR0cHM6Ly9saXN0cy5zb3VyY2Vmb3JnZS5uZXQvbGlzdHMvbGlz
-dGluZm8vamZzLWRpc2N1c3Npb24K
+From: Dylan Wolff <wolffd@comp.nus.edu.sg>
+
+[ Upstream commit a4685408ff6c3e2af366ad9a7274f45ff3f394ee ]
+
+[ Syzkaller Report ]
+
+Oops: general protection fault, probably for non-canonical address
+0xdffffc0000000087: 0000 [#1
+KASAN: null-ptr-deref in range [0x0000000000000438-0x000000000000043f]
+CPU: 2 UID: 0 PID: 10614 Comm: syz-executor.0 Not tainted
+6.13.0-rc6-gfbfd64d25c7a-dirty #1
+Hardware name: QEMU Standard PC (i440FX + PIIX, 1996), BIOS 1.15.0-1 04/01/2014
+Sched_ext: serialise (enabled+all), task: runnable_at=-30ms
+RIP: 0010:jfs_ioc_trim+0x34b/0x8f0
+Code: e7 e8 59 a4 87 fe 4d 8b 24 24 4d 8d bc 24 38 04 00 00 48 8d 93
+90 82 fe ff 4c 89 ff 31 f6
+RSP: 0018:ffffc900055f7cd0 EFLAGS: 00010206
+RAX: 0000000000000087 RBX: 00005866a9e67ff8 RCX: 000000000000000a
+RDX: 0000000000000001 RSI: 0000000000000004 RDI: 0000000000000001
+RBP: dffffc0000000000 R08: ffff88807c180003 R09: 1ffff1100f830000
+R10: dffffc0000000000 R11: ffffed100f830001 R12: 0000000000000000
+R13: 0000000000000000 R14: 0000000000000001 R15: 0000000000000438
+FS:  00007fe520225640(0000) GS:ffff8880b7e80000(0000) knlGS:0000000000000000
+CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033
+CR2: 00005593c91b2c88 CR3: 000000014927c000 CR4: 00000000000006f0
+DR0: 0000000000000000 DR1: 0000000000000000 DR2: 0000000000000000
+DR3: 0000000000000000 DR6: 00000000fffe0ff0 DR7: 0000000000000400
+Call Trace:
+<TASK>
+? __die_body+0x61/0xb0
+? die_addr+0xb1/0xe0
+? exc_general_protection+0x333/0x510
+? asm_exc_general_protection+0x26/0x30
+? jfs_ioc_trim+0x34b/0x8f0
+jfs_ioctl+0x3c8/0x4f0
+? __pfx_jfs_ioctl+0x10/0x10
+? __pfx_jfs_ioctl+0x10/0x10
+__se_sys_ioctl+0x269/0x350
+? __pfx___se_sys_ioctl+0x10/0x10
+? do_syscall_64+0xfb/0x210
+do_syscall_64+0xee/0x210
+? syscall_exit_to_user_mode+0x1e0/0x330
+entry_SYSCALL_64_after_hwframe+0x77/0x7f
+RIP: 0033:0x7fe51f4903ad
+Code: c3 e8 a7 2b 00 00 0f 1f 80 00 00 00 00 f3 0f 1e fa 48 89 f8 48
+89 f7 48 89 d6 48 89 ca 4d
+RSP: 002b:00007fe5202250c8 EFLAGS: 00000246 ORIG_RAX: 0000000000000010
+RAX: ffffffffffffffda RBX: 00007fe51f5cbf80 RCX: 00007fe51f4903ad
+RDX: 0000000020000680 RSI: 00000000c0185879 RDI: 0000000000000005
+RBP: 0000000000000000 R08: 0000000000000000 R09: 0000000000000000
+R10: 0000000000000000 R11: 0000000000000246 R12: 00007fe520225640
+R13: 000000000000000e R14: 00007fe51f44fca0 R15: 00007fe52021d000
+</TASK>
+Modules linked in:
+---[ end trace 0000000000000000 ]---
+RIP: 0010:jfs_ioc_trim+0x34b/0x8f0
+Code: e7 e8 59 a4 87 fe 4d 8b 24 24 4d 8d bc 24 38 04 00 00 48 8d 93
+90 82 fe ff 4c 89 ff 31 f6
+RSP: 0018:ffffc900055f7cd0 EFLAGS: 00010206
+RAX: 0000000000000087 RBX: 00005866a9e67ff8 RCX: 000000000000000a
+RDX: 0000000000000001 RSI: 0000000000000004 RDI: 0000000000000001
+RBP: dffffc0000000000 R08: ffff88807c180003 R09: 1ffff1100f830000
+R10: dffffc0000000000 R11: ffffed100f830001 R12: 0000000000000000
+R13: 0000000000000000 R14: 0000000000000001 R15: 0000000000000438
+FS:  00007fe520225640(0000) GS:ffff8880b7e80000(0000) knlGS:0000000000000000
+CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033
+CR2: 00005593c91b2c88 CR3: 000000014927c000 CR4: 00000000000006f0
+DR0: 0000000000000000 DR1: 0000000000000000 DR2: 0000000000000000
+DR3: 0000000000000000 DR6: 00000000fffe0ff0 DR7: 0000000000000400
+Kernel panic - not syncing: Fatal exception
+
+[ Analysis ]
+
+We believe that we have found a concurrency bug in the `fs/jfs` module
+that results in a null pointer dereference. There is a closely related
+issue which has been fixed:
+
+https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=d6c1b3599b2feb5c7291f5ac3a36e5fa7cedb234
+
+... but, unfortunately, the accepted patch appears to still be
+susceptible to a null pointer dereference under some interleavings.
+
+To trigger the bug, we think that `JFS_SBI(ipbmap->i_sb)->bmap` is set
+to NULL in `dbFreeBits` and then dereferenced in `jfs_ioc_trim`. This
+bug manifests quite rarely under normal circumstances, but is
+triggereable from a syz-program.
+
+Reported-and-tested-by: Dylan J. Wolff<wolffd@comp.nus.edu.sg>
+Reported-and-tested-by: Jiacheng Xu <stitch@zju.edu.cn>
+Signed-off-by: Dylan J. Wolff<wolffd@comp.nus.edu.sg>
+Signed-off-by: Jiacheng Xu <stitch@zju.edu.cn>
+Signed-off-by: Dave Kleikamp <dave.kleikamp@oracle.com>
+Signed-off-by: Sasha Levin <sashal@kernel.org>
+---
+
+**YES** This commit should be backported to stable kernel trees. Here's
+my extensive analysis: ## Code Analysis The commit adds a crucial NULL
+pointer check in `jfs_ioc_trim()` function: ```c
+down_read(&sb->s_umount); bmp = JFS_SBI(ip->i_sb)->bmap; - if (minlen >
+bmp->db_agsize || + if (bmp == NULL || + minlen > bmp->db_agsize ||
+start >= bmp->db_mapsize || range->len < sb->s_blocksize) {
+up_read(&sb->s_umount); return -EINVAL; } ``` ## Why This Should Be
+Backported ### 1. **Critical Bug Fix with Clear User Impact** - **Kernel
+Panic**: The bug causes a general protection fault leading to kernel
+panic when `bmp` is NULL - **Syzkaller Report**: This is a security-
+relevant bug discovered by syzkaller, indicating it's triggerable from
+userspace - **Race Condition**: The commit message clearly describes a
+concurrency bug where `JFS_SBI(ipbmap->i_sb)->bmap` can be set to NULL
+in `dbFreeBits` while being dereferenced in `jfs_ioc_trim` ### 2.
+**Minimal and Safe Fix** - **Single Line Addition**: The fix only adds
+`bmp == NULL ||` to an existing validation check - **No Architectural
+Changes**: No complex logic changes or new features - **Follows Existing
+Pattern**: Uses the same error handling path (`return -EINVAL`) already
+established - **Proper Cleanup**: Correctly calls
+`up_read(&sb->s_umount)` before returning ### 3. **Matches Stable Tree
+Criteria** Comparing with the similar commits marked "YES": - **Like
+Similar Commit #1 (fm10k)**: Fixes NULL pointer dereference by adding
+proper error checking - **Like Similar Commit #2 (ssb)**: Addresses the
+same pattern of missing NULL checks leading to crashes - **Like Similar
+Commit #3 (bdev)**: Similar NULL pointer protection pattern - **Like
+Similar Commit #5 (jfs dtInsert)**: Another JFS fix with similar
+validation pattern ### 4. **Related Context Shows Importance** The
+related commit `d6c1b3599b2f` ("jfs: Fix uaf in dbFreeBits") addressed a
+similar race condition in the same subsystem, but as the commit message
+notes: "unfortunately, the accepted patch appears to still be
+susceptible to a null pointer dereference under some interleavings." ###
+5. **Low Risk Assessment** - **Contained to JFS**: Only affects JFS
+filesystem operations - **IOCTL Interface**: Only triggered through
+FITRIM ioctl, not normal filesystem operations - **Early Return**: The
+fix returns early with a standard error code, preventing further
+execution - **No Performance Impact**: The NULL check is minimal
+overhead ### 6. **Security Implications** - **Userspace Triggerable**:
+The crash can be triggered from userspace via the FITRIM ioctl -
+**Denial of Service**: Successful exploitation leads to kernel
+panic/system crash - **No Privilege Escalation**: While this is a crash
+bug, it demonstrates the importance of proper input validation ##
+Conclusion This commit fixes a critical NULL pointer dereference that
+causes kernel panics, uses a minimal and safe approach, and follows the
+same patterns as other commits successfully backported to stable trees.
+The fix addresses a security-relevant bug that can be triggered from
+userspace, making it an important candidate for stable backporting.
+
+ fs/jfs/jfs_discard.c | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+diff --git a/fs/jfs/jfs_discard.c b/fs/jfs/jfs_discard.c
+index 5f4b305030ad5..4b660296caf39 100644
+--- a/fs/jfs/jfs_discard.c
++++ b/fs/jfs/jfs_discard.c
+@@ -86,7 +86,8 @@ int jfs_ioc_trim(struct inode *ip, struct fstrim_range *range)
+ 	down_read(&sb->s_umount);
+ 	bmp = JFS_SBI(ip->i_sb)->bmap;
+ 
+-	if (minlen > bmp->db_agsize ||
++	if (bmp == NULL ||
++	    minlen > bmp->db_agsize ||
+ 	    start >= bmp->db_mapsize ||
+ 	    range->len < sb->s_blocksize) {
+ 		up_read(&sb->s_umount);
+-- 
+2.39.5
+
+
+
+_______________________________________________
+Jfs-discussion mailing list
+Jfs-discussion@lists.sourceforge.net
+https://lists.sourceforge.net/lists/listinfo/jfs-discussion
