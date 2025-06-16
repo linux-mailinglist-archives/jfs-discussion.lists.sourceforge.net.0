@@ -2,90 +2,83 @@ Return-Path: <jfs-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+jfs-discussion@lfdr.de
 Delivered-To: lists+jfs-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id 07E69ADBD54
-	for <lists+jfs-discussion@lfdr.de>; Tue, 17 Jun 2025 00:55:05 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1FFADADBD74
+	for <lists+jfs-discussion@lfdr.de>; Tue, 17 Jun 2025 01:12:05 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.sourceforge.net; s=beta; h=Content-Transfer-Encoding:Content-Type:Cc:
-	Reply-To:From:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:Subject:In-Reply-To:References:To:MIME-Version:Date:
-	Message-ID:Sender:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=R0BR/sbp/0UVEDFJmQJB3MVBoj1Jls5ZUP5KYjWYhAY=; b=Z/NYbveGCRG5XsdwoiySU8KK+M
-	uaaljoOAqErRmFQIvO9z0C63xKVnN9UPuTNw7+mHZHZo3ohp/608zjvTzcqIw8vjL2/4Am1ZacHLn
-	b2Mb5mbTaPLVIKA4qc2HPd3uPl8oPF/2LCIjx27Kux5t8NCbp151ME8sYSMY073GsntA=;
-Received: from [127.0.0.1] (helo=sfs-ml-3.v29.lw.sourceforge.com)
-	by sfs-ml-3.v29.lw.sourceforge.com with esmtp (Exim 4.95)
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	Subject:Mime-Version:References:In-Reply-To:Message-Id:To:From:Date:Sender:
+	Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender
+	:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=fy/uStlAadw/QYenCaVkyLAIkJ0avDkiIyqv08nIRR8=; b=MwcwSrmd+9k8CKfArLsCK8rhQt
+	mT/VYVEInvxg4kaHg3DSJxP1QF+Fa1peAFitTJN+JMur+ZW9O6q/gKLkjhH4bu/l1xdA43TPJzcsk
+	dYm/5eVAaPlMsq7J7lF+cH/QgpLH21uUPxxuW8duQnFyxQbiqfWtPQvmFaEv03psFsYI=;
+Received: from [127.0.0.1] (helo=sfs-ml-1.v29.lw.sourceforge.com)
+	by sfs-ml-1.v29.lw.sourceforge.com with esmtp (Exim 4.95)
 	(envelope-from <jfs-discussion-bounces@lists.sourceforge.net>)
-	id 1uRIib-0002Im-V8;
-	Mon, 16 Jun 2025 22:54:21 +0000
+	id 1uRIzA-0007qD-Br;
+	Mon, 16 Jun 2025 23:11:28 +0000
 Received: from [172.30.29.66] (helo=mx.sourceforge.net)
- by sfs-ml-3.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
+ by sfs-ml-1.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
  TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (Exim 4.95)
- (envelope-from <dlemoal@kernel.org>) id 1uRIiX-0002Ic-MH
- for jfs-discussion@lists.sourceforge.net;
- Mon, 16 Jun 2025 22:54:20 +0000
+ (envelope-from <akpm@linux-foundation.org>) id 1uRIz9-0007q4-1v;
+ Mon, 16 Jun 2025 23:11:27 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=sourceforge.net; s=x; h=Content-Transfer-Encoding:Content-Type:In-Reply-To:
- From:References:Cc:To:Subject:MIME-Version:Date:Message-ID:Sender:Reply-To:
+ d=sourceforge.net; s=x; h=Content-Transfer-Encoding:Content-Type:Mime-Version
+ :References:In-Reply-To:Message-Id:Subject:Cc:To:From:Date:Sender:Reply-To:
  Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
  Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=/MQsD6la/BSX1QuayTipEXhf37o+C5JvtM3N1DgVBC8=; b=HDCTtkJ86MQvvdW3gGUkk9Sc4R
- N4OWFBCU4toyYjKCcrixeVluuRioUZ5jRZqClaO8/SA0ZVOlOb2rjLxW5o/MMCAP+M1cwNPizYp8e
- p3Z0cnescYntAiw4p+dKS37xOLob0nmm3h9qfkbt8WsO/JFzapWjJrhTsy38t3qPbVNM=;
+ bh=WbjyFa1lEmpjeO0fSo1gdi8l5MsWaLjra/L669ygfQY=; b=jjh0XWjzZ42me0PZFPjtpigQjK
+ IKjTvTAjZqp3v/2jnj5QlvBUW/0frVczCBeSih7ukjnBqpvqepnW/ZYFLJ7BEcnrSO7Wt+F1NLL0m
+ NUNF7dDlqrAppud6PHsnWCe3JvDoynsplhuRF+f6vDIsRUwkE9zm3CiQOgUF87J1HSRs=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
- h=Content-Transfer-Encoding:Content-Type:In-Reply-To:From:References:Cc:To:
- Subject:MIME-Version:Date:Message-ID:Sender:Reply-To:Content-ID:
+ h=Content-Transfer-Encoding:Content-Type:Mime-Version:References:
+ In-Reply-To:Message-Id:Subject:Cc:To:From:Date:Sender:Reply-To:Content-ID:
  Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
  :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
  List-Post:List-Owner:List-Archive;
- bh=/MQsD6la/BSX1QuayTipEXhf37o+C5JvtM3N1DgVBC8=; b=kCQZNJOIflujZuowPtYPQLkRW2
- W5zL/g0ftjlDq+JbvjINT+N9rqyFYJJTIW2U8upQLZGZJ0DNzjvQK3EnPbsCUlB97BWKgLrIZnIlN
- w7v/SozeFmfcv8YPP7pb4IMvxqrtGTi+CVXoxrkm1K15e8Myw7U/uurWscl5rg9k9Gts=;
-Received: from tor.source.kernel.org ([172.105.4.254])
+ bh=WbjyFa1lEmpjeO0fSo1gdi8l5MsWaLjra/L669ygfQY=; b=KuHNB+cxeK5/KHzHB0c0U3cnDj
+ X62oPvZMAa/zP5v0WxdxTBL+O+KblqndW3xLKyEZ77v57hgsEJoe0BbPioo61SY5eWSYKAwsi+uCy
+ SVBgPqRXgdb40QKwuJZ/yDarjmjP0rPQ762VPBmoE8jcTMT5SOeJdLVGmnQQfhcovumo=;
+Received: from sea.source.kernel.org ([172.234.252.31])
  by sfi-mx-2.v28.lw.sourceforge.com with esmtps
  (TLS1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.95)
- id 1uRIiX-00067c-13 for jfs-discussion@lists.sourceforge.net;
- Mon, 16 Jun 2025 22:54:17 +0000
+ id 1uRIz8-0007Hx-Gj; Mon, 16 Jun 2025 23:11:26 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
- by tor.source.kernel.org (Postfix) with ESMTP id 88E3A629DC;
- Mon, 16 Jun 2025 22:54:10 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 1F658C4CEEA;
- Mon, 16 Jun 2025 22:53:52 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=k20201202; t=1750114450;
- bh=2rQ4MWMNuiiZXr3ruKby+3pF9PtUetUIutSjWGs52xQ=;
- h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
- b=p9LuBOmFGkwzRdPq0c3k3DFo+Gg7PbA5ztEVsDN9YZvn/BtbR0RubCEEUAupc/0QN
- UyKsXWg+3Xgr8jYaXCDMYIX9AMo3NmXmNJWlhYEhfQb2Sm0ZC+2euqRHnrYZxtOuoI
- /XOGCT4NNqf3QLkRtC5atg5JemfK28tCQYDxQ+vvt7VJIHaxKtebm4/Pva1Y9ypu3C
- 0i5AHJz8+318CUMsMSF8zAEbryPRnLo/KnKQMO3Ip+RltAyo1TepCJSxqJg7VUGaup
- 0RxiaVHPlYYqHNPaSdRNrmN5q1z0dDh0yP0RcMExF7vaS/owYzg4U/4qGi5HRJ5JK3
- 4Jr+e8uabprHQ==
-Message-ID: <60615f31-7a58-4336-adaa-129408c90000@kernel.org>
-Date: Tue, 17 Jun 2025 07:51:56 +0900
-MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-To: Lorenzo Stoakes <lorenzo.stoakes@oracle.com>,
- Andrew Morton <akpm@linux-foundation.org>
+ by sea.source.kernel.org (Postfix) with ESMTP id A3062447EE;
+ Mon, 16 Jun 2025 23:11:15 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 210E3C4CEEA;
+ Mon, 16 Jun 2025 23:11:12 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=linux-foundation.org;
+ s=korg; t=1750115475;
+ bh=f92kylcTcgjxPjPuigrD0gWIhxIBT4jMyjAYbJx2fgU=;
+ h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
+ b=ZWFIShO/XryFzSpjTSsOpPReKk7MGg3LaJS+8VXbd/Sv0l3pkMferPDaEDw5h7t/5
+ TXCAWyMhImwvLfVbY+RFN3BVnPd8HICJ3ykvMXc1pH9OWRmJr7YNN1rWZZcClmJua5
+ wc8/ODhsb5I7ekSoYglMpTbL4//+BGhwsrmpxvDU=
+Date: Mon, 16 Jun 2025 16:11:11 -0700
+From: Andrew Morton <akpm@linux-foundation.org>
+To: Lorenzo Stoakes <lorenzo.stoakes@oracle.com>
+Message-Id: <20250616161111.74e10321c4c421674f78d689@linux-foundation.org>
+In-Reply-To: <cover.1750099179.git.lorenzo.stoakes@oracle.com>
 References: <cover.1750099179.git.lorenzo.stoakes@oracle.com>
- <f528ac4f35b9378931bd800920fee53fc0c5c74d.1750099179.git.lorenzo.stoakes@oracle.com>
-Content-Language: en-US
-Organization: Western Digital Research
-In-Reply-To: <f528ac4f35b9378931bd800920fee53fc0c5c74d.1750099179.git.lorenzo.stoakes@oracle.com>
-X-Spam-Score: -0.3 (/)
+X-Mailer: Sylpheed 3.8.0beta1 (GTK+ 2.24.33; x86_64-pc-linux-gnu)
+Mime-Version: 1.0
+X-Spam-Score: -2.1 (--)
 X-Spam-Report: Spam detection software,
  running on the system "sfi-spamd-2.hosts.colo.sdot.me", 
  has NOT identified this incoming email as spam.  The original
  message has been attached to this so you can view it or label
  similar future email.  If you have any questions, see
  the administrator of that system for details.
- Content preview:  On 6/17/25 4:33 AM, Lorenzo Stoakes wrote: > Since commit
- c84bf6dd2b83 ("mm: introduce new .mmap_prepare() file > callback"),
- the f_op->mmap()
- hook has been deprecated in favour of > f_op->mmap_prepar [...] 
- Content analysis details:   (-0.3 points, 5.0 required)
+ Content preview:  On Mon,
+ 16 Jun 2025 20:33:19 +0100 Lorenzo Stoakes <lorenzo.stoakes@oracle.com>
+ wrote: > I am basing this on the mm-new branch in Andrew's tree, so let me
+ know if I > should rebase anything here. Given the mm bits touched I did
+ think perhaps > we should take it through the mm tree, howe [...] 
+ Content analysis details:   (-2.1 points, 5.0 required)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -95,10 +88,10 @@ X-Spam-Report: Spam detection software,
  -0.1 DKIM_VALID_AU Message has a valid DKIM or DK signature from author's
  domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIMWL_WL_HIGH         DKIMwl.org - High trust sender
-X-Headers-End: 1uRIiX-00067c-13
-Subject: Re: [Jfs-discussion] [PATCH 10/10] fs: replace mmap hook with
- .mmap_prepare for simple mappings
+ -1.9 NICE_REPLY_A           Looks like a legit reply (A)
+X-Headers-End: 1uRIz8-0007Hx-Gj
+Subject: Re: [Jfs-discussion] [PATCH 00/10] convert the majority of file
+ systems to mmap_prepare
 X-BeenThere: jfs-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -110,8 +103,6 @@ List-Post: <mailto:jfs-discussion@lists.sourceforge.net>
 List-Help: <mailto:jfs-discussion-request@lists.sourceforge.net?subject=help>
 List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/jfs-discussion>, 
  <mailto:jfs-discussion-request@lists.sourceforge.net?subject=subscribe>
-From: Damien Le Moal via Jfs-discussion <jfs-discussion@lists.sourceforge.net>
-Reply-To: Damien Le Moal <dlemoal@kernel.org>
 Cc: Latchesar Ionkov <lucho@ionkov.net>, nvdimm@lists.linux.dev,
  Paulo Alcantara <pc@manguebit.org>, dri-devel@lists.freedesktop.org,
  ceph-devel@vger.kernel.org, Mike Marshall <hubcap@omnibond.com>,
@@ -142,9 +133,10 @@ Cc: Latchesar Ionkov <lucho@ionkov.net>, nvdimm@lists.linux.dev,
  Miklos Szeredi <miklos@szeredi.hu>, Matthew Wilcox <willy@infradead.org>,
  coda@cs.cmu.edu, Ilya Dryomov <idryomov@gmail.com>, linux-ext4@vger.kernel.org,
  Amir Goldstein <amir73il@gmail.com>, intel-gfx@lists.freedesktop.org,
- Rodrigo Vivi <rodrigo.vivi@intel.com>, Dan Williams <dan.j.williams@intel.com>,
- Gao Xiang <xiang@kernel.org>, David Howells <dhowells@redhat.com>,
- linux-nfs@vger.kernel.org, linux-mm@kvack.org, samba-technical@lists.samba.org,
+ Damien Le Moal <dlemoal@kernel.org>, Rodrigo Vivi <rodrigo.vivi@intel.com>,
+ Dan Williams <dan.j.williams@intel.com>, Gao Xiang <xiang@kernel.org>,
+ David Howells <dhowells@redhat.com>, linux-nfs@vger.kernel.org,
+ linux-mm@kvack.org, samba-technical@lists.samba.org,
  Steve French <sfrench@samba.org>, ntfs3@lists.linux.dev,
  linux-erofs@lists.ozlabs.org, jfs-discussion@lists.sourceforge.net,
  Jan Kara <jack@suse.cz>, linux-aio@kvack.org,
@@ -176,40 +168,20 @@ Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Errors-To: jfs-discussion-bounces@lists.sourceforge.net
 
-On 6/17/25 4:33 AM, Lorenzo Stoakes wrote:
-> Since commit c84bf6dd2b83 ("mm: introduce new .mmap_prepare() file
-> callback"), the f_op->mmap() hook has been deprecated in favour of
-> f_op->mmap_prepare().
-> 
-> This callback is invoked in the mmap() logic far earlier, so error handling
-> can be performed more safely without complicated and bug-prone state
-> unwinding required should an error arise.
-> 
-> This hook also avoids passing a pointer to a not-yet-correctly-established
-> VMA avoiding any issues with referencing this data structure.
-> 
-> It rather provides a pointer to the new struct vm_area_desc descriptor type
-> which contains all required state and allows easy setting of required
-> parameters without any consideration needing to be paid to locking or
-> reference counts.
-> 
-> Note that nested filesystems like overlayfs are compatible with an
-> .mmap_prepare() callback since commit bb666b7c2707 ("mm: add mmap_prepare()
-> compatibility layer for nested file systems").
-> 
-> In this patch we apply this change to file systems with relatively simple
-> mmap() hook logic - exfat, ceph, f2fs, bcachefs, zonefs, btrfs, ocfs2,
-> orangefs, nilfs2, romfs, ramfs and aio.
-> 
-> Signed-off-by: Lorenzo Stoakes <lorenzo.stoakes@oracle.com>
+On Mon, 16 Jun 2025 20:33:19 +0100 Lorenzo Stoakes <lorenzo.stoakes@oracle.com> wrote:
 
-For zonefs,
+> I am basing this on the mm-new branch in Andrew's tree, so let me know if I
+> should rebase anything here. Given the mm bits touched I did think perhaps
+> we should take it through the mm tree, however it may be more sensible to
+> take it through an fs tree - let me know!
 
-Acked-by: Damien Le Moal <dlemoal@kernel.org>
+It's more fs/ than mm/ purely from a footprint point of view.  But is
+there any expectation that there will be additional patches which build
+on this?
 
--- 
-Damien Le Moal
-Western Digital Research
+I'll scoop it into mm-new for now, see what happens.
+
+Minus all the cc's.  Sorry ;)
 
 
 _______________________________________________
