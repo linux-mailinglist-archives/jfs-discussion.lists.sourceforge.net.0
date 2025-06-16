@@ -2,102 +2,98 @@ Return-Path: <jfs-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+jfs-discussion@lfdr.de
 Delivered-To: lists+jfs-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id 99DADADBB32
-	for <lists+jfs-discussion@lfdr.de>; Mon, 16 Jun 2025 22:30:43 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 436E8ADBB30
+	for <lists+jfs-discussion@lfdr.de>; Mon, 16 Jun 2025 22:29:17 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.sourceforge.net; s=beta; h=Content-Transfer-Encoding:Content-Type:Cc:
-	Reply-To:From:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:Subject:MIME-Version:Message-ID:References:
-	In-Reply-To:To:Date:Sender:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=I87OScjQh+9itlEQHbrarFnMQC41wYnfvl0UeZCqStI=; b=S980f2pK+7gqVxtH+Qw7R/FWlA
-	x6qFlDZZvpnh605bVdmXsgvGiTIhm2N03xYHFpa6oz3OyhjBFX7x+LkMPLwes2cXOUrAN1L/lDGSZ
-	HNIZ5aKVPat/zMmTZjgytetkIASC7cTAZRBtXDlwZgBOYiVTbz91qOxiMbMXFiK8WJsQ=;
-Received: from [127.0.0.1] (helo=sfs-ml-3.v29.lw.sourceforge.com)
-	by sfs-ml-3.v29.lw.sourceforge.com with esmtp (Exim 4.95)
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	Subject:In-Reply-To:MIME-Version:References:Message-ID:To:From:Date:Sender:
+	Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender
+	:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=qXw636rftBxjpzJT7ANZDPpSdxwTPKooLkKCpe0Fd+g=; b=beWrIooYnI2z2xljaXo47z0Nkw
+	2byVjqFNIHIb+sU7pwl/AEwfuAH0bD4Dn2+ICOyXa3UX1pcCq44HV8CcGez9Jw6JUu6ctXziCx5u3
+	TzQJb4CMknTHJIeHuwLJCuipl8J2XaJfk1DdDAKtU2d6um2njczlAAxGfr5izyqBP0zY=;
+Received: from [127.0.0.1] (helo=sfs-ml-2.v29.lw.sourceforge.com)
+	by sfs-ml-2.v29.lw.sourceforge.com with esmtp (Exim 4.95)
 	(envelope-from <jfs-discussion-bounces@lists.sourceforge.net>)
-	id 1uRGSu-0007RA-EL;
-	Mon, 16 Jun 2025 20:30:00 +0000
+	id 1uRGRQ-0008Ex-Cr;
+	Mon, 16 Jun 2025 20:28:28 +0000
 Received: from [172.30.29.66] (helo=mx.sourceforge.net)
- by sfs-ml-1.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
+ by sfs-ml-2.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
  TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (Exim 4.95)
- (envelope-from <kees@kernel.org>) id 1uRG13-0007OS-K9
- for jfs-discussion@lists.sourceforge.net;
- Mon, 16 Jun 2025 20:01:13 +0000
+ (envelope-from <willy@infradead.org>) id 1uRGRO-0008EV-JV;
+ Mon, 16 Jun 2025 20:28:27 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=sourceforge.net; s=x; h=Content-Transfer-Encoding:Content-Type:MIME-Version
- :Message-ID:References:In-Reply-To:Subject:CC:To:From:Date:Sender:Reply-To:
+ d=sourceforge.net; s=x; h=In-Reply-To:Content-Type:MIME-Version:References:
+ Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:Content-Transfer-Encoding:
  Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
  Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=AomqQsJBTpg66zFC6IzNCQDm8xWbRpjPl0LqtiAdfzI=; b=dtgoVsYl+16wS5+NJNzzi1QA1I
- KGtBbRgxuMDqiysZY1bYJeHXsNeibDu2qELl2tHlZiYpqNlCJLbQG7xtqkfcsW/Z/J+JhtZ0xN5NZ
- TOAkYxn6v4bcmtfUHPUQajRkAMjRSDwitBK5cQdwOHpYRZQoEk2UlzpC57sj0HX6nI3M=;
+ bh=rMTsK0YsjlB18wsT75a6evHrM3XMSVJTrFI3gzXouMw=; b=RvY+m7S+SnqYKLgruIMtWaPM/u
+ TU1+X2/1q5fQuYpWexiR2R/sbbnSjpD+EHRladNwq20+Gyt4iTgiLC/AzsbASn8TKOCO94xecpJLz
+ tmn4XDudlBvzD6lLV2ZEbIM9/2Q5XAiIiJU7MbafX4eqNhHReA2ICIwBYzdD6zh4Tnyo=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
- h=Content-Transfer-Encoding:Content-Type:MIME-Version:Message-ID:References
- :In-Reply-To:Subject:CC:To:From:Date:Sender:Reply-To:Content-ID:
+ h=In-Reply-To:Content-Type:MIME-Version:References:Message-ID:Subject:Cc:To
+ :From:Date:Sender:Reply-To:Content-Transfer-Encoding:Content-ID:
  Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
  :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
  List-Post:List-Owner:List-Archive;
- bh=AomqQsJBTpg66zFC6IzNCQDm8xWbRpjPl0LqtiAdfzI=; b=TY5PcSTvVMv1fRbACbvop1ygcF
- uguAgd0Vg48ttEl2VJSYsSua1rPFUnykpvRyZK5O+wCufT7+9E3L/fo4vAzF/husqHatoeOPGEUjg
- Ciiz55BnXd12KgzzhvFYQJw7IIDcboOyjjEmRZt/Ak927oJ3NEB8kRh/14SHfPVKNIzQ=;
-Received: from tor.source.kernel.org ([172.105.4.254])
+ bh=rMTsK0YsjlB18wsT75a6evHrM3XMSVJTrFI3gzXouMw=; b=NpC4QdmDQtTqy3uZoPq2TwUT4N
+ 0EW+mqqOf5d+/oqn8J3F33zeXEQVIprWhbdnlMlxLbUV6QptXqxJJE2TdqPdbtPr5DfDMg5xixSm7
+ Ultv6QTD+603WC9JE2iehuR01oKyO7jYzE0uA+dsbLpOAPrWgFQk+72BhgwyPfX5aZMI=;
+Received: from casper.infradead.org ([90.155.50.34])
  by sfi-mx-2.v28.lw.sourceforge.com with esmtps
  (TLS1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.95)
- id 1uRG13-0002K0-5S for jfs-discussion@lists.sourceforge.net;
- Mon, 16 Jun 2025 20:01:13 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
- by tor.source.kernel.org (Postfix) with ESMTP id 87714615F2;
- Mon, 16 Jun 2025 20:01:01 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id DC77AC4CEEA;
- Mon, 16 Jun 2025 20:01:00 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=k20201202; t=1750104061;
- bh=63g4BFyDRQ9zPpgQi+aKRKc8QZqr403zshqDeyAnLYU=;
- h=Date:From:To:CC:Subject:In-Reply-To:References:From;
- b=MIbLmxFkQvDlWahGwOzhitZt0cSzoXdhWUHu8g8OkqZLAupve4SlpvOS2uS1ZEWmj
- UwQ2s8yA8tAesX44zSYXdwSfJqH8TXAO82zH05g97Z/1UOjr1700+pmtNnzQBgsvl8
- 4ex7UC260hPMrrevOuoNx+ItcoPEWmxAHO8kKS0LskJGXsmB+Lw+lBdLI7AmEbxTyi
- Xaylvf43oG7bbuZKo2MFBbk3fvcCNc7E3lsmsbzOnTEhXlMNNdjS9szSMRmncYZuuz
- cV+XE+08Pnq5bgJ/0F99pB6Ea9gbVg9z6nnYTpH3+D1YHFBxVujigA5wdVTvZ/xroj
- anLaWnk5pcMew==
-Date: Mon, 16 Jun 2025 13:01:00 -0700
-To: Lorenzo Stoakes <lorenzo.stoakes@oracle.com>,
- Andrew Morton <akpm@linux-foundation.org>
-User-Agent: K-9 Mail for Android
-In-Reply-To: <b68145b609532e62bab603dd9686faa6562046ec.1750099179.git.lorenzo.stoakes@oracle.com>
+ id 1uRGRK-0004i3-Mk; Mon, 16 Jun 2025 20:28:26 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=infradead.org; s=casper.20170209; h=In-Reply-To:Content-Type:MIME-Version:
+ References:Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:
+ Content-Transfer-Encoding:Content-ID:Content-Description;
+ bh=rMTsK0YsjlB18wsT75a6evHrM3XMSVJTrFI3gzXouMw=; b=XSnCmY0Ml7NLCrMRP4OfNwKCxm
+ t3knyrRU4umUwqGsAQ78VDJwhklMHyppjzgkgSiDjEr1eDLbkdmMI1Ud09tK10NOTGSkVr9OAVdA5
+ yeDW00x8GaS/9hTn/5iTIiI7ZEmOX2IYVaYsUKHT/a7Sh9XTAvxkYrLcfI6adjZOgVZ/EQ8izXpRS
+ N7CyfmoYNKAXSZWjXkcw7dH2WIhiyXqdB2rcIWxw4KPMz9e5BecjG1NA5nrYsPuYwy5tj/ShXnUjZ
+ Hx7i1JazW+vFcm5JpzfYFwz2+TREcWXzGJRoblKfrG12x8d/ZXuZZBMy93UQ4ahuLIE/06ESgJ7x2
+ dKaQyh9w==;
+Received: from willy by casper.infradead.org with local (Exim 4.98.2 #2 (Red
+ Hat Linux)) id 1uRGPu-0000000GKxl-3X50;
+ Mon, 16 Jun 2025 20:26:54 +0000
+Date: Mon, 16 Jun 2025 21:26:54 +0100
+From: Matthew Wilcox <willy@infradead.org>
+To: Lorenzo Stoakes <lorenzo.stoakes@oracle.com>
+Message-ID: <aFB-Do9FE6H9SsGY@casper.infradead.org>
 References: <cover.1750099179.git.lorenzo.stoakes@oracle.com>
- <b68145b609532e62bab603dd9686faa6562046ec.1750099179.git.lorenzo.stoakes@oracle.com>
-Message-ID: <E0284B4E-A675-4855-87C8-CD13979710D6@kernel.org>
+ <b09de1e8544384074165d92d048e80058d971286.1750099179.git.lorenzo.stoakes@oracle.com>
 MIME-Version: 1.0
-X-Spam-Score: -0.3 (/)
+Content-Disposition: inline
+In-Reply-To: <b09de1e8544384074165d92d048e80058d971286.1750099179.git.lorenzo.stoakes@oracle.com>
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: Spam detection software,
- running on the system "sfi-spamd-1.hosts.colo.sdot.me", 
+ running on the system "sfi-spamd-2.hosts.colo.sdot.me", 
  has NOT identified this incoming email as spam.  The original
  message has been attached to this so you can view it or label
  similar future email.  If you have any questions, see
  the administrator of that system for details.
- Content preview:  On June 16, 2025 12:33:22 PM PDT,
- Lorenzo Stoakes <lorenzo.stoakes@oracle.com>
- wrote: >Since commit c84bf6dd2b83 ("mm: introduce new .mmap_prepare() file
- >callback"), the f_op->mmap() hook has been de [...] 
- Content analysis details:   (-0.3 points, 5.0 required)
+ Content preview:  On Mon, Jun 16, 2025 at 08:33:23PM +0100, Lorenzo Stoakes
+ wrote: > fs/ext4/file.c | 2 +- > fs/xfs/xfs_file.c | 3 ++- Both of these
+ already have the inode from the file ... > +static inline bool
+ daxdev_mapping_supported(vm_flags_t
+ vm_flags, > + struct file *file, > + struct dax_device *dax_dev) > { > -
+ if (!(vma->vm_flags & VM_SYNC)) > + if (!(vm_flags & VM_SYNC)) > retu [...]
+ Content analysis details:   (-0.2 points, 5.0 required)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature,
  not necessarily valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU Message has a valid DKIM or DK signature from author's
  domain
- -0.1 DKIMWL_WL_HIGH         DKIMwl.org - High trust sender
-X-Headers-End: 1uRG13-0002K0-5S
-X-Mailman-Approved-At: Mon, 16 Jun 2025 20:29:58 +0000
-Subject: Re: [Jfs-discussion] [PATCH 03/10] fs: consistently use
- file_has_valid_mmap_hooks() helper
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+X-Headers-End: 1uRGRK-0004i3-Mk
+Subject: Re: [Jfs-discussion] [PATCH 04/10] fs/dax: make it possible to
+ check dev dax support without a VMA
 X-BeenThere: jfs-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -109,8 +105,6 @@ List-Post: <mailto:jfs-discussion@lists.sourceforge.net>
 List-Help: <mailto:jfs-discussion-request@lists.sourceforge.net?subject=help>
 List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/jfs-discussion>, 
  <mailto:jfs-discussion-request@lists.sourceforge.net?subject=subscribe>
-From: Kees Cook via Jfs-discussion <jfs-discussion@lists.sourceforge.net>
-Reply-To: Kees Cook <kees@kernel.org>
 Cc: Latchesar Ionkov <lucho@ionkov.net>, nvdimm@lists.linux.dev,
  Paulo Alcantara <pc@manguebit.org>, dri-devel@lists.freedesktop.org,
  ceph-devel@vger.kernel.org, Mike Marshall <hubcap@omnibond.com>,
@@ -122,6 +116,7 @@ Cc: Latchesar Ionkov <lucho@ionkov.net>, nvdimm@lists.linux.dev,
  Eric Van Hensbergen <ericvh@kernel.org>,
  Zhihao Cheng <chengzhihao1@huawei.com>, Christian Brauner <brauner@kernel.org>,
  linux-kernel@vger.kernel.org, linux-fsdevel@vger.kernel.org,
+ Andrew Morton <akpm@linux-foundation.org>,
  Trond Myklebust <trondmy@kernel.org>, Dave Kleikamp <shaggy@kernel.org>,
  Sandeep Dhavale <dhavale@google.com>, Simona Vetter <simona@ffwll.ch>,
  linux-cifs@vger.kernel.org, linux-nilfs@vger.kernel.org,
@@ -132,13 +127,14 @@ Cc: Latchesar Ionkov <lucho@ionkov.net>, nvdimm@lists.linux.dev,
  linux-block@vger.kernel.org, Theodore Ts'o <tytso@mit.edu>,
  linux-f2fs-devel@lists.sourceforge.net, Hongbo Li <lihongbo22@huawei.com>,
  Anna Schumaker <anna@kernel.org>, Martin Brandenburg <martin@omnibond.com>,
- Yuezhang Mo <yuezhang.mo@sony.com>, Carlos Maiolino <cem@kernel.org>,
+ Kees Cook <kees@kernel.org>, Yuezhang Mo <yuezhang.mo@sony.com>,
+ Carlos Maiolino <cem@kernel.org>,
  Joonas Lahtinen <joonas.lahtinen@linux.intel.com>, Chris Mason <clm@fb.com>,
  linux-mtd@lists.infradead.org, Jaegeuk Kim <jaegeuk@kernel.org>,
  Marc Dionne <marc.dionne@auristor.com>, Tvrtko Ursulin <tursulin@ursulin.net>,
  linux-afs@lists.infradead.org, Naohiro Aota <naohiro.aota@wdc.com>,
- Miklos Szeredi <miklos@szeredi.hu>, Matthew Wilcox <willy@infradead.org>,
- coda@cs.cmu.edu, Ilya Dryomov <idryomov@gmail.com>, linux-ext4@vger.kernel.org,
+ Miklos Szeredi <miklos@szeredi.hu>, coda@cs.cmu.edu,
+ Ilya Dryomov <idryomov@gmail.com>, linux-ext4@vger.kernel.org,
  Amir Goldstein <amir73il@gmail.com>, intel-gfx@lists.freedesktop.org,
  Damien Le Moal <dlemoal@kernel.org>, Rodrigo Vivi <rodrigo.vivi@intel.com>,
  Dan Williams <dan.j.williams@intel.com>, Gao Xiang <xiang@kernel.org>,
@@ -175,38 +171,27 @@ Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Errors-To: jfs-discussion-bounces@lists.sourceforge.net
 
+On Mon, Jun 16, 2025 at 08:33:23PM +0100, Lorenzo Stoakes wrote:
+>  fs/ext4/file.c      |  2 +-
+>  fs/xfs/xfs_file.c   |  3 ++-
 
+Both of these already have the inode from the file ...
 
-On June 16, 2025 12:33:22 PM PDT, Lorenzo Stoakes <lorenzo.stoakes@oracle.com> wrote:
->Since commit c84bf6dd2b83 ("mm: introduce new .mmap_prepare() file
->callback"), the f_op->mmap() hook has been deprecated in favour of
->f_op->mmap_prepare().
->
->Additionally, commit bb666b7c2707 ("mm: add mmap_prepare() compatibility
->layer for nested file systems") permits the use of the .mmap_prepare() hook
->even in nested filesystems like overlayfs.
->
->There are a number of places where we check only for f_op->mmap - this is
->incorrect now mmap_prepare exists, so update all of these to use the
->general helper file_has_valid_mmap_hooks().
->
->Most notably, this updates the elf logic to allow for the ability to
->execute binaries on filesystems which have the .mmap_prepare hook, but
->additionally we update nested filesystems.
->
->Signed-off-by: Lorenzo Stoakes <lorenzo.stoakes@oracle.com>
->---
-> fs/backing-file.c     | 2 +-
-> fs/binfmt_elf.c       | 4 ++--
-> fs/binfmt_elf_fdpic.c | 2 +-
+> +static inline bool daxdev_mapping_supported(vm_flags_t vm_flags,
+> +					    struct file *file,
+> +					    struct dax_device *dax_dev)
+>  {
+> -	if (!(vma->vm_flags & VM_SYNC))
+> +	if (!(vm_flags & VM_SYNC))
+>  		return true;
+> -	if (!IS_DAX(file_inode(vma->vm_file)))
+> +	if (!IS_DAX(file_inode(file)))
+>  		return false;
+>  	return dax_synchronous(dax_dev);
 
-Thanks for the refactoring!
+... and the only thing this function uses from the file is the inode.
+So maybe pass in the inode rather than the file?
 
-Acked-by: Kees Cook<kees@kernel.org>
-
-
--- 
-Kees Cook
 
 
 _______________________________________________
