@@ -2,106 +2,106 @@ Return-Path: <jfs-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+jfs-discussion@lfdr.de
 Delivered-To: lists+jfs-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id 30BC3ADCDB0
-	for <lists+jfs-discussion@lfdr.de>; Tue, 17 Jun 2025 15:42:54 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 51DE9ADCA6C
+	for <lists+jfs-discussion@lfdr.de>; Tue, 17 Jun 2025 14:06:07 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.sourceforge.net; s=beta; h=Content-Transfer-Encoding:Content-Type:
+	d=lists.sourceforge.net; s=beta; h=Content-Transfer-Encoding:Content-Type:Cc:
 	Reply-To:From:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:Subject:To:Message-ID:Date:MIME-Version:Sender:Cc:
-	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
-	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
-	bh=eCrCe0Eizfdwmflawu62LqmYakymkD3CTV8oHsveFS8=; b=G3NAd4//a/1WSdYwfPPiML9G4g
-	pJ6Pt0l/0qhCM4c1ObNBRJjYLvoFmB2dAZS+Yce9Usb35DVhPE+SFkj/OKYcO+Cd/rC1q0ZtpQoef
-	TnuA8YrvLfL2u5fU1BLb8sUvjRHq73PxgBJZmgNNj69zbBmVCsupk0IAVl6Z/dK9WTm4=;
-Received: from [127.0.0.1] (helo=sfs-ml-3.v29.lw.sourceforge.com)
-	by sfs-ml-3.v29.lw.sourceforge.com with esmtp (Exim 4.95)
+	List-Unsubscribe:List-Id:Subject:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:To:Sender:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=+3s41SEWjftyeqvSN2FmRJZe1wZugoIpHjClqWZ2vIk=; b=StG13Ui9a9G4fOrBvrctmpx+1M
+	YPpgl/ak9MGCNoAmQjy1s1zb8fd8ptwwv/L4FWgiQT5hw0XYqfvz09C/SzT3LtMq9FwtEVAQbqRlq
+	XhJadvtBvKSiKPmiNI0pjAtWx2N/3O5tOSVvcpkxEdf/gjihXBBKv9W7vWaiGBB2R+2s=;
+Received: from [127.0.0.1] (helo=sfs-ml-4.v29.lw.sourceforge.com)
+	by sfs-ml-4.v29.lw.sourceforge.com with esmtp (Exim 4.95)
 	(envelope-from <jfs-discussion-bounces@lists.sourceforge.net>)
-	id 1uRWZp-0005yR-OH;
-	Tue, 17 Jun 2025 13:42:13 +0000
+	id 1uRUzJ-0005lm-Rz;
+	Tue, 17 Jun 2025 12:00:25 +0000
 Received: from [172.30.29.66] (helo=mx.sourceforge.net)
- by sfs-ml-1.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
- TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (Exim 4.95) (envelope-from
- <3f9NQaAkbALIkqrcSddWjShhaV.YggYdWmkWjUgflWfl.Uge@M3KW2WVRGUFZ5GODRSRYTGD7.apphosting.bounces.google.com>)
- id 1uRM6n-0007UX-RG for jfs-discussion@lists.sourceforge.net;
- Tue, 17 Jun 2025 02:31:33 +0000
+ by sfs-ml-4.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
+ TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (Exim 4.95)
+ (envelope-from <brauner@kernel.org>) id 1uRUzI-0005le-AD
+ for jfs-discussion@lists.sourceforge.net;
+ Tue, 17 Jun 2025 12:00:24 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=sourceforge.net; s=x; h=Content-Type:To:From:Subject:Message-ID:Date:
- MIME-Version:Sender:Reply-To:Cc:Content-Transfer-Encoding:Content-ID:
- Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
- :Resent-Message-ID:In-Reply-To:References:List-Id:List-Help:List-Unsubscribe:
+ d=sourceforge.net; s=x; h=Content-Transfer-Encoding:Content-Type:MIME-Version
+ :References:In-Reply-To:Message-ID:Date:Subject:Cc:To:From:Sender:Reply-To:
+ Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
+ Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=iICH6rGkCd0NMk5QLBV914Vt0rPaUBnhf5fohNbLyBA=; b=NQi9zzsMV24UFi25DLOrNtjLTc
- ppsZzSiiqg8+hcJVpMwqI7NwylhyCwEBG4m47KPL/9UFvSmVrDRiunAUD9oUl8vpTycqIJs09qJUR
- hajgcxpwBldW84eAj6T+9PzxnMv3EZTG40qVDQtRgvmBZefzphTSrwy1UPKINd84/V0w=;
+ bh=VadYNfxPDS9mWpWiEQHS/5/7snz8zXTvd9oaZpSDKWQ=; b=R0q47IiohZuiX6iTLHZl1Y1yhS
+ z612ujn1baCFZJcic7vYC6TBWfYoJlGVWJAclyWV+8cDDWWyJ7aEY4dFPj35ScY+Eq6RmXGfZH6YJ
+ 7AOMh+IESRpnXLb1AZ1Q7V57PpCaDbPUUWLWflRxu08WZ4yBhrf740GL1wbw47qhlAwU=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
- h=Content-Type:To:From:Subject:Message-ID:Date:MIME-Version:Sender:Reply-To
- :Cc:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
- Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
- References:List-Id:List-Help:List-Unsubscribe:List-Subscribe:List-Post:
- List-Owner:List-Archive; bh=iICH6rGkCd0NMk5QLBV914Vt0rPaUBnhf5fohNbLyBA=; b=W
- JrgxKxMwLq0yuKjVZwqz7M1zaPu6JRBDufUlJuHm+rNLt54Y8VNzDxAhzpBP1LhOpBMGw+u/p0c1s
- rgUPIedv8KOY2F+OJk70aJDgTy+6WJOumtp6SAxDMC2haNTV+bDkbR1o2m2NySUKR+6epe/Wc8dJs
- CiLacyNAHV727LCM=;
-Received: from mail-il1-f205.google.com ([209.85.166.205])
+ h=Content-Transfer-Encoding:Content-Type:MIME-Version:References:
+ In-Reply-To:Message-ID:Date:Subject:Cc:To:From:Sender:Reply-To:Content-ID:
+ Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+ :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
+ List-Post:List-Owner:List-Archive;
+ bh=VadYNfxPDS9mWpWiEQHS/5/7snz8zXTvd9oaZpSDKWQ=; b=ScDTgIis38XeHOJ094hXb/6Dl1
+ UIAg17vsZMdo5PQRpaIFlYzciRvTMDnYfrkqhGHYH8svD3khIsuIz7eC2J+XJbl42fwQTQsggmNT8
+ OGGRxCc1uoEL6kaMF7r1KK1NvCSYI2fylF3qxHUVXOMzf8/r7llyWOcs+C+YD3Pg7kIg=;
+Received: from sea.source.kernel.org ([172.234.252.31])
  by sfi-mx-2.v28.lw.sourceforge.com with esmtps
- (TLS1.2:ECDHE-RSA-AES128-GCM-SHA256:128) (Exim 4.95)
- id 1uRM6n-0002JE-Bu for jfs-discussion@lists.sourceforge.net;
- Tue, 17 Jun 2025 02:31:33 +0000
-Received: by mail-il1-f205.google.com with SMTP id
- e9e14a558f8ab-3ddc1af1e5bso130387395ab.0
- for <jfs-discussion@lists.sourceforge.net>;
- Mon, 16 Jun 2025 19:31:33 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20230601; t=1750127487; x=1750732287;
- h=to:from:subject:message-id:date:mime-version:x-gm-message-state
- :from:to:cc:subject:date:message-id:reply-to;
- bh=iICH6rGkCd0NMk5QLBV914Vt0rPaUBnhf5fohNbLyBA=;
- b=lAJKbp+N1CzV4La+9vKcQy562YZ22T6zuOV2aRXcKMZsSd3TD8m+HJ4uPYLt8FpJqt
- FIDzI8D2KthlKZpfE+v1tLce9mTe+H054yZzssrh2+xTNp6ssc+wDf4EedYZHAHb/8LV
- GhbSDll35vYG+Ao19wznN4Tmtbqe/1NqEySkkjXprXSVOyxINAAC59G5JJaTEOKbyUg+
- ogp4hBOhFWi9AjnwooqB6MQ6HMyY5QNDVZ3YIwPwwplCH0WUWNuNBHgrU4dRFXlTK+u2
- e0Uhb83MSfy9jfhbLEB3jJgpo5rMRnWXHff4T4M59qDDaYAeKkm/PfWzLtJ2Bf3hFfpO
- LCVg==
-X-Gm-Message-State: AOJu0Yxx5TtQxGZC9/gjq4zp53IDT6dkBESlYsuw2OURiZCTXJrcUJMD
- XzU+gaZh89RtchgjPEG/yNSJbaNCl+B6gX+hJv6wEzD07bdOKnbD+83CMIfWcIdkdDFZWIFVAiF
- gM5ikBZL37fYaWqD4LVy3I/LPxhpzd1Egmqh9Fra1LmnNzfCSnzeNeUSjfpJJkQ==
-X-Google-Smtp-Source: AGHT+IF5zYMUboyj8eAxrp3c74PsEWNVpNs0IZe3ofWVWAHz/ZMN4tQC557mWqcpG9ZeTG+I0683iCBzQU8eQ1aoQu7LmuB2bMkc
+ (TLS1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.95)
+ id 1uRUzH-0002N6-Pm for jfs-discussion@lists.sourceforge.net;
+ Tue, 17 Jun 2025 12:00:24 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+ by sea.source.kernel.org (Postfix) with ESMTP id 4F92D49D8F;
+ Tue, 17 Jun 2025 12:00:13 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 4F729C4CEE3;
+ Tue, 17 Jun 2025 11:59:50 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=k20201202; t=1750161613;
+ bh=d7N8Br27sigUm6RwJ6QKDyuMIfLKb482gs0GJECdYqY=;
+ h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
+ b=cbm6eSpOXnYTKVf24fD5wSecYeYAtaJSPLtzA/cg7YuA4PJRPYSNZqoHGrOB9vedO
+ xE+Kw4QDbA/4jdsP7oXbPhVrMP5XKHSj57b+LizHRuDadEPqGBM+ZxF2QhTJG4KKld
+ niMYuWEWwMHm5apCVpkqg1uA/sm57a3OJs6XP47Q03JuvcLdBMJ4BZLJME8mGFpquF
+ OAV54y1YNZFqwgygvgnolLyQkxdfAP1bT54VMRT4yd/LwvYOK0H78h2s/9FU+jHgJZ
+ /1P5yb/ScvLTgMkRASvu83CdtUFgXaGEFmmqSgC4JGFIOk41SmtzQEJEUL45wKXKIE
+ copUCuL9W6X/w==
+To: Lorenzo Stoakes <lorenzo.stoakes@oracle.com>
+Date: Tue, 17 Jun 2025 13:58:21 +0200
+Message-ID: <20250617-neugliederung-erarbeiten-58c2ad93db83@brauner>
+X-Mailer: git-send-email 2.47.2
+In-Reply-To: <cover.1750099179.git.lorenzo.stoakes@oracle.com>
+References: <cover.1750099179.git.lorenzo.stoakes@oracle.com>
 MIME-Version: 1.0
-X-Received: by 2002:a05:6e02:2143:b0:3dd:d178:9315 with SMTP id
- e9e14a558f8ab-3de07c414d8mr130321735ab.8.1750127487587; Mon, 16 Jun 2025
- 19:31:27 -0700 (PDT)
-Date: Mon, 16 Jun 2025 19:31:27 -0700
-X-Google-Appengine-App-Id: s~syzkaller
-X-Google-Appengine-App-Id-Alias: syzkaller
-Message-ID: <6850d37f.a70a0220.395abc.01f9.GAE@google.com>
-To: jfs-discussion@lists.sourceforge.net, linux-kernel@vger.kernel.org, 
- shaggy@kernel.org, syzkaller-bugs@googlegroups.com
-X-Spam-Score: 0.3 (/)
+X-Developer-Signature: v=1; a=openpgp-sha256; l=2454; i=brauner@kernel.org;
+ h=from:subject:message-id; bh=d7N8Br27sigUm6RwJ6QKDyuMIfLKb482gs0GJECdYqY=;
+ b=owGbwMvMwCU28Zj0gdSKO4sYT6slMWQERqz1Wd3by3g/duuF6rmP/N/MPRV+t8Tf5qpaV67t4
+ jKOJ7rXO0pZGMS4GGTFFFkc2k3C5ZbzVGw2ytSAmcPKBDKEgYtTACaysIiRYfKb1+w2vf8O/mdg
+ vPFO8PHqRzML+F0vTZYp4bqm1fwkeyXDP4PuJqblPl9UmcRtf/n65jge6ap97PLc+43T4+kid/k
+ fMgMA
+X-Developer-Key: i=brauner@kernel.org; a=openpgp;
+ fpr=4880B8C9BD0E5106FC070F4F7B3C391EFEA93624
+X-Spam-Score: -0.3 (/)
 X-Spam-Report: Spam detection software,
  running on the system "sfi-spamd-1.hosts.colo.sdot.me", 
  has NOT identified this incoming email as spam.  The original
  message has been attached to this so you can view it or label
  similar future email.  If you have any questions, see
  the administrator of that system for details.
- Content preview:  Hello,
- syzbot found the following issue on: HEAD commit: 050f8ad7b58d
- Add linux-next specific files for 20250616 git tree: linux-next
- console+strace:
- https://syzkaller.appspot.com/x/log.txt?x=11e0190c580000 kernel config:
- https://syzkaller.apps [...] 
- Content analysis details:   (0.3 points, 5.0 required)
+ Content preview:  On Mon, 16 Jun 2025 20:33:19 +0100, Lorenzo Stoakes wrote:
+ > REVIEWER'S NOTES > ================ > > I am basing this on the mm-new
+ branch in Andrew's tree, so let me know if I > should rebase anythin [...]
+ Content analysis details:   (-0.3 points, 5.0 required)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.3 FROM_LOCAL_HEX         From: localpart has long hexadecimal sequence
- 0.0 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level mail
- domains are different
- 0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.166.205 listed in wl.mailspike.net]
-X-Headers-End: 1uRM6n-0002JE-Bu
-X-Mailman-Approved-At: Tue, 17 Jun 2025 13:42:10 +0000
-Subject: [Jfs-discussion] [syzbot] [jfs?] WARNING: fs/jfs/jfs_dmap.c:LINE at
- dbAdjTree, CPU: jfsCommit/NUM
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature,
+ not necessarily valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU Message has a valid DKIM or DK signature from author's
+ domain
+ -0.1 DKIMWL_WL_HIGH         DKIMwl.org - High trust sender
+X-Headers-End: 1uRUzH-0002N6-Pm
+Subject: Re: [Jfs-discussion] [PATCH 00/10] convert the majority of file
+ systems to mmap_prepare
 X-BeenThere: jfs-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -113,93 +113,126 @@ List-Post: <mailto:jfs-discussion@lists.sourceforge.net>
 List-Help: <mailto:jfs-discussion-request@lists.sourceforge.net?subject=help>
 List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/jfs-discussion>, 
  <mailto:jfs-discussion-request@lists.sourceforge.net?subject=subscribe>
-From: syzbot via Jfs-discussion <jfs-discussion@lists.sourceforge.net>
-Reply-To: syzbot <syzbot+077d9ebda84f426a6a1e@syzkaller.appspotmail.com>
+From: Christian Brauner via Jfs-discussion
+ <jfs-discussion@lists.sourceforge.net>
+Reply-To: Christian Brauner <brauner@kernel.org>
+Cc: Latchesar Ionkov <lucho@ionkov.net>, nvdimm@lists.linux.dev,
+ Paulo Alcantara <pc@manguebit.org>, dri-devel@lists.freedesktop.org,
+ ceph-devel@vger.kernel.org, Mike Marshall <hubcap@omnibond.com>,
+ linux-xfs@vger.kernel.org, Tyler Hicks <code@tyhicks.com>,
+ devel@lists.orangefs.org, Shyam Prasad N <sprasad@microsoft.com>,
+ Jan Harkes <jaharkes@cs.cmu.edu>, linux-um@lists.infradead.org,
+ Joel Becker <jlbec@evilplan.org>, Ronnie Sahlberg <ronniesahlberg@gmail.com>,
+ John Paul Adrian Glaubitz <glaubitz@physik.fu-berlin.de>,
+ Eric Van Hensbergen <ericvh@kernel.org>,
+ Zhihao Cheng <chengzhihao1@huawei.com>, Christian Brauner <brauner@kernel.org>,
+ linux-kernel@vger.kernel.org, linux-fsdevel@vger.kernel.org,
+ Andrew Morton <akpm@linux-foundation.org>,
+ Trond Myklebust <trondmy@kernel.org>, Dave Kleikamp <shaggy@kernel.org>,
+ Sandeep Dhavale <dhavale@google.com>, Simona Vetter <simona@ffwll.ch>,
+ linux-cifs@vger.kernel.org, linux-nilfs@vger.kernel.org,
+ codalist@coda.cs.cmu.edu, Namjae Jeon <linkinjeon@kernel.org>,
+ ecryptfs@vger.kernel.org, Yangtao Li <frank.li@vivo.com>,
+ Jani Nikula <jani.nikula@linux.intel.com>, ocfs2-devel@lists.linux.dev,
+ Pedro Falcato <pfalcato@suse.de>, OGAWA Hirofumi <hirofumi@mail.parknet.co.jp>,
+ linux-block@vger.kernel.org, Theodore Ts'o <tytso@mit.edu>,
+ linux-f2fs-devel@lists.sourceforge.net, Hongbo Li <lihongbo22@huawei.com>,
+ Anna Schumaker <anna@kernel.org>, Martin Brandenburg <martin@omnibond.com>,
+ Kees Cook <kees@kernel.org>, Yuezhang Mo <yuezhang.mo@sony.com>,
+ Carlos Maiolino <cem@kernel.org>,
+ Joonas Lahtinen <joonas.lahtinen@linux.intel.com>, Chris Mason <clm@fb.com>,
+ linux-mtd@lists.infradead.org, Jaegeuk Kim <jaegeuk@kernel.org>,
+ Marc Dionne <marc.dionne@auristor.com>, Tvrtko Ursulin <tursulin@ursulin.net>,
+ linux-afs@lists.infradead.org, Naohiro Aota <naohiro.aota@wdc.com>,
+ Miklos Szeredi <miklos@szeredi.hu>, Matthew Wilcox <willy@infradead.org>,
+ coda@cs.cmu.edu, Ilya Dryomov <idryomov@gmail.com>, linux-ext4@vger.kernel.org,
+ Amir Goldstein <amir73il@gmail.com>, intel-gfx@lists.freedesktop.org,
+ Damien Le Moal <dlemoal@kernel.org>, Rodrigo Vivi <rodrigo.vivi@intel.com>,
+ Dan Williams <dan.j.williams@intel.com>, Gao Xiang <xiang@kernel.org>,
+ David Howells <dhowells@redhat.com>, linux-nfs@vger.kernel.org,
+ linux-mm@kvack.org, samba-technical@lists.samba.org,
+ Steve French <sfrench@samba.org>, ntfs3@lists.linux.dev,
+ linux-erofs@lists.ozlabs.org, jfs-discussion@lists.sourceforge.net,
+ Jan Kara <jack@suse.cz>, linux-aio@kvack.org,
+ Dominique Martinet <asmadeus@codewreck.org>,
+ Christian Schoenebeck <linux_oss@crudebyte.com>,
+ Bob Copeland <me@bobcopeland.com>,
+ Konstantin Komarov <almaz.alexandrovich@paragon-software.com>,
+ Joseph Qi <joseph.qi@linux.alibaba.com>,
+ Andreas Dilger <adilger.kernel@dilger.ca>,
+ Mikulas Patocka <mikulas@artax.karlin.mff.cuni.cz>,
+ David Airlie <airlied@gmail.com>,
+ Anton Ivanov <anton.ivanov@cambridgegreys.com>, Yue Hu <zbestahu@gmail.com>,
+ Richard Weinberger <richard@nod.at>, Mark Fasheh <mark@fasheh.com>,
+ linux-bcachefs@vger.kernel.org, Jann Horn <jannh@google.com>,
+ Chao Yu <chao@kernel.org>, Josef Bacik <josef@toxicpanda.com>,
+ "Liam R . Howlett" <Liam.Howlett@oracle.com>, Tom Talpey <tom@talpey.com>,
+ Hans de Goede <hdegoede@redhat.com>, Bharath SM <bharathsm@microsoft.com>,
+ "Tigran A . Aivazian" <aivazian.tigran@gmail.com>,
+ David Sterba <dsterba@suse.com>, Xiubo Li <xiubli@redhat.com>,
+ Ryusuke Konishi <konishi.ryusuke@gmail.com>, Vlastimil Babka <vbabka@suse.cz>,
+ Jens Axboe <axboe@kernel.dk>, Sungjong Seo <sj1557.seo@samsung.com>,
+ v9fs@lists.linux.dev, Kent Overstreet <kent.overstreet@linux.dev>,
+ linux-unionfs@vger.kernel.org, Benjamin LaHaise <bcrl@kvack.org>,
+ Jeffle Xu <jefflexu@linux.alibaba.com>,
+ Johannes Berg <johannes@sipsolutions.net>, Johannes Thumshirn <jth@kernel.org>,
+ David Woodhouse <dwmw2@infradead.org>, linux-karma-devel@lists.sourceforge.net,
+ linux-btrfs@vger.kernel.org, Alexander Viro <viro@zeniv.linux.org.uk>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Errors-To: jfs-discussion-bounces@lists.sourceforge.net
 
-Hello,
+On Mon, 16 Jun 2025 20:33:19 +0100, Lorenzo Stoakes wrote:
+> REVIEWER'S NOTES
+> ================
+> 
+> I am basing this on the mm-new branch in Andrew's tree, so let me know if I
+> should rebase anything here. Given the mm bits touched I did think perhaps
+> we should take it through the mm tree, however it may be more sensible to
+> take it through an fs tree - let me know!
+> 
+> [...]
 
-syzbot found the following issue on:
-
-HEAD commit:    050f8ad7b58d Add linux-next specific files for 20250616
-git tree:       linux-next
-console+strace: https://syzkaller.appspot.com/x/log.txt?x=11e0190c580000
-kernel config:  https://syzkaller.appspot.com/x/.config?x=d2efc7740224b93a
-dashboard link: https://syzkaller.appspot.com/bug?extid=077d9ebda84f426a6a1e
-compiler:       Debian clang version 20.1.6 (++20250514063057+1e4d39e07757-1~exp1~20250514183223.118), Debian LLD 20.1.6
-syz repro:      https://syzkaller.appspot.com/x/repro.syz?x=17aa1e82580000
-C reproducer:   https://syzkaller.appspot.com/x/repro.c?x=15e0190c580000
-
-Downloadable assets:
-disk image: https://storage.googleapis.com/syzbot-assets/49faa18d2f53/disk-050f8ad7.raw.xz
-vmlinux: https://storage.googleapis.com/syzbot-assets/7c6f9cd7fe5d/vmlinux-050f8ad7.xz
-kernel image: https://storage.googleapis.com/syzbot-assets/84a08d6403ee/bzImage-050f8ad7.xz
-mounted in repro: https://storage.googleapis.com/syzbot-assets/65c809c20ad8/mount_0.gz
-  fsck result: failed (log: https://syzkaller.appspot.com/x/fsck.log?x=178095d4580000)
-
-IMPORTANT: if you fix the issue, please add the following tag to the commit:
-Reported-by: syzbot+077d9ebda84f426a6a1e@syzkaller.appspotmail.com
-
-------------[ cut here ]------------
-WARNING: fs/jfs/jfs_dmap.c:2867 at dbAdjTree+0x454/0x4e0 fs/jfs/jfs_dmap.c:2867, CPU#0: jfsCommit/113
-Modules linked in:
-CPU: 0 UID: 0 PID: 113 Comm: jfsCommit Not tainted 6.16.0-rc2-next-20250616-syzkaller #0 PREEMPT(full) 
-Hardware name: Google Google Compute Engine/Google Compute Engine, BIOS Google 05/07/2025
-RIP: 0010:dbAdjTree+0x454/0x4e0 fs/jfs/jfs_dmap.c:2867
-Code: 5a ff ff ff e8 dd ed 81 fe eb 05 e8 d6 ed 81 fe 48 83 c4 28 5b 41 5c 41 5d 41 5e 41 5f 5d c3 cc cc cc cc cc e8 bd ed 81 fe 90 <0f> 0b 90 eb e1 44 89 e1 80 e1 07 80 c1 03 38 c1 0f 8c e1 fb ff ff
-RSP: 0018:ffffc90002de7988 EFLAGS: 00010293
-RAX: ffffffff833e7c73 RBX: ffff88807806f010 RCX: ffff88801eb2bc00
-RDX: 0000000000000000 RSI: 0000000000000155 RDI: 0000000000020056
-RBP: 0000000000020056 R08: ffffea0001e01bc7 R09: 1ffffd40003c0378
-R10: dffffc0000000000 R11: fffff940003c0379 R12: ffff88807806f018
-R13: dffffc0000000000 R14: 0000000000000004 R15: 0000000000000155
-FS:  0000000000000000(0000) GS:ffff888125c40000(0000) knlGS:0000000000000000
-CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033
-CR2: 00005555944916f8 CR3: 00000000736f2000 CR4: 00000000003526f0
-DR0: 0000000000000000 DR1: 0000000000000000 DR2: 0000000000000000
-DR3: 0000000000000000 DR6: 00000000fffe0ff0 DR7: 0000000000000400
-Call Trace:
- <TASK>
- dbJoin+0x238/0x300 fs/jfs/jfs_dmap.c:2835
- dbFreeBits+0x4e1/0xdb0 fs/jfs/jfs_dmap.c:2332
- dbFreeDmap fs/jfs/jfs_dmap.c:2081 [inline]
- dbFree+0x336/0x650 fs/jfs/jfs_dmap.c:398
- txFreeMap+0x7ff/0xde0 fs/jfs/jfs_txnmgr.c:2534
- txUpdateMap+0x308/0x9c0 fs/jfs/jfs_txnmgr.c:-1
- txLazyCommit fs/jfs/jfs_txnmgr.c:2664 [inline]
- jfs_lazycommit+0x43f/0xa90 fs/jfs/jfs_txnmgr.c:2733
- kthread+0x711/0x8a0 kernel/kthread.c:464
- ret_from_fork+0x3fc/0x770 arch/x86/kernel/process.c:148
- ret_from_fork_asm+0x1a/0x30 arch/x86/entry/entry_64.S:245
- </TASK>
-
+This looks good. I fixed up the minor review comments.
+Looking forward to further cleanups in this area.
 
 ---
-This report is generated by a bot. It may contain errors.
-See https://goo.gl/tpsmEJ for more information about syzbot.
-syzbot engineers can be reached at syzkaller@googlegroups.com.
 
-syzbot will keep track of this issue. See:
-https://goo.gl/tpsmEJ#status for how to communicate with syzbot.
+Applied to the vfs-6.17.mmap_prepare branch of the vfs/vfs.git tree.
+Patches in the vfs-6.17.mmap_prepare branch should appear in linux-next soon.
 
-If the report is already addressed, let syzbot know by replying with:
-#syz fix: exact-commit-title
+Please report any outstanding bugs that were missed during review in a
+new review to the original patch series allowing us to drop it.
 
-If you want syzbot to run the reproducer, reply with:
-#syz test: git://repo/address.git branch-or-commit-hash
-If you attach or paste a git patch, syzbot will apply it before testing.
+It's encouraged to provide Acked-bys and Reviewed-bys even though the
+patch has now been applied. If possible patch trailers will be updated.
 
-If you want to overwrite report's subsystems, reply with:
-#syz set subsystems: new-subsystem
-(See the list of subsystem names on the web dashboard)
+Note that commit hashes shown below are subject to change due to rebase,
+trailer updates or similar. If in doubt, please check the listed branch.
 
-If the report is a duplicate of another one, reply with:
-#syz dup: exact-subject-of-another-report
+tree:   https://git.kernel.org/pub/scm/linux/kernel/git/vfs/vfs.git
+branch: vfs-6.17.mmap_prepare
 
-If you want to undo deduplication, reply with:
-#syz undup
+[01/10] mm: rename call_mmap/mmap_prepare to vfs_mmap/mmap_prepare
+        https://git.kernel.org/vfs/vfs/c/20ca475d9860
+[02/10] mm/nommu: use file_has_valid_mmap_hooks() helper
+        https://git.kernel.org/vfs/vfs/c/c6900f227f89
+[03/10] fs: consistently use file_has_valid_mmap_hooks() helper
+        https://git.kernel.org/vfs/vfs/c/b013ed403197
+[04/10] fs/dax: make it possible to check dev dax support without a VMA
+        https://git.kernel.org/vfs/vfs/c/0335f6afd348
+[05/10] fs/ext4: transition from deprecated .mmap hook to .mmap_prepare
+        https://git.kernel.org/vfs/vfs/c/8c90ae8fe5e3
+[06/10] fs/xfs: transition from deprecated .mmap hook to .mmap_prepare
+        https://git.kernel.org/vfs/vfs/c/6528d29b46d8
+[07/10] mm/filemap: introduce generic_file_*_mmap_prepare() helpers
+        https://git.kernel.org/vfs/vfs/c/5b44297bcfa4
+[08/10] fs: convert simple use of generic_file_*_mmap() to .mmap_prepare()
+        https://git.kernel.org/vfs/vfs/c/951ea2f4844c
+[09/10] fs: convert most other generic_file_*mmap() users to .mmap_prepare()
+        https://git.kernel.org/vfs/vfs/c/a5ee9a82981d
+[10/10] fs: replace mmap hook with .mmap_prepare for simple mappings
+        https://git.kernel.org/vfs/vfs/c/a1e5b36c4034
 
 
 _______________________________________________
