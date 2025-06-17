@@ -2,37 +2,36 @@ Return-Path: <jfs-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+jfs-discussion@lfdr.de
 Delivered-To: lists+jfs-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9D7E0ADC9E5
-	for <lists+jfs-discussion@lfdr.de>; Tue, 17 Jun 2025 13:49:45 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id AF03DADC9D1
+	for <lists+jfs-discussion@lfdr.de>; Tue, 17 Jun 2025 13:46:55 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.sourceforge.net; s=beta; h=Content-Transfer-Encoding:Content-Type:Cc:
 	Reply-To:From:List-Subscribe:List-Help:List-Post:List-Archive:
 	List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:References:
 	Message-ID:To:Date:Sender:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=CldZa3f4CbMsRqXEdvYZZslw8EeB8kEOX4rWyFdIc+Q=; b=Up1M8U7+qO+O2buSKZUBc68jVB
-	6ztelvFICv6fO7oxqVhuUymZwjTnDEoLjEwcmSJ12kBnibaZTNVGg89340Q3DBktoAFPUJY7Arc2G
-	ZQ41/qPoR9IiWIDASGDT5L1935jrury0ON7+vwyXk6Urazf5rlhF96i+iR6sMJSsk/zk=;
+	bh=s6XOYLjFe5XFpBaQVFrO+XYpzNk9WUYGtFb1m4oglu8=; b=A30Y1Fdty/JCXTEoBtx/VImg3M
+	a2sL4+065vePpOFnoWfUaZEYtCoWw7AdnvZBtPjexZGQrBnqGCiciieME6j+TIzQ3f4c609wIjAYy
+	pSJx2tnwQE3sE7LyQD0vqvKBQqTBSZ5HTpPFUXMrWdduUYMqv87Awobx6JQf4xIkCRlY=;
 Received: from [127.0.0.1] (helo=sfs-ml-3.v29.lw.sourceforge.com)
 	by sfs-ml-3.v29.lw.sourceforge.com with esmtp (Exim 4.95)
 	(envelope-from <jfs-discussion-bounces@lists.sourceforge.net>)
-	id 1uRUjg-000217-S5;
-	Tue, 17 Jun 2025 11:44:16 +0000
+	id 1uRUlb-00024v-Vs;
+	Tue, 17 Jun 2025 11:46:15 +0000
 Received: from [172.30.29.66] (helo=mx.sourceforge.net)
  by sfs-ml-3.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
  TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (Exim 4.95)
- (envelope-from <brauner@kernel.org>) id 1uRUjf-000211-39
- for jfs-discussion@lists.sourceforge.net;
- Tue, 17 Jun 2025 11:44:15 +0000
+ (envelope-from <brauner@kernel.org>) id 1uRUla-00024j-CS;
+ Tue, 17 Jun 2025 11:46:14 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=sourceforge.net; s=x; h=In-Reply-To:Content-Type:MIME-Version:References:
  Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:Content-Transfer-Encoding:
  Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
  Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=XaXveEeH10NyqmsZskThZ30oS/IooNFOsjao3u+MPWU=; b=YhwHahEX5qNOG31B0k76g5i6DP
- 7y/XfruIv0KOpa5uBsDzIBiLc7k4sGxmMk0EmLb//4eujgBS/jfWDrFV7ITjwJVNn8R3Z4nO33OIh
- ddrSJmKb5ayyl3SUP3MaqJqxlgM5yE2VySOKtiJsD8CDHR1i1mtu4nConRB2CxAolEVA=;
+ bh=dJhc/xLFMoBcJaq1EUp+bwPxRKCz82LTkTE0hRnLfZw=; b=AnJqfaprO+7roJN4ZU1l7Em1gk
+ Wxierh95xjoxYTXHJJlmySIYJAR2yOJKa2KD6DgojBdnrwJv4ce4WmA0QY3p8tI7WrVvt9dixXwYE
+ r8sPp3do6rkghDN1a1f9wbslWjcky0Gv9ckeFUAbCsLCRjF3/6DOGCny3yAyoUAGFaq8=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
  h=In-Reply-To:Content-Type:MIME-Version:References:Message-ID:Subject:Cc:To
@@ -40,38 +39,37 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
  :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
  List-Post:List-Owner:List-Archive;
- bh=XaXveEeH10NyqmsZskThZ30oS/IooNFOsjao3u+MPWU=; b=mzvmohw4Naj0bKLeI/RwBdbPrZ
- N55EDt0fU+yhs59wVM1vnG85qmRtjkk3+XGSuutgSQ0HhuDBxADMPJqeb2qEex5sJa3yjKjYK7F20
- Hyy98RawrSrXGuGx041QbTTAqmCgqKfln4wuHSNQtz63j2cLpRwCn+hMmA4XVaYN3V6w=;
+ bh=dJhc/xLFMoBcJaq1EUp+bwPxRKCz82LTkTE0hRnLfZw=; b=JLcdkDI9WDlJ34/8JQmRhie5i7
+ /62FjzyGWj75V29TAR8qyzXN3/t/WoVa4QV932d5jPUpnXcqOiznFr5gGvjKkLEo+FRRC3+4rAnJ3
+ RggdcmFrpDWtgv/9eDKfhCkpUHzuvAZ/PmaBvcYeJx1qZBK5fWzrwE+t5OjTvuDNpxPM=;
 Received: from nyc.source.kernel.org ([147.75.193.91])
  by sfi-mx-2.v28.lw.sourceforge.com with esmtps
  (TLS1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.95)
- id 1uRUje-0001LY-LD for jfs-discussion@lists.sourceforge.net;
- Tue, 17 Jun 2025 11:44:15 +0000
+ id 1uRUlZ-0001XL-VC; Tue, 17 Jun 2025 11:46:14 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
- by nyc.source.kernel.org (Postfix) with ESMTP id 77600A5000E;
- Tue, 17 Jun 2025 11:44:03 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id CBABEC4CEE3;
- Tue, 17 Jun 2025 11:43:39 +0000 (UTC)
+ by nyc.source.kernel.org (Postfix) with ESMTP id 52AFFA4F1AA;
+ Tue, 17 Jun 2025 11:46:03 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 3E2A2C4CEE3;
+ Tue, 17 Jun 2025 11:45:40 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=k20201202; t=1750160643;
- bh=L4F/xAE2aK6xDa/QOHjQNfrbZ+ldwQ/xxyXW1QOlMqY=;
+ s=k20201202; t=1750160763;
+ bh=StMBYKo3IYdJvpDPP28DVy7nnfZ5iZVxiZzaq3OT7Gk=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=pglRVmSgsr6zVPCbLUxJit1HENECqtF+VKUELSm7DDvJTAXtRKCT9IonBR+vy/Pv+
- 0KOSaKv4o78/UPxS/8WAJnS8XTOzb25DdQPvidNigl04+KbSBnUNdwYpWyPtjwUao2
- KVjU1eod47I9hfmAqu1HXs5NNkpj9ZmoKBDj9iEbYW+Iu4/Wq9ZnQvd/24RiYcCxU6
- ehoC5iKuDLDPBM85gO0tJ3zg29crJnqV/BFPF36D01IwNlhquecGAcdQBOYi0SfMgr
- iTlE7wC7JprLm5uHeq/OcqpnX3tE4351ouMdsYgL/8w6omsW5EvX+9RqdO82rtRfny
- Z7wz58Ln84EiQ==
-Date: Tue, 17 Jun 2025 13:43:36 +0200
-To: Matthew Wilcox <willy@infradead.org>
-Message-ID: <20250617-sehgewohnheiten-getagt-47e1ee917d4f@brauner>
+ b=LKZAHZAC9vUoLxqJ9kPw7y11d1vccxwHwO+yliNT9fTET47uPMg0jRAi/9kqollS2
+ 3j8hdqKrliDMUGiMhPw2i9dqvvInebMc6yA2lG7rgUpPGh/yxB0XWm17UXOqauVCc6
+ Sagcwo9PDm6boEPAX0mIsK8saf5hKwJj0gSqfvOJcC35Ur+DJm/pIWbzY5aT2H/9YC
+ 9jut3Jn0eTCrVe+VIPmIgpnff0NScXFO+hEPUf2CI9uzx8gHglPFlh4VWh+b/JQt0q
+ u82czCjtFdfG73DgONm2+NtA0s6Hq8jxAqKfQtbaaS8tUES6NzxY9nC8fYbzwdQBIB
+ OrD8iaWSk5iyQ==
+Date: Tue, 17 Jun 2025 13:45:37 +0200
+To: Christoph Hellwig <hch@infradead.org>
+Message-ID: <20250617-herdplatte-ringkampf-8e8b439e81f2@brauner>
 References: <cover.1750099179.git.lorenzo.stoakes@oracle.com>
- <b09de1e8544384074165d92d048e80058d971286.1750099179.git.lorenzo.stoakes@oracle.com>
- <aFB-Do9FE6H9SsGY@casper.infradead.org>
+ <cba8b29ba5f225df8f63f50182d5f6e0fcf94456.1750099179.git.lorenzo.stoakes@oracle.com>
+ <aFD4M48RMZB0Hj-f@infradead.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <aFB-Do9FE6H9SsGY@casper.infradead.org>
+In-Reply-To: <aFD4M48RMZB0Hj-f@infradead.org>
 X-Spam-Score: -0.3 (/)
 X-Spam-Report: Spam detection software,
  running on the system "sfi-spamd-2.hosts.colo.sdot.me", 
@@ -79,11 +77,9 @@ X-Spam-Report: Spam detection software,
  message has been attached to this so you can view it or label
  similar future email.  If you have any questions, see
  the administrator of that system for details.
- Content preview:  On Mon, Jun 16, 2025 at 09:26:54PM +0100,
- Matthew Wilcox wrote:
- > On Mon, Jun 16, 2025 at 08:33:23PM +0100,
- Lorenzo Stoakes wrote: > > fs/ext4/file.c
- | 2 +- > > fs/xfs/xfs_file.c | 3 ++- > > Both of t [...] 
+ Content preview:  On Mon, Jun 16, 2025 at 10:08:03PM -0700, Christoph Hellwig
+ wrote: > On Mon, Jun 16, 2025 at 08:33:25PM +0100, Lorenzo Stoakes wrote:
+ > > STATIC int > > -xfs_file_mmap( > > - struct file *file, > > - [...] 
  Content analysis details:   (-0.3 points, 5.0 required)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
@@ -95,9 +91,9 @@ X-Spam-Report: Spam detection software,
  domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIMWL_WL_HIGH         DKIMwl.org - High trust sender
-X-Headers-End: 1uRUje-0001LY-LD
-Subject: Re: [Jfs-discussion] [PATCH 04/10] fs/dax: make it possible to
- check dev dax support without a VMA
+X-Headers-End: 1uRUlZ-0001XL-VC
+Subject: Re: [Jfs-discussion] [PATCH 06/10] fs/xfs: transition from
+ deprecated .mmap hook to .mmap_prepare
 X-BeenThere: jfs-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -140,8 +136,8 @@ Cc: Latchesar Ionkov <lucho@ionkov.net>, nvdimm@lists.linux.dev,
  linux-mtd@lists.infradead.org, Jaegeuk Kim <jaegeuk@kernel.org>,
  Marc Dionne <marc.dionne@auristor.com>, Tvrtko Ursulin <tursulin@ursulin.net>,
  linux-afs@lists.infradead.org, Naohiro Aota <naohiro.aota@wdc.com>,
- Miklos Szeredi <miklos@szeredi.hu>, coda@cs.cmu.edu,
- Ilya Dryomov <idryomov@gmail.com>, linux-ext4@vger.kernel.org,
+ Miklos Szeredi <miklos@szeredi.hu>, Matthew Wilcox <willy@infradead.org>,
+ coda@cs.cmu.edu, Ilya Dryomov <idryomov@gmail.com>, linux-ext4@vger.kernel.org,
  Amir Goldstein <amir73il@gmail.com>, intel-gfx@lists.freedesktop.org,
  Damien Le Moal <dlemoal@kernel.org>, Rodrigo Vivi <rodrigo.vivi@intel.com>,
  Dan Williams <dan.j.williams@intel.com>, Gao Xiang <xiang@kernel.org>,
@@ -178,29 +174,20 @@ Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Errors-To: jfs-discussion-bounces@lists.sourceforge.net
 
-On Mon, Jun 16, 2025 at 09:26:54PM +0100, Matthew Wilcox wrote:
-> On Mon, Jun 16, 2025 at 08:33:23PM +0100, Lorenzo Stoakes wrote:
-> >  fs/ext4/file.c      |  2 +-
-> >  fs/xfs/xfs_file.c   |  3 ++-
+On Mon, Jun 16, 2025 at 10:08:03PM -0700, Christoph Hellwig wrote:
+> On Mon, Jun 16, 2025 at 08:33:25PM +0100, Lorenzo Stoakes wrote:
+> >  STATIC int
+> > -xfs_file_mmap(
+> > -	struct file		*file,
+> > -	struct vm_area_struct	*vma)
+> > +xfs_file_mmap_prepare(
+> > +	struct vm_area_desc *desc)
 > 
-> Both of these already have the inode from the file ...
+> Please stick to the existing alignment for the declarations.
 > 
-> > +static inline bool daxdev_mapping_supported(vm_flags_t vm_flags,
-> > +					    struct file *file,
-> > +					    struct dax_device *dax_dev)
-> >  {
-> > -	if (!(vma->vm_flags & VM_SYNC))
-> > +	if (!(vm_flags & VM_SYNC))
-> >  		return true;
-> > -	if (!IS_DAX(file_inode(vma->vm_file)))
-> > +	if (!IS_DAX(file_inode(file)))
-> >  		return false;
-> >  	return dax_synchronous(dax_dev);
-> 
-> ... and the only thing this function uses from the file is the inode.
-> So maybe pass in the inode rather than the file?
+> Otherwise this looks good.
 
-Agreed. I've converted this to take const struct inode *.
+Fixed in-tree.
 
 
 _______________________________________________
