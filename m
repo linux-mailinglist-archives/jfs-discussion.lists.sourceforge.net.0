@@ -2,162 +2,114 @@ Return-Path: <jfs-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+jfs-discussion@lfdr.de
 Delivered-To: lists+jfs-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id EBBE7ADDC3A
-	for <lists+jfs-discussion@lfdr.de>; Tue, 17 Jun 2025 21:23:15 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B7831ADF37D
+	for <lists+jfs-discussion@lfdr.de>; Wed, 18 Jun 2025 19:07:02 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.sourceforge.net; s=beta; h=Content-Transfer-Encoding:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	Subject:In-Reply-To:From:References:To:MIME-Version:Date:Message-ID:Sender:
-	Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender
-	:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=3FkLXh0CsTodNCInaCWGw1O+wTgZG9P2M+OxmJZI4h4=; b=NilXNqMPAb6DRa1COdTmLxhodF
-	SIK2XGkhNizYp/j96oUyDOhxHBldLc+HIYLmqwxS04uBR9M7kO5fnU4snkZj3AMrANGepNKMFuMs3
-	kY5lUMoz4sGCJZwVFj3pnCgt+iO3cPcjlJcpezJXaiRH5dWtShfX2OdhfbHIlEj3iaRI=;
-Received: from [127.0.0.1] (helo=sfs-ml-4.v29.lw.sourceforge.com)
-	by sfs-ml-4.v29.lw.sourceforge.com with esmtp (Exim 4.95)
+	Reply-To:List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:
+	List-Id:Subject:In-Reply-To:MIME-Version:References:Message-ID:To:From:Date:
+	Sender:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
+	Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=qbvi+kdjgeJEKRL7qeZ7qo43RTGbJoMBx79OvTKzTMA=; b=lBAtaFT9SkVrzqkKdZdSmd34tW
+	khzg6A0Ne7B5EYreO0UzAEGIyoP2w4xwtBreEoQKUZsFGleqpjzLoSmWTTh/ANTyHa/CQBBgcj11A
+	pFsJzxiwlsqTLWT/wQmrSUMi30LVwFifAAu2R4hh5voxWjhPm7hkQ9UIE8wlHFj15AJI=;
+Received: from [127.0.0.1] (helo=sfs-ml-3.v29.lw.sourceforge.com)
+	by sfs-ml-3.v29.lw.sourceforge.com with esmtp (Exim 4.95)
 	(envelope-from <jfs-discussion-bounces@lists.sourceforge.net>)
-	id 1uRbtJ-00088O-26;
-	Tue, 17 Jun 2025 19:22:41 +0000
+	id 1uRwEw-0000AZ-30;
+	Wed, 18 Jun 2025 17:06:22 +0000
 Received: from [172.30.29.66] (helo=mx.sourceforge.net)
- by sfs-ml-1.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
+ by sfs-ml-3.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
  TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (Exim 4.95)
- (envelope-from <vbabka@suse.cz>) id 1uRbYL-0004So-Eo
+ (envelope-from <dsterba@suse.cz>) id 1uRwEu-0000AT-LW
  for jfs-discussion@lists.sourceforge.net;
- Tue, 17 Jun 2025 19:01:01 +0000
+ Wed, 18 Jun 2025 17:06:20 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=sourceforge.net; s=x; h=Content-Transfer-Encoding:Content-Type:In-Reply-To:
- From:References:Cc:To:Subject:MIME-Version:Date:Message-ID:Sender:Reply-To:
+ d=sourceforge.net; s=x; h=In-Reply-To:Content-Type:MIME-Version:References:
+ Reply-To:Message-ID:Subject:Cc:To:From:Date:Sender:Content-Transfer-Encoding:
  Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
  Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=9Juk2Y8Z4vCgweVfRh7S+BpOVSpAcPiYmdkEL/A0ZQ8=; b=ffI6hxAPtwN6FXfu2Bqqt/Rfao
- t20pRxr+0bCpml06cNBQPSXGYa5TzcMSNiJBijlbh4TkyxLntibiREMwi3aMBUQAwaEnnjwUNLFo0
- gFQgOPW0K+3aUiK156DH4ibwO0MJMqzzhD+FrRdJzRuo8iVMhy4o65Idc/o/A+ce4aEc=;
+ bh=SAxHe4/SFOgVVfwP/YkVikw5O0UdBvLzL0DaWVhZNTM=; b=VYKAEm4ICQHNBqUEN411bqaVeb
+ OYO0W6SwUN0p9epqfhlxvcVLmBKRaftJHro3L7QFSFOhVvjWk+m2eyemsTY7hT/JBoIsEAHssNbsS
+ 3vkzzTZaQFVtpkzRnaHUwhiniI6WVmp5JpsZNggnTv9cQWyfYQqG/ddLWQUVX3KYVkEM=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
- h=Content-Transfer-Encoding:Content-Type:In-Reply-To:From:References:Cc:To:
- Subject:MIME-Version:Date:Message-ID:Sender:Reply-To:Content-ID:
+ h=In-Reply-To:Content-Type:MIME-Version:References:Reply-To:Message-ID:
+ Subject:Cc:To:From:Date:Sender:Content-Transfer-Encoding:Content-ID:
  Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
  :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
  List-Post:List-Owner:List-Archive;
- bh=9Juk2Y8Z4vCgweVfRh7S+BpOVSpAcPiYmdkEL/A0ZQ8=; b=aVf5TrzOX5MptMOhLfVkS30Vi3
- anHKXjFJlBwaa1rRbY3F7woj5ym0mhuA+19OyGt/H4aR4Yc8MZQvJ9usWAjmrK7GGu/xm1N4oy6Kq
- Ndcl+OYHBULdZyGd8VJ8sU4mSYw3O3ArVugSfnKfiwr7QOERueB7nGrM29+K/CT/IhS4=;
+ bh=SAxHe4/SFOgVVfwP/YkVikw5O0UdBvLzL0DaWVhZNTM=; b=YAcaInM/9Qa7oXwDREpHxCIX5Q
+ cwRKRdStwhCQ5WTqnnDidzKiNgEsk3XbO1zhWWICL7fuk7Q+c24EOkhsViIWN2hvHbJ+G5Ce2OtzE
+ 62tq9yNbFfZiJhy+BBaMEZv1a5mWjcFxvJzIQqS+P3ifHi2AZikymsV3auEvkYpnempg=;
 Received: from smtp-out2.suse.de ([195.135.223.131])
  by sfi-mx-2.v28.lw.sourceforge.com with esmtps
  (TLS1.2:ECDHE-RSA-AES128-GCM-SHA256:128) (Exim 4.95)
- id 1uRbYK-0001aR-Jp for jfs-discussion@lists.sourceforge.net;
- Tue, 17 Jun 2025 19:01:01 +0000
-Received: from imap1.dmz-prg2.suse.org (imap1.dmz-prg2.suse.org
- [IPv6:2a07:de40:b281:104:10:150:64:97])
+ id 1uRwEt-0006HF-U6 for jfs-discussion@lists.sourceforge.net;
+ Wed, 18 Jun 2025 17:06:20 +0000
+Received: from imap1.dmz-prg2.suse.org (unknown [10.150.64.97])
  (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
  key-exchange X25519 server-signature RSA-PSS (4096 bits) server-digest SHA256)
  (No client certificate requested)
- by smtp-out2.suse.de (Postfix) with ESMTPS id 507671F7B8;
- Tue, 17 Jun 2025 19:00:47 +0000 (UTC)
+ by smtp-out2.suse.de (Postfix) with ESMTPS id 788C91F7BD;
+ Wed, 18 Jun 2025 17:06:08 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=suse.cz; s=susede2_rsa;
- t=1750186847; h=from:from:reply-to:date:date:message-id:message-id:to:to:cc:cc:
- mime-version:mime-version:content-type:content-type:
- content-transfer-encoding:content-transfer-encoding:
- in-reply-to:in-reply-to:references:references:autocrypt:autocrypt;
- bh=9Juk2Y8Z4vCgweVfRh7S+BpOVSpAcPiYmdkEL/A0ZQ8=;
- b=byCwB4RCvD+fdWiUPHXXzPv+6Y6J9hxjIABrcJvka3IHD4rlwNxlRCOh6nKvFSXUCtlmv9
- oheOjdnZ8AO5O8ntsesgc4FHhDq0h5Wm/nQ/XLXl3/LgjoGtFxk6LSH9B6SOCmvzUQWsr5
- +8isq/XPBuk9eRn399cgn8+LNDDeDzM=
+ t=1750266368;
+ h=from:from:reply-to:reply-to:date:date:message-id:message-id:to:to:
+ cc:cc:mime-version:mime-version:content-type:content-type:
+ in-reply-to:in-reply-to:references:references;
+ bh=SAxHe4/SFOgVVfwP/YkVikw5O0UdBvLzL0DaWVhZNTM=;
+ b=NHroZLiPV+1/rO8sD9qZX/5PHN5D5Rfo5Zb5aOHdYXCyTajLXhRkymKkUo6NqEKT1i51Wq
+ 3jzRv5I50TsK881TQSExVKFBTV1uPJb21aJuIaeXllkCTjwU0SL7U9SX534GcVuTrf9MkN
+ z5adrX6FKDM+9HUfScghJAj+d4/N4Kw=
 DKIM-Signature: v=1; a=ed25519-sha256; c=relaxed/relaxed; d=suse.cz;
- s=susede2_ed25519; t=1750186847;
- h=from:from:reply-to:date:date:message-id:message-id:to:to:cc:cc:
- mime-version:mime-version:content-type:content-type:
- content-transfer-encoding:content-transfer-encoding:
- in-reply-to:in-reply-to:references:references:autocrypt:autocrypt;
- bh=9Juk2Y8Z4vCgweVfRh7S+BpOVSpAcPiYmdkEL/A0ZQ8=;
- b=5dU0FaFSntG9ZXnX+34/DLPOUKbmUYAfLK4fGoy5GhfiI3Qw/3k5bXxhuRtcOt1nYqXS8V
- 1TvsfVYTrLwt6BBg==
+ s=susede2_ed25519; t=1750266368;
+ h=from:from:reply-to:reply-to:date:date:message-id:message-id:to:to:
+ cc:cc:mime-version:mime-version:content-type:content-type:
+ in-reply-to:in-reply-to:references:references;
+ bh=SAxHe4/SFOgVVfwP/YkVikw5O0UdBvLzL0DaWVhZNTM=;
+ b=G3RePS1FfsxZPpVKpINLhWACefVqXMozYLP/NJ+59JpdNLld0DBJsRsQUOr6wb7MNlldLN
+ KfEZjWEX4nPtmqCQ==
 Authentication-Results: smtp-out2.suse.de;
- dkim=pass header.d=suse.cz header.s=susede2_rsa header.b=byCwB4RC;
- dkim=pass header.d=suse.cz header.s=susede2_ed25519 header.b=5dU0FaFS
+	none
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=suse.cz; s=susede2_rsa;
- t=1750186847; h=from:from:reply-to:date:date:message-id:message-id:to:to:cc:cc:
- mime-version:mime-version:content-type:content-type:
- content-transfer-encoding:content-transfer-encoding:
- in-reply-to:in-reply-to:references:references:autocrypt:autocrypt;
- bh=9Juk2Y8Z4vCgweVfRh7S+BpOVSpAcPiYmdkEL/A0ZQ8=;
- b=byCwB4RCvD+fdWiUPHXXzPv+6Y6J9hxjIABrcJvka3IHD4rlwNxlRCOh6nKvFSXUCtlmv9
- oheOjdnZ8AO5O8ntsesgc4FHhDq0h5Wm/nQ/XLXl3/LgjoGtFxk6LSH9B6SOCmvzUQWsr5
- +8isq/XPBuk9eRn399cgn8+LNDDeDzM=
+ t=1750266368;
+ h=from:from:reply-to:reply-to:date:date:message-id:message-id:to:to:
+ cc:cc:mime-version:mime-version:content-type:content-type:
+ in-reply-to:in-reply-to:references:references;
+ bh=SAxHe4/SFOgVVfwP/YkVikw5O0UdBvLzL0DaWVhZNTM=;
+ b=NHroZLiPV+1/rO8sD9qZX/5PHN5D5Rfo5Zb5aOHdYXCyTajLXhRkymKkUo6NqEKT1i51Wq
+ 3jzRv5I50TsK881TQSExVKFBTV1uPJb21aJuIaeXllkCTjwU0SL7U9SX534GcVuTrf9MkN
+ z5adrX6FKDM+9HUfScghJAj+d4/N4Kw=
 DKIM-Signature: v=1; a=ed25519-sha256; c=relaxed/relaxed; d=suse.cz;
- s=susede2_ed25519; t=1750186847;
- h=from:from:reply-to:date:date:message-id:message-id:to:to:cc:cc:
- mime-version:mime-version:content-type:content-type:
- content-transfer-encoding:content-transfer-encoding:
- in-reply-to:in-reply-to:references:references:autocrypt:autocrypt;
- bh=9Juk2Y8Z4vCgweVfRh7S+BpOVSpAcPiYmdkEL/A0ZQ8=;
- b=5dU0FaFSntG9ZXnX+34/DLPOUKbmUYAfLK4fGoy5GhfiI3Qw/3k5bXxhuRtcOt1nYqXS8V
- 1TvsfVYTrLwt6BBg==
+ s=susede2_ed25519; t=1750266368;
+ h=from:from:reply-to:reply-to:date:date:message-id:message-id:to:to:
+ cc:cc:mime-version:mime-version:content-type:content-type:
+ in-reply-to:in-reply-to:references:references;
+ bh=SAxHe4/SFOgVVfwP/YkVikw5O0UdBvLzL0DaWVhZNTM=;
+ b=G3RePS1FfsxZPpVKpINLhWACefVqXMozYLP/NJ+59JpdNLld0DBJsRsQUOr6wb7MNlldLN
+ KfEZjWEX4nPtmqCQ==
 Received: from imap1.dmz-prg2.suse.org (localhost [127.0.0.1])
  (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
  key-exchange X25519 server-signature RSA-PSS (4096 bits) server-digest SHA256)
  (No client certificate requested)
- by imap1.dmz-prg2.suse.org (Postfix) with ESMTPS id 7DFC0139E2;
- Tue, 17 Jun 2025 19:00:46 +0000 (UTC)
+ by imap1.dmz-prg2.suse.org (Postfix) with ESMTPS id D50B313721;
+ Wed, 18 Jun 2025 17:06:07 +0000 (UTC)
 Received: from dovecot-director2.suse.de ([2a07:de40:b281:106:10:150:64:167])
- by imap1.dmz-prg2.suse.org with ESMTPSA id CFZsHl67UWjKOQAAD6G6ig
- (envelope-from <vbabka@suse.cz>); Tue, 17 Jun 2025 19:00:46 +0000
-Message-ID: <540449d2-e1fe-4736-bc40-b6922db0b1a4@suse.cz>
-Date: Tue, 17 Jun 2025 21:00:46 +0200
-MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Content-Language: en-US
-To: Lorenzo Stoakes <lorenzo.stoakes@oracle.com>,
- Andrew Morton <akpm@linux-foundation.org>
+ by imap1.dmz-prg2.suse.org with ESMTPSA id 4kJvM//xUmgeMgAAD6G6ig
+ (envelope-from <dsterba@suse.cz>); Wed, 18 Jun 2025 17:06:07 +0000
+Date: Wed, 18 Jun 2025 19:06:06 +0200
+From: David Sterba <dsterba@suse.cz>
+To: Lorenzo Stoakes <lorenzo.stoakes@oracle.com>
+Message-ID: <20250618170606.GI4037@suse.cz>
 References: <cover.1750099179.git.lorenzo.stoakes@oracle.com>
- <30622c1f0b98c66840bc8c02668bda276a810b70.1750099179.git.lorenzo.stoakes@oracle.com>
-From: Vlastimil Babka <vbabka@suse.cz>
-Autocrypt: addr=vbabka@suse.cz; keydata=
- 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
- m6M14QORSWTLRg==
-In-Reply-To: <30622c1f0b98c66840bc8c02668bda276a810b70.1750099179.git.lorenzo.stoakes@oracle.com>
-X-Rspamd-Server: rspamd2.dmz-prg2.suse.org
-X-Rspamd-Queue-Id: 507671F7B8
-X-Rspamd-Action: no action
-X-Spam-Flag: NO
-X-Spamd-Result: default: False [-1.01 / 50.00]; BAYES_HAM(-3.00)[100.00%];
+ <f528ac4f35b9378931bd800920fee53fc0c5c74d.1750099179.git.lorenzo.stoakes@oracle.com>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <f528ac4f35b9378931bd800920fee53fc0c5c74d.1750099179.git.lorenzo.stoakes@oracle.com>
+User-Agent: Mutt/1.5.23.1-rc1 (2014-03-12)
+X-Spamd-Result: default: False [-0.50 / 50.00]; BAYES_HAM(-3.00)[100.00%];
  FORGED_RECIPIENTS(2.00)[m:akpm@linux-foundation.org, m:axboe@kernel.dk,
  m:rodrigo.vivi@intel.com, m:airlied@gmail.com, m:simona@ffwll.ch,
  m:ericvh@kernel.org, m:lucho@ionkov.net, m:asmadeus@codewreck.org,
@@ -174,27 +126,26 @@ X-Spamd-Result: default: False [-1.01 / 50.00]; BAYES_HAM(-3.00)[100.00%];
  m:mark@fasheh.com, m:jlbec@evilplan.org, m:me@bobcopeland.com,
  m:ronniesahlberg@gmail.com, m:chengzhihao1@huawei.com, m:cem@kernel.org,
  m:dlemoal@kernel.or
- g,m:naohiro.aota@wdc.com,m:jth@kernel.org,m:dan.j.williams@intel.com,m:willy@infradead.org,m:jannh@google.com,m:linux-aio@kvack.org,m:linux-mm@kvack.org,m:codalist@coda.cs.cmu.edu,s:linux-mtd@lists.infradead.org,s:linux-um@lists.infradead.org,s:ntfs3@lists.linux.dev,s:nvdimm@lists.linux.dev,s:ocfs2-devel@lists.linux.dev,s:devel@lists.orangefs.org,s:samba-technical@lists.samba.org,s:jfs-discussion@lists.sourceforge.net,s:linux-karma-devel@lists.sourceforge.net];
+ g,m:naohiro.aota@wdc.com,m:jth@kernel.org,m:dan.j.williams@intel.com,m:willy@infradead.org,m:jannh@google.com,m:linux-aio@kvack.org,m:linux-mm@kvack.org,m:codalist@coda.cs.cmu.edu,s:linux-mtd@lists.infradead.org,s:linux-um@lists.infradead.org,s:ntfs3@lists.linux.dev,s:nvdimm@lists.linux.dev,s:ocfs2-devel@lists.linux.dev,s:devel@lists.orangefs.org,s:samba-technical@lists.samba.org,s:jfs-discussion@lists.sourceforge.net,s:linux-f2fs-devel@lists.sourceforge.net,s:linux-karma-devel@lists.sourceforge.net];
  SUSPICIOUS_RECIPS(1.50)[]; NEURAL_HAM_LONG(-1.00)[-1.000];
- R_DKIM_ALLOW(-0.20)[suse.cz:s=susede2_rsa,suse.cz:s=susede2_ed25519];
+ HAS_REPLYTO(0.30)[dsterba@suse.cz];
  NEURAL_HAM_SHORT(-0.20)[-1.000]; MIME_GOOD(-0.10)[text/plain];
- MX_GOOD(-0.01)[]; FROM_HAS_DN(0.00)[];
+ FUZZY_BLOCKED(0.00)[rspamd.com]; FROM_HAS_DN(0.00)[];
  DKIM_SIGNED(0.00)[suse.cz:s=susede2_rsa,suse.cz:s=susede2_ed25519];
- FUZZY_BLOCKED(0.00)[rspamd.com];
- FREEMAIL_CC(0.00)[oracle.com,kernel.dk,linux.intel.com,intel.com,ursulin.net,gmail.com,ffwll.ch,kernel.org,ionkov.net,codewreck.org,crudebyte.com,suse.com,redhat.com,auristor.com,zeniv.linux.org.uk,suse.cz,kvack.org,szeredi.hu,linux.dev,fb.com,toxicpanda.com,cs.cmu.edu,tyhicks.com,linux.alibaba.com,google.com,huawei.com,samsung.com,sony.com,mit.edu,dilger.ca,mail.parknet.co.jp,dubeyko.com,physik.fu-berlin.de,vivo.com,nod.at,cambridgegreys.com,sipsolutions.net,artax.karlin.mff.cuni.cz,infradead.org,paragon-software.com,fasheh.com,evilplan.org,bobcopeland.com,omnibond.com,samba.org,manguebit.org,microsoft.com,talpey.com,wdc.com,suse.de,vger.kernel.org,lists.freedesktop.org,lists.linux.dev,lists.infradead.org,coda.cs.cmu.edu,lists.ozlabs.org,lists.sourceforge.net,lists.orangefs.org,lists.samba.org];
+ TO_DN_SOME(0.00)[];
+ FREEMAIL_CC(0.00)[linux-foundation.org,oracle.com,kernel.dk,linux.intel.com,intel.com,ursulin.net,gmail.com,ffwll.ch,kernel.org,ionkov.net,codewreck.org,crudebyte.com,suse.com,redhat.com,auristor.com,zeniv.linux.org.uk,suse.cz,kvack.org,szeredi.hu,linux.dev,fb.com,toxicpanda.com,cs.cmu.edu,tyhicks.com,linux.alibaba.com,google.com,huawei.com,samsung.com,sony.com,mit.edu,dilger.ca,mail.parknet.co.jp,dubeyko.com,physik.fu-berlin.de,vivo.com,nod.at,cambridgegreys.com,sipsolutions.net,artax.karlin.mff.cuni.cz,infradead.org,paragon-software.com,fasheh.com,evilplan.org,bobcopeland.com,omnibond.com,samba.org,manguebit.org,microsoft.com,talpey.com,wdc.com,suse.de,vger.kernel.org,lists.freedesktop.org,lists.linux.dev,lists.infradead.org,coda.cs.cmu.edu,lists.ozlabs.org,lists.sourceforge.net,lists.orangefs.org,lists.samba.org];
  MIME_TRACE(0.00)[0:+]; ARC_NA(0.00)[]; RCVD_TLS_ALL(0.00)[];
- DKIM_TRACE(0.00)[suse.cz:+];
- R_RATELIMIT(0.00)[to_ip_from(RLtt3oo4rjgrukgqu3o4a3j6w6)];
- TO_MATCH_ENVRCPT_SOME(0.00)[]; RCVD_COUNT_TWO(0.00)[2];
- FROM_EQ_ENVFROM(0.00)[]; TO_DN_SOME(0.00)[];
- RCPT_COUNT_GT_50(0.00)[112];
- RECEIVED_SPAMHAUS_BLOCKED_OPENRESOLVER(0.00)[2a07:de40:b281:106:10:150:64:167:received];
- MID_RHS_MATCH_FROM(0.00)[]; RCVD_VIA_SMTP_AUTH(0.00)[];
+ R_RATELIMIT(0.00)[to_ip_from(RLghqfk66faf4qxrpoiianeeaj)];
+ RCVD_VIA_SMTP_AUTH(0.00)[]; RCVD_COUNT_TWO(0.00)[2];
+ REPLYTO_ADDR_EQ_FROM(0.00)[]; FROM_EQ_ENVFROM(0.00)[];
+ REPLYTO_DOM_NEQ_TO_DOM(0.00)[]; TO_MATCH_ENVRCPT_SOME(0.00)[];
+ MID_RHS_MATCH_FROM(0.00)[]; RCPT_COUNT_GT_50(0.00)[113];
  TAGGED_RCPT(0.00)[];
- DBL_BLOCKED_OPENRESOLVER(0.00)[oracle.com:email, imap1.dmz-prg2.suse.org:rdns,
- imap1.dmz-prg2.suse.org:helo, suse.cz:mid, suse.cz:dkim, suse.cz:email]
-X-Spam-Score: -1.01
+ DBL_BLOCKED_OPENRESOLVER(0.00)[suse.cz:replyto, suse.cz:mid, oracle.com:email,
+ imap1.dmz-prg2.suse.org:helo, suse.com:email]
 X-Spam-Level: 
+X-Spam-Flag: NO
+X-Spam-Score: -0.50
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: Spam detection software,
  running on the system "sfi-spamd-2.hosts.colo.sdot.me", 
@@ -202,10 +153,9 @@ X-Spam-Report: Spam detection software,
  message has been attached to this so you can view it or label
  similar future email.  If you have any questions, see
  the administrator of that system for details.
- Content preview:  On 6/16/25 21:33,
- Lorenzo Stoakes wrote: > Since commit c84bf6dd2b83
- ("mm: introduce new .mmap_prepare() file > callback"), the f_op->mmap() hook
- has been deprecated in favour of > f_op->mmap_prepare( [...] 
+ Content preview:  On Mon, Jun 16, 2025 at 08:33:29PM +0100, Lorenzo Stoakes
+ wrote: > Since commit c84bf6dd2b83 ("mm: introduce new .mmap_prepare() file
+ > callback"), the f_op->mmap() hook has been deprecated in favour [...] 
  Content analysis details:   (-0.2 points, 5.0 required)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
@@ -216,10 +166,9 @@ X-Spam-Report: Spam detection software,
  -0.1 DKIM_VALID_AU Message has a valid DKIM or DK signature from author's
  domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
-X-Headers-End: 1uRbYK-0001aR-Jp
-X-Mailman-Approved-At: Tue, 17 Jun 2025 19:22:39 +0000
-Subject: Re: [Jfs-discussion] [PATCH 07/10] mm/filemap: introduce
- generic_file_*_mmap_prepare() helpers
+X-Headers-End: 1uRwEt-0006HF-U6
+Subject: Re: [Jfs-discussion] [PATCH 10/10] fs: replace mmap hook with
+ .mmap_prepare for simple mappings
 X-BeenThere: jfs-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -231,6 +180,7 @@ List-Post: <mailto:jfs-discussion@lists.sourceforge.net>
 List-Help: <mailto:jfs-discussion-request@lists.sourceforge.net?subject=help>
 List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/jfs-discussion>, 
  <mailto:jfs-discussion-request@lists.sourceforge.net?subject=subscribe>
+Reply-To: dsterba@suse.cz
 Cc: Latchesar Ionkov <lucho@ionkov.net>, nvdimm@lists.linux.dev,
  Paulo Alcantara <pc@manguebit.org>, dri-devel@lists.freedesktop.org,
  ceph-devel@vger.kernel.org, Mike Marshall <hubcap@omnibond.com>,
@@ -242,6 +192,7 @@ Cc: Latchesar Ionkov <lucho@ionkov.net>, nvdimm@lists.linux.dev,
  Eric Van Hensbergen <ericvh@kernel.org>,
  Zhihao Cheng <chengzhihao1@huawei.com>, Christian Brauner <brauner@kernel.org>,
  linux-kernel@vger.kernel.org, linux-fsdevel@vger.kernel.org,
+ Andrew Morton <akpm@linux-foundation.org>,
  Trond Myklebust <trondmy@kernel.org>, Dave Kleikamp <shaggy@kernel.org>,
  Sandeep Dhavale <dhavale@google.com>, Simona Vetter <simona@ffwll.ch>,
  linux-cifs@vger.kernel.org, linux-nilfs@vger.kernel.org,
@@ -284,10 +235,11 @@ Cc: Latchesar Ionkov <lucho@ionkov.net>, nvdimm@lists.linux.dev,
  Hans de Goede <hdegoede@redhat.com>, Bharath SM <bharathsm@microsoft.com>,
  "Tigran A . Aivazian" <aivazian.tigran@gmail.com>,
  David Sterba <dsterba@suse.com>, Xiubo Li <xiubli@redhat.com>,
- Ryusuke Konishi <konishi.ryusuke@gmail.com>, Jens Axboe <axboe@kernel.dk>,
- Sungjong Seo <sj1557.seo@samsung.com>, v9fs@lists.linux.dev,
- Kent Overstreet <kent.overstreet@linux.dev>, linux-unionfs@vger.kernel.org,
- Benjamin LaHaise <bcrl@kvack.org>, Jeffle Xu <jefflexu@linux.alibaba.com>,
+ Ryusuke Konishi <konishi.ryusuke@gmail.com>, Vlastimil Babka <vbabka@suse.cz>,
+ Jens Axboe <axboe@kernel.dk>, Sungjong Seo <sj1557.seo@samsung.com>,
+ v9fs@lists.linux.dev, Kent Overstreet <kent.overstreet@linux.dev>,
+ linux-unionfs@vger.kernel.org, Benjamin LaHaise <bcrl@kvack.org>,
+ Jeffle Xu <jefflexu@linux.alibaba.com>,
  Johannes Berg <johannes@sipsolutions.net>, Johannes Thumshirn <jth@kernel.org>,
  David Woodhouse <dwmw2@infradead.org>, linux-karma-devel@lists.sourceforge.net,
  linux-btrfs@vger.kernel.org, Alexander Viro <viro@zeniv.linux.org.uk>
@@ -295,106 +247,39 @@ Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Errors-To: jfs-discussion-bounces@lists.sourceforge.net
 
-On 6/16/25 21:33, Lorenzo Stoakes wrote:
+On Mon, Jun 16, 2025 at 08:33:29PM +0100, Lorenzo Stoakes wrote:
 > Since commit c84bf6dd2b83 ("mm: introduce new .mmap_prepare() file
 > callback"), the f_op->mmap() hook has been deprecated in favour of
 > f_op->mmap_prepare().
 > 
-> The generic mmap handlers are very simple, so we can very easily convert
-> these in advance of converting file systems which use them.
+> This callback is invoked in the mmap() logic far earlier, so error handling
+> can be performed more safely without complicated and bug-prone state
+> unwinding required should an error arise.
 > 
-> This patch does so.
+> This hook also avoids passing a pointer to a not-yet-correctly-established
+> VMA avoiding any issues with referencing this data structure.
+> 
+> It rather provides a pointer to the new struct vm_area_desc descriptor type
+> which contains all required state and allows easy setting of required
+> parameters without any consideration needing to be paid to locking or
+> reference counts.
+> 
+> Note that nested filesystems like overlayfs are compatible with an
+> .mmap_prepare() callback since commit bb666b7c2707 ("mm: add mmap_prepare()
+> compatibility layer for nested file systems").
+> 
+> In this patch we apply this change to file systems with relatively simple
+> mmap() hook logic - exfat, ceph, f2fs, bcachefs, zonefs, btrfs, ocfs2,
+> orangefs, nilfs2, romfs, ramfs and aio.
 > 
 > Signed-off-by: Lorenzo Stoakes <lorenzo.stoakes@oracle.com>
-
-Acked-by: Vlastimil Babka <vbabka@suse.cz>
-
 > ---
->  include/linux/fs.h |  6 ++++--
->  mm/filemap.c       | 29 +++++++++++++++++++++++++++++
->  2 files changed, 33 insertions(+), 2 deletions(-)
-> 
-> diff --git a/include/linux/fs.h b/include/linux/fs.h
-> index 7120f80255b3..65cffc445fcc 100644
-> --- a/include/linux/fs.h
-> +++ b/include/linux/fs.h
-> @@ -3395,8 +3395,10 @@ extern void inode_add_lru(struct inode *inode);
->  extern int sb_set_blocksize(struct super_block *, int);
->  extern int sb_min_blocksize(struct super_block *, int);
->  
-> -extern int generic_file_mmap(struct file *, struct vm_area_struct *);
-> -extern int generic_file_readonly_mmap(struct file *, struct vm_area_struct *);
-> +int generic_file_mmap(struct file *, struct vm_area_struct *);
-> +int generic_file_mmap_prepare(struct vm_area_desc *desc);
-> +int generic_file_readonly_mmap(struct file *, struct vm_area_struct *);
-> +int generic_file_readonly_mmap_prepare(struct vm_area_desc *desc);
->  extern ssize_t generic_write_checks(struct kiocb *, struct iov_iter *);
->  int generic_write_checks_count(struct kiocb *iocb, loff_t *count);
->  extern int generic_write_check_limits(struct file *file, loff_t pos,
-> diff --git a/mm/filemap.c b/mm/filemap.c
-> index 93fbc2ef232a..e75608cbf420 100644
-> --- a/mm/filemap.c
-> +++ b/mm/filemap.c
-> @@ -3847,6 +3847,18 @@ int generic_file_mmap(struct file *file, struct vm_area_struct *vma)
->  	return 0;
->  }
->  
-> +int generic_file_mmap_prepare(struct vm_area_desc *desc)
-> +{
-> +	struct file *file = desc->file;
-> +	struct address_space *mapping = file->f_mapping;
-> +
-> +	if (!mapping->a_ops->read_folio)
-> +		return -ENOEXEC;
-> +	file_accessed(file);
-> +	desc->vm_ops = &generic_file_vm_ops;
-> +	return 0;
-> +}
-> +
->  /*
->   * This is for filesystems which do not implement ->writepage.
->   */
-> @@ -3856,6 +3868,13 @@ int generic_file_readonly_mmap(struct file *file, struct vm_area_struct *vma)
->  		return -EINVAL;
->  	return generic_file_mmap(file, vma);
->  }
-> +
-> +int generic_file_readonly_mmap_prepare(struct vm_area_desc *desc)
-> +{
-> +	if (is_shared_maywrite(desc->vm_flags))
-> +		return -EINVAL;
-> +	return generic_file_mmap_prepare(desc);
-> +}
->  #else
->  vm_fault_t filemap_page_mkwrite(struct vm_fault *vmf)
->  {
-> @@ -3865,15 +3884,25 @@ int generic_file_mmap(struct file *file, struct vm_area_struct *vma)
->  {
->  	return -ENOSYS;
->  }
-> +int generic_file_mmap_prepare(struct vm_area_desc *desc)
-> +{
-> +	return -ENOSYS;
-> +}
->  int generic_file_readonly_mmap(struct file *file, struct vm_area_struct *vma)
->  {
->  	return -ENOSYS;
->  }
-> +int generic_file_readonly_mmap_prepare(struct vm_area_desc *desc)
-> +{
-> +	return -ENOSYS;
-> +}
->  #endif /* CONFIG_MMU */
->  
->  EXPORT_SYMBOL(filemap_page_mkwrite);
->  EXPORT_SYMBOL(generic_file_mmap);
-> +EXPORT_SYMBOL(generic_file_mmap_prepare);
->  EXPORT_SYMBOL(generic_file_readonly_mmap);
-> +EXPORT_SYMBOL(generic_file_readonly_mmap_prepare);
->  
->  static struct folio *do_read_cache_folio(struct address_space *mapping,
->  		pgoff_t index, filler_t filler, struct file *file, gfp_t gfp)
 
+For
+
+>  fs/btrfs/file.c       |  7 ++++---
+
+Acked-by: David Sterba <dsterba@suse.com>
 
 
 _______________________________________________
