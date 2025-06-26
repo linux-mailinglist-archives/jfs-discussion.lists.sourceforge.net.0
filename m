@@ -2,76 +2,76 @@ Return-Path: <jfs-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+jfs-discussion@lfdr.de
 Delivered-To: lists+jfs-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1FCE9AEA447
-	for <lists+jfs-discussion@lfdr.de>; Thu, 26 Jun 2025 19:16:57 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5EE20AEA446
+	for <lists+jfs-discussion@lfdr.de>; Thu, 26 Jun 2025 19:16:56 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.sourceforge.net; s=beta; h=Content-Transfer-Encoding:Content-Type:Cc:
 	Reply-To:From:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:To:Sender:
-	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
-	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
-	bh=u+fITb/7E3pBqK7SahR1cV5bYPPRTxylN5Bipl4JJ30=; b=nGENzq8ZaGkPN812mbZOQv1RTB
-	Ng95kdWSTXbJiLMvthi/5DyKjwBBDtW1Lz7TAXQHptmMKb73Zl1eMwDJcXtFnbcxpPjvrM6Bbr/7f
-	LKqecla/CADqdCLEJq60v1E7mkarJtiGRkRiuG87xfuOmEpOltjQ0rEV4hFmOH37l+4s=;
+	List-Unsubscribe:List-Id:Subject:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:To:Sender:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=IAuwuvocQlS34jXmcM6OADAkcVg3UCYH6+BSyls7rRI=; b=QkvXBLjGPaZ6hUU7RVs6KGXNsM
+	sPZeDxvsi2EZVvhB8jj5Hix11npXoJvp+ghBGSKi/H+cTldd76qV5erEIcPDpUvK2D1KraboJSE49
+	k60XYuZtr9AJ1kH5G39Ncuit+IuZi3/0hS2z7ynB12CxYnayze4vxW6QY5O8oVaZyKzM=;
 Received: from [127.0.0.1] (helo=sfs-ml-2.v29.lw.sourceforge.com)
 	by sfs-ml-2.v29.lw.sourceforge.com with esmtp (Exim 4.95)
 	(envelope-from <jfs-discussion-bounces@lists.sourceforge.net>)
-	id 1uUqD4-0001fS-6w;
-	Thu, 26 Jun 2025 17:16:26 +0000
+	id 1uUqD3-0001fC-JO;
+	Thu, 26 Jun 2025 17:16:25 +0000
 Received: from [172.30.29.66] (helo=mx.sourceforge.net)
- by sfs-ml-2.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
+ by sfs-ml-4.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
  TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (Exim 4.95)
- (envelope-from <frank.li@vivo.com>) id 1uUq7E-00016T-AZ;
- Thu, 26 Jun 2025 17:10:26 +0000
+ (envelope-from <frank.li@vivo.com>) id 1uUq7F-0003Ce-Dd;
+ Thu, 26 Jun 2025 17:10:25 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=sourceforge.net; s=x; h=MIME-Version:Content-Type:Content-Transfer-Encoding
- :Message-Id:Date:Subject:Cc:To:From:Sender:Reply-To:Content-ID:
- Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
- :Resent-Message-ID:In-Reply-To:References:List-Id:List-Help:List-Unsubscribe:
+ :References:In-Reply-To:Message-Id:Date:Subject:Cc:To:From:Sender:Reply-To:
+ Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
+ Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=rmYVQNU2DXX8cxu/IfAvuzqp02Ybqd4zVBjOeUXs1tA=; b=YqOJZnA5JcAr249dLR//HVLWTS
- jPlBnwxPzkLQ+XI1jjqliOorjf2sXYBMgMxAsLSQJLGrzJ3DmU4q7A/CZs16hFMHT4Tm8Fw3ssO+7
- xMsxCxZcbW0yMB7xliqzBfmOHk56SuCyvQZ7xtm7b6ssoF8pTJ8fIQ20p67exsLI/bkk=;
+ bh=KhRwRsxneRG5Tmr1cDwh8fsprR2psQtekNQEDMRwxHI=; b=JMrnWcl2hG7gDo6yADxJiq35fD
+ fwc6xAHOK4RaRE+1p3DzTCSmjEXTQXkaHTJdIEU506huPCsrcPzIgDmp3jJn31eGF3YGmeMu1dR1z
+ dKSzgYcdeR3RSyJtpxoPw0kTI8v8/lichwyuMFexiabF7bWmmV+HPa7nSWqyIZzUeixI=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
- h=MIME-Version:Content-Type:Content-Transfer-Encoding:Message-Id:Date:
- Subject:Cc:To:From:Sender:Reply-To:Content-ID:Content-Description:Resent-Date
- :Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
- References:List-Id:List-Help:List-Unsubscribe:List-Subscribe:List-Post:
- List-Owner:List-Archive; bh=rmYVQNU2DXX8cxu/IfAvuzqp02Ybqd4zVBjOeUXs1tA=; b=C
- E5DZI4U1ShH8quHFf+xWI4BR9fX2PgHuEm8iVDRkqDsr+8JoiXJi05oKvChCEKs9K4gyBwZLAhiP6
- vMt3aWeccNS7LcTEMs3/cwxaeBwAxidt5HCXAM9TUYLDSh7sivsv7IPuEIa+ArdSSctSPjiHMI0qB
- J7VRUUVaZnLiSstg=;
+ h=MIME-Version:Content-Type:Content-Transfer-Encoding:References:
+ In-Reply-To:Message-Id:Date:Subject:Cc:To:From:Sender:Reply-To:Content-ID:
+ Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+ :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
+ List-Post:List-Owner:List-Archive;
+ bh=KhRwRsxneRG5Tmr1cDwh8fsprR2psQtekNQEDMRwxHI=; b=JUO9kAKub7h8N5Szdv4mXeE63D
+ cbyK3N1H5M9Oeec02Y7uNafs3/jV1rny1YXa4nYAMbtRiBXZc0pPiB7h12dVaiS5xOUKF/m9Xzgx0
+ BjcdPpgzFCdSYH7T9n3ErjMr76EXeZMG0IRXgOv1mDrtQYmyHIxX+P8MTBGxWkXt3dQY=;
 Received: from mail-japanwestazon11012028.outbound.protection.outlook.com
  ([40.107.75.28] helo=OS8PR02CU002.outbound.protection.outlook.com)
  by sfi-mx-2.v28.lw.sourceforge.com with esmtps
  (TLS1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.95)
- id 1uUq7D-0007cQ-HS; Thu, 26 Jun 2025 17:10:24 +0000
+ id 1uUq7E-0007cQ-IO; Thu, 26 Jun 2025 17:10:25 +0000
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=KnUwErZ4YGKlgnTmee6e9pvl48EUjoZe2b49pnUF/895vsEHHMaqa/YIMPVGqWSEIV9VsW0ClzpAjqRx7XUXASfDGbQoLhY/RrozI16eC5mN3vtArv21YazqbtH6bwq+qHom9eSrTxzTC1T1/HkFmkspAgLB06ZfCuPlQlz9ZaRHM9XNXgzXF+6kqFAxTVYjmSxgKu4E2flSQRBhHz/fq+AQZnoPokguUp7iOhZsTEWTdix2Wio4HpYDBSVkjTwbyq2+mjrawBUonj/jPPyFWQAH2mFq2IpEA/FE7hLJkD95SrE3ogUZiIpUPZJTsh0WPW8TmTlRdFPSanvQ8qXiKw==
+ b=W+HcSSyGZKgA1nbsDzVHgwP7MnagOo9gSqT8dC+pJzTLRWs5ayIc7DMcWTAHNvyik7njg7vjGemhiLq69suOh8OA1IuNbxk0eMAfnGSbX4b9RhbUWZ8czAkptffKLOXp15S/7GifakOCqNUfZEYFL9Dkyj/h0abtX35YjDmF7b6bHFvp4zkszpxsdjnkuhmipzirHE+TiA3xHy9CK641nexID4zYSRKU7zucQdTeeFkPTGKugYEbxv9A48NAqjYZ4x+tZxqB/VjNwUnmV8JRY27aag5oBzpuvXyA1HdcZUdv1PufHrfI0m3yqbhNb0wwS4Wi5WvFrCj6w7QgQcxsSg==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
  s=arcselector10001;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=rmYVQNU2DXX8cxu/IfAvuzqp02Ybqd4zVBjOeUXs1tA=;
- b=Z8xn4rAM77O8sa43NjUa+RIniyXH68oochyVAfkS7i1yRnwYh2PNIPkawu0WsFllXY5PHnIMQGVU5GgyUSimNl6n4IVko0ZqX9E0zZuXRAMuc/9qnHZ0Uq6nRASmtuPUAKosIJzIZwT4nkRl0i90E+GHhET3JgCZd52u5R6lTkgjxJCPn6EnrRUj9GscRT8FrdUkp5Pvj/rVDeCP9gh683KFs5nMsi50Dkl2+l18vBZFPWolrk7ZRkxQSvBzVdWg0WWcjwaRW9Z8J3oSLRMGjRoMJ/92ihAacRR5iAcQpvjHy2txWL92pwgKgNVeo0R2KwWKdfuiNWsepIXVlXwUQg==
+ bh=KhRwRsxneRG5Tmr1cDwh8fsprR2psQtekNQEDMRwxHI=;
+ b=sE3X6rQ5Py9V+e1uH+nTgb4xWYgs1XKk6mocbPC+dyUfHZ2CxP26KSL1cHyOlAYy67NaOAroGLi1DI19nOxfaBJlButTDan2V55AuWLgpCrxeV3jp0HFYWvgkUSxX3L67qSQyrgF0PFvnbE7tbPrOQPqfSQDRIznsJuZj2yQdPJM75ONGGF0CCtUw5bsj2V+AA6fbcM4a1FNsjCeOoQk7OFIYApoHkrNn58UQBIZ24DYdoE3rLB9G/tLTFEDkZmZ/phzm+gpCZrBMI6luXepjxacjFtGiUtXraJ2EU0I9v7hc76u2G71W24woXXtqDPUgi5Y7jnl1mrD/URwjKHVvA==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
  smtp.mailfrom=vivo.com; dmarc=pass action=none header.from=vivo.com;
  dkim=pass header.d=vivo.com; arc=none
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=vivo.com; s=selector2; 
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=rmYVQNU2DXX8cxu/IfAvuzqp02Ybqd4zVBjOeUXs1tA=;
- b=REMqDf32WLV1KQCLW702/ca0suUex22PY4TkfTxKUq45OLpUmYgIhftLlPKRDiax+BFOGaR0SVEp8g9IG00SC7oaKvYDIT3fk2IZWamBjEcG6I8PnCWyFhRf7xcO6bdQNDd9JoXYoE6OAj3642mGTFhxqboYEPAiHnpYeESzWFQCJVqamnVvi1sI0U0e93rSdDB3x868l4BZCkPh5pslTHgFet2WOpFyALJ0bZbaqeTxFFp0IBXzgyAKxshMknJTEM+hmaFBMX7+StCg4Kk06IAzPOCNvWTZDZxhOKMri9aXD944qZWTuJDxCtOLLfYYCyaRy0Jjk0LNLtlzpK4X7Q==
+ bh=KhRwRsxneRG5Tmr1cDwh8fsprR2psQtekNQEDMRwxHI=;
+ b=L4Tx1cpNTZ4kgl0ma/UfnYK9hthKi412qv5FiPvEjWjZiZtmrsHUdmXCTH6eZnVAgWd0ijZin1F5TLZk3PRSKpMOzHY6sjxHKo/4JC2uUYBr8Dqukurbuki6DJH1jWjtTjja2NrzgvhAGGGbbAN+W6yhKVHHhKpauArcYrdb7TNJQt07LGo0gv/X9oOX35E7a9/qZF9CfCADmiWpgf/lAA8FdxF2Z2LxgR4aZX4Beo9d7Wo7p9sErhtF7495z3vpeDJ4P53pAxz9Y9cUPz4w8abLuXcUei0LY98nhglJeCKhTwaTTsEBdWBYrGQLgZuvBru61IzqGSei7P7Y1Cfv4w==
 Authentication-Results: dkim=none (message not signed)
  header.d=none;dmarc=none action=none header.from=vivo.com;
 Received: from SEZPR06MB5269.apcprd06.prod.outlook.com (2603:1096:101:78::6)
  by TY0PR06MB5610.apcprd06.prod.outlook.com (2603:1096:400:328::7) with
  Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.8880.18; Thu, 26 Jun
- 2025 17:10:09 +0000
+ 2025 17:10:15 +0000
 Received: from SEZPR06MB5269.apcprd06.prod.outlook.com
  ([fe80::8c74:6703:81f7:9535]) by SEZPR06MB5269.apcprd06.prod.outlook.com
  ([fe80::8c74:6703:81f7:9535%7]) with mapi id 15.20.8857.026; Thu, 26 Jun 2025
- 17:10:08 +0000
+ 17:10:15 +0000
 To: axboe@kernel.dk, aivazian.tigran@gmail.com, viro@zeniv.linux.org.uk,
  brauner@kernel.org, jack@suse.cz, linkinjeon@kernel.org,
  sj1557.seo@samsung.com, yuezhang.mo@sony.com, slava@dubeyko.com,
@@ -80,87 +80,89 @@ To: axboe@kernel.dk, aivazian.tigran@gmail.com, viro@zeniv.linux.org.uk,
  me@bobcopeland.com, willy@infradead.org, josef@toxicpanda.com,
  kovalev@altlinux.org, dave@stgolabs.net, mhocko@suse.com,
  chentaotao@didiglobal.com
-Date: Thu, 26 Jun 2025 11:30:19 -0600
-Message-Id: <20250626173023.2702554-1-frank.li@vivo.com>
+Date: Thu, 26 Jun 2025 11:30:20 -0600
+Message-Id: <20250626173023.2702554-2-frank.li@vivo.com>
 X-Mailer: git-send-email 2.34.1
+In-Reply-To: <20250626173023.2702554-1-frank.li@vivo.com>
+References: <20250626173023.2702554-1-frank.li@vivo.com>
 X-ClientProxiedBy: SGXP274CA0008.SGPP274.PROD.OUTLOOK.COM (2603:1096:4:b8::20)
  To SEZPR06MB5269.apcprd06.prod.outlook.com
  (2603:1096:101:78::6)
 MIME-Version: 1.0
 X-MS-PublicTrafficType: Email
 X-MS-TrafficTypeDiagnostic: SEZPR06MB5269:EE_|TY0PR06MB5610:EE_
-X-MS-Office365-Filtering-Correlation-Id: b99d971c-4b95-4e28-66e9-08ddb4d44d47
+X-MS-Office365-Filtering-Correlation-Id: 58ada354-3971-4233-eeba-08ddb4d45179
 X-MS-Exchange-SenderADCheck: 1
 X-MS-Exchange-AntiSpam-Relay: 0
 X-Microsoft-Antispam: BCL:0;
  ARA:13230040|366016|7416014|376014|52116014|1800799024|38350700014|921020; 
-X-Microsoft-Antispam-Message-Info: =?us-ascii?Q?lP0XEJzRFMDGOXAAnsEWHG4RPipkGoA3f7qS3kKmhXN6o3JGgkusOymSpx8a?=
- =?us-ascii?Q?kIqnuYjHjtq3XTUnk8hfEen9rrCthm41o0sfG7duuFdIgk+evLsJT8/3mfi7?=
- =?us-ascii?Q?pX2Mwhg2hQkU1QaaSxuECmVDySvQD0kFecbsglDr6/02RR7W6heyAIjlq5ux?=
- =?us-ascii?Q?pSMvC3c4qgw5PG14yjNOLlKnS8rRqtCkzJFXdlIvyIPz7ItN2S0FFB2QWWnP?=
- =?us-ascii?Q?upvjkYo3VnECC8JsnGIWnkgViZmFJYVhZJFDw1UkPwhMaHSgmW2s6qwxyLu9?=
- =?us-ascii?Q?Y+n4oQcjoFAY6+aJbYHkp8/zZ1obOXSShJ0jqgOb+BOqsUsO+iESaWkSKZ80?=
- =?us-ascii?Q?dO+RFWZaJ9l/nUtYo825foJvh21jWa2CG1aUgl1daNK39sidrZ+qFZZO/6BJ?=
- =?us-ascii?Q?QpXC9PnkMXuL11G2c4dWTnoZEFYVrrQW+F3PGqqj7FVEd3ieHbEeG4ngTMeY?=
- =?us-ascii?Q?T1xwPP6cDT1SAdor3WoNkC8helOmJRVWg75vvDK6nDKX0ZsZBxbh8oqTREfb?=
- =?us-ascii?Q?aPi6h9E35hvoED6CUYOxW5tJsGrQehn0fFb6KfLCZaFEfWbVDV43noPO1Wc9?=
- =?us-ascii?Q?r/nMRPMezW4Rq54YcdT45dgXxEBPyOYEynzQ9Q86EPdH01nOQRj6zTYxiJlP?=
- =?us-ascii?Q?tqtaRjcEANy54PS3/zP3eJ7lP1/gGdUCYxpG8FhBHq+pj0WJT93a4IVZxWo8?=
- =?us-ascii?Q?v9FoVce1iAZ1TytX8XzpArJlEqNjNA4D4gtVw2yIPTeIyiDe1/2uW8ITqxaV?=
- =?us-ascii?Q?FXgYVTEZYSUwwZxhM0BcBp8SDZfJQpoHUbSM6AJR3gaT3MQn1IC3yuVh7/lO?=
- =?us-ascii?Q?gYqDvvRXoMBSTw0DNS9UhPXGS2j30EfswKiveR7yEDd69B9Yd52lKQzbkOJ+?=
- =?us-ascii?Q?ZW2lZRaL+54UNv33OJ0h3/KuxHq4ON+QaIzHZj8WeGvGyvw5CIqi4mEBt42H?=
- =?us-ascii?Q?ap9ySfapUNBLijZ/d/NsNkg1UQ991wmLU5oOb3x7IVMCfNsMw8s7wCAWmUxs?=
- =?us-ascii?Q?yto8hJUrO8Gd0jtT2axJt7OstD7eWTswQJPxo9MYv1hkaDIMtrRwO9CL76PK?=
- =?us-ascii?Q?Nr5D/ILiMcUyo62Mrlsywhx0rpHGkBcVvYttlrTIieUNruU+UjhqFwq8uFSg?=
- =?us-ascii?Q?osx08FXzQA3UvmxPmtk6fGvKDOeJukJdUzdKXaIx16ibSejFdeJIc47MSnGT?=
- =?us-ascii?Q?8rJ1+6qm0l/80a51BENpSQaxXxZxKDxW9kg5hXMiib3HS4SgTZFVseaf531u?=
- =?us-ascii?Q?pr6dqN2jtBjNDRASWDfQEjAQwYjcl3Gv3wDkDD5nqjqsi0I+5iGbfv+BOtPX?=
- =?us-ascii?Q?W0c/JrC5N2pft9E68x51zfKFBGR/vNReF2QXFhcXAnfof/LWmWmOl+T+vLlw?=
- =?us-ascii?Q?JvN89NhMIVTkh1omce/3WBFN+I3jVtad9GQygP9sbVYFMOE8LsJ16tWl8BL8?=
- =?us-ascii?Q?2s6u4AYM4e+dViWR3FGPJGojkuXolReJleRWL9XevQzLpxF5na92G1sa9uld?=
- =?us-ascii?Q?NlHIJDMlfEAlaQs=3D?=
+X-Microsoft-Antispam-Message-Info: =?us-ascii?Q?F541MZAS0F7DjZmZdVa0pMzi9HWhvyyAYuGeVPQPH6CqLdQKYKTwOl4evUE4?=
+ =?us-ascii?Q?vE4TwwVzmjHaEBMdvz/hwsr9DVU2gABWNmkBNVnVxlN+LAoB7qGwnkEGnmdl?=
+ =?us-ascii?Q?32jWmjtFI2tsj80qoCuyXV8ahB5/RPwq7Bqr9NrNxIpgoQOvAswXHL5NzOfJ?=
+ =?us-ascii?Q?7Eh29vNfQEgnjIc66Hmo6mIauWB3x5mfoszfy4gIIoO6SF5HKhJrYlbxZrOE?=
+ =?us-ascii?Q?CilUMa+LGgPvb4RicV+1iKPsR3QUsxwZIg6W591jQCRrasxFFGuhe9SCDGyy?=
+ =?us-ascii?Q?kNE1TvVnBATJ1JeHI/xUFmBEEt2N3v22wddT5ipttT+fSA7/BYLH3TgEoCCg?=
+ =?us-ascii?Q?yyCMUGGVDutfmLf8CRK8lA51xrBocEPGbAjNzpiNetyRsmNuF6+W0bzuqVn6?=
+ =?us-ascii?Q?zNUFLFW/AoklpAUFyuXjrUZZcIGIR0kSFAW2yCZUqK3FuxBYd58P53yloC+n?=
+ =?us-ascii?Q?UMVRbQKIgvI6F6oR+9Q9zMnQFEPvdeqf7elh2umR6AfY9AgAP03dFZCBLbfh?=
+ =?us-ascii?Q?VL+ccu1dbI7CyOrwkalQnujJW5drcb55xmxVIWRRMH6sktuHVvXiI1+CcLfx?=
+ =?us-ascii?Q?i4mibUZf7bciJkEOovDXzvCY/8eEj9t12tG5arjcgm3ozzRD0MqFYuqApVqR?=
+ =?us-ascii?Q?KTBjpEf00QVReDOmmZGGNFWVL2Lkej4/0IiiePrDNtFxGmXuolOwqMkJRY3x?=
+ =?us-ascii?Q?Nc+6GCiuYVldh50kuueOXNiRut5+/Wan5xyFTgTfJABzs7a12RKPorfwtiVv?=
+ =?us-ascii?Q?Ks47Kndrgc7tbos794CVqnUn9OamfXbUFeeGjNj7k+IQLYa1gKmjkje+Zl9I?=
+ =?us-ascii?Q?JthbIKay59eM0RE1eIYTN1qQrJ5WEgcqGwUZ2D9Yk/In+jKUBHrERwXJ+pr9?=
+ =?us-ascii?Q?fVkqLEg1KHo0PTJydtfKGD7U3UGAKj/8cI5c4h+CpEXpXkRum79E4RoKc87c?=
+ =?us-ascii?Q?Q7KmhodwmiPjCpltr1GldZnmAkGqhjGJug9Sp6/A9mpEC3V5LYIDrPB70Y+Q?=
+ =?us-ascii?Q?lQfnZpnQk8h3vyft8tVcjHR4rqxr9oAsxRK7ymJQZNhDJwIrBTAnwALbRDpv?=
+ =?us-ascii?Q?NJEav895JMQzDCc5VGiNgT0c+kyKWfcwlaqKKhVQ1MAlRsP+LihEQgBQajBq?=
+ =?us-ascii?Q?PqUrP4td4WLDfYP+WKUpU2rgeSqXr6YG2jkfad6HMfAFffCNoXQPgFu84XhF?=
+ =?us-ascii?Q?G5L20fhhmej/OgyilhiZx38Y0ZexABpOe23M6OhsvY23GCW1gtcGZazv5X/u?=
+ =?us-ascii?Q?H1M1ZwEGZFOqMAfAfQ9znnGjAc4DDgXwj44UkzhrqhrMwPG15eKLfTd/51HY?=
+ =?us-ascii?Q?7MywJonaugHISVdNJj83Sl3bDPDYq8q227eVKJKflr5W8lcqhmQzBwPvEAqE?=
+ =?us-ascii?Q?9AsdgnDvEosvm+Qlx8FNp9bE5VlRbbs0yF8mK4XNDxV3BwkwYzOkCdFxcocx?=
+ =?us-ascii?Q?ZE83kbsA2JJ0NvbIQkF9owQlztj9JEKt4GSq/eC2RwTerxA7utONPHgpL6if?=
+ =?us-ascii?Q?ZJCgb5Zi/EreJk8=3D?=
 X-Forefront-Antispam-Report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
  IPV:NLI; SFV:NSPM; H:SEZPR06MB5269.apcprd06.prod.outlook.com; PTR:; CAT:NONE;
  SFS:(13230040)(366016)(7416014)(376014)(52116014)(1800799024)(38350700014)(921020);
  DIR:OUT; SFP:1101; 
 X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?ySK/GLbqHpiCg/NkWJZubmly88Uxn9WvHH7dJCuElAcI5SrLQ6JE3+9gaSQB?=
- =?us-ascii?Q?GoYwSF9r5heWmqbojEUwne+hWh4a7nx0Yhvd912hKTlwNQZhNjDcfC6qHZSU?=
- =?us-ascii?Q?aK+BR0QmUM1Cf9qDqr7bKja0r9PinciP2TJ5LYWNUMHT0XPsJc101XKxSfZS?=
- =?us-ascii?Q?cb7KxKTuDIakTAuscoWxbPrVJgXe3/lB70g00t3wsYGeird6kNA+6tD/cXtD?=
- =?us-ascii?Q?yh2TQu3r7MCl1UI3ZcDFjN7qGvZaQh2bEo9HuWuMt32kf8GbGydU6hzRhpxe?=
- =?us-ascii?Q?F5GJ/QoYf6Ludmh9JMxxe/FRyP/D11T6PUIPvgTr60cDW29lGuw7ik1/yLCV?=
- =?us-ascii?Q?gcZfSSytVzPxdVxT3XdXB+zTBF8uQcm1D7/Ehe/m1XPDyctkXrHuxhoPjyVS?=
- =?us-ascii?Q?oesN0iL2cRLYDc4rzgvGP1wB55NYaFDJzjhKP7DyDnGwr04C3XZVN6o1wEbB?=
- =?us-ascii?Q?qi2y1GYop5BBAjIb/Hd7RXUHQzEKbCcDZ0++5+ob8KY6cIMVFt/cRpZ4Cy0Y?=
- =?us-ascii?Q?1M2o6g1VaxLxgo3txnxnDR/1o/CP54RACoOu6UFXRcb2XM7Tg1oK3vPR5/fQ?=
- =?us-ascii?Q?tYedNXIaDSmFzbZQhERgYcmRZR0lAomJuxhnEhacrKrhl5CDiqBK9jFgHsg6?=
- =?us-ascii?Q?8VA/iGBA7zz/nvOvwKG3tEhm7/5KuyktdO7xhHhecYSUyUgd+FUvmjOWGgB7?=
- =?us-ascii?Q?MJFxuR1PAQTSGXzXUks0NL1zpYm6AJVi3zxzkAgWwAFRPeJsOXnZ5pXZ1nee?=
- =?us-ascii?Q?bs5IOh66xDDsd1Pb5OVE4AcQRNaG/SJ9HTy2xfWpVN+kClX0Ch1se5EpnHou?=
- =?us-ascii?Q?VdMi+PbHGPrNKJasu/09nv3ND1vYvvOaIMPdh9ZRt/nTZJhAWqbwbrDgqJhr?=
- =?us-ascii?Q?ihCIoGBpD6s+3C7aGwjotOJrPVxccsP38XX1i+t1c/e3RhW5CGy01iaLT3Zl?=
- =?us-ascii?Q?1nCU2GkPaTr5XDHq38/ys7LXfw2rm+JnTgZkwAo/UVxZh7a5k0lsoyKRCdEg?=
- =?us-ascii?Q?1ws1bKHHfwsqm//6/2Q2BYUNl5Hjcl4diydMbcOJzat2RqnCj0A3QfIEjGmj?=
- =?us-ascii?Q?zfy9GYRqDJNo1sGMzK5bZ54lKErtAGX37wV+SVpoRNQeuNx7SminWhvez9gO?=
- =?us-ascii?Q?ebBlTGZu5lqJwV3EHdHBRqkJUMdOFbULjbrBziCK2ZP9CZhNSJ1AGiE7TSbT?=
- =?us-ascii?Q?K8zzdaoeXHNEfmFh+BXP4H8dV9nu8vqEBONtor090sE+lK4UzT/HCCdYpVb6?=
- =?us-ascii?Q?guZFKMwHDF0pOyWLmqlULmqWnjlMdhLqoCxkZhrSoOx/wyDxaPebrt8uRIrI?=
- =?us-ascii?Q?BZIl4ibZJiwiIXxj20g4jMV24nebSx21HC3XtfG5Y23IAsGbAy5ZzGlupdh3?=
- =?us-ascii?Q?SII1Fow6NxpHmyE0UeZKmCriXn3DKEI6V80eJexr9xvzlEmtOFoFB27kDdxB?=
- =?us-ascii?Q?ErLSHVeHszh2tSibGEKWmrhp9xy8oacCbbcx/4+recl+3/Zv0gFWIt4CSrDH?=
- =?us-ascii?Q?ulZxvZhB1KnwJ+3NtfuldMUBEHSIfaojDJCPltzX2WJZE1hKBQ/sGLwULbSf?=
- =?us-ascii?Q?M2eY93MyaYCOUoLM/hjc090seyp5DObKklJ1kWx1?=
+X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?zfRDdx+713q9ugl5i4oynrqjL03Y007wu/p5Gn031ab6MKPjQLzGzKxmCHfX?=
+ =?us-ascii?Q?m4PLYC8piXxdNtzkG54P+P+06hifQ3mKjGvf4Zg1ghnJkZUoy+gHNXZxIrF8?=
+ =?us-ascii?Q?Qrn91U2oBV14ODsG+6FHNWDWTDlyzJ5ByIKfWbkWw29AixIXoRFGYta4IfXU?=
+ =?us-ascii?Q?YerMtvAGCoYm0Z6liUd3llsEdgFwWRbKJSQ7r5R4OpN9/k1lbHY4z4BOow/H?=
+ =?us-ascii?Q?xdLna89DASx5LwPHlndEMcRm8jCNshZ5ftzwyDwWPCrtsYeJowWEoxmbMi8C?=
+ =?us-ascii?Q?fu99LAv45ZELcatu7gV4Ax0AiWGA6ZkIAC95c29EJQngv9MWjvygT+xSu914?=
+ =?us-ascii?Q?uQQgVhKNLA6eXU6l3La8Wt7T7uSba5E94cb0mzDjfdka3hH91K39S9og3WgH?=
+ =?us-ascii?Q?dhD3ZEDy9+e8DHEK0ILlq8wohSJoZddvqNUL2TjpIhuJ3jmurEd4GtnGrr/O?=
+ =?us-ascii?Q?BiGqSOTEZzryN6lMTIsI/49GMYhnWiCxKqr6SGbycuFoSK/n2Z4gdNWMlNhB?=
+ =?us-ascii?Q?iSU4Y6DXDbLg1R7XC6f/1PZVpYn/RqyFmEHta/b+AsD5ZEXfx9A6w8cGC00S?=
+ =?us-ascii?Q?3WYWWxgPQfgMQiZfUhKQrVweF5nPZI+DKAK4MqgJFU1a/1kYP8EFatPYOi0m?=
+ =?us-ascii?Q?MfDxF3HvL5jgJ/rOj8uTfr8VX6HrBnXyUAk1pyl0sdKOP0mR/wCk0kJVjAVo?=
+ =?us-ascii?Q?wpH66o5/rufBsyRxMX4DA/Rr4FxnjHVaCgpqBFktSeJ4MqscZnXFhyuhuNHQ?=
+ =?us-ascii?Q?LnTIBLQCNokGXqAO2/wXpgdsnM8vrX0zWy/LaWsiJG1g3gfIgGA/38f7p270?=
+ =?us-ascii?Q?Q5TBrsmziFF3czzULwTahwfTReBoOovGsQfvfzmRUFFbaqyP5HKLGl90yUvm?=
+ =?us-ascii?Q?YGMQTXpiIW85/voIHc0uyDKY+ufO0ynzLajW9CDxe8Tg8O07o+l7VuBBUauh?=
+ =?us-ascii?Q?4yWHAQk0+K1hSEa5ECycj9AY4+KytdqwyrbA9gXwkEX86i9uxRJaK4JrLHbG?=
+ =?us-ascii?Q?NeAyom+ko3uHCKOnqyMCH4/8hHwVEJmIsVDffAE2qenV4I1q9R/fTHjlXIW2?=
+ =?us-ascii?Q?CyTGaFMRFA9QZUuL7/rhA4OyJOSADesW/oANtxJ/2qi03xHAH2I+xBDNOyQh?=
+ =?us-ascii?Q?RPbrUH7h/0JCG7FL1wv7bNUHPXGJzQ5IHVRO3QD70AQUiubc0L9QtxDTrkoD?=
+ =?us-ascii?Q?inLNbUnJqzDUx74lu3q/GdvDdeUENC+pAIdlvO4qtKXFN0Hkc02NrmJnwPxd?=
+ =?us-ascii?Q?Dlvp7EOeiAs0M0oLqFh31PpbubNPi6TdfFpknnuPy9d2SQkWFCilRKlxnbXn?=
+ =?us-ascii?Q?hXoTUb/ivVG5H6lxyUYv/DtgVKvuFk2Tv1cWP+qeFC7NLOCEGBQfVV73eCGx?=
+ =?us-ascii?Q?43S5u1P4PCp9zI0eh8uhjWi1xc30YBrlJfzTwxNaySgyR28Jk0VmkQdIgOm8?=
+ =?us-ascii?Q?5YaOapQ4Pf9sbEic23VTiDC0qOveNlZkhd16ITtwfJDU6a1mY3ylqJ0sIXJH?=
+ =?us-ascii?Q?kWltQ7FzVBt2M0MZA0hCbDF6QhAZBfCajIHhEVXosDfZ9Pr1Cyrv9A6jRk7a?=
+ =?us-ascii?Q?pTJ/hU/xys+n9+CN0yEFDwlGBgreJdBKA4mgx2bI?=
 X-OriginatorOrg: vivo.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: b99d971c-4b95-4e28-66e9-08ddb4d44d47
+X-MS-Exchange-CrossTenant-Network-Message-Id: 58ada354-3971-4233-eeba-08ddb4d45179
 X-MS-Exchange-CrossTenant-AuthSource: SEZPR06MB5269.apcprd06.prod.outlook.com
 X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 26 Jun 2025 17:10:08.3116 (UTC)
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 26 Jun 2025 17:10:15.1638 (UTC)
 X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
 X-MS-Exchange-CrossTenant-Id: 923e42dc-48d5-4cbe-b582-1a797a6412ed
 X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: sNHMNzkJxWdv/HesB/s4a1v6eaTSwSmDaBV520iXtSncWl2qBb8ZZfc7FIbCIfCc4hpsypP2Z41tg3lecm+SAw==
+X-MS-Exchange-CrossTenant-UserPrincipalName: G6yA7lygkt1KYD92qRALbjQqthqkydExtOOtC/PTq7E2M2QNOPOxDWU9Trxu7G/ckryLiXknfeWSuUnlSk2SYg==
 X-MS-Exchange-Transport-CrossTenantHeadersStamped: TY0PR06MB5610
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: Spam detection software,
@@ -169,10 +171,11 @@ X-Spam-Report: Spam detection software,
  message has been attached to this so you can view it or label
  similar future email.  If you have any questions, see
  the administrator of that system for details.
- Content preview:  Hi, This patchset based git [1], and w/ patchset [2]. [1]
- kernel/git/torvalds/linux.git commit
- id=5e9388f7984a9cc7e659a105113f6ccf0aebedd0
- (selftests/bpf: adapt one more case in test_lru_map to the new target_free)
+ Content preview: Refactoring block_write_begin to use struct kiocb for passing
+ write context and flags. Signed-off-by: Yangtao Li <frank.li@vivo.com> ---
+ block/fops.c | 2 +- fs/bfs/file.c | 2 +- fs/buffer.c | 6 +++---
+ fs/exfat/inode.c
+ | 3 +-- fs/ext2/inode.c | 2 +- fs/jfs/inode.c | 2 +- fs/minix/inode.c [...]
  Content analysis details:   (-0.2 points, 5.0 required)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
@@ -187,10 +190,10 @@ X-Spam-Report: Spam detection software,
  domain
  0.0 ARC_VALID              Message has a valid ARC signature
  0.0 ARC_SIGNED             Message has a ARC signature
-X-Headers-End: 1uUq7D-0007cQ-HS
+X-Headers-End: 1uUq7E-0007cQ-IO
 X-Mailman-Approved-At: Thu, 26 Jun 2025 17:16:24 +0000
-Subject: [Jfs-discussion] [PATCH 0/4] hfs/hfsplus: add uncached buffer io
- support
+Subject: [Jfs-discussion] [PATCH 1/4] block: Add struct kiocb pointer to
+ block_write_begin()
 X-BeenThere: jfs-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -213,41 +216,223 @@ Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Errors-To: jfs-discussion-bounces@lists.sourceforge.net
 
-Hi,
+Refactoring block_write_begin to use struct kiocb for passing write context and
+flags.
 
-This patchset based git [1], and w/ patchset [2].
+Signed-off-by: Yangtao Li <frank.li@vivo.com>
+---
+ block/fops.c                | 2 +-
+ fs/bfs/file.c               | 2 +-
+ fs/buffer.c                 | 6 +++---
+ fs/exfat/inode.c            | 3 +--
+ fs/ext2/inode.c             | 2 +-
+ fs/jfs/inode.c              | 2 +-
+ fs/minix/inode.c            | 2 +-
+ fs/nilfs2/inode.c           | 2 +-
+ fs/nilfs2/recovery.c        | 2 +-
+ fs/ntfs3/inode.c            | 2 +-
+ fs/omfs/file.c              | 2 +-
+ fs/udf/inode.c              | 2 +-
+ fs/ufs/inode.c              | 2 +-
+ include/linux/buffer_head.h | 4 ++--
+ 14 files changed, 17 insertions(+), 18 deletions(-)
 
-[1]
-kernel/git/torvalds/linux.git commit id=5e9388f7984a9cc7e659a105113f6ccf0aebedd0
-(selftests/bpf: adapt one more case in test_lru_map to the new target_free)
-
-[2]
-https://lore.kernel.org/all/20250624121149.2927-1-chentaotao@didiglobal.com/
-
-Yangtao Li (4):
-  block: Add struct kiocb pointer to block_write_begin()
-  fs/buffer: parse IOCB_DONTCACHE flag in block_write_begin()
-  hfsplus: enable uncached buffer io support
-  hfs: enable uncached buffer io support
-
- block/fops.c                |  2 +-
- fs/bfs/file.c               |  2 +-
- fs/buffer.c                 | 13 ++++++++-----
- fs/exfat/inode.c            |  3 +--
- fs/ext2/inode.c             |  2 +-
- fs/hfs/inode.c              |  1 +
- fs/hfsplus/inode.c          |  1 +
- fs/jfs/inode.c              |  2 +-
- fs/minix/inode.c            |  2 +-
- fs/nilfs2/inode.c           |  2 +-
- fs/nilfs2/recovery.c        |  2 +-
- fs/ntfs3/inode.c            |  2 +-
- fs/omfs/file.c              |  2 +-
- fs/udf/inode.c              |  2 +-
- fs/ufs/inode.c              |  2 +-
- include/linux/buffer_head.h |  4 ++--
- 16 files changed, 24 insertions(+), 20 deletions(-)
-
+diff --git a/block/fops.c b/block/fops.c
+index 25ebee01e647..52ab6b5ba794 100644
+--- a/block/fops.c
++++ b/block/fops.c
+@@ -499,7 +499,7 @@ static void blkdev_readahead(struct readahead_control *rac)
+ static int blkdev_write_begin(struct kiocb *iocb, struct address_space *mapping,
+ 		loff_t pos, unsigned len, struct folio **foliop, void **fsdata)
+ {
+-	return block_write_begin(mapping, pos, len, foliop, blkdev_get_block);
++	return block_write_begin(iocb, mapping, pos, len, foliop, blkdev_get_block);
+ }
+ 
+ static int blkdev_write_end(struct kiocb *iocb, struct address_space *mapping,
+diff --git a/fs/bfs/file.c b/fs/bfs/file.c
+index 0a8ae8c2346b..860613c876ef 100644
+--- a/fs/bfs/file.c
++++ b/fs/bfs/file.c
+@@ -176,7 +176,7 @@ static int bfs_write_begin(struct kiocb *iocb, struct address_space *mapping,
+ {
+ 	int ret;
+ 
+-	ret = block_write_begin(mapping, pos, len, foliop, bfs_get_block);
++	ret = block_write_begin(iocb, mapping, pos, len, foliop, bfs_get_block);
+ 	if (unlikely(ret))
+ 		bfs_write_failed(mapping, pos + len);
+ 
+diff --git a/fs/buffer.c b/fs/buffer.c
+index b42b502fad2f..f2b7b30a76ca 100644
+--- a/fs/buffer.c
++++ b/fs/buffer.c
+@@ -2247,8 +2247,8 @@ EXPORT_SYMBOL(block_commit_write);
+  *
+  * The filesystem needs to handle block truncation upon failure.
+  */
+-int block_write_begin(struct address_space *mapping, loff_t pos, unsigned len,
+-		struct folio **foliop, get_block_t *get_block)
++int block_write_begin(struct kiocb *iocb, struct address_space *mapping, loff_t pos,
++		unsigned len, struct folio **foliop, get_block_t *get_block)
+ {
+ 	pgoff_t index = pos >> PAGE_SHIFT;
+ 	struct folio *folio;
+@@ -2598,7 +2598,7 @@ int cont_write_begin(struct kiocb *iocb, struct address_space *mapping,
+ 		(*bytes)++;
+ 	}
+ 
+-	return block_write_begin(mapping, pos, len, foliop, get_block);
++	return block_write_begin(iocb, mapping, pos, len, foliop, get_block);
+ }
+ EXPORT_SYMBOL(cont_write_begin);
+ 
+diff --git a/fs/exfat/inode.c b/fs/exfat/inode.c
+index 354edcccc5e3..3032bcc6c951 100644
+--- a/fs/exfat/inode.c
++++ b/fs/exfat/inode.c
+@@ -455,8 +455,7 @@ static int exfat_write_begin(struct kiocb *iocb, struct address_space *mapping,
+ 	if (unlikely(exfat_forced_shutdown(mapping->host->i_sb)))
+ 		return -EIO;
+ 
+-	ret = block_write_begin(mapping, pos, len, foliop, exfat_get_block);
+-
++	ret = block_write_begin(iocb, mapping, pos, len, foliop, exfat_get_block);
+ 	if (ret < 0)
+ 		exfat_write_failed(mapping, pos+len);
+ 
+diff --git a/fs/ext2/inode.c b/fs/ext2/inode.c
+index 66106157c7f0..b6700042db5e 100644
+--- a/fs/ext2/inode.c
++++ b/fs/ext2/inode.c
+@@ -920,7 +920,7 @@ ext2_write_begin(struct kiocb *iocb, struct address_space *mapping,
+ {
+ 	int ret;
+ 
+-	ret = block_write_begin(mapping, pos, len, foliop, ext2_get_block);
++	ret = block_write_begin(iocb, mapping, pos, len, foliop, ext2_get_block);
+ 	if (ret < 0)
+ 		ext2_write_failed(mapping, pos + len);
+ 	return ret;
+diff --git a/fs/jfs/inode.c b/fs/jfs/inode.c
+index ac494186926b..6b90200bab46 100644
+--- a/fs/jfs/inode.c
++++ b/fs/jfs/inode.c
+@@ -296,7 +296,7 @@ static int jfs_write_begin(struct kiocb *iocb, struct address_space *mapping,
+ {
+ 	int ret;
+ 
+-	ret = block_write_begin(mapping, pos, len, foliop, jfs_get_block);
++	ret = block_write_begin(iocb, mapping, pos, len, foliop, jfs_get_block);
+ 	if (unlikely(ret))
+ 		jfs_write_failed(mapping, pos + len);
+ 
+diff --git a/fs/minix/inode.c b/fs/minix/inode.c
+index 01011b5d045e..85fb73b37fe8 100644
+--- a/fs/minix/inode.c
++++ b/fs/minix/inode.c
+@@ -448,7 +448,7 @@ static int minix_write_begin(struct kiocb *iocb, struct address_space *mapping,
+ {
+ 	int ret;
+ 
+-	ret = block_write_begin(mapping, pos, len, foliop, minix_get_block);
++	ret = block_write_begin(iocb, mapping, pos, len, foliop, minix_get_block);
+ 	if (unlikely(ret))
+ 		minix_write_failed(mapping, pos + len);
+ 
+diff --git a/fs/nilfs2/inode.c b/fs/nilfs2/inode.c
+index 0ee4dea7f364..95cc7e1130bc 100644
+--- a/fs/nilfs2/inode.c
++++ b/fs/nilfs2/inode.c
+@@ -229,7 +229,7 @@ static int nilfs_write_begin(struct kiocb *iocb, struct address_space *mapping,
+ 	if (unlikely(err))
+ 		return err;
+ 
+-	err = block_write_begin(mapping, pos, len, foliop, nilfs_get_block);
++	err = block_write_begin(iocb, mapping, pos, len, foliop, nilfs_get_block);
+ 	if (unlikely(err)) {
+ 		nilfs_write_failed(mapping, pos + len);
+ 		nilfs_transaction_abort(inode->i_sb);
+diff --git a/fs/nilfs2/recovery.c b/fs/nilfs2/recovery.c
+index 22aecf6e2344..6bea9f9f445d 100644
+--- a/fs/nilfs2/recovery.c
++++ b/fs/nilfs2/recovery.c
+@@ -541,7 +541,7 @@ static int nilfs_recover_dsync_blocks(struct the_nilfs *nilfs,
+ 		}
+ 
+ 		pos = rb->blkoff << inode->i_blkbits;
+-		err = block_write_begin(inode->i_mapping, pos, blocksize,
++		err = block_write_begin(iocb, inode->i_mapping, pos, blocksize,
+ 					&folio, nilfs_get_block);
+ 		if (unlikely(err)) {
+ 			loff_t isize = inode->i_size;
+diff --git a/fs/ntfs3/inode.c b/fs/ntfs3/inode.c
+index 82c09c2fcadb..36d1baf95b84 100644
+--- a/fs/ntfs3/inode.c
++++ b/fs/ntfs3/inode.c
+@@ -947,7 +947,7 @@ int ntfs_write_begin(struct kiocb *iocb, struct address_space *mapping,
+ 			goto out;
+ 	}
+ 
+-	err = block_write_begin(mapping, pos, len, foliop,
++	err = block_write_begin(iocb, mapping, pos, len, foliop,
+ 				ntfs_get_block_write_begin);
+ 
+ out:
+diff --git a/fs/omfs/file.c b/fs/omfs/file.c
+index 3ae86bc2460a..3e687791da4e 100644
+--- a/fs/omfs/file.c
++++ b/fs/omfs/file.c
+@@ -316,7 +316,7 @@ static int omfs_write_begin(struct kiocb *iocb, struct address_space *mapping,
+ {
+ 	int ret;
+ 
+-	ret = block_write_begin(mapping, pos, len, foliop, omfs_get_block);
++	ret = block_write_begin(iocb, mapping, pos, len, foliop, omfs_get_block);
+ 	if (unlikely(ret))
+ 		omfs_write_failed(mapping, pos + len);
+ 
+diff --git a/fs/udf/inode.c b/fs/udf/inode.c
+index 13ea9aaa30e2..2b4db08e4205 100644
+--- a/fs/udf/inode.c
++++ b/fs/udf/inode.c
+@@ -254,7 +254,7 @@ static int udf_write_begin(struct kiocb *iocb, struct address_space *mapping,
+ 	int ret;
+ 
+ 	if (iinfo->i_alloc_type != ICBTAG_FLAG_AD_IN_ICB) {
+-		ret = block_write_begin(mapping, pos, len, foliop,
++		ret = block_write_begin(iocb, mapping, pos, len, foliop,
+ 					udf_get_block);
+ 		if (unlikely(ret))
+ 			udf_write_failed(mapping, pos + len);
+diff --git a/fs/ufs/inode.c b/fs/ufs/inode.c
+index 8b10833ff586..35aa1c97c1a7 100644
+--- a/fs/ufs/inode.c
++++ b/fs/ufs/inode.c
+@@ -480,7 +480,7 @@ static int ufs_write_begin(struct kiocb *iocb, struct address_space *mapping,
+ {
+ 	int ret;
+ 
+-	ret = block_write_begin(mapping, pos, len, foliop, ufs_getfrag_block);
++	ret = block_write_begin(iocb, mapping, pos, len, foliop, ufs_getfrag_block);
+ 	if (unlikely(ret))
+ 		ufs_write_failed(mapping, pos + len);
+ 
+diff --git a/include/linux/buffer_head.h b/include/linux/buffer_head.h
+index 56f7a65bd875..58d011cac9b9 100644
+--- a/include/linux/buffer_head.h
++++ b/include/linux/buffer_head.h
+@@ -258,8 +258,8 @@ int __block_write_full_folio(struct inode *inode, struct folio *folio,
+ 		get_block_t *get_block, struct writeback_control *wbc);
+ int block_read_full_folio(struct folio *, get_block_t *);
+ bool block_is_partially_uptodate(struct folio *, size_t from, size_t count);
+-int block_write_begin(struct address_space *mapping, loff_t pos, unsigned len,
+-		struct folio **foliop, get_block_t *get_block);
++int block_write_begin(struct kiocb *iocb, struct address_space *mapping, loff_t pos,
++		unsigned len, struct folio **foliop, get_block_t *get_block);
+ int __block_write_begin(struct folio *folio, loff_t pos, unsigned len,
+ 		get_block_t *get_block);
+ int block_write_end(struct file *, struct address_space *,
 -- 
 2.48.1
 
