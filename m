@@ -2,171 +2,107 @@ Return-Path: <jfs-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+jfs-discussion@lfdr.de
 Delivered-To: lists+jfs-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id C0CC2AF9A06
-	for <lists+jfs-discussion@lfdr.de>; Fri,  4 Jul 2025 19:46:30 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5969FAFA732
+	for <lists+jfs-discussion@lfdr.de>; Sun,  6 Jul 2025 20:32:10 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.sourceforge.net; s=beta; h=Content-Transfer-Encoding:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	Subject:MIME-Version:References:In-Reply-To:Date:To:From:Message-ID:Sender:
-	Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender
-	:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=pMAlxeg18Lpt6cPacvcEcsKN1ZjTRIN0geW7wetmpE4=; b=dCwsgCUqiSekHJhKMO8X74GGQM
-	JyeOh4yIArzCor6eOJLblbNRVFb9Q/qzVF36zvcyvm8brKR5KM3xWpWJy4QItdwtZ1OMhH/zh6uc/
-	bVP2uhNSuvHRnb2/FZ3PQSU0D/zA0qUtY7NT3mDimmsPNCyFCluzZ1UjBWAE43EQvKA0=;
+	d=lists.sourceforge.net; s=beta; h=Content-Transfer-Encoding:Content-Type:
+	Reply-To:From:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:Subject:To:Message-ID:Date:MIME-Version:Sender:Cc:
+	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
+	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
+	bh=zzYQs1ucpLZPwb4iJE1J/lB/ScabAToF8c1WRtnzozQ=; b=lnXWKiXR8nUFAGuvJVCL3fJ4HZ
+	QNaL5InPY67Fp4CD6aeXmcFW5SCKm2SpJDDcHDrcv6Vht/A6GF5hZcUhCNzEuXFW6eAKT4Zi7/nj8
+	AlxBT+N/EOatdJd6a06bZ5AFSiTxgte9ivQTD3Ar6ZLbFa1lWGycAkpEZupUdxM63ubQ=;
 Received: from [127.0.0.1] (helo=sfs-ml-2.v29.lw.sourceforge.com)
 	by sfs-ml-2.v29.lw.sourceforge.com with esmtp (Exim 4.95)
 	(envelope-from <jfs-discussion-bounces@lists.sourceforge.net>)
-	id 1uXkTo-0005cq-NR;
-	Fri, 04 Jul 2025 17:45:44 +0000
+	id 1uYU9D-0001U4-Fs;
+	Sun, 06 Jul 2025 18:31:31 +0000
 Received: from [172.30.29.66] (helo=mx.sourceforge.net)
- by sfs-ml-2.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
- TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (Exim 4.95)
- (envelope-from <slava@dubeyko.com>) id 1uXkTm-0005cb-J5
- for jfs-discussion@lists.sourceforge.net;
- Fri, 04 Jul 2025 17:45:42 +0000
+ by sfs-ml-3.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
+ TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (Exim 4.95) (envelope-from
+ <3Q4FqaAkbADoouvgWhhanWlleZ.ckkchaqoanYkjpajp.Yki@M3KW2WVRGUFZ5GODRSRYTGD7.apphosting.bounces.google.com>)
+ id 1uYPuE-0002yX-16 for jfs-discussion@lists.sourceforge.net;
+ Sun, 06 Jul 2025 13:59:46 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=sourceforge.net; s=x; h=MIME-Version:Content-Transfer-Encoding:Content-Type
- :References:In-Reply-To:Date:Cc:To:From:Subject:Message-ID:Sender:Reply-To:
- Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
- Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
+ d=sourceforge.net; s=x; h=Content-Type:To:From:Subject:Message-ID:Date:
+ MIME-Version:Sender:Reply-To:Cc:Content-Transfer-Encoding:Content-ID:
+ Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+ :Resent-Message-ID:In-Reply-To:References:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=sRRTUBR1HhzbPWZOo6ysCxsvxUXtkw1uTBwQrVosYbE=; b=Q8RlwYsuBaAovEeMcFmN0H4sH6
- qYaacXHlHzf2lSQFcVoIn56oKFIVJKKiM+Lw3AwTr3HqJclZMCgC2N5z+x9iAnPbsGUlkFICUGZyC
- JN5QPtuYbRxTUASdiKmv8JaJxQf9xnYl7o1nD3sqjhgVZY3v1LLilP7fARSotqfGfG8s=;
+ bh=xTEnq3Uz9tOhEg7gYohm3AHuoKWB/nrIIOeBJ/1F9qA=; b=QJHn0T+KA3XJUR/JNmHijhITRU
+ m/ocl+8vKiq3EfvHADpo0CDcOAIlO6BnT//TzVe56E0aO1SVHstDHABjz5fc9ioRhbMOBcIpPvywz
+ o2bs5wnFiKHXmrJQ3rF1gJSgr7NMFGOIfLHjAAo5x2rD4i3pgnMiYEFNlMPs2XzAAIg8=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
- h=MIME-Version:Content-Transfer-Encoding:Content-Type:References:
- In-Reply-To:Date:Cc:To:From:Subject:Message-ID:Sender:Reply-To:Content-ID:
- Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
- :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
- List-Post:List-Owner:List-Archive;
- bh=sRRTUBR1HhzbPWZOo6ysCxsvxUXtkw1uTBwQrVosYbE=; b=T6i+uWfD008lr9YvWQ7pfC2Z7T
- ZleiCoKORYIkDOHXmFIeScMdDgdCrJnbgEjJWODGuqsFf3kYKFy8IA7nPmKrRLBSL81njjy0LYvGv
- gZ1nAVnWOh1oh0Ik1CtWsjnN1dtdCCbE7vOzjzIZeeMH2EnQez4HSGI3ks7YiHe4uOBo=;
-Received: from mail-yb1-f174.google.com ([209.85.219.174])
+ h=Content-Type:To:From:Subject:Message-ID:Date:MIME-Version:Sender:Reply-To
+ :Cc:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+ Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+ References:List-Id:List-Help:List-Unsubscribe:List-Subscribe:List-Post:
+ List-Owner:List-Archive; bh=xTEnq3Uz9tOhEg7gYohm3AHuoKWB/nrIIOeBJ/1F9qA=; b=S
+ Wngg+XpNuBXdxxJ7cYnhIKMH3ulhqCwFOKTKLYWCEZ0ou+O7aRecqvRacO/SMmOacLHyk45ZAlKu1
+ DkrSPAU0Cy3ixrUadgIGfea9qE8egSCxypsjjmEJV2n1DsGSTppZGTuR8GZpOfK4N8On86sIP+jmc
+ T8EI9tltUDdLwTO8=;
+Received: from mail-il1-f207.google.com ([209.85.166.207])
  by sfi-mx-2.v28.lw.sourceforge.com with esmtps
  (TLS1.2:ECDHE-RSA-AES128-GCM-SHA256:128) (Exim 4.95)
- id 1uXkTm-0006Fe-92 for jfs-discussion@lists.sourceforge.net;
- Fri, 04 Jul 2025 17:45:42 +0000
-Received: by mail-yb1-f174.google.com with SMTP id
- 3f1490d57ef6-e7569ccf04cso995552276.0
+ id 1uYPuA-000243-Bh for jfs-discussion@lists.sourceforge.net;
+ Sun, 06 Jul 2025 13:59:42 +0000
+Received: by mail-il1-f207.google.com with SMTP id
+ e9e14a558f8ab-3de3b5b7703so12428805ab.1
  for <jfs-discussion@lists.sourceforge.net>;
- Fri, 04 Jul 2025 10:45:42 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=dubeyko-com.20230601.gappssmtp.com; s=20230601; t=1751651131; x=1752255931;
- darn=lists.sourceforge.net; 
- h=mime-version:user-agent:content-transfer-encoding:autocrypt
- :references:in-reply-to:date:cc:to:from:subject:message-id:from:to
- :cc:subject:date:message-id:reply-to;
- bh=sRRTUBR1HhzbPWZOo6ysCxsvxUXtkw1uTBwQrVosYbE=;
- b=EmujsFcGQu00zL4CLLvWG5KjltmrsPHPLNSlB/3U30brRZ/J3LPpzR0VghVQ7vjneM
- kzLRAlZWTZ6rTefsXOj1kRJRJCZiGmZnNRU8t4iNVFdb5ClpF+zND6uh/2Cn3JYh/zuq
- 1HWEcY9Np2fafGcigbIFTMUN7JTrmiKXuOfMjmGjYpRybqswPoebkF8ESo+6q4GivZrg
- ZN9LetDxrUCg7DPI8fzWue91f3CtThWlaiB6Wpju4oy+iJyu1OrGrwYa5tpRQ4v3NI3j
- Xpd0UpXGLOyTycD1XsZ0x7Rx6lQPRkiMo55U6gjf4aXtjfyXYHO5CZ97tixzqaJ21YPM
- 6sLA==
+ Sun, 06 Jul 2025 06:59:42 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20230601; t=1751651131; x=1752255931;
- h=mime-version:user-agent:content-transfer-encoding:autocrypt
- :references:in-reply-to:date:cc:to:from:subject:message-id
- :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
- bh=sRRTUBR1HhzbPWZOo6ysCxsvxUXtkw1uTBwQrVosYbE=;
- b=Je5bMQEeyyFMnwDBkdagHEReqFDFYe9PYXu4gLXNZFBQ6Olpp7sb1kLdMlfxxQiGyQ
- Vo8pPLZMuuV+1nVL/JIdHyp6y60Zr3OQXxpqJnFXHsIRhekvArWwgwapINxxqk6mjcV4
- HCsRKI6aNcU4Xid0bRohjjdsb9LLksbA7De8IEmEqrJ6HA/wvzkAhGtM0xUm5bbYPbUd
- zo7XlEzPZ4JLeckAAvOAmD0PVgRbuSXyIEnDYe5iVHiAUzvx4IBMQvZ81EWl9g5z8knX
- YJjIa03I3bKJ/GzBW3ujYgEy5fCo8FpW/TeRpWIDvosymq1Rwbgg7apX7A72aqp2fgUA
- H50A==
-X-Forwarded-Encrypted: i=1;
- AJvYcCV45b+A7+X8JzjauN7X9JvvREOqX91bf871PoSx5nJoMXQ3AsvbGGyqbJ3DR/aLOs5FU+TKKiS+gtYtBIxvCw==@lists.sourceforge.net
-X-Gm-Message-State: AOJu0YzwjLSAb3be+Yf3u5rYg2LHR5ayG/hB2sgm5fEw4VldXN7555Vo
- fKx5tYjHRt6Qq2MmYFnqCHp9g0bMZR+d9K8axsIrYsEnFeS8bXQmfpftic3joGcW2G4=
-X-Gm-Gg: ASbGnctOcrL/CTan88LWHL21gGz6vuGKF8NTHLjm1+9wHVf5wgCZ726VP2fD1IpXuQY
- IbLGqyWkYrTV+yrwTduqtPFeJxdFLkseRfCFwBz2mIzmko9AigbWAivWjQp4PQil7MqkXLRN72Z
- gYmwWyQh6seTYdgkJ2iS9I0WDBs2NgWrqkvuHqzZB31taQXfVgAN9aEK7KcPxeWF9aFZNCu1gzQ
- +P7XQ5aow2V9xZN1LRCPaon0oC6dQQu7Rh7Uj2RxMPLLvBj3vwZI4n+BB4HQ2U4zs89j5uzHdON
- Rq1GEkPttscpdjfWvbjT+Gd19peavmSn+HgtPwZ/He9R5zGGK9dxsY7ldEY4kDdQe43ECoHaIpK
- 3REK+wN145igHK7Hare3qnKKGuzotLwU=
-X-Google-Smtp-Source: AGHT+IHavxdRXfQcFPtCri7JPle6nXppaWnSECfYS7k4+PrbVcT/6JmmoNF/J8UBNVnhAzeOW0UVtw==
-X-Received: by 2002:a05:690c:3709:b0:70e:29d2:fba1 with SMTP id
- 00721157ae682-7166b66f4d6mr36192927b3.23.1751651131297; 
- Fri, 04 Jul 2025 10:45:31 -0700 (PDT)
-Received: from ?IPv6:2600:1700:6476:1430:f030:281a:9e2c:722?
- ([2600:1700:6476:1430:f030:281a:9e2c:722])
- by smtp.gmail.com with ESMTPSA id
- 3f1490d57ef6-e899c48ba54sm754640276.43.2025.07.04.10.45.28
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Fri, 04 Jul 2025 10:45:30 -0700 (PDT)
-Message-ID: <3c4ac1ab5f7afbbd745f88c595ee1465fc2e9ac6.camel@dubeyko.com>
-From: Viacheslav Dubeyko <slava@dubeyko.com>
-To: Yangtao Li <frank.li@vivo.com>, axboe@kernel.dk,
- aivazian.tigran@gmail.com, 	viro@zeniv.linux.org.uk, brauner@kernel.org,
- jack@suse.cz, linkinjeon@kernel.org, 	sj1557.seo@samsung.com,
- yuezhang.mo@sony.com, glaubitz@physik.fu-berlin.de, 	shaggy@kernel.org,
- konishi.ryusuke@gmail.com, 	almaz.alexandrovich@paragon-software.com,
- me@bobcopeland.com, 	willy@infradead.org, josef@toxicpanda.com,
- kovalev@altlinux.org, dave@stgolabs.net, 	mhocko@suse.com,
- chentaotao@didiglobal.com
-Date: Fri, 04 Jul 2025 10:45:27 -0700
-In-Reply-To: <20250626173023.2702554-4-frank.li@vivo.com>
-References: <20250626173023.2702554-1-frank.li@vivo.com>
- <20250626173023.2702554-4-frank.li@vivo.com>
-Autocrypt: addr=slava@dubeyko.com; prefer-encrypt=mutual;
- keydata=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
- fAMjjkInIPg7RLGs8FiwxfcpkILP0YbVWHiNAaQ==
-User-Agent: Evolution 3.56.1 (by Flathub.org) 
+ d=1e100.net; s=20230601; t=1751810371; x=1752415171;
+ h=to:from:subject:message-id:date:mime-version:x-gm-message-state
+ :from:to:cc:subject:date:message-id:reply-to;
+ bh=xTEnq3Uz9tOhEg7gYohm3AHuoKWB/nrIIOeBJ/1F9qA=;
+ b=sWqSY/cshcX63W+BpUUQKI1ipobQdd5xZBpgLJoseb0RsgsHAtguMnv6oE2KAvUtQ/
+ 2B6XXoaqf/2nN1llkUoTM3P/Y3A2Ben+uadCeo163HvGICeSeBAZYYXPxDDWA/bfKSyd
+ rnC80JIHqe1OoWVQIYO9f+s33KLbFLnZslYGhHSB+vG44Iaq9n0LQnJqyASYSvKBsRuh
+ g9ks/9Im6Ze39reoHSlIB/5NXTHGMavLHWf0o4Z5ThlpfOW5h0IRxBRJZDy05GNOn7+X
+ vCEN8WB5R+kKx3tJ4Ut41/AdOizNPFUe/bH6HbEyfyQ38eDUVWknbkBaKZwFJlVxqsK7
+ tBGQ==
+X-Gm-Message-State: AOJu0Yw/PQlXCyy4GVuRu8z8pgGEu96fU2JpUovrUyJ2lmRpne6IeJHB
+ jOKl7CkN3Jot7uBoBsIq3M4xVfp5GhwUbBu62H4vyWIPRKYSvLpvv3WU+G1PhChQMOGHCtdgMix
+ yo0TpfEJlu7mwGj6HueB9sKDB6GHVym23lDmCVksIEwxmkIviaMv5Yy11ZdIXMw==
+X-Google-Smtp-Source: AGHT+IHQvmxELFKtQB8kTMwtbluGsxgKN7950SxbLnkBbz5rLj7FnXxfM90trGgjCbWB+0Yzqr3cGBjtkZ3z8yVBJvShL1qIr+8U
 MIME-Version: 1.0
-X-Spam-Score: 0.0 (/)
+X-Received: by 2002:a05:6e02:1f0a:b0:3dc:7fa4:823 with SMTP id
+ e9e14a558f8ab-3e1371e850cmr79750425ab.16.1751810371665; Sun, 06 Jul 2025
+ 06:59:31 -0700 (PDT)
+Date: Sun, 06 Jul 2025 06:59:31 -0700
+X-Google-Appengine-App-Id: s~syzkaller
+X-Google-Appengine-App-Id-Alias: syzkaller
+Message-ID: <686a8143.a00a0220.c7b3.005b.GAE@google.com>
+To: jfs-discussion@lists.sourceforge.net, linkinjeon@kernel.org, 
+ linux-fsdevel@vger.kernel.org, linux-kernel@vger.kernel.org, 
+ shaggy@kernel.org, sj1557.seo@samsung.com, syzkaller-bugs@googlegroups.com
+X-Spam-Score: 2.8 (++)
 X-Spam-Report: Spam detection software,
- running on the system "sfi-spamd-1.hosts.colo.sdot.me", 
+ running on the system "sfi-spamd-2.hosts.colo.sdot.me", 
  has NOT identified this incoming email as spam.  The original
  message has been attached to this so you can view it or label
  similar future email.  If you have any questions, see
  the administrator of that system for details.
- Content preview:  On Thu, 2025-06-26 at 11:30 -0600, Yangtao Li wrote: > Now
- cont_write_begin() support DONTCACHE mode, let's set > FOP_DONTCACHE > flag
- to enable uncached buffer io support for hfsplus. > > Signed-off- [...] 
- Content analysis details:   (0.0 points, 5.0 required)
+ Content preview:  Hello,
+ syzbot found the following issue on: HEAD commit: 26ffb3d6f02c
+ Add linux-next specific files for 20250704 git tree: linux-next console
+ output:
+ https://syzkaller.appspot.com/x/log.txt?x=127fc28c580000 kernel config:
+ https://syzkaller.apps [...] 
+ Content analysis details:   (2.8 points, 5.0 required)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature,
- not necessarily valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.3 FROM_LOCAL_HEX         From: localpart has long hexadecimal sequence
+ 0.0 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level mail
+ domains are different
+ 2.5 SORTED_RECIPS          Recipient list is sorted by address
  0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.219.174 listed in wl.mailspike.net]
-X-Headers-End: 1uXkTm-0006Fe-92
-Subject: Re: [Jfs-discussion] [PATCH 3/4] hfsplus: enable uncached buffer io
- support
+ [209.85.166.207 listed in wl.mailspike.net]
+X-Headers-End: 1uYPuA-000243-Bh
+X-Mailman-Approved-At: Sun, 06 Jul 2025 18:31:30 +0000
+Subject: [Jfs-discussion] [syzbot] [exfat?] WARNING in bdev_getblk
 X-BeenThere: jfs-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -178,41 +114,116 @@ List-Post: <mailto:jfs-discussion@lists.sourceforge.net>
 List-Help: <mailto:jfs-discussion-request@lists.sourceforge.net?subject=help>
 List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/jfs-discussion>, 
  <mailto:jfs-discussion-request@lists.sourceforge.net?subject=subscribe>
-Cc: jfs-discussion@lists.sourceforge.net, linux-nilfs@vger.kernel.org,
- ntfs3@lists.linux.dev, linux-kernel@vger.kernel.org,
- linux-block@vger.kernel.org, linux-fsdevel@vger.kernel.org,
- bpf@vger.kernel.org, linux-ext4@vger.kernel.org,
- linux-karma-devel@lists.sourceforge.net
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+From: syzbot via Jfs-discussion <jfs-discussion@lists.sourceforge.net>
+Reply-To: syzbot <syzbot+01ef7a8da81a975e1ccd@syzkaller.appspotmail.com>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Errors-To: jfs-discussion-bounces@lists.sourceforge.net
 
-T24gVGh1LCAyMDI1LTA2LTI2IGF0IDExOjMwIC0wNjAwLCBZYW5ndGFvIExpIHdyb3RlOgo+IE5v
-dyBjb250X3dyaXRlX2JlZ2luKCkgc3VwcG9ydCBET05UQ0FDSEUgbW9kZSwgbGV0J3Mgc2V0Cj4g
-Rk9QX0RPTlRDQUNIRQo+IGZsYWcgdG8gZW5hYmxlIHVuY2FjaGVkIGJ1ZmZlciBpbyBzdXBwb3J0
-IGZvciBoZnNwbHVzLgo+IAo+IFNpZ25lZC1vZmYtYnk6IFlhbmd0YW8gTGkgPGZyYW5rLmxpQHZp
-dm8uY29tPgo+IC0tLQo+IMKgZnMvaGZzcGx1cy9pbm9kZS5jIHwgMSArCj4gwqAxIGZpbGUgY2hh
-bmdlZCwgMSBpbnNlcnRpb24oKykKPiAKPiBkaWZmIC0tZ2l0IGEvZnMvaGZzcGx1cy9pbm9kZS5j
-IGIvZnMvaGZzcGx1cy9pbm9kZS5jCj4gaW5kZXggMjZjYzE1MDg1NmI5Li5iNzkwZmZlOTIwMTkg
-MTAwNjQ0Cj4gLS0tIGEvZnMvaGZzcGx1cy9pbm9kZS5jCj4gKysrIGIvZnMvaGZzcGx1cy9pbm9k
-ZS5jCj4gQEAgLTM3Miw2ICszNzIsNyBAQCBzdGF0aWMgY29uc3Qgc3RydWN0IGZpbGVfb3BlcmF0
-aW9ucwo+IGhmc3BsdXNfZmlsZV9vcGVyYXRpb25zID0gewo+IMKgCS5vcGVuCQk9IGhmc3BsdXNf
-ZmlsZV9vcGVuLAo+IMKgCS5yZWxlYXNlCT0gaGZzcGx1c19maWxlX3JlbGVhc2UsCj4gwqAJLnVu
-bG9ja2VkX2lvY3RsID0gaGZzcGx1c19pb2N0bCwKPiArCS5mb3BfZmxhZ3MJPSBGT1BfRE9OVENB
-Q0hFLAo+IMKgfTsKPiDCoAo+IMKgc3RydWN0IGlub2RlICpoZnNwbHVzX25ld19pbm9kZShzdHJ1
-Y3Qgc3VwZXJfYmxvY2sgKnNiLCBzdHJ1Y3QgaW5vZGUKPiAqZGlyLAoKVGhlIHNhbWUgcXVlc3Rp
-b24gZm9yIEhGUysuIEJlY2F1c2UsIGl0IGlzIGFnYWluIG9sZCBhbmQgcHJldHR5Cm9ic29sZXRl
-IGZpbGUgc3lzdGVtLiA6KSBUaGUgbWFpbiB1c2UtY2FzZSBpcyBzaW1wbHkgc3VwcG9ydCB0aGUK
-Y2FwYWJpbGl0eSB0byBtb3VudCBIRlMrIHZvbHVtZSBpcyBjcmVhdGVkIHVuZGVyIE1hYyBPUyBY
-LCBmb3IgZXhhbXBsZSwKYW5kIHRvIGFjY2VzcyB0aGUgZGF0YSB0aGVyZS4gV2hhdCBpcyB0aGUg
-cG9pbnQgdG8gc3VwcG9ydCB0aGlzIGZlYXR1cmUKaW4gSEZTKz8gQ3VycmVudGx5LCBhcm91bmQg
-MjAwIHhmc3Rlc3RzIGZhaWxzIGluIEhGUy9IRlMrLiBXZSBldmVuCmNhbm5vdCB0ZXN0IGFueSBu
-ZXcgZnVuY3Rpb25hbGl0eSBwcm9wZXJseS4gQW5kIGd1eXMgcmVwb3J0cyBidWdzIGluCmV4aXN0
-aW5nIGZ1bmN0aW9uYWxpdHkuIFdlIG5lZWQgdG8gYmUgZm9jdXNlZCBvbiB0aGlzIHJpZ2h0IG5v
-dy4gU29ycnksCkhGUy9IRlMrIGlzIG5vdCBzbyBnb29kIGdyb3VuZCBmb3IgaW1wbGVtZW50aW5n
-IG5ldyBmZWF0dXJlcy4gOikKV2UgcmVhbGx5IG5lZWQgdG8gc3RhYmlsaXplIHRoZSBleGlzdGlu
-ZyBmdW5jdGlvbmFsaXR5IHJpZ2h0IG5vdy4gQW5kCndlIGhhdmUgYSBsb3Qgb2Ygd29yayB5ZXQu
-IDopIAoKVGhhbmtzLApTbGF2YS4gCgoKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX18KSmZzLWRpc2N1c3Npb24gbWFpbGluZyBsaXN0Ckpmcy1kaXNjdXNzaW9u
-QGxpc3RzLnNvdXJjZWZvcmdlLm5ldApodHRwczovL2xpc3RzLnNvdXJjZWZvcmdlLm5ldC9saXN0
-cy9saXN0aW5mby9qZnMtZGlzY3Vzc2lvbgo=
+Hello,
+
+syzbot found the following issue on:
+
+HEAD commit:    26ffb3d6f02c Add linux-next specific files for 20250704
+git tree:       linux-next
+console output: https://syzkaller.appspot.com/x/log.txt?x=127fc28c580000
+kernel config:  https://syzkaller.appspot.com/x/.config?x=1e4f88512ae53408
+dashboard link: https://syzkaller.appspot.com/bug?extid=01ef7a8da81a975e1ccd
+compiler:       Debian clang version 20.1.7 (++20250616065708+6146a88f6049-1~exp1~20250616065826.132), Debian LLD 20.1.7
+
+Unfortunately, I don't have any reproducer for this issue yet.
+
+Downloadable assets:
+disk image: https://storage.googleapis.com/syzbot-assets/fd5569903143/disk-26ffb3d6.raw.xz
+vmlinux: https://storage.googleapis.com/syzbot-assets/1b0c9505c543/vmlinux-26ffb3d6.xz
+kernel image: https://storage.googleapis.com/syzbot-assets/9d864c72bed1/bzImage-26ffb3d6.xz
+
+IMPORTANT: if you fix the issue, please add the following tag to the commit:
+Reported-by: syzbot+01ef7a8da81a975e1ccd@syzkaller.appspotmail.com
+
+ERROR: (device loop0): force_metapage: metapage_write_one() failed
+------------[ cut here ]------------
+WARNING: fs/buffer.c:1125 at __getblk_slow fs/buffer.c:1125 [inline], CPU#0: syz.0.12/6044
+WARNING: fs/buffer.c:1125 at bdev_getblk+0x580/0x660 fs/buffer.c:1461, CPU#0: syz.0.12/6044
+Modules linked in:
+CPU: 0 UID: 0 PID: 6044 Comm: syz.0.12 Not tainted 6.16.0-rc4-next-20250704-syzkaller #0 PREEMPT(full) 
+Hardware name: Google Google Compute Engine/Google Compute Engine, BIOS Google 05/07/2025
+RIP: 0010:__getblk_slow fs/buffer.c:1125 [inline]
+RIP: 0010:bdev_getblk+0x580/0x660 fs/buffer.c:1461
+Code: 26 fb ff ff e8 31 e3 78 ff 48 c7 c7 a0 fd 99 8b 48 c7 c6 b8 e6 9f 8d 4c 89 fa 4c 89 e9 e8 48 d0 e0 fe eb bd e8 11 e3 78 ff 90 <0f> 0b 90 48 b8 00 00 00 00 00 fc ff df 41 80 3c 07 00 74 08 48 89
+RSP: 0018:ffffc90005256f18 EFLAGS: 00010287
+RAX: ffffffff8246cd6f RBX: ffff888022ccc518 RCX: 0000000000080000
+RDX: ffffc9000d19d000 RSI: 000000000003d82f RDI: 000000000003d830
+RBP: 0000000000001000 R08: 0000000000000000 R09: ffffffff8216f9cd
+R10: dffffc0000000000 R11: fffff940003e86a7 R12: ffff888022ccce68
+R13: ffff888022ccc500 R14: 0000000000001000 R15: 1ffff110045998a3
+FS:  00007f72617f66c0(0000) GS:ffff888125be7000(0000) knlGS:0000000000000000
+CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033
+CR2: 0000200000009000 CR3: 0000000075c0a000 CR4: 00000000003526f0
+Call Trace:
+ <TASK>
+ __bread_gfp+0x89/0x3c0 fs/buffer.c:1515
+ sb_bread include/linux/buffer_head.h:346 [inline]
+ readSuper+0xdb/0x270 fs/jfs/jfs_mount.c:461
+ updateSuper+0x1cf/0x5d0 fs/jfs/jfs_mount.c:423
+ jfs_handle_error fs/jfs/super.c:69 [inline]
+ jfs_error+0x198/0x2c0 fs/jfs/super.c:98
+ force_metapage+0x1e7/0x360 fs/jfs/jfs_metapage.c:839
+ txForce fs/jfs/jfs_txnmgr.c:2215 [inline]
+ txCommit+0x4c05/0x5430 fs/jfs/jfs_txnmgr.c:1315
+ duplicateIXtree+0x292/0x490 fs/jfs/jfs_imap.c:3019
+ diNewIAG fs/jfs/jfs_imap.c:2597 [inline]
+ diAllocExt fs/jfs/jfs_imap.c:1905 [inline]
+ diAllocAG+0x17a7/0x1df0 fs/jfs/jfs_imap.c:1669
+ diAlloc+0x1d5/0x1680 fs/jfs/jfs_imap.c:1590
+ ialloc+0x8c/0x8f0 fs/jfs/jfs_inode.c:56
+ jfs_create+0x18d/0xa80 fs/jfs/namei.c:92
+ lookup_open fs/namei.c:3708 [inline]
+ open_last_lookups fs/namei.c:3807 [inline]
+ path_openat+0x14f1/0x3830 fs/namei.c:4043
+ do_filp_open+0x1fa/0x410 fs/namei.c:4073
+ do_sys_openat2+0x121/0x1c0 fs/open.c:1434
+ do_sys_open fs/open.c:1449 [inline]
+ __do_sys_openat fs/open.c:1465 [inline]
+ __se_sys_openat fs/open.c:1460 [inline]
+ __x64_sys_openat+0x138/0x170 fs/open.c:1460
+ do_syscall_x64 arch/x86/entry/syscall_64.c:63 [inline]
+ do_syscall_64+0xfa/0x3b0 arch/x86/entry/syscall_64.c:94
+ entry_SYSCALL_64_after_hwframe+0x77/0x7f
+RIP: 0033:0x7f726398e929
+Code: ff ff c3 66 2e 0f 1f 84 00 00 00 00 00 0f 1f 40 00 48 89 f8 48 89 f7 48 89 d6 48 89 ca 4d 89 c2 4d 89 c8 4c 8b 4c 24 08 0f 05 <48> 3d 01 f0 ff ff 73 01 c3 48 c7 c1 a8 ff ff ff f7 d8 64 89 01 48
+RSP: 002b:00007f72617f6038 EFLAGS: 00000246 ORIG_RAX: 0000000000000101
+RAX: ffffffffffffffda RBX: 00007f7263bb6080 RCX: 00007f726398e929
+RDX: 000000000000275a RSI: 0000200000000540 RDI: ffffffffffffff9c
+RBP: 00007f7263a10b39 R08: 0000000000000000 R09: 0000000000000000
+R10: 0000000000000000 R11: 0000000000000246 R12: 0000000000000000
+R13: 0000000000000001 R14: 00007f7263bb6080 R15: 00007ffc735ef598
+ </TASK>
+
+
+---
+This report is generated by a bot. It may contain errors.
+See https://goo.gl/tpsmEJ for more information about syzbot.
+syzbot engineers can be reached at syzkaller@googlegroups.com.
+
+syzbot will keep track of this issue. See:
+https://goo.gl/tpsmEJ#status for how to communicate with syzbot.
+
+If the report is already addressed, let syzbot know by replying with:
+#syz fix: exact-commit-title
+
+If you want to overwrite report's subsystems, reply with:
+#syz set subsystems: new-subsystem
+(See the list of subsystem names on the web dashboard)
+
+If the report is a duplicate of another one, reply with:
+#syz dup: exact-subject-of-another-report
+
+If you want to undo deduplication, reply with:
+#syz undup
+
+
+_______________________________________________
+Jfs-discussion mailing list
+Jfs-discussion@lists.sourceforge.net
+https://lists.sourceforge.net/lists/listinfo/jfs-discussion
