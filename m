@@ -2,237 +2,106 @@ Return-Path: <jfs-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+jfs-discussion@lfdr.de
 Delivered-To: lists+jfs-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3CFE9B152D8
-	for <lists+jfs-discussion@lfdr.de>; Tue, 29 Jul 2025 20:29:48 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id DF3D4B171FD
+	for <lists+jfs-discussion@lfdr.de>; Thu, 31 Jul 2025 15:24:51 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.sourceforge.net; s=beta; h=Content-Transfer-Encoding:Content-Type:Cc:
+	d=lists.sourceforge.net; s=beta; h=Content-Transfer-Encoding:Content-Type:
 	Reply-To:From:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:Subject:MIME-Version:Message-ID:Date:To:Sender:
+	List-Unsubscribe:List-Id:Subject:To:Message-ID:Date:MIME-Version:Sender:Cc:
 	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
 	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
-	bh=gTvLF11E9jQnj397ACJ43bG2r5i2H8+y5zmANXqVaDo=; b=cJtPr5p2pP3GRBTtAxVd0Qoyj8
-	E25DO0UdP+57D2TKIZZSA2XZ3X/u2xojSOHaEeFPnfXGLFIFZwP3G/4Kr3Q2A9mPihfD4Fhj361/v
-	E6kszR8ZG61L/lrlbRrPwMEAzhlGpybHZ7CC3AwhAKnWyxepwfbUymWiTwvOksBieSYg=;
-Received: from [127.0.0.1] (helo=sfs-ml-3.v29.lw.sourceforge.com)
-	by sfs-ml-3.v29.lw.sourceforge.com with esmtp (Exim 4.95)
+	bh=4zYCdCPwYlKPRsMGlrUfmRutmZn77CP2i+XTdQpdsQ0=; b=JkRVo72NAGKTjnmIf54bIGe3mQ
+	hjeBfxZYZvaOl4IwfCecfkpyN4+9k4WQHkX8WyZP2PjJUatA00wGWo5k9sLdEEk/LV5XH4/9UT64z
+	W/heQi9e1uqORESSBJDznUNAZUpLf3KgXoqoS/NN0cUwQL0NJHEE2dGt8OQMuGfKZTF4=;
+Received: from [127.0.0.1] (helo=sfs-ml-1.v29.lw.sourceforge.com)
+	by sfs-ml-1.v29.lw.sourceforge.com with esmtp (Exim 4.95)
 	(envelope-from <jfs-discussion-bounces@lists.sourceforge.net>)
-	id 1ugp4j-0007wm-Ab;
-	Tue, 29 Jul 2025 18:29:21 +0000
+	id 1uhTGU-0006qV-Ac;
+	Thu, 31 Jul 2025 13:24:10 +0000
 Received: from [172.30.29.66] (helo=mx.sourceforge.net)
- by sfs-ml-3.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
- TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (Exim 4.95)
- (envelope-from <zheng.yu@northwestern.edu>) id 1ugp4i-0007we-Jh
- for jfs-discussion@lists.sourceforge.net;
- Tue, 29 Jul 2025 18:29:20 +0000
+ by sfs-ml-1.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
+ TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (Exim 4.95) (envelope-from
+ <346KKaAkbAJ4QWXI8JJCP8NNGB.EMMEJCSQCPAMLRCLR.AMK@M3KW2WVRGUFZ5GODRSRYTGD7.apphosting.bounces.google.com>)
+ id 1uhFi2-0001zB-I5 for jfs-discussion@lists.sourceforge.net;
+ Wed, 30 Jul 2025 22:55:42 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=sourceforge.net; s=x; h=MIME-Version:Content-Transfer-Encoding:Content-Type
- :Message-ID:Date:Subject:CC:To:From:Sender:Reply-To:Content-ID:
+ d=sourceforge.net; s=x; h=Content-Type:To:From:Subject:Message-ID:Date:
+ MIME-Version:Sender:Reply-To:Cc:Content-Transfer-Encoding:Content-ID:
  Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
  :Resent-Message-ID:In-Reply-To:References:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=07Gw7RMtloLM44kl6BhqzuVh/GlUuwY7y0Oro3NCYvI=; b=lMqJ1x8BBdyzOaZpjMeYLkHNtW
- vVatSi4IDFBs6R16CGJLQc62rD3dw/yc49soZMSsXtBEb7EpGwa6WShhaWpY/13TsBZ+cj6iHw+kQ
- 3LJiNUwqz5BMaBpTRL+BhjItzTM1iWYvuuhsFJCqcI9Leqb0FCAX/xl6b+us7uwg2bVw=;
+ bh=8lqIO8c8gJjXdWuSugMRnvDZBMnicZ+DCnQIRPFI9JA=; b=YCuUAT5bse2/m6ao0JXtbm7bGm
+ ujjG/DOTh/ZNPQ24LpCtc7FzWcBTHUr0prfO2NGyalVT1tCKPeJrsHbfn/mqU89K+qC1TwOxcEMV7
+ Ea8lFY8GwhTjvFwNg4tilgpyHofx5Im/M4sJHALjx2WqQavTrJPwV25QHEGZTg7bKrx8=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
- h=MIME-Version:Content-Transfer-Encoding:Content-Type:Message-ID:Date:
- Subject:CC:To:From:Sender:Reply-To:Content-ID:Content-Description:Resent-Date
- :Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+ h=Content-Type:To:From:Subject:Message-ID:Date:MIME-Version:Sender:Reply-To
+ :Cc:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+ Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
  References:List-Id:List-Help:List-Unsubscribe:List-Subscribe:List-Post:
- List-Owner:List-Archive; bh=07Gw7RMtloLM44kl6BhqzuVh/GlUuwY7y0Oro3NCYvI=; b=O
- 4SgO2Otxa+PdL8OMGueRWilpLLgic8xpxAd4gdiXjqEo054XqUZDGFnfbZyCCmSgGJi2YFpiRh0AS
- +5MDMzZZJWSxpDsDPCratJcq2WGUYatTzrpHbkZYXn/tRWJK1wkIQ++XsCIBZNnZ+AGgdrBN3qi0o
- KM3Z/4KrE/8vHSvI=;
-Received: from evcspprf10.ads.northwestern.edu ([165.124.82.241])
+ List-Owner:List-Archive; bh=8lqIO8c8gJjXdWuSugMRnvDZBMnicZ+DCnQIRPFI9JA=; b=m
+ tITtHd9wgtyOVF9lVDS8McC7u0HeYZzLkBJ8Ud4UIPLp0VvGjd0A6tY54z/G5kaZJtAGUdHPlgIpF
+ f16k8HSxVjmDRxBZz8eu9o3bWOBxJXXqZCH1tH4P7VaPZ0mnOkENonBGih8xqOo+YDvgGAt6ABALO
+ JYD6aTUgoxNRCyLM=;
+Received: from mail-il1-f205.google.com ([209.85.166.205])
  by sfi-mx-2.v28.lw.sourceforge.com with esmtps
- (TLS1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.95)
- id 1ugp4h-0003S0-SN for jfs-discussion@lists.sourceforge.net;
- Tue, 29 Jul 2025 18:29:20 +0000
-Received: from pps.filterd (evcspprf10.ads.northwestern.edu [127.0.0.1])
- by evcspprf10.ads.northwestern.edu (8.18.1.2/8.18.1.2) with ESMTP id
- 56THdeUn028541; Tue, 29 Jul 2025 13:29:10 -0500
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=northwestern.edu;
- h=cc :
- content-transfer-encoding : content-type : date : from : message-id :
- mime-version : subject : to; s=proofpoint;
- bh=07Gw7RMtloLM44kl6BhqzuVh/GlUuwY7y0Oro3NCYvI=;
- b=Thm3QAFYfu8kXWG+P9hihy617ddGPshtbtJJLZvY46di5ukPyjl5izd5xepAc76XDjba
- RnZWU7PhE15kds/9YQtvUG9QQl6OkkdZp14mLp03DS8hUOO5P0aZApL/ABDNm5O5QRI6
- nm0WwbXdWfQ+0SOOMI5z6qvNqMQErVhnqpUCvtM81N+ep9dXGQaVv1MDz4VU286uu5zL
- djkEyGK2onqH9hb/0kL2zpCBkH3tsMqG1zT+AOjghRADjB013L5dHL20++HM1+EDiwRp
- o/Ri3DaBVNpftza+CRiEeO+tUm57NTLUxpSCr5mSnx9HIh/olrMcI329pxR1D40gSJLZ mA== 
-Received: from pps.reinject (localhost [127.0.0.1])
- by evcspprf10.ads.northwestern.edu (PPS) with ESMTPS id 485d75mttt-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
- Tue, 29 Jul 2025 13:29:09 -0500
-Received: from evcspprf10.ads.northwestern.edu
- (evcspprf10.ads.northwestern.edu [127.0.0.1])
- by pps.reinject (8.17.1.5/8.17.1.5) with ESMTP id 56TIKBna022823;
- Tue, 29 Jul 2025 13:29:09 -0500
-Received: from evcspexch01.ads.northwestern.edu
- (evcspexch01.ads.northwestern.edu [165.124.43.179])
- by evcspprf10.ads.northwestern.edu (PPS) with ESMTPS id 485d75mttp-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
- Tue, 29 Jul 2025 13:29:09 -0500
-Received: from EVCSPEXCH02.ads.northwestern.edu (165.124.43.180) by
- EVCSPEXCH01.ads.northwestern.edu (165.124.43.179) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.1544.11; Tue, 29 Jul 2025 13:29:09 -0500
-Received: from DM2PR04CU003.outbound.protection.outlook.com (40.93.13.99) by
- EVCSPEXCH02.ads.northwestern.edu (165.124.43.180) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.2.1544.11 via Frontend Transport; Tue, 29 Jul 2025 13:29:09 -0500
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=XtVscWBjEHw+AHBa1lNu5EqWz470KQDIN+tOqAvB43PV7Lo3Hc8ZK/Q4kW7fWtBDC5jiGDU15n2CHNxcwJzEx6pq2QhDd2qkKuyWpJg+aouKjEy+bUKSFnIOeVtOjMZ+0A0LcY38nfF9AMDdgKk+wJlLXQ73mYsm26Ksd91nHfFpNgaukc1wET+6QuzMF6qRfcCust7o1Eq1zFLdj2W2Rzp4UK334aC1d0hli5hfhh+1bAYZAQS+EqvFNR8/0s5rKMXzZyi4H48EnP8XuobQmQcDCgYQao+y3eAxEqjyfm/pBs+Kh9phav0nQDyOKPk+6Y68mRvEsS7ceV5sRK5pww==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector10001;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=07Gw7RMtloLM44kl6BhqzuVh/GlUuwY7y0Oro3NCYvI=;
- b=wdFm36VVBF9PeWKXAJM8pjGFjVFh8ZTWUZHYjSy0R6ZH+VjhoUCsfPQXkIuzf8Ndy4I4wR9v598rQ+fvfIrmDGEeKEy19yNetmYi1RxQYioxUHMLB+9PNScKEcua9pQqi+g0czTW5PrN9OENsA747KwOZzRt0YbeNYYIJFLnUuXvgwmUUThA3HXrRej71Q+Sz6Wzdicbg9eG6K9m23v+xCCuSK+iVopU92eSZDHDmXxjDH1HwT0yL1IY32a+aDgHZYMzbOChUfRZu77+QSSbX9xz6KylhC8Tn4XikC8z3vpgBv7Dg2FSTxPn5GJNPALqY5hpIyKA94cKLj6nY3O8yg==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=northwestern.edu; dmarc=pass action=none
- header.from=northwestern.edu; dkim=pass header.d=northwestern.edu; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=northwestern.edu;
- s=selector1;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=07Gw7RMtloLM44kl6BhqzuVh/GlUuwY7y0Oro3NCYvI=;
- b=kYa8znJ3Jlq8SH+QxUE3L2IIQslgmBqU7ekKiE5jqvzR6dXzQ+h6G9Oe/p4xsivo5N4MtCTN6J7TP8BTtPAUIEgOURebI66ApO1sKskxZTEHyqR/Fsve4346wS1NZpe+jRA4yJdG1gCSyhPKqrthVvSVvmk2NfSg1fM675kIAmI=
-Received: from BL0PR05MB4674.namprd05.prod.outlook.com (2603:10b6:208:2a::33)
- by DM4PR05MB9582.namprd05.prod.outlook.com (2603:10b6:8:105::18) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.8964.25; Tue, 29 Jul
- 2025 18:28:56 +0000
-Received: from BL0PR05MB4674.namprd05.prod.outlook.com
- ([fe80::2a87:1931:383a:f54d]) by BL0PR05MB4674.namprd05.prod.outlook.com
- ([fe80::2a87:1931:383a:f54d%4]) with mapi id 15.20.8964.019; Tue, 29 Jul 2025
- 18:28:56 +0000
-To: "shaggy@kernel.org" <shaggy@kernel.org>
-Thread-Topic: [PATCH] jfs: replace hardcoded magic number with DTPAGEMAXSLOT
- constant
-Thread-Index: AQHcALZhI8GgsN5OSEOFkl9iEpHHug==
-Date: Tue, 29 Jul 2025 18:28:56 +0000
-Message-ID: <BL0PR05MB46744E1F59F1E41E2C2E014EFF25A@BL0PR05MB4674.namprd05.prod.outlook.com>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-msip_labels: 
-x-ms-publictraffictype: Email
-x-ms-traffictypediagnostic: BL0PR05MB4674:EE_|DM4PR05MB9582:EE_
-x-ms-office365-filtering-correlation-id: f4749d9f-4678-4c2b-f042-08ddcecdc76a
-x-ms-exchange-senderadcheck: 1
-x-ms-exchange-antispam-relay: 0
-x-microsoft-antispam: BCL:0;
- ARA:13230040|366016|376014|1800799024|10070799003|38070700018; 
-x-microsoft-antispam-message-info: =?iso-8859-1?Q?WjQy6WuiuE6L8ogmI3IOpWZxP43rECHTnng40pM/aupL+vJBC9Nzwp3fh7?=
- =?iso-8859-1?Q?K1QkZAeBquPH4Rs6wf0Oz9BkqsbXsPrf2a1JoBoEGuUGxdSrdNjcKjx2mh?=
- =?iso-8859-1?Q?4vnjADZ2s1wC40gox+yUwIeYQ+iEl+jf3gFCthnrOehQGisuxDU7l7qrC5?=
- =?iso-8859-1?Q?8e4UoPQV7C0ZIFUS4CSJD5hYSp2VunRyk50wTv3B+6yWUVowdeozPzze5D?=
- =?iso-8859-1?Q?STCWH/1fzFlRfBdfJ8A/O16jVGe0rSgteC/X+5cCJIireRda/HEtn14wdN?=
- =?iso-8859-1?Q?3BMQ1trBqC1MSmL0AR7mOCqCCCpizy+tm9Gh2RmOktYsx9ifz/JNOAjQF2?=
- =?iso-8859-1?Q?jfpeQCe9xRafG1w9sVoIAx3H/QCEb+4I81X6vXS/JJL8kLZFHYiaTM31Qk?=
- =?iso-8859-1?Q?opRvDBUNio6OKu8uu6bk+DUKyYMieeRhhxU5up4NVNB7r8xUf4UC2GFelR?=
- =?iso-8859-1?Q?xIV5FJrYkeSftuHw3QpPReQcnyA7UHlCu5g/5TiJ2Ok6baYDBqBVo1pEeF?=
- =?iso-8859-1?Q?t8DTtzzJgZBjSFT+zpmu0Iq9o3EimPKDPJnF2lK14hSlxz+2lKHX8Cp5Ab?=
- =?iso-8859-1?Q?DXzdD1GXr2XSeRV2QQpiz1ZSRCx/gLlXlEyigHjoZ0i1SjBIlNjHwPrlRQ?=
- =?iso-8859-1?Q?Oo9LE2KLy9lgJYqnsqdtTuQshEAvYhyU3D+YMIndZePOPEKvqyGKeZn1RH?=
- =?iso-8859-1?Q?UOaRanbwiif45ep//2bluHIPNpjO5aSJiXq/xCgi9WFHCV08ry44PmS73T?=
- =?iso-8859-1?Q?+afz76FTfy9whZWafDB0EnUcfdgsoUnVt8tVDMgPDHWWc6DwTL6uIYDzZ+?=
- =?iso-8859-1?Q?Dpvm8v5nAHfatDgDuWNGxeXg1N2RAbtEqZpbnS4pIpXpVNMLLHEGfAFf6J?=
- =?iso-8859-1?Q?zuhKgq/iqAw7Rg1z+oOt2QXD+mqo0/Kizg4QC7V1k0toEnKxBt4QKrbeAh?=
- =?iso-8859-1?Q?grqXzODLMbEd/dIyOAnBkF4dshP9Fz01QejmDfxnaymrxOWowuhs2vduv6?=
- =?iso-8859-1?Q?PvbYnM8h99w+VjzPxsPlymgAivkeUtCzFgVcroVUaGNQlJlhze44LNz2Yc?=
- =?iso-8859-1?Q?Od5KZ0rJMlpf9oyh9HbU3y7pcVVb2n3ZybdlKthnCw5TByFAumPwUo3wyy?=
- =?iso-8859-1?Q?yJKzsyOZYr7dNmZAyjrrcrp31VXzc+PtuHti5ndKcYRqcSlverh+xe+NlZ?=
- =?iso-8859-1?Q?vQ4aIKEJa83T007v8ifOgRJYKAPRXwM1fmgd6+5pc6nsWRiXzr0VSQyLGd?=
- =?iso-8859-1?Q?i3q29dFkLxbhqxjSAYZVhtwjv58GhKgGqaC7nFgG3JgCw3QMeBh2SQYSCO?=
- =?iso-8859-1?Q?gzMBt5Njjt8YbOD8sSS6q/lL1vpUHysI2x/lgEdJ0W0dIQqxXRbeJ3V6nP?=
- =?iso-8859-1?Q?SrrhifvyC9vjXEDGjkVwonLbIIk5houz+r/IKxE0Xet0z6ra4Vtv4yLmKQ?=
- =?iso-8859-1?Q?4fbpsVPR3FF7BvpUva18XnioIIxF0elmO5Y2IHwcnM4OaeJrYhalXsXkJq?=
- =?iso-8859-1?Q?8i/JC0Ugx+27LuQkZswgsOF1LU+mPJ72m/TP8Zly0Dfw=3D=3D?=
-x-forefront-antispam-report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
- IPV:NLI; SFV:NSPM; H:BL0PR05MB4674.namprd05.prod.outlook.com; PTR:; CAT:NONE;
- SFS:(13230040)(366016)(376014)(1800799024)(10070799003)(38070700018); DIR:OUT;
- SFP:1102; 
-x-ms-exchange-antispam-messagedata-chunkcount: 1
-x-ms-exchange-antispam-messagedata-0: =?iso-8859-1?Q?um0Cj+QSDmdviqwEz7iInflII6zlImEVJXQ3fw9A1Mfd5zmpEP41fDSAZB?=
- =?iso-8859-1?Q?PKz/SCH4+kHOEzgsigw+NCys9VnpVeU5O/M8twPCW9W1HQ3ggiJOQA+csq?=
- =?iso-8859-1?Q?uKCcmGkcxSAlNimuqfWwklbobgXCluVPQzHwT0TDCBmyis0WsBiOWz9hnd?=
- =?iso-8859-1?Q?BW6dBcgETWi7IgXvmCY/KqVw1/RqIrS42UocpdlKp16xsVISh/a9yGe/Qu?=
- =?iso-8859-1?Q?aSyTas0MuPXz0AXLYijZfY/6tqL055IPlH8IQ6gtapLv2bSsctOh1f1BHu?=
- =?iso-8859-1?Q?pcq2jTj8QVqW2G+/V7NgTwzTWM7hyX2JZoDUpFOs+DgS/iiG+XMailf2E7?=
- =?iso-8859-1?Q?hQypUMz3s/0TR1rXuHFJBVUQeDY8VRF0HXIksHYk4m+z/fUt4EN46flTM2?=
- =?iso-8859-1?Q?MCrlC3uZKtflLZNr1iS/b2OK5ae9ucYiYZG1gkF1OaKQUDJMhpffcv+W8d?=
- =?iso-8859-1?Q?HA1ccU3onA0YEEcwLcLhYk/F7+B39aDf1F/dfsEH+r/K0LAH+2DNhGLcVB?=
- =?iso-8859-1?Q?d9+080C+KupSc+3wdAG7/F9LiQxkScJDF0+SqyqYRsTlMMRypQ8hb+MEeu?=
- =?iso-8859-1?Q?jXv+SeYgPNJGBgwN6uB5wA1642IAj7SOl5bCp1+NJGbMCaiymFN1TyszIY?=
- =?iso-8859-1?Q?3DAFAHFnPqAdbh2CF4YlCAqTEHAfE32sJaz70Z4rsVw9vg5YKYClVqvj5l?=
- =?iso-8859-1?Q?DTvoIxcGib93amljbX7VkXYcaZ8Dt7L+pXNziIiurrapcTWA2s9h4QAkYO?=
- =?iso-8859-1?Q?Opv5OG2wcKvRIfw3JmURQR2VjsN8BSiuK7+BBKFIezY5oyaXb6RV+W/sTX?=
- =?iso-8859-1?Q?WWYdX63mJGk89bCxcWUE/bza2u6hsW5EpaKVcdz5SuR/eOCMWcOu8mJB+s?=
- =?iso-8859-1?Q?YklPpfPMGC0F+P34bQ91GPOP0wwf1tjKZfzFH1EVrdR8cgm6G36VrFMTZu?=
- =?iso-8859-1?Q?roKy8Gj2m5vHc3ofoXCYYqpFbdyFVaNjrA7Hst5EILs8PejrYVtJXIpH0M?=
- =?iso-8859-1?Q?x8P837uhuY452pxzfH15jj+uPmu0b2G0Zp7Kv1sBEd/JNRv+Gy9NLuSDcD?=
- =?iso-8859-1?Q?iLOMqsWV+sQclu9y+Yi+xxQstQRftCmZ24ScWDGyspOmerJyzEmW5T3Dka?=
- =?iso-8859-1?Q?nfwsaHCi/5Sphnco8MP2cur0RoSyIb3z6GX/d4+CHIEWQgD/yYE/hNAwbd?=
- =?iso-8859-1?Q?3bU/EXQxMQmJzzL5KuMVIpufWDc7uRAVt0pD5tQkNwK8SsoLk6yGDf1SpF?=
- =?iso-8859-1?Q?iWz+iqbonxFtBBh5Rn8ylcYdEOt2SVgky6bb8oxpwOa5s4kYKdiJRBMGic?=
- =?iso-8859-1?Q?TKPRgH6+UTS1CrZh3I+5JijNST9NarGNHq6b2wPf0AnV0clm+/u6GOKQP/?=
- =?iso-8859-1?Q?2jCU7vm4UjsHgGHq3sMVfbuY4GCx7fNGwpiTm1eAFJ8UlLDTcx6TOoauR+?=
- =?iso-8859-1?Q?fCtfg1UMRDSLrsUn8AgtCoXr31igP7a6Bbz5N3tSnjdv2IWVk2zWlANuHT?=
- =?iso-8859-1?Q?42ZJ4kHrdUgHJpdv0UOMVRBqPvKxhrmXuoefTVXwAIdwsEJ1KXW0l76xtq?=
- =?iso-8859-1?Q?IxnB7o+pkNVHPPhDa6gQokHX8m9pLmHofZCHW5tzfNS8sJoOKXjkwGg07j?=
- =?iso-8859-1?Q?mXdFrbbwtA7qZH2DkWMAKjYJMz1Qc+lOLhQco4wFrxZYCBHss2KY1AH2UQ?=
- =?iso-8859-1?Q?F77kDDEFEC0T0xv1gbQN+s/i//r2kxJvz/aAo+mO?=
+ (TLS1.2:ECDHE-RSA-AES128-GCM-SHA256:128) (Exim 4.95)
+ id 1uhFi1-0004ip-U4 for jfs-discussion@lists.sourceforge.net;
+ Wed, 30 Jul 2025 22:55:42 +0000
+Received: by mail-il1-f205.google.com with SMTP id
+ e9e14a558f8ab-3e3fe1d77ccso3320765ab.2
+ for <jfs-discussion@lists.sourceforge.net>;
+ Wed, 30 Jul 2025 15:55:41 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20230601; t=1753916131; x=1754520931;
+ h=to:from:subject:message-id:date:mime-version:x-gm-message-state
+ :from:to:cc:subject:date:message-id:reply-to;
+ bh=8lqIO8c8gJjXdWuSugMRnvDZBMnicZ+DCnQIRPFI9JA=;
+ b=TJo05tJnQcUGfZlzdEkO6Hq8Dxr8N56yi1wwvnbumU7nuNTYBfv40jJmBQlOvSl/LG
+ rh1Xppob1HXMHcQXV3jItIhrPu+qLrsD6Xxjd40t8bAxxU8aXav1FEp5bgawVwcahkj5
+ I2gkmmirxdlSJlYM+bu51uxkHMC4MUHFDr/1Tnw3zVIX4wAdio0CsGHOR2ezxn+zf5c9
+ k+W9vAiUFLhVK+N4XbweO9P4fLHznJTufJLbWFD07Qo2VLL/9LcMDdQvjF3T/7Dmwl+W
+ y/CMtv/1y6RSuy+uhHAJawdE7Csfx84xhmGLmeijlVM9RPm+25H4AHsYR0oy5QoccUk8
+ u1FQ==
+X-Gm-Message-State: AOJu0YxluUiwcPJ4J5b/fs9gnNq7VPZyaZl5c57ieQci4befoFeSlCNi
+ Kj39NgLD2VgpVP9kMfph8NnBh4kKWAEc+DGmlcc4Du1a087jAIVdewWviydi5B9BgJkJbgyMXMd
+ ZdNWNeiBfTLfJriv/iTbS+HhJ/wokyIN4SzWRVUKfpI4OBmdSo9C/irBPnH3qGg==
+X-Google-Smtp-Source: AGHT+IHvv+SdtIF9GYRqOcel0L6gIZLToQDZ0/18Gzv3QUfsK8SLV2uxYDSBe35EHo5cX8RmdsJjx0AxolC7O8YCxA32j6x9VrY4
 MIME-Version: 1.0
-X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-AuthSource: BL0PR05MB4674.namprd05.prod.outlook.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: f4749d9f-4678-4c2b-f042-08ddcecdc76a
-X-MS-Exchange-CrossTenant-originalarrivaltime: 29 Jul 2025 18:28:56.4752 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 7d76d361-8277-4708-a477-64e8366cd1bc
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: mQLe3SZDne7xWAApxpoLOQ6D/7d3E/vlP2wO23r3GZ+qJUCfmTIOHqctk8XOYPUGDYK7z/NIctYGqKijHfFNC8nSoyK6f5+6eZRaeJYX+ps=
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: DM4PR05MB9582
-X-OriginatorOrg: northwestern.edu
-X-Proofpoint-GUID: n2iSwocXqxcKfld3uFdl6lo-EL4EUdXq
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwNzI5MDE0MSBTYWx0ZWRfX+WrpjFltvk0n
- 1AiFibCTNnkQq6KufP+P7EaHX7zFNkUSh1mAFoOyZhZpIejRU92/rB/KDroTNlwbFzvAJiuTuMC
- a+/art5oIwCQkIJgOmSkMrQkwGo9T7ZofOfeA29DNMrVxSsaz9U79GdhSuS2yODRMkm3SJohM6K
- RvfePaZD24eIs+/EpNCfXfGr8cw9R8Pq2HotGVIRf45r9zXtxrVFrAaa+QUjkLbvh25EV7SqY3H
- ZM+KyPNwjkLLzC5EXgsxlF/YqwCDlUZ4LQtYZwDWWpFa/POiisz6J7CJN+GWlBmh2gjzquQftjY
- JaaRcu8ihXoCa9NDaewPTzdJ5TlV4Eaa9Q/yVhFO8y2MLTwkkjnEMcse68bfhCp5xSAIlHaCX0R
- H/6OahnX
-X-Proofpoint-ORIG-GUID: Pqh0kHxsl0aEsS6kJ48HfeXbuBjs5dFg
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1099,Hydra:6.1.9,FMLib:17.12.80.40
- definitions=2025-07-29_03,2025-07-28_01,2025-03-28_01
-X-Proofpoint-Spam-Reason: safe
-X-Spam-Score: -0.2 (/)
+X-Received: by 2002:a05:6e02:440c:20b0:3e3:d5f1:9019 with SMTP id
+ e9e14a558f8ab-3e3f62a7e18mr58352905ab.16.1753916131209; Wed, 30 Jul 2025
+ 15:55:31 -0700 (PDT)
+Date: Wed, 30 Jul 2025 15:55:31 -0700
+X-Google-Appengine-App-Id: s~syzkaller
+X-Google-Appengine-App-Id-Alias: syzkaller
+Message-ID: <688aa2e3.050a0220.5d226.0010.GAE@google.com>
+To: jfs-discussion@lists.sourceforge.net, linux-kernel@vger.kernel.org, 
+ shaggy@kernel.org, syzkaller-bugs@googlegroups.com
+X-Spam-Score: 0.3 (/)
 X-Spam-Report: Spam detection software,
- running on the system "sfi-spamd-1.hosts.colo.sdot.me", 
+ running on the system "sfi-spamd-2.hosts.colo.sdot.me", 
  has NOT identified this incoming email as spam.  The original
  message has been attached to this so you can view it or label
  similar future email.  If you have any questions, see
  the administrator of that system for details.
- Content preview:  Replace hardcoded value 127 with DTPAGEMAXSLOT constant in
- boundary checks within jfs_readdir() and dtReadFirst(). This improves code
- maintainability and ensures consistency with the defined maximum s [...] 
- Content analysis details:   (-0.2 points, 5.0 required)
+ Content preview:  Hello,
+ syzbot found the following issue on: HEAD commit: 4b290aae788e
+ Merge tag 'sysctl-6.17-rc1' of git://git.kern.. git tree: upstream
+ console+strace:
+ https://syzkaller.appspot.com/x/log.txt?x=11008f82580000 kernel config:
+ https://syzkaller.a [...] 
+ Content analysis details:   (0.3 points, 5.0 required)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.1 DKIM_VALID_AU Message has a valid DKIM or DK signature from author's
- domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.0 ARC_VALID              Message has a valid ARC signature
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.0 ARC_SIGNED             Message has a ARC signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature,
- not necessarily valid
-X-Headers-End: 1ugp4h-0003S0-SN
-Subject: [Jfs-discussion] [PATCH] jfs: replace hardcoded magic number with
- DTPAGEMAXSLOT constant
+ 0.3 FROM_LOCAL_HEX         From: localpart has long hexadecimal sequence
+ 0.0 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level mail
+ domains are different
+ 0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.166.205 listed in wl.mailspike.net]
+X-Headers-End: 1uhFi1-0004ip-U4
+X-Mailman-Approved-At: Thu, 31 Jul 2025 13:24:08 +0000
+Subject: [Jfs-discussion] [syzbot] [jfs?] INFO: task hung in
+ release_metapage (2)
 X-BeenThere: jfs-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -244,53 +113,156 @@ List-Post: <mailto:jfs-discussion@lists.sourceforge.net>
 List-Help: <mailto:jfs-discussion-request@lists.sourceforge.net?subject=help>
 List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/jfs-discussion>, 
  <mailto:jfs-discussion-request@lists.sourceforge.net?subject=subscribe>
-From: Zheng Yu via Jfs-discussion <jfs-discussion@lists.sourceforge.net>
-Reply-To: Zheng Yu <zheng.yu@northwestern.edu>
-Cc: "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "jfs-discussion@lists.sourceforge.net"
- <jfs-discussion@lists.sourceforge.net>,
- "ghanshyam1898@gmail.com" <ghanshyam1898@gmail.com>,
- "r.smirnov@omp.ru" <r.smirnov@omp.ru>
+From: syzbot via Jfs-discussion <jfs-discussion@lists.sourceforge.net>
+Reply-To: syzbot <syzbot+5570e0eb2edddd308514@syzkaller.appspotmail.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Errors-To: jfs-discussion-bounces@lists.sourceforge.net
 
-Replace hardcoded value 127 with DTPAGEMAXSLOT constant in boundary
-checks within jfs_readdir() and dtReadFirst(). This improves code
-maintainability and ensures consistency with the defined maximum
-slot value.
+Hello,
 
-Fixes: ca84a2c9be48 ("jfs: array-index-out-of-bounds fix in dtReadFirst")
-Fixes: 839f102efb16 ("jfs: fix array-index-out-of-bounds in jfs_readdir")
-Signed-off-by: Zheng Yu <zheng.yu@northwestern.edu>
+syzbot found the following issue on:
+
+HEAD commit:    4b290aae788e Merge tag 'sysctl-6.17-rc1' of git://git.kern..
+git tree:       upstream
+console+strace: https://syzkaller.appspot.com/x/log.txt?x=11008f82580000
+kernel config:  https://syzkaller.appspot.com/x/.config?x=3d46544c44676816
+dashboard link: https://syzkaller.appspot.com/bug?extid=5570e0eb2edddd308514
+compiler:       Debian clang version 20.1.7 (++20250616065708+6146a88f6049-1~exp1~20250616065826.132), Debian LLD 20.1.7
+syz repro:      https://syzkaller.appspot.com/x/repro.syz?x=15f389bc580000
+C reproducer:   https://syzkaller.appspot.com/x/repro.c?x=10cfccf0580000
+
+Downloadable assets:
+disk image: https://storage.googleapis.com/syzbot-assets/a42db01cad91/disk-4b290aae.raw.xz
+vmlinux: https://storage.googleapis.com/syzbot-assets/32f0fca549e2/vmlinux-4b290aae.xz
+kernel image: https://storage.googleapis.com/syzbot-assets/e4b9f4fa04d4/bzImage-4b290aae.xz
+mounted in repro: https://storage.googleapis.com/syzbot-assets/bb7477fa5ad1/mount_0.gz
+  fsck result: failed (log: https://syzkaller.appspot.com/x/fsck.log?x=174fccf0580000)
+
+IMPORTANT: if you fix the issue, please add the following tag to the commit:
+Reported-by: syzbot+5570e0eb2edddd308514@syzkaller.appspotmail.com
+
+INFO: task syz-executor220:5846 blocked for more than 143 seconds.
+      Tainted: G        W           6.16.0-syzkaller-04405-g4b290aae788e #0
+"echo 0 > /proc/sys/kernel/hung_task_timeout_secs" disables this message.
+task:syz-executor220 state:D stack:24584 pid:5846  tgid:5846  ppid:5845   task_flags:0x400140 flags:0x00004006
+Call Trace:
+ <TASK>
+ context_switch kernel/sched/core.c:5351 [inline]
+ __schedule+0x16b2/0x4ca0 kernel/sched/core.c:6954
+ __schedule_loop kernel/sched/core.c:7036 [inline]
+ schedule+0x165/0x360 kernel/sched/core.c:7051
+ io_schedule+0x81/0xe0 kernel/sched/core.c:7896
+ folio_wait_bit_common+0x6b5/0xb90 mm/filemap.c:1317
+ folio_lock include/linux/pagemap.h:1141 [inline]
+ release_metapage+0x103/0xab0 fs/jfs/jfs_metapage.c:868
+ discard_metapage fs/jfs/jfs_metapage.h:88 [inline]
+ __get_metapage+0x9a0/0xde0 fs/jfs/jfs_metapage.c:751
+ jfs_readdir+0x1e01/0x3ae0 fs/jfs/jfs_dtree.c:3041
+ wrap_directory_iterator+0x96/0xe0 fs/readdir.c:65
+ iterate_dir+0x5bb/0x780 fs/readdir.c:108
+ __do_sys_getdents64 fs/readdir.c:410 [inline]
+ __se_sys_getdents64+0xe4/0x260 fs/readdir.c:396
+ do_syscall_x64 arch/x86/entry/syscall_64.c:63 [inline]
+ do_syscall_64+0xfa/0x3b0 arch/x86/entry/syscall_64.c:94
+ entry_SYSCALL_64_after_hwframe+0x77/0x7f
+RIP: 0033:0x7f7eda95cc19
+RSP: 002b:00007ffd76156b48 EFLAGS: 00000246 ORIG_RAX: 00000000000000d9
+RAX: ffffffffffffffda RBX: 0000200000000000 RCX: 00007f7eda95cc19
+RDX: 0000000000001000 RSI: 0000200000000f80 RDI: 0000000000000004
+RBP: 0030656c69662f2e R08: 0000555576b714c0 R09: 0000555576b714c0
+R10: 0000555576b714c0 R11: 0000000000000246 R12: 00002000000000c0
+R13: 00007ffd76156d98 R14: 431bde82d7b634db R15: 00007f7eda9a503b
+ </TASK>
+
+Showing all locks held in the system:
+1 lock held by khungtaskd/38:
+ #0: ffffffff8d7aa040 (rcu_read_lock){....}-{1:3}, at: rcu_lock_acquire include/linux/rcupdate.h:331 [inline]
+ #0: ffffffff8d7aa040 (rcu_read_lock){....}-{1:3}, at: rcu_read_lock include/linux/rcupdate.h:841 [inline]
+ #0: ffffffff8d7aa040 (rcu_read_lock){....}-{1:3}, at: debug_show_all_locks+0x2e/0x180 kernel/locking/lockdep.c:6775
+2 locks held by kworker/u8:11/1284:
+ #0: ffff888019881138 ((wq_completion)events_unbound){+.+.}-{0:0}, at: process_one_work kernel/workqueue.c:3213 [inline]
+ #0: ffff888019881138 ((wq_completion)events_unbound){+.+.}-{0:0}, at: process_scheduled_works+0x9b4/0x17b0 kernel/workqueue.c:3321
+ #1: ffffc9000517fbc0 ((work_completion)(&(&kfence_timer)->work)){+.+.}-{0:0}, at: process_one_work kernel/workqueue.c:3214 [inline]
+ #1: ffffc9000517fbc0 ((work_completion)(&(&kfence_timer)->work)){+.+.}-{0:0}, at: process_scheduled_works+0x9ef/0x17b0 kernel/workqueue.c:3321
+2 locks held by getty/5572:
+ #0: ffff88823bf7e8a0 (&tty->ldisc_sem){++++}-{0:0}, at: tty_ldisc_ref_wait+0x25/0x70 drivers/tty/tty_ldisc.c:243
+ #1: ffffc90003e9b2e0 (&ldata->atomic_read_lock){+.+.}-{4:4}, at: n_tty_read+0x444/0x1410 drivers/tty/n_tty.c:2222
+2 locks held by syz-executor220/5846:
+ #0: ffff888031876728 (&f->f_pos_lock){+.+.}-{4:4}, at: fdget_pos+0x253/0x320 fs/file.c:1232
+ #1: ffff888037f40f88 (&type->i_mutex_dir_key#6){++++}-{4:4}, at: wrap_directory_iterator+0x5d/0xe0 fs/readdir.c:54
+
+=============================================
+
+NMI backtrace for cpu 0
+CPU: 0 UID: 0 PID: 38 Comm: khungtaskd Tainted: G        W           6.16.0-syzkaller-04405-g4b290aae788e #0 PREEMPT_{RT,(full)} 
+Tainted: [W]=WARN
+Hardware name: Google Google Compute Engine/Google Compute Engine, BIOS Google 07/12/2025
+Call Trace:
+ <TASK>
+ dump_stack_lvl+0x189/0x250 lib/dump_stack.c:120
+ nmi_cpu_backtrace+0x39e/0x3d0 lib/nmi_backtrace.c:113
+ nmi_trigger_cpumask_backtrace+0x17a/0x300 lib/nmi_backtrace.c:62
+ trigger_all_cpu_backtrace include/linux/nmi.h:160 [inline]
+ check_hung_uninterruptible_tasks kernel/hung_task.c:307 [inline]
+ watchdog+0xf93/0xfe0 kernel/hung_task.c:470
+ kthread+0x711/0x8a0 kernel/kthread.c:464
+ ret_from_fork+0x3fc/0x770 arch/x86/kernel/process.c:148
+ ret_from_fork_asm+0x1a/0x30 arch/x86/entry/entry_64.S:245
+ </TASK>
+Sending NMI from CPU 0 to CPUs 1:
+NMI backtrace for cpu 1
+CPU: 1 UID: 0 PID: 0 Comm: swapper/1 Tainted: G        W           6.16.0-syzkaller-04405-g4b290aae788e #0 PREEMPT_{RT,(full)} 
+Tainted: [W]=WARN
+Hardware name: Google Google Compute Engine/Google Compute Engine, BIOS Google 07/12/2025
+RIP: 0010:pv_native_safe_halt+0x13/0x20 arch/x86/kernel/paravirt.c:82
+Code: cc cc cc cc cc cc cc 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 f3 0f 1e fa 66 90 0f 00 2d 53 1b 1a 00 f3 0f 1e fa fb f4 <e9> c8 b2 03 00 cc cc cc cc cc cc cc cc 90 90 90 90 90 90 90 90 90
+RSP: 0018:ffffc900001d7de0 EFLAGS: 000002c2
+RAX: 795132a39e33c100 RBX: ffffffff819592e8 RCX: 795132a39e33c100
+RDX: 0000000000000001 RSI: ffffffff8cff8d9d RDI: ffffffff8b61dd80
+RBP: ffffc900001d7f20 R08: ffff8880b893339b R09: 1ffff11017126673
+R10: dffffc0000000000 R11: ffffed1017126674 R12: ffffffff8efa15f0
+R13: 0000000000000001 R14: 0000000000000001 R15: 1ffff11003855b28
+FS:  0000000000000000(0000) GS:ffff888126c22000(0000) knlGS:0000000000000000
+CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033
+CR2: 000055598a640168 CR3: 000000000d5a6000 CR4: 00000000003526f0
+Call Trace:
+ <TASK>
+ arch_safe_halt arch/x86/include/asm/paravirt.h:107 [inline]
+ default_idle+0x13/0x20 arch/x86/kernel/process.c:757
+ default_idle_call+0x74/0xb0 kernel/sched/idle.c:122
+ cpuidle_idle_call kernel/sched/idle.c:190 [inline]
+ do_idle+0x1e8/0x510 kernel/sched/idle.c:330
+ cpu_startup_entry+0x44/0x60 kernel/sched/idle.c:428
+ start_secondary+0x101/0x110 arch/x86/kernel/smpboot.c:315
+ common_startup_64+0x13e/0x147
+ </TASK>
+
+
 ---
- fs/jfs/jfs_dtree.c | 4 ++--
- 1 file changed, 2 insertions(+), 2 deletions(-)
+This report is generated by a bot. It may contain errors.
+See https://goo.gl/tpsmEJ for more information about syzbot.
+syzbot engineers can be reached at syzkaller@googlegroups.com.
 
-diff --git a/fs/jfs/jfs_dtree.c b/fs/jfs/jfs_dtree.c
-index ab11849cf9cc..0ab83bb7bbdf 100644
---- a/fs/jfs/jfs_dtree.c
-+++ b/fs/jfs/jfs_dtree.c
-@@ -2903,7 +2903,7 @@ int jfs_readdir(struct file *file, struct dir_context *ctx)
-                 stbl = DT_GETSTBL(p);
- 
-                 for (i = index; i < p->header.nextindex; i++) {
--                       if (stbl[i] < 0 || stbl[i] > 127) {
-+                       if (stbl[i] < 0 || stbl[i] >= DTPAGEMAXSLOT) {
-                                 jfs_err("JFS: Invalid stbl[%d] = %d for inode %ld, block = %lld",
-                                         i, stbl[i], (long)ip->i_ino, (long long)bn);
-                                 free_page(dirent_buf);
-@@ -3108,7 +3108,7 @@ static int dtReadFirst(struct inode *ip, struct btstack * btstack)
-                 /* get the leftmost entry */
-                 stbl = DT_GETSTBL(p);
- 
--               if (stbl[0] < 0 || stbl[0] > 127) {
-+               if (stbl[0] < 0 || stbl[0] >= DTPAGEMAXSLOT) {
-                         DT_PUTPAGE(mp);
-                         jfs_error(ip->i_sb, "stbl[0] out of bound\n");
-                         return -EIO;
---
-2.43.0
+syzbot will keep track of this issue. See:
+https://goo.gl/tpsmEJ#status for how to communicate with syzbot.
+
+If the report is already addressed, let syzbot know by replying with:
+#syz fix: exact-commit-title
+
+If you want syzbot to run the reproducer, reply with:
+#syz test: git://repo/address.git branch-or-commit-hash
+If you attach or paste a git patch, syzbot will apply it before testing.
+
+If you want to overwrite report's subsystems, reply with:
+#syz set subsystems: new-subsystem
+(See the list of subsystem names on the web dashboard)
+
+If the report is a duplicate of another one, reply with:
+#syz dup: exact-subject-of-another-report
+
+If you want to undo deduplication, reply with:
+#syz undup
 
 
 _______________________________________________
