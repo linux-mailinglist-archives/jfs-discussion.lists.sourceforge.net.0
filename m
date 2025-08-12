@@ -2,73 +2,93 @@ Return-Path: <jfs-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+jfs-discussion@lfdr.de
 Delivered-To: lists+jfs-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id ECAADB21E65
-	for <lists+jfs-discussion@lfdr.de>; Tue, 12 Aug 2025 08:33:38 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E7734B22073
+	for <lists+jfs-discussion@lfdr.de>; Tue, 12 Aug 2025 10:15:10 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.sourceforge.net; s=beta; h=Content-Transfer-Encoding:Content-Type:Cc:
-	Reply-To:From:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:References:
-	Message-ID:To:Date:Sender:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=o2/wzrc45LEb6TZk51MX+6O51eT+QrXTHomaiQZvtgc=; b=SW1Ab44zXOxXCuTd43fRdtiNPq
-	ZDWrUuZEsIjFCytVnxZk5R96hbF9LQfvXZHHMDwwmKUgkYGqpaB3c5yHhWk9HIH571hbO/qSFTx+M
-	/f5q3y7jQ2SSAhqzAkLU82gBH6z8LU7qxj5KkQZVm1jzgT+qKLRNvkYcggQndH6gKbkI=;
-Received: from [127.0.0.1] (helo=sfs-ml-2.v29.lw.sourceforge.com)
-	by sfs-ml-2.v29.lw.sourceforge.com with esmtp (Exim 4.95)
+	Reply-To:List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:
+	List-Id:Subject:In-Reply-To:MIME-Version:References:Message-ID:To:From:Date:
+	Sender:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
+	Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=BXXz3QsN41YUgJxBOBqAuEsUX9UhgtMuH+pRawXJzu4=; b=G4ZuZ6V4zgfe/7t3EsaEGB2SnJ
+	94WGl1biOc5C9uUwVs+IGu5l9xD5LXJeEtgxO/GufjeQ5egG3rNnNQuNtV60+kMlj/Rxoxsh7Zew+
+	FBjie4rhahWw4LoCRvrrXDYPfc0PyHIIy+BBGeUxwDCoDMl/YV0eRzfoXNVIjV4nSDc8=;
+Received: from [127.0.0.1] (helo=sfs-ml-1.v29.lw.sourceforge.com)
+	by sfs-ml-1.v29.lw.sourceforge.com with esmtp (Exim 4.95)
 	(envelope-from <jfs-discussion-bounces@lists.sourceforge.net>)
-	id 1uliZR-0004Jg-7C;
-	Tue, 12 Aug 2025 06:33:18 +0000
+	id 1ulk9G-0006UG-6Y;
+	Tue, 12 Aug 2025 08:14:22 +0000
 Received: from [172.30.29.66] (helo=mx.sourceforge.net)
- by sfs-ml-2.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
+ by sfs-ml-1.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
  TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (Exim 4.95)
- (envelope-from <gregkh@linuxfoundation.org>) id 1uliZK-0004JA-Mx
+ (envelope-from <dsterba@suse.cz>) id 1ulk99-0006RU-Gn
  for jfs-discussion@lists.sourceforge.net;
- Tue, 12 Aug 2025 06:33:11 +0000
+ Tue, 12 Aug 2025 08:14:15 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=sourceforge.net; s=x; h=In-Reply-To:Content-Type:MIME-Version:References:
- Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:Content-Transfer-Encoding:
+ Reply-To:Message-ID:Subject:Cc:To:From:Date:Sender:Content-Transfer-Encoding:
  Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
  Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=80CcYUyhFS51zi8RkV5UHs4TwEeN2kI+C7wf490nVe0=; b=hYrBb6KTtf5FvF9aw/sSkrTVAa
- Y+R+FG815uV2vV00ELBfyHZg0mAzjOHtsmmXAUIGUd+sb5tc4jrNK7gos0KX/SAiDWFxPRNUwO/Mw
- HlWRgertL68bpWhade2gDiXHfoTwuVNdAuj1sFioaWmfN7qip7GRDjckAltCuC1XdZxQ=;
+ bh=zdS8cRXrb79Qryle3wWALVzssghNV8dY9EgSHNy03DI=; b=MOmSR5fa7dPO+IQz4z2NBHvy2N
+ 6s2R4xmefuKpmJCIlMJwZA/hbRs4x1Ae+VlsDqbPHAiGnK5TgjxnVsqZzNs7Mj8GrZYe7vxhCr9YH
+ X35KD2+D2REOAeu81en8SLZfAy1NT//stN7WLsslDbblwRM9lmA0HV7o9iXVFuJqACOY=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
- h=In-Reply-To:Content-Type:MIME-Version:References:Message-ID:Subject:Cc:To
- :From:Date:Sender:Reply-To:Content-Transfer-Encoding:Content-ID:
+ h=In-Reply-To:Content-Type:MIME-Version:References:Reply-To:Message-ID:
+ Subject:Cc:To:From:Date:Sender:Content-Transfer-Encoding:Content-ID:
  Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
  :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
  List-Post:List-Owner:List-Archive;
- bh=80CcYUyhFS51zi8RkV5UHs4TwEeN2kI+C7wf490nVe0=; b=j8GVHdWhZPWZkpMBAbkQ1eL3GB
- rfnQP9ODDi7U7Ar52sjXDzhIPkiYRbDRpOVakyGv1GUAkF3uR4ApoWs6PoZCDlwF13cGlXrLXlR0B
- ObjeFTUDgm5emdDgLvKlfXmcwIYzzqUulsxM9FjdWqn2+bbs6pT7NqkS4Sj1n3Tj/xmI=;
-Received: from tor.source.kernel.org ([172.105.4.254])
+ bh=zdS8cRXrb79Qryle3wWALVzssghNV8dY9EgSHNy03DI=; b=cVJh5yntrebRoY51OjdEMictt4
+ RLyc6ITypnXMFZAFBk4kW13BlGp5X76bmSzOv1j5B27LmLuhk8dWCcgnoAQ23JeAScl/RLIbI04Dq
+ CCjJHuxrjeXR9bCZcyn/bMWNl9svhCdacHdWQPhocSE+3jOEh/KPeQKy5LQYAyzUtvYE=;
+Received: from smtp-out2.suse.de ([195.135.223.131])
  by sfi-mx-2.v28.lw.sourceforge.com with esmtps
- (TLS1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.95)
- id 1uliZL-0005Nt-2o for jfs-discussion@lists.sourceforge.net;
- Tue, 12 Aug 2025 06:33:11 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
- by tor.source.kernel.org (Postfix) with ESMTP id 53FB361138;
- Tue, 12 Aug 2025 06:33:00 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 6C5D8C4CEF0;
- Tue, 12 Aug 2025 06:32:59 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=linuxfoundation.org;
- s=korg; t=1754980380;
- bh=L+sX4qQqPbDUBLkuV1Ks7WnwsWzP4JYCHfnG9R60EsQ=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=o3Zdl07+nWJldBMbMVuKTfEaKA02+JJIAzDpjCNhxFWBMLdaRJJhBmPRrgtO3jhOn
- 3DLPc/DlinkClYmp8AGn0qc5ZzONh5I+O4JSq3yBXwTxghSqeequDUZMB4Ps5ZU4fP
- axmDeKecaYk3Uif6H2WsVrS0XFX4G8URQzeK1yi8=
-Date: Tue, 12 Aug 2025 08:32:56 +0200
+ (TLS1.2:ECDHE-RSA-AES128-GCM-SHA256:128) (Exim 4.95)
+ id 1ulk98-0005aN-Vn for jfs-discussion@lists.sourceforge.net;
+ Tue, 12 Aug 2025 08:14:15 +0000
+Received: from imap1.dmz-prg2.suse.org (imap1.dmz-prg2.suse.org
+ [IPv6:2a07:de40:b281:104:10:150:64:97])
+ (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+ key-exchange X25519 server-signature RSA-PSS (4096 bits) server-digest SHA256)
+ (No client certificate requested)
+ by smtp-out2.suse.de (Postfix) with ESMTPS id 8E7CE1F461;
+ Tue, 12 Aug 2025 08:14:03 +0000 (UTC)
+Authentication-Results: smtp-out2.suse.de;
+	none
+Received: from imap1.dmz-prg2.suse.org (localhost [127.0.0.1])
+ (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+ key-exchange X25519 server-signature RSA-PSS (4096 bits) server-digest SHA256)
+ (No client certificate requested)
+ by imap1.dmz-prg2.suse.org (Postfix) with ESMTPS id 534191351A;
+ Tue, 12 Aug 2025 08:14:03 +0000 (UTC)
+Received: from dovecot-director2.suse.de ([2a07:de40:b281:106:10:150:64:167])
+ by imap1.dmz-prg2.suse.org with ESMTPSA id QtPcE8v3mmj4YQAAD6G6ig
+ (envelope-from <dsterba@suse.cz>); Tue, 12 Aug 2025 08:14:03 +0000
+Date: Tue, 12 Aug 2025 10:13:58 +0200
+From: David Sterba <dsterba@suse.cz>
 To: David Hildenbrand <david@redhat.com>
-Message-ID: <2025081248-frisbee-empathic-1815@gregkh>
+Message-ID: <20250812081358.GA5507@suse.cz>
 References: <20250811143949.1117439-1-david@redhat.com>
  <20250811143949.1117439-3-david@redhat.com>
 MIME-Version: 1.0
 Content-Disposition: inline
 In-Reply-To: <20250811143949.1117439-3-david@redhat.com>
-X-Spam-Score: -0.2 (/)
+User-Agent: Mutt/1.5.23.1-rc1 (2014-03-12)
+X-Rspamd-Pre-Result: action=no action; module=replies;
+ Message is reply to one we originated
+X-Spam-Level: 
+X-Rspamd-Server: rspamd1.dmz-prg2.suse.org
+X-Spamd-Result: default: False [-4.00 / 50.00]; REPLY(-4.00)[];
+ TAGGED_RCPT(0.00)[]
+X-Rspamd-Queue-Id: 8E7CE1F461
+X-Rspamd-Pre-Result: action=no action; module=replies;
+ Message is reply to one we originated
+X-Rspamd-Action: no action
+X-Spam-Flag: NO
+X-Spam-Score: -4.00
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: Spam detection software,
  running on the system "sfi-spamd-2.hosts.colo.sdot.me", 
  has NOT identified this incoming email as spam.  The original
@@ -78,18 +98,10 @@ X-Spam-Report: Spam detection software,
  Content preview:  On Mon, Aug 11, 2025 at 04:39:48PM +0200, David Hildenbrand
  wrote: > At this point MIGRATEPAGE_SUCCESS is misnamed for all folio users,
  > and now that we remove MIGRATEPAGE_UNMAP, it's really the only [...] 
- Content analysis details:   (-0.2 points, 5.0 required)
+ Content analysis details:   (0.0 points, 5.0 required)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature,
- not necessarily valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU Message has a valid DKIM or DK signature from author's
- domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - High trust sender
-X-Headers-End: 1uliZL-0005Nt-2o
+X-Headers-End: 1ulk98-0005aN-Vn
 Subject: Re: [Jfs-discussion] [PATCH v1 2/2] treewide: remove
  MIGRATEPAGE_SUCCESS
 X-BeenThere: jfs-discussion@lists.sourceforge.net
@@ -103,9 +115,7 @@ List-Post: <mailto:jfs-discussion@lists.sourceforge.net>
 List-Help: <mailto:jfs-discussion-request@lists.sourceforge.net?subject=help>
 List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/jfs-discussion>, 
  <mailto:jfs-discussion-request@lists.sourceforge.net?subject=subscribe>
-From: Greg Kroah-Hartman via Jfs-discussion
- <jfs-discussion@lists.sourceforge.net>
-Reply-To: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
+Reply-To: dsterba@suse.cz
 Cc: linux-aio@kvack.org, jfs-discussion@lists.sourceforge.net,
  Jan Kara <jack@suse.cz>, "Michael S. Tsirkin" <mst@redhat.com>,
  Jason Wang <jasowang@redhat.com>, linux-mm@kvack.org,
@@ -125,6 +135,7 @@ Cc: linux-aio@kvack.org, jfs-discussion@lists.sourceforge.net,
  Alexander Viro <viro@zeniv.linux.org.uk>, David Sterba <dsterba@suse.com>,
  Oscar Salvador <osalvador@suse.de>, Joshua Hahn <joshua.hahnjy@gmail.com>,
  Christian Brauner <brauner@kernel.org>, Chris Mason <clm@fb.com>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
  Muchun Song <muchun.song@linux.dev>, linux-kernel@vger.kernel.org,
  Minchan Kim <minchan@kernel.org>, Benjamin LaHaise <bcrl@kvack.org>,
  linux-fsdevel@vger.kernel.org, Andrew Morton <akpm@linux-foundation.org>,
@@ -147,16 +158,12 @@ On Mon, Aug 11, 2025 at 04:39:48PM +0200, David Hildenbrand wrote:
 >  drivers/misc/vmw_balloon.c           |  4 +--
 >  drivers/virtio/virtio_balloon.c      |  2 +-
 >  fs/aio.c                             |  2 +-
->  fs/btrfs/inode.c                     |  4 +--
->  fs/hugetlbfs/inode.c                 |  4 +--
->  fs/jfs/jfs_metapage.c                |  8 +++---
->  include/linux/migrate.h              | 10 +------
->  mm/migrate.c                         | 40 +++++++++++++---------------
->  mm/migrate_device.c                  |  2 +-
->  mm/zsmalloc.c                        |  4 +--
->  11 files changed, 36 insertions(+), 46 deletions(-)
 
-Acked-by: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
+For
+
+>  fs/btrfs/inode.c                     |  4 +--
+
+Acked-by: David Sterba <dsterba@suse.com>
 
 
 _______________________________________________
