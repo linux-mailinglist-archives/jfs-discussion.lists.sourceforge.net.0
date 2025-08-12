@@ -2,192 +2,94 @@ Return-Path: <jfs-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+jfs-discussion@lfdr.de
 Delivered-To: lists+jfs-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7EA2DB21479
-	for <lists+jfs-discussion@lfdr.de>; Mon, 11 Aug 2025 20:35:35 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 57DA7B230BA
+	for <lists+jfs-discussion@lfdr.de>; Tue, 12 Aug 2025 19:55:51 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.sourceforge.net; s=beta; h=Content-Transfer-Encoding:Content-Type:Cc:
 	Reply-To:From:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:Subject:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:To:Sender:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=9tigbNSknreDXOX9sO+G1eJaAhi5xXeyXG8yJXE8eUY=; b=damSzCGOs3LrOstOIQioZ87e/K
-	RSBXG8T1Zk36duLUppR+vHb90FyB567r2F6FWs7lSKpYl04lbuy5IPrZ/sVPd8XtX3OFwzU5DrxaD
-	0FT6rpDLiKaIbo4B4lT3EQc+3KGtoY8QRvsSsqiCrpW6Fjb3AHh8ZrMnd8oiQUgmM8eQ=;
+	List-Unsubscribe:List-Id:Subject:MIME-Version:Message-ID:Date:References:
+	In-Reply-To:To:Sender:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=9ZIobRYXTsDOqPkWYpG1ktK1FTppZ/IFcMdE30VFHv0=; b=VXsgF8FWClJb2ykzxKDBQ4OAsE
+	EV29VKXomndM9CKQuL4b9zPqMYKEgRcSDWpz/Cbeldib0ac9VRru5kygZgsLkaUk1c4Y//fqJh7qF
+	t54PS2zt0CZThKxwykrm/itS9XbYTWIP0bsob5EwaWVsOYMtfCyjNJpxqOmllC9TTllg=;
 Received: from [127.0.0.1] (helo=sfs-ml-2.v29.lw.sourceforge.com)
 	by sfs-ml-2.v29.lw.sourceforge.com with esmtp (Exim 4.95)
 	(envelope-from <jfs-discussion-bounces@lists.sourceforge.net>)
-	id 1ulXMC-00006p-Cg;
-	Mon, 11 Aug 2025 18:34:53 +0000
+	id 1ultDZ-00040Y-JE;
+	Tue, 12 Aug 2025 17:55:26 +0000
 Received: from [172.30.29.66] (helo=mx.sourceforge.net)
- by sfs-ml-2.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
+ by sfs-ml-3.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
  TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (Exim 4.95)
- (envelope-from <ziy@nvidia.com>) id 1ulXMB-00006c-5G
+ (envelope-from <ying.huang@linux.alibaba.com>) id 1uldqE-0002Ra-0g
  for jfs-discussion@lists.sourceforge.net;
- Mon, 11 Aug 2025 18:34:52 +0000
+ Tue, 12 Aug 2025 01:30:18 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=sourceforge.net; s=x; h=MIME-Version:Content-Type:References:In-Reply-To:
- Message-ID:Date:Subject:Cc:To:From:Sender:Reply-To:Content-Transfer-Encoding:
+ d=sourceforge.net; s=x; h=Content-Transfer-Encoding:Content-Type:MIME-Version
+ :Message-ID:Date:References:In-Reply-To:Subject:Cc:To:From:Sender:Reply-To:
  Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
  Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=LbJqTzC1UIzdo+ms9ENliUvYOi6OT6zVj900iav1E+M=; b=lJ2E6atDhR6xyb+ecfPqUDb7EN
- JoUDDXc4gVkI2+k89X3rL1zbIFa/scgiDL2RhFDt3+g+zeeXmS5qvi/L0eNc4Yvp/hPX4umbIo23V
- OAObuxDQsOrg8QGhZX4i7mxuO/DFzYsh3FNFhxKJ51t9YzHkZGGc1IeeIjtKOR3gufuY=;
+ bh=djZxdkbYS5ABjJh5vZ+OSyzqxKEA12clHOn12k1eFBw=; b=RJgXVehHnlADV4F7I/w9cdX2Gt
+ O+/EaxhDHL77Q90zC8BHH/ojGFVYJNuR1/wuSaSM+mX6WhikXXxG0vXDRPM7VAATwXCmYGdeDVb8/
+ vHjC+UkLD2EOkeEQDCOT4arFDw8kjC8mTVcP6bn8UTQAH67UHsKoh8nVeRE4GniuoxNA=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
- h=MIME-Version:Content-Type:References:In-Reply-To:Message-ID:Date:Subject:
- Cc:To:From:Sender:Reply-To:Content-Transfer-Encoding:Content-ID:
+ h=Content-Transfer-Encoding:Content-Type:MIME-Version:Message-ID:Date:
+ References:In-Reply-To:Subject:Cc:To:From:Sender:Reply-To:Content-ID:
  Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
  :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
  List-Post:List-Owner:List-Archive;
- bh=LbJqTzC1UIzdo+ms9ENliUvYOi6OT6zVj900iav1E+M=; b=g/IqTzNXlsRcTMgHbiIJgtN2Ci
- WfJuR2oRb87FOxH+SwyOpHSL6jIFR7C7Z00MuRHQ2pQ3cJVTsjEWpAbFuZRzeRs3Llc3pyBrH9snT
- a490ZH5p8pUW+Wyr+NtdNdL1VorsmDQKFdXrnkyERSZvoy346SvICI+o7yT2gFtZ419o=;
-Received: from mail-dm6nam11on2083.outbound.protection.outlook.com
- ([40.107.223.83] helo=NAM11-DM6-obe.outbound.protection.outlook.com)
+ bh=djZxdkbYS5ABjJh5vZ+OSyzqxKEA12clHOn12k1eFBw=; b=HuVbDH9WGTnR2edAw4d0zY+lH3
+ z4fJ1dQ9U22hupq4+tLWYkFQjlSvY6jiudaa9PXvepRktLjGzkvxnm/xiayoXSJGXBhs4iKQcxBxg
+ jukCttzouz5CwsMpxXDnTzlWlzyq52FZ5KACg05q5BOViOMvSvCPEwiK0OrNc7KrNQbA=;
+Received: from out30-132.freemail.mail.aliyun.com ([115.124.30.132])
  by sfi-mx-2.v28.lw.sourceforge.com with esmtps
  (TLS1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.95)
- id 1ulXMB-0000fs-GQ for jfs-discussion@lists.sourceforge.net;
- Mon, 11 Aug 2025 18:34:51 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=oyZqyrIbVgnBmuu6QHKf202xwvOoNC+8mES8fe7sruP0QN9XngQNvU6cjlY6M1k7anQ0HOr3oWmBWdeNyole58AwoLxhl4BamuG2hb8jHX4WCoEa+md6vNq4ZhbV76LfduWkAti6+X4UyuJGl1UDMBe9PNLB2+K329+6F8DnCMnOYccgFCbTJ5M0zutFvduhiSHOFrULXoYXaXBn9uWg5Ok/R2EbzEE1JcP+qBiaFTEf4fgcNdhU/0KY0sOo26Qo21pdWFIcqpL4OGCPyudpjJ3qBFfTC40HCm0ooybo7q/x8jzqUsWb0fHtMHp/l9zyy3hbiIWo84gU0wO7GPnjPw==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector10001;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=LbJqTzC1UIzdo+ms9ENliUvYOi6OT6zVj900iav1E+M=;
- b=nvE9nG6Q/MM+UTI7cIOiLlwPyTe2cYyTouy6aADap3NHYJYQ0rZ0+x07aUZg3430WHAQDtTJ38WdS497bvA/kWgU/2anCMCicTdSZC7UsGZhQTCNRKzTHFemlA5ocK2jhCTbL48ei7X/GYJ4H0zqL0lB9U1LRBLnHfGQUA4MN56Ay9++UJNYJQu4I0uX8+EDG/1LgfIb1NBk0Ic7MbDKf2JXpfuL20ZhHz1iu7jL67cfdCErYRPA5leo8aemEosBGJD08we9djI7SrynCHFecV0rvJZ/2sVvKy7HCMWV2wIs/R1y6IN0VB6jiQqKHMbkVp9SXgzd0yeAAMCWg+Xj/g==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=nvidia.com; dmarc=pass action=none header.from=nvidia.com;
- dkim=pass header.d=nvidia.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=Nvidia.com;
- s=selector2;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=LbJqTzC1UIzdo+ms9ENliUvYOi6OT6zVj900iav1E+M=;
- b=KjKLS/DrnG8VrXkMmsMinNsCC0KwOu7YeRiF6aNt0H3nZExV0gapj0ah7F7vJXITGO8mGRc7M6/s4k0/frR/MXlA4woC26jCkO7fMrV9X60qNn8pezxhnCmxXXXsxjTyHM5+WWxS1GqXFzBmiqQNm6l3VBXMaTgO6YPDJzGftRv+8HUg3Lvd4QIWt/SyjLjS7qsjObYrfeyTwL/JUeosrjCNIw7AxLyqS0diOE/xRBOYYwuiiME27W7WvXxHJsIDejql/3Z/wcP3MNea0uwcjhRn39ODjnSLMLKvrPwDP0GgSjvAlXkypCy3KEWFQFQu7fMNbKxC5MfAhcfvGoVzXQ==
-Authentication-Results: dkim=none (message not signed)
- header.d=none;dmarc=none action=none header.from=nvidia.com;
-Received: from DS7PR12MB9473.namprd12.prod.outlook.com (2603:10b6:8:252::5) by
- CH3PR12MB7643.namprd12.prod.outlook.com (2603:10b6:610:152::19) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.9009.20; Mon, 11 Aug
- 2025 18:18:42 +0000
-Received: from DS7PR12MB9473.namprd12.prod.outlook.com
- ([fe80::5189:ecec:d84a:133a]) by DS7PR12MB9473.namprd12.prod.outlook.com
- ([fe80::5189:ecec:d84a:133a%6]) with mapi id 15.20.9009.017; Mon, 11 Aug 2025
- 18:18:42 +0000
+ id 1uldqD-0004WD-8K for jfs-discussion@lists.sourceforge.net;
+ Tue, 12 Aug 2025 01:30:17 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=linux.alibaba.com; s=default;
+ t=1754962210; h=From:To:Subject:Date:Message-ID:MIME-Version:Content-Type;
+ bh=djZxdkbYS5ABjJh5vZ+OSyzqxKEA12clHOn12k1eFBw=;
+ b=JMbfwpsRNCi9vQ8K0CdPK0zFsmtjl1OT5ze7/nvcC9uy1+BBNgnJzrXzYo/jsMsVasDPYYjhUbEL4r0yaX89uL9z80p/b5ORZUZIyBKo2n7zC/7pwar7Es6i3EZ6u8anU7cbm5tcI49YJa+A9LIyWz09nPLOifv3+UzTQQDKM9s=
+Received: from DESKTOP-5N7EMDA(mailfrom:ying.huang@linux.alibaba.com
+ fp:SMTPD_---0WlYvemQ_1754962181 cluster:ay36) by smtp.aliyun-inc.com;
+ Tue, 12 Aug 2025 09:30:08 +0800
 To: David Hildenbrand <david@redhat.com>
-Date: Mon, 11 Aug 2025 14:18:37 -0400
-X-Mailer: MailMate (2.0r6272)
-Message-ID: <E26CCE5E-8198-4919-A38E-DCD2F65F0BEA@nvidia.com>
-In-Reply-To: <20250811143949.1117439-3-david@redhat.com>
+In-Reply-To: <20250811143949.1117439-1-david@redhat.com> (David Hildenbrand's
+ message of "Mon, 11 Aug 2025 16:39:46 +0200")
 References: <20250811143949.1117439-1-david@redhat.com>
- <20250811143949.1117439-3-david@redhat.com>
-X-ClientProxiedBy: BN8PR12CA0019.namprd12.prod.outlook.com
- (2603:10b6:408:60::32) To DS7PR12MB9473.namprd12.prod.outlook.com
- (2603:10b6:8:252::5)
+Date: Tue, 12 Aug 2025 09:29:40 +0800
+Message-ID: <87bjolgwe3.fsf@DESKTOP-5N7EMDA>
+User-Agent: Gnus/5.13 (Gnus v5.13)
 MIME-Version: 1.0
-X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: DS7PR12MB9473:EE_|CH3PR12MB7643:EE_
-X-MS-Office365-Filtering-Correlation-Id: 153aec37-4d92-4965-22a1-08ddd903807f
-X-MS-Exchange-SenderADCheck: 1
-X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;
- ARA:13230040|1800799024|366016|376014|7416014|7053199007; 
-X-Microsoft-Antispam-Message-Info: =?us-ascii?Q?hbuE9OG6yJs+Pr9CJsUHGDYSZ0ghGt0reM+xyg3nU7XX2gCS1BpP9k+cCJgd?=
- =?us-ascii?Q?f4mGEulrttudJbM5sJ9Qpl/p1nVKso9XgglB3ReuUuELodoI/S40NjRgaKOV?=
- =?us-ascii?Q?tq6X/QspHflGOzCfZT3O0Cedhs7DOfvlcIfG6iTVOExe7yoC6iPea0vgtjeG?=
- =?us-ascii?Q?FpeDmArxHvsElG3zLfzhiu7JxUMRqJPPywbBUuyylYQZFCxmUkBuav4bH4o7?=
- =?us-ascii?Q?aY9TaUKLtRf9pcfq12K733MqAT8WrACYgqnFp3i6WUSVONlP9H6n3zjgk5qK?=
- =?us-ascii?Q?LHSqbgn12tJFKMhA+mAa+VdrUfysP1wiKgkR23kQQiCmSSHGadax5KzXbpYx?=
- =?us-ascii?Q?h0/c8B12bjPVHcjRmECGTTWBXMzgiZWeVM4VDDJrZcIih2/WW+4j26UMxPi0?=
- =?us-ascii?Q?Kshtr+rrMfIkdjU1PnRVBQUe+m4U2fTznFvL6HJ+T3FfZJX1EgA+q9O+h2dd?=
- =?us-ascii?Q?vrI5dSmkzpc4nv7+59JxYavp/CfMrQmA5BBvnFbx9ZXij4HeGoWyombF1SgE?=
- =?us-ascii?Q?pVoV3Elk1WOFkDiqI/KBdcqvCaas3cnEP6QctDkUsc0LkmKOUuNE/k8NBNfJ?=
- =?us-ascii?Q?pYoabMUCfsY4AsQGqGByxTD83GQciT39C2ABbGQL9i7rXApAP85gRI4NWuer?=
- =?us-ascii?Q?jALP7cIYWBPSTi58yO5t+8OaAkQ1eIUCc7EKgs56kmrkmsZAHQXPp00qJVZb?=
- =?us-ascii?Q?CRvz6zBwNzQ1BudbUlOooy2wfrP8QHQQJn2f327QZcb+B1A+vvHx7xg8001+?=
- =?us-ascii?Q?VnbOvOpeeX/Pb2vd9n2eDOS1o+mn0WzVYwJ5LrunGyEER3MLywqEaIDKOJxc?=
- =?us-ascii?Q?Ql1sAs9UOWz2PToXcj5TExl7xVP1pPAVBsAujYjjJPoBqO24GFMU5rYKAjkS?=
- =?us-ascii?Q?HRXbFiBAnIAkHT9m71sYUuNQwY7897PROoHLUVTEi3bF2S43HnQMenxZdIPd?=
- =?us-ascii?Q?kRkhgHSixbgu8qVU9GdP1GnZqOM95SFEEzCYmN/bEiffk3eztPbV0npk1rfz?=
- =?us-ascii?Q?9ukbEcLjX7a3XfRU1I7M0l5kiE7A8famOgfU5MwXh3jHowuSWYZqd9L99gl1?=
- =?us-ascii?Q?OzmbDHXYDxtPvTbEu2ogtPNfgrEgOdz2mLU1B6ZguULEOEwfozhX22exfPSN?=
- =?us-ascii?Q?DHw4wQfVJkgySfZyzS+qs5IkFH0pTtSx1XgzhHK2kfC+QG6IXqM7OW1Mz+BP?=
- =?us-ascii?Q?xwTdozBjE96T5a95AGf78RqWQfI4rS7lMPvKVcPWBpq5TJQgLA5K7bwW91Oz?=
- =?us-ascii?Q?uTMZfKR9FVmr/C8oUAbTL9c1NSva7vlwL/ChLkz1lBY0hPd+20EOSEBJG6vG?=
- =?us-ascii?Q?M5AaufkDXsqzPdpP6sMvNBcAJJ9JA57fwqSB8defFOZovS3dP96pns9uyPfh?=
- =?us-ascii?Q?GIAWkBTkx73OtL5Pi+nA6UKHWGHRbu0mckJZsYdKb5vgVjHnY2mQJTNOS8YR?=
- =?us-ascii?Q?jpdh5u883zE=3D?=
-X-Forefront-Antispam-Report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
- IPV:NLI; SFV:NSPM; H:DS7PR12MB9473.namprd12.prod.outlook.com; PTR:; CAT:NONE;
- SFS:(13230040)(1800799024)(366016)(376014)(7416014)(7053199007); DIR:OUT;
- SFP:1101; 
-X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?osXqi+aisRmQzqnwY6QSeMi5yq5mYRyeAkSd634R6f6vRobE8X6D4+fu/2OQ?=
- =?us-ascii?Q?5O9OEnV5Oo+s5Ep67+O0Z6OjfC0w8kZ2ZS0dRohBPQA8gs7Cn4X2y2tbXJq/?=
- =?us-ascii?Q?9mGVKug+RV78BYR0IoZxJk9M06DY7GM4H1yh+jT+fJWaK2orb4qG1yGEGkNi?=
- =?us-ascii?Q?Ma5cQfEq8hx5zt6d19VtZojVii4H5MgjH5+A5sNIE72UZs655Fn2f0dTl2vA?=
- =?us-ascii?Q?OnLP4K2nPPZAnLivkgAdEJ2xskovSj6KwIh5XJ3wtlF/00CKydCzB4Lh58Zt?=
- =?us-ascii?Q?lKqoWJC/XT+ldsf+TT4Sle4RxJy3HIrdbaP8rRC6QjilOQcrJwrkicyAdUMg?=
- =?us-ascii?Q?dpAVYlcf9A9mlx3NI/scXEm5yCkm15AHA1hfOpfdZQN96f1rQ9bBYIWjD2A+?=
- =?us-ascii?Q?eJeV9nytcJve/KcSyhQLHdVlW3rb2P9P3JyrHwkGKoaRPCt0WAwGQe9v6rI1?=
- =?us-ascii?Q?aqc90I7qjoXg4RBmf9mi/mPTvoS74dokKYw1/mZ77WXinA+T94qMXqOSpPKs?=
- =?us-ascii?Q?HHqZdzLAv7Eqk+XLWm+OCP43z4DXDQU+RfGcflJJ5KYedl9uiGtFKvZdBj1z?=
- =?us-ascii?Q?hHslljVcLvzGClYuz8L3nytngOLR6aCZz0FVG08tGTCGPI1HykA0ll4IP/ir?=
- =?us-ascii?Q?p2Wxv9YMQ3z78JnoHNmrHEGzZ8hDD/R/upRC0+f0+whJvi5mpCeqYq1VXDnV?=
- =?us-ascii?Q?Jais0yBXe29dLB4T8oBWmr3U6G9eo8tQFb/PU6LY394oY+YsJvHS0mPqv+Kx?=
- =?us-ascii?Q?HJFUiu6Mgn+QhcLlLiQMgTw6vhq9BQsW1mGKaU79Xh3zvNlEhyURZ9SOpCiv?=
- =?us-ascii?Q?QPDard2nm1JHw/axRmWjwbyubMK8tucjTZ7mCIe4MtLEQH0b4J8aLpXtN2dB?=
- =?us-ascii?Q?vwWyVrw5t8ZPmZexHFkN3z1b9pQ/j03nQHtqKworZfSo4MBECudJABJytvgZ?=
- =?us-ascii?Q?1/Dc8ubvHV1+N/X+WFjJ+USNPlWbac1FS1qBjptxQlqXr3RXLSuy1l0Y0/NZ?=
- =?us-ascii?Q?5BsIsfY9Kuip9/AWoPRp9uNiD92OlF1Sb9waqm3bKSMqggNNd6DnM/VnI6+s?=
- =?us-ascii?Q?cker0P+H8gPwW2eS4tgg2UflWpYJYdhVAmRi44SHyjMZrLdWss96qRpaLCHy?=
- =?us-ascii?Q?ctB7FxahJIq4WaGAm3EERJEoJ1e1baSou4xzPA/8g92lhLFdqiVqy893mBT4?=
- =?us-ascii?Q?zap56gLnagD5SSNbyi5pTHX3zfHbm89k3UwHKkwXOtcvNMA0HgU6kHji17P9?=
- =?us-ascii?Q?tMwhVVgWVpU5XVynJF051A4y1mEUr/+NVC+bUY8YakJshT9eV0p5kR+HKNoD?=
- =?us-ascii?Q?RAEUS3T/MSlcCiBog7xLqR0J4Q9uL9N8NODzuKVvJD6kKF6/yRMB37e4xd+B?=
- =?us-ascii?Q?AKIlqMoXNMSOMqg/5gWdtwq4Tzwasl2z7LiJxo1qH2DMP0s+Krcwc56KX2eY?=
- =?us-ascii?Q?WbP/OrMaaA6eU2g3LMYWa0DbsStOMZFqaoAa3LZeUGiAs6u6K4G/zYvo6uyj?=
- =?us-ascii?Q?OLOT+SKZ4F+UVHoryxPmvPcyr+IQGrTbK0guEBmYljVpEaRwVJZLV2F3/Uvf?=
- =?us-ascii?Q?ee4jmtCjwGn1/eZ2hul+nA4WSY+OpN2hh9tupvhL?=
-X-OriginatorOrg: Nvidia.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 153aec37-4d92-4965-22a1-08ddd903807f
-X-MS-Exchange-CrossTenant-AuthSource: DS7PR12MB9473.namprd12.prod.outlook.com
-X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 11 Aug 2025 18:18:42.1949 (UTC)
-X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
-X-MS-Exchange-CrossTenant-Id: 43083d15-7273-40c1-b7db-39efd9ccc17a
-X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: gyiUSeA7RBxkch5hSEaQBtnTlQ8xSqer34TMHxD406jYXw7SqdC4GRZDfdwS97us
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: CH3PR12MB7643
-X-Spam-Score: -0.2 (/)
+X-Spam-Score: -7.7 (-------)
 X-Spam-Report: Spam detection software,
- running on the system "sfi-spamd-2.hosts.colo.sdot.me", 
+ running on the system "sfi-spamd-1.hosts.colo.sdot.me", 
  has NOT identified this incoming email as spam.  The original
  message has been attached to this so you can view it or label
  similar future email.  If you have any questions, see
  the administrator of that system for details.
- Content preview:  On 11 Aug 2025, at 10:39, David Hildenbrand wrote: > At this
- point MIGRATEPAGE_SUCCESS is misnamed for all folio users, > and now that
- we remove MIGRATEPAGE_UNMAP, it's really the only "success" > return value
- that the code uses and expects. > > Let's [...] 
- Content analysis details:   (-0.2 points, 5.0 required)
+ Content preview:  Hi, David, David Hildenbrand <david@redhat.com> writes: >
+ This is against mm/mm-new. > > This series gets rid of MIGRATEPAGE_UNMAP,
+ to then convert the remaining > MIGRATEPAGE_SUCCESS usage to simply use 0
+ instead. > > Not sure if it makes sense to split t [...] 
+ Content analysis details:   (-7.7 points, 5.0 required)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature,
- not necessarily valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -7.5 USER_IN_DEF_DKIM_WL From: address is in the default DKIM welcome-list
  -0.1 DKIM_VALID_AU Message has a valid DKIM or DK signature from author's
- domain 0.0 ARC_SIGNED             Message has a ARC signature
+ domain
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
- 0.0 ARC_VALID              Message has a valid ARC signature
- 0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [40.107.223.83 listed in wl.mailspike.net]
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - High trust sender
-X-Headers-End: 1ulXMB-0000fs-GQ
-Subject: Re: [Jfs-discussion] [PATCH v1 2/2] treewide: remove
- MIGRATEPAGE_SUCCESS
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature,
+ not necessarily valid
+ 0.0 UNPARSEABLE_RELAY Informational: message has unparseable relay lines
+X-Headers-End: 1uldqD-0004WD-8K
+X-Mailman-Approved-At: Tue, 12 Aug 2025 17:55:24 +0000
+Subject: Re: [Jfs-discussion] [PATCH v1 0/2] mm: remove MIGRATEPAGE_*
 X-BeenThere: jfs-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -199,21 +101,20 @@ List-Post: <mailto:jfs-discussion@lists.sourceforge.net>
 List-Help: <mailto:jfs-discussion-request@lists.sourceforge.net?subject=help>
 List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/jfs-discussion>, 
  <mailto:jfs-discussion-request@lists.sourceforge.net?subject=subscribe>
-From: Zi Yan via Jfs-discussion <jfs-discussion@lists.sourceforge.net>
-Reply-To: Zi Yan <ziy@nvidia.com>
+From: "Huang, Ying via Jfs-discussion" <jfs-discussion@lists.sourceforge.net>
+Reply-To: "Huang, Ying" <ying.huang@linux.alibaba.com>
 Cc: linux-aio@kvack.org, jfs-discussion@lists.sourceforge.net,
  Jan Kara <jack@suse.cz>, "Michael S. Tsirkin" <mst@redhat.com>,
  Jason Wang <jasowang@redhat.com>, linux-mm@kvack.org,
- Ying Huang <ying.huang@linux.alibaba.com>,
  Matthew Brost <matthew.brost@intel.com>,
  Xuan Zhuo <xuanzhuo@linux.alibaba.com>,
  Madhavan Srinivasan <maddy@linux.ibm.com>, Rakie Kim <rakie.kim@sk.com>,
  Sergey Senozhatsky <senozhatsky@chromium.org>,
  Michael Ellerman <mpe@ellerman.id.au>, Alistair Popple <apopple@nvidia.com>,
  Christophe Leroy <christophe.leroy@csgroup.eu>,
- =?utf-8?q?Eugenio_P=C3=A9rez?= <eperezma@redhat.com>,
- Byungchul Park <byungchul@sk.com>, Josef Bacik <josef@toxicpanda.com>,
- Gregory Price <gourry@gourry.net>, Arnd Bergmann <arnd@arndb.de>,
+ Eugenio =?utf-8?Q?P=C3=A9rez?= <eperezma@redhat.com>, Zi Yan <ziy@nvidia.com>,
+ Josef Bacik <josef@toxicpanda.com>, Gregory Price <gourry@gourry.net>,
+ Byungchul Park <byungchul@sk.com>, Arnd Bergmann <arnd@arndb.de>,
  Dave Kleikamp <shaggy@kernel.org>, virtualization@lists.linux.dev,
  Nicholas Piggin <npiggin@gmail.com>,
  Jerrin Shaji George <jerrin.shaji-george@broadcom.com>,
@@ -225,45 +126,60 @@ Cc: linux-aio@kvack.org, jfs-discussion@lists.sourceforge.net,
  Minchan Kim <minchan@kernel.org>, Benjamin LaHaise <bcrl@kvack.org>,
  linux-fsdevel@vger.kernel.org, Andrew Morton <akpm@linux-foundation.org>,
  linuxppc-dev@lists.ozlabs.org, linux-btrfs@vger.kernel.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Errors-To: jfs-discussion-bounces@lists.sourceforge.net
 
-On 11 Aug 2025, at 10:39, David Hildenbrand wrote:
-
-> At this point MIGRATEPAGE_SUCCESS is misnamed for all folio users,
-> and now that we remove MIGRATEPAGE_UNMAP, it's really the only "success"
-> return value that the code uses and expects.
->
-> Let's just get rid of MIGRATEPAGE_SUCCESS completely and just use "0"
-> for success.
->
-> Signed-off-by: David Hildenbrand <david@redhat.com>
-> ---
->  arch/powerpc/platforms/pseries/cmm.c |  2 +-
->  drivers/misc/vmw_balloon.c           |  4 +--
->  drivers/virtio/virtio_balloon.c      |  2 +-
->  fs/aio.c                             |  2 +-
->  fs/btrfs/inode.c                     |  4 +--
->  fs/hugetlbfs/inode.c                 |  4 +--
->  fs/jfs/jfs_metapage.c                |  8 +++---
-
-
-
->  include/linux/migrate.h              | 10 +------
->  mm/migrate.c                         | 40 +++++++++++++---------------
->  mm/migrate_device.c                  |  2 +-
->  mm/zsmalloc.c                        |  4 +--
->  11 files changed, 36 insertions(+), 46 deletions(-)
->
-
-For the mm part, LGTM. Reviewed-by: Zi Yan <ziy@nvidia.com>
-
-Best Regards,
-Yan, Zi
-
-
-_______________________________________________
-Jfs-discussion mailing list
-Jfs-discussion@lists.sourceforge.net
-https://lists.sourceforge.net/lists/listinfo/jfs-discussion
+SGksIERhdmlkLAoKRGF2aWQgSGlsZGVuYnJhbmQgPGRhdmlkQHJlZGhhdC5jb20+IHdyaXRlczoK
+Cj4gVGhpcyBpcyBhZ2FpbnN0IG1tL21tLW5ldy4KPgo+IFRoaXMgc2VyaWVzIGdldHMgcmlkIG9m
+IE1JR1JBVEVQQUdFX1VOTUFQLCB0byB0aGVuIGNvbnZlcnQgdGhlIHJlbWFpbmluZwo+IE1JR1JB
+VEVQQUdFX1NVQ0NFU1MgdXNhZ2UgdG8gc2ltcGx5IHVzZSAwIGluc3RlYWQuCj4KPiBOb3Qgc3Vy
+ZSBpZiBpdCBtYWtlcyBzZW5zZSB0byBzcGxpdCB0aGUgc2Vjb25kIHBhdGNoIHVwLCBhIHRyZWV3
+aWRlCj4gY2xlYW51cCBmZWx0IG1vcmUgcmVhc29uYWJsZSBmb3IgdGhpcyBzaW1wbGUgY2hhbmdl
+IGluIGFuIGFyZWEgd2hlcmUKPiBJIGRvbid0IGV4cGVjdCBhIGxvdCBvZiBjaHVybi4KPgo+IEJy
+aWVmbHkgdGVzdGVkIHdpdGggdmlydGlvLW1lbSBpbiBhIFZNLCBtYWtpbmcgc3VyZSB0aGF0IGJh
+c2ljCj4gcGFnZSBtaWdyYXRpb24ga2VlcHMgd29ya2luZy4KPgo+IENjOiBBbmRyZXcgTW9ydG9u
+IDxha3BtQGxpbnV4LWZvdW5kYXRpb24ub3JnPgo+IENjOiBNYWRoYXZhbiBTcmluaXZhc2FuIDxt
+YWRkeUBsaW51eC5pYm0uY29tPgo+IENjOiBNaWNoYWVsIEVsbGVybWFuIDxtcGVAZWxsZXJtYW4u
+aWQuYXU+Cj4gQ2M6IE5pY2hvbGFzIFBpZ2dpbiA8bnBpZ2dpbkBnbWFpbC5jb20+Cj4gQ2M6IENo
+cmlzdG9waGUgTGVyb3kgPGNocmlzdG9waGUubGVyb3lAY3Nncm91cC5ldT4KPiBDYzogSmVycmlu
+IFNoYWppIEdlb3JnZSA8amVycmluLnNoYWppLWdlb3JnZUBicm9hZGNvbS5jb20+Cj4gQ2M6IEFy
+bmQgQmVyZ21hbm4gPGFybmRAYXJuZGIuZGU+Cj4gQ2M6IEdyZWcgS3JvYWgtSGFydG1hbiA8Z3Jl
+Z2toQGxpbnV4Zm91bmRhdGlvbi5vcmc+Cj4gQ2M6ICJNaWNoYWVsIFMuIFRzaXJraW4iIDxtc3RA
+cmVkaGF0LmNvbT4KPiBDYzogSmFzb24gV2FuZyA8amFzb3dhbmdAcmVkaGF0LmNvbT4KPiBDYzog
+WHVhbiBaaHVvIDx4dWFuemh1b0BsaW51eC5hbGliYWJhLmNvbT4KPiBDYzogIkV1Z2VuaW8gUMOp
+cmV6IiA8ZXBlcmV6bWFAcmVkaGF0LmNvbT4KPiBDYzogQWxleGFuZGVyIFZpcm8gPHZpcm9AemVu
+aXYubGludXgub3JnLnVrPgo+IENjOiBDaHJpc3RpYW4gQnJhdW5lciA8YnJhdW5lckBrZXJuZWwu
+b3JnPgo+IENjOiBKYW4gS2FyYSA8amFja0BzdXNlLmN6Pgo+IENjOiBCZW5qYW1pbiBMYUhhaXNl
+IDxiY3JsQGt2YWNrLm9yZz4KPiBDYzogQ2hyaXMgTWFzb24gPGNsbUBmYi5jb20+Cj4gQ2M6IEpv
+c2VmIEJhY2lrIDxqb3NlZkB0b3hpY3BhbmRhLmNvbT4KPiBDYzogRGF2aWQgU3RlcmJhIDxkc3Rl
+cmJhQHN1c2UuY29tPgo+IENjOiBNdWNodW4gU29uZyA8bXVjaHVuLnNvbmdAbGludXguZGV2Pgo+
+IENjOiBPc2NhciBTYWx2YWRvciA8b3NhbHZhZG9yQHN1c2UuZGU+Cj4gQ2M6IERhdmUgS2xlaWth
+bXAgPHNoYWdneUBrZXJuZWwub3JnPgo+IENjOiBaaSBZYW4gPHppeUBudmlkaWEuY29tPgo+IENj
+OiBNYXR0aGV3IEJyb3N0IDxtYXR0aGV3LmJyb3N0QGludGVsLmNvbT4KPiBDYzogSm9zaHVhIEhh
+aG4gPGpvc2h1YS5oYWhuanlAZ21haWwuY29tPgo+IENjOiBSYWtpZSBLaW0gPHJha2llLmtpbUBz
+ay5jb20+Cj4gQ2M6IEJ5dW5nY2h1bCBQYXJrIDxieXVuZ2NodWxAc2suY29tPgo+IENjOiBHcmVn
+b3J5IFByaWNlIDxnb3VycnlAZ291cnJ5Lm5ldD4KPiBDYzogWWluZyBIdWFuZyA8eWluZy5odWFu
+Z0BsaW51eC5hbGliYWJhLmNvbT4KPiBDYzogQWxpc3RhaXIgUG9wcGxlIDxhcG9wcGxlQG52aWRp
+YS5jb20+Cj4gQ2M6IE1pbmNoYW4gS2ltIDxtaW5jaGFuQGtlcm5lbC5vcmc+Cj4gQ2M6IFNlcmdl
+eSBTZW5vemhhdHNreSA8c2Vub3poYXRza3lAY2hyb21pdW0ub3JnPgo+Cj4gRGF2aWQgSGlsZGVu
+YnJhbmQgKDIpOgo+ICAgbW0vbWlncmF0ZTogcmVtb3ZlIE1JR1JBVEVQQUdFX1VOTUFQCj4gICB0
+cmVld2lkZTogcmVtb3ZlIE1JR1JBVEVQQUdFX1NVQ0NFU1MKCkxHVE0uICBGZWVsIGZyZWUgdG8g
+YWRkIG15CgpSZXZpZXdlZC1ieTogSHVhbmcgWWluZyA8eWluZy5odWFuZ0BsaW51eC5hbGliYWJh
+LmNvbT4KCmZvciB0aGUgd2hvbGUgc2VyaWVzIGluIHRoZSBmdXR1cmUgdmVyc2lvbnMuCgo+ICBh
+cmNoL3Bvd2VycGMvcGxhdGZvcm1zL3BzZXJpZXMvY21tLmMgfCAgMiArLQo+ICBkcml2ZXJzL21p
+c2Mvdm13X2JhbGxvb24uYyAgICAgICAgICAgfCAgNCArLQo+ICBkcml2ZXJzL3ZpcnRpby92aXJ0
+aW9fYmFsbG9vbi5jICAgICAgfCAgMiArLQo+ICBmcy9haW8uYyAgICAgICAgICAgICAgICAgICAg
+ICAgICAgICAgfCAgMiArLQo+ICBmcy9idHJmcy9pbm9kZS5jICAgICAgICAgICAgICAgICAgICAg
+fCAgNCArLQo+ICBmcy9odWdldGxiZnMvaW5vZGUuYyAgICAgICAgICAgICAgICAgfCAgNCArLQo+
+ICBmcy9qZnMvamZzX21ldGFwYWdlLmMgICAgICAgICAgICAgICAgfCAgOCArLS0KPiAgaW5jbHVk
+ZS9saW51eC9taWdyYXRlLmggICAgICAgICAgICAgIHwgMTEgKy0tLQo+ICBtbS9taWdyYXRlLmMg
+ICAgICAgICAgICAgICAgICAgICAgICAgfCA4MCArKysrKysrKysrKysrKy0tLS0tLS0tLS0tLS0t
+Cj4gIG1tL21pZ3JhdGVfZGV2aWNlLmMgICAgICAgICAgICAgICAgICB8ICAyICstCj4gIG1tL3pz
+bWFsbG9jLmMgICAgICAgICAgICAgICAgICAgICAgICB8ICA0ICstCj4gIDExIGZpbGVzIGNoYW5n
+ZWQsIDU2IGluc2VydGlvbnMoKyksIDY3IGRlbGV0aW9ucygtKQo+Cj4KPiBiYXNlLWNvbW1pdDog
+NTNjNDQ4MDIzMTg1NzE3ZDBlZDU2YjU1NDZkYzJiZTQwNWRhOTJmZgoKLS0tCkJlc3QgUmVnYXJk
+cywKSHVhbmcsIFlpbmcKCgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fXwpKZnMtZGlzY3Vzc2lvbiBtYWlsaW5nIGxpc3QKSmZzLWRpc2N1c3Npb25AbGlzdHMu
+c291cmNlZm9yZ2UubmV0Cmh0dHBzOi8vbGlzdHMuc291cmNlZm9yZ2UubmV0L2xpc3RzL2xpc3Rp
+bmZvL2pmcy1kaXNjdXNzaW9uCg==
