@@ -2,193 +2,175 @@ Return-Path: <jfs-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+jfs-discussion@lfdr.de
 Delivered-To: lists+jfs-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id 31CCCB3A453
-	for <lists+jfs-discussion@lfdr.de>; Thu, 28 Aug 2025 17:25:24 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6F531B2BD03
+	for <lists+jfs-discussion@lfdr.de>; Tue, 19 Aug 2025 11:19:06 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.sourceforge.net; s=beta; h=Content-Transfer-Encoding:Content-Type:Cc:
 	Reply-To:From:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:To:Sender:
-	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
-	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
-	bh=KGPSYypSNIj0gqkfDa3hRUpuOIUiAJ1GbAfDzZiWkeA=; b=K7jGx7+bEc/2nYk7HwonMoR7Ro
-	+bAmXwSDgxXlHBghllOJjEfvZdrrA8IEnf/4mwWBw9ZyY0NIsCC+s8JBodwB4QL364JdOKDDlsA9g
-	OlEO5uotsLPOVqqNOewvw5kbpYNydbrfpSkHw6a2CEPtUYH5z9n/c3MV93TDGm65H6EA=;
+	List-Unsubscribe:List-Id:Subject:In-Reply-To:References:To:MIME-Version:Date:
+	Message-ID:Sender:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=eTxMLYIBC6rPWWNn4S7zTbpglLA978/ltgmPKWN+BGw=; b=QrUhHz8Oxk2OMWggKx+NnL2i3M
+	wdXDGL6ytg+oLxe3dDgBOlUPHL2838r0tD6c/z7sVnaLgrbBw5iC4TOSDGDdz30C/O3u55jHBjcPd
+	KDzv29y1QdC4rmBpShnmszOm7c8BFNXZxkMsJ4ea1DiYHEzUPF5dJese+SDxq5TKDuPQ=;
 Received: from [127.0.0.1] (helo=sfs-ml-2.v29.lw.sourceforge.com)
 	by sfs-ml-2.v29.lw.sourceforge.com with esmtp (Exim 4.95)
 	(envelope-from <jfs-discussion-bounces@lists.sourceforge.net>)
-	id 1ureUT-0005Fq-J0;
-	Thu, 28 Aug 2025 15:24:42 +0000
+	id 1uoISG-0001iO-Pg;
+	Tue, 19 Aug 2025 09:16:33 +0000
 Received: from [172.30.29.66] (helo=mx.sourceforge.net)
- by sfs-ml-3.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
+ by sfs-ml-2.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
  TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (Exim 4.95)
- (envelope-from <liaoyuanhong@vivo.com>) id 1uoD1a-0007cF-Qj
+ (envelope-from <Markus.Elfring@web.de>) id 1uoISE-0001i4-Oa
  for jfs-discussion@lists.sourceforge.net;
- Tue, 19 Aug 2025 03:28:39 +0000
+ Tue, 19 Aug 2025 09:16:31 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=sourceforge.net; s=x; h=MIME-Version:Content-Type:Content-Transfer-Encoding
- :Message-Id:Date:Subject:Cc:To:From:Sender:Reply-To:Content-ID:
- Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
- :Resent-Message-ID:In-Reply-To:References:List-Id:List-Help:List-Unsubscribe:
+ d=sourceforge.net; s=x; h=Content-Transfer-Encoding:Content-Type:In-Reply-To:
+ From:Subject:References:Cc:To:MIME-Version:Date:Message-ID:Sender:Reply-To:
+ Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
+ Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=s7y+u/bPpQ5847fFbiHla7bdIQVhGRO5v8LAvIQ49g4=; b=EvIWrIlSY39mGBqBysqW1YZeCv
- kGugrjYi153fd0w/lW/IDTb+21hWp3reKxp/mwAQDggDklS69q5V3KOI4cnGz26gtYLtUo+WVzLTk
- C7NrohO3zKW/TJbKzjly4TA8nQzbcK8J4t94VJIo7P1abI8h/wE0U1hkWHwptqj9dzRI=;
+ bh=eBYVJ2FkORuTwqWvVkBmCDP8mHAzlrBhN4QFixSH68M=; b=ed6NYsGQXjfyW/m+9kB77cr/6g
+ 1iEZfj1kaMo8fIbsQ7GkHZ2s9NMxri3khjbXO9k53cDvT4ANe5LbCmEDB/xYojHLc+675Cq4qFUt4
+ gNJjplWP/7ICzY7Qg2awKMJM+IgguzzidxkoWR8niynzhJF6a1rw0IH+wNHhjrT6QXWs=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
- h=MIME-Version:Content-Type:Content-Transfer-Encoding:Message-Id:Date:
- Subject:Cc:To:From:Sender:Reply-To:Content-ID:Content-Description:Resent-Date
- :Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
- References:List-Id:List-Help:List-Unsubscribe:List-Subscribe:List-Post:
- List-Owner:List-Archive; bh=s7y+u/bPpQ5847fFbiHla7bdIQVhGRO5v8LAvIQ49g4=; b=O
- T1X/glozpYUlafpliYF1wq5HxfGCniX5N7J5ad47Fn6wPoz3vUkSFROq+hM6kCjza8XdYv8Qr7j9w
- KuHXUPKOvnsnpZ2ZkGiXEGfK0UiLtdRpBFfjjmPB3uT54yZa2x8h+ppMIoytC9iCScC6RflnYeF/w
- tJpFPsr4J72Xn4iQ=;
-Received: from mail-japaneastazon11013001.outbound.protection.outlook.com
- ([52.101.127.1] helo=TYDPR03CU002.outbound.protection.outlook.com)
+ h=Content-Transfer-Encoding:Content-Type:In-Reply-To:From:Subject:
+ References:Cc:To:MIME-Version:Date:Message-ID:Sender:Reply-To:Content-ID:
+ Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+ :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
+ List-Post:List-Owner:List-Archive;
+ bh=eBYVJ2FkORuTwqWvVkBmCDP8mHAzlrBhN4QFixSH68M=; b=DqJ9dIlrJ2/Wj2t8i2wxm7KLDi
+ ksPNzUkaNEnzqxNX4xssZaF1p6SpgKRblxT6vhd2Vlm+bLGxUaMsRY/FiZXQwDphp4QJL/3wttdqV
+ vjctCtWuqD8gFeQw7E6Y6ug/aQyzxVhzH6dLqCAAV0JL5p8omDHwwR0qksROdZlgbQ94=;
+Received: from mout.web.de ([212.227.15.4])
  by sfi-mx-2.v28.lw.sourceforge.com with esmtps
  (TLS1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.95)
- id 1uoD1Z-0005wS-Uq for jfs-discussion@lists.sourceforge.net;
- Tue, 19 Aug 2025 03:28:38 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=Qzxk2CHmWfV5HBL/ANnlWYdKYcJMAmpS/zwLhZ+eCZsceR4DsY1Zn18qbYrXmXikX/wg3bsE9PcNruWPuPLeqUX9OFltpt2LNzFkMxlWqf0qHl8I6tAo9R70pfuLT/WlgjNSE8p7s95h/gLef3S2osTc1wFFeU3OGQNSZHoJdMneFS0pLA/tMH7g13FzPA592oBDUE9ZOhI3r93ef6DpXwZaHa5xx34OYPx+CvzbSmRPUgOZCAInkZV4NgtUR1GYCfPPvecX+/6K4PqBuTfcTXsF3WABY2x2sL8e+qNLgc7jTT47qWv3lCP2xVgF7t0x4v2jBK3eNRZX8udJfTTvVA==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector10001;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=s7y+u/bPpQ5847fFbiHla7bdIQVhGRO5v8LAvIQ49g4=;
- b=psom7VPnNT4mNp5JjbWvyy9c6Kmmf7LWU9HUsoVs7bxisNwfpP34yMPy90KtjQxwVHxOeRfptOp+wsbw79puBOupc0bM1ZdtBKq5j09R+Nr5rbraznJglwGNTwRfA1cAqzFjO7ULH2jAhQ3qbSrXHeLCYiFta+d9tGEteWPa2R04yxDeqsb2vdEPVoorzpaAwnGVq2mAjKhAthPKlFBFhxxO7fzyZ5gIjW2iWiIRXMtVhTtPM/rD0F6ApsWgZNS0f78Mf3ruJ9U4lSCorhz8bsEubmwRKd2nYLuIp34G+GRsbsQg6CFGCa3NYp1wmlXdJ+E+ZBoZUx11Nwsmet7Rig==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=vivo.com; dmarc=pass action=none header.from=vivo.com;
- dkim=pass header.d=vivo.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=vivo.com; s=selector2; 
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=s7y+u/bPpQ5847fFbiHla7bdIQVhGRO5v8LAvIQ49g4=;
- b=lxN37YBZ5hXSGMgsq8gW+rT2KwfwdXBbcgK4abkWAL/zoS8a3nCsP8IP2rPkwKT0DG5hlN/DBBLrQBhDKxjAe8qo8hrVqRDOO4Uny60SAn28l/ydhHOzLvNsXi6pCksol58GVTOZ81KJgQfI9Yc2YvEM8HHBRgMZCJhy4iLxDzfzbPeD9ncXxgCrEa/AaS7SbkMPBsScwlUViGtiVWueEmwApa5BQ3Bxq9mqVHHbX0DB9gw5Jh7zzYWBjbDAFLpr5S44mOZY0rJKQC9bjHbmSB2o42W++AwQN/wCyR7RDyEgtd8D75ibQG/OAIsTaxJkLLVbXVOCVgYoIYyfJJAndw==
-Authentication-Results: dkim=none (message not signed)
- header.d=none;dmarc=none action=none header.from=vivo.com;
-Received: from SEZPR06MB5576.apcprd06.prod.outlook.com (2603:1096:101:c9::14)
- by JH0PR06MB6809.apcprd06.prod.outlook.com (2603:1096:990:4c::9) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.9031.24; Tue, 19 Aug
- 2025 03:28:29 +0000
-Received: from SEZPR06MB5576.apcprd06.prod.outlook.com
- ([fe80::5c0a:2748:6a72:99b6]) by SEZPR06MB5576.apcprd06.prod.outlook.com
- ([fe80::5c0a:2748:6a72:99b6%5]) with mapi id 15.20.9031.023; Tue, 19 Aug 2025
- 03:28:29 +0000
-To: Dave Kleikamp <shaggy@kernel.org>,
- jfs-discussion@lists.sourceforge.net (open list:JFS FILESYSTEM),
- linux-kernel@vger.kernel.org (open list)
-Date: Tue, 19 Aug 2025 11:28:14 +0800
-Message-Id: <20250819032816.426276-1-liaoyuanhong@vivo.com>
-X-Mailer: git-send-email 2.34.1
-X-ClientProxiedBy: SG2PR02CA0118.apcprd02.prod.outlook.com
- (2603:1096:4:92::34) To SEZPR06MB5576.apcprd06.prod.outlook.com
- (2603:1096:101:c9::14)
+ id 1uoISE-0006ci-IH for jfs-discussion@lists.sourceforge.net;
+ Tue, 19 Aug 2025 09:16:31 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=web.de;
+ s=s29768273; t=1755594972; x=1756199772; i=markus.elfring@web.de;
+ bh=eBYVJ2FkORuTwqWvVkBmCDP8mHAzlrBhN4QFixSH68M=;
+ h=X-UI-Sender-Class:Message-ID:Date:MIME-Version:To:Cc:References:
+ Subject:From:In-Reply-To:Content-Type:Content-Transfer-Encoding:
+ cc:content-transfer-encoding:content-type:date:from:message-id:
+ mime-version:reply-to:subject:to;
+ b=kdpflB0TjkM4sUfl5fIKS6zpNPXrY4PrtLO5iZNIZMatMzpjY/OBIuodfg3Hc5ud
+ QldIwpDodqEv6xmyU7P5qtkwIlcBEKuoE31MdZtZlvpWdb84VA//2WULjEJPUf5ba
+ GXbq+pqCkizeqdBFx+NK1OqLpidEYIVJlvG3N9BXHq2EMAoMfnnIwK/HCsGEtcxS6
+ C9mGx5ZVH6RSuR+9Pn1Dp2QGMLDXa6jYuEcEr8D2z6P6TbNH7p6I8EQ9UjSMUvN0z
+ toqqzLyvxNBNIkuGZqisiLtEhewIPrPmx0Yv6+MODHBQSr9iRcobW2k/UE+gFt/L/
+ C24oriShYd3E2sESeA==
+X-UI-Sender-Class: 814a7b36-bfc1-4dae-8640-3722d8ec6cd6
+Received: from [192.168.178.29] ([94.31.69.248]) by smtp.web.de (mrweb005
+ [213.165.67.108]) with ESMTPSA (Nemesis) id 1MSIF2-1uzGnU1shk-00Uyrc; Tue, 19
+ Aug 2025 11:16:12 +0200
+Message-ID: <88fd2a23-ecdb-47ec-9328-62b9bda7bff4@web.de>
+Date: Tue, 19 Aug 2025 11:16:11 +0200
 MIME-Version: 1.0
-X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: SEZPR06MB5576:EE_|JH0PR06MB6809:EE_
-X-MS-Office365-Filtering-Correlation-Id: 7f14743b-eadd-4d89-c8bc-08ddded0771d
-X-MS-Exchange-SenderADCheck: 1
-X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;
- ARA:13230040|1800799024|52116014|366016|376014|38350700014; 
-X-Microsoft-Antispam-Message-Info: =?us-ascii?Q?3URXxz2OLqPa1JdtwSCG+9UJSMHDKZtujAkl3hJ1PAjuQAq/HEDNAOO3a+B7?=
- =?us-ascii?Q?zgfb2fnn7SKPHt35uhBfeGYR4FbKmHegMmzW/tQU5pfg8/7no2i7/JzKjoo4?=
- =?us-ascii?Q?rA58iY0swrEqqYcO5qVbEIK7sOD0CTRcqcE7epJ+D94WzVe+1EKWVfc9IVl9?=
- =?us-ascii?Q?OFfGMnbsYm5h1g2uUN6LvTacgFk0NBlcXAqew4F4q2vTBpRAUq9y9wSdv/rP?=
- =?us-ascii?Q?2c9HMvweiAz40a1YoAoYB4auulGjD0THtixmqmW+7EqCAEj1DTeGdFbUcQLW?=
- =?us-ascii?Q?z0yNmgTZLGwXLQdU+Hbq8GvnXVXCN528rViV4CBkYbpaYu+7wU4tg0nJfnRA?=
- =?us-ascii?Q?KhfZuWLatGjY/zdtFjlrZdWewTfCzwDFCaxozo2WoyFSdGPEbz860vjcB/yM?=
- =?us-ascii?Q?IqRVL2hS4BZYEjZWKRn0nhwbcEYQxZWgDyAiABBuZTvsk8RJBbrWusvZd1De?=
- =?us-ascii?Q?3ID+1mslvOayI4OMrJo8vapXW8yjbRZk2btDqjwsfiYJlJSc4SEIVTkb8Byi?=
- =?us-ascii?Q?oyTLojXuE4d99bMTLXqIyYDs20QpFzMLiT9nfOwIfUTzrOrtwPErvvREASGX?=
- =?us-ascii?Q?GSu6M/ZWEo++OZPOxphnmVmxjkDgHQP/0MWVD/pO4yXGwbexwUwlmHx7Z5FC?=
- =?us-ascii?Q?kbcooUtYFdRfGaq+1nu9XBwN0sPKvtuxoept5oezI6+5wn+AEBPHwqhagidA?=
- =?us-ascii?Q?lZ1wByuEZoY2Bo7jkdZYStpTtLe0U5YWG6+MY8pmK5uVtEHQSvlnADJUmS15?=
- =?us-ascii?Q?2K+RyqJK6E8mP4SVSfZGAEmIxO3UC1Z7d5Y0x/Hyg6UGbMWlF+Nrjf0OQsE1?=
- =?us-ascii?Q?1hH0Z1URV7WSwvf7M8Hijc0v3SuUwmI4RnmRrN8I/j4GLUflDY7DfsUKpKfW?=
- =?us-ascii?Q?gtmQeLrdxZoFTzKCM8ubGzcZZRs903qZX8mJXhDOosjEGcaG+bek1AMwcLup?=
- =?us-ascii?Q?fainUBcIfOAe1qsxrpfbuI3bexopitxjLwDlvWQMHdvt7Ek6sGbSAfJJ7Yo9?=
- =?us-ascii?Q?mW0luiFIyRpYKiUSkgRU601FbWe9abOA3n6YrOSudE8UzKd3dVpj3XdfP7H1?=
- =?us-ascii?Q?7IU3VbMBCQkSoGFJzAupkNgc5drFeE7bENiHxMMeBHwXkGp0XlZd0VbH6v14?=
- =?us-ascii?Q?E/MNaU10sHojX2BvxKvugbGxbYAo6MkIOrnDAGLj/tYiEGXr4MgYsDbIfEjm?=
- =?us-ascii?Q?6CqU9/B6JUfk03IF8Sl9bL0V7ImpdMXIO2y+D4/iviKdwCGv6sDGaYDMOyps?=
- =?us-ascii?Q?XgI5WHUKbitwKKe8q9UKqOrvoSn3eClJ3i0WW8bAf4y4UL8D/2BB0O2dez+G?=
- =?us-ascii?Q?S2jZscZrdrFnXloTLn5VK3m9OGgiT/1E+zvhFlmFm76APXmguTS0ijLJTq/U?=
- =?us-ascii?Q?RwTfhgsgXhnsIxreowkKmMWEFVCnF9mwbdNu1P8XvuvQrjuCbR9JX6+NQYLu?=
- =?us-ascii?Q?Nl/jOCkXRVfKdckAzLlACIHKIosdGAcK/3A5FkkHfdXxB3u+h2BNbutC++iA?=
- =?us-ascii?Q?sAPK6cpBhRNrk0g=3D?=
-X-Forefront-Antispam-Report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
- IPV:NLI; SFV:NSPM; H:SEZPR06MB5576.apcprd06.prod.outlook.com; PTR:; CAT:NONE;
- SFS:(13230040)(1800799024)(52116014)(366016)(376014)(38350700014); DIR:OUT;
- SFP:1101; 
-X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0: =?us-ascii?Q?9zkVZWtHhK7uAMB6eWpV2nhCsqJBNz+kfM0qoWFqwSu1iRf4dUM/2cGdHbHw?=
- =?us-ascii?Q?giWVKjVR7JVvxvbQpeMLK+UDsxkcGhvt6UURiYKzUTrSPByQLkWr92kCiLUL?=
- =?us-ascii?Q?N5gbdtFSp4p0fD7P7HOqpG6es3ZcuMkgnZz3SG/TY5IP1nl3yUN4kEG3po6M?=
- =?us-ascii?Q?dlTbJNYHnSxQYaebnpp9gyl8BekzvC4b+wBndGkJmW+08l/AoQ4StzIz6BJB?=
- =?us-ascii?Q?E6tztwXDm7+f6DPPgUUcUyUbMSsmNaM/mOgMjpx5Rapw+AXmY6nAJdclxrk2?=
- =?us-ascii?Q?I0Qu8wXiMDmj3nQ5IlZ/Ri0m+m6/w6faV7UvOsqnhlKtieBbcMLQ7hid9uj5?=
- =?us-ascii?Q?XnctnBaa4s/NjraY7KF9D2fFWHdx529vPLyFNa/zprFHlHlv4oM36Hd4TUYF?=
- =?us-ascii?Q?ds/3J19vvFKpyb7wjrVN5e4TCIBdFqJtdPOJDAfgOCNR//TCJgu8QGK1Wa9W?=
- =?us-ascii?Q?VD0Pz8AjT5w1IKERAL+pDvzBdIdfPeu3HIpulK2keDwichbyhooHN8nD+Fcf?=
- =?us-ascii?Q?Wg3pWoTC3u+LRH5EhIHBQ0cVmxowuo2wpwZRfSNJuwqxB5lVqo1SKPwnkMvm?=
- =?us-ascii?Q?kwMm1tubM4+Xv5AIDUChhoOmCeo+/nVjO0RU9RAmpA6PkZCT3Ekq3jvZmcE1?=
- =?us-ascii?Q?luePESk5dm2IRkk1p2bJx5zgI288UR4UFpdDxc0bHUTvi7nbEuAu4LFaKD7F?=
- =?us-ascii?Q?ofpWL9qP625rvFdyu+ru0rHpuw7s2LzKjH97q0Gtp5U5qxm637x9DuVl3Kt/?=
- =?us-ascii?Q?G22jHkH+Ya7pkRZCv8Q27zz/Xaz/cKT0OCT1R90g1tOMe/esTwjrO7ViK1P1?=
- =?us-ascii?Q?WOyxvScE53YvW3f2+lKSRvGtThqnuHnCrjGGwSrX8eHw+ieGPcxJGbq7AgMD?=
- =?us-ascii?Q?CXjwARH40vRBohn3wXRMnXHMvZIS9TRVdPvBMKgQOqJ+XuTxX0qt4+MhSsX2?=
- =?us-ascii?Q?y/fyawUDdrOp2UkAFJJwrgIx/jT1tMY2ftGrnLy9C8h0Z6gzy0nYMcTwj0YY?=
- =?us-ascii?Q?NanPr81sKPnRD4qBqGLnyC9B99RIkPW46Dc6F6VNrVTVIk3HjZjbSGlm9dOh?=
- =?us-ascii?Q?6EG4/u/1wghLfPNibvdJioWnVLe/4klCTk2kZVTmNz1Gk7pzFl7Djdxvtv2C?=
- =?us-ascii?Q?bP6dUD7KbJIlAGhsh/DqL8buMF8x3SSgYm46pgiiHEzXB91GIUgkUEFG+CZC?=
- =?us-ascii?Q?HqbtESIkHzSbH2KFNuVKzsy4U7ababGtaUJNZlR9ZH5SYFTTApt/D/3/8hAg?=
- =?us-ascii?Q?CCHcxyzO1iZb1DSHYOdSYba/bARsfmGAHFQOmRhRLKZdLmgDmaZDmz3wjITM?=
- =?us-ascii?Q?7y5GHmU6OfLrcXKbR5S6TA8fWWpmjlNkTjcR1VbLKjf9NGWq/VDVPPC4VCVd?=
- =?us-ascii?Q?WcfZsCgTAbHx0IQN4hZakJlr8kQO3a5dqRd3sK/w1jhVAxWvqeuqtmGTpB5b?=
- =?us-ascii?Q?kWBE0KuNK2k5r+skJF1dVe0A5Gixn5Lt8V4QsgEzWlk/vJlIFdnguRUptRYq?=
- =?us-ascii?Q?eLcsjOVMrKfj4JkF04GvtABEHTzUlvquPQGQAy2Q9v8fOAQOHF24I7uEiU+n?=
- =?us-ascii?Q?f7OC0lFlZDB1AXf22PCO47E7P25LAEinBHbnftvA?=
-X-OriginatorOrg: vivo.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 7f14743b-eadd-4d89-c8bc-08ddded0771d
-X-MS-Exchange-CrossTenant-AuthSource: SEZPR06MB5576.apcprd06.prod.outlook.com
-X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 19 Aug 2025 03:28:29.1635 (UTC)
-X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
-X-MS-Exchange-CrossTenant-Id: 923e42dc-48d5-4cbe-b582-1a797a6412ed
-X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: AZDHMaYPVIMtM9Sz2kbHCHDzVgtL02iZ7XNnGRT3y4ovM9ZSUNsPycTflsEv1h5/rF0uil9svKwJ86VuRyf4nQ==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: JH0PR06MB6809
-X-Spam-Score: 0.8 (/)
+User-Agent: Mozilla Thunderbird
+To: Liao Yuanhong <liaoyuanhong@vivo.com>,
+ jfs-discussion@lists.sourceforge.net, Dave Kleikamp <shaggy@kernel.org>
+References: <20250819032816.426276-1-liaoyuanhong@vivo.com>
+Content-Language: en-GB, de-DE
+In-Reply-To: <20250819032816.426276-1-liaoyuanhong@vivo.com>
+X-Provags-ID: V03:K1:EN4AWiQJyFq1Sucoj9nMHzU1fSTvsh2ltNimcq0EnQBzor0dk5h
+ y4X9SEyLDjI/H8lujokVCeIp9dmpTod8/YnHFI1F3sxzTs1Q0aRaqMhOc41SvOB2aHnYdI1
+ f4PuWPq3Aybcw83/c3ljizEQRhbqqDiXhNy5mq2vrj0csubb5nhLiZU1cGMuR/FdBLa6GER
+ BTXmkqMRjcs6NUV/vWLwA==
+X-Spam-Flag: NO
+UI-OutboundReport: notjunk:1;M01:P0:EGSQzH2KABU=;1rBwsA1O/UvaT/wMNkcwmjeZ1qI
+ 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
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: Spam detection software,
  running on the system "sfi-spamd-2.hosts.colo.sdot.me", 
  has NOT identified this incoming email as spam.  The original
  message has been attached to this so you can view it or label
  similar future email.  If you have any questions, see
  the administrator of that system for details.
- Content preview: The jfs_log struct is already zeroed by kzalloc(). It's
- redundant
- to initialize dummy_log->base to 0. Signed-off-by: Liao Yuanhong
- <liaoyuanhong@vivo.com>
- --- fs/jfs/jfs_logmgr.c | 1 - 1 file changed, 1 deletion(-) 
- Content analysis details:   (0.8 points, 5.0 required)
+ Content preview:  > The jfs_log struct is already zeroed by kzalloc(). It's
+ redundant to > initialize dummy_log->base to 0. See also once more:
+ https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/Documentation/process/submitting-patches.rst?h=v6.17-rc2#n94
+ Content analysis details:   (-0.2 points, 5.0 required)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [52.101.127.1 listed in wl.mailspike.net]
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature,
  not necessarily valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU Message has a valid DKIM or DK signature from author's
- domain 0.0 ARC_SIGNED             Message has a ARC signature
+ domain
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
- 0.0 ARC_VALID              Message has a valid ARC signature
- 1.0 HK_RANDOM_FROM         From username looks random
- 0.0 HK_RANDOM_ENVFROM      Envelope sender username looks random
-X-Headers-End: 1uoD1Z-0005wS-Uq
-X-Mailman-Approved-At: Thu, 28 Aug 2025 15:24:39 +0000
-Subject: [Jfs-discussion] [PATCH] JFS: Remove redundant 0 value
+ 0.0 FREEMAIL_FROM Sender email is commonly abused enduser mail provider
+ [markus.elfring(at)web.de]
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [212.227.15.4 listed in wl.mailspike.net]
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+X-Headers-End: 1uoISE-0006ci-IH
+Subject: Re: [Jfs-discussion] [PATCH] JFS: Remove redundant 0 value
  initialization
 X-BeenThere: jfs-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
@@ -201,36 +183,21 @@ List-Post: <mailto:jfs-discussion@lists.sourceforge.net>
 List-Help: <mailto:jfs-discussion-request@lists.sourceforge.net?subject=help>
 List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/jfs-discussion>, 
  <mailto:jfs-discussion-request@lists.sourceforge.net?subject=subscribe>
-From: Liao Yuanhong via Jfs-discussion <jfs-discussion@lists.sourceforge.net>
-Reply-To: Liao Yuanhong <liaoyuanhong@vivo.com>
-Cc: Liao Yuanhong <liaoyuanhong@vivo.com>
+From: Markus Elfring via Jfs-discussion <jfs-discussion@lists.sourceforge.net>
+Reply-To: Markus Elfring <Markus.Elfring@web.de>
+Cc: LKML <linux-kernel@vger.kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Errors-To: jfs-discussion-bounces@lists.sourceforge.net
 
-The jfs_log struct is already zeroed by kzalloc(). It's redundant to
-initialize dummy_log->base to 0.
+> The jfs_log struct is already zeroed by kzalloc(). It's redundant to
+> initialize dummy_log->base to 0.
 
-Signed-off-by: Liao Yuanhong <liaoyuanhong@vivo.com>
----
- fs/jfs/jfs_logmgr.c | 1 -
- 1 file changed, 1 deletion(-)
+See also once more:
+https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/Documentation/process/submitting-patches.rst?h=v6.17-rc2#n94
 
-diff --git a/fs/jfs/jfs_logmgr.c b/fs/jfs/jfs_logmgr.c
-index 270808b6219b..b343c5ea1159 100644
---- a/fs/jfs/jfs_logmgr.c
-+++ b/fs/jfs/jfs_logmgr.c
-@@ -1199,7 +1199,6 @@ static int open_dummy_log(struct super_block *sb)
- 		init_waitqueue_head(&dummy_log->syncwait);
- 		dummy_log->no_integrity = 1;
- 		/* Make up some stuff */
--		dummy_log->base = 0;
- 		dummy_log->size = 1024;
- 		rc = lmLogInit(dummy_log);
- 		if (rc) {
--- 
-2.34.1
-
+Regards,
+Markus
 
 
 _______________________________________________
