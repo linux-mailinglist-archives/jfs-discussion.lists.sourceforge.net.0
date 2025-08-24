@@ -2,104 +2,124 @@ Return-Path: <jfs-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+jfs-discussion@lfdr.de
 Delivered-To: lists+jfs-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2550AB3A452
-	for <lists+jfs-discussion@lfdr.de>; Thu, 28 Aug 2025 17:25:24 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8D726B3A445
+	for <lists+jfs-discussion@lfdr.de>; Thu, 28 Aug 2025 17:25:00 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.sourceforge.net; s=beta; h=Content-Transfer-Encoding:Content-Type:
+	d=lists.sourceforge.net; s=beta; h=Content-Transfer-Encoding:Content-Type:Cc:
 	Reply-To:From:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:Subject:To:Message-ID:Date:MIME-Version:Sender:Cc:
+	List-Unsubscribe:List-Id:Subject:MIME-Version:Message-ID:Date:To:Sender:
 	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
 	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
-	bh=NvZg6jVot/VGkUTWSjEzU53kLifEJsNSyysvikVJkDw=; b=i6nXFbhTg//f9DyCtr3ebErbZn
-	1DOwd1GZ4DL1DRaOv3XV5kGdylJGnryoe9LMRPWDpe81gQyyDbgC2mgP91YWCkvgv+pkmNupNiBBV
-	kuG2tZa2arDMdzC2UYk1D4Wv0fRbCvC4kVrKGF6osY4+MX0wTZDUpLExK0pEa6Og9tbo=;
+	bh=kIsMM1pgVGUjLclHPPiKO4w1VhLifqisNQd+A3CJ2io=; b=erYq0zagQhSqsQbkfIj3Vd/fso
+	QOv32ScgWZj6vE5Ms1tjXoxHs290t9Rdz/OhtMjzMSaS4wy/jsR4A/EcZvmzeTD3FRWz3SBXsY8KO
+	TbOGI+s2lxGOS5KAyzZ17lG7PAVUtSF2XJcEVMo67qKVLEEVpaIexPP3VUDT46D3Ii8g=;
 Received: from [127.0.0.1] (helo=sfs-ml-2.v29.lw.sourceforge.com)
 	by sfs-ml-2.v29.lw.sourceforge.com with esmtp (Exim 4.95)
 	(envelope-from <jfs-discussion-bounces@lists.sourceforge.net>)
-	id 1ureUU-0005GG-5C;
-	Thu, 28 Aug 2025 15:24:42 +0000
+	id 1ureUU-0005Ga-E9;
+	Thu, 28 Aug 2025 15:24:43 +0000
 Received: from [172.30.29.66] (helo=mx.sourceforge.net)
- by sfs-ml-4.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
- TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (Exim 4.95) (envelope-from
- <35OypaAkbALEjpqbRccViRggZU.XffXcVljViTfekVek.Tfd@M3KW2WVRGUFZ5GODRSRYTGD7.apphosting.bounces.google.com>)
- id 1upr9W-0001Oj-Fw for jfs-discussion@lists.sourceforge.net;
- Sat, 23 Aug 2025 16:31:38 +0000
+ by sfs-ml-2.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
+ TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (Exim 4.95)
+ (envelope-from <ssrane_b23@ee.vjti.ac.in>) id 1uqHyw-0005v3-N8
+ for jfs-discussion@lists.sourceforge.net;
+ Sun, 24 Aug 2025 21:10:31 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=sourceforge.net; s=x; h=Content-Type:To:From:Subject:Message-ID:Date:
- MIME-Version:Sender:Reply-To:Cc:Content-Transfer-Encoding:Content-ID:
+ d=sourceforge.net; s=x; h=Content-Transfer-Encoding:MIME-Version:Message-ID:
+ Date:Subject:Cc:To:From:Sender:Reply-To:Content-Type:Content-ID:
  Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
  :Resent-Message-ID:In-Reply-To:References:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=hHv33q9ltfCocvMdwHSFsTpUPmOGS5z30Wm1W0NFv2w=; b=GalymBB5vA1AvUJfHng11+pDsP
- HYduXU3G+rpZU5i1eyUWvOxLNv2ZwnCgrwyVbhipn5ueYsiLNku65gHBJ39Y6KLymGZfRe8bPXAF+
- SmfnS1SbXDeJeQ4yWDKk7gFJQNQualuuajwlpG/B8Wf7UoATbOfXBhoGKdxYXM/Y35pM=;
+ bh=x76S/o+eGtAyfQXS4f4w5/0aFuqXnjv0Dx2n1B93glQ=; b=kKEeOPe3swj59VXtZ6DPrEDXG0
+ zpFbq3XZxK0gaTC7Y3CnF0xNyU0L6cHOwRE47VnKxa/Vwn+WvM3QQk7Pvb0o5gxGPuFvqzuUMOAL/
+ s2pGSCHHj3bxgFIQHuz/kuwnWtcUaMgEGoLZ4ofSwgKa2wRL1SHuPKnhDXLAOyMsfK94=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
- h=Content-Type:To:From:Subject:Message-ID:Date:MIME-Version:Sender:Reply-To
- :Cc:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+ h=Content-Transfer-Encoding:MIME-Version:Message-ID:Date:Subject:Cc:To:From
+ :Sender:Reply-To:Content-Type:Content-ID:Content-Description:Resent-Date:
  Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
  References:List-Id:List-Help:List-Unsubscribe:List-Subscribe:List-Post:
- List-Owner:List-Archive; bh=hHv33q9ltfCocvMdwHSFsTpUPmOGS5z30Wm1W0NFv2w=; b=P
- FwMV6N4MUSBI/QjWhcYnO5xuwV+vUvp7diFL0CHbVmhzVUF/WpZnHn52GaWMEnxEnI2RlehJAFzMA
- 80fo5QOLnadiinVhbFlatoqBN8frf1EtK2oWYIA0xfhI97Dqt2m1ZLrBBPPlWUQPelsfBBBz9ntIs
- lDhCkIZzn9SaxvEQ=;
-Received: from mail-il1-f197.google.com ([209.85.166.197])
+ List-Owner:List-Archive; bh=x76S/o+eGtAyfQXS4f4w5/0aFuqXnjv0Dx2n1B93glQ=; b=H
+ WkzIDAVCA9HJ5n2Rl5ptFUU6/8G5rGlwa5JgXGjIMokdAFkCXQMwHRo2QfbD0jyoDIdYessdHb5EJ
+ i8PEYtrLlaPP/gc4X4I/8tdtgnxMAWgWRXyh701OgqPzPhNwyc26idUmMolXdnvSi36dy188XHfRG
+ 42rTRp+YENdmb9rY=;
+Received: from mail-vs1-f48.google.com ([209.85.217.48])
  by sfi-mx-2.v28.lw.sourceforge.com with esmtps
  (TLS1.2:ECDHE-RSA-AES128-GCM-SHA256:128) (Exim 4.95)
- id 1upr9V-00067h-Vd for jfs-discussion@lists.sourceforge.net;
- Sat, 23 Aug 2025 16:31:38 +0000
-Received: by mail-il1-f197.google.com with SMTP id
- e9e14a558f8ab-3e57006bfddso30707485ab.2
+ id 1uqHyx-0005hl-1Q for jfs-discussion@lists.sourceforge.net;
+ Sun, 24 Aug 2025 21:10:31 +0000
+Received: by mail-vs1-f48.google.com with SMTP id
+ ada2fe7eead31-522c2a648a7so10557137.0
  for <jfs-discussion@lists.sourceforge.net>;
- Sat, 23 Aug 2025 09:31:37 -0700 (PDT)
+ Sun, 24 Aug 2025 14:10:30 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=vjti.ac.in; s=google; t=1756069820; x=1756674620; darn=lists.sourceforge.net;
+ h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+ :to:from:from:to:cc:subject:date:message-id:reply-to;
+ bh=x76S/o+eGtAyfQXS4f4w5/0aFuqXnjv0Dx2n1B93glQ=;
+ b=JUIETlvgjswvTpw5BLdXl5zW80TwyCn5Y/kxXAiIuJGlYSUKDJAtfq/rCUnPh0DZfx
+ aXO2R3whZ1pHzM5GelGLAVyvoMe7aqnZkOKQyK7cZj+2De63xmlEKk1wQFxWp+zbwTDs
+ BhXG4/s2g4OInN0XDrra4c5fecW5dT0EEV3L0=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20230601; t=1755966692; x=1756571492;
- h=to:from:subject:message-id:date:mime-version:x-gm-message-state
- :from:to:cc:subject:date:message-id:reply-to;
- bh=hHv33q9ltfCocvMdwHSFsTpUPmOGS5z30Wm1W0NFv2w=;
- b=bvZkWUKlskoe/Vj7tI5JJ7UNu5kB9lkiKDc4HHwzEnbAeu/qJHwHN7CDhb0ERZawwT
- 297c6ulFFgGoBXSMU6D9LWq0OmifROPkAr0e61IeKGQJD2mfmkjnwCVt9fuI2n3yME8S
- etohrTyXqx2h0bUWrvwsVQ2YJX+bWwOIi3l2cosjRZ8x5BVowLbXD6s5Baq3GvChTSpf
- ry/jtUJQQTZpom6bpJdLBoHprgh36F5XSenyHLGa+vsHn5ofuhQvfYdZBc4RJcgbnEMr
- Cj0mXRngdhdoj/CjPSRrl7QhUJ0ey9a47davzkPQtQFWvE6jXrg3BzF3WS+MHPHW06az
- LP1w==
-X-Gm-Message-State: AOJu0Yy3PX6qst7AnZpOjGDyxDab4IEasd5S4UQ6xh68unjf/AuWy/U/
- CjtjM2r0zHzm+R+i9tKXJJdFSbTgpAmZS7ubiz7kRG1umftxJXi2/kIM6+kBLO79fHGehqAOd+2
- MhStShnNtaMpLyPBN09FPM8CHs4q1ssTjR2E1B6G22GhjRunn9NNzujj0bVQ=
-X-Google-Smtp-Source: AGHT+IF6Tfp2VNYDcZUSmpcuYAeZn7vJwvVWCyMRTdvjlwAHlgV6P1Qi4eoDFtRInJTnca7iFFEha/J6U8xwWIHJZvYK6DoDy6/0
+ d=1e100.net; s=20230601; t=1756069820; x=1756674620;
+ h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+ :to:from:x-gm-message-state:from:to:cc:subject:date:message-id
+ :reply-to;
+ bh=x76S/o+eGtAyfQXS4f4w5/0aFuqXnjv0Dx2n1B93glQ=;
+ b=plKd35Cwn79B2gne3uuX3/IxKJad133KY1SDvfmwnj28DbiS7Kdv+zx8RN4MUlCs5T
+ 9tsLGhsvFUnPDDvA3Cv0JiEwguJkqhEpp+vNk0q2J544D1N/aRX9B03xanFDXVzrbbql
+ XW8s/r2hkob1F3s/CW5pbaUNGlA9voevr6zkBj5k7Nu/WW/V7WiBm88D2C9J/E05IqJU
+ gbid+YA+6jZb+pYDxxKaLn4snDthR5St0JySVBmWlEEImEXRTQ5281dHRkaJdv87+YsV
+ Rv2xO+C/dGv7lLtDejZ9Rf7oAqGaRQu8nd2VWb1tKkQzEA9HdHZufCYapCyiLPLWOtKw
+ cjPg==
+X-Gm-Message-State: AOJu0YzQg/+CYX+zrWbvsCytwD5gmOD4nTmgY5RTu2gXlp/9uvoYZNdi
+ fRAK8R1r9XyZUvSF/XKeZZ4gTnEzBQCuYlbf1h5d6fmILRbiQdObQfaGUS+2SIWknT7ZQNv/plw
+ mdiVAA6g=
+X-Gm-Gg: ASbGnctDxxa830+5S1/c1lXZ2dL4iPjOj4GRlf/mgl2jAYA6U8QHeuJQ1GnTVaYUWGJ
+ 0Km6z4UPDocHMA/mul/IRIHf9ElJWmPK+o9tz0ObvBivHPiRxykLBYWBnygpl50dMj8rSVTxCj6
+ xwCcXnAa1oL1sVGDYP7610zo6uHyD2iercAdJPVUWseQJvR2XGZN0a7SXWWtBPBLb+DmNEilY39
+ XQqZH2sTGkXinbOUJSMbDEq0NvQ7hjJr4K1PIMiA6sMxo96j3pKFn62JC+4hR/ikqD01qQs+5H9
+ CDoC0LPHDq7uhfFD83NmbMcRcE4+cRJPOAB28KR11H3SpduAsMLSNtxJEcrlq2SPbXMvX+v0Z1K
+ mFWvV3UO6KkYrV9BCDxa7fpwKZXH1gg==
+X-Google-Smtp-Source: AGHT+IFE2UIoWuGuZxRVNliHypdTt1MzfzYsLZkO4j1r2l1oyvaMo77/1+8D2w4za3snZ1HG8LFRXw==
+X-Received: by 2002:a17:903:166e:b0:243:a32:1f0d with SMTP id
+ d9443c01a7336-24632a3602emr138158285ad.18.1756066427873; 
+ Sun, 24 Aug 2025 13:13:47 -0700 (PDT)
+Received: from fedora ([152.58.45.20]) by smtp.gmail.com with ESMTPSA id
+ d9443c01a7336-246688804c9sm49033195ad.130.2025.08.24.13.13.43
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Sun, 24 Aug 2025 13:13:47 -0700 (PDT)
+To: shaggy@kernel.org
+Date: Mon, 25 Aug 2025 01:43:32 +0530
+Message-ID: <20250824201332.4236-1-ssrane_b23@ee.vjti.ac.in>
+X-Mailer: git-send-email 2.50.1
 MIME-Version: 1.0
-X-Received: by 2002:a05:6e02:12e9:b0:3e5:75cb:44fc with SMTP id
- e9e14a558f8ab-3e921a5d155mr119122465ab.12.1755966692271; Sat, 23 Aug 2025
- 09:31:32 -0700 (PDT)
-Date: Sat, 23 Aug 2025 09:31:32 -0700
-X-Google-Appengine-App-Id: s~syzkaller
-X-Google-Appengine-App-Id-Alias: syzkaller
-Message-ID: <68a9ece4.a00a0220.3557d1.001f.GAE@google.com>
-To: jfs-discussion@lists.sourceforge.net, linux-kernel@vger.kernel.org, 
- shaggy@kernel.org, syzkaller-bugs@googlegroups.com
-X-Spam-Score: 0.3 (/)
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: Spam detection software,
  running on the system "sfi-spamd-2.hosts.colo.sdot.me", 
  has NOT identified this incoming email as spam.  The original
  message has been attached to this so you can view it or label
  similar future email.  If you have any questions, see
  the administrator of that system for details.
- Content preview:  Hello jfs maintainers/developers, This is a 31-day syzbot
- report for the jfs subsystem. All related reports/information can be found
- at: https://syzkaller.appspot.com/upstream/s/jfs During the period, 1 new
- issues were detected and 0 were fixed. In total, 55 issues are still open
- and 64 have already been fixed. 
- Content analysis details:   (0.3 points, 5.0 required)
+ Content preview:  The transaction manager initialization in txInit() was not
+ properly initializing TxBlock[0].waitor waitqueue,
+ causing a crash when txEnd(0)
+ is called on read-only filesystems. When a filesystem is mounted read-only,
+ txBegin() returns tid=0 to indicate no transaction. However, txEnd(0) still
+ gets called and tries to access TxBlock[0].waitor via tid_to_tblock(0), but
+ this wai [...] 
+ Content analysis details:   (0.0 points, 5.0 required)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.3 FROM_LOCAL_HEX         From: localpart has long hexadecimal sequence
- 0.0 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level mail
- domains are different
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature,
+ not necessarily valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.166.197 listed in wl.mailspike.net]
-X-Headers-End: 1upr9V-00067h-Vd
+ [209.85.217.48 listed in wl.mailspike.net]
+X-Headers-End: 1uqHyx-0005hl-1Q
 X-Mailman-Approved-At: Thu, 28 Aug 2025 15:24:39 +0000
-Subject: [Jfs-discussion] [syzbot] Monthly jfs report (Aug 2025)
+Subject: [Jfs-discussion] [PATCH] jfs: fix uninitialized waitqueue in
+ transaction manager
 X-BeenThere: jfs-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -111,57 +131,66 @@ List-Post: <mailto:jfs-discussion@lists.sourceforge.net>
 List-Help: <mailto:jfs-discussion-request@lists.sourceforge.net?subject=help>
 List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/jfs-discussion>, 
  <mailto:jfs-discussion-request@lists.sourceforge.net?subject=subscribe>
-From: syzbot via Jfs-discussion <jfs-discussion@lists.sourceforge.net>
-Reply-To: syzbot <syzbot+list00c376a6da959bb421c2@syzkaller.appspotmail.com>
+From: Shaurya Rane via Jfs-discussion <jfs-discussion@lists.sourceforge.net>
+Reply-To: Shaurya Rane <ssrane_b23@ee.vjti.ac.in>
+Cc: jfs-discussion@lists.sourceforge.net,
+ Shaurya Rane <ssrane_b23@ee.vjti.ac.in>, linux-kernel@vger.kernel.org,
+ syzbot+c4f3462d8b2ad7977bea@syzkaller.appspotmail.com,
+ syzbot+0cee785b798102696a4b@syzkaller.appspotmail.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Errors-To: jfs-discussion-bounces@lists.sourceforge.net
 
-Hello jfs maintainers/developers,
+The transaction manager initialization in txInit() was not properly
+initializing TxBlock[0].waitor waitqueue, causing a crash when
+txEnd(0) is called on read-only filesystems.
 
-This is a 31-day syzbot report for the jfs subsystem.
-All related reports/information can be found at:
-https://syzkaller.appspot.com/upstream/s/jfs
+When a filesystem is mounted read-only, txBegin() returns tid=0 to
+indicate no transaction. However, txEnd(0) still gets called and
+tries to access TxBlock[0].waitor via tid_to_tblock(0), but this
+waitqueue was never initialized because the initialization loop
+started at index 1 instead of 0.
 
-During the period, 1 new issues were detected and 0 were fixed.
-In total, 55 issues are still open and 64 have already been fixed.
+This causes a 'non-static key' lockdep warning and system crash:
+  INFO: trying to register non-static key in txEnd
 
-Some of the still happening issues:
+Fix by ensuring all transaction blocks including TxBlock[0] have
+their waitqueues properly initialized during txInit().
 
-Ref  Crashes Repro Title
-<1>  62723   Yes   kernel BUG in jfs_evict_inode
-                   https://syzkaller.appspot.com/bug?extid=9c0c58ea2e4887ab502e
-<2>  33520   Yes   WARNING in dbAdjTree
-                   https://syzkaller.appspot.com/bug?extid=ab18fa9c959320611727
-<3>  31065   Yes   kernel BUG in txUnlock
-                   https://syzkaller.appspot.com/bug?extid=a63afa301d1258d09267
-<4>  7046    Yes   general protection fault in lmLogSync (2)
-                   https://syzkaller.appspot.com/bug?extid=e14b1036481911ae4d77
-<5>  4338    Yes   kernel BUG in dbFindLeaf
-                   https://syzkaller.appspot.com/bug?extid=dcea2548c903300a400e
-<6>  3652    Yes   INFO: task hung in lock_metapage
-                   https://syzkaller.appspot.com/bug?extid=1d84a1682e4673d5c4fb
-<7>  3419    Yes   INFO: trying to register non-static key in txEnd (2)
-                   https://syzkaller.appspot.com/bug?extid=5b27962d84feb4acb5c1
-<8>  3371    Yes   KASAN: user-memory-access Write in __destroy_inode
-                   https://syzkaller.appspot.com/bug?extid=dcc068159182a4c31ca3
-<9>  2512    Yes   general protection fault in jfs_flush_journal
-                   https://syzkaller.appspot.com/bug?extid=194bfe3476f96782c0b6
-<10> 2416    Yes   general protection fault in write_special_inodes
-                   https://syzkaller.appspot.com/bug?extid=c732e285f8fc38d15916
+Reported-by: syzbot+c4f3462d8b2ad7977bea@syzkaller.appspotmail.com
 
+Signed-off-by: Shaurya Rane <ssrane_b23@ee.vjti.ac.in>
 ---
-This report is generated by a bot. It may contain errors.
-See https://goo.gl/tpsmEJ for more information about syzbot.
-syzbot engineers can be reached at syzkaller@googlegroups.com.
+ fs/jfs/jfs_txnmgr.c | 9 +++++----
+ 1 file changed, 5 insertions(+), 4 deletions(-)
 
-To disable reminders for individual bugs, reply with the following command:
-#syz set <Ref> no-reminders
+diff --git a/fs/jfs/jfs_txnmgr.c b/fs/jfs/jfs_txnmgr.c
+index be17e3c43582..7840a03e5bcb 100644
+--- a/fs/jfs/jfs_txnmgr.c
++++ b/fs/jfs/jfs_txnmgr.c
+@@ -272,14 +272,15 @@ int txInit(void)
+ 	if (TxBlock == NULL)
+ 		return -ENOMEM;
+ 
+-	for (k = 1; k < nTxBlock - 1; k++) {
+-		TxBlock[k].next = k + 1;
++	for (k = 0; k < nTxBlock; k++) {
+ 		init_waitqueue_head(&TxBlock[k].gcwait);
+ 		init_waitqueue_head(&TxBlock[k].waitor);
+ 	}
++
++	for (k = 1; k < nTxBlock - 1; k++) {
++		TxBlock[k].next = k + 1;
++	}
+ 	TxBlock[k].next = 0;
+-	init_waitqueue_head(&TxBlock[k].gcwait);
+-	init_waitqueue_head(&TxBlock[k].waitor);
+ 
+ 	TxAnchor.freetid = 1;
+ 	init_waitqueue_head(&TxAnchor.freewait);
+-- 
+2.34.1
 
-To change bug's subsystems, reply with:
-#syz set <Ref> subsystems: new-subsystem
-
-You may send multiple commands in a single email message.
 
 
 _______________________________________________
