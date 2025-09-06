@@ -2,155 +2,95 @@ Return-Path: <jfs-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+jfs-discussion@lfdr.de
 Delivered-To: lists+jfs-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id E2047B44374
-	for <lists+jfs-discussion@lfdr.de>; Thu,  4 Sep 2025 18:46:58 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C855BB46E31
+	for <lists+jfs-discussion@lfdr.de>; Sat,  6 Sep 2025 15:32:27 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.sourceforge.net; s=beta; h=Content-Type:Content-Transfer-Encoding:Cc:
+	d=lists.sourceforge.net; s=beta; h=Content-Transfer-Encoding:Content-Type:
 	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	Subject:In-Reply-To:MIME-Version:References:Message-ID:To:From:Date:Sender:
-	Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender
-	:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=SJjcs10brsOeOYPd6WrLb99PfJFm0m+Z8WS4rwVzDjE=; b=MWmqIly4Pz5ACSjx8R8lpX95ai
-	SVOdwf01lmNHZN03c4jwmLqgCC7ggigZckxEeEGeBinIVPy9Cr2DbaD1k5FH+GFplrjooeFl+wtXm
-	umeUIxE5yV2v9ihs++5378TmL9icKI/fshU87ugmBs/7uwKJ8orgfc/39DsAwd/YITyo=;
+	Subject:In-Reply-To:From:References:To:MIME-Version:Date:Message-ID:Sender:
+	Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=QJQoHxvzWZwhjFr3zuHDetlemd8Qa/iZqY+mzWOO3Xw=; b=SwpCAX34L0f9sw76CSG2xJoF0a
+	BFCIIYpN89alx/+dGrWEvPUvtJXff5IU2YEaq9nAaDySooua6RGXIWef4K7Ctp/qFAvmXNT2TE4aA
+	OE+juXknPXOIHr6bQEtWIOy3MvB9ibw/2ADtTHbU2KR/Kt9bpTScT60iKRaDac0applY=;
 Received: from [127.0.0.1] (helo=sfs-ml-1.v29.lw.sourceforge.com)
 	by sfs-ml-1.v29.lw.sourceforge.com with esmtp (Exim 4.95)
 	(envelope-from <jfs-discussion-bounces@lists.sourceforge.net>)
-	id 1uuD6W-0005gJ-Li;
-	Thu, 04 Sep 2025 16:46:32 +0000
+	id 1uut13-0000Fc-OV;
+	Sat, 06 Sep 2025 13:31:41 +0000
 Received: from [172.30.29.66] (helo=mx.sourceforge.net)
- by sfs-ml-2.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
+ by sfs-ml-1.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
  TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (Exim 4.95)
- (envelope-from <dave@stgolabs.net>) id 1utSgC-0002P3-Uk
- for jfs-discussion@lists.sourceforge.net;
- Tue, 02 Sep 2025 15:12:17 +0000
+ (envelope-from <penguin-kernel@I-love.SAKURA.ne.jp>)
+ id 1uut12-0000FW-Al for jfs-discussion@lists.sourceforge.net;
+ Sat, 06 Sep 2025 13:31:40 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=sourceforge.net; s=x; h=In-Reply-To:Content-Type:MIME-Version:References:
- Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:Content-Transfer-Encoding:
+ d=sourceforge.net; s=x; h=Content-Transfer-Encoding:Content-Type:In-Reply-To:
+ From:References:To:Subject:MIME-Version:Date:Message-ID:Sender:Reply-To:Cc:
  Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
  Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=DRZMJhVX4LzPqmwkjT3d+FOTiKORmaj3h8jd47mnvis=; b=gt9nUMf6JyHXEJ9NVp9SsZhU7/
- BQ9Uz72CPEiwwQcoJ2FlUTQeQqPTYiLqphee9y6FD0MwLLOdPjzo5yHMzDq1oO2Hns8dSDAzyNXg7
- nXxSOLd3HMFMncO4fWdLKXkO1YlrvrIHsqt4p9XlxZYHCvC/Iu6TgQjapXT0V4ImdYvQ=;
+ bh=W3RV8h8t/3UWT+BdhuejOemKXIuu7PzIp9vQ/OYcUwI=; b=fkQBupj2ChdEEqIOucXsDJd8Ra
+ TCi71B5katyrUDB06cNye3McmLjlXkgiCkjOSh5+K/cILQRfNo/yonTsMNC2kd1JJznyQe3WrUMaG
+ EWrFPPjINlTUxgqVZ/ACuPmYk6kQSA3Sqbk6jcxZPNpMx22FH/Oz7ZzNPyUDhO+b+HS8=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
- h=In-Reply-To:Content-Type:MIME-Version:References:Message-ID:Subject:Cc:To
- :From:Date:Sender:Reply-To:Content-Transfer-Encoding:Content-ID:
+ h=Content-Transfer-Encoding:Content-Type:In-Reply-To:From:References:To:
+ Subject:MIME-Version:Date:Message-ID:Sender:Reply-To:Cc:Content-ID:
  Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
  :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
  List-Post:List-Owner:List-Archive;
- bh=DRZMJhVX4LzPqmwkjT3d+FOTiKORmaj3h8jd47mnvis=; b=hdhCkr09FiXYvQ6E1qRXFwC+y7
- A3cjbaarvYlVMw63INM/h+pNMA4ngXnPFJhtrHWqUMzm2Cpnltz7GpNY2F7ZmKjQdCquVA3FYzH6R
- B9pTS51IbbvyqxJijBoZ2MELgmij7vvmF1b+qzXplclyHZH+EZczCNZuQgPUyIfWGDOM=;
-Received: from giant.ash.relay.mailchannels.net ([23.83.222.68])
+ bh=W3RV8h8t/3UWT+BdhuejOemKXIuu7PzIp9vQ/OYcUwI=; b=bhKR9Q0ntt/gnctJQUobfYG68M
+ 4iNvQzn33Rs/ghPWL2FwiX4Juh9aZoXwSbNCAGPEuy3ykCp+cK0fVpf8JFjCUnhMeBwmLJnXQi1Yo
+ ZeCUY9BYM5xn8RTR7GPUYrqA9i0qUVHYvgqyR55h4ZyEi++N1KoEXoMp347cO9AU2alw=;
+Received: from www262.sakura.ne.jp ([202.181.97.72])
  by sfi-mx-2.v28.lw.sourceforge.com with esmtps
  (TLS1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.95)
- id 1utSgC-0002Iw-W0 for jfs-discussion@lists.sourceforge.net;
- Tue, 02 Sep 2025 15:12:17 +0000
-X-Sender-Id: dreamhost|x-authsender|dave@stgolabs.net
-Received: from relay.mailchannels.net (localhost [127.0.0.1])
- by relay.mailchannels.net (Postfix) with ESMTP id CB6D48533F;
- Tue,  2 Sep 2025 14:46:59 +0000 (UTC)
-Received: from pdx1-sub0-mail-a218.dreamhost.com
- (100-102-100-57.trex-nlb.outbound.svc.cluster.local [100.102.100.57])
- (Authenticated sender: dreamhost)
- by relay.mailchannels.net (Postfix) with ESMTPA id 26FB484F45;
- Tue,  2 Sep 2025 14:46:59 +0000 (UTC)
-ARC-Seal: i=1; s=arc-2022; d=mailchannels.net; t=1756824419; a=rsa-sha256;
- cv=none;
- b=d4SI0fkmOUSX2SGsH3tGmzA5T7O38Rb2zp3OVz0EZyQd+gAfR0U6gz/TCQIvNw0eilrIYR
- j7fSHsvtLaaG7qTJOzWy+AN7n0Jw6VTr+vT7pwwhmdV5nN3Yi1fNgUHDkw8+MnyqYROENf
- TJwiaFLP5hqiwdMDUubbK4NelDCbWRQTkabhZH4zgcPiz3s4cNx8LP2O+DOQTNF3ozgfqf
- vCh6LTaH3zgwqM+rj6h5YOGNEXHMDn2Y+kE77q1f7Mfu3GQUQnPlmnGN+PN+KyACX8z38m
- K6bT1bLpB7G1Sjc80nSsLE6hc41Fo6hAbnkakKgGmyZOVc17FTaQme+NZM+a+g==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed;
- d=mailchannels.net; s=arc-2022; t=1756824419;
- h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
- to:to:cc:cc:mime-version:mime-version:content-type:content-type:
- in-reply-to:in-reply-to:references:references:dkim-signature;
- bh=DRZMJhVX4LzPqmwkjT3d+FOTiKORmaj3h8jd47mnvis=;
- b=blLyN6tNLXUZo4Qn8DwbQL+wqTwSMr2D8fftXutauH3fR0J9UeDxnlzJ9Gozn2t8Yh+MnI
- WoYkDYLHDyeY5oH4D8Uo2yPE6/S8H9n5wyW7Ran/gboLRHdAkTFeId3jJ/8z7CQuB101r1
- c5sngHBottpeXNUq7RlAhTf38guMBoIQ6A5g8OFpkGDi+5HSVvYBBK1AU/TpkykGLcd7HM
- Ht5JM1EWmp1GW+kj7NQ2UkNyVEJ4uutBY5gBcRsuyYE6DXNuNUcdzk+PWLlPoHAdjyU5NM
- On7H2AYc0rLCFzXBgAtyoRfKNylmEAoh3Oi00Vg3D9Ck5lM47CRn5ftS8qhWAA==
-ARC-Authentication-Results: i=1; rspamd-7b4c58cfff-wm9q6;
- auth=pass smtp.auth=dreamhost smtp.mailfrom=dave@stgolabs.net
-X-Sender-Id: dreamhost|x-authsender|dave@stgolabs.net
-X-MC-Relay: Neutral
-X-MailChannels-SenderId: dreamhost|x-authsender|dave@stgolabs.net
-X-MailChannels-Auth-Id: dreamhost
-X-White-Thoughtful: 6dfc35c35855886b_1756824419657_1353450583
-X-MC-Loop-Signature: 1756824419657:4042092830
-X-MC-Ingress-Time: 1756824419657
-Received: from pdx1-sub0-mail-a218.dreamhost.com (pop.dreamhost.com
- [64.90.62.162]) (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384)
- by 100.102.100.57 (trex/7.1.3); Tue, 02 Sep 2025 14:46:59 +0000
-Received: from offworld (syn-076-167-199-067.res.spectrum.com [76.167.199.67])
- (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
- key-exchange ECDHE (P-256) server-signature RSA-PSS (2048 bits) server-digest
- SHA256) (No client certificate requested)
- (Authenticated sender: dave@stgolabs.net)
- by pdx1-sub0-mail-a218.dreamhost.com (Postfix) with ESMTPSA id 4cGT8y0brxz5x; 
- Tue,  2 Sep 2025 07:46:58 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=stgolabs.net;
- s=dreamhost; t=1756824419;
- bh=DRZMJhVX4LzPqmwkjT3d+FOTiKORmaj3h8jd47mnvis=;
- h=Date:From:To:Cc:Subject:Content-Type;
- b=ahFuXh6TLfV1SNfdspKZSAUyRRCEMTayPVRx7ctfIpGBahfb0Dp/YnYNoWAl/2nci
- ED7kWBbA884J1CmHlDqoolEsxeLcGz1xNnbHoDXyjfMEOOjAQ5fWQbK0eiRExb1jwZ
- r3njvCgIJuU/KHBqHKbD26Ra3FupmSiZ2oBtXnvd+PbF50gWUH4xvCOfiWkgO20Xv0
- Pn7cu4FaKJUDP53K20BbVlOyA8K9AKlEuadnFFmy4/I/dbtzrYCrbH0Mc3IQRITR8I
- oJvxhxZV2ueEMqbkRYKQR5Kyuo0N1S5o9VIF0erx5qJi+L7aDHi6pehxfM3fZ94MAz
- nLjRGrHw1V41Q==
-Date: Tue, 2 Sep 2025 07:46:55 -0700
-From: Davidlohr Bueso <dave@stgolabs.net>
-To: syzbot <syzbot+cba6270878c89ed64a2d@syzkaller.appspotmail.com>
-Message-ID: <20250902144655.5em4trxkeks7nwgx@offworld>
-Mail-Followup-To: syzbot
- <syzbot+cba6270878c89ed64a2d@syzkaller.appspotmail.com>, 
+ id 1uut11-0003gB-F5 for jfs-discussion@lists.sourceforge.net;
+ Sat, 06 Sep 2025 13:31:40 +0000
+Received: from www262.sakura.ne.jp (localhost [127.0.0.1])
+ by www262.sakura.ne.jp (8.15.2/8.15.2) with ESMTP id 586DUZVP092719;
+ Sat, 6 Sep 2025 22:30:35 +0900 (JST)
+ (envelope-from penguin-kernel@I-love.SAKURA.ne.jp)
+Received: from [192.168.1.10] (M106072142033.v4.enabler.ne.jp [106.72.142.33])
+ (authenticated bits=0)
+ by www262.sakura.ne.jp (8.15.2/8.15.2) with ESMTPSA id 586DUZ8m092716
+ (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=NO);
+ Sat, 6 Sep 2025 22:30:35 +0900 (JST)
+ (envelope-from penguin-kernel@I-love.SAKURA.ne.jp)
+Message-ID: <fa7b2e99-f91d-4126-9d0a-1b0330023394@I-love.SAKURA.ne.jp>
+Date: Sat, 6 Sep 2025 22:30:31 +0900
+MIME-Version: 1.0
+User-Agent: Mozilla Thunderbird
+To: syzbot <syzbot+cba6270878c89ed64a2d@syzkaller.appspotmail.com>,
  akpm@linux-foundation.org, brauner@kernel.org, frank.li@vivo.com,
  glaubitz@physik.fu-berlin.de, jack@suse.cz,
  jfs-discussion@lists.sourceforge.net, linux-fsdevel@vger.kernel.org,
  linux-kernel@vger.kernel.org, linux-mm@kvack.org, mcgrof@kernel.org,
- shaggy@kernel.org, slava@dubeyko.com,
- syzkaller-bugs@googlegroups.com, viro@zeniv.linux.org.uk,
- willy@infradead.org
+ shaggy@kernel.org, slava@dubeyko.com, syzkaller-bugs@googlegroups.com,
+ viro@zeniv.linux.org.uk, willy@infradead.org
 References: <00000000000091e466061cee5be7@google.com>
  <68b55245.050a0220.3db4df.01bc.GAE@google.com>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <68b55245.050a0220.3db4df.01bc.GAE@google.com>
-User-Agent: NeoMutt/20220429
-X-Spam-Score: -0.2 (/)
+ <20250902144655.5em4trxkeks7nwgx@offworld>
+Content-Language: en-US
+From: Tetsuo Handa <penguin-kernel@I-love.SAKURA.ne.jp>
+In-Reply-To: <20250902144655.5em4trxkeks7nwgx@offworld>
+X-Anti-Virus-Server: fsav203.rs.sakura.ne.jp
+X-Virus-Status: clean
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: Spam detection software,
- running on the system "sfi-spamd-2.hosts.colo.sdot.me", 
+ running on the system "sfi-spamd-1.hosts.colo.sdot.me", 
  has NOT identified this incoming email as spam.  The original
  message has been attached to this so you can view it or label
  similar future email.  If you have any questions, see
  the administrator of that system for details.
- Content preview:  On Mon, 01 Sep 2025, syzbot wrote: >syzbot has bisected this
- issue to: > >commit 5b67d43976828dea2394eae2556b369bb7a61f64 >Author:
- Davidlohr
- Bueso <dave@stgolabs.net> >Date: Fri Apr 18 01:59:17 2025 +0000 > > fs/buffer:
- use sleeping ve [...] 
- Content analysis details:   (-0.2 points, 5.0 required)
+ Content preview:  On 2025/09/02 23:46, Davidlohr Bueso wrote: > On Mon, 01 Sep
+ 2025, syzbot wrote: > >> syzbot has bisected this issue to: >> >> commit
+ 5b67d43976828dea2394eae2556b369bb7a61f64 >> Author: Davidlohr Bues [...] 
+ Content analysis details:   (0.0 points, 5.0 required)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature,
- not necessarily valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU Message has a valid DKIM or DK signature from author's
- domain 0.0 ARC_SIGNED             Message has a ARC signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.0 ARC_VALID              Message has a valid ARC signature
- 0.0 RCVD_IN_MSPIKE_H4      RBL: Very Good reputation (+4)
- [23.83.222.68 listed in wl.mailspike.net]
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
-X-Headers-End: 1utSgC-0002Iw-W0
-X-Mailman-Approved-At: Thu, 04 Sep 2025 16:46:30 +0000
+X-Headers-End: 1uut11-0003gB-F5
 Subject: Re: [Jfs-discussion] [syzbot] [hfs?] INFO: task hung in
  deactivate_super (3)
 X-BeenThere: jfs-discussion@lists.sourceforge.net
@@ -164,47 +104,118 @@ List-Post: <mailto:jfs-discussion@lists.sourceforge.net>
 List-Help: <mailto:jfs-discussion-request@lists.sourceforge.net?subject=help>
 List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/jfs-discussion>, 
  <mailto:jfs-discussion-request@lists.sourceforge.net?subject=subscribe>
-Cc: shaggy@kernel.org, brauner@kernel.org, jack@suse.cz, frank.li@vivo.com,
- syzkaller-bugs@googlegroups.com, jfs-discussion@lists.sourceforge.net,
- willy@infradead.org, linux-kernel@vger.kernel.org, linux-mm@kvack.org,
- mcgrof@kernel.org, viro@zeniv.linux.org.uk, glaubitz@physik.fu-berlin.de,
- linux-fsdevel@vger.kernel.org, akpm@linux-foundation.org
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Errors-To: jfs-discussion-bounces@lists.sourceforge.net
 
-On Mon, 01 Sep 2025, syzbot wrote:
+On 2025/09/02 23:46, Davidlohr Bueso wrote:
+> On Mon, 01 Sep 2025, syzbot wrote:
+> 
+>> syzbot has bisected this issue to:
+>>
+>> commit 5b67d43976828dea2394eae2556b369bb7a61f64
+>> Author: Davidlohr Bueso <dave@stgolabs.net>
+>> Date:   Fri Apr 18 01:59:17 2025 +0000
+>>
+>>    fs/buffer: use sleeping version of __find_get_block()
+> 
+> I don't think this bisection is right, considering this issue was first
+> triggered last year (per the dashboard).
 
->syzbot has bisected this issue to:
->
->commit 5b67d43976828dea2394eae2556b369bb7a61f64
->Author: Davidlohr Bueso <dave@stgolabs.net>
->Date:   Fri Apr 18 01:59:17 2025 +0000
->
->    fs/buffer: use sleeping version of __find_get_block()
+I think this bisection is not bogus; at least that commit made this problem
+easily triggerable enough to find a reproducer...
 
-I don't think this bisection is right, considering this issue was first
-triggered last year (per the dashboard).
+What is common to this report is that deactivate_super() is blocked waiting
+for hfs_sync_fs() to complete and release sb->s_umount lock.
 
-Thanks,
-Davidlohr
+Current sample crash report (shown below) tells us that PID = 5962 (who is trying
+to hold for write) is blocked inside deactivate_super() waiting for PID = 6254
+(who is already holding for read) to release sb->s_umount lock. But since PID = 6254
+is blocked at io_schedule(), PID = 6254 can't release sb->s_umount lock.
 
->
->bisection log:  https://syzkaller.appspot.com/x/bisect.txt?x=101ba1f0580000
->start commit:   c8bc81a52d5a Merge tag 'arm64-fixes' of git://git.kernel.o..
->git tree:       upstream
->final oops:     https://syzkaller.appspot.com/x/report.txt?x=121ba1f0580000
->console output: https://syzkaller.appspot.com/x/log.txt?x=141ba1f0580000
->kernel config:  https://syzkaller.appspot.com/x/.config?x=bd9738e00c1bbfb4
->dashboard link: https://syzkaller.appspot.com/bug?extid=cba6270878c89ed64a2d
->syz repro:      https://syzkaller.appspot.com/x/repro.syz?x=10857a62580000
->C reproducer:   https://syzkaller.appspot.com/x/repro.c?x=14f5ce34580000
->
->Reported-by: syzbot+cba6270878c89ed64a2d@syzkaller.appspotmail.com
->Fixes: 5b67d4397682 ("fs/buffer: use sleeping version of __find_get_block()")
->
->For information about bisection process see: https://goo.gl/tpsmEJ#bisection
->
+The question is why PID = 6254 is blocked for two minutes waiting for io_schedule()
+to complete. I suspect that commit 5b67d4397682 is relevant, for that commit has
+changed the behavior of bdev_getblk() which PID = 6254 is blocked. Some method for
+reporting what is happening (e.g. report details when folio_lock() is blocked for
+more than 10 seconds) is wanted. Of course, it is possible that a corrupted hfs
+filesystem image is leading to an infinite loop...
+
+
+
+INFO: task syz-executor:5962 blocked for more than 143 seconds.
+      Not tainted syzkaller #0
+"echo 0 > /proc/sys/kernel/hung_task_timeout_secs" disables this message.
+task:syz-executor    state:D stack:21832 pid:5962  tgid:5962  ppid:1      task_flags:0x400140 flags:0x00004004
+Call Trace:
+ <TASK>
+ context_switch kernel/sched/core.c:5357 [inline]
+ __schedule+0x16f3/0x4c20 kernel/sched/core.c:6961
+ __schedule_loop kernel/sched/core.c:7043 [inline]
+ rt_mutex_schedule+0x77/0xf0 kernel/sched/core.c:7339
+ rwbase_write_lock+0x3dd/0x750 kernel/locking/rwbase_rt.c:272
+ __super_lock fs/super.c:57 [inline]
+ __super_lock_excl fs/super.c:72 [inline]
+ deactivate_super+0xa9/0xe0 fs/super.c:506
+ cleanup_mnt+0x425/0x4c0 fs/namespace.c:1375
+ task_work_run+0x1d4/0x260 kernel/task_work.c:227
+ exit_to_user_mode_loop+0[  309.321754][   T38]  resume_user_mode_work include/linux/resume_user_mode.h:50 [inline]
+ exit_to_user_mode_loop+0[  309.321754][   T38]  exit_to_user_mode_loop+0xec/0x110 kernel/entry/common.c:43
+ exit_to_user_mode_prepare include/linux/irq-entry-common.h:225 [inline]
+ syscall_exit_to_user_mode_work include/linux/entry-common.h:175 [inline]
+ syscall_exit_to_user_mode include/linux/entry-common.h:210 [inline]
+ do_syscall_64+0x2bd/0x3b0 arch/x86/entry/syscall_64.c:100
+ entry_SYSCALL_64_after_hwframe+0x77/0x7f
+RIP: 0033:0x7ff4a4aaff17
+RSP: 002b:00007ffe8b16a008 EFLAGS: 00000246 ORIG_RAX: 00000000000000a6
+RAX: 0000000000000000 RBX: 00007ff4a4b31c05 RCX: 00007ff4a4aaff17
+RDX: 0000000000000000 RSI: 0000000000000009 RDI: 00007ffe8b16a0c0
+RBP: 00007ffe8b16a0c0 R08: 0000000000000000 R09: 0000000000000000
+R10: 00000000ffffffff R11: 0000000000000246 R12: 00007ffe8b16b150
+R13: 00007ff4a4b31c05 R14: 00000000000257d4 R15: 00007ffe8b16b190
+ </TASK>
+1 lock held by syz-executor/5962:
+ #0: ffff88803976c0d0 (&type->s_umount_key#72){++++}-{4:4}, at: __super_lock fs/super.c:57 [inline]
+ #0: ffff88803976c0d0 (&type->s_umount_key#72){++++}-{4:4}, at: __super_lock_excl fs/super.c:72 [inline]
+ #0: ffff88803976c0d0 (&type->s_umount_key#72){++++}-{4:4}, at: deactivate_super+0xa9/0xe0 fs/super.c:506
+
+INFO: task syz.4.168:6254 blocked for more than 143 seconds.
+      Not tainted syzkaller #0
+"echo 0 > /proc/sys/kernel/hung_task_timeout_secs" disables this message.
+task:syz.4.168       state:D stack:25800 pid:6254  tgid:6254  ppid:5967   task_flags:0x400140 flags:0x00004004
+Call Trace:
+ <TASK>
+ context_switch kernel/sched/core.c:5357 [inline]
+ __schedule+0x16f3/0x4c20 kernel/sched/core.c:6961
+ __schedule_loop kernel/sched/core.c:7043 [inline]
+ schedule+0x165/0x360 kernel/sched/core.c:7058
+ io_schedule+0x81/0xe0 kernel/sched/core.c:7903
+ folio_wait_bit_common+0x6b5/0xb90 mm/filemap.c:1317
+ folio_lock include/linux/pagemap.h:1133 [inline]
+ __find_get_block_slow fs/buffer.c:205 [inline]
+ find_get_block_common+0x2e6/0xfc0 fs/buffer.c:1408
+ bdev_getblk+0x4b/0x660 fs/buffer.c:-1
+ __bread_gfp+0x89/0x3c0 fs/buffer.c:1515
+ sb_bread include/linux/buffer_head.h:346 [inline]
+ hfs_mdb_commit+0xa42/0x1160 fs/hfs/mdb.c:318
+ hfs_sync_fs+0x15/0x20 fs/hfs/super.c:37
+ __iterate_supers+0x13a/0x290 fs/super.c:924
+ ksys_sync+0xa3/0x150 fs/sync.c:103
+ __ia32_sys_sync+0xe/0x20 fs/sync.c:113
+ do_syscall_x64 arch/x86/entry/syscall_64.c:63 [inline]
+ do_syscall_64+0xfa/0x3b0 arch/x86/entry/syscall_64.c:94
+ entry_SYSCALL_64_after_hwframe+0x77/0x7f
+RIP: 0033:0x7f35c0abebe9
+RSP: 002b:00007fff821c57b8 EFLAGS: 00000246 ORIG_RAX: 00000000000000a2
+RAX: ffffffffffffffda RBX: 00007f35c0cf5fa0 RCX: 00007f35c0abebe9
+RDX: 0000000000000000 RSI: 0000000000000000 RDI: 0000000000000000
+RBP: 0000000000000000 R08: 0000000000000000 R09: 0000000000000000
+R10: 0000000000000000 R11: 0000000000000246 R12: 0000000000000000
+R13: 00007f35c0cf5fa0 R14: 00007f35c0cf5fa0 R15: 0000000000000000
+ </TASK>
+1 lock held by syz.4.168/6254:
+ #0: ffff88803976c0d0 (&type->s_umount_key#72){++++}-{4:4}, at: __super_lock fs/super.c:59 [inline]
+ #0: ffff88803976c0d0 (&type->s_umount_key#72){++++}-{4:4}, at: super_lock+0x2a9/0x3b0 fs/super.c:121
+
 
 
 _______________________________________________
