@@ -2,37 +2,37 @@ Return-Path: <jfs-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+jfs-discussion@lfdr.de
 Delivered-To: lists+jfs-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1D214BD1F64
-	for <lists+jfs-discussion@lfdr.de>; Mon, 13 Oct 2025 10:14:28 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7E197BD1EF8
+	for <lists+jfs-discussion@lfdr.de>; Mon, 13 Oct 2025 10:09:31 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.sourceforge.net; s=beta; h=Content-Transfer-Encoding:Content-Type:Cc:
 	Reply-To:From:List-Subscribe:List-Help:List-Post:List-Archive:
 	List-Unsubscribe:List-Id:Subject:In-Reply-To:References:To:MIME-Version:Date:
 	Message-ID:Sender:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=X/EwCid8G8GL4La2fE0DgyCJy3QAjzhdEIWKpgQuGlg=; b=CxpubSN7Geqd8+xT17pJqrN1hq
-	WY+2ZVtwfvCC9I7FeuEfVCcHJU6Z5bxyA9svwOjAMyE5mABWoUcZuqSKf0QeWqrPi9/hfQjhbnLhy
-	6jzK1iezl3fwM0wxWNEOx0RYufIj4iAPL/sADOGm4lfxhh8CULwJGAIB1M6w/FHX28xo=;
+	bh=TXUE7YQN0k+bvdjYmXWvrAIZx9257r6o880IPX+/5Ps=; b=ejiP7C0EbmXUwKdJxOv62IpV32
+	RMe0pGih+Pdy9l95+zsC01uCjXMfdWxKyHR92seZJX+qXRcBdaak/IGnxa/lZ2+1yVRequSkZR3qq
+	ZEgnu/DRkVtH20LI+ZoC6ADPKa41o0LcdtX8hezPvWN9UvNcziaLBHzoxVG0DbJ4HOeE=;
 Received: from [127.0.0.1] (helo=sfs-ml-4.v29.lw.sourceforge.com)
 	by sfs-ml-4.v29.lw.sourceforge.com with esmtp (Exim 4.95)
 	(envelope-from <jfs-discussion-bounces@lists.sourceforge.net>)
-	id 1v8Dh4-00054F-LE;
-	Mon, 13 Oct 2025 08:14:10 +0000
+	id 1v8DcJ-0004v9-7b;
+	Mon, 13 Oct 2025 08:09:15 +0000
 Received: from [172.30.29.66] (helo=mx.sourceforge.net)
  by sfs-ml-4.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
  TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (Exim 4.95)
- (envelope-from <dlemoal@kernel.org>) id 1v8Dh3-000547-4k
+ (envelope-from <dlemoal@kernel.org>) id 1v8DcH-0004uz-7p
  for jfs-discussion@lists.sourceforge.net;
- Mon, 13 Oct 2025 08:14:09 +0000
+ Mon, 13 Oct 2025 08:09:13 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=sourceforge.net; s=x; h=Content-Transfer-Encoding:Content-Type:In-Reply-To:
  From:References:Cc:To:Subject:MIME-Version:Date:Message-ID:Sender:Reply-To:
  Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
  Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=OXwozSeMlS70Sl3oI0odNiKy3vdryBhBgECDo9dwsrQ=; b=RXhrZ82t4rrarRp/M55AUC8n6y
- DbGUEewdY7u8cvLEcLEPvX5eEaNWynEUDSv19Hlv2xfUcTao6JAA+Edolxs5Sc3mMn26H8TUuSVH3
- cnt/Tbrn2BU3hBT3KJHBkGxjcz7x+a/uAjnmN+S+AZPTcT1ywMaG3wlas0XdBD7QF/rw=;
+ bh=MZvcUyE/3rm7XVjVfA5sB0LiuyxoL4N5gYGG3dyEWUo=; b=Xk3/sBDUq121x918nUaPUPnX28
+ ogxPEQKUWRF+Bex8e/o+Awrrn3amDa96E/7tJw6v9tr4DeAzHRq9UIz8SKJ6YPoyeBBEcQJGQPtJW
+ IRGWbDbfAdUtYXLgTkm2l7ARHq8WztGG03G0z7CDj7swnGVWdgej9x0Ny7rnTutRBVyg=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
  h=Content-Transfer-Encoding:Content-Type:In-Reply-To:From:References:Cc:To:
@@ -40,31 +40,31 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
  :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
  List-Post:List-Owner:List-Archive;
- bh=OXwozSeMlS70Sl3oI0odNiKy3vdryBhBgECDo9dwsrQ=; b=QR/ePUPubbSLhe+Jsp3CiVIDXW
- On78l8wsZweMTMVG2yXXzKR6S96DhKD4t0jRrvGcbLKNJGzL/XN6X/tPFvHmQ/DV5xyqrXPIu6ZI/
- o9DiTQ6ItKTJ+DtiuaCR1OHD7K+32T8uSOa5l1DxJYhtxry5dtrIBNWGABMhVrccQUZY=;
+ bh=MZvcUyE/3rm7XVjVfA5sB0LiuyxoL4N5gYGG3dyEWUo=; b=m1jzB2WXgcAYmfWfwFANXCnTqa
+ XWWt2rW2gUyh3dJkQGNz2BqQSiFdSwHJ5tK2OjieWdtDtObqpyqwfGs/cR8g0xqSQtjb2y0KkCV92
+ xr2D6MNn132dChpncfeb5VPPO3VMXcp6sv5dLUmxH1NC0wzv8cG76uMCPOY99Rzm8Znc=;
 Received: from tor.source.kernel.org ([172.105.4.254])
  by sfi-mx-2.v28.lw.sourceforge.com with esmtps
  (TLS1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.95)
- id 1v8Dh2-0006Bw-O6 for jfs-discussion@lists.sourceforge.net;
- Mon, 13 Oct 2025 08:14:09 +0000
+ id 1v8DcG-0005ZT-Pw for jfs-discussion@lists.sourceforge.net;
+ Mon, 13 Oct 2025 08:09:13 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
- by tor.source.kernel.org (Postfix) with ESMTP id A47A06111E;
- Mon, 13 Oct 2025 08:05:58 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id BB19FC4CEE7;
- Mon, 13 Oct 2025 08:05:54 +0000 (UTC)
+ by tor.source.kernel.org (Postfix) with ESMTP id 3325861139;
+ Mon, 13 Oct 2025 08:09:07 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 61F32C4CEE7;
+ Mon, 13 Oct 2025 08:09:03 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=k20201202; t=1760342758;
- bh=5HsWbtZ2dcB7krEcbKjne7KnS+nPBJU93qavaxJizuM=;
+ s=k20201202; t=1760342946;
+ bh=gDCK0s48HW2hUV0Q7ClAR5lIhUaH2d/9Yb/F3zIIufk=;
  h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
- b=JoJ5YBKdMmynvxsqiAkHkZbrbXNbh1kQQdkhIKnwG6b9L6o3Uzqi1X27KlKrsP3Fl
- R+lbP/clJGXkbhS5NEhqi0WhSG87d70ezCBhCv1BktJRTGsKjbOMR2s0X7m2rPZ0Za
- aJ89IXK3xmT7/fyqzwHbHH3uYFwcU8sSKoILbJ6+EgEN5d0jr/somN9ZzIA7z4pSU1
- vSAsqr50CL9MnLXn4g22yvpe4Rxs3HtQAYyAu3lN/RpP31W4v5IU0188xLD7bhEdEo
- rs2FORcAaC7QLU5udePhJZbhtXDoEEFtFdrkp7D0ifJNyNJWapFn9NwLgNGUylYwx6
- Gyj0yBRoVk77w==
-Message-ID: <227fc5f2-c16c-4fb2-be02-e7b1f37559dc@kernel.org>
-Date: Mon, 13 Oct 2025 17:05:53 +0900
+ b=iJ+uHNePZM88j5ktJ5Bn1podhcv/yo+c/xoKWvmJCMV2YxHE+DNLDoI56qVkiCpTn
+ TxoscpmAdTgCxdgycT4KHSRE3r70iCpIgB7T7rI+1qUaM6ZZ+nt7mZjUbSA4b7Lrux
+ lUjw2K+OcCGzjj/6Ls0XCbV18L5FC4//4YoTGf/NMPzI6P1qWPH60TtfBA4kJShdjC
+ iqqE20h+7G6vYXYQLxzOsnRt8mRSEdjloLa4cbPqMDozwhAdJFn5cCaxx1RclH6zYT
+ Ysxe5J51HpSdoRXr4GrxLj69WDrKliXSJ4D7ff5TWJkpFEP96aTqY2YXjNkXI3Iwox
+ H2lbji/ExBBBg==
+Message-ID: <e0fa533d-c3c4-4a94-9e22-c379d69cb640@kernel.org>
+Date: Mon, 13 Oct 2025 17:09:02 +0900
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
 To: Christoph Hellwig <hch@lst.de>,
@@ -75,10 +75,10 @@ To: Christoph Hellwig <hch@lst.de>,
  David Sterba <dsterba@suse.com>, Mark Fasheh <mark@fasheh.com>,
  Joel Becker <jlbec@evilplan.org>, Joseph Qi <joseph.qi@linux.alibaba.com>
 References: <20251013025808.4111128-1-hch@lst.de>
- <20251013025808.4111128-9-hch@lst.de>
+ <20251013025808.4111128-10-hch@lst.de>
 Content-Language: en-US
 Organization: Western Digital Research
-In-Reply-To: <20251013025808.4111128-9-hch@lst.de>
+In-Reply-To: <20251013025808.4111128-10-hch@lst.de>
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: Spam detection software,
  running on the system "sfi-spamd-2.hosts.colo.sdot.me", 
@@ -87,9 +87,10 @@ X-Spam-Report: Spam detection software,
  similar future email.  If you have any questions, see
  the administrator of that system for details.
  Content preview:  On 2025/10/13 11:58,
- Christoph Hellwig wrote: > Replace filemap_fdatawrite_wbc, 
- which exposes a writeback_control to the > callers with a __filemap_fdatawrite
- helper that takes all the possible > argu [...] 
+ Christoph Hellwig wrote: > Use filemap_fdatawrite_range
+ and filemap_fdatawrite_range_kick instead > of the low-level
+ __filemap_fdatawrite_range
+ that requires the caller > to know [...] 
  Content analysis details:   (-0.2 points, 5.0 required)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
@@ -101,8 +102,9 @@ X-Spam-Report: Spam detection software,
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.0 DKIMWL_WL_HIGH         DKIMwl.org - High trust sender
-X-Headers-End: 1v8Dh2-0006Bw-O6
-Subject: Re: [Jfs-discussion] [PATCH 08/10] mm: remove filemap_fdatawrite_wbc
+X-Headers-End: 1v8DcG-0005ZT-Pw
+Subject: Re: [Jfs-discussion] [PATCH 09/10] mm: remove
+ __filemap_fdatawrite_range
 X-BeenThere: jfs-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -127,13 +129,16 @@ Content-Transfer-Encoding: 7bit
 Errors-To: jfs-discussion-bounces@lists.sourceforge.net
 
 On 2025/10/13 11:58, Christoph Hellwig wrote:
-> Replace filemap_fdatawrite_wbc, which exposes a writeback_control to the
-> callers with a __filemap_fdatawrite helper that takes all the possible
-> arguments and declares the writeback_control itself.
+> Use filemap_fdatawrite_range and filemap_fdatawrite_range_kick instead
+> of the low-level __filemap_fdatawrite_range that requires the caller
+> to know the internals of the writeback_control structure and remove
+> __filemap_fdatawrite_range now that it is trivial and only two callers
+> would be left.
 > 
 > Signed-off-by: Christoph Hellwig <hch@lst.de>
 
 Reviewed-by: Damien Le Moal <dlemoal@kernel.org>
+
 
 -- 
 Damien Le Moal
