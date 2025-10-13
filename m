@@ -2,37 +2,37 @@ Return-Path: <jfs-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+jfs-discussion@lfdr.de
 Delivered-To: lists+jfs-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1A9F9BD15C7
-	for <lists+jfs-discussion@lfdr.de>; Mon, 13 Oct 2025 06:14:08 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4919ABD15CD
+	for <lists+jfs-discussion@lfdr.de>; Mon, 13 Oct 2025 06:14:28 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.sourceforge.net; s=beta; h=Content-Transfer-Encoding:Content-Type:Cc:
 	Reply-To:From:List-Subscribe:List-Help:List-Post:List-Archive:
 	List-Unsubscribe:List-Id:Subject:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:To:Sender:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=oTnD1/IIGe3VLvx2069AV7kDbsX4SLhiJdqJOUKFBlQ=; b=cu6kYA1c7dYaScZ+9Lg17Wi0zB
-	mdf39zVbqfutHqCtMBGwOoXfHUWnfsce3jucasV3eCC1xJllyuBtwIeGDuT2NOnkPGGfa24O1i0x9
-	PtfUPk0rkZXMvC1RQT5D25eb869F1FlkTsPSvdJI/h2CdV3/V305TeFuV+keAYXy74Tc=;
-Received: from [127.0.0.1] (helo=sfs-ml-1.v29.lw.sourceforge.com)
-	by sfs-ml-1.v29.lw.sourceforge.com with esmtp (Exim 4.95)
+	bh=4v36KXxCJmlQ4NXn/4gOrbjZNU7MKwiM6BeX9UB/v00=; b=LJByqWo1U/C0wRsmMhZgG3TZRD
+	yMZDMBc5bHcrFGA/NXbTbJRztcD2qZ1OyBEB00TgUzVB/ZV92iiyvThhboYRD5fByQ5XUJ2894SDQ
+	P6ilkfPoltHeOemgMUdHz8t1ZwPYJiFH1h33Xo8I9NdEu5x3mSv2nPZL/0wDwxK7cWww=;
+Received: from [127.0.0.1] (helo=sfs-ml-4.v29.lw.sourceforge.com)
+	by sfs-ml-4.v29.lw.sourceforge.com with esmtp (Exim 4.95)
 	(envelope-from <jfs-discussion-bounces@lists.sourceforge.net>)
-	id 1v89wS-0006Az-KG;
-	Mon, 13 Oct 2025 04:13:48 +0000
+	id 1v89wo-0008S0-L7;
+	Mon, 13 Oct 2025 04:14:10 +0000
 Received: from [172.30.29.66] (helo=mx.sourceforge.net)
- by sfs-ml-1.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
+ by sfs-ml-4.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
  TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (Exim 4.95) (envelope-from
  <BATV+429c5dd7f65f3a144064+8086+infradead.org+hch@bombadil.srs.infradead.org>)
- id 1v89wR-0006Aq-B1 for jfs-discussion@lists.sourceforge.net;
- Mon, 13 Oct 2025 04:13:47 +0000
+ id 1v89wn-0008Ru-CH for jfs-discussion@lists.sourceforge.net;
+ Mon, 13 Oct 2025 04:14:09 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=sourceforge.net; s=x; h=Content-Transfer-Encoding:MIME-Version:References:
  In-Reply-To:Message-ID:Date:Subject:Cc:To:From:Sender:Reply-To:Content-Type:
  Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
  Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=Lj0S3vmb6d6s8d0aaOlI5MPqL6b+xgrnGX6hOqz1wwY=; b=JpwCu2GSOrFZJffeaK/uqw1azf
- 1got/POxdqthmaFDBNFBmZQt2eS5B/Ti2hxsSQvtLiK7lqcCUOUFl1FFAfDMMNGhIYdLgaNp7qlIi
- llPPjW8cw7p5p7X6OH58YBMt5utrM/guIXjAL2sV2dS60FZmAxz3UVdybSUez+u8S018=;
+ bh=dQZOPAAeeds/w0ZlIXWjsgocvBDsAHF4UQnFeVZIJl8=; b=MIEJL/OOzaPBhxZ5y02wkhSlmN
+ BXFoh1EI2iJ5UfuKBpagVDoXkOx1ccH0k2VNd6pIm2tdzWGZixybcH8StoS6oypvvT71KLJWA3adD
+ aEBNNFvKlMytT7BSW2nDcht34cwfaysrFDL3WIla64fFm4OhyaMkArqECodB3KeNWn7s=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
  h=Content-Transfer-Encoding:MIME-Version:References:In-Reply-To:Message-ID:
@@ -40,27 +40,27 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
  :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
  List-Post:List-Owner:List-Archive;
- bh=Lj0S3vmb6d6s8d0aaOlI5MPqL6b+xgrnGX6hOqz1wwY=; b=W47rylu9mRrPEyjLoFzWr3EbS6
- zqcl7izP2lPilPQ7togqYpHqOQI/zboodnw2UI4RQtAOsanFonh7GmOSS70ghXU7LnDNiqkwMjw4w
- urzenfyjIO6/HUG+pFJn08qooqv7Jx1W504ljUWJkwx4210NUGn8SlIqihO/c8+u6vTo=;
+ bh=dQZOPAAeeds/w0ZlIXWjsgocvBDsAHF4UQnFeVZIJl8=; b=gUNkeqEpBwwpyeocmTRtzSKdMf
+ 0+7TF7UhDRRgwTcCQGW/xiH0mv8fnGlb+aqJxq4imAI0yLGJ8BWaEiD+cO7kSoi4x8KJCDTwOa+T+
+ LgCb+renC1xTg+Vv2EPQ9BqD73qjmK8kNqKw6X2xzeSQEbM4n0AAaddrkYruJngEB8K0=;
 Received: from bombadil.infradead.org ([198.137.202.133])
  by sfi-mx-2.v28.lw.sourceforge.com with esmtps
  (TLS1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.95)
- id 1v89wQ-00061o-Rx for jfs-discussion@lists.sourceforge.net;
- Mon, 13 Oct 2025 04:13:47 +0000
+ id 1v89wm-00063c-Tw for jfs-discussion@lists.sourceforge.net;
+ Mon, 13 Oct 2025 04:14:09 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=infradead.org; s=bombadil.20210309; h=Content-Transfer-Encoding:
  MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:Cc:To:From:Sender
  :Reply-To:Content-Type:Content-ID:Content-Description;
- bh=Lj0S3vmb6d6s8d0aaOlI5MPqL6b+xgrnGX6hOqz1wwY=; b=pgQEnUky4Ql91uLX3wxEvBkqfg
- Y5kAKuNYys7DA+Bdzoel/fuaJiYGe+yhJC40tdLtCmysJJmXsjU7NWrXctWPSuOKQd2KVl8e2cKNf
- vfKkVLHEa4wyUGUZ3BwaGLIy79HIiReJSvlaIdamBqQYFc/m+FOjw4daFqRcvHHYFc/nIXvJrCsJZ
- R5ftvFBbGFHhDVk6Z+T7I0h/7k4zlDlbVmAwuMtgIiixL8gp97UMYAnraPIxl5BBu85JDsneKe5qz
- xqCiWkuFZudZ97TBpTgw80q4gaZ425/EZZPUU92LFfnQu6Y0AeErFsIsOrun2fhPEWl9YnV6Y1Uu2
- A17JVs6w==;
+ bh=dQZOPAAeeds/w0ZlIXWjsgocvBDsAHF4UQnFeVZIJl8=; b=FDfBpYZNHkGYl26RqtPTH1d2z0
+ 0grd2UwV3PK7DTQrexZXFT2MSdKVpYRL+Gjc3eFSuxeb03ctH5iPyQKpzIO6edBYs5CLd9PefOSSM
+ i+j8w8lTD4MZx5T8BNzqhQjwiPzFGW4QohpQ8TOsPSGb5ECwtiYghElUUuDsSmqULiAgDmPuLdwDj
+ pE95DuAtsOpzDNx6YaGtSTFWpMCalmXOLEyUGHDbBZ2vFQKi0Hg9HE1rwYeigBs5zic7UhFJ9nSVl
+ VJUIaBI9dI/hwo2OaxbrpcOR0PsHLKqRYJcCmgouWBRYW+9tyuOye5gNQ/srvuYKJiOGWhaYnd0Oq
+ epabVJjQ==;
 Received: from [220.85.59.196] (helo=localhost)
  by bombadil.infradead.org with esmtpsa (Exim 4.98.2 #2 (Red Hat Linux))
- id 1v88lZ-0000000C86m-3JLa; Mon, 13 Oct 2025 02:58:30 +0000
+ id 1v88lh-0000000C87W-3jg1; Mon, 13 Oct 2025 02:58:38 +0000
 To: "Matthew Wilcox (Oracle)" <willy@infradead.org>,
  Eric Van Hensbergen <ericvh@kernel.org>,
  Latchesar Ionkov <lucho@ionkov.net>,
@@ -68,8 +68,8 @@ To: "Matthew Wilcox (Oracle)" <willy@infradead.org>,
  Christian Schoenebeck <linux_oss@crudebyte.com>, Chris Mason <clm@fb.com>,
  David Sterba <dsterba@suse.com>, Mark Fasheh <mark@fasheh.com>,
  Joel Becker <jlbec@evilplan.org>, Joseph Qi <joseph.qi@linux.alibaba.com>
-Date: Mon, 13 Oct 2025 11:57:57 +0900
-Message-ID: <20251013025808.4111128-3-hch@lst.de>
+Date: Mon, 13 Oct 2025 11:57:58 +0900
+Message-ID: <20251013025808.4111128-4-hch@lst.de>
 X-Mailer: git-send-email 2.47.3
 In-Reply-To: <20251013025808.4111128-1-hch@lst.de>
 References: <20251013025808.4111128-1-hch@lst.de>
@@ -84,8 +84,8 @@ X-Spam-Report: Spam detection software,
  similar future email.  If you have any questions, see
  the administrator of that system for details.
  Content preview: Use filemap_fdatawrite_range instead of opencoding the logic
- using filemap_fdatawrite_wbc. Signed-off-by: Christoph Hellwig <hch@lst.de>
- --- fs/9p/vfs_file.c | 17 ++++ 1 file changed, 4 insertions(+), 13 deletions(-)
+ using filemap_fdatawrite_wbc. There is a slight change in the conversion
+ as nr_to_write is now set to LONG_MAX instead of double the number [...] 
  Content analysis details:   (0.0 points, 5.0 required)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
@@ -94,9 +94,9 @@ X-Spam-Report: Spam detection software,
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.0 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level mail
  domains are different
-X-Headers-End: 1v89wQ-00061o-Rx
-Subject: [Jfs-discussion] [PATCH 02/10] 9p: don't opencode
- filemap_fdatawrite_range in v9fs_mmap_vm_close
+X-Headers-End: 1v89wm-00063c-Tw
+Subject: [Jfs-discussion] [PATCH 03/10] ocfs2: don't opencode
+ filemap_fdatawrite_range in ocfs2_journal_submit_inode_data_buffers
 X-BeenThere: jfs-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -122,46 +122,38 @@ Content-Transfer-Encoding: 7bit
 Errors-To: jfs-discussion-bounces@lists.sourceforge.net
 
 Use filemap_fdatawrite_range instead of opencoding the logic using
-filemap_fdatawrite_wbc.
+filemap_fdatawrite_wbc.  There is a slight change in the conversion
+as nr_to_write is now set to LONG_MAX instead of double the number
+of the pages in the range.  LONG_MAX is the usual nr_to_write for
+WB_SYNC_ALL writeback, and the value expected by lower layers here.
 
 Signed-off-by: Christoph Hellwig <hch@lst.de>
 ---
- fs/9p/vfs_file.c | 17 ++++-------------
- 1 file changed, 4 insertions(+), 13 deletions(-)
+ fs/ocfs2/journal.c | 11 ++---------
+ 1 file changed, 2 insertions(+), 9 deletions(-)
 
-diff --git a/fs/9p/vfs_file.c b/fs/9p/vfs_file.c
-index eb0b083da269..612a230bc012 100644
---- a/fs/9p/vfs_file.c
-+++ b/fs/9p/vfs_file.c
-@@ -483,24 +483,15 @@ v9fs_vm_page_mkwrite(struct vm_fault *vmf)
+diff --git a/fs/ocfs2/journal.c b/fs/ocfs2/journal.c
+index e5f58ff2175f..85239807dec7 100644
+--- a/fs/ocfs2/journal.c
++++ b/fs/ocfs2/journal.c
+@@ -902,15 +902,8 @@ int ocfs2_journal_alloc(struct ocfs2_super *osb)
  
- static void v9fs_mmap_vm_close(struct vm_area_struct *vma)
+ static int ocfs2_journal_submit_inode_data_buffers(struct jbd2_inode *jinode)
  {
--	struct inode *inode;
--
+-	struct address_space *mapping = jinode->i_vfs_inode->i_mapping;
 -	struct writeback_control wbc = {
--		.nr_to_write = LONG_MAX,
--		.sync_mode = WB_SYNC_ALL,
--		.range_start = (loff_t)vma->vm_pgoff * PAGE_SIZE,
--		 /* absolute end, byte at end included */
--		.range_end = (loff_t)vma->vm_pgoff * PAGE_SIZE +
--			(vma->vm_end - vma->vm_start - 1),
+-		.sync_mode =  WB_SYNC_ALL,
+-		.nr_to_write = mapping->nrpages * 2,
+-		.range_start = jinode->i_dirty_start,
+-		.range_end = jinode->i_dirty_end,
 -	};
 -
- 	if (!(vma->vm_flags & VM_SHARED))
- 		return;
- 
- 	p9_debug(P9_DEBUG_VFS, "9p VMA close, %p, flushing", vma);
- 
--	inode = file_inode(vma->vm_file);
--	filemap_fdatawrite_wbc(inode->i_mapping, &wbc);
-+	filemap_fdatawrite_range(file_inode(vma->vm_file)->i_mapping,
-+			(loff_t)vma->vm_pgoff * PAGE_SIZE,
-+			(loff_t)vma->vm_pgoff * PAGE_SIZE +
-+				(vma->vm_end - vma->vm_start - 1));
+-	return filemap_fdatawrite_wbc(mapping, &wbc);
++	return filemap_fdatawrite_range(jinode->i_vfs_inode->i_mapping,
++			jinode->i_dirty_start, jinode->i_dirty_end);
  }
  
- static const struct vm_operations_struct v9fs_mmap_file_vm_ops = {
+ int ocfs2_journal_init(struct ocfs2_super *osb, int *dirty)
 -- 
 2.47.3
 
