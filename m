@@ -2,37 +2,37 @@ Return-Path: <jfs-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+jfs-discussion@lfdr.de
 Delivered-To: lists+jfs-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id A6836BD206D
-	for <lists+jfs-discussion@lfdr.de>; Mon, 13 Oct 2025 10:24:20 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6742FBD23B1
+	for <lists+jfs-discussion@lfdr.de>; Mon, 13 Oct 2025 11:15:56 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.sourceforge.net; s=beta; h=Content-Transfer-Encoding:Content-Type:Cc:
 	Reply-To:From:List-Subscribe:List-Help:List-Post:List-Archive:
 	List-Unsubscribe:List-Id:Subject:In-Reply-To:References:To:MIME-Version:Date:
 	Message-ID:Sender:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=NRCCUToansGSShWhk22ICB+HuU7EyN/WEH9AQdRDszw=; b=Tzs601tAJGy5WFHvXaWSPJBFHz
-	BpYIUY9HJPNMg36FRFUr0hukSSmAxRdL5MsXnfQzu9h59xp/VxGApKy8LJu2LRvc/tlotW5QiQJS/
-	vqpa0XAOS5O8DPpO1IFcCcisDhHipmHJVRDzyFSXx6RG/0FVuiQGgx1+kkWYLpAI2edU=;
+	bh=NHzBdh2t6p40NSYvtivwc5qx/w9cYpzgPEjCuFdgxo4=; b=cd/ByG2wkFGmWDID0Aoak8Hrv6
+	Gb4+5/bmfXqwlJI0fQsxeQ+lBXjsnH4GYed2elG5qykR6N/zuZSWzxDidbQkVldAMV+VdFDf8ggrc
+	0CH2Ptl+VOcDyacHuf39XYfYpXHBRaXpu/g8l3Klgm51UwelAWv/gjudv5G3sJyMXnTU=;
 Received: from [127.0.0.1] (helo=sfs-ml-1.v29.lw.sourceforge.com)
 	by sfs-ml-1.v29.lw.sourceforge.com with esmtp (Exim 4.95)
 	(envelope-from <jfs-discussion-bounces@lists.sourceforge.net>)
-	id 1v8DqJ-0006qs-JT;
-	Mon, 13 Oct 2025 08:23:43 +0000
+	id 1v8EeE-0008Eu-Lj;
+	Mon, 13 Oct 2025 09:15:18 +0000
 Received: from [172.30.29.66] (helo=mx.sourceforge.net)
  by sfs-ml-1.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
  TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (Exim 4.95)
- (envelope-from <dlemoal@kernel.org>) id 1v8Dq7-0006mJ-9I
+ (envelope-from <joseph.qi@linux.alibaba.com>) id 1v8EeC-0008El-5I
  for jfs-discussion@lists.sourceforge.net;
- Mon, 13 Oct 2025 08:23:31 +0000
+ Mon, 13 Oct 2025 09:15:16 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=sourceforge.net; s=x; h=Content-Transfer-Encoding:Content-Type:In-Reply-To:
  From:References:Cc:To:Subject:MIME-Version:Date:Message-ID:Sender:Reply-To:
  Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
  Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=gWZgHXxBcz5Iy79EMz07wJ3G/Gcb4/W61XEISke+Y60=; b=NBJwbUH7NMs7l2dYuNvVBuYXnZ
- tQ1DBOTSh4YtUQtux9QyqTWxSY+6upkukCda5DxCvzybVz9O03cKx02VbyJ/OFd+ujExubL6Nrzgl
- mN9ILEKlU3jZLoYhpN/HF4Sxs57emmVlXF9doImA940PHcXHqpAwSpxi6eMREVBFRh0w=;
+ bh=gGIOd7Ex2m90KckglAwHsiXkn+YFnTKWdf60l+zhCdc=; b=JIXxBTVVDTV82RK67E0M0Hx/lj
+ p5f4oFi2oQPBnh6jfdXc9iBXWhgtDzvBrCI/HeJLmRShKgOiMvncDYKxUWh7NTOKWzMPwiSCavxWB
+ +bsGR+XAsVKuHmIlBHwFMzPTZ80+JRAYERCGuqvh9/b4LpbK42pLZDgpEhcOhfLWbCM4=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
  h=Content-Transfer-Encoding:Content-Type:In-Reply-To:From:References:Cc:To:
@@ -40,31 +40,24 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
  :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
  List-Post:List-Owner:List-Archive;
- bh=gWZgHXxBcz5Iy79EMz07wJ3G/Gcb4/W61XEISke+Y60=; b=YFedDUxXHQAbo3aMEEO2O6rKXs
- YctJXKDbkWDCT6aRfDPOTldygqDTPdy55glo7OWalnDi0YrlCDtGoaNFak581JslwR2kgEsD6y5ff
- bxj88mvhrBnc2uR6Bep2SLL0J5wCYF+QxkfagBf9I4vMJExl5gsx6PxvUiDgrtzi/bRc=;
-Received: from sea.source.kernel.org ([172.234.252.31])
+ bh=gGIOd7Ex2m90KckglAwHsiXkn+YFnTKWdf60l+zhCdc=; b=bh9cJsUAHMQhfJ/1hrTy8uSehD
+ g93dLh9Uup7iiKRWmJUj4u7zoXbiTDIF3GUVoe3HYjv1zFNm+92ix3Fo0KthPQhudVgshvGujUWwH
+ I7Qh9q8igOFGniOcWBTNiqRG8YQ+WQ7fQ70HjJ7HRcKlDSLT28xQDLpShE7dvTklLoic=;
+Received: from out30-131.freemail.mail.aliyun.com ([115.124.30.131])
  by sfi-mx-2.v28.lw.sourceforge.com with esmtps
  (TLS1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.95)
- id 1v8Dq6-00077o-Tv for jfs-discussion@lists.sourceforge.net;
- Mon, 13 Oct 2025 08:23:31 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
- by sea.source.kernel.org (Postfix) with ESMTP id 876C445B72;
- Mon, 13 Oct 2025 08:23:20 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id E29EDC4CEE7;
- Mon, 13 Oct 2025 08:23:16 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=k20201202; t=1760343800;
- bh=cnSh8W6jhFCAzaT940CS+TKEufGQdg5GaKndRn4BVvk=;
- h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
- b=Z7GUKc0pKniE7mLAPZ/6pqdvN6WS2EGnlbQRlV7qxincVQQUZa2U3P7ChEwKeVC4x
- SlEKS8xSrHY3CnyD3YbWDRS/kA0K60YGo053lr62M+geB650bwBSwyC8aQjQLkzuKk
- kHFlR90vbfuxBpdkKSCdFPB8lmMCQ0ustwXMoTx+EvvSGfl74gubOnvcn+Vd+uQzft
- dOtpQMN8sqT4KxQxAVE+mkkL349M6U9ZIrsk7THwobYeYosNK80tQEvOXdrX4Swmgj
- iFt3eWBkG9Ar/XnxgL5APEFIX+GCqgi2thNRqaBVBW/tJDHGT8OJLVYu9/UXd4+e7s
- 660G6HX+IccMQ==
-Message-ID: <6f7e9453-de4e-4f43-ac1c-aaf9322cc6a4@kernel.org>
-Date: Mon, 13 Oct 2025 17:23:15 +0900
+ id 1v8EeB-0004Gx-Da for jfs-discussion@lists.sourceforge.net;
+ Mon, 13 Oct 2025 09:15:16 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=linux.alibaba.com; s=default;
+ t=1760346903; h=Message-ID:Date:MIME-Version:Subject:To:From:Content-Type;
+ bh=gGIOd7Ex2m90KckglAwHsiXkn+YFnTKWdf60l+zhCdc=;
+ b=vIzPwZ9qQzC9Tu6VO1CrvwCKUhQe00U3agOTdCC8C82UIxabjGlEsR68yVCq6SOpNSweXEPIyWZIjkHWYpjTXQ/YhTBgf2WSSt6lbcS1iIZSFq/mtxEaN+MbOA8Pv0b7OazO0Q8DP3mrXkMfHXLJfSmCWrE4wU07HzXv2UO1ad8=
+Received: from 30.221.129.221(mailfrom:joseph.qi@linux.alibaba.com
+ fp:SMTPD_---0Wq2ERPx_1760345954 cluster:ay36) by smtp.aliyun-inc.com;
+ Mon, 13 Oct 2025 16:59:15 +0800
+Message-ID: <9b8abc79-8605-4c13-9d9f-972f90418cd2@linux.alibaba.com>
+Date: Mon, 13 Oct 2025 16:59:14 +0800
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
 To: Christoph Hellwig <hch@lst.de>,
@@ -73,27 +66,25 @@ To: Christoph Hellwig <hch@lst.de>,
  <lucho@ionkov.net>, Dominique Martinet <asmadeus@codewreck.org>,
  Christian Schoenebeck <linux_oss@crudebyte.com>, Chris Mason <clm@fb.com>,
  David Sterba <dsterba@suse.com>, Mark Fasheh <mark@fasheh.com>,
- Joel Becker <jlbec@evilplan.org>, Joseph Qi <joseph.qi@linux.alibaba.com>
+ Joel Becker <jlbec@evilplan.org>
 References: <20251013025808.4111128-1-hch@lst.de>
- <20251013025808.4111128-11-hch@lst.de>
-Content-Language: en-US
-Organization: Western Digital Research
-In-Reply-To: <20251013025808.4111128-11-hch@lst.de>
-X-Spam-Score: -0.2 (/)
+ <20251013025808.4111128-4-hch@lst.de>
+In-Reply-To: <20251013025808.4111128-4-hch@lst.de>
+X-Spam-Score: -7.7 (-------)
 X-Spam-Report: Spam detection software,
  running on the system "sfi-spamd-2.hosts.colo.sdot.me", 
  has NOT identified this incoming email as spam.  The original
  message has been attached to this so you can view it or label
  similar future email.  If you have any questions, see
  the administrator of that system for details.
- Content preview:  On 2025/10/13 11:58,
- Christoph Hellwig wrote: > Make the naming
- consistent with the other helpers and get away from > the flush terminology
- that is way to overloaded. s/to/too > > Signed-off-by: Christoph Hellwig
- <hch@lst.de> 
- Content analysis details:   (-0.2 points, 5.0 required)
+ Content preview:  On 2025/10/13 10:57,
+ Christoph Hellwig wrote: > Use filemap_fdatawrite_range
+ instead of opencoding the logic using > filemap_fdatawrite_wbc. There is
+ a slight change in the conversion > as nr_to_write [...] 
+ Content analysis details:   (-7.7 points, 5.0 required)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -7.5 USER_IN_DEF_DKIM_WL From: address is in the default DKIM welcome-list
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature,
  not necessarily valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -101,10 +92,10 @@ X-Spam-Report: Spam detection software,
  domain
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - High trust sender
-X-Headers-End: 1v8Dq6-00077o-Tv
-Subject: Re: [Jfs-discussion] [PATCH 10/10] mm: rename filemap_flush to
- filemap_fdatawrite_kick
+ 0.0 UNPARSEABLE_RELAY Informational: message has unparseable relay lines
+X-Headers-End: 1v8EeB-0004Gx-Da
+Subject: Re: [Jfs-discussion] [PATCH 03/10] ocfs2: don't opencode
+ filemap_fdatawrite_range in ocfs2_journal_submit_inode_data_buffers
 X-BeenThere: jfs-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -116,8 +107,8 @@ List-Post: <mailto:jfs-discussion@lists.sourceforge.net>
 List-Help: <mailto:jfs-discussion-request@lists.sourceforge.net?subject=help>
 List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/jfs-discussion>, 
  <mailto:jfs-discussion-request@lists.sourceforge.net?subject=subscribe>
-From: Damien Le Moal via Jfs-discussion <jfs-discussion@lists.sourceforge.net>
-Reply-To: Damien Le Moal <dlemoal@kernel.org>
+From: Joseph Qi via Jfs-discussion <jfs-discussion@lists.sourceforge.net>
+Reply-To: Joseph Qi <joseph.qi@linux.alibaba.com>
 Cc: linux-xfs@vger.kernel.org, Christian Brauner <brauner@kernel.org>,
  Jan Kara <jack@suse.cz>, linux-mm@kvack.org, v9fs@lists.linux.dev,
  Josef Bacik <josef@toxicpanda.com>, linux-block@vger.kernel.org,
@@ -128,21 +119,47 @@ Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Errors-To: jfs-discussion-bounces@lists.sourceforge.net
 
-On 2025/10/13 11:58, Christoph Hellwig wrote:
-> Make the naming consistent with the other helpers and get away from
-> the flush terminology that is way to overloaded.
 
-s/to/too
 
+On 2025/10/13 10:57, Christoph Hellwig wrote:
+> Use filemap_fdatawrite_range instead of opencoding the logic using
+> filemap_fdatawrite_wbc.  There is a slight change in the conversion
+> as nr_to_write is now set to LONG_MAX instead of double the number
+> of the pages in the range.  LONG_MAX is the usual nr_to_write for
+> WB_SYNC_ALL writeback, and the value expected by lower layers here.
 > 
 > Signed-off-by: Christoph Hellwig <hch@lst.de>
 
-Reviewed-by: Damien Le Moal <dlemoal@kernel.org>
+Looks fine to me.
+Reviewed-by: Joseph Qi <joseph.qi@linux.alibaba.com>
 
+> ---
+>  fs/ocfs2/journal.c | 11 ++---------
+>  1 file changed, 2 insertions(+), 9 deletions(-)
+> 
+> diff --git a/fs/ocfs2/journal.c b/fs/ocfs2/journal.c
+> index e5f58ff2175f..85239807dec7 100644
+> --- a/fs/ocfs2/journal.c
+> +++ b/fs/ocfs2/journal.c
+> @@ -902,15 +902,8 @@ int ocfs2_journal_alloc(struct ocfs2_super *osb)
+>  
+>  static int ocfs2_journal_submit_inode_data_buffers(struct jbd2_inode *jinode)
+>  {
+> -	struct address_space *mapping = jinode->i_vfs_inode->i_mapping;
+> -	struct writeback_control wbc = {
+> -		.sync_mode =  WB_SYNC_ALL,
+> -		.nr_to_write = mapping->nrpages * 2,
+> -		.range_start = jinode->i_dirty_start,
+> -		.range_end = jinode->i_dirty_end,
+> -	};
+> -
+> -	return filemap_fdatawrite_wbc(mapping, &wbc);
+> +	return filemap_fdatawrite_range(jinode->i_vfs_inode->i_mapping,
+> +			jinode->i_dirty_start, jinode->i_dirty_end);
+>  }
+>  
+>  int ocfs2_journal_init(struct ocfs2_super *osb, int *dirty)
 
--- 
-Damien Le Moal
-Western Digital Research
 
 
 _______________________________________________
