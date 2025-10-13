@@ -2,37 +2,37 @@ Return-Path: <jfs-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+jfs-discussion@lfdr.de
 Delivered-To: lists+jfs-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0D16CBD30E3
-	for <lists+jfs-discussion@lfdr.de>; Mon, 13 Oct 2025 14:49:17 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id CC58ABD311F
+	for <lists+jfs-discussion@lfdr.de>; Mon, 13 Oct 2025 14:50:56 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.sourceforge.net; s=beta; h=Content-Type:Content-Transfer-Encoding:Cc:
 	Reply-To:From:List-Subscribe:List-Help:List-Post:List-Archive:
 	List-Unsubscribe:List-Id:Subject:In-Reply-To:References:To:MIME-Version:Date:
 	Message-ID:Sender:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=2xnSZOjiIFKGWDifVXwbq1ErkDwa0iVJN6GPVY1xtl0=; b=lo+muO1xCwTXFxxHKjs4TFj1Ug
-	fglyPTBAD92B293NxwslblnDHKsgUvRyOLTZQHa1qLajR5K8WAIzr0ITNi38HLzq0FdS7XvzPUkMJ
-	Me3DCk1SGi+bOHSnJMPKDL30FGumJhZcCckv8I1jPRA6prja+b2UoZ/YlYfIEcqcZZD8=;
-Received: from [127.0.0.1] (helo=sfs-ml-1.v29.lw.sourceforge.com)
-	by sfs-ml-1.v29.lw.sourceforge.com with esmtp (Exim 4.95)
+	bh=Piei3cqUUPkYHalWyYAX3IthxVg3HnpK44tTX6PPfGw=; b=MudogpATiu4BE/4swjn21ePvQt
+	zn7jP03jgAuuQTfJwJafc1Iadn1HA7kk42Y6vkcDBFTJm53RapMEffxmnyR/OfB6R//dFQy9B43E/
+	u1UMecUFsxYDGkv9JelTY7yT9agkhJIO76bwnw+wxA+8hJPqtoLHlVSAcZY5Y3ei6BmQ=;
+Received: from [127.0.0.1] (helo=sfs-ml-3.v29.lw.sourceforge.com)
+	by sfs-ml-3.v29.lw.sourceforge.com with esmtp (Exim 4.95)
 	(envelope-from <jfs-discussion-bounces@lists.sourceforge.net>)
-	id 1v8Hz4-0004Jl-NS;
-	Mon, 13 Oct 2025 12:49:02 +0000
+	id 1v8I0c-0004J0-S8;
+	Mon, 13 Oct 2025 12:50:38 +0000
 Received: from [172.30.29.66] (helo=mx.sourceforge.net)
- by sfs-ml-1.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
+ by sfs-ml-3.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
  TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (Exim 4.95)
- (envelope-from <david@redhat.com>) id 1v8Hz3-0004JN-4f
+ (envelope-from <david@redhat.com>) id 1v8I0a-0004It-OE
  for jfs-discussion@lists.sourceforge.net;
- Mon, 13 Oct 2025 12:49:01 +0000
+ Mon, 13 Oct 2025 12:50:36 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=sourceforge.net; s=x; h=Content-Transfer-Encoding:Content-Type:In-Reply-To:
  From:References:Cc:To:Subject:MIME-Version:Date:Message-ID:Sender:Reply-To:
  Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
  Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=V6YxR1nTJCDrfaOZFN3CnG2vV5jcoOfzGFCcTcZo0jw=; b=Zse3kUhu9al1o8s2sj13beiY5l
- UOOOgk+G9eET8c2dqXc25egphk3xNK6pjKOqRYj2USLwjbZEL/y/2qrrK4qUwrde+WcULAxoVy94L
- g5JikTXrtpBFFFNqFTo4gm1AIvuSewaV3uOpbSJehRX977bDyZlKHRUZ0NgbooQIdvuk=;
+ bh=fmLpGViBdbcMLzx1bb+Kxqb3+3UtyUNscErHdno+a+c=; b=fQ3loOyAfneNexNkwEh1O06ltM
+ szkhPKkBUCXRSQZp1Jx7lXGNBDQ0MyHCc/UfmCsf4t2e4yJUxEMxLTUgG9g5NvwqEatmTYEVI0WUt
+ Voacsr7XwFB355Wqa01L+cB24q9wmek1libFKGElwjws8MfbywgRKyFFStMsiQbJK9KE=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
  h=Content-Transfer-Encoding:Content-Type:In-Reply-To:From:References:Cc:To:
@@ -40,73 +40,73 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
  :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
  List-Post:List-Owner:List-Archive;
- bh=V6YxR1nTJCDrfaOZFN3CnG2vV5jcoOfzGFCcTcZo0jw=; b=YA3zDdaSrhXI4ZSeJak++9CKq5
- Y7GPulpLJ8qG8Dj1GLIedgr6n5Yd2za1yc0ClyOgZGkAWXeLMMcsTH9EEYAJWZypHui5nBvxOD2kv
- Z75wAoEkoqC3vVaVMRO2PDRQ9ueltVg90rN8xwfHCp5D1PxjSRrTYWvaG6bkSzwTaeaI=;
-Received: from us-smtp-delivery-124.mimecast.com ([170.10.133.124])
+ bh=fmLpGViBdbcMLzx1bb+Kxqb3+3UtyUNscErHdno+a+c=; b=S9/i56xuqwwQH70K34uiJbDLvE
+ EPmmbtj1dAAeqmjMBVeqOStnxujedhYno0Ahw55tXe04CA+vT7Fd8FiJagHakvXyozxOoHB95vxi4
+ Gzfpd3jHTcimvmiwkZZlrYCVAKsGE83+Zdkp+uOvk6M8NEdXJT23EVcUf4KQAdcNVaBE=;
+Received: from us-smtp-delivery-124.mimecast.com ([170.10.129.124])
  by sfi-mx-2.v28.lw.sourceforge.com with esmtps
  (TLS1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.95)
- id 1v8Hz2-0005FO-DN for jfs-discussion@lists.sourceforge.net;
- Mon, 13 Oct 2025 12:49:01 +0000
+ id 1v8I0a-0005MX-8U for jfs-discussion@lists.sourceforge.net;
+ Mon, 13 Oct 2025 12:50:36 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
- s=mimecast20190719; t=1760359734;
+ s=mimecast20190719; t=1760359830;
  h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
  to:to:cc:cc:mime-version:mime-version:content-type:content-type:
  content-transfer-encoding:content-transfer-encoding:
  in-reply-to:in-reply-to:references:references:autocrypt:autocrypt;
- bh=V6YxR1nTJCDrfaOZFN3CnG2vV5jcoOfzGFCcTcZo0jw=;
- b=gCeK9oDbwUpVGMJ5X0xQoBymzfm5LIlOlFfHGArX5/g7WHLGr51MhRSij2X5tRlyKBSCae
- noFeR2Ep06+Y5IVIA08vsZ3x8Ro3M4Gw5OxZhmAO3pPVejO29nGTsMW3vk4spQnSUvfoXa
- vEyBf2buwCQswLRQJlF+bjUxusvbmVY=
-Received: from mail-wm1-f70.google.com (mail-wm1-f70.google.com
- [209.85.128.70]) by relay.mimecast.com with ESMTP with STARTTLS
+ bh=fmLpGViBdbcMLzx1bb+Kxqb3+3UtyUNscErHdno+a+c=;
+ b=ApjK8+TFmj8PXajDObDIt9yfNi3EoONxgd2NJAwnKwimYfnsS5Oir/jBFUCDgIB+kXO8Bd
+ hsEiNDymu2Eb70hbPA/2uDUyE3j1Hld+btEopoW/4UU4jt88msJmn0VS3QcDn/KIAjykAZ
+ pVUXyuQrVIsA8qlwe/Q2TGF5t5bpQPY=
+Received: from mail-wm1-f71.google.com (mail-wm1-f71.google.com
+ [209.85.128.71]) by relay.mimecast.com with ESMTP with STARTTLS
  (version=TLSv1.3, cipher=TLS_AES_256_GCM_SHA384) id
- us-mta-478-rUua3fBuPtyweuBNkOm1TQ-1; Mon, 13 Oct 2025 08:48:53 -0400
-X-MC-Unique: rUua3fBuPtyweuBNkOm1TQ-1
-X-Mimecast-MFC-AGG-ID: rUua3fBuPtyweuBNkOm1TQ_1760359732
-Received: by mail-wm1-f70.google.com with SMTP id
- 5b1f17b1804b1-46e2c11b94cso29430215e9.3
+ us-mta-629-xF6NV_zHOmCzgIvKuZ64OQ-1; Mon, 13 Oct 2025 08:50:29 -0400
+X-MC-Unique: xF6NV_zHOmCzgIvKuZ64OQ-1
+X-Mimecast-MFC-AGG-ID: xF6NV_zHOmCzgIvKuZ64OQ_1760359828
+Received: by mail-wm1-f71.google.com with SMTP id
+ 5b1f17b1804b1-46e3ef2dd66so27406295e9.1
  for <jfs-discussion@lists.sourceforge.net>;
- Mon, 13 Oct 2025 05:48:53 -0700 (PDT)
+ Mon, 13 Oct 2025 05:50:28 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20230601; t=1760359732; x=1760964532;
+ d=1e100.net; s=20230601; t=1760359828; x=1760964628;
  h=content-transfer-encoding:in-reply-to:autocrypt:content-language
  :from:references:cc:to:subject:user-agent:mime-version:date
  :message-id:x-gm-message-state:from:to:cc:subject:date:message-id
  :reply-to;
- bh=V6YxR1nTJCDrfaOZFN3CnG2vV5jcoOfzGFCcTcZo0jw=;
- b=stZ1D86AEfMMMo5xkbD0nwN6TxetNL+nYjRxXVz78lkAHHsdrLSf75Sd2d+b5gEbTy
- RtVjQi3m5E+YuSdwnboHgKNAdHZynfV2gMel7ze6E501akPA4kKbt7PpekBEfGQDYn70
- AN1Vwh9M9K1miM+9nnoG59XHIt9OauIvrcEq8f/F2H+z51CWnuAdzLRa3ZrnI/sYnL74
- c7w/3USBK3iOEk1p2koVstQZv4rPmBOHaDVNHKt3gdwPntBzt3Q5x6Un21wp/SIe4FT1
- hXFiKahJQ7iaUo3aT/3izAPxatuO1uagm4F1Nd464BUM6sVOq5aVBllyNlfLIYGMxR0U
- irYw==
+ bh=fmLpGViBdbcMLzx1bb+Kxqb3+3UtyUNscErHdno+a+c=;
+ b=DPriv2fgXyqDzjKIFZ0TKjs3SOZwzpqwRRMbU9wN3R/z66aDpbOpagaEZzeaRovpq9
+ GZQ26W1I25GjxNRxmVeeANMZGYwUxWyazyB308CD/NIzmEPmN1nL/iLvZGLOk6xTHXHM
+ 2dnevlWqyunJgYeiNcgR7lOeinc8y3IBL+BiBalGRAvIo/vrel1HnAlidjEHrJtpKLG5
+ Dzcyb7vMkFlg4g6Y6DdwdJENwwhTQSuCOMLn9UOZYKWkwbgAr1w+po56ToynyQNmYofQ
+ T3gNSg2+Bi8O23RjX4vcmYyskgmVC3cBDtDU6qyJtCjuryHvgc5Sh/+wBt2gt+eBKKU3
+ Kt9g==
 X-Forwarded-Encrypted: i=1;
- AJvYcCWCRE/72bH4bme2Uplv2ut4+EBE7HqTajZ6AZPFRM2rFHcQyZ96gr5XYfSek/2+mVV5IWMHVyg1QQcuf1tSYg==@lists.sourceforge.net
-X-Gm-Message-State: AOJu0Yx5XrxhugSayxfy+O18XuSX6YSsru+k7sDADIf6IBS33j50xci2
- na7Ypn68NbMpp/rHC+XheyieqR9z1mO6xTP/b/jHo2fIheYm/pAapoTVodyutnwaIYS+sZ6Md9I
- 15EPR5QjR+CjQ8UviSY2PokVnzzbPRkOYDkYlw15+2gf7tD4LfC86Yyz1awnE5OIMaiVZwChKtY
- zs
-X-Gm-Gg: ASbGnctob0Vbwj5EY2s3zdN8j/AGcNSLInh/0svxwFLNi362EA1sIzZsz1bytBdxqEH
- MbEZefDU1NgbnOV0F/5YK83jbbK0jePNZxEzoCT/BUpYkxGib6y/T3kanIbbucS9ArUj/dh4bRA
- k2PtIqLM/BQILVGiG/r8SIPcRCB3vdRl+ZvQwkxGRQjmbIjQjiHEZdvkwZRiIIRNTTh58EhFh2F
- rdrGyYHVhN6k16ghEAx8C95WvURB8Hfdjj4onFe/z9Xnt60ctV+yXw9+d4TsJ+7LvE57hxFxKt+
- ykvLIzHUu8Rdku9CQo9Bx1goSNY8X04rdXIfQ2C2vuJOiSE9i87GTEiddLupqxkYcoH92f0HqyV
- x7NQ=
-X-Received: by 2002:a05:600c:530e:b0:46e:4c90:81d0 with SMTP id
- 5b1f17b1804b1-46fa9a8f1c5mr144086845e9.2.1760359731941; 
- Mon, 13 Oct 2025 05:48:51 -0700 (PDT)
-X-Google-Smtp-Source: AGHT+IGGLnouyUlx2MAgaHkKm2L1dKdQ4wuo7Nrhykv7xLHekC80pf6DEJPuKh5QZvTCPV+to9J8TA==
-X-Received: by 2002:a05:600c:530e:b0:46e:4c90:81d0 with SMTP id
- 5b1f17b1804b1-46fa9a8f1c5mr144086535e9.2.1760359731494; 
- Mon, 13 Oct 2025 05:48:51 -0700 (PDT)
+ AJvYcCVD9o9cJih+am56b/iAbg1N90rsGLrNFbZQlT5P+/kVIpPUsGfniNbjHtuY0aWARU2qAZyO+83oZg9CuEJ38Q==@lists.sourceforge.net
+X-Gm-Message-State: AOJu0YwrVT3MTpvJLdayfSAO7aoWlDZYF9cz1K44JWy6XbzwYZewnCjZ
+ q2HSQs8VM5eWWQPnwTfZMBL+vbo6yPEFkMD/bNabUkv/JLKrCq5oCAke0FQaLbKUNzianotcOz9
+ y+c1lvz4UqhqibPkLHWaD7DhqXsrukkIBAiSu0CYYiS9d0M7f3ucOzKWDx6doyXJ86j71ou7ih1
+ eK
+X-Gm-Gg: ASbGncvuXt38gSsvgDb8H/5wHANLqTsSx7dim+L7wnlkD5mBmL/hHdrznI4z+11Vhpa
+ XGBajQt+h0TMRI9gm4EBJqe3kspyfvzGrA7t24nfa3P848bd6eCs3xa7dryUwDEaHi/35WyvSfA
+ 6ewW6WyR/gaQts/C7GSotsP3XU8LGuQDpnYMUsG4nQs4P/hOdORknor5CrjURNd7Dwge6A9W4Dd
+ mmex4SKa/08kaCDIAZL43JOpssH+JAXJpgGjFMohlA7s3dUbbeIj+jvU4XifbJNp8ISJSG1h4hM
+ HZDZ5rz8bLDmK9In1IkH88uWwLLEG/aXvjeVRdZXVK1jMpLajMhCFSrSmAu6cuxDF9Vd8Epevfr
+ 9qdA=
+X-Received: by 2002:a05:600c:6011:b0:45c:b642:87a6 with SMTP id
+ 5b1f17b1804b1-46fa28bbca1mr126817325e9.0.1760359828004; 
+ Mon, 13 Oct 2025 05:50:28 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IGMMoKs4VS2gHV3gKsNnQk9DNjQ77BVoRLFBciblN4uYmPY7ldMdNRqp+3ZL0M1o/a3ErG8+Q==
+X-Received: by 2002:a05:600c:6011:b0:45c:b642:87a6 with SMTP id
+ 5b1f17b1804b1-46fa28bbca1mr126817005e9.0.1760359827614; 
+ Mon, 13 Oct 2025 05:50:27 -0700 (PDT)
 Received: from [192.168.3.141] (tmo-083-189.customers.d1-online.com.
  [80.187.83.189]) by smtp.gmail.com with ESMTPSA id
- 5b1f17b1804b1-46fb497aec2sm189420095e9.1.2025.10.13.05.48.48
+ 5b1f17b1804b1-46fb49c3e49sm183435545e9.16.2025.10.13.05.50.24
  (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Mon, 13 Oct 2025 05:48:51 -0700 (PDT)
-Message-ID: <41f5cd92-6bd8-46d4-afce-3c14a1cd48dc@redhat.com>
-Date: Mon, 13 Oct 2025 14:48:48 +0200
+ Mon, 13 Oct 2025 05:50:27 -0700 (PDT)
+Message-ID: <3fdede63-0bb7-4618-af45-6605ed25b6c0@redhat.com>
+Date: Mon, 13 Oct 2025 14:50:24 +0200
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
 To: Christoph Hellwig <hch@lst.de>,
@@ -117,7 +117,7 @@ To: Christoph Hellwig <hch@lst.de>,
  David Sterba <dsterba@suse.com>, Mark Fasheh <mark@fasheh.com>,
  Joel Becker <jlbec@evilplan.org>, Joseph Qi <joseph.qi@linux.alibaba.com>
 References: <20251013025808.4111128-1-hch@lst.de>
- <20251013025808.4111128-7-hch@lst.de>
+ <20251013025808.4111128-9-hch@lst.de>
 Autocrypt: addr=david@redhat.com; keydata=
  xsFNBFXLn5EBEAC+zYvAFJxCBY9Tr1xZgcESmxVNI/0ffzE/ZQOiHJl6mGkmA1R7/uUpiCjJ
  dBrn+lhhOYjjNefFQou6478faXE6o2AhmebqT4KiQoUQFV4R7y1KMEKoSyy8hQaK1umALTdL
@@ -162,39 +162,42 @@ Autocrypt: addr=david@redhat.com; keydata=
  3iyY2Nsd7JxfKu1PRhCGwXzRw5TlfEsoRI7V9A8isUCoqE2Dzh3FvYHVeX4Us+bRL/oqareJ
  CIFqgYMyvHj7Q06kTKmauOe4Nf0l0qEkIuIzfoLJ3qr5UyXc2hLtWyT9Ir+lYlX9efqh7mOY
  qIws/H2t
-In-Reply-To: <20251013025808.4111128-7-hch@lst.de>
+In-Reply-To: <20251013025808.4111128-9-hch@lst.de>
 X-Mimecast-Spam-Score: 0
-X-Mimecast-MFC-PROC-ID: okmbrM7Cdcx8Daf0nEQMI8xAGmSwbmh0GpFrlzK0rWU_1760359732
+X-Mimecast-MFC-PROC-ID: L3BqrH5rIUEYxbCWRtKypXQmP_yghw6auIqDZu83Ra8_1760359828
 X-Mimecast-Originator: redhat.com
 Content-Language: en-US
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: Spam detection software,
- running on the system "sfi-spamd-2.hosts.colo.sdot.me", 
+ running on the system "sfi-spamd-1.hosts.colo.sdot.me", 
  has NOT identified this incoming email as spam.  The original
  message has been attached to this so you can view it or label
  similar future email.  If you have any questions, see
  the administrator of that system for details.
- Content preview:  > @@ -474, 6 +474,
- 28 @@ int filemap_flush(struct address_space
- *mapping) > } > EXPORT_SYMBOL(filemap_flush); > > +/* > + * Start writeback
- on @nr_to_write pages from @mapping. No one but the existing [...] 
+ Content preview:  On 13.10.25 04:58,
+ Christoph Hellwig wrote: > Replace filemap_fdatawrite_wbc, 
+ which exposes a writeback_control to the > callers with a __filemap_fdatawrite
+ helper that takes all the possible > argume [...] 
  Content analysis details:   (-0.2 points, 5.0 required)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ 0.0 RCVD_IN_DNSWL_BLOCKED  RBL: ADMINISTRATOR NOTICE: The query to DNSWL
+ was blocked.  See
+ http://wiki.apache.org/spamassassin/DnsBlocklists#DnsBlocklists-dnsbl-block
+ for more information. [170.10.129.124 listed in list.dnswl.org]
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature,
  not necessarily valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU Message has a valid DKIM or DK signature from author's
- domain
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [170.10.133.124 listed in wl.mailspike.net]
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ -0.1 DKIM_VALID_AU Message has a valid DKIM or DK signature from author's
+ domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.0 DKIMWL_WL_HIGH         DKIMwl.org - High trust sender
-X-Headers-End: 1v8Hz2-0005FO-DN
-Subject: Re: [Jfs-discussion] [PATCH 06/10] mm,
- btrfs: add a filemap_fdatawrite_kick_nr helper
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [170.10.129.124 listed in wl.mailspike.net]
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+X-Headers-End: 1v8I0a-0005MX-8U
+Subject: Re: [Jfs-discussion] [PATCH 08/10] mm: remove filemap_fdatawrite_wbc
 X-BeenThere: jfs-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -219,42 +222,13 @@ Content-Transfer-Encoding: 7bit
 Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Errors-To: jfs-discussion-bounces@lists.sourceforge.net
 
-
-> @@ -474,6 +474,28 @@ int filemap_flush(struct address_space *mapping)
->   }
->   EXPORT_SYMBOL(filemap_flush);
->   
-> +/*
-> + * Start writeback on @nr_to_write pages from @mapping.  No one but the existing
-> + * btrfs caller should be using this.  Talk to linux-mm if you think adding a
-> + * new caller is a good idea.
-> + */
-
-Nit: We seem to prefer proper kerneldoc for filemap_fdatawrite* functions.
-
-> +int filemap_fdatawrite_kick_nr(struct address_space *mapping, long *nr_to_write)
-> +{
-> +	struct writeback_control wbc = {
-> +		.nr_to_write = *nr_to_write,
-> +		.sync_mode = WB_SYNC_NONE,
-> +		.range_start = 0,
-> +		.range_end = LLONG_MAX,
-> +	};
-> +	int ret;
-> +
-> +	ret = filemap_fdatawrite_wbc(mapping, &wbc);
-> +	if (!ret)
-> +		*nr_to_write = wbc.nr_to_write;
-> +	return ret;
-> +}
-> +EXPORT_SYMBOL_FOR_MODULES(filemap_fdatawrite_kick_nr, "btrfs");
-> +
->   /**
->    * filemap_range_has_page - check if a page exists in range.
->    * @mapping:           address space within which to check
-
-
-I think there is still a discussion on the name, but in general LGTM
+On 13.10.25 04:58, Christoph Hellwig wrote:
+> Replace filemap_fdatawrite_wbc, which exposes a writeback_control to the
+> callers with a __filemap_fdatawrite helper that takes all the possible
+> arguments and declares the writeback_control itself.
+> 
+> Signed-off-by: Christoph Hellwig <hch@lst.de>
+> ---
 
 Reviewed-by: David Hildenbrand <david@redhat.com>
 
