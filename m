@@ -2,37 +2,37 @@ Return-Path: <jfs-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+jfs-discussion@lfdr.de
 Delivered-To: lists+jfs-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4919ABD15CD
-	for <lists+jfs-discussion@lfdr.de>; Mon, 13 Oct 2025 06:14:28 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id ADFFABD15C1
+	for <lists+jfs-discussion@lfdr.de>; Mon, 13 Oct 2025 06:13:41 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.sourceforge.net; s=beta; h=Content-Transfer-Encoding:Content-Type:Cc:
 	Reply-To:From:List-Subscribe:List-Help:List-Post:List-Archive:
 	List-Unsubscribe:List-Id:Subject:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:To:Sender:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=4v36KXxCJmlQ4NXn/4gOrbjZNU7MKwiM6BeX9UB/v00=; b=LJByqWo1U/C0wRsmMhZgG3TZRD
-	yMZDMBc5bHcrFGA/NXbTbJRztcD2qZ1OyBEB00TgUzVB/ZV92iiyvThhboYRD5fByQ5XUJ2894SDQ
-	P6ilkfPoltHeOemgMUdHz8t1ZwPYJiFH1h33Xo8I9NdEu5x3mSv2nPZL/0wDwxK7cWww=;
-Received: from [127.0.0.1] (helo=sfs-ml-4.v29.lw.sourceforge.com)
-	by sfs-ml-4.v29.lw.sourceforge.com with esmtp (Exim 4.95)
+	bh=P99jrk2PuhvYyu7xOmNIjF43Fs89ZwcEfmfft2zw5vA=; b=SrULo+MzwPkoIiGAT33AePgnSc
+	ZpxgyX2iL2kWwG0ZyHONiHNJFPNvt85RtBY106TeVZy8xmONf6YniPGRps6T6DlyRFOS4cpgX2YJu
+	d25Iwq0gyWUV2fjEeZxuMc0Y3FhedCy2jVHAIOdpLZfZiWgVCEB5fiJaydKt2pz+i1fE=;
+Received: from [127.0.0.1] (helo=sfs-ml-1.v29.lw.sourceforge.com)
+	by sfs-ml-1.v29.lw.sourceforge.com with esmtp (Exim 4.95)
 	(envelope-from <jfs-discussion-bounces@lists.sourceforge.net>)
-	id 1v89wo-0008S0-L7;
-	Mon, 13 Oct 2025 04:14:10 +0000
+	id 1v89w3-0006A2-AD;
+	Mon, 13 Oct 2025 04:13:23 +0000
 Received: from [172.30.29.66] (helo=mx.sourceforge.net)
- by sfs-ml-4.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
+ by sfs-ml-1.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
  TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (Exim 4.95) (envelope-from
  <BATV+429c5dd7f65f3a144064+8086+infradead.org+hch@bombadil.srs.infradead.org>)
- id 1v89wn-0008Ru-CH for jfs-discussion@lists.sourceforge.net;
- Mon, 13 Oct 2025 04:14:09 +0000
+ id 1v89w1-00069t-9o for jfs-discussion@lists.sourceforge.net;
+ Mon, 13 Oct 2025 04:13:21 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=sourceforge.net; s=x; h=Content-Transfer-Encoding:MIME-Version:References:
  In-Reply-To:Message-ID:Date:Subject:Cc:To:From:Sender:Reply-To:Content-Type:
  Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
  Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=dQZOPAAeeds/w0ZlIXWjsgocvBDsAHF4UQnFeVZIJl8=; b=MIEJL/OOzaPBhxZ5y02wkhSlmN
- BXFoh1EI2iJ5UfuKBpagVDoXkOx1ccH0k2VNd6pIm2tdzWGZixybcH8StoS6oypvvT71KLJWA3adD
- aEBNNFvKlMytT7BSW2nDcht34cwfaysrFDL3WIla64fFm4OhyaMkArqECodB3KeNWn7s=;
+ bh=U/DAAkWmq2Dxx5Ncu78XnJSF3nOk6rkN/CJQmqoQWpE=; b=Tf4P91XwseoEOtlxa6/rpjnYG/
+ oCi6AWax8IZtb2ddZpnEqthIdcZSOJ2fGl7n2mFve9Bwfu9XK2u6kmRxfiLR7AhgVcRImEI9ip1y5
+ 0ACn6+aHDerVhpXQtxlVokyuPA1fcpEnRvws96VVsYFz1OEVtJxYHA3SVyIXupPIraws=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
  h=Content-Transfer-Encoding:MIME-Version:References:In-Reply-To:Message-ID:
@@ -40,27 +40,27 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
  :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
  List-Post:List-Owner:List-Archive;
- bh=dQZOPAAeeds/w0ZlIXWjsgocvBDsAHF4UQnFeVZIJl8=; b=gUNkeqEpBwwpyeocmTRtzSKdMf
- 0+7TF7UhDRRgwTcCQGW/xiH0mv8fnGlb+aqJxq4imAI0yLGJ8BWaEiD+cO7kSoi4x8KJCDTwOa+T+
- LgCb+renC1xTg+Vv2EPQ9BqD73qjmK8kNqKw6X2xzeSQEbM4n0AAaddrkYruJngEB8K0=;
+ bh=U/DAAkWmq2Dxx5Ncu78XnJSF3nOk6rkN/CJQmqoQWpE=; b=D7XNBBoyddjazdyHFuGfXUCbbN
+ rPsfjDOXykguDNKCOCCqkoCUDlaf3UbVJk2LbrFp7FKsclZtvkW3jF7juUEHVIPVACI8CATQvoeYd
+ /kZk572rjDfO5s9NL36a2kGmtsaTYdbT2o5t4I6adPHFdWvwdk1FwyD4oca9Wcq58s4A=;
 Received: from bombadil.infradead.org ([198.137.202.133])
  by sfi-mx-2.v28.lw.sourceforge.com with esmtps
  (TLS1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.95)
- id 1v89wm-00063c-Tw for jfs-discussion@lists.sourceforge.net;
- Mon, 13 Oct 2025 04:14:09 +0000
+ id 1v89w0-00060R-UN for jfs-discussion@lists.sourceforge.net;
+ Mon, 13 Oct 2025 04:13:21 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=infradead.org; s=bombadil.20210309; h=Content-Transfer-Encoding:
  MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:Cc:To:From:Sender
  :Reply-To:Content-Type:Content-ID:Content-Description;
- bh=dQZOPAAeeds/w0ZlIXWjsgocvBDsAHF4UQnFeVZIJl8=; b=FDfBpYZNHkGYl26RqtPTH1d2z0
- 0grd2UwV3PK7DTQrexZXFT2MSdKVpYRL+Gjc3eFSuxeb03ctH5iPyQKpzIO6edBYs5CLd9PefOSSM
- i+j8w8lTD4MZx5T8BNzqhQjwiPzFGW4QohpQ8TOsPSGb5ECwtiYghElUUuDsSmqULiAgDmPuLdwDj
- pE95DuAtsOpzDNx6YaGtSTFWpMCalmXOLEyUGHDbBZ2vFQKi0Hg9HE1rwYeigBs5zic7UhFJ9nSVl
- VJUIaBI9dI/hwo2OaxbrpcOR0PsHLKqRYJcCmgouWBRYW+9tyuOye5gNQ/srvuYKJiOGWhaYnd0Oq
- epabVJjQ==;
+ bh=U/DAAkWmq2Dxx5Ncu78XnJSF3nOk6rkN/CJQmqoQWpE=; b=v1agg868KstaamClRF27PcxAmE
+ NMKTaFWdSt0z5b2C9IP/DIDFPD7zXPVT89f4fnltVINDZ7ES6vsQPElxFC8Wahjh08WYsbT8Xx4U/
+ PvrlxExKr7jaW23AlDsdD/3j2gQcVjYHULOZMyDMyzZAqBWpkyeLiMq2U9gSiO/Bb+vmTVicLSNbZ
+ Qw50TbDFEfFk6Sf3Mmkw5eCgl+dyz4UEdgpPZcRfcYmq7GLBuF6TNzL/XPkSkZp7sBy4pqKdLpQdp
+ AvSJJr70eSzdh+IVUoaoKh1XmeJJRiWgDBOsuQnXsHq40oDaH/Fwf5GzqpUljOMhy5j7WEKmQ12Wd
+ 6GjFwTpw==;
 Received: from [220.85.59.196] (helo=localhost)
  by bombadil.infradead.org with esmtpsa (Exim 4.98.2 #2 (Red Hat Linux))
- id 1v88lh-0000000C87W-3jg1; Mon, 13 Oct 2025 02:58:38 +0000
+ id 1v88lo-0000000C8BU-2H5E; Mon, 13 Oct 2025 02:58:45 +0000
 To: "Matthew Wilcox (Oracle)" <willy@infradead.org>,
  Eric Van Hensbergen <ericvh@kernel.org>,
  Latchesar Ionkov <lucho@ionkov.net>,
@@ -68,8 +68,8 @@ To: "Matthew Wilcox (Oracle)" <willy@infradead.org>,
  Christian Schoenebeck <linux_oss@crudebyte.com>, Chris Mason <clm@fb.com>,
  David Sterba <dsterba@suse.com>, Mark Fasheh <mark@fasheh.com>,
  Joel Becker <jlbec@evilplan.org>, Joseph Qi <joseph.qi@linux.alibaba.com>
-Date: Mon, 13 Oct 2025 11:57:58 +0900
-Message-ID: <20251013025808.4111128-4-hch@lst.de>
+Date: Mon, 13 Oct 2025 11:57:59 +0900
+Message-ID: <20251013025808.4111128-5-hch@lst.de>
 X-Mailer: git-send-email 2.47.3
 In-Reply-To: <20251013025808.4111128-1-hch@lst.de>
 References: <20251013025808.4111128-1-hch@lst.de>
@@ -83,9 +83,10 @@ X-Spam-Report: Spam detection software,
  message has been attached to this so you can view it or label
  similar future email.  If you have any questions, see
  the administrator of that system for details.
- Content preview: Use filemap_fdatawrite_range instead of opencoding the logic
- using filemap_fdatawrite_wbc. There is a slight change in the conversion
- as nr_to_write is now set to LONG_MAX instead of double the number [...] 
+ Content preview: start_delalloc_inodes has a struct inode * pointer available
+ in the main loop, use it instead of re-calculating it from the btrfs inode.
+ Signed-off-by: Christoph Hellwig <hch@lst.de> --- fs/btrfs/inode.c | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-) 
  Content analysis details:   (0.0 points, 5.0 required)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
@@ -94,9 +95,9 @@ X-Spam-Report: Spam detection software,
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.0 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level mail
  domains are different
-X-Headers-End: 1v89wm-00063c-Tw
-Subject: [Jfs-discussion] [PATCH 03/10] ocfs2: don't opencode
- filemap_fdatawrite_range in ocfs2_journal_submit_inode_data_buffers
+X-Headers-End: 1v89w0-00060R-UN
+Subject: [Jfs-discussion] [PATCH 04/10] btrfs: use the local tmp_inode
+ variable in start_delalloc_inodes
 X-BeenThere: jfs-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -121,39 +122,39 @@ Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Errors-To: jfs-discussion-bounces@lists.sourceforge.net
 
-Use filemap_fdatawrite_range instead of opencoding the logic using
-filemap_fdatawrite_wbc.  There is a slight change in the conversion
-as nr_to_write is now set to LONG_MAX instead of double the number
-of the pages in the range.  LONG_MAX is the usual nr_to_write for
-WB_SYNC_ALL writeback, and the value expected by lower layers here.
+start_delalloc_inodes has a struct inode * pointer available in the
+main loop, use it instead of re-calculating it from the btrfs inode.
 
 Signed-off-by: Christoph Hellwig <hch@lst.de>
 ---
- fs/ocfs2/journal.c | 11 ++---------
- 1 file changed, 2 insertions(+), 9 deletions(-)
+ fs/btrfs/inode.c | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
 
-diff --git a/fs/ocfs2/journal.c b/fs/ocfs2/journal.c
-index e5f58ff2175f..85239807dec7 100644
---- a/fs/ocfs2/journal.c
-+++ b/fs/ocfs2/journal.c
-@@ -902,15 +902,8 @@ int ocfs2_journal_alloc(struct ocfs2_super *osb)
- 
- static int ocfs2_journal_submit_inode_data_buffers(struct jbd2_inode *jinode)
- {
--	struct address_space *mapping = jinode->i_vfs_inode->i_mapping;
--	struct writeback_control wbc = {
--		.sync_mode =  WB_SYNC_ALL,
--		.nr_to_write = mapping->nrpages * 2,
--		.range_start = jinode->i_dirty_start,
--		.range_end = jinode->i_dirty_end,
--	};
--
--	return filemap_fdatawrite_wbc(mapping, &wbc);
-+	return filemap_fdatawrite_range(jinode->i_vfs_inode->i_mapping,
-+			jinode->i_dirty_start, jinode->i_dirty_end);
- }
- 
- int ocfs2_journal_init(struct ocfs2_super *osb, int *dirty)
+diff --git a/fs/btrfs/inode.c b/fs/btrfs/inode.c
+index 3b1b3a0553ee..9edb78fc57fc 100644
+--- a/fs/btrfs/inode.c
++++ b/fs/btrfs/inode.c
+@@ -8744,9 +8744,9 @@ static int start_delalloc_inodes(struct btrfs_root *root,
+ 		if (snapshot)
+ 			set_bit(BTRFS_INODE_SNAPSHOT_FLUSH, &inode->runtime_flags);
+ 		if (full_flush) {
+-			work = btrfs_alloc_delalloc_work(&inode->vfs_inode);
++			work = btrfs_alloc_delalloc_work(tmp_inode);
+ 			if (!work) {
+-				iput(&inode->vfs_inode);
++				iput(tmp_inode);
+ 				ret = -ENOMEM;
+ 				goto out;
+ 			}
+@@ -8754,7 +8754,7 @@ static int start_delalloc_inodes(struct btrfs_root *root,
+ 			btrfs_queue_work(root->fs_info->flush_workers,
+ 					 &work->work);
+ 		} else {
+-			ret = filemap_fdatawrite_wbc(inode->vfs_inode.i_mapping, wbc);
++			ret = filemap_fdatawrite_wbc(tmp_inode->i_mapping, wbc);
+ 			btrfs_add_delayed_iput(inode);
+ 			if (ret || wbc->nr_to_write <= 0)
+ 				goto out;
 -- 
 2.47.3
 
