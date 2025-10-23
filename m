@@ -2,78 +2,80 @@ Return-Path: <jfs-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+jfs-discussion@lfdr.de
 Delivered-To: lists+jfs-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7D61CC095E1
-	for <lists+jfs-discussion@lfdr.de>; Sat, 25 Oct 2025 18:22:50 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7DD89C129F8
+	for <lists+jfs-discussion@lfdr.de>; Tue, 28 Oct 2025 03:04:49 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.sourceforge.net; s=beta; h=Content-Transfer-Encoding:Content-Type:Cc:
 	Reply-To:From:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:Subject:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:To:Sender:Content-ID:Content-Description:Resent-Date:
+	List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:References:
+	Message-ID:To:Date:Sender:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=RQbw+Rl9u9IkhRBibigDV1/ShZvb76RLIM1bcYjsdVc=; b=KuhI2aiPE8LmWvE5cg4n0lhTB8
-	v/waTpPTBzQunLij7H6bLBEvtoEVtt1jFnswkp30r8MAigSpYr6oIJ39woKV+UWHoxqL+b16ez9F6
-	BlpGAuBRVOnyFRjoxLXmeZtksfGs1XZh82XLDfP41ft6J94NsS7vJo9kUd8G7PFVXxXw=;
-Received: from [127.0.0.1] (helo=sfs-ml-4.v29.lw.sourceforge.com)
-	by sfs-ml-4.v29.lw.sourceforge.com with esmtp (Exim 4.95)
+	bh=1UulpXwHmn9IftPeMkanjoTMMPpV6daOrG8O8avZveU=; b=k1LDIPKxS4ELNHDF/n1Bc/a1wy
+	ZFd1LOxwIQqqAxWu4/UzJ+dwpfkqH030uGRMh76Jm28zWwzBlBBaCqwgBZwUWYrUR5cRxyUL5tWaY
+	YEM6Hs/tFxcdsc9wMAyBobd6/3d85zCLtnoLY0GdJ0Z8P1IJfuQfCmBJEQ0y64Qdmhe8=;
+Received: from [127.0.0.1] (helo=sfs-ml-3.v29.lw.sourceforge.com)
+	by sfs-ml-3.v29.lw.sourceforge.com with esmtp (Exim 4.95)
 	(envelope-from <jfs-discussion-bounces@lists.sourceforge.net>)
-	id 1vCh0B-0006F3-Py;
-	Sat, 25 Oct 2025 16:20:23 +0000
+	id 1vDZ2A-0002vV-LU;
+	Tue, 28 Oct 2025 02:02:02 +0000
 Received: from [172.30.29.66] (helo=mx.sourceforge.net)
- by sfs-ml-4.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
+ by sfs-ml-2.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
  TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (Exim 4.95)
- (envelope-from <sashal@kernel.org>) id 1vCh09-0006Ew-Mg
+ (envelope-from <nathan@kernel.org>) id 1vBuci-00085p-KB
  for jfs-discussion@lists.sourceforge.net;
- Sat, 25 Oct 2025 16:20:21 +0000
+ Thu, 23 Oct 2025 12:40:57 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=sourceforge.net; s=x; h=Content-Transfer-Encoding:Content-Type:MIME-Version
- :References:In-Reply-To:Message-ID:Date:Subject:Cc:To:From:Sender:Reply-To:
+ d=sourceforge.net; s=x; h=In-Reply-To:Content-Type:MIME-Version:References:
+ Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:Content-Transfer-Encoding:
  Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
  Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=VPBX/q7+7vAxFyFuRCE7ujcJR3PsQIDeQjvMJnSxkDo=; b=VNQw8Lh6yiZPQ/E3XZ8fJFY7gb
- an4umig4ukulCQr4DCTBFq+Xb65i8p2Gao2Ks3iyzIsEivhfGaqGNQ93sJJ5OF5sLh+o/wHNOo8ZF
- OSRNIIwJj4MiY23sZ6G/pTswJZpIkK7P7urGvjEtNmf2DZeHEFq1DP9VjH4MBVuDpiA8=;
+ bh=4MTH2VsnjvYA9JHr71oYHa9aTOp34ZEy5OH9h4QDyZ4=; b=H4a4THy7J5Ksn0u72hfIQ4nMi+
+ mt1VmSTMDPq3CxARNTT4GMv+A9O1SnTfG7760KTu52VLQtVujOheqGFqJph/73+l6meZbT73TRhGX
+ sWMhKTBmVf24jaH/W4GiGqEcmoOXgiv0xcM5UU8CkiXuk7fWAc0v9zap/C0U6KfYRCWY=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
- h=Content-Transfer-Encoding:Content-Type:MIME-Version:References:
- In-Reply-To:Message-ID:Date:Subject:Cc:To:From:Sender:Reply-To:Content-ID:
+ h=In-Reply-To:Content-Type:MIME-Version:References:Message-ID:Subject:Cc:To
+ :From:Date:Sender:Reply-To:Content-Transfer-Encoding:Content-ID:
  Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
  :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
  List-Post:List-Owner:List-Archive;
- bh=VPBX/q7+7vAxFyFuRCE7ujcJR3PsQIDeQjvMJnSxkDo=; b=NJ7mZhEfu6Z4Tv9u/PYZ+N83eR
- SWLDA04jIWn9EyEnwW1GbyK40sBVYuq8JZDxlb7MHzqjq/o1EQOHWmaqBGqt1v/6w0V6jagWRLgCh
- kdvgEv1DHt04vzSDzzNtMfJWMHExHsmRPRm5Xz0/a9SvTI29ee+/1NEhtTcalaXBtii4=;
-Received: from sea.source.kernel.org ([172.234.252.31])
+ bh=4MTH2VsnjvYA9JHr71oYHa9aTOp34ZEy5OH9h4QDyZ4=; b=BUWllnVnIMcrulj4EjxwGIp/YM
+ Rm+9nJtQ1odQjHMhTr6HLGK0Eu48Usl6O2Nagr6sLAHNjx/NiwbGa72u015ZoVdMrosTW5r95EXd1
+ stybUwo88hdnPxS1fKjH65ugpX+0x+WPFXqv7StL0PZQQZNbr7rj3umyJe/NCyw41jzg=;
+Received: from tor.source.kernel.org ([172.105.4.254])
  by sfi-mx-2.v28.lw.sourceforge.com with esmtps
  (TLS1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.95)
- id 1vCh09-0003Vp-4r for jfs-discussion@lists.sourceforge.net;
- Sat, 25 Oct 2025 16:20:21 +0000
+ id 1vBuci-0000qi-QD for jfs-discussion@lists.sourceforge.net;
+ Thu, 23 Oct 2025 12:40:57 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
- by sea.source.kernel.org (Postfix) with ESMTP id AFF84450E8;
- Sat, 25 Oct 2025 16:20:10 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 34535C4CEF5;
- Sat, 25 Oct 2025 16:20:09 +0000 (UTC)
+ by tor.source.kernel.org (Postfix) with ESMTP id 2654C6061A;
+ Thu, 23 Oct 2025 12:40:46 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 14AEAC4CEE7;
+ Thu, 23 Oct 2025 12:40:43 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=k20201202; t=1761409210;
- bh=Azs5/WmDLV1h8jBKANAqoGYQS7sR47L8sRbriesti6Q=;
- h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=prW4GD0yp1qrBAMOTDJzSbMwUJjYeBYNC0YnYHSq6n3RRtH4Bl3Y5g9sZCbtXLd3j
- iG9A56YUIvtR8R5kzqezgLfipFT+he/GagiFbZ58OVZ/DQYlXHO+ugf5RM8dBNC6ML
- U/Fj2nqagxIOMmSybM0kG4q/BuMi0KOsb12ZTnIgIxZ6tBrzM3j/avOu1yc5CIsTR5
- 61XROhUeVkV+3UeEnDyNV6Rh0Xq89Jhjt9a93JaPQefkeQZV2jdeaqjZeYR5GoJ8uI
- Hi0YJOMSuQKbW80q8JhGyorz6qOyuc2U4v5QS1yEvJd+mlYBNe/rGO22cS9G2Zqi4Z
- aRob4oB4OFatQ==
-To: patches@lists.linux.dev,
-	stable@vger.kernel.org
-Date: Sat, 25 Oct 2025 11:57:54 -0400
-Message-ID: <20251025160905.3857885-243-sashal@kernel.org>
-X-Mailer: git-send-email 2.51.0
-In-Reply-To: <20251025160905.3857885-1-sashal@kernel.org>
-References: <20251025160905.3857885-1-sashal@kernel.org>
+ s=k20201202; t=1761223245;
+ bh=OwgX4A4nUsjXLvlUNNji3awVIq48IsYKIpns6jEsaF0=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=eCn7pzAXwHtLrzaa/YhuJfPNCVP6Pnu/nAAMiKfwQSsv06J6Jd2HXehsvFVS0r76s
+ n6zNsF/60LjlqGkwHg8F/NO27HDRdVEzaH11spxxsB37a1jSubPqFVvvvbfxweF6v8
+ ngSlwg3RzgdGV4HpUc19eq0cbF5y7EClQHeDC/bX9ORGYQ8lP6Z7J1+KgaSt0I5y6k
+ Lgc6mbCOQTBAfdpl1jwJNKX47OQF6MaRwszTh9uUw8aJsQiOH2g+G51qMIsxCnOUw6
+ pssOa5jT4DoTQJFtTNSuk9D4EExRi1ZOKqNFAId7rDtgSzF7YUZUsbBO8QiyirLKRw
+ a3fly7zNWieag==
+Date: Thu, 23 Oct 2025 14:40:41 +0200
+To: Rasmus Villemoes <linux@rasmusvillemoes.dk>,
+ Linus Torvalds <torvalds@linux-foundation.org>,
+ Dave Kleikamp <shaggy@kernel.org>
+Message-ID: <20251023124041.GA739226@ax162>
+References: <20251020142228.1819871-1-linux@rasmusvillemoes.dk>
+ <20251020142228.1819871-2-linux@rasmusvillemoes.dk>
+ <20251022161505.GA1226098@ax162>
+ <CAKwiHFiMAm-DX3aERH_F1UooiM1YUiMaax51exhRg2=1ND2VCw@mail.gmail.com>
+ <20251022211133.GA2063489@ax162>
 MIME-Version: 1.0
-X-stable: review
-X-Patchwork-Hint: Ignore
-X-stable-base: Linux 6.17.5
+Content-Disposition: inline
+In-Reply-To: <20251022211133.GA2063489@ax162>
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: Spam detection software,
  running on the system "sfi-spamd-1.hosts.colo.sdot.me", 
@@ -81,10 +83,9 @@ X-Spam-Report: Spam detection software,
  message has been attached to this so you can view it or label
  similar future email.  If you have any questions, see
  the administrator of that system for details.
- Content preview:  From: Tetsuo Handa <penguin-kernel@I-love.SAKURA.ne.jp> [
- Upstream commit 7a5aa54fba2bd591b22b9b624e6baa9037276986 ] The inode mode
- loaded from corrupted disk can be invalid. Do like what commit 0a9e74051313
- ("isofs: Verify inode mode when loading from disk") does. 
+ Content preview:  On Wed, Oct 22, 2025 at 11:11:38PM +0200, Nathan Chancellor
+ wrote: ... > > > > +# Allow including a tagged struct or union anonymously
+ in another struct/union. > > > > +KBUILD_CFLAGS += -fms-extension [...] 
  Content analysis details:   (-0.2 points, 5.0 required)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
@@ -96,9 +97,9 @@ X-Spam-Report: Spam detection software,
  not necessarily valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.0 DKIMWL_WL_HIGH         DKIMwl.org - High trust sender
-X-Headers-End: 1vCh09-0003Vp-4r
-Subject: [Jfs-discussion] [PATCH AUTOSEL 6.17-5.4] jfs: Verify inode mode
- when loading from disk
+X-Headers-End: 1vBuci-0000qi-QD
+X-Mailman-Approved-At: Tue, 28 Oct 2025 02:02:00 +0000
+Subject: Re: [Jfs-discussion] [PATCH 1/2] Kbuild: enable -fms-extensions
 X-BeenThere: jfs-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -110,71 +111,83 @@ List-Post: <mailto:jfs-discussion@lists.sourceforge.net>
 List-Help: <mailto:jfs-discussion-request@lists.sourceforge.net?subject=help>
 List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/jfs-discussion>, 
  <mailto:jfs-discussion-request@lists.sourceforge.net?subject=subscribe>
-From: Sasha Levin via Jfs-discussion <jfs-discussion@lists.sourceforge.net>
-Reply-To: Sasha Levin <sashal@kernel.org>
-Cc: Sasha Levin <sashal@kernel.org>, shaggy@kernel.org, brauner@kernel.org,
- chentaotao@didiglobal.com, Tetsuo Handa <penguin-kernel@I-love.SAKURA.ne.jp>,
- jfs-discussion@lists.sourceforge.net, lizhi.xu@windriver.com,
- syzbot <syzbot+895c23f6917da440ed0d@syzkaller.appspotmail.com>,
- kovalev@altlinux.org, alexandre.f.demers@gmail.com
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+From: Nathan Chancellor via Jfs-discussion
+ <jfs-discussion@lists.sourceforge.net>
+Reply-To: Nathan Chancellor <nathan@kernel.org>
+Cc: David Sterba <dsterba@suse.com>, jfs-discussion@lists.sourceforge.net,
+ linux-kbuild@vger.kernel.org, linux-btrfs@vger.kernel.org,
+ Nick Desaulniers <nick.desaulniers+lkml@gmail.com>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Errors-To: jfs-discussion-bounces@lists.sourceforge.net
 
-RnJvbTogVGV0c3VvIEhhbmRhIDxwZW5ndWluLWtlcm5lbEBJLWxvdmUuU0FLVVJBLm5lLmpwPgoK
-WyBVcHN0cmVhbSBjb21taXQgN2E1YWE1NGZiYTJiZDU5MWIyMmI5YjYyNGU2YmFhOTAzNzI3Njk4
-NiBdCgpUaGUgaW5vZGUgbW9kZSBsb2FkZWQgZnJvbSBjb3JydXB0ZWQgZGlzayBjYW4gYmUgaW52
-YWxpZC4gRG8gbGlrZSB3aGF0CmNvbW1pdCAwYTllNzQwNTEzMTMgKCJpc29mczogVmVyaWZ5IGlu
-b2RlIG1vZGUgd2hlbiBsb2FkaW5nIGZyb20gZGlzayIpCmRvZXMuCgpSZXBvcnRlZC1ieTogc3l6
-Ym90IDxzeXpib3QrODk1YzIzZjY5MTdkYTQ0MGVkMGRAc3l6a2FsbGVyLmFwcHNwb3RtYWlsLmNv
-bT4KQ2xvc2VzOiBodHRwczovL3N5emthbGxlci5hcHBzcG90LmNvbS9idWc/ZXh0aWQ9ODk1YzIz
-ZjY5MTdkYTQ0MGVkMGQKU2lnbmVkLW9mZi1ieTogVGV0c3VvIEhhbmRhIDxwZW5ndWluLWtlcm5l
-bEBJLWxvdmUuU0FLVVJBLm5lLmpwPgpTaWduZWQtb2ZmLWJ5OiBEYXZlIEtsZWlrYW1wIDxkYXZl
-LmtsZWlrYW1wQG9yYWNsZS5jb20+ClNpZ25lZC1vZmYtYnk6IFNhc2hhIExldmluIDxzYXNoYWxA
-a2VybmVsLm9yZz4KLS0tCgpMTE0gR2VuZXJhdGVkIGV4cGxhbmF0aW9ucywgbWF5IGJlIGNvbXBs
-ZXRlbHkgYm9ndXM6CgpZRVMKLSBUaGUgY2hhbmdlIGJvdW5kcyB0aGUgc3BlY2lhbC1maWxlIHBh
-dGggaW4gYGpmc19pZ2V0KClgIHRvIHRoZSBmb3VyCiAgdmFsaWQgc3BlY2lhbCBpbm9kZSBjbGFz
-c2VzIChgU19JU0NIUi9TX0lTQkxLL1NfSVNGSUZPL1NfSVNTT0NLYCkKICBiZWZvcmUgY2FsbGlu
-ZyBgaW5pdF9zcGVjaWFsX2lub2RlKClgIChgZnMvamZzL2lub2RlLmM6NjItNjVgKS4gVGhhdAog
-IHByZXZlbnRzIGludmFsaWQgb24tZGlzayBtb2RlcyBmcm9tIHNpbGVudGx5IGZsb3dpbmcgaW50
-bwogIGBpbml0X3NwZWNpYWxfaW5vZGUoKWAsIHdoaWNoIG90aGVyd2lzZSBvbmx5IGVtaXRzIGEg
-ZGVidWcgbWVzc2FnZSBhbmQKICBsZWF2ZXMgYGlfZm9wYCB1bnNldCAoYGZzL2lub2RlLmM6MjU2
-MC0yNTgzYCksIG1ha2luZyBsYXRlciBWRlMKICBvcGVyYXRpb25zIHRyaXAgb3ZlciBhIGBOVUxM
-YCBtZXRob2QgdGFibGUuIFN5emthbGxlciBhbHJlYWR5IGhpdCB0aGF0CiAgY3Jhc2ggc2NlbmFy
-aW8gb24gY29ycnVwdGVkIG1ldGFkYXRhLCBzbyB0aGlzIGlzIGEgcmVhbCBidWcgZml4LCBub3QK
-ICBqdXN0IGhhcmRlbmluZy4KLSBXaGVuIHRoZSBtb2RlIGlzIG91dHNpZGUgZXZlcnkgbGVnYWwg
-Y2xhc3MsIHRoZSBuZXcgYnJhbmNoIGxvZ3MgdGhlCiAgYW5vbWFseSBhbmQgZmFpbHMgdGhlIGln
-ZXQgKGBmcy9qZnMvaW5vZGUuYzo2Ny03MGApLiBSZXR1cm5pbmcKICBgRVJSX1BUUigtRUlPKWAg
-aXMgdGhlIHN0YW5kYXJkIGlkaW9tIGFscmVhZHkgdXNlZCBhIGZldyBsaW5lcyBhYm92ZQogIGZv
-ciBvdGhlciBgZGlSZWFkKClgIGZhaWx1cmVzIChgZnMvamZzL2lub2RlLmM6MzQtMzhgKSwgc28g
-Y2FsbGVycwogIHN1Y2ggYXMgYGpmc19yZWFkX3N1cGVyKClgIGFuZCBgamZzX2xvb2t1cCgpYCBh
-bHJlYWR5IGV4cGVjdCBhbmQKICBoYW5kbGUgaXQuIFRoYXQgdHVybnMgYSBrZXJuZWwgY3Jhc2gg
-aW50byBhbiBJL08gZXJyb3IsIG1hdGNoaW5nIHRoZQogIHN0YWJsZSB0cmVlIGdvYWwgb2Yg4oCc
-ZG9u4oCZdCBwYW5pYyBvbiBjb3JydXB0ZWQgbWVkaWEu4oCdCi0gVGhlIHBhdGNoIGlzIG1pbmlt
-YWwgYW5kIHNlbGYtY29udGFpbmVkOiBpdCB0b3VjaGVzIGEgc2luZ2xlIGZ1bmN0aW9uLAogIGFk
-ZHMgbm8gbmV3IEFQSXMsIGFuZCBtaXJyb3JzIHRoZSBhbHJlYWR5LXVwc3RyZWFtZWQgaXNvZnMg
-Zml4IGZvciB0aGUKICBzYW1lIHN5emJvdCByZXBvcnQuIE5vcm1hbCB3b3JrbG9hZHMgKHJlZ3Vs
-YXIgZmlsZXMsIGRpcmVjdG9yaWVzLAogIHN5bWxpbmtzLCBhbmQgd2VsbC1mb3JtZWQgc3BlY2lh
-bCBmaWxlcykgc3RheSBvbiB0aGVpciBleGlzdGluZyBwYXRocywKICBzbyByZWdyZXNzaW9uIHJp
-c2sgaXMgbmVnbGlnaWJsZSB3aGlsZSB0aGUgcGF5b2ZmIGlzIHByZXZlbnRpbmcgYQogIHVzZXIt
-dHJpZ2dlcmFibGUgY3Jhc2ggb24gZGFtYWdlZCB2b2x1bWVz4oCUc3F1YXJlbHkgd2l0aGluIHN0
-YWJsZQogIGJhY2twb3J0IHBvbGljeS4gUG90ZW50aWFsIG5leHQgc3RlcDogcXVldWUgaXQgZm9y
-IGFsbCBzdXBwb3J0ZWQKICBzdGFibGUgc2VyaWVzIHRoYXQgc3RpbGwgY2FycnkgdGhlIHZ1bG5l
-cmFibGUgY29kZSBwYXRoLgoKIGZzL2pmcy9pbm9kZS5jIHwgOCArKysrKysrLQogMSBmaWxlIGNo
-YW5nZWQsIDcgaW5zZXJ0aW9ucygrKSwgMSBkZWxldGlvbigtKQoKZGlmZiAtLWdpdCBhL2ZzL2pm
-cy9pbm9kZS5jIGIvZnMvamZzL2lub2RlLmMKaW5kZXggZmNlZGViNTE0ZTE0YS4uMjFmM2QwMjlk
-YTdkZCAxMDA2NDQKLS0tIGEvZnMvamZzL2lub2RlLmMKKysrIGIvZnMvamZzL2lub2RlLmMKQEAg
-LTU5LDkgKzU5LDE1IEBAIHN0cnVjdCBpbm9kZSAqamZzX2lnZXQoc3RydWN0IHN1cGVyX2Jsb2Nr
-ICpzYiwgdW5zaWduZWQgbG9uZyBpbm8pCiAJCQkgKi8KIAkJCWlub2RlLT5pX2xpbmtbaW5vZGUt
-Pmlfc2l6ZV0gPSAnXDAnOwogCQl9Ci0JfSBlbHNlIHsKKwl9IGVsc2UgaWYgKFNfSVNDSFIoaW5v
-ZGUtPmlfbW9kZSkgfHwgU19JU0JMSyhpbm9kZS0+aV9tb2RlKSB8fAorCQkgICBTX0lTRklGTyhp
-bm9kZS0+aV9tb2RlKSB8fCBTX0lTU09DSyhpbm9kZS0+aV9tb2RlKSkgewogCQlpbm9kZS0+aV9v
-cCA9ICZqZnNfZmlsZV9pbm9kZV9vcGVyYXRpb25zOwogCQlpbml0X3NwZWNpYWxfaW5vZGUoaW5v
-ZGUsIGlub2RlLT5pX21vZGUsIGlub2RlLT5pX3JkZXYpOworCX0gZWxzZSB7CisJCXByaW50ayhL
-RVJOX0RFQlVHICJKRlM6IEludmFsaWQgZmlsZSB0eXBlIDAlMDRvIGZvciBpbm9kZSAlbHUuXG4i
-LAorCQkgICAgICAgaW5vZGUtPmlfbW9kZSwgaW5vZGUtPmlfaW5vKTsKKwkJaWdldF9mYWlsZWQo
-aW5vZGUpOworCQlyZXR1cm4gRVJSX1BUUigtRUlPKTsKIAl9CiAJdW5sb2NrX25ld19pbm9kZShp
-bm9kZSk7CiAJcmV0dXJuIGlub2RlOwotLSAKMi41MS4wCgoKCl9fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fCkpmcy1kaXNjdXNzaW9uIG1haWxpbmcgbGlzdApK
-ZnMtZGlzY3Vzc2lvbkBsaXN0cy5zb3VyY2Vmb3JnZS5uZXQKaHR0cHM6Ly9saXN0cy5zb3VyY2Vm
-b3JnZS5uZXQvbGlzdHMvbGlzdGluZm8vamZzLWRpc2N1c3Npb24K
+On Wed, Oct 22, 2025 at 11:11:38PM +0200, Nathan Chancellor wrote:
+...
+> > > > +# Allow including a tagged struct or union anonymously in another struct/union.
+> > > > +KBUILD_CFLAGS += -fms-extensions
+...
+> I have tentatively applied this to kbuild-next so that it can spend most
+> of the cycle in -next to try and catch all potential problems.
+
+One side effect that has been found in my testing so far is clang's
+'-fms-extensions' turns '_inline' into a keyword, which breaks fs/jfs:
+
+  In file included from fs/jfs/jfs_unicode.c:8:
+  fs/jfs/jfs_incore.h:86:13: error: type name does not allow function specifier to be specified
+     86 |                                         unchar _inline[128];
+        |                                                ^
+  fs/jfs/jfs_incore.h:86:20: error: expected member name or ';' after declaration specifiers
+     86 |                                         unchar _inline[128];
+        |                                         ~~~~~~~~~~~~~~^
+
+There appear to be other similar keywords (ones with KEYMS in the linke
+below) but my personal distribution configuration does not show any
+instances in the build where they matter (I did not test allmodconfig
+yet).
+
+  https://github.com/llvm/llvm-project/blob/249883d0c5883996bed038cd82a8999f342994c9/clang/include/clang/Basic/TokenKinds.def#L744-L794
+
+Something like this is all it takes to resolve the issue, so I will send
+a patch for formal review/acking but I wanted to bring it up ahead of
+time in case this is unpalpable and we should throw these changes out of
+-next instead of forward fixing.
+
+Cheers,
+Nathan
+
+diff --git a/fs/jfs/jfs_incore.h b/fs/jfs/jfs_incore.h
+index 10934f9a11be..5aaafedb8fbc 100644
+--- a/fs/jfs/jfs_incore.h
++++ b/fs/jfs/jfs_incore.h
+@@ -76,14 +76,14 @@ struct jfs_inode_info {
+ 		struct {
+ 			unchar _unused[16];	/* 16: */
+ 			dxd_t _dxd;		/* 16: */
+-			/* _inline may overflow into _inline_ea when needed */
++			/* _inline_sym may overflow into _inline_ea when needed */
+ 			/* _inline_ea may overlay the last part of
+ 			 * file._xtroot if maxentry = XTROOTINITSLOT
+ 			 */
+ 			union {
+ 				struct {
+ 					/* 128: inline symlink */
+-					unchar _inline[128];
++					unchar _inline_sym[128];
+ 					/* 128: inline extended attr */
+ 					unchar _inline_ea[128];
+ 				};
+@@ -101,7 +101,7 @@ struct jfs_inode_info {
+ #define i_imap u.file._imap
+ #define i_dirtable u.dir._table
+ #define i_dtroot u.dir._dtroot
+-#define i_inline u.link._inline
++#define i_inline u.link._inline_sym
+ #define i_inline_ea u.link._inline_ea
+ #define i_inline_all u.link._inline_all
+ 
+
+
+_______________________________________________
+Jfs-discussion mailing list
+Jfs-discussion@lists.sourceforge.net
+https://lists.sourceforge.net/lists/listinfo/jfs-discussion
