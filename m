@@ -2,37 +2,37 @@ Return-Path: <jfs-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+jfs-discussion@lfdr.de
 Delivered-To: lists+jfs-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3870AC04F3F
-	for <lists+jfs-discussion@lfdr.de>; Fri, 24 Oct 2025 10:06:46 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C7764C04F50
+	for <lists+jfs-discussion@lfdr.de>; Fri, 24 Oct 2025 10:06:54 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.sourceforge.net; s=beta; h=Content-Transfer-Encoding:Content-Type:Cc:
 	Reply-To:From:List-Subscribe:List-Help:List-Post:List-Archive:
 	List-Unsubscribe:List-Id:Subject:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:To:Sender:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=v3o/hs1PSFrCMQ4sXrS0ZEjVl58Ni/Y2GUMhwY++ul8=; b=c/d8u2fIFD+oYUyJGTMnRDod6c
-	IuQi2ggtxxRebvjq1jCGiyEyVvzkx9LlQVEgb2bbzQtGG4/cV5g+wZMR9laweFpyZ6Moa/zuNXqEY
-	uz6dGP5sfmi17ycFaEZOXnyvpRkR2gbLXXej4o2UxqRBYOb7rfzGT6umP8LzQ1wbrh+Y=;
-Received: from [127.0.0.1] (helo=sfs-ml-3.v29.lw.sourceforge.com)
-	by sfs-ml-3.v29.lw.sourceforge.com with esmtp (Exim 4.95)
+	bh=XNDBESzvdJhXhi1UjEGIGva8zv5/xDLH+SM+jUdpddw=; b=jsNSafUCzDIcEh+B/R1reUyUwH
+	iGIjRGbHt3p5p9VzpThRKx9va8JqWoYzfPSjTKa5Q05g9n6DVNOrP/meIdbveAuVkhcQ0MECvPHK/
+	4YGPdiuzns+fLb/CZH+OM1+s8zYUc0n/x+z/yZbnBQ5yQGQSyq16ppcb1Ur4qh7xwo84=;
+Received: from [127.0.0.1] (helo=sfs-ml-4.v29.lw.sourceforge.com)
+	by sfs-ml-4.v29.lw.sourceforge.com with esmtp (Exim 4.95)
 	(envelope-from <jfs-discussion-bounces@lists.sourceforge.net>)
-	id 1vCCof-0002vg-PY;
-	Fri, 24 Oct 2025 08:06:29 +0000
+	id 1vCCor-0000nl-36;
+	Fri, 24 Oct 2025 08:06:41 +0000
 Received: from [172.30.29.66] (helo=mx.sourceforge.net)
- by sfs-ml-3.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
+ by sfs-ml-4.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
  TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (Exim 4.95) (envelope-from
  <BATV+aa390122061dbb70398c+8097+infradead.org+hch@bombadil.srs.infradead.org>)
- id 1vCCoe-0002va-Vx for jfs-discussion@lists.sourceforge.net;
- Fri, 24 Oct 2025 08:06:28 +0000
+ id 1vCCop-0000nf-9K for jfs-discussion@lists.sourceforge.net;
+ Fri, 24 Oct 2025 08:06:39 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=sourceforge.net; s=x; h=Content-Transfer-Encoding:MIME-Version:References:
  In-Reply-To:Message-ID:Date:Subject:Cc:To:From:Sender:Reply-To:Content-Type:
  Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
  Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=F5xkr4XmJjPQvb2MdEVftXia+X6i5Gwk5N6/ltFfj3A=; b=emaEoZncc+Yw363vRePA+SXk3f
- PSHNHlRcRzLpSROWCrTjr1PyxRfu+3iRmTroFuFAun47F9xoBtBRyBtNK73uMJ4CkMBgRRbOJgncS
- jvDGAUJVO0iEcfv9bM7s+VOFgpKXYQLVn0XS1yAj97BC6pSbUCqNtfgJ9ki3anogjnZo=;
+ bh=CK4+A+XQ8xSWXf+Z9tTtAvh9OT31XsHF6kx6Btc5iA8=; b=RI2b/FRWqh0GoGskNsGDuy/mIJ
+ TYZfYmRVd5G8M+FQ0ebriZojc4iU3dghUPky8scww/1XR8XsJ7vCt7ql6s62y868RNRZY9S8QNO22
+ 1BBFa1jiMrpPUqOP4bnhJsJ80Ft1VBq0bGQ59sDFFZhOSQknetqgzP6e8l7wYakLkN/k=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
  h=Content-Transfer-Encoding:MIME-Version:References:In-Reply-To:Message-ID:
@@ -40,29 +40,29 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
  :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
  List-Post:List-Owner:List-Archive;
- bh=F5xkr4XmJjPQvb2MdEVftXia+X6i5Gwk5N6/ltFfj3A=; b=CivSnBzf2yNnMLuqgUTJWtEmqA
- dGEN5nRbp3DItDaBhUbWwI2GmYU2dfKqGVIGR0Vk7XnGFtgotYt6e2nbcMrKVfKw0zFKYJvrX/wdG
- O0yVmmsFLAnFyvxfLS59QXZ/IwxurqCi4BdUDrR7adAhg0cuo0eEJ9u0vZ4Iqzz7Y5HU=;
+ bh=CK4+A+XQ8xSWXf+Z9tTtAvh9OT31XsHF6kx6Btc5iA8=; b=HDPHIsATO6D9V9yBlIIbhoqAQA
+ l2duVQgjZzBe6rDf50zBw9aJFJrRThpIH1jQC56HIRX35u/yx0WVVqK2ZUMYxDsL02vvYk+r6cfAp
+ aDcDJXsgyTtwmSsWX1Zk5ERZ0YMMvcKZye/I28d32CxtJaJm3YoopaNsT+txDE07I6Sc=;
 Received: from bombadil.infradead.org ([198.137.202.133])
  by sfi-mx-2.v28.lw.sourceforge.com with esmtps
  (TLS1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.95)
- id 1vCCoe-0004Vd-Cd for jfs-discussion@lists.sourceforge.net;
- Fri, 24 Oct 2025 08:06:28 +0000
+ id 1vCCoo-0004W4-Oa for jfs-discussion@lists.sourceforge.net;
+ Fri, 24 Oct 2025 08:06:39 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=infradead.org; s=bombadil.20210309; h=Content-Transfer-Encoding:
  MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:Cc:To:From:Sender
  :Reply-To:Content-Type:Content-ID:Content-Description;
- bh=F5xkr4XmJjPQvb2MdEVftXia+X6i5Gwk5N6/ltFfj3A=; b=4hfAQJA34diibzRB9j6FpjgscA
- j2GSpM9W9Piz8C/KKTKK9nFxs6QPJ4VNLHk14XNgb3ptHW3IEgOcHsAQ1ttCparGnefefzrLVu7yh
- 0aS9zBBClbDjUl72om/4U8UmjjTNstU+Li/IFwwucTfArM2fn6WZ5wgiyqoaNPVJ4AXbcghkrjxQV
- H8SMv331u/xD+JCEkcqGqBlEXwkADHQP4jMevGF35dVqCjlyfQv5oEXtAmyhTjhxl5zsAbHUrTnhH
- gUJwU/xWtwUn1DE3RIUdMBDINvpSbOLjQXaJqGl2QRdpICZM17BeHLnR/mu0jnxdb8LMTVu34rK/k
- 8KQzvgMw==;
+ bh=CK4+A+XQ8xSWXf+Z9tTtAvh9OT31XsHF6kx6Btc5iA8=; b=D6AogjIsaOXIaEKMP8+nYzb2S/
+ Oi9fBsDLQ/QDLj8zWUOszOIZUXoUGJEGD6oOe3/gwwa36ob+z5Y4jnXIMl/I47R2yybCHjHy9PVpp
+ u9rk8NVCJvRsT7wc5scuOjf+d0qjgiv7xQKVzrHmYhwZolySV+SEki+Hm9VEk4MYwcBCOKWh8kE/L
+ vlzlOWvLC6nPNVOCQn/9gA1eRi4wHGrw+7X1beFwTeRlaIDXxs6ij8o/wGIbY6gxmKmEmayQZ5noV
+ iBvVRW/cRH9N2cvm1YrB7NcZkATFE2g0crlK/d+n5Fpb75Kk12b+O+FG+yCLdiKH/xMwQRP6Ju0xM
+ N9qYV9hw==;
 Received: from
  2a02-8389-2341-5b80-d601-7564-c2e0-491c.cable.dynamic.v6.surfer.at
  ([2a02:8389:2341:5b80:d601:7564:c2e0:491c] helo=localhost)
  by bombadil.infradead.org with esmtpsa (Exim 4.98.2 #2 (Red Hat Linux))
- id 1vCCoP-00000008cNL-2sV3; Fri, 24 Oct 2025 08:06:14 +0000
+ id 1vCCoa-00000008cQn-37yb; Fri, 24 Oct 2025 08:06:25 +0000
 To: "Matthew Wilcox (Oracle)" <willy@infradead.org>,
  Eric Van Hensbergen <ericvh@kernel.org>,
  Latchesar Ionkov <lucho@ionkov.net>,
@@ -70,8 +70,8 @@ To: "Matthew Wilcox (Oracle)" <willy@infradead.org>,
  Christian Schoenebeck <linux_oss@crudebyte.com>, Chris Mason <clm@fb.com>,
  David Sterba <dsterba@suse.com>, Mark Fasheh <mark@fasheh.com>,
  Joel Becker <jlbec@evilplan.org>, Joseph Qi <joseph.qi@linux.alibaba.com>
-Date: Fri, 24 Oct 2025 10:04:20 +0200
-Message-ID: <20251024080431.324236-10-hch@lst.de>
+Date: Fri, 24 Oct 2025 10:04:21 +0200
+Message-ID: <20251024080431.324236-11-hch@lst.de>
 X-Mailer: git-send-email 2.47.3
 In-Reply-To: <20251024080431.324236-1-hch@lst.de>
 References: <20251024080431.324236-1-hch@lst.de>
@@ -85,10 +85,11 @@ X-Spam-Report: Spam detection software,
  message has been attached to this so you can view it or label
  similar future email.  If you have any questions, see
  the administrator of that system for details.
- Content preview: Use filemap_fdatawrite_range and
- filemap_fdatawrite_range_kick
- instead of the low-level __filemap_fdatawrite_range that requires the caller
- to know the internals of the writeback_control structure and [...] 
+ Content preview: Rename filemap_fdatawrite_range_kick to filemap_flush_range
+ because it is the ranged version of filemap_flush. Signed-off-by: Christoph
+ Hellwig <hch@lst.de> --- fs/sync.c | 3 +-- include/linux/fs.h | 6 +++---
+ mm/fadvise.c | 2 +- mm/filemap.c | 8 ++++---- 4 files changed, 9 insertions(+),
+ 10 deletions(-) 
  Content analysis details:   (0.0 points, 5.0 required)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
@@ -97,8 +98,9 @@ X-Spam-Report: Spam detection software,
  not necessarily valid
  0.0 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level mail
  domains are different
-X-Headers-End: 1vCCoe-0004Vd-Cd
-Subject: [Jfs-discussion] [PATCH 09/10] mm: remove __filemap_fdatawrite_range
+X-Headers-End: 1vCCoo-0004W4-Oa
+Subject: [Jfs-discussion] [PATCH 10/10] mm: rename
+ filemap_fdatawrite_range_kick to filemap_flush_range
 X-BeenThere: jfs-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -114,155 +116,114 @@ From: Christoph Hellwig via Jfs-discussion
  <jfs-discussion@lists.sourceforge.net>
 Reply-To: Christoph Hellwig <hch@lst.de>
 Cc: linux-xfs@vger.kernel.org, Christian Brauner <brauner@kernel.org>,
- Jan Kara <jack@suse.cz>, linux-mm@kvack.org,
- Johannes Thumshirn <johannes.thumshirn@wdc.com>, v9fs@lists.linux.dev,
+ Jan Kara <jack@suse.cz>, linux-mm@kvack.org, v9fs@lists.linux.dev,
  Josef Bacik <josef@toxicpanda.com>, linux-block@vger.kernel.org,
- ocfs2-devel@lists.linux.dev, Damien Le Moal <dlemoal@kernel.org>,
- Alexander Viro <viro@zeniv.linux.org.uk>, jfs-discussion@lists.sourceforge.net,
- linux-fsdevel@vger.kernel.org, linux-ext4@vger.kernel.org,
- linux-btrfs@vger.kernel.org
+ ocfs2-devel@lists.linux.dev, Alexander Viro <viro@zeniv.linux.org.uk>,
+ jfs-discussion@lists.sourceforge.net, linux-fsdevel@vger.kernel.org,
+ linux-ext4@vger.kernel.org, linux-btrfs@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Errors-To: jfs-discussion-bounces@lists.sourceforge.net
 
-Use filemap_fdatawrite_range and filemap_fdatawrite_range_kick instead
-of the low-level __filemap_fdatawrite_range that requires the caller
-to know the internals of the writeback_control structure and remove
-__filemap_fdatawrite_range now that it is trivial and only two callers
-would be left.
+Rename filemap_fdatawrite_range_kick to filemap_flush_range because it
+is the ranged version of filemap_flush.
 
 Signed-off-by: Christoph Hellwig <hch@lst.de>
-Reviewed-by: Jan Kara <jack@suse.cz>
-Reviewed-by: Damien Le Moal <dlemoal@kernel.org>
-Reviewed-by: Johannes Thumshirn <johannes.thumshirn@wdc.com>
 ---
- fs/sync.c               | 11 +++++------
- include/linux/pagemap.h |  2 --
- mm/fadvise.c            |  3 +--
- mm/filemap.c            | 25 +++++++------------------
- 4 files changed, 13 insertions(+), 28 deletions(-)
+ fs/sync.c          | 3 +--
+ include/linux/fs.h | 6 +++---
+ mm/fadvise.c       | 2 +-
+ mm/filemap.c       | 8 ++++----
+ 4 files changed, 9 insertions(+), 10 deletions(-)
 
 diff --git a/fs/sync.c b/fs/sync.c
-index 2955cd4c77a3..6d8b04e04c3c 100644
+index 6d8b04e04c3c..1759f6ba36cd 100644
 --- a/fs/sync.c
 +++ b/fs/sync.c
-@@ -280,14 +280,13 @@ int sync_file_range(struct file *file, loff_t offset, loff_t nbytes,
- 	}
- 
- 	if (flags & SYNC_FILE_RANGE_WRITE) {
--		int sync_mode = WB_SYNC_NONE;
--
- 		if ((flags & SYNC_FILE_RANGE_WRITE_AND_WAIT) ==
- 			     SYNC_FILE_RANGE_WRITE_AND_WAIT)
--			sync_mode = WB_SYNC_ALL;
--
--		ret = __filemap_fdatawrite_range(mapping, offset, endbyte,
--						 sync_mode);
-+			ret = filemap_fdatawrite_range(mapping, offset,
-+					endbyte);
-+		else
-+			ret = filemap_fdatawrite_range_kick(mapping, offset,
-+					endbyte);
+@@ -285,8 +285,7 @@ int sync_file_range(struct file *file, loff_t offset, loff_t nbytes,
+ 			ret = filemap_fdatawrite_range(mapping, offset,
+ 					endbyte);
+ 		else
+-			ret = filemap_fdatawrite_range_kick(mapping, offset,
+-					endbyte);
++			ret = filemap_flush_range(mapping, offset, endbyte);
  		if (ret < 0)
  			goto out;
  	}
-diff --git a/include/linux/pagemap.h b/include/linux/pagemap.h
-index 678d8ae23d01..d0a7dd43c835 100644
---- a/include/linux/pagemap.h
-+++ b/include/linux/pagemap.h
-@@ -54,8 +54,6 @@ static inline int filemap_fdatawait(struct address_space *mapping)
- bool filemap_range_has_page(struct address_space *, loff_t lstart, loff_t lend);
- int filemap_write_and_wait_range(struct address_space *mapping,
- 		loff_t lstart, loff_t lend);
--int __filemap_fdatawrite_range(struct address_space *mapping,
--		loff_t start, loff_t end, int sync_mode);
- int filemap_fdatawrite_range(struct address_space *mapping,
- 		loff_t start, loff_t end);
- int filemap_check_errors(struct address_space *mapping);
+diff --git a/include/linux/fs.h b/include/linux/fs.h
+index c895146c1444..a5dbfa20f8d7 100644
+--- a/include/linux/fs.h
++++ b/include/linux/fs.h
+@@ -3014,7 +3014,7 @@ extern int __must_check file_fdatawait_range(struct file *file, loff_t lstart,
+ extern int __must_check file_check_and_advance_wb_err(struct file *file);
+ extern int __must_check file_write_and_wait_range(struct file *file,
+ 						loff_t start, loff_t end);
+-int filemap_fdatawrite_range_kick(struct address_space *mapping, loff_t start,
++int filemap_flush_range(struct address_space *mapping, loff_t start,
+ 		loff_t end);
+ 
+ static inline int file_write_and_wait(struct file *file)
+@@ -3051,8 +3051,8 @@ static inline ssize_t generic_write_sync(struct kiocb *iocb, ssize_t count)
+ 	} else if (iocb->ki_flags & IOCB_DONTCACHE) {
+ 		struct address_space *mapping = iocb->ki_filp->f_mapping;
+ 
+-		filemap_fdatawrite_range_kick(mapping, iocb->ki_pos - count,
+-					      iocb->ki_pos - 1);
++		filemap_flush_range(mapping, iocb->ki_pos - count,
++				iocb->ki_pos - 1);
+ 	}
+ 
+ 	return count;
 diff --git a/mm/fadvise.c b/mm/fadvise.c
-index 588fe76c5a14..f1be619f0e58 100644
+index f1be619f0e58..67028e30aa91 100644
 --- a/mm/fadvise.c
 +++ b/mm/fadvise.c
-@@ -111,8 +111,7 @@ int generic_fadvise(struct file *file, loff_t offset, loff_t len, int advice)
+@@ -111,7 +111,7 @@ int generic_fadvise(struct file *file, loff_t offset, loff_t len, int advice)
  		spin_unlock(&file->f_lock);
  		break;
  	case POSIX_FADV_DONTNEED:
--		__filemap_fdatawrite_range(mapping, offset, endbyte,
--					   WB_SYNC_NONE);
-+		filemap_fdatawrite_range_kick(mapping, offset, endbyte);
+-		filemap_fdatawrite_range_kick(mapping, offset, endbyte);
++		filemap_flush_range(mapping, offset, endbyte);
  
  		/*
  		 * First and last FULL page! Partial pages are deliberately
 diff --git a/mm/filemap.c b/mm/filemap.c
-index 7126d0587c94..f90f5bb2b825 100644
+index f90f5bb2b825..fa770768ea3a 100644
 --- a/mm/filemap.c
 +++ b/mm/filemap.c
-@@ -392,32 +392,23 @@ static int filemap_writeback(struct address_space *mapping, loff_t start,
- }
+@@ -419,7 +419,7 @@ int filemap_fdatawrite(struct address_space *mapping)
+ EXPORT_SYMBOL(filemap_fdatawrite);
  
  /**
-- * __filemap_fdatawrite_range - start writeback on mapping dirty pages in range
-+ * filemap_fdatawrite_range - start writeback on mapping dirty pages in range
-  * @mapping:	address space structure to write
-  * @start:	offset in bytes where the range starts
-  * @end:	offset in bytes where the range ends (inclusive)
-- * @sync_mode:	enable synchronous operation
-  *
-  * Start writeback against all of a mapping's dirty pages that lie
-  * within the byte offsets <start, end> inclusive.
-  *
-- * If sync_mode is WB_SYNC_ALL then this is a "data integrity" operation, as
-- * opposed to a regular memory cleansing writeback.  The difference between
-- * these two operations is that if a dirty page/buffer is encountered, it must
-- * be waited upon, and not just skipped over.
-+ * This is a data integrity operation that waits upon dirty or in writeback
-+ * pages.
+- * filemap_fdatawrite_range_kick - start writeback on a range
++ * filemap_flush_range - start writeback on a range
+  * @mapping:	target address_space
+  * @start:	index to start writeback on
+  * @end:	last (inclusive) index for writeback
+@@ -429,12 +429,12 @@ EXPORT_SYMBOL(filemap_fdatawrite);
   *
   * Return: %0 on success, negative error code otherwise.
   */
--int __filemap_fdatawrite_range(struct address_space *mapping, loff_t start,
--				loff_t end, int sync_mode)
--{
--	return filemap_writeback(mapping, start, end, sync_mode, NULL);
--}
--
- int filemap_fdatawrite_range(struct address_space *mapping, loff_t start,
- 		loff_t end)
- {
--	return __filemap_fdatawrite_range(mapping, start, end, WB_SYNC_ALL);
-+	return filemap_writeback(mapping, start, end, WB_SYNC_ALL, NULL);
- }
- EXPORT_SYMBOL(filemap_fdatawrite_range);
- 
-@@ -441,7 +432,7 @@ EXPORT_SYMBOL(filemap_fdatawrite);
- int filemap_fdatawrite_range_kick(struct address_space *mapping, loff_t start,
+-int filemap_fdatawrite_range_kick(struct address_space *mapping, loff_t start,
++int filemap_flush_range(struct address_space *mapping, loff_t start,
  				  loff_t end)
  {
--	return __filemap_fdatawrite_range(mapping, start, end, WB_SYNC_NONE);
-+	return filemap_writeback(mapping, start, end, WB_SYNC_NONE, NULL);
+ 	return filemap_writeback(mapping, start, end, WB_SYNC_NONE, NULL);
  }
- EXPORT_SYMBOL_GPL(filemap_fdatawrite_range_kick);
+-EXPORT_SYMBOL_GPL(filemap_fdatawrite_range_kick);
++EXPORT_SYMBOL_GPL(filemap_flush_range);
  
-@@ -689,8 +680,7 @@ int filemap_write_and_wait_range(struct address_space *mapping,
- 		return 0;
+ /**
+  * filemap_flush - mostly a non-blocking flush
+@@ -447,7 +447,7 @@ EXPORT_SYMBOL_GPL(filemap_fdatawrite_range_kick);
+  */
+ int filemap_flush(struct address_space *mapping)
+ {
+-	return filemap_fdatawrite_range_kick(mapping, 0, LLONG_MAX);
++	return filemap_flush_range(mapping, 0, LLONG_MAX);
+ }
+ EXPORT_SYMBOL(filemap_flush);
  
- 	if (mapping_needs_writeback(mapping)) {
--		err = __filemap_fdatawrite_range(mapping, lstart, lend,
--						 WB_SYNC_ALL);
-+		err = filemap_fdatawrite_range(mapping, lstart, lend);
- 		/*
- 		 * Even if the above returned error, the pages may be
- 		 * written partially (e.g. -ENOSPC), so we wait for it.
-@@ -792,8 +782,7 @@ int file_write_and_wait_range(struct file *file, loff_t lstart, loff_t lend)
- 		return 0;
- 
- 	if (mapping_needs_writeback(mapping)) {
--		err = __filemap_fdatawrite_range(mapping, lstart, lend,
--						 WB_SYNC_ALL);
-+		err = filemap_fdatawrite_range(mapping, lstart, lend);
- 		/* See comment of filemap_write_and_wait() */
- 		if (err != -EIO)
- 			__filemap_fdatawait_range(mapping, lstart, lend);
 -- 
 2.47.3
 
