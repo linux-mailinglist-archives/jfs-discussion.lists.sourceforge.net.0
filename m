@@ -2,126 +2,78 @@ Return-Path: <jfs-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+jfs-discussion@lfdr.de
 Delivered-To: lists+jfs-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id 58041C06F7E
-	for <lists+jfs-discussion@lfdr.de>; Fri, 24 Oct 2025 17:28:51 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D23BFC095C0
+	for <lists+jfs-discussion@lfdr.de>; Sat, 25 Oct 2025 18:22:22 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.sourceforge.net; s=beta; h=Content-Transfer-Encoding:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	Subject:In-Reply-To:MIME-Version:References:Message-ID:To:From:Date:Sender:
-	Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender
-	:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=yXFRHCSeBTxprL96I56XPIbP3VsBKNeIftNdv62YX9U=; b=jfThlj4gmPYcc5/9P8PSmXEbqh
-	490rdE25G4R8IiUKWMn7NVPmeda2TFSIo56CeoFASiVk0N0dqsPcnJ/2gXDMJZpScERkJaIJt570z
-	TlLiX9lkYvNe4QvOVXqYb5HhrIfinzkNrheBu8MgPnBiqMf5iI/PRjFXPs9NXOO6UG1I=;
-Received: from [127.0.0.1] (helo=sfs-ml-1.v29.lw.sourceforge.com)
-	by sfs-ml-1.v29.lw.sourceforge.com with esmtp (Exim 4.95)
+	Reply-To:From:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:Subject:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:To:Sender:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=BcCWSj+FzE83tIMHhIi7Rd5cbU7t3rFwGqmTUjZKG60=; b=ks14MdxoXCEuQ9l4TdHJCAh/sd
+	usguFIeYH45fT+BSz4uynvF2ovrYoMQ0tkq7e/4wM6wacFXB+7iIoXVghZ7IGYMhZSni/q+wuciM+
+	Jef3itMJ3EqqCIqV6pcfYeMCLlx5oZwOixYvfWI74UPiaseAgzNYMx18gD5KgGY+h98k=;
+Received: from [127.0.0.1] (helo=sfs-ml-2.v29.lw.sourceforge.com)
+	by sfs-ml-2.v29.lw.sourceforge.com with esmtp (Exim 4.95)
 	(envelope-from <jfs-discussion-bounces@lists.sourceforge.net>)
-	id 1vCJiC-0001bN-1z;
-	Fri, 24 Oct 2025 15:28:16 +0000
+	id 1vCgzO-00047Z-1P;
+	Sat, 25 Oct 2025 16:19:34 +0000
 Received: from [172.30.29.66] (helo=mx.sourceforge.net)
- by sfs-ml-1.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
+ by sfs-ml-2.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
  TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (Exim 4.95)
- (envelope-from <jack@suse.cz>) id 1vCJiA-0001bH-GQ
+ (envelope-from <sashal@kernel.org>) id 1vCgzM-00047O-Rk
  for jfs-discussion@lists.sourceforge.net;
- Fri, 24 Oct 2025 15:28:14 +0000
+ Sat, 25 Oct 2025 16:19:33 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=sourceforge.net; s=x; h=In-Reply-To:Content-Type:MIME-Version:References:
- Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:Content-Transfer-Encoding:
+ d=sourceforge.net; s=x; h=Content-Transfer-Encoding:Content-Type:MIME-Version
+ :References:In-Reply-To:Message-ID:Date:Subject:Cc:To:From:Sender:Reply-To:
  Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
  Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=AkVO73khQEXexPsxQT0RVGnJrziAwGHpdDpx2ltyfZ0=; b=SUY/JoAfc2CWXUnro1h/mbbZvX
- THcuod2DBv4VL3iZFC0oTO84a8F/AaYf2D2Id4MRRuSbu/mqL9ZwoLbfNrGskwm77xnSsebKwp4K6
- Jqqo5c70TM7Kv4RUiac3hy5L1S63x2AzEAi+cjFE6lT6RLz8IMLq2dflW2VofnD9aaAo=;
+ bh=sQl1NBOdWbI6bxA1C+8BD9mJMDny1d4TFtHhCaE3IME=; b=dg9wdgAqIYny3k1/lmd2fnWhe7
+ /HJmjGyPzANmjZXYRHFURuQavByqprRlSPDu9aAVFjhySaxlp7lA6hN7OluytURXx8qiBp/bCIMhs
+ +tc7l6sddy+3HN1zv5eMZzp+KczE4dVx46JxkFqk94da6pF6T2v+RAvXNLrBhwx6jc8w=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
- h=In-Reply-To:Content-Type:MIME-Version:References:Message-ID:Subject:Cc:To
- :From:Date:Sender:Reply-To:Content-Transfer-Encoding:Content-ID:
+ h=Content-Transfer-Encoding:Content-Type:MIME-Version:References:
+ In-Reply-To:Message-ID:Date:Subject:Cc:To:From:Sender:Reply-To:Content-ID:
  Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
  :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
  List-Post:List-Owner:List-Archive;
- bh=AkVO73khQEXexPsxQT0RVGnJrziAwGHpdDpx2ltyfZ0=; b=GL41Da9cRc749z8xC/V4OfoTNN
- sDDZtjg7rldK2WiWIpK/J4cphxZalYRnyG+JlvJoHs1yH1mochHPRDBcgZK9uO0YQxEZHh1c+ocPf
- jTNW7ZxGDcBeLotwkACzmYxKLtAQYvSS45hpyrDTfzNlUGna+ud1SfA8t4ntds1FelyQ=;
-Received: from smtp-out1.suse.de ([195.135.223.130])
+ bh=sQl1NBOdWbI6bxA1C+8BD9mJMDny1d4TFtHhCaE3IME=; b=EIIFzP2Z0Kwz7EyQVzewZvtkrr
+ tdnNWa0gtEfohV4pe9F1JIij0245z53rvT2Zv2cHIJKN9PtADGPdpOrCGgVwj1kJLA6yokE2jYJon
+ zOXbpKBrjGk9DToDgt88JHmXnMN0o41ciJwdHcnHIi2VWr075H3kWWwr2/zH6Y+QbRLQ=;
+Received: from tor.source.kernel.org ([172.105.4.254])
  by sfi-mx-2.v28.lw.sourceforge.com with esmtps
- (TLS1.2:ECDHE-RSA-AES128-GCM-SHA256:128) (Exim 4.95)
- id 1vCJi9-0006d3-O4 for jfs-discussion@lists.sourceforge.net;
- Fri, 24 Oct 2025 15:28:14 +0000
-Received: from imap1.dmz-prg2.suse.org (unknown [10.150.64.97])
- (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
- key-exchange X25519 server-signature RSA-PSS (4096 bits) server-digest SHA256)
- (No client certificate requested)
- by smtp-out1.suse.de (Postfix) with ESMTPS id 46D6C2120A;
- Fri, 24 Oct 2025 12:13:20 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=suse.cz; s=susede2_rsa;
- t=1761308000; h=from:from:reply-to:date:date:message-id:message-id:to:to:cc:cc:
- mime-version:mime-version:content-type:content-type:
- in-reply-to:in-reply-to:references:references;
- bh=AkVO73khQEXexPsxQT0RVGnJrziAwGHpdDpx2ltyfZ0=;
- b=CjojHoYqaGMzfr5XqNusQqu1GyDxPy0hnR6Ldj+jMf2eYrTAdI2alMTnKoUSmrXoHvFzyY
- UToaifYK+aQl8TtK32yOMGz7StJr1kY/XFCLmL8yl3rGsIxvYxpuaYXr9RvWQe45kcVwON
- 5/tuFmNtP0/OwY0IBwV80drSEDaabHk=
-DKIM-Signature: v=1; a=ed25519-sha256; c=relaxed/relaxed; d=suse.cz;
- s=susede2_ed25519; t=1761308000;
- h=from:from:reply-to:date:date:message-id:message-id:to:to:cc:cc:
- mime-version:mime-version:content-type:content-type:
- in-reply-to:in-reply-to:references:references;
- bh=AkVO73khQEXexPsxQT0RVGnJrziAwGHpdDpx2ltyfZ0=;
- b=1acUFfy3hGwnqk5XZUYklOyZE7Yzi46EVBZ/g+PJSSiLxPnydp7ewriPn0sf5iaWyR9gF9
- M2aK7AndCIkzA5Cg==
-Authentication-Results: smtp-out1.suse.de;
-	none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=suse.cz; s=susede2_rsa;
- t=1761308000; h=from:from:reply-to:date:date:message-id:message-id:to:to:cc:cc:
- mime-version:mime-version:content-type:content-type:
- in-reply-to:in-reply-to:references:references;
- bh=AkVO73khQEXexPsxQT0RVGnJrziAwGHpdDpx2ltyfZ0=;
- b=CjojHoYqaGMzfr5XqNusQqu1GyDxPy0hnR6Ldj+jMf2eYrTAdI2alMTnKoUSmrXoHvFzyY
- UToaifYK+aQl8TtK32yOMGz7StJr1kY/XFCLmL8yl3rGsIxvYxpuaYXr9RvWQe45kcVwON
- 5/tuFmNtP0/OwY0IBwV80drSEDaabHk=
-DKIM-Signature: v=1; a=ed25519-sha256; c=relaxed/relaxed; d=suse.cz;
- s=susede2_ed25519; t=1761308000;
- h=from:from:reply-to:date:date:message-id:message-id:to:to:cc:cc:
- mime-version:mime-version:content-type:content-type:
- in-reply-to:in-reply-to:references:references;
- bh=AkVO73khQEXexPsxQT0RVGnJrziAwGHpdDpx2ltyfZ0=;
- b=1acUFfy3hGwnqk5XZUYklOyZE7Yzi46EVBZ/g+PJSSiLxPnydp7ewriPn0sf5iaWyR9gF9
- M2aK7AndCIkzA5Cg==
-Received: from imap1.dmz-prg2.suse.org (localhost [127.0.0.1])
- (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
- key-exchange X25519 server-signature RSA-PSS (4096 bits) server-digest SHA256)
- (No client certificate requested)
- by imap1.dmz-prg2.suse.org (Postfix) with ESMTPS id 301D713693;
- Fri, 24 Oct 2025 12:13:20 +0000 (UTC)
-Received: from dovecot-director2.suse.de ([2a07:de40:b281:106:10:150:64:167])
- by imap1.dmz-prg2.suse.org with ESMTPSA id Mwu+C2Bt+2jXOQAAD6G6ig
- (envelope-from <jack@suse.cz>); Fri, 24 Oct 2025 12:13:20 +0000
-Received: by quack3.suse.cz (Postfix, from userid 1000)
- id 3BF23A28AB; Fri, 24 Oct 2025 14:13:19 +0200 (CEST)
-Date: Fri, 24 Oct 2025 14:13:19 +0200
-From: Jan Kara <jack@suse.cz>
-To: Christoph Hellwig <hch@lst.de>
-Message-ID: <yybiur2jmv6s4n2sjlubwimmfbsrb3gx6tk67ki23jnqncaeba@wayirnpbaum3>
-References: <20251024080431.324236-1-hch@lst.de>
- <20251024080431.324236-11-hch@lst.de>
+ (TLS1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.95)
+ id 1vCgzN-0003UW-2g for jfs-discussion@lists.sourceforge.net;
+ Sat, 25 Oct 2025 16:19:33 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+ by tor.source.kernel.org (Postfix) with ESMTP id 3DCCE603DA;
+ Sat, 25 Oct 2025 16:19:27 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id C36CBC4CEF5;
+ Sat, 25 Oct 2025 16:19:25 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=k20201202; t=1761409166;
+ bh=AbpB0gL1tgUYZeJubeGkbYNli+tZXVzNp/3ticMHYC0=;
+ h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
+ b=XFQwp6SdVE14tJK/vqM0/78cuUrVDlaBguvxfhSGr6nVpviXpr0bNEx4HGHehjXxW
+ UODr/fpmywsX9DtYXDwo2LuULPPrKPazm29LOi7zw1Mv/tt7wubLBcfcwaliyaPpLO
+ YPD9IVQuJLrfhLQlI9BnNz7G/N0pkCvoOcdvZuiGFmB+hkFsrxK0VoWHq6VMjl+Y6p
+ LjUCTanqJWJKimjNrVWe1DpE+Fah05ZKaT3g9jto9+NzWI7+2H/tb9ma7NJebQsVWH
+ W7hxv9+JPy8YxqUi5gY7QUmDpQCXbQhcr3Ec917wssAbq0uMpR557r7eZlBDin0odG
+ G+C7lCCGfejEA==
+To: patches@lists.linux.dev,
+	stable@vger.kernel.org
+Date: Sat, 25 Oct 2025 11:57:38 -0400
+Message-ID: <20251025160905.3857885-227-sashal@kernel.org>
+X-Mailer: git-send-email 2.51.0
+In-Reply-To: <20251025160905.3857885-1-sashal@kernel.org>
+References: <20251025160905.3857885-1-sashal@kernel.org>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20251024080431.324236-11-hch@lst.de>
-X-Spamd-Result: default: False [-3.80 / 50.00]; BAYES_HAM(-3.00)[100.00%];
- NEURAL_HAM_LONG(-1.00)[-1.000]; MID_RHS_NOT_FQDN(0.50)[];
- NEURAL_HAM_SHORT(-0.20)[-1.000]; MIME_GOOD(-0.10)[text/plain];
- RCVD_COUNT_THREE(0.00)[3]; FUZZY_RATELIMITED(0.00)[rspamd.com];
- FROM_HAS_DN(0.00)[]; ARC_NA(0.00)[];
- RCPT_COUNT_TWELVE(0.00)[24]; MIME_TRACE(0.00)[0:+];
- DKIM_SIGNED(0.00)[suse.cz:s=susede2_rsa,suse.cz:s=susede2_ed25519];
- RCVD_TLS_LAST(0.00)[]; TO_MATCH_ENVRCPT_ALL(0.00)[];
- FROM_EQ_ENVFROM(0.00)[]; TO_DN_SOME(0.00)[];
- RCVD_VIA_SMTP_AUTH(0.00)[]; MISSING_XM_UA(0.00)[];
- DBL_BLOCKED_OPENRESOLVER(0.00)[suse.com:email,imap1.dmz-prg2.suse.org:helo]
-X-Spam-Flag: NO
-X-Spam-Score: -3.80
-X-Spam-Level: 
+X-stable: review
+X-Patchwork-Hint: Ignore
+X-stable-base: Linux 6.17.5
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: Spam detection software,
  running on the system "sfi-spamd-2.hosts.colo.sdot.me", 
@@ -129,9 +81,12 @@ X-Spam-Report: Spam detection software,
  message has been attached to this so you can view it or label
  similar future email.  If you have any questions, see
  the administrator of that system for details.
- Content preview:  On Fri 24-10-25 10:04:21, Christoph Hellwig wrote: > Rename
- filemap_fdatawrite_range_kick to filemap_flush_range because it > is the
- ranged version of filemap_flush. > > Signed-off-by: Christoph Hellw [...] 
+ Content preview: From: Shaurya Rane <ssrane_b23@ee.vjti.ac.in> [ Upstream
+ commit
+ 300b072df72694ea330c4c673c035253e07827b8 ] The transaction manager
+ initialization
+ in txInit() was not properly initializing TxBlock[0].waitor waitqueue, causing
+ a crash when txEnd(0) is called on read-only filesystems. 
  Content analysis details:   (-0.2 points, 5.0 required)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
@@ -142,9 +97,10 @@ X-Spam-Report: Spam detection software,
  not necessarily valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
-X-Headers-End: 1vCJi9-0006d3-O4
-Subject: Re: [Jfs-discussion] [PATCH 10/10] mm: rename
- filemap_fdatawrite_range_kick to filemap_flush_range
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - High trust sender
+X-Headers-End: 1vCgzN-0003UW-2g
+Subject: [Jfs-discussion] [PATCH AUTOSEL 6.17-5.4] jfs: fix uninitialized
+ waitqueue in transaction manager
 X-BeenThere: jfs-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -156,137 +112,81 @@ List-Post: <mailto:jfs-discussion@lists.sourceforge.net>
 List-Help: <mailto:jfs-discussion-request@lists.sourceforge.net?subject=help>
 List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/jfs-discussion>, 
  <mailto:jfs-discussion-request@lists.sourceforge.net?subject=subscribe>
-Cc: Latchesar Ionkov <lucho@ionkov.net>, jfs-discussion@lists.sourceforge.net,
- Jan Kara <jack@suse.cz>, Dominique Martinet <asmadeus@codewreck.org>,
- Christian Schoenebeck <linux_oss@crudebyte.com>, linux-mm@kvack.org,
- Joseph Qi <joseph.qi@linux.alibaba.com>, Mark Fasheh <mark@fasheh.com>,
- "Matthew Wilcox \(Oracle\)" <willy@infradead.org>, linux-ext4@vger.kernel.org,
- Josef Bacik <josef@toxicpanda.com>, linux-block@vger.kernel.org,
- ocfs2-devel@lists.linux.dev, Joel Becker <jlbec@evilplan.org>,
- David Sterba <dsterba@suse.com>, Eric Van Hensbergen <ericvh@kernel.org>,
- Christian Brauner <brauner@kernel.org>, Chris Mason <clm@fb.com>,
- v9fs@lists.linux.dev, linux-xfs@vger.kernel.org, linux-fsdevel@vger.kernel.org,
- linux-btrfs@vger.kernel.org, Alexander Viro <viro@zeniv.linux.org.uk>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+From: Sasha Levin via Jfs-discussion <jfs-discussion@lists.sourceforge.net>
+Reply-To: Sasha Levin <sashal@kernel.org>
+Cc: Sasha Levin <sashal@kernel.org>, shaggy@kernel.org,
+ jfs-discussion@lists.sourceforge.net,
+ syzbot+c4f3462d8b2ad7977bea@syzkaller.appspotmail.com,
+ Shaurya Rane <ssrane_b23@ee.vjti.ac.in>, alexander.deucher@amd.com,
+ alexandre.f.demers@gmail.com
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Errors-To: jfs-discussion-bounces@lists.sourceforge.net
 
-On Fri 24-10-25 10:04:21, Christoph Hellwig wrote:
-> Rename filemap_fdatawrite_range_kick to filemap_flush_range because it
-> is the ranged version of filemap_flush.
-> 
-> Signed-off-by: Christoph Hellwig <hch@lst.de>
-
-Looks good. Feel free to add:
-
-Reviewed-by: Jan Kara <jack@suse.cz>
-
-								Honza
-
-> ---
->  fs/sync.c          | 3 +--
->  include/linux/fs.h | 6 +++---
->  mm/fadvise.c       | 2 +-
->  mm/filemap.c       | 8 ++++----
->  4 files changed, 9 insertions(+), 10 deletions(-)
-> 
-> diff --git a/fs/sync.c b/fs/sync.c
-> index 6d8b04e04c3c..1759f6ba36cd 100644
-> --- a/fs/sync.c
-> +++ b/fs/sync.c
-> @@ -285,8 +285,7 @@ int sync_file_range(struct file *file, loff_t offset, loff_t nbytes,
->  			ret = filemap_fdatawrite_range(mapping, offset,
->  					endbyte);
->  		else
-> -			ret = filemap_fdatawrite_range_kick(mapping, offset,
-> -					endbyte);
-> +			ret = filemap_flush_range(mapping, offset, endbyte);
->  		if (ret < 0)
->  			goto out;
->  	}
-> diff --git a/include/linux/fs.h b/include/linux/fs.h
-> index c895146c1444..a5dbfa20f8d7 100644
-> --- a/include/linux/fs.h
-> +++ b/include/linux/fs.h
-> @@ -3014,7 +3014,7 @@ extern int __must_check file_fdatawait_range(struct file *file, loff_t lstart,
->  extern int __must_check file_check_and_advance_wb_err(struct file *file);
->  extern int __must_check file_write_and_wait_range(struct file *file,
->  						loff_t start, loff_t end);
-> -int filemap_fdatawrite_range_kick(struct address_space *mapping, loff_t start,
-> +int filemap_flush_range(struct address_space *mapping, loff_t start,
->  		loff_t end);
->  
->  static inline int file_write_and_wait(struct file *file)
-> @@ -3051,8 +3051,8 @@ static inline ssize_t generic_write_sync(struct kiocb *iocb, ssize_t count)
->  	} else if (iocb->ki_flags & IOCB_DONTCACHE) {
->  		struct address_space *mapping = iocb->ki_filp->f_mapping;
->  
-> -		filemap_fdatawrite_range_kick(mapping, iocb->ki_pos - count,
-> -					      iocb->ki_pos - 1);
-> +		filemap_flush_range(mapping, iocb->ki_pos - count,
-> +				iocb->ki_pos - 1);
->  	}
->  
->  	return count;
-> diff --git a/mm/fadvise.c b/mm/fadvise.c
-> index f1be619f0e58..67028e30aa91 100644
-> --- a/mm/fadvise.c
-> +++ b/mm/fadvise.c
-> @@ -111,7 +111,7 @@ int generic_fadvise(struct file *file, loff_t offset, loff_t len, int advice)
->  		spin_unlock(&file->f_lock);
->  		break;
->  	case POSIX_FADV_DONTNEED:
-> -		filemap_fdatawrite_range_kick(mapping, offset, endbyte);
-> +		filemap_flush_range(mapping, offset, endbyte);
->  
->  		/*
->  		 * First and last FULL page! Partial pages are deliberately
-> diff --git a/mm/filemap.c b/mm/filemap.c
-> index f90f5bb2b825..fa770768ea3a 100644
-> --- a/mm/filemap.c
-> +++ b/mm/filemap.c
-> @@ -419,7 +419,7 @@ int filemap_fdatawrite(struct address_space *mapping)
->  EXPORT_SYMBOL(filemap_fdatawrite);
->  
->  /**
-> - * filemap_fdatawrite_range_kick - start writeback on a range
-> + * filemap_flush_range - start writeback on a range
->   * @mapping:	target address_space
->   * @start:	index to start writeback on
->   * @end:	last (inclusive) index for writeback
-> @@ -429,12 +429,12 @@ EXPORT_SYMBOL(filemap_fdatawrite);
->   *
->   * Return: %0 on success, negative error code otherwise.
->   */
-> -int filemap_fdatawrite_range_kick(struct address_space *mapping, loff_t start,
-> +int filemap_flush_range(struct address_space *mapping, loff_t start,
->  				  loff_t end)
->  {
->  	return filemap_writeback(mapping, start, end, WB_SYNC_NONE, NULL);
->  }
-> -EXPORT_SYMBOL_GPL(filemap_fdatawrite_range_kick);
-> +EXPORT_SYMBOL_GPL(filemap_flush_range);
->  
->  /**
->   * filemap_flush - mostly a non-blocking flush
-> @@ -447,7 +447,7 @@ EXPORT_SYMBOL_GPL(filemap_fdatawrite_range_kick);
->   */
->  int filemap_flush(struct address_space *mapping)
->  {
-> -	return filemap_fdatawrite_range_kick(mapping, 0, LLONG_MAX);
-> +	return filemap_flush_range(mapping, 0, LLONG_MAX);
->  }
->  EXPORT_SYMBOL(filemap_flush);
->  
-> -- 
-> 2.47.3
-> 
--- 
-Jan Kara <jack@suse.com>
-SUSE Labs, CR
-
-
-_______________________________________________
-Jfs-discussion mailing list
-Jfs-discussion@lists.sourceforge.net
-https://lists.sourceforge.net/lists/listinfo/jfs-discussion
+RnJvbTogU2hhdXJ5YSBSYW5lIDxzc3JhbmVfYjIzQGVlLnZqdGkuYWMuaW4+CgpbIFVwc3RyZWFt
+IGNvbW1pdCAzMDBiMDcyZGY3MjY5NGVhMzMwYzRjNjczYzAzNTI1M2UwNzgyN2I4IF0KClRoZSB0
+cmFuc2FjdGlvbiBtYW5hZ2VyIGluaXRpYWxpemF0aW9uIGluIHR4SW5pdCgpIHdhcyBub3QgcHJv
+cGVybHkKaW5pdGlhbGl6aW5nIFR4QmxvY2tbMF0ud2FpdG9yIHdhaXRxdWV1ZSwgY2F1c2luZyBh
+IGNyYXNoIHdoZW4KdHhFbmQoMCkgaXMgY2FsbGVkIG9uIHJlYWQtb25seSBmaWxlc3lzdGVtcy4K
+CldoZW4gYSBmaWxlc3lzdGVtIGlzIG1vdW50ZWQgcmVhZC1vbmx5LCB0eEJlZ2luKCkgcmV0dXJu
+cyB0aWQ9MCB0bwppbmRpY2F0ZSBubyB0cmFuc2FjdGlvbi4gSG93ZXZlciwgdHhFbmQoMCkgc3Rp
+bGwgZ2V0cyBjYWxsZWQgYW5kCnRyaWVzIHRvIGFjY2VzcyBUeEJsb2NrWzBdLndhaXRvciB2aWEg
+dGlkX3RvX3RibG9jaygwKSwgYnV0IHRoaXMKd2FpdHF1ZXVlIHdhcyBuZXZlciBpbml0aWFsaXpl
+ZCBiZWNhdXNlIHRoZSBpbml0aWFsaXphdGlvbiBsb29wCnN0YXJ0ZWQgYXQgaW5kZXggMSBpbnN0
+ZWFkIG9mIDAuCgpUaGlzIGNhdXNlcyBhICdub24tc3RhdGljIGtleScgbG9ja2RlcCB3YXJuaW5n
+IGFuZCBzeXN0ZW0gY3Jhc2g6CiAgSU5GTzogdHJ5aW5nIHRvIHJlZ2lzdGVyIG5vbi1zdGF0aWMg
+a2V5IGluIHR4RW5kCgpGaXggYnkgZW5zdXJpbmcgYWxsIHRyYW5zYWN0aW9uIGJsb2NrcyBpbmNs
+dWRpbmcgVHhCbG9ja1swXSBoYXZlCnRoZWlyIHdhaXRxdWV1ZXMgcHJvcGVybHkgaW5pdGlhbGl6
+ZWQgZHVyaW5nIHR4SW5pdCgpLgoKUmVwb3J0ZWQtYnk6IHN5emJvdCtjNGYzNDYyZDhiMmFkNzk3
+N2JlYUBzeXprYWxsZXIuYXBwc3BvdG1haWwuY29tCgpTaWduZWQtb2ZmLWJ5OiBTaGF1cnlhIFJh
+bmUgPHNzcmFuZV9iMjNAZWUudmp0aS5hYy5pbj4KU2lnbmVkLW9mZi1ieTogRGF2ZSBLbGVpa2Ft
+cCA8ZGF2ZS5rbGVpa2FtcEBvcmFjbGUuY29tPgpTaWduZWQtb2ZmLWJ5OiBTYXNoYSBMZXZpbiA8
+c2FzaGFsQGtlcm5lbC5vcmc+Ci0tLQoKTExNIEdlbmVyYXRlZCBleHBsYW5hdGlvbnMsIG1heSBi
+ZSBjb21wbGV0ZWx5IGJvZ3VzOgoKWUVTCi0gYHR4SW5pdCgpYCBwcmV2aW91c2x5IHNraXBwZWQg
+aW5kZXggMCB3aGVuIHByaW1pbmcgdGhlIGB0YmxvY2tgIHdhaXQKICBxdWV1ZXMsIHNvIGBUeEJs
+b2NrWzBdLndhaXRvcmAgc3RheWVkIHVuaW5pdGlhbGl6ZWQKICAoYGZzL2pmcy9qZnNfdHhubWdy
+LmM6MjcwLTI4NGAgYmVmb3JlIHRoZSBwYXRjaCkuIFdoZW4gdGhlIGZpbGVzeXN0ZW0KICBpcyBt
+b3VudGVkIHJlYWQtb25seSwgYHR4QmVnaW4oKWAgbGVnaXRpbWF0ZWx5IHJldHVybnMgYHRpZCA9
+PSAwYAogIChgZnMvamZzL2pmc190eG5tZ3IuYzozNDgtMzU0YCksIHlldCBldmVyeSBjYWxsZXIg
+c3RpbGwgZXhlY3V0ZXMKICBgdHhFbmQodGlkKWAuIGB0eEVuZCgpYCBpbW1lZGlhdGVseSBjYWxs
+cyBgVFhOX1dBS0VVUCgmdGJsay0+d2FpdG9yKWAKICBvbiB0aGF0IHJlc2VydmVkIGVudHJ5IChg
+ZnMvamZzL2pmc190eG5tZ3IuYzo1MDAtNTA2YCksIHdoaWNoIHRyaXBzCiAgbG9ja2RlcCAo4oCc
+dHJ5aW5nIHRvIHJlZ2lzdGVyIG5vbi1zdGF0aWMga2V54oCdKSBhbmQgY2FuIHBhbmljIHRoZQog
+IHN5c3RlbSwgZXhhY3RseSBhcyByZXBvcnRlZCBieSBzeXpib3QuCi0gVGhlIGZpeCBlbnN1cmVz
+IGJvdGggYHdhaXRvcmAgYW5kIGBnY3dhaXRgIGFyZSBpbml0aWFsaXplZCBmb3IgYWxsCiAgYHRi
+bG9ja2BzLCBpbmNsdWRpbmcgdGhlIHJlc2VydmVkIHNsb3QgMCwgYnkgcnVubmluZyBhIGRlZGlj
+YXRlZCBsb29wCiAgZnJvbSAwLi5uVHhCbG9jay0xIGJlZm9yZSB3aXJpbmcgdXAgdGhlIGZyZWVs
+aXN0CiAgKGBmcy9qZnMvamZzX3R4bm1nci5jOjI3NS0yODNgKS4gTm8gb3RoZXIgYmVoYXZpb3Vy
+IGNoYW5nZXMgb2NjdXI6IHRoZQogIGZyZWVsaXN0IHBvcHVsYXRpb24gZm9yIGluZGljZXMg4oml
+MSByZW1haW5zIGlkZW50aWNhbCwgYW5kIHNsb3QgMCBpcwogIHN0aWxsIGV4Y2x1ZGVkIGZyb20g
+YWxsb2NhdGlvbi4KLSBUaGUgYnVnIHdhcyBpbnRyb2R1Y2VkIHdoZW4gYHR4QmVnaW4oKWAgc3Rh
+cnRlZCByZXR1cm5pbmcgMCBmb3IgcmVhZC0KICBvbmx5IG1vdW50cyAoY29tbWl0IDk1ZTJiMzUy
+YzAzYjBhODYsIGFscmVhZHkgaW4gNi42KyBzdGFibGUpLiBUaHVzCiAgZXZlcnkgc3VwcG9ydGVk
+IHN0YWJsZSB0cmVlIHRoYXQgY29udGFpbnMgdGhhdCBjaGFuZ2UgaXMgc3VzY2VwdGlibGUKICB0
+byBhbiBpbW1lZGlhdGUga2VybmVsIGNyYXNoIHdoZW5ldmVyIGB0eEVuZCgwKWAgZXhlY3V0ZXPi
+gJR0cmlnZ2VyYWJsZQogIGJ5IHJvdXRpbmUgbWV0YWRhdGEgb3BlcmF0aW9ucyBvbiBhIHJlYWQt
+b25seSBKRlMgdm9sdW1lLgotIFRoZSBwYXRjaCBpcyB0aW55LCBsb2NhbGl6ZWQgdG8gaW5pdGlh
+bGl6YXRpb24sIGFuZCBjYXJyaWVzIG5lZ2xpZ2libGUKICByZWdyZXNzaW9uIHJpc2s6IGluaXRp
+YWxpemluZyBhIHdhaXRxdWV1ZSBoZWFkIHR3aWNlIGlzIHNhZmUsIGFuZCBubwogIGNvbmN1cnJl
+bnQgYWN0aXZpdHkgZXhpc3RzIGR1cmluZyBgdHhJbml0KClgLiBUaGVyZSBhcmUgbm8KICBwcmVy
+ZXF1aXNpdGUgZGVwZW5kZW5jaWVzLgotIEJlY2F1c2UgdGhpcyByZXNvbHZlcyBhIHJlYWwsIHVz
+ZXItdmlzaWJsZSBjcmFzaCBpbnRyb2R1Y2VkIGluCiAgY3VycmVudGx5LXN1cHBvcnRlZCBzdGFi
+bGUgcmVsZWFzZXMgYW5kIGRvZXMgc28gd2l0aCBhIG1pbmltYWwsIHdlbGwtCiAgc2NvcGVkIGNo
+YW5nZSwgaXQgc3F1YXJlbHkgbWVldHMgdGhlIHN0YWJsZSBiYWNrcG9ydCBjcml0ZXJpYS4KCiBm
+cy9qZnMvamZzX3R4bm1nci5jIHwgOSArKysrKy0tLS0KIDEgZmlsZSBjaGFuZ2VkLCA1IGluc2Vy
+dGlvbnMoKyksIDQgZGVsZXRpb25zKC0pCgpkaWZmIC0tZ2l0IGEvZnMvamZzL2pmc190eG5tZ3Iu
+YyBiL2ZzL2pmcy9qZnNfdHhubWdyLmMKaW5kZXggYmUxN2UzYzQzNTgyZi4uNzg0MGEwM2U1YmNi
+NyAxMDA2NDQKLS0tIGEvZnMvamZzL2pmc190eG5tZ3IuYworKysgYi9mcy9qZnMvamZzX3R4bm1n
+ci5jCkBAIC0yNzIsMTQgKzI3MiwxNSBAQCBpbnQgdHhJbml0KHZvaWQpCiAJaWYgKFR4QmxvY2sg
+PT0gTlVMTCkKIAkJcmV0dXJuIC1FTk9NRU07CiAKLQlmb3IgKGsgPSAxOyBrIDwgblR4QmxvY2sg
+LSAxOyBrKyspIHsKLQkJVHhCbG9ja1trXS5uZXh0ID0gayArIDE7CisJZm9yIChrID0gMDsgayA8
+IG5UeEJsb2NrOyBrKyspIHsKIAkJaW5pdF93YWl0cXVldWVfaGVhZCgmVHhCbG9ja1trXS5nY3dh
+aXQpOwogCQlpbml0X3dhaXRxdWV1ZV9oZWFkKCZUeEJsb2NrW2tdLndhaXRvcik7CiAJfQorCisJ
+Zm9yIChrID0gMTsgayA8IG5UeEJsb2NrIC0gMTsgaysrKSB7CisJCVR4QmxvY2tba10ubmV4dCA9
+IGsgKyAxOworCX0KIAlUeEJsb2NrW2tdLm5leHQgPSAwOwotCWluaXRfd2FpdHF1ZXVlX2hlYWQo
+JlR4QmxvY2tba10uZ2N3YWl0KTsKLQlpbml0X3dhaXRxdWV1ZV9oZWFkKCZUeEJsb2NrW2tdLndh
+aXRvcik7CiAKIAlUeEFuY2hvci5mcmVldGlkID0gMTsKIAlpbml0X3dhaXRxdWV1ZV9oZWFkKCZU
+eEFuY2hvci5mcmVld2FpdCk7Ci0tIAoyLjUxLjAKCgoKX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX18KSmZzLWRpc2N1c3Npb24gbWFpbGluZyBsaXN0Ckpmcy1k
+aXNjdXNzaW9uQGxpc3RzLnNvdXJjZWZvcmdlLm5ldApodHRwczovL2xpc3RzLnNvdXJjZWZvcmdl
+Lm5ldC9saXN0cy9saXN0aW5mby9qZnMtZGlzY3Vzc2lvbgo=
