@@ -2,81 +2,81 @@ Return-Path: <jfs-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+jfs-discussion@lfdr.de
 Delivered-To: lists+jfs-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id 920FDC14D69
-	for <lists+jfs-discussion@lfdr.de>; Tue, 28 Oct 2025 14:28:23 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6D323C1756C
+	for <lists+jfs-discussion@lfdr.de>; Wed, 29 Oct 2025 00:24:20 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.sourceforge.net; s=beta; h=Content-Transfer-Encoding:Content-Type:Cc:
 	Reply-To:From:List-Subscribe:List-Help:List-Post:List-Archive:
 	List-Unsubscribe:List-Id:Subject:MIME-Version:Message-ID:Date:To:Sender:
 	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
 	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
-	bh=IyzY+If5X+mNG4frEx2dmdYyMW1E/EvwLB5NlEStthk=; b=nOjhCk5DZu7P5xIYXei/+p3o9v
-	Zs3MotMpwABnHrX4XcyfswS7x0pgnNJ4aK7Tc6/IScRjBeD1E61G7ctBtJZMMRWrftLcue3cRODk6
-	a/jIFGvKUoAEMybgGGPhkW9l4fAFPGUer0HHl5uWZ1Y8F6vX1i1prq4tlUjsq1YyrDN4=;
-Received: from [127.0.0.1] (helo=sfs-ml-4.v29.lw.sourceforge.com)
-	by sfs-ml-4.v29.lw.sourceforge.com with esmtp (Exim 4.95)
+	bh=jWcyRrtVuLq9zgmUr67xzJnnB85hTBQi9yfh+9DegBc=; b=l6CqJZHOa5F3FHKLVfhoQk7Haa
+	x5xT1F/KvrHWQQOfhFXnrzfHyWSDlr3yjuAHemy4iYHVSDb08Ou5ZEHbx2Z34Sq2HBmwTl4dsn3ux
+	Jt+gpyfSMuig6b32klxcGxVwKnv223CU3XiqbaVV2ocq33Mw/a4g7eLc3hFFzT9VPC9w=;
+Received: from [127.0.0.1] (helo=sfs-ml-1.v29.lw.sourceforge.com)
+	by sfs-ml-1.v29.lw.sourceforge.com with esmtp (Exim 4.95)
 	(envelope-from <jfs-discussion-bounces@lists.sourceforge.net>)
-	id 1vDjjj-00061g-HI;
-	Tue, 28 Oct 2025 13:27:43 +0000
+	id 1vDt2R-0001vu-Nv;
+	Tue, 28 Oct 2025 23:23:39 +0000
 Received: from [172.30.29.66] (helo=mx.sourceforge.net)
  by sfs-ml-1.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
  TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (Exim 4.95)
- (envelope-from <jkoolstra@xs4all.nl>) id 1vDiiZ-0004yY-4E
+ (envelope-from <jkoolstra@xs4all.nl>) id 1vDt2P-0001vn-LP
  for jfs-discussion@lists.sourceforge.net;
- Tue, 28 Oct 2025 12:22:27 +0000
+ Tue, 28 Oct 2025 23:23:37 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=sourceforge.net; s=x; h=Content-Transfer-Encoding:MIME-Version:Message-ID:
  Date:Subject:Cc:To:From:Sender:Reply-To:Content-Type:Content-ID:
  Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
  :Resent-Message-ID:In-Reply-To:References:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=6hGTw/im2BS7bu9qrR+TzihP9cldUdB2xJLe6OVfK1w=; b=bTjdj2G3oHf+tIieax8ySVfGZu
- tIGNUAGIxwifp1tADCwIN6Rh9iqcyqYLdA6QwGGlgLM1J4nH6TIKuk2lRExuiWtZ/7377oQY+YJTd
- s/vLBEquTNKonjVrZgN+DljRyUm0/MuwmEW1m/bLMy+M/Yya1/emWnI0h0vkGQRMTEI8=;
+ bh=CwganTJx+9Lw3WMSh7k5X4jbPqLypnHQOM2bPJvw16Q=; b=G9THaPJupARQKL/z3YmX63scvw
+ DdfgB14EJqsCF7mKH6d/GW6kPXSmvvW+6sNbEJQ1Ag720ySD/B2ss+7iUNkoaFr/0hWIJ5KBZtXIJ
+ 4y+ZstQD1/RohHikSLOfIz8vpwuNsKn/pHJtBazgc39ODn7/S4KIC9G28od/RQf4ck0o=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
  h=Content-Transfer-Encoding:MIME-Version:Message-ID:Date:Subject:Cc:To:From
  :Sender:Reply-To:Content-Type:Content-ID:Content-Description:Resent-Date:
  Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
  References:List-Id:List-Help:List-Unsubscribe:List-Subscribe:List-Post:
- List-Owner:List-Archive; bh=6hGTw/im2BS7bu9qrR+TzihP9cldUdB2xJLe6OVfK1w=; b=C
- RhwohAtmvx5AfLLGdlWT2PH7LvNhYM9XOFedkThHWb0/i+98pWIYplh8E1HbEjYx80CzHurwRIvu6
- JBOgJgFMJeWcJb8ZR/Y94/oba3C4Y155wAz8DK6F+0hTrSeLPMdCl5ahSapmoRQBKhzJPgUSi304/
- VYyDKEUxb2fuyVGM=;
-Received: from ewsoutbound.kpnmail.nl ([195.121.94.186])
+ List-Owner:List-Archive; bh=CwganTJx+9Lw3WMSh7k5X4jbPqLypnHQOM2bPJvw16Q=; b=Z
+ FyNhqEImrEdej7HbCPcd3p7WDnW9SPU0adPVG04HEGzmUbghqopesBT2k/6EzwUXuc9XGN5pjI6NJ
+ yJPp+2XuWtfdvWNkUuvICwKxfQiPvTr/5sqi0i21fZCWNTRPiuxVcw8/JXFrAFiD8iu3l1fe/siCC
+ 7ymgAgnwBCdBmLKA=;
+Received: from ewsoutbound.kpnmail.nl ([195.121.94.167])
  by sfi-mx-2.v28.lw.sourceforge.com with esmtps
  (TLS1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.95)
- id 1vDiiX-0002dv-VD for jfs-discussion@lists.sourceforge.net;
- Tue, 28 Oct 2025 12:22:27 +0000
-X-KPN-MessageId: 17cc7e56-b3f9-11f0-b0b9-00505699b430
-Received: from smtp.kpnmail.nl (unknown [10.31.155.6])
+ id 1vDt2N-00056a-TJ for jfs-discussion@lists.sourceforge.net;
+ Tue, 28 Oct 2025 23:23:37 +0000
+X-KPN-MessageId: 653a8817-b455-11f0-a27d-005056abbe64
+Received: from smtp.kpnmail.nl (unknown [10.31.155.40])
  by ewsoutbound.so.kpn.org (Halon) with ESMTPS
- id 17cc7e56-b3f9-11f0-b0b9-00505699b430;
- Tue, 28 Oct 2025 13:24:47 +0100 (CET)
+ id 653a8817-b455-11f0-a27d-005056abbe64;
+ Wed, 29 Oct 2025 00:25:31 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=xs4all.nl; s=xs4all01;
  h=mime-version:message-id:date:subject:to:from;
- bh=6hGTw/im2BS7bu9qrR+TzihP9cldUdB2xJLe6OVfK1w=;
- b=Qt+70qnzIbi+vAWxXvUmZgk6AIfwztgT09mG/25KuJ4BlW41wOdAOAsgDPbedxwkGavK4yUDzUH1Q
- xlCB1y/TbjqCV0M5ZUa6BJkAnYUppbtVGcZt+aJzOTRAYP5qujl1kzEA5mxzC+pM+tC8TMnYggHD6g
- pPOzcH1bGsvlEJZ8bhFh+9PpgnoIuTQugJPWSqLHJeTbf7oatnY/iliPFtm8Otci1WwNAoT/5/pA71
- zqvLU1qEHHRm0XZQjOM78VCMwWE6vjmNua3kAaIhAqq2/XcWIK5AOClqamTz1tspGfn2LJLKpt1BN5
- 9wQfVsIokHt6DeAz9dHbc/+Fqdgvs9Q==
-X-KPN-MID: 33|p+RV6W9QzUQHX9Ar2UCHdRItZsgflKwRX4+wxlZPKivM5xakmPdp8vdQMLHvWvr
- PdTvI/YE04gcbwfY1aDdb3otk56Jqw+h4XZYbFH541gE=
+ bh=CwganTJx+9Lw3WMSh7k5X4jbPqLypnHQOM2bPJvw16Q=;
+ b=R14oSUjhmj2pquwuRCcE8NiEP8x8ux60XVc+D6ACcpVcOffL06DqgXioV5ukDUBDD5I99jIDX3qmj
+ a5ahmErglsZG2hwdWOOBMZ/lHAN+BfB6IkbcJmCOpchiX+QIoRtvZAcdD2Ax6xlvWM6GBFi7Fxrr2W
+ oaGqr2I0XLSbTzQ5xeQHiekciMJ1lXtLC2qWqFKvytepAWQL2BOD7VrX4GSGM+BFBvssC7v289y8Wh
+ pEXnnRkSUHUewp2x+kSy8xPU1JtdV/CXCcfYbG5JCdn/rBHCTOG8cR3tE3Fkfw3UaAi/EG/9fLZeW9
+ KUJ6fGpPGXROAUgV35GN7BGer1Uh3bg==
+X-KPN-MID: 33|tzsCuW5x5QBoQxv6qLKTGow+iGUfXhzRjhiA/IpHMov+l+P/osS1hjmYvK8DuM6
+ qeQra2J/YrM0pPdh4lWEJYuMx04EuMGg6QXV0aP2ppkk=
 X-KPN-VerifiedSender: Yes
-X-CMASSUN: 33|r0IRAVaLQQnFj/6NHjVgNozaylTQSPecBpP7soA74NAdZH9CDh6nNtd0CMxyrId
- XyBkrkFuHj1HVvTjG83J4Eg==
+X-CMASSUN: 33|fMvmz9POJ2hi8AxioCD6qmoiI1Oyk2u6fX/3p9Nolvil3pAoWorKv8vPcatxfVT
+ UEdrhNBTfuylyjoVoH1khfw==
 X-Originating-IP: 178.231.9.54
 Received: from daedalus.home (unknown [178.231.9.54])
  by smtp.xs4all.nl (Halon) with ESMTPSA
- id bbd9284a-b3f8-11f0-bff1-00505699772e;
- Tue, 28 Oct 2025 13:22:13 +0100 (CET)
+ id 1c1539a7-b455-11f0-b8c6-005056ab7584;
+ Wed, 29 Oct 2025 00:23:29 +0100 (CET)
 To: Dave Kleikamp <shaggy@kernel.org>, Jeff Layton <jlayton@kernel.org>,
  Christian Brauner <brauner@kernel.org>,
  Gabriel Krisman Bertazi <gabriel@krisman.be>, NeilBrown <neil@brown.name>,
  Al Viro <viro@zeniv.linux.org.uk>
-Date: Tue, 28 Oct 2025 13:22:12 +0100
-Message-ID: <20251028122212.290745-1-jkoolstra@xs4all.nl>
+Date: Wed, 29 Oct 2025 00:23:29 +0100
+Message-ID: <20251028232329.430752-1-jkoolstra@xs4all.nl>
 X-Mailer: git-send-email 2.51.1.dirty
 MIME-Version: 1.0
 X-Spam-Score: -0.2 (/)
@@ -86,15 +86,17 @@ X-Spam-Report: Spam detection software,
  message has been attached to this so you can view it or label
  similar future email.  If you have any questions, see
  the administrator of that system for details.
- Content preview: If nlink is maximal for a directory (-1) and inside that
- directory
- you perform a rename for some child directory (not moving from the parent),
- then the nlink of the first directory is first incremente [...] 
+ Content preview: Syzbot reported a general protection fault in
+ inode_set_ctime_current.
+ This resulted from the following circumstances: when creating a new file
+ via dtInsert, BT_GETSEARCH may yield a pointer to a dtro [...] 
  Content analysis details:   (-0.2 points, 5.0 required)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 RCVD_IN_MSPIKE_H5      RBL: Excellent reputation (+5)
- [195.121.94.186 listed in wl.mailspike.net]
+ 0.0 RCVD_IN_DNSWL_BLOCKED  RBL: ADMINISTRATOR NOTICE: The query to DNSWL
+ was blocked.  See
+ http://wiki.apache.org/spamassassin/DnsBlocklists#DnsBlocklists-dnsbl-block
+ for more information. [195.121.94.167 listed in list.dnswl.org]
  -0.1 DKIM_VALID_AU Message has a valid DKIM or DK signature from author's
  domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -102,10 +104,9 @@ X-Spam-Report: Spam detection software,
  not necessarily valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
-X-Headers-End: 1vDiiX-0002dv-VD
-X-Mailman-Approved-At: Tue, 28 Oct 2025 13:27:42 +0000
-Subject: [Jfs-discussion] [PATCH] nlink overflow in jfs_rename
+X-Headers-End: 1vDt2N-00056a-TJ
+Subject: [Jfs-discussion] [PATCH] dtInsertEntry can result in buffer
+ overflow on corrupted jfs filesystems
 X-BeenThere: jfs-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -121,53 +122,104 @@ From: Jori Koolstra via Jfs-discussion <jfs-discussion@lists.sourceforge.net>
 Reply-To: Jori Koolstra <jkoolstra@xs4all.nl>
 Cc: jkoolstra@xs4all.nl, jfs-discussion@lists.sourceforge.net,
  linux-kernel@vger.kernel.org,
- syzbot+9131ddfd7870623b719f@syzkaller.appspotmail.com
+ syzbot+cd7590567cc388f064f3@syzkaller.appspotmail.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Errors-To: jfs-discussion-bounces@lists.sourceforge.net
 
-If nlink is maximal for a directory (-1) and inside that directory you
-perform a rename for some child directory (not moving from the parent),
-then the nlink of the first directory is first incremented and later
-decremented. Normally this is fine, but when nlink = -1 this causes a
-wrap around to 0, and then drop_nlink issues a warning.
+Syzbot reported a general protection fault in inode_set_ctime_current.
+This resulted from the following circumstances: when creating a new file
+via dtInsert, BT_GETSEARCH may yield a pointer to a dtroot which is
+embedded directly in the jfs_inode_info. When finally dtInsertEntry is
+called, if the freelist field or any next field of a slot of the dtpage
+is corrupted, this may result in memory corruption of the parent
+directory inode.
 
-After applying the patch syzbot no longer issues any warnings. I also
-ran some basic fs tests to look for any regressions.
+In this case the i_sb field was corrupted, which raised the gpf when
+in inode_set_ctime_current i_sb was dereferenced to access s_time_gran.
+
+I tested the patch using the syzbot reproducer and doing some basic
+filesystem operations on a fresh jfs fs, such as "cp -r /usr/include/
+/mnt/jfs/" and "rm -r /mnt/jfs/include/n*"
 
 Signed-off-by: Jori Koolstra <jkoolstra@xs4all.nl>
-Reported-by: syzbot+9131ddfd7870623b719f@syzkaller.appspotmail.com
-Closes: https://syzbot.org/bug?extid=9131ddfd7870623b719f
+Reported-by: syzbot+cd7590567cc388f064f3@syzkaller.appspotmail.com
+Closes: https://syzbot.org/bug?extid=cd7590567cc388f064f3
 ---
- fs/jfs/namei.c | 6 ++++--
- 1 file changed, 4 insertions(+), 2 deletions(-)
+ fs/jfs/jfs_dtree.c | 22 +++++++++++++++++-----
+ 1 file changed, 17 insertions(+), 5 deletions(-)
 
-diff --git a/fs/jfs/namei.c b/fs/jfs/namei.c
-index 65a218eba8fa..7879c049632b 100644
---- a/fs/jfs/namei.c
-+++ b/fs/jfs/namei.c
-@@ -1228,7 +1228,7 @@ static int jfs_rename(struct mnt_idmap *idmap, struct inode *old_dir,
- 				jfs_err("jfs_rename: dtInsert returned -EIO");
- 			goto out_tx;
- 		}
--		if (S_ISDIR(old_ip->i_mode))
-+		if (S_ISDIR(old_ip->i_mode) && old_dir != new_dir)
- 			inc_nlink(new_dir);
- 	}
- 	/*
-@@ -1244,7 +1244,9 @@ static int jfs_rename(struct mnt_idmap *idmap, struct inode *old_dir,
- 		goto out_tx;
- 	}
- 	if (S_ISDIR(old_ip->i_mode)) {
--		drop_nlink(old_dir);
-+		if (new_ip || old_dir != new_dir)
-+			drop_nlink(old_dir);
+diff --git a/fs/jfs/jfs_dtree.c b/fs/jfs/jfs_dtree.c
+index 0ab83bb7bbdf..e37278596afe 100644
+--- a/fs/jfs/jfs_dtree.c
++++ b/fs/jfs/jfs_dtree.c
+@@ -170,8 +170,8 @@ static void dtGetKey(dtpage_t * p, int i, struct component_name * key,
+ static int ciGetLeafPrefixKey(dtpage_t * lp, int li, dtpage_t * rp,
+ 			      int ri, struct component_name * key, int flag);
+ 
+-static void dtInsertEntry(dtpage_t * p, int index, struct component_name * key,
+-			  ddata_t * data, struct dt_lock **);
++static int dtInsertEntry(dtpage_t * p, int index, struct component_name * key,
++			 ddata_t * data, struct dt_lock **);
+ 
+ static void dtMoveEntry(dtpage_t * sp, int si, dtpage_t * dp,
+ 			struct dt_lock ** sdtlock, struct dt_lock ** ddtlock,
+@@ -891,7 +891,8 @@ int dtInsert(tid_t tid, struct inode *ip,
+ 	lv->length = 1;
+ 	dtlck->index++;
+ 
+-	dtInsertEntry(p, index, name, &data, &dtlck);
++	if ((rc = dtInsertEntry(p, index, name, &data, &dtlck)))
++		return rc;
+ 
+ 	/* linelock stbl of non-root leaf page */
+ 	if (!(p->header.flag & BT_ROOT)) {
+@@ -3625,9 +3626,10 @@ static void dtGetKey(dtpage_t * p, int i,	/* entry index */
+  * function: allocate free slot(s) and
+  *	     write a leaf/internal entry
+  *
+- * return: entry slot index
++ * * return: 0 - success;
++ *	   errno - failure;
+  */
+-static void dtInsertEntry(dtpage_t * p, int index, struct component_name * key,
++static int dtInsertEntry(dtpage_t * p, int index, struct component_name * key,
+ 			  ddata_t * data, struct dt_lock ** dtlock)
+ {
+ 	struct dtslot *h, *t;
+@@ -3649,6 +3651,10 @@ static void dtInsertEntry(dtpage_t * p, int index, struct component_name * key,
+ 
+ 	/* allocate a free slot */
+ 	hsi = fsi = p->header.freelist;
++	if (fsi >= ((p->header.flag & BT_ROOT) ? DTROOTMAXSLOT : p->header.maxslot)) {
++		jfs_err("Encountered corrupted dtpage before insert");
++		return -EIO;
++	}
+ 	h = &p->slot[fsi];
+ 	p->header.freelist = h->next;
+ 	--p->header.freecnt;
+@@ -3697,6 +3703,10 @@ static void dtInsertEntry(dtpage_t * p, int index, struct component_name * key,
+ 	while (klen) {
+ 		/* get free slot */
+ 		fsi = p->header.freelist;
++		if (fsi >= ((p->header.flag & BT_ROOT) ? DTROOTMAXSLOT : p->header.maxslot)) {
++			jfs_err("Encountered corrupted dtpage before insert");
++			return -EIO;
++		}
+ 		t = &p->slot[fsi];
+ 		p->header.freelist = t->next;
+ 		--p->header.freecnt;
+@@ -3774,6 +3784,8 @@ static void dtInsertEntry(dtpage_t * p, int index, struct component_name * key,
+ 
+ 	/* advance next available entry index of stbl */
+ 	++p->header.nextindex;
 +
- 		if (old_dir != new_dir) {
- 			/*
- 			 * Change inode number of parent for moved directory
++	return 0;
+ }
+ 
+ 
 -- 
-2.51.0
+2.51.1.dirty
 
 
 
