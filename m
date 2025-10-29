@@ -2,83 +2,82 @@ Return-Path: <jfs-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+jfs-discussion@lfdr.de
 Delivered-To: lists+jfs-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6D323C1756C
-	for <lists+jfs-discussion@lfdr.de>; Wed, 29 Oct 2025 00:24:20 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 94845C1B6E7
+	for <lists+jfs-discussion@lfdr.de>; Wed, 29 Oct 2025 15:54:17 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.sourceforge.net; s=beta; h=Content-Transfer-Encoding:Content-Type:Cc:
 	Reply-To:From:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:Subject:MIME-Version:Message-ID:Date:To:Sender:
-	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
-	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
-	bh=jWcyRrtVuLq9zgmUr67xzJnnB85hTBQi9yfh+9DegBc=; b=l6CqJZHOa5F3FHKLVfhoQk7Haa
-	x5xT1F/KvrHWQQOfhFXnrzfHyWSDlr3yjuAHemy4iYHVSDb08Ou5ZEHbx2Z34Sq2HBmwTl4dsn3ux
-	Jt+gpyfSMuig6b32klxcGxVwKnv223CU3XiqbaVV2ocq33Mw/a4g7eLc3hFFzT9VPC9w=;
+	List-Unsubscribe:List-Id:Subject:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:To:Sender:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=7NmQcMX7CUdMgkyKnqHwPv2SaiKkpO6JSe5M8WwJAkA=; b=FWAqJwlEFPBLKTHSa5202dCvrg
+	o2TcOEazkdfPPpHW5cKaxG2gP/q+bs0kYwic93HoK2gCl8IidGjxtBBz3vp+e2ycNAiVWZvGVK51k
+	wvKMZ6Y7iC8/XjA0kU5XjNr9LTrwCwMPUMUIfdL9TdAAMWyT8kXE7jjaLlXaNTep+78M=;
 Received: from [127.0.0.1] (helo=sfs-ml-1.v29.lw.sourceforge.com)
 	by sfs-ml-1.v29.lw.sourceforge.com with esmtp (Exim 4.95)
 	(envelope-from <jfs-discussion-bounces@lists.sourceforge.net>)
-	id 1vDt2R-0001vu-Nv;
-	Tue, 28 Oct 2025 23:23:39 +0000
+	id 1vE7Yg-0003rD-Nn;
+	Wed, 29 Oct 2025 14:53:54 +0000
 Received: from [172.30.29.66] (helo=mx.sourceforge.net)
  by sfs-ml-1.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
  TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (Exim 4.95)
- (envelope-from <jkoolstra@xs4all.nl>) id 1vDt2P-0001vn-LP
+ (envelope-from <brauner@kernel.org>) id 1vE7Yb-0003r3-GK
  for jfs-discussion@lists.sourceforge.net;
- Tue, 28 Oct 2025 23:23:37 +0000
+ Wed, 29 Oct 2025 14:53:49 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=sourceforge.net; s=x; h=Content-Transfer-Encoding:MIME-Version:Message-ID:
- Date:Subject:Cc:To:From:Sender:Reply-To:Content-Type:Content-ID:
- Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
- :Resent-Message-ID:In-Reply-To:References:List-Id:List-Help:List-Unsubscribe:
+ d=sourceforge.net; s=x; h=Content-Transfer-Encoding:Content-Type:MIME-Version
+ :References:In-Reply-To:Message-ID:Date:Subject:Cc:To:From:Sender:Reply-To:
+ Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
+ Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=CwganTJx+9Lw3WMSh7k5X4jbPqLypnHQOM2bPJvw16Q=; b=G9THaPJupARQKL/z3YmX63scvw
- DdfgB14EJqsCF7mKH6d/GW6kPXSmvvW+6sNbEJQ1Ag720ySD/B2ss+7iUNkoaFr/0hWIJ5KBZtXIJ
- 4y+ZstQD1/RohHikSLOfIz8vpwuNsKn/pHJtBazgc39ODn7/S4KIC9G28od/RQf4ck0o=;
+ bh=xyCpitqWMdD7yCXV5WYiC8JZkRSQX5VzGoFOnyLmDhI=; b=UQTyp7iR2luKkavT+xJxeFjRvm
+ zhTXmx6MdI562xWp1LwywTthMofkKEVRftHqUQnyyix2PmgkCFRon4MjOhaH98NFw0G4L82D1G49m
+ JDH8TOOLaQ5cn+mX38qTPiQUMijsXycFuarWCo6W4wYzwrSjOrqtmMFYWMrNxU3MNrUc=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
- h=Content-Transfer-Encoding:MIME-Version:Message-ID:Date:Subject:Cc:To:From
- :Sender:Reply-To:Content-Type:Content-ID:Content-Description:Resent-Date:
- Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
- References:List-Id:List-Help:List-Unsubscribe:List-Subscribe:List-Post:
- List-Owner:List-Archive; bh=CwganTJx+9Lw3WMSh7k5X4jbPqLypnHQOM2bPJvw16Q=; b=Z
- FyNhqEImrEdej7HbCPcd3p7WDnW9SPU0adPVG04HEGzmUbghqopesBT2k/6EzwUXuc9XGN5pjI6NJ
- yJPp+2XuWtfdvWNkUuvICwKxfQiPvTr/5sqi0i21fZCWNTRPiuxVcw8/JXFrAFiD8iu3l1fe/siCC
- 7ymgAgnwBCdBmLKA=;
-Received: from ewsoutbound.kpnmail.nl ([195.121.94.167])
+ h=Content-Transfer-Encoding:Content-Type:MIME-Version:References:
+ In-Reply-To:Message-ID:Date:Subject:Cc:To:From:Sender:Reply-To:Content-ID:
+ Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+ :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
+ List-Post:List-Owner:List-Archive;
+ bh=xyCpitqWMdD7yCXV5WYiC8JZkRSQX5VzGoFOnyLmDhI=; b=LSZaz2tp3lV9G5LUkTRfY71D3A
+ 7MkmwDjQs7Z3spihcK7KzOdG5sBvqRNmFqUie20714sAnfa17x8C6ENMdfs+XRjRm7F2RqgpbiBQp
+ 46vRZgXquK1go17NlXcqD51TYruI01MWe630b2bIPkSuqNGrHE0TZ3gIbqLohmnXrVtI=;
+Received: from tor.source.kernel.org ([172.105.4.254])
  by sfi-mx-2.v28.lw.sourceforge.com with esmtps
  (TLS1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.95)
- id 1vDt2N-00056a-TJ for jfs-discussion@lists.sourceforge.net;
- Tue, 28 Oct 2025 23:23:37 +0000
-X-KPN-MessageId: 653a8817-b455-11f0-a27d-005056abbe64
-Received: from smtp.kpnmail.nl (unknown [10.31.155.40])
- by ewsoutbound.so.kpn.org (Halon) with ESMTPS
- id 653a8817-b455-11f0-a27d-005056abbe64;
- Wed, 29 Oct 2025 00:25:31 +0100 (CET)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=xs4all.nl; s=xs4all01;
- h=mime-version:message-id:date:subject:to:from;
- bh=CwganTJx+9Lw3WMSh7k5X4jbPqLypnHQOM2bPJvw16Q=;
- b=R14oSUjhmj2pquwuRCcE8NiEP8x8ux60XVc+D6ACcpVcOffL06DqgXioV5ukDUBDD5I99jIDX3qmj
- a5ahmErglsZG2hwdWOOBMZ/lHAN+BfB6IkbcJmCOpchiX+QIoRtvZAcdD2Ax6xlvWM6GBFi7Fxrr2W
- oaGqr2I0XLSbTzQ5xeQHiekciMJ1lXtLC2qWqFKvytepAWQL2BOD7VrX4GSGM+BFBvssC7v289y8Wh
- pEXnnRkSUHUewp2x+kSy8xPU1JtdV/CXCcfYbG5JCdn/rBHCTOG8cR3tE3Fkfw3UaAi/EG/9fLZeW9
- KUJ6fGpPGXROAUgV35GN7BGer1Uh3bg==
-X-KPN-MID: 33|tzsCuW5x5QBoQxv6qLKTGow+iGUfXhzRjhiA/IpHMov+l+P/osS1hjmYvK8DuM6
- qeQra2J/YrM0pPdh4lWEJYuMx04EuMGg6QXV0aP2ppkk=
-X-KPN-VerifiedSender: Yes
-X-CMASSUN: 33|fMvmz9POJ2hi8AxioCD6qmoiI1Oyk2u6fX/3p9Nolvil3pAoWorKv8vPcatxfVT
- UEdrhNBTfuylyjoVoH1khfw==
-X-Originating-IP: 178.231.9.54
-Received: from daedalus.home (unknown [178.231.9.54])
- by smtp.xs4all.nl (Halon) with ESMTPSA
- id 1c1539a7-b455-11f0-b8c6-005056ab7584;
- Wed, 29 Oct 2025 00:23:29 +0100 (CET)
-To: Dave Kleikamp <shaggy@kernel.org>, Jeff Layton <jlayton@kernel.org>,
- Christian Brauner <brauner@kernel.org>,
- Gabriel Krisman Bertazi <gabriel@krisman.be>, NeilBrown <neil@brown.name>,
- Al Viro <viro@zeniv.linux.org.uk>
-Date: Wed, 29 Oct 2025 00:23:29 +0100
-Message-ID: <20251028232329.430752-1-jkoolstra@xs4all.nl>
-X-Mailer: git-send-email 2.51.1.dirty
+ id 1vE7Ya-0002M2-Tr for jfs-discussion@lists.sourceforge.net;
+ Wed, 29 Oct 2025 14:53:49 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+ by tor.source.kernel.org (Postfix) with ESMTP id 0F61660488;
+ Wed, 29 Oct 2025 14:53:38 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 75851C4CEF7;
+ Wed, 29 Oct 2025 14:53:32 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=k20201202; t=1761749617;
+ bh=4N52YreIUF0OvAY3AgVuCEeEXHoxvfXQKpRpGqGXt0Y=;
+ h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
+ b=d6i+Tpv81I+RjXv1z/ZhRypcIVRTtXraq5U9iBWHQnvW+KkPDvGl1y2pSEVEa6fIB
+ Ln4x6wF3AkfAIwedEj981+iIN+wR6+btNH1aNeYDoUlV+PjuWWLC2qWuazlwsZDUyc
+ w6JEXBhDvgpuQ5ndnBinokI18XbR2srsXkcfTy4nMLpLT5LYAeO4NgeFX7Rl3DUghg
+ Y+Yu9YxHcIql1AYDpRrZVpwWLKrTXwOqAs1s25OG2ooUXYEvx3zM1w82Fg077igDaB
+ eTslPtXRVVOcLbKtU1sdxtLF6P6BiY2N2GMT83pc272G20lW+5PvUy3M8NbUj0mjMG
+ oZaRyJXLYf5Iw==
+To: Christoph Hellwig <hch@lst.de>
+Date: Wed, 29 Oct 2025 15:53:19 +0100
+Message-ID: <20251029-fahrdienst-klaglos-834e266b8e42@brauner>
+X-Mailer: git-send-email 2.47.3
+In-Reply-To: <20251024080431.324236-1-hch@lst.de>
+References: <20251024080431.324236-1-hch@lst.de>
 MIME-Version: 1.0
+X-Developer-Signature: v=1; a=openpgp-sha256; l=2522; i=brauner@kernel.org;
+ h=from:subject:message-id; bh=4N52YreIUF0OvAY3AgVuCEeEXHoxvfXQKpRpGqGXt0Y=;
+ b=owGbwMvMwCU28Zj0gdSKO4sYT6slMWQyaaVPuJ+i9m4br2nk2mOv3Hiqzuq8kEi/LX5pZ5Jpp
+ 1hLQ0l0RykLgxgXg6yYIotDu0m43HKeis1GmRowc1iZQIYwcHEKwESObmZkePvsGoekGs9rdpbt
+ ZmmmOZrb/hx/6K49NePTtSDdi8HVvIwMl5ZenxV508LqDt+pO5cidkrwHHy3v/970ayNXZffekh
+ 4MAEA
+X-Developer-Key: i=brauner@kernel.org; a=openpgp;
+ fpr=4880B8C9BD0E5106FC070F4F7B3C391EFEA93624
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: Spam detection software,
  running on the system "sfi-spamd-2.hosts.colo.sdot.me", 
@@ -86,17 +85,13 @@ X-Spam-Report: Spam detection software,
  message has been attached to this so you can view it or label
  similar future email.  If you have any questions, see
  the administrator of that system for details.
- Content preview: Syzbot reported a general protection fault in
- inode_set_ctime_current.
- This resulted from the following circumstances: when creating a new file
- via dtInsert, BT_GETSEARCH may yield a pointer to a dtro [...] 
+ Content preview:  On Fri, 24 Oct 2025 10:04:11 +0200, Christoph Hellwig wrote:
+ > while looking at the filemap writeback code,
+ I think adding > filemap_fdatawrite_wbc
+ ended up being a mistake, as all but the original > [...] 
  Content analysis details:   (-0.2 points, 5.0 required)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 RCVD_IN_DNSWL_BLOCKED  RBL: ADMINISTRATOR NOTICE: The query to DNSWL
- was blocked.  See
- http://wiki.apache.org/spamassassin/DnsBlocklists#DnsBlocklists-dnsbl-block
- for more information. [195.121.94.167 listed in list.dnswl.org]
  -0.1 DKIM_VALID_AU Message has a valid DKIM or DK signature from author's
  domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -104,9 +99,9 @@ X-Spam-Report: Spam detection software,
  not necessarily valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
-X-Headers-End: 1vDt2N-00056a-TJ
-Subject: [Jfs-discussion] [PATCH] dtInsertEntry can result in buffer
- overflow on corrupted jfs filesystems
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - High trust sender
+X-Headers-End: 1vE7Ya-0002M2-Tr
+Subject: Re: [Jfs-discussion] filemap_* writeback interface cleanups v2
 X-BeenThere: jfs-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -118,109 +113,72 @@ List-Post: <mailto:jfs-discussion@lists.sourceforge.net>
 List-Help: <mailto:jfs-discussion-request@lists.sourceforge.net?subject=help>
 List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/jfs-discussion>, 
  <mailto:jfs-discussion-request@lists.sourceforge.net?subject=subscribe>
-From: Jori Koolstra via Jfs-discussion <jfs-discussion@lists.sourceforge.net>
-Reply-To: Jori Koolstra <jkoolstra@xs4all.nl>
-Cc: jkoolstra@xs4all.nl, jfs-discussion@lists.sourceforge.net,
- linux-kernel@vger.kernel.org,
- syzbot+cd7590567cc388f064f3@syzkaller.appspotmail.com
+From: Christian Brauner via Jfs-discussion
+ <jfs-discussion@lists.sourceforge.net>
+Reply-To: Christian Brauner <brauner@kernel.org>
+Cc: Latchesar Ionkov <lucho@ionkov.net>, jfs-discussion@lists.sourceforge.net,
+ Jan Kara <jack@suse.cz>, Dominique Martinet <asmadeus@codewreck.org>,
+ Christian Schoenebeck <linux_oss@crudebyte.com>,
+ Joseph Qi <joseph.qi@linux.alibaba.com>, linux-mm@kvack.org,
+ Mark Fasheh <mark@fasheh.com>,
+ "Matthew Wilcox \(Oracle\)" <willy@infradead.org>, linux-ext4@vger.kernel.org,
+ Josef Bacik <josef@toxicpanda.com>, linux-block@vger.kernel.org,
+ ocfs2-devel@lists.linux.dev, Alexander Viro <viro@zeniv.linux.org.uk>,
+ David Sterba <dsterba@suse.com>, Eric Van Hensbergen <ericvh@kernel.org>,
+ Christian Brauner <brauner@kernel.org>, Chris Mason <clm@fb.com>,
+ v9fs@lists.linux.dev, linux-xfs@vger.kernel.org, linux-fsdevel@vger.kernel.org,
+ linux-btrfs@vger.kernel.org, Joel Becker <jlbec@evilplan.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Errors-To: jfs-discussion-bounces@lists.sourceforge.net
 
-Syzbot reported a general protection fault in inode_set_ctime_current.
-This resulted from the following circumstances: when creating a new file
-via dtInsert, BT_GETSEARCH may yield a pointer to a dtroot which is
-embedded directly in the jfs_inode_info. When finally dtInsertEntry is
-called, if the freelist field or any next field of a slot of the dtpage
-is corrupted, this may result in memory corruption of the parent
-directory inode.
+On Fri, 24 Oct 2025 10:04:11 +0200, Christoph Hellwig wrote:
+> while looking at the filemap writeback code, I think adding
+> filemap_fdatawrite_wbc ended up being a mistake, as all but the original
+> btrfs caller should be using better high level interfaces instead.  This
+> series removes all these, switches btrfs to a more specific interfaces
+> and also cleans up another too low-level interface.  With this the
+> writeback_control that is passed to the writeback code is only
+> initialized in three places, although there are a lot more places in
+> file system code that never reach the common writeback code.
+> 
+> [...]
 
-In this case the i_sb field was corrupted, which raised the gpf when
-in inode_set_ctime_current i_sb was dereferenced to access s_time_gran.
+Applied to the vfs-6.19.writeback branch of the vfs/vfs.git tree.
+Patches in the vfs-6.19.writeback branch should appear in linux-next soon.
 
-I tested the patch using the syzbot reproducer and doing some basic
-filesystem operations on a fresh jfs fs, such as "cp -r /usr/include/
-/mnt/jfs/" and "rm -r /mnt/jfs/include/n*"
+Please report any outstanding bugs that were missed during review in a
+new review to the original patch series allowing us to drop it.
 
-Signed-off-by: Jori Koolstra <jkoolstra@xs4all.nl>
-Reported-by: syzbot+cd7590567cc388f064f3@syzkaller.appspotmail.com
-Closes: https://syzbot.org/bug?extid=cd7590567cc388f064f3
----
- fs/jfs/jfs_dtree.c | 22 +++++++++++++++++-----
- 1 file changed, 17 insertions(+), 5 deletions(-)
+It's encouraged to provide Acked-bys and Reviewed-bys even though the
+patch has now been applied. If possible patch trailers will be updated.
 
-diff --git a/fs/jfs/jfs_dtree.c b/fs/jfs/jfs_dtree.c
-index 0ab83bb7bbdf..e37278596afe 100644
---- a/fs/jfs/jfs_dtree.c
-+++ b/fs/jfs/jfs_dtree.c
-@@ -170,8 +170,8 @@ static void dtGetKey(dtpage_t * p, int i, struct component_name * key,
- static int ciGetLeafPrefixKey(dtpage_t * lp, int li, dtpage_t * rp,
- 			      int ri, struct component_name * key, int flag);
- 
--static void dtInsertEntry(dtpage_t * p, int index, struct component_name * key,
--			  ddata_t * data, struct dt_lock **);
-+static int dtInsertEntry(dtpage_t * p, int index, struct component_name * key,
-+			 ddata_t * data, struct dt_lock **);
- 
- static void dtMoveEntry(dtpage_t * sp, int si, dtpage_t * dp,
- 			struct dt_lock ** sdtlock, struct dt_lock ** ddtlock,
-@@ -891,7 +891,8 @@ int dtInsert(tid_t tid, struct inode *ip,
- 	lv->length = 1;
- 	dtlck->index++;
- 
--	dtInsertEntry(p, index, name, &data, &dtlck);
-+	if ((rc = dtInsertEntry(p, index, name, &data, &dtlck)))
-+		return rc;
- 
- 	/* linelock stbl of non-root leaf page */
- 	if (!(p->header.flag & BT_ROOT)) {
-@@ -3625,9 +3626,10 @@ static void dtGetKey(dtpage_t * p, int i,	/* entry index */
-  * function: allocate free slot(s) and
-  *	     write a leaf/internal entry
-  *
-- * return: entry slot index
-+ * * return: 0 - success;
-+ *	   errno - failure;
-  */
--static void dtInsertEntry(dtpage_t * p, int index, struct component_name * key,
-+static int dtInsertEntry(dtpage_t * p, int index, struct component_name * key,
- 			  ddata_t * data, struct dt_lock ** dtlock)
- {
- 	struct dtslot *h, *t;
-@@ -3649,6 +3651,10 @@ static void dtInsertEntry(dtpage_t * p, int index, struct component_name * key,
- 
- 	/* allocate a free slot */
- 	hsi = fsi = p->header.freelist;
-+	if (fsi >= ((p->header.flag & BT_ROOT) ? DTROOTMAXSLOT : p->header.maxslot)) {
-+		jfs_err("Encountered corrupted dtpage before insert");
-+		return -EIO;
-+	}
- 	h = &p->slot[fsi];
- 	p->header.freelist = h->next;
- 	--p->header.freecnt;
-@@ -3697,6 +3703,10 @@ static void dtInsertEntry(dtpage_t * p, int index, struct component_name * key,
- 	while (klen) {
- 		/* get free slot */
- 		fsi = p->header.freelist;
-+		if (fsi >= ((p->header.flag & BT_ROOT) ? DTROOTMAXSLOT : p->header.maxslot)) {
-+			jfs_err("Encountered corrupted dtpage before insert");
-+			return -EIO;
-+		}
- 		t = &p->slot[fsi];
- 		p->header.freelist = t->next;
- 		--p->header.freecnt;
-@@ -3774,6 +3784,8 @@ static void dtInsertEntry(dtpage_t * p, int index, struct component_name * key,
- 
- 	/* advance next available entry index of stbl */
- 	++p->header.nextindex;
-+
-+	return 0;
- }
- 
- 
--- 
-2.51.1.dirty
+Note that commit hashes shown below are subject to change due to rebase,
+trailer updates or similar. If in doubt, please check the listed branch.
 
+tree:   https://git.kernel.org/pub/scm/linux/kernel/git/vfs/vfs.git
+branch: vfs-6.19.writeback
+
+[01/10] mm: don't opencode filemap_fdatawrite_range in filemap_invalidate_inode
+        https://git.kernel.org/vfs/vfs/c/a21134b5d6cb
+[02/10] 9p: don't opencode filemap_fdatawrite_range in v9fs_mmap_vm_close
+        https://git.kernel.org/vfs/vfs/c/3c2e5cee5eb3
+[03/10] ocfs2: don't opencode filemap_fdatawrite_range in ocfs2_journal_submit_inode_data_buffers
+        https://git.kernel.org/vfs/vfs/c/890f141da068
+[04/10] btrfs: use the local tmp_inode variable in start_delalloc_inodes
+        https://git.kernel.org/vfs/vfs/c/41e52c644753
+[05/10] btrfs: push struct writeback_control into start_delalloc_inodes
+        https://git.kernel.org/vfs/vfs/c/c9501112e3cb
+[06/10] mm,btrfs: add a filemap_flush_nr helper
+        https://git.kernel.org/vfs/vfs/c/7fabcb7fbabb
+[07/10] mm: remove __filemap_fdatawrite
+        https://git.kernel.org/vfs/vfs/c/735965144806
+[08/10] mm: remove filemap_fdatawrite_wbc
+        https://git.kernel.org/vfs/vfs/c/1bcb413d0cd8
+[09/10] mm: remove __filemap_fdatawrite_range
+        https://git.kernel.org/vfs/vfs/c/45cbce5b8877
+[10/10] mm: rename filemap_fdatawrite_range_kick to filemap_flush_range
+        https://git.kernel.org/vfs/vfs/c/c28d67b33cbf
 
 
 _______________________________________________
