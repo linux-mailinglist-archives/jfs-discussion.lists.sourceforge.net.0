@@ -2,36 +2,36 @@ Return-Path: <jfs-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+jfs-discussion@lfdr.de
 Delivered-To: lists+jfs-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id 59212C3ACA0
-	for <lists+jfs-discussion@lfdr.de>; Thu, 06 Nov 2025 13:08:55 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id C3693C3CFDE
+	for <lists+jfs-discussion@lfdr.de>; Thu, 06 Nov 2025 19:02:26 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.sourceforge.net; s=beta; h=Content-Transfer-Encoding:Content-Type:Cc:
 	Reply-To:From:List-Subscribe:List-Help:List-Post:List-Archive:
 	List-Unsubscribe:List-Id:Subject:MIME-Version:References:In-Reply-To:Date:To:
 	Message-ID:Sender:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=kscmWVqOcqhn468FTQ5vFaqkA76c7eyMPkhSl2XsUBk=; b=i+Jv9G2vfcjhiQ7Xg1+xJyeUfW
-	CQYfyOyzPyOuNTSSQR4L+DPmAh+UO69giMWoU1YGsWsnve05cT4tq/2QWhxLySfsXAKf6Fe0uqV2i
-	5JAoK5ANBZ+hGTSuFN2wLpziPWhjoRVHv/ErVW8h8+7ooHnYm5lrjtWdv0i6HxbirYRE=;
+	bh=nH5eqiksu1G8cXX5QvC1cq6OrE9UTB4UcaYEDBA+SIM=; b=cZv7iGNm+L2BVeQGsI86A+Sxtc
+	/XzLkPNe8cIpWe07l9RTXCZ7rQsoCTTwh2A2TNmFn6Sdcjs0YssA716Zr8nPbuTS/yzX6E4doKpIy
+	eEyBQXrYgLj6SH3wLxd2wD5at8FgsEfb3rTfb73own2Cas/0vUv6Jthx1RQWYcyhISYo=;
 Received: from [127.0.0.1] (helo=sfs-ml-1.v29.lw.sourceforge.com)
 	by sfs-ml-1.v29.lw.sourceforge.com with esmtp (Exim 4.95)
 	(envelope-from <jfs-discussion-bounces@lists.sourceforge.net>)
-	id 1vGymf-0001vZ-63;
-	Thu, 06 Nov 2025 12:08:09 +0000
+	id 1vH4In-0001VS-ES;
+	Thu, 06 Nov 2025 18:01:41 +0000
 Received: from [172.30.29.66] (helo=mx.sourceforge.net)
  by sfs-ml-1.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
  TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (Exim 4.95)
- (envelope-from <jlayton@kernel.org>) id 1vGymd-0001vN-3m;
- Thu, 06 Nov 2025 12:08:07 +0000
+ (envelope-from <jlayton@kernel.org>) id 1vH4Im-0001VE-2S;
+ Thu, 06 Nov 2025 18:01:40 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=sourceforge.net; s=x; h=MIME-Version:Content-Transfer-Encoding:Content-Type
  :References:In-Reply-To:Date:Cc:To:From:Subject:Message-ID:Sender:Reply-To:
  Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
  Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=YAOKS7lc0gpoFpGjexdKrfNsswjNXPZWfZEtc2U76Ww=; b=lXZiQXR2+Xv0Rh8ZUY2WvfdliZ
- 8QDSvMEa7elvW/u7zfmFgAfUEyrpbpcisi/mmkDpmdSJD2i3ydwLJ8S/mfdWM5SlNVIGgqeggEo8T
- NNGWTWQNxPkcu7HuH73yd1hSeiN918JAllCP3kkJFOmGPdqcuvztVo1193y9x6KwUp6g=;
+ bh=j7/H12w2SuCZaWAEqKHKPf8HfmPzD2i63Bo72wwcPkY=; b=BgLIur9TuslE1xiKVnpZTjP0tc
+ 5mIKQ/AHlDqLHk+NCcsOiokkwTYslAQZgg/mnN0h4aWekrBDOQwzy/5TcPdkjj39DLR59e83IzOaT
+ ZFqZiyCvH1HyowvzsaVIVmqfgse0Fr5Umfx59TwaM9DJaJMxyBzNqAM0o4OVOUVakEHc=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
  h=MIME-Version:Content-Transfer-Encoding:Content-Type:References:
@@ -39,34 +39,35 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
  :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
  List-Post:List-Owner:List-Archive;
- bh=YAOKS7lc0gpoFpGjexdKrfNsswjNXPZWfZEtc2U76Ww=; b=c6Yf8K4+jvc0gZY3M16G/CsClj
- 6wb4giZS8Y+TAdg8jVZdp8qULam4X9oHZxmFx73cx9ucllK88cAoESISfHZGDjfjiJwmHfpSStDpL
- UeQ2rIKnNXldUkIzIWnMyNGVuV3VJFuyRH2NOpOPhmoLsv5+nFd2Qe6wQdvg1/xWPSkE=;
+ bh=j7/H12w2SuCZaWAEqKHKPf8HfmPzD2i63Bo72wwcPkY=; b=Fsf3HW1n6G6l/6P/WLWrDv7xqE
+ NNfGVJ0d0nThnkWoaI7S+eZXQ4AXjAzenJMMRIrJRrxfvEsuZo48PPoZz52zaQtjK68xOAXvWvJbD
+ QlR5mA73JWkpTuu1DY/xNStMkvuT3ce4xkVEIzaBgi7Z3AgdGzzAZ8yT2PaUdyiNdwvU=;
 Received: from sea.source.kernel.org ([172.234.252.31])
  by sfi-mx-2.v28.lw.sourceforge.com with esmtps
  (TLS1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.95)
- id 1vGymc-0004Ny-NY; Thu, 06 Nov 2025 12:08:07 +0000
+ id 1vH4Il-0006lQ-KP; Thu, 06 Nov 2025 18:01:40 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
- by sea.source.kernel.org (Postfix) with ESMTP id 32BDF40629;
- Thu,  6 Nov 2025 12:07:56 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 45F20C16AAE;
- Thu,  6 Nov 2025 12:07:49 +0000 (UTC)
+ by sea.source.kernel.org (Postfix) with ESMTP id ED6BE4401C;
+ Thu,  6 Nov 2025 18:01:28 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id EEBDCC116C6;
+ Thu,  6 Nov 2025 18:01:21 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=k20201202; t=1762430876;
- bh=ZSAzxLSRlNc7aHk3QQjU+Jn2ls3JaS1qMmMrb2/qUBM=;
+ s=k20201202; t=1762452088;
+ bh=dMhrb4k0NLQTzG9CdasHB8pF4LD/TSGmYxk7iyEfZqc=;
  h=Subject:From:To:Cc:Date:In-Reply-To:References:From;
- b=VNzO3H2p6CwGtTyPbapCQ3QGkVPCDj0Gu4NOPyGtgJgmaYMtgBtFdfn1FNy5iqr6k
- vTv6ROHNpjvXI02lRsoWF/DhOh/uJCOWIGFqPaPNS7PcJjp39waeiJOYKbRPTwfrbU
- SMsnPJn43Jpt7c11rBBLMRgkivM7erknhuvz0QL9AVVVAnNexDJAeVEkJChDqH2EN6
- 8oda1kH5rwMJrie0d3U1H9Cz/oc/yOp2QxL//jKy5IQ7gAhznsONMdqHufyuvBkH7Z
- SS+7EyYZ9fRip3j/kHm5jr4WaoPL6Ps8XzbBqB5YMKxF7epkNPAz2Ku5VI9q85h1pI
- bAkoyVAUJdhpA==
-Message-ID: <6758176514cdd6e2ceacb3bd0e4d63fb8784b7c6.camel@kernel.org>
+ b=WB7yYBKUOX/lE4WZY3g8QG/RvBLCrGkug7SbS55SwPbAyl2h/5knvTDVX7fdQR0dn
+ /r2h5zqyYYg4YpTcRl4bb17O2pbs9f8Ty0hcR98EO81Rf0vm6/jnoROJ67IgB19hqt
+ I87SfjjtAKzWhX9MRD5MywBx0QTkPqPYiAJOBd6v77Lsv/0J7lP9WK3VTY8q4pv96C
+ sc7RfxgdkgPYVq+mqEd1yKOjQfYhp6cb6cjLMpB5vtuslVF+sXEk2nxjPYIbxlTOp7
+ xn4l6FSe3rrrS+hYzYdvxTjPCAUZ0rwMgS5itofFbs6IlBmNPX49Qy46dSE4Ot/9So
+ ttgrYph6IXC0g==
+Message-ID: <f5927a9bb985b9ad241bc5f9fc32acfd35340222.camel@kernel.org>
 To: NeilBrown <neil@brown.name>
-Date: Thu, 06 Nov 2025 07:07:48 -0500
-In-Reply-To: <176237780417.634289.15818324160940255011@noble.neil.brown.name>
+Date: Thu, 06 Nov 2025 13:01:20 -0500
+In-Reply-To: <6758176514cdd6e2ceacb3bd0e4d63fb8784b7c6.camel@kernel.org>
 References: <20251105-create-excl-v1-1-a4cce035cc55@kernel.org>
  <176237780417.634289.15818324160940255011@noble.neil.brown.name>
+ <6758176514cdd6e2ceacb3bd0e4d63fb8784b7c6.camel@kernel.org>
 Autocrypt: addr=jlayton@kernel.org; prefer-encrypt=mutual;
  keydata=mQINBE6V0TwBEADXhJg7s8wFDwBMEvn0qyhAnzFLTOCHooMZyx7XO7dAiIhDSi7G1NPxw
  n8jdFUQMCR/GlpozMFlSFiZXiObE7sef9rTtM68ukUyZM4pJ9l0KjQNgDJ6Fr342Htkjxu/kFV1Wv
@@ -150,9 +151,9 @@ X-Spam-Report: Spam detection software,
  message has been attached to this so you can view it or label
  similar future email.  If you have any questions, see
  the administrator of that system for details.
- Content preview:  On Thu, 2025-11-06 at 08:23 +1100, NeilBrown wrote: > On Thu,
- 06 Nov 2025, Jeff Layton wrote: > > Since ce8644fcadc5 ("lookup_open(): expand
- the call of vfs_create()"), > > the "excl" argument to the [...] 
+ Content preview:  On Thu, 2025-11-06 at 07:07 -0500, Jeff Layton wrote: > On
+ Thu, 2025-11-06 at 08:23 +1100, NeilBrown wrote: > > On Thu, 06 Nov 2025,
+ Jeff Layton wrote: > > > Since ce8644fcadc5 ("lookup_open(): expand [...]
  Content analysis details:   (-0.2 points, 5.0 required)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
@@ -164,7 +165,7 @@ X-Spam-Report: Spam detection software,
  not necessarily valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.0 DKIMWL_WL_HIGH         DKIMwl.org - High trust sender
-X-Headers-End: 1vGymc-0004Ny-NY
+X-Headers-End: 1vH4Il-0006lQ-KP
 Subject: Re: [Jfs-discussion] [PATCH] vfs: remove the excl argument from the
  ->create() inode_operation
 X-BeenThere: jfs-discussion@lists.sourceforge.net
@@ -237,36 +238,56 @@ Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Errors-To: jfs-discussion-bounces@lists.sourceforge.net
 
-On Thu, 2025-11-06 at 08:23 +1100, NeilBrown wrote:
-> On Thu, 06 Nov 2025, Jeff Layton wrote:
-> > Since ce8644fcadc5 ("lookup_open(): expand the call of vfs_create()"),
-> > the "excl" argument to the ->create() inode_operation is always set to
-> > true. Remove it, and fix up all of the create implementations.
+On Thu, 2025-11-06 at 07:07 -0500, Jeff Layton wrote:
+> On Thu, 2025-11-06 at 08:23 +1100, NeilBrown wrote:
+> > On Thu, 06 Nov 2025, Jeff Layton wrote:
+> > > Since ce8644fcadc5 ("lookup_open(): expand the call of vfs_create()"),
+> > > the "excl" argument to the ->create() inode_operation is always set to
+> > > true. Remove it, and fix up all of the create implementations.
+> > 
+> > nonono
+> > 
+> > 
+> > > @@ -3802,7 +3802,7 @@ static struct dentry *lookup_open(struct nameidata *nd, struct file *file,
+> > >  		}
+> > >  
+> > >  		error = dir_inode->i_op->create(idmap, dir_inode, dentry,
+> > > -						mode, open_flag & O_EXCL);
+> > > +						mode);
+> > 
+> > "open_flag & O_EXCL" is not the same as "true".
+> > 
+> > It is true that "all calls to vfs_create() pass true for 'excl'"
+> > The same is NOT true for inode_operations.create.
+> > 
 > 
-> nonono
+> I don't think this is a problem, actually:
 > 
-> 
-> > @@ -3802,7 +3802,7 @@ static struct dentry *lookup_open(struct nameidata *nd, struct file *file,
-> >  		}
-> >  
-> >  		error = dir_inode->i_op->create(idmap, dir_inode, dentry,
-> > -						mode, open_flag & O_EXCL);
-> > +						mode);
-> 
-> "open_flag & O_EXCL" is not the same as "true".
-> 
-> It is true that "all calls to vfs_create() pass true for 'excl'"
-> The same is NOT true for inode_operations.create.
-> 
+> Almost all of the existing ->create() operations ignore the "excl"
+> bool. There are only two that I found that do not: NFS and GFS2. Both
+> of those have an ->atomic_open() operation though, so lookup_open()
+> will never call ->create() for those filesystems. This means that -
+> > create() _is_ always called with excl == true.
 
-I don't think this is a problem, actually:
+How about this for a revised changelog, which makes the above clear:
 
-Almost all of the existing ->create() operations ignore the "excl"
-bool. There are only two that I found that do not: NFS and GFS2. Both
-of those have an ->atomic_open() operation though, so lookup_open()
-will never call ->create() for those filesystems. This means that -
->create() _is_ always called with excl == true.
+    vfs: remove the excl argument from the ->create() inode_operation
+    
+    Since ce8644fcadc5 ("lookup_open(): expand the call of vfs_create()"),
+    the "excl" argument to the ->create() inode_operation is always set to
+    true in vfs_create().
+    
+    There is another call to ->create() in lookup_open() that can set it to
+    either true or false. All of the ->create() operations in the kernel
+    ignore the excl argument, except for NFS and GFS2. Both NFS and GFS2
+    have an ->atomic_open() operation, however so lookup_open() will never
+    call ->create() on those filesystems.
+    
+    Remove the "excl" argument from the ->create() operation, and fix up the
+    filesystems accordingly.
 
+Maybe we also need some comments or updates to Documentation/ to make
+it clear that ->create() always implies O_EXCL semantics?
 -- 
 Jeff Layton <jlayton@kernel.org>
 
