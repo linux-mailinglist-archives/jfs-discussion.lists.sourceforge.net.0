@@ -2,140 +2,102 @@ Return-Path: <jfs-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+jfs-discussion@lfdr.de
 Delivered-To: lists+jfs-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id BBDCDC3870E
-	for <lists+jfs-discussion@lfdr.de>; Thu, 06 Nov 2025 01:11:04 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3E10EC38708
+	for <lists+jfs-discussion@lfdr.de>; Thu, 06 Nov 2025 01:10:54 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.sourceforge.net; s=beta; h=Content-Transfer-Encoding:Content-Type:Cc:
+	d=lists.sourceforge.net; s=beta; h=Content-Transfer-Encoding:Content-Type:
 	Reply-To:From:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:Subject:Message-id:Date:References:In-reply-to:To:
-	MIME-Version:Sender:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=QnK4O7xTk2dzbWJZrN4v+cjkdO8EOuDtZyfROiTz3xQ=; b=Vb7hPhu7nkPI0Rpo/KGR88B4JR
-	ltpDQ1/KfyaK82lDXm62EiPBonD5sBC7ITK+AePFkcDez7GUOyfftAcHFPeblWT3ekCjhxm8soI5m
-	Q6aXD2KrZusX5unURLTcWMcaNQcgfeYsLinK5/Q5+unYPUJRIbNffu0cIj/Temw9yw4k=;
+	List-Unsubscribe:List-Id:Subject:To:Message-ID:Date:MIME-Version:Sender:Cc:
+	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
+	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
+	bh=y08V0zNYQGH4xyW9KbTL66IyvnQ4X9J3ReCnVu+bu20=; b=fD4ir0zGLNSyCl9d716y/ZGfyN
+	iF2jFvhTKUQ2XRWvBMRhP2nNhs3BKA0CFe+js7evhHYyT6TPUKaQX35q8erAZCTFc1bEKf0E2euak
+	jo9Z3G/09O0suJcDHVThhANMoRuojBDjyWpfup07MQRGosjmXxDYaF0gH9a29tHJ7X9I=;
 Received: from [127.0.0.1] (helo=sfs-ml-1.v29.lw.sourceforge.com)
 	by sfs-ml-1.v29.lw.sourceforge.com with esmtp (Exim 4.95)
 	(envelope-from <jfs-discussion-bounces@lists.sourceforge.net>)
-	id 1vGnaF-0001Np-IF;
-	Thu, 06 Nov 2025 00:10:35 +0000
+	id 1vGnaF-0001Nz-W9;
+	Thu, 06 Nov 2025 00:10:36 +0000
 Received: from [172.30.29.66] (helo=mx.sourceforge.net)
- by sfs-ml-2.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
- TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (Exim 4.95)
- (envelope-from <neilb@ownmail.net>) id 1vGlFk-0007Y8-Cd;
- Wed, 05 Nov 2025 21:41:17 +0000
+ by sfs-ml-4.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
+ TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (Exim 4.95) (envelope-from
+ <3NOcLaQkbAIEx34pfqqjwfuuni.lttlqjzxjwhtsyjsy.htr@M3KW2WVRGUFZ5GODRSRYTGD7.apphosting.bounces.google.com>)
+ id 1vGnZC-0001Pa-O1 for jfs-discussion@lists.sourceforge.net;
+ Thu, 06 Nov 2025 00:09:30 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=sourceforge.net; s=x; h=Reply-To:Message-id:Date:References:In-reply-to:
- Subject:Cc:To:From:MIME-Version:Content-Transfer-Encoding:Content-Type:Sender
- :Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
- Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
+ d=sourceforge.net; s=x; h=Content-Type:To:From:Subject:Message-ID:Date:
+ MIME-Version:Sender:Reply-To:Cc:Content-Transfer-Encoding:Content-ID:
+ Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+ :Resent-Message-ID:In-Reply-To:References:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=EVCZm+k0TFnzyISAYv/ad61W8yGyS+GgtniecPh35bI=; b=eA73GMg6ElSN8YjMpiIU/gMT05
- QGQLS5X0RvoOXJIhV7mdslc2j8WlqALL2fQ4nK2iQyqb0V9a7Iwmg3mj/sFtP8qyw3lGNXsuy+evQ
- Yt0iBw9MR7vSA86pwKqX8xsoolBqn+zGq9cv3SU1/hxThNq5TOCvWT+1cBUlYg/ZQtUM=;
+ bh=OTbAQ2M/nCFfHVZ9BV27LDugd86V/+z5TlraEbOVrw0=; b=PEGWXzlQStteN7yKsqEWLZWgNB
+ s4d/MAKAuvc613d5aBjiNvFQvo3JeAj7pfmOKyoOuPW898WfV/pb4pmA72NmeCs+CZBY9uwzxr9Im
+ 44OtRI6WKrZWrx9kJaHtaX2vev4EEr0aR09G0C3auo/jaIHkL98KHNktBFnxeNjC87Cw=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
- h=Reply-To:Message-id:Date:References:In-reply-to:Subject:Cc:To:From:
- MIME-Version:Content-Transfer-Encoding:Content-Type:Sender:Content-ID:
- Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
- :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
- List-Post:List-Owner:List-Archive;
- bh=EVCZm+k0TFnzyISAYv/ad61W8yGyS+GgtniecPh35bI=; b=QPWELDNJRVZMVGuig8tOv1vkfm
- ih1L1XV1kCdR+HGn0wVTS/0RV8aedTjudIwnAt0/NqtBB1kcC6OfWVAv9nYzlalsZ6BefSOGq5QbF
- RQHtX2z+wE/HEr78h4VI+zpgtYqByBJTHENVcE6D6x1FDd82rgi5LZZNZaTiJYDCeqCA=;
-Received: from flow-b5-smtp.messagingengine.com ([202.12.124.140])
+ h=Content-Type:To:From:Subject:Message-ID:Date:MIME-Version:Sender:Reply-To
+ :Cc:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+ Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+ References:List-Id:List-Help:List-Unsubscribe:List-Subscribe:List-Post:
+ List-Owner:List-Archive; bh=OTbAQ2M/nCFfHVZ9BV27LDugd86V/+z5TlraEbOVrw0=; b=I
+ GeVPyJK85IQrEVDzlxpmJnPqXdpwqJ1qNYsWm12ugpVlQ371CgIg3PFYEeCHfcJJoSNxhYo2oNtEe
+ S6e4ZU+sICXJc7bNsd4Y9TS61UJmHXx+xf3O9kDSs5vtlkXWHFuBshawKIp92/ifFKQd6Juj4nCPB
+ Ckbx2WtZjoVEvR9A=;
+Received: from mail-io1-f78.google.com ([209.85.166.78])
  by sfi-mx-2.v28.lw.sourceforge.com with esmtps
- (TLS1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.95)
- id 1vGlFk-0002BE-Ft; Wed, 05 Nov 2025 21:41:17 +0000
-Received: from phl-compute-03.internal (phl-compute-03.internal [10.202.2.43])
- by mailflow.stl.internal (Postfix) with ESMTP id 1739B1300C2C;
- Wed,  5 Nov 2025 16:24:03 -0500 (EST)
-Received: from phl-mailfrontend-01 ([10.202.2.162])
- by phl-compute-03.internal (MEProxy); Wed, 05 Nov 2025 16:24:05 -0500
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ownmail.net; h=
- cc:cc:content-transfer-encoding:content-type:content-type:date
- :date:from:from:in-reply-to:in-reply-to:message-id:mime-version
- :references:reply-to:reply-to:subject:subject:to:to; s=fm3; t=
- 1762377842; x=1762385042; bh=EVCZm+k0TFnzyISAYv/ad61W8yGyS+Ggtni
- ecPh35bI=; b=HmU5hGoPqokqzJCeAqGf4BLGNy0MGNPv7gplJ67n7ajHRRuR5XU
- QACgC7SBMngKWRr4nVPjJJgBKA3Q8lvkyUIGSJ1J47cOcYiClbPU1pS4MppGb5wh
- 2U2/xgadcENW/jgHJsJTyYYdk+1XjojR7/TQqmLQq3cUPGl27XnIya4CBHC1wN5U
- B+nehvMy/L9Mb2tEVTuU62Q/a0ARwc5MO2szCGIyxpVtm6vXzecjyFmyuGF+NoPC
- aDoFRHfQnTUA0wUc9ga83EokX5Vq/Y4zVF59Z0IqpO5AZkbSr//2iHDO/uH6Mdle
- v+KzAJeRAhAF2PY5f//xFYICp+6h/EtUY0Q==
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
- messagingengine.com; h=cc:cc:content-transfer-encoding
- :content-type:content-type:date:date:feedback-id:feedback-id
- :from:from:in-reply-to:in-reply-to:message-id:mime-version
- :references:reply-to:reply-to:subject:subject:to:to:x-me-proxy
- :x-me-sender:x-me-sender:x-sasl-enc; s=fm3; t=1762377842; x=
- 1762385042; bh=EVCZm+k0TFnzyISAYv/ad61W8yGyS+GgtniecPh35bI=; b=q
- SmEJgx4M8dlmgTjoUZkSr8FLucgLUEVlbd9odWDFkQcMJ+PFRsH9Y//0VRWWOa2P
- Ww7Nr0XlQSokRvZEPNvVMlDa6wHjsBAaK17Tal0oudel/kBoVldVw56udPXn9uh7
- Mczp91CekHgkQQrSfj7GW2ikHW7rCR3uH+ZZqm5byT0S1cyww1zJkHKJ+SuERDBe
- UBNUFH0g9LBeW66OTxBJSBU1+z1R+WJlAHRefWLPYecfVMfJsDxhw/7LXOajVkRK
- EY0gezm21MwMMJYPZofen2+s3eL3i0IyTk0/RNQdye2aRU/x2B6K2Dlf35uwcujj
- UVMV0x49c00E0JFs7mDIA==
-X-ME-Sender: <xms:asALaQBQoSVaUuTXtcG_GYkEHX7ZGK1IdW3-DpTTeAob7NvcdQnESw>
- <xme:asALaZvvSYTRURk71wOmt1sLYQpre30qKc9hcTtEoays4h59X1vNTOzcXv4ewIAT7
- PBP05Cv2IT0eKS3Y5hzt-pSpQXWpNcWFPc3z3tPuShZJnbiAw>
-X-ME-Received: <xmr:asALaV1K1vj_trpV4WX4Ug9tckywabHWFw4izsBwBHNEfUZdhT2LhWV0hKbStCEFmuTyATTpSjnEcu5m6FzT9u-CFv5Y_mYw-vIlsrnNGGDt>
-X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgeeffedrtdeggddukeegleejucetufdoteggodetrf
- dotffvucfrrhhofhhilhgvmecuhfgrshhtofgrihhlpdfurfetoffkrfgpnffqhgenuceu
- rghilhhouhhtmecufedttdenucesvcftvggtihhpihgvnhhtshculddquddttddmnecujf
- gurheptgfgggfhvfevufgjfhffkfhrsehtqhertddttdejnecuhfhrohhmpefpvghilheu
- rhhofihnuceonhgvihhlsgesohifnhhmrghilhdrnhgvtheqnecuggftrfgrthhtvghrnh
- epleejtdefgeeukeeiteduveehudevfeffvedutefgteduhfegvdfgtdeigeeuudejnecu
- vehluhhsthgvrhfuihiivgeptdenucfrrghrrghmpehmrghilhhfrhhomhepnhgvihhlsg
- esohifnhhmrghilhdrnhgvthdpnhgspghrtghpthhtohepleegpdhmohguvgepshhmthhp
- ohhuthdprhgtphhtthhopehvihhrohesiigvnhhivhdrlhhinhhugidrohhrghdruhhkpd
- hrtghpthhtohepfhhrrghnkhdrlhhisehvihhvohdrtghomhdprhgtphhtthhopehlihhn
- uhigqdigfhhssehvghgvrhdrkhgvrhhnvghlrdhorhhgpdhrtghpthhtoheplhhinhhugi
- dquhhnihhonhhfshesvhhgvghrrdhkvghrnhgvlhdrohhrghdprhgtphhtthhopehlihhn
- uhigqdhnihhlfhhssehvghgvrhdrkhgvrhhnvghlrdhorhhgpdhrtghpthhtoheplhhinh
- hugidqnhhfshesvhhgvghrrdhkvghrnhgvlhdrohhrghdprhgtphhtthhopehlihhnuhig
- qdhkvghrnhgvlhesvhhgvghrrdhkvghrnhgvlhdrohhrghdprhgtphhtthhopehlihhnuh
- igqdhhrghruggvnhhinhhgsehvghgvrhdrkhgvrhhnvghlrdhorhhgpdhrtghpthhtohep
- lhhinhhugidqfhhsuggvvhgvlhesvhhgvghrrdhkvghrnhgvlhdrohhrgh
-X-ME-Proxy: <xmx:asALafmPr_ZX1OBseZ_yN5P8ha0kcdOo70DqfQ-d7eox1J3FRhMuTg>
- <xmx:asALaYv6caGo7YOyqxlwHt-aa7xcS6ubR74B6joQPFkP4nVa857B-Q>
- <xmx:asALaQazXCEbXKvEWtOde9MGMuFd4iSpENdxHY6Br8A6SQLP9UCqOg>
- <xmx:asALaUc6XxQI42baNH5r4oVKLbArJeUxiTNL9duhGxUFeugLz9diCA>
- <xmx:csALaZ2nr3Xo9lu7ZwRVoMnu5vfNzgtS4RKi9tfb5i1b6hqQye68vliH>
-Feedback-ID: iab3e480c:Fastmail
-Received: by mail.messagingengine.com (Postfix) with ESMTPA; Wed,
- 5 Nov 2025 16:23:32 -0500 (EST)
+ (TLS1.2:ECDHE-RSA-AES128-GCM-SHA256:128) (Exim 4.95)
+ id 1vGnZC-00016D-5H for jfs-discussion@lists.sourceforge.net;
+ Thu, 06 Nov 2025 00:09:30 +0000
+Received: by mail-io1-f78.google.com with SMTP id
+ ca18e2360f4ac-937e5f9ea74so48508439f.1
+ for <jfs-discussion@lists.sourceforge.net>;
+ Wed, 05 Nov 2025 16:09:30 -0800 (PST)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20230601; t=1762387764; x=1762992564;
+ h=to:from:subject:message-id:date:mime-version:x-gm-message-state
+ :from:to:cc:subject:date:message-id:reply-to;
+ bh=OTbAQ2M/nCFfHVZ9BV27LDugd86V/+z5TlraEbOVrw0=;
+ b=A9PCoeU5f9tTwGj4YUWwUcaklfWBX9mqHpreLIdaioJPgV/5PtDOv7VUo3u8Db/dOa
+ K2Wg5MjspXaBbQ69O6yq9jx128gf4o5e9Mfn4BCXU2+6he0fnvS9v9hzQdaEMTJsTLDC
+ lcLGdivhdCU969F9RyyL1oqDG+g2wLNMLesUuoq6UYJMeH286wOumYW9IMymRGvo3jQ7
+ 7wXfoWWtVlki13pmfOuSX5NyqFilsdFlMWJM2IJUDe6GQ7opvRCJXMkiZNJs0ycjc8tj
+ z/cnk2gcFO3euD3U1FTF2E4j+bPU/W1jeBqkcFZrFOvR4idgDjhVhkDxl+MhNKCZL1aR
+ NJFA==
+X-Gm-Message-State: AOJu0YwWABGSoTYexCzGgDBJtdkcpfyBGyCdhfY56KNrTRBAYbLAcF5k
+ FxcIVQ2Uqmlp0RCq2Y8/KxzwpaVuxXMmThCKfCZtfcMfllqooV70Q7fKSMw/CKvfvnXNmk/RUlT
+ gL/9Mu9l3SfoIZASv1ULA5pzuIhq8euLwWD9WPmUj4ZVyjpNnLpOZveck5hfGcA==
+X-Google-Smtp-Source: AGHT+IFyxfNhzxUVWRmkkPT+ZrPYGb7DmKIXoPjVutiS3OEQ2ZIHRrLEh6mPuUoziz9D8L/I2Yv+kJEyCy7Mpd5rUFd53ZH4mnU3
 MIME-Version: 1.0
-To: "Jeff Layton" <jlayton@kernel.org>
-In-reply-to: <20251105-create-excl-v1-1-a4cce035cc55@kernel.org>
-References: <20251105-create-excl-v1-1-a4cce035cc55@kernel.org>
-Date: Thu, 06 Nov 2025 08:23:24 +1100
-Message-id: <176237780417.634289.15818324160940255011@noble.neil.brown.name>
-X-Spam-Score: -0.2 (/)
+X-Received: by 2002:a05:6e02:3182:b0:433:27c1:75c4 with SMTP id
+ e9e14a558f8ab-433407dac54mr85725185ab.31.1762387764377; Wed, 05 Nov 2025
+ 16:09:24 -0800 (PST)
+Date: Wed, 05 Nov 2025 16:09:24 -0800
+X-Google-Appengine-App-Id: s~syzkaller
+X-Google-Appengine-App-Id-Alias: syzkaller
+Message-ID: <690be734.050a0220.baf87.007a.GAE@google.com>
+To: jfs-discussion@lists.sourceforge.net, linux-kernel@vger.kernel.org, 
+ shaggy@kernel.org, syzkaller-bugs@googlegroups.com
+X-Spam-Score: 0.3 (/)
 X-Spam-Report: Spam detection software,
  running on the system "sfi-spamd-1.hosts.colo.sdot.me", 
  has NOT identified this incoming email as spam.  The original
  message has been attached to this so you can view it or label
  similar future email.  If you have any questions, see
  the administrator of that system for details.
- Content preview:  On Thu, 06 Nov 2025, Jeff Layton wrote: > Since ce8644fcadc5
- ("lookup_open(): expand the call of vfs_create()"), > the "excl" argument
- to the ->create() inode_operation is always set to > true. Remove [...] 
- Content analysis details:   (-0.2 points, 5.0 required)
+ Content preview:  Hello,
+ syzbot found the following issue on: HEAD commit: 691d401c7e0e
+ Merge tag 'spi-fix-v6.18-rc3' of git://git.ke.. git tree: upstream console
+ output: https://syzkaller.appspot.com/x/log.txt?x=1698c292580000 kernel
+ config: https://syzkaller.a [...] 
+ Content analysis details:   (0.3 points, 5.0 required)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU Message has a valid DKIM or DK signature from author's
- domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature,
- not necessarily valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.0 FREEMAIL_FROM Sender email is commonly abused enduser mail provider
- [neilb(at)ownmail.net]
-X-Headers-End: 1vGlFk-0002BE-Ft
+ 0.3 FROM_LOCAL_HEX         From: localpart has long hexadecimal sequence
+ 0.0 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level mail
+ domains are different
+X-Headers-End: 1vGnZC-00016D-5H
 X-Mailman-Approved-At: Thu, 06 Nov 2025 00:10:34 +0000
-Subject: Re: [Jfs-discussion] [PATCH] vfs: remove the excl argument from the
- ->create() inode_operation
+Subject: [Jfs-discussion] [syzbot] [jfs?] BUG: corrupted list in dbUpdatePMap
 X-BeenThere: jfs-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -147,88 +109,105 @@ List-Post: <mailto:jfs-discussion@lists.sourceforge.net>
 List-Help: <mailto:jfs-discussion-request@lists.sourceforge.net?subject=help>
 List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/jfs-discussion>, 
  <mailto:jfs-discussion-request@lists.sourceforge.net?subject=subscribe>
-From: NeilBrown via Jfs-discussion <jfs-discussion@lists.sourceforge.net>
-Reply-To: NeilBrown <neil@brown.name>
-Cc: NeilBrown <neilb@ownmail.net>, Latchesar Ionkov <lucho@ionkov.net>,
- Paulo Alcantara <pc@manguebit.org>, Mike Marshall <hubcap@omnibond.com>,
- linux-xfs@vger.kernel.org, Tyler Hicks <code@tyhicks.com>,
- devel@lists.orangefs.org, Shyam Prasad N <sprasad@microsoft.com>,
- Jan Harkes <jaharkes@cs.cmu.edu>, linux-um@lists.infradead.org,
- Alexander Viro <viro@zeniv.linux.org.uk>,
- Ronnie Sahlberg <ronniesahlberg@gmail.com>,
- John Paul Adrian Glaubitz <glaubitz@physik.fu-berlin.de>,
- Eric Van Hensbergen <ericvh@kernel.org>,
- Zhihao Cheng <chengzhihao1@huawei.com>, Christian Brauner <brauner@kernel.org>,
- linux-kernel@vger.kernel.org, linux-fsdevel@vger.kernel.org,
- Andrew Morton <akpm@linux-foundation.org>,
- Trond Myklebust <trondmy@kernel.org>, Dave Kleikamp <shaggy@kernel.org>,
- David Hildenbrand <david@redhat.com>, Jeff Layton <jlayton@kernel.org>,
- linux-cifs@vger.kernel.org, linux-nilfs@vger.kernel.org,
- Hugh Dickins <hughd@google.com>, codalist@coda.cs.cmu.edu,
- Namjae Jeon <linkinjeon@kernel.org>, Chao Yu <chao@kernel.org>,
- Yangtao Li <frank.li@vivo.com>, ocfs2-devel@lists.linux.dev,
- Jaegeuk Kim <jaegeuk@kernel.org>, OGAWA Hirofumi <hirofumi@mail.parknet.co.jp>,
- Theodore Ts'o <tytso@mit.edu>, Muchun Song <muchun.song@linux.dev>,
- "Gustavo A. R. Silva" <gustavoars@kernel.org>,
- linux-f2fs-devel@lists.sourceforge.net, gfs2@lists.linux.dev,
- Anna Schumaker <anna@kernel.org>, linux-efi@vger.kernel.org,
- Martin Brandenburg <martin@omnibond.com>, Kees Cook <kees@kernel.org>,
- Yuezhang Mo <yuezhang.mo@sony.com>, Carlos Maiolino <cem@kernel.org>,
- Chris Mason <clm@fb.com>, linux-mtd@lists.infradead.org,
- linux-hardening@vger.kernel.org, Marc Dionne <marc.dionne@auristor.com>,
- linux-afs@lists.infradead.org, Miklos Szeredi <miklos@szeredi.hu>,
- coda@cs.cmu.edu, Ilya Dryomov <idryomov@gmail.com>, linux-ext4@vger.kernel.org,
- Amir Goldstein <amir73il@gmail.com>,
- Baolin Wang <baolin.wang@linux.alibaba.com>, ceph-devel@vger.kernel.org,
- Oscar Salvador <osalvador@suse.de>, David Howells <dhowells@redhat.com>,
- linux-nfs@vger.kernel.org, Joseph Qi <joseph.qi@linux.alibaba.com>,
- samba-technical@lists.samba.org, Steve French <sfrench@samba.org>,
- Jeremy Kerr <jk@ozlabs.org>, ntfs3@lists.linux.dev,
- Hans de Goede <hansg@kernel.org>, jfs-discussion@lists.sourceforge.net,
- Jan Kara <jack@suse.cz>, Dominique Martinet <asmadeus@codewreck.org>,
- Christian Schoenebeck <linux_oss@crudebyte.com>,
- Bob Copeland <me@bobcopeland.com>,
- Konstantin Komarov <almaz.alexandrovich@paragon-software.com>,
- linux-mm@kvack.org, Andreas Dilger <adilger.kernel@dilger.ca>,
- Mikulas Patocka <mikulas@artax.karlin.mff.cuni.cz>,
- Ard Biesheuvel <ardb@kernel.org>,
- Anton Ivanov <anton.ivanov@cambridgegreys.com>,
- Andreas Gruenbacher <agruenba@redhat.com>, Richard Weinberger <richard@nod.at>,
- Mark Fasheh <mark@fasheh.com>, ecryptfs@vger.kernel.org,
- Tom Talpey <tom@talpey.com>, Bharath SM <bharathsm@microsoft.com>,
- "Tigran A. Aivazian" <aivazian.tigran@gmail.com>,
- David Sterba <dsterba@suse.com>, Xiubo Li <xiubli@redhat.com>,
- Ryusuke Konishi <konishi.ryusuke@gmail.com>, v9fs@lists.linux.dev,
- linux-unionfs@vger.kernel.org, Johannes Berg <johannes@sipsolutions.net>,
- Sungjong Seo <sj1557.seo@samsung.com>, David Woodhouse <dwmw2@infradead.org>,
- linux-karma-devel@lists.sourceforge.net, linux-btrfs@vger.kernel.org,
- Joel Becker <jlbec@evilplan.org>
+From: syzbot via Jfs-discussion <jfs-discussion@lists.sourceforge.net>
+Reply-To: syzbot <syzbot+4d0a0feb49c5138cac46@syzkaller.appspotmail.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Errors-To: jfs-discussion-bounces@lists.sourceforge.net
 
-On Thu, 06 Nov 2025, Jeff Layton wrote:
-> Since ce8644fcadc5 ("lookup_open(): expand the call of vfs_create()"),
-> the "excl" argument to the ->create() inode_operation is always set to
-> true. Remove it, and fix up all of the create implementations.
+Hello,
 
-nonono
+syzbot found the following issue on:
+
+HEAD commit:    691d401c7e0e Merge tag 'spi-fix-v6.18-rc3' of git://git.ke..
+git tree:       upstream
+console output: https://syzkaller.appspot.com/x/log.txt?x=1698c292580000
+kernel config:  https://syzkaller.appspot.com/x/.config?x=41ad820f608cb833
+dashboard link: https://syzkaller.appspot.com/bug?extid=4d0a0feb49c5138cac46
+compiler:       Debian clang version 20.1.8 (++20250708063551+0c9f909b7976-1~exp1~20250708183702.136), Debian LLD 20.1.8
+syz repro:      https://syzkaller.appspot.com/x/repro.syz?x=150b5704580000
+C reproducer:   https://syzkaller.appspot.com/x/repro.c?x=15d75fe2580000
+
+Downloadable assets:
+disk image: https://storage.googleapis.com/syzbot-assets/d338706bec79/disk-691d401c.raw.xz
+vmlinux: https://storage.googleapis.com/syzbot-assets/d3ac35c22ff8/vmlinux-691d401c.xz
+kernel image: https://storage.googleapis.com/syzbot-assets/d8d6c3e88136/bzImage-691d401c.xz
+mounted in repro: https://storage.googleapis.com/syzbot-assets/47c6a6500cd9/mount_0.gz
+  fsck result: failed (log: https://syzkaller.appspot.com/x/fsck.log?x=166ee32f980000)
+
+IMPORTANT: if you fix the issue, please add the following tag to the commit:
+Reported-by: syzbot+4d0a0feb49c5138cac46@syzkaller.appspotmail.com
+
+list_add corruption. next is NULL.
+------------[ cut here ]------------
+kernel BUG at lib/list_debug.c:28!
+Oops: invalid opcode: 0000 [#1] SMP KASAN PTI
+CPU: 1 UID: 0 PID: 122 Comm: jfsCommit Not tainted syzkaller #0 PREEMPT_{RT,(full)} 
+Hardware name: Google Google Compute Engine/Google Compute Engine, BIOS Google 10/02/2025
+RIP: 0010:__list_add_valid_or_report+0xc3/0x130 lib/list_debug.c:27
+Code: 4c 89 f2 48 89 d9 e8 0c 88 a4 fc 90 0f 0b 48 c7 c7 20 de 3d 8b e8 fd 87 a4 fc 90 0f 0b 48 c7 c7 c0 de 3d 8b e8 ee 87 a4 fc 90 <0f> 0b 48 89 df e8 13 c3 7d fd 42 80 7c 2d 00 00 74 08 4c 89 e7 e8
+RSP: 0018:ffffc9000395fa20 EFLAGS: 00010246
+RAX: 0000000000000022 RBX: 0000000000000000 RCX: 270c5dfadb559700
+RDX: 0000000000000000 RSI: 0000000000000000 RDI: 0000000000000000
+RBP: 00000000000f0000 R08: 0000000000000000 R09: 0000000000000000
+R10: dffffc0000000000 R11: fffff5200072bee9 R12: 0000000000000000
+R13: dffffc0000000000 R14: 0000000000000004 R15: 1ffff92000632266
+FS:  0000000000000000(0000) GS:ffff888126ef9000(0000) knlGS:0000000000000000
+CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033
+CR2: 000056341fdb86c0 CR3: 0000000040a18000 CR4: 00000000003526f0
+Call Trace:
+ <TASK>
+ __list_add_valid include/linux/list.h:96 [inline]
+ __list_add include/linux/list.h:158 [inline]
+ list_add include/linux/list.h:177 [inline]
+ dbUpdatePMap+0x7e4/0xeb0 fs/jfs/jfs_dmap.c:577
+ txAllocPMap+0x57d/0x6b0 fs/jfs/jfs_txnmgr.c:2426
+ txUpdateMap+0x81e/0x9c0 fs/jfs/jfs_txnmgr.c:2364
+ txLazyCommit fs/jfs/jfs_txnmgr.c:2665 [inline]
+ jfs_lazycommit+0x3f1/0xa10 fs/jfs/jfs_txnmgr.c:2734
+ kthread+0x711/0x8a0 kernel/kthread.c:463
+ ret_from_fork+0x4bc/0x870 arch/x86/kernel/process.c:158
+ ret_from_fork_asm+0x1a/0x30 arch/x86/entry/entry_64.S:245
+ </TASK>
+Modules linked in:
+---[ end trace 0000000000000000 ]---
+RIP: 0010:__list_add_valid_or_report+0xc3/0x130 lib/list_debug.c:27
+Code: 4c 89 f2 48 89 d9 e8 0c 88 a4 fc 90 0f 0b 48 c7 c7 20 de 3d 8b e8 fd 87 a4 fc 90 0f 0b 48 c7 c7 c0 de 3d 8b e8 ee 87 a4 fc 90 <0f> 0b 48 89 df e8 13 c3 7d fd 42 80 7c 2d 00 00 74 08 4c 89 e7 e8
+RSP: 0018:ffffc9000395fa20 EFLAGS: 00010246
+RAX: 0000000000000022 RBX: 0000000000000000 RCX: 270c5dfadb559700
+RDX: 0000000000000000 RSI: 0000000000000000 RDI: 0000000000000000
+RBP: 00000000000f0000 R08: 0000000000000000 R09: 0000000000000000
+R10: dffffc0000000000 R11: fffff5200072bee9 R12: 0000000000000000
+R13: dffffc0000000000 R14: 0000000000000004 R15: 1ffff92000632266
+FS:  0000000000000000(0000) GS:ffff888126ef9000(0000) knlGS:0000000000000000
+CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033
+CR2: 000056341fdb86c0 CR3: 0000000040a18000 CR4: 00000000003526f0
 
 
-> @@ -3802,7 +3802,7 @@ static struct dentry *lookup_open(struct nameidata *nd, struct file *file,
->  		}
->  
->  		error = dir_inode->i_op->create(idmap, dir_inode, dentry,
-> -						mode, open_flag & O_EXCL);
-> +						mode);
+---
+This report is generated by a bot. It may contain errors.
+See https://goo.gl/tpsmEJ for more information about syzbot.
+syzbot engineers can be reached at syzkaller@googlegroups.com.
 
-"open_flag & O_EXCL" is not the same as "true".
+syzbot will keep track of this issue. See:
+https://goo.gl/tpsmEJ#status for how to communicate with syzbot.
 
-It is true that "all calls to vfs_create() pass true for 'excl'"
-The same is NOT true for inode_operations.create.
+If the report is already addressed, let syzbot know by replying with:
+#syz fix: exact-commit-title
 
-NeilBrown
+If you want syzbot to run the reproducer, reply with:
+#syz test: git://repo/address.git branch-or-commit-hash
+If you attach or paste a git patch, syzbot will apply it before testing.
 
+If you want to overwrite report's subsystems, reply with:
+#syz set subsystems: new-subsystem
+(See the list of subsystem names on the web dashboard)
+
+If the report is a duplicate of another one, reply with:
+#syz dup: exact-subject-of-another-report
+
+If you want to undo deduplication, reply with:
+#syz undup
 
 
 _______________________________________________
