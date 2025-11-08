@@ -2,145 +2,92 @@ Return-Path: <jfs-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+jfs-discussion@lfdr.de
 Delivered-To: lists+jfs-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id EC966C41FD1
-	for <lists+jfs-discussion@lfdr.de>; Sat, 08 Nov 2025 00:38:54 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6E8C5C42C10
+	for <lists+jfs-discussion@lfdr.de>; Sat, 08 Nov 2025 12:43:06 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.sourceforge.net; s=beta; h=Content-Transfer-Encoding:Content-Type:Cc:
-	Reply-To:From:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:Subject:Message-id:Date:References:In-reply-to:To:
-	MIME-Version:Sender:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=/OH32M7/FCHah8X7+zVF5qyS7wPukF2XAfgtYIo1oPc=; b=bWSuDCbJdcPsYg1sOTiwbf4DJz
-	iOfl1awdn/hytiApJbOx8gx6nsPotBYy7gFziDNgDIjrlg6qqQ6TDZop+cUM9p1ppTGiiCPSpd5mj
-	Bw5wNAab5JZtctQACdzORrRw7jzQbLJ9SVm952VCTtW3fQ6Rp5Yd3x414VdOztrcM5qw=;
-Received: from [127.0.0.1] (helo=sfs-ml-1.v29.lw.sourceforge.com)
-	by sfs-ml-1.v29.lw.sourceforge.com with esmtp (Exim 4.95)
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	Subject:In-Reply-To:From:References:To:MIME-Version:Date:Message-ID:Sender:
+	Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender
+	:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=7VxajWY4GFhU90smiG6zBpR0VB2F4NJJr+nd4zjBRAY=; b=mLDJGFggA5EO6Ymb1Oj5sESQgA
+	NU25qa36ULS6V+uMIo0FMQX03isv8+i96eLbX440c9tzjhEDqz1YJc6m5X3e2gUarBME4cbNqq5Ki
+	qS2r0yfGPcSbtukTNG79Rjl0jD91yRVkF7tjUFyUUgWk6w+g0Aqlm8URxlB1wI1dXyDw=;
+Received: from [127.0.0.1] (helo=sfs-ml-4.v29.lw.sourceforge.com)
+	by sfs-ml-4.v29.lw.sourceforge.com with esmtp (Exim 4.95)
 	(envelope-from <jfs-discussion-bounces@lists.sourceforge.net>)
-	id 1vHW21-0001q6-T0;
-	Fri, 07 Nov 2025 23:38:13 +0000
+	id 1vHhKx-00012l-7T;
+	Sat, 08 Nov 2025 11:42:31 +0000
 Received: from [172.30.29.66] (helo=mx.sourceforge.net)
- by sfs-ml-1.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
+ by sfs-ml-4.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
  TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (Exim 4.95)
- (envelope-from <neilb@ownmail.net>) id 1vHW20-0001ps-Of;
- Fri, 07 Nov 2025 23:38:13 +0000
+ (envelope-from <penguin-kernel@I-love.SAKURA.ne.jp>)
+ id 1vHhKv-00012f-8v for jfs-discussion@lists.sourceforge.net;
+ Sat, 08 Nov 2025 11:42:29 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=sourceforge.net; s=x; h=Reply-To:Message-id:Date:References:In-reply-to:
- Subject:Cc:To:From:MIME-Version:Content-Transfer-Encoding:Content-Type:Sender
- :Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
+ d=sourceforge.net; s=x; h=Content-Transfer-Encoding:Content-Type:In-Reply-To:
+ From:References:Cc:To:Subject:MIME-Version:Date:Message-ID:Sender:Reply-To:
+ Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
  Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=ZcRWR0XGRVohQHNqpTmVOGqvgKfDCmeABc6Q5B6kVA0=; b=KdxrmZeWMyR019nZZRIN8hcuPx
- 9eyZgz4rUbSmh2hKtknl4eNBvYSSROPh3r1L56W47UGmREXhIWe5K9AYlS9st2WACyjUDFsSVpsGS
- sxkLh2yGXBManXOjIrh6Hw5Oa6tNEgtfmtNRHYQzasIjt0KpUsruASGJ14clqawpX5TE=;
+ bh=8a4HP+d2FfUB1WSXBOua59ve8+CanSYwYah1hcLW/N0=; b=NAWFZH+NHqfwYvhigW+0wklmZd
+ I/H97ltjjQ1ffVmZ/ny6VLimRnbs4vGSqwb7kHJnZa88tJwHHYfA6o1g9J45QOUyR6ox7fg9CfMcC
+ 9eO56x4SvVhvpgVRSQpsrVlz7xiGqjb5Ktz2gbSqGYUEF0Q8Snhd60j5O2ZGL8rn8moY=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
- h=Reply-To:Message-id:Date:References:In-reply-to:Subject:Cc:To:From:
- MIME-Version:Content-Transfer-Encoding:Content-Type:Sender:Content-ID:
+ h=Content-Transfer-Encoding:Content-Type:In-Reply-To:From:References:Cc:To:
+ Subject:MIME-Version:Date:Message-ID:Sender:Reply-To:Content-ID:
  Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
  :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
  List-Post:List-Owner:List-Archive;
- bh=ZcRWR0XGRVohQHNqpTmVOGqvgKfDCmeABc6Q5B6kVA0=; b=HqEqFaEESdb8HaT5c+SsQReFx0
- WB9HvXa2t3LzteXGSnK5ge243Df6rplZWBMrX0xdmHSSyKtkz7Fk9f/p30yyRrbp1ZFW0YiCJ22Z0
- U7WSSHmhfJzad5UaToz/tO14ZFOzl/7C1zcCzyf3bEn2UZN7t+Q4dpWKa7WCdSUuxu5A=;
-Received: from flow-b3-smtp.messagingengine.com ([202.12.124.138])
+ bh=8a4HP+d2FfUB1WSXBOua59ve8+CanSYwYah1hcLW/N0=; b=Wznwu1B9LJgFi72E9zTtfkQP2N
+ zWZBbz/5NgHZocLeo9wAEAsDrOAN5NDjZr3Z6sT6POf3jVZrT9mDxRygpY4Gonx7TKzWSnThmHl+c
+ FaS5Psr2ZDds3vR7bgagS6uVHrCnqRT7orB+wQm0ifUMo88Y0auEp1ClwAl0/QJCzPLA=;
+Received: from www262.sakura.ne.jp ([202.181.97.72])
  by sfi-mx-2.v28.lw.sourceforge.com with esmtps
  (TLS1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.95)
- id 1vHW1z-0001AU-JX; Fri, 07 Nov 2025 23:38:12 +0000
-Received: from phl-compute-04.internal (phl-compute-04.internal [10.202.2.44])
- by mailflow.stl.internal (Postfix) with ESMTP id 3696013001EB;
- Fri,  7 Nov 2025 18:38:03 -0500 (EST)
-Received: from phl-mailfrontend-01 ([10.202.2.162])
- by phl-compute-04.internal (MEProxy); Fri, 07 Nov 2025 18:38:05 -0500
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ownmail.net; h=
- cc:cc:content-transfer-encoding:content-type:content-type:date
- :date:from:from:in-reply-to:in-reply-to:message-id:mime-version
- :references:reply-to:reply-to:subject:subject:to:to; s=fm3; t=
- 1762558683; x=1762565883; bh=ZcRWR0XGRVohQHNqpTmVOGqvgKfDCmeABc6
- Q5B6kVA0=; b=E4OMnSLCME0PmpfRUhAwNxIceLFq3/FAK5GtwevM7iICUCUuV5x
- chVCFB6fdmay7+ooFw0uv6Azy1ChdRqJqvR+mkrCRIpg73LnR+/X59PszjPwZ/rz
- 8CPuwHb/xwC5N1QSJvSaLdjI57addGAeTJRkLimMYRo6wgCZPhDhW+hNxZlCxMuJ
- hAPkIxK9zjio+5tvTHBm3a+bqM8CDMop81FHuSYzFd2NCfNmjV5NgDtUDa2Eyf25
- 3VuDhIEZvIbIrGiHuAnMLfItwaVgsWO7Q33GX+ggP6/jGDAegWeYBoQRn47aNko2
- PunoNsPduYvN8zewgDdm1dEy75bfZgIQYaQ==
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
- messagingengine.com; h=cc:cc:content-transfer-encoding
- :content-type:content-type:date:date:feedback-id:feedback-id
- :from:from:in-reply-to:in-reply-to:message-id:mime-version
- :references:reply-to:reply-to:subject:subject:to:to:x-me-proxy
- :x-me-sender:x-me-sender:x-sasl-enc; s=fm3; t=1762558683; x=
- 1762565883; bh=ZcRWR0XGRVohQHNqpTmVOGqvgKfDCmeABc6Q5B6kVA0=; b=a
- v+lzygtoc1HX4ZadDskwTpZwJtb1oG3peL6O0gr4iO5O5jYd+vaRP7/no7N27oF3
- EzxSXy6KoH6IHmfzzAjLPr0QATO37tQfExkHIQ/kLMEtcMIpZa9opvRREQRlIldG
- Q9D0WkBAPuYtKKTvP1JAxo1/Rx7n6G2bitd51++grbdTyzCWIWx3DW0/Nhivcp1A
- s7ZtqshuHntLjgQgQJ+crHlgWYzKyD5izePEyTID8AqXRiIHiDEt9qwC/wQbmAXC
- g/7fHF+pLwFi9swg49B8mIz8mdbJ+nyJwVG9AYbNRT/JTg129nrTn8NZkPgHxX+2
- 7BatW30ZGfoIC5BANZTig==
-X-ME-Sender: <xms:04IOaUS1llkqfnpj0hP0k9hck1nUGtgZum40Y0dtCM64yfklBqqJ5g>
- <xme:04IOaV4vrSP4x6QNhepje5WcwIcNTd1apJim4xvCzIrniX8SAiYXqKNGGHIuD1WKQ
- 33nU51_RKbR52XMFfrIspvHlzrBn079yJ8CWMmi6dxhoUy63Q>
-X-ME-Received: <xmr:04IOaT3MWpLgDLL757W25o-tMfqjGpak2vFwG2uUDPGL2GuLLHFgVWSCwflcxilp3PZXpLTiHfR-SxGJx5w8TjROMf9sHRUcJd4NP_ZWYt62>
-X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgeeffedrtdeggdduledutddtucetufdoteggodetrf
- dotffvucfrrhhofhhilhgvmecuhfgrshhtofgrihhlpdfurfetoffkrfgpnffqhgenuceu
- rghilhhouhhtmecufedttdenucesvcftvggtihhpihgvnhhtshculddquddttddmnegouf
- hprghmfghrlhculdeftddtmdenucfjughrpegtgfgghffvvefujghffffkrhesthhqredt
- tddtjeenucfhrhhomheppfgvihhluehrohifnhcuoehnvghilhgssehofihnmhgrihhlrd
- hnvghtqeenucggtffrrghtthgvrhhnpedvueetleekjeekveetteevtdekgeeludeifedt
- feetgfdttdeljefglefgveffieenucffohhmrghinhepkhgvrhhnvghlrdhorhhgnecuuf
- hprghmfghrlhephhhtthhpshemsddslhhorhgvrdhkvghrnhgvlhdrohhrghdsrghllhds
- jeeiieeffeeileekvdeltdehuddurdehfedtvdekfeekqdelqdgurghvvgdrhhgrnecuve
- hluhhsthgvrhfuihiivgeptdenucfrrghrrghmpehmrghilhhfrhhomhepnhgvihhlsges
- ohifnhhmrghilhdrnhgvthdpnhgspghrtghpthhtohepleejpdhmohguvgepshhmthhpoh
- huthdprhgtphhtthhopehvihhrohesiigvnhhivhdrlhhinhhugidrohhrghdruhhkpdhr
- tghpthhtohepfhhrrghnkhdrlhhisehvihhvohdrtghomhdprhgtphhtthhopehlihhnuh
- igqdigfhhssehvghgvrhdrkhgvrhhnvghlrdhorhhgpdhrtghpthhtoheplhhinhhugidq
- uhhnihhonhhfshesvhhgvghrrdhkvghrnhgvlhdrohhrghdprhgtphhtthhopehlihhnuh
- igqdhnihhlfhhssehvghgvrhdrkhgvrhhnvghlrdhorhhgpdhrtghpthhtoheplhhinhhu
- gidqnhhfshesvhhgvghrrdhkvghrnhgvlhdrohhrghdprhgtphhtthhopehlihhnuhigqd
- hkvghrnhgvlhesvhhgvghrrdhkvghrnhgvlhdrohhrghdprhgtphhtthhopehlihhnuhig
- qdhhrghruggvnhhinhhgsehvghgvrhdrkhgvrhhnvghlrdhorhhgpdhrtghpthhtoheplh
- hinhhugidqfhhsuggvvhgvlhesvhhgvghrrdhkvghrnhgvlhdrohhrgh
-X-ME-Proxy: <xmx:04IOaUUP8Agp5i-ePskgdOIZ3qDw3X8wH2n0PkSgIS-qUH6nBwUnqg>
- <xmx:04IOaTnQGxLDK6TRtOgEGVijEWvd6FvZOuwL0vyqcWwYM4LX-zVZXA>
- <xmx:04IOaVhEuGeVrKovELx7lzKD-9IxEW9YEYZ2LQZX-iUA996QSWwOgg>
- <xmx:04IOab5K6Z-7wWhbIK2-S_EvLNyL4_2HwgPfi2l7GSRp7-b2X_0qug>
- <xmx:24IOabMc8-grgTNo-sBp23kB4IC_01hhvLJuap-Y8_HG_nozNoQTctxM>
-Feedback-ID: iab3e480c:Fastmail
-Received: by mail.messagingengine.com (Postfix) with ESMTPA; Fri,
- 7 Nov 2025 18:37:32 -0500 (EST)
+ id 1vHhKu-0002o4-DZ for jfs-discussion@lists.sourceforge.net;
+ Sat, 08 Nov 2025 11:42:29 +0000
+Received: from www262.sakura.ne.jp (localhost [127.0.0.1])
+ by www262.sakura.ne.jp (8.15.2/8.15.2) with ESMTP id 5A8AJwlI005978;
+ Sat, 8 Nov 2025 19:19:58 +0900 (JST)
+ (envelope-from penguin-kernel@I-love.SAKURA.ne.jp)
+Received: from [192.168.1.10] (M106072142033.v4.enabler.ne.jp [106.72.142.33])
+ (authenticated bits=0)
+ by www262.sakura.ne.jp (8.15.2/8.15.2) with ESMTPSA id 5A8AJvkD005975
+ (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=NO);
+ Sat, 8 Nov 2025 19:19:57 +0900 (JST)
+ (envelope-from penguin-kernel@I-love.SAKURA.ne.jp)
+Message-ID: <c3b11943-f8ea-4283-9d88-e442bc8ff547@I-love.SAKURA.ne.jp>
+Date: Sat, 8 Nov 2025 19:19:55 +0900
 MIME-Version: 1.0
-To: "Jeff Layton" <jlayton@kernel.org>
-In-reply-to: <f5a2c41e4f272fef9f1525e17b494dd4b4bcb529.camel@kernel.org>
-References: <20251107-create-excl-v2-1-f678165d7f3f@kernel.org>,
- <176255458305.634289.5577159882824096330@noble.neil.brown.name>,
- <87ikfl1nfe.fsf@trenco.lwn.net>,
- <f5a2c41e4f272fef9f1525e17b494dd4b4bcb529.camel@kernel.org>
-Date: Sat, 08 Nov 2025 10:37:30 +1100
-Message-id: <176255865045.634289.1814933499430115577@noble.neil.brown.name>
-X-Spam-Score: -0.2 (/)
+User-Agent: Mozilla Thunderbird
+To: ssrane_b23@ee.vjti.ac.in, shaggy@kernel.org
+Newsgroups: gmane.linux.kernel
+References: <20251107200645.149093-1-ssranevjti@gmail.com>
+Content-Language: en-US
+From: Tetsuo Handa <penguin-kernel@I-love.SAKURA.ne.jp>
+In-Reply-To: <20251107200645.149093-1-ssranevjti@gmail.com>
+X-Virus-Status: clean
+X-Anti-Virus-Server: fsav202.rs.sakura.ne.jp
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: Spam detection software,
  running on the system "sfi-spamd-2.hosts.colo.sdot.me", 
  has NOT identified this incoming email as spam.  The original
  message has been attached to this so you can view it or label
  similar future email.  If you have any questions, see
  the administrator of that system for details.
- Content preview:  On Sat, 08 Nov 2025, Jeff Layton wrote: > On Fri, 2025-11-07
- at 15:35 -0700, Jonathan Corbet wrote: > > NeilBrown <neilb@ownmail.net>
- writes: > > > > > On Sat, 08 Nov 2025, Jeff Layton wrote: > > > > [...] 
- Content analysis details:   (-0.2 points, 5.0 required)
+ Content preview:  On 2025/11/08 5:06,
+ ssrane_b23@ee.vjti.ac.in wrote: > Reported-by:
+ syzbot+cfc7cab3bb6eaa7c4de2@syzkaller.appspotmail.com > Closes:
+ https://syzkaller.appspot.com/bug?extid=cfc7cab3bb6eaa7c4de2
+ > Signed [...] 
+ Content analysis details:   (0.0 points, 5.0 required)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.1 DKIM_VALID_AU Message has a valid DKIM or DK signature from author's
- domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature,
- not necessarily valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.0 FREEMAIL_FROM Sender email is commonly abused enduser mail provider
- [neilb(at)ownmail.net]
-X-Headers-End: 1vHW1z-0001AU-JX
-Subject: Re: [Jfs-discussion] LLM disclosure (was: [PATCH v2] vfs: remove
- the excl argument from the ->create() inode_operation)
+X-Headers-End: 1vHhKu-0002o4-DZ
+Subject: Re: [Jfs-discussion] [PATCH] jfs: Initialize synclist in metapage
+ allocation
 X-BeenThere: jfs-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -152,116 +99,22 @@ List-Post: <mailto:jfs-discussion@lists.sourceforge.net>
 List-Help: <mailto:jfs-discussion-request@lists.sourceforge.net?subject=help>
 List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/jfs-discussion>, 
  <mailto:jfs-discussion-request@lists.sourceforge.net?subject=subscribe>
-From: NeilBrown via Jfs-discussion <jfs-discussion@lists.sourceforge.net>
-Reply-To: NeilBrown <neil@brown.name>
-Cc: NeilBrown <neilb@ownmail.net>, Latchesar Ionkov <lucho@ionkov.net>,
- Paulo Alcantara <pc@manguebit.org>, Mike Marshall <hubcap@omnibond.com>,
- linux-xfs@vger.kernel.org, Tyler Hicks <code@tyhicks.com>,
- devel@lists.orangefs.org, Shyam Prasad N <sprasad@microsoft.com>,
- Jan Harkes <jaharkes@cs.cmu.edu>, linux-um@lists.infradead.org,
- Alexander Viro <viro@zeniv.linux.org.uk>,
- Ronnie Sahlberg <ronniesahlberg@gmail.com>,
- John Paul Adrian Glaubitz <glaubitz@physik.fu-berlin.de>,
- Eric Van Hensbergen <ericvh@kernel.org>,
- Zhihao Cheng <chengzhihao1@huawei.com>, Christian Brauner <brauner@kernel.org>,
- linux-kernel@vger.kernel.org, linux-fsdevel@vger.kernel.org,
- Andrew Morton <akpm@linux-foundation.org>,
- Trond Myklebust <trondmy@kernel.org>, Dave Kleikamp <shaggy@kernel.org>,
- David Hildenbrand <david@redhat.com>, linux-cifs@vger.kernel.org,
- linux-nilfs@vger.kernel.org, Hugh Dickins <hughd@google.com>,
- codalist@coda.cs.cmu.edu, Namjae Jeon <linkinjeon@kernel.org>,
- Chao Yu <chao@kernel.org>, Yangtao Li <frank.li@vivo.com>,
- Miklos Szeredi <miklos@szeredi.hu>, Jaegeuk Kim <jaegeuk@kernel.org>,
- OGAWA Hirofumi <hirofumi@mail.parknet.co.jp>, Theodore Ts'o <tytso@mit.edu>,
- ocfs2-devel@lists.linux.dev, Muchun Song <muchun.song@linux.dev>,
- "Gustavo A. R. Silva" <gustavoars@kernel.org>,
- linux-f2fs-devel@lists.sourceforge.net, gfs2@lists.linux.dev,
- Anna Schumaker <anna@kernel.org>, linux-efi@vger.kernel.org,
- Martin Brandenburg <martin@omnibond.com>, Kees Cook <kees@kernel.org>,
- Yuezhang Mo <yuezhang.mo@sony.com>, Carlos Maiolino <cem@kernel.org>,
- Chris Mason <clm@fb.com>, linux-mtd@lists.infradead.org,
- linux-hardening@vger.kernel.org, Marc Dionne <marc.dionne@auristor.com>,
- linux-afs@lists.infradead.org, Jonathan Corbet <corbet@lwn.net>,
- linux-doc@vger.kernel.org, "Matthew Wilcox \(Oracle\)" <willy@infradead.org>,
- coda@cs.cmu.edu, Ilya Dryomov <idryomov@gmail.com>, linux-ext4@vger.kernel.org,
- Amir Goldstein <amir73il@gmail.com>,
- Baolin Wang <baolin.wang@linux.alibaba.com>, ceph-devel@vger.kernel.org,
- Oscar Salvador <osalvador@suse.de>, David Howells <dhowells@redhat.com>,
- linux-nfs@vger.kernel.org, Joseph Qi <joseph.qi@linux.alibaba.com>,
- samba-technical@lists.samba.org, Steve French <sfrench@samba.org>,
- Jeremy Kerr <jk@ozlabs.org>, ntfs3@lists.linux.dev,
- Hans de Goede <hansg@kernel.org>, jfs-discussion@lists.sourceforge.net,
- Jan Kara <jack@suse.cz>, Dominique Martinet <asmadeus@codewreck.org>,
- Christian Schoenebeck <linux_oss@crudebyte.com>,
- Bob Copeland <me@bobcopeland.com>,
- Konstantin Komarov <almaz.alexandrovich@paragon-software.com>,
- linux-mm@kvack.org, Andreas Dilger <adilger.kernel@dilger.ca>,
- Mikulas Patocka <mikulas@artax.karlin.mff.cuni.cz>,
- Ard Biesheuvel <ardb@kernel.org>,
- Anton Ivanov <anton.ivanov@cambridgegreys.com>,
- Andreas Gruenbacher <agruenba@redhat.com>, Richard Weinberger <richard@nod.at>,
- Mark Fasheh <mark@fasheh.com>, ecryptfs@vger.kernel.org,
- Tom Talpey <tom@talpey.com>, Bharath SM <bharathsm@microsoft.com>,
- "Tigran A. Aivazian" <aivazian.tigran@gmail.com>,
- David Sterba <dsterba@suse.com>, Xiubo Li <xiubli@redhat.com>,
- Ryusuke Konishi <konishi.ryusuke@gmail.com>, v9fs@lists.linux.dev,
- linux-unionfs@vger.kernel.org, Johannes Berg <johannes@sipsolutions.net>,
- Sungjong Seo <sj1557.seo@samsung.com>, David Woodhouse <dwmw2@infradead.org>,
- linux-karma-devel@lists.sourceforge.net, linux-btrfs@vger.kernel.org,
- Joel Becker <jlbec@evilplan.org>
+Cc: shivankg@amd.com, jfs-discussion@lists.sourceforge.net,
+ david.hunter.linux@gmail.com, david@redhat.com, linux-kernel@vger.kernel.org,
+ syzbot+cfc7cab3bb6eaa7c4de2@syzkaller.appspotmail.com, khalid@kernel.org,
+ skhan@linuxfoundation.org, dsterba@suse.com, akpm@linux-foundation.org,
+ linux-kernel-mentees@lists.linux.dev
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Errors-To: jfs-discussion-bounces@lists.sourceforge.net
 
-On Sat, 08 Nov 2025, Jeff Layton wrote:
-> On Fri, 2025-11-07 at 15:35 -0700, Jonathan Corbet wrote:
-> > NeilBrown <neilb@ownmail.net> writes:
-> > 
-> > > On Sat, 08 Nov 2025, Jeff Layton wrote:
-> > 
-> > > > Full disclosure: I did use Claude code to generate the first
-> > > > approximation of this patch, but I had to fix a number of things that it
-> > > > missed.  I probably could have given it better prompts. In any case, I'm
-> > > > not sure how to properly attribute this (or if I even need to).
-> > > 
-> > > My understanding is that if you fully understand (and can defend) the
-> > > code change with all its motivations and implications as well as if you
-> > > had written it yourself, then you don't need to attribute whatever fancy
-> > > text editor or IDE (e.g.  Claude) that you used to help produce the
-> > > patch.
-> > 
-> > The proposed policy for such things is here, under review right now:
-> > 
-> >   https://lore.kernel.org/all/20251105231514.3167738-1-dave.hansen@linux.intel.com/
-> > 
-> > jon
-> 
-> Thanks Jon.
-> 
-> I'm guessing that this would fall under the "menial task"
-> classification, and therefore doesn't need attribution. This seems
-> applicable:
-> 
-> + - Purely mechanical transformations like variable renaming
-> 
-> This is a little different, but it's a similar rote task.
-> -- 
-> Jeff Layton <jlayton@kernel.org>
-> 
+On 2025/11/08 5:06, ssrane_b23@ee.vjti.ac.in wrote:
+> Reported-by: syzbot+cfc7cab3bb6eaa7c4de2@syzkaller.appspotmail.com
+> Closes: https://syzkaller.appspot.com/bug?extid=cfc7cab3bb6eaa7c4de2
+> Signed-off-by: Shaurya Rane <ssrane_b23@ee.vjti.ac.in>
 
-The bit I particularly liked was:
+Excuse me, but the reporter and link are for an ocfs2 bug. Please correct.
 
-+
-+Even if your tool use is out of scope you should still always consider
-+if it would help reviewing your contribution if the reviewer knows
-+about the tool that you used.
-+
-
-"would it help the reviewer"?  I agree that is a key question.  In your
-case I cannot see how it would help.
-
-Thanks,
-NeilBrown
 
 
 _______________________________________________
