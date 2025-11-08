@@ -2,36 +2,37 @@ Return-Path: <jfs-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+jfs-discussion@lfdr.de
 Delivered-To: lists+jfs-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3F6CCC42FD8
-	for <lists+jfs-discussion@lfdr.de>; Sat, 08 Nov 2025 17:23:26 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2A560C42FD5
+	for <lists+jfs-discussion@lfdr.de>; Sat, 08 Nov 2025 17:23:07 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.sourceforge.net; s=beta; h=Content-Transfer-Encoding:Content-Type:Cc:
-	Reply-To:From:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:References:
-	Message-ID:To:Date:Sender:Content-ID:Content-Description:Resent-Date:
+	d=lists.sourceforge.net; s=beta; h=Content-Type:Cc:Reply-To:From:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	Subject:In-Reply-To:MIME-Version:References:Message-ID:To:Date:Sender:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=k6y2Wvp1N0XvTh7nULMq+JM91cz/c/y3yoSkPNu6wfM=; b=VGBOeudJv7hooqrpqPEeh17dyx
-	HLHJXOU/D0eu8KckbFKs17779rT7dmri7yrnO86l4hi3C90QinfA7IWu80Br8SnN0Bfob8Odu8RBq
-	gt38XcN8o7Og9hROpD7m422Chm+1p57bZGy+RzkQY6VeKN4vcxVoJDXvSNFB+O58LaPQ=;
+	bh=e7ip7TEAvb8DBjp5Vrjg/0Ir6/wqSYKt5/Q0/9xF6DQ=; b=C9eaXorVJL9cNN0y2OBs1gzG2O
+	LJAhTFU+R5LRtOSI8j4RWUBakuywg+mFVp5npHOg4rp4S/gDfw1u3awxqTcNsSJ0DCmEf2dtpqbny
+	9Prw010PvTsAvznmVGSIM3Nc7ffm/AoAjEHnjS2DSYDHgLlDDrPiUOYX/A6EY6OZlMiI=;
 Received: from [127.0.0.1] (helo=sfs-ml-2.v29.lw.sourceforge.com)
 	by sfs-ml-2.v29.lw.sourceforge.com with esmtp (Exim 4.95)
 	(envelope-from <jfs-discussion-bounces@lists.sourceforge.net>)
-	id 1vHli4-0007bc-QA;
+	id 1vHli5-0007bj-3h;
 	Sat, 08 Nov 2025 16:22:41 +0000
 Received: from [172.30.29.66] (helo=mx.sourceforge.net)
  by sfs-ml-3.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
  TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (Exim 4.95)
- (envelope-from <asmadeus@codewreck.org>) id 1vHcUL-0003cd-JH;
- Sat, 08 Nov 2025 06:31:55 +0000
+ (envelope-from <bagasdotme@gmail.com>) id 1vHf6q-0007Ah-Gw
+ for jfs-discussion@lists.sourceforge.net;
+ Sat, 08 Nov 2025 09:19:48 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=sourceforge.net; s=x; h=In-Reply-To:Content-Type:MIME-Version:References:
  Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:Content-Transfer-Encoding:
  Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
  Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=LTM5LkyL3mfB0IbHJeS1oRharyj4iNDNdaZ7y5irjmg=; b=DnzaufUhsKuCnw/Let6ku7+kn2
- 1YV/u+276LisnmCAqrsiamrACo3fUOhztJB4q0Z2hBF4wlwpQuI/3GIORmxXjp9oE3k5pSsIn8Xz2
- Q99YL/atqvcqnRUFuoil7jcdIp4hzb1KfqDxp+si3yfm0uAHWNHJv04yQHwYUBOUFPeQ=;
+ bh=xMJJSbsWQXZcDWYlPD+q/sMKmcoPg7XO2KNCJJBRcPk=; b=bcai/B1DQFPFMpj6avT2VkjkmH
+ b9GAKBi0IRy9MV29kiilQ2R3cSUuBrFQI3PtlXXZrz6/2xlHf5S8lWOOkx5AiL5qGrMtJFTGA7Oa8
+ PnudzuwyBZM6o/4n+zs7gQj0Ok79FgHSxH9oW7iLIEmNpMCNIEBWRCYDQD7pnr2tGSSU=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
  h=In-Reply-To:Content-Type:MIME-Version:References:Message-ID:Subject:Cc:To
@@ -39,36 +40,70 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
  :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
  List-Post:List-Owner:List-Archive;
- bh=LTM5LkyL3mfB0IbHJeS1oRharyj4iNDNdaZ7y5irjmg=; b=m5P1eTyUCVTW52/h9QvF1r5B/k
- +wp1LbEPRHTfPfVw54gU6MUev6Wwf0LZxe/kSN3cgrsSoKPxDhNbe1Z0nj8XJ4aXFgv5HwJk71QXf
- 5Z7ms2KS5KihuHzWLZwvE4YSK1gLnGFX1U7tehuxmH+woIzg1n1v0erGi3gyWwGlE27Y=;
-Received: from submarine.notk.org ([62.210.214.84])
- by sfi-mx-2.v28.lw.sourceforge.com with esmtp (Exim 4.95)
- id 1vHcUJ-0001QA-Tt; Sat, 08 Nov 2025 06:31:53 +0000
-Received: from gaia.codewreck.org (localhost [127.0.0.1])
- by submarine.notk.org (Postfix) with ESMTPS id A419014C2D3;
- Sat,  8 Nov 2025 07:12:27 +0100 (CET)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=codewreck.org;
- s=2; t=1762582373;
- h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
- to:to:cc:cc:mime-version:mime-version:content-type:content-type:
- in-reply-to:in-reply-to:references:references;
- bh=LTM5LkyL3mfB0IbHJeS1oRharyj4iNDNdaZ7y5irjmg=;
- b=B+D3byKtJ5aLyRiu2rooP0B2TJlyh9NnWKaBHKY3oGl5WrI9R/ZTOokRqfrmQkRjA4d6PF
- hVA+2jtaIxDHKJVm19YOlIu00RJFzbMjiJ2IJMY5v8SjTtfCjEZWBxEPfRtzuPasj++KiY
- 8Sahe5eVbfmwmhQeo5uzL3Rp7AKK7Nzr7m3ipU5qmaiTEStLej1x9iBcfVqKnY9WidAi8X
- rwVB6qqUGBZMEcUSkoPWBbqf240gmgWcLbAb7B4RNHuho0O1rPy72OuweBfiXGGrgaJqO1
- amO1aDXHVrMyRWIApKs7c+o9NFvUODZZvMkcXugNCGdZ2S65dzPgh2BACKmoHA==
-Received: from localhost (gaia.codewreck.org [local])
- by gaia.codewreck.org (OpenSMTPD) with ESMTPA id 26a2c8b4;
- Sat, 8 Nov 2025 06:12:25 +0000 (UTC)
-Date: Sat, 8 Nov 2025 15:12:10 +0900
-To: Jeff Layton <jlayton@kernel.org>
-Message-ID: <aQ7fOmknHIxcxuha@codewreck.org>
+ bh=xMJJSbsWQXZcDWYlPD+q/sMKmcoPg7XO2KNCJJBRcPk=; b=aab4IkKFu2OIVwHKm3BYn7RWdg
+ Qnul/K2VB1B/vOi28HW0+EeQ78jXGqLq6K/7+oqiiAK0mM9MsAvsUUQeDJXGo5mQQUIKn94giMBck
+ tWRNjDPAqEX18ySCYq2K4k4ONxegUmBLy5vunzGkCWzjy0c/VULEQuVHMprt5vhgkucs=;
+Received: from mail-pl1-f178.google.com ([209.85.214.178])
+ by sfi-mx-2.v28.lw.sourceforge.com with esmtps
+ (TLS1.2:ECDHE-RSA-AES128-GCM-SHA256:128) (Exim 4.95)
+ id 1vHf6p-0002HT-S9 for jfs-discussion@lists.sourceforge.net;
+ Sat, 08 Nov 2025 09:19:48 +0000
+Received: by mail-pl1-f178.google.com with SMTP id
+ d9443c01a7336-27d3540a43fso14583665ad.3
+ for <jfs-discussion@lists.sourceforge.net>;
+ Sat, 08 Nov 2025 01:19:47 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=gmail.com; s=20230601; t=1762593577; x=1763198377; darn=lists.sourceforge.net;
+ h=in-reply-to:content-disposition:mime-version:references:message-id
+ :subject:cc:to:from:date:from:to:cc:subject:date:message-id:reply-to;
+ bh=xMJJSbsWQXZcDWYlPD+q/sMKmcoPg7XO2KNCJJBRcPk=;
+ b=iExWiLMvTiDWfIPuJ3VWJUNei75q0X8QDzq9nJq2wdS2kd9j9MHBaXqu56ZRtlZxeU
+ rDWWJ8id50/y9tjZaEQdOaA1OfeizO+ceuie/2yjiUzacQL+bk9tEZkCk0f0cz26tumO
+ +2HFEK3iXW+R6okSNs8gP1j9U0ZQ07FpxHPCuK/DRCJ6AMxc8mnNgFfyv+q/j9/swb1t
+ if7Bc1PfHdN1hyZ/ceCeJRosraAejmbFYkvwZpaMsrosXlB4aYsYeP0if8fahUouJdhY
+ 2ec2SxjNFU+ySV2nlj+LjAJ9u4MwCqc6yPBY9UkI6ttpuAI737O22CZGss0K3apwzIyB
+ FpCw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20230601; t=1762593577; x=1763198377;
+ h=in-reply-to:content-disposition:mime-version:references:message-id
+ :subject:cc:to:from:date:x-gm-gg:x-gm-message-state:from:to:cc
+ :subject:date:message-id:reply-to;
+ bh=xMJJSbsWQXZcDWYlPD+q/sMKmcoPg7XO2KNCJJBRcPk=;
+ b=ioytgsd8ubsECSoggIIaXwXivxj+HS1z5/YTC90dnxvMJfvzYfUTLpVdGf1aUXo33z
+ NEFk5XXyiMjW6FIkvoVitkQ3gPY35bPsaK/k44VIugI5fpN6+pEBpNK07FRMQs8/EkpE
+ 0T6XXmQdmeBY6F1r+eZ5IAcEqHcd45brvDIcvCV+0IT7nh/IGiXyQjiq01IC8t5vHS97
+ ZK5F3pdWp4xI4EkBGcVAjcCZZAnfuhrPzkuGpfF63QPBecScS0+vTFXYPh/qyQrutSAE
+ 77Yz0XzE9Awufm3YqCEo43/FDAGqNX4lZ8xqTFE2nBJ8sZ0TMIYWoyuvewBhGv6YjznU
+ XHjw==
+X-Forwarded-Encrypted: i=1;
+ AJvYcCW4veO5Ki21gox2NV4bZui4/wsgwxwf/c7Rf+khituuLMYYApAgIRkjR8dgNPdK8OeoYzpMcU4Qyl6qrmzzCA==@lists.sourceforge.net
+X-Gm-Message-State: AOJu0YxHYZ925Qugvm4eNuX3RWVxSB1k1JLw18B/RUmSolKNJPBnihfM
+ 5IfiRJFizyBsEgqrmM/SIueT8gqGEBTIgk3So/F7rPYWG0Mm3XdIzJ0o
+X-Gm-Gg: ASbGncvhE+TBeiFY2cxGE7SkKiTtn7RF5SQE/IskpfPLT/RWNooNe0sbok1vonWQEqg
+ YSZFyxYPGYYT3BXjN4Nq9qJCi79f83pjMcQ5dHVLq/oZQfUijJfWaIJmPGL7Alet7zHeA8u5wTH
+ 1OvY1jJZEL/jQDhuj6OEKP9HNc/uPA9rl1xXu2hGasU/Cxk5rgNGVOm3f7ZnDBR+z4b48k4aA0B
+ NaK8h5UbjSLhKRwRAd5Cvj+VY6JVZtcIQgaSBHpuIDVDtAF3R0UJqwSwz9z0sTjrvvNGGRZkqYX
+ qzJ36FGRztGr8oagrRM8/ueFKbjcXh03K5TSy+ZAMASu/T/WRsVYAv0Ga6WheweRDmyiHsiPGFJ
+ rKbATVt8XKmUJOeNs7fkRKnI60gFrH586CvIeTfE1d0qOfA/7tO83LpxJI3DJhU2VA2kQp4bZRT
+ fhZWcu97u+/bI=
+X-Google-Smtp-Source: AGHT+IGxcceL/cUmEO7hnoApXfEFPAPpQerRMJTCvaDgcasBmFqwVjXcVlI2/yGLIfmLK+orIB3gUw==
+X-Received: by 2002:a17:902:da84:b0:292:fc65:3584 with SMTP id
+ d9443c01a7336-297e56f9b21mr24987685ad.50.1762593577039; 
+ Sat, 08 Nov 2025 01:19:37 -0800 (PST)
+Received: from archie.me ([210.87.74.117]) by smtp.gmail.com with ESMTPSA id
+ d9443c01a7336-29650c5c6b3sm82791745ad.24.2025.11.08.01.19.35
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Sat, 08 Nov 2025 01:19:35 -0800 (PST)
+Received: by archie.me (Postfix, from userid 1000)
+ id 77412400200B; Sat, 08 Nov 2025 16:19:33 +0700 (WIB)
+Date: Sat, 8 Nov 2025 16:19:33 +0700
+To: Dominique Martinet <asmadeus@codewreck.org>,
+ Jeff Layton <jlayton@kernel.org>
+Message-ID: <aQ8LJfKC0R-4ehLU@archie.me>
 References: <20251107-create-excl-v2-1-f678165d7f3f@kernel.org>
+ <aQ7fOmknHIxcxuha@codewreck.org>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20251107-create-excl-v2-1-f678165d7f3f@kernel.org>
+In-Reply-To: <aQ7fOmknHIxcxuha@codewreck.org>
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: Spam detection software,
  running on the system "sfi-spamd-1.hosts.colo.sdot.me", 
@@ -76,9 +111,9 @@ X-Spam-Report: Spam detection software,
  message has been attached to this so you can view it or label
  similar future email.  If you have any questions, see
  the administrator of that system for details.
- Content preview:  Jeff Layton wrote on Fri, Nov 07, 2025 at 10:05:03AM -0500:
- > With two exceptions, ->create() methods provided by filesystems ignore
- > the "excl" flag. Those exception are NFS and GFS2 which both also [...] 
+ Content preview:  On Sat, Nov 08, 2025 at 03:12:10PM +0900, Dominique Martinet
+ wrote: > Jeff Layton wrote on Fri, Nov 07, 2025 at 10:05:03AM -0500: > >
+ diff --git a/Documentation/filesystems/vfs.rst b/Documentation/fil [...] 
  Content analysis details:   (-0.2 points, 5.0 required)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
@@ -89,7 +124,12 @@ X-Spam-Report: Spam detection software,
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature,
  not necessarily valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
-X-Headers-End: 1vHcUJ-0001QA-Tt
+ 0.0 FREEMAIL_FROM Sender email is commonly abused enduser mail provider
+ [bagasdotme(at)gmail.com]
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [209.85.214.178 listed in wl.mailspike.net]
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+X-Headers-End: 1vHf6p-0002HT-S9
 X-Mailman-Approved-At: Sat, 08 Nov 2025 16:22:38 +0000
 Subject: Re: [Jfs-discussion] [PATCH v2] vfs: remove the excl argument from
  the ->create() inode_operation
@@ -104,9 +144,8 @@ List-Post: <mailto:jfs-discussion@lists.sourceforge.net>
 List-Help: <mailto:jfs-discussion-request@lists.sourceforge.net?subject=help>
 List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/jfs-discussion>, 
  <mailto:jfs-discussion-request@lists.sourceforge.net?subject=subscribe>
-From: Dominique Martinet via Jfs-discussion
- <jfs-discussion@lists.sourceforge.net>
-Reply-To: Dominique Martinet <asmadeus@codewreck.org>
+From: Bagas Sanjaya via Jfs-discussion <jfs-discussion@lists.sourceforge.net>
+Reply-To: Bagas Sanjaya <bagasdotme@gmail.com>
 Cc: Latchesar Ionkov <lucho@ionkov.net>, Paulo Alcantara <pc@manguebit.org>,
  Mike Marshall <hubcap@omnibond.com>, linux-xfs@vger.kernel.org,
  Tyler Hicks <code@tyhicks.com>, devel@lists.orangefs.org,
@@ -162,54 +201,108 @@ Cc: Latchesar Ionkov <lucho@ionkov.net>, Paulo Alcantara <pc@manguebit.org>,
  Sungjong Seo <sj1557.seo@samsung.com>, David Woodhouse <dwmw2@infradead.org>,
  linux-karma-devel@lists.sourceforge.net, linux-btrfs@vger.kernel.org,
  Joel Becker <jlbec@evilplan.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: multipart/mixed; boundary="===============2452553626015049805=="
 Errors-To: jfs-discussion-bounces@lists.sourceforge.net
 
-Jeff Layton wrote on Fri, Nov 07, 2025 at 10:05:03AM -0500:
-> With two exceptions, ->create() methods provided by filesystems ignore
-> the "excl" flag.  Those exception are NFS and GFS2 which both also
-> provide ->atomic_open.
-> 
-> Since ce8644fcadc5 ("lookup_open(): expand the call of vfs_create()"),
-> the "excl" argument to the ->create() inode_operation is always set to
-> true in vfs_create(). The ->create() call in lookup_open() sets it
-> according to the O_EXCL open flag, but is never called if the filesystem
-> provides ->atomic_open().
-> 
-> The excl flag is therefore always either ignored or true.  Remove it,
-> and change NFS and GFS2 to act as if it were always true.
-> 
-> Signed-off-by: Jeff Layton <jlayton@kernel.org>
 
-Good cleanup, just one whitespace nitpick below but:
-Reviewed-by: Dominique Martinet <asmadeus@codewreck.org>
+--===============2452553626015049805==
+Content-Type: multipart/signed; micalg=pgp-sha512;
+	protocol="application/pgp-signature"; boundary="hTQgJTXrd9+JcPiP"
+Content-Disposition: inline
 
 
-> diff --git a/Documentation/filesystems/vfs.rst b/Documentation/filesystems/vfs.rst
-> index 4f13b01e42eb5e2ad9d60cbbce7e47d09ad831e6..7a55e491e0c87a0d18909bd181754d6d68318059 100644
-> --- a/Documentation/filesystems/vfs.rst
-> +++ b/Documentation/filesystems/vfs.rst
-> @@ -505,7 +505,10 @@ otherwise noted.
->  	if you want to support regular files.  The dentry you get should
->  	not have an inode (i.e. it should be a negative dentry).  Here
->  	you will probably call d_instantiate() with the dentry and the
-> -	newly created inode
-> +        newly created inode. This operation should always provide O_EXCL
+--hTQgJTXrd9+JcPiP
+Content-Type: text/plain; charset=utf-8
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
 
-This and the block below change halfway from tab (old text) to spaces
-(your patch)
+On Sat, Nov 08, 2025 at 03:12:10PM +0900, Dominique Martinet wrote:
+> Jeff Layton wrote on Fri, Nov 07, 2025 at 10:05:03AM -0500:
+> > diff --git a/Documentation/filesystems/vfs.rst b/Documentation/filesyst=
+ems/vfs.rst
+> > index 4f13b01e42eb5e2ad9d60cbbce7e47d09ad831e6..7a55e491e0c87a0d18909bd=
+181754d6d68318059 100644
+> > --- a/Documentation/filesystems/vfs.rst
+> > +++ b/Documentation/filesystems/vfs.rst
+> > @@ -505,7 +505,10 @@ otherwise noted.
+> >  	if you want to support regular files.  The dentry you get should
+> >  	not have an inode (i.e. it should be a negative dentry).  Here
+> >  	you will probably call d_instantiate() with the dentry and the
+> > -	newly created inode
+> > +        newly created inode. This operation should always provide O_EX=
+CL
+>=20
+> This and the block below change halfway from tab (old text) to spaces
+> (your patch)
+>=20
+> Looks like the file has a few space-indented sections though so it won't
+> be the first if that goes in as is, the html-rendering doesn't seem to
+> care :)
 
-Looks like the file has a few space-indented sections though so it won't
-be the first if that goes in as is, the html-rendering doesn't seem to
-care :)
+FYI: I'm using Vim. My important settings (in ~/.vimrc) are:
 
-Cheers,
--- 
-Dominique Martinet | Asmadeus
+```
+set nojoinspaces
+set textwidth=3D0
+set backspace=3D2
+```
 
+However, ftplugin override these for each file type, so you have to essenti=
+ally
+"fork" the relevant ftplugin file for each type if you want for your settin=
+gs
+to take precedence. For example, in case of reST, copy
+/usr/share/vim/vim91/ftplugin/rst.vim to ~/.vim/ftplugin/rst and override t=
+he
+already defined options there:
+
+```
+=2E..
+" keep tabs as-is
+setlocal comments=3Dfb:.. commentstring=3D..\ %s noexpandtab
+=2E..
+if exists("g:rst_style") && g:rst_style !=3D 0
+    setlocal noexpandtab shiftwidth=3D8 softtabstop=3D0 tabstop=3D8
+endif
+=2E..
+```
+
+Thanks.
+
+--=20
+An old man doll... just what I always wanted! - Clara
+
+--hTQgJTXrd9+JcPiP
+Content-Type: application/pgp-signature; name=signature.asc
+
+-----BEGIN PGP SIGNATURE-----
+
+iHUEABYKAB0WIQSSYQ6Cy7oyFNCHrUH2uYlJVVFOowUCaQ8LHwAKCRD2uYlJVVFO
+o2WVAPsFBRuUsYfWxAnWROgP/61sBqVYDc/UsPimcXm5dJJfgQD9ESTXpfxlpefS
+VKeWBneX6svZYShHE5RzrbcYO+G5GA0=
+=gW2v
+-----END PGP SIGNATURE-----
+
+--hTQgJTXrd9+JcPiP--
+
+
+--===============2452553626015049805==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
+
+
+--===============2452553626015049805==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 Jfs-discussion mailing list
 Jfs-discussion@lists.sourceforge.net
 https://lists.sourceforge.net/lists/listinfo/jfs-discussion
+
+--===============2452553626015049805==--
+
