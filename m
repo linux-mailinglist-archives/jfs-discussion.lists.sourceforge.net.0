@@ -2,105 +2,104 @@ Return-Path: <jfs-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+jfs-discussion@lfdr.de
 Delivered-To: lists+jfs-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id AC4B1C43A05
-	for <lists+jfs-discussion@lfdr.de>; Sun, 09 Nov 2025 08:59:18 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id F0EBBC43A14
+	for <lists+jfs-discussion@lfdr.de>; Sun, 09 Nov 2025 09:01:50 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.sourceforge.net; s=beta; h=Content-Transfer-Encoding:Content-Type:Cc:
 	Reply-To:From:List-Subscribe:List-Help:List-Post:List-Archive:
 	List-Unsubscribe:List-Id:Subject:MIME-Version:Message-ID:Date:To:Sender:
 	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
 	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
-	bh=blYUs8PFuQ9S3tUxIpywCBrCvzL4bY1jof5/xnmD6/k=; b=ItSnYrAldJTrM0thU84XsuDo7M
-	ToQT9qJohEoINPazOqodcKSio91D2GkD+idNygFg9M8fXAbUnQQyfXPOJ1Ngi9HlXMSB9immNagoJ
-	QnFGAIwzghLpqXzYTFJVXrCkCxEstyfocM0+85AvJosObhgyUU4W72soCzcK2NTQghrU=;
-Received: from [127.0.0.1] (helo=sfs-ml-1.v29.lw.sourceforge.com)
-	by sfs-ml-1.v29.lw.sourceforge.com with esmtp (Exim 4.95)
+	bh=tHRaBTwWXYrULDnsOIE8h/Kw2VZ204EV73BqyOfX8gM=; b=M0VwMIc5qGoMcdAetfDj68D7Z3
+	YTvoV5z6uGsFARf4U1G0zF0yNlifQgn8Z1HPAcjAdICwrEJPYlqXzxqAU3WFBE+wGeMpemNr2tZMZ
+	pvArgl0ws6/hxvr9BKiZYo1YMQ09oYygs8WFHBbDh9G3bozYlSvxlrV0fPM0mcx54LTU=;
+Received: from [127.0.0.1] (helo=sfs-ml-4.v29.lw.sourceforge.com)
+	by sfs-ml-4.v29.lw.sourceforge.com with esmtp (Exim 4.95)
 	(envelope-from <jfs-discussion-bounces@lists.sourceforge.net>)
-	id 1vI0K4-0005uk-E7;
-	Sun, 09 Nov 2025 07:58:52 +0000
+	id 1vI0Mh-0000i8-BH;
+	Sun, 09 Nov 2025 08:01:35 +0000
 Received: from [172.30.29.66] (helo=mx.sourceforge.net)
- by sfs-ml-1.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
+ by sfs-ml-4.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
  TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (Exim 4.95)
  (envelope-from <prvs=340844d838=yun.zhou@windriver.com>)
- id 1vI0K3-0005uc-20 for jfs-discussion@lists.sourceforge.net;
- Sun, 09 Nov 2025 07:58:51 +0000
+ id 1vI0Mf-0000i0-VL for jfs-discussion@lists.sourceforge.net;
+ Sun, 09 Nov 2025 08:01:34 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=sourceforge.net; s=x; h=Content-Type:Content-Transfer-Encoding:MIME-Version
  :Message-ID:Date:Subject:CC:To:From:Sender:Reply-To:Content-ID:
  Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
  :Resent-Message-ID:In-Reply-To:References:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=Iq2Z7I+JlB6c6uQ0YmR9PkKlSRV5E8tj8llQhJfbAio=; b=WaPAvgaPALWpjZMu6HvT/5QYit
- BpegIYt6gx8URzX+pdt+VPpUkTZzNemoIzNFZ2c6lzmChxpkCtfTlKpF35I7IBAP/gb5CwLkA7IqA
- hCYKgVQ/NyyJWNuJXig0ZfH9tUgIWXkiujzEu1OXtfIcC0Hy6SA5OpXuAIl9h+D1u0Zc=;
+ bh=hqKCmdP7zxwz+X23A5A9/L6yq/4SS8Ac005fbjv9X7Q=; b=EcxQKVRsPqDOXOIwWlLVyMX1l5
+ IIGV889lzi2J/bQk4v2rkeQcSYRZgTTJIGUZJTDl1D3nmpFvZIjugnggwh4I2P8WHKZfzr6ghoWv9
+ CVTuypaX4SJXYwJqN8dvaas77pO+HVVSruAX8tOETU4JwxH/Dhd9ovzEKLUXd2hJGz5o=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
  h=Content-Type:Content-Transfer-Encoding:MIME-Version:Message-ID:Date:
  Subject:CC:To:From:Sender:Reply-To:Content-ID:Content-Description:Resent-Date
  :Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
  References:List-Id:List-Help:List-Unsubscribe:List-Subscribe:List-Post:
- List-Owner:List-Archive; bh=Iq2Z7I+JlB6c6uQ0YmR9PkKlSRV5E8tj8llQhJfbAio=; b=b
- UqYXT0ghbLo3yPnKbly9QAw8HyNJwTB84l4PyU8/Ab+mZPJe4U6BLUnMMlpOan3j1USjAETN4ZECA
- 1YXTuiDyV0ja9gRa7xKCs4G04fW8oH+o5lXS80VGqkgiC1OVVu1NTiSzj0YwlHiB5koWzbktTnp0c
- fCzVhcDoNAM6s70c=;
+ List-Owner:List-Archive; bh=hqKCmdP7zxwz+X23A5A9/L6yq/4SS8Ac005fbjv9X7Q=; b=c
+ wVjBjzguARsmfJ4S/WxezlIsUYVgYssgB3+1W2JwYnx8yQzdbBjGOq8jQ5xpybb8Z3ACPjMIVsW85
+ VmEn069nc3tOARP5rqepXouxIiA6ptY1THVdvKZWRhIugRv8vo7AwQn3JLPrWWnaoXcnO9Y/2kCA5
+ PIn+PGIaWOdOd+KQ=;
 Received: from mx0a-0064b401.pphosted.com ([205.220.166.238])
  by sfi-mx-2.v28.lw.sourceforge.com with esmtps
  (TLS1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.95)
- id 1vI0K0-0007ZB-Lh for jfs-discussion@lists.sourceforge.net;
- Sun, 09 Nov 2025 07:58:50 +0000
-Received: from pps.filterd (m0250810.ppops.net [127.0.0.1])
+ id 1vI0Mf-0007jJ-H7 for jfs-discussion@lists.sourceforge.net;
+ Sun, 09 Nov 2025 08:01:33 +0000
+Received: from pps.filterd (m0250809.ppops.net [127.0.0.1])
  by mx0a-0064b401.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id
- 5A97tQVj3258752; Sat, 8 Nov 2025 23:58:22 -0800
+ 5A97swWc2547971; Sun, 9 Nov 2025 00:01:17 -0800
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=windriver.com;
  h=cc:content-transfer-encoding:content-type:date:from
- :message-id:mime-version:subject:to; s=PPS06212021; bh=Iq2Z7I+Jl
- B6c6uQ0YmR9PkKlSRV5E8tj8llQhJfbAio=; b=rSFUbmmn+9E3OwsQH7eHgc09W
- L9SNmosvXHahKuU4+X5p1C6yAYRo6ibBj0F2CPbXIF5o5iO/81EpCoF2oJyrheNh
- UbHc+gO7KfTmOQCQyymzuR3xYJQfrIUMXKhCn6g5zuV81THWh1lKR8cGVuXTdGn8
- QHW0K55VV0taUnV0QscMbz3Y26FN4XxiGxvofKPLpvTg+xZmz/WLeHou1pQD3T4x
- LtCX6L7ZEaGn2+gpa9msfL4cNmjl7mgF7UoaCSXNCWTsJC7+Q4kK/rqPSDmYrFfT
- jaUlOt1hKRWpmb3MJCzuX+Ht7gTmBDihJGFpn96J0HqX5Mo456Ef3nTMaxFjw==
+ :message-id:mime-version:subject:to; s=PPS06212021; bh=hqKCmdP7z
+ xwz+X23A5A9/L6yq/4SS8Ac005fbjv9X7Q=; b=RHStroJO+RWipWU1eSEzHwsjN
+ hT/oOvGZW9mLOBGJvyYHG+DNowTehyEDsZ9MM7qQGH5MgsnPxrPy2VUC9mu6kpVC
+ UcF0Ahl68oMe52g2T0S8L7QFvA6StizYpbrzC74Ltd4Ox0Pf7CvHDsdoc1J4n5aL
+ 1FKpcydYV/K+wT6O1k4PtrObolKr3cwB1Y5itfQmxr+HRUrqozKAHVPRdF1HCSQP
+ F+BHfdIwROZdzPjajn+FXaJik0X/bBCJ9iaWcW1PFz4bPzQ29ClYkHLSJxFZxMKu
+ o6eKEUCrDyQYAc+EZ75Y+XUATBZHaUjqWLbcNZB+TpLj/c3BZHjpvwkLLG2lQ==
 Received: from ala-exchng02.corp.ad.wrs.com ([128.224.246.37])
- by mx0a-0064b401.pphosted.com (PPS) with ESMTPS id 4aa2130ngj-1
+ by mx0a-0064b401.pphosted.com (PPS) with ESMTPS id 4aa68jgh5k-1
  (version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NOT);
- Sat, 08 Nov 2025 23:58:22 -0800 (PST)
+ Sun, 09 Nov 2025 00:01:17 -0800 (PST)
 Received: from ala-exchng01.corp.ad.wrs.com (10.11.224.121) by
  ALA-EXCHNG02.corp.ad.wrs.com (10.11.224.122) with Microsoft SMTP Server
  (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
- 15.1.2507.61; Sat, 8 Nov 2025 23:58:21 -0800
+ 15.1.2507.61; Sun, 9 Nov 2025 00:01:16 -0800
 Received: from pek-lpd-ccm3.wrs.com (10.11.232.110) by
  ala-exchng01.corp.ad.wrs.com (10.11.224.121) with Microsoft SMTP Server id
- 15.1.2507.61 via Frontend Transport; Sat, 8 Nov 2025 23:58:19 -0800
+ 15.1.2507.61 via Frontend Transport; Sun, 9 Nov 2025 00:01:14 -0800
 To: <shaggy@kernel.org>, <akpm@linux-foundation.org>, <david@redhat.com>,
  <byungchul@sk.com>, <gregkh@linuxfoundation.org>,
  <yun.zhou@windriver.com>, <shivankg@amd.com>, <ssrane_b23@ee.vjti.ac.in>
-Date: Sun, 9 Nov 2025 15:58:18 +0800
-Message-ID: <20251109075818.229971-1-yun.zhou@windriver.com>
+Date: Sun, 9 Nov 2025 16:01:13 +0800
+Message-ID: <20251109080113.236739-1-yun.zhou@windriver.com>
 X-Mailer: git-send-email 2.43.0
 MIME-Version: 1.0
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUxMTA5MDA2OCBTYWx0ZWRfX3C4cyAfBczWV
- kN6ZVuySyd0k56NdOp+xB8KThSjW+/wzb9coSW1LgDt3dvieLrvJ0kpvfJoOG4S78YwiZGd4724
- 4wTiICG1wLBxhdoa9LFBGflT9jzHUBJHnjxoz/37fYxM5gGEYuUycT7VeY9UdoWu5O7cbtRSgLM
- Hdv76usQdMhpyG+nGD1b4WbHRCQVoqUnQow0M7wuWG/PuaZvocMZ1b2wRqThI7Y0OiD1oGsZ4cq
- +x6DL3fSUYe4dowhQwSGtrkZE6yRXl9yp9/v31ODtjlDJAOgMR6utA6kZ9UOEDzSxGAho2My0ln
- M8q1RPheEBSlUlWjLWP/T3xym0J9xb9d6cKpn62tBm+ZJbeH0dDnxGlIBdR+buKKCuI5UmON6Be
- vZGHIuRTadP1SoPu64cEiINfG4g5Sw==
-X-Proofpoint-ORIG-GUID: mBkFQC0Y8PBPGK3CgghUQhRwWMJyXOTh
-X-Authority-Analysis: v=2.4 cv=XPA9iAhE c=1 sm=1 tr=0 ts=6910499e cx=c_pps
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUxMTA5MDA2OSBTYWx0ZWRfX+nxJXFTVFzxm
+ v1ZyFut3T0dND5GV4YayRuuERPa4UMMGzpRVZrfT5m7uq9MQRdONN6qJvpi/odhGWrNRsFmGpfa
+ IzYneWhsVMpgoftBi27YSdxzwaZWqnjZJdH2+OqiVhzzp0yQ6BOt1ly/CrCQKr4EXto785h9JRr
+ dpkmpZ0n1YP0ypn/SPO/rJ7IFdaElnKlcWUR1xm6oitAAU+t9NxrgU5HHxY+NiIrlypOlnJuEuy
+ X52m3q8qzPkhEn6joCfjkzDnnIC12X+btJpD7jzV/Mcs4kALXHvMpWPFRgISNrQ0MLs5ISORliy
+ eomPliTlTYtlF1PnIVfZllGMqQew1AuvDuDMX1VYTuIFKTiA1PIvlKafMI6DCBNBim7jl5Xo23H
+ ivpqjs5bud9pEVqLXof6IF7mizMQlQ==
+X-Proofpoint-GUID: BpCl5-HMoPr1VIw6Am6Gap3W_YUZkI7r
+X-Proofpoint-ORIG-GUID: BpCl5-HMoPr1VIw6Am6Gap3W_YUZkI7r
+X-Authority-Analysis: v=2.4 cv=ef0wvrEH c=1 sm=1 tr=0 ts=69104a4d cx=c_pps
  a=Lg6ja3A245NiLSnFpY5YKQ==:117 a=Lg6ja3A245NiLSnFpY5YKQ==:17
- a=6UeiqGixMTsA:10 a=VkNPw1HP01LnGYTKEx00:22 a=edf1wS77AAAA:8 a=hSkVLCK3AAAA:8
- a=t7CeM3EgAAAA:8 a=HWOROlQ_xHIrUlYk3fIA:9 a=DcSpbTIhAlouE1Uv7lRv:22
- a=cQPPKAXgyycSBL8etih5:22 a=FdTzh2GWekK77mhwV6Dw:22 a=poXaRoVlC6wW9_mwW8W4:22
- a=cPQSjfK2_nFv0Q5t_7PE:22 a=Z5ABNNGmrOfJ6cZ5bIyy:22 a=SsAZrZ5W_gNWK9tOzrEV:22
-X-Proofpoint-GUID: mBkFQC0Y8PBPGK3CgghUQhRwWMJyXOTh
+ a=6UeiqGixMTsA:10 a=VkNPw1HP01LnGYTKEx00:22 a=hSkVLCK3AAAA:8 a=t7CeM3EgAAAA:8
+ a=839DiVg-qJ3f83dBwJIA:9 a=cQPPKAXgyycSBL8etih5:22 a=FdTzh2GWekK77mhwV6Dw:22
+ a=cPQSjfK2_nFv0Q5t_7PE:22
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1121,Hydra:6.1.9,FMLib:17.12.100.49
  definitions=2025-11-09_03,2025-11-06_01,2025-10-01_01
 X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- impostorscore=0 clxscore=1011 malwarescore=0 adultscore=0 bulkscore=0
- phishscore=0 spamscore=0 lowpriorityscore=0 priorityscore=1501 suspectscore=0
+ malwarescore=0 phishscore=0 suspectscore=0 priorityscore=1501 impostorscore=0
+ lowpriorityscore=0 clxscore=1011 spamscore=0 adultscore=0 bulkscore=0
  classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
- reason=mlx scancount=1 engine=8.22.0-2510240001 definitions=main-2511090068
+ reason=mlx scancount=1 engine=8.22.0-2510240001 definitions=main-2511090069
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: Spam detection software,
  running on the system "sfi-spamd-1.hosts.colo.sdot.me", 
@@ -108,9 +107,9 @@ X-Spam-Report: Spam detection software,
  message has been attached to this so you can view it or label
  similar future email.  If you have any questions, see
  the administrator of that system for details.
- Content preview: This patch resolves the "list_add corruption. next is NULL"
- Oops reported by syzkaller in dbUpdatePMap(). The root cause is uninitialized
- synclist nodes in struct metapage and struct TxBlock, plus imp [...] 
+ Content preview:  This patch adds boundary checks for the dilinelock->index
+ in the diWrite() function of JFS to prevent out-of-bounds access to the lv
+ array. When dilinelock->index exceeds dilinelock->maxcnt, it calls [...] 
  Content analysis details:   (-0.2 points, 5.0 required)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
@@ -121,10 +120,15 @@ X-Spam-Report: Spam detection software,
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature,
  not necessarily valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.0 URIBL_BLOCKED ADMINISTRATOR NOTICE: The query to URIBL was blocked.
+ See
+ http://wiki.apache.org/spamassassin/DnsBlocklists#dnsbl-block
+ for more information. [URI: windriver.com]
  0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
  [205.220.166.238 listed in wl.mailspike.net]
-X-Headers-End: 1vI0K0-0007ZB-Lh
-Subject: [Jfs-discussion] [PATCH v2] jfs: fix corrupted list in dbUpdatePMap
+X-Headers-End: 1vI0Mf-0007jJ-H7
+Subject: [Jfs-discussion] [PATCH] jfs: add linelock->index boundary check in
+ diWrite
 X-BeenThere: jfs-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -143,103 +147,49 @@ Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Errors-To: jfs-discussion-bounces@lists.sourceforge.net
 
-This patch resolves the "list_add corruption. next is NULL" Oops
-reported by syzkaller in dbUpdatePMap(). The root cause is uninitialized
-synclist nodes in struct metapage and struct TxBlock, plus improper list
-node removal using list_del() (which leaves nodes in an invalid state).
+This patch adds boundary checks for the dilinelock->index in the
+diWrite() function of JFS to prevent out-of-bounds access to the lv
+array. When dilinelock->index exceeds dilinelock->maxcnt, it calls
+txLinelock() to refresh the dilinelock structure, ensuring valid access
+to dilinelock->lv[] during inode data writing.
 
-This fixes the following Oops reported by syzkaller.
-
-list_add corruption. next is NULL.
-------------[ cut here ]------------
-kernel BUG at lib/list_debug.c:28!
-Oops: invalid opcode: 0000 [#1] SMP KASAN PTI
-CPU: 1 UID: 0 PID: 122 Comm: jfsCommit Not tainted syzkaller #0
-PREEMPT_{RT,(full)}
-Hardware name: Google Google Compute Engine/Google Compute Engine, BIOS
-Google 10/02/2025
-RIP: 0010:__list_add_valid_or_report+0xc3/0x130 lib/list_debug.c:27
-Code: 4c 89 f2 48 89 d9 e8 0c 88 a4 fc 90 0f 0b 48 c7 c7 20 de 3d 8b e8
-fd 87 a4 fc 90 0f 0b 48 c7 c7 c0 de 3d 8b e8 ee 87 a4 fc 90 <0f> 0b 48
-89 df e8 13 c3 7d fd 42 80 7c 2d 00 00 74 08 4c 89 e7 e8
-RSP: 0018:ffffc9000395fa20 EFLAGS: 00010246
-RAX: 0000000000000022 RBX: 0000000000000000 RCX: 270c5dfadb559700
-RDX: 0000000000000000 RSI: 0000000000000000 RDI: 0000000000000000
-RBP: 00000000000f0000 R08: 0000000000000000 R09: 0000000000000000
-R10: dffffc0000000000 R11: fffff5200072bee9 R12: 0000000000000000
-R13: dffffc0000000000 R14: 0000000000000004 R15: 1ffff92000632266
-FS:  0000000000000000(0000) GS:ffff888126ef9000(0000)
-knlGS:0000000000000000
-CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033
-CR2: 000056341fdb86c0 CR3: 0000000040a18000 CR4: 00000000003526f0
-Call Trace:
- <TASK>
- __list_add_valid include/linux/list.h:96 [inline]
- __list_add include/linux/list.h:158 [inline]
- list_add include/linux/list.h:177 [inline]
- dbUpdatePMap+0x7e4/0xeb0 fs/jfs/jfs_dmap.c:577
- txAllocPMap+0x57d/0x6b0 fs/jfs/jfs_txnmgr.c:2426
- txUpdateMap+0x81e/0x9c0 fs/jfs/jfs_txnmgr.c:2364
- txLazyCommit fs/jfs/jfs_txnmgr.c:2665 [inline]
- jfs_lazycommit+0x3f1/0xa10 fs/jfs/jfs_txnmgr.c:2734
- kthread+0x711/0x8a0 kernel/kthread.c:463
- ret_from_fork+0x4bc/0x870 arch/x86/kernel/process.c:158
- ret_from_fork_asm+0x1a/0x30 arch/x86/entry/entry_64.S:245
- </TASK>
-Modules linked in:
----[ end trace 0000000000000000 ]---
-
-Reported-by: syzbot+4d0a0feb49c5138cac46@syzkaller.appspotmail.com
-Closes: https://syzkaller.appspot.com/bug?extid=4d0a0feb49c5138cac46
-Tested-by: syzbot+4d0a0feb49c5138cac46@syzkaller.appspotmail.com
+Reported-by: syzbot+9489c9f9f3d437221ea2@syzkaller.appspotmail.com
 Signed-off-by: Yun Zhou <yun.zhou@windriver.com>
 ---
- fs/jfs/jfs_metapage.c | 3 ++-
- fs/jfs/jfs_txnmgr.c   | 3 ++-
- 2 files changed, 4 insertions(+), 2 deletions(-)
+ fs/jfs/jfs_imap.c | 6 ++++++
+ 1 file changed, 6 insertions(+)
 
-diff --git a/fs/jfs/jfs_metapage.c b/fs/jfs/jfs_metapage.c
-index 871cf4fb3636..0d6c40e7e551 100644
---- a/fs/jfs/jfs_metapage.c
-+++ b/fs/jfs/jfs_metapage.c
-@@ -270,6 +270,7 @@ static inline struct metapage *alloc_metapage(gfp_t gfp_mask)
- 		mp->clsn = 0;
- 		mp->log = NULL;
- 		init_waitqueue_head(&mp->wait);
-+		INIT_LIST_HEAD(&mp->synclist);
- 	}
- 	return mp;
- }
-@@ -379,7 +380,7 @@ static void remove_from_logsync(struct metapage *mp)
- 		mp->lsn = 0;
- 		mp->clsn = 0;
- 		log->count--;
--		list_del(&mp->synclist);
-+		list_del_init(&mp->synclist);
- 	}
- 	LOGSYNC_UNLOCK(log, flags);
- }
-diff --git a/fs/jfs/jfs_txnmgr.c b/fs/jfs/jfs_txnmgr.c
-index 7840a03e5bcb..a5a5bc0a266d 100644
---- a/fs/jfs/jfs_txnmgr.c
-+++ b/fs/jfs/jfs_txnmgr.c
-@@ -275,6 +275,7 @@ int txInit(void)
- 	for (k = 0; k < nTxBlock; k++) {
- 		init_waitqueue_head(&TxBlock[k].gcwait);
- 		init_waitqueue_head(&TxBlock[k].waitor);
-+		INIT_LIST_HEAD(&TxBlock[k].synclist);
- 	}
- 
- 	for (k = 1; k < nTxBlock - 1; k++) {
-@@ -974,7 +975,7 @@ static void txUnlock(struct tblock * tblk)
- 	if (tblk->lsn) {
- 		LOGSYNC_LOCK(log, flags);
- 		log->count--;
--		list_del(&tblk->synclist);
-+		list_del_init(&tblk->synclist);
- 		LOGSYNC_UNLOCK(log, flags);
- 	}
- }
+diff --git a/fs/jfs/jfs_imap.c b/fs/jfs/jfs_imap.c
+index ecb8e05b8b84..7f93150d319f 100644
+--- a/fs/jfs/jfs_imap.c
++++ b/fs/jfs/jfs_imap.c
+@@ -762,6 +762,8 @@ int diWrite(tid_t tid, struct inode *ip)
+ 	 * copy inline symlink from in-memory inode to on-disk inode
+ 	 */
+ 	if (S_ISLNK(ip->i_mode) && ip->i_size < IDATASIZE) {
++		if (unlikely(dilinelock->index >= dilinelock->maxcnt))
++			dilinelock = txLinelock(dilinelock);
+ 		lv = & dilinelock->lv[dilinelock->index];
+ 		lv->offset = (dioffset + 2 * 128) >> L2INODESLOTSIZE;
+ 		lv->length = 2;
+@@ -773,6 +775,8 @@ int diWrite(tid_t tid, struct inode *ip)
+ 	 * 128 byte slot granularity
+ 	 */
+ 	if (test_cflag(COMMIT_Inlineea, ip)) {
++		if (unlikely(dilinelock->index >= dilinelock->maxcnt))
++			dilinelock = txLinelock(dilinelock);
+ 		lv = & dilinelock->lv[dilinelock->index];
+ 		lv->offset = (dioffset + 3 * 128) >> L2INODESLOTSIZE;
+ 		lv->length = 1;
+@@ -785,6 +789,8 @@ int diWrite(tid_t tid, struct inode *ip)
+ 	/*
+ 	 *	lock/copy inode base: 128 byte slot granularity
+ 	 */
++	if (unlikely(dilinelock->index >= dilinelock->maxcnt))
++		dilinelock = txLinelock(dilinelock);
+ 	lv = & dilinelock->lv[dilinelock->index];
+ 	lv->offset = dioffset >> L2INODESLOTSIZE;
+ 	copy_to_dinode(dp, ip);
 -- 
 2.34.1
 
