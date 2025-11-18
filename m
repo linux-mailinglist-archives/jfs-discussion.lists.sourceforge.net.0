@@ -2,37 +2,37 @@ Return-Path: <jfs-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+jfs-discussion@lfdr.de
 Delivered-To: lists+jfs-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5B873C6AAE9
-	for <lists+jfs-discussion@lfdr.de>; Tue, 18 Nov 2025 17:40:05 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id DCCF2C6AB70
+	for <lists+jfs-discussion@lfdr.de>; Tue, 18 Nov 2025 17:47:16 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.sourceforge.net; s=beta; h=Content-Transfer-Encoding:Content-Type:Cc:
 	Reply-To:From:List-Subscribe:List-Help:List-Post:List-Archive:
 	List-Unsubscribe:List-Id:Subject:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:To:Sender:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=jEkBVLTBjvOYv+4hyMVUOFfWukk2ofVsrK4UWzPHvjU=; b=cFcR3PCmFuvDKXoTg36VyDIkmH
-	4GOqpH/BeFyt38rESio3iRxgphkoJnOQcDi5ds0hYeWRTzFF1JLlh3EGWcTeOVVHaoOOyP9bdhwfV
-	pUUSlDx8ISoV8I319vzvWCV4I+hDmAPCsCv0LuvI76aRZrUmi1jUvHVqTyV56QsV/TKA=;
-Received: from [127.0.0.1] (helo=sfs-ml-1.v29.lw.sourceforge.com)
-	by sfs-ml-1.v29.lw.sourceforge.com with esmtp (Exim 4.95)
+	bh=6Nz+R9uFuQHE5AsY1o6QYQLVijVvZ27vSV+G3w1Cvdw=; b=P9sOTcv6L1MT3tjK5/DqXvgLI/
+	bs3C7AWj2jd+ga4IJRD1B8biD6v27OsIfBzZ6xaM4vCdXlhoF9DFwuaJBcOZHUhQIXXFnkksBUulx
+	LuboYtykhJNcfW7a6Zp5JswfyxJXYXj33tYolTWcOSMd6eyRXqoe1Oqn+2CYl8Lc0EYQ=;
+Received: from [127.0.0.1] (helo=sfs-ml-4.v29.lw.sourceforge.com)
+	by sfs-ml-4.v29.lw.sourceforge.com with esmtp (Exim 4.95)
 	(envelope-from <jfs-discussion-bounces@lists.sourceforge.net>)
-	id 1vLOk3-0000rb-N2;
-	Tue, 18 Nov 2025 16:39:43 +0000
+	id 1vLOr5-0005zW-2P;
+	Tue, 18 Nov 2025 16:46:59 +0000
 Received: from [172.30.29.66] (helo=mx.sourceforge.net)
- by sfs-ml-1.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
+ by sfs-ml-4.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
  TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (Exim 4.95)
- (envelope-from <jkoolstra@xs4all.nl>) id 1vLOk2-0000rV-GC
+ (envelope-from <jkoolstra@xs4all.nl>) id 1vLOr1-0005zI-7z
  for jfs-discussion@lists.sourceforge.net;
- Tue, 18 Nov 2025 16:39:42 +0000
+ Tue, 18 Nov 2025 16:46:55 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=sourceforge.net; s=x; h=Content-Transfer-Encoding:MIME-Version:References:
  In-Reply-To:Message-ID:Date:Subject:Cc:To:From:Sender:Reply-To:Content-Type:
  Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
  Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=n6apG3lmkHSuUuG0ZOl3EabiA2yAP5M8vJKLwwhuUMc=; b=Pz8qFxKFBDXy5QpfmnbBrW+1N1
- Zfzh3CL/EoLe/GBLtJm7avFpnDnRCFQO2lahoF6hwAVVBqVi884taz0SnJruk55dw+WwH2iKQkyW1
- taLL/FlUGg7DqKPxn+VRHhX5XxrlFdI/XoFtxxUgfcn1P8kIkhpFPside060KcgtpdYo=;
+ bh=HAHYRDhukERTz8v5O2UgurxedQY+3XqpZD0YVHrD21I=; b=RWM2J0d6eo2LyYaFbJ15vAefTt
+ rZ5gx28iPfrys0WlBRsD6mSof2QjSL/tzM6iLCA8P2n8nbDoF6OqAaQ93uyAL4ie77Rl+KxoLOl2D
+ WK3ae/MeNqnTN4wmQPcSdF6Lp+t3azOFLrCEy3VyZFDG54Rm5jBIWlZ37AVaIDhVvw1M=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
  h=Content-Transfer-Encoding:MIME-Version:References:In-Reply-To:Message-ID:
@@ -40,44 +40,44 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
  :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
  List-Post:List-Owner:List-Archive;
- bh=n6apG3lmkHSuUuG0ZOl3EabiA2yAP5M8vJKLwwhuUMc=; b=kjWs/Y8jF4JSTbJ7SZXUmNvp/+
- M0x7wOIcuFovO8uoyUQQxgoD0ImdyQB789pmy3JCkJrdopZ8iWMwCGxHdLn9RF/Xt2w1b3hsj9QHN
- 0KkzyYPi80Wm5wI27DEZieyt8ZiFHIw2pW4SbjrR1m1H3TqwIstTUGg2wuw6pcBTDZFo=;
-Received: from ewsoutbound.kpnmail.nl ([195.121.94.169])
+ bh=HAHYRDhukERTz8v5O2UgurxedQY+3XqpZD0YVHrD21I=; b=P0isVAHVtXwj57MwxL2Owv5Bs+
+ miFLJnJEenSEz0STbb0b4F0kFIsfL0+42ynrsb3f69aeZ6jU1jQ7kRWHBEiI0BI/qwHVewBxINAKH
+ OZxw8Jc6w6hwVJdopBRRUVhlz3wJXIlB21iSoouaB9ldp94DkM+cqHaiD2XKpMUIaYG8=;
+Received: from ewsoutbound.kpnmail.nl ([195.121.94.170])
  by sfi-mx-2.v28.lw.sourceforge.com with esmtps
  (TLS1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.95)
- id 1vLOk0-0005c0-KX for jfs-discussion@lists.sourceforge.net;
- Tue, 18 Nov 2025 16:39:42 +0000
-X-KPN-MessageId: 3531c13c-c49d-11f0-84a0-005056abad63
+ id 1vLOqz-0005uh-8T for jfs-discussion@lists.sourceforge.net;
+ Tue, 18 Nov 2025 16:46:53 +0000
+X-KPN-MessageId: 69fa9918-c49e-11f0-9c78-005056ab378f
 Received: from smtp.kpnmail.nl (unknown [10.31.155.37])
  by ewsoutbound.so.kpn.org (Halon) with ESMTPS
- id 3531c13c-c49d-11f0-84a0-005056abad63;
- Tue, 18 Nov 2025 17:39:52 +0100 (CET)
+ id 69fa9918-c49e-11f0-9c78-005056ab378f;
+ Tue, 18 Nov 2025 17:48:31 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=xs4all.nl; s=xs4all01;
  h=mime-version:message-id:date:subject:to:from;
- bh=n6apG3lmkHSuUuG0ZOl3EabiA2yAP5M8vJKLwwhuUMc=;
- b=EwKUtVJgH1jXu4+dAKim/EDxsEa96gw7tUK28U6foVN6s5zJmxlRNq5pouV33vpeM1ZlYBwlS9fny
- 77e/12I+3b3hBJVwE8bkmX6Rl3LsKFUCQATLT7UQT+d+QnKM8lOhCNzJJ5aj3k5/OBtF27S6mxIYQs
- STK0H9PLkk29HPyrm1NkOr5Ah6IflCKCYtK/ejmGNIj+rJ9k3WyiV0cyu/bKPuxpktgSBeIuD44ULd
- tWVSocjb1Vfew5l0WGh+pBYb0J3CqYYKP/hW/5SluyexvL2+45x6p01r/zte/GT5JsQQ1zv3P7l6ij
- aNKa3DUm56dtH8T83TsWGbgKcu5kj4w==
-X-KPN-MID: 33|g+Gd0clpTIob7INLhpnqeXr966zuPn6yfVu/2wHS780eUuHHqQlToL7XUlE8WHI
- Dclwm4usw/cJ+Bn8KRMvskw==
+ bh=HAHYRDhukERTz8v5O2UgurxedQY+3XqpZD0YVHrD21I=;
+ b=b4OW3P6OTZrHBLnSWsYpcyYzzuxwMua0kdL5hcRgLo7v/aHA9Tr3OkPAeB3HMkphgqVsY2M95X8Uc
+ YeaBZVLT1J/2qJLePJnLHzLxHuDfdXsgNL2j9c1SyXl5sRpKb+PVmHriY22ZHXiQVQDjLATYPq4ism
+ X9E4brYgBBGv82wlz7agKC3OZSeaTmn3Uh1yzGTpRKVgLmFq6tK3UXEDqon3YQXLOCp8Ata7AaHJpP
+ EkgBdIrbGCSzjodTydob+ZkRrQZqZgQd8QeW3Cs5civJGB/jMWXWsDDGdIylRKZWiBDpydncbhc1yv
+ hckzV6G8LD4D/F41RYZEj13jnRuoQAQ==
+X-KPN-MID: 33|ozctNrtMi6JcJHbi1tHtXvl4ZKynJNp1Jhr5BHCIFVXHITwjkagyaclPA77hMll
+ Pwc295jVlFxFol0Ja/SzApw==
 X-KPN-VerifiedSender: Yes
-X-CMASSUN: 33|RVg6e6myhbxa47oQnV/5fLxXNa2xaWujlNtwUqvT3MtZd1ogwn17tAg3YE5j4G+
- rKV856CnYIWTh2wCVnF181g==
+X-CMASSUN: 33|QuyYZ0rs6+TiMRMiQSIoFkN+bkUOdZy9ETITNpmViG4OtpxjItibJA7SVBH/5lS
+ 7rQZ8O8vAjfOjwMCrEIElSg==
 X-Originating-IP: 178.226.144.191
 Received: from lt-jori.localdomain (unknown [178.226.144.191])
  by smtp.xs4all.nl (Halon) with ESMTPSA
- id 267ebfba-c49d-11f0-bda2-005056ab1411;
- Tue, 18 Nov 2025 17:39:28 +0100 (CET)
+ id 2b6ff0f6-c49e-11f0-bda2-005056ab1411;
+ Tue, 18 Nov 2025 17:46:46 +0100 (CET)
 To: brauner@kernel.org, gabriel@krisman.be, jlayton@kernel.org,
  neil@brown.name, shaggy@kernel.org, viro@zeniv.linux.org.uk
-Date: Tue, 18 Nov 2025 17:39:26 +0100
-Message-ID: <20251118163926.65737-1-jkoolstra@xs4all.nl>
+Date: Tue, 18 Nov 2025 17:46:45 +0100
+Message-ID: <20251118164645.67401-1-jkoolstra@xs4all.nl>
 X-Mailer: git-send-email 2.51.2
-In-Reply-To: <20251028122212.290745-1-jkoolstra@xs4all.nl>
-References: <20251028122212.290745-1-jkoolstra@xs4all.nl>
+In-Reply-To: <20251028232329.430752-1-jkoolstra@xs4all.nl>
+References: <20251028232329.430752-1-jkoolstra@xs4all.nl>
 MIME-Version: 1.0
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: Spam detection software,
@@ -100,8 +100,9 @@ X-Spam-Report: Spam detection software,
  not necessarily valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
-X-Headers-End: 1vLOk0-0005c0-KX
-Subject: [Jfs-discussion] [PATCH] nlink overflow in jfs_rename
+X-Headers-End: 1vLOqz-0005uh-8T
+Subject: [Jfs-discussion] [PATCH] dtInsertEntry can result in buffer
+ overflow on corrupted jfs filesystems
 X-BeenThere: jfs-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -115,7 +116,7 @@ List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/jfs-discussion>,
  <mailto:jfs-discussion-request@lists.sourceforge.net?subject=subscribe>
 From: Jori Koolstra via Jfs-discussion <jfs-discussion@lists.sourceforge.net>
 Reply-To: Jori Koolstra <jkoolstra@xs4all.nl>
-Cc: jkoolstra@xs4all.nl, syzbot+9131ddfd7870623b719f@syzkaller.appspotmail.com,
+Cc: jkoolstra@xs4all.nl, syzbot+cd7590567cc388f064f3@syzkaller.appspotmail.com,
  skhan@linuxfoundation.org, jfs-discussion@lists.sourceforge.net,
  linux-kernel@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
@@ -131,21 +132,27 @@ Jori.
 
 Apologies for the resend, I messed up the email headers.
 
-> Op 28-10-2025 13:22 CET schreef Jori Koolstra <jkoolstra@xs4all.nl>:
->
->
-> If nlink is maximal for a directory (-1) and inside that directory you
-> perform a rename for some child directory (not moving from the parent),
-> then the nlink of the first directory is first incremented and later
-> decremented. Normally this is fine, but when nlink = -1 this causes a
-> wrap around to 0, and then drop_nlink issues a warning.
+> Op 29-10-2025 00:23 CET schreef Jori Koolstra <jkoolstra@xs4all.nl>:
 > 
-> After applying the patch syzbot no longer issues any warnings. I also
-> ran some basic fs tests to look for any regressions.
+>  
+> Syzbot reported a general protection fault in inode_set_ctime_current.
+> This resulted from the following circumstances: when creating a new file
+> via dtInsert, BT_GETSEARCH may yield a pointer to a dtroot which is
+> embedded directly in the jfs_inode_info. When finally dtInsertEntry is
+> called, if the freelist field or any next field of a slot of the dtpage
+> is corrupted, this may result in memory corruption of the parent
+> directory inode.
+> 
+> In this case the i_sb field was corrupted, which raised the gpf when
+> in inode_set_ctime_current i_sb was dereferenced to access s_time_gran.
+> 
+> I tested the patch using the syzbot reproducer and doing some basic
+> filesystem operations on a fresh jfs fs, such as "cp -r /usr/include/
+> /mnt/jfs/" and "rm -r /mnt/jfs/include/n*"
 > 
 > Signed-off-by: Jori Koolstra <jkoolstra@xs4all.nl>
-> Reported-by: syzbot+9131ddfd7870623b719f@syzkaller.appspotmail.com
-> Closes: https://syzbot.org/bug?extid=9131ddfd7870623b719f
+> Reported-by: syzbot+cd7590567cc388f064f3@syzkaller.appspotmail.com
+> Closes: https://syzbot.org/bug?extid=cd7590567cc388f064f3
 
 
 _______________________________________________
