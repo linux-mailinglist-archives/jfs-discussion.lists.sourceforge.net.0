@@ -2,102 +2,101 @@ Return-Path: <jfs-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+jfs-discussion@lfdr.de
 Delivered-To: lists+jfs-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id 206A9C75154
-	for <lists+jfs-discussion@lfdr.de>; Thu, 20 Nov 2025 16:45:28 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 89CBBC751FB
+	for <lists+jfs-discussion@lfdr.de>; Thu, 20 Nov 2025 16:50:25 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.sourceforge.net; s=beta; h=Content-Transfer-Encoding:Content-Type:Cc:
 	Reply-To:From:List-Subscribe:List-Help:List-Post:List-Archive:
 	List-Unsubscribe:List-Id:Subject:MIME-Version:Message-ID:Date:To:Sender:
 	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
 	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
-	bh=pAjTqiYFNu22G20486T++AgF1FWBefoSGWzOZFt/f60=; b=GSmLU+o5xabm3oPTT1phtEweQk
-	+p5NCJ+TTffUasJKJdPq/ucNQ2BeZJTUYPkTyHaJcDzROXzhbQlsy39VbhCUBn5lmey5brgPVwF8P
-	q9wPAmAkheqzSzrt6c12LM8R6SzDKBBaa0tdvG7Tz8ovP+ZiYOL/uV2j5cNgbNGTJOWI=;
-Received: from [127.0.0.1] (helo=sfs-ml-1.v29.lw.sourceforge.com)
-	by sfs-ml-1.v29.lw.sourceforge.com with esmtp (Exim 4.95)
+	bh=FG/v/ysiNRHKPEyZGL/g83KIYLWg0TR4RjrWYu47B00=; b=MgUi8XdwrWpKHVYHz9Xz4BRP10
+	WhIuEQedSsejtWgrbNZqjVUTL/l5V2XzZG08OGcfninuHzcH4ZqmaJG1S3cES8TPAA86kzWTDI4wy
+	UwC8mgy8V9XsToo7nsvFsWWUZ151iy2yjB4/SSPkkrOy1FCyLHDxa21VcTkwWabfQ7qc=;
+Received: from [127.0.0.1] (helo=sfs-ml-2.v29.lw.sourceforge.com)
+	by sfs-ml-2.v29.lw.sourceforge.com with esmtp (Exim 4.95)
 	(envelope-from <jfs-discussion-bounces@lists.sourceforge.net>)
-	id 1vM6q3-0007CZ-CM;
-	Thu, 20 Nov 2025 15:44:51 +0000
+	id 1vM6q7-0005ok-QE;
+	Thu, 20 Nov 2025 15:44:56 +0000
 Received: from [172.30.29.66] (helo=mx.sourceforge.net)
- by sfs-ml-1.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
+ by sfs-ml-2.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
  TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (Exim 4.95)
  (envelope-from <prvs=34190f787f=yun.zhou@windriver.com>)
- id 1vM6q2-0007CS-DR for jfs-discussion@lists.sourceforge.net;
- Thu, 20 Nov 2025 15:44:50 +0000
+ id 1vM6q6-0005oc-Is for jfs-discussion@lists.sourceforge.net;
+ Thu, 20 Nov 2025 15:44:55 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=sourceforge.net; s=x; h=Content-Type:Content-Transfer-Encoding:MIME-Version
  :Message-ID:Date:Subject:CC:To:From:Sender:Reply-To:Content-ID:
  Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
  :Resent-Message-ID:In-Reply-To:References:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=rO26f2Omac4xoQJyT9Ehp1ex0mERXIZvq25qjo7zG1E=; b=FdTRwsczBuFXRXCko/8lJubvim
- Q8l2eVZr4wkPIElhpO1vwr3KWJuM/0TPjUTe3rcJAZS1fbL6TmsKaJ1Kl1LKIyxl+jI7RFTfvfDwQ
- LTdw29cc8pFxxhFQIZmhAnO/GZMz0xKdI6qX5hpQBPin3q79gIFdYrf01aV88Ng0rbxs=;
+ bh=vTJp97rBSKdcJdasfGTXlCAXG468fwK1jPd2jG7cG0w=; b=EQiCQnWU6wc79Lzwn/VCGvdMHn
+ Jh8XiguQH2I84vFjcgXpVGA4r7p3dnliXfcACm1nnJ4L8mQo+IhfsZsedwRjZlvXno14Cy0yAnn0+
+ rOhEmVW7fzhx7bhcktZqm1m3zdSrnwp1UQZJQmA55qPN8cY3T6hPRrZa6mb7FkCziE4M=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
  h=Content-Type:Content-Transfer-Encoding:MIME-Version:Message-ID:Date:
  Subject:CC:To:From:Sender:Reply-To:Content-ID:Content-Description:Resent-Date
  :Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
  References:List-Id:List-Help:List-Unsubscribe:List-Subscribe:List-Post:
- List-Owner:List-Archive; bh=rO26f2Omac4xoQJyT9Ehp1ex0mERXIZvq25qjo7zG1E=; b=k
- RiBLtC/SHkxVUgsKUYsNSJOyXHnUTOckDrnYt0DWJHAIPGwPW2vCXZWExVIQlwhb+AGhA3qSuEnCa
- tZ7qvrRTxiv1VjSfcvES6bE2GjvzWm9tc7usbwTSyoWGbcycGuZGgiz4qqUcy6Q7P9+fVwqqLHXon
- nNkO9niYGbMpXJVw=;
-Received: from mx0b-0064b401.pphosted.com ([205.220.178.238])
+ List-Owner:List-Archive; bh=vTJp97rBSKdcJdasfGTXlCAXG468fwK1jPd2jG7cG0w=; b=l
+ 85IONiGAOkwN6a+Ujn0L3fnsvhOsGwTmtsnF2K53nuq6aQZvmaoGAA2kw21iH8CmeNEMAivopuarY
+ 2A4dBtjZ2tOmrCUWIuo1Dn+unhCcW73mIECpDLX59SO0mRlOBgjcCXTukd4alJqPycsYD3vZ5pC0C
+ 6j3HRwWoFPekocdc=;
+Received: from mx0a-0064b401.pphosted.com ([205.220.166.238])
  by sfi-mx-2.v28.lw.sourceforge.com with esmtps
  (TLS1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.95)
- id 1vM6q1-0002NJ-Lg for jfs-discussion@lists.sourceforge.net;
- Thu, 20 Nov 2025 15:44:50 +0000
-Received: from pps.filterd (m0250812.ppops.net [127.0.0.1])
+ id 1vM6q6-0002NX-JO for jfs-discussion@lists.sourceforge.net;
+ Thu, 20 Nov 2025 15:44:55 +0000
+Received: from pps.filterd (m0250809.ppops.net [127.0.0.1])
  by mx0a-0064b401.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id
- 5AKBLLto1396429; Thu, 20 Nov 2025 15:44:07 GMT
+ 5AKBA2nV4175630; Thu, 20 Nov 2025 07:44:16 -0800
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=windriver.com;
  h=cc:content-transfer-encoding:content-type:date:from
- :message-id:mime-version:subject:to; s=PPS06212021; bh=rO26f2Oma
- c4xoQJyT9Ehp1ex0mERXIZvq25qjo7zG1E=; b=bwZzsGu7PYMR5znOOZEMz1qdo
- DI5uNZgkSXWd3AT1+HCD66Sk7TBO0Kido8Zs/g6Xu6YszQ9YXZG5vpPBQVUZeMFB
- aQZ4xryOIPe/ZCI4ngh8qHbAQwnQsScjvppVaWW8yfIQC32CJH1IQNDaZQImLaWe
- c95pAg7i3yOgta+nn7LsEmZMFH7fPbQLKnE4GqsA2gUtcpVgvkFvjmi3GluS3ej1
- oa3Y5nTt1JhCGO0fB7sVociBsHHVaFaRGrrfu2fYxfQUfg6Z14wAcN98JTah9ktV
- 04uytlPUVI04wPNx0MyPHLGuXYWXOxtSXyB59vCwj7tkiSWR01rm3e5ZLnAqg==
-Received: from ala-exchng02.corp.ad.wrs.com ([128.224.246.37])
- by mx0a-0064b401.pphosted.com (PPS) with ESMTPS id 4ahayrsu6p-1
+ :message-id:mime-version:subject:to; s=PPS06212021; bh=vTJp97rBS
+ KdcJdasfGTXlCAXG468fwK1jPd2jG7cG0w=; b=PGn4glfGPiu02lXL6GZTMrQZJ
+ wkwYc23dTHMUZtB5xW3lWh2A06ruQfnoxXzjT+ee2mwTj1XVuBeu4mOXppr/leYV
+ +aNR+4MkGDHK//9zj0vQTAx+Rv0SiVd7keeMTpKp3H3JVmZjXgRyo5LkKx/xL9Xs
+ FN67poa07QvHm5BYwDoWJLrBwqz6FRG15X4cA6DRLmvwdyFYLRyFO4Fn2DYm14ET
+ h15ZeXXjbwR6QRNaRbLUBWPvOAdYU/xmDKKCMjUJXte0mwzRb7CoQ3Rmgtu+dSRs
+ OmWweXS2zHycaKx3Ajv1FIn2QsdEWZl34Wo+2gNzFUMi+Gyl4+oQY9HV73i2w==
+Received: from ala-exchng01.corp.ad.wrs.com ([128.224.246.36])
+ by mx0a-0064b401.pphosted.com (PPS) with ESMTPS id 4aeswjedvp-1
  (version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NOT);
- Thu, 20 Nov 2025 15:44:07 +0000 (GMT)
+ Thu, 20 Nov 2025 07:44:16 -0800 (PST)
 Received: from ALA-EXCHNG02.corp.ad.wrs.com (10.11.224.122) by
- ALA-EXCHNG02.corp.ad.wrs.com (10.11.224.122) with Microsoft SMTP Server
+ ala-exchng01.corp.ad.wrs.com (10.11.224.121) with Microsoft SMTP Server
  (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
- 15.1.2507.61; Thu, 20 Nov 2025 07:44:03 -0800
+ 15.1.2507.61; Thu, 20 Nov 2025 07:44:15 -0800
 Received: from pek-lpd-ccm6.wrs.com (10.11.232.110) by
  ALA-EXCHNG02.corp.ad.wrs.com (10.11.224.122) with Microsoft SMTP Server id
- 15.1.2507.61 via Frontend Transport; Thu, 20 Nov 2025 07:44:01 -0800
+ 15.1.2507.61 via Frontend Transport; Thu, 20 Nov 2025 07:44:13 -0800
 To: <shaggy@kernel.org>
-Date: Thu, 20 Nov 2025 23:44:00 +0800
-Message-ID: <20251120154400.1042123-1-yun.zhou@windriver.com>
+Date: Thu, 20 Nov 2025 23:44:12 +0800
+Message-ID: <20251120154413.1043174-1-yun.zhou@windriver.com>
 X-Mailer: git-send-email 2.43.0
 MIME-Version: 1.0
-X-Proofpoint-ORIG-GUID: xwOHKPi7LHb5bj0QVLymZTJ4fgEgNCOq
-X-Authority-Analysis: v=2.4 cv=EdXFgfmC c=1 sm=1 tr=0 ts=691f3747 cx=c_pps
- a=Lg6ja3A245NiLSnFpY5YKQ==:117 a=Lg6ja3A245NiLSnFpY5YKQ==:17
- a=6UeiqGixMTsA:10 a=VkNPw1HP01LnGYTKEx00:22 a=t7CeM3EgAAAA:8
- a=u9DlrU1ZzlIu95ImLY8A:9 a=FdTzh2GWekK77mhwV6Dw:22
-X-Proofpoint-GUID: xwOHKPi7LHb5bj0QVLymZTJ4fgEgNCOq
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUxMTIwMDEwMyBTYWx0ZWRfX1JHt3JHClkBF
- N5Jz8vYZRuApXz7aZON5tSJkuECuMz9H8UTB5Ye/+keDSENLDi4Gr6XC2rNTk/eP+9/Mt7/jWk8
- 263NST8Pu34vrVStwfRZnwQ1+ZCL5B5Pu16i4OU3QViXnFtc2be87bFDapIWVpRFj3bGvI0giWc
- tmkphJjFBjkl6hGkPeUdKxfSVcDpHliphl7uL//bDNa25tJr8ynsMp6NNwyiUi1f2RR28jMT6WM
- pVCe9jdSQy3tcqB3BJo9Wh1APHrd0DyUPwszXRA4Bo6zGYlBUMSPvwhUVsDsp9mwe76bTzMqGgD
- dNMTDYCsRnqCVP4OVqRvaA9Yg6ITkwhNFLlQ8C+tK5HJg49KQBRcQgS9cqd6kqNENEWY4WsFyWu
- XfJXr6JIbxkJJPbqEXt5i9jsTIy2Kg==
+X-Authority-Analysis: v=2.4 cv=BqiQAIX5 c=1 sm=1 tr=0 ts=691f3750 cx=c_pps
+ a=AbJuCvi4Y3V6hpbCNWx0WA==:117 a=AbJuCvi4Y3V6hpbCNWx0WA==:17
+ a=6UeiqGixMTsA:10 a=VkNPw1HP01LnGYTKEx00:22 a=hSkVLCK3AAAA:8 a=t7CeM3EgAAAA:8
+ a=3JtE_UQzxUXlF2KlCTMA:9 a=cQPPKAXgyycSBL8etih5:22 a=FdTzh2GWekK77mhwV6Dw:22
+X-Proofpoint-GUID: Q6SEmRU71VNo96Y1GluMXujo6pYGzinJ
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUxMTIwMDEwMyBTYWx0ZWRfX3c+QbRSmIX4H
+ 0f9/P+EYwSb/omjwmLgHhjQxIvn0dxqM7qDoJxgwnk/TmLjVX4iGQXHuhbr3+Fc6KKYUfbxbQ6y
+ w5oKHg/6W/5Cg4B0xaC9lT+CmuMNdTG87KImoe9CSQI28T+u4LiLNPrG88BVgbQaBBSL5Kvrs9E
+ CAImx1ygGXn4JvDIVTrupDgqUwXxTLLpFL7TSQcaC9TLwlxIWSQytl/A/54GgW3UBJOMUIGKL68
+ btVY1fjZH4+RSxf3cpbDGA9sZEsEFAYfHHxjgRpplgZcXatfzgUgQzlp1G343qsu8+J6fWKTWoW
+ UeMRyvQvVtmr54HG75gTW1sARshSCeMhNeaxc5f+L58AVkQMnIoqQg25hQVNgwnWi595/a76hHM
+ oGh6XngE/zbIRsYzo8K+u3xuZHqIlA==
+X-Proofpoint-ORIG-GUID: Q6SEmRU71VNo96Y1GluMXujo6pYGzinJ
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1121,Hydra:6.1.9,FMLib:17.12.100.49
  definitions=2025-11-20_05,2025-11-20_01,2025-10-01_01
 X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- spamscore=0 adultscore=0 suspectscore=0 bulkscore=0 impostorscore=0
- phishscore=0 malwarescore=0 clxscore=1015 priorityscore=1501
- lowpriorityscore=0 classifier=typeunknown authscore=0 authtc= authcc=
- route=outbound adjust=0 reason=mlx scancount=1 engine=8.22.0-2510240001
- definitions=main-2511200103
+ clxscore=1015 phishscore=0 priorityscore=1501 suspectscore=0 adultscore=0
+ lowpriorityscore=0 impostorscore=0 malwarescore=0 spamscore=0 bulkscore=0
+ classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
+ reason=mlx scancount=1 engine=8.22.0-2510240001 definitions=main-2511200103
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: Spam detection software,
  running on the system "sfi-spamd-2.hosts.colo.sdot.me", 
@@ -105,26 +104,26 @@ X-Spam-Report: Spam detection software,
  message has been attached to this so you can view it or label
  similar future email.  If you have any questions, see
  the administrator of that system for details.
- Content preview:  Add check_dtpage() to validate dtpage_t integrity, focusing
- on preventing index/pointer overflows from on-disk corruption. Key checks:
- - maxslot must be exactly DTPAGEMAXSLOT (128) as defined for dtpage slot
- array. - freecnt bounded by [0, DTPAGEMAXSLOT-1] (slot[0] reserved for header).
- - freelist validity: -1 when freecn [...] 
+ Content preview:  Add check_dmapctl() to validate dmapctl structure integrity, 
+ focusing on preventing invalid operations caused by on-disk corruption. Key
+ checks: - nleafs bounded by [0, LPERCTL] (maximum leaf nodes per dmapctl).
+ - l2nleafs bounded by [0, L2LPERCTL] and consistent with nleafs (nleafs must
+ be 2^l2nleafs). - leafidx must be exactly CT [...] 
  Content analysis details:   (-0.2 points, 5.0 required)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [205.220.178.238 listed in wl.mailspike.net]
+ 0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [205.220.166.238 listed in wl.mailspike.net]
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature,
  not necessarily valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID_AU Message has a valid DKIM or DK signature from author's
- domain 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
-X-Headers-End: 1vM6q1-0002NJ-Lg
-Subject: [Jfs-discussion] [PATCH] jfs: add dtpage integrity check to prevent
- index/pointer overflows
+ domain
+X-Headers-End: 1vM6q6-0002NX-JO
+Subject: [Jfs-discussion] [PATCH] jfs: add dmapctl integrity check to
+ prevent invalid operations
 X-BeenThere: jfs-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -145,164 +144,258 @@ Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Errors-To: jfs-discussion-bounces@lists.sourceforge.net
 
-Add check_dtpage() to validate dtpage_t integrity, focusing on
-preventing index/pointer overflows from on-disk corruption.
+Add check_dmapctl() to validate dmapctl structure integrity, focusing on
+preventing invalid operations caused by on-disk corruption.
 
 Key checks:
-- maxslot must be exactly DTPAGEMAXSLOT (128) as defined for dtpage
-  slot array.
-- freecnt bounded by [0, DTPAGEMAXSLOT-1] (slot[0] reserved for header).
-- freelist validity: -1 when freecnt=0; 1~DTPAGEMAXSLOT-1 when non-zero,
-  with linked list checks (no duplicates, proper termination via next=-1).
-- stblindex bounds: must be within range that avoids overlapping with
-  stbl itself (stblindex < DTPAGEMAXSLOT - stblsize).
-- nextindex bounded by stbl size (stblsize << L2DTSLOTSIZE). stbl entries
-  validity: within 1~DTPAGEMAXSLOT-1, no duplicates(excluding invalid
-  entries marked as -1).
+ - nleafs bounded by [0, LPERCTL] (maximum leaf nodes per dmapctl).
+ - l2nleafs bounded by [0, L2LPERCTL] and consistent with nleafs
+   (nleafs must be 2^l2nleafs).
+ - leafidx must be exactly CTLLEAFIND (expected leaf index position).
+ - height bounded by [0, L2LPERCTL >> 1] (valid tree height range).
+ - budmin validity: NOFREE only if nleafs=0; otherwise >= BUDMIN.
+ - Leaf nodes fit within stree array (leafidx + nleafs <= CTLTREESIZE).
+ - Leaf node values are either non-negative or NOFREE.
 
-Invoked when loading dtpage (in BT_GETPAGE macro context) to catch
-corruption early before directory operations trigger out-of-bounds access.
+Invoked in dbAllocAG(), dbFindCtl(), dbAdjCtl() and dbExtendFS() when
+accessing dmapctl pages, catching corruption early before dmap operations
+trigger invalid memory access or logic errors.
 
+This fixes the following UBSAN warning.
+
+[58245.668090][T14017] ------------[ cut here ]------------
+[58245.668103][T14017] UBSAN: shift-out-of-bounds in fs/jfs/jfs_dmap.c:2641:11
+[58245.668119][T14017] shift exponent 110 is too large for 32-bit type 'int'
+[58245.668137][T14017] CPU: 0 UID: 0 PID: 14017 Comm: 4c1966e88c28fa9 Tainted: G            E       6.18.0-rc4-00253-g21ce5d4ba045-dirty #124 PREEMPT_{RT,(full)}
+[58245.668174][T14017] Tainted: [E]=UNSIGNED_MODULE
+[58245.668176][T14017] Hardware name: QEMU Ubuntu 25.04 PC (i440FX + PIIX, 1996), BIOS 1.16.3-debian-1.16.3-2 04/01/2014
+[58245.668184][T14017] Call Trace:
+[58245.668200][T14017]  <TASK>
+[58245.668208][T14017]  dump_stack_lvl+0x189/0x250
+[58245.668288][T14017]  ? __pfx_dump_stack_lvl+0x10/0x10
+[58245.668301][T14017]  ? __pfx__printk+0x10/0x10
+[58245.668315][T14017]  ? lock_metapage+0x303/0x400 [jfs]
+[58245.668406][T14017]  ubsan_epilogue+0xa/0x40
+[58245.668422][T14017]  __ubsan_handle_shift_out_of_bounds+0x386/0x410
+[58245.668462][T14017]  dbSplit+0x1f8/0x200 [jfs]
+[58245.668543][T14017]  dbAdjCtl+0x34c/0xa20 [jfs]
+[58245.668628][T14017]  dbAllocNear+0x2ee/0x3d0 [jfs]
+[58245.668710][T14017]  dbAlloc+0x933/0xba0 [jfs]
+[58245.668797][T14017]  ea_write+0x374/0xdd0 [jfs]
+[58245.668888][T14017]  ? __pfx_ea_write+0x10/0x10 [jfs]
+[58245.668966][T14017]  ? __jfs_setxattr+0x76e/0x1120 [jfs]
+[58245.669046][T14017]  __jfs_setxattr+0xa01/0x1120 [jfs]
+[58245.669135][T14017]  ? __pfx___jfs_setxattr+0x10/0x10 [jfs]
+[58245.669216][T14017]  ? mutex_lock_nested+0x154/0x1d0
+[58245.669252][T14017]  ? __jfs_xattr_set+0xb9/0x170 [jfs]
+[58245.669333][T14017]  __jfs_xattr_set+0xda/0x170 [jfs]
+[58245.669430][T14017]  ? __pfx___jfs_xattr_set+0x10/0x10 [jfs]
+[58245.669509][T14017]  ? xattr_full_name+0x6f/0x90
+[58245.669546][T14017]  ? jfs_xattr_set+0x33/0x60 [jfs]
+[58245.669636][T14017]  ? __pfx_jfs_xattr_set+0x10/0x10 [jfs]
+[58245.669726][T14017]  __vfs_setxattr+0x43c/0x480
+[58245.669743][T14017]  __vfs_setxattr_noperm+0x12d/0x660
+[58245.669756][T14017]  vfs_setxattr+0x16b/0x2f0
+[58245.669768][T14017]  ? __pfx_vfs_setxattr+0x10/0x10
+[58245.669782][T14017]  filename_setxattr+0x274/0x600
+[58245.669795][T14017]  ? __pfx_filename_setxattr+0x10/0x10
+[58245.669806][T14017]  ? getname_flags+0x1e5/0x540
+[58245.669829][T14017]  path_setxattrat+0x364/0x3a0
+[58245.669840][T14017]  ? __pfx_path_setxattrat+0x10/0x10
+[58245.669859][T14017]  ? __se_sys_chdir+0x1b9/0x280
+[58245.669876][T14017]  __x64_sys_lsetxattr+0xbf/0xe0
+[58245.669888][T14017]  do_syscall_64+0xfa/0xfa0
+[58245.669901][T14017]  ? lockdep_hardirqs_on+0x9c/0x150
+[58245.669913][T14017]  ? entry_SYSCALL_64_after_hwframe+0x77/0x7f
+[58245.669927][T14017]  ? exc_page_fault+0xab/0x100
+[58245.669937][T14017]  entry_SYSCALL_64_after_hwframe+0x77/0x7f
+
+Reported-by: syzbot+4c1966e88c28fa96e053@syzkaller.appspotmail.com
 Signed-off-by: Yun Zhou <yun.zhou@windriver.com>
 ---
- fs/jfs/jfs_dtree.c | 108 +++++++++++++++++++++++++++++++++++++++++++--
- fs/jfs/jfs_dtree.h |   2 +
- 2 files changed, 106 insertions(+), 4 deletions(-)
+ fs/jfs/jfs_dmap.c | 113 ++++++++++++++++++++++++++++++++++++++++++++--
+ 1 file changed, 110 insertions(+), 3 deletions(-)
 
-diff --git a/fs/jfs/jfs_dtree.c b/fs/jfs/jfs_dtree.c
-index e1cbc3a04f3f..6df4a3ed9043 100644
---- a/fs/jfs/jfs_dtree.c
-+++ b/fs/jfs/jfs_dtree.c
-@@ -115,10 +115,7 @@ struct dtsplit {
- do {									\
- 	BT_GETPAGE(IP, BN, MP, dtpage_t, SIZE, P, RC, i_dtroot);	\
- 	if (!(RC)) {							\
--		if (((P)->header.nextindex >				\
--		     (((BN) == 0) ? DTROOTMAXSLOT : (P)->header.maxslot)) || \
--		    ((BN) && (((P)->header.maxslot > DTPAGEMAXSLOT) ||	\
--		    ((P)->header.stblindex >= DTPAGEMAXSLOT)))) {	\
-+		if ((BN) && !check_dtpage(P)) {				\
- 			BT_PUTPAGE(MP);					\
- 			jfs_error((IP)->i_sb,				\
- 				  "DT_GETPAGE: dtree page corrupt\n");	\
-@@ -4399,3 +4396,106 @@ bool check_dtroot(dtroot_t *p)
+diff --git a/fs/jfs/jfs_dmap.c b/fs/jfs/jfs_dmap.c
+index cdfa699cd7c8..20dffd44785f 100644
+--- a/fs/jfs/jfs_dmap.c
++++ b/fs/jfs/jfs_dmap.c
+@@ -133,6 +133,92 @@ static const s8 budtab[256] = {
+ 	2, 1, 1, 1, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1
+ };
  
-     return true;
- }
-+
-+bool check_dtpage(dtpage_t *p)
++/*
++ * check_dmapctl - Validate integrity of a dmapctl structure
++ * @dcp: Pointer to the dmapctl structure to check
++ *
++ * Return: true if valid, false if corrupted
++ */
++static bool check_dmapctl(struct dmapctl *dcp)
 +{
-+	DECLARE_BITMAP(bitmap, DTPAGEMAXSLOT) = {0};
-+	const int stblsize = ((PSIZE >> L2DTSLOTSIZE) + 31) >> L2DTSLOTSIZE;
++	s8 budmin = dcp->budmin;
++	u32 nleafs, l2nleafs, leafidx, height;
 +	int i;
 +
-+	/* Validate maxslot (maximum number of slots in the page)
-+	 * dtpage_t slot array is defined to hold up to DTPAGEMAXSLOT (128) slots
-+	 */
-+	if (unlikely(p->header.maxslot != DTPAGEMAXSLOT)) {
-+		jfs_err("Bad maxslot:%d in dtpage (expected %d)\n",
-+				p->header.maxslot, DTPAGEMAXSLOT);
++	nleafs = le32_to_cpu(dcp->nleafs);
++	/* Check basic field ranges */
++	if (unlikely(nleafs > LPERCTL || nleafs < 0)) {
++		jfs_err("dmapctl: invalid nleafs %u (max %u)",
++			nleafs, LPERCTL);
 +		return false;
 +	}
 +
-+	/* freecnt cannot be negative or exceed DTPAGEMAXSLOT-1
-+	 * (since slot[0] is occupied by the header).
-+	 */
-+	if (unlikely(p->header.freecnt < 0 ||
-+				p->header.freecnt > DTPAGEMAXSLOT - 1)) {
-+		jfs_err("Bad freecnt:%d in dtpage\n", p->header.freecnt);
-+		return false;
-+	} else if (p->header.freecnt == 0) {
-+		/* No free slots: freelist must be -1 */
-+		if (unlikely(p->header.freelist != -1)) {
-+			jfs_err("freecnt=0 but freelist=%d in dtpage\n",
-+					p->header.freelist);
-+			return false;
-+		}
-+	} else {
-+		int fsi;
-+		/* When there are free slots, freelist must be a valid slot index in
-+		 * 1~DTROOTMAXSLOT-1(since slot[0] is occupied by the header).
-+		 */
-+		if (unlikely(p->header.freelist < 1 ||
-+					p->header.freelist >= DTPAGEMAXSLOT)) {
-+			jfs_err("Bad freelist:%d in dtpage\n", p->header.freelist);
-+			return false;
-+		}
-+
-+		/* Traverse the free list to check validity of all node indices */
-+		fsi = p->header.freelist;
-+		for (i = 0; i < p->header.freecnt - 1; i++) {
-+			/* Check for duplicate indices in the free list */
-+			if (unlikely(__test_and_set_bit(fsi, bitmap))) {
-+				jfs_err("duplicate index%d in slot in dtpage\n", fsi);
-+				return false;
-+			}
-+			fsi = p->slot[fsi].next;
-+
-+			/* Ensure the next slot index in the free list is valid */
-+			if (unlikely(fsi < 1 || fsi >= DTPAGEMAXSLOT)) {
-+				jfs_err("Bad index:%d in slot in dtpage\n", fsi);
-+				return false;
-+			}
-+		}
-+
-+		/* The last node in the free list must terminate with next = -1 */
-+		if (unlikely(p->slot[fsi].next != -1)) {
-+			jfs_err("Bad next:%d of the last slot in dtpage\n",
-+					p->slot[fsi].next);
-+			return false;
-+		}
-+	}
-+
-+	/* stbl must be little then DTPAGEMAXSLOT */
-+	if (unlikely(p->header.stblindex >= DTPAGEMAXSLOT - stblsize)) {
-+		jfs_err("Bad stblindex:%d in dtpage (stbl size %d)\n",
-+				p->header.stblindex, stblsize);
++	l2nleafs = le32_to_cpu(dcp->l2nleafs);
++	if (unlikely(l2nleafs > L2LPERCTL || l2nleafs < 0)) {
++		jfs_err("dmapctl: invalid l2nleafs %u (max %u)",
++			l2nleafs, L2LPERCTL);
 +		return false;
 +	}
 +
-+	/* nextindex must be little then stblsize*32 */
-+	if (unlikely(p->header.nextindex >= (stblsize << L2DTSLOTSIZE))) {
-+		jfs_err("Bad nextindex:%d in dtpage (stbl size %d)\n",
-+				p->header.nextindex, stblsize);
++	/* Verify nleafs matches l2nleafs (must be power of two) */
++	if (unlikely((1U << l2nleafs) != nleafs)) {
++		jfs_err("dmapctl: nleafs %u != 2^%u",
++			nleafs, l2nleafs);
 +		return false;
 +	}
 +
-+	/* Validate stbl entries
-+	 * Each entry is a slot index, valid range: -1 (invalid) or [0, nextindex-1] (valid data slots)
-+	 * (stblindex and higher slots are reserved for stbl itself)
-+	 */
-+	for (i = 0; i < p->header.nextindex; i++) {
-+		int idx = DT_GETSTBL(p)[i];
++	leafidx = le32_to_cpu(dcp->leafidx);
++	/* Check leaf index matches expected position */
++	if (unlikely(leafidx != CTLLEAFIND)) {
++		jfs_err("dmapctl: invalid leafidx %u (expected %u)",
++			leafidx, CTLLEAFIND);
++		return false;
++	}
 +
-+		/* Check if index is out of valid data slot range */
-+		if (unlikely(idx < 1 || idx >= DTPAGEMAXSLOT)) {
-+			jfs_err("Bad stbl[%d] index:%d (stblindex %d) in dtpage\n",
-+					i, idx, p->header.stblindex);
++	height = le32_to_cpu(dcp->height);
++	/* Check tree height is within valid range */
++	if (unlikely(height < 0 || height > (L2LPERCTL >> 1))) {
++		jfs_err("dmapctl: invalid height %u (max %u)",
++			height, L2LPERCTL >> 1);
++		return false;
++	}
++
++	/* Check budmin is valid (cannot be NOFREE for non-empty tree) */
++	if (budmin == NOFREE) {
++		if (unlikely(nleafs > 0)) {
++			jfs_err("dmapctl: budmin is NOFREE but nleafs %u",
++				nleafs);
 +			return false;
 +		}
++	} else if (unlikely(budmin < BUDMIN)) {
++		jfs_err("dmapctl: invalid budmin %d (min %d)",
++			budmin, BUDMIN);
++		return false;
++	}
 +
-+		/* Check for duplicate valid indices (skip -1) */
-+		if (unlikely(__test_and_set_bit(idx, bitmap))) {
-+			jfs_err("Duplicate index:%d in stbl of dtpage\n", idx);
++	/* Check leaf nodes fit within stree array */
++	if (unlikely(leafidx + nleafs > CTLTREESIZE)) {
++		jfs_err("dmapctl: leaf range exceeds stree size (end %u > %u)",
++			leafidx + nleafs, CTLTREESIZE);
++		return false;
++	}
++
++	/* Check leaf nodes have valid values */
++	for (i = leafidx; i < leafidx + nleafs; i++) {
++		s8 val = dcp->stree[i];
++		if (unlikely(val < NOFREE)) {
++			jfs_err("dmapctl: invalid leaf value %d at index %d",
++					val, i);
++			return false;
++		} else if (unlikely(val > 31)) {
++			jfs_err("dmapctl: leaf value %d too large at index %d", val, i);
 +			return false;
 +		}
 +	}
 +
 +	return true;
 +}
-diff --git a/fs/jfs/jfs_dtree.h b/fs/jfs/jfs_dtree.h
-index 94dc16123c87..dfc87b6690a9 100644
---- a/fs/jfs/jfs_dtree.h
-+++ b/fs/jfs/jfs_dtree.h
-@@ -255,4 +255,6 @@ extern int dtModify(tid_t tid, struct inode *ip, struct component_name * key,
- extern int jfs_readdir(struct file *file, struct dir_context *ctx);
- 
- extern bool check_dtroot(dtroot_t *p);
 +
-+extern bool check_dtpage(dtpage_t *p);
- #endif				/* !_H_JFS_DTREE */
+ /*
+  * NAME:	dbMount()
+  *
+@@ -1372,7 +1458,7 @@ dbAllocAG(struct bmap * bmp, int agno, s64 nblocks, int l2nb, s64 * results)
+ 	dcp = (struct dmapctl *) mp->data;
+ 	budmin = dcp->budmin;
+ 
+-	if (dcp->leafidx != cpu_to_le32(CTLLEAFIND)) {
++	if (unlikely(!check_dmapctl(dcp))) {
+ 		jfs_error(bmp->db_ipbmap->i_sb, "Corrupt dmapctl page\n");
+ 		release_metapage(mp);
+ 		return -EIO;
+@@ -1702,7 +1788,7 @@ static int dbFindCtl(struct bmap * bmp, int l2nb, int level, s64 * blkno)
+ 		dcp = (struct dmapctl *) mp->data;
+ 		budmin = dcp->budmin;
+ 
+-		if (dcp->leafidx != cpu_to_le32(CTLLEAFIND)) {
++		if (unlikely(!check_dmapctl(dcp))) {
+ 			jfs_error(bmp->db_ipbmap->i_sb,
+ 				  "Corrupt dmapctl page\n");
+ 			release_metapage(mp);
+@@ -2485,7 +2571,7 @@ dbAdjCtl(struct bmap * bmp, s64 blkno, int newval, int alloc, int level)
+ 		return -EIO;
+ 	dcp = (struct dmapctl *) mp->data;
+ 
+-	if (dcp->leafidx != cpu_to_le32(CTLLEAFIND)) {
++	if (unlikely(!check_dmapctl(dcp))) {
+ 		jfs_error(bmp->db_ipbmap->i_sb, "Corrupt dmapctl page\n");
+ 		release_metapage(mp);
+ 		return -EIO;
+@@ -3454,6 +3540,11 @@ int dbExtendFS(struct inode *ipbmap, s64 blkno,	s64 nblocks)
+ 		return -EIO;
+ 	}
+ 	l2dcp = (struct dmapctl *) l2mp->data;
++	if (unlikely(!check_dmapctl(l2dcp))) {
++		jfs_error(ipbmap->i_sb, "Corrupt dmapctl page\n");
++		release_metapage(l2mp);
++		return -EIO;
++	}
+ 
+ 	/* compute start L1 */
+ 	k = blkno >> L2MAXL1SIZE;
+@@ -3471,6 +3562,10 @@ int dbExtendFS(struct inode *ipbmap, s64 blkno,	s64 nblocks)
+ 			if (l1mp == NULL)
+ 				goto errout;
+ 			l1dcp = (struct dmapctl *) l1mp->data;
++			if (unlikely(!check_dmapctl(l1dcp))) {
++				jfs_error(ipbmap->i_sb, "Corrupt dmapctl page\n");
++				goto errout;
++			}
+ 
+ 			/* compute start L0 */
+ 			j = (blkno & (MAXL1SIZE - 1)) >> L2MAXL0SIZE;
+@@ -3484,6 +3579,10 @@ int dbExtendFS(struct inode *ipbmap, s64 blkno,	s64 nblocks)
+ 				goto errout;
+ 
+ 			l1dcp = (struct dmapctl *) l1mp->data;
++			if (unlikely(!check_dmapctl(l1dcp))) {
++				jfs_error(ipbmap->i_sb, "Corrupt dmapctl page\n");
++				goto errout;
++			}
+ 
+ 			/* compute start L0 */
+ 			j = 0;
+@@ -3503,6 +3602,10 @@ int dbExtendFS(struct inode *ipbmap, s64 blkno,	s64 nblocks)
+ 				if (l0mp == NULL)
+ 					goto errout;
+ 				l0dcp = (struct dmapctl *) l0mp->data;
++				if (unlikely(!check_dmapctl(l0dcp))) {
++					jfs_error(ipbmap->i_sb, "Corrupt dmapctl page\n");
++					goto errout;
++				}
+ 
+ 				/* compute start dmap */
+ 				i = (blkno & (MAXL0SIZE - 1)) >>
+@@ -3518,6 +3621,10 @@ int dbExtendFS(struct inode *ipbmap, s64 blkno,	s64 nblocks)
+ 					goto errout;
+ 
+ 				l0dcp = (struct dmapctl *) l0mp->data;
++				if (unlikely(!check_dmapctl(l0dcp))) {
++					jfs_error(ipbmap->i_sb, "Corrupt dmapctl page\n");
++					goto errout;
++				}
+ 
+ 				/* compute start dmap */
+ 				i = 0;
 -- 
 2.34.1
 
