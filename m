@@ -2,103 +2,128 @@ Return-Path: <jfs-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+jfs-discussion@lfdr.de
 Delivered-To: lists+jfs-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id 584CCC6F924
-	for <lists+jfs-discussion@lfdr.de>; Wed, 19 Nov 2025 16:12:24 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6BC33C751F2
+	for <lists+jfs-discussion@lfdr.de>; Thu, 20 Nov 2025 16:50:12 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.sourceforge.net; s=beta; h=Content-Transfer-Encoding:Content-Type:
+	d=lists.sourceforge.net; s=beta; h=Content-Transfer-Encoding:Content-Type:Cc:
 	Reply-To:From:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:Subject:To:Message-ID:Date:MIME-Version:Sender:Cc:
+	List-Unsubscribe:List-Id:Subject:MIME-Version:Message-ID:Date:To:Sender:
 	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
 	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
-	bh=e25pHHocnqq2V+0HCYNrnHe7U/r+K8kqhJPYZmcbWsk=; b=M8bFe83+A5h6N+H+Np2fMNeyD9
-	XuNkpKaNe7N+Ttt8mSqqgbLapSA0QSFr8CLCRdEi6os8nSo40whbLyHow16s8oGfttLLAz2/eC0Pw
-	WafRnnNEc2vsQlwZ68gE17IXdr2qPydiA3wt236iQfXDtcMFAGa1MBH7pHozrUoSByhg=;
-Received: from [127.0.0.1] (helo=sfs-ml-3.v29.lw.sourceforge.com)
-	by sfs-ml-3.v29.lw.sourceforge.com with esmtp (Exim 4.95)
+	bh=y5eyVwhBgRe+7DSyYMPDgpTRoBim8tUjtV1btuzhcsw=; b=aLQfakYyI5lTEB+N0JAoUoZlwH
+	woS1DlfDaIVPhFCdWCZZ8CTXHy27UeGDRUfFqdS0Vc2oxpOeHlp+j6gX+HQtHvN3f6jGHeG5zD1Pk
+	r8kq4L1+QiNXigi+WyNIm7j2KZT+6g3/sRKYP1rRfV7qoGkan8HGFyDBaMqTjzqvR9cA=;
+Received: from [127.0.0.1] (helo=sfs-ml-2.v29.lw.sourceforge.com)
+	by sfs-ml-2.v29.lw.sourceforge.com with esmtp (Exim 4.95)
 	(envelope-from <jfs-discussion-bounces@lists.sourceforge.net>)
-	id 1vLjqN-00033A-Gg;
-	Wed, 19 Nov 2025 15:11:39 +0000
+	id 1vM6pr-0005o1-GS;
+	Thu, 20 Nov 2025 15:44:40 +0000
 Received: from [172.30.29.66] (helo=mx.sourceforge.net)
- by sfs-ml-1.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
- TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (Exim 4.95) (envelope-from
- <3AFkdaQkbAHcntufVggZmVkkdY.bjjbgZpnZmXjioZio.Xjh@M3KW2WVRGUFZ5GODRSRYTGD7.apphosting.bounces.google.com>)
- id 1vLayc-0006SR-SB for jfs-discussion@lists.sourceforge.net;
- Wed, 19 Nov 2025 05:43:34 +0000
+ by sfs-ml-2.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
+ TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (Exim 4.95)
+ (envelope-from <prvs=34190f787f=yun.zhou@windriver.com>)
+ id 1vM6pk-0005nq-Nx for jfs-discussion@lists.sourceforge.net;
+ Thu, 20 Nov 2025 15:44:33 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=sourceforge.net; s=x; h=Content-Type:To:From:Subject:Message-ID:Date:
- MIME-Version:Sender:Reply-To:Cc:Content-Transfer-Encoding:Content-ID:
+ d=sourceforge.net; s=x; h=Content-Type:Content-Transfer-Encoding:MIME-Version
+ :Message-ID:Date:Subject:CC:To:From:Sender:Reply-To:Content-ID:
  Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
  :Resent-Message-ID:In-Reply-To:References:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=ugR7X8HvV6e32qc5iZzJIRITvUVF04LyoLD2VL/Z8HE=; b=T1mPA7uCf8GAYW6V1Hf5ULY85T
- owLyJbg51fPa/aldaZCuKrOnGHtyry201BnYFCYjYm2JMSLYQLkmQUNDZ2qqfosv/+1JgIwGEgH5s
- j/4WBIrlgcQyRH8CubwrqWOxX822gDE1bXSJOAZnLwIKMn8AjWu3ExUXlUsQwaOQ4AvI=;
+ bh=HsTSciYfOKB1VLsx9zPc895qSM+/HHnQTSav0zqfnzI=; b=NXmoIOK/fWR19gD624bgPrBSDs
+ 5ZPK5Lll3kor4Gh/jYcv6pr+sDLMxOl+rPmmgWYkzSwMJ/Izf3pxFZNvr/fTgNCiBDFlSAe5KMolx
+ 6pgHpX8MSadxHueyqq8qgN8z4XGoMzARBfLek5LkliALtkup3NqcvdQAuHzWIHhvDLKw=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
- h=Content-Type:To:From:Subject:Message-ID:Date:MIME-Version:Sender:Reply-To
- :Cc:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
- Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+ h=Content-Type:Content-Transfer-Encoding:MIME-Version:Message-ID:Date:
+ Subject:CC:To:From:Sender:Reply-To:Content-ID:Content-Description:Resent-Date
+ :Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
  References:List-Id:List-Help:List-Unsubscribe:List-Subscribe:List-Post:
- List-Owner:List-Archive; bh=ugR7X8HvV6e32qc5iZzJIRITvUVF04LyoLD2VL/Z8HE=; b=H
- llOb+nOiK+OtRpyufTvP8RYB/nUONZ4LT013pKYT2omtHdzfPHjw6tqcHoYsDzzmEHG3tFIU21uMa
- CcD8srxKw4IVE1LQrnFtQ1hcmGkw/fyYuoMsKuN4wveeroxEJjyHBiY1Ue55LnZKB8xNgD1zhChkd
- GxwJNywsbGVspjxI=;
-Received: from mail-io1-f79.google.com ([209.85.166.79])
+ List-Owner:List-Archive; bh=HsTSciYfOKB1VLsx9zPc895qSM+/HHnQTSav0zqfnzI=; b=l
+ kBMhZVV01lrAhZNJe8eM6iiFUvGqv30N9AWfTl2FTRL4vfz2gWb5TO90uS+gQj3lBXgXL/8uFye5n
+ qdeXfsirw1Raq7ofb5t5O51MIBM1HZZr3Zu9uaPn7uR7NhDH6aGS3dJsq3iuqaPYr/V5LCwTu464S
+ QUPd1UJEmuBZFiRA=;
+Received: from mx0b-0064b401.pphosted.com ([205.220.178.238])
  by sfi-mx-2.v28.lw.sourceforge.com with esmtps
- (TLS1.2:ECDHE-RSA-AES128-GCM-SHA256:128) (Exim 4.95)
- id 1vLayc-0001NJ-9t for jfs-discussion@lists.sourceforge.net;
- Wed, 19 Nov 2025 05:43:34 +0000
-Received: by mail-io1-f79.google.com with SMTP id
- ca18e2360f4ac-9490387e016so295444839f.2
- for <jfs-discussion@lists.sourceforge.net>;
- Tue, 18 Nov 2025 21:43:34 -0800 (PST)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20230601; t=1763531008; x=1764135808;
- h=to:from:subject:message-id:date:mime-version:x-gm-message-state
- :from:to:cc:subject:date:message-id:reply-to;
- bh=ugR7X8HvV6e32qc5iZzJIRITvUVF04LyoLD2VL/Z8HE=;
- b=viv1XqrvA0/IXVpS3qnHEBqsekF62ff0nlIGjlQ8R4cGOuLWRDiEYozC2n6POgwreM
- RU1WBTbBidRtzcAPKQdqC+SgJJrck1UlCsdQ26CkfbwrmWPsARoSW820A4R2XeJk0fLw
- w7RyDYSQBMvKWWueF7hXzVsj0MyIfGc/htoJ7oBaAHFBNuFRosudmEO/00gWTewZf1YE
- hnLJMObEz0K07t8VvEj3obzCTc5G1M+VFyyZFAQT7WhDKTEYPhpJaMvkHfJdeVAKEfMn
- QemwBIcUPJD5idF2rq6+JV+7pROd5DTX+kDI4ZMahDgy/QWtJPJ3c9/hmZUJQfIFMqaj
- LZHw==
-X-Gm-Message-State: AOJu0YyHSR1PVO4rdq2SjArcXQMD0EPAUeJVj7mWsRsKbA8aqtagJRD8
- 57H1+DoKBWASMyS+KUp00vG2ZcI84EBlth856DSEeuHAK2RacF5h558U8lQcifjAPa/thyneL7v
- xjJ5ZdZWmfTlBlmK+Foy2gldoeZ6gyjmsPAg2Tzt4V2JK9xTacaRCEoHfaDvpyA==
-X-Google-Smtp-Source: AGHT+IHVIHkUL+Iua/cTDN1l7FPF8dbunbgVIxlIcTH6IF2VoOBVygM+fSmEbxUdEebArp7DLbKONRihYXVerdZch4Ipp2Ymym7j
+ (TLS1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.95)
+ id 1vM6pj-0002MI-Q1 for jfs-discussion@lists.sourceforge.net;
+ Thu, 20 Nov 2025 15:44:33 +0000
+Received: from pps.filterd (m0250812.ppops.net [127.0.0.1])
+ by mx0a-0064b401.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id
+ 5AK60nlG867668; Thu, 20 Nov 2025 15:43:28 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=windriver.com;
+ h=cc:content-transfer-encoding:content-type:date:from
+ :message-id:mime-version:subject:to; s=PPS06212021; bh=HsTSciYfO
+ KB1VLsx9zPc895qSM+/HHnQTSav0zqfnzI=; b=m2KZ3553Hyz/LqdAoQp4XUmAq
+ SZWrfUn5ANqrAGOL8w4gZU46ANdP1LQIo6/t/vZ2XRxHWLxmrSTXMPezw94gv07w
+ JQmBF80vtaQO7eByoppoU3afPq0iCYOu+uc6xg0lqnWHOonvDxltNhuy71fMsjbQ
+ tmUZrPmropgVuf/wopwTgGM2iIOABGIzxYml01nhxKKssEXSR7OcRivnJ2lBRB92
+ 54vExGcyF8bZbAhEeyk6sVf1kmlCLO31cWoPIlaHIlxaHtguYkRTdgwRWfTGm9rl
+ XZrIx1PzAYKd5jjcsIj386yVOM402aVbHzGXJy2JI9RovwkFsUfrPDeGEZH/Q==
+Received: from ala-exchng02.corp.ad.wrs.com ([128.224.246.37])
+ by mx0a-0064b401.pphosted.com (PPS) with ESMTPS id 4ahayrsu5f-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NOT);
+ Thu, 20 Nov 2025 15:43:27 +0000 (GMT)
+Received: from ALA-EXCHNG02.corp.ad.wrs.com (10.11.224.122) by
+ ALA-EXCHNG02.corp.ad.wrs.com (10.11.224.122) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
+ 15.1.2507.61; Thu, 20 Nov 2025 07:43:26 -0800
+Received: from pek-lpd-ccm6.wrs.com (10.11.232.110) by
+ ALA-EXCHNG02.corp.ad.wrs.com (10.11.224.122) with Microsoft SMTP Server id
+ 15.1.2507.61 via Frontend Transport; Thu, 20 Nov 2025 07:43:24 -0800
+To: <shaggy@kernel.org>
+Date: Thu, 20 Nov 2025 23:43:23 +0800
+Message-ID: <20251120154323.1039302-1-yun.zhou@windriver.com>
+X-Mailer: git-send-email 2.43.0
 MIME-Version: 1.0
-X-Received: by 2002:a05:6e02:1c2a:b0:435:a148:cbd with SMTP id
- e9e14a558f8ab-435a1480e34mr8398755ab.42.1763531008592; Tue, 18 Nov 2025
- 21:43:28 -0800 (PST)
-Date: Tue, 18 Nov 2025 21:43:28 -0800
-X-Google-Appengine-App-Id: s~syzkaller
-X-Google-Appengine-App-Id-Alias: syzkaller
-Message-ID: <691d5900.a70a0220.2ea503.000e.GAE@google.com>
-To: jfs-discussion@lists.sourceforge.net, linux-kernel@vger.kernel.org, 
- shaggy@kernel.org, syzkaller-bugs@googlegroups.com
-X-Spam-Score: 0.3 (/)
+X-Proofpoint-ORIG-GUID: hSs8Yc79CwIj7IPTZ8SVo5j0gwya67Ig
+X-Authority-Analysis: v=2.4 cv=EdXFgfmC c=1 sm=1 tr=0 ts=691f371f cx=c_pps
+ a=Lg6ja3A245NiLSnFpY5YKQ==:117 a=Lg6ja3A245NiLSnFpY5YKQ==:17
+ a=6UeiqGixMTsA:10 a=VkNPw1HP01LnGYTKEx00:22 a=hSkVLCK3AAAA:8 a=t7CeM3EgAAAA:8
+ a=eUl833jy40kcsfN9NwAA:9 a=cQPPKAXgyycSBL8etih5:22 a=FdTzh2GWekK77mhwV6Dw:22
+X-Proofpoint-GUID: hSs8Yc79CwIj7IPTZ8SVo5j0gwya67Ig
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUxMTIwMDEwMyBTYWx0ZWRfX95IEndpe1Mgq
+ pRM0+3yXRn08MRShJDNIfA2ptvPBsX25AdNgQnh8SZYVfSwYIoNhuojjH9ohDIdlntdD4qeFLIT
+ yCzzAj5JcUw5N+2BREQPycIRqjU0Z6V0ga7lWMCse+4I+fEwFV3Phd8e3oASc1BuDlUlMAY5vFN
+ vKihoLxul3E8OSkJ2ZbLGumC9FrrRZqFeuw2qPEzeCmzs3o6ZgP8Cu9CKlO0/nPTGll6MUFHQq1
+ +4t/F4lKLhvcqh8DZqVcDqtPaQBFAyAMMr2YRO6DYZCtpWeGxU1dr9iBrmqsway38ruEVEcgvnF
+ OpxFY/fxG/Jyn5xr4aV/OswShqEZBuNWayyQ1JQ25Dofng2GHQEcsSposUx8y7+FKllfi5dv776
+ n+QFs5YhuwxPWuTRXU4/hpzpp3FaFQ==
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1121,Hydra:6.1.9,FMLib:17.12.100.49
+ definitions=2025-11-20_05,2025-11-20_01,2025-10-01_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
+ spamscore=0 adultscore=0 suspectscore=0 bulkscore=0 impostorscore=0
+ phishscore=0 malwarescore=0 clxscore=1011 priorityscore=1501
+ lowpriorityscore=0 classifier=typeunknown authscore=0 authtc= authcc=
+ route=outbound adjust=0 reason=mlx scancount=1 engine=8.22.0-2510240001
+ definitions=main-2511200103
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: Spam detection software,
- running on the system "sfi-spamd-1.hosts.colo.sdot.me", 
+ running on the system "sfi-spamd-2.hosts.colo.sdot.me", 
  has NOT identified this incoming email as spam.  The original
  message has been attached to this so you can view it or label
  similar future email.  If you have any questions, see
  the administrator of that system for details.
- Content preview:  Hello,
- syzbot found the following issue on: HEAD commit: 7a0892d2836e
- Merge tag 'pci-v6.18-fixes-5' of git://git.ke.. git tree: upstream console
- output: https://syzkaller.appspot.com/x/log.txt?x=1285760a580000 kernel
- config: https://syzkaller.a [...] 
- Content analysis details:   (0.3 points, 5.0 required)
+ Content preview: The fixed-size lv[20] array in struct linelock can't
+ accommodate
+ maxcnt=TLOCKLONG (28), causing out-of-bounds access. Replace with a flexible
+ array member to dynamically fit both TLOCKSHORT (20) and T [...] 
+ Content analysis details:   (-0.2 points, 5.0 required)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.3 FROM_LOCAL_HEX         From: localpart has long hexadecimal sequence
- 0.0 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level mail
- domains are different
-X-Headers-End: 1vLayc-0001NJ-9t
-X-Mailman-Approved-At: Wed, 19 Nov 2025 15:11:38 +0000
-Subject: [Jfs-discussion] [syzbot] [jfs?] UBSAN: array-index-out-of-bounds
- in diAllocBit
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature,
+ not necessarily valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU Message has a valid DKIM or DK signature from author's
+ domain 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [205.220.178.238 listed in wl.mailspike.net]
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+X-Headers-End: 1vM6pj-0002MI-Q1
+Subject: [Jfs-discussion] [PATCH] jfs: fix array-index-out-of-bounds in
+ linelock by using flexible array for lv
 X-BeenThere: jfs-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -110,95 +135,81 @@ List-Post: <mailto:jfs-discussion@lists.sourceforge.net>
 List-Help: <mailto:jfs-discussion-request@lists.sourceforge.net?subject=help>
 List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/jfs-discussion>, 
  <mailto:jfs-discussion-request@lists.sourceforge.net?subject=subscribe>
-From: syzbot via Jfs-discussion <jfs-discussion@lists.sourceforge.net>
-Reply-To: syzbot <syzbot+015483fc71d1413f40ee@syzkaller.appspotmail.com>
+From: Yun Zhou via Jfs-discussion <jfs-discussion@lists.sourceforge.net>
+Reply-To: Yun Zhou <yun.zhou@windriver.com>
+Cc: jfs-discussion@lists.sourceforge.net, yun.zhou@windriver.com,
+ eadavis@qq.com, linux-kernel@vger.kernel.org, kovalev@altlinux.org,
+ contact@arnaud-lcm.com, zheng.yu@northwestern.edu, rand.sec96@gmail.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Errors-To: jfs-discussion-bounces@lists.sourceforge.net
 
-Hello,
+The fixed-size lv[20] array in struct linelock can't accommodate
+maxcnt=TLOCKLONG (28), causing out-of-bounds access. Replace with a
+flexible array member to dynamically fit both TLOCKSHORT (20) and
+TLOCKLONG (28) scenarios, resolving the UBSAN warning below.
 
-syzbot found the following issue on:
+[  101.832754][ T5960] ------------[ cut here ]------------
+[  101.832762][ T5960] UBSAN: array-index-out-of-bounds in fs/jfs/jfs_dtree.c:3713:8
+[  101.832792][ T5960] index -1 is out of range for type 'struct dtslot[128]'
+[  101.832807][ T5960] CPU: 2 UID: 0 PID: 5960 Comm: 5f7f0caf9979e9d Tainted: G            E       6.18.0-rc4-00250-g2603eb907f03 #119 PREEMPT_{RT,(full
+[  101.832817][ T5960] Tainted: [E]=UNSIGNED_MODULE
+[  101.832819][ T5960] Hardware name: QEMU Ubuntu 25.04 PC (i440FX + PIIX, 1996), BIOS 1.16.3-debian-1.16.3-2 04/01/2014
+[  101.832823][ T5960] Call Trace:
+[  101.832833][ T5960]  <TASK>
+[  101.832838][ T5960]  dump_stack_lvl+0x189/0x250
+[  101.832909][ T5960]  ? __pfx_dump_stack_lvl+0x10/0x10
+[  101.832925][ T5960]  ? __pfx__printk+0x10/0x10
+[  101.832934][ T5960]  ? rt_mutex_slowunlock+0x493/0x8a0
+[  101.832959][ T5960]  ubsan_epilogue+0xa/0x40
+[  101.832966][ T5960]  __ubsan_handle_out_of_bounds+0xe9/0xf0
+[  101.833007][ T5960]  dtInsertEntry+0x936/0x1430 [jfs]
+[  101.833094][ T5960]  dtSplitPage+0x2c8b/0x3ed0 [jfs]
+[  101.833177][ T5960]  ? __pfx_rt_mutex_slowunlock+0x10/0x10
+[  101.833193][ T5960]  dtInsert+0x109b/0x6000 [jfs]
+[  101.833283][ T5960]  ? rt_mutex_slowunlock+0x493/0x8a0
+[  101.833296][ T5960]  ? __pfx_rt_mutex_slowunlock+0x10/0x10
+[  101.833307][ T5960]  ? rt_spin_unlock+0x161/0x200
+[  101.833315][ T5960]  ? __pfx_dtInsert+0x10/0x10 [jfs]
+[  101.833391][ T5960]  ? txLock+0xaf9/0x1cb0 [jfs]
+[  101.833477][ T5960]  ? dtInitRoot+0x22a/0x670 [jfs]
+[  101.833556][ T5960]  jfs_mkdir+0x6ec/0xa70 [jfs]
+[  101.833636][ T5960]  ? __pfx_jfs_mkdir+0x10/0x10 [jfs]
+[  101.833721][ T5960]  ? generic_permission+0x2e5/0x690
+[  101.833760][ T5960]  ? bpf_lsm_inode_mkdir+0x9/0x20
+[  101.833776][ T5960]  vfs_mkdir+0x306/0x510
+[  101.833786][ T5960]  do_mkdirat+0x247/0x590
+[  101.833795][ T5960]  ? __pfx_do_mkdirat+0x10/0x10
+[  101.833804][ T5960]  ? getname_flags+0x1e5/0x540
+[  101.833815][ T5960]  __x64_sys_mkdir+0x6c/0x80
+[  101.833823][ T5960]  do_syscall_64+0xfa/0xfa0
+[  101.833832][ T5960]  ? lockdep_hardirqs_on+0x9c/0x150
+[  101.833840][ T5960]  ? entry_SYSCALL_64_after_hwframe+0x77/0x7f
+[  101.833847][ T5960]  ? exc_page_fault+0xab/0x100
+[  101.833856][ T5960]  entry_SYSCALL_64_after_hwframe+0x77/0x7f
 
-HEAD commit:    7a0892d2836e Merge tag 'pci-v6.18-fixes-5' of git://git.ke..
-git tree:       upstream
-console output: https://syzkaller.appspot.com/x/log.txt?x=1285760a580000
-kernel config:  https://syzkaller.appspot.com/x/.config?x=929790bc044e87d7
-dashboard link: https://syzkaller.appspot.com/bug?extid=015483fc71d1413f40ee
-compiler:       Debian clang version 20.1.8 (++20250708063551+0c9f909b7976-1~exp1~20250708183702.136), Debian LLD 20.1.8
-
-Unfortunately, I don't have any reproducer for this issue yet.
-
-Downloadable assets:
-disk image (non-bootable): https://storage.googleapis.com/syzbot-assets/d900f083ada3/non_bootable_disk-7a0892d2.raw.xz
-vmlinux: https://storage.googleapis.com/syzbot-assets/a78c5c2efd8d/vmlinux-7a0892d2.xz
-kernel image: https://storage.googleapis.com/syzbot-assets/5a51cc5df960/bzImage-7a0892d2.xz
-
-IMPORTANT: if you fix the issue, please add the following tag to the commit:
-Reported-by: syzbot+015483fc71d1413f40ee@syzkaller.appspotmail.com
-
-loop0: detected capacity change from 0 to 32768
-netlink: 96 bytes leftover after parsing attributes in process `syz.0.0'.
-------------[ cut here ]------------
-UBSAN: array-index-out-of-bounds in fs/jfs/jfs_imap.c:2105:2
-index 8592359 is out of range for type 'struct iagctl[128]'
-CPU: 0 UID: 0 PID: 5318 Comm: syz.0.0 Not tainted syzkaller #0 PREEMPT(full) 
-Hardware name: QEMU Standard PC (Q35 + ICH9, 2009), BIOS 1.16.3-debian-1.16.3-2~bpo12+1 04/01/2014
-Call Trace:
- <TASK>
- dump_stack_lvl+0x189/0x250 lib/dump_stack.c:120
- ubsan_epilogue+0xa/0x40 lib/ubsan.c:233
- __ubsan_handle_out_of_bounds+0xe9/0xf0 lib/ubsan.c:455
- diAllocBit+0xba2/0xd40 fs/jfs/jfs_imap.c:2105
- diAllocIno fs/jfs/jfs_imap.c:1844 [inline]
- diAllocAG+0x12d9/0x1df0 fs/jfs/jfs_imap.c:1676
- diAlloc+0x1d5/0x1680 fs/jfs/jfs_imap.c:1590
- ialloc+0x8c/0x8f0 fs/jfs/jfs_inode.c:56
- jfs_create+0x18d/0xa80 fs/jfs/namei.c:92
- lookup_open fs/namei.c:3796 [inline]
- open_last_lookups fs/namei.c:3895 [inline]
- path_openat+0x14f4/0x3830 fs/namei.c:4131
- do_filp_open+0x1fa/0x410 fs/namei.c:4161
- do_sys_openat2+0x121/0x1c0 fs/open.c:1437
- do_sys_open fs/open.c:1452 [inline]
- __do_sys_openat fs/open.c:1468 [inline]
- __se_sys_openat fs/open.c:1463 [inline]
- __x64_sys_openat+0x138/0x170 fs/open.c:1463
- do_syscall_x64 arch/x86/entry/syscall_64.c:63 [inline]
- do_syscall_64+0xfa/0xfa0 arch/x86/entry/syscall_64.c:94
- entry_SYSCALL_64_after_hwframe+0x77/0x7f
-RIP: 0033:0x7f0a7ef8f6c9
-Code: ff ff c3 66 2e 0f 1f 84 00 00 00 00 00 0f 1f 40 00 48 89 f8 48 89 f7 48 89 d6 48 89 ca 4d 89 c2 4d 89 c8 4c 8b 4c 24 08 0f 05 <48> 3d 01 f0 ff ff 73 01 c3 48 c7 c1 a8 ff ff ff f7 d8 64 89 01 48
-RSP: 002b:00007f0a7fed8038 EFLAGS: 00000246 ORIG_RAX: 0000000000000101
-RAX: ffffffffffffffda RBX: 00007f0a7f1e5fa0 RCX: 00007f0a7ef8f6c9
-RDX: 000000000000275a RSI: 0000200000000080 RDI: ffffffffffffff9c
-RBP: 00007f0a7f011f91 R08: 0000000000000000 R09: 0000000000000000
-R10: 0000000000000000 R11: 0000000000000246 R12: 0000000000000000
-R13: 00007f0a7f1e6038 R14: 00007f0a7f1e5fa0 R15: 00007ffde7416408
- </TASK>
----[ end trace ]---
-
-
+Reported-by: syzbot+5f7f0caf9979e9d09ff8@syzkaller.appspotmail.com
+Signed-off-by: Yun Zhou <yun.zhou@windriver.com>
 ---
-This report is generated by a bot. It may contain errors.
-See https://goo.gl/tpsmEJ for more information about syzbot.
-syzbot engineers can be reached at syzkaller@googlegroups.com.
+ fs/jfs/jfs_txnmgr.h | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
-syzbot will keep track of this issue. See:
-https://goo.gl/tpsmEJ#status for how to communicate with syzbot.
+diff --git a/fs/jfs/jfs_txnmgr.h b/fs/jfs/jfs_txnmgr.h
+index ba71eb5ced56..391c0d28e1bc 100644
+--- a/fs/jfs/jfs_txnmgr.h
++++ b/fs/jfs/jfs_txnmgr.h
+@@ -165,7 +165,7 @@ struct linelock {
+ 	u8 l2linesize;		/* 1: log2 of linesize */
+ 	/* (8) */
+ 
+-	struct lv lv[20];	/* 40: */
++	struct lv lv[];	/* 40: */
+ };				/* (48) */
+ 
+ #define dt_lock	linelock
+-- 
+2.34.1
 
-If the report is already addressed, let syzbot know by replying with:
-#syz fix: exact-commit-title
-
-If you want to overwrite report's subsystems, reply with:
-#syz set subsystems: new-subsystem
-(See the list of subsystem names on the web dashboard)
-
-If the report is a duplicate of another one, reply with:
-#syz dup: exact-subject-of-another-report
-
-If you want to undo deduplication, reply with:
-#syz undup
 
 
 _______________________________________________
