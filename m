@@ -2,128 +2,121 @@ Return-Path: <jfs-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+jfs-discussion@lfdr.de
 Delivered-To: lists+jfs-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id 89CBBC751FB
-	for <lists+jfs-discussion@lfdr.de>; Thu, 20 Nov 2025 16:50:25 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8BC29C7DB5E
+	for <lists+jfs-discussion@lfdr.de>; Sun, 23 Nov 2025 05:24:23 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.sourceforge.net; s=beta; h=Content-Transfer-Encoding:Content-Type:Cc:
 	Reply-To:From:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:Subject:MIME-Version:Message-ID:Date:To:Sender:
-	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
-	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
-	bh=FG/v/ysiNRHKPEyZGL/g83KIYLWg0TR4RjrWYu47B00=; b=MgUi8XdwrWpKHVYHz9Xz4BRP10
-	WhIuEQedSsejtWgrbNZqjVUTL/l5V2XzZG08OGcfninuHzcH4ZqmaJG1S3cES8TPAA86kzWTDI4wy
-	UwC8mgy8V9XsToo7nsvFsWWUZ151iy2yjB4/SSPkkrOy1FCyLHDxa21VcTkwWabfQ7qc=;
-Received: from [127.0.0.1] (helo=sfs-ml-2.v29.lw.sourceforge.com)
-	by sfs-ml-2.v29.lw.sourceforge.com with esmtp (Exim 4.95)
+	List-Unsubscribe:List-Id:Subject:To:Message-ID:Date:In-Reply-To:References:
+	MIME-Version:Sender:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=GAsRylY5dogI9dfoE+reTsHLQ8gfYQr9x4kIRACkgoQ=; b=aE0EZs4jVugkm0JZlP4fr2eR32
+	aCIEB6vlyLXacDp1dY1yddxeSAy/GCo+mtznza4SkkagDKa6pc5Ng5LUfm5tplwoWbNZePUYC+/VO
+	bCi9oxVhvTC+4PDXdQG6zz+kkTSgwxO37sTCTLSILFtMDxG3RazzUlXkjYa0lR72hTfU=;
+Received: from [127.0.0.1] (helo=sfs-ml-1.v29.lw.sourceforge.com)
+	by sfs-ml-1.v29.lw.sourceforge.com with esmtp (Exim 4.95)
 	(envelope-from <jfs-discussion-bounces@lists.sourceforge.net>)
-	id 1vM6q7-0005ok-QE;
-	Thu, 20 Nov 2025 15:44:56 +0000
+	id 1vN1dU-00064I-IZ;
+	Sun, 23 Nov 2025 04:23:40 +0000
 Received: from [172.30.29.66] (helo=mx.sourceforge.net)
- by sfs-ml-2.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
+ by sfs-ml-1.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
  TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (Exim 4.95)
- (envelope-from <prvs=34190f787f=yun.zhou@windriver.com>)
- id 1vM6q6-0005oc-Is for jfs-discussion@lists.sourceforge.net;
- Thu, 20 Nov 2025 15:44:55 +0000
+ (envelope-from <ssrane_b23@ee.vjti.ac.in>) id 1vN1dT-00064C-H9
+ for jfs-discussion@lists.sourceforge.net;
+ Sun, 23 Nov 2025 04:23:39 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=sourceforge.net; s=x; h=Content-Type:Content-Transfer-Encoding:MIME-Version
- :Message-ID:Date:Subject:CC:To:From:Sender:Reply-To:Content-ID:
- Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
- :Resent-Message-ID:In-Reply-To:References:List-Id:List-Help:List-Unsubscribe:
+ d=sourceforge.net; s=x; h=Content-Transfer-Encoding:Content-Type:Cc:To:
+ Subject:Message-ID:Date:From:In-Reply-To:References:MIME-Version:Sender:
+ Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender
+ :Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=vTJp97rBSKdcJdasfGTXlCAXG468fwK1jPd2jG7cG0w=; b=EQiCQnWU6wc79Lzwn/VCGvdMHn
- Jh8XiguQH2I84vFjcgXpVGA4r7p3dnliXfcACm1nnJ4L8mQo+IhfsZsedwRjZlvXno14Cy0yAnn0+
- rOhEmVW7fzhx7bhcktZqm1m3zdSrnwp1UQZJQmA55qPN8cY3T6hPRrZa6mb7FkCziE4M=;
+ bh=Nhvna7XyABpz0y7IciVRtasd6k6MY2T7JOlNLRQKzHM=; b=ZdEyHTkLWWphqukXszcXzKSmCZ
+ T06ZFspzxIaQGYODap2qwzrVl6hOlBlEdyLO5krKiJoaMQACakZWVuePfE02bT6GOKfuB2HWgPA5q
+ Hsp2nqiZLrDX9YiDoYbiJERQhmgGqTnrPh2JjgGjmlTg8b5nLxahHQPavJlieDZRl2Jc=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
- h=Content-Type:Content-Transfer-Encoding:MIME-Version:Message-ID:Date:
- Subject:CC:To:From:Sender:Reply-To:Content-ID:Content-Description:Resent-Date
- :Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
- References:List-Id:List-Help:List-Unsubscribe:List-Subscribe:List-Post:
- List-Owner:List-Archive; bh=vTJp97rBSKdcJdasfGTXlCAXG468fwK1jPd2jG7cG0w=; b=l
- 85IONiGAOkwN6a+Ujn0L3fnsvhOsGwTmtsnF2K53nuq6aQZvmaoGAA2kw21iH8CmeNEMAivopuarY
- 2A4dBtjZ2tOmrCUWIuo1Dn+unhCcW73mIECpDLX59SO0mRlOBgjcCXTukd4alJqPycsYD3vZ5pC0C
- 6j3HRwWoFPekocdc=;
-Received: from mx0a-0064b401.pphosted.com ([205.220.166.238])
+ h=Content-Transfer-Encoding:Content-Type:Cc:To:Subject:Message-ID:Date:From
+ :In-Reply-To:References:MIME-Version:Sender:Reply-To:Content-ID:
+ Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+ :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
+ List-Post:List-Owner:List-Archive;
+ bh=Nhvna7XyABpz0y7IciVRtasd6k6MY2T7JOlNLRQKzHM=; b=LTL3pFm+8On2zLpcVCOtrA8AMK
+ uRx2UJZ9zOthfzpSYsOriDhiLd0WvM7NeP93Ts4O9hyj4s3nLA+/DqjJxIdMpTqJg219cFBWMCt9d
+ atGvD5pyAkAoYCbt8vh7XnyGIw7n/9wgJwknlvqOhxSXyiPPbwSlc8ThU/xYl9NAyF5E=;
+Received: from mail-qt1-f171.google.com ([209.85.160.171])
  by sfi-mx-2.v28.lw.sourceforge.com with esmtps
- (TLS1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.95)
- id 1vM6q6-0002NX-JO for jfs-discussion@lists.sourceforge.net;
- Thu, 20 Nov 2025 15:44:55 +0000
-Received: from pps.filterd (m0250809.ppops.net [127.0.0.1])
- by mx0a-0064b401.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id
- 5AKBA2nV4175630; Thu, 20 Nov 2025 07:44:16 -0800
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=windriver.com;
- h=cc:content-transfer-encoding:content-type:date:from
- :message-id:mime-version:subject:to; s=PPS06212021; bh=vTJp97rBS
- KdcJdasfGTXlCAXG468fwK1jPd2jG7cG0w=; b=PGn4glfGPiu02lXL6GZTMrQZJ
- wkwYc23dTHMUZtB5xW3lWh2A06ruQfnoxXzjT+ee2mwTj1XVuBeu4mOXppr/leYV
- +aNR+4MkGDHK//9zj0vQTAx+Rv0SiVd7keeMTpKp3H3JVmZjXgRyo5LkKx/xL9Xs
- FN67poa07QvHm5BYwDoWJLrBwqz6FRG15X4cA6DRLmvwdyFYLRyFO4Fn2DYm14ET
- h15ZeXXjbwR6QRNaRbLUBWPvOAdYU/xmDKKCMjUJXte0mwzRb7CoQ3Rmgtu+dSRs
- OmWweXS2zHycaKx3Ajv1FIn2QsdEWZl34Wo+2gNzFUMi+Gyl4+oQY9HV73i2w==
-Received: from ala-exchng01.corp.ad.wrs.com ([128.224.246.36])
- by mx0a-0064b401.pphosted.com (PPS) with ESMTPS id 4aeswjedvp-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NOT);
- Thu, 20 Nov 2025 07:44:16 -0800 (PST)
-Received: from ALA-EXCHNG02.corp.ad.wrs.com (10.11.224.122) by
- ala-exchng01.corp.ad.wrs.com (10.11.224.121) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
- 15.1.2507.61; Thu, 20 Nov 2025 07:44:15 -0800
-Received: from pek-lpd-ccm6.wrs.com (10.11.232.110) by
- ALA-EXCHNG02.corp.ad.wrs.com (10.11.224.122) with Microsoft SMTP Server id
- 15.1.2507.61 via Frontend Transport; Thu, 20 Nov 2025 07:44:13 -0800
-To: <shaggy@kernel.org>
-Date: Thu, 20 Nov 2025 23:44:12 +0800
-Message-ID: <20251120154413.1043174-1-yun.zhou@windriver.com>
-X-Mailer: git-send-email 2.43.0
+ (TLS1.2:ECDHE-RSA-AES128-GCM-SHA256:128) (Exim 4.95)
+ id 1vN1dS-0002be-SK for jfs-discussion@lists.sourceforge.net;
+ Sun, 23 Nov 2025 04:23:39 +0000
+Received: by mail-qt1-f171.google.com with SMTP id
+ d75a77b69052e-4ed82ee9e57so48891261cf.0
+ for <jfs-discussion@lists.sourceforge.net>;
+ Sat, 22 Nov 2025 20:23:38 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=vjti.ac.in; s=google; t=1763871813; x=1764476613; darn=lists.sourceforge.net;
+ h=content-transfer-encoding:cc:to:subject:message-id:date:from
+ :in-reply-to:references:mime-version:from:to:cc:subject:date
+ :message-id:reply-to;
+ bh=Nhvna7XyABpz0y7IciVRtasd6k6MY2T7JOlNLRQKzHM=;
+ b=OR7HM1SlSld4UEOE4CHVhUDOSQbu1UFyxhjX6FNzE9b1tEMHMo3iSldeadMZLtGTkJ
+ ctBfKPfeOFVaDJetEdsU/0QBy3e0aA7LzSpgAZ4DLawRSxqBcLZJQyHnuQ0qt/wob+Ct
+ NO56VATz1LIqEBAGDEk5zA7aipVJTcYHMbm94=
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20230601; t=1763871813; x=1764476613;
+ h=content-transfer-encoding:cc:to:subject:message-id:date:from
+ :in-reply-to:references:mime-version:x-gm-gg:x-gm-message-state:from
+ :to:cc:subject:date:message-id:reply-to;
+ bh=Nhvna7XyABpz0y7IciVRtasd6k6MY2T7JOlNLRQKzHM=;
+ b=lzNBXxHsCJVh4y7mN2hoiYx8TRUfuQRVBefHp+5FxN0nO5VOvSVV3iTVBG4F9tJNHQ
+ xjC7DrLoYpkpD8bVzKvKjQZdxUiCFp8rl6hZebfUIOHFeUnaXgwkhzrvT6YQhbbrPijO
+ TS5zIhGOoB6azqkrXWFOFplx2MnFkh/JB8VFoMnzIEFzQeKnSVIdN16BLVTtNUUbMQk5
+ CtseNSjOJsyt7XzreNJV1NiNwyjcgHhc50g5Lzg9nziw8pWF+kXe9/hSOJgvltZLlwzm
+ SSAQlLw0ws9hN0FB6AlmY9UXh9fUATx0V+/aRrstkoBThFtQ1fS1h0SO8t5nklauDk3O
+ 5WaA==
+X-Gm-Message-State: AOJu0YyPmHIhDlj7T+2+FBEN8jFdWlKfxmMeg8sNIKzC8RWWcVzOPAF7
+ AesyxpiZJ9mT/9uYZ5AhUT4qZstKzaKvi9oTALEfvAYQgmPvK91mk7MLqe9ZDAQRLy2K8BHhbB+
+ v8WAgGIPecq+5Mm2nMr4/R8BQymkZ99ICZixFDtQdX+bnWdW/mwTBCIZfbg==
+X-Gm-Gg: ASbGncttbJykvOnnYGNV1q4tpg70YfXmFwotrqUEgYEU2nfd68POWEMxF0JJeIRzseA
+ ZZNqX6l5GXMrx7DWwigYrGqNOvpr1YNVYNZ1m5Hp2tMgSHrQJxyvOQm/RrejPEoKL393cwDA7Gj
+ ymy8B6SZp3y13x0DplFJ3Y22/QyoCsk0JMEyrB8WHak5t70BR4GS+l2z41zbKDcCBitzSsRfFQm
+ DdcB73XYUErla2yVW5sc9plunpv2eW1wgryj8MBYt+iSQ0cUqW0LCes7U8TJX3KB7/ZKlDqdHN5
+ Or1XabU1lA1lkD1dWabDH+JeGsE=
+X-Google-Smtp-Source: AGHT+IFgrY980E9ZQyocO3aMJGUgJeNVFSms6jRM+b3NQsPdCBONY5tq34RGbAY8Nhr62GwkeQB9udkdlOIH8X4kvoo=
+X-Received: by 2002:a05:690e:151a:b0:63e:1ee2:eb03 with SMTP id
+ 956f58d0204a3-64302af1600mr5089681d50.45.1763865780942; Sat, 22 Nov 2025
+ 18:43:00 -0800 (PST)
 MIME-Version: 1.0
-X-Authority-Analysis: v=2.4 cv=BqiQAIX5 c=1 sm=1 tr=0 ts=691f3750 cx=c_pps
- a=AbJuCvi4Y3V6hpbCNWx0WA==:117 a=AbJuCvi4Y3V6hpbCNWx0WA==:17
- a=6UeiqGixMTsA:10 a=VkNPw1HP01LnGYTKEx00:22 a=hSkVLCK3AAAA:8 a=t7CeM3EgAAAA:8
- a=3JtE_UQzxUXlF2KlCTMA:9 a=cQPPKAXgyycSBL8etih5:22 a=FdTzh2GWekK77mhwV6Dw:22
-X-Proofpoint-GUID: Q6SEmRU71VNo96Y1GluMXujo6pYGzinJ
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUxMTIwMDEwMyBTYWx0ZWRfX3c+QbRSmIX4H
- 0f9/P+EYwSb/omjwmLgHhjQxIvn0dxqM7qDoJxgwnk/TmLjVX4iGQXHuhbr3+Fc6KKYUfbxbQ6y
- w5oKHg/6W/5Cg4B0xaC9lT+CmuMNdTG87KImoe9CSQI28T+u4LiLNPrG88BVgbQaBBSL5Kvrs9E
- CAImx1ygGXn4JvDIVTrupDgqUwXxTLLpFL7TSQcaC9TLwlxIWSQytl/A/54GgW3UBJOMUIGKL68
- btVY1fjZH4+RSxf3cpbDGA9sZEsEFAYfHHxjgRpplgZcXatfzgUgQzlp1G343qsu8+J6fWKTWoW
- UeMRyvQvVtmr54HG75gTW1sARshSCeMhNeaxc5f+L58AVkQMnIoqQg25hQVNgwnWi595/a76hHM
- oGh6XngE/zbIRsYzo8K+u3xuZHqIlA==
-X-Proofpoint-ORIG-GUID: Q6SEmRU71VNo96Y1GluMXujo6pYGzinJ
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1121,Hydra:6.1.9,FMLib:17.12.100.49
- definitions=2025-11-20_05,2025-11-20_01,2025-10-01_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- clxscore=1015 phishscore=0 priorityscore=1501 suspectscore=0 adultscore=0
- lowpriorityscore=0 impostorscore=0 malwarescore=0 spamscore=0 bulkscore=0
- classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
- reason=mlx scancount=1 engine=8.22.0-2510240001 definitions=main-2511200103
-X-Spam-Score: -0.2 (/)
+References: <20251108141834.46428-1-ssranevjti@gmail.com>
+ <20251108141834.46428-2-ssranevjti@gmail.com>
+In-Reply-To: <20251108141834.46428-2-ssranevjti@gmail.com>
+Date: Sun, 23 Nov 2025 08:12:49 +0530
+X-Gm-Features: AWmQ_bnUQ9cqktRiIIylW1Y4-1ZWcYhGpz9uHU__v-2fKfpCX3dbdAfHmkK7RkM
+Message-ID: <CANNWa05ecKo0MOQDUAusuDzNdyFH7gEpF-tS1-Z56Gpg_jWZ5A@mail.gmail.com>
+To: shaggy@kernel.org
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: Spam detection software,
  running on the system "sfi-spamd-2.hosts.colo.sdot.me", 
  has NOT identified this incoming email as spam.  The original
  message has been attached to this so you can view it or label
  similar future email.  If you have any questions, see
  the administrator of that system for details.
- Content preview:  Add check_dmapctl() to validate dmapctl structure integrity, 
- focusing on preventing invalid operations caused by on-disk corruption. Key
- checks: - nleafs bounded by [0, LPERCTL] (maximum leaf nodes per dmapctl).
- - l2nleafs bounded by [0, L2LPERCTL] and consistent with nleafs (nleafs must
- be 2^l2nleafs). - leafidx must be exactly CT [...] 
- Content analysis details:   (-0.2 points, 5.0 required)
+ Content preview:  Pinging if missed On Sat, Nov 8,
+ 2025 at 7:48 PM <ssrane_b23@ee.vjti.ac.in>
+ wrote: > > From: Shaurya Rane <ssrane_b23@ee.vjti.ac.in> > > The synclist
+ field in struct metapage was not being initialized during > allocati [...]
+ Content analysis details:   (0.0 points, 5.0 required)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [205.220.166.238 listed in wl.mailspike.net]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/, no
+ trust [209.85.160.171 listed in list.dnswl.org]
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature,
  not necessarily valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU Message has a valid DKIM or DK signature from author's
- domain
-X-Headers-End: 1vM6q6-0002NX-JO
-Subject: [Jfs-discussion] [PATCH] jfs: add dmapctl integrity check to
- prevent invalid operations
+ 0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.160.171 listed in wl.mailspike.net]
+X-Headers-End: 1vN1dS-0002be-SK
+Subject: Re: [Jfs-discussion] [PATCH v3] jfs: Initialize synclist in
+ metapage allocation
 X-BeenThere: jfs-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -135,273 +128,53 @@ List-Post: <mailto:jfs-discussion@lists.sourceforge.net>
 List-Help: <mailto:jfs-discussion-request@lists.sourceforge.net?subject=help>
 List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/jfs-discussion>, 
  <mailto:jfs-discussion-request@lists.sourceforge.net?subject=subscribe>
-From: Yun Zhou via Jfs-discussion <jfs-discussion@lists.sourceforge.net>
-Reply-To: Yun Zhou <yun.zhou@windriver.com>
-Cc: jfs-discussion@lists.sourceforge.net, yun.zhou@windriver.com,
- eadavis@qq.com, linux-kernel@vger.kernel.org, kovalev@altlinux.org,
- contact@arnaud-lcm.com, zheng.yu@northwestern.edu, rand.sec96@gmail.com
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+From: SHAURYA RANE via Jfs-discussion <jfs-discussion@lists.sourceforge.net>
+Reply-To: SHAURYA RANE <ssrane_b23@ee.vjti.ac.in>
+Cc: shivankg@amd.com, jfs-discussion@lists.sourceforge.net,
+ david.hunter.linux@gmail.com, david@redhat.com, linux-kernel@vger.kernel.org,
+ syzbot+e87be72c9a6fe69996f5@syzkaller.appspotmail.com, khalid@kernel.org,
+ skhan@linuxfoundation.org, dsterba@suse.com, akpm@linux-foundation.org,
+ linux-kernel-mentees@lists.linux.dev
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Errors-To: jfs-discussion-bounces@lists.sourceforge.net
 
-Add check_dmapctl() to validate dmapctl structure integrity, focusing on
-preventing invalid operations caused by on-disk corruption.
-
-Key checks:
- - nleafs bounded by [0, LPERCTL] (maximum leaf nodes per dmapctl).
- - l2nleafs bounded by [0, L2LPERCTL] and consistent with nleafs
-   (nleafs must be 2^l2nleafs).
- - leafidx must be exactly CTLLEAFIND (expected leaf index position).
- - height bounded by [0, L2LPERCTL >> 1] (valid tree height range).
- - budmin validity: NOFREE only if nleafs=0; otherwise >= BUDMIN.
- - Leaf nodes fit within stree array (leafidx + nleafs <= CTLTREESIZE).
- - Leaf node values are either non-negative or NOFREE.
-
-Invoked in dbAllocAG(), dbFindCtl(), dbAdjCtl() and dbExtendFS() when
-accessing dmapctl pages, catching corruption early before dmap operations
-trigger invalid memory access or logic errors.
-
-This fixes the following UBSAN warning.
-
-[58245.668090][T14017] ------------[ cut here ]------------
-[58245.668103][T14017] UBSAN: shift-out-of-bounds in fs/jfs/jfs_dmap.c:2641:11
-[58245.668119][T14017] shift exponent 110 is too large for 32-bit type 'int'
-[58245.668137][T14017] CPU: 0 UID: 0 PID: 14017 Comm: 4c1966e88c28fa9 Tainted: G            E       6.18.0-rc4-00253-g21ce5d4ba045-dirty #124 PREEMPT_{RT,(full)}
-[58245.668174][T14017] Tainted: [E]=UNSIGNED_MODULE
-[58245.668176][T14017] Hardware name: QEMU Ubuntu 25.04 PC (i440FX + PIIX, 1996), BIOS 1.16.3-debian-1.16.3-2 04/01/2014
-[58245.668184][T14017] Call Trace:
-[58245.668200][T14017]  <TASK>
-[58245.668208][T14017]  dump_stack_lvl+0x189/0x250
-[58245.668288][T14017]  ? __pfx_dump_stack_lvl+0x10/0x10
-[58245.668301][T14017]  ? __pfx__printk+0x10/0x10
-[58245.668315][T14017]  ? lock_metapage+0x303/0x400 [jfs]
-[58245.668406][T14017]  ubsan_epilogue+0xa/0x40
-[58245.668422][T14017]  __ubsan_handle_shift_out_of_bounds+0x386/0x410
-[58245.668462][T14017]  dbSplit+0x1f8/0x200 [jfs]
-[58245.668543][T14017]  dbAdjCtl+0x34c/0xa20 [jfs]
-[58245.668628][T14017]  dbAllocNear+0x2ee/0x3d0 [jfs]
-[58245.668710][T14017]  dbAlloc+0x933/0xba0 [jfs]
-[58245.668797][T14017]  ea_write+0x374/0xdd0 [jfs]
-[58245.668888][T14017]  ? __pfx_ea_write+0x10/0x10 [jfs]
-[58245.668966][T14017]  ? __jfs_setxattr+0x76e/0x1120 [jfs]
-[58245.669046][T14017]  __jfs_setxattr+0xa01/0x1120 [jfs]
-[58245.669135][T14017]  ? __pfx___jfs_setxattr+0x10/0x10 [jfs]
-[58245.669216][T14017]  ? mutex_lock_nested+0x154/0x1d0
-[58245.669252][T14017]  ? __jfs_xattr_set+0xb9/0x170 [jfs]
-[58245.669333][T14017]  __jfs_xattr_set+0xda/0x170 [jfs]
-[58245.669430][T14017]  ? __pfx___jfs_xattr_set+0x10/0x10 [jfs]
-[58245.669509][T14017]  ? xattr_full_name+0x6f/0x90
-[58245.669546][T14017]  ? jfs_xattr_set+0x33/0x60 [jfs]
-[58245.669636][T14017]  ? __pfx_jfs_xattr_set+0x10/0x10 [jfs]
-[58245.669726][T14017]  __vfs_setxattr+0x43c/0x480
-[58245.669743][T14017]  __vfs_setxattr_noperm+0x12d/0x660
-[58245.669756][T14017]  vfs_setxattr+0x16b/0x2f0
-[58245.669768][T14017]  ? __pfx_vfs_setxattr+0x10/0x10
-[58245.669782][T14017]  filename_setxattr+0x274/0x600
-[58245.669795][T14017]  ? __pfx_filename_setxattr+0x10/0x10
-[58245.669806][T14017]  ? getname_flags+0x1e5/0x540
-[58245.669829][T14017]  path_setxattrat+0x364/0x3a0
-[58245.669840][T14017]  ? __pfx_path_setxattrat+0x10/0x10
-[58245.669859][T14017]  ? __se_sys_chdir+0x1b9/0x280
-[58245.669876][T14017]  __x64_sys_lsetxattr+0xbf/0xe0
-[58245.669888][T14017]  do_syscall_64+0xfa/0xfa0
-[58245.669901][T14017]  ? lockdep_hardirqs_on+0x9c/0x150
-[58245.669913][T14017]  ? entry_SYSCALL_64_after_hwframe+0x77/0x7f
-[58245.669927][T14017]  ? exc_page_fault+0xab/0x100
-[58245.669937][T14017]  entry_SYSCALL_64_after_hwframe+0x77/0x7f
-
-Reported-by: syzbot+4c1966e88c28fa96e053@syzkaller.appspotmail.com
-Signed-off-by: Yun Zhou <yun.zhou@windriver.com>
----
- fs/jfs/jfs_dmap.c | 113 ++++++++++++++++++++++++++++++++++++++++++++--
- 1 file changed, 110 insertions(+), 3 deletions(-)
-
-diff --git a/fs/jfs/jfs_dmap.c b/fs/jfs/jfs_dmap.c
-index cdfa699cd7c8..20dffd44785f 100644
---- a/fs/jfs/jfs_dmap.c
-+++ b/fs/jfs/jfs_dmap.c
-@@ -133,6 +133,92 @@ static const s8 budtab[256] = {
- 	2, 1, 1, 1, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1
- };
- 
-+/*
-+ * check_dmapctl - Validate integrity of a dmapctl structure
-+ * @dcp: Pointer to the dmapctl structure to check
-+ *
-+ * Return: true if valid, false if corrupted
-+ */
-+static bool check_dmapctl(struct dmapctl *dcp)
-+{
-+	s8 budmin = dcp->budmin;
-+	u32 nleafs, l2nleafs, leafidx, height;
-+	int i;
-+
-+	nleafs = le32_to_cpu(dcp->nleafs);
-+	/* Check basic field ranges */
-+	if (unlikely(nleafs > LPERCTL || nleafs < 0)) {
-+		jfs_err("dmapctl: invalid nleafs %u (max %u)",
-+			nleafs, LPERCTL);
-+		return false;
-+	}
-+
-+	l2nleafs = le32_to_cpu(dcp->l2nleafs);
-+	if (unlikely(l2nleafs > L2LPERCTL || l2nleafs < 0)) {
-+		jfs_err("dmapctl: invalid l2nleafs %u (max %u)",
-+			l2nleafs, L2LPERCTL);
-+		return false;
-+	}
-+
-+	/* Verify nleafs matches l2nleafs (must be power of two) */
-+	if (unlikely((1U << l2nleafs) != nleafs)) {
-+		jfs_err("dmapctl: nleafs %u != 2^%u",
-+			nleafs, l2nleafs);
-+		return false;
-+	}
-+
-+	leafidx = le32_to_cpu(dcp->leafidx);
-+	/* Check leaf index matches expected position */
-+	if (unlikely(leafidx != CTLLEAFIND)) {
-+		jfs_err("dmapctl: invalid leafidx %u (expected %u)",
-+			leafidx, CTLLEAFIND);
-+		return false;
-+	}
-+
-+	height = le32_to_cpu(dcp->height);
-+	/* Check tree height is within valid range */
-+	if (unlikely(height < 0 || height > (L2LPERCTL >> 1))) {
-+		jfs_err("dmapctl: invalid height %u (max %u)",
-+			height, L2LPERCTL >> 1);
-+		return false;
-+	}
-+
-+	/* Check budmin is valid (cannot be NOFREE for non-empty tree) */
-+	if (budmin == NOFREE) {
-+		if (unlikely(nleafs > 0)) {
-+			jfs_err("dmapctl: budmin is NOFREE but nleafs %u",
-+				nleafs);
-+			return false;
-+		}
-+	} else if (unlikely(budmin < BUDMIN)) {
-+		jfs_err("dmapctl: invalid budmin %d (min %d)",
-+			budmin, BUDMIN);
-+		return false;
-+	}
-+
-+	/* Check leaf nodes fit within stree array */
-+	if (unlikely(leafidx + nleafs > CTLTREESIZE)) {
-+		jfs_err("dmapctl: leaf range exceeds stree size (end %u > %u)",
-+			leafidx + nleafs, CTLTREESIZE);
-+		return false;
-+	}
-+
-+	/* Check leaf nodes have valid values */
-+	for (i = leafidx; i < leafidx + nleafs; i++) {
-+		s8 val = dcp->stree[i];
-+		if (unlikely(val < NOFREE)) {
-+			jfs_err("dmapctl: invalid leaf value %d at index %d",
-+					val, i);
-+			return false;
-+		} else if (unlikely(val > 31)) {
-+			jfs_err("dmapctl: leaf value %d too large at index %d", val, i);
-+			return false;
-+		}
-+	}
-+
-+	return true;
-+}
-+
- /*
-  * NAME:	dbMount()
-  *
-@@ -1372,7 +1458,7 @@ dbAllocAG(struct bmap * bmp, int agno, s64 nblocks, int l2nb, s64 * results)
- 	dcp = (struct dmapctl *) mp->data;
- 	budmin = dcp->budmin;
- 
--	if (dcp->leafidx != cpu_to_le32(CTLLEAFIND)) {
-+	if (unlikely(!check_dmapctl(dcp))) {
- 		jfs_error(bmp->db_ipbmap->i_sb, "Corrupt dmapctl page\n");
- 		release_metapage(mp);
- 		return -EIO;
-@@ -1702,7 +1788,7 @@ static int dbFindCtl(struct bmap * bmp, int l2nb, int level, s64 * blkno)
- 		dcp = (struct dmapctl *) mp->data;
- 		budmin = dcp->budmin;
- 
--		if (dcp->leafidx != cpu_to_le32(CTLLEAFIND)) {
-+		if (unlikely(!check_dmapctl(dcp))) {
- 			jfs_error(bmp->db_ipbmap->i_sb,
- 				  "Corrupt dmapctl page\n");
- 			release_metapage(mp);
-@@ -2485,7 +2571,7 @@ dbAdjCtl(struct bmap * bmp, s64 blkno, int newval, int alloc, int level)
- 		return -EIO;
- 	dcp = (struct dmapctl *) mp->data;
- 
--	if (dcp->leafidx != cpu_to_le32(CTLLEAFIND)) {
-+	if (unlikely(!check_dmapctl(dcp))) {
- 		jfs_error(bmp->db_ipbmap->i_sb, "Corrupt dmapctl page\n");
- 		release_metapage(mp);
- 		return -EIO;
-@@ -3454,6 +3540,11 @@ int dbExtendFS(struct inode *ipbmap, s64 blkno,	s64 nblocks)
- 		return -EIO;
- 	}
- 	l2dcp = (struct dmapctl *) l2mp->data;
-+	if (unlikely(!check_dmapctl(l2dcp))) {
-+		jfs_error(ipbmap->i_sb, "Corrupt dmapctl page\n");
-+		release_metapage(l2mp);
-+		return -EIO;
-+	}
- 
- 	/* compute start L1 */
- 	k = blkno >> L2MAXL1SIZE;
-@@ -3471,6 +3562,10 @@ int dbExtendFS(struct inode *ipbmap, s64 blkno,	s64 nblocks)
- 			if (l1mp == NULL)
- 				goto errout;
- 			l1dcp = (struct dmapctl *) l1mp->data;
-+			if (unlikely(!check_dmapctl(l1dcp))) {
-+				jfs_error(ipbmap->i_sb, "Corrupt dmapctl page\n");
-+				goto errout;
-+			}
- 
- 			/* compute start L0 */
- 			j = (blkno & (MAXL1SIZE - 1)) >> L2MAXL0SIZE;
-@@ -3484,6 +3579,10 @@ int dbExtendFS(struct inode *ipbmap, s64 blkno,	s64 nblocks)
- 				goto errout;
- 
- 			l1dcp = (struct dmapctl *) l1mp->data;
-+			if (unlikely(!check_dmapctl(l1dcp))) {
-+				jfs_error(ipbmap->i_sb, "Corrupt dmapctl page\n");
-+				goto errout;
-+			}
- 
- 			/* compute start L0 */
- 			j = 0;
-@@ -3503,6 +3602,10 @@ int dbExtendFS(struct inode *ipbmap, s64 blkno,	s64 nblocks)
- 				if (l0mp == NULL)
- 					goto errout;
- 				l0dcp = (struct dmapctl *) l0mp->data;
-+				if (unlikely(!check_dmapctl(l0dcp))) {
-+					jfs_error(ipbmap->i_sb, "Corrupt dmapctl page\n");
-+					goto errout;
-+				}
- 
- 				/* compute start dmap */
- 				i = (blkno & (MAXL0SIZE - 1)) >>
-@@ -3518,6 +3621,10 @@ int dbExtendFS(struct inode *ipbmap, s64 blkno,	s64 nblocks)
- 					goto errout;
- 
- 				l0dcp = (struct dmapctl *) l0mp->data;
-+				if (unlikely(!check_dmapctl(l0dcp))) {
-+					jfs_error(ipbmap->i_sb, "Corrupt dmapctl page\n");
-+					goto errout;
-+				}
- 
- 				/* compute start dmap */
- 				i = 0;
--- 
-2.34.1
-
-
-
-_______________________________________________
-Jfs-discussion mailing list
-Jfs-discussion@lists.sourceforge.net
-https://lists.sourceforge.net/lists/listinfo/jfs-discussion
+UGluZ2luZyBpZiBtaXNzZWQKCk9uIFNhdCwgTm92IDgsIDIwMjUgYXQgNzo0OOKAr1BNIDxzc3Jh
+bmVfYjIzQGVlLnZqdGkuYWMuaW4+IHdyb3RlOgo+Cj4gRnJvbTogU2hhdXJ5YSBSYW5lIDxzc3Jh
+bmVfYjIzQGVlLnZqdGkuYWMuaW4+Cj4KPiBUaGUgc3luY2xpc3QgZmllbGQgaW4gc3RydWN0IG1l
+dGFwYWdlIHdhcyBub3QgYmVpbmcgaW5pdGlhbGl6ZWQgZHVyaW5nCj4gYWxsb2NhdGlvbiBpbiBh
+bGxvY19tZXRhcGFnZSgpLCBsZWFkaW5nIHRvIGxpc3QgY29ycnVwdGlvbiB3aGVuIHRoZQo+IG1l
+dGFwYWdlIGlzIGxhdGVyIGFkZGVkIHRvIGEgdHJhbnNhY3Rpb24ncyBzeW5jIGxpc3QuCj4KPiBX
+aGVuIGRpVXBkYXRlUE1hcCgpIGNhbGxzIGxpc3RfYWRkKCZtcC0+c3luY2xpc3QsICZ0YmxrLT5z
+eW5jbGlzdCksIGlmCj4gdGhlIHN5bmNsaXN0IGZpZWxkIGNvbnRhaW5zIHN0YWxlIGRhdGEgZnJv
+bSBhIHByZXZpb3VzIGFsbG9jYXRpb24gKHN1Y2gKPiBhcyBMSVNUX1BPSVNPTiB2YWx1ZXMgZnJv
+bSBhIGZyZWVkIGxpc3Qgbm9kZSksIHRoZSBsaXN0IGRlYnVnZ2luZyBjb2RlCj4gZGV0ZWN0cyB0
+aGUgY29ycnVwdGlvbiBhbmQgdHJpZ2dlcnMgYSBzdGFjayBzZWdtZW50IGZhdWx0Lgo+Cj4gVGhp
+cyBpc3N1ZSBpcyBpbnRlcm1pdHRlbnQgYmVjYXVzZSBpdCBvbmx5IG1hbmlmZXN0cyB3aGVuIHJl
+Y3ljbGVkCj4gbWVtb3J5IGhhcHBlbnMgdG8gY29udGFpbiBwb2lzb24gdmFsdWVzIGluIHRoZSBz
+eW5jbGlzdCBmaWVsZC4gVGhlIGJ1Zwo+IHdhcyBkaXNjb3ZlcmVkIGJ5IHN5emJvdCwgd2hpY2gg
+Y3JlYXRlcyBzcGVjaWZpYyBmaWxlc3lzdGVtIHBhdHRlcm5zCj4gdGhhdCByZWxpYWJseSB0cmln
+Z2VyIHRoaXMgdW5pbml0aWFsaXplZCBtZW1vcnkgdXNhZ2UuCj4KPiBJbml0aWFsaXplIHRoZSBz
+eW5jbGlzdCBmaWVsZCB3aXRoIElOSVRfTElTVF9IRUFEKCkgaW4gYWxsb2NfbWV0YXBhZ2UoKQo+
+IHRvIGVuc3VyZSBpdCdzIGluIGEgdmFsaWQgc3RhdGUgYmVmb3JlIGJlaW5nIHVzZWQgaW4gbGlz
+dCBvcGVyYXRpb25zLgo+IFRoaXMgaXMgY29uc2lzdGVudCB3aXRoIGhvdyB0aGUgd2FpdCBxdWV1
+ZSBpcyBpbml0aWFsaXplZCBpbiB0aGUgc2FtZQo+IGZ1bmN0aW9uLgo+Cj4gUmVwb3J0ZWQtYnk6
+IHN5emJvdCtlODdiZTcyYzlhNmZlNjk5OTZmNUBzeXprYWxsZXIuYXBwc3BvdG1haWwuY29tCj4g
+Q2xvc2VzOiBodHRwczovL3N5emthbGxlci5hcHBzcG90LmNvbS9idWc/ZXh0aWQ9ZTg3YmU3MmM5
+YTZmZTY5OTk2ZjUKPiBTaWduZWQtb2ZmLWJ5OiBTaGF1cnlhIFJhbmUgPHNzcmFuZV9iMjNAZWUu
+dmp0aS5hYy5pbj4KPgo+IC0tLQo+IFRlc3RlZDoKPiAgLSBUZXN0ZWQgbG9jYWxseSB3aXRoIHN5
+emJvdCByZXByb2R1Y2VyLCBubyBlcnJvcnMgb2JzZXJ2ZWQKPiBDaGFuZ2Vsb2c6Cj4gLSBDb3Jy
+ZWN0IGJ1ZyBsaW5rCj4gLSBDb3JyZWN0ZWQgcGF0Y2ggZm9ybWF0Cj4KPiAgZnMvamZzL2pmc19t
+ZXRhcGFnZS5jIHwgMSArCj4gIDEgZmlsZSBjaGFuZ2VkLCAxIGluc2VydGlvbigrKQo+Cj4gZGlm
+ZiAtLWdpdCBhL2ZzL2pmcy9qZnNfbWV0YXBhZ2UuYyBiL2ZzL2pmcy9qZnNfbWV0YXBhZ2UuYwo+
+IGluZGV4IDg3MWNmNGZiMzYzNi4uNzdjNTEyYTBhNDJiIDEwMDY0NAo+IC0tLSBhL2ZzL2pmcy9q
+ZnNfbWV0YXBhZ2UuYwo+ICsrKyBiL2ZzL2pmcy9qZnNfbWV0YXBhZ2UuYwo+IEBAIC0yNjksNiAr
+MjY5LDcgQEAgc3RhdGljIGlubGluZSBzdHJ1Y3QgbWV0YXBhZ2UgKmFsbG9jX21ldGFwYWdlKGdm
+cF90IGdmcF9tYXNrKQo+ICAgICAgICAgICAgICAgICBtcC0+ZGF0YSA9IE5VTEw7Cj4gICAgICAg
+ICAgICAgICAgIG1wLT5jbHNuID0gMDsKPiAgICAgICAgICAgICAgICAgbXAtPmxvZyA9IE5VTEw7
+Cj4gKyAgICAgICAgICAgICAgIElOSVRfTElTVF9IRUFEKCZtcC0+c3luY2xpc3QpOwo+ICAgICAg
+ICAgICAgICAgICBpbml0X3dhaXRxdWV1ZV9oZWFkKCZtcC0+d2FpdCk7Cj4gICAgICAgICB9Cj4g
+ICAgICAgICByZXR1cm4gbXA7Cj4gLS0KPiAyLjM0LjEKPgoKCl9fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fCkpmcy1kaXNjdXNzaW9uIG1haWxpbmcgbGlzdApK
+ZnMtZGlzY3Vzc2lvbkBsaXN0cy5zb3VyY2Vmb3JnZS5uZXQKaHR0cHM6Ly9saXN0cy5zb3VyY2Vm
+b3JnZS5uZXQvbGlzdHMvbGlzdGluZm8vamZzLWRpc2N1c3Npb24K
