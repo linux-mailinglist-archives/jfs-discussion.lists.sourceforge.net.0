@@ -2,128 +2,101 @@ Return-Path: <jfs-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+jfs-discussion@lfdr.de
 Delivered-To: lists+jfs-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id 178C1C927BE
-	for <lists+jfs-discussion@lfdr.de>; Fri, 28 Nov 2025 16:53:30 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6EF73C9359F
+	for <lists+jfs-discussion@lfdr.de>; Sat, 29 Nov 2025 02:16:11 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.sourceforge.net; s=beta; h=Content-Transfer-Encoding:Content-Type:Cc:
+	d=lists.sourceforge.net; s=beta; h=Content-Type:Content-Transfer-Encoding:Cc:
 	Reply-To:From:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:Subject:MIME-Version:Message-ID:Date:To:Sender:
-	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
-	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
-	bh=edfaBU43iFrN7gsLBxM2/1sTSWHszFe/KPx3oTkcPyc=; b=IMyjyj/ICIR53lT/VNLLN6VfqU
-	p1BQLhgohCMtY/JHye3dFxhdLu4Q9UY2x/ViQIgCNNFfQKSZ1ySYBnY37BJzZF+IK5qGcop0BQYd2
-	jbp/s2jxEMxCVccCz20DJNTnV7Us/AmBTOlLZ8C1BXDzLqb+moyY5nB3KNFczgxKE1Wk=;
-Received: from [127.0.0.1] (helo=sfs-ml-1.v29.lw.sourceforge.com)
-	by sfs-ml-1.v29.lw.sourceforge.com with esmtp (Exim 4.95)
+	List-Unsubscribe:List-Id:Subject:In-Reply-To:References:To:MIME-Version:Date:
+	Message-ID:Sender:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=3F30PocWkyNWHR219m0C1Bx4MMY1IKjbfK8HnAXDMWQ=; b=JecHTS//CkEZbGgKrUw5mxA5Qz
+	oq6qhkvjHANTfKIG8qMBSs3lg3DaxsufKgemuhbmf9pzt5c4sR5FL+mWQBLGTelDSsuvGO1CGYUw9
+	PMxJsrLhBKrOFt6KlMPIx765QgzuY/z65LQ6D4SU+Gfr3CjwZhBYIYicJl/paGZWyR7w=;
+Received: from [127.0.0.1] (helo=sfs-ml-3.v29.lw.sourceforge.com)
+	by sfs-ml-3.v29.lw.sourceforge.com with esmtp (Exim 4.95)
 	(envelope-from <jfs-discussion-bounces@lists.sourceforge.net>)
-	id 1vP0mS-0003Dw-6r;
-	Fri, 28 Nov 2025 15:53:08 +0000
+	id 1vP9Z3-00024f-5g;
+	Sat, 29 Nov 2025 01:15:53 +0000
 Received: from [172.30.29.66] (helo=mx.sourceforge.net)
- by sfs-ml-1.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
+ by sfs-ml-3.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
  TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (Exim 4.95)
- (envelope-from <prvs=442756d65e=yun.zhou@windriver.com>)
- id 1vP0mP-0003Dm-72 for jfs-discussion@lists.sourceforge.net;
- Fri, 28 Nov 2025 15:53:07 +0000
+ (envelope-from <lilingfeng3@huawei.com>) id 1vP9Z1-00024X-Lb
+ for jfs-discussion@lists.sourceforge.net;
+ Sat, 29 Nov 2025 01:15:51 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=sourceforge.net; s=x; h=Content-Type:Content-Transfer-Encoding:MIME-Version
- :Message-ID:Date:Subject:CC:To:From:Sender:Reply-To:Content-ID:
- Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
- :Resent-Message-ID:In-Reply-To:References:List-Id:List-Help:List-Unsubscribe:
+ d=sourceforge.net; s=x; h=Content-Transfer-Encoding:Content-Type:In-Reply-To:
+ From:References:CC:To:Subject:MIME-Version:Date:Message-ID:Sender:Reply-To:
+ Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
+ Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=FonsJWLc+Z9vgYScMr5gzm/H1tWIKcTpJv+zdq/u9+U=; b=fum6nV+IKE4S1T5wxb3z4t7Cxg
- mo1n3lMJ5I9qvlwpfS+HVbNtAawpYHTmq1bG/B0hdZveMPRy93M+5mXhQL3ARwGCS0QAsvT5hMCDP
- AtSfShKwcgUKomu6ah+pYMoR1RfCcGL5RV7o1lpw9kX77n+FsIvvLkQzMv913suVJ/c4=;
+ bh=LXsknlZt4ReqSl7GuQSyOxUqfbkcLZE1qF9Smjkpguo=; b=FxMgGyGUhWb1SGRyIY8NEDVztI
+ 8oq++lc0LSjEClo+boYZtScJZ7khgUhK55oR9Pe/Q8Y1e0vPc5Sl029a+LNYw4ps+Wl8T10zaSJ1i
+ N7Y9s1uU5M8Eg+usWbsLuLRrzcJPas6rUgDSyWFvcUEA2lawfA2gHKHCwOdf81BanpJE=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
- h=Content-Type:Content-Transfer-Encoding:MIME-Version:Message-ID:Date:
- Subject:CC:To:From:Sender:Reply-To:Content-ID:Content-Description:Resent-Date
- :Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
- References:List-Id:List-Help:List-Unsubscribe:List-Subscribe:List-Post:
- List-Owner:List-Archive; bh=FonsJWLc+Z9vgYScMr5gzm/H1tWIKcTpJv+zdq/u9+U=; b=i
- L94EhQFs5KRwulTcEBsyyK/EP1IhNRP4CjZ/tGYFU3wj00kOXV/BFhzPFlijA/zIiX9de0LOCKu2Q
- aGFSwAQzAkj+41H6jVDfZWLw/e4ZIret5U5RIHlf2QK66z2Oq8bCRyXIM0ixnWXJWy9FnCm7HWnE0
- 81yyITG5QFgUNd/k=;
-Received: from mx0b-0064b401.pphosted.com ([205.220.178.238])
+ h=Content-Transfer-Encoding:Content-Type:In-Reply-To:From:References:CC:To:
+ Subject:MIME-Version:Date:Message-ID:Sender:Reply-To:Content-ID:
+ Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+ :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
+ List-Post:List-Owner:List-Archive;
+ bh=LXsknlZt4ReqSl7GuQSyOxUqfbkcLZE1qF9Smjkpguo=; b=T/wOcXd9nzDePJzhAopR0ne+eO
+ jb9Bei9soEM5BVpHI/TkTZVUjBW7JXU4akVAR8V7ijjLAMOiRqE8FusohKJ14oa03QnTxyv0Be16r
+ +hBCqDDXUwzMiIUxlibip47s3houlXV4lwWmTQVI9pKo3k36WzZxyNWqF9yuJCmM3Vkg=;
+Received: from canpmsgout06.his.huawei.com ([113.46.200.221])
  by sfi-mx-2.v28.lw.sourceforge.com with esmtps
  (TLS1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.95)
- id 1vP0mO-0004vH-98 for jfs-discussion@lists.sourceforge.net;
- Fri, 28 Nov 2025 15:53:05 +0000
-Received: from pps.filterd (m0250812.ppops.net [127.0.0.1])
- by mx0a-0064b401.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id
- 5ASEsRX8146095; Fri, 28 Nov 2025 15:51:54 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=windriver.com;
- h=cc:content-transfer-encoding:content-type:date:from
- :message-id:mime-version:subject:to; s=PPS06212021; bh=FonsJWLc+
- Z9vgYScMr5gzm/H1tWIKcTpJv+zdq/u9+U=; b=RjG5Bs8uw/akG56se0Ibx5iM5
- Gpm6Ft7j06c1ZyMk7x1Sn9qkFpxf+Rye6ns1881mwlyQDMjRg5hD9hBWD2MHVxZp
- 8IMbz94f28dIVN6U4dw643eMB3DvGyl7egdrWfIuiZeu1/Hi70gMstWaC7wgx3Bc
- KAkPjmhk2diHDS2OqL6iCrLMxQuW2WC3GCJuZOsiL+PM00J5ezoM3T11Gc+lZw2Z
- aWhX7iYhFcbX/qTocHyUajd2fCYNBaivsjh/1BxVe0A+DcSIkgWkJPJ2/SRc7NLp
- sBytHOFc3PoAbd0AcReiLmJ7cU2FAZPxmFSncjKNFdYaArcYa3gjUN8wV4IOQ==
-Received: from ala-exchng02.corp.ad.wrs.com ([128.224.246.37])
- by mx0a-0064b401.pphosted.com (PPS) with ESMTPS id 4ak455q1wc-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NOT);
- Fri, 28 Nov 2025 15:51:54 +0000 (GMT)
-Received: from ala-exchng01.corp.ad.wrs.com (10.11.224.121) by
- ALA-EXCHNG02.corp.ad.wrs.com (10.11.224.122) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
- 15.1.2507.61; Fri, 28 Nov 2025 07:51:53 -0800
-Received: from c38b02c5ee49.wrs.com (10.11.232.110) by
- ala-exchng01.corp.ad.wrs.com (10.11.224.121) with Microsoft SMTP Server id
- 15.1.2507.61 via Frontend Transport; Fri, 28 Nov 2025 07:51:51 -0800
-To: <lilingfeng3@huawei.com>, <shaggy@kernel.org>
-Date: Fri, 28 Nov 2025 23:51:50 +0800
-Message-ID: <20251128155150.1493986-1-yun.zhou@windriver.com>
-X-Mailer: git-send-email 2.44.0
+ id 1vP9Z0-0004mP-8W for jfs-discussion@lists.sourceforge.net;
+ Sat, 29 Nov 2025 01:15:51 +0000
+dkim-signature: v=1; a=rsa-sha256; d=huawei.com; s=dkim;
+ c=relaxed/relaxed; q=dns/txt; h=From;
+ bh=LXsknlZt4ReqSl7GuQSyOxUqfbkcLZE1qF9Smjkpguo=;
+ b=L7KKdoJgXdTDDUKF32rCIw84UhEIlCupDQjRjV0LWAx+ifYw9p9fMHm9a0Y5G/kG7V0Jk9YPa
+ DtjMmxE0vJkmeRJU7BWRChFXyGfy/oP3h02iotoqZgRt99fHhq8VqH5eo9H6NbocnxQGKbGtSjR
+ JJTP6wJVR7FmynnrbgR7Yos=
+Received: from mail.maildlp.com (unknown [172.19.162.254])
+ by canpmsgout06.his.huawei.com (SkyGuard) with ESMTPS id 4dJBy85zTMzRhQT;
+ Sat, 29 Nov 2025 09:13:52 +0800 (CST)
+Received: from kwepemj200013.china.huawei.com (unknown [7.202.194.25])
+ by mail.maildlp.com (Postfix) with ESMTPS id 74C55180464;
+ Sat, 29 Nov 2025 09:15:42 +0800 (CST)
+Received: from [10.174.179.155] (10.174.179.155) by
+ kwepemj200013.china.huawei.com (7.202.194.25) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.2.1544.11; Sat, 29 Nov 2025 09:15:41 +0800
+Message-ID: <2febd16b-77a3-45c7-80cb-e324d3540746@huawei.com>
+Date: Sat, 29 Nov 2025 09:15:40 +0800
 MIME-Version: 1.0
-X-Proofpoint-ORIG-GUID: AHTAK1qYFOUMihEKZnmK87Zs4g48wJdP
-X-Proofpoint-GUID: AHTAK1qYFOUMihEKZnmK87Zs4g48wJdP
-X-Authority-Analysis: v=2.4 cv=T6eBjvKQ c=1 sm=1 tr=0 ts=6929c51a cx=c_pps
- a=Lg6ja3A245NiLSnFpY5YKQ==:117 a=Lg6ja3A245NiLSnFpY5YKQ==:17
- a=6UeiqGixMTsA:10 a=VkNPw1HP01LnGYTKEx00:22 a=hSkVLCK3AAAA:8 a=t7CeM3EgAAAA:8
- a=3JtE_UQzxUXlF2KlCTMA:9 a=cQPPKAXgyycSBL8etih5:22 a=FdTzh2GWekK77mhwV6Dw:22
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUxMTI4MDExNiBTYWx0ZWRfX5PVtfQVE/wzf
- uYgbOb79qucVK5Nfe9hSoj6JnRD5D5+l1XxiMaVqSb0XHkdqNAy5rMvudhyUQnoBCfKKUJObUIO
- RZtpxwKhizUL6fewkRk3eOQLLpjBHWTRhzVWWPppeahdlGLldq79E7BfJbYHePT/dDWOiJnsfjX
- 7bWq+/Af5eUfcGx7WOu/A99m4+bpDwsaHpKmmj73EX723WeOMcssZOYiJyGI5hO4ggec+WNnXQe
- cTLZPBEF35H3KJqbDoSpgII7rBVr8UjsROqm9UG7WB+Y81buD9coMxzR0ZE9D0p9hjKdnHTwjqh
- SQWW6gP4d63lpo1e1jy02P875Kj+LUXznTLAsoCjxgmtxjM6641wfjb+m9+X+HiHdDLc1Vk2XM/
- GIiwnQc28bd1+FFWcP29HrtPeYCZDA==
-X-Proofpoint-Virus-Version: vendor=baseguard
- engine=ICAP:2.0.293,Aquarius:18.0.1121,Hydra:6.1.9,FMLib:17.12.100.49
- definitions=2025-11-28_08,2025-11-27_02,2025-10-01_01
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- malwarescore=0 spamscore=0 lowpriorityscore=0 clxscore=1015 bulkscore=0
- phishscore=0 suspectscore=0 priorityscore=1501 impostorscore=0 adultscore=0
- classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
- reason=mlx scancount=1 engine=8.22.0-2510240001 definitions=main-2511280116
+User-Agent: =?UTF-8?B?TW96aWxsYSBUaHVuZGVyYmlyZCDmtYvor5XniYg=?=
+To: Yun Zhou <yun.zhou@windriver.com>, <shaggy@kernel.org>
+References: <20251128155150.1493986-1-yun.zhou@windriver.com>
+In-Reply-To: <20251128155150.1493986-1-yun.zhou@windriver.com>
+X-Originating-IP: [10.174.179.155]
+X-ClientProxiedBy: kwepems500002.china.huawei.com (7.221.188.17) To
+ kwepemj200013.china.huawei.com (7.202.194.25)
 X-Spam-Score: -0.2 (/)
-X-Spam-Report: Spam detection software,
- running on the system "sfi-spamd-2.hosts.colo.sdot.me", 
+X-Spam-Report: Spam detection software, running on the system "sfi-spamd-2.hosts.colo.sdot.me",
  has NOT identified this incoming email as spam.  The original
  message has been attached to this so you can view it or label
  similar future email.  If you have any questions, see
  the administrator of that system for details.
- Content preview:  Add check_dmapctl() to validate dmapctl structure integrity, 
- focusing on preventing invalid operations caused by on-disk corruption. Key
- checks: - nleafs bounded by [0, LPERCTL] (maximum leaf nodes per dmapctl).
- - l2nleafs bounded by [0, L2LPERCTL] and consistent with nleafs (nleafs must
- be 2^l2nleafs). - leafidx must be exactly CT [...] 
+ 
+ Content preview:  Hi Yun, 在 2025/11/28 23:51, Yun Zhou 写道: > Add check_dmapctl()
+    to validate dmapctl structure integrity, focusing on > preventing invalid
+    operations caused by on-disk corruption. > > Key checks: > - nlea [...] 
+ 
  Content analysis details:   (-0.2 points, 5.0 required)
- pts rule name              description
+ 
+  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature,
- not necessarily valid
- -0.1 DKIM_VALID_AU Message has a valid DKIM or DK signature from author's
- domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [205.220.178.238 listed in wl.mailspike.net]
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
-X-Headers-End: 1vP0mO-0004vH-98
-Subject: [Jfs-discussion] [PATCH v2] jfs: add dmapctl integrity check to
+                             envelope-from domain
+  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from author's
+                             domain
+ -0.1 DKIM_VALID             Message has at least one valid DKIM or DK signature
+X-Headers-End: 1vP9Z0-0004mP-8W
+Subject: Re: [Jfs-discussion] [PATCH v2] jfs: add dmapctl integrity check to
  prevent invalid operations
 X-BeenThere: jfs-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
@@ -136,273 +109,191 @@ List-Post: <mailto:jfs-discussion@lists.sourceforge.net>
 List-Help: <mailto:jfs-discussion-request@lists.sourceforge.net?subject=help>
 List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/jfs-discussion>, 
  <mailto:jfs-discussion-request@lists.sourceforge.net?subject=subscribe>
-From: Yun Zhou via Jfs-discussion <jfs-discussion@lists.sourceforge.net>
-Reply-To: Yun Zhou <yun.zhou@windriver.com>
-Cc: jfs-discussion@lists.sourceforge.net, yun.zhou@windriver.com,
- linux-kernel@vger.kernel.org, kovalev@altlinux.org, contact@arnaud-lcm.com,
- zheng.yu@northwestern.edu, rand.sec96@gmail.com
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+From: Li Lingfeng via Jfs-discussion <jfs-discussion@lists.sourceforge.net>
+Reply-To: Li Lingfeng <lilingfeng3@huawei.com>
+Cc: jfs-discussion@lists.sourceforge.net, yangerkun <yangerkun@huawei.com>,
+ linux-kernel@vger.kernel.org, linan122@huawei.com, kovalev@altlinux.org,
+ contact@arnaud-lcm.com, zheng.yu@northwestern.edu, rand.sec96@gmail.com
+Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="utf-8"; Format="flowed"
 Errors-To: jfs-discussion-bounces@lists.sourceforge.net
 
-Add check_dmapctl() to validate dmapctl structure integrity, focusing on
-preventing invalid operations caused by on-disk corruption.
-
-Key checks:
- - nleafs bounded by [0, LPERCTL] (maximum leaf nodes per dmapctl).
- - l2nleafs bounded by [0, L2LPERCTL] and consistent with nleafs
-   (nleafs must be 2^l2nleafs).
- - leafidx must be exactly CTLLEAFIND (expected leaf index position).
- - height bounded by [0, L2LPERCTL >> 1] (valid tree height range).
- - budmin validity: NOFREE only if nleafs=0; otherwise >= BUDMIN.
- - Leaf nodes fit within stree array (leafidx + nleafs <= CTLTREESIZE).
- - Leaf node values are either non-negative or NOFREE.
-
-Invoked in dbAllocAG(), dbFindCtl(), dbAdjCtl() and dbExtendFS() when
-accessing dmapctl pages, catching corruption early before dmap operations
-trigger invalid memory access or logic errors.
-
-This fixes the following UBSAN warning.
-
-[58245.668090][T14017] ------------[ cut here ]------------
-[58245.668103][T14017] UBSAN: shift-out-of-bounds in fs/jfs/jfs_dmap.c:2641:11
-[58245.668119][T14017] shift exponent 110 is too large for 32-bit type 'int'
-[58245.668137][T14017] CPU: 0 UID: 0 PID: 14017 Comm: 4c1966e88c28fa9 Tainted: G            E       6.18.0-rc4-00253-g21ce5d4ba045-dirty #124 PREEMPT_{RT,(full)}
-[58245.668174][T14017] Tainted: [E]=UNSIGNED_MODULE
-[58245.668176][T14017] Hardware name: QEMU Ubuntu 25.04 PC (i440FX + PIIX, 1996), BIOS 1.16.3-debian-1.16.3-2 04/01/2014
-[58245.668184][T14017] Call Trace:
-[58245.668200][T14017]  <TASK>
-[58245.668208][T14017]  dump_stack_lvl+0x189/0x250
-[58245.668288][T14017]  ? __pfx_dump_stack_lvl+0x10/0x10
-[58245.668301][T14017]  ? __pfx__printk+0x10/0x10
-[58245.668315][T14017]  ? lock_metapage+0x303/0x400 [jfs]
-[58245.668406][T14017]  ubsan_epilogue+0xa/0x40
-[58245.668422][T14017]  __ubsan_handle_shift_out_of_bounds+0x386/0x410
-[58245.668462][T14017]  dbSplit+0x1f8/0x200 [jfs]
-[58245.668543][T14017]  dbAdjCtl+0x34c/0xa20 [jfs]
-[58245.668628][T14017]  dbAllocNear+0x2ee/0x3d0 [jfs]
-[58245.668710][T14017]  dbAlloc+0x933/0xba0 [jfs]
-[58245.668797][T14017]  ea_write+0x374/0xdd0 [jfs]
-[58245.668888][T14017]  ? __pfx_ea_write+0x10/0x10 [jfs]
-[58245.668966][T14017]  ? __jfs_setxattr+0x76e/0x1120 [jfs]
-[58245.669046][T14017]  __jfs_setxattr+0xa01/0x1120 [jfs]
-[58245.669135][T14017]  ? __pfx___jfs_setxattr+0x10/0x10 [jfs]
-[58245.669216][T14017]  ? mutex_lock_nested+0x154/0x1d0
-[58245.669252][T14017]  ? __jfs_xattr_set+0xb9/0x170 [jfs]
-[58245.669333][T14017]  __jfs_xattr_set+0xda/0x170 [jfs]
-[58245.669430][T14017]  ? __pfx___jfs_xattr_set+0x10/0x10 [jfs]
-[58245.669509][T14017]  ? xattr_full_name+0x6f/0x90
-[58245.669546][T14017]  ? jfs_xattr_set+0x33/0x60 [jfs]
-[58245.669636][T14017]  ? __pfx_jfs_xattr_set+0x10/0x10 [jfs]
-[58245.669726][T14017]  __vfs_setxattr+0x43c/0x480
-[58245.669743][T14017]  __vfs_setxattr_noperm+0x12d/0x660
-[58245.669756][T14017]  vfs_setxattr+0x16b/0x2f0
-[58245.669768][T14017]  ? __pfx_vfs_setxattr+0x10/0x10
-[58245.669782][T14017]  filename_setxattr+0x274/0x600
-[58245.669795][T14017]  ? __pfx_filename_setxattr+0x10/0x10
-[58245.669806][T14017]  ? getname_flags+0x1e5/0x540
-[58245.669829][T14017]  path_setxattrat+0x364/0x3a0
-[58245.669840][T14017]  ? __pfx_path_setxattrat+0x10/0x10
-[58245.669859][T14017]  ? __se_sys_chdir+0x1b9/0x280
-[58245.669876][T14017]  __x64_sys_lsetxattr+0xbf/0xe0
-[58245.669888][T14017]  do_syscall_64+0xfa/0xfa0
-[58245.669901][T14017]  ? lockdep_hardirqs_on+0x9c/0x150
-[58245.669913][T14017]  ? entry_SYSCALL_64_after_hwframe+0x77/0x7f
-[58245.669927][T14017]  ? exc_page_fault+0xab/0x100
-[58245.669937][T14017]  entry_SYSCALL_64_after_hwframe+0x77/0x7f
-
-Reported-by: syzbot+4c1966e88c28fa96e053@syzkaller.appspotmail.com
-Signed-off-by: Yun Zhou <yun.zhou@windriver.com>
----
- fs/jfs/jfs_dmap.c | 113 ++++++++++++++++++++++++++++++++++++++++++++--
- 1 file changed, 110 insertions(+), 3 deletions(-)
-
-diff --git a/fs/jfs/jfs_dmap.c b/fs/jfs/jfs_dmap.c
-index cdfa699cd7c8..3f1ed82baa3d 100644
---- a/fs/jfs/jfs_dmap.c
-+++ b/fs/jfs/jfs_dmap.c
-@@ -133,6 +133,92 @@ static const s8 budtab[256] = {
- 	2, 1, 1, 1, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1
- };
- 
-+/*
-+ * check_dmapctl - Validate integrity of a dmapctl structure
-+ * @dcp: Pointer to the dmapctl structure to check
-+ *
-+ * Return: true if valid, false if corrupted
-+ */
-+static bool check_dmapctl(struct dmapctl *dcp)
-+{
-+	s8 budmin = dcp->budmin;
-+	u32 nleafs, l2nleafs, leafidx, height;
-+	int i;
-+
-+	nleafs = le32_to_cpu(dcp->nleafs);
-+	/* Check basic field ranges */
-+	if (unlikely(nleafs > LPERCTL)) {
-+		jfs_err("dmapctl: invalid nleafs %u (max %u)",
-+			nleafs, LPERCTL);
-+		return false;
-+	}
-+
-+	l2nleafs = le32_to_cpu(dcp->l2nleafs);
-+	if (unlikely(l2nleafs > L2LPERCTL)) {
-+		jfs_err("dmapctl: invalid l2nleafs %u (max %u)",
-+			l2nleafs, L2LPERCTL);
-+		return false;
-+	}
-+
-+	/* Verify nleafs matches l2nleafs (must be power of two) */
-+	if (unlikely((1U << l2nleafs) != nleafs)) {
-+		jfs_err("dmapctl: nleafs %u != 2^%u",
-+			nleafs, l2nleafs);
-+		return false;
-+	}
-+
-+	leafidx = le32_to_cpu(dcp->leafidx);
-+	/* Check leaf index matches expected position */
-+	if (unlikely(leafidx != CTLLEAFIND)) {
-+		jfs_err("dmapctl: invalid leafidx %u (expected %u)",
-+			leafidx, CTLLEAFIND);
-+		return false;
-+	}
-+
-+	height = le32_to_cpu(dcp->height);
-+	/* Check tree height is within valid range */
-+	if (unlikely(height > (L2LPERCTL >> 1))) {
-+		jfs_err("dmapctl: invalid height %u (max %u)",
-+			height, L2LPERCTL >> 1);
-+		return false;
-+	}
-+
-+	/* Check budmin is valid (cannot be NOFREE for non-empty tree) */
-+	if (budmin == NOFREE) {
-+		if (unlikely(nleafs > 0)) {
-+			jfs_err("dmapctl: budmin is NOFREE but nleafs %u",
-+				nleafs);
-+			return false;
-+		}
-+	} else if (unlikely(budmin < BUDMIN)) {
-+		jfs_err("dmapctl: invalid budmin %d (min %d)",
-+			budmin, BUDMIN);
-+		return false;
-+	}
-+
-+	/* Check leaf nodes fit within stree array */
-+	if (unlikely(leafidx + nleafs > CTLTREESIZE)) {
-+		jfs_err("dmapctl: leaf range exceeds stree size (end %u > %u)",
-+			leafidx + nleafs, CTLTREESIZE);
-+		return false;
-+	}
-+
-+	/* Check leaf nodes have valid values */
-+	for (i = leafidx; i < leafidx + nleafs; i++) {
-+		s8 val = dcp->stree[i];
-+		if (unlikely(val < NOFREE)) {
-+			jfs_err("dmapctl: invalid leaf value %d at index %d",
-+					val, i);
-+			return false;
-+		} else if (unlikely(val > 31)) {
-+			jfs_err("dmapctl: leaf value %d too large at index %d", val, i);
-+			return false;
-+		}
-+	}
-+
-+	return true;
-+}
-+
- /*
-  * NAME:	dbMount()
-  *
-@@ -1372,7 +1458,7 @@ dbAllocAG(struct bmap * bmp, int agno, s64 nblocks, int l2nb, s64 * results)
- 	dcp = (struct dmapctl *) mp->data;
- 	budmin = dcp->budmin;
- 
--	if (dcp->leafidx != cpu_to_le32(CTLLEAFIND)) {
-+	if (unlikely(!check_dmapctl(dcp))) {
- 		jfs_error(bmp->db_ipbmap->i_sb, "Corrupt dmapctl page\n");
- 		release_metapage(mp);
- 		return -EIO;
-@@ -1702,7 +1788,7 @@ static int dbFindCtl(struct bmap * bmp, int l2nb, int level, s64 * blkno)
- 		dcp = (struct dmapctl *) mp->data;
- 		budmin = dcp->budmin;
- 
--		if (dcp->leafidx != cpu_to_le32(CTLLEAFIND)) {
-+		if (unlikely(!check_dmapctl(dcp))) {
- 			jfs_error(bmp->db_ipbmap->i_sb,
- 				  "Corrupt dmapctl page\n");
- 			release_metapage(mp);
-@@ -2485,7 +2571,7 @@ dbAdjCtl(struct bmap * bmp, s64 blkno, int newval, int alloc, int level)
- 		return -EIO;
- 	dcp = (struct dmapctl *) mp->data;
- 
--	if (dcp->leafidx != cpu_to_le32(CTLLEAFIND)) {
-+	if (unlikely(!check_dmapctl(dcp))) {
- 		jfs_error(bmp->db_ipbmap->i_sb, "Corrupt dmapctl page\n");
- 		release_metapage(mp);
- 		return -EIO;
-@@ -3454,6 +3540,11 @@ int dbExtendFS(struct inode *ipbmap, s64 blkno,	s64 nblocks)
- 		return -EIO;
- 	}
- 	l2dcp = (struct dmapctl *) l2mp->data;
-+	if (unlikely(!check_dmapctl(l2dcp))) {
-+		jfs_error(ipbmap->i_sb, "Corrupt dmapctl page\n");
-+		release_metapage(l2mp);
-+		return -EIO;
-+	}
- 
- 	/* compute start L1 */
- 	k = blkno >> L2MAXL1SIZE;
-@@ -3471,6 +3562,10 @@ int dbExtendFS(struct inode *ipbmap, s64 blkno,	s64 nblocks)
- 			if (l1mp == NULL)
- 				goto errout;
- 			l1dcp = (struct dmapctl *) l1mp->data;
-+			if (unlikely(!check_dmapctl(l1dcp))) {
-+				jfs_error(ipbmap->i_sb, "Corrupt dmapctl page\n");
-+				goto errout;
-+			}
- 
- 			/* compute start L0 */
- 			j = (blkno & (MAXL1SIZE - 1)) >> L2MAXL0SIZE;
-@@ -3484,6 +3579,10 @@ int dbExtendFS(struct inode *ipbmap, s64 blkno,	s64 nblocks)
- 				goto errout;
- 
- 			l1dcp = (struct dmapctl *) l1mp->data;
-+			if (unlikely(!check_dmapctl(l1dcp))) {
-+				jfs_error(ipbmap->i_sb, "Corrupt dmapctl page\n");
-+				goto errout;
-+			}
- 
- 			/* compute start L0 */
- 			j = 0;
-@@ -3503,6 +3602,10 @@ int dbExtendFS(struct inode *ipbmap, s64 blkno,	s64 nblocks)
- 				if (l0mp == NULL)
- 					goto errout;
- 				l0dcp = (struct dmapctl *) l0mp->data;
-+				if (unlikely(!check_dmapctl(l0dcp))) {
-+					jfs_error(ipbmap->i_sb, "Corrupt dmapctl page\n");
-+					goto errout;
-+				}
- 
- 				/* compute start dmap */
- 				i = (blkno & (MAXL0SIZE - 1)) >>
-@@ -3518,6 +3621,10 @@ int dbExtendFS(struct inode *ipbmap, s64 blkno,	s64 nblocks)
- 					goto errout;
- 
- 				l0dcp = (struct dmapctl *) l0mp->data;
-+				if (unlikely(!check_dmapctl(l0dcp))) {
-+					jfs_error(ipbmap->i_sb, "Corrupt dmapctl page\n");
-+					goto errout;
-+				}
- 
- 				/* compute start dmap */
- 				i = 0;
--- 
-2.34.1
-
-
-
-_______________________________________________
-Jfs-discussion mailing list
-Jfs-discussion@lists.sourceforge.net
-https://lists.sourceforge.net/lists/listinfo/jfs-discussion
+SGkgWXVuLAoK5ZyoIDIwMjUvMTEvMjggMjM6NTEsIFl1biBaaG91IOWGmemBkzoKPiBBZGQgY2hl
+Y2tfZG1hcGN0bCgpIHRvIHZhbGlkYXRlIGRtYXBjdGwgc3RydWN0dXJlIGludGVncml0eSwgZm9j
+dXNpbmcgb24KPiBwcmV2ZW50aW5nIGludmFsaWQgb3BlcmF0aW9ucyBjYXVzZWQgYnkgb24tZGlz
+ayBjb3JydXB0aW9uLgo+Cj4gS2V5IGNoZWNrczoKPiAgIC0gbmxlYWZzIGJvdW5kZWQgYnkgWzAs
+IExQRVJDVExdIChtYXhpbXVtIGxlYWYgbm9kZXMgcGVyIGRtYXBjdGwpLgo+ICAgLSBsMm5sZWFm
+cyBib3VuZGVkIGJ5IFswLCBMMkxQRVJDVExdIGFuZCBjb25zaXN0ZW50IHdpdGggbmxlYWZzCj4g
+ICAgIChubGVhZnMgbXVzdCBiZSAyXmwybmxlYWZzKS4KPiAgIC0gbGVhZmlkeCBtdXN0IGJlIGV4
+YWN0bHkgQ1RMTEVBRklORCAoZXhwZWN0ZWQgbGVhZiBpbmRleCBwb3NpdGlvbikuCj4gICAtIGhl
+aWdodCBib3VuZGVkIGJ5IFswLCBMMkxQRVJDVEwgPj4gMV0gKHZhbGlkIHRyZWUgaGVpZ2h0IHJh
+bmdlKS4KPiAgIC0gYnVkbWluIHZhbGlkaXR5OiBOT0ZSRUUgb25seSBpZiBubGVhZnM9MDsgb3Ro
+ZXJ3aXNlID49IEJVRE1JTi4KPiAgIC0gTGVhZiBub2RlcyBmaXQgd2l0aGluIHN0cmVlIGFycmF5
+IChsZWFmaWR4ICsgbmxlYWZzIDw9IENUTFRSRUVTSVpFKS4KPiAgIC0gTGVhZiBub2RlIHZhbHVl
+cyBhcmUgZWl0aGVyIG5vbi1uZWdhdGl2ZSBvciBOT0ZSRUUuCj4KPiBJbnZva2VkIGluIGRiQWxs
+b2NBRygpLCBkYkZpbmRDdGwoKSwgZGJBZGpDdGwoKSBhbmQgZGJFeHRlbmRGUygpIHdoZW4KPiBh
+Y2Nlc3NpbmcgZG1hcGN0bCBwYWdlcywgY2F0Y2hpbmcgY29ycnVwdGlvbiBlYXJseSBiZWZvcmUg
+ZG1hcCBvcGVyYXRpb25zCj4gdHJpZ2dlciBpbnZhbGlkIG1lbW9yeSBhY2Nlc3Mgb3IgbG9naWMg
+ZXJyb3JzLgo+Cj4gVGhpcyBmaXhlcyB0aGUgZm9sbG93aW5nIFVCU0FOIHdhcm5pbmcuCj4KPiBb
+NTgyNDUuNjY4MDkwXVtUMTQwMTddIC0tLS0tLS0tLS0tLVsgY3V0IGhlcmUgXS0tLS0tLS0tLS0t
+LQo+IFs1ODI0NS42NjgxMDNdW1QxNDAxN10gVUJTQU46IHNoaWZ0LW91dC1vZi1ib3VuZHMgaW4g
+ZnMvamZzL2pmc19kbWFwLmM6MjY0MToxMQo+IFs1ODI0NS42NjgxMTldW1QxNDAxN10gc2hpZnQg
+ZXhwb25lbnQgMTEwIGlzIHRvbyBsYXJnZSBmb3IgMzItYml0IHR5cGUgJ2ludCcKPiBbNTgyNDUu
+NjY4MTM3XVtUMTQwMTddIENQVTogMCBVSUQ6IDAgUElEOiAxNDAxNyBDb21tOiA0YzE5NjZlODhj
+MjhmYTkgVGFpbnRlZDogRyAgICAgICAgICAgIEUgICAgICAgNi4xOC4wLXJjNC0wMDI1My1nMjFj
+ZTVkNGJhMDQ1LWRpcnR5ICMxMjQgUFJFRU1QVF97UlQsKGZ1bGwpfQo+IFs1ODI0NS42NjgxNzRd
+W1QxNDAxN10gVGFpbnRlZDogW0VdPVVOU0lHTkVEX01PRFVMRQo+IFs1ODI0NS42NjgxNzZdW1Qx
+NDAxN10gSGFyZHdhcmUgbmFtZTogUUVNVSBVYnVudHUgMjUuMDQgUEMgKGk0NDBGWCArIFBJSVgs
+IDE5OTYpLCBCSU9TIDEuMTYuMy1kZWJpYW4tMS4xNi4zLTIgMDQvMDEvMjAxNAo+IFs1ODI0NS42
+NjgxODRdW1QxNDAxN10gQ2FsbCBUcmFjZToKPiBbNTgyNDUuNjY4MjAwXVtUMTQwMTddICA8VEFT
+Sz4KPiBbNTgyNDUuNjY4MjA4XVtUMTQwMTddICBkdW1wX3N0YWNrX2x2bCsweDE4OS8weDI1MAo+
+IFs1ODI0NS42NjgyODhdW1QxNDAxN10gID8gX19wZnhfZHVtcF9zdGFja19sdmwrMHgxMC8weDEw
+Cj4gWzU4MjQ1LjY2ODMwMV1bVDE0MDE3XSAgPyBfX3BmeF9fcHJpbnRrKzB4MTAvMHgxMAo+IFs1
+ODI0NS42NjgzMTVdW1QxNDAxN10gID8gbG9ja19tZXRhcGFnZSsweDMwMy8weDQwMCBbamZzXQo+
+IFs1ODI0NS42Njg0MDZdW1QxNDAxN10gIHVic2FuX2VwaWxvZ3VlKzB4YS8weDQwCj4gWzU4MjQ1
+LjY2ODQyMl1bVDE0MDE3XSAgX191YnNhbl9oYW5kbGVfc2hpZnRfb3V0X29mX2JvdW5kcysweDM4
+Ni8weDQxMAo+IFs1ODI0NS42Njg0NjJdW1QxNDAxN10gIGRiU3BsaXQrMHgxZjgvMHgyMDAgW2pm
+c10KPiBbNTgyNDUuNjY4NTQzXVtUMTQwMTddICBkYkFkakN0bCsweDM0Yy8weGEyMCBbamZzXQo+
+IFs1ODI0NS42Njg2MjhdW1QxNDAxN10gIGRiQWxsb2NOZWFyKzB4MmVlLzB4M2QwIFtqZnNdCj4g
+WzU4MjQ1LjY2ODcxMF1bVDE0MDE3XSAgZGJBbGxvYysweDkzMy8weGJhMCBbamZzXQo+IFs1ODI0
+NS42Njg3OTddW1QxNDAxN10gIGVhX3dyaXRlKzB4Mzc0LzB4ZGQwIFtqZnNdCj4gWzU4MjQ1LjY2
+ODg4OF1bVDE0MDE3XSAgPyBfX3BmeF9lYV93cml0ZSsweDEwLzB4MTAgW2pmc10KPiBbNTgyNDUu
+NjY4OTY2XVtUMTQwMTddICA/IF9famZzX3NldHhhdHRyKzB4NzZlLzB4MTEyMCBbamZzXQo+IFs1
+ODI0NS42NjkwNDZdW1QxNDAxN10gIF9famZzX3NldHhhdHRyKzB4YTAxLzB4MTEyMCBbamZzXQo+
+IFs1ODI0NS42NjkxMzVdW1QxNDAxN10gID8gX19wZnhfX19qZnNfc2V0eGF0dHIrMHgxMC8weDEw
+IFtqZnNdCj4gWzU4MjQ1LjY2OTIxNl1bVDE0MDE3XSAgPyBtdXRleF9sb2NrX25lc3RlZCsweDE1
+NC8weDFkMAo+IFs1ODI0NS42NjkyNTJdW1QxNDAxN10gID8gX19qZnNfeGF0dHJfc2V0KzB4Yjkv
+MHgxNzAgW2pmc10KPiBbNTgyNDUuNjY5MzMzXVtUMTQwMTddICBfX2pmc194YXR0cl9zZXQrMHhk
+YS8weDE3MCBbamZzXQo+IFs1ODI0NS42Njk0MzBdW1QxNDAxN10gID8gX19wZnhfX19qZnNfeGF0
+dHJfc2V0KzB4MTAvMHgxMCBbamZzXQo+IFs1ODI0NS42Njk1MDldW1QxNDAxN10gID8geGF0dHJf
+ZnVsbF9uYW1lKzB4NmYvMHg5MAo+IFs1ODI0NS42Njk1NDZdW1QxNDAxN10gID8gamZzX3hhdHRy
+X3NldCsweDMzLzB4NjAgW2pmc10KPiBbNTgyNDUuNjY5NjM2XVtUMTQwMTddICA/IF9fcGZ4X2pm
+c194YXR0cl9zZXQrMHgxMC8weDEwIFtqZnNdCj4gWzU4MjQ1LjY2OTcyNl1bVDE0MDE3XSAgX192
+ZnNfc2V0eGF0dHIrMHg0M2MvMHg0ODAKPiBbNTgyNDUuNjY5NzQzXVtUMTQwMTddICBfX3Zmc19z
+ZXR4YXR0cl9ub3Blcm0rMHgxMmQvMHg2NjAKPiBbNTgyNDUuNjY5NzU2XVtUMTQwMTddICB2ZnNf
+c2V0eGF0dHIrMHgxNmIvMHgyZjAKPiBbNTgyNDUuNjY5NzY4XVtUMTQwMTddICA/IF9fcGZ4X3Zm
+c19zZXR4YXR0cisweDEwLzB4MTAKPiBbNTgyNDUuNjY5NzgyXVtUMTQwMTddICBmaWxlbmFtZV9z
+ZXR4YXR0cisweDI3NC8weDYwMAo+IFs1ODI0NS42Njk3OTVdW1QxNDAxN10gID8gX19wZnhfZmls
+ZW5hbWVfc2V0eGF0dHIrMHgxMC8weDEwCj4gWzU4MjQ1LjY2OTgwNl1bVDE0MDE3XSAgPyBnZXRu
+YW1lX2ZsYWdzKzB4MWU1LzB4NTQwCj4gWzU4MjQ1LjY2OTgyOV1bVDE0MDE3XSAgcGF0aF9zZXR4
+YXR0cmF0KzB4MzY0LzB4M2EwCj4gWzU4MjQ1LjY2OTg0MF1bVDE0MDE3XSAgPyBfX3BmeF9wYXRo
+X3NldHhhdHRyYXQrMHgxMC8weDEwCj4gWzU4MjQ1LjY2OTg1OV1bVDE0MDE3XSAgPyBfX3NlX3N5
+c19jaGRpcisweDFiOS8weDI4MAo+IFs1ODI0NS42Njk4NzZdW1QxNDAxN10gIF9feDY0X3N5c19s
+c2V0eGF0dHIrMHhiZi8weGUwCj4gWzU4MjQ1LjY2OTg4OF1bVDE0MDE3XSAgZG9fc3lzY2FsbF82
+NCsweGZhLzB4ZmEwCj4gWzU4MjQ1LjY2OTkwMV1bVDE0MDE3XSAgPyBsb2NrZGVwX2hhcmRpcnFz
+X29uKzB4OWMvMHgxNTAKPiBbNTgyNDUuNjY5OTEzXVtUMTQwMTddICA/IGVudHJ5X1NZU0NBTExf
+NjRfYWZ0ZXJfaHdmcmFtZSsweDc3LzB4N2YKPiBbNTgyNDUuNjY5OTI3XVtUMTQwMTddICA/IGV4
+Y19wYWdlX2ZhdWx0KzB4YWIvMHgxMDAKPiBbNTgyNDUuNjY5OTM3XVtUMTQwMTddICBlbnRyeV9T
+WVNDQUxMXzY0X2FmdGVyX2h3ZnJhbWUrMHg3Ny8weDdmCj4KPiBSZXBvcnRlZC1ieTogc3l6Ym90
+KzRjMTk2NmU4OGMyOGZhOTZlMDUzQHN5emthbGxlci5hcHBzcG90bWFpbC5jb20KPiBTaWduZWQt
+b2ZmLWJ5OiBZdW4gWmhvdSA8eXVuLnpob3VAd2luZHJpdmVyLmNvbT4KPiAtLS0KPiAgIGZzL2pm
+cy9qZnNfZG1hcC5jIHwgMTEzICsrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysr
+KysrKysrLS0KPiAgIDEgZmlsZSBjaGFuZ2VkLCAxMTAgaW5zZXJ0aW9ucygrKSwgMyBkZWxldGlv
+bnMoLSkKPgo+IGRpZmYgLS1naXQgYS9mcy9qZnMvamZzX2RtYXAuYyBiL2ZzL2pmcy9qZnNfZG1h
+cC5jCj4gaW5kZXggY2RmYTY5OWNkN2M4Li4zZjFlZDgyYmFhM2QgMTAwNjQ0Cj4gLS0tIGEvZnMv
+amZzL2pmc19kbWFwLmMKPiArKysgYi9mcy9qZnMvamZzX2RtYXAuYwo+IEBAIC0xMzMsNiArMTMz
+LDkyIEBAIHN0YXRpYyBjb25zdCBzOCBidWR0YWJbMjU2XSA9IHsKPiAgIAkyLCAxLCAxLCAxLCAx
+LCAwLCAwLCAwLCAxLCAwLCAwLCAwLCAxLCAwLCAwLCAtMQo+ICAgfTsKPiAgIAo+ICsvKgo+ICsg
+KiBjaGVja19kbWFwY3RsIC0gVmFsaWRhdGUgaW50ZWdyaXR5IG9mIGEgZG1hcGN0bCBzdHJ1Y3R1
+cmUKPiArICogQGRjcDogUG9pbnRlciB0byB0aGUgZG1hcGN0bCBzdHJ1Y3R1cmUgdG8gY2hlY2sK
+PiArICoKPiArICogUmV0dXJuOiB0cnVlIGlmIHZhbGlkLCBmYWxzZSBpZiBjb3JydXB0ZWQKPiAr
+ICovCj4gK3N0YXRpYyBib29sIGNoZWNrX2RtYXBjdGwoc3RydWN0IGRtYXBjdGwgKmRjcCkKPiAr
+ewo+ICsJczggYnVkbWluID0gZGNwLT5idWRtaW47Cj4gKwl1MzIgbmxlYWZzLCBsMm5sZWFmcywg
+bGVhZmlkeCwgaGVpZ2h0Owo+ICsJaW50IGk7Cj4gKwo+ICsJbmxlYWZzID0gbGUzMl90b19jcHUo
+ZGNwLT5ubGVhZnMpOwo+ICsJLyogQ2hlY2sgYmFzaWMgZmllbGQgcmFuZ2VzICovCj4gKwlpZiAo
+dW5saWtlbHkobmxlYWZzID4gTFBFUkNUTCkpIHsKPiArCQlqZnNfZXJyKCJkbWFwY3RsOiBpbnZh
+bGlkIG5sZWFmcyAldSAobWF4ICV1KSIsCj4gKwkJCW5sZWFmcywgTFBFUkNUTCk7Cj4gKwkJcmV0
+dXJuIGZhbHNlOwo+ICsJfQo+ICsKPiArCWwybmxlYWZzID0gbGUzMl90b19jcHUoZGNwLT5sMm5s
+ZWFmcyk7Cj4gKwlpZiAodW5saWtlbHkobDJubGVhZnMgPiBMMkxQRVJDVEwpKSB7Cj4gKwkJamZz
+X2VycigiZG1hcGN0bDogaW52YWxpZCBsMm5sZWFmcyAldSAobWF4ICV1KSIsCj4gKwkJCWwybmxl
+YWZzLCBMMkxQRVJDVEwpOwo+ICsJCXJldHVybiBmYWxzZTsKPiArCX0KPiArCj4gKwkvKiBWZXJp
+ZnkgbmxlYWZzIG1hdGNoZXMgbDJubGVhZnMgKG11c3QgYmUgcG93ZXIgb2YgdHdvKSAqLwo+ICsJ
+aWYgKHVubGlrZWx5KCgxVSA8PCBsMm5sZWFmcykgIT0gbmxlYWZzKSkgewo+ICsJCWpmc19lcnIo
+ImRtYXBjdGw6IG5sZWFmcyAldSAhPSAyXiV1IiwKPiArCQkJbmxlYWZzLCBsMm5sZWFmcyk7Cj4g
+KwkJcmV0dXJuIGZhbHNlOwo+ICsJfQo+ICsKPiArCWxlYWZpZHggPSBsZTMyX3RvX2NwdShkY3At
+PmxlYWZpZHgpOwo+ICsJLyogQ2hlY2sgbGVhZiBpbmRleCBtYXRjaGVzIGV4cGVjdGVkIHBvc2l0
+aW9uICovCj4gKwlpZiAodW5saWtlbHkobGVhZmlkeCAhPSBDVExMRUFGSU5EKSkgewo+ICsJCWpm
+c19lcnIoImRtYXBjdGw6IGludmFsaWQgbGVhZmlkeCAldSAoZXhwZWN0ZWQgJXUpIiwKPiArCQkJ
+bGVhZmlkeCwgQ1RMTEVBRklORCk7Cj4gKwkJcmV0dXJuIGZhbHNlOwo+ICsJfQo+ICsKPiArCWhl
+aWdodCA9IGxlMzJfdG9fY3B1KGRjcC0+aGVpZ2h0KTsKPiArCS8qIENoZWNrIHRyZWUgaGVpZ2h0
+IGlzIHdpdGhpbiB2YWxpZCByYW5nZSAqLwo+ICsJaWYgKHVubGlrZWx5KGhlaWdodCA+IChMMkxQ
+RVJDVEwgPj4gMSkpKSB7Cj4gKwkJamZzX2VycigiZG1hcGN0bDogaW52YWxpZCBoZWlnaHQgJXUg
+KG1heCAldSkiLAo+ICsJCQloZWlnaHQsIEwyTFBFUkNUTCA+PiAxKTsKPiArCQlyZXR1cm4gZmFs
+c2U7Cj4gKwl9Cj4gKwo+ICsJLyogQ2hlY2sgYnVkbWluIGlzIHZhbGlkIChjYW5ub3QgYmUgTk9G
+UkVFIGZvciBub24tZW1wdHkgdHJlZSkgKi8KPiArCWlmIChidWRtaW4gPT0gTk9GUkVFKSB7Cj4g
+KwkJaWYgKHVubGlrZWx5KG5sZWFmcyA+IDApKSB7Cj4gKwkJCWpmc19lcnIoImRtYXBjdGw6IGJ1
+ZG1pbiBpcyBOT0ZSRUUgYnV0IG5sZWFmcyAldSIsCj4gKwkJCQlubGVhZnMpOwo+ICsJCQlyZXR1
+cm4gZmFsc2U7Cj4gKwkJfQo+ICsJfSBlbHNlIGlmICh1bmxpa2VseShidWRtaW4gPCBCVURNSU4p
+KSB7Cj4gKwkJamZzX2VycigiZG1hcGN0bDogaW52YWxpZCBidWRtaW4gJWQgKG1pbiAlZCkiLAo+
+ICsJCQlidWRtaW4sIEJVRE1JTik7Cj4gKwkJcmV0dXJuIGZhbHNlOwo+ICsJfQo+ICsKPiArCS8q
+IENoZWNrIGxlYWYgbm9kZXMgZml0IHdpdGhpbiBzdHJlZSBhcnJheSAqLwo+ICsJaWYgKHVubGlr
+ZWx5KGxlYWZpZHggKyBubGVhZnMgPiBDVExUUkVFU0laRSkpIHsKPiArCQlqZnNfZXJyKCJkbWFw
+Y3RsOiBsZWFmIHJhbmdlIGV4Y2VlZHMgc3RyZWUgc2l6ZSAoZW5kICV1ID4gJXUpIiwKPiArCQkJ
+bGVhZmlkeCArIG5sZWFmcywgQ1RMVFJFRVNJWkUpOwo+ICsJCXJldHVybiBmYWxzZTsKPiArCX0K
+PiArCj4gKwkvKiBDaGVjayBsZWFmIG5vZGVzIGhhdmUgdmFsaWQgdmFsdWVzICovCj4gKwlmb3Ig
+KGkgPSBsZWFmaWR4OyBpIDwgbGVhZmlkeCArIG5sZWFmczsgaSsrKSB7Cj4gKwkJczggdmFsID0g
+ZGNwLT5zdHJlZVtpXTsKPiArCQlpZiAodW5saWtlbHkodmFsIDwgTk9GUkVFKSkgewo+ICsJCQlq
+ZnNfZXJyKCJkbWFwY3RsOiBpbnZhbGlkIGxlYWYgdmFsdWUgJWQgYXQgaW5kZXggJWQiLAo+ICsJ
+CQkJCXZhbCwgaSk7Cj4gKwkJCXJldHVybiBmYWxzZTsKPiArCQl9IGVsc2UgaWYgKHVubGlrZWx5
+KHZhbCA+IDMxKSkgewo+ICsJCQlqZnNfZXJyKCJkbWFwY3RsOiBsZWFmIHZhbHVlICVkIHRvbyBs
+YXJnZSBhdCBpbmRleCAlZCIsIHZhbCwgaSk7Cj4gKwkJCXJldHVybiBmYWxzZTsKPiArCQl9Cj4g
+Kwl9Cj4gKwo+ICsJcmV0dXJuIHRydWU7Cj4gK30KPiArCj4gICAvKgo+ICAgICogTkFNRToJZGJN
+b3VudCgpCj4gICAgKgo+IEBAIC0xMzcyLDcgKzE0NTgsNyBAQCBkYkFsbG9jQUcoc3RydWN0IGJt
+YXAgKiBibXAsIGludCBhZ25vLCBzNjQgbmJsb2NrcywgaW50IGwybmIsIHM2NCAqIHJlc3VsdHMp
+Cj4gICAJZGNwID0gKHN0cnVjdCBkbWFwY3RsICopIG1wLT5kYXRhOwo+ICAgCWJ1ZG1pbiA9IGRj
+cC0+YnVkbWluOwo+ICAgCj4gLQlpZiAoZGNwLT5sZWFmaWR4ICE9IGNwdV90b19sZTMyKENUTExF
+QUZJTkQpKSB7Cj4gKwlpZiAodW5saWtlbHkoIWNoZWNrX2RtYXBjdGwoZGNwKSkpIHsKPiAgIAkJ
+amZzX2Vycm9yKGJtcC0+ZGJfaXBibWFwLT5pX3NiLCAiQ29ycnVwdCBkbWFwY3RsIHBhZ2VcbiIp
+Owo+ICAgCQlyZWxlYXNlX21ldGFwYWdlKG1wKTsKPiAgIAkJcmV0dXJuIC1FSU87Cj4gQEAgLTE3
+MDIsNyArMTc4OCw3IEBAIHN0YXRpYyBpbnQgZGJGaW5kQ3RsKHN0cnVjdCBibWFwICogYm1wLCBp
+bnQgbDJuYiwgaW50IGxldmVsLCBzNjQgKiBibGtubykKPiAgIAkJZGNwID0gKHN0cnVjdCBkbWFw
+Y3RsICopIG1wLT5kYXRhOwo+ICAgCQlidWRtaW4gPSBkY3AtPmJ1ZG1pbjsKPiAgIAo+IC0JCWlm
+IChkY3AtPmxlYWZpZHggIT0gY3B1X3RvX2xlMzIoQ1RMTEVBRklORCkpIHsKPiArCQlpZiAodW5s
+aWtlbHkoIWNoZWNrX2RtYXBjdGwoZGNwKSkpIHsKPiAgIAkJCWpmc19lcnJvcihibXAtPmRiX2lw
+Ym1hcC0+aV9zYiwKPiAgIAkJCQkgICJDb3JydXB0IGRtYXBjdGwgcGFnZVxuIik7Cj4gICAJCQly
+ZWxlYXNlX21ldGFwYWdlKG1wKTsKPiBAQCAtMjQ4NSw3ICsyNTcxLDcgQEAgZGJBZGpDdGwoc3Ry
+dWN0IGJtYXAgKiBibXAsIHM2NCBibGtubywgaW50IG5ld3ZhbCwgaW50IGFsbG9jLCBpbnQgbGV2
+ZWwpCj4gICAJCXJldHVybiAtRUlPOwo+ICAgCWRjcCA9IChzdHJ1Y3QgZG1hcGN0bCAqKSBtcC0+
+ZGF0YTsKPiAgIAo+IC0JaWYgKGRjcC0+bGVhZmlkeCAhPSBjcHVfdG9fbGUzMihDVExMRUFGSU5E
+KSkgewo+ICsJaWYgKHVubGlrZWx5KCFjaGVja19kbWFwY3RsKGRjcCkpKSB7Cj4gICAJCWpmc19l
+cnJvcihibXAtPmRiX2lwYm1hcC0+aV9zYiwgIkNvcnJ1cHQgZG1hcGN0bCBwYWdlXG4iKTsKPiAg
+IAkJcmVsZWFzZV9tZXRhcGFnZShtcCk7Cj4gICAJCXJldHVybiAtRUlPOwo+IEBAIC0zNDU0LDYg
+KzM1NDAsMTEgQEAgaW50IGRiRXh0ZW5kRlMoc3RydWN0IGlub2RlICppcGJtYXAsIHM2NCBibGtu
+bywJczY0IG5ibG9ja3MpCj4gICAJCXJldHVybiAtRUlPOwo+ICAgCX0KPiAgIAlsMmRjcCA9IChz
+dHJ1Y3QgZG1hcGN0bCAqKSBsMm1wLT5kYXRhOwo+ICsJaWYgKHVubGlrZWx5KCFjaGVja19kbWFw
+Y3RsKGwyZGNwKSkpIHsKPiArCQlqZnNfZXJyb3IoaXBibWFwLT5pX3NiLCAiQ29ycnVwdCBkbWFw
+Y3RsIHBhZ2VcbiIpOwo+ICsJCXJlbGVhc2VfbWV0YXBhZ2UobDJtcCk7Cj4gKwkJcmV0dXJuIC1F
+SU87Cj4gKwl9Cj4gICAKPiAgIAkvKiBjb21wdXRlIHN0YXJ0IEwxICovCj4gICAJayA9IGJsa25v
+ID4+IEwyTUFYTDFTSVpFOwo+IEBAIC0zNDcxLDYgKzM1NjIsMTAgQEAgaW50IGRiRXh0ZW5kRlMo
+c3RydWN0IGlub2RlICppcGJtYXAsIHM2NCBibGtubywJczY0IG5ibG9ja3MpCj4gICAJCQlpZiAo
+bDFtcCA9PSBOVUxMKQo+ICAgCQkJCWdvdG8gZXJyb3V0Owo+ICAgCQkJbDFkY3AgPSAoc3RydWN0
+IGRtYXBjdGwgKikgbDFtcC0+ZGF0YTsKPiArCQkJaWYgKHVubGlrZWx5KCFjaGVja19kbWFwY3Rs
+KGwxZGNwKSkpIHsKPiArCQkJCWpmc19lcnJvcihpcGJtYXAtPmlfc2IsICJDb3JydXB0IGRtYXBj
+dGwgcGFnZVxuIik7Cj4gKwkJCQlnb3RvIGVycm91dDsKPiArCQkJfQo+ICAgCj4gICAJCQkvKiBj
+b21wdXRlIHN0YXJ0IEwwICovCj4gICAJCQlqID0gKGJsa25vICYgKE1BWEwxU0laRSAtIDEpKSA+
+PiBMMk1BWEwwU0laRTsKPiBAQCAtMzQ4NCw2ICszNTc5LDEwIEBAIGludCBkYkV4dGVuZEZTKHN0
+cnVjdCBpbm9kZSAqaXBibWFwLCBzNjQgYmxrbm8sCXM2NCBuYmxvY2tzKQo+ICAgCQkJCWdvdG8g
+ZXJyb3V0Owo+ICAgCj4gICAJCQlsMWRjcCA9IChzdHJ1Y3QgZG1hcGN0bCAqKSBsMW1wLT5kYXRh
+Owo+ICsJCQlpZiAodW5saWtlbHkoIWNoZWNrX2RtYXBjdGwobDFkY3ApKSkgewo+ICsJCQkJamZz
+X2Vycm9yKGlwYm1hcC0+aV9zYiwgIkNvcnJ1cHQgZG1hcGN0bCBwYWdlXG4iKTsKPiArCQkJCWdv
+dG8gZXJyb3V0Owo+ICsJCQl9Cj4gICAKPiAgIAkJCS8qIGNvbXB1dGUgc3RhcnQgTDAgKi8KPiAg
+IAkJCWogPSAwOwo+IEBAIC0zNTAzLDYgKzM2MDIsMTAgQEAgaW50IGRiRXh0ZW5kRlMoc3RydWN0
+IGlub2RlICppcGJtYXAsIHM2NCBibGtubywJczY0IG5ibG9ja3MpCj4gICAJCQkJaWYgKGwwbXAg
+PT0gTlVMTCkKPiAgIAkJCQkJZ290byBlcnJvdXQ7Cj4gICAJCQkJbDBkY3AgPSAoc3RydWN0IGRt
+YXBjdGwgKikgbDBtcC0+ZGF0YTsKPiArCQkJCWlmICh1bmxpa2VseSghY2hlY2tfZG1hcGN0bChs
+MGRjcCkpKSB7Cj4gKwkJCQkJamZzX2Vycm9yKGlwYm1hcC0+aV9zYiwgIkNvcnJ1cHQgZG1hcGN0
+bCBwYWdlXG4iKTsKPiArCQkJCQlnb3RvIGVycm91dDsKPiArCQkJCX0KPiAgIAo+ICAgCQkJCS8q
+IGNvbXB1dGUgc3RhcnQgZG1hcCAqLwo+ICAgCQkJCWkgPSAoYmxrbm8gJiAoTUFYTDBTSVpFIC0g
+MSkpID4+Cj4gQEAgLTM1MTgsNiArMzYyMSwxMCBAQCBpbnQgZGJFeHRlbmRGUyhzdHJ1Y3QgaW5v
+ZGUgKmlwYm1hcCwgczY0IGJsa25vLAlzNjQgbmJsb2NrcykKPiAgIAkJCQkJZ290byBlcnJvdXQ7
+Cj4gICAKPiAgIAkJCQlsMGRjcCA9IChzdHJ1Y3QgZG1hcGN0bCAqKSBsMG1wLT5kYXRhOwo+ICsJ
+CQkJaWYgKHVubGlrZWx5KCFjaGVja19kbWFwY3RsKGwwZGNwKSkpIHsKPiArCQkJCQlqZnNfZXJy
+b3IoaXBibWFwLT5pX3NiLCAiQ29ycnVwdCBkbWFwY3RsIHBhZ2VcbiIpOwo+ICsJCQkJCWdvdG8g
+ZXJyb3V0Owo+ICsJCQkJfQo+ICAgCj4gICAJCQkJLyogY29tcHV0ZSBzdGFydCBkbWFwICovCj4g
+ICAJCQkJaSA9IDA7CgpUaGFuayB5b3UgZm9yIHRoZSBwYXRjaC4KSXQgYWxzbyByZXNvbHZlcyB0
+aGUgaXNzdWUgZGVzY3JpYmVkIGluIHRoZSBsaW5rWzFdLgpbMV0gCmh0dHBzOi8vbG9yZS5rZXJu
+ZWwub3JnL2FsbC9jMjAxY2JlMC01ZjUyLTQ1NzItYTA0Yy1kYzE2NWVjY2ZmOTVAaHVhd2VpLmNv
+bS8KClRlc3RlZC1ieTogTGkgTGluZ2ZlbmcgPGxpbGluZ2ZlbmczQGh1YXdlaS5jb20+CgoKCl9f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCkpmcy1kaXNjdXNz
+aW9uIG1haWxpbmcgbGlzdApKZnMtZGlzY3Vzc2lvbkBsaXN0cy5zb3VyY2Vmb3JnZS5uZXQKaHR0
+cHM6Ly9saXN0cy5zb3VyY2Vmb3JnZS5uZXQvbGlzdHMvbGlzdGluZm8vamZzLWRpc2N1c3Npb24K
