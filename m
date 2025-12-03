@@ -2,116 +2,104 @@ Return-Path: <jfs-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+jfs-discussion@lfdr.de
 Delivered-To: lists+jfs-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id B11FFC9D04C
-	for <lists+jfs-discussion@lfdr.de>; Tue, 02 Dec 2025 22:12:30 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0A7DCC9EB12
+	for <lists+jfs-discussion@lfdr.de>; Wed, 03 Dec 2025 11:20:03 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.sourceforge.net; s=beta; h=Content-Transfer-Encoding:Content-Type:
+	d=lists.sourceforge.net; s=beta; h=Content-Transfer-Encoding:Content-Type:Cc:
 	Reply-To:From:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:Subject:To:Message-ID:In-Reply-To:Date:MIME-Version:
-	Sender:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:References:List-Owner;
-	bh=Cx5JK0+nJORSNtzVP65Ko6c5GR9/IUr7Jv0U4xHumTw=; b=TRpRX4KfrX01H6aT4q5j4xKlI5
-	KWSdkR1TKaTM1KLh+ejNSDULu9Ye+UFyRWQ6FxPfMrYa2mS0Jf+0O07xWmKQRPQYcQCX1BwdCr1ZM
-	hPGCnL1r0gVK+xhB6xoN+JbELkD7njVXm4fhESi3oZCKgnijcCSK/KzvbCpkRb435lOE=;
-Received: from [127.0.0.1] (helo=sfs-ml-2.v29.lw.sourceforge.com)
-	by sfs-ml-2.v29.lw.sourceforge.com with esmtp (Exim 4.95)
+	List-Unsubscribe:List-Id:Subject:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:To:Sender:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=wZpsF0z34j+ItJrb9BCKO+xIFnepcN/cMGIse2AqyvY=; b=Ocs7gchiXqIeXsI/UCVhEJ63AQ
+	ADQsqqED28Dbmz0aznFG67vQKkZ5hnMqEz2/ZGPtsip0jIZAhvXx1bP7kXiwoR1/FhxhghgWeZlqR
+	nsXVQRVr0NWYftTeGHRaCux4LW/7lYQRnbecPJwXEXKcn6z9cZGDtchv7znELO1/8/bY=;
+Received: from [127.0.0.1] (helo=sfs-ml-4.v29.lw.sourceforge.com)
+	by sfs-ml-4.v29.lw.sourceforge.com with esmtp (Exim 4.95)
 	(envelope-from <jfs-discussion-bounces@lists.sourceforge.net>)
-	id 1vQXfL-0006uA-TU;
-	Tue, 02 Dec 2025 21:12:08 +0000
+	id 1vQjxD-0007M4-Vv;
+	Wed, 03 Dec 2025 10:19:23 +0000
 Received: from [172.30.29.66] (helo=mx.sourceforge.net)
- by sfs-ml-3.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
- TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (Exim 4.95) (envelope-from
- <3PkMvaQkbANEFLM7x881ExCC50.3BB381HF1EzBAG1AG.zB9@M3KW2WVRGUFZ5GODRSRYTGD7.apphosting.bounces.google.com>)
- id 1vQWPV-0001wp-Jx for jfs-discussion@lists.sourceforge.net;
- Tue, 02 Dec 2025 19:51:41 +0000
+ by sfs-ml-4.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
+ TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (Exim 4.95)
+ (envelope-from <brauner@kernel.org>) id 1vQjxC-0007Lr-Nd;
+ Wed, 03 Dec 2025 10:19:22 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=sourceforge.net; s=x; h=Content-Type:To:From:Subject:Message-ID:In-Reply-To
- :Date:MIME-Version:Sender:Reply-To:Cc:Content-Transfer-Encoding:Content-ID:
- Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
- :Resent-Message-ID:References:List-Id:List-Help:List-Unsubscribe:
+ d=sourceforge.net; s=x; h=Content-Transfer-Encoding:Content-Type:MIME-Version
+ :References:In-Reply-To:Message-ID:Date:Subject:Cc:To:From:Sender:Reply-To:
+ Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
+ Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=vrTA8/Ib4dqg468mg7sXdU5lKN1300g4eFvAGgrlg20=; b=VrSbDz1lSoaDtIihKHUNgYbrns
- RqIi7U7GVQlySr1znfIvmyAr2TXi5ueDUsIv396ZV71RzYqfb+6gZcUA9hmJgfeNWdxoA795K23wU
- RVD71sIPe9vOejRTFINUz/lERLT5Yiglbe/cRmhrs6elYUkh824rRXKsAblkYDeewvRM=;
+ bh=i9QD6HVcKhaudvgQUmcrPWxae5Gbkj5XejxdA7YCuNM=; b=cCZbuoHS5ulvqGx1Wvi7SYaW+M
+ Oow0KlCPU9aBLbgywucqhMZzjISJDgnQJImfzNUZdSZypN2YfALTp+bLoLm9AmfUa44ScVvJH96Zm
+ aSFMfSs8I08k6gvj+eJALzOIRV3x2bz7DT8C3rmieGtNcUhGq7vwRfxuXdvC4GATYjHg=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
- h=Content-Type:To:From:Subject:Message-ID:In-Reply-To:Date:MIME-Version:
- Sender:Reply-To:Cc:Content-Transfer-Encoding:Content-ID:Content-Description:
- Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
- References:List-Id:List-Help:List-Unsubscribe:List-Subscribe:List-Post:
- List-Owner:List-Archive; bh=vrTA8/Ib4dqg468mg7sXdU5lKN1300g4eFvAGgrlg20=; b=P
- 85fvCikJYa7WCFO5W9jFDEpjeuBtts1JvE0eFPDungUH8kl6zsxFlY0F85lSd8vAVII2+8O1+lxpD
- W36HkfhUKBYsJnHbmMiiyHouTaauYT095vb0CBPzyHz1dwGZHcnxq2GIUKjP6NzfvN2hQ/cKA1EvN
- Cah4WrV5EPBqe+0A=;
-Received: from mail-oo1-f78.google.com ([209.85.161.78])
+ h=Content-Transfer-Encoding:Content-Type:MIME-Version:References:
+ In-Reply-To:Message-ID:Date:Subject:Cc:To:From:Sender:Reply-To:Content-ID:
+ Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+ :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
+ List-Post:List-Owner:List-Archive;
+ bh=i9QD6HVcKhaudvgQUmcrPWxae5Gbkj5XejxdA7YCuNM=; b=QjBxLzJNMvsN+pcyFhmOFIe4X1
+ 5CUbR/J4AmukP9732cJZ8dGx6+tFO0LLCtdto9cHc9o38w3nNUg5n5hjGTGA6qnQxd0fVrBZWIUtN
+ smPyXOzGSU3elk4zYZpbUCEDMx7y7wOG17Ewp2bC8E8xj1OkcWUaZLva+Dmy3+d9+XNo=;
+Received: from sea.source.kernel.org ([172.234.252.31])
  by sfi-mx-2.v28.lw.sourceforge.com with esmtps
- (TLS1.2:ECDHE-RSA-AES128-GCM-SHA256:128) (Exim 4.95)
- id 1vQWPR-0001yt-6Q for jfs-discussion@lists.sourceforge.net;
- Tue, 02 Dec 2025 19:51:37 +0000
-Received: by mail-oo1-f78.google.com with SMTP id
- 006d021491bc7-656ed76017aso248877eaf.1
- for <jfs-discussion@lists.sourceforge.net>;
- Tue, 02 Dec 2025 11:51:37 -0800 (PST)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20230601; t=1764705086; x=1765309886;
- h=to:from:subject:message-id:in-reply-to:date:mime-version
- :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
- bh=vrTA8/Ib4dqg468mg7sXdU5lKN1300g4eFvAGgrlg20=;
- b=mpjCm1XfXt8aVDKFtCGpqCyAbVXPXt8ds6gNhivlB8FSYiEO8PgTrw3FhiZowHtyBE
- F19BxCpAJgWUuAAeqZJvLPU0AxWhIrnzWSXraKmqjU007wIOausTxEnxW3okSbbc/SH1
- B/IgljXw5vKoiEKAqlekD6+/Bztvhf8/8wsqPJR7tOr28oXOwqkaUYirMwNX31w+ux0+
- 9P9n3K7H98hwthmYe1kVe/N9bY6VZz32910RqV1wq+5N+1xAtY+dMsTVJsQf41PHC58+
- FqNCX9vS7hdQ9IAjdPyR11nOs+UnnbxZC7lAU8BzNHl0aiH+154vPOaxpKQGVgJfOi9E
- 7oBg==
-X-Forwarded-Encrypted: i=1;
- AJvYcCWytgt5Wmp6E1w4H3LV1yVjqEIKilprHOw0xs7LDEB8IrlvU5MEpZl1mnciqrMtzbHCWArmNsYcpcX7hrR0iQ==@lists.sourceforge.net
-X-Gm-Message-State: AOJu0Yx8ZaESk3qsXYQOD/ktlR6xNn/KEi1dEqL21v4ltN96S5xhAKfV
- kDt3xxx4jQbTmvppzrFB531fu9NO2chwAnU046cKn2idco30zqSdohkvyXkE1YUYnsX6tQNvpMl
- Vglq4f6DKdJ4bv7chkgh0W2MPo5dy0dvLz3tyrknOsFqZQirixP/E9Bj4EKY=
-X-Google-Smtp-Source: AGHT+IHSDhpAfgj8NpXYE1+938IBzEeH6v2xujWW6bryC6W1Kbk/To6d4FkOrTPq7It6EsLEB7nSzYosBkgZ0W4B75A5ZUSymq+V
+ (TLS1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.95)
+ id 1vQjxC-0000V4-16; Wed, 03 Dec 2025 10:19:22 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+ by sea.source.kernel.org (Postfix) with ESMTP id BE02C40235;
+ Wed,  3 Dec 2025 10:19:10 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 25361C113D0;
+ Wed,  3 Dec 2025 10:18:49 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=k20201202; t=1764757150;
+ bh=1ALGFmGlgOHY6f+bdLdgKebsX+au1yQ5dTRhimTaFoA=;
+ h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
+ b=Sia1MYILwN3OHyU8vJVbFzEbPmh+E9Rkdc13NmENJiNAQwujMzrx7aLJDYQwnRJH2
+ icv0Cs7+2DiJlUtJrJ3jFjsxz5e5SC+H4b4cDPm/4/s+aTZepyO4AvrHMcRjPs8po7
+ P0lAluHlqilBXk1Sh/B/XN0TZMdipTL7EolZ0FehsZ8XGO0/aidHMHK8ayQiiiT5TA
+ U6OOgYna9Ec2DgYD68Hcv9/StfMLZVIApf1YAZumWdYivMJy+S1b4NF19fKc5R60wD
+ vv/cJLS0nI7ttPeXB8OyKOFM1iSYjxfn/4avfs6o2Xu7czGUpIFQziUIbMv79dw+WM
+ YExRE41C2xh0g==
+To: Jeff Layton <jlayton@kernel.org>
+Date: Wed,  3 Dec 2025 11:18:32 +0100
+Message-ID: <20251203-sechzehn-lethargisch-cd739d4ff49a@brauner>
+X-Mailer: git-send-email 2.47.3
+In-Reply-To: <20251201-create-excl-v3-1-8933a444b046@kernel.org>
+References: <20251201-create-excl-v3-1-8933a444b046@kernel.org>
 MIME-Version: 1.0
-X-Received: by 2002:a05:6808:2f14:b0:43d:2e06:4e84 with SMTP id
- 5614622812f47-4535d2f36b5mr2523422b6e.13.1764705086559; Tue, 02 Dec 2025
- 11:51:26 -0800 (PST)
-Date: Tue, 02 Dec 2025 11:51:26 -0800
-In-Reply-To: <690e2846.a70a0220.22f260.0057.GAE@google.com>
-X-Google-Appengine-App-Id: s~syzkaller
-X-Google-Appengine-App-Id-Alias: syzkaller
-Message-ID: <692f433e.a70a0220.d98e3.01a3.GAE@google.com>
-To: akpm@linux-foundation.org, david.hunter.linux@gmail.com, david@redhat.com, 
- dsterba@suse.com, jfs-discussion@lists.sourceforge.net, jlbec@evilplan.org,
- joseph.qi@linux.alibaba.com, khalid@kernel.org, 
- linux-kernel-mentees@lists.linux.dev, linux-kernel@vger.kernel.org, 
- mark@fasheh.com, ocfs2-devel@lists.linux.dev, 
- penguin-kernel@i-love.sakura.ne.jp, shaggy@kernel.org, shivankg@amd.com, 
- skhan@linuxfoundation.org, ssrane_b23@ee.vjti.ac.in, 
- syzkaller-bugs@googlegroups.com
-X-Spam-Score: 3.1 (+++)
+X-Developer-Signature: v=1; a=openpgp-sha256; l=1370; i=brauner@kernel.org;
+ h=from:subject:message-id; bh=1ALGFmGlgOHY6f+bdLdgKebsX+au1yQ5dTRhimTaFoA=;
+ b=owGbwMvMwCU28Zj0gdSKO4sYT6slMWQa8NXdfyOWEe7C1j7j3H39MtmOfckhfYU3uPbO3GJ5W
+ X9idSdfRykLgxgXg6yYIotDu0m43HKeis1GmRowc1iZQIYwcHEKwER6JjEyXElxiNLjXsTcG/zF
+ veHQZtE3X3LuXMnZx/2vIaPja/5RBYb/9Vo7JnHefOS2MX2Dr5zm5id7fnmJz3GXVk7n4Wu5Kpf
+ KBAA=
+X-Developer-Key: i=brauner@kernel.org; a=openpgp;
+ fpr=4880B8C9BD0E5106FC070F4F7B3C391EFEA93624
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: Spam detection software,
- running on the system "sfi-spamd-1.hosts.colo.sdot.me", 
+ running on the system "sfi-spamd-2.hosts.colo.sdot.me", 
  has NOT identified this incoming email as spam.  The original
  message has been attached to this so you can view it or label
  similar future email.  If you have any questions, see
  the administrator of that system for details.
- Content preview:  syzbot has found a reproducer for the following issue on:
- HEAD commit: 4a26e7032d7d Merge tag 'core-bugs-2025-12-01' of git://git..
- git tree: upstream console output:
- https://syzkaller.appspot.com/x/log.txt?x=111c14c2580000
- kernel config: https://syzkaller.a [...] 
- Content analysis details:   (3.1 points, 5.0 required)
+ Content preview:  On Mon, 01 Dec 2025 08:11:42 -0500, Jeff Layton wrote: > With
+ three exceptions, ->create() methods provided by filesystems ignore > the
+ "excl" flag. Those exception are NFS, GFS2 and vboxsf which all [...] 
+ Content analysis details:   (-0.2 points, 5.0 required)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.3 FROM_LOCAL_HEX         From: localpart has long hexadecimal sequence
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level mail
- domains are different
- 2.5 SORTED_RECIPS          Recipient list is sorted by address
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [209.85.161.78 listed in wl.mailspike.net]
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
-X-Headers-End: 1vQWPR-0001yt-6Q
-X-Mailman-Approved-At: Tue, 02 Dec 2025 21:12:07 +0000
-Subject: Re: [Jfs-discussion] [syzbot] [ocfs2?] memory leak in
- ocfs2_new_path_from_path
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU Message has a valid DKIM or DK signature from author's
+ domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature,
+ not necessarily valid
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - High trust sender
+X-Headers-End: 1vQjxC-0000V4-16
+Subject: Re: [Jfs-discussion] [PATCH RESEND v3] vfs: remove the excl
+ argument from the ->create() inode_operation
 X-BeenThere: jfs-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -123,70 +111,99 @@ List-Post: <mailto:jfs-discussion@lists.sourceforge.net>
 List-Help: <mailto:jfs-discussion-request@lists.sourceforge.net?subject=help>
 List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/jfs-discussion>, 
  <mailto:jfs-discussion-request@lists.sourceforge.net?subject=subscribe>
-From: syzbot via Jfs-discussion <jfs-discussion@lists.sourceforge.net>
-Reply-To: syzbot <syzbot+cfc7cab3bb6eaa7c4de2@syzkaller.appspotmail.com>
+From: Christian Brauner via Jfs-discussion
+ <jfs-discussion@lists.sourceforge.net>
+Reply-To: Christian Brauner <brauner@kernel.org>
+Cc: Latchesar Ionkov <lucho@ionkov.net>, Paulo Alcantara <pc@manguebit.org>,
+ Mike Marshall <hubcap@omnibond.com>, linux-xfs@vger.kernel.org,
+ Tyler Hicks <code@tyhicks.com>, devel@lists.orangefs.org,
+ Shyam Prasad N <sprasad@microsoft.com>, Jan Harkes <jaharkes@cs.cmu.edu>,
+ linux-um@lists.infradead.org, Christian Brauner <brauner@kernel.org>,
+ Alexander Viro <viro@zeniv.linux.org.uk>,
+ Ronnie Sahlberg <ronniesahlberg@gmail.com>,
+ John Paul Adrian Glaubitz <glaubitz@physik.fu-berlin.de>,
+ David Hildenbrand <david@kernel.org>, Eric Van Hensbergen <ericvh@kernel.org>,
+ Zhihao Cheng <chengzhihao1@huawei.com>, David Howells <dhowells@redhat.com>,
+ linux-kernel@vger.kernel.org, linux-fsdevel@vger.kernel.org,
+ Andrew Morton <akpm@linux-foundation.org>,
+ Trond Myklebust <trondmy@kernel.org>, Dave Kleikamp <shaggy@kernel.org>,
+ linux-doc@vger.kernel.org, linux-cifs@vger.kernel.org,
+ linux-nilfs@vger.kernel.org, Hugh Dickins <hughd@google.com>,
+ codalist@coda.cs.cmu.edu, Namjae Jeon <linkinjeon@kernel.org>,
+ ecryptfs@vger.kernel.org, Yangtao Li <frank.li@vivo.com>,
+ ocfs2-devel@lists.linux.dev, Jaegeuk Kim <jaegeuk@kernel.org>,
+ OGAWA Hirofumi <hirofumi@mail.parknet.co.jp>, Theodore Ts'o <tytso@mit.edu>,
+ Muchun Song <muchun.song@linux.dev>,
+ "Gustavo A. R. Silva" <gustavoars@kernel.org>,
+ linux-f2fs-devel@lists.sourceforge.net, Anna Schumaker <anna@kernel.org>,
+ linux-efi@vger.kernel.org, Martin Brandenburg <martin@omnibond.com>,
+ Kees Cook <kees@kernel.org>, Yuezhang Mo <yuezhang.mo@sony.com>,
+ Carlos Maiolino <cem@kernel.org>, Chris Mason <clm@fb.com>,
+ linux-mtd@lists.infradead.org, linux-hardening@vger.kernel.org,
+ Marc Dionne <marc.dionne@auristor.com>, linux-afs@lists.infradead.org,
+ Jonathan Corbet <corbet@lwn.net>, Miklos Szeredi <miklos@szeredi.hu>,
+ NeilBrown <neilb@ownmail.net>,
+ "Matthew Wilcox \(Oracle\)" <willy@infradead.org>, coda@cs.cmu.edu,
+ NeilBrown <neil@brown.name>, Ilya Dryomov <idryomov@gmail.com>,
+ linux-ext4@vger.kernel.org, Amir Goldstein <amir73il@gmail.com>,
+ Baolin Wang <baolin.wang@linux.alibaba.com>, ceph-devel@vger.kernel.org,
+ Oscar Salvador <osalvador@suse.de>,
+ Konstantin Komarov <almaz.alexandrovich@paragon-software.com>,
+ linux-nfs@vger.kernel.org, Joseph Qi <joseph.qi@linux.alibaba.com>,
+ samba-technical@lists.samba.org, Steve French <sfrench@samba.org>,
+ Jeremy Kerr <jk@ozlabs.org>, ntfs3@lists.linux.dev,
+ Hans de Goede <hansg@kernel.org>, jfs-discussion@lists.sourceforge.net,
+ Jan Kara <jack@suse.cz>, Dominique Martinet <asmadeus@codewreck.org>,
+ Christian Schoenebeck <linux_oss@crudebyte.com>,
+ Bob Copeland <me@bobcopeland.com>, gfs2@lists.linux.dev, linux-mm@kvack.org,
+ Andreas Dilger <adilger.kernel@dilger.ca>,
+ Mikulas Patocka <mikulas@artax.karlin.mff.cuni.cz>,
+ Ard Biesheuvel <ardb@kernel.org>,
+ Anton Ivanov <anton.ivanov@cambridgegreys.com>,
+ Andreas Gruenbacher <agruenba@redhat.com>, Richard Weinberger <richard@nod.at>,
+ Mark Fasheh <mark@fasheh.com>, Chao Yu <chao@kernel.org>,
+ Tom Talpey <tom@talpey.com>, Bharath SM <bharathsm@microsoft.com>,
+ "Tigran A. Aivazian" <aivazian.tigran@gmail.com>,
+ David Sterba <dsterba@suse.com>, Xiubo Li <xiubli@redhat.com>,
+ Ryusuke Konishi <konishi.ryusuke@gmail.com>, v9fs@lists.linux.dev,
+ linux-unionfs@vger.kernel.org, Johannes Berg <johannes@sipsolutions.net>,
+ Sungjong Seo <sj1557.seo@samsung.com>, David Woodhouse <dwmw2@infradead.org>,
+ linux-karma-devel@lists.sourceforge.net, linux-btrfs@vger.kernel.org,
+ Joel Becker <jlbec@evilplan.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Errors-To: jfs-discussion-bounces@lists.sourceforge.net
 
-syzbot has found a reproducer for the following issue on:
+On Mon, 01 Dec 2025 08:11:42 -0500, Jeff Layton wrote:
+> With three exceptions, ->create() methods provided by filesystems ignore
+> the "excl" flag.  Those exception are NFS, GFS2 and vboxsf which all also
+> provide ->atomic_open.
+> 
+> Since ce8644fcadc5 ("lookup_open(): expand the call of vfs_create()"),
+> the "excl" argument to the ->create() inode_operation is always set to
+> true in vfs_create(). The ->create() call in lookup_open() sets it
+> according to the O_EXCL open flag, but is never called if the filesystem
+> provides ->atomic_open().
+> 
+> [...]
 
-HEAD commit:    4a26e7032d7d Merge tag 'core-bugs-2025-12-01' of git://git..
-git tree:       upstream
-console output: https://syzkaller.appspot.com/x/log.txt?x=111c14c2580000
-kernel config:  https://syzkaller.appspot.com/x/.config?x=cbf343972ee89096
-dashboard link: https://syzkaller.appspot.com/bug?extid=cfc7cab3bb6eaa7c4de2
-compiler:       gcc (Debian 12.2.0-14+deb12u1) 12.2.0, GNU ld (GNU Binutils for Debian) 2.40
-syz repro:      https://syzkaller.appspot.com/x/repro.syz?x=16833512580000
-C reproducer:   https://syzkaller.appspot.com/x/repro.c?x=151c14c2580000
+Applied to the vfs-6.20.mkdir branch of the vfs/vfs.git tree.
+Patches in the vfs-6.20.mkdir branch should appear in linux-next soon.
 
-Downloadable assets:
-disk image: https://storage.googleapis.com/syzbot-assets/3f4ff8b7d65f/disk-4a26e703.raw.xz
-vmlinux: https://storage.googleapis.com/syzbot-assets/2fbb585ef1ac/vmlinux-4a26e703.xz
-kernel image: https://storage.googleapis.com/syzbot-assets/dfdc58db78d3/bzImage-4a26e703.xz
-mounted in repro: https://storage.googleapis.com/syzbot-assets/ef2db83daf44/mount_0.gz
-  fsck result: OK (log: https://syzkaller.appspot.com/x/fsck.log?x=14cae192580000)
+Please report any outstanding bugs that were missed during review in a
+new review to the original patch series allowing us to drop it.
 
-IMPORTANT: if you fix the issue, please add the following tag to the commit:
-Reported-by: syzbot+cfc7cab3bb6eaa7c4de2@syzkaller.appspotmail.com
+It's encouraged to provide Acked-bys and Reviewed-bys even though the
+patch has now been applied. If possible patch trailers will be updated.
 
-BUG: memory leak
-unreferenced object 0xffff8881292668a0 (size 96):
-  comm "syz.1.52", pid 6365, jiffies 4294945684
-  hex dump (first 32 bytes):
-    01 00 00 00 00 00 00 00 80 0e 31 82 ff ff ff ff  ..........1.....
-    50 e7 58 27 81 88 ff ff c0 54 eb 33 81 88 ff ff  P.X'.....T.3....
-  backtrace (crc d3d62878):
-    kmemleak_alloc_recursive include/linux/kmemleak.h:44 [inline]
-    slab_post_alloc_hook mm/slub.c:4983 [inline]
-    slab_alloc_node mm/slub.c:5288 [inline]
-    __kmalloc_cache_noprof+0x3a6/0x5b0 mm/slub.c:5766
-    kmalloc_noprof include/linux/slab.h:957 [inline]
-    kzalloc_noprof include/linux/slab.h:1094 [inline]
-    ocfs2_new_path fs/ocfs2/alloc.c:688 [inline]
-    ocfs2_new_path_from_path+0x4f/0x90 fs/ocfs2/alloc.c:702
-    ocfs2_get_left_path.constprop.0+0x182/0x390 fs/ocfs2/alloc.c:3491
-    ocfs2_merge_rec_left+0x426/0xe60 fs/ocfs2/alloc.c:3543
-    ocfs2_try_to_merge_extent+0x3cb/0xe90 fs/ocfs2/alloc.c:3794
-    ocfs2_split_extent+0xd2e/0x1330 fs/ocfs2/alloc.c:5139
-    ocfs2_change_extent_flag+0x2ed/0x720 fs/ocfs2/alloc.c:5230
-    ocfs2_mark_extent_written+0x1e3/0x2c0 fs/ocfs2/alloc.c:5276
-    ocfs2_dio_end_io_write+0x5bc/0xaa0 fs/ocfs2/aops.c:2350
-    ocfs2_dio_end_io+0x8c/0x180 fs/ocfs2/aops.c:2404
-    dio_complete+0x12e/0x4b0 fs/direct-io.c:281
-    __blockdev_direct_IO+0x1782/0x1b40 fs/direct-io.c:1303
-    ocfs2_direct_IO+0xf6/0x100 fs/ocfs2/aops.c:2441
-    generic_file_direct_write+0xb4/0x180 mm/filemap.c:4234
-    __generic_file_write_iter+0xa1/0x130 mm/filemap.c:4403
-    ocfs2_file_write_iter+0x68a/0x15a0 fs/ocfs2/file.c:2469
+Note that commit hashes shown below are subject to change due to rebase,
+trailer updates or similar. If in doubt, please check the listed branch.
 
-connection error: failed to recv *flatrpc.ExecutorMessageRawT: EOF
+tree:   https://git.kernel.org/pub/scm/linux/kernel/git/vfs/vfs.git
+branch: vfs-6.20.mkdir
 
-
----
-If you want syzbot to run the reproducer, reply with:
-#syz test: git://repo/address.git branch-or-commit-hash
-If you attach or paste a git patch, syzbot will apply it before testing.
+[1/1] vfs: remove the excl argument from the ->create() inode_operation
+      https://git.kernel.org/vfs/vfs/c/7d91315b4335
 
 
 _______________________________________________
