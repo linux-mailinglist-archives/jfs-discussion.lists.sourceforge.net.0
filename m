@@ -2,101 +2,107 @@ Return-Path: <jfs-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+jfs-discussion@lfdr.de
 Delivered-To: lists+jfs-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id 52758CABA0F
-	for <lists+jfs-discussion@lfdr.de>; Sun, 07 Dec 2025 22:09:10 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7C95CCABA09
+	for <lists+jfs-discussion@lfdr.de>; Sun, 07 Dec 2025 22:08:47 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.sourceforge.net; s=beta; h=Content-Transfer-Encoding:Content-Type:Cc:
 	Reply-To:From:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:Subject:To:Message-ID:Date:In-Reply-To:References:
-	MIME-Version:Sender:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=A8LSIluUCgdPcHGVEs6rZ51fd8aUyCBuMOLN6YPTcKk=; b=TPw92mFRDdeBZp5v13F2q0tS0R
-	i6uV+tzlRSHK3RSSnSvY8R4qX686/AROZaT3+9bPN7bLyxW0/Oxga1gYgDcuDqJu1bk9a1Xx4y4lC
-	GRyvoGAFEADHbbj91sCy3AVujc2dRNTZoKsK5qvG5ANJEfRrCE2UBsu2UaDGsl5o7HFs=;
+	List-Unsubscribe:List-Id:Subject:MIME-Version:Message-ID:Date:To:Sender:
+	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
+	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
+	bh=3FdDWVesCkU9HDjSBrsl8bpUF3p13rmiTd3RqfDGaJo=; b=mq2qZQn0EBpNSj/AaYLZpA9pQx
+	d9Hi+YdXBH+FMsp0K+NP15k+RQrc4nOvZs8WlAw+5TiE4xbTEhdNMP4DifSuQFzUsjkqI251NNa/4
+	vY6VnrjOg1DJUeXc2iaYF7/2TYxnKLlcRaeSvk78yXPjKbDmpT0jDiVLngs9fKb5KFpw=;
 Received: from [127.0.0.1] (helo=sfs-ml-2.v29.lw.sourceforge.com)
 	by sfs-ml-2.v29.lw.sourceforge.com with esmtp (Exim 4.95)
 	(envelope-from <jfs-discussion-bounces@lists.sourceforge.net>)
-	id 1vSLzZ-0002DX-Gc;
+	id 1vSLzZ-0002De-Q0;
 	Sun, 07 Dec 2025 21:08:30 +0000
 Received: from [172.30.29.66] (helo=mx.sourceforge.net)
- by sfs-ml-1.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
+ by sfs-ml-2.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
  TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (Exim 4.95)
- (envelope-from <kartikey406@gmail.com>) id 1vS8gP-00018Y-12
+ (envelope-from <kartikey406@gmail.com>) id 1vS8iv-0004eW-PR
  for jfs-discussion@lists.sourceforge.net;
- Sun, 07 Dec 2025 06:55:49 +0000
+ Sun, 07 Dec 2025 06:58:26 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=sourceforge.net; s=x; h=Content-Transfer-Encoding:Content-Type:Cc:To:
- Subject:Message-ID:Date:From:In-Reply-To:References:MIME-Version:Sender:
- Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender
- :Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
+ d=sourceforge.net; s=x; h=Content-Transfer-Encoding:MIME-Version:Message-ID:
+ Date:Subject:Cc:To:From:Sender:Reply-To:Content-Type:Content-ID:
+ Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+ :Resent-Message-ID:In-Reply-To:References:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=xI0EvnbZA/tQl8tVwd5y/1wfMvCqCNEaI5+ylSKQGWY=; b=YZsANpBpoOnEH9Y12wbAQsQh4W
- HRL7rVPYeymOgpj6k4Xcy+jQAN26G15Qr2FjbgrRk/xNzXsnG2X4Aa4/uJp8VXzwbcNCXivtZtpxA
- hqj0/eZsHhmDwr2riOZDzdz3aNe48hmsavVoSjddMcJIS86OlSUcmtFIAw39bI5Vlv5k=;
+ bh=e31pJQGgbdFp8qgVDnCkMYCpVAZCje46ZRMyi85fPTA=; b=InTapPHWl2CEQhBttG1dGE9inQ
+ 3ZpZ8RMuPsfeEkJCNOs9UTm/w8WVWBK44DafpjUZ36OHHYwSZVACJBLFoWTJVudi8+2MHFVk21Ipc
+ weBUumNZaCioZ3cUdsfjTDQ5QqY3dCM7xeUz222+e69gaUQqbBztaVoLAOQVyffG6Iok=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
- h=Content-Transfer-Encoding:Content-Type:Cc:To:Subject:Message-ID:Date:From
- :In-Reply-To:References:MIME-Version:Sender:Reply-To:Content-ID:
- Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
- :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
- List-Post:List-Owner:List-Archive;
- bh=xI0EvnbZA/tQl8tVwd5y/1wfMvCqCNEaI5+ylSKQGWY=; b=RbCPrpOrgcwDqxP6VO7ycl4Tpp
- zwjt/W5n+jA6ISjVheN2+qaGMLVA5r2SnEUb1Rew7j0cPATHUWryn8rFf8vdCDz2hYd6hoPuMhh+4
- OwGZBT0Cej8cHJUgFkmRJhQovLeAFr/uzZXGj+Y42g7I9Z4dUn3ta+bi/4iysd5njxjs=;
-Received: from mail-yx1-f49.google.com ([74.125.224.49])
+ h=Content-Transfer-Encoding:MIME-Version:Message-ID:Date:Subject:Cc:To:From
+ :Sender:Reply-To:Content-Type:Content-ID:Content-Description:Resent-Date:
+ Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+ References:List-Id:List-Help:List-Unsubscribe:List-Subscribe:List-Post:
+ List-Owner:List-Archive; bh=e31pJQGgbdFp8qgVDnCkMYCpVAZCje46ZRMyi85fPTA=; b=e
+ D6H4Lpqegn0Lc6NO4vxfDvbQy16bvohnQofT7Yo3Nih+xKi8lXwUPcW2rqUa+FGb3ikbACLRcOrBw
+ 717PeqzOPAn+AqaHHdqiBCSVDx4jgDPDhnAKJ8zog5YC+M8gCBUkXaNdGnZrJiybKAtxY4fEYfFbQ
+ QO8uvzqL3hortyH0=;
+Received: from mail-pj1-f51.google.com ([209.85.216.51])
  by sfi-mx-2.v28.lw.sourceforge.com with esmtps
  (TLS1.2:ECDHE-RSA-AES128-GCM-SHA256:128) (Exim 4.95)
- id 1vS8gO-0004Sl-9u for jfs-discussion@lists.sourceforge.net;
- Sun, 07 Dec 2025 06:55:48 +0000
-Received: by mail-yx1-f49.google.com with SMTP id
- 956f58d0204a3-641e4744e59so3354313d50.2
+ id 1vS8iv-0004Y4-V2 for jfs-discussion@lists.sourceforge.net;
+ Sun, 07 Dec 2025 06:58:26 +0000
+Received: by mail-pj1-f51.google.com with SMTP id
+ 98e67ed59e1d1-340a5c58bf1so2297003a91.2
  for <jfs-discussion@lists.sourceforge.net>;
- Sat, 06 Dec 2025 22:55:48 -0800 (PST)
+ Sat, 06 Dec 2025 22:58:25 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=gmail.com; s=20230601; t=1765090537; x=1765695337; darn=lists.sourceforge.net;
- h=content-transfer-encoding:cc:to:subject:message-id:date:from
- :in-reply-to:references:mime-version:from:to:cc:subject:date
- :message-id:reply-to;
- bh=xI0EvnbZA/tQl8tVwd5y/1wfMvCqCNEaI5+ylSKQGWY=;
- b=HrZvd1xkVX/q2pxIpPfrviopV5MUtIFx5Ynw1KaBT+ToWRnbsSfX1xQwhxc8BU96hJ
- alfVD0BkAZebm0d6nPVzSzeN0lbW0tuAaG1vFfPjmKpy6Lpsa2b0rPGodqjcu9Bbw5ns
- oz6TIORXnvNkfJlgNP+VAPZTG5un0PSvvEIqm4jNZK5X2e7RusI5LcZxX0ttR+zPuZxr
- PNLpr6ahqdROGsyBARaj6RKodo3pk16iMQRXvo5E6Kp4LMCkhMkSsN0AcCOf5W7nRJgQ
- V0cXpzCINwShJ9PWqA4WtBY3KMPXLmKvhc1sCDpNLqUtXNzyx6vFP8sXiLKvbzZK1Uuz
- zlNg==
+ d=gmail.com; s=20230601; t=1765090695; x=1765695495; darn=lists.sourceforge.net;
+ h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+ :to:from:from:to:cc:subject:date:message-id:reply-to;
+ bh=e31pJQGgbdFp8qgVDnCkMYCpVAZCje46ZRMyi85fPTA=;
+ b=aO1BeC7OKCX9D3e+2Pp6YGsp6sCvCrFGbbGeH370rcr7JhXmmBi8Ksw2Q4o00IjRFC
+ yIcYDDIf8sEsqRtAwiMEpXBzg8xTw9IG+6TOdYWNiknyFeU+PhdE7mK23T5VI9ToaIYv
+ hLUgeoWjCeRaBnCHrnyY3wAFIcbLteBoS82y1JjOkeZZAMPS5NWMetbqs5cRaOd0Z+zK
+ QlQCxiYYZTY9MIJvpRqNTvzc9fW7Oa0vgsZpYnbnfIIx77twJU3bXLeIcMHrV1AbWidB
+ mI5ENP4Ar7ouzuh7WaMZrhQke6/6b4Cg0d8+I15CN2cq59c49WVfeXKC39PJUcmMKRXn
+ Mh/Q==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20230601; t=1765090537; x=1765695337;
- h=content-transfer-encoding:cc:to:subject:message-id:date:from
- :in-reply-to:references:mime-version:x-gm-gg:x-gm-message-state:from
- :to:cc:subject:date:message-id:reply-to;
- bh=xI0EvnbZA/tQl8tVwd5y/1wfMvCqCNEaI5+ylSKQGWY=;
- b=o+VJZ+xfIaakZeoLsbns3x7Te+sOpxyUjJQlPkkS6sumbBmrYV1ZObZIM+zZLXvc7M
- jReZYd1KaOzQBCbsF2mD3IhNzCwNIPKzB+J3Aa7O9AG08yycIcL9M0Rx6PNlaGmnjJ0u
- Iw1+5ZD5pF88JBPPmDlG5USIyOiBY+QN+rm85Gpl+6ceCRWX3xCz1aBGMtjlEmwDRwoD
- HQuS1eKft4G530auegoUl6IFhgoKbKU7ekOLhnQhwodumVVIc2RPKySKGsnxGj3aNyCx
- OjRwx739t82NQzM7+YeN894GkXjk/aZ7dSUDsWWXfjlDZYQHAgks1kww/SAOhQnQLaiX
- n71g==
+ d=1e100.net; s=20230601; t=1765090695; x=1765695495;
+ h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+ :to:from:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
+ :message-id:reply-to;
+ bh=e31pJQGgbdFp8qgVDnCkMYCpVAZCje46ZRMyi85fPTA=;
+ b=K4fdufwIeCFuaUVxfzJbXI9XZ2fFWEAlybl7I0WedZ1LObjrDxWkf0q5xM+qTlzYNL
+ Y90nAAg+OKY/naRhLMirzYcQO8JvNfSf2KkoDQlPUQv50TLqWowmB/P+7PODBOj6ykcq
+ X3dOApSOzROzF3o+bqmAsgWeGHoCxIduacEURi42mv6japEnUacj0R31yqKr6dJ0pZyz
+ bfvrBgBMzOxpTyfMnO8E2THAhcEUneaPbR4nQdDIWuvoCZA8qgchheMsUMNNQ/HIbERx
+ mzl1TbHlYrnHs+ChyGiZHyQODWwDc+xehpQ2yUeU01gYqdu7nrDbcVgJ2OBTPkq772Y/
+ 167A==
 X-Forwarded-Encrypted: i=1;
- AJvYcCWnGbfXfggEIcSfeprnDQGZSivac29bjR9rIFBuTRH67dMnkcar97z8x3pYdhW1f4TD8OYA+juMXUfCtkmROA==@lists.sourceforge.net
-X-Gm-Message-State: AOJu0YxchDcMShL1DJsX/VwwuvRtNNvM31YxKXozBPJrx/qjwd8N3ijI
- ZkY9T+vd7qa7asDXuK3ClP561qqBvMXqfdSX6oJ9dySvfgN/QfN9ANNZsbliBiFRbMI/AASGv3h
- pvJ5UcKVe6WlJBDazS3Autos6C87WPSE=
-X-Gm-Gg: ASbGncs+YvRgjLoGDZrBlPDJqMl/cLaj+ngTgPtsiWlaChz724BhPwfSYR+mAtbNmut
- Vjhbft/ZKkpwWZ2lunJ4QYNbd71KjyYmGbn6j4bKGG4QpwWGmCH2sxSIs2PRs2BZlDHIyZ7NNa0
- RqDRSHAAtPF2z7Zc1geB4vJpK6esVz3IGt471jPbyuUu5qTNEtXY864/aPC4BM4ykNgqK3nz9hr
- vKr0UrpAWUNT8YeZIjZE/z3cQxeXzY7i5aj87Bc4mpT5lCh5yruw4X+1mFp2rzueAWPyC8+utdc
- Lc3rr73clr839G0kc7BuQLq4jJo/uQlCk8iO3G4Q3+2IyNw8RldngxDGNH9X
-X-Google-Smtp-Source: AGHT+IF2hSZd0NbJvebvwNpRv5gutetjkNYf5sMlIwE09x3lXCg6zvwrma16AoxLpveFALvnD7eUjEbKEE3HKIUtTJs=
-X-Received: by 2002:a05:690e:24db:b0:643:2169:d6c4 with SMTP id
- 956f58d0204a3-6444e7bd87emr2686609d50.66.1765090537482; Sat, 06 Dec 2025
- 22:55:37 -0800 (PST)
+ AJvYcCXYp48N+8gXnzbO8gbBdOq9RFLUYiK4NiZuYMIDj9dE4GPslyV4gOmkBmDIJZS6Hi1SZ6TZSuh9Dquzir7Jtw==@lists.sourceforge.net
+X-Gm-Message-State: AOJu0Yw5u56tDOS9pyPtYqGZq8sSEKtrJZ2rebrU2HYcp7Ooc4I/urUf
+ FMmK6s+ddFdSezNMV3fVpvxpdbrlkMGRWMgs43ZYksu88FV0YrQz8P9V
+X-Gm-Gg: ASbGncsvjHpVX4pxynKt3thThDd8czyC5ydDrICLynMz3zfeOMjZBLFsYk0BEobqDaf
+ gNoRcRYHt88CnGkfWwH39YDkq7W+z8zko6dx0rXkM9J8LQcVNqK3c+N8FFL6H1xLr3xdFMc7Xkl
+ sNpuZ8x/MYMKoxdWAf9I2LiJ7cZT2ohBrS089b+H9FnmbITmgzOUBXQVxNyeUZR1So4E4+KVWN5
+ FKxXR3RMmE9GUbutXPr8eyPlBhz0siAD6k7U3nEHU+jiySfwoNKprJOjGnIKgyV0VZ/3+CzLwoO
+ Oxnw8s9iEJa855qM/j2sPBsPvcpafudYwiFL03uzM3YGBMlS5X/kkfN7BKpQFze8FCKGjOUALN3
+ H+EKtEnY34P10HNsX4r3WRLBFru3K7viXaqk4pKqjVHKlJ4z/phyibxbI/11WEG02/siGCz/JZ+
+ aJZwAxPeKzPb8RRjZcxXG9cl+vk9bD6d1JcE2oidnaP7qRXEyOVBzuymgGmJKF1XzFyBtopXca+
+ vydOw==
+X-Google-Smtp-Source: AGHT+IHddt5/Uga5pkbbG71Gt44w7xeJXbFnimz19khQFtfhIOnypOcomPSiQh6tyrOU1UZiD3CZKg==
+X-Received: by 2002:a17:90b:3ec1:b0:340:6f07:fefa with SMTP id
+ 98e67ed59e1d1-349a268034amr3677106a91.20.1765090695209; 
+ Sat, 06 Dec 2025 22:58:15 -0800 (PST)
+Received: from deepanshu-kernel-hacker..
+ ([2405:201:682f:389d:6893:b3d4:beeb:8a65])
+ by smtp.gmail.com with ESMTPSA id
+ 98e67ed59e1d1-3494ea63e87sm8633964a91.12.2025.12.06.22.58.11
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Sat, 06 Dec 2025 22:58:14 -0800 (PST)
+To: shaggy@kernel.org,
+	brauner@kernel.org
+Date: Sun,  7 Dec 2025 12:28:01 +0530
+Message-ID: <20251207065801.2611800-1-kartikey406@gmail.com>
+X-Mailer: git-send-email 2.43.0
 MIME-Version: 1.0
-References: <20251207065134.2610956-1-kartikey406@gmail.com>
-In-Reply-To: <20251207065134.2610956-1-kartikey406@gmail.com>
-Date: Sun, 7 Dec 2025 12:25:26 +0530
-X-Gm-Features: AQt7F2oCxtVrMHoMieSrt8W3_g7PLAV-bb58_nfxx16bFxFl4NmPTMCCQEMiIKU
-Message-ID: <CADhLXY7Za9F5+-h35+7QFJq23LUZyYxEfMhq2NTH1DfiDm4S+A@mail.gmail.com>
-To: shaggy@kernel.org, brauner@kernel.org
 X-Spam-Score: 0.1 (/)
 X-Spam-Report: Spam detection software,
  running on the system "sfi-spamd-2.hosts.colo.sdot.me", 
@@ -104,9 +110,11 @@ X-Spam-Report: Spam detection software,
  message has been attached to this so you can view it or label
  similar future email.  If you have any questions, see
  the administrator of that system for details.
- Content preview:  On Sun, Dec 7, 2025 at 12:21 PM Deepanshu Kartikey wrote:
- > > When reusing transaction locks for DTREE operations, the index field >
- may contain stale values from previous operations, causing assert [...] 
+ Content preview:  When reusing transaction locks for DTREE operations,
+ the index
+ field may contain stale values from previous operations, causing assertion
+ failures in dtSplitRoot(): ASSERT(dtlck->index == 0) This results in kernel
+ crashes like: 
  Content analysis details:   (0.1 points, 5.0 required)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
@@ -121,11 +129,12 @@ X-Spam-Report: Spam detection software,
  [kartikey406(at)gmail.com]
  0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends in
  digit [kartikey406(at)gmail.com]
- 0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [74.125.224.49 listed in wl.mailspike.net]
-X-Headers-End: 1vS8gO-0004Sl-9u
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [209.85.216.51 listed in wl.mailspike.net]
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+X-Headers-End: 1vS8iv-0004Y4-V2
 X-Mailman-Approved-At: Sun, 07 Dec 2025 21:08:29 +0000
-Subject: Re: [Jfs-discussion] [PATCH] jfs: fix directory tree corruption in
+Subject: [Jfs-discussion] [PATCH] jfs: fix directory tree corruption in
  dtSplitRoot()
 X-BeenThere: jfs-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
@@ -141,71 +150,82 @@ List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/jfs-discussion>,
 From: Deepanshu Kartikey via Jfs-discussion
  <jfs-discussion@lists.sourceforge.net>
 Reply-To: Deepanshu Kartikey <kartikey406@gmail.com>
-Cc: jfs-discussion@lists.sourceforge.net, mjguzik@gmail.com,
+Cc: Deepanshu Kartikey <kartikey406@gmail.com>,
+ jfs-discussion@lists.sourceforge.net, mjguzik@gmail.com,
  syzbot+a099d674daa27a9272db@syzkaller.appspotmail.com,
  linux-kernel@vger.kernel.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Errors-To: jfs-discussion-bounces@lists.sourceforge.net
 
-T24gU3VuLCBEZWMgNywgMjAyNSBhdCAxMjoyMeKAr1BNIERlZXBhbnNodSBLYXJ0aWtleQo8a2Fy
-dGlrZXk0MDZAZ21haWwuY29tPiB3cm90ZToKPgo+IFdoZW4gcmV1c2luZyB0cmFuc2FjdGlvbiBs
-b2NrcyBmb3IgRFRSRUUgb3BlcmF0aW9ucywgdGhlIGluZGV4IGZpZWxkCj4gbWF5IGNvbnRhaW4g
-c3RhbGUgdmFsdWVzIGZyb20gcHJldmlvdXMgb3BlcmF0aW9ucywgY2F1c2luZyBhc3NlcnRpb24K
-PiBmYWlsdXJlcyBpbiBkdFNwbGl0Um9vdCgpOgo+Cj4gICBBU1NFUlQoZHRsY2stPmluZGV4ID09
-IDApCj4KPiBUaGlzIHJlc3VsdHMgaW4ga2VybmVsIGNyYXNoZXMgbGlrZToKPgo+ICAga2VybmVs
-IEJVRyBhdCBmcy9qZnMvamZzX2R0cmVlLmM6MTk0MiEKPiAgIENhbGwgVHJhY2U6Cj4gICAgZHRT
-cGxpdFJvb3QrMHgxNjk0LzB4MTZjMCBmcy9qZnMvamZzX2R0cmVlLmM6MTk0Mgo+ICAgIGR0U3Bs
-aXRVcCBmcy9qZnMvamZzX2R0cmVlLmM6MTI0NCBbaW5saW5lXQo+ICAgIGR0SW5zZXJ0KzB4MjUy
-NS8weDVmNDAgZnMvamZzL2pmc19kdHJlZS5jOjg3MQo+ICAgIGpmc19jcmVhdGUrMHg2YzgvMHhh
-ODAgZnMvamZzL25hbWVpLmM6MTM3Cj4KPiBUaGUgYnVnIG9jY3VycyBiZWNhdXNlIHR4TG9jaygp
-IGhhcyBtdWx0aXBsZSBjb2RlIHBhdGhzIGZvciBsb2NrCj4gYWNxdWlzaXRpb246Cj4KPiAxLiBG
-cmVzaCBhbGxvY2F0aW9uIChhbGxvY2F0ZUxvY2spIC0gY29ycmVjdGx5IGluaXRpYWxpemVzIGlu
-ZGV4IHRvIDAKPiAyLiBMb2NrIHJldXNlIChzYW1lIHRyYW5zYWN0aW9uKSAtIHNraXBzIGluaXRp
-YWxpemF0aW9uCj4gMy4gQW5vbnltb3VzIGxvY2sgYWNxdWlzaXRpb24gLSBza2lwcyBpbml0aWFs
-aXphdGlvbgo+Cj4gUGF0aHMgMiBhbmQgMyBqdW1wIGRpcmVjdGx5IHRvIHRoZSBncmFudExvY2sg
-bGFiZWwsIGJ5cGFzc2luZyB0aGUKPiBpbmRleCBpbml0aWFsaXphdGlvbi4gV2hlbiBkdFNwbGl0
-Um9vdCgpIGlzIGNhbGxlZCBtdWx0aXBsZSB0aW1lcwo+IHdpdGhpbiBhIGJhdGNoZWQgdHJhbnNh
-Y3Rpb24gKHdoaWNoIEpGUyB1c2VzIGZvciBwZXJmb3JtYW5jZSksIGl0IG1heQo+IHJlY2VpdmUg
-YSByZXVzZWQgbG9jayB3aXRoIGluZGV4PTMgZnJvbSBhIHByZXZpb3VzIG9wZXJhdGlvbiBpbnN0
-ZWFkCj4gb2YgdGhlIGV4cGVjdGVkIGluZGV4PTAuCj4KPiBFeGFtcGxlIHNlcXVlbmNlOgo+ICAg
-VHJhbnNhY3Rpb24gdGlkPTE6Cj4gICAgIC0gRmlyc3QgZHRTcGxpdFJvb3Q6IGdldHMgZnJlc2gg
-bG9jaywgaW5kZXg9MCDinJMKPiAgICAgLSBNb2RpZmllcyBlbnRyaWVzLCBpbmRleCBiZWNvbWVz
-IDMKPiAgICAgLSBMb2NrIHJldHVybmVkIHRvIHBvb2wgYnV0IG5vdCBmcmVlZAo+Cj4gICBUcmFu
-c2FjdGlvbiB0aWQ9MSAoY29udGludWVzKToKPiAgICAgLSBTZWNvbmQgZHRTcGxpdFJvb3Q6IHJl
-dXNlcyBzYW1lIGxvY2sKPiAgICAgLSBpbmRleCBzdGlsbCA9IDMgKHN0YWxlIHZhbHVlKSDinJcK
-PiAgICAgLSBBU1NFUlQoaW5kZXggPT0gMCkgZmFpbHMg4oaSIGNyYXNoCj4KPiBGaXggYnkgcmVz
-ZXR0aW5nIGR0bGNrLT5pbmRleCB0byAwIGF0IHRoZSBncmFudExvY2sgbGFiZWwsIGJ1dCBvbmx5
-Cj4gZm9yIG9wZXJhdGlvbnMgd2l0aCB0aGUgdGxja05FVyBmbGFnIHNldC4gVGhpcyBlbnN1cmVz
-Ogo+Cj4gLSBOZXcgcGFnZXMgKGxpa2UgZHRTcGxpdFJvb3QpIHN0YXJ0IHdpdGggY2xlYW4gc3Rh
-dGUgKGluZGV4PTApCj4gLSBFeGlzdGluZyBwYWdlcyBwcmVzZXJ2ZSBhY2N1bXVsYXRlZCBjaGFu
-Z2VzIHdpdGhpbiBhIHRyYW5zYWN0aW9uCj4gLSBObyBwZXJmb3JtYW5jZSBpbXBhY3QgKG9ubHkg
-YWZmZWN0cyBuZXcgcGFnZSBvcGVyYXRpb25zKQo+Cj4gVGhlIHRsY2tORVcgZmxhZyBpcyB1c2Vk
-IGJ5IGR0U3BsaXRSb290KCkgd2hlbiBjcmVhdGluZyBhIG5ldyByb290Cj4gcGFnZSwgbWFraW5n
-IHRoaXMgZml4IHRhcmdldGVkIHRvIHRoZSBleGFjdCBzY2VuYXJpbyB0aGF0IHJlcXVpcmVzCj4g
-aW5kZXg9MC4KPgo+IFJlcG9ydGVkLWJ5OiBzeXpib3QrYTA5OWQ2NzRkYWEyN2E5MjcyZGJAc3l6
-a2FsbGVyLmFwcHNwb3RtYWlsLmNvbQo+IENsb3NlczogaHR0cHM6Ly9zeXprYWxsZXIuYXBwc3Bv
-dC5jb20vYnVnP2V4dGlkPWEwOTlkNjc0ZGFhMjdhOTI3MmRiCj4gU2lnbmVkLW9mZi1ieTogRGVl
-cGFuc2h1IEthcnRpa2V5IDxrYXJ0aWtleTQwNkBnbWFpbC5jb20+Cj4gLS0tCj4gIGZzL2pmcy9q
-ZnNfdHhubWdyLmMgfCAxMSArKysrKysrKysrKwo+ICAxIGZpbGUgY2hhbmdlZCwgMTEgaW5zZXJ0
-aW9ucygrKQo+Cj4gZGlmZiAtLWdpdCBhL2ZzL2pmcy9qZnNfdHhubWdyLmMgYi9mcy9qZnMvamZz
-X3R4bm1nci5jCj4gaW5kZXggYzE2NTc4YWYzYTc3Li41Y2UyZmMxN2Q5NjcgMTAwNjQ0Cj4gLS0t
-IGEvZnMvamZzL2pmc190eG5tZ3IuYwo+ICsrKyBiL2ZzL2pmcy9qZnNfdHhubWdyLmMKPiBAQCAt
-ODExLDYgKzgxMSwxNyBAQCBzdHJ1Y3QgdGxvY2sgKnR4TG9jayh0aWRfdCB0aWQsIHN0cnVjdCBp
-bm9kZSAqaXAsIHN0cnVjdCBtZXRhcGFnZSAqIG1wLAo+ICAgICAgICAgICogdXBkYXRlIHRsb2Nr
-IHZlY3Rvcgo+ICAgICAgICAgICovCj4gICAgICAgIGdyYW50TG9jazoKPiArICAgICAgIC8qCj4g
-KyAgICAgICAgKiBSZXNldCBpbmRleCBmb3IgbmV3IERUUkVFIGxvY2tzIHRvIGVuc3VyZSBjbGVh
-biBzdGF0ZS4KPiArICAgICAgICAqIFdoZW4gbG9ja3MgYXJlIHJldXNlZCwgaW5kZXggbWF5IGNv
-bnRhaW4gc3RhbGUgdmFsdWVzIGZyb20KPiArICAgICAgICAqIHByZXZpb3VzIG9wZXJhdGlvbnMu
-IE9wZXJhdGlvbnMgbGlrZSBkdFNwbGl0Um9vdCgpIGV4cGVjdAo+ICsgICAgICAgICogaW5kZXgg
-dG8gYmUgMCB3aGVuIGNyZWF0aW5nIG5ldyBwYWdlcyAodGxja05FVyBmbGFnKS4KPiArICAgICAg
-ICAqLwo+ICsgICAgICAgaWYgKCh0eXBlICYgdGxja0RUUkVFKSAmJiAodHlwZSAmIHRsY2tORVcp
-KSB7Cj4gKyAgICAgICAgICAgICAgIHN0cnVjdCBkdF9sb2NrICpkdGxjayA9IChzdHJ1Y3QgZHRf
-bG9jayAqKSZ0bGNrLT5sb2NrOwo+ICsKPiArICAgICAgICAgICAgICAgZHRsY2stPmluZGV4ID0g
-MDsKPiArICAgICAgIH0KPiAgICAgICAgIHRsY2stPnR5cGUgfD0gdHlwZTsKPgo+ICAgICAgICAg
-cmV0dXJuIHRsY2s7Cj4gLS0KPiAyLjQzLjAKPgoKUGxlYXNlIGRpc3JlZ2FyZCB0aGlzIHBhdGNo
-LiBBcywgIGl0IGNvbnRhaW5zIHNwZWNpYWwgY2hhcmFjdGVycy4gSQp3aWxsIGJlIHJlc2VuZGlu
-ZyB0aGUgcGF0Y2ggYWdhaW4KClRoYW5rcwoKRGVlcGFuc2h1CgoKX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX18KSmZzLWRpc2N1c3Npb24gbWFpbGluZyBsaXN0
-Ckpmcy1kaXNjdXNzaW9uQGxpc3RzLnNvdXJjZWZvcmdlLm5ldApodHRwczovL2xpc3RzLnNvdXJj
-ZWZvcmdlLm5ldC9saXN0cy9saXN0aW5mby9qZnMtZGlzY3Vzc2lvbgo=
+When reusing transaction locks for DTREE operations, the index field
+may contain stale values from previous operations, causing assertion
+failures in dtSplitRoot():
+
+  ASSERT(dtlck->index == 0)
+
+This results in kernel crashes like:
+
+  kernel BUG at fs/jfs/jfs_dtree.c:1942!
+  Call Trace:
+   dtSplitRoot+0x1694/0x16c0 fs/jfs/jfs_dtree.c:1942
+   dtSplitUp fs/jfs/jfs_dtree.c:1244 [inline]
+   dtInsert+0x2525/0x5f40 fs/jfs/jfs_dtree.c:871
+   jfs_create+0x6c8/0xa80 fs/jfs/namei.c:137
+
+The bug occurs because txLock() has multiple code paths for lock
+acquisition:
+
+1. Fresh allocation (allocateLock) - correctly initializes index to 0
+2. Lock reuse (same transaction) - skips initialization
+3. Anonymous lock acquisition - skips initialization
+
+Paths 2 and 3 jump directly to the grantLock label, bypassing the
+index initialization. When dtSplitRoot() is called multiple times
+within a batched transaction (which JFS uses for performance), it may
+receive a reused lock with index=3 from a previous operation instead
+of the expected index=0.
+
+Fix by resetting dtlck->index to 0 at the grantLock label, but only
+for operations with the tlckNEW flag set. This ensures new pages start
+with clean state while preserving accumulated changes on existing pages.
+
+Reported-by: syzbot+a099d674daa27a9272db@syzkaller.appspotmail.com
+Closes: https://syzkaller.appspot.com/bug?extid=a099d674daa27a9272db
+Tested-by: Deepanshu Kartikey <kartikey406@gmail.com>
+Signed-off-by: Deepanshu Kartikey <kartikey406@gmail.com>
+---
+ fs/jfs/jfs_txnmgr.c | 11 +++++++++++
+ 1 file changed, 11 insertions(+)
+
+diff --git a/fs/jfs/jfs_txnmgr.c b/fs/jfs/jfs_txnmgr.c
+index c16578af3a77..5ce2fc17d967 100644
+--- a/fs/jfs/jfs_txnmgr.c
++++ b/fs/jfs/jfs_txnmgr.c
+@@ -811,6 +811,17 @@ struct tlock *txLock(tid_t tid, struct inode *ip, struct metapage * mp,
+ 	 * update tlock vector
+ 	 */
+       grantLock:
++	/*
++	 * Reset index for new DTREE locks to ensure clean state.
++	 * When locks are reused, index may contain stale values from
++	 * previous operations. Operations like dtSplitRoot() expect
++	 * index to be 0 when creating new pages (tlckNEW flag).
++	 */
++	if ((type & tlckDTREE) && (type & tlckNEW)) {
++		struct dt_lock *dtlck = (struct dt_lock *)&tlck->lock;
++
++		dtlck->index = 0;
++	}
+ 	tlck->type |= type;
+ 
+ 	return tlck;
+-- 
+2.43.0
+
+
+
+_______________________________________________
+Jfs-discussion mailing list
+Jfs-discussion@lists.sourceforge.net
+https://lists.sourceforge.net/lists/listinfo/jfs-discussion
