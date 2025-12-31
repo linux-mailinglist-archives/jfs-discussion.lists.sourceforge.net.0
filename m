@@ -2,108 +2,100 @@ Return-Path: <jfs-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+jfs-discussion@lfdr.de
 Delivered-To: lists+jfs-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id A5C60CE0292
-	for <lists+jfs-discussion@lfdr.de>; Sat, 27 Dec 2025 23:16:09 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8B70CCEB31D
+	for <lists+jfs-discussion@lfdr.de>; Wed, 31 Dec 2025 04:34:28 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.sourceforge.net; s=beta; h=Content-Transfer-Encoding:Content-Type:
-	Reply-To:From:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:Subject:To:Message-ID:Date:MIME-Version:Sender:Cc:
-	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
-	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
-	bh=OO2w7d1lF5LY78Z2SQXh7jjGSIqhEEW9EFRzJFqwNiA=; b=L84U4nN6y+YUyp3YXoig6UDOb+
-	S42WcuKq0H/dzrGkTPgwQVRxwnS7IEflNp91+BP9veU0dICrAXMzjzsgvnP6boDXfQw9Y9IqF2Bgb
-	MIlXQqUH+4XeuDrwQbm6vsio661jkzinY2vcj4GuJ89Ha7aD9DcYbbXRGaL0YwfgZFBw=;
-Received: from [127.0.0.1] (helo=sfs-ml-2.v29.lw.sourceforge.com)
-	by sfs-ml-2.v29.lw.sourceforge.com with esmtp (Exim 4.95)
+	d=lists.sourceforge.net; s=beta; h=Content-Transfer-Encoding:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	Subject:MIME-Version:Message-ID:Date:To:From:Sender:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:In-Reply-To:References:List-Owner;
+	bh=dkoluIuhrpbHhoJXO3nFEL7CE42rzd/16LB2FydQtJA=; b=M//VCcs9ukiihaSmBWeRo7YmOO
+	wigYRRKXEdHnzHrBH5JKocsGQ2yYZOZNWn/k5Rwa8Iqp+Zms/GylVDJp6nN83WObvhDLGpCdNcJms
+	XXpadhFikN4zRjx4uqn3pKu9nj+s2OsfPXmmTirk3VDAEQ7Md9hAdTg5gMNTBWZI2/xc=;
+Received: from [127.0.0.1] (helo=sfs-ml-4.v29.lw.sourceforge.com)
+	by sfs-ml-4.v29.lw.sourceforge.com with esmtp (Exim 4.95)
 	(envelope-from <jfs-discussion-bounces@lists.sourceforge.net>)
-	id 1vZcZK-0000Y4-9e;
-	Sat, 27 Dec 2025 22:15:27 +0000
+	id 1vamxo-0002XL-TA;
+	Wed, 31 Dec 2025 03:33:32 +0000
 Received: from [172.30.29.66] (helo=mx.sourceforge.net)
- by sfs-ml-1.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
- TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (Exim 4.95) (envelope-from
- <3xj1OaQkbAMs9FG1r22v8r66zu.x55x2vB9v8t54Av4A.t53@M3KW2WVRGUFZ5GODRSRYTGD7.apphosting.bounces.google.com>)
- id 1vZ3dl-0003f1-G1 for jfs-discussion@lists.sourceforge.net;
- Fri, 26 Dec 2025 08:57:41 +0000
+ by sfs-ml-4.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
+ TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (Exim 4.95)
+ (envelope-from <vulab@iscas.ac.cn>) id 1vamxm-0002XF-W8
+ for jfs-discussion@lists.sourceforge.net;
+ Wed, 31 Dec 2025 03:33:31 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=sourceforge.net; s=x; h=Content-Type:To:From:Subject:Message-ID:Date:
- MIME-Version:Sender:Reply-To:Cc:Content-Transfer-Encoding:Content-ID:
+ d=sourceforge.net; s=x; h=Content-Transfer-Encoding:MIME-Version:Message-ID:
+ Date:Subject:Cc:To:From:Sender:Reply-To:Content-Type:Content-ID:
  Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
  :Resent-Message-ID:In-Reply-To:References:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=ir3RX/Uy9mA4Q0MfcnZbiYXBaaO0AyvP0KlMRuuBQpo=; b=JgVuy0GFBuplz+z1HH2MC8gGbo
- i0E19ATTeW8nNbu5VenrirbtBEoJxDYqVIQvFNPoorfOACJtNeDY4VnZTAN4JxgMPQbaEE5W+rBvg
- z5OkCaMDblpfp2z2JRg04v+VCjLyqcTHW7enm0G2obwOi0kNtgAHvMeYV8GLsnaqYPX4=;
+ bh=ipkZBxe3hwCY/EoTxuJZGREQ9u56DYFcYYYmVGRiVUE=; b=MVk45UWeBWe6g1KVVlVi8LhLj5
+ gpqmooUphDqdDQoWCBhCJ8BVXEbhj99LW9OaMBe/ACHx7Z8VlMGFlwo4HL1RCL5CXus+48Q/ar3uL
+ JXY5bkSt0lxvnZxaq420bdOdpzYlklSdioudSDriuRFxx4xPteXQ6ewmgEZy2ipv+tNs=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
- h=Content-Type:To:From:Subject:Message-ID:Date:MIME-Version:Sender:Reply-To
- :Cc:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+ h=Content-Transfer-Encoding:MIME-Version:Message-ID:Date:Subject:Cc:To:From
+ :Sender:Reply-To:Content-Type:Content-ID:Content-Description:Resent-Date:
  Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
  References:List-Id:List-Help:List-Unsubscribe:List-Subscribe:List-Post:
- List-Owner:List-Archive; bh=ir3RX/Uy9mA4Q0MfcnZbiYXBaaO0AyvP0KlMRuuBQpo=; b=U
- M+9sqVUf54g74PCgOyzQ2dO2/lEqffvdKEu3ax2tJDt0mR/TARaZ0M/tqlLro6FO0s8KRIKAOqsPz
- +yoPNAYSAmmWhh4flWO50DTRfra4nz3KqNUKvVSW+t/OIjsigFLu3c42OFgbp6MsAuhKvGDuNXAZ0
- 1k84zpqFsTZa5XDM=;
-Received: from mail-ua1-f72.google.com ([209.85.222.72])
- by sfi-mx-2.v28.lw.sourceforge.com with esmtps
- (TLS1.2:ECDHE-RSA-AES128-GCM-SHA256:128) (Exim 4.95)
- id 1vZ3dk-0002eo-M9 for jfs-discussion@lists.sourceforge.net;
- Fri, 26 Dec 2025 08:57:41 +0000
-Received: by mail-ua1-f72.google.com with SMTP id
- a1e0cc1a2514c-93723fdb00fso14399273241.2
- for <jfs-discussion@lists.sourceforge.net>;
- Fri, 26 Dec 2025 00:57:40 -0800 (PST)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20230601; t=1766739450; x=1767344250;
- h=to:from:subject:message-id:date:mime-version:x-gm-message-state
- :from:to:cc:subject:date:message-id:reply-to;
- bh=ir3RX/Uy9mA4Q0MfcnZbiYXBaaO0AyvP0KlMRuuBQpo=;
- b=Rnv8U3J7SDhz4Da9+6Wy2v56hFVQ5/DImAJQANR8OwwEAsjKPK60lKx9OJWFkraS6g
- cMafjXvyFDaGUsUZIxwNb7z+25WSDSPDa1z5tcQkyQPc57yLG9gJYk6vGHaOqc5sbhHa
- /rcORHfn0ljskjJIjnsnhKdIU2WGwWAjVYnUcyhVasvM9dNECZJD4GipShGdQFswm9e9
- +2X12yxwWR94EApuYzZgontinMK322g+FKBbDdAAhXsoWcQ4uHtx9p3UhT+/ZEylw74Z
- 3OalkeX6XKajnroV7+2RRb1lIBftOAPf0NtG5YDEIWnW/cS2e0hs1K9sUn07XqlI50sA
- QXDA==
-X-Gm-Message-State: AOJu0YySLOd3UtVnj5sfEnugTVV+/wAEiThz+SX0zxJuwMQhKOuUckyE
- 3Z+nr1G9APobnCR4CHTczzJu/PEpgmn/bjw3e7kBSDGuhuen7PbqCgQgDf25O8gMIY+NG2qUMlY
- vBkwlO62SMJawGZBp5dPjct0NpX3dO3iImoVUEGGJ5JkgAr7FefRk6Pi7HMI=
-X-Google-Smtp-Source: AGHT+IF6JB8O1ld68VPOCSKRjaTSe7cdqtXwgYr9k0n0kA0HK3uDxXpsfe/VC3PDgWW2vL1pCYT2YlD1L5eb5MR2rwzmnjCe8nY1
+ List-Owner:List-Archive; bh=ipkZBxe3hwCY/EoTxuJZGREQ9u56DYFcYYYmVGRiVUE=; b=A
+ /eOx58h6HDzapG2eKxN4HCsqLEYj6k+fC10rWSKogPZ1IWptuChdm/PifW8bCz7hMZtEdyDbwt4sD
+ WZ/nlpsu4UX0UERVyy0Kv6NIt+ZqLwV7N5Hj2RnpBbD4FvBGcieOubbe9rcjVMftJjdGdTer6Cyu3
+ khb9HVdtQ17mAKMQ=;
+Received: from smtp21.cstnet.cn ([159.226.251.21] helo=cstnet.cn)
+ by sfi-mx-2.v28.lw.sourceforge.com with esmtps (TLS1.2:DHE-RSA-AES256-SHA:256)
+ (Exim 4.95) id 1vamxl-0001zY-UJ
+ for jfs-discussion@lists.sourceforge.net;
+ Wed, 31 Dec 2025 03:33:30 +0000
+Received: from DESKTOP-L0HPE2S.localdomain (unknown [124.16.141.245])
+ by APP-01 (Coremail) with SMTP id qwCowACnTGh6mVRpjwB6Ag--.18768S2;
+ Wed, 31 Dec 2025 11:33:15 +0800 (CST)
+From: Haotian Zhang <vulab@iscas.ac.cn>
+To: shaggy@kernel.org
+Date: Wed, 31 Dec 2025 11:31:26 +0800
+Message-ID: <20251231033126.64087-1-vulab@iscas.ac.cn>
+X-Mailer: git-send-email 2.43.0
 MIME-Version: 1.0
-X-Received: by 2002:a05:6820:6e87:b0:65c:f046:bb76 with SMTP id
- 006d021491bc7-65d0e9a3a14mr6354842eaf.29.1766735302879; Thu, 25 Dec 2025
- 23:48:22 -0800 (PST)
-Date: Thu, 25 Dec 2025 23:48:22 -0800
-X-Google-Appengine-App-Id: s~syzkaller
-X-Google-Appengine-App-Id-Alias: syzkaller
-Message-ID: <694e3dc6.050a0220.35954c.0068.GAE@google.com>
-To: jfs-discussion@lists.sourceforge.net, linux-kernel@vger.kernel.org, 
- shaggy@kernel.org, syzkaller-bugs@googlegroups.com
-X-Spam-Score: 0.3 (/)
+X-CM-TRANSID: qwCowACnTGh6mVRpjwB6Ag--.18768S2
+X-Coremail-Antispam: 1UD129KBjvJXoWrKw18WFyfuw4fKrWfAFykAFb_yoW8JrWUp3
+ 92kF47K39Yq3yrAFn7tF1UXayYk3s5trW8JryFqrW0yw18Kr17C3W0qF93WF1DGr4Fq34Y
+ 9F4UKFn5uF4UZ3DanT9S1TB71UUUUU7qnTZGkaVYY2UrUUUUjbIjqfuFe4nvWSU5nxnvy2
+ 9KBjDU0xBIdaVrnRJUUUkG14x267AKxVW8JVW5JwAFc2x0x2IEx4CE42xK8VAvwI8IcIk0
+ rVWrJVCq3wAFIxvE14AKwVWUJVWUGwA2ocxC64kIII0Yj41l84x0c7CEw4AK67xGY2AK02
+ 1l84ACjcxK6xIIjxv20xvE14v26ryj6F1UM28EF7xvwVC0I7IYx2IY6xkF7I0E14v26r4j
+ 6F4UM28EF7xvwVC2z280aVAFwI0_Cr1j6rxdM28EF7xvwVC2z280aVCY1x0267AKxVW0oV
+ Cq3wAS0I0E0xvYzxvE52x082IY62kv0487Mc02F40EFcxC0VAKzVAqx4xG6I80ewAv7VC0
+ I7IYx2IY67AKxVWUJVWUGwAv7VC2z280aVAFwI0_Jr0_Gr1lOx8S6xCaFVCjc4AY6r1j6r
+ 4UM4x0Y48IcxkI7VAKI48JM4x0x7Aq67IIx4CEVc8vx2IErcIFxwCY1x0262kKe7AKxVWU
+ AVWUtwCF04k20xvY0x0EwIxGrwCFx2IqxVCFs4IE7xkEbVWUJVW8JwC20s026c02F40E14
+ v26r1j6r18MI8I3I0E7480Y4vE14v26r106r1rMI8E67AF67kF1VAFwI0_JF0_Jw1lIxkG
+ c2Ij64vIr41lIxAIcVC0I7IYx2IY67AKxVWUJVWUCwCI42IY6xIIjxv20xvEc7CjxVAFwI
+ 0_Jr0_Gr1lIxAIcVCF04k26cxKx2IYs7xG6r1j6r1xMIIF0xvEx4A2jsIE14v26r1j6r4U
+ MIIF0xvEx4A2jsIEc7CjxVAFwI0_Gr0_Gr1UYxBIdaVFxhVjvjDU0xZFpf9x0JUBVbkUUU
+ UU=
+X-Originating-IP: [124.16.141.245]
+X-CM-SenderInfo: pyxotu46lvutnvoduhdfq/1tbiDAYNA2lUhg9A2QAAsp
+X-Spam-Score: 0.4 (/)
 X-Spam-Report: Spam detection software,
- running on the system "sfi-spamd-2.hosts.colo.sdot.me", 
+ running on the system "sfi-spamd-1.hosts.colo.sdot.me", 
  has NOT identified this incoming email as spam.  The original
  message has been attached to this so you can view it or label
  similar future email.  If you have any questions, see
  the administrator of that system for details.
- Content preview:  Hello jfs maintainers/developers, This is a 31-day syzbot
- report for the jfs subsystem. All related reports/information can be found
- at: https://syzkaller.appspot.com/upstream/s/jfs During the period, 5 new
- issues were detected and 0 were fixed. In total, 67 issues are still open
- and 65 have already been fixed. 
- Content analysis details:   (0.3 points, 5.0 required)
+ Content preview: syzbot reported an array-index-out-of-bounds access in
+ diAllocBit(), 
+ where im_agctl[] is indexed by agno derived from on-disk agstart without
+ validation. agno is computed via BLKTOAG() and may become negative or exceed
+ MAXAG when the filesystem metadata is corrupted, leading to an out-of-bounds
+ access to imap->im_agctl[]. 
+ Content analysis details:   (0.4 points, 5.0 required)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 URIBL_BLOCKED ADMINISTRATOR NOTICE: The query to URIBL was blocked.
- See
- http://wiki.apache.org/spamassassin/DnsBlocklists#dnsbl-block
- for more information. [URI: goo.gl] [URI: syzkaller.appspot.com]
- 0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.222.72 listed in wl.mailspike.net]
- 0.3 FROM_LOCAL_HEX         From: localpart has long hexadecimal sequence
- 0.0 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level mail
- domains are different
-X-Headers-End: 1vZ3dk-0002eo-M9
-X-Mailman-Approved-At: Sat, 27 Dec 2025 22:15:23 +0000
-Subject: [Jfs-discussion] [syzbot] Monthly jfs report (Dec 2025)
+ 0.4 KHOP_HELO_FCRDNS       Relay HELO differs from its IP's reverse DNS
+X-Headers-End: 1vamxl-0001zY-UJ
+Subject: [Jfs-discussion] [PATCH] jfs: fix array-index-out-of-bounds in
+ diAllocBit()
 X-BeenThere: jfs-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -115,57 +107,54 @@ List-Post: <mailto:jfs-discussion@lists.sourceforge.net>
 List-Help: <mailto:jfs-discussion-request@lists.sourceforge.net?subject=help>
 List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/jfs-discussion>, 
  <mailto:jfs-discussion-request@lists.sourceforge.net?subject=subscribe>
-From: syzbot via Jfs-discussion <jfs-discussion@lists.sourceforge.net>
-Reply-To: syzbot <syzbot+list88894042dba283b50d90@syzkaller.appspotmail.com>
+Cc: jfs-discussion@lists.sourceforge.net, aha310510@gmail.com,
+ syzkaller-bugs@googlegroups.com, linux-kernel@vger.kernel.org,
+ syzbot+015483fc71d1413f40ee@syzkaller.appspotmail.com,
+ Haotian Zhang <vulab@iscas.ac.cn>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Errors-To: jfs-discussion-bounces@lists.sourceforge.net
 
-Hello jfs maintainers/developers,
+syzbot reported an array-index-out-of-bounds access in diAllocBit(),
+where im_agctl[] is indexed by agno derived from on-disk agstart
+without validation.
 
-This is a 31-day syzbot report for the jfs subsystem.
-All related reports/information can be found at:
-https://syzkaller.appspot.com/upstream/s/jfs
+agno is computed via BLKTOAG() and may become negative or exceed
+MAXAG when the filesystem metadata is corrupted, leading to an
+out-of-bounds access to imap->im_agctl[].
 
-During the period, 5 new issues were detected and 0 were fixed.
-In total, 67 issues are still open and 65 have already been fixed.
+Validate agno before using it and abort the operation if the value
+is invalid.
 
-Some of the still happening issues:
-
-Ref  Crashes Repro Title
-<1>  80685   Yes   kernel BUG in jfs_evict_inode
-                   https://syzkaller.appspot.com/bug?extid=9c0c58ea2e4887ab502e
-<2>  45006   Yes   WARNING in dbAdjTree
-                   https://syzkaller.appspot.com/bug?extid=ab18fa9c959320611727
-<3>  7741    Yes   general protection fault in lmLogSync (2)
-                   https://syzkaller.appspot.com/bug?extid=e14b1036481911ae4d77
-<4>  5943    Yes   kernel BUG in dbFindLeaf
-                   https://syzkaller.appspot.com/bug?extid=dcea2548c903300a400e
-<5>  4187    Yes   INFO: task hung in lock_metapage
-                   https://syzkaller.appspot.com/bug?extid=1d84a1682e4673d5c4fb
-<6>  3483    Yes   general protection fault in jfs_flush_journal
-                   https://syzkaller.appspot.com/bug?extid=194bfe3476f96782c0b6
-<7>  3416    Yes   general protection fault in txEnd
-                   https://syzkaller.appspot.com/bug?extid=1d096d31de6a0491b55e
-<8>  2752    Yes   KASAN: use-after-free Read in jfs_lazycommit
-                   https://syzkaller.appspot.com/bug?extid=885a4f3281b8d99c48d8
-<9>  2574    Yes   UBSAN: array-index-out-of-bounds in dtInsertEntry
-                   https://syzkaller.appspot.com/bug?extid=5f7f0caf9979e9d09ff8
-<10> 2467    Yes   general protection fault in write_special_inodes
-                   https://syzkaller.appspot.com/bug?extid=c732e285f8fc38d15916
-
+Reported-by: syzbot+015483fc71d1413f40ee@syzkaller.appspotmail.com
+Closes: https://syzkaller.appspot.com/bug?extid=015483fc71d1413f40ee
+Signed-off-by: Haotian Zhang <vulab@iscas.ac.cn>
 ---
-This report is generated by a bot. It may contain errors.
-See https://goo.gl/tpsmEJ for more information about syzbot.
-syzbot engineers can be reached at syzkaller@googlegroups.com.
+ fs/jfs/jfs_imap.c | 8 ++++++++
+ 1 file changed, 8 insertions(+)
 
-To disable reminders for individual bugs, reply with the following command:
-#syz set <Ref> no-reminders
+diff --git a/fs/jfs/jfs_imap.c b/fs/jfs/jfs_imap.c
+index ecb8e05b8b84..cc72fcaa94e2 100644
+--- a/fs/jfs/jfs_imap.c
++++ b/fs/jfs/jfs_imap.c
+@@ -2044,6 +2044,14 @@ static int diAllocBit(struct inomap * imap, struct iag * iagp, int ino)
+ 	 * the extent.
+ 	 */
+ 	agno = BLKTOAG(le64_to_cpu(iagp->agstart), JFS_SBI(imap->im_ipimap->i_sb));
++	if (agno >= MAXAG || agno < 0) {
++		if (amp)
++			release_metapage(amp);
++		if (bmp)
++			release_metapage(bmp);
++		return -EIO;
++	}
++
+ 	extno = ino >> L2INOSPEREXT;
+ 	bitno = ino & (INOSPEREXT - 1);
+ 
+-- 
+2.43.0
 
-To change bug's subsystems, reply with:
-#syz set <Ref> subsystems: new-subsystem
-
-You may send multiple commands in a single email message.
 
 
 _______________________________________________
