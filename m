@@ -2,37 +2,37 @@ Return-Path: <jfs-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+jfs-discussion@lfdr.de
 Delivered-To: lists+jfs-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id F1E6CD05160
-	for <lists+jfs-discussion@lfdr.de>; Thu, 08 Jan 2026 18:40:08 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5DE95D0521D
+	for <lists+jfs-discussion@lfdr.de>; Thu, 08 Jan 2026 18:44:06 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.sourceforge.net; s=beta; h=Content-Transfer-Encoding:Content-Type:Cc:
 	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
 	Subject:In-Reply-To:MIME-Version:References:Message-ID:To:From:Date:Sender:
 	Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender
 	:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=g1qPuLyYszCLcJ+9NN0fPcJKvDzfYazghMtAPTAdNbI=; b=MgPqWNlnn6+7lstDoejzVahpd2
-	0aFnFaAgUSYzHCXtbnAvUtEPTuHJex60zPdhEg9VBi5S7MjmQlM80AnggjP3ZWqKsEira+At9zf1d
-	DQIsZMBkoijuOWGnexTDjO6zqj7J5mJrkqf0xDQ30wlkqksGiOwGJKVH0C6CJsk2Y/j4=;
-Received: from [127.0.0.1] (helo=sfs-ml-4.v29.lw.sourceforge.com)
-	by sfs-ml-4.v29.lw.sourceforge.com with esmtp (Exim 4.95)
+	bh=Sge59mARro3Xf6NGKKry5bIPfZDTTxbHkvT5cyqvZZI=; b=CPyUkYNoqraE4Z1juWZTjEGOE4
+	KnNaql1K8nt/hqt1X5hxn6g9RWA2+0C2MZAmNPR85sCDLhNCBWCiNkEO9WSaZtZLlE3gUoTwhPSIV
+	uRJp2PSw9XHRfzYG+R/KiN2XgcEvObInGD6BUAiS3deyqJF7VivaMdHyTx8K1SWsHzvU=;
+Received: from [127.0.0.1] (helo=sfs-ml-2.v29.lw.sourceforge.com)
+	by sfs-ml-2.v29.lw.sourceforge.com with esmtp (Exim 4.95)
 	(envelope-from <jfs-discussion-bounces@lists.sourceforge.net>)
-	id 1vdtzD-0007bG-L8;
-	Thu, 08 Jan 2026 17:39:51 +0000
+	id 1vdu34-0005tr-Ks;
+	Thu, 08 Jan 2026 17:43:51 +0000
 Received: from [172.30.29.66] (helo=mx.sourceforge.net)
- by sfs-ml-4.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
+ by sfs-ml-2.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
  TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (Exim 4.95)
- (envelope-from <jack@suse.cz>) id 1vdtzB-0007bA-FG
+ (envelope-from <jack@suse.cz>) id 1vdu32-0005tk-M7
  for jfs-discussion@lists.sourceforge.net;
- Thu, 08 Jan 2026 17:39:49 +0000
+ Thu, 08 Jan 2026 17:43:49 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=sourceforge.net; s=x; h=In-Reply-To:Content-Type:MIME-Version:References:
  Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:Content-Transfer-Encoding:
  Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
  Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=dRR5MJyX+HDqbBmCwQZHQRTY+WXgey6jvqbxMzndKRo=; b=XGleCuTh3ccl2516/B7euL12tB
- gQ65Nl3GChZE80HWi9mxTZU0mqvM1mYjW/uZN3hR0vHKgB9roR25I0h180qwSEIKJj1HQRB6q4YXb
- T0cbdImMaA7cIn4zG1IQvUvvzlQ33OR14hsYy4IJcsV5ns9ATNypM9r7YnFDOwPYIwDY=;
+ bh=LZmRq1jobUO8YamiQvtoLSiP3S45TLaZihc+2opPu78=; b=e4ayZO87MEVOsLlDkjdISlnibE
+ Q2rW/Z9zSBFCKJYA1TQGUfeS6mb7bz6N3EEDkzwgjdm06jB+j0xiv1XPkV1tK1+XLYYPe0BOG60wP
+ G5uYpeLJyC5pnWNIdmuhR6FvMNkmGoUP9+AA/Uu+NXlGldayl3jK66aG8XyDmeKMiXBE=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
  h=In-Reply-To:Content-Type:MIME-Version:References:Message-ID:Subject:Cc:To
@@ -40,76 +40,76 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
  :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
  List-Post:List-Owner:List-Archive;
- bh=dRR5MJyX+HDqbBmCwQZHQRTY+WXgey6jvqbxMzndKRo=; b=fAVz2f49wDj0VOioCxV+HvWV87
- PuaWCP/ZonTmhVe3IAPAgEZ13I3bZA358VQYavX0+h6/MGMzFbTWAKguToWX7pUr2YMpLP8lhp+6Q
- wXQrcmWkXS4fTSkbEWxljLjGTGXNPa8/gOVa+IUO5GBMi4f5Et1Y3DGDQZUEnm0D49aY=;
+ bh=LZmRq1jobUO8YamiQvtoLSiP3S45TLaZihc+2opPu78=; b=laMnC6SwrsMQfZ3ccHNO+rft6V
+ 6PUYaoyutGgHJHmmBX9VWlBeBgvm9yjbMG2+e9usSsPMIkX7bfL4bnL6XvfbyhG3SXBOygVioQuAy
+ Ejyv/aqALz686LepZx7mOh7Q0u/5GqCK9Ir2drGpinU3m6Y3r7bYXoP402F9QUpP2N20=;
 Received: from smtp-out1.suse.de ([195.135.223.130])
  by sfi-mx-2.v28.lw.sourceforge.com with esmtps
  (TLS1.2:ECDHE-RSA-AES128-GCM-SHA256:128) (Exim 4.95)
- id 1vdtzA-0000FL-Rq for jfs-discussion@lists.sourceforge.net;
- Thu, 08 Jan 2026 17:39:49 +0000
+ id 1vdu32-0000jb-LN for jfs-discussion@lists.sourceforge.net;
+ Thu, 08 Jan 2026 17:43:49 +0000
 Received: from imap1.dmz-prg2.suse.org (imap1.dmz-prg2.suse.org
  [IPv6:2a07:de40:b281:104:10:150:64:97])
  (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
  key-exchange X25519 server-signature RSA-PSS (4096 bits) server-digest SHA256)
  (No client certificate requested)
- by smtp-out1.suse.de (Postfix) with ESMTPS id 0A3CB345BB;
- Thu,  8 Jan 2026 17:28:07 +0000 (UTC)
+ by smtp-out1.suse.de (Postfix) with ESMTPS id 31252346D1;
+ Thu,  8 Jan 2026 17:28:28 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=suse.cz; s=susede2_rsa;
- t=1767893288; h=from:from:reply-to:date:date:message-id:message-id:to:to:cc:cc:
+ t=1767893308; h=from:from:reply-to:date:date:message-id:message-id:to:to:cc:cc:
  mime-version:mime-version:content-type:content-type:
  in-reply-to:in-reply-to:references:references;
- bh=dRR5MJyX+HDqbBmCwQZHQRTY+WXgey6jvqbxMzndKRo=;
- b=d4rSDFVrXJSP77CIbAOSkyHjsRgNACqSgQbCVEPwZM/7zstbAcRfpaKGt2UisstM25nHN7
- 1Bgquq3HKv8seUDn0gF0sfxOp2JusCFG/9EjeeXW5wzvXBXqmCE1wFrQAYKngFoA0v5P6u
- 83axHXkSOymjejIcnA/3CWyrtM2EjP0=
+ bh=LZmRq1jobUO8YamiQvtoLSiP3S45TLaZihc+2opPu78=;
+ b=PgM0qTCXZ2X5Z3hkK3jtzjZOvDMZLm/E4JYhqQ6em+5IaD4UT31FECDXudaGiS5xM4DJ0y
+ CjQygviac/9t0aQvin8JilOeYO3xwSNnNhPdm0cnkvbpJgP68yJhD2J3X6sGHvKGWvyaXj
+ 1+h9HLpBlNo8eR3zYHP8X4pAMSGnU84=
 DKIM-Signature: v=1; a=ed25519-sha256; c=relaxed/relaxed; d=suse.cz;
- s=susede2_ed25519; t=1767893288;
+ s=susede2_ed25519; t=1767893308;
  h=from:from:reply-to:date:date:message-id:message-id:to:to:cc:cc:
  mime-version:mime-version:content-type:content-type:
  in-reply-to:in-reply-to:references:references;
- bh=dRR5MJyX+HDqbBmCwQZHQRTY+WXgey6jvqbxMzndKRo=;
- b=DgBHV1jqSF0+H7pOM/PFFepN4UptQo4Xm9zzBWmsA8HM9uc0EEx2dxtRo2p/BgW1yiLhLp
- aLSuKnoBqXXSPuAw==
+ bh=LZmRq1jobUO8YamiQvtoLSiP3S45TLaZihc+2opPu78=;
+ b=7I3Psqn1KNPxXCXm9PcU1P3QCaLnWDhGBG6oy6mEBBHZkBtmbJGI/TRrEDw+5SLm4knqEo
+ +ceMclR97Y1K14AQ==
 Authentication-Results: smtp-out1.suse.de;
- dkim=pass header.d=suse.cz header.s=susede2_rsa header.b=DLUw9TrT;
- dkim=pass header.d=suse.cz header.s=susede2_ed25519 header.b=WJmCqN15
+ dkim=pass header.d=suse.cz header.s=susede2_rsa header.b=PgM0qTCX;
+ dkim=pass header.d=suse.cz header.s=susede2_ed25519 header.b=7I3Psqn1
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=suse.cz; s=susede2_rsa;
- t=1767893287; h=from:from:reply-to:date:date:message-id:message-id:to:to:cc:cc:
+ t=1767893308; h=from:from:reply-to:date:date:message-id:message-id:to:to:cc:cc:
  mime-version:mime-version:content-type:content-type:
  in-reply-to:in-reply-to:references:references;
- bh=dRR5MJyX+HDqbBmCwQZHQRTY+WXgey6jvqbxMzndKRo=;
- b=DLUw9TrTi3ictVL6EEioV8vKn1Tnf6kctL6QZRX5vF/5rVSvqfOAvG70NWVYOUzLZYrPPv
- JdngfH9/bOKbMsGeD044ITXU8l7U5S8cTiEyCgEXIEkp5Gs8xEtWYMvaxY2N8yBFRKBhTZ
- gG0Ba6Ai4Hwdwd3g0MwV58QLPOnmVNI=
+ bh=LZmRq1jobUO8YamiQvtoLSiP3S45TLaZihc+2opPu78=;
+ b=PgM0qTCXZ2X5Z3hkK3jtzjZOvDMZLm/E4JYhqQ6em+5IaD4UT31FECDXudaGiS5xM4DJ0y
+ CjQygviac/9t0aQvin8JilOeYO3xwSNnNhPdm0cnkvbpJgP68yJhD2J3X6sGHvKGWvyaXj
+ 1+h9HLpBlNo8eR3zYHP8X4pAMSGnU84=
 DKIM-Signature: v=1; a=ed25519-sha256; c=relaxed/relaxed; d=suse.cz;
- s=susede2_ed25519; t=1767893287;
+ s=susede2_ed25519; t=1767893308;
  h=from:from:reply-to:date:date:message-id:message-id:to:to:cc:cc:
  mime-version:mime-version:content-type:content-type:
  in-reply-to:in-reply-to:references:references;
- bh=dRR5MJyX+HDqbBmCwQZHQRTY+WXgey6jvqbxMzndKRo=;
- b=WJmCqN15jIu+CIYMzqKepntgbV5TrDYXbl8J/P+sr5x+oDHQQw2miYcNGTvbX94SXnz0Fo
- fZFJjn0j2xx8QWBw==
+ bh=LZmRq1jobUO8YamiQvtoLSiP3S45TLaZihc+2opPu78=;
+ b=7I3Psqn1KNPxXCXm9PcU1P3QCaLnWDhGBG6oy6mEBBHZkBtmbJGI/TRrEDw+5SLm4knqEo
+ +ceMclR97Y1K14AQ==
 Received: from imap1.dmz-prg2.suse.org (localhost [127.0.0.1])
  (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
  key-exchange X25519 server-signature RSA-PSS (4096 bits) server-digest SHA256)
  (No client certificate requested)
- by imap1.dmz-prg2.suse.org (Postfix) with ESMTPS id E447E3EA65;
- Thu,  8 Jan 2026 17:28:06 +0000 (UTC)
+ by imap1.dmz-prg2.suse.org (Postfix) with ESMTPS id 2203C3EA65;
+ Thu,  8 Jan 2026 17:28:28 +0000 (UTC)
 Received: from dovecot-director2.suse.de ([2a07:de40:b281:106:10:150:64:167])
- by imap1.dmz-prg2.suse.org with ESMTPSA id iBi3NybpX2lLdwAAD6G6ig
- (envelope-from <jack@suse.cz>); Thu, 08 Jan 2026 17:28:06 +0000
+ by imap1.dmz-prg2.suse.org with ESMTPSA id 9BtLCDzpX2lmdwAAD6G6ig
+ (envelope-from <jack@suse.cz>); Thu, 08 Jan 2026 17:28:28 +0000
 Received: by quack3.suse.cz (Postfix, from userid 1000)
- id 92F9DA0B23; Thu,  8 Jan 2026 18:28:02 +0100 (CET)
-Date: Thu, 8 Jan 2026 18:28:02 +0100
+ id D507AA0B23; Thu,  8 Jan 2026 18:28:27 +0100 (CET)
+Date: Thu, 8 Jan 2026 18:28:27 +0100
 From: Jan Kara <jack@suse.cz>
 To: Jeff Layton <jlayton@kernel.org>
-Message-ID: <pqnz52eipormcmskhnn6m4d6tzfnjrzk7qhohxri2euftpzjwx@l5zfqgeenvge>
+Message-ID: <4vqji2aypves2bafiyxtpw442nxzhbipvayyl3jky6uogdks6s@l6tfwl272v7e>
 References: <20260108-setlease-6-20-v1-0-ea4dec9b67fa@kernel.org>
- <20260108-setlease-6-20-v1-5-ea4dec9b67fa@kernel.org>
+ <20260108-setlease-6-20-v1-6-ea4dec9b67fa@kernel.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20260108-setlease-6-20-v1-5-ea4dec9b67fa@kernel.org>
+In-Reply-To: <20260108-setlease-6-20-v1-6-ea4dec9b67fa@kernel.org>
 X-Spamd-Result: default: False [-2.51 / 50.00]; BAYES_HAM(-3.00)[100.00%];
  SUSPICIOUS_RECIPS(1.50)[]; NEURAL_HAM_LONG(-1.00)[-1.000];
  MID_RHS_NOT_FQDN(0.50)[];
@@ -124,44 +124,48 @@ X-Spamd-Result: default: False [-2.51 / 50.00]; BAYES_HAM(-3.00)[100.00%];
  ARC_NA(0.00)[]; FREEMAIL_ENVRCPT(0.00)[gmail.com];
  FREEMAIL_CC(0.00)[kernel.org,gmail.com,fluxnic.net,infradead.org,suse.cz,alarsen.net,zeniv.linux.org.uk,suse.com,fb.com,linux.alibaba.com,google.com,huawei.com,vivo.com,mit.edu,dilger.ca,mail.parknet.co.jp,nod.at,dubeyko.com,paragon-software.com,fasheh.com,evilplan.org,omnibond.com,szeredi.hu,squashfs.org.uk,linux-foundation.org,samsung.com,sony.com,oracle.com,redhat.com,lwn.net,ionkov.net,codewreck.org,crudebyte.com,samba.org,manguebit.org,microsoft.com,talpey.com,vger.kernel.org,lists.ozlabs.org,lists.sourceforge.net,lists.infradead.org,lists.linux.dev,lists.orangefs.org,kvack.org,lists.samba.org];
  DKIM_TRACE(0.00)[suse.cz:+]; TO_MATCH_ENVRCPT_SOME(0.00)[];
- DNSWL_BLOCKED(0.00)[2a07:de40:b281:106:10:150:64:167:received,2a07:de40:b281:104:10:150:64:97:from];
+ DNSWL_BLOCKED(0.00)[2a07:de40:b281:104:10:150:64:97:from,2a07:de40:b281:106:10:150:64:167:received];
  FROM_EQ_ENVFROM(0.00)[]; FROM_HAS_DN(0.00)[];
  TO_DN_SOME(0.00)[]; RCPT_COUNT_GT_50(0.00)[86];
  TAGGED_RCPT(0.00)[];
  R_RATELIMIT(0.00)[to_ip_from(RLjxstjou9w9fpr873xxxyrjcd)];
  RECEIVED_SPAMHAUS_BLOCKED_OPENRESOLVER(0.00)[2a07:de40:b281:106:10:150:64:167:received];
  MISSING_XM_UA(0.00)[]; RCVD_VIA_SMTP_AUTH(0.00)[];
- DBL_BLOCKED_OPENRESOLVER(0.00)[suse.com:email, imap1.dmz-prg2.suse.org:helo,
- imap1.dmz-prg2.suse.org:rdns, suse.cz:dkim, suse.cz:email]
+ DBL_BLOCKED_OPENRESOLVER(0.00)[suse.com:email, suse.cz:dkim, suse.cz:email,
+ imap1.dmz-prg2.suse.org:helo, imap1.dmz-prg2.suse.org:rdns]
 X-Spam-Flag: NO
 X-Spam-Score: -2.51
-X-Rspamd-Queue-Id: 0A3CB345BB
+X-Rspamd-Queue-Id: 31252346D1
 X-Rspamd-Action: no action
 X-Rspamd-Server: rspamd2.dmz-prg2.suse.org
 X-Spam-Level: 
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: Spam detection software,
- running on the system "sfi-spamd-1.hosts.colo.sdot.me", 
+ running on the system "sfi-spamd-2.hosts.colo.sdot.me", 
  has NOT identified this incoming email as spam.  The original
  message has been attached to this so you can view it or label
  similar future email.  If you have any questions, see
  the administrator of that system for details.
- Content preview:  On Thu 08-01-26 12:13:00,
+ Content preview:  On Thu 08-01-26 12:13:01,
  Jeff Layton wrote: > Add the setlease
- file_operation to ext2_file_operations and > ext2_dir_operations, pointing
+ file_operation to ext4_file_operations and > ext4_dir_operations, pointing
  to generic_setlease. A future patch will > change the default [...] 
  Content analysis details:   (-0.2 points, 5.0 required)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
+ 0.0 URIBL_BLOCKED ADMINISTRATOR NOTICE: The query to URIBL was blocked.
+ See
+ http://wiki.apache.org/spamassassin/DnsBlocklists#dnsbl-block
+ for more information. [URI: suse.cz]
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature,
  not necessarily valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU Message has a valid DKIM or DK signature from author's
  domain
-X-Headers-End: 1vdtzA-0000FL-Rq
-Subject: Re: [Jfs-discussion] [PATCH 05/24] ext2: add setlease file operation
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+X-Headers-End: 1vdu32-0000jb-LN
+Subject: Re: [Jfs-discussion] [PATCH 06/24] ext4: add setlease file operation
 X-BeenThere: jfs-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -222,9 +226,9 @@ Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Errors-To: jfs-discussion-bounces@lists.sourceforge.net
 
-On Thu 08-01-26 12:13:00, Jeff Layton wrote:
-> Add the setlease file_operation to ext2_file_operations and
-> ext2_dir_operations, pointing to generic_setlease.  A future patch will
+On Thu 08-01-26 12:13:01, Jeff Layton wrote:
+> Add the setlease file_operation to ext4_file_operations and
+> ext4_dir_operations, pointing to generic_setlease.  A future patch will
 > change the default behavior to reject lease attempts with -EINVAL when
 > there is no setlease file operation defined. Add generic_setlease to
 > retain the ability to set leases on this filesystem.
@@ -238,48 +242,48 @@ Reviewed-by: Jan Kara <jack@suse.cz>
 								Honza
 
 > ---
->  fs/ext2/dir.c  | 2 ++
->  fs/ext2/file.c | 2 ++
+>  fs/ext4/dir.c  | 2 ++
+>  fs/ext4/file.c | 2 ++
 >  2 files changed, 4 insertions(+)
 > 
-> diff --git a/fs/ext2/dir.c b/fs/ext2/dir.c
-> index b07b3b369710c4848d6091742cdd0b5c42d4674d..395fc36c089b7bb6360a8326727bd5606c7e2476 100644
-> --- a/fs/ext2/dir.c
-> +++ b/fs/ext2/dir.c
+> diff --git a/fs/ext4/dir.c b/fs/ext4/dir.c
+> index 256fe2c1d4c1619eb2cd915d8b6b05bce72656e7..00c4b3c82b6534790962dc3964c0c557162b6dff 100644
+> --- a/fs/ext4/dir.c
+> +++ b/fs/ext4/dir.c
 > @@ -24,6 +24,7 @@
 >  
->  #include "ext2.h"
+>  #include <linux/fs.h>
 >  #include <linux/buffer_head.h>
 > +#include <linux/filelock.h>
->  #include <linux/pagemap.h>
->  #include <linux/swap.h>
+>  #include <linux/slab.h>
 >  #include <linux/iversion.h>
-> @@ -734,4 +735,5 @@ const struct file_operations ext2_dir_operations = {
->  	.compat_ioctl	= ext2_compat_ioctl,
+>  #include <linux/unicode.h>
+> @@ -690,4 +691,5 @@ const struct file_operations ext4_dir_operations = {
 >  #endif
->  	.fsync		= ext2_fsync,
+>  	.fsync		= ext4_sync_file,
+>  	.release	= ext4_release_dir,
 > +	.setlease	= generic_setlease,
 >  };
-> diff --git a/fs/ext2/file.c b/fs/ext2/file.c
-> index 76bddce462fced77b24d64416cb9fdb172d8270b..ebe356a38b185e0d8662f704ad20e42fe618284e 100644
-> --- a/fs/ext2/file.c
-> +++ b/fs/ext2/file.c
-> @@ -22,6 +22,7 @@
->  #include <linux/time.h>
->  #include <linux/pagemap.h>
+> diff --git a/fs/ext4/file.c b/fs/ext4/file.c
+> index 7a8b3093218921f26a7f8962f94739ba49431230..534cf864101f8d1e5f4106b61c0580c858bc0e27 100644
+> --- a/fs/ext4/file.c
+> +++ b/fs/ext4/file.c
+> @@ -25,6 +25,7 @@
+>  #include <linux/mount.h>
+>  #include <linux/path.h>
 >  #include <linux/dax.h>
 > +#include <linux/filelock.h>
 >  #include <linux/quotaops.h>
->  #include <linux/iomap.h>
+>  #include <linux/pagevec.h>
 >  #include <linux/uio.h>
-> @@ -325,6 +326,7 @@ const struct file_operations ext2_file_operations = {
->  	.get_unmapped_area = thp_get_unmapped_area,
->  	.splice_read	= filemap_splice_read,
->  	.splice_write	= iter_file_splice_write,
+> @@ -980,6 +981,7 @@ const struct file_operations ext4_file_operations = {
+>  	.fop_flags	= FOP_MMAP_SYNC | FOP_BUFFER_RASYNC |
+>  			  FOP_DIO_PARALLEL_WRITE |
+>  			  FOP_DONTCACHE,
 > +	.setlease	= generic_setlease,
 >  };
 >  
->  const struct inode_operations ext2_file_inode_operations = {
+>  const struct inode_operations ext4_file_inode_operations = {
 > 
 > -- 
 > 2.52.0
