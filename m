@@ -2,103 +2,144 @@ Return-Path: <jfs-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+jfs-discussion@lfdr.de
 Delivered-To: lists+jfs-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4BD72D03778
-	for <lists+jfs-discussion@lfdr.de>; Thu, 08 Jan 2026 15:46:24 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4DAB8D04C68
+	for <lists+jfs-discussion@lfdr.de>; Thu, 08 Jan 2026 18:14:20 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.sourceforge.net; s=beta; h=Content-Transfer-Encoding:Content-Type:Cc:
 	Reply-To:From:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:Subject:MIME-Version:References:In-Reply-To:Date:To:
-	Message-ID:Sender:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=gz7UG8r7q31M2Yrc3CMOnINZA2JN2Lj6LuwagsOCevA=; b=ircvzdB8khm6OVhK1/Cw/tydmf
-	hy+Av+cFalXF2/1rFPFE+6EE/rBH7GZ0qvf5KaDdtTW/J/2WPa7GW3RjUjgP5CArPGyM7CSH+hMJR
-	xAZ+AI0eo5QLby7E7rpcxdda2JuKXEAOSST94wrcparrT14TAo77CCOsuDh1tbTJA3tE=;
-Received: from [127.0.0.1] (helo=sfs-ml-3.v29.lw.sourceforge.com)
-	by sfs-ml-3.v29.lw.sourceforge.com with esmtp (Exim 4.95)
+	List-Unsubscribe:List-Id:Subject:To:MIME-Version:Message-Id:Date:Sender:
+	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
+	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
+	bh=OJSA2EIK89UwmonwSsqOVl2X78IG6nF9zojfn02cwT4=; b=VDWt0WejiACS0OiKbxOqyeIfr5
+	x7+2GyduRXZSrBPGiVg4UgyvvAUMxIsqIue/c3vBAqjipeLVS5txq9pvU1/p84Plx+7/s9d9QyWAt
+	gm6B3rmVNCwe3El/Er6kAUCJuXovH3QT5Q8EIN7gHO5TXl8Jap5BkDWJ4/OkgF5fk3U8=;
+Received: from [127.0.0.1] (helo=sfs-ml-4.v29.lw.sourceforge.com)
+	by sfs-ml-4.v29.lw.sourceforge.com with esmtp (Exim 4.95)
 	(envelope-from <jfs-discussion-bounces@lists.sourceforge.net>)
-	id 1vdrGz-0000k8-5Y;
-	Thu, 08 Jan 2026 14:46:01 +0000
+	id 1vdtaC-0006YT-1m;
+	Thu, 08 Jan 2026 17:14:00 +0000
 Received: from [172.30.29.66] (helo=mx.sourceforge.net)
- by sfs-ml-3.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
+ by sfs-ml-4.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
  TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (Exim 4.95)
- (envelope-from <eadavis@qq.com>) id 1vdrGw-0000jz-Oo
- for jfs-discussion@lists.sourceforge.net;
- Thu, 08 Jan 2026 14:45:59 +0000
+ (envelope-from <jlayton@kernel.org>) id 1vdta4-0006Y9-Gh;
+ Thu, 08 Jan 2026 17:13:52 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=sourceforge.net; s=x; h=Content-Transfer-Encoding:MIME-Version:References:
- In-Reply-To:Date:Subject:Cc:To:From:Message-ID:Sender:Reply-To:Content-Type:
- Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
- Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
+ d=sourceforge.net; s=x; h=Cc:To:Content-Transfer-Encoding:Content-Type:
+ MIME-Version:Message-Id:Date:Subject:From:Sender:Reply-To:Content-ID:
+ Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+ :Resent-Message-ID:In-Reply-To:References:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=DEYlDv7IlB4kOzLSK9r3FPpqIBINDBa7y+bEY8dfrJA=; b=L4Z3l4tMgnCHZRRVwCIj7XAQmQ
- VNmi6g7PXdO9fIuOrq12E1nhOPaEAxnZYdPLvstJiR0DvVtG8oNRx9VLRFovqjcXzi7PiQ4HMkxVB
- 3l1Fq3hI+i5AkVzDm0pKcSJsS2pht6Y/4ANC/IRLIKEn36n883ZfV2YToMnx3IHDV3wI=;
+ bh=UORsbIn2DznlIyVO6qJ4lZnfdd6OvlDWHFK9Nh7h01Y=; b=L2+7nHMAEEQil3IH4RPhKPpTVc
+ uEnfjHGRhB0MNv82oLm9fN2VqM/EV6Tbl17mCoYqXsYMIgcplpR2bDGcpWbT5SnAUgF+vPp0Aicl1
+ AxJTzoduhEQxx8P/2/RiORfLxiQKsPqbgykqR6RjOFyJh9o1kj+rJqvY4P2i5sz6PQ2o=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
- h=Content-Transfer-Encoding:MIME-Version:References:In-Reply-To:Date:
- Subject:Cc:To:From:Message-ID:Sender:Reply-To:Content-Type:Content-ID:
- Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
- :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
- List-Post:List-Owner:List-Archive;
- bh=DEYlDv7IlB4kOzLSK9r3FPpqIBINDBa7y+bEY8dfrJA=; b=SobpLd5AMQkPvqBHqBJSaH9Jpt
- w5LvVXEJKzM4iprENgJTXDRmtqLkvCDkHLoFKVlImN/xGb/+SOBwn89+PqmyoX1lC24Xtbo9tYV+y
- uPk3wJIaW7C/ABwdFkQUr9NqLyqO7l7BwPadi2Rfn79uZR9oog7Veh8UTTMIvw+7uiQA=;
-Received: from out162-62-57-210.mail.qq.com ([162.62.57.210])
+ h=Cc:To:Content-Transfer-Encoding:Content-Type:MIME-Version:Message-Id:Date
+ :Subject:From:Sender:Reply-To:Content-ID:Content-Description:Resent-Date:
+ Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+ References:List-Id:List-Help:List-Unsubscribe:List-Subscribe:List-Post:
+ List-Owner:List-Archive; bh=UORsbIn2DznlIyVO6qJ4lZnfdd6OvlDWHFK9Nh7h01Y=; b=a
+ IVdA4P5UX+bPtY7X4vIHBznlNLAkBfj1TU/TXW2VvM2MYKPEpXqrGzteu7Hcp0Rc67gW0DUuqeslU
+ ySjnTAwn6kkqTUIbFYey+GRsuZk+2MR+iYsPSoCwJqtP9nwbGyRz7RbGvrGV2nZgU0nJDLUlDldln
+ 9yB78mp4R9BlTJLk=;
+Received: from sea.source.kernel.org ([172.234.252.31])
  by sfi-mx-2.v28.lw.sourceforge.com with esmtps
  (TLS1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.95)
- id 1vdrGu-0001X7-MR for jfs-discussion@lists.sourceforge.net;
- Thu, 08 Jan 2026 14:45:57 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qq.com; s=s201512;
- t=1767883545; bh=DEYlDv7IlB4kOzLSK9r3FPpqIBINDBa7y+bEY8dfrJA=;
- h=From:To:Cc:Subject:Date:In-Reply-To:References;
- b=JzfVZ5MPJszlk9D3RFsWARG5hXFyDJHDR/MVSyHHcwrF4dmFsup56Db8atiHqDXdd
- e1n8rHXBhiBUIWFuyZGEKHJ0Rzu1+FXNwgRBMfS8sVx44lycQaj62hHU+WufRJKu7m
- bTYUcKTb4zVRdBM7wbvkO5GoIpMaXdWvtKP1aY38=
-Received: from lxu-ped-host.. ([114.244.57.24])
- by newxmesmtplogicsvrszb51-0.qq.com (NewEsmtp) with SMTP
- id B6B95C9E; Thu, 08 Jan 2026 22:45:43 +0800
-X-QQ-mid: xmsmtpt1767883543tk2uqk6jr
-Message-ID: <tencent_5E4F8F8DEFA5930D909222DDE35DCE192A07@qq.com>
-X-QQ-XMAILINFO: NPa98HB0c72NwmRa8x9ohsclaMm7BNmj2FPq0WGYd89SttfO7bG+zF7xnC26Mu
- 3u4yhkYQEZ7Da9fInp5TWVb8ni8BGCsF1xjzEU8ZRw75F/U2HL8t+Jv9WH4w8L2IwmzndEF5OyyC
- 0V9gsH3b0H+VpB5RaUvaZHpPP3ELAy9ODg8sYOTlCU351bFthhLZ3ttXmusZsJpAkYJHCR8gAp6U
- mfkopzSWLzag9pfsyeuxJBWExFxFkRgV58m5H3iba3ggM0bsU7pdL9/ZVwi6dHng2InJxwjGAnkq
- 8mQHYpFC2V9yh/Y+/3clfk2vh/SPrbKtiGtqLli8Bc01o/JsQhkHEXSZUjpYwjmdk+HgQ35XsC4b
- NIqAui8EIzekKWdn2s99pcyrX/+baBauILHwCj8ytsM8sTDGqOpE68zJjfaypOGvKsUslN8AEf7K
- Uk2NZs8ljiKYDqXsAvFBaf8DUv6eAQHZ/IC4DR/m/KOTzZ0Vb2NjmwCtCYL24MSWCS8tZ3uYMqHL
- +gHm4zJ8xjBkF1voaSHqUKvrQWWlxI2uTGxv5RwPUyUY8Qfm4gWvUXIsKqwWqfiQca3Zkrr34WZH
- iIOT7Ec32YrWdTLC4E59yz7ySeNopWDTRzfhwqWCCHuV1jEtWQntPO44iMHhHuw4LVO3h6JeFC1d
- 7zTrXVOQmMWGlC3GrzVGq5Ti0ntr0qnvWR6863bWWpUtPHx8l2yQfRY6MYh+eG1TxswhfC0l8WSS
- eUrk6pkhWHqM+D4nZPqdKcPBiSm6Omqa//FRH15lB1tPcEjqINizPKUfIU74cchK7xSCD0zjjwV4
- c1F125rSiWZpMsiZ4Qm7vhhplnFb4zDX68StWCr1RamPq/XGzdTFRHV3A3vJTYtmWZn1VjXxm4Hm
- JVCN8vbpdUaz4vy988yuCUd/LxEVp3p2TvPKw0tpq3elswlpf/F9hTII87MBSG20i3FarP+Ck/Ic
- 5M00BFc4YVoBNzJYODJZudqXfI2/giBzdJRlMYTYgJL4dblyF6WLOHxJvMyNq3OYUFZHjPusG3GC
- COcIZi2w==
-X-QQ-XMRINFO: OWPUhxQsoeAVwkVaQIEGSKwwgKCxK/fD5g==
-To: syzbot+1afe7ef2d0062e19eeb3@syzkaller.appspotmail.com
-Date: Thu,  8 Jan 2026 22:45:44 +0800
-X-OQ-MSGID: <20260108144543.518312-2-eadavis@qq.com>
-X-Mailer: git-send-email 2.43.0
-In-Reply-To: <695faa63.050a0220.1c677c.039a.GAE@google.com>
-References: <695faa63.050a0220.1c677c.039a.GAE@google.com>
+ id 1vdta0-0005kV-4h; Thu, 08 Jan 2026 17:13:48 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+ by sea.source.kernel.org (Postfix) with ESMTP id 5C545434D8;
+ Thu,  8 Jan 2026 17:13:42 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id DE2D4C116C6;
+ Thu,  8 Jan 2026 17:13:34 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=k20201202; t=1767892422;
+ bh=Oo05LcV8B4ObeCq3rrJEiTXLheQXnmVPy6EWKbJpWYY=;
+ h=From:Subject:Date:To:Cc:From;
+ b=sMLaSOnD+Lb34DqAv4+l1KIbr+z8ayCyntGOlgw1db2MmJQhOdIkWIrWeRcdIdKWS
+ S/zZ1aldQOEJt+M4gNNpgwr8njA+kY57ueYyzw69x62DB2y8ZdsNP0n7O2v8cGXFpi
+ Rqu92gjEkqK5VGOhWZChnPJ4VjzfqdTkQ5Pb550IY/fptv7JSzPczGvy4XqdhjJ5sA
+ l0a72cVjGZa+Jo45PjkXSM0qO0LbjExULNMK8lG/BaoQzQWxdDW9x19wy15yv5tDSd
+ cgmarBCaj12d1puK7fN4kFXY72IDiwfR7r7m0gQbOzLxetlMXGRug7hJ9c8PA8IU9d
+ DvLLUdQgizFew==
+Date: Thu, 08 Jan 2026 12:12:55 -0500
+Message-Id: <20260108-setlease-6-20-v1-0-ea4dec9b67fa@kernel.org>
 MIME-Version: 1.0
-X-Spam-Score: 3.4 (+++)
+X-B4-Tracking: v=1; b=H4sIAAAAAAAC/x3MwQpAQBRG4VfRXbs1pmY0XkUWgx+3hOZKSt7dZ
+ PktznlIkQRKTfFQwiUq+5ZRlQUNS9xmsIzZZI31pjI1K84VUcGerWEbAnrngxtcpNwcCZPc/6/
+ t3vcDWdlQRF8AAAA=
+X-Change-ID: 20260107-setlease-6-20-299eb5695c5a
+To: Luis de Bethencourt <luisbg@kernel.org>, 
+ Salah Triki <salah.triki@gmail.com>, Nicolas Pitre <nico@fluxnic.net>, 
+ Christoph Hellwig <hch@infradead.org>, Jan Kara <jack@suse.cz>, 
+ Anders Larsen <al@alarsen.net>, Alexander Viro <viro@zeniv.linux.org.uk>, 
+ Christian Brauner <brauner@kernel.org>, David Sterba <dsterba@suse.com>, 
+ Chris Mason <clm@fb.com>, Gao Xiang <xiang@kernel.org>, 
+ Chao Yu <chao@kernel.org>, Yue Hu <zbestahu@gmail.com>, 
+ Jeffle Xu <jefflexu@linux.alibaba.com>, 
+ Sandeep Dhavale <dhavale@google.com>, Hongbo Li <lihongbo22@huawei.com>, 
+ Chunhai Guo <guochunhai@vivo.com>, Jan Kara <jack@suse.com>, 
+ Theodore Ts'o <tytso@mit.edu>, Andreas Dilger <adilger.kernel@dilger.ca>, 
+ Jaegeuk Kim <jaegeuk@kernel.org>, 
+ OGAWA Hirofumi <hirofumi@mail.parknet.co.jp>, 
+ David Woodhouse <dwmw2@infradead.org>, Richard Weinberger <richard@nod.at>, 
+ Dave Kleikamp <shaggy@kernel.org>, 
+ Ryusuke Konishi <konishi.ryusuke@gmail.com>, 
+ Viacheslav Dubeyko <slava@dubeyko.com>, 
+ Konstantin Komarov <almaz.alexandrovich@paragon-software.com>, 
+ Mark Fasheh <mark@fasheh.com>, Joel Becker <jlbec@evilplan.org>, 
+ Joseph Qi <joseph.qi@linux.alibaba.com>, 
+ Mike Marshall <hubcap@omnibond.com>, 
+ Martin Brandenburg <martin@omnibond.com>, 
+ Miklos Szeredi <miklos@szeredi.hu>, Amir Goldstein <amir73il@gmail.com>, 
+ Phillip Lougher <phillip@squashfs.org.uk>, Carlos Maiolino <cem@kernel.org>, 
+ Hugh Dickins <hughd@google.com>, 
+ Baolin Wang <baolin.wang@linux.alibaba.com>, 
+ Andrew Morton <akpm@linux-foundation.org>, 
+ Namjae Jeon <linkinjeon@kernel.org>, Sungjong Seo <sj1557.seo@samsung.com>, 
+ Yuezhang Mo <yuezhang.mo@sony.com>, Chuck Lever <chuck.lever@oracle.com>, 
+ Alexander Aring <alex.aring@gmail.com>, 
+ Andreas Gruenbacher <agruenba@redhat.com>, Jonathan Corbet <corbet@lwn.net>, 
+ "Matthew Wilcox (Oracle)" <willy@infradead.org>, 
+ Eric Van Hensbergen <ericvh@kernel.org>, 
+ Latchesar Ionkov <lucho@ionkov.net>, 
+ Dominique Martinet <asmadeus@codewreck.org>, 
+ Christian Schoenebeck <linux_oss@crudebyte.com>, 
+ Xiubo Li <xiubli@redhat.com>, Ilya Dryomov <idryomov@gmail.com>, 
+ Trond Myklebust <trondmy@kernel.org>, Anna Schumaker <anna@kernel.org>, 
+ Steve French <sfrench@samba.org>, Paulo Alcantara <pc@manguebit.org>, 
+ Ronnie Sahlberg <ronniesahlberg@gmail.com>, 
+ Shyam Prasad N <sprasad@microsoft.com>, Tom Talpey <tom@talpey.com>, 
+ Bharath SM <bharathsm@microsoft.com>, Hans de Goede <hansg@kernel.org>
+X-Mailer: b4 0.14.2
+X-Developer-Signature: v=1; a=openpgp-sha256; l=5826; i=jlayton@kernel.org;
+ h=from:subject:message-id; bh=Oo05LcV8B4ObeCq3rrJEiTXLheQXnmVPy6EWKbJpWYY=;
+ b=owEBbQKS/ZANAwAKAQAOaEEZVoIVAcsmYgBpX+WzBv3HT+d1Fmmb4WJNh3VjXhmOx5cl7E+0X
+ 98Wl1lzspuJAjMEAAEKAB0WIQRLwNeyRHGyoYTq9dMADmhBGVaCFQUCaV/lswAKCRAADmhBGVaC
+ FYaFD/49dAmx6k9hJ/TPfTiX5MGWuIm/Bb6hiQ3wYU8z7D5mM7bDA0JzI4uNC4IC4k7DtSaeW+t
+ HW0GXcfmOc/2RNtvIURgrbNIKtr02nzAYWch3n94PXAZNhcygbpjjekIxTTpfmIp6Q3JR0VXmgj
+ FPOGz1G9+W5jTp8JkJCS7rK3QI1nR+/TS195gfflVDsyGMEA252ZaGAWOXQucH8aMmL3SmL4Sw3
+ SQIvSgZPcin8ppqmJM+SMqpJjims+KsIvBeiZ5RAX2koRTuCEpaimiM9mi7uvZTjn9qDUXstfCl
+ j6vVSQyDrhB6qaSgIjGD31+J/UHY4GmSW7EXpo9hwYld6pajZ7JmgvQYyorZSADZQ1buPawi578
+ 2S+AKCmbogE/0eu1rDPfSf7+pgKL0PHCFCUHmNfl5kyVzMdQ5fEfhZa0HY103UgMpyn9CWEA426
+ pzh9DY5Q7TVq+/Ml0m/iauvJ1NRfOvo1XZ6qodWqnFZEO7/lzreoUi45cpyDZzLiSQuca/VsCjV
+ 6m4pCflt/f0Ao2+yx3/gP9YDsugBwKA59y5BZvauge564wraKaWFFPDoPNSNY9aww3L7L1579eX
+ mhWasindF/bS2ZuJ3k3obfEbzGrzZnRus+vFi5LvzlZIlOMMPaJ/pY9IJPoJjhxxacuSawLXV7W
+ 2iGXbdzTGfcW99w==
+X-Developer-Key: i=jlayton@kernel.org; a=openpgp;
+ fpr=4BC0D7B24471B2A184EAF5D3000E684119568215
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: Spam detection software,
  running on the system "sfi-spamd-1.hosts.colo.sdot.me", 
  has NOT identified this incoming email as spam.  The original
  message has been attached to this so you can view it or label
  similar future email.  If you have any questions, see
  the administrator of that system for details.
- Content preview:  The initial value of x is ti, and there is a potential risk
- that the value of ti might equal max_size. The existing boundary checks have
- been improved to prevent the out-of-bounds (OOB) issue [1] repo [...] 
- Content analysis details:   (3.4 points, 5.0 required)
+ Content preview:  Yesterday, I sent patches to fix how directory delegation
+ support is handled on filesystems where the should be disabled [1]. That set
+ is appropriate for v6.19. For v7.0, I want to make lease support [...] 
+ Content analysis details:   (-0.2 points, 5.0 required)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 URIBL_BLOCKED ADMINISTRATOR NOTICE: The query to URIBL was blocked.
- See
- http://wiki.apache.org/spamassassin/DnsBlocklists#dnsbl-block
- for more information. [URI: qq.com]
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
@@ -106,14 +147,10 @@ X-Spam-Report: Spam detection software,
  not necessarily valid
  -0.1 DKIM_VALID_AU Message has a valid DKIM or DK signature from author's
  domain
- 0.0 FREEMAIL_FROM Sender email is commonly abused enduser mail provider
- [eadavis(at)qq.com]
- 0.4 RDNS_DYNAMIC           Delivered to internal network by host with
- dynamic-looking rDNS
- 3.2 HELO_DYNAMIC_IPADDR    Relay HELO'd using suspicious hostname (IP addr
- 1)
-X-Headers-End: 1vdrGu-0001X7-MR
-Subject: [Jfs-discussion] [PATCH] jfs: fix oob in dbFindLeaf
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - High trust sender
+X-Headers-End: 1vdta0-0005kV-4h
+Subject: [Jfs-discussion] [PATCH 00/24] vfs: require filesystems to
+ explicitly opt-in to lease support
 X-BeenThere: jfs-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -125,50 +162,150 @@ List-Post: <mailto:jfs-discussion@lists.sourceforge.net>
 List-Help: <mailto:jfs-discussion-request@lists.sourceforge.net?subject=help>
 List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/jfs-discussion>, 
  <mailto:jfs-discussion-request@lists.sourceforge.net?subject=subscribe>
-From: Edward Adam Davis via Jfs-discussion
- <jfs-discussion@lists.sourceforge.net>
-Reply-To: Edward Adam Davis <eadavis@qq.com>
-Cc: shaggy@kernel.org, jfs-discussion@lists.sourceforge.net,
- syzkaller-bugs@googlegroups.com, linux-kernel@vger.kernel.org
+From: Jeff Layton via Jfs-discussion <jfs-discussion@lists.sourceforge.net>
+Reply-To: Jeff Layton <jlayton@kernel.org>
+Cc: jfs-discussion@lists.sourceforge.net, linux-doc@vger.kernel.org,
+ Jeff Layton <jlayton@kernel.org>, linux-kernel@vger.kernel.org,
+ gfs2@lists.linux.dev, linux-mm@kvack.org, linux-mtd@lists.infradead.org,
+ linux-cifs@vger.kernel.org, linux-nilfs@vger.kernel.org,
+ linux-ext4@vger.kernel.org, devel@lists.orangefs.org,
+ ocfs2-devel@lists.linux.dev, ceph-devel@vger.kernel.org,
+ linux-nfs@vger.kernel.org, v9fs@lists.linux.dev,
+ samba-technical@lists.samba.org, linux-unionfs@vger.kernel.org,
+ linux-f2fs-devel@lists.sourceforge.net, linux-xfs@vger.kernel.org,
+ linux-fsdevel@vger.kernel.org, ntfs3@lists.linux.dev,
+ linux-erofs@lists.ozlabs.org, linux-btrfs@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Errors-To: jfs-discussion-bounces@lists.sourceforge.net
 
-The initial value of x is ti, and there is a potential risk that the
-value of ti might equal max_size.  The existing boundary checks have
-been improved to prevent the out-of-bounds (OOB) issue [1] reported
-by syzbot.
+Yesterday, I sent patches to fix how directory delegation support is
+handled on filesystems where the should be disabled [1]. That set is
+appropriate for v6.19. For v7.0, I want to make lease support be more
+opt-in, rather than opt-out:
 
-[1]
-UBSAN: array-index-out-of-bounds in fs/jfs/jfs_dmap.c:2976:16
-index 1365 is out of range for type 's8[1365]' (aka 'signed char[1365]')
-Call Trace:
- dbFindLeaf+0x308/0x520 fs/jfs/jfs_dmap.c:2976
- dbFindCtl+0x267/0x520 fs/jfs/jfs_dmap.c:1717
- dbAllocAny fs/jfs/jfs_dmap.c:1527 [inline]
+For historical reasons, when ->setlease() file_operation is set to NULL,
+the default is to use the kernel-internal lease implementation. This
+means that if you want to disable them, you need to explicitly set the
+->setlease() file_operation to simple_nosetlease() or the equivalent.
 
-Reported-by: syzbot+1afe7ef2d0062e19eeb3@syzkaller.appspotmail.com
-Closes: https://syzkaller.appspot.com/bug?extid=1afe7ef2d0062e19eeb3
-Signed-off-by: Edward Adam Davis <eadavis@qq.com>
+This has caused a number of problems over the years as some filesystems
+have inadvertantly allowed leases to be acquired simply by having left
+it set to NULL. It would be better if filesystems had to opt-in to lease
+support, particularly with the advent of directory delegations.
+
+This series has sets the ->setlease() operation in a pile of existing
+local filesystems to generic_setlease() and then changes
+kernel_setlease() to return -EINVAL when the setlease() operation is not
+set.
+
+With this change, new filesystems will need to explicitly set the
+->setlease() operations in order to provide lease and delegation
+support.
+
+I mainly focused on filesystems that are NFS exportable, since NFS and
+SMB are the main users of file leases, and they tend to end up exporting
+the same filesystem types. Let me know if I've missed any.
+
+[1]: https://lore.kernel.org/linux-fsdevel/20260107-setlease-6-19-v1-0-85f034abcc57@kernel.org/
+
+Signed-off-by: Jeff Layton <jlayton@kernel.org>
 ---
- fs/jfs/jfs_dmap.c | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+Jeff Layton (24):
+      fs: add setlease to generic_ro_fops and read-only filesystem directory operations
+      affs: add setlease file operation
+      btrfs: add setlease file operation
+      erofs: add setlease file operation
+      ext2: add setlease file operation
+      ext4: add setlease file operation
+      exfat: add setlease file operation
+      f2fs: add setlease file operation
+      fat: add setlease file operation
+      gfs2: add a setlease file operation
+      jffs2: add setlease file operation
+      jfs: add setlease file operation
+      nilfs2: add setlease file operation
+      ntfs3: add setlease file operation
+      ocfs2: add setlease file operation
+      orangefs: add setlease file operation
+      overlayfs: add setlease file operation
+      squashfs: add setlease file operation
+      tmpfs: add setlease file operation
+      udf: add setlease file operation
+      ufs: add setlease file operation
+      xfs: add setlease file operation
+      filelock: default to returning -EINVAL when ->setlease operation is NULL
+      fs: remove simple_nosetlease()
 
-diff --git a/fs/jfs/jfs_dmap.c b/fs/jfs/jfs_dmap.c
-index cdfa699cd7c8..18a7dc58f289 100644
---- a/fs/jfs/jfs_dmap.c
-+++ b/fs/jfs/jfs_dmap.c
-@@ -2971,7 +2971,7 @@ static int dbFindLeaf(dmtree_t *tp, int l2nb, int *leafidx, bool is_ctl)
- 			/* sufficient free space found.  move to the next
- 			 * level (or quit if this is the last level).
- 			 */
--			if (x + n > max_size)
-+			if (x + n >= max_size)
- 				return -ENOSPC;
- 			if (l2nb <= tp->dmt_stree[x + n])
- 				break;
+ Documentation/filesystems/porting.rst |  9 +++++++++
+ Documentation/filesystems/vfs.rst     |  9 ++++++---
+ fs/9p/vfs_dir.c                       |  2 --
+ fs/9p/vfs_file.c                      |  2 --
+ fs/affs/dir.c                         |  2 ++
+ fs/affs/file.c                        |  2 ++
+ fs/befs/linuxvfs.c                    |  2 ++
+ fs/btrfs/file.c                       |  2 ++
+ fs/btrfs/inode.c                      |  2 ++
+ fs/ceph/dir.c                         |  2 --
+ fs/ceph/file.c                        |  1 -
+ fs/cramfs/inode.c                     |  2 ++
+ fs/efs/dir.c                          |  2 ++
+ fs/erofs/data.c                       |  2 ++
+ fs/erofs/dir.c                        |  2 ++
+ fs/exfat/dir.c                        |  2 ++
+ fs/exfat/file.c                       |  2 ++
+ fs/ext2/dir.c                         |  2 ++
+ fs/ext2/file.c                        |  2 ++
+ fs/ext4/dir.c                         |  2 ++
+ fs/ext4/file.c                        |  2 ++
+ fs/f2fs/dir.c                         |  2 ++
+ fs/f2fs/file.c                        |  2 ++
+ fs/fat/dir.c                          |  2 ++
+ fs/fat/file.c                         |  2 ++
+ fs/freevxfs/vxfs_lookup.c             |  2 ++
+ fs/fuse/dir.c                         |  1 -
+ fs/gfs2/file.c                        |  3 +--
+ fs/isofs/dir.c                        |  2 ++
+ fs/jffs2/dir.c                        |  2 ++
+ fs/jffs2/file.c                       |  2 ++
+ fs/jfs/file.c                         |  2 ++
+ fs/jfs/namei.c                        |  2 ++
+ fs/libfs.c                            | 20 ++------------------
+ fs/locks.c                            |  3 +--
+ fs/nfs/dir.c                          |  1 -
+ fs/nfs/file.c                         |  1 -
+ fs/nilfs2/dir.c                       |  3 ++-
+ fs/nilfs2/file.c                      |  2 ++
+ fs/ntfs3/dir.c                        |  3 +++
+ fs/ntfs3/file.c                       |  3 +++
+ fs/ocfs2/file.c                       |  5 +++++
+ fs/orangefs/dir.c                     |  4 +++-
+ fs/orangefs/file.c                    |  1 +
+ fs/overlayfs/file.c                   |  2 ++
+ fs/overlayfs/readdir.c                |  2 ++
+ fs/qnx4/dir.c                         |  2 ++
+ fs/qnx6/dir.c                         |  2 ++
+ fs/read_write.c                       |  2 ++
+ fs/smb/client/cifsfs.c                |  1 -
+ fs/squashfs/dir.c                     |  2 ++
+ fs/squashfs/file.c                    |  4 +++-
+ fs/udf/dir.c                          |  2 ++
+ fs/udf/file.c                         |  2 ++
+ fs/ufs/dir.c                          |  2 ++
+ fs/ufs/file.c                         |  2 ++
+ fs/vboxsf/dir.c                       |  1 -
+ fs/vboxsf/file.c                      |  1 -
+ fs/xfs/xfs_file.c                     |  3 +++
+ include/linux/fs.h                    |  1 -
+ mm/shmem.c                            |  2 ++
+ 61 files changed, 116 insertions(+), 42 deletions(-)
+---
+base-commit: 731ce71a6c8adb8b8f873643beacaeedc1564500
+change-id: 20260107-setlease-6-20-299eb5695c5a
+
+Best regards,
 -- 
-2.43.0
+Jeff Layton <jlayton@kernel.org>
 
 
 
