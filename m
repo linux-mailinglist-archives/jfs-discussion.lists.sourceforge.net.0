@@ -2,37 +2,37 @@ Return-Path: <jfs-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+jfs-discussion@lfdr.de
 Delivered-To: lists+jfs-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4A329D05274
-	for <lists+jfs-discussion@lfdr.de>; Thu, 08 Jan 2026 18:46:34 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5659CD05187
+	for <lists+jfs-discussion@lfdr.de>; Thu, 08 Jan 2026 18:40:31 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.sourceforge.net; s=beta; h=Content-Transfer-Encoding:Content-Type:Cc:
 	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
 	Subject:In-Reply-To:MIME-Version:References:Message-ID:To:From:Date:Sender:
 	Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender
 	:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=0jpv5zKeK2FMI5IOoE848bXQSz/BLt9mMXPCvR0uD80=; b=ae3EaWtjKBOTaUQAW6ie+tu+09
-	SS81x4Weq/Atvgoj8yv36u3JHZ4sk2ZO1q9mbXMpZ8LJpKmlaFy3fJ+8AQyD/MZrr6d/cn1RHZozf
-	IDMvPCjxR30o51pZ9MdXnrWDvpQdkUcS/jAhS073DmTOYU8PG+R5EYX2GyocDafLi7JQ=;
-Received: from [127.0.0.1] (helo=sfs-ml-4.v29.lw.sourceforge.com)
-	by sfs-ml-4.v29.lw.sourceforge.com with esmtp (Exim 4.95)
+	bh=NegCt/KgR5ZYWcmE8i/qJaxtmjcoXFoyLukeeLKwFmE=; b=K370s8QeXW8eP/mkCicna6AlK1
+	Zc8et5iI/nGpgqVTTcH+PtGZ0eKSo3h8PP4rPnF3alFMXnAVOeuj+p7U3ENVXs3WxEIVMm22YUd3G
+	1KwOfBNhwJbQ97O3FM244UB3wtot0+Pm5MC5knqc9e+ABfkMAiSdV0aX7MTN8k+UHrww=;
+Received: from [127.0.0.1] (helo=sfs-ml-2.v29.lw.sourceforge.com)
+	by sfs-ml-2.v29.lw.sourceforge.com with esmtp (Exim 4.95)
 	(envelope-from <jfs-discussion-bounces@lists.sourceforge.net>)
-	id 1vdu5R-0007pp-5g;
-	Thu, 08 Jan 2026 17:46:17 +0000
+	id 1vdtzc-0005lA-KK;
+	Thu, 08 Jan 2026 17:40:17 +0000
 Received: from [172.30.29.66] (helo=mx.sourceforge.net)
- by sfs-ml-4.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
+ by sfs-ml-2.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
  TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (Exim 4.95)
- (envelope-from <jack@suse.cz>) id 1vdu5P-0007pj-Vc
+ (envelope-from <jack@suse.cz>) id 1vdtza-0005l2-Cq
  for jfs-discussion@lists.sourceforge.net;
- Thu, 08 Jan 2026 17:46:15 +0000
+ Thu, 08 Jan 2026 17:40:15 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=sourceforge.net; s=x; h=In-Reply-To:Content-Type:MIME-Version:References:
  Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:Content-Transfer-Encoding:
  Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
  Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=Rc9QMKouyjzH45LZUhjCbf9iU6kNH1nER3QE4i7JiDM=; b=BoS9/wv5XP84bqn5KbjqQ2SNNh
- Wo7rRTKp+NcWSLlWJuPUgVRQXW5E37Qhq6lZWmDGfrWbRjYKnbEow4MLaTRs9UI/qTp/sTGIMbCeu
- ZQkjYygkxoIPY7O2YL8Y2UsyfL0yM+G46tcKIBYkaqvxsJ5WP33KVOdviTo/fdTYwE0s=;
+ bh=F+CPMws/FnGYdGWk6ohH7U7LIk13uVJdlWREsvgP22k=; b=AiBsGE3J/dOUJwqIQ7hrC79NG3
+ iHMrBPu+LAXcAQSJgtzZnOUOKCDvoKbmvI+ac9IfRHM9cs2XrYMXs3ZybSr1OA1BmniwNaLUHe7NW
+ FTsp7fePe6o+Jn50k/WMivp1XWtd88HAgowH3kaFKc43PalSZhwS8uhrgPoZHS5FT6G0=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
  h=In-Reply-To:Content-Type:MIME-Version:References:Message-ID:Subject:Cc:To
@@ -40,77 +40,76 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
  :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
  List-Post:List-Owner:List-Archive;
- bh=Rc9QMKouyjzH45LZUhjCbf9iU6kNH1nER3QE4i7JiDM=; b=FvEwI4DtkwCBoIu/3peGH1bASk
- ZepG+aol7OqkAVzZKip+hNOaCZ4Q+bSwxwbkuqUyJBObtGDeFYTkccjPZ33cD+Z+wHHKb9tyqJYsH
- Cwi3lxLDN3BEfAUy91YdVEJo2G9hmTXGLFhWOlIGlCRuU/ZvCzCmOX7gp4Up3/qXpSrg=;
+ bh=F+CPMws/FnGYdGWk6ohH7U7LIk13uVJdlWREsvgP22k=; b=eYMqW5zcAM+P/f+hJEXZPXpwX9
+ Am4JPBFI4/0xi5RhbbKDqGTZcE946UN4V+yCY2yh/s8uKMgi499exp18IgvOfDIN8i6S9JcebJJNf
+ 5rvLnAeaHChyszD6aZ8FcD8pqrOZmw2emnTa9m/Xif+ieCJK9aN9ynROfvQzczgsyvJg=;
 Received: from smtp-out2.suse.de ([195.135.223.131])
  by sfi-mx-2.v28.lw.sourceforge.com with esmtps
  (TLS1.2:ECDHE-RSA-AES128-GCM-SHA256:128) (Exim 4.95)
- id 1vdu5P-0000zU-6Q for jfs-discussion@lists.sourceforge.net;
- Thu, 08 Jan 2026 17:46:15 +0000
+ id 1vdtza-0000IT-Aq for jfs-discussion@lists.sourceforge.net;
+ Thu, 08 Jan 2026 17:40:15 +0000
 Received: from imap1.dmz-prg2.suse.org (imap1.dmz-prg2.suse.org
  [IPv6:2a07:de40:b281:104:10:150:64:97])
  (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
  key-exchange X25519 server-signature RSA-PSS (4096 bits) server-digest SHA256)
  (No client certificate requested)
- by smtp-out2.suse.de (Postfix) with ESMTPS id E02605CBAB;
- Thu,  8 Jan 2026 17:32:02 +0000 (UTC)
+ by smtp-out2.suse.de (Postfix) with ESMTPS id 3206A5CBBA;
+ Thu,  8 Jan 2026 17:34:18 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=suse.cz; s=susede2_rsa;
- t=1767893523; h=from:from:reply-to:date:date:message-id:message-id:to:to:cc:cc:
+ t=1767893658; h=from:from:reply-to:date:date:message-id:message-id:to:to:cc:cc:
  mime-version:mime-version:content-type:content-type:
  in-reply-to:in-reply-to:references:references;
- bh=Rc9QMKouyjzH45LZUhjCbf9iU6kNH1nER3QE4i7JiDM=;
- b=MKYplGgUyR+sE06i0JiUz8GKtJbOPqRHHpMIj+IWs303KtwqzOMjj+JFlHwHtSt7nbAUxA
- UNp4Ll6iPK3H52aM4vFBGo0ErVRKRIPPFhbwF8eh7s2fgE1PWOm6znJF/4G+mtw+movdZo
- 1psyKrKOcJR2WxUMmY9s6q28XLqlyTw=
+ bh=F+CPMws/FnGYdGWk6ohH7U7LIk13uVJdlWREsvgP22k=;
+ b=v/EZdGITitw8CsQiMuaGfXbUwWWx8X5TD/YRa/XZZpZ68ngQ9xwJ0IIhpHdhcnkJ73fsRf
+ p+mufimcDsVx7itgUk6q88o1BMvGZdhe3E1n/AChQ7pU+p1eYtiCRpkctujSCJSu5bivTP
+ E3j+OIjCP6YUECLftS1PCmGaQtp0d/g=
 DKIM-Signature: v=1; a=ed25519-sha256; c=relaxed/relaxed; d=suse.cz;
- s=susede2_ed25519; t=1767893523;
+ s=susede2_ed25519; t=1767893658;
  h=from:from:reply-to:date:date:message-id:message-id:to:to:cc:cc:
  mime-version:mime-version:content-type:content-type:
  in-reply-to:in-reply-to:references:references;
- bh=Rc9QMKouyjzH45LZUhjCbf9iU6kNH1nER3QE4i7JiDM=;
- b=+kISGD+BwUugn2ejyQVVgjX3pI8t3dz4nil+/amsO+obOFpkCydzCEt1LMAEaSWkfKrT23
- PrLkTBk88AY2V7BA==
+ bh=F+CPMws/FnGYdGWk6ohH7U7LIk13uVJdlWREsvgP22k=;
+ b=ThMGOBotWNLGznhXYptjblJw1E5rrD2imFij6R6Qug5s3TyXHn8Vw/C9Wgt+x5X6XILeTi
+ WJvEzDPbx8aSLDBg==
 Authentication-Results: smtp-out2.suse.de;
- dkim=pass header.d=suse.cz header.s=susede2_rsa header.b=zchHYT5l;
- dkim=pass header.d=suse.cz header.s=susede2_ed25519 header.b=v7Sxuhou
+ dkim=pass header.d=suse.cz header.s=susede2_rsa header.b="v/EZdGIT";
+ dkim=pass header.d=suse.cz header.s=susede2_ed25519 header.b=ThMGOBot
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=suse.cz; s=susede2_rsa;
- t=1767893522; h=from:from:reply-to:date:date:message-id:message-id:to:to:cc:cc:
+ t=1767893658; h=from:from:reply-to:date:date:message-id:message-id:to:to:cc:cc:
  mime-version:mime-version:content-type:content-type:
  in-reply-to:in-reply-to:references:references;
- bh=Rc9QMKouyjzH45LZUhjCbf9iU6kNH1nER3QE4i7JiDM=;
- b=zchHYT5ly7W8Ws0WGBZ/OLSaO6YePdF0ZuvnJ54B4z/6iRJB1Rmu65L8SCdhqtGnDJRxNt
- h8hIIjb74QUVWPEDWc4b2ZIMvH4EEJ7zRjN43UvzJAdzhjiSz7WLubJqA7OtP6gQLvF0Fh
- qsB+hXW7VQPvyvSNGU9sg0unRkW933o=
+ bh=F+CPMws/FnGYdGWk6ohH7U7LIk13uVJdlWREsvgP22k=;
+ b=v/EZdGITitw8CsQiMuaGfXbUwWWx8X5TD/YRa/XZZpZ68ngQ9xwJ0IIhpHdhcnkJ73fsRf
+ p+mufimcDsVx7itgUk6q88o1BMvGZdhe3E1n/AChQ7pU+p1eYtiCRpkctujSCJSu5bivTP
+ E3j+OIjCP6YUECLftS1PCmGaQtp0d/g=
 DKIM-Signature: v=1; a=ed25519-sha256; c=relaxed/relaxed; d=suse.cz;
- s=susede2_ed25519; t=1767893522;
+ s=susede2_ed25519; t=1767893658;
  h=from:from:reply-to:date:date:message-id:message-id:to:to:cc:cc:
  mime-version:mime-version:content-type:content-type:
  in-reply-to:in-reply-to:references:references;
- bh=Rc9QMKouyjzH45LZUhjCbf9iU6kNH1nER3QE4i7JiDM=;
- b=v7Sxuhou8fYCJendb+nuEct46VWp54XIkm6cHFo3LZWNdJd5/5Qm//MUpOHl5WjYSfdzmb
- HPS47RhJ47XDEuBA==
+ bh=F+CPMws/FnGYdGWk6ohH7U7LIk13uVJdlWREsvgP22k=;
+ b=ThMGOBotWNLGznhXYptjblJw1E5rrD2imFij6R6Qug5s3TyXHn8Vw/C9Wgt+x5X6XILeTi
+ WJvEzDPbx8aSLDBg==
 Received: from imap1.dmz-prg2.suse.org (localhost [127.0.0.1])
  (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
  key-exchange X25519 server-signature RSA-PSS (4096 bits) server-digest SHA256)
  (No client certificate requested)
- by imap1.dmz-prg2.suse.org (Postfix) with ESMTPS id C47143EA63;
- Thu,  8 Jan 2026 17:32:02 +0000 (UTC)
+ by imap1.dmz-prg2.suse.org (Postfix) with ESMTPS id 1A91D3EA63;
+ Thu,  8 Jan 2026 17:34:18 +0000 (UTC)
 Received: from dovecot-director2.suse.de ([2a07:de40:b281:106:10:150:64:167])
- by imap1.dmz-prg2.suse.org with ESMTPSA id pu3oLxLqX2nzegAAD6G6ig
- (envelope-from <jack@suse.cz>); Thu, 08 Jan 2026 17:32:02 +0000
+ by imap1.dmz-prg2.suse.org with ESMTPSA id tcZtBprqX2kkfQAAD6G6ig
+ (envelope-from <jack@suse.cz>); Thu, 08 Jan 2026 17:34:18 +0000
 Received: by quack3.suse.cz (Postfix, from userid 1000)
- id 3B7FAA0B23; Thu,  8 Jan 2026 18:31:54 +0100 (CET)
-Date: Thu, 8 Jan 2026 18:31:54 +0100
+ id C390EA0B23; Thu,  8 Jan 2026 18:34:13 +0100 (CET)
+Date: Thu, 8 Jan 2026 18:34:13 +0100
 From: Jan Kara <jack@suse.cz>
 To: Jeff Layton <jlayton@kernel.org>
-Message-ID: <5dtyb6by4ujjnkjz6lu4rl2x3s5km6awilvrozuzmgq2wn7bl6@cxvq3jpviunf>
+Message-ID: <j3qkk6xh6q76uorxfrqfp5gubc44qe6d3gqeshb55yxi3miexu@udfpls76gitt>
 References: <20260108-setlease-6-20-v1-0-ea4dec9b67fa@kernel.org>
- <20260108-setlease-6-20-v1-19-ea4dec9b67fa@kernel.org>
+ <20260108-setlease-6-20-v1-23-ea4dec9b67fa@kernel.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20260108-setlease-6-20-v1-19-ea4dec9b67fa@kernel.org>
-X-Spam-Score: -2.51
+In-Reply-To: <20260108-setlease-6-20-v1-23-ea4dec9b67fa@kernel.org>
 X-Spamd-Result: default: False [-2.51 / 50.00]; BAYES_HAM(-3.00)[100.00%];
  SUSPICIOUS_RECIPS(1.50)[]; NEURAL_HAM_LONG(-1.00)[-1.000];
  MID_RHS_NOT_FQDN(0.50)[];
@@ -125,44 +124,43 @@ X-Spamd-Result: default: False [-2.51 / 50.00]; BAYES_HAM(-3.00)[100.00%];
  ARC_NA(0.00)[]; FREEMAIL_ENVRCPT(0.00)[gmail.com];
  FREEMAIL_CC(0.00)[kernel.org,gmail.com,fluxnic.net,infradead.org,suse.cz,alarsen.net,zeniv.linux.org.uk,suse.com,fb.com,linux.alibaba.com,google.com,huawei.com,vivo.com,mit.edu,dilger.ca,mail.parknet.co.jp,nod.at,dubeyko.com,paragon-software.com,fasheh.com,evilplan.org,omnibond.com,szeredi.hu,squashfs.org.uk,linux-foundation.org,samsung.com,sony.com,oracle.com,redhat.com,lwn.net,ionkov.net,codewreck.org,crudebyte.com,samba.org,manguebit.org,microsoft.com,talpey.com,vger.kernel.org,lists.ozlabs.org,lists.sourceforge.net,lists.infradead.org,lists.linux.dev,lists.orangefs.org,kvack.org,lists.samba.org];
  DKIM_TRACE(0.00)[suse.cz:+]; TO_MATCH_ENVRCPT_SOME(0.00)[];
- DNSWL_BLOCKED(0.00)[2a07:de40:b281:106:10:150:64:167:received,2a07:de40:b281:104:10:150:64:97:from];
+ DNSWL_BLOCKED(0.00)[2a07:de40:b281:104:10:150:64:97:from,2a07:de40:b281:106:10:150:64:167:received];
  FROM_EQ_ENVFROM(0.00)[]; FROM_HAS_DN(0.00)[];
  TO_DN_SOME(0.00)[]; RCPT_COUNT_GT_50(0.00)[86];
- TAGGED_RCPT(0.00)[];
+ RCVD_VIA_SMTP_AUTH(0.00)[]; TAGGED_RCPT(0.00)[];
  R_RATELIMIT(0.00)[to_ip_from(RLjxstjou9w9fpr873xxxyrjcd)];
- RECEIVED_SPAMHAUS_BLOCKED_OPENRESOLVER(0.00)[2a07:de40:b281:106:10:150:64:167:received];
- MISSING_XM_UA(0.00)[]; RCVD_VIA_SMTP_AUTH(0.00)[];
- DBL_BLOCKED_OPENRESOLVER(0.00)[suse.cz:dkim, suse.cz:email,
- imap1.dmz-prg2.suse.org:rdns, imap1.dmz-prg2.suse.org:helo]
-X-Spam-Level: 
-X-Rspamd-Action: no action
-X-Rspamd-Queue-Id: E02605CBAB
-X-Rspamd-Server: rspamd1.dmz-prg2.suse.org
+ MISSING_XM_UA(0.00)[];
+ DBL_BLOCKED_OPENRESOLVER(0.00)[imap1.dmz-prg2.suse.org:helo,
+ imap1.dmz-prg2.suse.org:rdns, suse.cz:dkim, suse.cz:email]
 X-Spam-Flag: NO
+X-Spam-Score: -2.51
+X-Rspamd-Queue-Id: 3206A5CBBA
+X-Rspamd-Action: no action
+X-Rspamd-Server: rspamd2.dmz-prg2.suse.org
+X-Spam-Level: 
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: Spam detection software,
- running on the system "sfi-spamd-1.hosts.colo.sdot.me", 
+ running on the system "sfi-spamd-2.hosts.colo.sdot.me", 
  has NOT identified this incoming email as spam.  The original
  message has been attached to this so you can view it or label
  similar future email.  If you have any questions, see
  the administrator of that system for details.
- Content preview:  On Thu 08-01-26 12:13:14,
- Jeff Layton wrote: > Add the setlease
- file_operation pointing to generic_setlease to the > tmpfs file_operations
- structures. A future patch will change the > default behavior [...] 
+ Content preview:  On Thu 08-01-26 12:13:18, Jeff Layton wrote: > Now that most
+ filesystems where we expect to need lease support have > their ->setlease()
+ operations explicitly set, change kernel_setlease() > to return [...] 
  Content analysis details:   (-0.2 points, 5.0 required)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature,
  not necessarily valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU Message has a valid DKIM or DK signature from author's
  domain
-X-Headers-End: 1vdu5P-0000zU-6Q
-Subject: Re: [Jfs-discussion] [PATCH 19/24] tmpfs: add setlease file
- operation
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+X-Headers-End: 1vdtza-0000IT-Aq
+Subject: Re: [Jfs-discussion] [PATCH 23/24] filelock: default to returning
+ -EINVAL when ->setlease operation is NULL
 X-BeenThere: jfs-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -223,12 +221,12 @@ Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Errors-To: jfs-discussion-bounces@lists.sourceforge.net
 
-On Thu 08-01-26 12:13:14, Jeff Layton wrote:
-> Add the setlease file_operation pointing to generic_setlease to the
-> tmpfs file_operations structures. A future patch will change the
-> default behavior to reject lease attempts with -EINVAL when there is no
-> setlease file operation defined. Add generic_setlease to retain the
-> ability to set leases on this filesystem.
+On Thu 08-01-26 12:13:18, Jeff Layton wrote:
+> Now that most filesystems where we expect to need lease support have
+> their ->setlease() operations explicitly set, change kernel_setlease()
+> to return -EINVAL when the setlease is a NULL pointer.
+> 
+> Also update the Documentation/ with info about this change.
 > 
 > Signed-off-by: Jeff Layton <jlayton@kernel.org>
 
@@ -239,49 +237,61 @@ Reviewed-by: Jan Kara <jack@suse.cz>
 								Honza
 
 > ---
->  fs/libfs.c | 2 ++
->  mm/shmem.c | 2 ++
->  2 files changed, 4 insertions(+)
+>  Documentation/filesystems/porting.rst | 9 +++++++++
+>  Documentation/filesystems/vfs.rst     | 9 ++++++---
+>  fs/locks.c                            | 3 +--
+>  3 files changed, 16 insertions(+), 5 deletions(-)
 > 
-> diff --git a/fs/libfs.c b/fs/libfs.c
-> index 591eb649ebbacf202ff48cd3abd64a175daa291c..697c6d5fc12786c036f0086886297fb5cd52ae00 100644
-> --- a/fs/libfs.c
-> +++ b/fs/libfs.c
-> @@ -6,6 +6,7 @@
+> diff --git a/Documentation/filesystems/porting.rst b/Documentation/filesystems/porting.rst
+> index 3397937ed838e5e7dfacc6379a9d71481cc30914..c0f7103628ab5ed70d142a5c7f6d95ca4734c741 100644
+> --- a/Documentation/filesystems/porting.rst
+> +++ b/Documentation/filesystems/porting.rst
+> @@ -1334,3 +1334,12 @@ end_creating() and the parent will be unlocked precisely when necessary.
 >  
->  #include <linux/blkdev.h>
->  #include <linux/export.h>
-> +#include <linux/filelock.h>
->  #include <linux/pagemap.h>
->  #include <linux/slab.h>
->  #include <linux/cred.h>
-> @@ -570,6 +571,7 @@ const struct file_operations simple_offset_dir_operations = {
->  	.iterate_shared	= offset_readdir,
->  	.read		= generic_read_dir,
->  	.fsync		= noop_fsync,
-> +	.setlease	= generic_setlease,
->  };
+>  kill_litter_super() is gone; convert to DCACHE_PERSISTENT use (as all
+>  in-tree filesystems have done).
+> +
+> +---
+> +
+> +**mandatory**
+> +
+> +The ->setlease() file_operation must now be explicitly set in order to provide
+> +support for leases. When set to NULL, the kernel will now return -EINVAL to
+> +attempts to set a lease. Filesystems that wish to use the kernel-internal lease
+> +implementation should set it to generic_setlease().
+> diff --git a/Documentation/filesystems/vfs.rst b/Documentation/filesystems/vfs.rst
+> index 670ba66b60e4964927164a57e68adc0edfc681ee..21dc8921dd9ebedeafc4c108de7327f172138b6e 100644
+> --- a/Documentation/filesystems/vfs.rst
+> +++ b/Documentation/filesystems/vfs.rst
+> @@ -1180,9 +1180,12 @@ otherwise noted.
+>  	method is used by the splice(2) system call
 >  
->  struct dentry *find_next_child(struct dentry *parent, struct dentry *prev)
-> diff --git a/mm/shmem.c b/mm/shmem.c
-> index ec6c01378e9d2bd47db9d7506e4d6a565e092185..88ef1fd5cd38efedbb31353da2871ab1d47e68a5 100644
-> --- a/mm/shmem.c
-> +++ b/mm/shmem.c
-> @@ -29,6 +29,7 @@
->  #include <linux/pagemap.h>
->  #include <linux/file.h>
->  #include <linux/fileattr.h>
-> +#include <linux/filelock.h>
->  #include <linux/mm.h>
->  #include <linux/random.h>
->  #include <linux/sched/signal.h>
-> @@ -5219,6 +5220,7 @@ static const struct file_operations shmem_file_operations = {
->  	.splice_read	= shmem_file_splice_read,
->  	.splice_write	= iter_file_splice_write,
->  	.fallocate	= shmem_fallocate,
-> +	.setlease	= generic_setlease,
->  #endif
->  };
+>  ``setlease``
+> -	called by the VFS to set or release a file lock lease.  setlease
+> -	implementations should call generic_setlease to record or remove
+> -	the lease in the inode after setting it.
+> +	called by the VFS to set or release a file lock lease.  Local
+> +	filesystems that wish to use the kernel-internal lease implementation
+> +	should set this to generic_setlease(). Other setlease implementations
+> +	should call generic_setlease() to record or remove the lease in the inode
+> +	after setting it. When set to NULL, attempts to set or remove a lease will
+> +	return -EINVAL.
+>  
+>  ``fallocate``
+>  	called by the VFS to preallocate blocks or punch a hole.
+> diff --git a/fs/locks.c b/fs/locks.c
+> index e2036aa4bd3734be415296f9157d8f17166878aa..ea38a18f373c2202ba79e8e37125f8d32a0e2d42 100644
+> --- a/fs/locks.c
+> +++ b/fs/locks.c
+> @@ -2016,8 +2016,7 @@ kernel_setlease(struct file *filp, int arg, struct file_lease **lease, void **pr
+>  		setlease_notifier(arg, *lease);
+>  	if (filp->f_op->setlease)
+>  		return filp->f_op->setlease(filp, arg, lease, priv);
+> -	else
+> -		return generic_setlease(filp, arg, lease, priv);
+> +	return -EINVAL;
+>  }
+>  EXPORT_SYMBOL_GPL(kernel_setlease);
 >  
 > 
 > -- 
