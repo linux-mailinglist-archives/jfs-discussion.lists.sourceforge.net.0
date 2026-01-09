@@ -2,97 +2,97 @@ Return-Path: <jfs-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+jfs-discussion@lfdr.de
 Delivered-To: lists+jfs-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id B35E9D074B6
-	for <lists+jfs-discussion@lfdr.de>; Fri, 09 Jan 2026 07:02:11 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 809ACD07A97
+	for <lists+jfs-discussion@lfdr.de>; Fri, 09 Jan 2026 08:58:21 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.sourceforge.net; s=beta; h=Content-Transfer-Encoding:Content-Type:Cc:
-	Reply-To:From:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:References:
-	Message-ID:To:Date:Sender:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=fPO3Ld0JlIXlvdAB/9ufcbkVXeejj4+rM/WE1g4Ze20=; b=Nq+475WVG6t683PbaGcCkuVIf5
-	EBut6MeZ4lUIQrTtjCsTxFoKoj0xhHXA4Z/ciyzINNPvgvP4yuG1URagZj4J+tzU0bKwqRpen2asG
-	66F+KSYj/0smfvWq12zDiciJItVjOY3GdN1SLfZcuUVPtfKkyQo7DzMHhsxnuoKsnRbs=;
-Received: from [127.0.0.1] (helo=sfs-ml-3.v29.lw.sourceforge.com)
-	by sfs-ml-3.v29.lw.sourceforge.com with esmtp (Exim 4.95)
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	Subject:MIME-Version:References:In-Reply-To:Message-ID:To:From:Date:Sender:
+	Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender
+	:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=zErITf00lfgBzDOYKUhyDPHDMdysq5ab6oal5zMBrWw=; b=iFyDgu9206mVklyL3mbEAoZ7qE
+	3T5/Lf80C46ICeQLkO3+vtar5mFocyOD7wdVYKuyEYjZQYbRI6DjpxmGZPEVGW/s8nbWMqqePhdik
+	btqlKAdtPAvjwrZWQYaSQ77ox0MUjQTjgW9w5cXfmLOi2xBFYhU2MhYZlJewu0B9f5WM=;
+Received: from [127.0.0.1] (helo=sfs-ml-1.v29.lw.sourceforge.com)
+	by sfs-ml-1.v29.lw.sourceforge.com with esmtp (Exim 4.95)
 	(envelope-from <jfs-discussion-bounces@lists.sourceforge.net>)
-	id 1ve5Yv-0003TK-SU;
-	Fri, 09 Jan 2026 06:01:29 +0000
+	id 1ve7NO-0000ux-0E;
+	Fri, 09 Jan 2026 07:57:42 +0000
 Received: from [172.30.29.66] (helo=mx.sourceforge.net)
- by sfs-ml-3.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
- TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (Exim 4.95) (envelope-from
- <BATV+d4639d90bc861be87f98+8174+infradead.org+hch@bombadil.srs.infradead.org>)
- id 1ve5Yt-0003T2-Np; Fri, 09 Jan 2026 06:01:28 +0000
+ by sfs-ml-1.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
+ TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (Exim 4.95)
+ (envelope-from <richard@nod.at>) id 1ve7NM-0000uq-Ge
+ for jfs-discussion@lists.sourceforge.net;
+ Fri, 09 Jan 2026 07:57:40 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=sourceforge.net; s=x; h=In-Reply-To:Content-Type:MIME-Version:References:
- Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:Content-Transfer-Encoding:
+ d=sourceforge.net; s=x; h=Content-Transfer-Encoding:Content-Type:MIME-Version
+ :Subject:References:In-Reply-To:Message-ID:Cc:To:From:Date:Sender:Reply-To:
  Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
  Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=TVlnT2WiXW5nYG95M0tj3/pwuA98uZmz0fLtRU3VLPA=; b=S0P7ZA0SjeI0ae6P1LoFJmfFO1
- 0Gtu9H45PRBGoSOiWgGlxWueOVFFoO5wG8ks8mzhbpMcaHvTV+k0Wk/Sdi0PAcAUspLr2xpbBlh1o
- tmUnnhZQc2qpsuae3mE1GPClIedW1By8wD32yF33YeGVrdpkM2qN2H0f0AxjfKOSYV08=;
+ bh=gRFBl535XJ21h48TaltTZ13zMho2nH839kUbC2YJflo=; b=PXwXWv8rai0wGshW4J4TDZW0So
+ K4OBATzl/mVKi4rQ8ndwbMP+IwBpBrRkRypulyI+0z8ABb+cM/sxVWrJ1awrI/ZLTe62LE6gWgYz6
+ TakFZPc0kw5LLiCEmxusmOAQ1AwiXkdWKE4sYGVcenC5rVhIXID1i362w8JMqtiPZtZw=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
- h=In-Reply-To:Content-Type:MIME-Version:References:Message-ID:Subject:Cc:To
- :From:Date:Sender:Reply-To:Content-Transfer-Encoding:Content-ID:
+ h=Content-Transfer-Encoding:Content-Type:MIME-Version:Subject:References:
+ In-Reply-To:Message-ID:Cc:To:From:Date:Sender:Reply-To:Content-ID:
  Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
  :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
  List-Post:List-Owner:List-Archive;
- bh=TVlnT2WiXW5nYG95M0tj3/pwuA98uZmz0fLtRU3VLPA=; b=NEDcAL9qGTckySkIatkAJP97lq
- hBHmGKKlJEWN1uxPWO4xKQMUIdZbuO+9WYchHrqKwc3z63s79ejdZ+FY4zB5K/wzFr4L85ZFzH7q1
- 369yZvqjtNopD6fN6oa3eg04ZKkspoIMDrOPqaC7K3nOLawAGdg97J0n58wn0H+4c15g=;
-Received: from bombadil.infradead.org ([198.137.202.133])
+ bh=gRFBl535XJ21h48TaltTZ13zMho2nH839kUbC2YJflo=; b=dlX+IooSy3YHfxUpWVwWECGwbG
+ JvmUcHmTHRJxPlf+nMMoD6h/p8sy8PmrxP1+XLt0JmkV5YKxzDq/MzPysfaDXOxC4JMfWa3QlBWg0
+ IOL2aLvv+9p7Gsgl3Kxvpv4MbiQ1uXQZcHXc/zAkugTUe/3gJuesGvZNw3hJb3PVQqHY=;
+Received: from mailout.nod.at ([116.203.167.152] helo=lithops.sigma-star.at)
  by sfi-mx-2.v28.lw.sourceforge.com with esmtps
  (TLS1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.95)
- id 1ve5Ys-00055f-GA; Fri, 09 Jan 2026 06:01:27 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=infradead.org; s=bombadil.20210309; h=In-Reply-To:Content-Type:MIME-Version
- :References:Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:
- Content-Transfer-Encoding:Content-ID:Content-Description;
- bh=TVlnT2WiXW5nYG95M0tj3/pwuA98uZmz0fLtRU3VLPA=; b=nNw+ohOkHNWpQswvh+NdF9LHsu
- PJ6XIUFJtAy/341ZJ9J92w/DrPqKhkxz3zTjI/OkCD5uCId/D9WwQgvpVYCFTlMBlisRY+uVtvIRe
- REPMinKM/zRtj+mAGb6mG8h33I8v4EUxHd7wpMoL0MVUe5QELfPQU02i+BkEkkPD+IWuWUtmR9vj7
- 5PESqXWBa9hJrSIyYBcnAULtN9bqZwa9ct6avHgzAt8PQ8DJwQPVi9fHlBg9V+TF/Bau3F5xfjNlp
- 4gxLTxemKZWrMAqjEIaxZ8E5uEYuSvRgEMvz0VvHRFcwTeD7kP/g3KTcD027gjhOnTRYhsN0CtrV+
- PA5MAVYw==;
-Received: from hch by bombadil.infradead.org with local (Exim 4.98.2 #2 (Red
- Hat Linux)) id 1ve5Y8-00000001VCt-1XPG;
- Fri, 09 Jan 2026 06:00:40 +0000
-Date: Thu, 8 Jan 2026 22:00:40 -0800
+ id 1ve7NL-0000Um-NI for jfs-discussion@lists.sourceforge.net;
+ Fri, 09 Jan 2026 07:57:40 +0000
+Received: from localhost (localhost [127.0.0.1])
+ by lithops.sigma-star.at (Postfix) with ESMTP id 8503429ABE4;
+ Fri,  9 Jan 2026 08:40:40 +0100 (CET)
+Received: from lithops.sigma-star.at ([127.0.0.1])
+ by localhost (lithops.sigma-star.at [127.0.0.1]) (amavisd-new, port 10032)
+ with ESMTP id 4Z-nBiPgjzSg; Fri,  9 Jan 2026 08:40:39 +0100 (CET)
+Received: from localhost (localhost [127.0.0.1])
+ by lithops.sigma-star.at (Postfix) with ESMTP id 9463229ABDC;
+ Fri,  9 Jan 2026 08:40:39 +0100 (CET)
+Received: from lithops.sigma-star.at ([127.0.0.1])
+ by localhost (lithops.sigma-star.at [127.0.0.1]) (amavisd-new, port 10026)
+ with ESMTP id ipM5fPbFtVak; Fri,  9 Jan 2026 08:40:39 +0100 (CET)
+Received: from lithops.sigma-star.at (lithops.sigma-star.at [195.201.40.130])
+ by lithops.sigma-star.at (Postfix) with ESMTP id C28E529ABCA;
+ Fri,  9 Jan 2026 08:40:38 +0100 (CET)
+Date: Fri, 9 Jan 2026 08:40:38 +0100 (CET)
+From: Richard Weinberger <richard@nod.at>
 To: Jeff Layton <jlayton@kernel.org>
-Message-ID: <aWCZiFOmnY3D4oUl@infradead.org>
+Message-ID: <218403128.88322.1767944438487.JavaMail.zimbra@nod.at>
+In-Reply-To: <20260108-setlease-6-20-v1-12-ea4dec9b67fa@kernel.org>
 References: <20260108-setlease-6-20-v1-0-ea4dec9b67fa@kernel.org>
+ <20260108-setlease-6-20-v1-12-ea4dec9b67fa@kernel.org>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20260108-setlease-6-20-v1-0-ea4dec9b67fa@kernel.org>
-X-SRS-Rewrite: SMTP reverse-path rewritten from <hch@infradead.org> by
- bombadil.infradead.org. See http://www.infradead.org/rpr.html
-X-Spam-Score: -0.1 (/)
-X-Spam-Report: Spam detection software,
- running on the system "sfi-spamd-1.hosts.colo.sdot.me", 
+X-Originating-IP: [195.201.40.130]
+X-Mailer: Zimbra 8.8.12_GA_3807 (ZimbraWebClient - FF146
+ (Linux)/8.8.12_GA_3809)
+Thread-Topic: add setlease file operation
+Thread-Index: Ijb4veyM6wDb0tIeqxd8skdz5qkIYA==
+X-Spam-Score: 0.0 (/)
+X-Spam-Report: Spam detection software, running on the system "sfi-spamd-1.hosts.colo.sdot.me",
  has NOT identified this incoming email as spam.  The original
  message has been attached to this so you can view it or label
  similar future email.  If you have any questions, see
  the administrator of that system for details.
- Content preview:  On Thu, Jan 08, 2026 at 12:12:55PM -0500, Jeff Layton wrote:
- > I mainly focused on filesystems that are NFS exportable, since NFS and
- > SMB are the main users of file leases, and they tend to end up e [...] 
- Content analysis details:   (-0.1 points, 5.0 required)
- pts rule name              description
+ 
+ Content preview:  ----- Ursprüngliche Mail ----- > Von: "Jeff Layton" <jlayton@kernel.org>
+    > Add the setlease file_operation to jfs_file_operations and > jfs_dir_operations,
+    pointing to generic_setlease. A future patc [...] 
+ 
+ Content analysis details:   (0.0 points, 5.0 required)
+ 
+  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 URIBL_BLOCKED ADMINISTRATOR NOTICE: The query to URIBL was blocked.
- See
- http://wiki.apache.org/spamassassin/DnsBlocklists#dnsbl-block
- for more information. [URI: infradead.org]
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature,
- not necessarily valid
- -0.1 DKIM_VALID_AU Message has a valid DKIM or DK signature from author's
- domain
-X-Headers-End: 1ve5Ys-00055f-GA
-Subject: Re: [Jfs-discussion] [PATCH 00/24] vfs: require filesystems to
- explicitly opt-in to lease support
+X-Headers-End: 1ve7NL-0000Um-NI
+Subject: Re: [Jfs-discussion] [PATCH 12/24] jfs: add setlease file operation
 X-BeenThere: jfs-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -104,77 +104,71 @@ List-Post: <mailto:jfs-discussion@lists.sourceforge.net>
 List-Help: <mailto:jfs-discussion-request@lists.sourceforge.net?subject=help>
 List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/jfs-discussion>, 
  <mailto:jfs-discussion-request@lists.sourceforge.net?subject=subscribe>
-From: Christoph Hellwig via Jfs-discussion
- <jfs-discussion@lists.sourceforge.net>
-Reply-To: Christoph Hellwig <hch@infradead.org>
 Cc: Latchesar Ionkov <lucho@ionkov.net>, Dave Kleikamp <shaggy@kernel.org>,
  Alexander Aring <alex.aring@gmail.com>, Jan Kara <jack@suse.cz>,
  Paulo Alcantara <pc@manguebit.org>, Sandeep Dhavale <dhavale@google.com>,
  Martin Brandenburg <martin@omnibond.com>, Yuezhang Mo <yuezhang.mo@sony.com>,
  Anders Larsen <al@alarsen.net>, Amir Goldstein <amir73il@gmail.com>,
- jfs-discussion@lists.sourceforge.net, linux-unionfs@vger.kernel.org,
+ jfs-discussion@lists.sourceforge.net,
+ linux-unionfs <linux-unionfs@vger.kernel.org>,
  Konstantin Komarov <almaz.alexandrovich@paragon-software.com>,
  Chris Mason <clm@fb.com>, Andreas Dilger <adilger.kernel@dilger.ca>,
  Chunhai Guo <guochunhai@vivo.com>, Ilya Dryomov <idryomov@gmail.com>,
- Ronnie Sahlberg <ronniesahlberg@gmail.com>, linux-mtd@lists.infradead.org,
- Mike Marshall <hubcap@omnibond.com>, linux-xfs@vger.kernel.org,
- Xiubo Li <xiubli@redhat.com>, Yue Hu <zbestahu@gmail.com>,
- Miklos Szeredi <miklos@szeredi.hu>, samba-technical@lists.samba.org,
- Richard Weinberger <richard@nod.at>, Mark Fasheh <mark@fasheh.com>,
- devel@lists.orangefs.org, Hugh Dickins <hughd@google.com>,
- "Matthew Wilcox \(Oracle\)" <willy@infradead.org>, ntfs3@lists.linux.dev,
+ Ronnie Sahlberg <ronniesahlberg@gmail.com>,
+ linux-mtd <linux-mtd@lists.infradead.org>, Mike Marshall <hubcap@omnibond.com>,
+ linux-xfs <linux-xfs@vger.kernel.org>, Xiubo Li <xiubli@redhat.com>,
+ Yue Hu <zbestahu@gmail.com>, Miklos Szeredi <miklos@szeredi.hu>,
+ samba-technical@lists.samba.org, Mark Fasheh <mark@fasheh.com>,
+ devel@lists.orangefs.org, hughd <hughd@google.com>,
+ Matthew Wilcox <willy@infradead.org>, ntfs3@lists.linux.dev,
  Christoph Hellwig <hch@infradead.org>, Joseph Qi <joseph.qi@linux.alibaba.com>,
- linux-mm@kvack.org, linux-btrfs@vger.kernel.org, Gao Xiang <xiang@kernel.org>,
- linux-ext4@vger.kernel.org, Salah Triki <salah.triki@gmail.com>,
- Carlos Maiolino <cem@kernel.org>, Dominique Martinet <asmadeus@codewreck.org>,
+ linux-mm <linux-mm@kvack.org>, linux-btrfs <linux-btrfs@vger.kernel.org>,
+ Gao Xiang <xiang@kernel.org>, linux-ext4 <linux-ext4@vger.kernel.org>,
+ Salah Triki <salah.triki@gmail.com>, Carlos Maiolino <cem@kernel.org>,
+ Dominique Martinet <asmadeus@codewreck.org>,
  Shyam Prasad N <sprasad@microsoft.com>,
- Christian Schoenebeck <linux_oss@crudebyte.com>, linux-cifs@vger.kernel.org,
- Chao Yu <chao@kernel.org>, linux-nfs@vger.kernel.org,
- Tom Talpey <tom@talpey.com>, ocfs2-devel@lists.linux.dev,
- Bharath SM <bharathsm@microsoft.com>, linux-nilfs@vger.kernel.org,
- David Sterba <dsterba@suse.com>, Alexander Viro <viro@zeniv.linux.org.uk>,
- Baolin Wang <baolin.wang@linux.alibaba.com>,
+ Christian Schoenebeck <linux_oss@crudebyte.com>,
+ linux-cifs <linux-cifs@vger.kernel.org>, Chao Yu <chao@kernel.org>,
+ linux-nfs <linux-nfs@vger.kernel.org>, Tom Talpey <tom@talpey.com>,
+ ocfs2-devel@lists.linux.dev, Bharath SM <bharathsm@microsoft.com>,
+ linux-nilfs <linux-nilfs@vger.kernel.org>, David Sterba <dsterba@suse.com>,
+ Al Viro <viro@zeniv.linux.org.uk>, Baolin Wang <baolin.wang@linux.alibaba.com>,
  Jeffle Xu <jefflexu@linux.alibaba.com>, Jaegeuk Kim <jaegeuk@kernel.org>,
- ceph-devel@vger.kernel.org, Eric Van Hensbergen <ericvh@kernel.org>,
+ ceph-devel <ceph-devel@vger.kernel.org>,
+ Eric Van Hensbergen <ericvh@kernel.org>,
  Ryusuke Konishi <konishi.ryusuke@gmail.com>,
  OGAWA Hirofumi <hirofumi@mail.parknet.co.jp>,
  Andreas Gruenbacher <agruenba@redhat.com>, Hans de Goede <hansg@kernel.org>,
  gfs2@lists.linux.dev, Christian Brauner <brauner@kernel.org>,
- linux-f2fs-devel@lists.sourceforge.net, Theodore Ts'o <tytso@mit.edu>,
- Luis de Bethencourt <luisbg@kernel.org>, Nicolas Pitre <nico@fluxnic.net>,
- linux-erofs@lists.ozlabs.org, v9fs@lists.linux.dev,
- Jonathan Corbet <corbet@lwn.net>, linux-doc@vger.kernel.org,
- linux-kernel@vger.kernel.org, Namjae Jeon <linkinjeon@kernel.org>,
- Steve French <sfrench@samba.org>, Chuck Lever <chuck.lever@oracle.com>,
- Hongbo Li <lihongbo22@huawei.com>, Anna Schumaker <anna@kernel.org>,
- Jan Kara <jack@suse.com>, linux-fsdevel@vger.kernel.org,
+ linux-f2fs-devel <linux-f2fs-devel@lists.sourceforge.net>,
+ tytso <tytso@mit.edu>, Luis de Bethencourt <luisbg@kernel.org>,
+ Nicolas Pitre <nico@fluxnic.net>, linux-erofs <linux-erofs@lists.ozlabs.org>,
+ v9fs@lists.linux.dev, Jonathan Corbet <corbet@lwn.net>,
+ Linux Doc Mailing List <linux-doc@vger.kernel.org>,
+ linux-kernel <linux-kernel@vger.kernel.org>,
+ Namjae Jeon <linkinjeon@kernel.org>, Steve French <sfrench@samba.org>,
+ chuck lever <chuck.lever@oracle.com>, Hongbo Li <lihongbo22@huawei.com>,
+ anna <anna@kernel.org>, Jan Kara <jack@suse.com>,
+ linux-fsdevel <linux-fsdevel@vger.kernel.org>,
  Phillip Lougher <phillip@squashfs.org.uk>,
  Andrew Morton <akpm@linux-foundation.org>,
  Sungjong Seo <sj1557.seo@samsung.com>, David Woodhouse <dwmw2@infradead.org>,
  Trond Myklebust <trondmy@kernel.org>, Joel Becker <jlbec@evilplan.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Errors-To: jfs-discussion-bounces@lists.sourceforge.net
 
-On Thu, Jan 08, 2026 at 12:12:55PM -0500, Jeff Layton wrote:
-> I mainly focused on filesystems that are NFS exportable, since NFS and
-> SMB are the main users of file leases, and they tend to end up exporting
-> the same filesystem types. Let me know if I've missed any.
-> 
-> [1]: https://lore.kernel.org/linux-fsdevel/20260107-setlease-6-19-v1-0-85f034abcc57@kernel.org/
-
-That seems reasonable, and I like the approach here (without having the
-time to review every change right now):
-
-Acked-by: Christoph Hellwig <hch@lst.de>
-
-If it turns out we have people use leases on other file systems we'll
-have to wire up a few more instance as needed, but I think your initial
-set makes sense.
-
-
-
-_______________________________________________
-Jfs-discussion mailing list
-Jfs-discussion@lists.sourceforge.net
-https://lists.sourceforge.net/lists/listinfo/jfs-discussion
+LS0tLS0gVXJzcHLDvG5nbGljaGUgTWFpbCAtLS0tLQo+IFZvbjogIkplZmYgTGF5dG9uIiA8amxh
+eXRvbkBrZXJuZWwub3JnPgo+IEFkZCB0aGUgc2V0bGVhc2UgZmlsZV9vcGVyYXRpb24gdG8gamZz
+X2ZpbGVfb3BlcmF0aW9ucyBhbmQKPiBqZnNfZGlyX29wZXJhdGlvbnMsIHBvaW50aW5nIHRvIGdl
+bmVyaWNfc2V0bGVhc2UuICBBIGZ1dHVyZSBwYXRjaCB3aWxsCj4gY2hhbmdlIHRoZSBkZWZhdWx0
+IGJlaGF2aW9yIHRvIHJlamVjdCBsZWFzZSBhdHRlbXB0cyB3aXRoIC1FSU5WQUwgd2hlbgo+IHRo
+ZXJlIGlzIG5vIHNldGxlYXNlIGZpbGUgb3BlcmF0aW9uIGRlZmluZWQuIEFkZCBnZW5lcmljX3Nl
+dGxlYXNlIHRvCj4gcmV0YWluIHRoZSBhYmlsaXR5IHRvIHNldCBsZWFzZXMgb24gdGhpcyBmaWxl
+c3lzdGVtLgo+IAo+IFNpZ25lZC1vZmYtYnk6IEplZmYgTGF5dG9uIDxqbGF5dG9uQGtlcm5lbC5v
+cmc+Cj4gLS0tCj4gZnMvamZzL2ZpbGUuYyAgfCAyICsrCj4gZnMvamZzL25hbWVpLmMgfCAyICsr
+Cj4gMiBmaWxlcyBjaGFuZ2VkLCA0IGluc2VydGlvbnMoKykKCkFja2VkLWJ5OiBSaWNoYXJkIFdl
+aW5iZXJnZXIgPHJpY2hhcmRAbm9kLmF0PgoKVGhhbmtzLAovL3JpY2hhcmQKCgpfX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpKZnMtZGlzY3Vzc2lvbiBtYWls
+aW5nIGxpc3QKSmZzLWRpc2N1c3Npb25AbGlzdHMuc291cmNlZm9yZ2UubmV0Cmh0dHBzOi8vbGlz
+dHMuc291cmNlZm9yZ2UubmV0L2xpc3RzL2xpc3RpbmZvL2pmcy1kaXNjdXNzaW9uCg==
