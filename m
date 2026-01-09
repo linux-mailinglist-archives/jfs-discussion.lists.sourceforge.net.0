@@ -2,37 +2,37 @@ Return-Path: <jfs-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+jfs-discussion@lfdr.de
 Delivered-To: lists+jfs-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id B9F06D07F6A
-	for <lists+jfs-discussion@lfdr.de>; Fri, 09 Jan 2026 09:50:19 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 05D43D07F82
+	for <lists+jfs-discussion@lfdr.de>; Fri, 09 Jan 2026 09:51:04 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.sourceforge.net; s=beta; h=Content-Transfer-Encoding:Content-Type:Cc:
 	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
 	Subject:MIME-Version:References:In-Reply-To:Message-ID:To:From:Date:Sender:
 	Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender
 	:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=5zqwxckwKCYj2REluSCHw8ctpGsOCtxbXzvlCdh9v7E=; b=D/W2WSOmflFXUYird7Vqnrmhao
-	3yHDBpnDvbAvBIArlBp050k9C4hn+OsVA43RmPd13pWRuccKcQh610zSpDHoBw0OH63KH8YaVZ5Kp
-	sM6+LulvhvCWw4p5cab+VeRi3OC9mXjAWPbp8sns3NX05REn73FFFFHDdKx3OWcYq5To=;
+	bh=sPR3Z4aISk4DKzRYRRcRpQ6WmFMn3PwHf4cNLOeVjLA=; b=CbTiY8TuuUkKBibLxVe+HF0FPd
+	zGYPdxGXogPsV1ltQtR+QHDkxtH1GV3jKxO5QAf6ql2S5iQmGJbduKGYM9RFB0YDFfnbFQHB6+sdB
+	H8cAOeEzextM9qRw0uA7NPGK0eUrtKxCakLNnXQwdlmirdQfJAsmJKLLyazmz+QaISJM=;
 Received: from [127.0.0.1] (helo=sfs-ml-1.v29.lw.sourceforge.com)
 	by sfs-ml-1.v29.lw.sourceforge.com with esmtp (Exim 4.95)
 	(envelope-from <jfs-discussion-bounces@lists.sourceforge.net>)
-	id 1ve8Bd-0007u7-PU;
-	Fri, 09 Jan 2026 08:49:37 +0000
+	id 1ve8CP-00088v-3f;
+	Fri, 09 Jan 2026 08:50:25 +0000
 Received: from [172.30.29.66] (helo=mx.sourceforge.net)
  by sfs-ml-1.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
  TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (Exim 4.95)
- (envelope-from <richard@nod.at>) id 1ve8B0-0007hd-Pe
+ (envelope-from <richard@nod.at>) id 1ve8Bk-0007wn-U0
  for jfs-discussion@lists.sourceforge.net;
- Fri, 09 Jan 2026 08:48:58 +0000
+ Fri, 09 Jan 2026 08:49:44 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=sourceforge.net; s=x; h=Content-Transfer-Encoding:Content-Type:MIME-Version
  :Subject:References:In-Reply-To:Message-ID:Cc:To:From:Date:Sender:Reply-To:
  Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
  Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=hi6ZwA10nQeVVLVHSSKeYbeNuIjA/FZtJQ9gk2yneq8=; b=GtMmlGv9GW14z1pcOFVpNhGPtf
- ic3Z9LqZ0zVtasV4B9d1SAhzUCLJI887w7TWmj0X3TBizoVf+IE0HxnTUfE01ylqpxbX4UKuMsY4T
- FCmr9F0uKzBzCHCwATbY6gH8qGiK8JO6i3LFT10WEa0ICUuKmNFzhuSJSyOHaItrFT0U=;
+ bh=N/41tXXyY58j/0Q0aF6dwot8qrNnnx5K4/PUFO5dd2g=; b=GO2HiXyfhWh1ThkUfF5Os7uGck
+ qMJKEFBGXFDgKRI2wgPuk88yAz7wwSDgJMcxW6P5mqNGkQIn+qJ8FXjDoxw6EqpNWNjQgXwQor8gh
+ MyQuZSCBf4t7lndGTIYxUL4uIPkP4Psqy2O/6U3gTWbahvSfIfOLfD8WT8QmAForpW90=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
  h=Content-Transfer-Encoding:Content-Type:MIME-Version:Subject:References:
@@ -40,43 +40,42 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
  :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
  List-Post:List-Owner:List-Archive;
- bh=hi6ZwA10nQeVVLVHSSKeYbeNuIjA/FZtJQ9gk2yneq8=; b=UC9B/sOxvbBs3LErxgZ9VWzQnq
- fjXJBWulhumsMbBV40Gn+woa+omBwWotddCt3WwO4DCic4LV3Y4HEMWnNMoWsrTMvtT3kpmaufSjH
- sE5oNR+D9Qbiy1HocBXw98xrEFlREdUov8oENH3p1BvijG1f5ELPztCl9CWEOKz+tNps=;
+ bh=N/41tXXyY58j/0Q0aF6dwot8qrNnnx5K4/PUFO5dd2g=; b=PO5AJuEOspv6dlwKMuQ9c2/WdG
+ teQMofpqH+ZsjU+RYGNOT9Vlt3CvPi5k3wD/fK4vTsdqapkpZ4wjOzkQkQBHsvWTRdefaYDVoHypM
+ yAwhD+dxxxIpwF9I+QNS07ez9kWj+lHpv8xPipXRUYZuCa0P4JSOoPQ5JwP9qvlB8IXw=;
 Received: from mailout.nod.at ([116.203.167.152] helo=lithops.sigma-star.at)
  by sfi-mx-2.v28.lw.sourceforge.com with esmtps
  (TLS1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.95)
- id 1ve8B0-00046r-6O for jfs-discussion@lists.sourceforge.net;
- Fri, 09 Jan 2026 08:48:58 +0000
+ id 1ve8Bk-00049D-B1 for jfs-discussion@lists.sourceforge.net;
+ Fri, 09 Jan 2026 08:49:44 +0000
 Received: from localhost (localhost [127.0.0.1])
- by lithops.sigma-star.at (Postfix) with ESMTP id A047A29ABD6;
- Fri,  9 Jan 2026 09:48:46 +0100 (CET)
+ by lithops.sigma-star.at (Postfix) with ESMTP id 13ABC29ABD6;
+ Fri,  9 Jan 2026 09:49:33 +0100 (CET)
 Received: from lithops.sigma-star.at ([127.0.0.1])
  by localhost (lithops.sigma-star.at [127.0.0.1]) (amavisd-new, port 10032)
- with ESMTP id PY1yWc1jnPcz; Fri,  9 Jan 2026 09:48:46 +0100 (CET)
+ with ESMTP id ATPC6i9pWXNZ; Fri,  9 Jan 2026 09:49:32 +0100 (CET)
 Received: from localhost (localhost [127.0.0.1])
- by lithops.sigma-star.at (Postfix) with ESMTP id E0C0628F9E9;
- Fri,  9 Jan 2026 09:48:45 +0100 (CET)
+ by lithops.sigma-star.at (Postfix) with ESMTP id A870929ABDC;
+ Fri,  9 Jan 2026 09:49:32 +0100 (CET)
 Received: from lithops.sigma-star.at ([127.0.0.1])
  by localhost (lithops.sigma-star.at [127.0.0.1]) (amavisd-new, port 10026)
- with ESMTP id BZO6SamqYTTM; Fri,  9 Jan 2026 09:48:45 +0100 (CET)
+ with ESMTP id 50WQivczX82j; Fri,  9 Jan 2026 09:49:32 +0100 (CET)
 Received: from lithops.sigma-star.at (lithops.sigma-star.at [195.201.40.130])
- by lithops.sigma-star.at (Postfix) with ESMTP id 30C7B29859D;
- Fri,  9 Jan 2026 09:48:45 +0100 (CET)
-Date: Fri, 9 Jan 2026 09:48:45 +0100 (CET)
+ by lithops.sigma-star.at (Postfix) with ESMTP id 2BED829ABCA;
+ Fri,  9 Jan 2026 09:49:32 +0100 (CET)
+Date: Fri, 9 Jan 2026 09:49:32 +0100 (CET)
 From: Richard Weinberger <richard@nod.at>
 To: Jeff Layton <jlayton@kernel.org>
-Message-ID: <393733638.88534.1767948525135.JavaMail.zimbra@nod.at>
-In-Reply-To: <218403128.88322.1767944438487.JavaMail.zimbra@nod.at>
+Message-ID: <235309114.88543.1767948572101.JavaMail.zimbra@nod.at>
+In-Reply-To: <20260108-setlease-6-20-v1-11-ea4dec9b67fa@kernel.org>
 References: <20260108-setlease-6-20-v1-0-ea4dec9b67fa@kernel.org>
- <20260108-setlease-6-20-v1-12-ea4dec9b67fa@kernel.org>
- <218403128.88322.1767944438487.JavaMail.zimbra@nod.at>
+ <20260108-setlease-6-20-v1-11-ea4dec9b67fa@kernel.org>
 MIME-Version: 1.0
 X-Originating-IP: [195.201.40.130]
 X-Mailer: Zimbra 8.8.12_GA_3807 (ZimbraWebClient - FF146
  (Linux)/8.8.12_GA_3809)
-Thread-Topic: add setlease file operation
-Thread-Index: Ijb4veyM6wDb0tIeqxd8skdz5qkIYBNsmijj
+Thread-Topic: jffs2: add setlease file operation
+Thread-Index: 1XfajkHy73ekR8RzfIWJ5jINW3wE1g==
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: Spam detection software, running on the system "sfi-spamd-2.hosts.colo.sdot.me",
  has NOT identified this incoming email as spam.  The original
@@ -84,16 +83,18 @@ X-Spam-Report: Spam detection software, running on the system "sfi-spamd-2.hosts
  similar future email.  If you have any questions, see
  the administrator of that system for details.
  
- Content preview:  ----- Ursprüngliche Mail ----- > Von: "richard" <richard@nod.at>
-    >> --- >> fs/jfs/file.c | 2 ++ >> fs/jfs/namei.c | 2 ++ >> 2 files changed,
-    4 insertions(+) > > Acked-by: Richard Weinberger <richard@ [...] 
+ Content preview:  ----- Ursprüngliche Mail ----- > Signed-off-by: Jeff Layton
+    <jlayton@kernel.org> > --- > fs/jffs2/dir.c | 2 ++ > fs/jffs2/file.c | 2
+   ++ > 2 files changed, 4 insertions(+) Acked-by: Richard Weinberger <richard@nod.at>
+    
  
  Content analysis details:   (0.0 points, 5.0 required)
  
   pts rule name              description
  ---- ---------------------- --------------------------------------------------
-X-Headers-End: 1ve8B0-00046r-6O
-Subject: Re: [Jfs-discussion] [PATCH 12/24] jfs: add setlease file operation
+X-Headers-End: 1ve8Bk-00049D-B1
+Subject: Re: [Jfs-discussion] [PATCH 11/24] jffs2: add setlease file
+ operation
 X-BeenThere: jfs-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -159,11 +160,11 @@ Content-Type: text/plain; charset="utf-8"
 Content-Transfer-Encoding: base64
 Errors-To: jfs-discussion-bounces@lists.sourceforge.net
 
-LS0tLS0gVXJzcHLDvG5nbGljaGUgTWFpbCAtLS0tLQo+IFZvbjogInJpY2hhcmQiIDxyaWNoYXJk
-QG5vZC5hdD4KPj4gLS0tCj4+IGZzL2pmcy9maWxlLmMgIHwgMiArKwo+PiBmcy9qZnMvbmFtZWku
-YyB8IDIgKysKPj4gMiBmaWxlcyBjaGFuZ2VkLCA0IGluc2VydGlvbnMoKykKPiAKPiBBY2tlZC1i
-eTogUmljaGFyZCBXZWluYmVyZ2VyIDxyaWNoYXJkQG5vZC5hdD4KCldob29wcyEgSSBtZWFudCB0
-byByZXBseSB0byB0aGUgamZmczIgcGF0Y2guLi4KClRoYW5rcywKLy9yaWNoYXJkCgoKX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18KSmZzLWRpc2N1c3Npb24g
-bWFpbGluZyBsaXN0Ckpmcy1kaXNjdXNzaW9uQGxpc3RzLnNvdXJjZWZvcmdlLm5ldApodHRwczov
-L2xpc3RzLnNvdXJjZWZvcmdlLm5ldC9saXN0cy9saXN0aW5mby9qZnMtZGlzY3Vzc2lvbgo=
+LS0tLS0gVXJzcHLDvG5nbGljaGUgTWFpbCAtLS0tLQo+IFNpZ25lZC1vZmYtYnk6IEplZmYgTGF5
+dG9uIDxqbGF5dG9uQGtlcm5lbC5vcmc+Cj4gLS0tCj4gZnMvamZmczIvZGlyLmMgIHwgMiArKwo+
+IGZzL2pmZnMyL2ZpbGUuYyB8IDIgKysKPiAyIGZpbGVzIGNoYW5nZWQsIDQgaW5zZXJ0aW9ucygr
+KQoKQWNrZWQtYnk6IFJpY2hhcmQgV2VpbmJlcmdlciA8cmljaGFyZEBub2QuYXQ+CgpUaGFua3Ms
+Ci8vcmljaGFyZAoKCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fCkpmcy1kaXNjdXNzaW9uIG1haWxpbmcgbGlzdApKZnMtZGlzY3Vzc2lvbkBsaXN0cy5zb3Vy
+Y2Vmb3JnZS5uZXQKaHR0cHM6Ly9saXN0cy5zb3VyY2Vmb3JnZS5uZXQvbGlzdHMvbGlzdGluZm8v
+amZzLWRpc2N1c3Npb24K
