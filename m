@@ -2,106 +2,108 @@ Return-Path: <jfs-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+jfs-discussion@lfdr.de
 Delivered-To: lists+jfs-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9688AD20090
+	by mail.lfdr.de (Postfix) with ESMTPS id 91B0BD2008F
 	for <lists+jfs-discussion@lfdr.de>; Wed, 14 Jan 2026 17:03:23 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.sourceforge.net; s=beta; h=Content-Transfer-Encoding:Content-Type:Cc:
 	Reply-To:From:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:Subject:MIME-Version:References:In-Reply-To:
-	Message-ID:To:Date:Sender:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=3a2kJFtFeAydCwh8GoAvHTwWallqFl+Os/QtQXcWI/0=; b=WDy8JsbQW9CmOyYadUmQEGgV+U
-	5PuVbw/SJmdrfvHGUysiM+Nbozj4mwjpK+MEfXOmvEsPgZP5iWulIqpLVnnRTUZWG5iBEdxl8y8VC
-	xLeeC2t7AS8mEbKH+O0NZcFKlwd7quvqHbvvc9jrl+oLi2FwGOXCuGAHHj/25n0EijD8=;
+	List-Unsubscribe:List-Id:Subject:References:In-Reply-To:Message-Id:To:Date:
+	MIME-Version:Sender:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=BfHoBlmC8rjYEsdSwQC2CR7a9w7wvqXlK8e1KuBUsuc=; b=dg4dbndaBPcPFKJIObtbBaMZq9
+	dh0cgpy1U4OmYpCGHzAGatIFWFUjy2pTpsAvMzmCXHD/7FXDUdOVQkDnJmEd62SMpxzE2IxIQAy01
+	ZfyPu4hyixGDOP+aPtZc4lnuegbM5sIIXMtnN7Pn3RueG+bCF+pyfbGQ7DfGgFULBtTg=;
 Received: from [127.0.0.1] (helo=sfs-ml-3.v29.lw.sourceforge.com)
 	by sfs-ml-3.v29.lw.sourceforge.com with esmtp (Exim 4.95)
 	(envelope-from <jfs-discussion-bounces@lists.sourceforge.net>)
-	id 1vg3KY-0002Pv-Vj;
-	Wed, 14 Jan 2026 16:02:46 +0000
+	id 1vg3KZ-0002Q1-93;
+	Wed, 14 Jan 2026 16:02:47 +0000
 Received: from [172.30.29.66] (helo=mx.sourceforge.net)
- by sfs-ml-1.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
+ by sfs-ml-2.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
  TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (Exim 4.95)
- (envelope-from <david.laight.linux@gmail.com>) id 1vg16a-00068r-4H
+ (envelope-from <cel@kernel.org>) id 1vg2FC-0005PH-DS
  for jfs-discussion@lists.sourceforge.net;
- Wed, 14 Jan 2026 13:40:12 +0000
+ Wed, 14 Jan 2026 14:53:11 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=sourceforge.net; s=x; h=Content-Transfer-Encoding:Content-Type:MIME-Version
- :References:In-Reply-To:Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:
- Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
- Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
+ d=sourceforge.net; s=x; h=Content-Transfer-Encoding:Content-Type:Subject:
+ References:In-Reply-To:Message-Id:Cc:To:From:Date:MIME-Version:Sender:
+ Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender
+ :Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=5wmwTmp5IFzHOcZYUSrwZ2WCFgEOIoQQbhD/zBC9MXc=; b=cEQ0nHQmPYDIqjct2BEmpyzEsH
- eEs0KcE377pnwsZs7nh76fIZs7iRHUNlvGTIW4El57wAMoywKa0fVK/acfrHHdJEL7mEkNijrEJIK
- N6SXkSskpk5qvN1BHWo/Ixi1BikDH+hpvzXMAdFrrqNf4V/P27PcWck6QCBw63NLuqpA=;
+ bh=xKp2mRX639Xrl1hAH25cMUgzI8E+8kaOkrWTmDZ9gJI=; b=UnUXCwsPAT3hnhULpr8kxyUxm5
+ 4Oa1UytK9ux+3iVuNZDtbA5gGC0VD9LV6/45vJNxqlK6BsJ2jbfvdmJkvAHiA/+adTBe7LYfHW/Yn
+ Oc6ucmjIz9WeCwZlnaGunZBZCffua9Fh+v28IIhosCDoD84Mffs69Fl954yGqByWo0hg=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
- h=Content-Transfer-Encoding:Content-Type:MIME-Version:References:
- In-Reply-To:Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:Content-ID:
+ h=Content-Transfer-Encoding:Content-Type:Subject:References:In-Reply-To:
+ Message-Id:Cc:To:From:Date:MIME-Version:Sender:Reply-To:Content-ID:
  Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
  :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
  List-Post:List-Owner:List-Archive;
- bh=5wmwTmp5IFzHOcZYUSrwZ2WCFgEOIoQQbhD/zBC9MXc=; b=AlbASagCfuk2On2i6A9gXkGJY1
- HyrgaJGqSzmF0YIO7S6tVeQ/P+9m2/ZaoOrDAeVSQS6QSscucSbwbQWwsEuDC644TduGvnNScQqpB
- rqSa6/pkEfIo5SmUUkmajlIHL6zXGRGh/ajTNZpDyn1nEejmr7T81liW4B41gqF5eEJY=;
-Received: from mail-wr1-f50.google.com ([209.85.221.50])
+ bh=xKp2mRX639Xrl1hAH25cMUgzI8E+8kaOkrWTmDZ9gJI=; b=D2R+Qcw7DAdwV6jIoHPw+irOxw
+ DjQUZm0cw1qB2W9e1PyJLqT5apeXdoXZb1P79GGqJZ//zGMIZTfGQAmDJfSJmj6XdPm7VlG3hXHaV
+ NB3MePuAxrKy8gGxj2hi6OXb+6DZ8Cq57o7sqCRz3oUrNlnvC8LKjiEfaABp0eQKrpIE=;
+Received: from sea.source.kernel.org ([172.234.252.31])
  by sfi-mx-2.v28.lw.sourceforge.com with esmtps
- (TLS1.2:ECDHE-RSA-AES128-GCM-SHA256:128) (Exim 4.95)
- id 1vg16V-0007Wx-V2 for jfs-discussion@lists.sourceforge.net;
- Wed, 14 Jan 2026 13:40:08 +0000
-Received: by mail-wr1-f50.google.com with SMTP id
- ffacd0b85a97d-430f2ee2f00so5174300f8f.3
- for <jfs-discussion@lists.sourceforge.net>;
- Wed, 14 Jan 2026 05:40:07 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=gmail.com; s=20230601; t=1768398001; x=1769002801; darn=lists.sourceforge.net;
- h=content-transfer-encoding:mime-version:references:in-reply-to
- :message-id:subject:cc:to:from:date:from:to:cc:subject:date
- :message-id:reply-to;
- bh=5wmwTmp5IFzHOcZYUSrwZ2WCFgEOIoQQbhD/zBC9MXc=;
- b=eG//6mW17QblSHenuEumSShFTvEl8X06d2loJZ/8VkY12GaUd3XhbabGhAEjVes1qb
- PAt1qNht1/FIEJt7MtIXT3ZIBULjDPdrOHjS/eWeXetZ3qLh7j31qUVOC67A67afbfc2
- FJptFZwjmYcY6DyS1XaW8sxQUxIm1IYUhYUgI6yhh2pIS5GPesX0ipLBDp6h9E2X0AbZ
- 9LO+vebRaCsFwI9HJ+fqebR+HF4XC+2KGLUVEJ+DgZp5mepbm9dLxw7Caa1jyGjKUZH5
- 5Fev2QggHjuIgELxRLKDwG9ZB200lWvyDspQNIgoKAeo3kWX2cZhERJUCPo4DVSMOz0M
- L7jw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20230601; t=1768398001; x=1769002801;
- h=content-transfer-encoding:mime-version:references:in-reply-to
- :message-id:subject:cc:to:from:date:x-gm-gg:x-gm-message-state:from
- :to:cc:subject:date:message-id:reply-to;
- bh=5wmwTmp5IFzHOcZYUSrwZ2WCFgEOIoQQbhD/zBC9MXc=;
- b=mrUABh0WUnsBrd/PbcmkQgcLJawiviCh5HhTFNYRlAu1lWVtPzZRvDljJAQ6Jk/XI9
- kAJndIwQa3rWwAEFM2agmQ1GVy9QiwQQzJHqd+jxqUCYN1W1Uo5XZs9CNeOaKjGzlI2J
- ITYMcDq2WVrUpVTIClfgTMJ5S4qrbK7JsYUKnpn9mU2BdIIjhB9wwwKbOUzsjiRtt81N
- doSAJKvmiNOfOmQGi45jsvZvdcWygCcMkDrJTzIkEUZONJCMCIYx/rS+r0g9uSumOrd2
- FtRshUOy+/09s+IOgO4/fmS+pFOO0mMRaJWFjNJCfDHm/1YSSL3SBVxC0qaKsZhjCVHp
- F3RA==
-X-Forwarded-Encrypted: i=1;
- AJvYcCVZLopY8KRfVOCufhSy+gsjCnHO30YN9ZPVeRHmcI9hOYSekuD7PZrQvnz/Q3PIZ8SbVzEEbMYm2OYaa22pMw==@lists.sourceforge.net
-X-Gm-Message-State: AOJu0YyIlCLPGzPzCj97DHy4Kye6mVCix9ymfx44QlyBYKWNNo/FwM78
- hl+agEUzI4iqDA8Qap3Ed9fcXwRtk5ek4WIk2C42yZcoNaPD6RY8Ff7j
-X-Gm-Gg: AY/fxX7P90oflkvZe+fhRfzfBS1bsIdpHp0o9ZrjmKTc0+FYIRf+t9yH1IdISiUNwjD
- hfoI0wPxxfk+kDsdVjilsh8iSPDoNScqlgcZjbtSXHQztkkZIbL/t7/9DqttEec7+5hVfQlu6As
- JcvG81oxPe/XP2PcT2KSzVhrKaEfyJVJjHC+9294XigtHPMVHitw8rCFI6StYdsHqRYxtAFr9+6
- 4c+wfz6UtDHGLln7G+x3hK2Bf7iOyPJ3pQ6hbj5UFDF6TpK956B88B3lIzqBS656aKaTjigIrHn
- ZFNMJC2z9vs41iHZ1qvg88wvqYzI3rmGEP1WA9hA0eQFKFwxUvkGUmlUv62jWkte0f7sqgzQWvR
- 2PYKHSeEQiTM9L/YaaXFFVREu6lJFMzh61s5mM3iCY7H+eISazp/cJCYrssb9PUiHDGQnisuv8j
- XiwwyGjDXcuSVAp/N+mSi9M/kA9ERTP7HlvnPD/W6AiIvY1KfNpqBW
-X-Received: by 2002:a5d:53c9:0:b0:432:5bf9:cf2e with SMTP id
- ffacd0b85a97d-4342c3ef274mr2643750f8f.13.1768398001040; 
- Wed, 14 Jan 2026 05:40:01 -0800 (PST)
-Received: from pumpkin (82-69-66-36.dsl.in-addr.zen.co.uk. [82.69.66.36])
- by smtp.gmail.com with ESMTPSA id
- ffacd0b85a97d-432bd5edd51sm50238105f8f.29.2026.01.14.05.39.59
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 14 Jan 2026 05:40:00 -0800 (PST)
-Date: Wed, 14 Jan 2026 13:39:55 +0000
-To: Amir Goldstein <amir73il@gmail.com>
-Message-ID: <20260114133955.0a9f5cd3@pumpkin>
-In-Reply-To: <CAOQ4uxhMjitW_DC9WK9eku51gE1Ft+ENhD=qq3uehwrHO=RByA@mail.gmail.com>
-References: <20260108-setlease-6-20-v1-0-ea4dec9b67fa@kernel.org>
- <m3mywef74xhcakianlrovrnaadnhzhfqjfusulkcnyioforfml@j2xnk7dzkmv4>
- <8af369636c32b868f83669c49aea708ca3b894ac.camel@kernel.org>
+ (TLS1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.95)
+ id 1vg2FC-0002Y1-J6 for jfs-discussion@lists.sourceforge.net;
+ Wed, 14 Jan 2026 14:53:11 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+ by sea.source.kernel.org (Postfix) with ESMTP id F2BBC443F1;
+ Wed, 14 Jan 2026 14:53:04 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 57505C4AF0B;
+ Wed, 14 Jan 2026 14:53:03 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=k20201202; t=1768402384;
+ bh=xKp2mRX639Xrl1hAH25cMUgzI8E+8kaOkrWTmDZ9gJI=;
+ h=Date:From:To:Cc:In-Reply-To:References:Subject:From;
+ b=DZ4y7792kI2/4eE5VVTlEy1lwDXzIzeNr2iEGyaqqLMYTsvcSbwt8Bo54fNz4FJrn
+ 0CjwDI0jj4BZuie48fZ7X8+pogo2m9xuuz5ZkTKqUIWIWMb2aIahe3YDQ1OihTAsyY
+ /kSWP/W66gnEfc8gA/3bKKHjBBbzoJWIQmXxEVECLl86oIEVeZwN3rPLewdZXpBLNQ
+ 4fSATB6J5Q9DEK8WPOow5IHJKdW2q5kckZv1zfwvc/Rackn2AgyYEGYSEHyTHq4m0k
+ xzDo6EcWHnQhpPR7xCjV8fvC1tdohxaCsjAOcYPGoYZ1/+HzD4MzDToJBxFdCh/tru
+ OSjQsEWq0CzTg==
+Received: from phl-compute-10.internal (phl-compute-10.internal [10.202.2.50])
+ by mailfauth.phl.internal (Postfix) with ESMTP id 336F2F4006C;
+ Wed, 14 Jan 2026 09:53:02 -0500 (EST)
+Received: from phl-imap-15 ([10.202.2.104])
+ by phl-compute-10.internal (MEProxy); Wed, 14 Jan 2026 09:53:02 -0500
+X-ME-Sender: <xms:zq1naTL1verRbjv_OWxa5Qc-mm-FLSmJA57qMcDcmimTH1ZvOzAH8Q>
+ <xme:zq1naR8m09634GxEfslbvAHAt_pWKVnj5KMHoclqQy7tbEop4pkDoeOLzOlsxhgNB
+ mfBJSAWYD5Pvqo039VVHWSbWWy3lMiNKfBSo92wfzMrsG2olMOvAg>
+X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgeefgedrtddtgdduvdefgeejucetufdoteggodetrf
+ dotffvucfrrhhofhhilhgvmecuhfgrshhtofgrihhlpdfurfetoffkrfgpnffqhgenuceu
+ rghilhhouhhtmecufedttdenucesvcftvggtihhpihgvnhhtshculddquddttddmnecujf
+ gurhepofggfffhvfevkfgjfhfutgfgsehtqhertdertdejnecuhfhrohhmpedfvehhuhgt
+ khcunfgvvhgvrhdfuceotggvlheskhgvrhhnvghlrdhorhhgqeenucggtffrrghtthgvrh
+ hnpefghfeguedtieeiveeugfevtdejfedukeevgfeggfeugfetgfeltdetueelleelteen
+ ucevlhhushhtvghrufhiiigvpedtnecurfgrrhgrmhepmhgrihhlfhhrohhmpegthhhutg
+ hklhgvvhgvrhdomhgvshhmthhprghuthhhphgvrhhsohhnrghlihhthidqudeifeegleel
+ leehledqfedvleekgeegvdefqdgtvghlpeepkhgvrhhnvghlrdhorhhgsehfrghsthhmrg
+ hilhdrtghomhdpnhgspghrtghpthhtohephedtpdhmohguvgepshhmthhpohhuthdprhgt
+ phhtthhopegrlhesrghlrghrshgvnhdrnhgvthdprhgtphhtthhopegrshhmrgguvghush
+ estghouggvfihrvggtkhdrohhrghdprhgtphhtthhopehlihhnuhigpghoshhssegtrhhu
+ uggvsgihthgvrdgtohhmpdhrtghpthhtoheprgguihhlghgvrhdrkhgvrhhnvghlseguih
+ hlghgvrhdrtggrpdhrtghpthhtohepshhlrghvrgesughusggvhihkohdrtghomhdprhgt
+ phhtthhopehjlhgsvggtsegvvhhilhhplhgrnhdrohhrghdprhgtphhtthhopehmrghrkh
+ esfhgrshhhvghhrdgtohhmpdhrtghpthhtoheptghlmhesfhgsrdgtohhmpdhrtghpthht
+ ohepnhhitghosehflhhugihnihgtrdhnvght
+X-ME-Proxy: <xmx:zq1naR4y4iRWBYp2xNnePgUOv-GP1DKdFBDtDf2IC92YRobPvv4XvQ>
+ <xmx:zq1nabUvbFcuW5qmkDCHdiOne_rDLza_EAZnBtIjXTs4zRVj0oLKWg>
+ <xmx:zq1naXWzKUDfqjQXjvlbqUXobr95Hj_DLjvdFTe0pPxUPWiy4igVFQ>
+ <xmx:zq1naQSTIJTSkNqnVd_7fRCRq8sinXvVVU9WAT0_5jXT_tt716hBhQ>
+ <xmx:zq1naeeXm4Q-EAh1xMCT3MnzrdKd7lPZzpjsKoHgYV0ycvEqIoQrdgKM>
+Feedback-ID: ifa6e4810:Fastmail
+Received: by mailuser.phl.internal (Postfix, from userid 501)
+ id F2C75780070; Wed, 14 Jan 2026 09:53:01 -0500 (EST)
+X-Mailer: MessagingEngine.com Webmail Interface
+MIME-Version: 1.0
+X-ThreadId: ArEQL-Tet5yZ
+Date: Wed, 14 Jan 2026 09:52:34 -0500
+To: "Amir Goldstein" <amir73il@gmail.com>, "Jeff Layton" <jlayton@kernel.org>
+Message-Id: <5a1730f3-30ff-403c-a460-09a81f9616c5@app.fastmail.com>
+In-Reply-To: <CAOQ4uxhDwR7dteLaqURX+9CooGM1hA7PL6KnVmSwX11ZdKxZTA@mail.gmail.com>
+References: <8af369636c32b868f83669c49aea708ca3b894ac.camel@kernel.org>
  <CAOQ4uxgD+Sgbbg9K2U0SF9TyUOBb==Z6auShUWc4FfPaDCQ=rg@mail.gmail.com>
  <ec78bf021fa1f6243798945943541ba171e337e7.camel@kernel.org>
  <cb5d2da6-2090-4639-ad96-138342bba56d@oracle.com>
@@ -111,35 +113,33 @@ References: <20260108-setlease-6-20-v1-0-ea4dec9b67fa@kernel.org>
  <ce418800f06aa61a7f47f0d19394988f87a3da07.camel@kernel.org>
  <aWc3mwBNs8LNFN4W@infradead.org>
  <CAOQ4uxhMjitW_DC9WK9eku51gE1Ft+ENhD=qq3uehwrHO=RByA@mail.gmail.com>
-X-Mailer: Claws Mail 4.1.1 (GTK 3.24.38; arm-unknown-linux-gnueabihf)
-MIME-Version: 1.0
-X-Spam-Score: 0.8 (/)
+ <aWeUv2UUJ_NdgozS@infradead.org>
+ <c40862cd65a059ad45fa88f5473722ea5c5f70a5.camel@kernel.org>
+ <CAOQ4uxhDwR7dteLaqURX+9CooGM1hA7PL6KnVmSwX11ZdKxZTA@mail.gmail.com>
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: Spam detection software,
- running on the system "sfi-spamd-1.hosts.colo.sdot.me", 
+ running on the system "sfi-spamd-2.hosts.colo.sdot.me", 
  has NOT identified this incoming email as spam.  The original
  message has been attached to this so you can view it or label
  similar future email.  If you have any questions, see
  the administrator of that system for details.
- Content preview:  On Wed, 14 Jan 2026 10:34:04 +0100 Amir Goldstein wrote: >
- On Wed, Jan 14, 2026 at 7:28 AM Christoph Hellwig wrote: > > > > On Tue,
- Jan 13, 2026 at 12:06:42PM -0500, Jeff Layton wrote: > > > Fair point, but
- it's not that hard to conceive of a situation wh [...] 
- Content analysis details:   (0.8 points, 5.0 required)
+ Content preview:  On Wed, Jan 14, 2026, at 9:14 AM, Amir Goldstein wrote: >
+ On Wed, Jan 14, 2026 at 2:41 PM Jeff Layton <jlayton@kernel.org> wrote: >
+ Very well then. > How about EXPORT_OP_PERSISTENT_HANDLES? > > This terminology
+ is from the NFS protocol spec and it is also used > to describe the same
+ trait in SMB protocol. > >> The problem there [...] 
+ Content analysis details:   (-0.2 points, 5.0 required)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature,
- not necessarily valid
  -0.1 DKIM_VALID_AU Message has a valid DKIM or DK signature from author's
  domain
- 0.0 FREEMAIL_FROM Sender email is commonly abused enduser mail provider
- [david.laight.linux(at)gmail.com]
- 1.0 FORGED_GMAIL_RCVD 'From' gmail.com does not match 'Received' headers
- 0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.221.50 listed in wl.mailspike.net]
-X-Headers-End: 1vg16V-0007Wx-V2
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature,
+ not necessarily valid
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - High trust sender
+X-Headers-End: 1vg2FC-0002Y1-J6
 X-Mailman-Approved-At: Wed, 14 Jan 2026 16:02:44 +0000
 Subject: Re: [Jfs-discussion] [PATCH 00/24] vfs: require filesystems to
  explicitly opt-in to lease support
@@ -154,8 +154,8 @@ List-Post: <mailto:jfs-discussion@lists.sourceforge.net>
 List-Help: <mailto:jfs-discussion-request@lists.sourceforge.net?subject=help>
 List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/jfs-discussion>, 
  <mailto:jfs-discussion-request@lists.sourceforge.net?subject=subscribe>
-From: David Laight via Jfs-discussion <jfs-discussion@lists.sourceforge.net>
-Reply-To: David Laight <david.laight.linux@gmail.com>
+From: Chuck Lever via Jfs-discussion <jfs-discussion@lists.sourceforge.net>
+Reply-To: Chuck Lever <cel@kernel.org>
 Cc: Latchesar Ionkov <lucho@ionkov.net>, Dave Kleikamp <shaggy@kernel.org>,
  Alexander Aring <alex.aring@gmail.com>, Jan Kara <jack@suse.cz>,
  Paulo Alcantara <pc@manguebit.org>, Sandeep Dhavale <dhavale@google.com>,
@@ -171,18 +171,18 @@ Cc: Latchesar Ionkov <lucho@ionkov.net>, Dave Kleikamp <shaggy@kernel.org>,
  Xiubo Li <xiubli@redhat.com>, Yue Hu <zbestahu@gmail.com>,
  Miklos Szeredi <miklos@szeredi.hu>, Richard Weinberger <richard@nod.at>,
  Mark Fasheh <mark@fasheh.com>, devel@lists.orangefs.org,
- Hugh Dickins <hughd@google.com>, "Matthew Wilcox
- \(Oracle\)" <willy@infradead.org>, ntfs3@lists.linux.dev,
+ Hugh Dickins <hughd@google.com>,
+ "Matthew Wilcox \(Oracle\)" <willy@infradead.org>, ntfs3@lists.linux.dev,
  Christoph Hellwig <hch@infradead.org>, Joseph Qi <joseph.qi@linux.alibaba.com>,
  linux-mm@kvack.org, linux-btrfs@vger.kernel.org, Gao Xiang <xiang@kernel.org>,
  linux-ext4@vger.kernel.org, Salah Triki <salah.triki@gmail.com>,
  Carlos Maiolino <cem@kernel.org>, Dominique Martinet <asmadeus@codewreck.org>,
  Shyam Prasad N <sprasad@microsoft.com>, samba-technical@lists.samba.org,
- linux-doc@vger.kernel.org, linux-cifs@vger.kernel.org,
- Chao Yu <chao@kernel.org>, linux-nfs@vger.kernel.org,
- Tom Talpey <tom@talpey.com>, ocfs2-devel@lists.linux.dev,
- Bharath SM <bharathsm@microsoft.com>, linux-nilfs@vger.kernel.org,
- David Sterba <dsterba@suse.com>, Alexander Viro <viro@zeniv.linux.org.uk>,
+ linux-cifs@vger.kernel.org, Chao Yu <chao@kernel.org>,
+ linux-nfs@vger.kernel.org, Tom Talpey <tom@talpey.com>,
+ ocfs2-devel@lists.linux.dev, Bharath SM <bharathsm@microsoft.com>,
+ linux-nilfs@vger.kernel.org, David Sterba <dsterba@suse.com>,
+ Alexander Viro <viro@zeniv.linux.org.uk>,
  Baolin Wang <baolin.wang@linux.alibaba.com>,
  Jeffle Xu <jefflexu@linux.alibaba.com>, Jaegeuk Kim <jaegeuk@kernel.org>,
  ceph-devel@vger.kernel.org, Eric Van Hensbergen <ericvh@kernel.org>,
@@ -190,10 +190,10 @@ Cc: Latchesar Ionkov <lucho@ionkov.net>, Dave Kleikamp <shaggy@kernel.org>,
  OGAWA Hirofumi <hirofumi@mail.parknet.co.jp>,
  Andreas Gruenbacher <agruenba@redhat.com>, Hans de Goede <hansg@kernel.org>,
  gfs2@lists.linux.dev, Christian Brauner <brauner@kernel.org>,
- linux-f2fs-devel@lists.sourceforge.net, Theodore Ts'o <tytso@mit.edu>,
+ linux-f2fs-devel@lists.sourceforge.net, Theodore Tso <tytso@mit.edu>,
  Luis de Bethencourt <luisbg@kernel.org>, Nicolas Pitre <nico@fluxnic.net>,
  linux-erofs@lists.ozlabs.org, v9fs@lists.linux.dev,
- Jonathan Corbet <corbet@lwn.net>, Jeff Layton <jlayton@kernel.org>,
+ Jonathan Corbet <corbet@lwn.net>, linux-doc@vger.kernel.org,
  linux-kernel@vger.kernel.org, Namjae Jeon <linkinjeon@kernel.org>,
  Steve French <sfrench@samba.org>, Chuck Lever <chuck.lever@oracle.com>,
  Hongbo Li <lihongbo22@huawei.com>, Anna Schumaker <anna@kernel.org>,
@@ -206,46 +206,26 @@ Content-Type: text/plain; charset="utf-8"
 Content-Transfer-Encoding: base64
 Errors-To: jfs-discussion-bounces@lists.sourceforge.net
 
-T24gV2VkLCAxNCBKYW4gMjAyNiAxMDozNDowNCArMDEwMApBbWlyIEdvbGRzdGVpbiA8YW1pcjcz
-aWxAZ21haWwuY29tPiB3cm90ZToKCj4gT24gV2VkLCBKYW4gMTQsIDIwMjYgYXQgNzoyOOKAr0FN
-IENocmlzdG9waCBIZWxsd2lnIDxoY2hAaW5mcmFkZWFkLm9yZz4gd3JvdGU6Cj4gPgo+ID4gT24g
-VHVlLCBKYW4gMTMsIDIwMjYgYXQgMTI6MDY6NDJQTSAtMDUwMCwgSmVmZiBMYXl0b24gd3JvdGU6
-ICAKPiA+ID4gRmFpciBwb2ludCwgYnV0IGl0J3Mgbm90IHRoYXQgaGFyZCB0byBjb25jZWl2ZSBv
-ZiBhIHNpdHVhdGlvbiB3aGVyZQo+ID4gPiBzb21lb25lIGluYWR2ZXJ0YW50bHkgZXhwb3J0cyBj
-Z3JvdXBmcyBvciBzb21lIHNpbWlsYXIgZmlsZXN5c3RlbTogIAo+ID4KPiA+IFN1cmUuICBCdXQg
-aG93IGlzIHRoaXMgd29yc2UgdGhhbiBhY2NpZGVudGFsbHkgZXhwb3J0aW5nIHByaXZhdGUgZGF0
-YQo+ID4gb3IgYW55IG90aGVyIG1pc2NvbmZpZ3VyYXRpb24/Cj4gPiAgCj4gCj4gTXkgUE9WIGlz
-IHRoYXQgaXQgaXMgbGVzcyBhYm91dCBzZWN1cml0eSAoYXMgeW91ciBxdWVzdGlvbiBpbXBsaWVz
-KSwgYW5kCj4gbW9yZSBhYm91dCBjb3JyZWN0bmVzcy4KPiAKPiBUaGUgc3BlY2lhbCB0aGluZyBh
-Ym91dCBORlMgZXhwb3J0LCBhcyBvcHBvc2VkIHRvLCBzYXksIGtzbWJkLCBpcwo+IG9wZW4gYnkg
-ZmlsZSBoYW5kbGUsIElPVywgdGhlIGV4cG9ydF9vcGVyYXRpb25zLgo+IAo+IEkgcGVyY2VpdmUg
-dGhpcyBhcyBhIHZlcnkgc3RyYW5nZSBhbmQgdW5kZXNpcmVkIHNpdHVhdGlvbiB3aGVuIE5GUwo+
-IGZpbGUgaGFuZGxlcyBkbyBub3QgYmVoYXZlIGFzIHBlcnNpc3RlbnQgZmlsZSBoYW5kbGVzLgo+
-IAo+IEZVU0Ugd2lsbCBnbGFkbHkgb3BlbiBhIGNvbXBsZXRlbHkgZGlmZmVyZW50IG9iamVjdCwg
-c29tZXRpbWVzCj4gYSBkaWZmZXJlbnQgb2JqZWN0IHR5cGUgZnJvbSBhbiBORlMgY2xpZW50IHJl
-cXVlc3QgYWZ0ZXIgc2VydmVyIHJlc3RhcnQuCj4gCj4gSSBzdXBwb3NlIHRoYXQgdGhlIHNhbWUg
-Y291bGQgaGFwcGVuIHdpdGggdG1wZnMgYW5kIHByb2JhYmx5IHNvbWUKPiBvdGhlciBmcy4KLi4u
-CgpZb3UgcmVhbGx5IHNob3VsZG4ndCBiZSBhbGxvd2VkIHRvIG5mcyBleHBvcnQgYSBmcyB0aGF0
-IGRvZXNuJ3QgaGF2ZQpwZXJzaXN0ZW50IGZpbGUgaGFuZGxlcy4KCkV2ZW4gZmlsZSBoYW5kbGVz
-IGNvbnRhaW5pbmcgJ3JhbmRvbScgbnVtYmVycyBjYW4gYmUgcHJvYmxlbWF0aWMuClRoZSBkZWZh
-dWx0IHVzZWQgdG8gYmUgJ2hhcmQgbW91bnRzJyAobm90IHN1cmUgaXQgaXMgYW55IG1vcmUpIHdo
-aWNoCmNhdXNlZCB0aGUgY2xpZW50IChub3QgTGludXggLSB0b28gbG9uZyBhZ28pIHRvIGxvb3Ag
-aW4ga2VybmVsCmZvcmV2ZXIgd2FpdGluZyBmb3IgdGhlIHNlcnZlciB0byByZWNvdmVyIHRoZSBm
-aWxlc3lzdGVtIGV4cG9ydC4KVGhlIG9ubHkgcmVzb2x1dGlvbiBvbiB0aGF0IHN5c3RlbSB3YXMg
-dG8gcmVib290IHRoZSBjbGllbnQuCgpBdCBsZWFzdCBuZnMgY2FuIG5vdyB1c2UgdmFyaWFibGUg
-c2l6ZSBmaWxlLWlkcy4KV2hlbiBJIHdhcyBmaXhpbmcgc29tZSBjb2RlIHRoYXQgZXhwb3J0ZWQg
-YSBsYXllcmVkIGZzIChJIHByZXR0eQptdWNoIHJld3JvdGUgdGhlIGZzIGF0IHRoZSBzYW1lIHRp
-bWUpIEkgZGlkIHJhbmRvbWlzZSB0aGUgZmlsZS1pZHMKc28gdGhleSAoaG9wZWZ1bGx5KSBiZWNh
-bWUgaW52YWxpZCBhZnRlciBhIHJlYm9vdCAob25seSBhZnRlciBzdWZmZXJpbmcKc29tZSB2ZXJ5
-IGNvcnJ1cHQgZmlsZXN5c3RlbXMhKQpJIGZvdW5kIG5mcyAob3ZlciB1ZHApIGhhZCBzb21lIGlu
-dGVyZXN0aW5nICdmZWF0dXJlcyc6Ci0gSWYgeW91IGV4cG9ydCBwYXJ0IG9mIGEgZnMgeW91IGV4
-cG9ydCBhbGwgb2YgaXQuCiAgKEVzcGVjaWFsbHkgc2luY2UgdGhpcyBwcmVkYXRlZCB0aGUgcmFu
-ZG9taXNhdGlvbiBvZiB0aGUgaW5vZGUKICBnZW5lcmF0aW9uIG51bWJlci4pCi0gSWYgeW91IGdp
-dmUgYW55b25lIGFjY2VzcyB5b3UgZ2l2ZSBldmVyeW9uZSBhY2Nlc3MuCi0gSWYgeW91IGdpdmUg
-YW55b25lIHdyaXRlIGFjY2VzcyB5b3UgZ2l2ZSBldmVyeW9uZSB3cml0ZSBhY2Nlc3MuClRoZSBs
-YXR0ZXIgdHdvIGJlY2F1c2UgdGhlICdtb3VudCcgcHJvdG9jb2wgd2Fzbid0IHJlYWxseSBuZWVk
-ZWQKYW5kIHRoZSBzZXJ2ZXIgZGlkbid0IGNhcmUgd2hlcmUgcmVxdWVzdHMgY2FtZSBmcm9tLgoK
-CURhdmlkCgoKCgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-XwpKZnMtZGlzY3Vzc2lvbiBtYWlsaW5nIGxpc3QKSmZzLWRpc2N1c3Npb25AbGlzdHMuc291cmNl
-Zm9yZ2UubmV0Cmh0dHBzOi8vbGlzdHMuc291cmNlZm9yZ2UubmV0L2xpc3RzL2xpc3RpbmZvL2pm
-cy1kaXNjdXNzaW9uCg==
+CgpPbiBXZWQsIEphbiAxNCwgMjAyNiwgYXQgOToxNCBBTSwgQW1pciBHb2xkc3RlaW4gd3JvdGU6
+Cj4gT24gV2VkLCBKYW4gMTQsIDIwMjYgYXQgMjo0MeKAr1BNIEplZmYgTGF5dG9uIDxqbGF5dG9u
+QGtlcm5lbC5vcmc+IHdyb3RlOgoKPiBWZXJ5IHdlbGwgdGhlbi4KPiBIb3cgYWJvdXQgRVhQT1JU
+X09QX1BFUlNJU1RFTlRfSEFORExFUz8KPgo+IFRoaXMgdGVybWlub2xvZ3kgaXMgZnJvbSB0aGUg
+TkZTIHByb3RvY29sIHNwZWMgYW5kIGl0IGlzIGFsc28gdXNlZAo+IHRvIGRlc2NyaWJlIHRoZSBz
+YW1lIHRyYWl0IGluIFNNQiBwcm90b2NvbC4KPgo+PiBUaGUgcHJvYmxlbSB0aGVyZSBpcyB0aGF0
+IHdlIHZlcnkgbXVjaCBkbyB3YW50IHRvIGtlZXAgdG1wZnMKPj4gZXhwb3J0YWJsZSwgYnV0IGl0
+IGRvZXNuJ3QgaGF2ZSBzdGFibGUgaGFuZGxlcyAocGVyLXNlKS4KPgo+IFRoaW5raW5nIG91dCBs
+b3VkIC0KPiBJdCB3b3VsZCBiZSBtaXNndWlkZWQgdG8gZGVjbGFyZSB0bXBmcyBhcwo+IEVYUE9S
+VF9PUF9QRVJTSVNURU5UX0hBTkRMRVMKPiBhbmQgcmVncmVzc2luZyBleHBvcnRzIG9mIHRtcGZz
+IHdpbGwgc3VyZWx5IG5vdCBnbyB1bm5vdGljZWQuCj4KPiBIb3cgYWJvdXQgYWRkaW5nIGFuIGV4
+cG9ydGZzIG9wdGlvbiAicGVyc2lzdGVudF9oYW5kbGVzIiwKPiB1c2UgaXQgYXMgZGVmYXVsdCBJ
+RkYgbmVpdGhlciBvcHRpb25zIGZzaWQ9LCB1dWlkPSBhcmUgdXNlZCwKPiBzbyB0aGF0IGF0IGxl
+YXN0IHdoZW4gZXhwb3J0aW5nIHRtcGZzLCBleHBvcnRmcyAtdiB3aWxsIHNob3cKPiAibm9fcGVy
+c2lzdGVudF9oYW5kbGVzIiBleHBsaWNpdGx5PwoKSSB0aGluayB3ZSBuZWVkIHRvIGJlIGNhcmVm
+dWwuIHRtcGZzIGZpbGVoYW5kbGVzIGFsaWduIHF1aXRlCndlbGwgd2l0aCB0aGUgdHJhZGl0aW9u
+YWwgZGVmaW5pdGlvbiBvZiBwZXJzaXN0ZW50IGZpbGVoYW5kbGVzLgp0bXBmcyBmaWxlaGFuZGxl
+cyBsaXZlIGFzIGxvbmcgYXMgdG1wZnMgZmlsZXMgZG8sIGFuZCB0aGF0IGlzCmFsbCB0aGF0IGlz
+IHJlcXVpcmVkIHRvIGJlIGNvbnNpZGVyZWQgInBlcnNpc3RlbnQiLgoKCi0tIApDaHVjayBMZXZl
+cgoKCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCkpmcy1k
+aXNjdXNzaW9uIG1haWxpbmcgbGlzdApKZnMtZGlzY3Vzc2lvbkBsaXN0cy5zb3VyY2Vmb3JnZS5u
+ZXQKaHR0cHM6Ly9saXN0cy5zb3VyY2Vmb3JnZS5uZXQvbGlzdHMvbGlzdGluZm8vamZzLWRpc2N1
+c3Npb24K
