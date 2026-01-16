@@ -2,37 +2,37 @@ Return-Path: <jfs-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+jfs-discussion@lfdr.de
 Delivered-To: lists+jfs-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0E97BD2A3F1
-	for <lists+jfs-discussion@lfdr.de>; Fri, 16 Jan 2026 03:41:04 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 561B8D2FC9D
+	for <lists+jfs-discussion@lfdr.de>; Fri, 16 Jan 2026 11:46:52 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.sourceforge.net; s=beta; h=Content-Transfer-Encoding:Content-Type:Cc:
-	Reply-To:From:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:References:
-	Message-ID:To:Date:Sender:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=dyvarsLxzjZuQrtWCGN9cdKjFu2rf19hKtMbgnF28rw=; b=SjyQrjEMa9plLwMfuOI/pfZw4M
-	0ktKl7rA3yT5qJySTGJ/jOk85JLG+Bm6sO5LSF7lcVIhEaRrkgn1yP1y1qGCW7/hSImxvOSBY1uA+
-	a471uEZxinSPLU6yme6zh+YjPcu1yA+PP+X1YVk9pChKhpVrspbbSTy0yYBELMso9+us=;
-Received: from [127.0.0.1] (helo=sfs-ml-2.v29.lw.sourceforge.com)
-	by sfs-ml-2.v29.lw.sourceforge.com with esmtp (Exim 4.95)
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	Subject:In-Reply-To:MIME-Version:References:Message-ID:To:From:Date:Sender:
+	Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender
+	:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=Wid9lL7GZuqxw5as2SXNYGVc4edU7QfAvoQrr2+5S5c=; b=DI8SFi0EWd4vQo/F7kIDZcV/rF
+	aSH8rzNxRNxyTS1PcE/4i1BPViXyCy/RU3cxONOjiZRJkl8Eccnh3jEN6PG4BXdZWxiYpBFedrQmM
+	nuRltjhLsI20iTFUsx8i0uOT531a/gak8WT+ThMrpFRzaNKqpzchFXrVTqHYlg3uJCvU=;
+Received: from [127.0.0.1] (helo=sfs-ml-1.v29.lw.sourceforge.com)
+	by sfs-ml-1.v29.lw.sourceforge.com with esmtp (Exim 4.95)
 	(envelope-from <jfs-discussion-bounces@lists.sourceforge.net>)
-	id 1vgZlB-0002iL-OK;
-	Fri, 16 Jan 2026 02:40:26 +0000
+	id 1vghLF-0007jN-VS;
+	Fri, 16 Jan 2026 10:46:09 +0000
 Received: from [172.30.29.66] (helo=mx.sourceforge.net)
- by sfs-ml-2.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
+ by sfs-ml-1.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
  TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (Exim 4.95)
- (envelope-from <tytso@mit.edu>) id 1vgZl9-0002i3-SB
+ (envelope-from <jack@suse.cz>) id 1vghLE-0007iP-5u
  for jfs-discussion@lists.sourceforge.net;
- Fri, 16 Jan 2026 02:40:24 +0000
+ Fri, 16 Jan 2026 10:46:08 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=sourceforge.net; s=x; h=In-Reply-To:Content-Type:MIME-Version:References:
  Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:Content-Transfer-Encoding:
  Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
  Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=e7+ZkXTf+cEt8COK7ZiBm7FpEGCZkXwmsqQ2YKKQgYQ=; b=I28ikb+Q+2Ca5rQQVy67rIRAeQ
- AW+ZcCC1ioe8liGh3jC2SEpMvCNOcfL+qSm0dp4goRtFHAsIsExpEHKBn4nwx74b1S9iaPJYoaz+E
- fm884ANJThxt7HJt3Srmn021nBE/IH8Aq/W6Vr7yms2y4C6yyNF/ZarXbjACAjVcVJHA=;
+ bh=WJuLQN1/VqCQ5MzAXUwztUOsWD7c/6Ri8BvtTGrLxeQ=; b=EMDD+064qMyaUXQqj9owunudwe
+ WO8ZQkwdElakl6WWOU7WBQqb9n0oCwTxQLyrlQek+Dd8aXBTqVqoswvmeL6g2g2ZQ1SsHW+uL668Y
+ szJh5b26yipBmzlv/IJKK6sB7WKriw9E7q+cHjMtXn7QsgH10grlWcobc8KT81WL/81s=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
  h=In-Reply-To:Content-Type:MIME-Version:References:Message-ID:Subject:Cc:To
@@ -40,61 +40,126 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
  :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
  List-Post:List-Owner:List-Archive;
- bh=e7+ZkXTf+cEt8COK7ZiBm7FpEGCZkXwmsqQ2YKKQgYQ=; b=COU+Dcoq4hdm9m2n63Yx7wepAi
- bbJ5CJgyjNpH87JZlXiQMuOjZrU8LxaDQ0a2PBFWpJx7HsGzCmXQ5OmLSAgElKOY6ogkH68F2tOvP
- e7XSWHlzs3gV9b6c7+SP8d67wkR7Eay6AvHCtJqRa4pE76+v5MKuXH5JhedF/hWsuwUM=;
-Received: from outgoing-auth-1.mit.edu ([18.9.28.11] helo=outgoing.mit.edu)
+ bh=WJuLQN1/VqCQ5MzAXUwztUOsWD7c/6Ri8BvtTGrLxeQ=; b=B+NKmMDOmc8L6XDszGm+lZL4Bg
+ ToPZq3dUD1pmoY+SJKXRHDiOnpheFeJ2L2DGj4vuG0IpXRRqzGIiQ+ZFlhBQ8cBMmuA6u2SIajDpv
+ 0sZoxIwBk5joVMz4V7LqQigLQTjgdAASi8ULRCPIyj5Gpj+qMRa9N53CAoaJWHkJ1dJw=;
+Received: from smtp-out1.suse.de ([195.135.223.130])
  by sfi-mx-2.v28.lw.sourceforge.com with esmtps
- (TLS1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.95)
- id 1vgZlA-0007Tc-5q for jfs-discussion@lists.sourceforge.net;
- Fri, 16 Jan 2026 02:40:24 +0000
-Received: from macsyma.thunk.org ([37.140.223.154]) (authenticated bits=0)
- (User authenticated as tytso@ATHENA.MIT.EDU)
- by outgoing.mit.edu (8.14.7/8.12.4) with ESMTP id 60G2M4QF012987
- (version=TLSv1/SSLv3 cipher=DHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
- Thu, 15 Jan 2026 21:22:06 -0500
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=mit.edu; s=outgoing;
- t=1768530137; bh=e7+ZkXTf+cEt8COK7ZiBm7FpEGCZkXwmsqQ2YKKQgYQ=;
- h=Date:From:Subject:Message-ID:MIME-Version:Content-Type;
- b=CKqH0dMhvlhBzX4Ihkt/n9SLGrWfxX4mn8QeWQB6i/JMAynZ/PpZnz2J7QzS+Bs5J
- LHYjeS4eVH/+ftuv6ryVG1XbTNkEBDxBvsdirBrG5SJDvA92Anx4u3N3DTR/EiIhC5
- D7kuOYWuR+wEG+aT+6digJ4U2JgVCouMwzPvCca8UfAIhFjTH/mNpBMF8a1mqTO4TR
- J3Ca6tRIWBeIDKXxVFNRB7jtbFt4susYUTGwXkPso02XWNw91PlkdVzLKiVnspunHr
- roxMctbg4I/pbwnOXw13om2WtDRQ1218LHXRi7gxhCYQcXc4EIsE/wDw9NxL3LC14F
- SKf5FnkqXpe0Q==
-Received: by macsyma.thunk.org (Postfix, from userid 15806)
- id A12EE54D8E5B; Thu, 15 Jan 2026 17:22:03 -0900 (AKST)
-Date: Thu, 15 Jan 2026 17:22:03 -0900
+ (TLS1.2:ECDHE-RSA-AES128-GCM-SHA256:128) (Exim 4.95)
+ id 1vghLD-0007NF-FX for jfs-discussion@lists.sourceforge.net;
+ Fri, 16 Jan 2026 10:46:08 +0000
+Received: from imap1.dmz-prg2.suse.org (imap1.dmz-prg2.suse.org
+ [IPv6:2a07:de40:b281:104:10:150:64:97])
+ (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+ key-exchange X25519 server-signature RSA-PSS (4096 bits) server-digest SHA256)
+ (No client certificate requested)
+ by smtp-out1.suse.de (Postfix) with ESMTPS id A863F336A7;
+ Fri, 16 Jan 2026 10:45:55 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=suse.cz; s=susede2_rsa;
+ t=1768560355; h=from:from:reply-to:date:date:message-id:message-id:to:to:cc:cc:
+ mime-version:mime-version:content-type:content-type:
+ in-reply-to:in-reply-to:references:references;
+ bh=WJuLQN1/VqCQ5MzAXUwztUOsWD7c/6Ri8BvtTGrLxeQ=;
+ b=NM/kSQUl/op+YKS2s6eKZXfE9Glh5kkfMDr9vCIJsC9FWe94PjEgFUboHs0ZKmqO49bUWq
+ GGnb+NiraWiGN0Yc7/GMi+PXcDAXYotsEPDcTaiNspuD+pdYjp5VDufc+cwlF6YloG+qs3
+ uSGr4retqv1mJn56UXxhwHQeZysiV4E=
+DKIM-Signature: v=1; a=ed25519-sha256; c=relaxed/relaxed; d=suse.cz;
+ s=susede2_ed25519; t=1768560355;
+ h=from:from:reply-to:date:date:message-id:message-id:to:to:cc:cc:
+ mime-version:mime-version:content-type:content-type:
+ in-reply-to:in-reply-to:references:references;
+ bh=WJuLQN1/VqCQ5MzAXUwztUOsWD7c/6Ri8BvtTGrLxeQ=;
+ b=YPA70NjZ53LaWpg1U5dSvh7NjJzYXWZLUEwmMsCnm1ykEpF60x4KxRv4KCQctMxjo+19kZ
+ QfNXpE3F5HGTWWBA==
+Authentication-Results: smtp-out1.suse.de;
+ dkim=pass header.d=suse.cz header.s=susede2_rsa header.b="NM/kSQUl";
+ dkim=pass header.d=suse.cz header.s=susede2_ed25519 header.b=YPA70NjZ
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=suse.cz; s=susede2_rsa;
+ t=1768560355; h=from:from:reply-to:date:date:message-id:message-id:to:to:cc:cc:
+ mime-version:mime-version:content-type:content-type:
+ in-reply-to:in-reply-to:references:references;
+ bh=WJuLQN1/VqCQ5MzAXUwztUOsWD7c/6Ri8BvtTGrLxeQ=;
+ b=NM/kSQUl/op+YKS2s6eKZXfE9Glh5kkfMDr9vCIJsC9FWe94PjEgFUboHs0ZKmqO49bUWq
+ GGnb+NiraWiGN0Yc7/GMi+PXcDAXYotsEPDcTaiNspuD+pdYjp5VDufc+cwlF6YloG+qs3
+ uSGr4retqv1mJn56UXxhwHQeZysiV4E=
+DKIM-Signature: v=1; a=ed25519-sha256; c=relaxed/relaxed; d=suse.cz;
+ s=susede2_ed25519; t=1768560355;
+ h=from:from:reply-to:date:date:message-id:message-id:to:to:cc:cc:
+ mime-version:mime-version:content-type:content-type:
+ in-reply-to:in-reply-to:references:references;
+ bh=WJuLQN1/VqCQ5MzAXUwztUOsWD7c/6Ri8BvtTGrLxeQ=;
+ b=YPA70NjZ53LaWpg1U5dSvh7NjJzYXWZLUEwmMsCnm1ykEpF60x4KxRv4KCQctMxjo+19kZ
+ QfNXpE3F5HGTWWBA==
+Received: from imap1.dmz-prg2.suse.org (localhost [127.0.0.1])
+ (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+ key-exchange X25519 server-signature RSA-PSS (4096 bits) server-digest SHA256)
+ (No client certificate requested)
+ by imap1.dmz-prg2.suse.org (Postfix) with ESMTPS id 965853EA65;
+ Fri, 16 Jan 2026 10:45:55 +0000 (UTC)
+Received: from dovecot-director2.suse.de ([2a07:de40:b281:106:10:150:64:167])
+ by imap1.dmz-prg2.suse.org with ESMTPSA id 6CqxJOMWamkVCwAAD6G6ig
+ (envelope-from <jack@suse.cz>); Fri, 16 Jan 2026 10:45:55 +0000
+Received: by quack3.suse.cz (Postfix, from userid 1000)
+ id 30814A091D; Fri, 16 Jan 2026 11:45:55 +0100 (CET)
+Date: Fri, 16 Jan 2026 11:45:55 +0100
+From: Jan Kara <jack@suse.cz>
 To: Jeff Layton <jlayton@kernel.org>
-Message-ID: <20260116022203.GE19200@macsyma.local>
+Message-ID: <6bajjyslarqrjr2brzyy6bgrmqrdxyhc42q7pfmz42d4y4kjtn@fod6fi4uf6qv>
 References: <20260115-exportfs-nfsd-v1-0-8e80160e3c0c@kernel.org>
- <20260115-exportfs-nfsd-v1-3-8e80160e3c0c@kernel.org>
+ <20260115-exportfs-nfsd-v1-1-8e80160e3c0c@kernel.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20260115-exportfs-nfsd-v1-3-8e80160e3c0c@kernel.org>
+In-Reply-To: <20260115-exportfs-nfsd-v1-1-8e80160e3c0c@kernel.org>
+X-Spam-Score: -2.51
+X-Spamd-Result: default: False [-2.51 / 50.00]; BAYES_HAM(-3.00)[100.00%];
+ SUSPICIOUS_RECIPS(1.50)[]; NEURAL_HAM_LONG(-1.00)[-1.000];
+ MID_RHS_NOT_FQDN(0.50)[];
+ R_DKIM_ALLOW(-0.20)[suse.cz:s=susede2_rsa,suse.cz:s=susede2_ed25519];
+ NEURAL_HAM_SHORT(-0.20)[-1.000]; MIME_GOOD(-0.10)[text/plain];
+ MX_GOOD(-0.01)[]; MIME_TRACE(0.00)[0:+];
+ RBL_SPAMHAUS_BLOCKED_OPENRESOLVER(0.00)[2a07:de40:b281:104:10:150:64:97:from]; 
+ RCVD_COUNT_THREE(0.00)[3]; RCVD_TLS_LAST(0.00)[];
+ FUZZY_RATELIMITED(0.00)[rspamd.com]; ARC_NA(0.00)[];
+ DKIM_SIGNED(0.00)[suse.cz:s=susede2_rsa,suse.cz:s=susede2_ed25519];
+ FREEMAIL_ENVRCPT(0.00)[gmail.com]; DKIM_TRACE(0.00)[suse.cz:+];
+ TO_DN_SOME(0.00)[]; TO_MATCH_ENVRCPT_SOME(0.00)[];
+ DNSWL_BLOCKED(0.00)[2a07:de40:b281:104:10:150:64:97:from];
+ FROM_EQ_ENVFROM(0.00)[]; FROM_HAS_DN(0.00)[];
+ FREEMAIL_CC(0.00)[kernel.org,zeniv.linux.org.uk,oracle.com,brown.name,redhat.com,talpey.com,gmail.com,google.com,linux.alibaba.com,linux-foundation.org,mit.edu,dilger.ca,suse.com,huawei.com,vivo.com,dubeyko.com,fb.com,squashfs.org.uk,samba.org,manguebit.org,microsoft.com,szeredi.hu,omnibond.com,fasheh.com,evilplan.org,paragon-software.com,infradead.org,nod.at,suse.cz,mail.parknet.co.jp,vger.kernel.org,kvack.org,lists.ozlabs.org,lists.samba.org,lists.orangefs.org,lists.linux.dev,lists.sourceforge.net,lists.infradead.org];
+ RCPT_COUNT_GT_50(0.00)[74]; TAGGED_RCPT(0.00)[];
+ R_RATELIMIT(0.00)[to_ip_from(RLpnapcpkwxdkc5mopt1ezhhna)];
+ RECEIVED_SPAMHAUS_BLOCKED_OPENRESOLVER(0.00)[2a07:de40:b281:106:10:150:64:167:received];
+ MISSING_XM_UA(0.00)[]; RCVD_VIA_SMTP_AUTH(0.00)[];
+ DBL_BLOCKED_OPENRESOLVER(0.00)[imap1.dmz-prg2.suse.org:rdns,
+ imap1.dmz-prg2.suse.org:helo, suse.com:email, suse.cz:dkim, suse.cz:email]
+X-Spam-Level: 
+X-Rspamd-Action: no action
+X-Rspamd-Queue-Id: A863F336A7
+X-Rspamd-Server: rspamd1.dmz-prg2.suse.org
+X-Spam-Flag: NO
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: Spam detection software,
- running on the system "sfi-spamd-1.hosts.colo.sdot.me", 
+ running on the system "sfi-spamd-2.hosts.colo.sdot.me", 
  has NOT identified this incoming email as spam.  The original
  message has been attached to this so you can view it or label
  similar future email.  If you have any questions, see
  the administrator of that system for details.
- Content preview:  On Thu, Jan 15, 2026 at 12:47:34PM -0500, Jeff Layton wrote:
- > Add the EXPORT_OP_STABLE_HANDLES flag to ext4 export operations to indicate
- > that this filesystem can be exported via NFS. > > Signed-of [...] 
+ Content preview:  On Thu 15-01-26 12:47:32, Jeff Layton wrote: > At one time, 
+ nfsd could take the presence of struct export_operations to > be an indicator
+ that a filesystem was exportable via NFS. Since then, a > lot [...] 
  Content analysis details:   (-0.2 points, 5.0 required)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.1 DKIM_VALID_AU Message has a valid DKIM or DK signature from author's
  domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature,
  not necessarily valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
-X-Headers-End: 1vgZlA-0007Tc-5q
-Subject: Re: [Jfs-discussion] [PATCH 03/29] ext4: add
- EXPORT_OP_STABLE_HANDLES flag to export operations
+X-Headers-End: 1vghLD-0007NF-FX
+Subject: Re: [Jfs-discussion] [PATCH 01/29] exportfs: add new
+ EXPORT_OP_STABLE_HANDLES flag
 X-BeenThere: jfs-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -106,8 +171,6 @@ List-Post: <mailto:jfs-discussion@lists.sourceforge.net>
 List-Help: <mailto:jfs-discussion-request@lists.sourceforge.net?subject=help>
 List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/jfs-discussion>, 
  <mailto:jfs-discussion-request@lists.sourceforge.net?subject=subscribe>
-From: Theodore Tso via Jfs-discussion <jfs-discussion@lists.sourceforge.net>
-Reply-To: Theodore Tso <tytso@mit.edu>
 Cc: Martin Brandenburg <martin@omnibond.com>,
  jfs-discussion@lists.sourceforge.net, Jan Kara <jack@suse.cz>,
  Paulo Alcantara <pc@manguebit.org>, Alex Markuze <amarkuze@redhat.com>,
@@ -124,7 +187,7 @@ Cc: Martin Brandenburg <martin@omnibond.com>,
  Hugh Dickins <hughd@google.com>, Dai Ngo <Dai.Ngo@oracle.com>,
  Ryusuke Konishi <konishi.ryusuke@gmail.com>,
  Christoph Hellwig <hch@infradead.org>, NeilBrown <neil@brown.name>,
- Ilya Dryomov <idryomov@gmail.com>, linux-ext4@vger.kernel.org,
+ Gao Xiang <xiang@kernel.org>, linux-ext4@vger.kernel.org,
  Salah Triki <salah.triki@gmail.com>, linux-mm@kvack.org,
  devel@lists.orangefs.org, Shyam Prasad N <sprasad@microsoft.com>,
  Olga Kornievskaia <okorniev@redhat.com>, linux-cifs@vger.kernel.org,
@@ -134,10 +197,10 @@ Cc: Martin Brandenburg <martin@omnibond.com>,
  David Sterba <dsterba@suse.com>, Alexander Viro <viro@zeniv.linux.org.uk>,
  Baolin Wang <baolin.wang@linux.alibaba.com>,
  Jeffle Xu <jefflexu@linux.alibaba.com>, Jaegeuk Kim <jaegeuk@kernel.org>,
- ceph-devel@vger.kernel.org, Gao Xiang <xiang@kernel.org>,
+ ceph-devel@vger.kernel.org, Ilya Dryomov <idryomov@gmail.com>,
  OGAWA Hirofumi <hirofumi@mail.parknet.co.jp>,
  Andreas Gruenbacher <agruenba@redhat.com>, gfs2@lists.linux.dev,
- Christian Brauner <brauner@kernel.org>,
+ Christian Brauner <brauner@kernel.org>, Theodore Ts'o <tytso@mit.edu>,
  Luis de Bethencourt <luisbg@kernel.org>,
  Joseph Qi <joseph.qi@linux.alibaba.com>, linux-erofs@lists.ozlabs.org,
  samba-technical@lists.samba.org, linux-kernel@vger.kernel.org,
@@ -152,13 +215,43 @@ Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Errors-To: jfs-discussion-bounces@lists.sourceforge.net
 
-On Thu, Jan 15, 2026 at 12:47:34PM -0500, Jeff Layton wrote:
-> Add the EXPORT_OP_STABLE_HANDLES flag to ext4 export operations to indicate
-> that this filesystem can be exported via NFS.
+On Thu 15-01-26 12:47:32, Jeff Layton wrote:
+> At one time, nfsd could take the presence of struct export_operations to
+> be an indicator that a filesystem was exportable via NFS. Since then, a
+> lot of filesystems have grown export operations in order to provide
+> filehandle support. Some of those (e.g. kernfs, pidfs, and nsfs) are not
+> suitable for export via NFS since they lack filehandles that are
+> stable across reboot.
+> 
+> Add a new EXPORT_OP_STABLE_HANDLES flag that indicates that the
+> filesystem supports perisistent filehandles, a requirement for nfs
+> export. While in there, switch to the BIT() macro for defining these
+> flags.
+> 
+> For now, the flag is not checked anywhere. That will come later after
+> we've added it to the existing filesystems that need to remain
+> exportable.
 > 
 > Signed-off-by: Jeff Layton <jlayton@kernel.org>
 
-Acked-by: Theodore Ts'o <tytso@mit.edu>
+...
+
+> -#define EXPORT_OP_FLUSH_ON_CLOSE	(0x20) /* fs flushes file data on close */
+> -#define EXPORT_OP_NOLOCKS		(0x40) /* no file locking support */
+> +#define EXPORT_OP_FLUSH_ON_CLOSE	BIT(5) /* fs flushes file data on close */
+> +#define EXPORT_OP_NOLOCKS		BIT(6) /* no file locking support */
+> +#define EXPORT_OP_STABLE_HANDLES	BIT(7) /* required for nfsd export */
+
+The comment "required for nfsd export" doesn't quite match the name. I'd
+change the comment to something like "file handles are stable across
+reboot". Otherwise feel free to add:
+
+Reviewed-by: Jan Kara <jack@suse.cz>
+
+								Honza
+-- 
+Jan Kara <jack@suse.com>
+SUSE Labs, CR
 
 
 _______________________________________________
