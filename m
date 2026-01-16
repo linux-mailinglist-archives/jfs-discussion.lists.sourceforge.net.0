@@ -2,37 +2,37 @@ Return-Path: <jfs-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+jfs-discussion@lfdr.de
 Delivered-To: lists+jfs-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id BD0C6D2FD13
-	for <lists+jfs-discussion@lfdr.de>; Fri, 16 Jan 2026 11:48:14 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 150C7D2FD22
+	for <lists+jfs-discussion@lfdr.de>; Fri, 16 Jan 2026 11:48:18 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.sourceforge.net; s=beta; h=Content-Transfer-Encoding:Content-Type:Cc:
 	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
 	Subject:In-Reply-To:MIME-Version:References:Message-ID:To:From:Date:Sender:
 	Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender
 	:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=1luQ8QRBlMXzurZuqqbJLrnmSrdj35gDWNxjm18zR0E=; b=ZgUXAIQORJrpav4AcCsaReD3a7
-	GnyNmb8cYMVxiUs/9cSn896Z+Xtukhvxff/To2b0ON/MqoS4+GEW15O+Q8wHvf0h78nu6aWk96aP4
-	4PWJCj9DPJsdaVuK9t4KHc4jXuioJbYXCDje79K2eyl1w2jet3wGYyQOYxLUA7Joe84o=;
-Received: from [127.0.0.1] (helo=sfs-ml-3.v29.lw.sourceforge.com)
-	by sfs-ml-3.v29.lw.sourceforge.com with esmtp (Exim 4.95)
+	bh=e41MhhRppD185aPDy79ocbFSv8CN9ar1eGguEDFhs68=; b=KXQoM0wEOvNhDK3HsxVIAQjN7s
+	k3FrFg1Kf9K8RV0FtqijvsI99Z20YgBUE8Jqtriw657pxVt282Zwdu0erNVK7VTJ0u/coJiPq99wQ
+	mh7Ldro7KlStxzrVl6VK6iSceJLfW4jN9egB1dq85qjpQbLNCv7TbBHVlJxa3SPw8aj0=;
+Received: from [127.0.0.1] (helo=sfs-ml-2.v29.lw.sourceforge.com)
+	by sfs-ml-2.v29.lw.sourceforge.com with esmtp (Exim 4.95)
 	(envelope-from <jfs-discussion-bounces@lists.sourceforge.net>)
-	id 1vghMi-00065B-Ob;
-	Fri, 16 Jan 2026 10:47:40 +0000
+	id 1vghMy-0008Bp-7T;
+	Fri, 16 Jan 2026 10:47:57 +0000
 Received: from [172.30.29.66] (helo=mx.sourceforge.net)
- by sfs-ml-3.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
+ by sfs-ml-2.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
  TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (Exim 4.95)
- (envelope-from <jack@suse.cz>) id 1vghMh-00064h-43
+ (envelope-from <jack@suse.cz>) id 1vghMx-0008BZ-7w
  for jfs-discussion@lists.sourceforge.net;
- Fri, 16 Jan 2026 10:47:39 +0000
+ Fri, 16 Jan 2026 10:47:56 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=sourceforge.net; s=x; h=In-Reply-To:Content-Type:MIME-Version:References:
  Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:Content-Transfer-Encoding:
  Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
  Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=2lMC4dV45oi1mlY5BXp8fQKt2SNPdaLd6Ilt8JO+JmQ=; b=QbWVsrdhslxSpwsLjL37j0J1gq
- jr+YjKlzw8IXmWd03V391tKYeSzShA6pSR5hhMDCULVZN1G+4dBhYxwFNttoIM8rubm3GLyrnDrzp
- T6rpmM1Cdsj40PRfPgBlPi5JhtvleWhJRznNKw7gXrFmKd+PjkLMoFmvsnJZ5x66mNko=;
+ bh=Sxv0JM+Kl8CyBCRTXuvFgjvy4sy6WbuKYSBt+sEG264=; b=TMwR4pyAWKwdda57/DhzIt8/4q
+ auLeZEj0r7rSIoDt1SHxm65dPDCfGYk+WM6OBqJWN/gY1I3W58PXz8gLS8f7fQoFmRcZ802CaLFrc
+ DGPM5i7aPtVJ7kH2trzM5djp4CI4hQIBdBkCw64o+CB/lrvFqRrntLDIAoG/RPE3tSC4=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
  h=In-Reply-To:Content-Type:MIME-Version:References:Message-ID:Subject:Cc:To
@@ -40,76 +40,76 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
  :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
  List-Post:List-Owner:List-Archive;
- bh=2lMC4dV45oi1mlY5BXp8fQKt2SNPdaLd6Ilt8JO+JmQ=; b=JDmxSTmrF/Zj1dhHcesQNCjDOC
- IfNIOLKNVqG1J3CxZWI5V0JwFpl4LsjlVmlC1vG+UxE0JvKg94ZDe1YpthyNQAse/t19eD/vN1pvZ
- uixPQ2l3lOgVhtfyzvuRT8xXsTNhzmme+4bTSpYJ5Eq5PuTJGhfE23sFRSVlfyHqSIM4=;
-Received: from smtp-out2.suse.de ([195.135.223.131])
+ bh=Sxv0JM+Kl8CyBCRTXuvFgjvy4sy6WbuKYSBt+sEG264=; b=JGJV/o4HM2ed1A1xbSXmqnUY2s
+ A42h8SJhsgg2lL1a9uChBz3u+b6/nnPaQeOiXet4bhIQ1zFcv9eHNV3hlCMji9Lyc8k1AFFQUpUDK
+ hG6bbMGFS0TECAbHVWa445hkGzyktvYi0TLvwAXrhI2/Bw6XAi+h9EY9AK6IkDigwCrA=;
+Received: from smtp-out1.suse.de ([195.135.223.130])
  by sfi-mx-2.v28.lw.sourceforge.com with esmtps
  (TLS1.2:ECDHE-RSA-AES128-GCM-SHA256:128) (Exim 4.95)
- id 1vghMc-0007SY-Bc for jfs-discussion@lists.sourceforge.net;
- Fri, 16 Jan 2026 10:47:34 +0000
+ id 1vghMx-0007TW-8t for jfs-discussion@lists.sourceforge.net;
+ Fri, 16 Jan 2026 10:47:55 +0000
 Received: from imap1.dmz-prg2.suse.org (imap1.dmz-prg2.suse.org
  [IPv6:2a07:de40:b281:104:10:150:64:97])
  (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
  key-exchange X25519 server-signature RSA-PSS (4096 bits) server-digest SHA256)
  (No client certificate requested)
- by smtp-out2.suse.de (Postfix) with ESMTPS id EF1155BCCB;
- Fri, 16 Jan 2026 10:47:27 +0000 (UTC)
+ by smtp-out1.suse.de (Postfix) with ESMTPS id E9DC4336BA;
+ Fri, 16 Jan 2026 10:47:48 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=suse.cz; s=susede2_rsa;
- t=1768560448; h=from:from:reply-to:date:date:message-id:message-id:to:to:cc:cc:
+ t=1768560469; h=from:from:reply-to:date:date:message-id:message-id:to:to:cc:cc:
  mime-version:mime-version:content-type:content-type:
  in-reply-to:in-reply-to:references:references;
- bh=2lMC4dV45oi1mlY5BXp8fQKt2SNPdaLd6Ilt8JO+JmQ=;
- b=Ftw/w48AH2FIze8c5NCpGY+5XO/vnHkjGCmtVV9PTeJB6y2k7VTfqEVHahDLJnyaun4vrT
- jZwEXiGVCIwZUyt3JbbArZXWmWmE5e5aZEA1Gruu+xovaSyAFw4iXisViVzre8n7BBI/TR
- X0JT5TV78n0RM2yYJOHbOFg0cunt5rE=
+ bh=Sxv0JM+Kl8CyBCRTXuvFgjvy4sy6WbuKYSBt+sEG264=;
+ b=NAigHHJefgDlX6mRySbG7B5iCmL36aEduQNmXj2EvsoYBrU7/VTo8/WNZrc+jBxVmYwek3
+ innlofjWnNur4gO64jxDUWQVk3pm53xXSuys1aTGTWpFtvR1Xd4ONEVhhk+B034xGJPlVB
+ qicHNvV2T2n+PsShv1UvN/CV4roIDw8=
 DKIM-Signature: v=1; a=ed25519-sha256; c=relaxed/relaxed; d=suse.cz;
- s=susede2_ed25519; t=1768560448;
+ s=susede2_ed25519; t=1768560469;
  h=from:from:reply-to:date:date:message-id:message-id:to:to:cc:cc:
  mime-version:mime-version:content-type:content-type:
  in-reply-to:in-reply-to:references:references;
- bh=2lMC4dV45oi1mlY5BXp8fQKt2SNPdaLd6Ilt8JO+JmQ=;
- b=/0mnXymQoI/apVzzXrkGOFLQrtf7ARYoukgV2ygH5/30E/hcAH6PZ8LZ8kwGADlW1g3sJT
- 6D8IQPk6mXId1oDA==
-Authentication-Results: smtp-out2.suse.de;
- dkim=pass header.d=suse.cz header.s=susede2_rsa header.b="Ftw/w48A";
- dkim=pass header.d=suse.cz header.s=susede2_ed25519 header.b="/0mnXymQ"
+ bh=Sxv0JM+Kl8CyBCRTXuvFgjvy4sy6WbuKYSBt+sEG264=;
+ b=wAaeVaZXVSmCCp/Ci8z3PCyFT3ubSWVNcMQNxpoFpxosJZqqzSMYJQTVEe91z3AbyBwRES
+ hgYeQWFl3/XVwuCg==
+Authentication-Results: smtp-out1.suse.de;
+ dkim=pass header.d=suse.cz header.s=susede2_rsa header.b=Vqd1Y4ym;
+ dkim=pass header.d=suse.cz header.s=susede2_ed25519 header.b=7Gjt5tLm
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=suse.cz; s=susede2_rsa;
- t=1768560448; h=from:from:reply-to:date:date:message-id:message-id:to:to:cc:cc:
+ t=1768560468; h=from:from:reply-to:date:date:message-id:message-id:to:to:cc:cc:
  mime-version:mime-version:content-type:content-type:
  in-reply-to:in-reply-to:references:references;
- bh=2lMC4dV45oi1mlY5BXp8fQKt2SNPdaLd6Ilt8JO+JmQ=;
- b=Ftw/w48AH2FIze8c5NCpGY+5XO/vnHkjGCmtVV9PTeJB6y2k7VTfqEVHahDLJnyaun4vrT
- jZwEXiGVCIwZUyt3JbbArZXWmWmE5e5aZEA1Gruu+xovaSyAFw4iXisViVzre8n7BBI/TR
- X0JT5TV78n0RM2yYJOHbOFg0cunt5rE=
+ bh=Sxv0JM+Kl8CyBCRTXuvFgjvy4sy6WbuKYSBt+sEG264=;
+ b=Vqd1Y4ymZFbiTB3W7/+krX5l7W5sxL7aNuHpBkJYaPRDypTZKpWZDKux+L+iC/0RWALCc4
+ Wl+guT58YT9lXH7G1B0VaMoNprxzvexhqTpUZyuh7OzKnAPdgG0Xbfk0EUDTxkORMoIq4Q
+ yoxjYuhlhqs/kbTHf/h7VyrYgdeD378=
 DKIM-Signature: v=1; a=ed25519-sha256; c=relaxed/relaxed; d=suse.cz;
- s=susede2_ed25519; t=1768560448;
+ s=susede2_ed25519; t=1768560468;
  h=from:from:reply-to:date:date:message-id:message-id:to:to:cc:cc:
  mime-version:mime-version:content-type:content-type:
  in-reply-to:in-reply-to:references:references;
- bh=2lMC4dV45oi1mlY5BXp8fQKt2SNPdaLd6Ilt8JO+JmQ=;
- b=/0mnXymQoI/apVzzXrkGOFLQrtf7ARYoukgV2ygH5/30E/hcAH6PZ8LZ8kwGADlW1g3sJT
- 6D8IQPk6mXId1oDA==
+ bh=Sxv0JM+Kl8CyBCRTXuvFgjvy4sy6WbuKYSBt+sEG264=;
+ b=7Gjt5tLmv8pwoPI4+tAhdd+IkW9SPQOahLPixnGtYy+H9R2r0zQYbKm8w1G8zq15sjbdtX
+ okoOuMG52JxjWaBA==
 Received: from imap1.dmz-prg2.suse.org (localhost [127.0.0.1])
  (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
  key-exchange X25519 server-signature RSA-PSS (4096 bits) server-digest SHA256)
  (No client certificate requested)
- by imap1.dmz-prg2.suse.org (Postfix) with ESMTPS id DF7B83EA63;
- Fri, 16 Jan 2026 10:47:27 +0000 (UTC)
+ by imap1.dmz-prg2.suse.org (Postfix) with ESMTPS id DAAB63EA63;
+ Fri, 16 Jan 2026 10:47:48 +0000 (UTC)
 Received: from dovecot-director2.suse.de ([2a07:de40:b281:106:10:150:64:167])
- by imap1.dmz-prg2.suse.org with ESMTPSA id sMCYNj8XamkZDAAAD6G6ig
- (envelope-from <jack@suse.cz>); Fri, 16 Jan 2026 10:47:27 +0000
+ by imap1.dmz-prg2.suse.org with ESMTPSA id JhtdNVQXamm8DAAAD6G6ig
+ (envelope-from <jack@suse.cz>); Fri, 16 Jan 2026 10:47:48 +0000
 Received: by quack3.suse.cz (Postfix, from userid 1000)
- id A8D37A091D; Fri, 16 Jan 2026 11:47:27 +0100 (CET)
-Date: Fri, 16 Jan 2026 11:47:27 +0100
+ id A1819A091D; Fri, 16 Jan 2026 11:47:48 +0100 (CET)
+Date: Fri, 16 Jan 2026 11:47:48 +0100
 From: Jan Kara <jack@suse.cz>
 To: Jeff Layton <jlayton@kernel.org>
-Message-ID: <epeo3w56c33kgxtx7jj6xyjl2gq3n67y6eqq4jlxfvg2qrgjod@3fn2xqpb66bw>
+Message-ID: <7ez6obuswq26r3fi5es44rv25motvmcc7iuv7mpj7s2cnb4i4i@di4z7eug36t7>
 References: <20260115-exportfs-nfsd-v1-0-8e80160e3c0c@kernel.org>
- <20260115-exportfs-nfsd-v1-2-8e80160e3c0c@kernel.org>
+ <20260115-exportfs-nfsd-v1-18-8e80160e3c0c@kernel.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20260115-exportfs-nfsd-v1-2-8e80160e3c0c@kernel.org>
+In-Reply-To: <20260115-exportfs-nfsd-v1-18-8e80160e3c0c@kernel.org>
 X-Spam-Score: -2.51
 X-Spamd-Result: default: False [-2.51 / 50.00]; BAYES_HAM(-3.00)[99.99%];
  SUSPICIOUS_RECIPS(1.50)[]; NEURAL_HAM_LONG(-1.00)[-1.000];
@@ -131,11 +131,11 @@ X-Spamd-Result: default: False [-2.51 / 50.00]; BAYES_HAM(-3.00)[99.99%];
  TAGGED_RCPT(0.00)[];
  RECEIVED_SPAMHAUS_BLOCKED_OPENRESOLVER(0.00)[2a07:de40:b281:106:10:150:64:167:received];
  MISSING_XM_UA(0.00)[]; RCVD_VIA_SMTP_AUTH(0.00)[];
- DBL_BLOCKED_OPENRESOLVER(0.00)[suse.com:email, suse.cz:dkim, suse.cz:email,
- imap1.dmz-prg2.suse.org:rdns, imap1.dmz-prg2.suse.org:helo]
+ DBL_BLOCKED_OPENRESOLVER(0.00)[imap1.dmz-prg2.suse.org:rdns,
+ imap1.dmz-prg2.suse.org:helo, suse.cz:dkim, suse.cz:email, suse.com:email]
 X-Spam-Level: 
 X-Rspamd-Action: no action
-X-Rspamd-Queue-Id: EF1155BCCB
+X-Rspamd-Queue-Id: E9DC4336BA
 X-Rspamd-Server: rspamd1.dmz-prg2.suse.org
 X-Spam-Flag: NO
 X-Spam-Score: -0.2 (/)
@@ -145,9 +145,9 @@ X-Spam-Report: Spam detection software,
  message has been attached to this so you can view it or label
  similar future email.  If you have any questions, see
  the administrator of that system for details.
- Content preview:  On Thu 15-01-26 12:47:33,
+ Content preview:  On Thu 15-01-26 12:47:49,
  Jeff Layton wrote: > Add the EXPORT_OP_STABLE_HANDLES
- flag to tmpfs export operations to indicate > that this filesystem can be
+ flag to ocfs2 export operations to indicate > that this filesystem can be
  exported via NFS. > > Signed-off-by: Jeff Layt [...] 
  Content analysis details:   (-0.2 points, 5.0 required)
  pts rule name              description
@@ -159,8 +159,8 @@ X-Spam-Report: Spam detection software,
  not necessarily valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
-X-Headers-End: 1vghMc-0007SY-Bc
-Subject: Re: [Jfs-discussion] [PATCH 02/29] tmpfs: add
+X-Headers-End: 1vghMx-0007TW-8t
+Subject: Re: [Jfs-discussion] [PATCH 18/29] ocfs2: add
  EXPORT_OP_STABLE_HANDLES flag to export operations
 X-BeenThere: jfs-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
@@ -217,8 +217,8 @@ Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Errors-To: jfs-discussion-bounces@lists.sourceforge.net
 
-On Thu 15-01-26 12:47:33, Jeff Layton wrote:
-> Add the EXPORT_OP_STABLE_HANDLES flag to tmpfs export operations to indicate
+On Thu 15-01-26 12:47:49, Jeff Layton wrote:
+> Add the EXPORT_OP_STABLE_HANDLES flag to ocfs2 export operations to indicate
 > that this filesystem can be exported via NFS.
 > 
 > Signed-off-by: Jeff Layton <jlayton@kernel.org>
@@ -230,21 +230,19 @@ Reviewed-by: Jan Kara <jack@suse.cz>
 								Honza
 
 > ---
->  mm/shmem.c | 1 +
+>  fs/ocfs2/export.c | 1 +
 >  1 file changed, 1 insertion(+)
 > 
-> diff --git a/mm/shmem.c b/mm/shmem.c
-> index ec6c01378e9d2bd47db9d7506e4d6a565e092185..c64c4410b4fd9961599a5ea768b469d8184e713e 100644
-> --- a/mm/shmem.c
-> +++ b/mm/shmem.c
-> @@ -4477,6 +4477,7 @@ static const struct export_operations shmem_export_ops = {
->  	.get_parent     = shmem_get_parent,
->  	.encode_fh      = shmem_encode_fh,
->  	.fh_to_dentry	= shmem_fh_to_dentry,
+> diff --git a/fs/ocfs2/export.c b/fs/ocfs2/export.c
+> index b95724b767e150e991ae4b8ea5d0505c1ae95984..77d82ff994c86037c14fbf7a1d9706f1dd2b87ac 100644
+> --- a/fs/ocfs2/export.c
+> +++ b/fs/ocfs2/export.c
+> @@ -280,4 +280,5 @@ const struct export_operations ocfs2_export_ops = {
+>  	.fh_to_dentry	= ocfs2_fh_to_dentry,
+>  	.fh_to_parent	= ocfs2_fh_to_parent,
+>  	.get_parent	= ocfs2_get_parent,
 > +	.flags		= EXPORT_OP_STABLE_HANDLES,
 >  };
->  
->  enum shmem_param {
 > 
 > -- 
 > 2.52.0
