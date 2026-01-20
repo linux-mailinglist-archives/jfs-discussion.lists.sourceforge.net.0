@@ -2,144 +2,101 @@ Return-Path: <jfs-discussion-bounces@lists.sourceforge.net>
 X-Original-To: lists+jfs-discussion@lfdr.de
 Delivered-To: lists+jfs-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1578DD3B8CC
-	for <lists+jfs-discussion@lfdr.de>; Mon, 19 Jan 2026 21:46:53 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1D2E0D3C0A9
+	for <lists+jfs-discussion@lfdr.de>; Tue, 20 Jan 2026 08:39:26 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.sourceforge.net; s=beta; h=Content-Transfer-Encoding:Content-Type:Cc:
 	Reply-To:From:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:Subject:Message-id:Date:References:In-reply-to:To:
-	MIME-Version:Sender:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=j1+xrC1cWLxs0IIx/WmxNj8u01qPoXxfEPlzCDEtI3M=; b=hCVr/px4NzMMgojbsZ/tCbh8ov
-	hPzUmvklEwhXKwBfAcfnoSA/QAIQdwr4fMr9RBANKBqMN0gMhLcl6Q+jwxKw+NZUC8v+lvXtKxNF2
-	cr2dJnchwKwefLsg3C9gQYcDJFxs3Qv7QhCVhItOWamiJAzl4KuTjfRIOFN/rUjubQ6o=;
-Received: from [127.0.0.1] (helo=sfs-ml-2.v29.lw.sourceforge.com)
-	by sfs-ml-2.v29.lw.sourceforge.com with esmtp (Exim 4.95)
+	List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:References:
+	Message-ID:To:Date:Sender:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=NXTh90JRKwIGa9mOaMmNndo/F/G+Zigo/MEccLSmrVk=; b=Z9fpr0m8gpICzuXjEZsLzqLFIz
+	dUKt/dAsDRX6F2BpVIvNxbWkXR4xP3JDBz5+5ojpaAOWfI0PKTqXeqRxoG0Vu7P5u95Qya7JyDFia
+	DrnICJRDtuI//e78CwdtOyp3GnN/XFnnXyTlWGoqu2GZGM40cs5Bptuyuj48gSnjaKyI=;
+Received: from [127.0.0.1] (helo=sfs-ml-1.v29.lw.sourceforge.com)
+	by sfs-ml-1.v29.lw.sourceforge.com with esmtp (Exim 4.95)
 	(envelope-from <jfs-discussion-bounces@lists.sourceforge.net>)
-	id 1vhw8Y-0002G3-Lr;
-	Mon, 19 Jan 2026 20:46:11 +0000
+	id 1vi6K2-0004MP-CX;
+	Tue, 20 Jan 2026 07:38:42 +0000
 Received: from [172.30.29.66] (helo=mx.sourceforge.net)
- by sfs-ml-2.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
- TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (Exim 4.95)
- (envelope-from <neilb@ownmail.net>) id 1vhw8W-0002Fc-Ew;
- Mon, 19 Jan 2026 20:46:09 +0000
+ by sfs-ml-1.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
+ TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (Exim 4.95) (envelope-from
+ <BATV+6f87a82fb8d0462b7f15+8185+infradead.org+hch@bombadil.srs.infradead.org>)
+ id 1vi6K0-0004ME-KV; Tue, 20 Jan 2026 07:38:41 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=sourceforge.net; s=x; h=Reply-To:Message-id:Date:References:In-reply-to:
- Subject:Cc:To:From:MIME-Version:Content-Transfer-Encoding:Content-Type:Sender
- :Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
+ d=sourceforge.net; s=x; h=In-Reply-To:Content-Type:MIME-Version:References:
+ Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:Content-Transfer-Encoding:
+ Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
  Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=v4LtkcerTNcKdHBuxb989VhIuXJUmGOFYwT3m9zCWpQ=; b=ZCXf/1YtvdELyikKbCPw3HF56e
- WxTQVngHchc/jMT2ZKe1O7KfpIoCruArRbmWdc2h05g53Q7Jg6im5Wu/uCyRmQ0H32zNosTDUrMA/
- TKE0U8EvvMEIcZL1ceCA/JauKQKGaCRYSD/ZEKVRZG6mDV+UIjsX88d9k6D/wrdqCJM0=;
+ bh=MWgDWsJcZSPLDHs9IJsUoi9AsdVhP2NHHfcQigencrE=; b=KIoB5L0XfspvGwt4mIwRd8E0br
+ Gd4lVHOvio+3W+c5rUXuQr6418AYRQt7M/RxQEb/BxlJgi/h0wZD4h14eUJxEx7G0VT983myB4BgS
+ OWTgcD5NdogDQPzNaRFfBms7WcSgp37e4DEVVDGu7gPKQvURv7xWwXynp/vv0U14oEoM=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
- h=Reply-To:Message-id:Date:References:In-reply-to:Subject:Cc:To:From:
- MIME-Version:Content-Transfer-Encoding:Content-Type:Sender:Content-ID:
+ h=In-Reply-To:Content-Type:MIME-Version:References:Message-ID:Subject:Cc:To
+ :From:Date:Sender:Reply-To:Content-Transfer-Encoding:Content-ID:
  Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
  :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
  List-Post:List-Owner:List-Archive;
- bh=v4LtkcerTNcKdHBuxb989VhIuXJUmGOFYwT3m9zCWpQ=; b=ErhH2hKP3C7NowIPyrUTZuCUFm
- MJXmYMRUypBkGNvMokytKMLmi0DX6miwtfytzix4STXL7zOkhtdCp1btqQdEkB9ZsW2y2rljGcxHN
- JIoPXMp2IOXBI37RjZeIegJV6scIuNSaGXjIc7+CMbTKlttDoG914DIJQvYObGmcuivY=;
-Received: from flow-b3-smtp.messagingengine.com ([202.12.124.138])
+ bh=MWgDWsJcZSPLDHs9IJsUoi9AsdVhP2NHHfcQigencrE=; b=XaU1sjPoZx/1MLz25vDcSiN6Yi
+ hnPJtTvWgyPjDvBmWSxcBPdTu9K1TKXr9ZNgfCsgclJ3AaeSKuXUpkQ3dhXi1x8fUPYVmjXRlfJbS
+ 9Q67qrgYWkp2j+tN+pOyjwlFcUJOusdLkKtPr6WnkJMFPl/sxub+EqYgU3Iqs/8MlUZ0=;
+Received: from bombadil.infradead.org ([198.137.202.133])
  by sfi-mx-2.v28.lw.sourceforge.com with esmtps
  (TLS1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.95)
- id 1vhw8V-0003Jb-FO; Mon, 19 Jan 2026 20:46:09 +0000
-Received: from phl-compute-04.internal (phl-compute-04.internal [10.202.2.44])
- by mailflow.stl.internal (Postfix) with ESMTP id C9DA613010D8;
- Mon, 19 Jan 2026 15:45:59 -0500 (EST)
-Received: from phl-frontend-03 ([10.202.2.162])
- by phl-compute-04.internal (MEProxy); Mon, 19 Jan 2026 15:46:01 -0500
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ownmail.net; h=
- cc:cc:content-transfer-encoding:content-type:content-type:date
- :date:from:from:in-reply-to:in-reply-to:message-id:mime-version
- :references:reply-to:reply-to:subject:subject:to:to; s=fm2; t=
- 1768855559; x=1768862759; bh=v4LtkcerTNcKdHBuxb989VhIuXJUmGOFYwT
- 3m9zCWpQ=; b=Lc0EYW6ibUUqVQJUKzaim23Euwd0BGgFRXe5DALzfEojg7VN6rT
- B6DiPIhAD3IC7M+5XEsbPahQ32cVgcxSRShqrzfxc+w2dQttIp0GWIrdUpX55qw0
- 1YJfvLNEex4MDg629sJRt0DIagYZ7O2YgHGEWRwCbzJK6pewaTBy/LwbN/3UuIrH
- D1X+l3ArslIHe9m6/MxEM+BHkwyONj/QBcgvUoddEjQn2rtqiXm8XIlcaUBBGYcG
- L51CiT0gWDAG38s7mrfim3JvqvUewVVj4jdamfv/vGEC6XVs37En7pvh86V+RKx9
- u1Btsigj5UNDPW1ltBPZUH8SSA1nKU+SOjA==
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
- messagingengine.com; h=cc:cc:content-transfer-encoding
- :content-type:content-type:date:date:feedback-id:feedback-id
- :from:from:in-reply-to:in-reply-to:message-id:mime-version
- :references:reply-to:reply-to:subject:subject:to:to:x-me-proxy
- :x-me-sender:x-me-sender:x-sasl-enc; s=fm2; t=1768855559; x=
- 1768862759; bh=v4LtkcerTNcKdHBuxb989VhIuXJUmGOFYwT3m9zCWpQ=; b=e
- xt14fYhTflITcl6YnaiRNNIPiieIuY3T2ekw4mgpmY/v/o1D6Rm9og97ySUxlRr7
- FuBeLtlEdjDnDlXWSfPcQ5AbZapLP6oLiXJHFrRkIH0gKfaYLMLYjIQO36N4L42d
- r+sxyuyT+2Dw0f4nF6Lb5U2/7dD8/gO1shUXevXTcOuhLj1lVMOynN4dkejCogfQ
- 7OuzydzQDyp0GPeNwjKBxultpJ+adDUHRpRjZpvqCu+f30BBcE9P8TFFL51mFFSd
- 5nqf/ngi6HPQpjIzif8UMR8pgDgY3x6Ww4kDrS1yWA5BVy+Nd5cITHqHPkkjbEzT
- FALc3wWKIrn/NhNHGyWNw==
-X-ME-Sender: <xms:BJhuaSbEzFcWy9Pk6146wE82fhYm_CxjTiFHqGZKgwA0vYGamqcSmg>
- <xme:BJhuaSwoBnyfk0eKn4-Aohsxi2pWCriN6dRenPPaxnkZL7_MsdqbsQlFS_j1eycjJ
- snQClQFRDDxmckQGHACK4fSLzS3RfNjJQu9JuQvNfYNBDMQpQ>
-X-ME-Received: <xmr:BJhuaSJdRJMi7-ZpoAEIl9nJ6TzUD9unJMV7r6q_QrUGstq03Bv3pQ2jFX3ElyETlEyXOOSz_dMOZCxbyCO3448TMs1hLaDXJLozABR1b4SI>
-X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgeefgedrtddtgddufeekheehucetufdoteggodetrf
- dotffvucfrrhhofhhilhgvmecuhfgrshhtofgrihhlpdfurfetoffkrfgpnffqhgenuceu
- rghilhhouhhtmecufedttdenucesvcftvggtihhpihgvnhhtshculddquddttddmnecujf
- gurheptgfgggfhvfevufgjfhffkfhrsehtqhertddttdejnecuhfhrohhmpefpvghilheu
- rhhofihnuceonhgvihhlsgesohifnhhmrghilhdrnhgvtheqnecuggftrfgrthhtvghrnh
- epleejtdefgeeukeeiteduveehudevfeffvedutefgteduhfegvdfgtdeigeeuudejnecu
- vehluhhsthgvrhfuihiivgeptdenucfrrghrrghmpehmrghilhhfrhhomhepnhgvihhlsg
- esohifnhhmrghilhdrnhgvthdpnhgspghrtghpthhtohepjedvpdhmohguvgepshhmthhp
- ohhuthdprhgtphhtthhopehvihhrohesiigvnhhivhdrlhhinhhugidrohhrghdruhhkpd
- hrtghpthhtohepghhuohgthhhunhhhrghisehvihhvohdrtghomhdprhgtphhtthhopehl
- ihhnuhigqdigfhhssehvghgvrhdrkhgvrhhnvghlrdhorhhgpdhrtghpthhtoheplhhinh
- hugidquhhnihhonhhfshesvhhgvghrrdhkvghrnhgvlhdrohhrghdprhgtphhtthhopehl
- ihhnuhigqdhnihhlfhhssehvghgvrhdrkhgvrhhnvghlrdhorhhgpdhrtghpthhtoheplh
- hinhhugidqnhhfshesvhhgvghrrdhkvghrnhgvlhdrohhrghdprhgtphhtthhopehlihhn
- uhigqdhkvghrnhgvlhesvhhgvghrrdhkvghrnhgvlhdrohhrghdprhgtphhtthhopehlih
- hnuhigqdhfshguvghvvghlsehvghgvrhdrkhgvrhhnvghlrdhorhhgpdhrtghpthhtohep
- lhhinhhugidqvgigthegsehvghgvrhdrkhgvrhhnvghlrdhorhhg
-X-ME-Proxy: <xmx:BJhuaSBO9clKpBY1c8tqtIkxX8-Yutqel2bbB8TbvrqddamOXX7Ykg>
- <xmx:BJhuaRhuOPQDyCA_KFYnfcdaAOzKUXr3io07nJfde0jw7wudsjV9Bg>
- <xmx:BJhuade95jkbwLWPmv5m35H6i7zd7TYoRjmUJ2fQMpOWq-IJ6QyQ1w>
- <xmx:BJhuaelSBffgMjviuHAjgSaIv0cuzLl42YuUELeDiPJYohFPRx_JkA>
- <xmx:B5huacYgAtwv-dw4ucg_ORya8hJwBFrWvyIGFRHLnxavffYq8g3321NH>
-Feedback-ID: iab3e480c:Fastmail
-Received: by mail.messagingengine.com (Postfix) with ESMTPA; Mon,
- 19 Jan 2026 15:45:39 -0500 (EST)
-MIME-Version: 1.0
-To: "Christian Brauner" <brauner@kernel.org>
-In-reply-to: <20260119-kanufahren-meerjungfrau-775048806544@brauner>
-References: <20260115-exportfs-nfsd-v1-0-8e80160e3c0c@kernel.org>,
- <CAOQ4uxjOJMwv_hRVTn3tJHDLMQHbeaCGsdLupiZYcwm7M2rm3g@mail.gmail.com>,
- <9c99197dde2eafa55a1b55dce2f0d4d02c77340a.camel@kernel.org>,
- <176877859306.16766.15009835437490907207@noble.neil.brown.name>,
- <aW3SAKIr_QsnEE5Q@infradead.org>,
- <176880736225.16766.4203157325432990313@noble.neil.brown.name>,
+ id 1vi6Jz-00086y-ND; Tue, 20 Jan 2026 07:38:40 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=infradead.org; s=bombadil.20210309; h=In-Reply-To:Content-Type:MIME-Version
+ :References:Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:
+ Content-Transfer-Encoding:Content-ID:Content-Description;
+ bh=MWgDWsJcZSPLDHs9IJsUoi9AsdVhP2NHHfcQigencrE=; b=QQjy8UtfJINxBhZn7YjEMtg5bI
+ RR/UTX6ry3NKZFPfoe8NvA46huniC8Qe5WKKYr9odSic6x/azSx6ttNuGshX1v/vo0/uShB8r7jvu
+ oQsFb6UppuK9W5J+pQ3LkkqP9wItu6+F+hdSK/8VV2v841T7dec2Zxhhl1cf/V6K+X8k3OQle+nM1
+ +QFFtmJGhnxZTPqgAKCdQOUJoPKo1QuoWKyKACFSMKWKPzqQYD3//Ir7gB2tYr9y/jfHBn8vwIeOu
+ m3+XtJchvn4RXotvr9JWjd2NEnaFbSv/vkLKgykdLYa9ocsv+hA7DGOxFY+mj7v7P2zZZO29/i/nl
+ B9PJVAUw==;
+Received: from hch by bombadil.infradead.org with local (Exim 4.98.2 #2 (Red
+ Hat Linux)) id 1vi6JN-00000003MRN-2vIx;
+ Tue, 20 Jan 2026 07:38:01 +0000
+Date: Mon, 19 Jan 2026 23:38:01 -0800
+To: NeilBrown <neil@brown.name>
+Message-ID: <aW8w2SRyFnmA2uqk@infradead.org>
+References: <20260115-exportfs-nfsd-v1-0-8e80160e3c0c@kernel.org>
+ <CAOQ4uxjOJMwv_hRVTn3tJHDLMQHbeaCGsdLupiZYcwm7M2rm3g@mail.gmail.com>
+ <9c99197dde2eafa55a1b55dce2f0d4d02c77340a.camel@kernel.org>
+ <176877859306.16766.15009835437490907207@noble.neil.brown.name>
+ <aW3SAKIr_QsnEE5Q@infradead.org>
+ <176880736225.16766.4203157325432990313@noble.neil.brown.name>
  <20260119-kanufahren-meerjungfrau-775048806544@brauner>
-Date: Tue, 20 Jan 2026 07:45:35 +1100
-Message-id: <176885553525.16766.291581709413217562@noble.neil.brown.name>
-X-Spam-Score: -0.2 (/)
+ <176885553525.16766.291581709413217562@noble.neil.brown.name>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <176885553525.16766.291581709413217562@noble.neil.brown.name>
+X-SRS-Rewrite: SMTP reverse-path rewritten from <hch@infradead.org> by
+ bombadil.infradead.org. See http://www.infradead.org/rpr.html
+X-Spam-Score: -0.1 (/)
 X-Spam-Report: Spam detection software,
  running on the system "sfi-spamd-2.hosts.colo.sdot.me", 
  has NOT identified this incoming email as spam.  The original
  message has been attached to this so you can view it or label
  similar future email.  If you have any questions, see
  the administrator of that system for details.
- Content preview:  On Mon, 19 Jan 2026, Christian Brauner wrote: > On Mon, Jan
- 19, 2026 at 06:22:42PM +1100, NeilBrown wrote: > > On Mon, 19 Jan 2026,
- Christoph
- Hellwig wrote: > > > On Mon, Jan 19, 2026 at 10:23:13AM +1 [...] 
- Content analysis details:   (-0.2 points, 5.0 required)
+ Content preview:  On Tue, Jan 20, 2026 at 07:45:35AM +1100, NeilBrown wrote:
+ > This sounds like you are recommending that we give in to bullying. I find
+ your suggestion that anything you disagree with is bullying extremely
+ offensive.
+ If you have valid reasons for naming something after the user instead of
+ explaining the semantics, please explai [...] 
+ Content analysis details:   (-0.1 points, 5.0 required)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature,
- not necessarily valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU Message has a valid DKIM or DK signature from author's
  domain
- 0.0 FREEMAIL_FROM Sender email is commonly abused enduser mail provider
- [neilb(at)ownmail.net]
-X-Headers-End: 1vhw8V-0003Jb-FO
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature,
+ not necessarily valid
+X-Headers-End: 1vi6Jz-00086y-ND
 Subject: Re: [Jfs-discussion] [PATCH 00/29] fs: require filesystems to
  explicitly opt-in to nfsd export support
 X-BeenThere: jfs-discussion@lists.sourceforge.net
@@ -153,9 +110,10 @@ List-Post: <mailto:jfs-discussion@lists.sourceforge.net>
 List-Help: <mailto:jfs-discussion-request@lists.sourceforge.net?subject=help>
 List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/jfs-discussion>, 
  <mailto:jfs-discussion-request@lists.sourceforge.net?subject=subscribe>
-From: NeilBrown via Jfs-discussion <jfs-discussion@lists.sourceforge.net>
-Reply-To: NeilBrown <neil@brown.name>
-Cc: NeilBrown <neilb@ownmail.net>, Martin Brandenburg <martin@omnibond.com>,
+From: Christoph Hellwig via Jfs-discussion
+ <jfs-discussion@lists.sourceforge.net>
+Reply-To: Christoph Hellwig <hch@infradead.org>
+Cc: Martin Brandenburg <martin@omnibond.com>,
  jfs-discussion@lists.sourceforge.net, Jan Kara <jack@suse.cz>,
  Paulo Alcantara <pc@manguebit.org>, Alex Markuze <amarkuze@redhat.com>,
  Sandeep Dhavale <dhavale@google.com>, linux-btrfs@vger.kernel.org,
@@ -176,15 +134,15 @@ Cc: NeilBrown <neilb@ownmail.net>, Martin Brandenburg <martin@omnibond.com>,
  Shyam Prasad N <sprasad@microsoft.com>,
  Olga Kornievskaia <okorniev@redhat.com>, linux-cifs@vger.kernel.org,
  Dave Kleikamp <shaggy@kernel.org>, Chao Yu <chao@kernel.org>,
- Tom Talpey <tom@talpey.com>, ocfs2-devel@lists.linux.dev,
- Bharath SM <bharathsm@microsoft.com>, David Sterba <dsterba@suse.com>,
- Alexander Viro <viro@zeniv.linux.org.uk>,
+ linux-nfs@vger.kernel.org, Tom Talpey <tom@talpey.com>,
+ ocfs2-devel@lists.linux.dev, Bharath SM <bharathsm@microsoft.com>,
+ David Sterba <dsterba@suse.com>, Alexander Viro <viro@zeniv.linux.org.uk>,
  Baolin Wang <baolin.wang@linux.alibaba.com>,
  Jeffle Xu <jefflexu@linux.alibaba.com>, Jaegeuk Kim <jaegeuk@kernel.org>,
  ceph-devel@vger.kernel.org, Ilya Dryomov <idryomov@gmail.com>,
  OGAWA Hirofumi <hirofumi@mail.parknet.co.jp>,
  Andreas Gruenbacher <agruenba@redhat.com>, gfs2@lists.linux.dev,
- linux-nfs@vger.kernel.org, Theodore Ts'o <tytso@mit.edu>,
+ Christian Brauner <brauner@kernel.org>, Theodore Ts'o <tytso@mit.edu>,
  Luis de Bethencourt <luisbg@kernel.org>,
  Joseph Qi <joseph.qi@linux.alibaba.com>, linux-erofs@lists.ozlabs.org,
  Jeff Layton <jlayton@kernel.org>, linux-kernel@vger.kernel.org,
@@ -199,78 +157,16 @@ Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Errors-To: jfs-discussion-bounces@lists.sourceforge.net
 
-On Mon, 19 Jan 2026, Christian Brauner wrote:
-> On Mon, Jan 19, 2026 at 06:22:42PM +1100, NeilBrown wrote:
-> > On Mon, 19 Jan 2026, Christoph Hellwig wrote:
-> > > On Mon, Jan 19, 2026 at 10:23:13AM +1100, NeilBrown wrote:
-> > > > > This was Chuck's suggested name. His point was that STABLE means that
-> > > > > the FH's don't change during the lifetime of the file.
-> > > > > 
-> > > > > I don't much care about the flag name, so if everyone likes PERSISTENT
-> > > > > better I'll roll with that.
-> > > > 
-> > > > I don't like PERSISTENT.
-> > > > I'd rather call a spade a spade.
-> > > > 
-> > > >   EXPORT_OP_SUPPORTS_NFS_EXPORT
-> > > > or
-> > > >   EXPORT_OP_NOT_NFS_COMPATIBLE
-> > > > 
-> > > > The issue here is NFS export and indirection doesn't bring any benefits.
-> > > 
-> > > No, it absolutely is not.  And the whole concept of calling something
-> > > after the initial or main use is a recipe for a mess.
-> > 
-> > We are calling it for it's only use.  If there was ever another use, we
-> > could change the name if that made sense.  It is not a public name, it
-> > is easy to change.
-> > 
-> > > 
-> > > Pick a name that conveys what the flag is about, and document those
-> > > semantics well.  This flag is about the fact that for a given file,
-> > > as long as that file exists in the file system the handle is stable.
-> > > Both stable and persistent are suitable for that, nfs is everything
-> > > but.
-> > 
-> > My understanding is that kernfs would not get the flag.
-> > kernfs filehandles do not change as long as the file exist.
-> > But this is not sufficient for the files to be usefully exported.
-> > 
-> > I suspect kernfs does re-use filehandles relatively soon after the
-> > file/object has been destroyed.  Maybe that is the real problem here:
-> > filehandle reuse, not filehandle stability.
-> > 
-> > Jeff: could you please give details (and preserve them in future cover
-> > letters) of which filesystems are known to have problems and what
-> > exactly those problems are?
-> > 
-> > > 
-> > > Remember nfs also support volatile file handles, and other applications
-> > > might rely on this (I know of quite a few user space applications that
-> > > do, but they are kinda hardwired to xfs anyway).
-> > 
-> > The NFS protocol supports volatile file handles.  knfsd does not.
-> > So maybe
-> >   EXPORT_OP_NOT_NFSD_COMPATIBLE
-> > might be better.  or EXPORT_OP_NOT_LINUX_NFSD_COMPATIBLE.
-> > (I prefer opt-out rather than opt-in because nfsd export was the
-> > original purpose of export_operations, but it isn't something
-> > I would fight for)
-> 
-> I prefer one of the variants you proposed here but I don't particularly
-> care. It's not a hill worth dying on. So if Christoph insists on the
-> other name then I say let's just go with it.
-> 
+On Tue, Jan 20, 2026 at 07:45:35AM +1100, NeilBrown wrote:
+> This sounds like you are recommending that we give in to bullying.
 
-This sounds like you are recommending that we give in to bullying.
-I would rather the decision be made based on the facts of the case, not
-the opinions that are stated most bluntly.
+I find your suggestion that anything you disagree with is bullying
+extremely offensive.  If you have valid reasons for naming something
+after the user instead of explaining the semantics, please explain that.
 
-I actually think that what Christoph wants is actually quite different
-from what Jeff wants, and maybe two flags are needed.  But I don't yet
-have a clear understanding of what Christoph wants, so I cannot be sure.
-
-NeilBrown
+If you think NFS actually explains the semantics pretty well, please
+explain that too, especially in forms that can be put into
+documentation, including for the user ABI.
 
 
 
