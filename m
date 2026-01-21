@@ -2,144 +2,101 @@ Return-Path: <jfs-discussion-bounces@lists.sourceforge.net>
 Delivered-To: lists+jfs-discussion@lfdr.de
 Received: from mail.lfdr.de
 	by lfdr with LMTP
-	id qEnICQFScGlvXQAAu9opvQ
+	id 6NMcO/yZcGlyYgAAu9opvQ
 	(envelope-from <jfs-discussion-bounces@lists.sourceforge.net>)
-	for <lists+jfs-discussion@lfdr.de>; Wed, 21 Jan 2026 05:11:45 +0100
+	for <lists+jfs-discussion@lfdr.de>; Wed, 21 Jan 2026 10:18:52 +0100
 X-Original-To: lists+jfs-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id 805AC50DCB
-	for <lists+jfs-discussion@lfdr.de>; Wed, 21 Jan 2026 05:11:44 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8B537543C5
+	for <lists+jfs-discussion@lfdr.de>; Wed, 21 Jan 2026 10:18:52 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.sourceforge.net; s=beta; h=Content-Transfer-Encoding:Content-Type:Cc:
 	Reply-To:From:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:Subject:Message-id:Date:References:In-reply-to:To:
-	MIME-Version:Sender:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=f/gl4SItEIjUsz0xRtq/3l2IyS1ns2Tpd6LtEdxqQV4=; b=LMRRPn4ZIPaQNR+8/ZU8CFh+Xw
-	yJscKezVl+hgMSVfk/5YZ6SU7eLlENouZdzff33W50rCuD9Rba1V1w8b8y2YIdrLmoDqLh+XzsWD2
-	qFYu5QR6jI4Iuh9RsPN8Pm6EWXzEfPP9qlAP4fJr8DyYEwIspIGPlNN0RT1DViJ+1zTw=;
-Received: from [127.0.0.1] (helo=sfs-ml-2.v29.lw.sourceforge.com)
-	by sfs-ml-2.v29.lw.sourceforge.com with esmtp (Exim 4.95)
+	List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:References:
+	Message-ID:To:Date:Sender:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=LJ/BKrAXfhVW2Ty/2kYQKuDh3+pGaqc5WhekrtwVg48=; b=e8rEDs0/+cgKP70B0mTGUZDdxb
+	Bxl5w/nz/RzEZdUUg0uRcyHhowfRoCx6hgEj08bmqtkON83cbnThe7uiwoAGyejXP2CTar13nmsQB
+	AUNWh94+JbTYwEU2GFB6n31tWKllPdbICncCGErbF93WnVaY0Cy3il9IhDdL4S+IGfj4=;
+Received: from [127.0.0.1] (helo=sfs-ml-4.v29.lw.sourceforge.com)
+	by sfs-ml-4.v29.lw.sourceforge.com with esmtp (Exim 4.95)
 	(envelope-from <jfs-discussion-bounces@lists.sourceforge.net>)
-	id 1viPYc-0000GZ-Gr;
-	Wed, 21 Jan 2026 04:11:03 +0000
+	id 1viULn-0004W5-FO;
+	Wed, 21 Jan 2026 09:18:07 +0000
 Received: from [172.30.29.66] (helo=mx.sourceforge.net)
- by sfs-ml-2.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
- TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (Exim 4.95)
- (envelope-from <neilb@ownmail.net>) id 1viPYa-0000G2-6N;
- Wed, 21 Jan 2026 04:11:01 +0000
+ by sfs-ml-4.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
+ TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (Exim 4.95) (envelope-from
+ <BATV+bcc91a9d4ebb8e7eb2a7+8186+infradead.org+hch@bombadil.srs.infradead.org>)
+ id 1viULl-0004Vs-6u; Wed, 21 Jan 2026 09:18:05 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=sourceforge.net; s=x; h=Reply-To:Message-id:Date:References:In-reply-to:
- Subject:Cc:To:From:MIME-Version:Content-Transfer-Encoding:Content-Type:Sender
- :Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
+ d=sourceforge.net; s=x; h=In-Reply-To:Content-Type:MIME-Version:References:
+ Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:Content-Transfer-Encoding:
+ Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
  Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=VHtydnr8fLS7IJeEIN+Bebc9EhZyuKs8Mrygf/E6Mwk=; b=W+gE+g46h5rgyNsrye+/E65ZmQ
- ULiw6U/pzhe4+xnsQDPbX+2eBW9W8r1l+TAmGwNEWPJsBmtnqo6k53mmzLBfVtm+YDxVsA9A0eG/x
- Vhy6P26ptVExJ45a2QpifDmbGvssOKYaKQWW/SbJjDFI2ha+coPgM62Re09ey3DlUuWA=;
+ bh=QMRVjotEayLOv8XTxaxuE0M55enKBYtQeaeNcrACLfc=; b=RU5+x7Eq+qonfcNI8KKf6nbQqZ
+ M2WpminueeAke/Hv26tGbhd09I14E6wi9cw77mS5znWUhS525dMxWufJ9Dfxq2DJKrpVSTv627iFB
+ KEd4BooX44o/enkH8NL0bvMBjtJH0JvGnmXMsXIoGweZICTaxxpnEB6++dQVYdqez16U=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
- h=Reply-To:Message-id:Date:References:In-reply-to:Subject:Cc:To:From:
- MIME-Version:Content-Transfer-Encoding:Content-Type:Sender:Content-ID:
+ h=In-Reply-To:Content-Type:MIME-Version:References:Message-ID:Subject:Cc:To
+ :From:Date:Sender:Reply-To:Content-Transfer-Encoding:Content-ID:
  Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
  :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
  List-Post:List-Owner:List-Archive;
- bh=VHtydnr8fLS7IJeEIN+Bebc9EhZyuKs8Mrygf/E6Mwk=; b=Y4ZTcPLIil85jeCTX/ppp8fOs3
- bug9X4Nsd5ao4gKAPT1JvW9WRqms+rPFXj7TlZpezmZn1iNplDKImRSKODy0kfQHNrVbpvXHhEX03
- ooK6wK8gNGRik42w9n6BDv5NBBh7QVhFam03dFkWxCiVkb1D9XL9TQfir+er2GdnBXeM=;
-Received: from flow-a3-smtp.messagingengine.com ([103.168.172.138])
+ bh=QMRVjotEayLOv8XTxaxuE0M55enKBYtQeaeNcrACLfc=; b=Y0t3Kz3K9LiYodlhXegfXw/+Pe
+ fTXToTeBDoWl5JfujRet7qs+LX5A2Fx617gP4l2aYbHH7Fsq0oqjZZs0Te29P39h0MdOK9GNhIeYd
+ 5R6jFEhrb+ab5UPJVzHU4d3CU1FcTN8lM6Tl6NpMrC3M+Rpg2k3GN2hoCKnj2Cn4C46c=;
+Received: from bombadil.infradead.org ([198.137.202.133])
  by sfi-mx-2.v28.lw.sourceforge.com with esmtps
  (TLS1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.95)
- id 1viPYa-0006yO-Gc; Wed, 21 Jan 2026 04:11:00 +0000
-Received: from phl-compute-06.internal (phl-compute-06.internal [10.202.2.46])
- by mailflow.phl.internal (Postfix) with ESMTP id CDA9513807C6;
- Tue, 20 Jan 2026 23:10:49 -0500 (EST)
-Received: from phl-frontend-04 ([10.202.2.163])
- by phl-compute-06.internal (MEProxy); Tue, 20 Jan 2026 23:10:49 -0500
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ownmail.net; h=
- cc:cc:content-transfer-encoding:content-type:content-type:date
- :date:from:from:in-reply-to:in-reply-to:message-id:mime-version
- :references:reply-to:reply-to:subject:subject:to:to; s=fm2; t=
- 1768968649; x=1768975849; bh=VHtydnr8fLS7IJeEIN+Bebc9EhZyuKs8Mry
- gf/E6Mwk=; b=k3Rxmu5uR9LzcxYLB3t0g9OZO0rJkXHWHzZwWU2baOA0T+BauMb
- JVwdNn8FXLcfJjWpT/PesgXD8rWNCNVfalot0ujFj+m9iIfbTfXgug2Q3yJqrVyB
- 8eJIYj37xg9eo1bP9zpmammhxmuGoBzvKOGPf5Qihx0i4Xtur2zoOlGt4VqfI2Aq
- VcQiUYFS9VLDwzq7PFAV47UiRi8Z6ewfEdkzCtfuUcbBtYGQ4REwO/NQfx0wGxZa
- zaqsbkKg/7unaAaTepYNC7FeekN9e3dyldZZ6WnZ81ri0JmX1JvDTDOyA9r/um3Q
- 0UTk91MwX8RKLgf76R+Fpg0kqrT6VIZzfKQ==
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
- messagingengine.com; h=cc:cc:content-transfer-encoding
- :content-type:content-type:date:date:feedback-id:feedback-id
- :from:from:in-reply-to:in-reply-to:message-id:mime-version
- :references:reply-to:reply-to:subject:subject:to:to:x-me-proxy
- :x-me-sender:x-me-sender:x-sasl-enc; s=fm2; t=1768968649; x=
- 1768975849; bh=VHtydnr8fLS7IJeEIN+Bebc9EhZyuKs8Mrygf/E6Mwk=; b=g
- AJ0npOh094R5rlQ+lB6V86VTqskShc/USfs9jmX1TOsWUZfsPdWnx0W03o0QsD0J
- ole/Eq8d6vjOz/TwgxXAi4GUViQNE7aP9SFrw1QS88PkqsRNgUMpp2Dsk75jigEL
- Tq3UezOIFJ8hQFHcKj89Ey79saQSKP0MwkW63MgMtbV/mnNXN/xKVwew/W1KuJOB
- UtSIMWwNUT/KJ08KW4iRnFlHq35eiupz+giAs+7ptzAfWnDBN/iL/8qtRpNmSEaA
- 7+qwUSVwzkTj44zrlBWH3L4VcAF8ddte590kdslQTISEXKuf5ZNRlxQrYy4fTjd4
- +bXU8lH/3WUCP5TODW9mQ==
-X-ME-Sender: <xms:x1FwaXcQqjPpSgnEH0JKgQq9qBmBgEL4xriEE0RJAFk0DGbOHo3GJQ>
- <xme:x1FwaRGn5TWEli8N0_6q7i-Js7HZaHfbVLccEQrr6Mlj8opNJxVvGV2IOF4DACpZJ
- 67k8djIbKVq6CJIz8sMWvyebtGqxQwHb9fq0iYg9h6RLbhG>
-X-ME-Received: <xmr:x1FwaeOCYluQbHVqHC0b8yb2QyAzu4oYGvwgfL3Rv1YcRePq4NfK1L8su9uzG-K39Rf20ZSVJLGZZZsgDaJ4alcLa9ozRYjqUp45LbFlfXWe>
-X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgeefgedrtddtgddugedvvdejucetufdoteggodetrf
- dotffvucfrrhhofhhilhgvmecuhfgrshhtofgrihhlpdfurfetoffkrfgpnffqhgenuceu
- rghilhhouhhtmecufedttdenucesvcftvggtihhpihgvnhhtshculddquddttddmnecujf
- gurheptgfgggfhvfevufgjfhffkfhrsehtjeertddttdejnecuhfhrohhmpefpvghilheu
- rhhofihnuceonhgvihhlsgesohifnhhmrghilhdrnhgvtheqnecuggftrfgrthhtvghrnh
- epudetfefhudevhedvfeeufedvffekveekgfdtfefggfekheejgefhteeihffggfelnecu
- vehluhhsthgvrhfuihiivgeptdenucfrrghrrghmpehmrghilhhfrhhomhepnhgvihhlsg
- esohifnhhmrghilhdrnhgvthdpnhgspghrtghpthhtohepjedvpdhmohguvgepshhmthhp
- ohhuthdprhgtphhtthhopehvihhrohesiigvnhhivhdrlhhinhhugidrohhrghdruhhkpd
- hrtghpthhtohepghhuohgthhhunhhhrghisehvihhvohdrtghomhdprhgtphhtthhopehl
- ihhnuhigqdigfhhssehvghgvrhdrkhgvrhhnvghlrdhorhhgpdhrtghpthhtoheplhhinh
- hugidquhhnihhonhhfshesvhhgvghrrdhkvghrnhgvlhdrohhrghdprhgtphhtthhopehl
- ihhnuhigqdhnihhlfhhssehvghgvrhdrkhgvrhhnvghlrdhorhhgpdhrtghpthhtoheplh
- hinhhugidqnhhfshesvhhgvghrrdhkvghrnhgvlhdrohhrghdprhgtphhtthhopehlihhn
- uhigqdhkvghrnhgvlhesvhhgvghrrdhkvghrnhgvlhdrohhrghdprhgtphhtthhopehlih
- hnuhigqdhfshguvghvvghlsehvghgvrhdrkhgvrhhnvghlrdhorhhgpdhrtghpthhtohep
- lhhinhhugidqvgigthegsehvghgvrhdrkhgvrhhnvghlrdhorhhg
-X-ME-Proxy: <xmx:x1FwaR8X47pB82llCoOnx-_tqfG4Wgl__nF7iR7DTsvnBKEgoxWWLA>
- <xmx:x1FwadL_4AgUdEoAdrrjBUzKm_QwvAZ5_vABwDi-yZXKOEZQmRVN-g>
- <xmx:x1FwacjsPmz0p5xJHKbK1Llgy6XHSkD5sIUV00neAVndqU1R0osl9Q>
- <xmx:x1FwaQ-U7Yh5HcQNL5v5YvAtJgbgLMSzKZeFpndI7b9KPjw4FZERdA>
- <xmx:yVFwafa--UBBDa_lEtTQJ8XgCJ_3LeDDEGWDRnQKAI7NA5gXIajXqhW->
-Feedback-ID: iab3e480c:Fastmail
-Received: by mail.messagingengine.com (Postfix) with ESMTPA; Tue,
- 20 Jan 2026 23:10:25 -0500 (EST)
+ id 1viULk-0006pi-EN; Wed, 21 Jan 2026 09:18:05 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=infradead.org; s=bombadil.20210309; h=In-Reply-To:Content-Type:MIME-Version
+ :References:Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:
+ Content-Transfer-Encoding:Content-ID:Content-Description;
+ bh=QMRVjotEayLOv8XTxaxuE0M55enKBYtQeaeNcrACLfc=; b=dL4371OFHyaeDBmxzj7GOgrMx3
+ 3K3xbidZALqODJsAS8whqERF7Cf9V7Fo7hOwrsqaJ52l4+3LZ3NOo6ToaJTvHKZRqcoXdeIkI5i2Y
+ /IGCwCDyqZvkKB3vxuq/jXLgMBASekbT7z2m5uG7UV6Z1vT7LxO5FNkuYsqXQ65ggC8pblORDhMxn
+ g88h/3uSdhW32hsFMLKV41gZ2EzUh0QwXmfBFzhtXFBCIM8iZiBvymXdqRapwUqUsREyNCfkJfKnN
+ emlY1xCH7+a+KdQVe/KemipvA79Ca3KD2ZAnJ6dAOXDUOz1nqP1FfvsKk+szaZfJ4qnOmyQQriS0o
+ bmhS62CA==;
+Received: from hch by bombadil.infradead.org with local (Exim 4.98.2 #2 (Red
+ Hat Linux)) id 1viUKw-00000005AiH-18Yv;
+ Wed, 21 Jan 2026 09:17:14 +0000
+Date: Wed, 21 Jan 2026 01:17:14 -0800
+To: Jan Kara <jack@suse.cz>
+Message-ID: <aXCZmmBRSJR3ftHn@infradead.org>
+References: <20260119-exportfs-nfsd-v2-0-d93368f903bd@kernel.org>
+ <20260119-exportfs-nfsd-v2-2-d93368f903bd@kernel.org>
+ <aW8ztQ-RbhxwzMk7@infradead.org>
+ <56fr33ju43h6zzp6jrzrkyfag6r3jz6wpnk45oe5byy6fqyvti@d43hgikfuk7t>
 MIME-Version: 1.0
-To: "Jeff Layton" <jlayton@kernel.org>
-In-reply-to: <9fdf7a8c04861306b453a78233f4bd6004c465f4.camel@kernel.org>
-References: <>, <9fdf7a8c04861306b453a78233f4bd6004c465f4.camel@kernel.org>
-Date: Wed, 21 Jan 2026 15:10:22 +1100
-Message-id: <176896862299.16766.6206046829320088529@noble.neil.brown.name>
-X-Spam-Score: -0.2 (/)
+Content-Disposition: inline
+In-Reply-To: <56fr33ju43h6zzp6jrzrkyfag6r3jz6wpnk45oe5byy6fqyvti@d43hgikfuk7t>
+X-SRS-Rewrite: SMTP reverse-path rewritten from <hch@infradead.org> by
+ bombadil.infradead.org. See http://www.infradead.org/rpr.html
+X-Spam-Score: -0.1 (/)
 X-Spam-Report: Spam detection software,
  running on the system "sfi-spamd-2.hosts.colo.sdot.me", 
  has NOT identified this incoming email as spam.  The original
  message has been attached to this so you can view it or label
  similar future email.  If you have any questions, see
  the administrator of that system for details.
- Content preview:  On Mon, 19 Jan 2026, Jeff Layton wrote: > > There is another
- approach we could consider: We could move the > export_operations that are
- needed for local filehandle access into a > new struct filehandl [...] 
- Content analysis details:   (-0.2 points, 5.0 required)
+ Content preview:  On Tue, Jan 20, 2026 at 09:40:07AM +0100, Jan Kara wrote:
+ > (with explanations before I couldn't quite see the difference between shmem
+ > and kernfs). I'd note that fat or shmem (which are both export [...] 
+ Content analysis details:   (-0.1 points, 5.0 required)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature,
  not necessarily valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
  -0.1 DKIM_VALID_AU Message has a valid DKIM or DK signature from author's
  domain
- 0.0 FREEMAIL_FROM Sender email is commonly abused enduser mail provider
- [neilb(at)ownmail.net]
-X-Headers-End: 1viPYa-0006yO-Gc
-Subject: Re: [Jfs-discussion] [PATCH 00/29] fs: require filesystems to
- explicitly opt-in to nfsd export support
+X-Headers-End: 1viULk-0006pi-EN
+Subject: Re: [Jfs-discussion] [PATCH v2 02/31] exportfs: add new
+ EXPORT_OP_STABLE_HANDLES flag
 X-BeenThere: jfs-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -151,13 +108,14 @@ List-Post: <mailto:jfs-discussion@lists.sourceforge.net>
 List-Help: <mailto:jfs-discussion-request@lists.sourceforge.net?subject=help>
 List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/jfs-discussion>, 
  <mailto:jfs-discussion-request@lists.sourceforge.net?subject=subscribe>
-From: NeilBrown via Jfs-discussion <jfs-discussion@lists.sourceforge.net>
-Reply-To: NeilBrown <neil@brown.name>
-Cc: NeilBrown <neilb@ownmail.net>, Martin Brandenburg <martin@omnibond.com>,
- jfs-discussion@lists.sourceforge.net, Jan Kara <jack@suse.cz>,
- Paulo Alcantara <pc@manguebit.org>, Alex Markuze <amarkuze@redhat.com>,
- Sandeep Dhavale <dhavale@google.com>, linux-btrfs@vger.kernel.org,
- Carlos Maiolino <cem@kernel.org>, Amir Goldstein <amir73il@gmail.com>,
+From: Christoph Hellwig via Jfs-discussion
+ <jfs-discussion@lists.sourceforge.net>
+Reply-To: Christoph Hellwig <hch@infradead.org>
+Cc: Martin Brandenburg <martin@omnibond.com>,
+ jfs-discussion@lists.sourceforge.net, Paulo Alcantara <pc@manguebit.org>,
+ Alex Markuze <amarkuze@redhat.com>, Sandeep Dhavale <dhavale@google.com>,
+ linux-btrfs@vger.kernel.org, Carlos Maiolino <cem@kernel.org>,
+ Amir Goldstein <amir73il@gmail.com>, Dave Chinner <david@fromorbit.com>,
  linux-unionfs@vger.kernel.org,
  Konstantin Komarov <almaz.alexandrovich@paragon-software.com>,
  Chris Mason <clm@fb.com>, Andreas Dilger <adilger.kernel@dilger.ca>,
@@ -165,10 +123,12 @@ Cc: NeilBrown <neilb@ownmail.net>, Martin Brandenburg <martin@omnibond.com>,
  linux-mtd@lists.infradead.org, Mike Marshall <hubcap@omnibond.com>,
  linux-xfs@vger.kernel.org, linux-nilfs@vger.kernel.org,
  Yue Hu <zbestahu@gmail.com>, Miklos Szeredi <miklos@szeredi.hu>,
- Richard Weinberger <richard@nod.at>, Mark Fasheh <mark@fasheh.com>,
+ samba-technical@lists.samba.org, Richard Weinberger <richard@nod.at>,
+ Mark Fasheh <mark@fasheh.com>, linux-doc@vger.kernel.org,
  Hugh Dickins <hughd@google.com>, Dai Ngo <Dai.Ngo@oracle.com>,
  Ryusuke Konishi <konishi.ryusuke@gmail.com>,
- Christoph Hellwig <hch@infradead.org>, Gao Xiang <xiang@kernel.org>,
+ Christoph Hellwig <hch@infradead.org>, steve@digidescorp.com,
+ NeilBrown <neil@brown.name>, Gao Xiang <xiang@kernel.org>,
  linux-ext4@vger.kernel.org, Salah Triki <salah.triki@gmail.com>,
  linux-mm@kvack.org, devel@lists.orangefs.org,
  Shyam Prasad N <sprasad@microsoft.com>,
@@ -185,14 +145,16 @@ Cc: NeilBrown <neilb@ownmail.net>, Martin Brandenburg <martin@omnibond.com>,
  Christian Brauner <brauner@kernel.org>, Theodore Ts'o <tytso@mit.edu>,
  Luis de Bethencourt <luisbg@kernel.org>,
  Joseph Qi <joseph.qi@linux.alibaba.com>, linux-erofs@lists.ozlabs.org,
+ Jonathan Corbet <corbet@lwn.net>, Jeff Layton <jlayton@kernel.org>,
  linux-kernel@vger.kernel.org, linux-f2fs-devel@lists.sourceforge.net,
  Steve French <sfrench@samba.org>, Chuck Lever <chuck.lever@oracle.com>,
  Hongbo Li <lihongbo22@huawei.com>, Anna Schumaker <anna@kernel.org>,
  Jan Kara <jack@suse.com>, linux-fsdevel@vger.kernel.org,
  Phillip Lougher <phillip@squashfs.org.uk>,
  Andrew Morton <akpm@linux-foundation.org>, ntfs3@lists.linux.dev,
- David Woodhouse <dwmw2@infradead.org>, Trond Myklebust <trondmy@kernel.org>,
- Joel Becker <jlbec@evilplan.org>
+ David Woodhouse <dwmw2@infradead.org>,
+ David Laight <david.laight.linux@gmail.com>,
+ Trond Myklebust <trondmy@kernel.org>, Joel Becker <jlbec@evilplan.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Errors-To: jfs-discussion-bounces@lists.sourceforge.net
@@ -202,54 +164,52 @@ X-Spamd-Result: default: False [-7.11 / 15.00];
 	DMARC_POLICY_ALLOW_WITH_FAILURES(-0.50)[];
 	RWL_MAILSPIKE_EXCELLENT(-0.40)[216.105.38.7:from];
 	R_DKIM_ALLOW(-0.20)[lists.sourceforge.net:s=beta];
-	R_SPF_ALLOW(-0.20)[+ip4:216.105.38.7:c];
 	MAILLIST(-0.20)[mailman];
+	R_SPF_ALLOW(-0.20)[+ip4:216.105.38.7:c];
 	MIME_GOOD(-0.10)[text/plain];
 	HAS_LIST_UNSUB(-0.01)[];
-	TO_DN_SOME(0.00)[];
-	DKIM_MIXED(0.00)[];
 	FORGED_SENDER_MAILLIST(0.00)[];
+	ARC_NA(0.00)[];
+	DKIM_MIXED(0.00)[];
 	RCVD_TLS_LAST(0.00)[];
 	RECEIVED_HELO_LOCALHOST(0.00)[];
-	DMARC_POLICY_ALLOW(0.00)[lists.sourceforge.net,none];
+	TO_DN_SOME(0.00)[];
+	FREEMAIL_CC(0.00)[omnibond.com,lists.sourceforge.net,manguebit.org,redhat.com,google.com,vger.kernel.org,kernel.org,gmail.com,fromorbit.com,paragon-software.com,fb.com,dilger.ca,vivo.com,lists.infradead.org,szeredi.hu,lists.samba.org,nod.at,fasheh.com,oracle.com,infradead.org,digidescorp.com,brown.name,kvack.org,lists.orangefs.org,microsoft.com,talpey.com,lists.linux.dev,suse.com,zeniv.linux.org.uk,linux.alibaba.com,mail.parknet.co.jp,mit.edu,lists.ozlabs.org,lwn.net,samba.org,huawei.com,squashfs.org.uk,linux-foundation.org,evilplan.org];
+	RCVD_COUNT_THREE(0.00)[4];
 	MIME_TRACE(0.00)[0:+];
-	ARC_NA(0.00)[];
-	FREEMAIL_CC(0.00)[ownmail.net,omnibond.com,lists.sourceforge.net,suse.cz,manguebit.org,redhat.com,google.com,vger.kernel.org,kernel.org,gmail.com,paragon-software.com,fb.com,dilger.ca,vivo.com,lists.infradead.org,szeredi.hu,nod.at,fasheh.com,oracle.com,infradead.org,kvack.org,lists.orangefs.org,microsoft.com,talpey.com,lists.linux.dev,suse.com,zeniv.linux.org.uk,linux.alibaba.com,mail.parknet.co.jp,mit.edu,lists.ozlabs.org,samba.org,huawei.com,squashfs.org.uk,linux-foundation.org,evilplan.org];
-	R_DKIM_REJECT(0.00)[sourceforge.net:s=x,sf.net:s=x,ownmail.net:s=fm2,messagingengine.com:s=fm2];
-	DKIM_TRACE(0.00)[lists.sourceforge.net:+,sourceforge.net:-,sf.net:-,ownmail.net:-,messagingengine.com:-];
-	REPLYTO_DOM_NEQ_TO_DOM(0.00)[];
-	RCVD_COUNT_FIVE(0.00)[6];
-	RCPT_COUNT_GT_50(0.00)[72];
+	DMARC_POLICY_ALLOW(0.00)[lists.sourceforge.net,none];
+	DKIM_TRACE(0.00)[lists.sourceforge.net:+,sourceforge.net:-,sf.net:-,infradead.org:-];
+	REPLYTO_DOM_NEQ_FROM_DOM(0.00)[];
+	RCPT_COUNT_GT_50(0.00)[78];
+	TAGGED_RCPT(0.00)[jfs-discussion];
 	FROM_NEQ_ENVFROM(0.00)[jfs-discussion@lists.sourceforge.net,jfs-discussion-bounces@lists.sourceforge.net];
 	FROM_HAS_DN(0.00)[];
-	REPLYTO_DOM_NEQ_FROM_DOM(0.00)[];
-	TAGGED_RCPT(0.00)[jfs-discussion];
+	R_DKIM_REJECT(0.00)[sourceforge.net:s=x,sf.net:s=x,infradead.org:s=bombadil.20210309];
 	ASN(0.00)[asn:11320, ipnet:216.105.32.0/21, country:US];
-	HAS_REPLYTO(0.00)[neil@brown.name];
-	RCVD_VIA_SMTP_AUTH(0.00)[];
 	FORGED_RECIPIENTS_MAILLIST(0.00)[];
 	MISSING_XM_UA(0.00)[];
-	DBL_BLOCKED_OPENRESOLVER(0.00)[lists.sourceforge.net:dkim,lists.sourceforge.net:rdns,lists.sourceforge.net:helo,noble.neil.brown.name:mid,brown.name:replyto]
-X-Rspamd-Queue-Id: 805AC50DCB
+	HAS_REPLYTO(0.00)[hch@infradead.org];
+	REPLYTO_DOM_NEQ_TO_DOM(0.00)[];
+	DBL_BLOCKED_OPENRESOLVER(0.00)[lists.sourceforge.net:dkim,lists.sourceforge.net:rdns,lists.sourceforge.net:helo,infradead.org:mid,infradead.org:replyto]
+X-Rspamd-Queue-Id: 8B537543C5
 X-Rspamd-Action: no action
 X-Rspamd-Server: lfdr
 
-On Mon, 19 Jan 2026, Jeff Layton wrote:
-> 
-> There is another approach we could consider: We could move the
-> export_operations that are needed for local filehandle access into a
-> new struct filehandle_operations or something. It does mean adding an
-> extra pointer to the super_block for the new operations vector, but it
-> might be more intuitive.
+On Tue, Jan 20, 2026 at 09:40:07AM +0100, Jan Kara wrote:
+> (with explanations before I couldn't quite see the difference between shmem
+> and kernfs). I'd note that fat or shmem (which are both exportable)
+> satisfy this only with reasonably high probability as they use
+> get_random_u32() for initializing their i_generation but I guess it's as
+> good as it gets for them.
 
-If that sort of change were seen to be valuable, I would rather not
-create a filehandle_operations but merge some (or all) of
-export_operations into super_operations.
-Maybe then the existence of s_export_op would return to mean "NFS export
-supported" even if it is empty.
+For tmpfs random generations are as good as it gets, in fact that's what
+XFS starts with when allocating new inode clusters (which could have
+previous been used for for inodes as well).
 
-Thanks,
-NeilBrown
+fat on the other hand looks broken, as it also set a new generation when
+reading inodes from disk.  So I don't think fat should be nfs exportable,
+even if the export ops predate other uses.
+
 
 
 _______________________________________________
