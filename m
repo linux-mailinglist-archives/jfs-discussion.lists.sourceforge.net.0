@@ -2,110 +2,109 @@ Return-Path: <jfs-discussion-bounces@lists.sourceforge.net>
 Delivered-To: lists+jfs-discussion@lfdr.de
 Received: from mail.lfdr.de
 	by lfdr with LMTP
-	id oCsLLs5YcmkpiwAAu9opvQ
+	id 4LhgDe2BcmnFlgAAu9opvQ
 	(envelope-from <jfs-discussion-bounces@lists.sourceforge.net>)
-	for <lists+jfs-discussion@lfdr.de>; Thu, 22 Jan 2026 18:05:18 +0100
+	for <lists+jfs-discussion@lfdr.de>; Thu, 22 Jan 2026 21:00:45 +0100
 X-Original-To: lists+jfs-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id 36A6E6ABA4
-	for <lists+jfs-discussion@lfdr.de>; Thu, 22 Jan 2026 18:05:18 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 336456D4EF
+	for <lists+jfs-discussion@lfdr.de>; Thu, 22 Jan 2026 21:00:44 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.sourceforge.net; s=beta; h=Content-Transfer-Encoding:Content-Type:Cc:
+	d=lists.sourceforge.net; s=beta; h=Content-Transfer-Encoding:Content-Type:
 	Reply-To:From:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:References:
-	Message-ID:To:Date:Sender:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=9PxgJ4RxcIQ8Ovpo4wMewDWYTAX4saiIjV67d9pRmNo=; b=TQLa+r9d8D0+NfwEBZZRDgWg4O
-	ux+HpvXP9f2m5n1YPE543jbWZR/oYRQTspM6OBwP6/zBa5O4yc+hrQIz3OmJ+jZEJZzz17z62Sim4
-	ii+qKK/tH/1NKkT/qbPPOlrYI2xHh6aLG/wXsSWRLw+O/1rYvFNe0dN+4xCZ1I+qDXSg=;
-Received: from [127.0.0.1] (helo=sfs-ml-3.v29.lw.sourceforge.com)
-	by sfs-ml-3.v29.lw.sourceforge.com with esmtp (Exim 4.95)
+	List-Unsubscribe:List-Id:Subject:To:Message-ID:Date:MIME-Version:Sender:Cc:
+	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
+	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
+	bh=UFU+5lqC1jU4CqJGRMvGivLRDOgojFSi/iIPWjgbhYw=; b=RMUl5BlYVD3a4Iik4eseOuZ3Ey
+	TNlaxiHE0cGTDsl7UR3KoWyBLkmnNWvRPfG6zBE7iUP1w0eMBitG57C1t10huHTl0tsulMNoOITNK
+	+Zst3DFmu613+X1NQ8pGV1ullgY8AKsx3Rf242LLTG7nXYAh6ip3MZ3LTYiNbuLXQTmM=;
+Received: from [127.0.0.1] (helo=sfs-ml-4.v29.lw.sourceforge.com)
+	by sfs-ml-4.v29.lw.sourceforge.com with esmtp (Exim 4.95)
 	(envelope-from <jfs-discussion-bounces@lists.sourceforge.net>)
-	id 1viy6n-0004RC-7B;
-	Thu, 22 Jan 2026 17:04:37 +0000
+	id 1vj0qZ-00066l-6w;
+	Thu, 22 Jan 2026 20:00:03 +0000
 Received: from [172.30.29.66] (helo=mx.sourceforge.net)
  by sfs-ml-3.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
- TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (Exim 4.95)
- (envelope-from <djwong@kernel.org>) id 1viy6l-0004R2-LE;
- Thu, 22 Jan 2026 17:04:35 +0000
+ TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (Exim 4.95) (envelope-from
+ <3QnFyaQkbAEEv12ndoohudsslg.jrrjohxvhufrqwhqw.frp@M3KW2WVRGUFZ5GODRSRYTGD7.apphosting.bounces.google.com>)
+ id 1vizkX-0006gI-6q for jfs-discussion@lists.sourceforge.net;
+ Thu, 22 Jan 2026 18:49:45 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=sourceforge.net; s=x; h=In-Reply-To:Content-Type:MIME-Version:References:
- Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:Content-Transfer-Encoding:
- Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
- Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
+ d=sourceforge.net; s=x; h=Content-Type:To:From:Subject:Message-ID:Date:
+ MIME-Version:Sender:Reply-To:Cc:Content-Transfer-Encoding:Content-ID:
+ Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+ :Resent-Message-ID:In-Reply-To:References:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=qs+XaS+FGKy5XGjHxsh2yZR3UAuTtojhMQnjtTVwQfA=; b=DQJpdVxcLrPN39oG3XjU67yA+G
- QiPmlJLZtYrmvsabCRcomxkgyxXhoWmzR5T9KckaCMfidihlh1xwFnrFusLwXUxD0QGhYd0IvJRDi
- +SDD+6ijzm9hAxr/HdHZwNOo0p8KnVbRc5Hn+cgYrmgguOK6MVwzZP5mfCGC425gTd6w=;
+ bh=YfURiHF4NJvPK5avqS9ua7ThJSOSbPiSDn7pjL0HLwY=; b=LrGYTCbs1eH7lH94MthQBAdp27
+ 0pctU9Hvj39Qh9LnUaW/klNnF/xogRepObAgJjdVjQTvw3rH94VP2PqHgBWxzTjM3Tu0zvzKIilrh
+ yNK1RVKFmlh5SnqqrodC7rVKIYSpTZgI0ZWo40HmIAUsoS5GiUJIVXySPucR7sbjoinE=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
- h=In-Reply-To:Content-Type:MIME-Version:References:Message-ID:Subject:Cc:To
- :From:Date:Sender:Reply-To:Content-Transfer-Encoding:Content-ID:
- Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
- :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
- List-Post:List-Owner:List-Archive;
- bh=qs+XaS+FGKy5XGjHxsh2yZR3UAuTtojhMQnjtTVwQfA=; b=h1q9CMJ2tihlWsCDfQAryEZXlW
- stGrFrnIi7ciusukVFBG8Gf9AtL3dhh2iCfcRmrrVYkchafxBzjZ/Sej/xFAjgPkOtP4pXL6WZfRv
- pZj7Yd/Mr37NhOoZ5/yRgYooRlWPs15hvlbVjoetZx718N9BhvWhq5nGZ2xe3q69Mn7k=;
-Received: from sea.source.kernel.org ([172.234.252.31])
+ h=Content-Type:To:From:Subject:Message-ID:Date:MIME-Version:Sender:Reply-To
+ :Cc:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+ Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+ References:List-Id:List-Help:List-Unsubscribe:List-Subscribe:List-Post:
+ List-Owner:List-Archive; bh=YfURiHF4NJvPK5avqS9ua7ThJSOSbPiSDn7pjL0HLwY=; b=c
+ eZLxua5kf+dBO+DLHJ/w5o7obr6K+hoL/DAk4LoHUo9t3RcisUBr4KIqrAUVD9pWxTF91CU7wX+b1
+ izuUncBftBaUIBqlbDewyQUiqrzTNHfzzyPgz6P8yCFZY+cISpechTBYOIRvOqEcflZImhDSahOAE
+ c8FudBTcRLUC6xuM=;
+Received: from mail-ot1-f78.google.com ([209.85.210.78])
  by sfi-mx-2.v28.lw.sourceforge.com with esmtps
- (TLS1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.95)
- id 1viy6l-0003zh-3q; Thu, 22 Jan 2026 17:04:35 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
- by sea.source.kernel.org (Postfix) with ESMTP id 528AE4099B;
- Thu, 22 Jan 2026 17:04:24 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 156DAC116C6;
- Thu, 22 Jan 2026 17:04:24 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=k20201202; t=1769101464;
- bh=xwFz5Oidq8APQpCp7THEtDpXn9O+NGssd7GC7NPkIXE=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=ueyMX6ohlT+V7E4FTnwyr+bckr2XgM0otlsgh+U8+RB7dufNou2jXtRF8/4HiLX1h
- aiyHG+xAbRXlOpSKYNl+YW1B6es8lJGWyDpCT3G89X8Bn++QSMPHsovt5BRyWj7Z84
- MiFPflUjkr2UeHtVIt004pQ2LHYESJ6jR9ib6bF3tKB5BvchCfBJcHtl2H7eGV6Hj+
- XeQh59i2mPbJ0Z07CURTocG8MzgcrhLB0YpqMQ2BX+Q2rUwcSwiRIRCTHIiyBghAen
- fRki137MnL3p5j+2P7Cc4giyKdLsB0k8xoBASjwbPFk1rE23p0Kg5qRxi8CJQxSLFn
- VC/vMBqCcUNNQ==
-Date: Thu, 22 Jan 2026 09:04:23 -0800
-To: Jeff Layton <jlayton@kernel.org>
-Message-ID: <20260122170423.GU5945@frogsfrogsfrogs>
-References: <176885553525.16766.291581709413217562@noble.neil.brown.name>
- <aW8w2SRyFnmA2uqk@infradead.org>
- <176890126683.16766.5241619788613840985@noble.neil.brown.name>
- <aXCg-MqXH0E6IuwS@infradead.org>
- <176899164457.16766.16099772451425825775@noble.neil.brown.name>
- <364d2fd98af52a2e2c32ca286decbdc1fe1c80d3.camel@kernel.org>
- <aXDm8FPPOHs04w9m@infradead.org>
- <3210d04fa2c0b1f4312d10506cac30586cb49a3c.camel@kernel.org>
- <aXHFlF1tef68i2HU@infradead.org>
- <b491335d12e976e1ea1c07b9c14164ac69d22aea.camel@kernel.org>
+ (TLS1.2:ECDHE-RSA-AES128-GCM-SHA256:128) (Exim 4.95)
+ id 1vizkW-0004No-9o for jfs-discussion@lists.sourceforge.net;
+ Thu, 22 Jan 2026 18:49:45 +0000
+Received: by mail-ot1-f78.google.com with SMTP id
+ 46e09a7af769-7cfe286f517so2395980a34.0
+ for <jfs-discussion@lists.sourceforge.net>;
+ Thu, 22 Jan 2026 10:49:44 -0800 (PST)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20230601; t=1769107778; x=1769712578;
+ h=to:from:subject:message-id:date:mime-version:x-gm-message-state
+ :from:to:cc:subject:date:message-id:reply-to;
+ bh=YfURiHF4NJvPK5avqS9ua7ThJSOSbPiSDn7pjL0HLwY=;
+ b=Cg1GAOCQXVW5+sm7Wd2FM0XNhWt0BvMbXHBDB9rxpV9mm5Ip390jReW5zZbwi4XGIY
+ zmmlERYmJNEshkapEmBOof+TQeJPgQaSHj1Pb9CmGiGO2Hmn6FF/PPS2FdaPHVAn0cOB
+ 9bypFhHONuPx4hWTcWBysJVyzPhuBEGBKLUeedMRHn7xkON62orlg+f74/P9037lLl5n
+ 6DgkotOIQtEopCHoJhOAxrAqZCZIO4uXf+5yI7u/aUaLPmz48bkIghl+QCURhoF1GZEe
+ dBWrDYN5kuD1CNIzw0lazEi+XxxV43z0znXL0QT9mnQnnIWj57+9ywlj4E09QB6dEzsC
+ /EZw==
+X-Gm-Message-State: AOJu0YypOpcdAfLf4eRAHBUZzmSg0hIKur51sdAKC7ZGgz1eLBnMBXGH
+ wLWfQMZWwnA3joWcPKvd0pMbyBKrk1QjFzmeEFC0iyn2vl+s6m51urShthJS5CjSdr/CLYC05R4
+ q0Gf3zRHDUxfqPPlWCcrkij3FER+vcrXJmCQfSo9RFIDpaLcHY33MSA8Qz+pfVA==
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <b491335d12e976e1ea1c07b9c14164ac69d22aea.camel@kernel.org>
-X-Spam-Score: -0.3 (/)
+X-Received: by 2002:a05:6820:160f:b0:662:c0a9:e5b1 with SMTP id
+ 006d021491bc7-662cabb26f9mr364761eaf.80.1769107778742; Thu, 22 Jan 2026
+ 10:49:38 -0800 (PST)
+Date: Thu, 22 Jan 2026 10:49:38 -0800
+X-Google-Appengine-App-Id: s~syzkaller
+X-Google-Appengine-App-Id-Alias: syzkaller
+Message-ID: <69727142.050a0220.706b.0027.GAE@google.com>
+To: jfs-discussion@lists.sourceforge.net, linux-kernel@vger.kernel.org, 
+ shaggy@kernel.org, syzkaller-bugs@googlegroups.com
+X-Spam-Score: 0.3 (/)
 X-Spam-Report: Spam detection software,
- running on the system "sfi-spamd-2.hosts.colo.sdot.me", 
+ running on the system "sfi-spamd-1.hosts.colo.sdot.me", 
  has NOT identified this incoming email as spam.  The original
  message has been attached to this so you can view it or label
  similar future email.  If you have any questions, see
  the administrator of that system for details.
- Content preview:  On Thu, Jan 22, 2026 at 07:12:36AM -0500, Jeff Layton wrote:
- > On Wed, 2026-01-21 at 22:37 -0800, Christoph Hellwig wrote: > > On Wed,
- Jan 21, 2026 at 10:18:00AM -0500, Jeff Layton wrote: > > > > fat [...] 
- Content analysis details:   (-0.3 points, 5.0 required)
+ Content preview:  Hello,
+ syzbot found the following issue on: HEAD commit: e84d960149e7
+ Merge tag 'for-6.19-rc5-tag' of git://git.ker.. git tree: upstream console
+ output: https://syzkaller.appspot.com/x/log.txt?x=16784b9a580000 kernel
+ config: https://syzkaller.a [...] 
+ Content analysis details:   (0.3 points, 5.0 required)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature,
- not necessarily valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU Message has a valid DKIM or DK signature from author's
- domain
- -0.1 DKIMWL_WL_HIGH         DKIMwl.org - High trust sender
-X-Headers-End: 1viy6l-0003zh-3q
-Subject: Re: [Jfs-discussion] [PATCH 00/29] fs: require filesystems to
- explicitly opt-in to nfsd export support
+ 0.3 FROM_LOCAL_HEX         From: localpart has long hexadecimal sequence
+ 0.0 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level mail
+ domains are different
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [209.85.210.78 listed in wl.mailspike.net]
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+X-Headers-End: 1vizkW-0004No-9o
+X-Mailman-Approved-At: Thu, 22 Jan 2026 20:00:01 +0000
+Subject: [Jfs-discussion] [syzbot] [jfs?] KMSAN: uninit-value in txLock
 X-BeenThere: jfs-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -117,155 +116,146 @@ List-Post: <mailto:jfs-discussion@lists.sourceforge.net>
 List-Help: <mailto:jfs-discussion-request@lists.sourceforge.net?subject=help>
 List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/jfs-discussion>, 
  <mailto:jfs-discussion-request@lists.sourceforge.net?subject=subscribe>
-From: "Darrick J. Wong via Jfs-discussion"
- <jfs-discussion@lists.sourceforge.net>
-Reply-To: "Darrick J. Wong" <djwong@kernel.org>
-Cc: Martin Brandenburg <martin@omnibond.com>,
- jfs-discussion@lists.sourceforge.net, Jan Kara <jack@suse.cz>,
- Paulo Alcantara <pc@manguebit.org>, Alex Markuze <amarkuze@redhat.com>,
- Sandeep Dhavale <dhavale@google.com>, linux-btrfs@vger.kernel.org,
- Carlos Maiolino <cem@kernel.org>, Amir Goldstein <amir73il@gmail.com>,
- linux-unionfs@vger.kernel.org,
- Konstantin Komarov <almaz.alexandrovich@paragon-software.com>,
- Chris Mason <clm@fb.com>, Andreas Dilger <adilger.kernel@dilger.ca>,
- Chunhai Guo <guochunhai@vivo.com>, Ronnie Sahlberg <ronniesahlberg@gmail.com>,
- linux-mtd@lists.infradead.org, Mike Marshall <hubcap@omnibond.com>,
- linux-xfs@vger.kernel.org, linux-nilfs@vger.kernel.org,
- Yue Hu <zbestahu@gmail.com>, Miklos Szeredi <miklos@szeredi.hu>,
- Richard Weinberger <richard@nod.at>, Mark Fasheh <mark@fasheh.com>,
- Hugh Dickins <hughd@google.com>, Dai Ngo <Dai.Ngo@oracle.com>,
- Ryusuke Konishi <konishi.ryusuke@gmail.com>,
- Christoph Hellwig <hch@infradead.org>, NeilBrown <neil@brown.name>,
- Gao Xiang <xiang@kernel.org>, linux-ext4@vger.kernel.org,
- Salah Triki <salah.triki@gmail.com>, linux-mm@kvack.org,
- devel@lists.orangefs.org, Shyam Prasad N <sprasad@microsoft.com>,
- Olga Kornievskaia <okorniev@redhat.com>, linux-cifs@vger.kernel.org,
- Dave Kleikamp <shaggy@kernel.org>, Chao Yu <chao@kernel.org>,
- linux-nfs@vger.kernel.org, Tom Talpey <tom@talpey.com>,
- ocfs2-devel@lists.linux.dev, Bharath SM <bharathsm@microsoft.com>,
- David Sterba <dsterba@suse.com>, Alexander Viro <viro@zeniv.linux.org.uk>,
- Baolin Wang <baolin.wang@linux.alibaba.com>,
- Jeffle Xu <jefflexu@linux.alibaba.com>, Jaegeuk Kim <jaegeuk@kernel.org>,
- ceph-devel@vger.kernel.org, Ilya Dryomov <idryomov@gmail.com>,
- OGAWA Hirofumi <hirofumi@mail.parknet.co.jp>,
- Andreas Gruenbacher <agruenba@redhat.com>, gfs2@lists.linux.dev,
- Christian Brauner <brauner@kernel.org>, Theodore Ts'o <tytso@mit.edu>,
- Luis de Bethencourt <luisbg@kernel.org>,
- Joseph Qi <joseph.qi@linux.alibaba.com>, linux-erofs@lists.ozlabs.org,
- linux-kernel@vger.kernel.org, linux-f2fs-devel@lists.sourceforge.net,
- Steve French <sfrench@samba.org>, Chuck Lever <chuck.lever@oracle.com>,
- Hongbo Li <lihongbo22@huawei.com>, Anna Schumaker <anna@kernel.org>,
- Jan Kara <jack@suse.com>, linux-fsdevel@vger.kernel.org,
- Phillip Lougher <phillip@squashfs.org.uk>,
- Andrew Morton <akpm@linux-foundation.org>, ntfs3@lists.linux.dev,
- David Woodhouse <dwmw2@infradead.org>, Trond Myklebust <trondmy@kernel.org>,
- Joel Becker <jlbec@evilplan.org>
+From: syzbot via Jfs-discussion <jfs-discussion@lists.sourceforge.net>
+Reply-To: syzbot <syzbot+d3a57c32b9112d7b01ec@syzkaller.appspotmail.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Errors-To: jfs-discussion-bounces@lists.sourceforge.net
 X-Rspamd-Server: lfdr
-X-Spamd-Result: default: False [-6.61 / 15.00];
+X-Spamd-Result: default: False [-7.61 / 15.00];
 	WHITELIST_DMARC(-7.00)[sourceforge.net:D:+];
-	SUSPICIOUS_RECIPS(1.50)[];
+	URI_HIDDEN_PATH(1.00)[https://syzkaller.appspot.com/x/.config?x=46b5f80a6e7aaa5c];
 	DMARC_POLICY_ALLOW_WITH_FAILURES(-0.50)[];
-	MID_RHS_NOT_FQDN(0.50)[];
 	RWL_MAILSPIKE_EXCELLENT(-0.40)[216.105.38.7:from];
-	R_SPF_ALLOW(-0.20)[+ip4:216.105.38.7:c];
 	R_DKIM_ALLOW(-0.20)[lists.sourceforge.net:s=beta];
+	R_SPF_ALLOW(-0.20)[+ip4:216.105.38.7];
 	MAILLIST(-0.20)[mailman];
 	MIME_GOOD(-0.10)[text/plain];
 	HAS_LIST_UNSUB(-0.01)[];
-	ARC_NA(0.00)[];
-	RCVD_TLS_LAST(0.00)[];
-	FORGED_SENDER_MAILLIST(0.00)[];
-	TO_DN_SOME(0.00)[];
-	RECEIVED_HELO_LOCALHOST(0.00)[];
-	DKIM_MIXED(0.00)[];
-	REPLYTO_DOM_EQ_TO_DOM(0.00)[];
-	FREEMAIL_CC(0.00)[omnibond.com,lists.sourceforge.net,suse.cz,manguebit.org,redhat.com,google.com,vger.kernel.org,kernel.org,gmail.com,paragon-software.com,fb.com,dilger.ca,vivo.com,lists.infradead.org,szeredi.hu,nod.at,fasheh.com,oracle.com,infradead.org,brown.name,kvack.org,lists.orangefs.org,microsoft.com,talpey.com,lists.linux.dev,suse.com,zeniv.linux.org.uk,linux.alibaba.com,mail.parknet.co.jp,mit.edu,lists.ozlabs.org,samba.org,huawei.com,squashfs.org.uk,linux-foundation.org,evilplan.org];
-	MIME_TRACE(0.00)[0:+];
-	R_DKIM_REJECT(0.00)[sourceforge.net:s=x,sf.net:s=x,kernel.org:s=k20201202];
-	DKIM_TRACE(0.00)[lists.sourceforge.net:+,sourceforge.net:-,sf.net:-,kernel.org:-];
-	DMARC_POLICY_ALLOW(0.00)[lists.sourceforge.net,none];
-	RCVD_COUNT_FIVE(0.00)[5];
-	RCPT_COUNT_GT_50(0.00)[72];
-	FROM_NEQ_ENVFROM(0.00)[jfs-discussion@lists.sourceforge.net,jfs-discussion-bounces@lists.sourceforge.net];
-	FROM_HAS_DN(0.00)[];
-	REPLYTO_DOM_NEQ_FROM_DOM(0.00)[];
-	TAGGED_RCPT(0.00)[jfs-discussion];
-	ASN(0.00)[asn:11320, ipnet:216.105.32.0/21, country:US];
-	HAS_REPLYTO(0.00)[djwong@kernel.org];
-	RCVD_VIA_SMTP_AUTH(0.00)[];
 	FORGED_RECIPIENTS_MAILLIST(0.00)[];
+	RCVD_TLS_LAST(0.00)[];
+	DMARC_POLICY_ALLOW(0.00)[lists.sourceforge.net,none];
+	RECEIVED_HELO_LOCALHOST(0.00)[];
+	R_DKIM_REJECT(0.00)[sourceforge.net:s=x,sf.net:s=x];
+	FORGED_SENDER_MAILLIST(0.00)[];
+	DKIM_MIXED(0.00)[];
+	MIME_TRACE(0.00)[0:+];
+	RCVD_COUNT_THREE(0.00)[4];
+	ARC_NA(0.00)[];
+	REPLYTO_DOM_NEQ_FROM_DOM(0.00)[];
+	RCPT_COUNT_THREE(0.00)[4];
+	REPLYTO_DOM_NEQ_TO_DOM(0.00)[];
+	PREVIOUSLY_DELIVERED(0.00)[jfs-discussion@lists.sourceforge.net];
+	DBL_BLOCKED_OPENRESOLVER(0.00)[syzkaller.appspot.com:url,storage.googleapis.com:url,appspotmail.com:email,goo.gl:url];
+	TO_DN_NONE(0.00)[];
+	FROM_HAS_DN(0.00)[];
+	FROM_NEQ_ENVFROM(0.00)[jfs-discussion@lists.sourceforge.net,jfs-discussion-bounces@lists.sourceforge.net];
+	DKIM_TRACE(0.00)[lists.sourceforge.net:+,sourceforge.net:-,sf.net:-];
+	NEURAL_HAM(-0.00)[-1.000];
+	REDIRECTOR_URL(0.00)[goo.gl];
+	HAS_REPLYTO(0.00)[syzbot+d3a57c32b9112d7b01ec@syzkaller.appspotmail.com];
+	TAGGED_RCPT(0.00)[jfs-discussion];
 	MISSING_XM_UA(0.00)[];
-	DBL_BLOCKED_OPENRESOLVER(0.00)[lists.sourceforge.net:dkim,lists.sourceforge.net:helo,lists.sourceforge.net:rdns]
-X-Rspamd-Queue-Id: 36A6E6ABA4
+	ASN(0.00)[asn:11320, ipnet:216.105.32.0/21, country:US];
+	SUBJECT_HAS_QUESTION(0.00)[]
+X-Rspamd-Queue-Id: 336456D4EF
 X-Rspamd-Action: no action
 
-On Thu, Jan 22, 2026 at 07:12:36AM -0500, Jeff Layton wrote:
-> On Wed, 2026-01-21 at 22:37 -0800, Christoph Hellwig wrote:
-> > On Wed, Jan 21, 2026 at 10:18:00AM -0500, Jeff Layton wrote:
-> > > > fat seems to be an exception as far as the 'real' file systems go.
-> > > > And it did sound to me like some of the synthetic ones had similar
-> > > > issues.
-> > > > 
-> > > 
-> > > Not sure what we can do about FAT without changing the filehandle
-> > > format in some fashion. The export ops just use
-> > > generic_encode_ino32_fh, and FAT doesn't have stable inode numbers.
-> > > The "nostale" ops seem sane enough but it looks like they only work
-> > > with the fs in r/o mode.
-> > 
-> > Yeah.  I guess we need to ignore this because of <history>
-> > 
-> 
-> Yep. This is a case where the handles are not PERSISTENT but I don't
-> think we can get away with making FAT unexportable. We're probably
-> stuck with it.
-> 
-> > > > I think Amirs patch would take care of that.  Although userland nfs
-> > > > servers or other storage applications using the handle syscalls would
-> > > > still see them.  Then again fixing the problem that some handles
-> > > > did not fulfill the long standing (but not documented well enough)
-> > > > semantics probably is a good fix on it's own.
-> > > 
-> > > Agreed. We should try to ensure uniqueness and persistence in all
-> > > filehandles both for nfsd and userland applications.
-> > 
-> > Sounds good to me.
-> 
-> 
-> Unfortunately, there are already exceptions. Apparently pidfs and
-> cgroupfs handles (at least) can't be extended because of userspace
-> expectations:
-> 
-> https://lore.kernel.org/linux-nfs/20260120-irrelevant-zeilen-b3c40a8e6c30@brauner/
+Hello,
 
-systemd cracking file handles??  Yeesh, I thought userspace was supposed
-to treat a file handle as an opaque N-byte blob and nothing more, and
-only certain "special" tools (e.g. xfsprogs on XFS) could do more than
-that.
+syzbot found the following issue on:
 
---D
+HEAD commit:    e84d960149e7 Merge tag 'for-6.19-rc5-tag' of git://git.ker..
+git tree:       upstream
+console output: https://syzkaller.appspot.com/x/log.txt?x=16784b9a580000
+kernel config:  https://syzkaller.appspot.com/x/.config?x=46b5f80a6e7aaa5c
+dashboard link: https://syzkaller.appspot.com/bug?extid=d3a57c32b9112d7b01ec
+compiler:       Debian clang version 20.1.8 (++20250708063551+0c9f909b7976-1~exp1~20250708183702.136), Debian LLD 20.1.8
+syz repro:      https://syzkaller.appspot.com/x/repro.syz?x=158fdb9a580000
+C reproducer:   https://syzkaller.appspot.com/x/repro.c?x=170153fa580000
 
-> My personal take is that we should try to make handle uniqueness a goal
-> for most existing filesystems, but we're going to have some that can't
-> achieve that. For them we probably want to be able to flag them so they
-> can be id'ed by userland.
-> 
-> So, we will need an export_operations flag of some sort
-> (EXPORT_OP_UNIQUE_HANDLES?). At that point, we'll have to decide
-> whether to deny nfsd export based on that flag:
-> 
-> We could deny export of any fs that doesn't set the flag, but NFSv4
-> actually allows the server to advertise that it can't guarantee handle
-> uniqueness. There isn't much guidance for the client on how to handle
-> that though and the attribute seems to have the scope of the entire NFS
-> server.
-> 
-> -- 
-> Jeff Layton <jlayton@kernel.org>
-> 
+Downloadable assets:
+disk image: https://storage.googleapis.com/syzbot-assets/2d9623942f5a/disk-e84d9601.raw.xz
+vmlinux: https://storage.googleapis.com/syzbot-assets/61b0e15f8560/vmlinux-e84d9601.xz
+kernel image: https://storage.googleapis.com/syzbot-assets/8b71c88680c4/bzImage-e84d9601.xz
+mounted in repro: https://storage.googleapis.com/syzbot-assets/7023ce628e6e/mount_2.gz
+  fsck result: failed (log: https://syzkaller.appspot.com/x/fsck.log?x=130153fa580000)
+
+IMPORTANT: if you fix the issue, please add the following tag to the commit:
+Reported-by: syzbot+d3a57c32b9112d7b01ec@syzkaller.appspotmail.com
+
+=====================================================
+BUG: KMSAN: uninit-value in txLock+0x13a2/0x2900 fs/jfs/jfs_txnmgr.c:659
+ txLock+0x13a2/0x2900 fs/jfs/jfs_txnmgr.c:659
+ xtTruncate+0x1002/0x5050 fs/jfs/jfs_xtree.c:2337
+ jfs_truncate_nolock+0x223/0x670 fs/jfs/inode.c:396
+ jfs_truncate fs/jfs/inode.c:420 [inline]
+ jfs_write_failed+0x207/0x3c0 fs/jfs/inode.c:295
+ jfs_write_end+0xcc/0x110 fs/jfs/inode.c:322
+ generic_perform_write+0x999/0x1050 mm/filemap.c:4335
+ __generic_file_write_iter+0x213/0x460 mm/filemap.c:4431
+ generic_file_write_iter+0x131/0x980 mm/filemap.c:4457
+ new_sync_write fs/read_write.c:593 [inline]
+ vfs_write+0xbe2/0x15d0 fs/read_write.c:686
+ ksys_pwrite64 fs/read_write.c:793 [inline]
+ __do_sys_pwrite64 fs/read_write.c:801 [inline]
+ __se_sys_pwrite64 fs/read_write.c:798 [inline]
+ __x64_sys_pwrite64+0x2ab/0x3b0 fs/read_write.c:798
+ x64_sys_call+0xbaf/0x3e70 arch/x86/include/generated/asm/syscalls_64.h:19
+ do_syscall_x64 arch/x86/entry/syscall_64.c:63 [inline]
+ do_syscall_64+0xd3/0xf80 arch/x86/entry/syscall_64.c:94
+ entry_SYSCALL_64_after_hwframe+0x77/0x7f
+
+Uninit was created at:
+ __alloc_frozen_pages_noprof+0x421/0xab0 mm/page_alloc.c:5263
+ alloc_pages_mpol+0x328/0x860 mm/mempolicy.c:2486
+ alloc_frozen_pages_noprof mm/mempolicy.c:2557 [inline]
+ alloc_pages_noprof+0x102/0x280 mm/mempolicy.c:2577
+ vm_area_alloc_pages mm/vmalloc.c:3649 [inline]
+ __vmalloc_area_node mm/vmalloc.c:3863 [inline]
+ __vmalloc_node_range_noprof+0xa94/0x2d90 mm/vmalloc.c:4051
+ __vmalloc_node_noprof mm/vmalloc.c:4111 [inline]
+ vmalloc_noprof+0xce/0x140 mm/vmalloc.c:4146
+ txInit+0xb5c/0xfa0 fs/jfs/jfs_txnmgr.c:297
+ init_jfs_fs+0x1b2/0xcb0 fs/jfs/super.c:977
+ do_one_initcall+0x22b/0xad0 init/main.c:1378
+ do_initcall_level+0x157/0x2e0 init/main.c:1440
+ do_initcalls+0x176/0x310 init/main.c:1456
+ do_basic_setup+0x1d/0x30 init/main.c:1475
+ kernel_init_freeable+0x214/0x430 init/main.c:1688
+ kernel_init+0x2f/0x5e0 init/main.c:1578
+ ret_from_fork+0x208/0x710 arch/x86/kernel/process.c:158
+ ret_from_fork_asm+0x1a/0x30 arch/x86/entry/entry_64.S:246
+
+CPU: 1 UID: 0 PID: 6025 Comm: syz.0.17 Not tainted syzkaller #0 PREEMPT(none) 
+Hardware name: Google Google Compute Engine/Google Compute Engine, BIOS Google 10/25/2025
+=====================================================
+
+
+---
+This report is generated by a bot. It may contain errors.
+See https://goo.gl/tpsmEJ for more information about syzbot.
+syzbot engineers can be reached at syzkaller@googlegroups.com.
+
+syzbot will keep track of this issue. See:
+https://goo.gl/tpsmEJ#status for how to communicate with syzbot.
+
+If the report is already addressed, let syzbot know by replying with:
+#syz fix: exact-commit-title
+
+If you want syzbot to run the reproducer, reply with:
+#syz test: git://repo/address.git branch-or-commit-hash
+If you attach or paste a git patch, syzbot will apply it before testing.
+
+If you want to overwrite report's subsystems, reply with:
+#syz set subsystems: new-subsystem
+(See the list of subsystem names on the web dashboard)
+
+If the report is a duplicate of another one, reply with:
+#syz dup: exact-subject-of-another-report
+
+If you want to undo deduplication, reply with:
+#syz undup
 
 
 _______________________________________________
