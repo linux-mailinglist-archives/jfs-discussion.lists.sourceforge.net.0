@@ -2,132 +2,129 @@ Return-Path: <jfs-discussion-bounces@lists.sourceforge.net>
 Delivered-To: lists+jfs-discussion@lfdr.de
 Received: from mail.lfdr.de
 	by lfdr with LMTP
-	id AMDYKuNXcWkNEwAAu9opvQ
+	id gIAwC/F8cWm0HwAAu9opvQ
 	(envelope-from <jfs-discussion-bounces@lists.sourceforge.net>)
-	for <lists+jfs-discussion@lfdr.de>; Wed, 21 Jan 2026 23:49:07 +0100
+	for <lists+jfs-discussion@lfdr.de>; Thu, 22 Jan 2026 02:27:13 +0100
 X-Original-To: lists+jfs-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0F0CE5F08F
-	for <lists+jfs-discussion@lfdr.de>; Wed, 21 Jan 2026 23:49:07 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4A66660514
+	for <lists+jfs-discussion@lfdr.de>; Thu, 22 Jan 2026 02:27:12 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.sourceforge.net; s=beta; h=Content-Transfer-Encoding:Content-Type:Cc:
 	Reply-To:From:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:Subject:Message-id:Date:References:In-reply-to:To:
-	MIME-Version:Sender:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=zihRgM/r73Z6pGIfANPOu7k5Oi6W7rFMYSsxN6mhkGg=; b=d4QN974fzVrn8p/xWd7rNi/lt1
-	eWjGnWLg7fysx1db/672cZGYmxosAJCBjVsjPMugY9GddW0IiGyfVl2B0ffe5ljh5Pjgcal2jfMaG
-	YoehtulyyLljLRKWHvrt4VpnjS/x7jEwUY1hCWbcCXTqx82NLvvY0I+Ca/9qeq0hOjLo=;
+	List-Unsubscribe:List-Id:Subject:MIME-Version:Message-ID:Date:To:Sender:
+	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
+	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
+	bh=8ewfX61Wu3p65J/EYrP5mG/5ZDPU7bBEJnpcJ9Nd2hI=; b=ZCs0yB7F0SOcKkGQCpTI2YwThr
+	cpXer5PSjtwT+PFY9jqsxqw3Bynjc54e1Jd4ut7DP+U6EOsH/Z9QmSlKvA1quqSrzLuAb6RcLOFD+
+	EVyGAOfGYRUOdNDJCREWSUK7Fv3Wg9XruiDhWzU5RsPsRu9s5wweo6RCjsGxYha7EpuQ=;
 Received: from [127.0.0.1] (helo=sfs-ml-2.v29.lw.sourceforge.com)
 	by sfs-ml-2.v29.lw.sourceforge.com with esmtp (Exim 4.95)
 	(envelope-from <jfs-discussion-bounces@lists.sourceforge.net>)
-	id 1vigzv-0001ED-GN;
-	Wed, 21 Jan 2026 22:48:24 +0000
+	id 1vijSw-0007tA-Ry;
+	Thu, 22 Jan 2026 01:26:31 +0000
 Received: from [172.30.29.66] (helo=mx.sourceforge.net)
  by sfs-ml-2.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
  TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (Exim 4.95)
- (envelope-from <neilb@ownmail.net>) id 1vigzt-0001E2-Fu;
- Wed, 21 Jan 2026 22:48:22 +0000
+ (envelope-from <qikeyu2017@gmail.com>) id 1vijSv-0007st-6I
+ for jfs-discussion@lists.sourceforge.net;
+ Thu, 22 Jan 2026 01:26:30 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=sourceforge.net; s=x; h=Reply-To:Message-id:Date:References:In-reply-to:
- Subject:Cc:To:From:MIME-Version:Content-Transfer-Encoding:Content-Type:Sender
- :Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
- Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
+ d=sourceforge.net; s=x; h=Content-Transfer-Encoding:MIME-Version:Message-ID:
+ Date:Subject:Cc:To:From:Sender:Reply-To:Content-Type:Content-ID:
+ Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+ :Resent-Message-ID:In-Reply-To:References:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=5coOyJl4iosEMxvKLf9pz/D+NbUu48dkiDD9Y2kxJME=; b=iicwrgTGIK+Nmg+YaUaHPR5QLq
- b5hyAmeXwJAAP1U/jJNIZ3AozsJMem5VKqz7gLAk6tqfpGonsUQbLIZf8znhbocuR3BIxGnrc0YdG
- zM+/xIZ9Es1dhHGbkwuVFJnnKpxufi+c5/RUOjAa1H0CJ1Otvy2cCZDXs3TaETT57Ta0=;
+ bh=dUSv8YHIJjxsXrtxcCX+JA8SGYZsDqSqraKizssPYoQ=; b=RZ0Yi0RgJlQJBhayskx4dxb7WO
+ d+j9YiRFYIdZUUXwyyg1Ral1f6CTcLcjDWT1k3eu/T4G6BZvgSBQdPjCi2NC56mhGywhtXLRdYtN5
+ bSl41nBFmVIVkg0W2dngzMiPIdWyye7oqBSoVIDQdbpVgxoQtmklbNW7uuS8CcSYN5Ig=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
- h=Reply-To:Message-id:Date:References:In-reply-to:Subject:Cc:To:From:
- MIME-Version:Content-Transfer-Encoding:Content-Type:Sender:Content-ID:
- Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
- :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
- List-Post:List-Owner:List-Archive;
- bh=5coOyJl4iosEMxvKLf9pz/D+NbUu48dkiDD9Y2kxJME=; b=Sgc/FkM0tb//9I1g3asPm0s0Rc
- qym5ZE9lPm/0iO1wVzjq+P9VrHlJHlcn3U0GoYU4yB6TjTc2uDMRB1sKNrH+JdD6OS+NHmjp4hYDV
- Y6YVGlV/CiBHRNOMrS55aGGDi+Y069aAPcckAwZqrZFXZOKgg9BsHUkA/BZIQEWwd8/Y=;
-Received: from flow-b6-smtp.messagingengine.com ([202.12.124.141])
+ h=Content-Transfer-Encoding:MIME-Version:Message-ID:Date:Subject:Cc:To:From
+ :Sender:Reply-To:Content-Type:Content-ID:Content-Description:Resent-Date:
+ Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+ References:List-Id:List-Help:List-Unsubscribe:List-Subscribe:List-Post:
+ List-Owner:List-Archive; bh=dUSv8YHIJjxsXrtxcCX+JA8SGYZsDqSqraKizssPYoQ=; b=T
+ kXZclbvlIksTpBzXGKNBmQ5W1L04yeco1TDITCT6Z+MHgExlqrt9/UvRgTEbeqyk2kzRhqR/MSvWg
+ Cg83DMPqnglnEuPCf52f5OHEsHXSmf8Nn0FToc7hHay3WCQFz87B9AiVSBqo1q8EuM1M25f/GIEFK
+ wlbhQBzylWFaJoj8=;
+Received: from mail-pj1-f53.google.com ([209.85.216.53])
  by sfi-mx-2.v28.lw.sourceforge.com with esmtps
- (TLS1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.95)
- id 1vigzt-0003Na-Ec; Wed, 21 Jan 2026 22:48:22 +0000
-Received: from phl-compute-05.internal (phl-compute-05.internal [10.202.2.45])
- by mailflow.stl.internal (Postfix) with ESMTP id 8D6A31300F24;
- Wed, 21 Jan 2026 17:48:08 -0500 (EST)
-Received: from phl-frontend-04 ([10.202.2.163])
- by phl-compute-05.internal (MEProxy); Wed, 21 Jan 2026 17:48:10 -0500
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ownmail.net; h=
- cc:cc:content-transfer-encoding:content-type:content-type:date
- :date:from:from:in-reply-to:in-reply-to:message-id:mime-version
- :references:reply-to:reply-to:subject:subject:to:to; s=fm2; t=
- 1769035688; x=1769042888; bh=5coOyJl4iosEMxvKLf9pz/D+NbUu48dkiDD
- 9Y2kxJME=; b=GuovOWXRBLUE5OJcSyLnE/2eveX/36uTx36j9P93zjQcQRBZQL2
- hrnzBjQOgzs/f0q+zVSV1tWHCGJeldpGO5tNxzbNYGAmGERTI/74rC4AhDEcwnbN
- 3EK+IxK9Da7qBxTZ0cL7/5RdElCmK5xx1WEmeVCQTAdbEDCJzhvLIyYH/VUBXRn2
- h49SQEqoXX9n4peKNOiWNTGeGPiK9qsGhIMzVRsfQ8nV0r0CSHnLs3nYhgIfpNL3
- aRQdXpKb6VS0ww0j3QddijYoBo1Kwrkcj+Ox1b+DG22Mrte7SY069e+GdbfIhnlj
- 3VqqpOkLrd4aGQop2LrD926E4486pl+anPw==
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
- messagingengine.com; h=cc:cc:content-transfer-encoding
- :content-type:content-type:date:date:feedback-id:feedback-id
- :from:from:in-reply-to:in-reply-to:message-id:mime-version
- :references:reply-to:reply-to:subject:subject:to:to:x-me-proxy
- :x-me-sender:x-me-sender:x-sasl-enc; s=fm2; t=1769035688; x=
- 1769042888; bh=5coOyJl4iosEMxvKLf9pz/D+NbUu48dkiDD9Y2kxJME=; b=G
- Qln8ftBpavKFAA+sJNEPaaNr8oKurXmo3q4BaVp9GwaWB1fm8C563yxGcgYW93DS
- 2xtNzCjbtolaXD67qz6Qutqe5geB5bsD8Ugeg6j/LWjxuo9XwZj1mmfo4drLgUP2
- yKqhpGLcalZ4u5NUgfoc97greSYLp54DwzSB4S6wHw4u2msQsbGk5ZA8IJMGNIbQ
- ngZ+8m6ZYaIowc/dHLMNgP5a1uqvjsJX/qkbUxNoCKOD6a2oW1oaQNc62xAi1nw9
- 1ilzAzJcDO41rfb5T7w8GgYR5Vyc6IoiPl6WjnE4pmvyLFxhbYKi59Pm07XkqffD
- MH3MYMODbYPIXIIlLoSWg==
-X-ME-Sender: <xms:o1dxaZ-cMFc_o0d43ug7z0kzLEBmcLr7-qnETyPvdBZuqqtXE2bH3w>
- <xme:o1dxaWu_cgJpAPDvXRifHWGeBvpSKMc12f7rFBgOoG_tMemlpn3xQTXYgCwgfa7tz
- OXDCzuK93xla979oqbjqOFhStCl3Vabm505SJATmkmL4XzdyA>
-X-ME-Received: <xmr:o1dxaTxZPCOrm1mlblqPiWzOX285XPSCGpXm-fKvOvS9y7eJCkfR7O9aWP_lCWxHfYgXgfjqf3Vws4y9gRuwORW00qGz0381O1TtjVlRJXe1>
-X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgeefgedrtddtgddugeeghedvucetufdoteggodetrf
- dotffvucfrrhhofhhilhgvmecuhfgrshhtofgrihhlpdfurfetoffkrfgpnffqhgenuceu
- rghilhhouhhtmecufedttdenucesvcftvggtihhpihgvnhhtshculddquddttddmnecujf
- gurheptgfgggfhvfevufgjfhffkfhrsehtqhertddttdejnecuhfhrohhmpefpvghilheu
- rhhofihnuceonhgvihhlsgesohifnhhmrghilhdrnhgvtheqnecuggftrfgrthhtvghrnh
- epleejtdefgeeukeeiteduveehudevfeffvedutefgteduhfegvdfgtdeigeeuudejnecu
- vehluhhsthgvrhfuihiivgeptdenucfrrghrrghmpehmrghilhhfrhhomhepnhgvihhlsg
- esohifnhhmrghilhdrnhgvthdpnhgspghrtghpthhtohepjeejpdhmohguvgepshhmthhp
- ohhuthdprhgtphhtthhopehvihhrohesiigvnhhivhdrlhhinhhugidrohhrghdruhhkpd
- hrtghpthhtohepghhuohgthhhunhhhrghisehvihhvohdrtghomhdprhgtphhtthhopehl
- ihhnuhigqdigfhhssehvghgvrhdrkhgvrhhnvghlrdhorhhgpdhrtghpthhtoheplhhinh
- hugidquhhnihhonhhfshesvhhgvghrrdhkvghrnhgvlhdrohhrghdprhgtphhtthhopehl
- ihhnuhigqdhnihhlfhhssehvghgvrhdrkhgvrhhnvghlrdhorhhgpdhrtghpthhtoheplh
- hinhhugidqnhhfshesvhhgvghrrdhkvghrnhgvlhdrohhrghdprhgtphhtthhopehlihhn
- uhigqdhkvghrnhgvlhesvhhgvghrrdhkvghrnhgvlhdrohhrghdprhgtphhtthhopehlih
- hnuhigqdhfshguvghvvghlsehvghgvrhdrkhgvrhhnvghlrdhorhhgpdhrtghpthhtohep
- lhhinhhugidqvgigthegsehvghgvrhdrkhgvrhhnvghlrdhorhhg
-X-ME-Proxy: <xmx:o1dxabxtlAdkhpwCkINTEBpxmOYNyzwJPUiM41SluU32_hzzNA9XZQ>
- <xmx:o1dxafCKgd9STI3lGSZvVjQToHTy1h7liCKSrmU9waffzwMuC1NFUA>
- <xmx:o1dxaY793FR_a6LdPfr_ZHshxnAh_1jwBDA6jddarcyZMxIXycacjw>
- <xmx:o1dxaRMf9cXehnUejISjAclfFWLd7Zsy6-U0xLPbufXx8cPynQ1yZw>
- <xmx:qFdxaSd_vulaCSCn1gwPqzAJtzBUIYK-Pjhk-xVuA_6gzPYpL8lA2saQ>
-Feedback-ID: iab3e480c:Fastmail
-Received: by mail.messagingengine.com (Postfix) with ESMTPA; Wed,
- 21 Jan 2026 17:47:43 -0500 (EST)
+ (TLS1.2:ECDHE-RSA-AES128-GCM-SHA256:128) (Exim 4.95)
+ id 1vijSv-0003DR-KK for jfs-discussion@lists.sourceforge.net;
+ Thu, 22 Jan 2026 01:26:29 +0000
+Received: by mail-pj1-f53.google.com with SMTP id
+ 98e67ed59e1d1-34ccdcbe520so245695a91.1
+ for <jfs-discussion@lists.sourceforge.net>;
+ Wed, 21 Jan 2026 17:26:29 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=gmail.com; s=20230601; t=1769045179; x=1769649979; darn=lists.sourceforge.net;
+ h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+ :to:from:from:to:cc:subject:date:message-id:reply-to;
+ bh=dUSv8YHIJjxsXrtxcCX+JA8SGYZsDqSqraKizssPYoQ=;
+ b=DR8DLi1yuU+5YRYY3N2rn+lZ0PnQzSGdsUSJiqTBRJhftapn6sndgr3io0pk8TmHfL
+ E8KRB1K0wRSGyOxz59nd4PE7sH7Rl1s++qNgO38YCA8YwJsG0y+7yJs4uqzI7jWks41K
+ BmTMB5IVEe95MyrvARb0HcFGRzsvOk2T8t1ItE+h7CZF3v05yn0dKzNQnyrLGRfQQt8d
+ vgqSAmHxGyet4bBTJ6033uIgqH3KGX1JpWUOZU3G0EF8VUtPkFHY2dyKwDw+9mbGNfcX
+ kxphT/arsLwTUTudmvbCa5UMkix7WX4Nu38b7cgJqE/4U+mkxg0clqnKr966WK6kTegm
+ cclA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20230601; t=1769045179; x=1769649979;
+ h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+ :to:from:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
+ :message-id:reply-to;
+ bh=dUSv8YHIJjxsXrtxcCX+JA8SGYZsDqSqraKizssPYoQ=;
+ b=oDbE6885iiuISxiubez+aDt3hBJ2PYKqgvfQOjznG63EJo1VfdG9RGgpFOG1umXmzE
+ SVIpAauhg2oE7/eqMwQ6KYbd7eGAsU0UJL6PGNMb7teBVT1OwTZlh69m6NBl37U3uBpT
+ 1y7d098usdtS3hjr7lh3EbX1TeEAmB5iHyxistibA3BzneIyxfB8SMHi2Xs1xUtYsBva
+ tYMOyekKUDsN11sr/xq01QljpOG/KM95NkYZV3U9bx3N5ynAs4riaxcdO5gowKxpH6us
+ 5jhGFhJFQtcYo4KABI6h8HP7vaK5PQduwThKDB0jjtuSlv7It6TRUYXSGiD5X3i84/B/
+ lcWQ==
+X-Forwarded-Encrypted: i=1;
+ AJvYcCUHmHJ00xGriEbq/9hELiT9vfqbCoAngLqvgSuHbmYR0SpvMnIENHnbCECEjfM5Q5PL0V2W5u5iFl9cr3/Wtw==@lists.sourceforge.net
+X-Gm-Message-State: AOJu0Yw7/J3lMHNRA/UvTETSnFxZLQuWHbETxUd3l6KyxjZb87v/VCEN
+ BSN/GRdppwKdwZEq8jVdiHiEzPnYKhCS6Tw1oVVHaJzDgOZ1wEtL0h8=
+X-Gm-Gg: AZuq6aKMxPDSZeePh01xWWKphhWC1p3VbybPL2sCu6HmMz7Gb9B2+iMwjgGALYw01Mg
+ FtB8ce2vrlWwqgQoDvTl5VQYnzj3PyRXCT/BtdOaPoTp+xxvMTQGVU0NrjVbVT7QiRRrqBgvlwi
+ z3tzHbx9PQfg676vB0jUsbpwvGM2CI+/QEq7BlCxRYqawzFMFu2YR4B+3HZCgisfMOoTLjfuxLV
+ YQSs557Inq40shKsWq3dUeENS1mSnx6GyPCAKXaC0X3kYcUp2Ir9b8VimF6D5i+N7XsD/EQTvAx
+ cdUzZ8+X4pCofdHRxR/Da/2vpAVqsLQPpM29fgiQhvy1nDSYuq1//GAio9i1EUcKOgW03FBfj8T
+ gbICoF2CoWUbDcN/3Zh7BXGk2dBRO5Xnpa2uOrqLiftdtnC/pKKcfN78gwxZSbGl4soNZ732Zod
+ dMXl/3R6sMUVjcm1s=
+X-Received: by 2002:a17:90b:574b:b0:343:6a63:85d5 with SMTP id
+ 98e67ed59e1d1-353354d691bmr988240a91.16.1769045178799; 
+ Wed, 21 Jan 2026 17:26:18 -0800 (PST)
+Received: from DESKTOP-BKIPFGN ([38.76.140.13])
+ by smtp.gmail.com with ESMTPSA id
+ 98e67ed59e1d1-353354cdcc7sm635105a91.16.2026.01.21.17.26.16
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Wed, 21 Jan 2026 17:26:18 -0800 (PST)
+To: shaggy@kernel.org
+Date: Thu, 22 Jan 2026 09:25:42 +0800
+Message-ID: <20260122012541.1927-2-qikeyu2017@gmail.com>
+X-Mailer: git-send-email 2.50.1.windows.1
 MIME-Version: 1.0
-To: "Jeff Layton" <jlayton@kernel.org>
-In-reply-to: <d8d68d1df6838c382799ce58345cfb5366585a8f.camel@kernel.org>
-References: <>, <d8d68d1df6838c382799ce58345cfb5366585a8f.camel@kernel.org>
-Date: Thu, 22 Jan 2026 09:47:41 +1100
-Message-id: <176903566115.16766.12892778448343562390@noble.neil.brown.name>
-X-Spam-Score: -0.2 (/)
+X-Spam-Score: 0.1 (/)
 X-Spam-Report: Spam detection software,
  running on the system "sfi-spamd-1.hosts.colo.sdot.me", 
  has NOT identified this incoming email as spam.  The original
  message has been attached to this so you can view it or label
  similar future email.  If you have any questions, see
  the administrator of that system for details.
- Content preview:  On Wed, 21 Jan 2026, Jeff Layton wrote: > On Wed, 2026-01-21
- at 20:58 +1100, NeilBrown wrote: > > On Wed, 21 Jan 2026, Jeff Layton wrote:
- > > > On Tue, 2026-01-20 at 09:12 -0500, Jeff Layton wrote: > [...] 
- Content analysis details:   (-0.2 points, 5.0 required)
+ Content preview: Similar to the issue fixed in commit 49f9637aafa6 ("jfs: fix
+ array-index-out-of-bounds in diNewExt"), the diExtendFS() function also lacks
+ validation for the AG (allocation group) number. In diExtendFS(), the variable
+ 'n' is computed from iagp->agstart which is read from disk. If agstart
+ contains
+ a malicious or corrupted value, 'n' may exceed the bounds of the im_agctl[]
+ array (size MA [...] 
+ Content analysis details:   (0.1 points, 5.0 required)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ 0.0 RCVD_IN_DNSWL_BLOCKED  RBL: ADMINISTRATOR NOTICE: The query to DNSWL
+ was blocked.  See
+ http://wiki.apache.org/spamassassin/DnsBlocklists#DnsBlocklists-dnsbl-block
+ for more information. [209.85.216.53 listed in list.dnswl.org]
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU Message has a valid DKIM or DK signature from author's
  domain
@@ -135,11 +132,16 @@ X-Spam-Report: Spam detection software,
  envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature,
  not necessarily valid
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends in
+ digit [qikeyu2017(at)gmail.com]
  0.0 FREEMAIL_FROM Sender email is commonly abused enduser mail provider
- [neilb(at)ownmail.net]
-X-Headers-End: 1vigzt-0003Na-Ec
-Subject: Re: [Jfs-discussion] [PATCH v2 01/31] Documentation: document
- EXPORT_OP_NOLOCKS
+ [qikeyu2017(at)gmail.com]
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [209.85.216.53 listed in wl.mailspike.net]
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+X-Headers-End: 1vijSv-0003DR-KK
+Subject: [Jfs-discussion] [PATCH] jfs: fix array-index-out-of-bounds in
+ diExtendFS
 X-BeenThere: jfs-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -151,161 +153,94 @@ List-Post: <mailto:jfs-discussion@lists.sourceforge.net>
 List-Help: <mailto:jfs-discussion-request@lists.sourceforge.net?subject=help>
 List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/jfs-discussion>, 
  <mailto:jfs-discussion-request@lists.sourceforge.net?subject=subscribe>
-From: NeilBrown via Jfs-discussion <jfs-discussion@lists.sourceforge.net>
-Reply-To: NeilBrown <neil@brown.name>
-Cc: NeilBrown <neilb@ownmail.net>, Martin Brandenburg <martin@omnibond.com>,
- jfs-discussion@lists.sourceforge.net, Jan Kara <jack@suse.cz>,
- Paulo Alcantara <pc@manguebit.org>, Alex Markuze <amarkuze@redhat.com>,
- Sandeep Dhavale <dhavale@google.com>, linux-btrfs@vger.kernel.org,
- Carlos Maiolino <cem@kernel.org>, Amir Goldstein <amir73il@gmail.com>,
- Dave Chinner <david@fromorbit.com>, linux-unionfs@vger.kernel.org,
- Konstantin Komarov <almaz.alexandrovich@paragon-software.com>,
- Chris Mason <clm@fb.com>, Andreas Dilger <adilger.kernel@dilger.ca>,
- Chunhai Guo <guochunhai@vivo.com>, Ronnie Sahlberg <ronniesahlberg@gmail.com>,
- linux-mtd@lists.infradead.org, Mike Marshall <hubcap@omnibond.com>,
- linux-xfs@vger.kernel.org, linux-nilfs@vger.kernel.org,
- Yue Hu <zbestahu@gmail.com>, Miklos Szeredi <miklos@szeredi.hu>,
- Richard Weinberger <richard@nod.at>, Mark Fasheh <mark@fasheh.com>,
- linux-doc@vger.kernel.org, Hugh Dickins <hughd@google.com>,
- Dai Ngo <Dai.Ngo@oracle.com>, Ryusuke Konishi <konishi.ryusuke@gmail.com>,
- Christoph Hellwig <hch@infradead.org>, Gao Xiang <xiang@kernel.org>,
- linux-ext4@vger.kernel.org, Salah Triki <salah.triki@gmail.com>,
- linux-mm@kvack.org, devel@lists.orangefs.org,
- Shyam Prasad N <sprasad@microsoft.com>,
- Olga Kornievskaia <okorniev@redhat.com>, linux-cifs@vger.kernel.org,
- Dave Kleikamp <shaggy@kernel.org>, Chao Yu <chao@kernel.org>,
- linux-nfs@vger.kernel.org, Tom Talpey <tom@talpey.com>,
- ocfs2-devel@lists.linux.dev, Bharath SM <bharathsm@microsoft.com>,
- David Sterba <dsterba@suse.com>, Alexander Viro <viro@zeniv.linux.org.uk>,
- Baolin Wang <baolin.wang@linux.alibaba.com>,
- Jeffle Xu <jefflexu@linux.alibaba.com>, Jaegeuk Kim <jaegeuk@kernel.org>,
- ceph-devel@vger.kernel.org, Ilya Dryomov <idryomov@gmail.com>,
- OGAWA Hirofumi <hirofumi@mail.parknet.co.jp>,
- Andreas Gruenbacher <agruenba@redhat.com>, gfs2@lists.linux.dev,
- Christian Brauner <brauner@kernel.org>, Theodore Ts'o <tytso@mit.edu>,
- Luis de Bethencourt <luisbg@kernel.org>,
- Joseph Qi <joseph.qi@linux.alibaba.com>, linux-erofs@lists.ozlabs.org,
- Jonathan Corbet <corbet@lwn.net>, samba-technical@lists.samba.org,
- linux-kernel@vger.kernel.org, linux-f2fs-devel@lists.sourceforge.net,
- Steve French <sfrench@samba.org>, Chuck Lever <chuck.lever@oracle.com>,
- Hongbo Li <lihongbo22@huawei.com>, Anna Schumaker <anna@kernel.org>,
- Jan Kara <jack@suse.com>, linux-fsdevel@vger.kernel.org,
- Phillip Lougher <phillip@squashfs.org.uk>,
- Andrew Morton <akpm@linux-foundation.org>, ntfs3@lists.linux.dev,
- David Woodhouse <dwmw2@infradead.org>,
- David Laight <david.laight.linux@gmail.com>,
- Trond Myklebust <trondmy@kernel.org>, Joel Becker <jlbec@evilplan.org>
+From: Kery Qi via Jfs-discussion <jfs-discussion@lists.sourceforge.net>
+Reply-To: Kery Qi <qikeyu2017@gmail.com>
+Cc: quic_zhonhan@quicinc.com, dmantipov@yandex.ru, eadavis@qq.com,
+ jfs-discussion@lists.sourceforge.net, linux-kernel@vger.kernel.org,
+ Kery Qi <qikeyu2017@gmail.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Errors-To: jfs-discussion-bounces@lists.sourceforge.net
 X-Rspamd-Server: lfdr
-X-Spamd-Result: default: False [-7.11 / 15.00];
+X-Spamd-Result: default: False [-6.61 / 15.00];
 	WHITELIST_DMARC(-7.00)[sourceforge.net:D:+];
-	SUSPICIOUS_RECIPS(1.50)[];
+	FREEMAIL_REPLYTO_NEQ_FROM(2.00)[];
 	DMARC_POLICY_ALLOW_WITH_FAILURES(-0.50)[];
 	RWL_MAILSPIKE_EXCELLENT(-0.40)[216.105.38.7:from];
-	R_DKIM_ALLOW(-0.20)[lists.sourceforge.net:s=beta];
-	R_SPF_ALLOW(-0.20)[+ip4:216.105.38.7:c];
+	R_SPF_ALLOW(-0.20)[+ip4:216.105.38.7];
 	MAILLIST(-0.20)[mailman];
+	R_DKIM_ALLOW(-0.20)[lists.sourceforge.net:s=beta];
 	MIME_GOOD(-0.10)[text/plain];
 	HAS_LIST_UNSUB(-0.01)[];
+	DMARC_POLICY_ALLOW(0.00)[lists.sourceforge.net,none];
 	TO_DN_SOME(0.00)[];
 	DKIM_MIXED(0.00)[];
-	FORGED_SENDER_MAILLIST(0.00)[];
+	R_DKIM_REJECT(0.00)[sourceforge.net:s=x,sf.net:s=x,gmail.com:s=20230601];
 	RCVD_TLS_LAST(0.00)[];
+	FORGED_SENDER(0.00)[jfs-discussion@lists.sourceforge.net,jfs-discussion-bounces@lists.sourceforge.net];
 	RECEIVED_HELO_LOCALHOST(0.00)[];
-	DMARC_POLICY_ALLOW(0.00)[lists.sourceforge.net,none];
-	MIME_TRACE(0.00)[0:+];
+	FORWARDED(0.00)[jfs-discussion@lists.sourceforge.net];
 	ARC_NA(0.00)[];
-	FREEMAIL_CC(0.00)[ownmail.net,omnibond.com,lists.sourceforge.net,suse.cz,manguebit.org,redhat.com,google.com,vger.kernel.org,kernel.org,gmail.com,fromorbit.com,paragon-software.com,fb.com,dilger.ca,vivo.com,lists.infradead.org,szeredi.hu,nod.at,fasheh.com,oracle.com,infradead.org,kvack.org,lists.orangefs.org,microsoft.com,talpey.com,lists.linux.dev,suse.com,zeniv.linux.org.uk,linux.alibaba.com,mail.parknet.co.jp,mit.edu,lists.ozlabs.org,lwn.net,lists.samba.org,samba.org,huawei.com,squashfs.org.uk,linux-foundation.org,evilplan.org];
-	R_DKIM_REJECT(0.00)[sourceforge.net:s=x,sf.net:s=x,ownmail.net:s=fm2,messagingengine.com:s=fm2];
-	REPLYTO_DOM_NEQ_TO_DOM(0.00)[];
-	DKIM_TRACE(0.00)[lists.sourceforge.net:+,sourceforge.net:-,sf.net:-,ownmail.net:-,messagingengine.com:-];
-	RCVD_COUNT_FIVE(0.00)[6];
-	RCPT_COUNT_GT_50(0.00)[77];
-	FROM_NEQ_ENVFROM(0.00)[jfs-discussion@lists.sourceforge.net,jfs-discussion-bounces@lists.sourceforge.net];
-	FROM_HAS_DN(0.00)[];
+	MIME_TRACE(0.00)[0:+];
+	FREEMAIL_CC(0.00)[quicinc.com,yandex.ru,qq.com,lists.sourceforge.net,vger.kernel.org,gmail.com];
+	FORGED_RECIPIENTS(0.00)[m:shaggy@kernel.org,m:quic_zhonhan@quicinc.com,m:dmantipov@yandex.ru,m:eadavis@qq.com,m:jfs-discussion@lists.sourceforge.net,m:linux-kernel@vger.kernel.org,m:qikeyu2017@gmail.com,s:lists@lfdr.de];
 	REPLYTO_DOM_NEQ_FROM_DOM(0.00)[];
-	TAGGED_RCPT(0.00)[jfs-discussion];
-	ASN(0.00)[asn:11320, ipnet:216.105.32.0/21, country:US];
-	HAS_REPLYTO(0.00)[neil@brown.name];
-	RCVD_VIA_SMTP_AUTH(0.00)[];
 	FORGED_RECIPIENTS_MAILLIST(0.00)[];
-	MISSING_XM_UA(0.00)[];
-	DBL_BLOCKED_OPENRESOLVER(0.00)[brown.name:replyto,noble.neil.brown.name:mid]
-X-Rspamd-Queue-Id: 0F0CE5F08F
+	REPLYTO_DOM_NEQ_TO_DOM(0.00)[];
+	RCVD_COUNT_FIVE(0.00)[5];
+	PREVIOUSLY_DELIVERED(0.00)[jfs-discussion@lists.sourceforge.net];
+	FORGED_SENDER_FORWARDING(0.00)[];
+	FROM_HAS_DN(0.00)[];
+	FROM_NEQ_ENVFROM(0.00)[jfs-discussion@lists.sourceforge.net,jfs-discussion-bounces@lists.sourceforge.net];
+	DKIM_TRACE(0.00)[lists.sourceforge.net:+,sourceforge.net:-,sf.net:-,gmail.com:-];
+	FORGED_RECIPIENTS_FORWARDING(0.00)[];
+	TAGGED_RCPT(0.00)[jfs-discussion];
+	FREEMAIL_REPLYTO(0.00)[gmail.com];
+	RCPT_COUNT_SEVEN(0.00)[7];
+	FORGED_SENDER_MAILLIST(0.00)[];
+	RCVD_VIA_SMTP_AUTH(0.00)[];
+	ASN(0.00)[asn:11320, ipnet:216.105.32.0/21, country:US];
+	HAS_REPLYTO(0.00)[qikeyu2017@gmail.com]
+X-Rspamd-Queue-Id: 4A66660514
 X-Rspamd-Action: no action
 
-On Wed, 21 Jan 2026, Jeff Layton wrote:
-> On Wed, 2026-01-21 at 20:58 +1100, NeilBrown wrote:
-> > On Wed, 21 Jan 2026, Jeff Layton wrote:
-> > > On Tue, 2026-01-20 at 09:12 -0500, Jeff Layton wrote:
-> > > > On Tue, 2026-01-20 at 08:20 -0500, Jeff Layton wrote:
-> > > > > On Mon, 2026-01-19 at 23:44 -0800, Christoph Hellwig wrote:
-> > > > > > On Mon, Jan 19, 2026 at 11:26:18AM -0500, Jeff Layton wrote:
-> > > > > > > +  EXPORT_OP_NOLOCKS - Disable file locking on this filesystem. Some
-> > > > > > > +    filesystems cannot properly support file locking as implemented by
-> > > > > > > +    nfsd. A case in point is reexport of NFS itself, which can't be done
-> > > > > > > +    safely without coordinating the grace period handling. Other clustered
-> > > > > > > +    and networked filesystems can be problematic here as well.
-> > > > > > 
-> > > > > > I'm not sure this is very useful.  It really needs to document what
-> > > > > > locking semantics nfs expects, because otherwise no reader will know
-> > > > > > if they set this or not.
-> > > > > 
-> > > > > Fair point. I'll see if I can draft something better. Suggestions
-> > > > > welcome.
-> > > > 
-> > > > How about this?
-> > > > 
-> > > > +  EXPORT_OP_NOLOCKS - Disable file locking on this filesystem. Filesystems
-> > > > +    that want to support locking over NFS must support POSIX file locking
-> > > > +    semantics and must handle lock recovery requests from clients after a
-> > > > +    reboot. Most local disk, RAM, or pseudo-filesystems use the generic POSIX
-> > > > +    locking support in the kernel and naturally provide this capability. Network
-> > > > +    or clustered filesystems usually need special handling to do this properly.
-> > > 
-> > > Even better, I think?
-> > > 
-> > > +
-> > > +  EXPORT_OP_NOLOCKS - Disable file locking on this filesystem. Filesystems
-> > > +    that want to support locking over NFS must support POSIX file locking
-> > > +    semantics. When the server reboots, the clients will issue requests to
-> > > +    recover their locks, which nfsd will issue to the filesystem as new lock
-> > > +    requests. Those must succeed in order for lock recovery to work. Most
-> > > +    local disk, RAM, or pseudo-filesystems use the generic POSIX locking
-> > > +    support in the kernel and naturally provide this capability. Network or
-> > > +    clustered filesystems usually need special handling to do this properly.
-> > > +    Set this flag on filesystems that can't guarantee the proper semantics
-> > > +    (e.g. reexported NFS).
-> > 
-> > I think this is quite thorough, which it good ...  maybe too good :-) It
-> > reminds me that for true NFS compatibility the fs shouldn't allow local
-> > locks (or file opens!) until the grace period has passed.  I don't think
-> > any local filesystems enforce that - it would have to be locks.c that
-> > does I expect.  I doubt there would be much appetite for doing that
-> > though.
-> > 
-> 
-> Yeah, I don't see us ever doing that. It'd be a tricky chicken-and-egg
-> problem, given the demand-driven way that the mountd upcalls work
-> today. We don't even know that anything is exported until something
-> asks for it.
+Similar to the issue fixed in commit 49f9637aafa6 ("jfs: fix
+array-index-out-of-bounds in diNewExt"), the diExtendFS() function
+also lacks validation for the AG (allocation group) number.
 
-statd keeps state in /var/lib/nfs/sm, and nfsd keeps v4 state elsewhere
-in /var/lib/nfs.  This state effectively records if any NFS client might
-try to recover a lock.
-I think the v4 state is granular enough to identify the filesystem.
-lockd could be enhanced to use the same state I suspect.
+In diExtendFS(), the variable 'n' is computed from iagp->agstart
+which is read from disk. If agstart contains a malicious or corrupted
+value, 'n' may exceed the bounds of the im_agctl[] array (size MAXAG),
+leading to an out-of-bounds access.
 
-We would need to generalise that state and load it at mount time and
-block new state creation accordingly.
+Add a boundary check for 'n' after computation to ensure it falls
+within the valid range [0, MAXAG). If the check fails, release the
+metapage and return -EIO.
 
-i.e. this would have to be a vfs-level thing which nfsd makes use of.
+Fixes: 1da177e4c3f4 ("Linux-2.6.12-rc2")
+Signed-off-by: Kery Qi <qikeyu2017@gmail.com>
+---
+ fs/jfs/jfs_imap.c | 5 +++++
+ 1 file changed, 5 insertions(+)
 
-Possibly, but there are other things better worth our time.
-
-NeilBrown
+diff --git a/fs/jfs/jfs_imap.c b/fs/jfs/jfs_imap.c
+index ecb8e05b8b84..24b414bffd29 100644
+--- a/fs/jfs/jfs_imap.c
++++ b/fs/jfs/jfs_imap.c
+@@ -2900,6 +2900,11 @@ int diExtendFS(struct inode *ipimap, struct inode *ipbmap)
+ 
+ 		agstart = le64_to_cpu(iagp->agstart);
+ 		n = agstart >> mp->db_agl2size;
++		if (n < 0 || n >= MAXAG) {
++			release_metapage(bp);
++			jfs_error(ipimap->i_sb, "invalid AG number\n");
++			return -EIO;
++		}
+ 		iagp->agstart = cpu_to_le64((s64)n << mp->db_agl2size);
+ 
+ 		/* compute backed inodes */
+-- 
+2.34.1
 
 
 
