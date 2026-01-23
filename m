@@ -2,109 +2,151 @@ Return-Path: <jfs-discussion-bounces@lists.sourceforge.net>
 Delivered-To: lists+jfs-discussion@lfdr.de
 Received: from mail.lfdr.de
 	by lfdr with LMTP
-	id 4LhgDe2BcmnFlgAAu9opvQ
+	id EBD6EjA7c2kztgAAu9opvQ
 	(envelope-from <jfs-discussion-bounces@lists.sourceforge.net>)
-	for <lists+jfs-discussion@lfdr.de>; Thu, 22 Jan 2026 21:00:45 +0100
+	for <lists+jfs-discussion@lfdr.de>; Fri, 23 Jan 2026 10:11:12 +0100
 X-Original-To: lists+jfs-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id 336456D4EF
-	for <lists+jfs-discussion@lfdr.de>; Thu, 22 Jan 2026 21:00:44 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 86ECA73093
+	for <lists+jfs-discussion@lfdr.de>; Fri, 23 Jan 2026 10:11:11 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.sourceforge.net; s=beta; h=Content-Transfer-Encoding:Content-Type:
+	d=lists.sourceforge.net; s=beta; h=Content-Transfer-Encoding:Content-Type:Cc:
 	Reply-To:From:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:Subject:To:Message-ID:Date:MIME-Version:Sender:Cc:
+	List-Unsubscribe:List-Id:Subject:To:Message-ID:Date:MIME-Version:Sender:
 	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
 	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
-	bh=UFU+5lqC1jU4CqJGRMvGivLRDOgojFSi/iIPWjgbhYw=; b=RMUl5BlYVD3a4Iik4eseOuZ3Ey
-	TNlaxiHE0cGTDsl7UR3KoWyBLkmnNWvRPfG6zBE7iUP1w0eMBitG57C1t10huHTl0tsulMNoOITNK
-	+Zst3DFmu613+X1NQ8pGV1ullgY8AKsx3Rf242LLTG7nXYAh6ip3MZ3LTYiNbuLXQTmM=;
-Received: from [127.0.0.1] (helo=sfs-ml-4.v29.lw.sourceforge.com)
-	by sfs-ml-4.v29.lw.sourceforge.com with esmtp (Exim 4.95)
+	bh=SRGW9QCWhI8VWMFDPACI80G2Z3cIYzvj8PolYv86Wa4=; b=Bep823lJlGVvnEimpuK6F591e2
+	DiBJuiJFMzkihIYeLUPCiTfeIidHzClj70g3bAMtZAcwkKqT/r280Ynbw0x83cihWoLDvlrQcNWKj
+	VxegB6FyOlHWk1Vl6RpIcq383UrcCW4CYMOecLw1dE69v4wC+RY8oF380lmYXYDIsNZc=;
+Received: from [127.0.0.1] (helo=sfs-ml-1.v29.lw.sourceforge.com)
+	by sfs-ml-1.v29.lw.sourceforge.com with esmtp (Exim 4.95)
 	(envelope-from <jfs-discussion-bounces@lists.sourceforge.net>)
-	id 1vj0qZ-00066l-6w;
-	Thu, 22 Jan 2026 20:00:03 +0000
+	id 1vjDBZ-0001P4-Vi;
+	Fri, 23 Jan 2026 09:10:33 +0000
 Received: from [172.30.29.66] (helo=mx.sourceforge.net)
- by sfs-ml-3.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
- TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (Exim 4.95) (envelope-from
- <3QnFyaQkbAEEv12ndoohudsslg.jrrjohxvhufrqwhqw.frp@M3KW2WVRGUFZ5GODRSRYTGD7.apphosting.bounces.google.com>)
- id 1vizkX-0006gI-6q for jfs-discussion@lists.sourceforge.net;
- Thu, 22 Jan 2026 18:49:45 +0000
+ by sfs-ml-1.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
+ TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (Exim 4.95)
+ (envelope-from <kartikey406@gmail.com>) id 1vjDBU-0001Oe-I8
+ for jfs-discussion@lists.sourceforge.net;
+ Fri, 23 Jan 2026 09:10:28 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=sourceforge.net; s=x; h=Content-Type:To:From:Subject:Message-ID:Date:
- MIME-Version:Sender:Reply-To:Cc:Content-Transfer-Encoding:Content-ID:
+ d=sourceforge.net; s=x; h=Content-Type:Cc:To:Subject:Message-ID:Date:From:
+ MIME-Version:Sender:Reply-To:Content-Transfer-Encoding:Content-ID:
  Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
  :Resent-Message-ID:In-Reply-To:References:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=YfURiHF4NJvPK5avqS9ua7ThJSOSbPiSDn7pjL0HLwY=; b=LrGYTCbs1eH7lH94MthQBAdp27
- 0pctU9Hvj39Qh9LnUaW/klNnF/xogRepObAgJjdVjQTvw3rH94VP2PqHgBWxzTjM3Tu0zvzKIilrh
- yNK1RVKFmlh5SnqqrodC7rVKIYSpTZgI0ZWo40HmIAUsoS5GiUJIVXySPucR7sbjoinE=;
+ bh=UYjjSXoZ8KY4OISrpWK9jrnnKzhKIHB6meD+8H3qiYU=; b=jJuno8TlcquwuyhTXD6oMKV/lg
+ SmbHL33qlG4MPpDhJjUEIkLe7PJddmZ17861JSDspXVaopve62H/DAN+vn0IHqgmOQ4WueCdtZMfN
+ dRfuJ7yBwpy5CEh3SfCELxKZYq0PYDNXuK51aPjh/ABvVMyoBuvU7aBJJB+1AWAbifUE=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
- h=Content-Type:To:From:Subject:Message-ID:Date:MIME-Version:Sender:Reply-To
- :Cc:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
- Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+ h=Content-Type:Cc:To:Subject:Message-ID:Date:From:MIME-Version:Sender:
+ Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date
+ :Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
  References:List-Id:List-Help:List-Unsubscribe:List-Subscribe:List-Post:
- List-Owner:List-Archive; bh=YfURiHF4NJvPK5avqS9ua7ThJSOSbPiSDn7pjL0HLwY=; b=c
- eZLxua5kf+dBO+DLHJ/w5o7obr6K+hoL/DAk4LoHUo9t3RcisUBr4KIqrAUVD9pWxTF91CU7wX+b1
- izuUncBftBaUIBqlbDewyQUiqrzTNHfzzyPgz6P8yCFZY+cISpechTBYOIRvOqEcflZImhDSahOAE
- c8FudBTcRLUC6xuM=;
-Received: from mail-ot1-f78.google.com ([209.85.210.78])
+ List-Owner:List-Archive; bh=UYjjSXoZ8KY4OISrpWK9jrnnKzhKIHB6meD+8H3qiYU=; b=M
+ FdYHhyea2Tmy2ynAIFjC87vy56GRNN7zfXHqgfZTpEQrKrIyrA3aqoqpdrhtRPyuAT5gTKASKe3Gn
+ QXGH5L3S4x6uBaUuBKyDipYYqVj49ggjbnFqqBPKt1dkDtp8/XOFICqfjBAtF2x12K1hYYJh1UZiO
+ hD/gYC0ByzPKG5AM=;
+Received: from mail-yx1-f54.google.com ([74.125.224.54])
  by sfi-mx-2.v28.lw.sourceforge.com with esmtps
  (TLS1.2:ECDHE-RSA-AES128-GCM-SHA256:128) (Exim 4.95)
- id 1vizkW-0004No-9o for jfs-discussion@lists.sourceforge.net;
- Thu, 22 Jan 2026 18:49:45 +0000
-Received: by mail-ot1-f78.google.com with SMTP id
- 46e09a7af769-7cfe286f517so2395980a34.0
+ id 1vjDBT-0008Od-BU for jfs-discussion@lists.sourceforge.net;
+ Fri, 23 Jan 2026 09:10:28 +0000
+Received: by mail-yx1-f54.google.com with SMTP id
+ 956f58d0204a3-6481bd173c0so1803349d50.2
  for <jfs-discussion@lists.sourceforge.net>;
- Thu, 22 Jan 2026 10:49:44 -0800 (PST)
+ Fri, 23 Jan 2026 01:10:27 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1769159416; cv=none;
+ d=google.com; s=arc-20240605;
+ b=FSlpU7GGD6FTGz69+7sf5HpZYEwqYJHolVajn6vSHfDRjbkRaf9sxd4F5vuOOFE+op
+ MIXfqUNWJToD0912+fjH54MbDxCPnxKVaYFiYMgTAfW4baiyJpDdmKqcDXvf0NVrPT5O
+ 8wCjAELYZ7vdbLQOMCW8lp0SF/Rasdfh3iY/w66Q+qPD2DnWW7ZlUblJgX6wdNhK5I45
+ woKMVEQ+tCWkgqzSeA+MOXAybBu6cF+sGhoQbD70o31/0Z4dws+MjvR9AoaviC3cTsrN
+ DqxKJGokc8XN3hIPLnETXy1gf9HLndyoar4xyRTPVH88OiJJC9E+4BfIfJOCEncGsyXh
+ 6GNA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com;
+ s=arc-20240605; 
+ h=cc:to:subject:message-id:date:from:mime-version:dkim-signature;
+ bh=UYjjSXoZ8KY4OISrpWK9jrnnKzhKIHB6meD+8H3qiYU=;
+ fh=ZS+eBNBhuQFlqN98K6O7nsKVTXqwAlX2157SrCBg734=;
+ b=fDbPbWYDut5Y7FDY6nO8BfDWDl1E0JrFudV5q853i8JJnzx/vKwFAbz1Qcj4eNX4AJ
+ h9XaugoHNlfqvuI5SxJePNeZNU7XmH1mAMLHFPa3vmKY6EMn+kcKB9JLT0HP8erAekH+
+ Lrjx9vzN4xVztvXyjGNJgOnb7sqOnNskuTdWeZg7hxtYazTLriijJTmb5Hh/WW1hKPCB
+ yUcWpyZStc7HawnGX/taKdAoYE/1patVAVkApRNva0T72aznXcaGn4J5oSJ76nsNPq7G
+ 4aV3RZk8fHqviNuWlPf+UJAKvZFWDl/J1qoEzfzC+NtADH/tiWwlg9q2uCckJMt0hbum
+ FtQQ==; darn=lists.sourceforge.net
+ARC-Authentication-Results: i=1; mx.google.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=gmail.com; s=20230601; t=1769159416; x=1769764216; darn=lists.sourceforge.net;
+ h=cc:to:subject:message-id:date:from:mime-version:from:to:cc:subject
+ :date:message-id:reply-to;
+ bh=UYjjSXoZ8KY4OISrpWK9jrnnKzhKIHB6meD+8H3qiYU=;
+ b=KMSvtB8nxaZ8LhEQqRqeoc8zCxvqjOsOikS2PM8IVb8szmp6MrXW4GpDiYmLcZhfs/
+ UCXYWOq7jejGOTIS3R1L+e7/0BrAI/gToInNrBP1bD//zYfo2zYycypc4FjmMOO7loAK
+ ubUEqsOwqUgHppZ+gajXhM62GzOnl9/lOT116dVFdvuJjERerbCsww78GMBz/pc+KHIM
+ T6VegIiomzG/wSy6wYEgsOzpxHhJ/+AiUpI1awZrwBdlO7tz9sYAUg+fnIl95JpkgCsY
+ mmT5IrbZ3n4BmHSZtgeg1AhFwUAsnwrGAXet/5Fx28gd3x/ANRfGjuSgr+R0SwblvQ6W
+ WSaQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20230601; t=1769107778; x=1769712578;
- h=to:from:subject:message-id:date:mime-version:x-gm-message-state
- :from:to:cc:subject:date:message-id:reply-to;
- bh=YfURiHF4NJvPK5avqS9ua7ThJSOSbPiSDn7pjL0HLwY=;
- b=Cg1GAOCQXVW5+sm7Wd2FM0XNhWt0BvMbXHBDB9rxpV9mm5Ip390jReW5zZbwi4XGIY
- zmmlERYmJNEshkapEmBOof+TQeJPgQaSHj1Pb9CmGiGO2Hmn6FF/PPS2FdaPHVAn0cOB
- 9bypFhHONuPx4hWTcWBysJVyzPhuBEGBKLUeedMRHn7xkON62orlg+f74/P9037lLl5n
- 6DgkotOIQtEopCHoJhOAxrAqZCZIO4uXf+5yI7u/aUaLPmz48bkIghl+QCURhoF1GZEe
- dBWrDYN5kuD1CNIzw0lazEi+XxxV43z0znXL0QT9mnQnnIWj57+9ywlj4E09QB6dEzsC
- /EZw==
-X-Gm-Message-State: AOJu0YypOpcdAfLf4eRAHBUZzmSg0hIKur51sdAKC7ZGgz1eLBnMBXGH
- wLWfQMZWwnA3joWcPKvd0pMbyBKrk1QjFzmeEFC0iyn2vl+s6m51urShthJS5CjSdr/CLYC05R4
- q0Gf3zRHDUxfqPPlWCcrkij3FER+vcrXJmCQfSo9RFIDpaLcHY33MSA8Qz+pfVA==
+ d=1e100.net; s=20230601; t=1769159416; x=1769764216;
+ h=cc:to:subject:message-id:date:from:mime-version:x-gm-gg
+ :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+ bh=UYjjSXoZ8KY4OISrpWK9jrnnKzhKIHB6meD+8H3qiYU=;
+ b=PSbU/ka8yYhoZxiwxPdfMi03jbZVMPl7SG+5VtWYHMv72dgjF76X1FrtXU6/B5k/WF
+ qZ+yqXfuDH5dcdRvMNcDdd45BJ9o4XHB3BWkXimwMLtCUUvBKElTro/qsE9GoVXOjLkj
+ Kd2xCgxI+ascDaDkV3IwDWuR7x7+PgClGpezN1/yuHD7/JFmx0F0boRj4lMFkT9kY4ct
+ 40Gv7rWf0qoRK/bm+qrycCOoqhIWWH+PMwDakfuXC5YLOiBnSUZJC1fee88Ja1D6Rkxj
+ lrVmzEEkEXNxnM++8bQf3ZIdoXsavxT6TlxhOhA5BrJ1qqFibAdj6AB/QnrtsVsUKRb4
+ Zgmg==
+X-Gm-Message-State: AOJu0YwP4ngA1zPmamr10pSLhfrcnSV2Vs6w/w71X63JEIVIhjVA15CN
+ 9IzC1aK8NPHADTWl/m8Of2F9OUlcdSzWIJH6+M8SDeAY7Dume5Y2G1QSRicjOf8kq1vgVzHACIl
+ LCwPtVkA7w0Bvytca6FN2cmBoIIx7sxU=
+X-Gm-Gg: AZuq6aKcWlXBBMidCxxtDGiEjvROrRzBr1VriopQ3tRiinQhBHDpS7MplD0XUAVkule
+ qJ10BbkMDMxSrQCnF7bamnfKHavaBf/897rWHPp3ogztzZ1hydyOvRCLQDAha9E1A3/enZfTjED
+ +vtJGKD8B6lM8f9lUk3me992k6mc01RvrHhQsX10VE6NZIT9drU7lumxSB3kH/LzKaBven1YGTa
+ beXAQ7huXoT36tROfG2/OKEzUj0wgf3hZf7VGxNxmumFn+2bWp7CRLLI1pPZJ9uvgeYEeRYUdEU
+ 31A8hOyGnRIyKfHGQPgEIHe56kjjxMD09+Hh59GzKJGxJmQoexo7VXHixGsUNbXWLHOuWT4=
+X-Received: by 2002:a05:690e:4104:b0:646:e67f:e97b with SMTP id
+ 956f58d0204a3-6495bee640emr1858729d50.15.1769159416547; Fri, 23 Jan 2026
+ 01:10:16 -0800 (PST)
 MIME-Version: 1.0
-X-Received: by 2002:a05:6820:160f:b0:662:c0a9:e5b1 with SMTP id
- 006d021491bc7-662cabb26f9mr364761eaf.80.1769107778742; Thu, 22 Jan 2026
- 10:49:38 -0800 (PST)
-Date: Thu, 22 Jan 2026 10:49:38 -0800
-X-Google-Appengine-App-Id: s~syzkaller
-X-Google-Appengine-App-Id-Alias: syzkaller
-Message-ID: <69727142.050a0220.706b.0027.GAE@google.com>
-To: jfs-discussion@lists.sourceforge.net, linux-kernel@vger.kernel.org, 
- shaggy@kernel.org, syzkaller-bugs@googlegroups.com
-X-Spam-Score: 0.3 (/)
+Date: Fri, 23 Jan 2026 14:40:04 +0530
+X-Gm-Features: AZwV_QjIHLHPx4uo1REzsszw2s_18e1VyetyS15NycztdxDFXjnuSXD2lBlQidI
+Message-ID: <CADhLXY7bkhVSLgOaSh5kU=HJBVJ1b7Dnq-Dy77puUaM40qj81Q@mail.gmail.com>
+To: shaggy@kernel.org, brauner@kernel.org
+X-Spam-Score: 0.1 (/)
 X-Spam-Report: Spam detection software,
  running on the system "sfi-spamd-1.hosts.colo.sdot.me", 
  has NOT identified this incoming email as spam.  The original
  message has been attached to this so you can view it or label
  similar future email.  If you have any questions, see
  the administrator of that system for details.
- Content preview:  Hello,
- syzbot found the following issue on: HEAD commit: e84d960149e7
- Merge tag 'for-6.19-rc5-tag' of git://git.ker.. git tree: upstream console
- output: https://syzkaller.appspot.com/x/log.txt?x=16784b9a580000 kernel
- config: https://syzkaller.a [...] 
- Content analysis details:   (0.3 points, 5.0 required)
+ Content preview:  Hi JFS maintainers,
+ I'm investigating a KMSAN warning reported
+ by syzbot: https://syzkaller.appspot.com/bug?extid=d3a57c32b9112d7b01ec The
+ KMSAN trace shows uninitialized memory being read in txLock(): 
+ Content analysis details:   (0.1 points, 5.0 required)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.3 FROM_LOCAL_HEX         From: localpart has long hexadecimal sequence
- 0.0 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level mail
- domains are different
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [209.85.210.78 listed in wl.mailspike.net]
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
-X-Headers-End: 1vizkW-0004No-9o
-X-Mailman-Approved-At: Thu, 22 Jan 2026 20:00:01 +0000
-Subject: [Jfs-discussion] [syzbot] [jfs?] KMSAN: uninit-value in txLock
+ -0.1 DKIM_VALID_AU Message has a valid DKIM or DK signature from author's
+ domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature,
+ not necessarily valid
+ 0.0 ARC_VALID              Message has a valid ARC signature
+ 0.0 ARC_SIGNED             Message has a ARC signature
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends in
+ digit [kartikey406(at)gmail.com]
+ 0.0 FREEMAIL_FROM Sender email is commonly abused enduser mail provider
+ [kartikey406(at)gmail.com]
+ 0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [74.125.224.54 listed in wl.mailspike.net]
+X-Headers-End: 1vjDBT-0008Od-BU
+Subject: [Jfs-discussion] [PATCH RFC] jfs: fix KMSAN warning in txLock -
+ need guidance
 X-BeenThere: jfs-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -116,146 +158,115 @@ List-Post: <mailto:jfs-discussion@lists.sourceforge.net>
 List-Help: <mailto:jfs-discussion-request@lists.sourceforge.net?subject=help>
 List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/jfs-discussion>, 
  <mailto:jfs-discussion-request@lists.sourceforge.net?subject=subscribe>
-From: syzbot via Jfs-discussion <jfs-discussion@lists.sourceforge.net>
-Reply-To: syzbot <syzbot+d3a57c32b9112d7b01ec@syzkaller.appspotmail.com>
+From: Deepanshu Kartikey via Jfs-discussion
+ <jfs-discussion@lists.sourceforge.net>
+Reply-To: Deepanshu Kartikey <kartikey406@gmail.com>
+Cc: jfs-discussion@lists.sourceforge.net, mjguzik@gmail.com, b23@ee.vjti.ac.in,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Errors-To: jfs-discussion-bounces@lists.sourceforge.net
 X-Rspamd-Server: lfdr
-X-Spamd-Result: default: False [-7.61 / 15.00];
+X-Spamd-Result: default: False [-5.61 / 15.00];
 	WHITELIST_DMARC(-7.00)[sourceforge.net:D:+];
-	URI_HIDDEN_PATH(1.00)[https://syzkaller.appspot.com/x/.config?x=46b5f80a6e7aaa5c];
+	FREEMAIL_REPLYTO_NEQ_FROM(2.00)[];
+	ARC_REJECT(1.00)[signature check failed: fail, {[1] = sig:google.com:reject}];
 	DMARC_POLICY_ALLOW_WITH_FAILURES(-0.50)[];
 	RWL_MAILSPIKE_EXCELLENT(-0.40)[216.105.38.7:from];
 	R_DKIM_ALLOW(-0.20)[lists.sourceforge.net:s=beta];
-	R_SPF_ALLOW(-0.20)[+ip4:216.105.38.7];
 	MAILLIST(-0.20)[mailman];
+	R_SPF_ALLOW(-0.20)[+ip4:216.105.38.7];
 	MIME_GOOD(-0.10)[text/plain];
 	HAS_LIST_UNSUB(-0.01)[];
-	FORGED_RECIPIENTS_MAILLIST(0.00)[];
-	RCVD_TLS_LAST(0.00)[];
-	DMARC_POLICY_ALLOW(0.00)[lists.sourceforge.net,none];
-	RECEIVED_HELO_LOCALHOST(0.00)[];
-	R_DKIM_REJECT(0.00)[sourceforge.net:s=x,sf.net:s=x];
-	FORGED_SENDER_MAILLIST(0.00)[];
 	DKIM_MIXED(0.00)[];
-	MIME_TRACE(0.00)[0:+];
+	RCVD_TLS_LAST(0.00)[];
+	RECEIVED_HELO_LOCALHOST(0.00)[];
+	DMARC_POLICY_ALLOW(0.00)[lists.sourceforge.net,none];
 	RCVD_COUNT_THREE(0.00)[4];
-	ARC_NA(0.00)[];
-	REPLYTO_DOM_NEQ_FROM_DOM(0.00)[];
-	RCPT_COUNT_THREE(0.00)[4];
+	FORGED_RECIPIENTS(0.00)[m:shaggy@kernel.org,m:brauner@kernel.org,m:jfs-discussion@lists.sourceforge.net,m:mjguzik@gmail.com,m:b23@ee.vjti.ac.in,m:linux-kernel@vger.kernel.org,s:lists@lfdr.de];
+	FORGED_SENDER(0.00)[jfs-discussion@lists.sourceforge.net,jfs-discussion-bounces@lists.sourceforge.net];
+	FREEMAIL_REPLYTO(0.00)[gmail.com];
+	R_DKIM_REJECT(0.00)[sourceforge.net:s=x,sf.net:s=x,gmail.com:s=20230601];
+	MIME_TRACE(0.00)[0:+];
+	TO_DN_EQ_ADDR_SOME(0.00)[];
+	FORWARDED(0.00)[jfs-discussion@lists.sourceforge.net];
+	FREEMAIL_CC(0.00)[lists.sourceforge.net,gmail.com,ee.vjti.ac.in,vger.kernel.org];
 	REPLYTO_DOM_NEQ_TO_DOM(0.00)[];
+	DKIM_TRACE(0.00)[lists.sourceforge.net:+,sourceforge.net:-,sf.net:-,gmail.com:-];
+	DBL_BLOCKED_OPENRESOLVER(0.00)[lists.sourceforge.net:dkim,lists.sourceforge.net:helo,lists.sourceforge.net:rdns,mail.gmail.com:mid,syzkaller.appspot.com:url];
 	PREVIOUSLY_DELIVERED(0.00)[jfs-discussion@lists.sourceforge.net];
-	DBL_BLOCKED_OPENRESOLVER(0.00)[syzkaller.appspot.com:url,storage.googleapis.com:url,appspotmail.com:email,goo.gl:url];
-	TO_DN_NONE(0.00)[];
+	NEURAL_HAM(-0.00)[-0.948];
+	FORGED_SENDER_FORWARDING(0.00)[];
 	FROM_HAS_DN(0.00)[];
 	FROM_NEQ_ENVFROM(0.00)[jfs-discussion@lists.sourceforge.net,jfs-discussion-bounces@lists.sourceforge.net];
-	DKIM_TRACE(0.00)[lists.sourceforge.net:+,sourceforge.net:-,sf.net:-];
-	NEURAL_HAM(-0.00)[-1.000];
-	REDIRECTOR_URL(0.00)[goo.gl];
-	HAS_REPLYTO(0.00)[syzbot+d3a57c32b9112d7b01ec@syzkaller.appspotmail.com];
-	TAGGED_RCPT(0.00)[jfs-discussion];
-	MISSING_XM_UA(0.00)[];
+	REPLYTO_DOM_NEQ_FROM_DOM(0.00)[];
+	FORGED_RECIPIENTS_FORWARDING(0.00)[];
 	ASN(0.00)[asn:11320, ipnet:216.105.32.0/21, country:US];
-	SUBJECT_HAS_QUESTION(0.00)[]
-X-Rspamd-Queue-Id: 336456D4EF
+	RCPT_COUNT_FIVE(0.00)[6];
+	TAGGED_RCPT(0.00)[jfs-discussion];
+	FORGED_RECIPIENTS_MAILLIST(0.00)[];
+	MISSING_XM_UA(0.00)[];
+	FORGED_SENDER_MAILLIST(0.00)[];
+	HAS_REPLYTO(0.00)[kartikey406@gmail.com]
+X-Rspamd-Queue-Id: 86ECA73093
 X-Rspamd-Action: no action
 
-Hello,
+Hi JFS maintainers,
 
-syzbot found the following issue on:
+I'm investigating a KMSAN warning reported by syzbot:
+https://syzkaller.appspot.com/bug?extid=d3a57c32b9112d7b01ec
 
-HEAD commit:    e84d960149e7 Merge tag 'for-6.19-rc5-tag' of git://git.ker..
-git tree:       upstream
-console output: https://syzkaller.appspot.com/x/log.txt?x=16784b9a580000
-kernel config:  https://syzkaller.appspot.com/x/.config?x=46b5f80a6e7aaa5c
-dashboard link: https://syzkaller.appspot.com/bug?extid=d3a57c32b9112d7b01ec
-compiler:       Debian clang version 20.1.8 (++20250708063551+0c9f909b7976-1~exp1~20250708183702.136), Debian LLD 20.1.8
-syz repro:      https://syzkaller.appspot.com/x/repro.syz?x=158fdb9a580000
-C reproducer:   https://syzkaller.appspot.com/x/repro.c?x=170153fa580000
+The KMSAN trace shows uninitialized memory being read in txLock():
 
-Downloadable assets:
-disk image: https://storage.googleapis.com/syzbot-assets/2d9623942f5a/disk-e84d9601.raw.xz
-vmlinux: https://storage.googleapis.com/syzbot-assets/61b0e15f8560/vmlinux-e84d9601.xz
-kernel image: https://storage.googleapis.com/syzbot-assets/8b71c88680c4/bzImage-e84d9601.xz
-mounted in repro: https://storage.googleapis.com/syzbot-assets/7023ce628e6e/mount_2.gz
-  fsck result: failed (log: https://syzkaller.appspot.com/x/fsck.log?x=130153fa580000)
-
-IMPORTANT: if you fix the issue, please add the following tag to the commit:
-Reported-by: syzbot+d3a57c32b9112d7b01ec@syzkaller.appspotmail.com
-
-=====================================================
 BUG: KMSAN: uninit-value in txLock+0x13a2/0x2900 fs/jfs/jfs_txnmgr.c:659
- txLock+0x13a2/0x2900 fs/jfs/jfs_txnmgr.c:659
- xtTruncate+0x1002/0x5050 fs/jfs/jfs_xtree.c:2337
- jfs_truncate_nolock+0x223/0x670 fs/jfs/inode.c:396
- jfs_truncate fs/jfs/inode.c:420 [inline]
- jfs_write_failed+0x207/0x3c0 fs/jfs/inode.c:295
- jfs_write_end+0xcc/0x110 fs/jfs/inode.c:322
- generic_perform_write+0x999/0x1050 mm/filemap.c:4335
- __generic_file_write_iter+0x213/0x460 mm/filemap.c:4431
- generic_file_write_iter+0x131/0x980 mm/filemap.c:4457
- new_sync_write fs/read_write.c:593 [inline]
- vfs_write+0xbe2/0x15d0 fs/read_write.c:686
- ksys_pwrite64 fs/read_write.c:793 [inline]
- __do_sys_pwrite64 fs/read_write.c:801 [inline]
- __se_sys_pwrite64 fs/read_write.c:798 [inline]
- __x64_sys_pwrite64+0x2ab/0x3b0 fs/read_write.c:798
- x64_sys_call+0xbaf/0x3e70 arch/x86/include/generated/asm/syscalls_64.h:19
- do_syscall_x64 arch/x86/entry/syscall_64.c:63 [inline]
- do_syscall_64+0xd3/0xf80 arch/x86/entry/syscall_64.c:94
- entry_SYSCALL_64_after_hwframe+0x77/0x7f
 
 Uninit was created at:
- __alloc_frozen_pages_noprof+0x421/0xab0 mm/page_alloc.c:5263
- alloc_pages_mpol+0x328/0x860 mm/mempolicy.c:2486
- alloc_frozen_pages_noprof mm/mempolicy.c:2557 [inline]
- alloc_pages_noprof+0x102/0x280 mm/mempolicy.c:2577
- vm_area_alloc_pages mm/vmalloc.c:3649 [inline]
- __vmalloc_area_node mm/vmalloc.c:3863 [inline]
- __vmalloc_node_range_noprof+0xa94/0x2d90 mm/vmalloc.c:4051
- __vmalloc_node_noprof mm/vmalloc.c:4111 [inline]
- vmalloc_noprof+0xce/0x140 mm/vmalloc.c:4146
- txInit+0xb5c/0xfa0 fs/jfs/jfs_txnmgr.c:297
- init_jfs_fs+0x1b2/0xcb0 fs/jfs/super.c:977
- do_one_initcall+0x22b/0xad0 init/main.c:1378
- do_initcall_level+0x157/0x2e0 init/main.c:1440
- do_initcalls+0x176/0x310 init/main.c:1456
- do_basic_setup+0x1d/0x30 init/main.c:1475
- kernel_init_freeable+0x214/0x430 init/main.c:1688
- kernel_init+0x2f/0x5e0 init/main.c:1578
- ret_from_fork+0x208/0x710 arch/x86/kernel/process.c:158
- ret_from_fork_asm+0x1a/0x30 arch/x86/entry/entry_64.S:246
+  vmalloc_noprof+0xce/0x140 mm/vmalloc.c:4146
+  txInit+0xb5c/0xfa0 fs/jfs/jfs_txnmgr.c:297
 
-CPU: 1 UID: 0 PID: 6025 Comm: syz.0.17 Not tainted syzkaller #0 PREEMPT(none) 
-Hardware name: Google Google Compute Engine/Google Compute Engine, BIOS Google 10/25/2025
-=====================================================
+The issue is that txInit() allocates the global TxLock array using
+vmalloc(), which doesn't zero the memory. When txLock() later accesses
+TxLock[].next fields, it reads uninitialized memory.
 
+I have a simple fix - changing vmalloc() to vzalloc() in txInit():
 
----
-This report is generated by a bot. It may contain errors.
-See https://goo.gl/tpsmEJ for more information about syzbot.
-syzbot engineers can be reached at syzkaller@googlegroups.com.
+diff --git a/fs/jfs/jfs_txnmgr.c b/fs/jfs/jfs_txnmgr.c
+index c16578af3a77..4c72103a0b46 100644
+--- a/fs/jfs/jfs_txnmgr.c
++++ b/fs/jfs/jfs_txnmgr.c
+@@ -294,7 +294,7 @@ int txInit(void)
+  * tlock id = 0 is reserved.
+  */
+  size = sizeof(struct tlock) * nTxLock;
+- TxLock = vmalloc(size);
++ TxLock = vzalloc(size);
+  if (TxLock == NULL) {
+  vfree(TxBlock);
+  return -ENOMEM;
 
-syzbot will keep track of this issue. See:
-https://goo.gl/tpsmEJ#status for how to communicate with syzbot.
+This fixes the KMSAN warning. However, when testing with the reproducer,
+this change exposes a different issue:
 
-If the report is already addressed, let syzbot know by replying with:
-#syz fix: exact-commit-title
+[  307.772029][ T6674] BUG at fs/jfs/jfs_txnmgr.c:662 assert(last)
 
-If you want syzbot to run the reproducer, reply with:
-#syz test: git://repo/address.git branch-or-commit-hash
-If you attach or paste a git patch, syzbot will apply it before testing.
+It seems that with zeroed memory, the assert at line 662 now fails
+because the code is trying to traverse a transaction lock list starting
+from atlhead=0, and TxLock[0].next is now 0 (instead of garbage).
 
-If you want to overwrite report's subsystems, reply with:
-#syz set subsystems: new-subsystem
-(See the list of subsystem names on the web dashboard)
+I believe my vzalloc() patch is correct - it fixes undefined behavior.
+The assert failure appears to be a separate pre-existing logic bug that
+was previously hidden by garbage memory values.
 
-If the report is a duplicate of another one, reply with:
-#syz dup: exact-subject-of-another-report
+Questions:
+1. Is my analysis correct?
+2. Should I submit just the vzalloc() patch?
+3. Should the assert be replaced with proper error handling?
+4. Is there a case where atlhead=0 is valid and the code should handle it?
 
-If you want to undo deduplication, reply with:
-#syz undup
+I'm a kernel newbie and would appreciate guidance on the right approach.
+
+Thanks,
+Deepanshu Kartikey
 
 
 _______________________________________________
