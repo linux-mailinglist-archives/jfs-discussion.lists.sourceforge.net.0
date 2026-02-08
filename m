@@ -2,106 +2,148 @@ Return-Path: <jfs-discussion-bounces@lists.sourceforge.net>
 Delivered-To: lists+jfs-discussion@lfdr.de
 Received: from mail.lfdr.de
 	by lfdr with LMTP
-	id eL8DC/b3iWn7FAAAu9opvQ
+	id MHXzFn1HiGnhmwQAu9opvQ
 	(envelope-from <jfs-discussion-bounces@lists.sourceforge.net>)
-	for <lists+jfs-discussion@lfdr.de>; Mon, 09 Feb 2026 16:06:30 +0100
+	for <lists+jfs-discussion@lfdr.de>; Sun, 08 Feb 2026 09:21:17 +0100
 X-Original-To: lists+jfs-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3BBEF11185E
-	for <lists+jfs-discussion@lfdr.de>; Mon, 09 Feb 2026 16:06:29 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8050710818C
+	for <lists+jfs-discussion@lfdr.de>; Sun, 08 Feb 2026 09:21:16 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.sourceforge.net; s=beta; h=Content-Transfer-Encoding:Content-Type:Cc:
+	d=lists.sourceforge.net; s=beta; h=Content-Type:Content-Transfer-Encoding:Cc:
 	Reply-To:From:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:To:Sender:
-	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
-	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
-	bh=cmw31K8X9CjZIqlAumgWM4zq2+aSo5f8KFUE7Bg+dho=; b=PjCESFHlD62NOMduiR0wNhRRLp
-	DJbDzWBmT7kvldMJErHOH5QtfqWZ/F/4ECGuaHsDKHIwRQUscdkPt85TtfA9dFkC6SWBtZr7Kd6hB
-	tV7tcOsvhGPINV1lhxprTKtY37AObDCc6PFxUjSljvZipzS2uUY44ENH8Zdr7X85gQTk=;
+	List-Unsubscribe:List-Id:Subject:In-Reply-To:References:To:MIME-Version:Date:
+	Message-ID:Sender:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=1aZg7JFmXmgHKlfD6xr1s+jqzY0SlhOK+ceu0afMWlA=; b=HB97Rm5qLhaLLXlbwps+EpOacP
+	M2fEpMZJdzK7nOm4uDpteTixnJmVAzXL8PNU5NzW4P02HaMLHBmXab5knKEgLhfMVpy2Ar0RZd6/b
+	gCftCFj6zgTDLCEmxNqoKFqcMOqEtsNawVtHZkZd4FYhuJHhzzRX6U3T8lMGgmafp6js=;
 Received: from [127.0.0.1] (helo=sfs-ml-4.v29.lw.sourceforge.com)
 	by sfs-ml-4.v29.lw.sourceforge.com with esmtp (Exim 4.95)
 	(envelope-from <jfs-discussion-bounces@lists.sourceforge.net>)
-	id 1vpSih-0004pa-Qi;
-	Mon, 09 Feb 2026 14:58:35 +0000
+	id 1vp01j-0002o6-Ac;
+	Sun, 08 Feb 2026 08:20:19 +0000
 Received: from [172.30.29.66] (helo=mx.sourceforge.net)
- by sfs-ml-1.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
+ by sfs-ml-4.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
  TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (Exim 4.95)
- (envelope-from <ssp.nesin@crpt.ru>) id 1voH28-0005Oa-Ty
+ (envelope-from <zlatistiv@gmail.com>) id 1vp01h-0002o0-QV
  for jfs-discussion@lists.sourceforge.net;
- Fri, 06 Feb 2026 08:17:45 +0000
+ Sun, 08 Feb 2026 08:20:17 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=sourceforge.net; s=x; h=Content-Transfer-Encoding:MIME-Version:Message-Id:
- Date:Subject:Cc:To:From:Sender:Reply-To:Content-Type:Content-ID:
- Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
- :Resent-Message-ID:In-Reply-To:References:List-Id:List-Help:List-Unsubscribe:
+ d=sourceforge.net; s=x; h=Content-Transfer-Encoding:Content-Type:In-Reply-To:
+ From:References:Cc:To:Subject:MIME-Version:Date:Message-ID:Sender:Reply-To:
+ Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
+ Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=WgrnN2NOrIMIViNK8+v7WkDYFXLAtsuE4CP9tAe+G8U=; b=dpN4DLGx5gTmLOMwcAhOc4+FUU
- ouYw6w4bKkK/11butYqRUtKkbhS/ZjaSVv21Qw9YSSKj9xSPnctb7qjEKBrVwhVG0gkTx23bvlWMQ
- E5UgjI6ptRQDW354Zke06AH3Jxe6n8YjoTjOuqmiXKU1ZbmvlDLF4b8Vswi/HrT3fkb0=;
+ bh=AA+LxrfEqBJCeppYnfBQMgProGOSges9FPVZZ3/gDXc=; b=bvGCJ3rEXGbkqg5ryJFuNf6PT1
+ jG5icC3TwGVM/9mS2a+dl0fJrUX1It0QM0RF1rTfEaEtKEtoG1rpRF7aI5vybrqkKdzEaybIVMW3w
+ 9wZhsCKx+7XtswTrcQV7HoxKCZmgIWt9AAFNs86LuJ0Ah32ZlJbclw7z+leKg6CKDd10=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
- h=Content-Transfer-Encoding:MIME-Version:Message-Id:Date:Subject:Cc:To:From
- :Sender:Reply-To:Content-Type:Content-ID:Content-Description:Resent-Date:
- Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
- References:List-Id:List-Help:List-Unsubscribe:List-Subscribe:List-Post:
- List-Owner:List-Archive; bh=WgrnN2NOrIMIViNK8+v7WkDYFXLAtsuE4CP9tAe+G8U=; b=B
- kFJ62JEbcgq5Hu4MFyPIGwLEzsz23P23vC20hGzwLYdFJAs7/scBS0VQt6Q8n3JN/KwtQUs6w7JbP
- +LgD59pnlf9M73UDOpNBQVaFrK6fT0O9d0LBY+40pTNqVmOYKDAt8C1zchP5FOhwnpLIeAzQm6jLP
- mx6SPVQPG30nwb4M=;
-Received: from mail.crpt.ru ([91.236.205.1])
+ h=Content-Transfer-Encoding:Content-Type:In-Reply-To:From:References:Cc:To:
+ Subject:MIME-Version:Date:Message-ID:Sender:Reply-To:Content-ID:
+ Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+ :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
+ List-Post:List-Owner:List-Archive;
+ bh=AA+LxrfEqBJCeppYnfBQMgProGOSges9FPVZZ3/gDXc=; b=fo4W6yty3/hvxmBGQwOZNox0Qn
+ B1a/CIPW+EPW2Gcp+5TzY1HfPyZn2cK+4/rNeZKChna72O/VaBxlx9t/aCSPh45aqx7hKrk0GX/S5
+ GKmrw/zFdLJWGrvPttODxxWJp0qIUZgHy0lXWm0+d1mBEcHmTPHQDFT30+3OjutshH98=;
+Received: from mail-wr1-f43.google.com ([209.85.221.43])
  by sfi-mx-2.v28.lw.sourceforge.com with esmtps
- (TLS1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.95)
- id 1voH27-00054h-N5 for jfs-discussion@lists.sourceforge.net;
- Fri, 06 Feb 2026 08:17:44 +0000
-Received: from ssp-soft.crpt.local ([10.200.60.21])
- (user=ssp.nesin@crpt.ru mech=LOGIN bits=0)
- by mail.crpt.ru  with ESMTPSA id 61681f34014601-61681f37014601
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NO);
- Fri, 6 Feb 2026 11:01:56 +0300
-To: Dave Kleikamp <shaggy@kernel.org>
-Date: Fri,  6 Feb 2026 15:01:18 +0700
-Message-Id: <20260206080118.923439-1-ssp.nesin@crpt.ru>
-X-Mailer: git-send-email 2.34.1
+ (TLS1.2:ECDHE-RSA-AES128-GCM-SHA256:128) (Exim 4.95)
+ id 1vp01h-00053V-AO for jfs-discussion@lists.sourceforge.net;
+ Sun, 08 Feb 2026 08:20:17 +0000
+Received: by mail-wr1-f43.google.com with SMTP id
+ ffacd0b85a97d-436317c80f7so619500f8f.1
+ for <jfs-discussion@lists.sourceforge.net>;
+ Sun, 08 Feb 2026 00:20:17 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=gmail.com; s=20230601; t=1770538806; x=1771143606; darn=lists.sourceforge.net;
+ h=content-transfer-encoding:in-reply-to:from:content-language
+ :references:cc:to:subject:user-agent:mime-version:date:message-id
+ :from:to:cc:subject:date:message-id:reply-to;
+ bh=AA+LxrfEqBJCeppYnfBQMgProGOSges9FPVZZ3/gDXc=;
+ b=D2XVEmay7D/cbJA5wZNtAlYitX/OCHsGd/C+RXGH+8vcXRHSqTkIzxeYsu13akUyxp
+ IIQUET4xTBaHeIYFRvtmUjQWUK9pg8ZoZtwKen6D2aM1X9tRvJky6+insbuv7kg5Hhtw
+ lltWu19qTyNVMimFg+DFQ3KE0Pr7jptopqhbct7YzzbAlr2sRrcjADn4ZYkGoWaLlcMI
+ iYuIV10urY7QZ+RK6ERYR6F4vhYVWdJJsWDHSpnUcsrCxgi8mcKXoUVwbJQe9WDgU9Su
+ 2d9CdBIZ0qmxFgp2CJ/LA6zupIf7vW4cnQ5VfvxPYi7JmJHbLgWNis2nmfYn+N0QSUQD
+ czCg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20230601; t=1770538806; x=1771143606;
+ h=content-transfer-encoding:in-reply-to:from:content-language
+ :references:cc:to:subject:user-agent:mime-version:date:message-id
+ :x-gm-gg:x-gm-message-state:from:to:cc:subject:date:message-id
+ :reply-to;
+ bh=AA+LxrfEqBJCeppYnfBQMgProGOSges9FPVZZ3/gDXc=;
+ b=KOdIpEufivmUIQiMGgBJAD5oitS3bduGFbVfrH9sW1FEguBDu+bGafk8bYLcLteOYt
+ 9b9cdIEfyXLAGZ2fXzMYoFM25xKaD1lQyL7s8Jv86AI0eXQYDYyQ+N0o17Uyq2ldnkWT
+ fViiT0gHGsA819H1xTkNqKygZdUJyJiB+WIMQ/5WPpPNcfiCcNBJXqJZfy4AwpWdQgDP
+ CljKn6T/jWw7Mo+ourOQTvZMJc0i5jZ4oYsBcENS4asKpM4vRiJAnyGvOtONVUP2d5Ae
+ VkKJXOhVz0K2Uu/vXzO+DoFWOLO0NzFIfpkfcHBAitZwnHwiFYm5tiuvdXElnZRKfCd3
+ 4OhQ==
+X-Forwarded-Encrypted: i=1;
+ AJvYcCWYU3FYy7Uoyt+6tWzg1ujLVBWkeFCKhHwIRfL/pRMjV5/Mt4K43DtaFlwTe1EmHZ3Ydxs26K6LUuJPR2C3pw==@lists.sourceforge.net
+X-Gm-Message-State: AOJu0Yyf+UWR8nRluyvvwavZoIdWt0jbooXbLz9X8WCLKKiZJJsAg0U8
+ oOy2qs1bFZ/lNgRA8wK6TZ/U2HMIt0jmchec8DBBzU9++YMt8JevI2iw
+X-Gm-Gg: AZuq6aLCGeFr4zBiGDB8IV1AJYbJUlrDbIjaH9j9qJ+D1iyaXR0EAWo4sUWwLTUPx22
+ 4MSeueg3nvbt6qLpREB2Q/6yOHAkxRozBpeLKPEDLh+gXasec4JAEOdE9BIrANHP9q6EjNRuE5L
+ ZOGBloew7cd9XU/S5d+EEExkWAQI1wKQ8H4A8IiBe1CJSxiOxJfaqJtfqLUu/Dj1MxrhGRmFuXj
+ CmF00CpGSkpfxlknZHgpY/hqA9dqp04wGlDxeA1UvQm37iWtcAJO5mwmyGPqF/4NfeXGvATQDts
+ u4Bx7riXYj0hJX5BLTqM4YhplMZCLBNKzXOl1OAGS/1h1Wtl1YSgIvo1PuOfjPxzlq0l6jPYrJ/
+ hf3AZSHPaOtpx81MEVUpee57AzqcnCR4n3lXeDISrfNewCQvEsNsmaX41zqeRlDe8ftF7oHDpAh
+ vJzPG1D27Hh6JQz+g4t584fsmz10/H3PRl1K39gqNTx71oeCWe4nXp8w==
+X-Received: by 2002:a5d:5d89:0:b0:435:9a18:5a29 with SMTP id
+ ffacd0b85a97d-436209966ddmr20697343f8f.11.1770538805560; 
+ Sun, 08 Feb 2026 00:20:05 -0800 (PST)
+Received: from ?IPV6:2a01:5a8:304:153c:3ab3:7a9:6529:7104?
+ ([2a01:5a8:304:153c:3ab3:7a9:6529:7104])
+ by smtp.gmail.com with ESMTPSA id
+ ffacd0b85a97d-43629754c62sm16678514f8f.38.2026.02.08.00.20.04
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Sun, 08 Feb 2026 00:20:05 -0800 (PST)
+Message-ID: <20d908f6-14ff-42dd-9e09-1b0c997efe6e@gmail.com>
+Date: Sun, 8 Feb 2026 10:20:04 +0200
 MIME-Version: 1.0
-X-FEAS-Auth-User: ssp.nesin@crpt.ru
-X-FEAS-BEC-Info: WlpIGw0aAQkEARIJHAEHBlJSCRoLAAEeDUhZUEhYSFhIWUhZXkguLVxYWC48UVlRWFhYWVxaSFlfSBsbGEYGDRsBBigLGhgcRhodSFlIWV9IGxsYRgYNGwEGKAsaGBxGGh1IWUhZSFlaSFlYRlpYWEZeWEZaWUhQSFhIWEhRSFhIWEhYSFpaSAwdHBwJDAEcEQlZUCgPBQkBBEYLBwVIWEhbXkgCDhtFDAEbCx0bGwEHBigEARscG0YbBx0aCw0OBxoPDUYGDRxIWEhaUEgEAQYdEEUDDRoGDQQoHg8NGkYDDRoGDQRGBxoPSFhIWlBIBB4LRRgaBwINCxwoBAEGHRAcDRscAQYPRgcaD0hYSFleSBpGGwUBGgYHHigHBRhGGh1IWEhZX0gbAAkPDxEoAw0aBg0ERgcaD0hYSFlfSBsbGEYGDRsBBigLGhgcRhodSFlIXVtIGxESCgccQ1AODVsKUQ0OC1haCg5aDFgKXF1QKBsREgMJBAQNGkYJGBgbGAccBQkBBEYLBwVIWEhaXUgSAA0GD0YRHSgGBxocAB8NGxwNGgZGDQwdSFg=
-X-FEAS-Client-IP: 10.200.60.21
-X-FE-Envelope-From: ssp.nesin@crpt.ru
-X-FE-Policy-ID: 0:9:0:SYSTEM
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; d=crpt.ru; s=crpt.ru;
- c=relaxed/relaxed; 
- h=from:to:cc:subject:date:message-id:mime-version;
- bh=WgrnN2NOrIMIViNK8+v7WkDYFXLAtsuE4CP9tAe+G8U=;
- b=shbMugGDPs8zdx//5Co0jHYUHMSTabqXoq/Hnpv7JrgcNLidV4pjQ/sBgF1chaMWNxbuAuAGL1mM
- NeRDFlQXXFab/3jw3uxXO4zi7wv81eWZLUnGIfuLdFqMvpz7z51UgSfQjV8Pj68DyByKOt1UJe4c
- 6rddHDb49jNm0qWc/2L5ppdgZWIBs3LVEPkgCOq77qgeFuLR2C7n7I57V9TIpXmeyv7WMjTSiMuI
- bDk0gFYMk9GJhLKugauybFOJ98y7R1I4PN4YMd0A63P4t3ZWiOV99Pb7WBzh1yfdrG/qgWaJvhu+
- gJIt/+E0USi57o+d2MchhpFDGVosT2EG4monqQ==
-X-Spam-Score: -0.2 (/)
+User-Agent: Mozilla Thunderbird
+To: shaggy@kernel.org, dmantipov@yandex.ru, quic_zhonhan@quicinc.com,
+ eadavis@qq.com, jfs-discussion@lists.sourceforge.net
+References: <20260102184849.1932768-1-zlatistiv@gmail.com>
+Content-Language: en-US
+In-Reply-To: <20260102184849.1932768-1-zlatistiv@gmail.com>
+X-Spam-Score: 0.8 (/)
 X-Spam-Report: Spam detection software,
  running on the system "sfi-spamd-2.hosts.colo.sdot.me", 
  has NOT identified this incoming email as spam.  The original
  message has been attached to this so you can view it or label
  similar future email.  If you have any questions, see
  the administrator of that system for details.
- Content preview:  In jfs_readdir(),
- the stbl slot index validation uses a maximum
- value of DTPAGEMAXSLOT (128). However, for root directory pages (bn == 0)
- the maximum valid slot index is DTROOTMAXSLOT (9), not DTPAGEM [...] 
- Content analysis details:   (-0.2 points, 5.0 required)
+ Content preview:  On 1/2/26 8:48 PM, Nikola Z. Ivanov wrote: > syzbot reports
+ "VFS: Busy inodes after unmount" which is caused > by a deadlock in the
+ jfsCommit
+ thread, in a call to diFree. > > The filesystem from the [...] 
+ Content analysis details:   (0.8 points, 5.0 required)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ 0.0 RCVD_IN_DNSWL_BLOCKED  RBL: ADMINISTRATOR NOTICE: The query to DNSWL
+ was blocked.  See
+ http://wiki.apache.org/spamassassin/DnsBlocklists#DnsBlocklists-dnsbl-block
+ for more information. [209.85.221.43 listed in list.dnswl.org]
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
  -0.1 DKIM_VALID_AU Message has a valid DKIM or DK signature from author's
  domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature,
  not necessarily valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
-X-Headers-End: 1voH27-00054h-N5
-X-Mailman-Approved-At: Mon, 09 Feb 2026 14:58:34 +0000
-Subject: [Jfs-discussion] [PATCH] jfs: fix out-of-bounds access in
- jfs_readdir
+ 0.0 FREEMAIL_FROM Sender email is commonly abused enduser mail provider
+ [zlatistiv(at)gmail.com]
+ 1.0 FORGED_GMAIL_RCVD 'From' gmail.com does not match 'Received' headers
+ 0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.221.43 listed in wl.mailspike.net]
+X-Headers-End: 1vp01h-00053V-AO
+Subject: Re: [Jfs-discussion] [PATCH] jfs: Check for discrepancies between
+ iag and inomap iagctl
 X-BeenThere: jfs-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -113,137 +155,131 @@ List-Post: <mailto:jfs-discussion@lists.sourceforge.net>
 List-Help: <mailto:jfs-discussion-request@lists.sourceforge.net?subject=help>
 List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/jfs-discussion>, 
  <mailto:jfs-discussion-request@lists.sourceforge.net?subject=subscribe>
-From: Rostislav Nesin via Jfs-discussion <jfs-discussion@lists.sourceforge.net>
-Reply-To: Rostislav Nesin <ssp.nesin@crpt.ru>
-Cc: jfs-discussion@lists.sourceforge.net, lvc-project@linuxtesting.org,
- Rostislav Nesin <ssp.nesin@crpt.ru>, linux-kernel@vger.kernel.org,
- syzbot+8fe3b9efc02bf2d0b458@syzkaller.appspotmail.com,
- Zheng Yu <zheng.yu@northwestern.edu>, Aditya Dutt <duttaditya18@gmail.com>,
- Roman Smirnov <r.smirnov@omp.ru>
-Content-Type: text/plain; charset="us-ascii"
+From: "Nikola Z. Ivanov via Jfs-discussion"
+ <jfs-discussion@lists.sourceforge.net>
+Reply-To: "Nikola Z. Ivanov" <zlatistiv@gmail.com>
+Cc: syzbot+d569e274f46ca86f78fa@syzkaller.appspotmail.com,
+ linux-kernel@vger.kernel.org
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Errors-To: jfs-discussion-bounces@lists.sourceforge.net
 X-Rspamd-Server: lfdr
-X-Spamd-Result: default: False [-5.71 / 15.00];
+X-Spamd-Result: default: False [-4.71 / 15.00];
 	WHITELIST_DMARC(-7.00)[sourceforge.net:D:+];
+	FREEMAIL_REPLYTO_NEQ_FROM(2.00)[];
 	SUSPICIOUS_RECIPS(1.50)[];
-	DATE_IN_PAST(1.00)[79];
 	DMARC_POLICY_ALLOW_WITH_FAILURES(-0.50)[];
-	R_DKIM_ALLOW(-0.20)[lists.sourceforge.net:s=beta];
-	MAILLIST(-0.20)[mailman];
 	R_SPF_ALLOW(-0.20)[+ip4:216.105.38.7];
+	MAILLIST(-0.20)[mailman];
+	R_DKIM_ALLOW(-0.20)[lists.sourceforge.net:s=beta];
 	MIME_GOOD(-0.10)[text/plain];
 	HAS_LIST_UNSUB(-0.01)[];
+	DMARC_POLICY_ALLOW(0.00)[lists.sourceforge.net,none];
+	RCVD_TLS_LAST(0.00)[];
 	DKIM_MIXED(0.00)[];
 	RECEIVED_HELO_LOCALHOST(0.00)[];
-	FORGED_RECIPIENTS(0.00)[m:shaggy@kernel.org,m:jfs-discussion@lists.sourceforge.net,m:lvc-project@linuxtesting.org,m:ssp.nesin@crpt.ru,m:linux-kernel@vger.kernel.org,m:syzbot+8fe3b9efc02bf2d0b458@syzkaller.appspotmail.com,m:zheng.yu@northwestern.edu,m:duttaditya18@gmail.com,m:r.smirnov@omp.ru,m:syzbot@syzkaller.appspotmail.com,s:lists@lfdr.de];
-	RCVD_COUNT_THREE(0.00)[4];
-	FROM_HAS_DN(0.00)[];
-	FORGED_SENDER(0.00)[jfs-discussion@lists.sourceforge.net,jfs-discussion-bounces@lists.sourceforge.net];
-	TO_DN_SOME(0.00)[];
 	FORGED_SENDER_MAILLIST(0.00)[];
-	FREEMAIL_CC(0.00)[lists.sourceforge.net,linuxtesting.org,crpt.ru,vger.kernel.org,syzkaller.appspotmail.com,northwestern.edu,gmail.com,omp.ru];
+	R_DKIM_REJECT(0.00)[sourceforge.net:s=x,sf.net:s=x,gmail.com:s=20230601];
 	MIME_TRACE(0.00)[0:+];
-	ARC_NA(0.00)[];
+	FREEMAIL_REPLYTO(0.00)[gmail.com];
+	FORGED_RECIPIENTS(0.00)[m:shaggy@kernel.org,m:dmantipov@yandex.ru,m:quic_zhonhan@quicinc.com,m:eadavis@qq.com,m:jfs-discussion@lists.sourceforge.net,m:syzbot+d569e274f46ca86f78fa@syzkaller.appspotmail.com,m:linux-kernel@vger.kernel.org,m:syzbot@syzkaller.appspotmail.com,s:lists@lfdr.de];
 	FORWARDED(0.00)[jfs-discussion@lists.sourceforge.net];
-	RCVD_TLS_LAST(0.00)[];
-	REPLYTO_DOM_NEQ_TO_DOM(0.00)[];
-	R_DKIM_REJECT(0.00)[sourceforge.net:s=x,sf.net:s=x,crpt.ru:s=crpt.ru];
-	RCPT_COUNT_SEVEN(0.00)[9];
-	TAGGED_RCPT(0.00)[jfs-discussion,8fe3b9efc02bf2d0b458];
-	FORGED_RECIPIENTS_FORWARDING(0.00)[];
-	FROM_NEQ_ENVFROM(0.00)[jfs-discussion@lists.sourceforge.net,jfs-discussion-bounces@lists.sourceforge.net];
-	FORGED_SENDER_FORWARDING(0.00)[];
-	DMARC_POLICY_ALLOW(0.00)[lists.sourceforge.net,none];
-	RCVD_VIA_SMTP_AUTH(0.00)[];
-	FORGED_RECIPIENTS_MAILLIST(0.00)[];
-	HAS_REPLYTO(0.00)[ssp.nesin@crpt.ru];
-	ASN(0.00)[asn:11320, ipnet:216.105.32.0/21, country:US];
+	FORGED_SENDER(0.00)[jfs-discussion@lists.sourceforge.net,jfs-discussion-bounces@lists.sourceforge.net];
+	ARC_NA(0.00)[];
+	FREEMAIL_TO(0.00)[kernel.org,yandex.ru,quicinc.com,qq.com,lists.sourceforge.net];
 	REPLYTO_DOM_NEQ_FROM_DOM(0.00)[];
-	DKIM_TRACE(0.00)[lists.sourceforge.net:+,sourceforge.net:-,sf.net:-,crpt.ru:-];
-	DBL_BLOCKED_OPENRESOLVER(0.00)[appspotmail.com:email,syzkaller.appspot.com:url,lists.sourceforge.net:rdns,lists.sourceforge.net:helo,lists.sourceforge.net:dkim,crpt.ru:mid,crpt.ru:email,crpt.ru:replyto]
-X-Rspamd-Queue-Id: 3BBEF11185E
+	FORGED_RECIPIENTS_MAILLIST(0.00)[];
+	REPLYTO_DOM_NEQ_TO_DOM(0.00)[];
+	RCVD_COUNT_FIVE(0.00)[5];
+	TO_DN_NONE(0.00)[];
+	PREVIOUSLY_DELIVERED(0.00)[jfs-discussion@lists.sourceforge.net];
+	FORGED_SENDER_FORWARDING(0.00)[];
+	FROM_HAS_DN(0.00)[];
+	FROM_NEQ_ENVFROM(0.00)[jfs-discussion@lists.sourceforge.net,jfs-discussion-bounces@lists.sourceforge.net];
+	DKIM_TRACE(0.00)[lists.sourceforge.net:+,sourceforge.net:-,sf.net:-,gmail.com:-];
+	NEURAL_HAM(-0.00)[-0.903];
+	RCPT_COUNT_SEVEN(0.00)[7];
+	HAS_REPLYTO(0.00)[zlatistiv@gmail.com];
+	FORGED_RECIPIENTS_FORWARDING(0.00)[];
+	ASN(0.00)[asn:11320, ipnet:216.105.32.0/21, country:US];
+	TAGGED_RCPT(0.00)[jfs-discussion,d569e274f46ca86f78fa];
+	RCVD_VIA_SMTP_AUTH(0.00)[];
+	DBL_BLOCKED_OPENRESOLVER(0.00)[syzkaller.appspot.com:url,appspotmail.com:email]
+X-Rspamd-Queue-Id: 8050710818C
 X-Rspamd-Action: no action
 
-In jfs_readdir(), the stbl slot index validation uses a maximum value
-of DTPAGEMAXSLOT (128). However, for root directory pages (bn == 0)
-the maximum valid slot index is DTROOTMAXSLOT (9), not DTPAGEMAXSLOT
-(128). This allows slot indices 9-127 to pass validation on root
-pages, leading to out-of-bounds access when reading from p->slot[].
 
-Similarly, the 'next' slot index in the directory entry name segment
-chain is not validated. The 'next' field in struct ldtentry and
-struct dtslot is read directly from disk (s8 next), and a corrupted
-filesystem image could contain any value, causing out-of-bounds access
-when following the segment chain via p->slot[next].
+On 1/2/26 8:48 PM, Nikola Z. Ivanov wrote:
+> syzbot reports "VFS: Busy inodes after unmount" which is caused
+> by a deadlock in the jfsCommit thread, in a call to diFree.
+>
+> The filesystem from the syz repro can be used to reproduce the
+> deadlock by mounting it, deleting a file and running "sync" or
+> unmounting the filesystem. Running "fsck" on the filesystem
+> image seemingly fixes the inconsistency and we no longer deadlock.
+>
+> This happens because the IAG that contains the inode we are
+> freeing is head of the free list, but also holds nfreeinos = 0,
+> which will lead to a deadlock when we try to add it as head
+> of the free list, since it already is head of the list.
+>
+> Fix this by adding a check for the discrepancy before
+> reading more metapages that could potentially match with "mp".
+> Do the same for the extent free list as it may lead to a
+> similar deadlock.
+>
+> Reported-by: syzbot+d569e274f46ca86f78fa@syzkaller.appspotmail.com
+> Closes: https://syzkaller.appspot.com/bug?extid=d569e274f46ca86f78fa
+> Signed-off-by: Nikola Z. Ivanov <zlatistiv@gmail.com>
+> ---
+>   fs/jfs/jfs_imap.c | 19 +++++++++++++++++++
+>   1 file changed, 19 insertions(+)
+>
+> diff --git a/fs/jfs/jfs_imap.c b/fs/jfs/jfs_imap.c
+> index ecb8e05b8b84..fd9f9babaf46 100644
+> --- a/fs/jfs/jfs_imap.c
+> +++ b/fs/jfs/jfs_imap.c
+> @@ -902,6 +902,25 @@ int diFree(struct inode *ip)
+>   	}
+>   	iagp = (struct iag *) mp->data;
+>   
+> +	/* We will deadlock if due to inconsistency
+> +	 * the iag has no free inodes/extents but is
+> +	 * head of the respective free list
+> +	 */
+> +	if (iagp->nfreeinos == 0 && imap->im_agctl[agno].inofree == iagno) {
+> +		IREAD_UNLOCK(ipimap);
+> +		AG_UNLOCK(imap, agno);
+> +		release_metapage(mp);
+> +		jfs_error(ip->i_sb, "nfreeinos = 0, but iag is head of freelist\n");
+> +		return -EIO;
+> +	}
+> +	if (iagp->nfreeexts == 0 && imap->im_agctl[agno].extfree == iagno) {
+> +		IREAD_UNLOCK(ipimap);
+> +		AG_UNLOCK(imap, agno);
+> +		release_metapage(mp);
+> +		jfs_error(ip->i_sb, "nfreeexts = 0, but iag is head of freelist\n");
+> +		return -EIO;
+> +	}
+> +
+>   	/* get the inode number and extent number of the inode within
+>   	 * the iag and the inode number within the extent.
+>   	 */
 
-BUG: KASAN: slab-out-of-bounds in jfs_strfromUCS_le+0x28d/0x3b0 fs/jfs/jfs_unicode.c:40
-Read of size 2 at addr ffff88807a187f72 by task syz.0.6/5913
+Hello,
 
-CPU: 1 UID: 0 PID: 5913 Comm: syz.0.6 Not tainted 6.13.0-rc5-syzkaller-00012-g0bc21e701a6f #0
-Hardware name: Google Google Compute Engine/Google Compute Engine, BIOS Google 09/13/2024
-Call Trace:
- <TASK>
- __dump_stack lib/dump_stack.c:94 [inline]
- dump_stack_lvl+0x241/0x360 lib/dump_stack.c:120
- print_address_description mm/kasan/report.c:378 [inline]
- print_report+0x169/0x550 mm/kasan/report.c:489
- kasan_report+0x143/0x180 mm/kasan/report.c:602
- jfs_strfromUCS_le+0x28d/0x3b0 fs/jfs/jfs_unicode.c:40
- jfs_readdir+0x199d/0x3c50 fs/jfs/jfs_dtree.c:2975
- wrap_directory_iterator+0x91/0xd0 fs/readdir.c:65
- iterate_dir+0x571/0x800 fs/readdir.c:108
- __do_sys_getdents64 fs/readdir.c:403 [inline]
- __se_sys_getdents64+0x1e2/0x4b0 fs/readdir.c:389
- do_syscall_x64 arch/x86/entry/common.c:52 [inline]
- do_syscall_64+0xf3/0x230 arch/x86/entry/common.c:83
- entry_SYSCALL_64_after_hwframe+0x77/0x7f
- </TASK>
 
-Fix this by validating stbl[i] and next against DTROOTMAXSLOT for root
-directory pages (bn == 0).
+Kindly sending a reminder on this in case this slipped through the cracks.
 
-Found by Linux Verification Center (linuxtesting.org) with Syzkaller.
+In case jfs is at the point where syzkaller bugs are not worth the
 
-Reported-by: syzbot+8fe3b9efc02bf2d0b458@syzkaller.appspotmail.com
-Closes: https://syzkaller.appspot.com/bug?extid=8fe3b9efc02bf2d0b458
-Fixes: 1da177e4c3f4 ("Linux-2.6.12-rc2")
-Signed-off-by: Rostislav Nesin <ssp.nesin@crpt.ru>
----
-This patch is prepared on top of the jfs-next branch of the maintainer's
-repository (https://github.com/kleikamp/linux-shaggy.git).
+effort please let us know since I was unable to find a definitive
 
- fs/jfs/jfs_dtree.c | 13 +++++++++++++-
- 1 file changed, 12 insertions(+), 1 deletion(-)
+answer in the mail archive.
 
-diff --git a/fs/jfs/jfs_dtree.c b/fs/jfs/jfs_dtree.c
-index 9ab3f2fc61d1..a1b2c3d4e5f6 100644
---- a/fs/jfs/jfs_dtree.c
-+++ b/fs/jfs/jfs_dtree.c
-@@ -2902,7 +2902,7 @@ int jfs_readdir(struct file *file, struct dir_context *ctx)
- 		stbl = DT_GETSTBL(p);
- 
- 		for (i = index; i < p->header.nextindex; i++) {
--			if (stbl[i] < 0) {
-+			if (stbl[i] < 0 || (bn == 0 && stbl[i] > DTROOTMAXSLOT)) {
- 				jfs_err("JFS: Invalid stbl[%d] = %d for inode %ld, block = %lld",
- 					i, stbl[i], (long)ip->i_ino, (long long)bn);
- 				free_page(dirent_buf);
-@@ -2970,6 +2970,11 @@ int jfs_readdir(struct file *file, struct dir_context *ctx)
- 			/* copy name in the additional segment(s) */
- 			next = d->next;
- 			while (next >= 0) {
-+				if (bn == 0 && next > DTROOTMAXSLOT) {
-+					jfs_err("JFS: Invalid next %d for inode %ld, block = %lld",
-+						next, (long)ip->i_ino, (long long)bn);
-+					goto skip_one;
-+				}
- 				t = (struct dtslot *) & p->slot[next];
- 				name_ptr += outlen;
- 				d_namleft -= len;
 
--- 
-2.34.1
+Thank you!
+
 
 
 _______________________________________________
