@@ -2,113 +2,106 @@ Return-Path: <jfs-discussion-bounces@lists.sourceforge.net>
 Delivered-To: lists+jfs-discussion@lfdr.de
 Received: from mail.lfdr.de
 	by lfdr with LMTP
-	id ABTeEvvokGkOdwEAu9opvQ
+	id QBkFKW/alGl7IQIAu9opvQ
 	(envelope-from <jfs-discussion-bounces@lists.sourceforge.net>)
-	for <lists+jfs-discussion@lfdr.de>; Sat, 14 Feb 2026 22:28:27 +0100
+	for <lists+jfs-discussion@lfdr.de>; Tue, 17 Feb 2026 22:15:27 +0100
 X-Original-To: lists+jfs-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9380413D6CB
-	for <lists+jfs-discussion@lfdr.de>; Sat, 14 Feb 2026 22:28:26 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id D0940150A10
+	for <lists+jfs-discussion@lfdr.de>; Tue, 17 Feb 2026 22:15:26 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.sourceforge.net; s=beta; h=Content-Transfer-Encoding:Content-Type:Cc:
 	Reply-To:From:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:Subject:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:To:Sender:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=JxvHnid8bVI0fVpH5O4nm16C8lCq8O9DQTYQngCi4+k=; b=nRDvFd5E3HB9bGgqve6mclfjXC
-	rsah+xGSA0OeoG5nIiJV/KRoW8mq4MyIfxUBY8ntEnu+nMn9KhdRK3OGyz5xC042nx0Ok88nprTeq
-	6Io5pNFjkrY11ojNUWEioO6xnguCqhPdSiQ5c+bWp45jw4LFOjaEN9AjpkH4CHpm8kfU=;
-Received: from [127.0.0.1] (helo=sfs-ml-4.v29.lw.sourceforge.com)
-	by sfs-ml-4.v29.lw.sourceforge.com with esmtp (Exim 4.95)
+	List-Unsubscribe:List-Id:Subject:To:In-Reply-To:References:Date:Message-Id:
+	MIME-Version:Sender:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=RGI/wWoRp30I17WzRtOZ+eEwFjsmB82IaMgKhmrUzQ4=; b=nAJdFYjAreOtE6MFcFKVR/xPLG
+	yYKJGjMd2/71pbA0nEIHBp8A4ip36Njp9YPBch/5hvZXX3mqDbfGpLOvnRyt7Jg3V6Ln3NuSzZTjY
+	wncUnw5Y2UTdubmOxpDk7rH8V+EId0Kp3Mdbqn3+a6gHU+7XFsIrED6Lo556REUQ1/kU=;
+Received: from [127.0.0.1] (helo=sfs-ml-1.v29.lw.sourceforge.com)
+	by sfs-ml-1.v29.lw.sourceforge.com with esmtp (Exim 4.95)
 	(envelope-from <jfs-discussion-bounces@lists.sourceforge.net>)
-	id 1vrNB9-0005zC-Nw;
-	Sat, 14 Feb 2026 21:27:51 +0000
+	id 1vsSP8-0004JP-EO;
+	Tue, 17 Feb 2026 21:14:46 +0000
 Received: from [172.30.29.66] (helo=mx.sourceforge.net)
- by sfs-ml-4.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
+ by sfs-ml-1.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
  TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (Exim 4.95)
- (envelope-from <sashal@kernel.org>) id 1vrNAd-0005yi-SQ
+ (envelope-from <patchwork-bot+f2fs@kernel.org>) id 1vsSP7-0004JJ-DF
  for jfs-discussion@lists.sourceforge.net;
- Sat, 14 Feb 2026 21:27:19 +0000
+ Tue, 17 Feb 2026 21:14:45 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=sourceforge.net; s=x; h=Content-Transfer-Encoding:Content-Type:MIME-Version
- :References:In-Reply-To:Message-ID:Date:Subject:Cc:To:From:Sender:Reply-To:
+ d=sourceforge.net; s=x; h=Cc:To:In-Reply-To:References:Date:Message-Id:From:
+ Subject:Content-Transfer-Encoding:MIME-Version:Content-Type:Sender:Reply-To:
  Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
  Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=7HhWzzCnZ/Zbg7NqWHB4LasOW9+x/L/Sd8N1XvsM4lw=; b=evAqut6871jmWbDtSLZHaaUMc8
- 8oN+hxWBTXzgM1CPv+SWEMhhv30KoLZDtqoq3XpMRgPEdzNXetsm/hEnBnIj6fWh4f1SybFyRf+fO
- PDSwh4HJVywdxfWTdq8GqZ2swhL6tNJktyxA4JUpxhYW3xjPvO4B4LZ7o7Wb8s+/uHgs=;
+ bh=/QAFZrzsR3b01tUvyixH463bVn8gaQeXSmMleluN4G8=; b=TWWU4bxz7isWeUhVjnYEFFWqbJ
+ d/E3HzeLDL7d1KG3JJcg+NraqKG2F+E+6dpO173HmhgfZ6qm4DVYnoFpHrpeX1Iag+aJLHtZxc9yu
+ FahXr8+kUlgfuT3H66dWftVG6KPkVGpE5iNgwOC4bwmwx1sr95HVaJjSfQGPt8tjC0vU=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
- ;
- h=Content-Transfer-Encoding:Content-Type:MIME-Version:References:
- In-Reply-To:Message-ID:Date:Subject:Cc:To:From:Sender:Reply-To:Content-ID:
- Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
- :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
- List-Post:List-Owner:List-Archive;
- bh=7HhWzzCnZ/Zbg7NqWHB4LasOW9+x/L/Sd8N1XvsM4lw=; b=SOhjIQaJBmu7nK790Mk9NOOBbN
- tzRn9C8C6o8kG9Udhh6eDoB7xnp2ajcznTk9hel89h1xWX/7JrfHaUs2wj558p+j1hNWeIZVHLtAK
- gm8n7yfQfZnYGZQUmpABllxZ7QB1iHqJLz1PE0nRk3meRzH9JnpBEspR1shXCNUTLGlA=;
+ ; h=Cc:To:In-Reply-To:References:Date:Message-Id:From:Subject:
+ Content-Transfer-Encoding:MIME-Version:Content-Type:Sender:Reply-To:
+ Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
+ Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
+ List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=/QAFZrzsR3b01tUvyixH463bVn8gaQeXSmMleluN4G8=; b=jpR/Sw9/ej/HYoxifbnvXwUL+h
+ t6DXWNkuHwmSEDptdN/fPTBcFXjLTcvMcHotQ50l0L3XS6utuX5wZeTqe03ggnhXrck+Lynv4o6NK
+ 49PpwGPVPgYCzMIlJ9w4SHDTkIUXbPm8UiqT/mqqZexkiQ1pgZNK5haDfkfAcgaaJIjc=;
 Received: from tor.source.kernel.org ([172.105.4.254])
  by sfi-mx-2.v28.lw.sourceforge.com with esmtps
  (TLS1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.95)
- id 1vrNAd-0004h7-67 for jfs-discussion@lists.sourceforge.net;
- Sat, 14 Feb 2026 21:27:19 +0000
+ id 1vsSP6-0001T8-Ir for jfs-discussion@lists.sourceforge.net;
+ Tue, 17 Feb 2026 21:14:45 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
- by tor.source.kernel.org (Postfix) with ESMTP id 7D6F960129;
- Sat, 14 Feb 2026 21:27:13 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id CE960C19423;
- Sat, 14 Feb 2026 21:27:11 +0000 (UTC)
+ by tor.source.kernel.org (Postfix) with ESMTP id 5CA3D60128;
+ Tue, 17 Feb 2026 21:14:38 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 05413C19421;
+ Tue, 17 Feb 2026 21:14:38 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=k20201202; t=1771104433;
- bh=jjUeI65DKfRKw44ufB5viyNZu9uX2y0jcM6x9CaYidU=;
- h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=PDsClJWOVLAKH2152uXkuNUgGyLgQ5YLUSuv9mp1xPy2Y6SMO4vxTSI8rzSmV7oqE
- Ts3xLf3kD173b3WAYHE+QzOd2SyPlGnxvADAM5zYZKrV/CN7VhzI/Q/3SM00JEvkIx
- sZtlA/S0jkaxxafxdvmUsRhmH7+s/2xIOzQQyjZ6jMxOhRgIRnQ4O20Bz/4dqWsgBX
- 9+uVeBj+JjhXgFdehggVhUiLiGpgqp0ekqvlHZmvL07OqfxdTvCqSrbdWskk+G24hX
- 5fwGISx4WU+XnEZcUf58maccAbyLNy3IAHetrGT1JE553vinHAA0TUHuouEj93SXtH
- xwTMqTIsVrWkg==
-To: patches@lists.linux.dev,
-	stable@vger.kernel.org
-Date: Sat, 14 Feb 2026 16:23:45 -0500
-Message-ID: <20260214212452.782265-80-sashal@kernel.org>
-X-Mailer: git-send-email 2.51.0
-In-Reply-To: <20260214212452.782265-1-sashal@kernel.org>
-References: <20260214212452.782265-1-sashal@kernel.org>
+ s=k20201202; t=1771362878;
+ bh=SWr3Pg6zIeu2S3Z6UDsk8BzZU6tf527GPJ41POMlghM=;
+ h=Subject:From:Date:References:In-Reply-To:To:Cc:From;
+ b=qME5lVPCgbs75GtVkYDVSedStUuy5Pu7iKCY4IKu3xqN3EcQE+Oh5yA77hoZy7VyU
+ +0wZZYMpZQVXM9oVuFBmRCNz9ULENuT2B5em0ouDg88Yb0OXaPujVB/GBPkgNNMpHr
+ EhgPO+uLpu1WI515RTCnoSYcSuoUoWHPdRcl280BUTS4HjHiimnSyoFiD+9+NmEu7s
+ 4m0WVXB/a1C6i48qotqtPrvf49sFdMixg5MNCldkNycO7JhTW+IJtnP0WEfZw+8dYi
+ 1uYBY6iDz7huxRyc2w6LATusfRgMkVW0RAKYcp9Uufer3E7jADONKO2Apo8cM0wFiU
+ pB1OIFY+N5Jzg==
+Received: from [10.30.226.235] (localhost [IPv6:::1])
+ by aws-us-west-2-korg-oddjob-rhel9-1.codeaurora.org (Postfix) with ESMTP id
+ 0B1123806667; Tue, 17 Feb 2026 21:14:31 +0000 (UTC)
 MIME-Version: 1.0
-X-stable: review
-X-Patchwork-Hint: Ignore
-X-stable-base: Linux 6.19
+Message-Id: <177136286957.643511.1991968143318289235.git-patchwork-notify@kernel.org>
+Date: Tue, 17 Feb 2026 21:14:29 +0000
+References: <20260108-setlease-6-20-v1-0-ea4dec9b67fa@kernel.org>
+In-Reply-To: <20260108-setlease-6-20-v1-0-ea4dec9b67fa@kernel.org>
+To: Jeff Layton <jlayton@kernel.org>
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: Spam detection software,
- running on the system "sfi-spamd-2.hosts.colo.sdot.me", 
+ running on the system "sfi-spamd-1.hosts.colo.sdot.me", 
  has NOT identified this incoming email as spam.  The original
  message has been attached to this so you can view it or label
  similar future email.  If you have any questions, see
  the administrator of that system for details.
- Content preview: From: Jori Koolstra <jkoolstra@xs4all.nl> [ Upstream commit
- 9218dc26fd922b09858ecd3666ed57dfd8098da8 ] If nlink is maximal for a directory
- (-1) and inside that directory you perform a rename for some child directory
- (not moving from the parent), then the nlink of the first directory is first
- incremente [...] 
+ Content preview: Hello: This series was applied to jaegeuk/f2fs.git (dev) by
+ Christian Brauner <brauner@kernel.org>: On Thu, 08 Jan 2026 12:12:55 -0500
+ you wrote: > Yesterday, I sent patches to fix how directory delegation support
+ is > handled on filesystems where the should be disabled [1]. That set is
+ > appropriat [...] 
  Content analysis details:   (-0.2 points, 5.0 required)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.1 DKIM_VALID_AU Message has a valid DKIM or DK signature from author's
- domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature,
  not necessarily valid
- 0.0 RCVD_IN_DNSWL_BLOCKED  RBL: ADMINISTRATOR NOTICE: The query to DNSWL
- was blocked.  See
- http://wiki.apache.org/spamassassin/DnsBlocklists#DnsBlocklists-dnsbl-block
- for more information. [172.105.4.254 listed in list.dnswl.org]
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU Message has a valid DKIM or DK signature from author's
+ domain
  -0.0 DKIMWL_WL_HIGH         DKIMwl.org - High trust sender
-X-Headers-End: 1vrNAd-0004h7-67
-Subject: [Jfs-discussion] [PATCH AUTOSEL 6.19-5.10] jfs: nlink overflow in
- jfs_rename
+X-Headers-End: 1vsSP6-0001T8-Ir
+Subject: Re: [Jfs-discussion] [f2fs-dev] [PATCH 00/24] vfs: require
+ filesystems to explicitly opt-in to lease support
 X-BeenThere: jfs-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -120,168 +113,163 @@ List-Post: <mailto:jfs-discussion@lists.sourceforge.net>
 List-Help: <mailto:jfs-discussion-request@lists.sourceforge.net?subject=help>
 List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/jfs-discussion>, 
  <mailto:jfs-discussion-request@lists.sourceforge.net?subject=subscribe>
-From: Sasha Levin via Jfs-discussion <jfs-discussion@lists.sourceforge.net>
-Reply-To: Sasha Levin <sashal@kernel.org>
-Cc: Sasha Levin <sashal@kernel.org>, shaggy@kernel.org, brauner@kernel.org,
- neil.armstrong@linaro.org, yelangyan@huaqin.corp-partner.google.com,
- jlayton@kernel.org, jfs-discussion@lists.sourceforge.net,
- Jori Koolstra <jkoolstra@xs4all.nl>, viro@zeniv.linux.org.uk, neil@brown.name,
- syzbot+9131ddfd7870623b719f@syzkaller.appspotmail.com
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+From: patchwork-bot+f2fs--- via Jfs-discussion
+ <jfs-discussion@lists.sourceforge.net>
+Reply-To: patchwork-bot+f2fs@kernel.org
+Cc: lucho@ionkov.net, shaggy@kernel.org, alex.aring@gmail.com, jack@suse.cz,
+ pc@manguebit.org, linux-xfs@vger.kernel.org, dhavale@google.com,
+ martin@omnibond.com, yuezhang.mo@sony.com, al@alarsen.net, amir73il@gmail.com,
+ jfs-discussion@lists.sourceforge.net, linux-unionfs@vger.kernel.org,
+ almaz.alexandrovich@paragon-software.com, clm@fb.com, adilger.kernel@dilger.ca,
+ guochunhai@vivo.com, idryomov@gmail.com, ronniesahlberg@gmail.com,
+ linux-mtd@lists.infradead.org, hubcap@omnibond.com, linux-cifs@vger.kernel.org,
+ xiubli@redhat.com, zbestahu@gmail.com, miklos@szeredi.hu, richard@nod.at,
+ mark@fasheh.com, linux-doc@vger.kernel.org, hughd@google.com,
+ willy@infradead.org, ntfs3@lists.linux.dev, hch@infradead.org,
+ joseph.qi@linux.alibaba.com, devel@lists.orangefs.org, linux-mm@kvack.org,
+ linux-btrfs@vger.kernel.org, xiang@kernel.org, linux-ext4@vger.kernel.org,
+ salah.triki@gmail.com, cem@kernel.org, asmadeus@codewreck.org,
+ sprasad@microsoft.com, linux_oss@crudebyte.com, chao@kernel.org,
+ linux-nfs@vger.kernel.org, tom@talpey.com, ocfs2-devel@lists.linux.dev,
+ bharathsm@microsoft.com, linux-nilfs@vger.kernel.org, dsterba@suse.com,
+ viro@zeniv.linux.org.uk, baolin.wang@linux.alibaba.com,
+ jefflexu@linux.alibaba.com, jaegeuk@kernel.org, ceph-devel@vger.kernel.org,
+ ericvh@kernel.org, konishi.ryusuke@gmail.com, hirofumi@mail.parknet.co.jp,
+ agruenba@redhat.com, hansg@kernel.org, gfs2@lists.linux.dev,
+ brauner@kernel.org, linux-f2fs-devel@lists.sourceforge.net, tytso@mit.edu,
+ luisbg@kernel.org, nico@fluxnic.net, linux-erofs@lists.ozlabs.org,
+ v9fs@lists.linux.dev, corbet@lwn.net, samba-technical@lists.samba.org,
+ linux-kernel@vger.kernel.org, linkinjeon@kernel.org, sfrench@samba.org,
+ chuck.lever@oracle.com, lihongbo22@huawei.com, anna@kernel.org, jack@suse.com,
+ linux-fsdevel@vger.kernel.org, phillip@squashfs.org.uk,
+ akpm@linux-foundation.org, sj1557.seo@samsung.com, dwmw2@infradead.org,
+ trondmy@kernel.org, jlbec@evilplan.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Errors-To: jfs-discussion-bounces@lists.sourceforge.net
 X-Rspamd-Server: lfdr
-X-Spamd-Result: default: False [-7.01 / 15.00];
+X-Spamd-Result: default: False [-6.11 / 15.00];
 	WHITELIST_DMARC(-7.00)[sourceforge.net:D:+];
 	SUSPICIOUS_RECIPS(1.50)[];
+	MID_RHS_MATCH_TO(1.00)[];
 	DMARC_POLICY_ALLOW_WITH_FAILURES(-0.50)[];
 	RWL_MAILSPIKE_EXCELLENT(-0.40)[216.105.38.7:from];
 	R_DKIM_ALLOW(-0.20)[lists.sourceforge.net:s=beta];
 	R_SPF_ALLOW(-0.20)[+ip4:216.105.38.7:c];
 	MAILLIST(-0.20)[mailman];
-	MIME_BASE64_TEXT(0.10)[];
 	MIME_GOOD(-0.10)[text/plain];
 	HAS_LIST_UNSUB(-0.01)[];
-	RECEIVED_HELO_LOCALHOST(0.00)[];
-	DKIM_MIXED(0.00)[];
-	RCVD_TLS_LAST(0.00)[];
-	TO_DN_SOME(0.00)[];
-	FORWARDED(0.00)[jfs-discussion@lists.sourceforge.net];
-	FREEMAIL_CC(0.00)[kernel.org,linaro.org,huaqin.corp-partner.google.com,lists.sourceforge.net,xs4all.nl,zeniv.linux.org.uk,brown.name,syzkaller.appspotmail.com];
 	MIME_TRACE(0.00)[0:+];
-	FORGED_SENDER(0.00)[jfs-discussion@lists.sourceforge.net,jfs-discussion-bounces@lists.sourceforge.net];
-	FORGED_RECIPIENTS(0.00)[m:patches@lists.linux.dev,m:stable@vger.kernel.org,m:sashal@kernel.org,m:shaggy@kernel.org,m:brauner@kernel.org,m:neil.armstrong@linaro.org,m:yelangyan@huaqin.corp-partner.google.com,m:jlayton@kernel.org,m:jfs-discussion@lists.sourceforge.net,m:jkoolstra@xs4all.nl,m:viro@zeniv.linux.org.uk,m:neil@brown.name,m:syzbot+9131ddfd7870623b719f@syzkaller.appspotmail.com,m:syzbot@syzkaller.appspotmail.com,s:lists@lfdr.de];
+	TO_DN_SOME(0.00)[];
+	RCVD_TLS_LAST(0.00)[];
+	FORGED_SENDER_MAILLIST(0.00)[];
+	DKIM_MIXED(0.00)[];
+	RECEIVED_HELO_LOCALHOST(0.00)[];
+	FORGED_RECIPIENTS(0.00)[m:jlayton@kernel.org,m:lucho@ionkov.net,m:shaggy@kernel.org,m:alex.aring@gmail.com,m:jack@suse.cz,m:pc@manguebit.org,m:linux-xfs@vger.kernel.org,m:dhavale@google.com,m:martin@omnibond.com,m:yuezhang.mo@sony.com,m:al@alarsen.net,m:amir73il@gmail.com,m:jfs-discussion@lists.sourceforge.net,m:linux-unionfs@vger.kernel.org,m:almaz.alexandrovich@paragon-software.com,m:clm@fb.com,m:adilger.kernel@dilger.ca,m:guochunhai@vivo.com,m:idryomov@gmail.com,m:ronniesahlberg@gmail.com,m:linux-mtd@lists.infradead.org,m:hubcap@omnibond.com,m:linux-cifs@vger.kernel.org,m:xiubli@redhat.com,m:zbestahu@gmail.com,m:miklos@szeredi.hu,m:richard@nod.at,m:mark@fasheh.com,m:linux-doc@vger.kernel.org,m:hughd@google.com,m:willy@infradead.org,m:ntfs3@lists.linux.dev,m:hch@infradead.org,m:joseph.qi@linux.alibaba.com,m:devel@lists.orangefs.org,m:linux-mm@kvack.org,m:linux-btrfs@vger.kernel.org,m:xiang@kernel.org,m:linux-ext4@vger.kernel.org,m:salah.triki@gmail.com,m:cem@kernel.org,m:asmadeus@
+ codewreck.org,m:sprasad@microsoft.com,m:linux_oss@crudebyte.com,m:chao@kernel.org,m:linux-nfs@vger.kernel.org,m:tom@talpey.com,m:ocfs2-devel@lists.linux.dev,m:bharathsm@microsoft.com,m:linux-nilfs@vger.kernel.org,m:dsterba@suse.com,m:viro@zeniv.linux.org.uk,m:baolin.wang@linux.alibaba.com,m:jefflexu@linux.alibaba.com,m:jaegeuk@kernel.org,m:ceph-devel@vger.kernel.org,m:ericvh@kernel.org,m:konishi.ryusuke@gmail.com,m:hirofumi@mail.parknet.co.jp,m:agruenba@redhat.com,m:hansg@kernel.org,m:gfs2@lists.linux.dev,m:brauner@kernel.org,m:linux-f2fs-devel@lists.sourceforge.net,m:tytso@mit.edu,m:luisbg@kernel.org,m:nico@fluxnic.net,m:linux-erofs@lists.ozlabs.org,m:v9fs@lists.linux.dev,m:corbet@lwn.net,m:samba-technical@lists.samba.org,m:linux-kernel@vger.kernel.org,m:linkinjeon@kernel.org,m:sfrench@samba.org,m:chuck.lever@oracle.com,m:lihongbo22@huawei.com,m:anna@kernel.org,m:jack@suse.com,m:linux-fsdevel@vger.kernel.org,m:phillip@squashfs.org.uk,m:akpm@linux-foundation.org,m:sj1557.seo@samsung
+ .com,m:dwmw2@infradead.org,m:trondmy@kernel.org,m:jlbec@evilplan.org,m:alexaring@gmail.com,s:lists@lfdr.de];
+	FORWARDED(0.00)[jfs-discussion@lists.sourceforge.net];
 	ARC_NA(0.00)[];
-	RCPT_COUNT_TWELVE(0.00)[13];
-	DMARC_POLICY_ALLOW(0.00)[lists.sourceforge.net,none];
-	DKIM_TRACE(0.00)[lists.sourceforge.net:+,sourceforge.net:-,sf.net:-,kernel.org:-];
+	REPLYTO_DOM_EQ_TO_DOM(0.00)[];
+	FORGED_SENDER(0.00)[jfs-discussion@lists.sourceforge.net,jfs-discussion-bounces@lists.sourceforge.net];
+	R_DKIM_REJECT(0.00)[sourceforge.net:s=x,sf.net:s=x,kernel.org:s=k20201202];
 	REPLYTO_DOM_NEQ_FROM_DOM(0.00)[];
-	RCVD_COUNT_FIVE(0.00)[5];
-	FORGED_RECIPIENTS_FORWARDING(0.00)[];
+	DKIM_TRACE(0.00)[lists.sourceforge.net:+,sourceforge.net:-,sf.net:-,kernel.org:-];
+	DMARC_POLICY_ALLOW(0.00)[lists.sourceforge.net,none];
+	RCVD_COUNT_FIVE(0.00)[6];
+	RCPT_COUNT_GT_50(0.00)[85];
 	FORGED_SENDER_FORWARDING(0.00)[];
 	FROM_HAS_DN(0.00)[];
 	FROM_NEQ_ENVFROM(0.00)[jfs-discussion@lists.sourceforge.net,jfs-discussion-bounces@lists.sourceforge.net];
-	R_DKIM_REJECT(0.00)[sourceforge.net:s=x,sf.net:s=x,kernel.org:s=k20201202];
-	TAGGED_RCPT(0.00)[jfs-discussion,9131ddfd7870623b719f];
-	ASN(0.00)[asn:11320, ipnet:216.105.32.0/21, country:US];
-	HAS_REPLYTO(0.00)[sashal@kernel.org];
+	FREEMAIL_CC(0.00)[ionkov.net,kernel.org,gmail.com,suse.cz,manguebit.org,vger.kernel.org,google.com,omnibond.com,sony.com,alarsen.net,lists.sourceforge.net,paragon-software.com,fb.com,dilger.ca,vivo.com,lists.infradead.org,redhat.com,szeredi.hu,nod.at,fasheh.com,infradead.org,lists.linux.dev,linux.alibaba.com,lists.orangefs.org,kvack.org,codewreck.org,microsoft.com,crudebyte.com,talpey.com,suse.com,zeniv.linux.org.uk,mail.parknet.co.jp,mit.edu,fluxnic.net,lists.ozlabs.org,lwn.net,lists.samba.org,samba.org,oracle.com,huawei.com,squashfs.org.uk,linux-foundation.org,samsung.com,evilplan.org];
+	FORGED_RECIPIENTS_FORWARDING(0.00)[];
 	RCVD_VIA_SMTP_AUTH(0.00)[];
-	REPLYTO_DOM_NEQ_TO_DOM(0.00)[];
-	FORGED_SENDER_MAILLIST(0.00)[];
+	HAS_REPLYTO(0.00)[patchwork-bot+f2fs@kernel.org];
+	TAGGED_RCPT(0.00)[jfs-discussion];
 	FORGED_RECIPIENTS_MAILLIST(0.00)[];
-	DBL_BLOCKED_OPENRESOLVER(0.00)[lists.sourceforge.net:rdns,lists.sourceforge.net:helo,lists.sourceforge.net:dkim,oracle.com:email,appspotmail.com:email]
-X-Rspamd-Queue-Id: 9380413D6CB
+	ASN(0.00)[asn:11320, ipnet:216.105.32.0/21, country:US];
+	MISSING_XM_UA(0.00)[];
+	DBL_BLOCKED_OPENRESOLVER(0.00)[lists.sourceforge.net:rdns,lists.sourceforge.net:helo,lists.sourceforge.net:dkim]
+X-Rspamd-Queue-Id: D0940150A10
 X-Rspamd-Action: no action
 
-RnJvbTogSm9yaSBLb29sc3RyYSA8amtvb2xzdHJhQHhzNGFsbC5ubD4KClsgVXBzdHJlYW0gY29t
-bWl0IDkyMThkYzI2ZmQ5MjJiMDk4NThlY2QzNjY2ZWQ1N2RmZDgwOThkYTggXQoKSWYgbmxpbmsg
-aXMgbWF4aW1hbCBmb3IgYSBkaXJlY3RvcnkgKC0xKSBhbmQgaW5zaWRlIHRoYXQgZGlyZWN0b3J5
-IHlvdQpwZXJmb3JtIGEgcmVuYW1lIGZvciBzb21lIGNoaWxkIGRpcmVjdG9yeSAobm90IG1vdmlu
-ZyBmcm9tIHRoZSBwYXJlbnQpLAp0aGVuIHRoZSBubGluayBvZiB0aGUgZmlyc3QgZGlyZWN0b3J5
-IGlzIGZpcnN0IGluY3JlbWVudGVkIGFuZCBsYXRlcgpkZWNyZW1lbnRlZC4gTm9ybWFsbHkgdGhp
-cyBpcyBmaW5lLCBidXQgd2hlbiBubGluayA9IC0xIHRoaXMgY2F1c2VzIGEKd3JhcCBhcm91bmQg
-dG8gMCwgYW5kIHRoZW4gZHJvcF9ubGluayBpc3N1ZXMgYSB3YXJuaW5nLgoKQWZ0ZXIgYXBwbHlp
-bmcgdGhlIHBhdGNoIHN5emJvdCBubyBsb25nZXIgaXNzdWVzIGFueSB3YXJuaW5ncy4gSSBhbHNv
-CnJhbiBzb21lIGJhc2ljIGZzIHRlc3RzIHRvIGxvb2sgZm9yIGFueSByZWdyZXNzaW9ucy4KClNp
-Z25lZC1vZmYtYnk6IEpvcmkgS29vbHN0cmEgPGprb29sc3RyYUB4czRhbGwubmw+ClJlcG9ydGVk
-LWJ5OiBzeXpib3QrOTEzMWRkZmQ3ODcwNjIzYjcxOWZAc3l6a2FsbGVyLmFwcHNwb3RtYWlsLmNv
-bQpDbG9zZXM6IGh0dHBzOi8vc3l6Ym90Lm9yZy9idWc/ZXh0aWQ9OTEzMWRkZmQ3ODcwNjIzYjcx
-OWYKU2lnbmVkLW9mZi1ieTogRGF2ZSBLbGVpa2FtcCA8ZGF2ZS5rbGVpa2FtcEBvcmFjbGUuY29t
-PgpTaWduZWQtb2ZmLWJ5OiBTYXNoYSBMZXZpbiA8c2FzaGFsQGtlcm5lbC5vcmc+Ci0tLQoKTExN
-IEdlbmVyYXRlZCBleHBsYW5hdGlvbnMsIG1heSBiZSBjb21wbGV0ZWx5IGJvZ3VzOgoKIyMgQW5h
-bHlzaXMgb2YgamZzOiBubGluayBvdmVyZmxvdyBpbiBqZnNfcmVuYW1lCgojIyMgMS4gQ29tbWl0
-IE1lc3NhZ2UgQW5hbHlzaXMKClRoZSBjb21taXQgbWVzc2FnZSBpcyBjbGVhciBhbmQgd2VsbC1z
-dHJ1Y3R1cmVkOgotICoqUHJvYmxlbSoqOiBXaGVuIGEgZGlyZWN0b3J5IGhhcyBtYXhpbXVtIG5s
-aW5rIChgLTFgIC8gYFVJTlRfTUFYYCksCiAgcGVyZm9ybWluZyBhIHJlbmFtZSBvZiBhIGNoaWxk
-IGRpcmVjdG9yeSB3aXRoaW4gdGhlIHNhbWUgcGFyZW50IGNhdXNlcwogIG5saW5rIHRvIHdyYXAg
-YXJvdW5kOiBmaXJzdCBpbmNyZW1lbnRlZCAod3JhcHMgdG8gMCksIHRoZW4gZGVjcmVtZW50ZWQK
-ICB2aWEgYGRyb3BfbmxpbmsoKWAgd2hpY2ggdHJpZ2dlcnMgYSBrZXJuZWwgV0FSTklORyBiZWNh
-dXNlIG5saW5rIGlzCiAgYWxyZWFkeSAwLgotICoqUmVwb3J0ZXIqKjogc3l6Ym90IChHb29nbGUn
-cyBrZXJuZWwgZnV6emVyKSDigJQgYSBzdHJvbmcgaW5kaWNhdG9yIG9mCiAgYSByZWFsLCByZXBy
-b2R1Y2libGUgYnVnLgotICoqVGVzdGluZyoqOiBBdXRob3IgY29uZmlybXMgc3l6Ym90IHdhcm5p
-bmcgaXMgcmVzb2x2ZWQgYW5kIHJhbiBiYXNpYwogIGZzIHJlZ3Jlc3Npb24gdGVzdHMuCi0gKipN
-YWludGFpbmVyIHNpZ24tb2ZmKio6IERhdmUgS2xlaWthbXAgKEpGUyBtYWludGFpbmVyKSBzaWdu
-ZWQgb2ZmLgoKIyMjIDIuIENvZGUgQ2hhbmdlIEFuYWx5c2lzCgpUaGUgZml4IGlzIGluIGBmcy9q
-ZnMvbmFtZWkuY2AgaW4gdGhlIGBqZnNfcmVuYW1lKClgIGZ1bmN0aW9uLiBUd28KY2hhbmdlczoK
-CioqQ2hhbmdlIDEqKiAobGluZSB+MTIzMSk6CmBgYGMKLSBpZiAoU19JU0RJUihvbGRfaXAtPmlf
-bW9kZSkpCisgaWYgKFNfSVNESVIob2xkX2lwLT5pX21vZGUpICYmIG9sZF9kaXIgIT0gbmV3X2Rp
-cikKICAgICBpbmNfbmxpbmsobmV3X2Rpcik7CmBgYApXaGVuIHJlbmFtaW5nIGEgZGlyZWN0b3J5
-IHdpdGhpbiB0aGUgKipzYW1lIHBhcmVudCoqIChgb2xkX2RpciA9PQpuZXdfZGlyYCksIHRoZXJl
-J3Mgbm8gbmVlZCB0byBpbmNyZW1lbnQgbmxpbmsgb24gdGhlIG5ldyBkaXJlY3RvcnkKYmVjYXVz
-ZSB0aGUgZGlyZWN0b3J5IGlzbid0IGdhaW5pbmcgYSBuZXcgc3ViZGlyZWN0b3J5IOKAlCB0aGUK
-c3ViZGlyZWN0b3J5IGlzIGp1c3QgYmVpbmcgcmVuYW1lZCBpbiBwbGFjZS4gVGhlIGBpbmNfbmxp
-bmtgIHNob3VsZCBvbmx5CmhhcHBlbiB3aGVuIG1vdmluZyBhIGRpcmVjdG9yeSB0byBhICoqZGlm
-ZmVyZW50KiogcGFyZW50LgoKKipDaGFuZ2UgMioqIChsaW5lcyB+MTI0NS0xMjQ3KToKYGBgYwot
-IGRyb3Bfbmxpbmsob2xkX2Rpcik7CisgaWYgKG5ld19pcCB8fCBvbGRfZGlyICE9IG5ld19kaXIp
-CisgICAgIGRyb3Bfbmxpbmsob2xkX2Rpcik7CmBgYApTaW1pbGFybHksIGBkcm9wX25saW5rYCBv
-biBgb2xkX2RpcmAgc2hvdWxkIG9ubHkgaGFwcGVuIHdoZW4gdGhlCmRpcmVjdG9yeSBpcyBhY3R1
-YWxseSBsb3NpbmcgYSBzdWJkaXJlY3RvcnkgKGVpdGhlciBpdCdzIGJlaW5nIG1vdmVkIHRvCmEg
-ZGlmZmVyZW50IHBhcmVudCwgb3IgaXQncyByZXBsYWNpbmcgYW4gZXhpc3RpbmcgZW50cnkgYG5l
-d19pcGApLiBXaGVuCnJlbmFtaW5nIHdpdGhpbiB0aGUgc2FtZSBkaXJlY3RvcnkgYW5kIG5vdCBy
-ZXBsYWNpbmcgYW55dGhpbmcsIG5saW5rCnNob3VsZG4ndCBjaGFuZ2UuCgojIyMgMy4gQnVnIE1l
-Y2hhbmlzbQoKVGhlIGJ1ZyBpcyBhbiBubGluayBpbnRlZ2VyIG92ZXJmbG93L3VuZGVyZmxvdzoK
-MS4gRGlyZWN0b3J5IGhhcyBubGluayA9IGBVSU5UX01BWGAgKG1heGltdW0gdmFsdWUpCjIuIEEg
-Y2hpbGQgZGlyZWN0b3J5IHJlbmFtZSB3aXRoaW4gdGhlIHNhbWUgcGFyZW50IHRyaWdnZXJzCiAg
-IGBpbmNfbmxpbmsoKWAg4oaSIG5saW5rIHdyYXBzIHRvIDAKMy4gVGhlbiBgZHJvcF9ubGluaygp
-YCBpcyBjYWxsZWQgb24gbmxpbms9MCwgd2hpY2ggdHJpZ2dlcnMgYSBgV0FSTl9PTmAKICAgaW4g
-dGhlIFZGUyBsYXllcgo0LiBUaGlzIGNhdXNlcyBhIGtlcm5lbCBXQVJOSU5HIOKAlCBhIGNsZWFy
-IHN0YWJpbGl0eSBpc3N1ZQoKVGhlIGZpeCBpcyBsb2dpY2FsbHkgY29ycmVjdDogd2hlbiByZW5h
-bWluZyB3aXRoaW4gdGhlIHNhbWUgZGlyZWN0b3J5LApubGluayBzaG91bGRuJ3QgYmUgdG91Y2hl
-ZCBhdCBhbGwgc2luY2UgdGhlIG51bWJlciBvZiBzdWJkaXJlY3RvcmllcwpoYXNuJ3QgY2hhbmdl
-ZC4KCiMjIyA0LiBDbGFzc2lmaWNhdGlvbgoKLSAqKkJ1ZyBmaXgqKjogWUVTIOKAlCBmaXhlcyBh
-biBubGluayBvdmVyZmxvdy91bmRlcmZsb3cgdGhhdCB0cmlnZ2VycwogIGtlcm5lbCB3YXJuaW5n
-cwotICoqU3l6Ym90LXJlcG9ydGVkKio6IFlFUyDigJQgcmVwcm9kdWNpYmxlIGZ1enplci1mb3Vu
-ZCBidWcKLSAqKlNlY3VyaXR5IHJlbGV2YW5jZSoqOiBNRURJVU0g4oCUIG5saW5rIGNvcnJ1cHRp
-b24gY291bGQgcG90ZW50aWFsbHkgYmUKICBleHBsb2l0ZWQsIGFuZCB0cmlnZ2VyaW5nIGtlcm5l
-bCB3YXJuaW5ncyBpcyBpdHNlbGYgYSBzdGFiaWxpdHkKICBjb25jZXJuCgojIyMgNS4gU2NvcGUg
-YW5kIFJpc2sgQXNzZXNzbWVudAoKLSAqKkxpbmVzIGNoYW5nZWQqKjogfjYgbGluZXMgb2YgYWN0
-dWFsIGxvZ2ljIGNoYW5nZSAodmVyeSBzbWFsbCkKLSAqKkZpbGVzIHRvdWNoZWQqKjogMSBmaWxl
-IChgZnMvamZzL25hbWVpLmNgKQotICoqU3Vic3lzdGVtKio6IEpGUyBmaWxlc3lzdGVtIOKAlCBt
-YXR1cmUsIHN0YWJsZSBmaWxlc3lzdGVtCi0gKipSaXNrKio6IExPVyDigJQgdGhlIGNvbmRpdGlv
-bnMgYWRkZWQgKGBvbGRfZGlyICE9IG5ld19kaXJgIGFuZAogIGBuZXdfaXBgKSBhcmUgc3RhbmRh
-cmQgY2hlY2tzIGFscmVhZHkgdXNlZCBlbHNld2hlcmUgaW4gdGhlIHNhbWUKICBmdW5jdGlvbi4g
-VGhlIGxvZ2ljIGlzIHN0cmFpZ2h0Zm9yd2FyZDogZG9uJ3QgbW9kaWZ5IG5saW5rIHdoZW4gdGhl
-CiAgZGlyZWN0b3J5IGNvdW50IGlzbid0IGFjdHVhbGx5IGNoYW5naW5nLgotICoqUmVncmVzc2lv
-biByaXNrKio6IE1JTklNQUwg4oCUIHRoaXMgbWFrZXMgSkZTIGNvbnNpc3RlbnQgd2l0aCBob3cK
-ICBvdGhlciBmaWxlc3lzdGVtcyBoYW5kbGUgc2FtZS1kaXJlY3RvcnkgcmVuYW1lcwoKIyMjIDYu
-IFN0YWJsZSBLZXJuZWwgQ3JpdGVyaWEgQ2hlY2sKCi0gKipPYnZpb3VzbHkgY29ycmVjdCBhbmQg
-dGVzdGVkKio6IFlFUyDigJQgbG9naWMgaXMgY2xlYXIsIHRlc3RlZCBieQogIGF1dGhvciwgdmVy
-aWZpZWQgYnkgc3l6Ym90Ci0gKipGaXhlcyBhIHJlYWwgYnVnKio6IFlFUyDigJQga2VybmVsIFdB
-Uk5JTkcgdHJpZ2dlciwgbmxpbmsgY29ycnVwdGlvbgotICoqSW1wb3J0YW50IGlzc3VlKio6IFlF
-UyDigJQga2VybmVsIFdBUk5JTkcsIHBvdGVudGlhbCBmaWxlc3lzdGVtCiAgbWV0YWRhdGEgY29y
-cnVwdGlvbgotICoqU21hbGwgYW5kIGNvbnRhaW5lZCoqOiBZRVMg4oCUIDYgbGluZXMgaW4gb25l
-IGZpbGUKLSAqKk5vIG5ldyBmZWF0dXJlcyoqOiBDb3JyZWN0IOKAlCBwdXJlIGJ1ZyBmaXgKLSAq
-Kk5vIG5ldyBBUElzKio6IENvcnJlY3QKCiMjIyA3LiBEZXBlbmRlbmNpZXMKClRoZSBmaXggaXMg
-c2VsZi1jb250YWluZWQuIEl0IG1vZGlmaWVzIGNvbmRpdGlvbnMgYXJvdW5kIGV4aXN0aW5nCmBp
-bmNfbmxpbmsoKWAgYW5kIGBkcm9wX25saW5rKClgIGNhbGxzLiBObyBkZXBlbmRlbmN5IG9uIG90
-aGVyIGNvbW1pdHMuClRoZSBhZmZlY3RlZCBjb2RlIChgamZzX3JlbmFtZWApIGhhcyBiZWVuIHN0
-YWJsZSBmb3IgeWVhcnMgYW5kIGV4aXN0cyBpbgphbGwgc3RhYmxlIHRyZWVzIHRoYXQgaW5jbHVk
-ZSBKRlMuCgojIyMgOC4gVXNlciBJbXBhY3QKCkpGUyB1c2VycyB3aG8gZW5jb3VudGVyIHRoZSBt
-YXhpbXVtIG5saW5rIHNjZW5hcmlvICh3aGljaCBzeXpib3QgY2FuCnRyaWdnZXIpIHdpbGwgc2Vl
-IGtlcm5lbCB3YXJuaW5ncy4gV2hpbGUgdGhlIHNjZW5hcmlvIHJlcXVpcmVzIG5saW5rIHRvCmJl
-IGF0IG1heGltdW0sIHRoaXMgaXMgYSBjb3JyZWN0bmVzcyBpc3N1ZSBpbiBmaWxlc3lzdGVtIG1l
-dGFkYXRhCmhhbmRsaW5nLiBGaWxlc3lzdGVtIGJ1Z3MgYXJlIGFsd2F5cyBoaWdoLXByaW9yaXR5
-IGZvciBzdGFibGUgYmVjYXVzZQp0aGV5IGNhbiBsZWFkIHRvIGRhdGEgY29ycnVwdGlvbiBvciBs
-b3NzLgoKIyMjIENvbmNsdXNpb24KClRoaXMgaXMgYSB0ZXh0Ym9vayBzdGFibGUgYmFja3BvcnQg
-Y2FuZGlkYXRlOiBhIHNtYWxsLCBzdXJnaWNhbCBmaXggdG8gYQpzeXpib3QtcmVwb3J0ZWQgYnVn
-IGluIGZpbGVzeXN0ZW0gY29kZSwgZml4aW5nIGFuIG5saW5rIG92ZXJmbG93IHRoYXQKdHJpZ2dl
-cnMga2VybmVsIHdhcm5pbmdzLiBJdCdzIG9idmlvdXNseSBjb3JyZWN0LCB3ZWxsLXRlc3RlZCwK
-bWFpbnRhaW5lci1hcHByb3ZlZCwgYW5kIGNhcnJpZXMgbWluaW1hbCByZWdyZXNzaW9uIHJpc2su
-CgoqKllFUyoqCgogZnMvamZzL25hbWVpLmMgfCA2ICsrKystLQogMSBmaWxlIGNoYW5nZWQsIDQg
-aW5zZXJ0aW9ucygrKSwgMiBkZWxldGlvbnMoLSkKCmRpZmYgLS1naXQgYS9mcy9qZnMvbmFtZWku
-YyBiL2ZzL2pmcy9uYW1laS5jCmluZGV4IDY1YTIxOGViYThmYWYuLjc4NzljMDQ5NjMyYjMgMTAw
-NjQ0Ci0tLSBhL2ZzL2pmcy9uYW1laS5jCisrKyBiL2ZzL2pmcy9uYW1laS5jCkBAIC0xMjI4LDcg
-KzEyMjgsNyBAQCBzdGF0aWMgaW50IGpmc19yZW5hbWUoc3RydWN0IG1udF9pZG1hcCAqaWRtYXAs
-IHN0cnVjdCBpbm9kZSAqb2xkX2RpciwKIAkJCQlqZnNfZXJyKCJqZnNfcmVuYW1lOiBkdEluc2Vy
-dCByZXR1cm5lZCAtRUlPIik7CiAJCQlnb3RvIG91dF90eDsKIAkJfQotCQlpZiAoU19JU0RJUihv
-bGRfaXAtPmlfbW9kZSkpCisJCWlmIChTX0lTRElSKG9sZF9pcC0+aV9tb2RlKSAmJiBvbGRfZGly
-ICE9IG5ld19kaXIpCiAJCQlpbmNfbmxpbmsobmV3X2Rpcik7CiAJfQogCS8qCkBAIC0xMjQ0LDcg
-KzEyNDQsOSBAQCBzdGF0aWMgaW50IGpmc19yZW5hbWUoc3RydWN0IG1udF9pZG1hcCAqaWRtYXAs
-IHN0cnVjdCBpbm9kZSAqb2xkX2RpciwKIAkJZ290byBvdXRfdHg7CiAJfQogCWlmIChTX0lTRElS
-KG9sZF9pcC0+aV9tb2RlKSkgewotCQlkcm9wX25saW5rKG9sZF9kaXIpOworCQlpZiAobmV3X2lw
-IHx8IG9sZF9kaXIgIT0gbmV3X2RpcikKKwkJCWRyb3Bfbmxpbmsob2xkX2Rpcik7CisKIAkJaWYg
-KG9sZF9kaXIgIT0gbmV3X2RpcikgewogCQkJLyoKIAkJCSAqIENoYW5nZSBpbm9kZSBudW1iZXIg
-b2YgcGFyZW50IGZvciBtb3ZlZCBkaXJlY3RvcnkKLS0gCjIuNTEuMAoKCgpfX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpKZnMtZGlzY3Vzc2lvbiBtYWlsaW5n
-IGxpc3QKSmZzLWRpc2N1c3Npb25AbGlzdHMuc291cmNlZm9yZ2UubmV0Cmh0dHBzOi8vbGlzdHMu
-c291cmNlZm9yZ2UubmV0L2xpc3RzL2xpc3RpbmZvL2pmcy1kaXNjdXNzaW9uCg==
+Hello:
+
+This series was applied to jaegeuk/f2fs.git (dev)
+by Christian Brauner <brauner@kernel.org>:
+
+On Thu, 08 Jan 2026 12:12:55 -0500 you wrote:
+> Yesterday, I sent patches to fix how directory delegation support is
+> handled on filesystems where the should be disabled [1]. That set is
+> appropriate for v6.19. For v7.0, I want to make lease support be more
+> opt-in, rather than opt-out:
+> 
+> For historical reasons, when ->setlease() file_operation is set to NULL,
+> the default is to use the kernel-internal lease implementation. This
+> means that if you want to disable them, you need to explicitly set the
+> ->setlease() file_operation to simple_nosetlease() or the equivalent.
+> 
+> [...]
+
+Here is the summary with links:
+  - [f2fs-dev,01/24] fs: add setlease to generic_ro_fops and read-only filesystem directory operations
+    https://git.kernel.org/jaegeuk/f2fs/c/ca4388bf1d9e
+  - [f2fs-dev,02/24] affs: add setlease file operation
+    https://git.kernel.org/jaegeuk/f2fs/c/663cdef61a27
+  - [f2fs-dev,03/24] btrfs: add setlease file operation
+    https://git.kernel.org/jaegeuk/f2fs/c/f9688474e413
+  - [f2fs-dev,04/24] erofs: add setlease file operation
+    https://git.kernel.org/jaegeuk/f2fs/c/f8902d3df893
+  - [f2fs-dev,05/24] ext2: add setlease file operation
+    https://git.kernel.org/jaegeuk/f2fs/c/ccdc2e0569f5
+  - [f2fs-dev,06/24] ext4: add setlease file operation
+    https://git.kernel.org/jaegeuk/f2fs/c/20747a2a29c6
+  - [f2fs-dev,07/24] exfat: add setlease file operation
+    https://git.kernel.org/jaegeuk/f2fs/c/b8ca02667552
+  - [f2fs-dev,08/24] f2fs: add setlease file operation
+    https://git.kernel.org/jaegeuk/f2fs/c/9e2ac6ddb397
+  - [f2fs-dev,09/24] fat: add setlease file operation
+    https://git.kernel.org/jaegeuk/f2fs/c/a9acc8422ffb
+  - [f2fs-dev,10/24] gfs2: add a setlease file operation
+    https://git.kernel.org/jaegeuk/f2fs/c/3b514c333390
+  - [f2fs-dev,11/24] jffs2: add setlease file operation
+    https://git.kernel.org/jaegeuk/f2fs/c/c275e6e7c085
+  - [f2fs-dev,12/24] jfs: add setlease file operation
+    https://git.kernel.org/jaegeuk/f2fs/c/7dd596bb35e5
+  - [f2fs-dev,13/24] nilfs2: add setlease file operation
+    https://git.kernel.org/jaegeuk/f2fs/c/f46bb13dc5d9
+  - [f2fs-dev,14/24] ntfs3: add setlease file operation
+    https://git.kernel.org/jaegeuk/f2fs/c/6aaa1d6337b5
+  - [f2fs-dev,15/24] ocfs2: add setlease file operation
+    https://git.kernel.org/jaegeuk/f2fs/c/f15d3150279d
+  - [f2fs-dev,16/24] orangefs: add setlease file operation
+    https://git.kernel.org/jaegeuk/f2fs/c/136b43aa4b16
+  - [f2fs-dev,17/24] overlayfs: add setlease file operation
+    https://git.kernel.org/jaegeuk/f2fs/c/94a3f60af5dc
+  - [f2fs-dev,18/24] squashfs: add setlease file operation
+    https://git.kernel.org/jaegeuk/f2fs/c/dfd8676efe43
+  - [f2fs-dev,19/24] tmpfs: add setlease file operation
+    https://git.kernel.org/jaegeuk/f2fs/c/f5a3446be277
+  - [f2fs-dev,20/24] udf: add setlease file operation
+    https://git.kernel.org/jaegeuk/f2fs/c/dbe8d57d1483
+  - [f2fs-dev,21/24] ufs: add setlease file operation
+    https://git.kernel.org/jaegeuk/f2fs/c/545b4144d804
+  - [f2fs-dev,22/24] xfs: add setlease file operation
+    https://git.kernel.org/jaegeuk/f2fs/c/6163b5da2f5e
+  - [f2fs-dev,23/24] filelock: default to returning -EINVAL when ->setlease operation is NULL
+    https://git.kernel.org/jaegeuk/f2fs/c/2b10994be716
+  - [f2fs-dev,24/24] fs: remove simple_nosetlease()
+    https://git.kernel.org/jaegeuk/f2fs/c/51e49111c00b
+
+You are awesome, thank you!
+-- 
+Deet-doot-dot, I am a bot.
+https://korg.docs.kernel.org/patchwork/pwbot.html
+
+
+
+
+_______________________________________________
+Jfs-discussion mailing list
+Jfs-discussion@lists.sourceforge.net
+https://lists.sourceforge.net/lists/listinfo/jfs-discussion
