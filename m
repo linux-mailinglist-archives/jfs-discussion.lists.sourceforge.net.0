@@ -2,141 +2,148 @@ Return-Path: <jfs-discussion-bounces@lists.sourceforge.net>
 Delivered-To: lists+jfs-discussion@lfdr.de
 Received: from mail.lfdr.de
 	by lfdr with LMTP
-	id 0MwEJyv8lmkXtQIAu9opvQ
+	id qAZeIC8zl2kcvgIAu9opvQ
 	(envelope-from <jfs-discussion-bounces@lists.sourceforge.net>)
-	for <lists+jfs-discussion@lfdr.de>; Thu, 19 Feb 2026 13:03:55 +0100
+	for <lists+jfs-discussion@lfdr.de>; Thu, 19 Feb 2026 16:58:39 +0100
 X-Original-To: lists+jfs-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id AE7CA15E7DA
-	for <lists+jfs-discussion@lfdr.de>; Thu, 19 Feb 2026 13:03:54 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id BCA58160713
+	for <lists+jfs-discussion@lfdr.de>; Thu, 19 Feb 2026 16:58:38 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.sourceforge.net; s=beta; h=Content-Transfer-Encoding:Content-Type:Cc:
 	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	Subject:In-Reply-To:MIME-Version:References:Message-ID:To:From:Date:Sender:
+	Subject:In-Reply-To:From:References:To:MIME-Version:Date:Message-ID:Sender:
 	Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender
 	:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=5tSuuX1OAn7W7fdoh7Bi2wq/lKBk0JW2FyO7chgnLFU=; b=iK3AOEMLAuCNvF6BG1tzDiB/dW
-	MmH12piWqJephO9wy+cs/L5Ef6c0hyER2+M7sKcfi1o33prBZ+WcddklNHBLwXJPdTauUhxhg+/hz
-	A3fuTbSOSQlQHgWPQXAkMPDyyIeugtH4yU6lf4Rsm8jDWe8XK8F/5E171qFCqkGek3nY=;
+	bh=5Eh96i8rVfKCRkuDEV4VgAWPQG+eLxv+9/waehuqXc0=; b=GnvnzQqTpshwYA2nJhIK6fyKFb
+	BqPI2tISBgeeeX/8DfCWvtw3YNMoo9LIuk5fJVtcvYomExKTkqu7P7nGYpLuZ3HnR13Ly65IGM3CU
+	CPf/rhBb5lcOdPOfUJmwGb85fw+LJafxxpq90DVqc+5m4xOfTOR3NQEEJiNJgje/aDdw=;
 Received: from [127.0.0.1] (helo=sfs-ml-1.v29.lw.sourceforge.com)
 	by sfs-ml-1.v29.lw.sourceforge.com with esmtp (Exim 4.95)
 	(envelope-from <jfs-discussion-bounces@lists.sourceforge.net>)
-	id 1vt2kR-0007vl-1G;
-	Thu, 19 Feb 2026 12:03:11 +0000
+	id 1vt6Pe-0004kF-Gv;
+	Thu, 19 Feb 2026 15:57:58 +0000
 Received: from [172.30.29.66] (helo=mx.sourceforge.net)
  by sfs-ml-1.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
  TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (Exim 4.95)
- (envelope-from <jack@suse.cz>) id 1vt2kO-0007vc-R6
+ (envelope-from <axboe@kernel.dk>) id 1vt6Pd-0004k7-9L
  for jfs-discussion@lists.sourceforge.net;
- Thu, 19 Feb 2026 12:03:09 +0000
+ Thu, 19 Feb 2026 15:57:57 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=sourceforge.net; s=x; h=In-Reply-To:Content-Type:MIME-Version:References:
- Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:Content-Transfer-Encoding:
+ d=sourceforge.net; s=x; h=Content-Transfer-Encoding:Content-Type:In-Reply-To:
+ From:References:Cc:To:Subject:MIME-Version:Date:Message-ID:Sender:Reply-To:
  Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
  Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=PYIguF5TPw9Bm5ffYF+ezNu69qmxavOJ15nqAdMnsBo=; b=ckpvHMH+YfG26QkeQLTeqp8N4B
- sELSx5hBkz1naFg7GptLuM7W48y45nSjrdMKUCCNP3LZOYN/KidxNpAubUOUcMLGKNAKnnzGVKT7A
- 86LZKTgnDdTNPcYr578uMBEX62k++8Npp4p4wVxrxAE6RGGEOLlXw8LS7gWh0tsTj/3g=;
+ bh=JgHRaYW1iBhNDu18vHtaVid1O4fLAXLvbx6+OcL28Ko=; b=Q4nn8njJjrXme189t8jOTmBbkI
+ KgI86LTSigIwmW2m6cRPs5gOcLV9zjNaOV36k3iYMbuRZL36rFOSnY6POJiz7uTzuMDnFMGuT/yqZ
+ MIKn+8qXfsBIpJd00B7RvRw8witg/GwcuGJkyH/KM7tgKKj7hE94aFeT8pGrRsSHOrcs=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
- h=In-Reply-To:Content-Type:MIME-Version:References:Message-ID:Subject:Cc:To
- :From:Date:Sender:Reply-To:Content-Transfer-Encoding:Content-ID:
+ h=Content-Transfer-Encoding:Content-Type:In-Reply-To:From:References:Cc:To:
+ Subject:MIME-Version:Date:Message-ID:Sender:Reply-To:Content-ID:
  Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
  :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
  List-Post:List-Owner:List-Archive;
- bh=PYIguF5TPw9Bm5ffYF+ezNu69qmxavOJ15nqAdMnsBo=; b=LseXbY4+8yUa1rwaA+FR09M4mf
- Fh/G+IKpkZdyjuJAhC5MsyaLVl1ZjDBeJERGPEyIMltabXn5VqsVzZ8VHt/vClGpme5/0PAlmEPel
- Pb8iOsIeEcj/lQ6hMFNRR6qn5PzyhdZpzl/nq3Rozfr93IYoAUlqhYhDARk2+nD7ibmU=;
-Received: from smtp-out1.suse.de ([195.135.223.130])
+ bh=JgHRaYW1iBhNDu18vHtaVid1O4fLAXLvbx6+OcL28Ko=; b=WExfSonUlAg6t+j22qKtDWndT8
+ QGlR9nkeZw+Z5OUUe9/cZYqrIYSE7selra85zWbcrNKTo+i3/AoXsY1KIHQzJlIerrQDyxbPWuQqo
+ CUKYsmigVhb13PLpO2vvQlBEcx5SELUkTHPsg7ECp6EmFbXEr856ABvyoZhVOKshW2Pk=;
+Received: from mail-qt1-f177.google.com ([209.85.160.177])
  by sfi-mx-2.v28.lw.sourceforge.com with esmtps
  (TLS1.2:ECDHE-RSA-AES128-GCM-SHA256:128) (Exim 4.95)
- id 1vt2kN-00076n-HY for jfs-discussion@lists.sourceforge.net;
- Thu, 19 Feb 2026 12:03:08 +0000
-Received: from imap1.dmz-prg2.suse.org (unknown [10.150.64.97])
- (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
- key-exchange X25519 server-signature RSA-PSS (4096 bits) server-digest SHA256)
- (No client certificate requested)
- by smtp-out1.suse.de (Postfix) with ESMTPS id 0BDF43E6DB;
- Thu, 19 Feb 2026 12:03:01 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=suse.cz; s=susede2_rsa;
- t=1771502581; h=from:from:reply-to:date:date:message-id:message-id:to:to:cc:cc:
- mime-version:mime-version:content-type:content-type:
- in-reply-to:in-reply-to:references:references;
- bh=PYIguF5TPw9Bm5ffYF+ezNu69qmxavOJ15nqAdMnsBo=;
- b=FX3La7g9lSI644cAJzI9v5F9vi/V+5Hpcix96v6lt+D0D89nqAeB3dgu8rau2hCiTOSJiZ
- lzetvgo0gNzcFcQGantfXs5RDF7qFnCE6GH/bBEJfFKY81BmEpVkKUWYPXAZjTF/TMIvax
- QLrEe5l6dM0z/Qwe3++GAg/EfvGyqW4=
-DKIM-Signature: v=1; a=ed25519-sha256; c=relaxed/relaxed; d=suse.cz;
- s=susede2_ed25519; t=1771502581;
- h=from:from:reply-to:date:date:message-id:message-id:to:to:cc:cc:
- mime-version:mime-version:content-type:content-type:
- in-reply-to:in-reply-to:references:references;
- bh=PYIguF5TPw9Bm5ffYF+ezNu69qmxavOJ15nqAdMnsBo=;
- b=NroNxCrqBXmR+uaYb7gSDV9Z1n9WRiE6wJfD385TwA7Uf9tyZnceL0eQKy9R+IruzABSh+
- Z8sGXwVwwLOb0JBA==
-Authentication-Results: smtp-out1.suse.de;
-	none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=suse.cz; s=susede2_rsa;
- t=1771502581; h=from:from:reply-to:date:date:message-id:message-id:to:to:cc:cc:
- mime-version:mime-version:content-type:content-type:
- in-reply-to:in-reply-to:references:references;
- bh=PYIguF5TPw9Bm5ffYF+ezNu69qmxavOJ15nqAdMnsBo=;
- b=FX3La7g9lSI644cAJzI9v5F9vi/V+5Hpcix96v6lt+D0D89nqAeB3dgu8rau2hCiTOSJiZ
- lzetvgo0gNzcFcQGantfXs5RDF7qFnCE6GH/bBEJfFKY81BmEpVkKUWYPXAZjTF/TMIvax
- QLrEe5l6dM0z/Qwe3++GAg/EfvGyqW4=
-DKIM-Signature: v=1; a=ed25519-sha256; c=relaxed/relaxed; d=suse.cz;
- s=susede2_ed25519; t=1771502581;
- h=from:from:reply-to:date:date:message-id:message-id:to:to:cc:cc:
- mime-version:mime-version:content-type:content-type:
- in-reply-to:in-reply-to:references:references;
- bh=PYIguF5TPw9Bm5ffYF+ezNu69qmxavOJ15nqAdMnsBo=;
- b=NroNxCrqBXmR+uaYb7gSDV9Z1n9WRiE6wJfD385TwA7Uf9tyZnceL0eQKy9R+IruzABSh+
- Z8sGXwVwwLOb0JBA==
-Received: from imap1.dmz-prg2.suse.org (localhost [127.0.0.1])
- (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
- key-exchange X25519 server-signature RSA-PSS (4096 bits) server-digest SHA256)
- (No client certificate requested)
- by imap1.dmz-prg2.suse.org (Postfix) with ESMTPS id E84613EA65;
- Thu, 19 Feb 2026 12:03:00 +0000 (UTC)
-Received: from dovecot-director2.suse.de ([2a07:de40:b281:106:10:150:64:167])
- by imap1.dmz-prg2.suse.org with ESMTPSA id zSavOPT7lmkiVAAAD6G6ig
- (envelope-from <jack@suse.cz>); Thu, 19 Feb 2026 12:03:00 +0000
-Received: by quack3.suse.cz (Postfix, from userid 1000)
- id AB2CFA06FE; Thu, 19 Feb 2026 13:03:00 +0100 (CET)
-Date: Thu, 19 Feb 2026 13:03:00 +0100
-From: Jan Kara <jack@suse.cz>
-To: Tal Zussman <tz2294@columbia.edu>
-Message-ID: <ew75xhk7i26smogev3mhd6vg24dsiguyh4fvhfghcobyne6w2d@shlc7nufv5b7>
-References: <20260218-blk-dontcache-v1-1-fad6675ef71f@columbia.edu>
+ id 1vt6Pc-0000jm-3f for jfs-discussion@lists.sourceforge.net;
+ Thu, 19 Feb 2026 15:57:57 +0000
+Received: by mail-qt1-f177.google.com with SMTP id
+ d75a77b69052e-5033387c80aso28163391cf.0
+ for <jfs-discussion@lists.sourceforge.net>;
+ Thu, 19 Feb 2026 07:57:56 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=kernel-dk.20230601.gappssmtp.com; s=20230601; t=1771516665; x=1772121465;
+ darn=lists.sourceforge.net; 
+ h=content-transfer-encoding:in-reply-to:from:content-language
+ :references:cc:to:subject:user-agent:mime-version:date:message-id
+ :from:to:cc:subject:date:message-id:reply-to;
+ bh=JgHRaYW1iBhNDu18vHtaVid1O4fLAXLvbx6+OcL28Ko=;
+ b=1k92PlmHmwIIB71yWw0xc849tiNl5Q2K2CjF2AMN75SrJQsNoSFgfwSti+5Tj5fRi9
+ z/xhUxVVjlpZceDnOKmkEUFjzJ1GJ7JuDtbvSp2GW1miLcwn1IopmdaEJnNGNxIZg3EJ
+ pK632snujJMeiT8Krjq9Y/WskV7ObL2AOQ2rMNZZdN8h3N3ccVRsOd7if7jllgi5iP9X
+ fKE9Zw7J40IteiSOZ5XQvXFiKU2V8BSyxagO6RQe1EGERbS965SEtHicMOapwQ022I8l
+ 7NVIR/nT8Kg5LXizLgIWmFLJwMMVPYJGXCbe1SaySsPkVx7mwNjlrWDxSjVD+hwD/smf
+ vSXw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20230601; t=1771516665; x=1772121465;
+ h=content-transfer-encoding:in-reply-to:from:content-language
+ :references:cc:to:subject:user-agent:mime-version:date:message-id
+ :x-gm-gg:x-gm-message-state:from:to:cc:subject:date:message-id
+ :reply-to;
+ bh=JgHRaYW1iBhNDu18vHtaVid1O4fLAXLvbx6+OcL28Ko=;
+ b=mxCUxy2iSMYNVNpWignsclzHqATDUkzMj3S84eUbyApb7GMKip3+55g9rw5lxrig5i
+ r4JpFuHFRwzwThD5IxX4fjT+UXw0qW5HbSxNa9FZUkJalcIURYpy82yX64YXMYXGEIoJ
+ BpRCL8fXefVJ2mD3beLokH7UGuVHc8UOb2Xx/EGJeIWpcT+Tu+Ehqf+C96bAkVY/HQ9E
+ olfk4CR9E70Yex07bkdDoMMZhRdITu+oaM/OylwYvrinlLUhkj9KpwE8W3qVCDa/6rJo
+ xG3jHBzsVHihNV7xftjRKr1cB+ljjOppHDzIjeH9XUOAuGfSIIYL79pDyartKKz/QSak
+ NLBg==
+X-Forwarded-Encrypted: i=1;
+ AJvYcCUIBie1Ihnoq26KUF43gIazOzUTQeeAKEFmKiqmPsbvZQyXTtro/8QAQXGgyhCWrFo43SRJeEis258PKcWtiA==@lists.sourceforge.net
+X-Gm-Message-State: AOJu0YyBHq9HT1TwRgsP+I3OlLFurAP/OZRjOjEEWWXRVYw67l2m1QBf
+ PamqREXgQnlrvbNT1zHYC8kkaTwfJTqFAEzPsRCJF0PmDSTwR9puBXKKfWs2XILLlomg0Qe2phd
+ kgmU1s1cZNQ==
+X-Gm-Gg: AZuq6aLGiix9hTT+VtEO3YNtT/eo/j2RfVdeOAHJyyypL1EhzNndMm64Q2F3Wgi8Vib
+ iag0TBVi21EosTADkLrxKvnxTFp0dnFH1fY30JblJNINY1HJUCMpWv6iVS9IaA400NoO8fbVszg
+ Qz5r98BwgfLGPtEKd6gIjy0YPZz0tTgTPghL5Ocvft08d/jgJazye4LLBUP2xh2Nhw1VWbEVoss
+ GAHThZidMx39rpy6ahEBX4SIdXFHuhOlqs0YinHbQWDTY3At7MnqHyRK1iu5XqDc1H3b7ehmm6k
+ hQyvUgE47rTU1YmpTxfpFqdduKVxBUuibX8TRWVYIzaq9xTE3jz/9ci6Y7syq7ewpiBl/T1q/ko
+ MjHej2f7WShisJK4kB1at26v9mwuanENVQh1mOdflU0loz3eAfm+/Vh0R8aW8YI11/Ij+IdLsBG
+ VSfWWFYxIo2SX2bCjJHJVyjlnAwIjwHL6YUbu277p3u8NVe4azCXVVenzcay/2okkjA2DhetEMw
+ 7BuiBIVuEY=
+X-Received: by 2002:a05:6870:a0ad:b0:414:9285:c243 with SMTP id
+ 586e51a60fabf-41545713115mr1093784fac.21.1771514681487; 
+ Thu, 19 Feb 2026 07:24:41 -0800 (PST)
+Received: from [172.25.209.35] ([187.199.77.89])
+ by smtp.gmail.com with ESMTPSA id
+ 586e51a60fabf-40f062ee328sm17955312fac.4.2026.02.19.07.24.38
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Thu, 19 Feb 2026 07:24:40 -0800 (PST)
+Message-ID: <35866783-2312-4e31-904d-3746510eaf56@kernel.dk>
+Date: Thu, 19 Feb 2026 08:24:38 -0700
 MIME-Version: 1.0
-Content-Disposition: inline
+User-Agent: Mozilla Thunderbird
+To: Tal Zussman <tz2294@columbia.edu>,
+ "Tigran A. Aivazian" <aivazian.tigran@gmail.com>,
+ Alexander Viro <viro@zeniv.linux.org.uk>,
+ Christian Brauner <brauner@kernel.org>, Jan Kara <jack@suse.cz>,
+ Namjae Jeon <linkinjeon@kernel.org>, Sungjong Seo <sj1557.seo@samsung.com>,
+ Yuezhang Mo <yuezhang.mo@sony.com>, Dave Kleikamp <shaggy@kernel.org>,
+ Ryusuke Konishi <konishi.ryusuke@gmail.com>,
+ Viacheslav Dubeyko <slava@dubeyko.com>,
+ Konstantin Komarov <almaz.alexandrovich@paragon-software.com>,
+ Bob Copeland <me@bobcopeland.com>
+References: <20260218-blk-dontcache-v1-1-fad6675ef71f@columbia.edu>
+Content-Language: en-US
+From: Jens Axboe <axboe@kernel.dk>
 In-Reply-To: <20260218-blk-dontcache-v1-1-fad6675ef71f@columbia.edu>
-X-Spam-Flag: NO
-X-Spam-Score: -2.30
-X-Spam-Level: 
-X-Spam-Score: -0.2 (/)
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: Spam detection software,
  running on the system "sfi-spamd-1.hosts.colo.sdot.me", 
  has NOT identified this incoming email as spam.  The original
  message has been attached to this so you can view it or label
  similar future email.  If you have any questions, see
  the administrator of that system for details.
- Content preview:  On Wed 18-02-26 16:13:17, Tal Zussman wrote: > Block device
- buffered reads and writes already pass through > filemap_read() and
+ Content preview:  On 2/18/26 2:13 PM,
+ Tal Zussman wrote: > Block device buffered
+ reads and writes already pass through > filemap_read() and
  iomap_file_buffered_write()
- respectively, both of > which handle IOCB_DO [...] 
- Content analysis details:   (-0.2 points, 5.0 required)
+ respectively, both of > which handle IOCB_DONTCACH [...] 
+ Content analysis details:   (0.0 points, 5.0 required)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.1 DKIM_VALID_AU Message has a valid DKIM or DK signature from author's
- domain
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [209.85.160.177 listed in wl.mailspike.net]
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature,
  not necessarily valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
-X-Headers-End: 1vt2kN-00076n-HY
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+X-Headers-End: 1vt6Pc-0000jm-3f
 Subject: Re: [Jfs-discussion] [PATCH RFC] block: enable RWF_DONTCACHE for
  block devices
 X-BeenThere: jfs-discussion@lists.sourceforge.net
@@ -150,62 +157,54 @@ List-Post: <mailto:jfs-discussion@lists.sourceforge.net>
 List-Help: <mailto:jfs-discussion-request@lists.sourceforge.net?subject=help>
 List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/jfs-discussion>, 
  <mailto:jfs-discussion-request@lists.sourceforge.net?subject=subscribe>
-Cc: Jens Axboe <axboe@kernel.dk>, Dave Kleikamp <shaggy@kernel.org>,
- Christian Brauner <brauner@kernel.org>, linux-ext4@vger.kernel.org,
- Jan Kara <jack@suse.cz>, linux-block@vger.kernel.org,
- Yuezhang Mo <yuezhang.mo@sony.com>, ntfs3@lists.linux.dev,
- Bob Copeland <me@bobcopeland.com>, linux-kernel@vger.kernel.org,
- Ryusuke Konishi <konishi.ryusuke@gmail.com>,
- Konstantin Komarov <almaz.alexandrovich@paragon-software.com>,
- linux-karma-devel@lists.sourceforge.net, linux-nilfs@vger.kernel.org,
- Alexander Viro <viro@zeniv.linux.org.uk>,
- "Tigran A. Aivazian" <aivazian.tigran@gmail.com>,
- linux-fsdevel@vger.kernel.org, Sungjong Seo <sj1557.seo@samsung.com>,
- Namjae Jeon <linkinjeon@kernel.org>, jfs-discussion@lists.sourceforge.net
+Cc: jfs-discussion@lists.sourceforge.net, linux-nilfs@vger.kernel.org,
+ ntfs3@lists.linux.dev, linux-kernel@vger.kernel.org,
+ linux-block@vger.kernel.org, linux-fsdevel@vger.kernel.org,
+ linux-ext4@vger.kernel.org, linux-karma-devel@lists.sourceforge.net
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Errors-To: jfs-discussion-bounces@lists.sourceforge.net
 X-Rspamd-Server: lfdr
-X-Spamd-Result: default: False [0.89 / 15.00];
+X-Spamd-Result: default: False [0.39 / 15.00];
 	SUSPICIOUS_RECIPS(1.50)[];
-	MID_RHS_NOT_FQDN(0.50)[];
 	RWL_MAILSPIKE_EXCELLENT(-0.40)[216.105.38.7:from];
-	R_DKIM_ALLOW(-0.20)[lists.sourceforge.net:s=beta];
-	MAILLIST(-0.20)[mailman];
 	R_SPF_ALLOW(-0.20)[+ip4:216.105.38.7];
+	MAILLIST(-0.20)[mailman];
+	R_DKIM_ALLOW(-0.20)[lists.sourceforge.net:s=beta];
 	MIME_GOOD(-0.10)[text/plain];
 	HAS_LIST_UNSUB(-0.01)[];
-	RCVD_TLS_LAST(0.00)[];
 	RECEIVED_HELO_LOCALHOST(0.00)[];
-	FORGED_RECIPIENTS(0.00)[m:tz2294@columbia.edu,m:axboe@kernel.dk,m:shaggy@kernel.org,m:brauner@kernel.org,m:linux-ext4@vger.kernel.org,m:jack@suse.cz,m:linux-block@vger.kernel.org,m:yuezhang.mo@sony.com,m:ntfs3@lists.linux.dev,m:me@bobcopeland.com,m:linux-kernel@vger.kernel.org,m:konishi.ryusuke@gmail.com,m:almaz.alexandrovich@paragon-software.com,m:linux-karma-devel@lists.sourceforge.net,m:linux-nilfs@vger.kernel.org,m:viro@zeniv.linux.org.uk,m:aivazian.tigran@gmail.com,m:linux-fsdevel@vger.kernel.org,m:sj1557.seo@samsung.com,m:linkinjeon@kernel.org,m:jfs-discussion@lists.sourceforge.net,m:konishiryusuke@gmail.com,m:aivaziantigran@gmail.com,s:lists@lfdr.de];
-	DKIM_MIXED(0.00)[];
-	FORGED_SENDER(0.00)[jack@suse.cz,jfs-discussion-bounces@lists.sourceforge.net];
+	FORGED_RECIPIENTS(0.00)[m:tz2294@columbia.edu,m:aivazian.tigran@gmail.com,m:viro@zeniv.linux.org.uk,m:brauner@kernel.org,m:jack@suse.cz,m:linkinjeon@kernel.org,m:sj1557.seo@samsung.com,m:yuezhang.mo@sony.com,m:shaggy@kernel.org,m:konishi.ryusuke@gmail.com,m:slava@dubeyko.com,m:almaz.alexandrovich@paragon-software.com,m:me@bobcopeland.com,m:jfs-discussion@lists.sourceforge.net,m:linux-nilfs@vger.kernel.org,m:ntfs3@lists.linux.dev,m:linux-kernel@vger.kernel.org,m:linux-block@vger.kernel.org,m:linux-fsdevel@vger.kernel.org,m:linux-ext4@vger.kernel.org,m:linux-karma-devel@lists.sourceforge.net,m:aivaziantigran@gmail.com,m:konishiryusuke@gmail.com,s:lists@lfdr.de];
+	RCVD_TLS_LAST(0.00)[];
+	DMARC_NA(0.00)[kernel.dk];
+	FREEMAIL_TO(0.00)[columbia.edu,gmail.com,zeniv.linux.org.uk,kernel.org,suse.cz,samsung.com,sony.com,dubeyko.com,paragon-software.com,bobcopeland.com];
+	FORGED_SENDER(0.00)[axboe@kernel.dk,jfs-discussion-bounces@lists.sourceforge.net];
 	RCPT_COUNT_TWELVE(0.00)[21];
-	DMARC_NA(0.00)[suse.cz];
+	R_DKIM_REJECT(0.00)[sourceforge.net:s=x,sf.net:s=x,kernel-dk.20230601.gappssmtp.com:s=20230601];
 	MIME_TRACE(0.00)[0:+];
 	ARC_NA(0.00)[];
 	FORWARDED(0.00)[jfs-discussion@lists.sourceforge.net];
-	R_DKIM_REJECT(0.00)[sourceforge.net:s=x,sf.net:s=x,suse.cz:s=susede2_rsa,suse.cz:s=susede2_ed25519];
-	DKIM_TRACE(0.00)[lists.sourceforge.net:+,sourceforge.net:-,sf.net:-,suse.cz:-];
+	DKIM_MIXED(0.00)[];
+	FORGED_RECIPIENTS_MAILLIST(0.00)[];
 	TO_DN_SOME(0.00)[];
-	DBL_BLOCKED_OPENRESOLVER(0.00)[suse.cz:email,suse.com:email,columbia.edu:email,lists.sourceforge.net:rdns,lists.sourceforge.net:helo,lists.sourceforge.net:dkim];
-	NEURAL_HAM(-0.00)[-1.000];
+	RCVD_COUNT_FIVE(0.00)[5];
+	PREVIOUSLY_DELIVERED(0.00)[jfs-discussion@lists.sourceforge.net];
 	FORGED_SENDER_FORWARDING(0.00)[];
 	FROM_HAS_DN(0.00)[];
-	FROM_NEQ_ENVFROM(0.00)[jack@suse.cz,jfs-discussion-bounces@lists.sourceforge.net];
-	FREEMAIL_CC(0.00)[kernel.dk,kernel.org,vger.kernel.org,suse.cz,sony.com,lists.linux.dev,bobcopeland.com,gmail.com,paragon-software.com,lists.sourceforge.net,zeniv.linux.org.uk,samsung.com];
+	FROM_NEQ_ENVFROM(0.00)[axboe@kernel.dk,jfs-discussion-bounces@lists.sourceforge.net];
+	DKIM_TRACE(0.00)[lists.sourceforge.net:+,sourceforge.net:-,sf.net:-,kernel-dk.20230601.gappssmtp.com:-];
+	NEURAL_HAM(-0.00)[-0.996];
 	FORGED_RECIPIENTS_FORWARDING(0.00)[];
-	FORGED_SENDER_MAILLIST(0.00)[];
-	FORGED_RECIPIENTS_MAILLIST(0.00)[];
-	TAGGED_RCPT(0.00)[jfs-discussion];
-	MISSING_XM_UA(0.00)[];
-	RCVD_VIA_SMTP_AUTH(0.00)[];
 	ASN(0.00)[asn:11320, ipnet:216.105.32.0/21, country:US];
-	RCVD_COUNT_SEVEN(0.00)[7]
-X-Rspamd-Queue-Id: AE7CA15E7DA
+	MID_RHS_MATCH_FROM(0.00)[];
+	RCVD_VIA_SMTP_AUTH(0.00)[];
+	TAGGED_RCPT(0.00)[jfs-discussion];
+	FORGED_SENDER_MAILLIST(0.00)[];
+	DBL_BLOCKED_OPENRESOLVER(0.00)[kernel.dk:mid]
+X-Rspamd-Queue-Id: BCA58160713
 X-Rspamd-Action: no action
 
-On Wed 18-02-26 16:13:17, Tal Zussman wrote:
+On 2/18/26 2:13 PM, Tal Zussman wrote:
 > Block device buffered reads and writes already pass through
 > filemap_read() and iomap_file_buffered_write() respectively, both of
 > which handle IOCB_DONTCACHE. Enable RWF_DONTCACHE for block device files
@@ -218,267 +217,14 @@ On Wed 18-02-26 16:13:17, Tal Zussman wrote:
 > 
 > This support is useful for databases that operate on raw block devices,
 > among other userspace applications.
-> 
-> Signed-off-by: Tal Zussman <tz2294@columbia.edu>
 
-Looks good to me. Feel free to add:
+OOO right now so I'll take a real look when I'm back, but when I
+originally did this work, it's not the issue side that's the issue. It's
+the pruning done from completion context, and you need to ensure that's
+sane context for that (non-irq).
 
-Reviewed-by: Jan Kara <jack@suse.cz>
-
-								Honza
-
-> ---
-> This is based on v6.19. Please let me know if there's a different tree I
-> should base this on.
-> 
-> I wasn't sure if the block_write_begin() changes were necessary for
-> block device support if CONFIG_BUFFER_HEAD is set (hence the RFC tag). I
-> can remove those if they're not necessary.
-> ---
->  block/fops.c                |  4 ++--
->  fs/bfs/file.c               |  2 +-
->  fs/buffer.c                 | 12 ++++++++----
->  fs/exfat/inode.c            |  2 +-
->  fs/ext2/inode.c             |  2 +-
->  fs/jfs/inode.c              |  2 +-
->  fs/minix/inode.c            |  2 +-
->  fs/nilfs2/inode.c           |  2 +-
->  fs/nilfs2/recovery.c        |  2 +-
->  fs/ntfs3/inode.c            |  2 +-
->  fs/omfs/file.c              |  2 +-
->  fs/udf/inode.c              |  2 +-
->  fs/ufs/inode.c              |  2 +-
->  include/linux/buffer_head.h |  5 +++--
->  14 files changed, 24 insertions(+), 19 deletions(-)
-> 
-> diff --git a/block/fops.c b/block/fops.c
-> index 4d32785b31d9..6bc727f8b252 100644
-> --- a/block/fops.c
-> +++ b/block/fops.c
-> @@ -505,7 +505,7 @@ static int blkdev_write_begin(const struct kiocb *iocb,
->  			      unsigned len, struct folio **foliop,
->  			      void **fsdata)
->  {
-> -	return block_write_begin(mapping, pos, len, foliop, blkdev_get_block);
-> +	return block_write_begin(iocb, mapping, pos, len, foliop, blkdev_get_block);
->  }
->  
->  static int blkdev_write_end(const struct kiocb *iocb,
-> @@ -967,7 +967,7 @@ const struct file_operations def_blk_fops = {
->  	.splice_write	= iter_file_splice_write,
->  	.fallocate	= blkdev_fallocate,
->  	.uring_cmd	= blkdev_uring_cmd,
-> -	.fop_flags	= FOP_BUFFER_RASYNC,
-> +	.fop_flags	= FOP_BUFFER_RASYNC | FOP_DONTCACHE,
->  };
->  
->  static __init int blkdev_init(void)
-> diff --git a/fs/bfs/file.c b/fs/bfs/file.c
-> index d33d6bde992b..f2804e38b8a7 100644
-> --- a/fs/bfs/file.c
-> +++ b/fs/bfs/file.c
-> @@ -177,7 +177,7 @@ static int bfs_write_begin(const struct kiocb *iocb,
->  {
->  	int ret;
->  
-> -	ret = block_write_begin(mapping, pos, len, foliop, bfs_get_block);
-> +	ret = block_write_begin(iocb, mapping, pos, len, foliop, bfs_get_block);
->  	if (unlikely(ret))
->  		bfs_write_failed(mapping, pos + len);
->  
-> diff --git a/fs/buffer.c b/fs/buffer.c
-> index 838c0c571022..33c3580b85d8 100644
-> --- a/fs/buffer.c
-> +++ b/fs/buffer.c
-> @@ -2241,14 +2241,18 @@ EXPORT_SYMBOL(block_commit_write);
->   *
->   * The filesystem needs to handle block truncation upon failure.
->   */
-> -int block_write_begin(struct address_space *mapping, loff_t pos, unsigned len,
-> -		struct folio **foliop, get_block_t *get_block)
-> +int block_write_begin(const struct kiocb *iocb, struct address_space *mapping,
-> +		loff_t pos, unsigned len, struct folio **foliop, get_block_t *get_block)
->  {
->  	pgoff_t index = pos >> PAGE_SHIFT;
-> +	fgf_t fgp_flags = FGP_WRITEBEGIN;
->  	struct folio *folio;
->  	int status;
->  
-> -	folio = __filemap_get_folio(mapping, index, FGP_WRITEBEGIN,
-> +	if (iocb && iocb->ki_flags & IOCB_DONTCACHE)
-> +		fgp_flags |= FGP_DONTCACHE;
-> +
-> +	folio = __filemap_get_folio(mapping, index, fgp_flags,
->  			mapping_gfp_mask(mapping));
->  	if (IS_ERR(folio))
->  		return PTR_ERR(folio);
-> @@ -2591,7 +2595,7 @@ int cont_write_begin(const struct kiocb *iocb, struct address_space *mapping,
->  		(*bytes)++;
->  	}
->  
-> -	return block_write_begin(mapping, pos, len, foliop, get_block);
-> +	return block_write_begin(iocb, mapping, pos, len, foliop, get_block);
->  }
->  EXPORT_SYMBOL(cont_write_begin);
->  
-> diff --git a/fs/exfat/inode.c b/fs/exfat/inode.c
-> index f9501c3a3666..39d36e8fdfd6 100644
-> --- a/fs/exfat/inode.c
-> +++ b/fs/exfat/inode.c
-> @@ -456,7 +456,7 @@ static int exfat_write_begin(const struct kiocb *iocb,
->  	if (unlikely(exfat_forced_shutdown(mapping->host->i_sb)))
->  		return -EIO;
->  
-> -	ret = block_write_begin(mapping, pos, len, foliop, exfat_get_block);
-> +	ret = block_write_begin(iocb, mapping, pos, len, foliop, exfat_get_block);
->  
->  	if (ret < 0)
->  		exfat_write_failed(mapping, pos+len);
-> diff --git a/fs/ext2/inode.c b/fs/ext2/inode.c
-> index dbfe9098a124..11aab03de752 100644
-> --- a/fs/ext2/inode.c
-> +++ b/fs/ext2/inode.c
-> @@ -930,7 +930,7 @@ ext2_write_begin(const struct kiocb *iocb, struct address_space *mapping,
->  {
->  	int ret;
->  
-> -	ret = block_write_begin(mapping, pos, len, foliop, ext2_get_block);
-> +	ret = block_write_begin(iocb, mapping, pos, len, foliop, ext2_get_block);
->  	if (ret < 0)
->  		ext2_write_failed(mapping, pos + len);
->  	return ret;
-> diff --git a/fs/jfs/inode.c b/fs/jfs/inode.c
-> index 4709762713ef..ae52db437771 100644
-> --- a/fs/jfs/inode.c
-> +++ b/fs/jfs/inode.c
-> @@ -303,7 +303,7 @@ static int jfs_write_begin(const struct kiocb *iocb,
->  {
->  	int ret;
->  
-> -	ret = block_write_begin(mapping, pos, len, foliop, jfs_get_block);
-> +	ret = block_write_begin(iocb, mapping, pos, len, foliop, jfs_get_block);
->  	if (unlikely(ret))
->  		jfs_write_failed(mapping, pos + len);
->  
-> diff --git a/fs/minix/inode.c b/fs/minix/inode.c
-> index 51ea9bdc813f..9075c0ba2f20 100644
-> --- a/fs/minix/inode.c
-> +++ b/fs/minix/inode.c
-> @@ -465,7 +465,7 @@ static int minix_write_begin(const struct kiocb *iocb,
->  {
->  	int ret;
->  
-> -	ret = block_write_begin(mapping, pos, len, foliop, minix_get_block);
-> +	ret = block_write_begin(iocb, mapping, pos, len, foliop, minix_get_block);
->  	if (unlikely(ret))
->  		minix_write_failed(mapping, pos + len);
->  
-> diff --git a/fs/nilfs2/inode.c b/fs/nilfs2/inode.c
-> index 51bde45d5865..d9d57eeecc5d 100644
-> --- a/fs/nilfs2/inode.c
-> +++ b/fs/nilfs2/inode.c
-> @@ -230,7 +230,7 @@ static int nilfs_write_begin(const struct kiocb *iocb,
->  	if (unlikely(err))
->  		return err;
->  
-> -	err = block_write_begin(mapping, pos, len, foliop, nilfs_get_block);
-> +	err = block_write_begin(iocb, mapping, pos, len, foliop, nilfs_get_block);
->  	if (unlikely(err)) {
->  		nilfs_write_failed(mapping, pos + len);
->  		nilfs_transaction_abort(inode->i_sb);
-> diff --git a/fs/nilfs2/recovery.c b/fs/nilfs2/recovery.c
-> index a9c61d0492cb..2f5fe44bf736 100644
-> --- a/fs/nilfs2/recovery.c
-> +++ b/fs/nilfs2/recovery.c
-> @@ -541,7 +541,7 @@ static int nilfs_recover_dsync_blocks(struct the_nilfs *nilfs,
->  		}
->  
->  		pos = rb->blkoff << inode->i_blkbits;
-> -		err = block_write_begin(inode->i_mapping, pos, blocksize,
-> +		err = block_write_begin(NULL, inode->i_mapping, pos, blocksize,
->  					&folio, nilfs_get_block);
->  		if (unlikely(err)) {
->  			loff_t isize = inode->i_size;
-> diff --git a/fs/ntfs3/inode.c b/fs/ntfs3/inode.c
-> index 0a9ac5efeb67..8c788feb319e 100644
-> --- a/fs/ntfs3/inode.c
-> +++ b/fs/ntfs3/inode.c
-> @@ -966,7 +966,7 @@ int ntfs_write_begin(const struct kiocb *iocb, struct address_space *mapping,
->  			goto out;
->  	}
->  
-> -	err = block_write_begin(mapping, pos, len, foliop,
-> +	err = block_write_begin(iocb, mapping, pos, len, foliop,
->  				ntfs_get_block_write_begin);
->  
->  out:
-> diff --git a/fs/omfs/file.c b/fs/omfs/file.c
-> index 49a1de5a827f..3bade632e36e 100644
-> --- a/fs/omfs/file.c
-> +++ b/fs/omfs/file.c
-> @@ -317,7 +317,7 @@ static int omfs_write_begin(const struct kiocb *iocb,
->  {
->  	int ret;
->  
-> -	ret = block_write_begin(mapping, pos, len, foliop, omfs_get_block);
-> +	ret = block_write_begin(iocb, mapping, pos, len, foliop, omfs_get_block);
->  	if (unlikely(ret))
->  		omfs_write_failed(mapping, pos + len);
->  
-> diff --git a/fs/udf/inode.c b/fs/udf/inode.c
-> index 7fae8002344a..aec9cdc938be 100644
-> --- a/fs/udf/inode.c
-> +++ b/fs/udf/inode.c
-> @@ -259,7 +259,7 @@ static int udf_write_begin(const struct kiocb *iocb,
->  	int ret;
->  
->  	if (iinfo->i_alloc_type != ICBTAG_FLAG_AD_IN_ICB) {
-> -		ret = block_write_begin(mapping, pos, len, foliop,
-> +		ret = block_write_begin(iocb, mapping, pos, len, foliop,
->  					udf_get_block);
->  		if (unlikely(ret))
->  			udf_write_failed(mapping, pos + len);
-> diff --git a/fs/ufs/inode.c b/fs/ufs/inode.c
-> index e2b0a35de2a7..dfba985265a8 100644
-> --- a/fs/ufs/inode.c
-> +++ b/fs/ufs/inode.c
-> @@ -481,7 +481,7 @@ static int ufs_write_begin(const struct kiocb *iocb,
->  {
->  	int ret;
->  
-> -	ret = block_write_begin(mapping, pos, len, foliop, ufs_getfrag_block);
-> +	ret = block_write_begin(iocb, mapping, pos, len, foliop, ufs_getfrag_block);
->  	if (unlikely(ret))
->  		ufs_write_failed(mapping, pos + len);
->  
-> diff --git a/include/linux/buffer_head.h b/include/linux/buffer_head.h
-> index b16b88bfbc3e..4b07dec5f8eb 100644
-> --- a/include/linux/buffer_head.h
-> +++ b/include/linux/buffer_head.h
-> @@ -258,8 +258,9 @@ int __block_write_full_folio(struct inode *inode, struct folio *folio,
->  		get_block_t *get_block, struct writeback_control *wbc);
->  int block_read_full_folio(struct folio *, get_block_t *);
->  bool block_is_partially_uptodate(struct folio *, size_t from, size_t count);
-> -int block_write_begin(struct address_space *mapping, loff_t pos, unsigned len,
-> -		struct folio **foliop, get_block_t *get_block);
-> +int block_write_begin(const struct kiocb *iocb, struct address_space *mapping,
-> +		loff_t pos, unsigned len, struct folio **foliop,
-> +		get_block_t *get_block);
->  int __block_write_begin(struct folio *folio, loff_t pos, unsigned len,
->  		get_block_t *get_block);
->  int block_write_end(loff_t pos, unsigned len, unsigned copied, struct folio *);
-> 
-> ---
-> base-commit: 05f7e89ab9731565d8a62e3b5d1ec206485eeb0b
-> change-id: 20260218-blk-dontcache-338133dd045e
-> 
-> Best regards,
-> -- 
-> Tal Zussman <tz2294@columbia.edu>
-> 
 -- 
-Jan Kara <jack@suse.com>
-SUSE Labs, CR
+Jens Axboe
 
 
 _______________________________________________
