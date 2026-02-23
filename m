@@ -2,150 +2,154 @@ Return-Path: <jfs-discussion-bounces@lists.sourceforge.net>
 Delivered-To: lists+jfs-discussion@lfdr.de
 Received: from mail.lfdr.de
 	by lfdr with LMTP
-	id qAZeIC8zl2kcvgIAu9opvQ
+	id 4DscNjRmnGmsFwQAu9opvQ
 	(envelope-from <jfs-discussion-bounces@lists.sourceforge.net>)
-	for <lists+jfs-discussion@lfdr.de>; Thu, 19 Feb 2026 16:58:39 +0100
+	for <lists+jfs-discussion@lfdr.de>; Mon, 23 Feb 2026 15:37:40 +0100
 X-Original-To: lists+jfs-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id BCA58160713
-	for <lists+jfs-discussion@lfdr.de>; Thu, 19 Feb 2026 16:58:38 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 281F917821C
+	for <lists+jfs-discussion@lfdr.de>; Mon, 23 Feb 2026 15:37:39 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.sourceforge.net; s=beta; h=Content-Transfer-Encoding:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	Subject:In-Reply-To:From:References:To:MIME-Version:Date:Message-ID:Sender:
-	Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender
-	:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=5Eh96i8rVfKCRkuDEV4VgAWPQG+eLxv+9/waehuqXc0=; b=GnvnzQqTpshwYA2nJhIK6fyKFb
-	BqPI2tISBgeeeX/8DfCWvtw3YNMoo9LIuk5fJVtcvYomExKTkqu7P7nGYpLuZ3HnR13Ly65IGM3CU
-	CPf/rhBb5lcOdPOfUJmwGb85fw+LJafxxpq90DVqc+5m4xOfTOR3NQEEJiNJgje/aDdw=;
-Received: from [127.0.0.1] (helo=sfs-ml-1.v29.lw.sourceforge.com)
-	by sfs-ml-1.v29.lw.sourceforge.com with esmtp (Exim 4.95)
+	Reply-To:From:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:Subject:To:Message-ID:Date:In-Reply-To:References:
+	MIME-Version:Sender:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=bex2d2yZMzrcTt6pL3tM23H7w9bAWfQbZ889XWgbSgs=; b=b5K6d1tPs5hd63TbJUf5S8zDYH
+	7HOr6G4V1SaDAJp4G5WGKEu6rTIF5j+4J3lNrQ+N25MZ+rj69MkOnbBM2lz4RlKR7fWX3hRA7haj3
+	P3Qa629coQuhZv0E0J2NrwHl2Px1FR5piLPf+uOROed5ueEqCfNvTOV1bv93IDshTs1E=;
+Received: from [127.0.0.1] (helo=sfs-ml-2.v29.lw.sourceforge.com)
+	by sfs-ml-2.v29.lw.sourceforge.com with esmtp (Exim 4.95)
 	(envelope-from <jfs-discussion-bounces@lists.sourceforge.net>)
-	id 1vt6Pe-0004kF-Gv;
-	Thu, 19 Feb 2026 15:57:58 +0000
+	id 1vuX3U-0002Zv-Vp;
+	Mon, 23 Feb 2026 14:37:01 +0000
 Received: from [172.30.29.66] (helo=mx.sourceforge.net)
- by sfs-ml-1.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
+ by sfs-ml-2.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
  TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (Exim 4.95)
- (envelope-from <axboe@kernel.dk>) id 1vt6Pd-0004k7-9L
+ (envelope-from <dvyukov@google.com>) id 1vuX3N-0002Zg-7u
  for jfs-discussion@lists.sourceforge.net;
- Thu, 19 Feb 2026 15:57:57 +0000
+ Mon, 23 Feb 2026 14:36:54 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=sourceforge.net; s=x; h=Content-Transfer-Encoding:Content-Type:In-Reply-To:
- From:References:Cc:To:Subject:MIME-Version:Date:Message-ID:Sender:Reply-To:
- Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
+ d=sourceforge.net; s=x; h=Content-Type:Cc:To:Subject:Message-ID:Date:From:
+ In-Reply-To:References:MIME-Version:Sender:Reply-To:Content-Transfer-Encoding
+ :Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
  Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=JgHRaYW1iBhNDu18vHtaVid1O4fLAXLvbx6+OcL28Ko=; b=Q4nn8njJjrXme189t8jOTmBbkI
- KgI86LTSigIwmW2m6cRPs5gOcLV9zjNaOV36k3iYMbuRZL36rFOSnY6POJiz7uTzuMDnFMGuT/yqZ
- MIKn+8qXfsBIpJd00B7RvRw8witg/GwcuGJkyH/KM7tgKKj7hE94aFeT8pGrRsSHOrcs=;
+ bh=MM3aKteGZmW/7GayY7dRMfYL0Xw/N+1zNqCVx7UjMoM=; b=dOQiBSXly/rICfPb89mIteVM7g
+ T5pgy0+1Cp9DbkTtBEz7loTzKYUDEptf2WbNQqut3p0WnGZTOHwRJ+51Rhmm1L1XWhVLU6bUE8LOR
+ 3e6I6YsNQebziMmF31KdYM/R7W0ZM7aVCO6WtgnL9jOyDFP+hYQTfNqBfmRGhYMBqHM8=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
- h=Content-Transfer-Encoding:Content-Type:In-Reply-To:From:References:Cc:To:
- Subject:MIME-Version:Date:Message-ID:Sender:Reply-To:Content-ID:
+ h=Content-Type:Cc:To:Subject:Message-ID:Date:From:In-Reply-To:References:
+ MIME-Version:Sender:Reply-To:Content-Transfer-Encoding:Content-ID:
  Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
  :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
  List-Post:List-Owner:List-Archive;
- bh=JgHRaYW1iBhNDu18vHtaVid1O4fLAXLvbx6+OcL28Ko=; b=WExfSonUlAg6t+j22qKtDWndT8
- QGlR9nkeZw+Z5OUUe9/cZYqrIYSE7selra85zWbcrNKTo+i3/AoXsY1KIHQzJlIerrQDyxbPWuQqo
- CUKYsmigVhb13PLpO2vvQlBEcx5SELUkTHPsg7ECp6EmFbXEr856ABvyoZhVOKshW2Pk=;
-Received: from mail-qt1-f177.google.com ([209.85.160.177])
+ bh=MM3aKteGZmW/7GayY7dRMfYL0Xw/N+1zNqCVx7UjMoM=; b=cc1UAU8B+q27dvwe8lpjs/0NmO
+ tfZStWQ7mxGZnyIQa9iqPdl6dFTR0i5zm6Y/8ZpnzNzszjVsO/VQKmtasOsOGOqRmeNTm/Q4nbtAy
+ KXDG81W2Fl5lm2113L00Lt6ZId6uPAIx+odvuIOGrD3lE5BLHyH9G1IbcI13wSePlaKc=;
+Received: from mail-lj1-f182.google.com ([209.85.208.182])
  by sfi-mx-2.v28.lw.sourceforge.com with esmtps
  (TLS1.2:ECDHE-RSA-AES128-GCM-SHA256:128) (Exim 4.95)
- id 1vt6Pc-0000jm-3f for jfs-discussion@lists.sourceforge.net;
- Thu, 19 Feb 2026 15:57:57 +0000
-Received: by mail-qt1-f177.google.com with SMTP id
- d75a77b69052e-5033387c80aso28163391cf.0
+ id 1vuX3N-0000PJ-9n for jfs-discussion@lists.sourceforge.net;
+ Mon, 23 Feb 2026 14:36:53 +0000
+Received: by mail-lj1-f182.google.com with SMTP id
+ 38308e7fff4ca-3870acaf78eso34672111fa.2
  for <jfs-discussion@lists.sourceforge.net>;
- Thu, 19 Feb 2026 07:57:56 -0800 (PST)
+ Mon, 23 Feb 2026 06:36:53 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1771857402; cv=none;
+ d=google.com; s=arc-20240605;
+ b=hx5lfV0Sdz7HviQFTlQOW8fu46EHjL+F7n2T72+u87wqZ+f9poZMNTMBTJeU3xKwLz
+ NYBXpdOEDpfHnIH2Y/R0mqGBl9fy+7QE/8Jnya7iyrNjpcBbEYRa2Spd/hfKpK5o2qij
+ RDgtWl5sTWD0YUEMS7ZDHFUyzAYPooDuPB1Zr0636aKvb56e2wj29eg+RpHgBOl+kWrL
+ UjC6ot1SXniHR0kWE8At+HBqul0dfohRlCyNI+dp48Ywb9Sq7d6YzjQElKeiZ7YIeBGh
+ qlKKAa0axrb5k7oR12o9e5JOP3o/vVLBbQRf8g8juXAglV6qDE8ShFhD0Hqb9AlsAnD9
+ bs3g==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com;
+ s=arc-20240605; 
+ h=cc:to:subject:message-id:date:from:in-reply-to:references
+ :mime-version:dkim-signature;
+ bh=MM3aKteGZmW/7GayY7dRMfYL0Xw/N+1zNqCVx7UjMoM=;
+ fh=SHofx2R2YiD89hIR0fQNBeGZagudU1wZX4M9z2QENdA=;
+ b=dZHwaF3nQmKiBT6tLMSHsNqT6zk/e924AC4mj4999PHJ5DZrccjH8SfGqi0NZ9KQO+
+ xkO/8XMgcr+NdM4lrI3aPO/xi7sX+a1C3OsdoIn5aKu3FloYFN+4OwAmB/rL/357lAGo
+ QbkEeBauTFPDRKZuV8RgyAGJVOsCR6aHIw7LuWVJajAJJt3m1H5/57mNOYl1E4tJ7/p1
+ r/rfwkV/OcyBO7b8RQTgJljRF2+sVFr9UnnSsgI2s0xei/CELcTTPnK9tBqyJCoSB6BO
+ ssX+0+Ij4EBBTrWYuLzn4PmIZf1YQuVIsnwWPQ8Gqv8Rhk+lq4JW/M6FwDiBFcZJWSlR
+ FsbA==; darn=lists.sourceforge.net
+ARC-Authentication-Results: i=1; mx.google.com; arc=none
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=kernel-dk.20230601.gappssmtp.com; s=20230601; t=1771516665; x=1772121465;
+ d=google.com; s=20230601; t=1771857402; x=1772462202;
  darn=lists.sourceforge.net; 
- h=content-transfer-encoding:in-reply-to:from:content-language
- :references:cc:to:subject:user-agent:mime-version:date:message-id
- :from:to:cc:subject:date:message-id:reply-to;
- bh=JgHRaYW1iBhNDu18vHtaVid1O4fLAXLvbx6+OcL28Ko=;
- b=1k92PlmHmwIIB71yWw0xc849tiNl5Q2K2CjF2AMN75SrJQsNoSFgfwSti+5Tj5fRi9
- z/xhUxVVjlpZceDnOKmkEUFjzJ1GJ7JuDtbvSp2GW1miLcwn1IopmdaEJnNGNxIZg3EJ
- pK632snujJMeiT8Krjq9Y/WskV7ObL2AOQ2rMNZZdN8h3N3ccVRsOd7if7jllgi5iP9X
- fKE9Zw7J40IteiSOZ5XQvXFiKU2V8BSyxagO6RQe1EGERbS965SEtHicMOapwQ022I8l
- 7NVIR/nT8Kg5LXizLgIWmFLJwMMVPYJGXCbe1SaySsPkVx7mwNjlrWDxSjVD+hwD/smf
- vSXw==
+ h=cc:to:subject:message-id:date:from:in-reply-to:references
+ :mime-version:from:to:cc:subject:date:message-id:reply-to;
+ bh=MM3aKteGZmW/7GayY7dRMfYL0Xw/N+1zNqCVx7UjMoM=;
+ b=QHNG1Y01dth02coQzHrAkNgwNffUh6o6jIdHMCiiP4KxlwvtqjmZFVN7ohtK9yq3K4
+ EMjd/vJWPBBZMemQFmfqyq41HN3YFjIl5Awi9DAsSAy1bbsf6LvKRS9ifoIHEBi7naoQ
+ YQnydmLOA4iwNW9kmKGCU3mioopldYcZxkJgDBfLIEe989ZnLuDHiM3G5wgGQYzZgvqY
+ 5+KCwBEgdyhmnL0G8dcp/YS7AsIx4gZ9uDMxfWiCLoSsnzLzZ4iiZGY0NHFUSOF5b7Gd
+ jqPZdve668xxQKSJcdvQGURQRcqufVoXQZP6D3BjPA2pZOBzQKM+DfrHCsRmzeKBkOJo
+ SV+A==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20230601; t=1771516665; x=1772121465;
- h=content-transfer-encoding:in-reply-to:from:content-language
- :references:cc:to:subject:user-agent:mime-version:date:message-id
- :x-gm-gg:x-gm-message-state:from:to:cc:subject:date:message-id
- :reply-to;
- bh=JgHRaYW1iBhNDu18vHtaVid1O4fLAXLvbx6+OcL28Ko=;
- b=mxCUxy2iSMYNVNpWignsclzHqATDUkzMj3S84eUbyApb7GMKip3+55g9rw5lxrig5i
- r4JpFuHFRwzwThD5IxX4fjT+UXw0qW5HbSxNa9FZUkJalcIURYpy82yX64YXMYXGEIoJ
- BpRCL8fXefVJ2mD3beLokH7UGuVHc8UOb2Xx/EGJeIWpcT+Tu+Ehqf+C96bAkVY/HQ9E
- olfk4CR9E70Yex07bkdDoMMZhRdITu+oaM/OylwYvrinlLUhkj9KpwE8W3qVCDa/6rJo
- xG3jHBzsVHihNV7xftjRKr1cB+ljjOppHDzIjeH9XUOAuGfSIIYL79pDyartKKz/QSak
- NLBg==
-X-Forwarded-Encrypted: i=1;
- AJvYcCUIBie1Ihnoq26KUF43gIazOzUTQeeAKEFmKiqmPsbvZQyXTtro/8QAQXGgyhCWrFo43SRJeEis258PKcWtiA==@lists.sourceforge.net
-X-Gm-Message-State: AOJu0YyBHq9HT1TwRgsP+I3OlLFurAP/OZRjOjEEWWXRVYw67l2m1QBf
- PamqREXgQnlrvbNT1zHYC8kkaTwfJTqFAEzPsRCJF0PmDSTwR9puBXKKfWs2XILLlomg0Qe2phd
- kgmU1s1cZNQ==
-X-Gm-Gg: AZuq6aLGiix9hTT+VtEO3YNtT/eo/j2RfVdeOAHJyyypL1EhzNndMm64Q2F3Wgi8Vib
- iag0TBVi21EosTADkLrxKvnxTFp0dnFH1fY30JblJNINY1HJUCMpWv6iVS9IaA400NoO8fbVszg
- Qz5r98BwgfLGPtEKd6gIjy0YPZz0tTgTPghL5Ocvft08d/jgJazye4LLBUP2xh2Nhw1VWbEVoss
- GAHThZidMx39rpy6ahEBX4SIdXFHuhOlqs0YinHbQWDTY3At7MnqHyRK1iu5XqDc1H3b7ehmm6k
- hQyvUgE47rTU1YmpTxfpFqdduKVxBUuibX8TRWVYIzaq9xTE3jz/9ci6Y7syq7ewpiBl/T1q/ko
- MjHej2f7WShisJK4kB1at26v9mwuanENVQh1mOdflU0loz3eAfm+/Vh0R8aW8YI11/Ij+IdLsBG
- VSfWWFYxIo2SX2bCjJHJVyjlnAwIjwHL6YUbu277p3u8NVe4azCXVVenzcay/2okkjA2DhetEMw
- 7BuiBIVuEY=
-X-Received: by 2002:a05:6870:a0ad:b0:414:9285:c243 with SMTP id
- 586e51a60fabf-41545713115mr1093784fac.21.1771514681487; 
- Thu, 19 Feb 2026 07:24:41 -0800 (PST)
-Received: from [172.25.209.35] ([187.199.77.89])
- by smtp.gmail.com with ESMTPSA id
- 586e51a60fabf-40f062ee328sm17955312fac.4.2026.02.19.07.24.38
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Thu, 19 Feb 2026 07:24:40 -0800 (PST)
-Message-ID: <35866783-2312-4e31-904d-3746510eaf56@kernel.dk>
-Date: Thu, 19 Feb 2026 08:24:38 -0700
+ d=1e100.net; s=20230601; t=1771857402; x=1772462202;
+ h=cc:to:subject:message-id:date:from:in-reply-to:references
+ :mime-version:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
+ :message-id:reply-to;
+ bh=MM3aKteGZmW/7GayY7dRMfYL0Xw/N+1zNqCVx7UjMoM=;
+ b=WRL4y5NLZwpE+t5xRB2zSXh9f/kg1cl7/OzCfbUn86A2t6MDqtE0T60AnDXJrxsfXH
+ krQorVv5CRSzMTO8tmQozupJkq65gwioAX9SZfh0qctD1VZe7zcMOtBuQC5GkhBuQGKF
+ tjLQ9/9u8i8wKFwWTLYtbDeVVwnarbmensNejGRwN1JM5sZZgacgv2eh3vBnTHe/HVoN
+ AjeUNe7cjq4aL/cjlMGlDuEmRgMVq0Tc6/fqH414qjoA2CL2zzu7hkkU+9qjlfYHW155
+ 7MRtvN+Bmo48PMLTdDbiQzNFEh664SVWAZWc22IJQ6DnoTOvwGjL5bI9n8JZzR6AydMv
+ sYcg==
+X-Gm-Message-State: AOJu0YyPgepfa/3roewRDbVGIa9lGZj2CwCtknfbzDx8SSpTActypVoY
+ NQuvasek5+G+qbz5hie2IcIWQO9YBkTNNykLoThFjrTUMqq+4GYI6Xu89x/BGIupftfTLoWeWV/
+ m25sZ8oTcLp6qA4KFmk7YrPdetgG5vNt/+J5cB7rP
+X-Gm-Gg: AZuq6aJsVwuju49pCHg8QuV95QxgO9/cwUJo/d7mjLCoPE2VV5d2T4LlnImmG529fnJ
+ ZS5wP31l2rUWImDFmyBM5bsV1VHlNfHyu70ixgxkUr/RONvFqsc+ae1Mdw1irO0OrdG/NSUsb0I
+ 3MO7XJlYCQhWpQANsj6xKIHPHSWfInVHc6DD0N6q5vIRXPfYYSAx91zQwN5DR/owHf0VFnYhDj5
+ RPYSqsJKObvywfvHqLFufQyudXBXuAtJmTfETSAgT81lSllgiRLdZ91pUgIHAqrbmxgZmPzwQ/T
+ gd4shAwSUVtXNPise90E0JSgSKukPgSpu4cgbg==
+X-Received: by 2002:a05:651c:31ce:b0:386:fd3e:bff0 with SMTP id
+ 38308e7fff4ca-389a5e94213mr23326701fa.39.1771857401229; Mon, 23 Feb 2026
+ 06:36:41 -0800 (PST)
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-To: Tal Zussman <tz2294@columbia.edu>,
- "Tigran A. Aivazian" <aivazian.tigran@gmail.com>,
- Alexander Viro <viro@zeniv.linux.org.uk>,
- Christian Brauner <brauner@kernel.org>, Jan Kara <jack@suse.cz>,
- Namjae Jeon <linkinjeon@kernel.org>, Sungjong Seo <sj1557.seo@samsung.com>,
- Yuezhang Mo <yuezhang.mo@sony.com>, Dave Kleikamp <shaggy@kernel.org>,
- Ryusuke Konishi <konishi.ryusuke@gmail.com>,
- Viacheslav Dubeyko <slava@dubeyko.com>,
- Konstantin Komarov <almaz.alexandrovich@paragon-software.com>,
- Bob Copeland <me@bobcopeland.com>
-References: <20260218-blk-dontcache-v1-1-fad6675ef71f@columbia.edu>
-Content-Language: en-US
-From: Jens Axboe <axboe@kernel.dk>
-In-Reply-To: <20260218-blk-dontcache-v1-1-fad6675ef71f@columbia.edu>
-X-Spam-Score: 0.0 (/)
+References: <20260204092230.2540042-1-syzbot@kernel.org>
+In-Reply-To: <20260204092230.2540042-1-syzbot@kernel.org>
+Date: Mon, 23 Feb 2026 15:36:29 +0100
+X-Gm-Features: AaiRm51tCsRBB7oayfu63tMMIZDAgJ7xHZQrvew4IJNGGTC0wVblcq8ltf71rm0
+Message-ID: <CACT4Y+YVb8+XkEg2ucfYKjw-J7uy2Om19kzrGkXvkyxa9XTzvQ@mail.gmail.com>
+To: syzbot <syzbot@kernel.org>
+X-Spam-Score: -7.7 (-------)
 X-Spam-Report: Spam detection software,
  running on the system "sfi-spamd-1.hosts.colo.sdot.me", 
  has NOT identified this incoming email as spam.  The original
  message has been attached to this so you can view it or label
  similar future email.  If you have any questions, see
  the administrator of that system for details.
- Content preview:  On 2/18/26 2:13 PM,
- Tal Zussman wrote: > Block device buffered
- reads and writes already pass through > filemap_read() and
- iomap_file_buffered_write()
- respectively, both of > which handle IOCB_DONTCACH [...] 
- Content analysis details:   (0.0 points, 5.0 required)
+ Content preview:  On Wed, 4 Feb 2026 at 10:23,
+ syzbot <syzbot@kernel.org> wrote:
+ > > UBSAN reported an array-index-out-of-bounds issue in dbFindLeaf: > >
+ index 1365 is out of range for type 's8[1365]' (aka 'signed char [...] 
+ Content analysis details:   (-7.7 points, 5.0 required)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [209.85.160.177 listed in wl.mailspike.net]
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -7.5 USER_IN_DEF_DKIM_WL From: address is in the default DKIM welcome-list
+ 0.0 ARC_VALID              Message has a valid ARC signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature,
  not necessarily valid
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
-X-Headers-End: 1vt6Pc-0000jm-3f
-Subject: Re: [Jfs-discussion] [PATCH RFC] block: enable RWF_DONTCACHE for
- block devices
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.0 ARC_SIGNED             Message has a ARC signature
+ -0.1 DKIM_VALID_AU Message has a valid DKIM or DK signature from author's
+ domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.208.182 listed in wl.mailspike.net]
+ -0.0 DKIMWL_WL_MED          DKIMwl.org - Medium trust sender
+X-Headers-End: 1vuX3N-0000PJ-9n
+Subject: Re: [Jfs-discussion] [PATCH] jfs: fix array-index-out-of-bounds in
+ dbFindLeaf
 X-BeenThere: jfs-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -157,74 +161,129 @@ List-Post: <mailto:jfs-discussion@lists.sourceforge.net>
 List-Help: <mailto:jfs-discussion-request@lists.sourceforge.net?subject=help>
 List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/jfs-discussion>, 
  <mailto:jfs-discussion-request@lists.sourceforge.net?subject=subscribe>
-Cc: jfs-discussion@lists.sourceforge.net, linux-nilfs@vger.kernel.org,
- ntfs3@lists.linux.dev, linux-kernel@vger.kernel.org,
- linux-block@vger.kernel.org, linux-fsdevel@vger.kernel.org,
- linux-ext4@vger.kernel.org, linux-karma-devel@lists.sourceforge.net
+From: Dmitry Vyukov via Jfs-discussion <jfs-discussion@lists.sourceforge.net>
+Reply-To: Dmitry Vyukov <dvyukov@google.com>
+Cc: shaggy@kernel.org, jfs-discussion@lists.sourceforge.net,
+ syzbot+1afe7ef2d0062e19eeb3@syzkaller.appspotmail.com,
+ linux-kernel@vger.kernel.org, stable@vger.kernel.org, ghandatmanas@gmail.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Errors-To: jfs-discussion-bounces@lists.sourceforge.net
 X-Rspamd-Server: lfdr
-X-Spamd-Result: default: False [0.39 / 15.00];
+X-Spamd-Result: default: False [-6.11 / 15.00];
+	WHITELIST_DMARC(-7.00)[sourceforge.net:D:+];
 	SUSPICIOUS_RECIPS(1.50)[];
+	ARC_REJECT(1.00)[signature check failed: fail, {[1] = sig:google.com:reject}];
+	DMARC_POLICY_ALLOW_WITH_FAILURES(-0.50)[];
 	RWL_MAILSPIKE_EXCELLENT(-0.40)[216.105.38.7:from];
-	R_SPF_ALLOW(-0.20)[+ip4:216.105.38.7];
 	MAILLIST(-0.20)[mailman];
 	R_DKIM_ALLOW(-0.20)[lists.sourceforge.net:s=beta];
+	R_SPF_ALLOW(-0.20)[+ip4:216.105.38.7];
 	MIME_GOOD(-0.10)[text/plain];
 	HAS_LIST_UNSUB(-0.01)[];
-	RECEIVED_HELO_LOCALHOST(0.00)[];
-	FORGED_RECIPIENTS(0.00)[m:tz2294@columbia.edu,m:aivazian.tigran@gmail.com,m:viro@zeniv.linux.org.uk,m:brauner@kernel.org,m:jack@suse.cz,m:linkinjeon@kernel.org,m:sj1557.seo@samsung.com,m:yuezhang.mo@sony.com,m:shaggy@kernel.org,m:konishi.ryusuke@gmail.com,m:slava@dubeyko.com,m:almaz.alexandrovich@paragon-software.com,m:me@bobcopeland.com,m:jfs-discussion@lists.sourceforge.net,m:linux-nilfs@vger.kernel.org,m:ntfs3@lists.linux.dev,m:linux-kernel@vger.kernel.org,m:linux-block@vger.kernel.org,m:linux-fsdevel@vger.kernel.org,m:linux-ext4@vger.kernel.org,m:linux-karma-devel@lists.sourceforge.net,m:aivaziantigran@gmail.com,m:konishiryusuke@gmail.com,s:lists@lfdr.de];
+	DMARC_POLICY_ALLOW(0.00)[lists.sourceforge.net,none];
 	RCVD_TLS_LAST(0.00)[];
-	DMARC_NA(0.00)[kernel.dk];
-	FREEMAIL_TO(0.00)[columbia.edu,gmail.com,zeniv.linux.org.uk,kernel.org,suse.cz,samsung.com,sony.com,dubeyko.com,paragon-software.com,bobcopeland.com];
-	FORGED_SENDER(0.00)[axboe@kernel.dk,jfs-discussion-bounces@lists.sourceforge.net];
-	RCPT_COUNT_TWELVE(0.00)[21];
-	R_DKIM_REJECT(0.00)[sourceforge.net:s=x,sf.net:s=x,kernel-dk.20230601.gappssmtp.com:s=20230601];
-	MIME_TRACE(0.00)[0:+];
-	ARC_NA(0.00)[];
-	FORWARDED(0.00)[jfs-discussion@lists.sourceforge.net];
+	RECEIVED_HELO_LOCALHOST(0.00)[];
 	DKIM_MIXED(0.00)[];
-	FORGED_RECIPIENTS_MAILLIST(0.00)[];
+	RCVD_COUNT_THREE(0.00)[4];
+	FORGED_SENDER(0.00)[jfs-discussion@lists.sourceforge.net,jfs-discussion-bounces@lists.sourceforge.net];
 	TO_DN_SOME(0.00)[];
-	RCVD_COUNT_FIVE(0.00)[5];
+	FORGED_RECIPIENTS(0.00)[m:syzbot@kernel.org,m:shaggy@kernel.org,m:jfs-discussion@lists.sourceforge.net,m:syzbot+1afe7ef2d0062e19eeb3@syzkaller.appspotmail.com,m:linux-kernel@vger.kernel.org,m:stable@vger.kernel.org,m:ghandatmanas@gmail.com,m:syzbot@syzkaller.appspotmail.com,s:lists@lfdr.de];
+	MIME_TRACE(0.00)[0:+];
+	FORGED_SENDER_MAILLIST(0.00)[];
+	FORWARDED(0.00)[jfs-discussion@lists.sourceforge.net];
+	R_DKIM_REJECT(0.00)[sourceforge.net:s=x,sf.net:s=x,google.com:s=20230601];
+	REPLYTO_DOM_NEQ_TO_DOM(0.00)[];
+	FREEMAIL_CC(0.00)[kernel.org,lists.sourceforge.net,syzkaller.appspotmail.com,vger.kernel.org,gmail.com];
 	PREVIOUSLY_DELIVERED(0.00)[jfs-discussion@lists.sourceforge.net];
-	FORGED_SENDER_FORWARDING(0.00)[];
-	FROM_HAS_DN(0.00)[];
-	FROM_NEQ_ENVFROM(0.00)[axboe@kernel.dk,jfs-discussion-bounces@lists.sourceforge.net];
-	DKIM_TRACE(0.00)[lists.sourceforge.net:+,sourceforge.net:-,sf.net:-,kernel-dk.20230601.gappssmtp.com:-];
 	NEURAL_HAM(-0.00)[-0.996];
 	FORGED_RECIPIENTS_FORWARDING(0.00)[];
+	FORGED_SENDER_FORWARDING(0.00)[];
+	FROM_HAS_DN(0.00)[];
+	FROM_NEQ_ENVFROM(0.00)[jfs-discussion@lists.sourceforge.net,jfs-discussion-bounces@lists.sourceforge.net];
+	REPLYTO_DOM_NEQ_FROM_DOM(0.00)[];
+	RCPT_COUNT_SEVEN(0.00)[7];
 	ASN(0.00)[asn:11320, ipnet:216.105.32.0/21, country:US];
-	MID_RHS_MATCH_FROM(0.00)[];
-	RCVD_VIA_SMTP_AUTH(0.00)[];
-	TAGGED_RCPT(0.00)[jfs-discussion];
-	FORGED_SENDER_MAILLIST(0.00)[];
-	DBL_BLOCKED_OPENRESOLVER(0.00)[kernel.dk:mid]
-X-Rspamd-Queue-Id: BCA58160713
+	HAS_REPLYTO(0.00)[dvyukov@google.com];
+	TAGGED_RCPT(0.00)[jfs-discussion,1afe7ef2d0062e19eeb3];
+	DKIM_TRACE(0.00)[lists.sourceforge.net:+,sourceforge.net:-,sf.net:-,google.com:-];
+	MISSING_XM_UA(0.00)[];
+	FORGED_RECIPIENTS_MAILLIST(0.00)[];
+	DBL_BLOCKED_OPENRESOLVER(0.00)[mail.gmail.com:mid,appspotmail.com:email,lists.sourceforge.net:rdns,lists.sourceforge.net:helo,lists.sourceforge.net:dkim]
+X-Rspamd-Queue-Id: 281F917821C
 X-Rspamd-Action: no action
 
-On 2/18/26 2:13 PM, Tal Zussman wrote:
-> Block device buffered reads and writes already pass through
-> filemap_read() and iomap_file_buffered_write() respectively, both of
-> which handle IOCB_DONTCACHE. Enable RWF_DONTCACHE for block device files
-> by setting FOP_DONTCACHE in def_blk_fops.
-> 
-> For CONFIG_BUFFER_HEAD paths, thread the kiocb through
-> block_write_begin() so that buffer_head-based I/O can use DONTCACHE
-> behavior as well. Callers without a kiocb context (e.g. nilfs2 recovery)
-> pass NULL, which preserves the existing behavior.
-> 
-> This support is useful for databases that operate on raw block devices,
-> among other userspace applications.
+On Wed, 4 Feb 2026 at 10:23, syzbot <syzbot@kernel.org> wrote:
+>
+> UBSAN reported an array-index-out-of-bounds issue in dbFindLeaf:
+>
+>   index 1365 is out of range for type 's8[1365]' (aka 'signed char[1365]')
+>   CPU: 0 UID: 0 PID: 6287 Comm: syz-executor268 Not tainted ...
+>   Call Trace:
+>    ...
+>    __ubsan_handle_out_of_bounds+0x115/0x140 lib/ubsan.c:455
+>    dbFindLeaf+0x308/0x520 fs/jfs/jfs_dmap.c:2976
+>    dbFindCtl+0x267/0x520 fs/jfs/jfs_dmap.c:1717
+>    ...
+>
+> The issue is caused by an off-by-one error in the bounds check within
+> dbFindLeaf. The function traverses the dmap tree to find free blocks.
+> It uses a loop to iterate through the levels of the tree, calculating
+> the index `x + n` to access the `tp->dmt_stree` array. The variable
+> `max_size` represents the size of this array (CTLTREESIZE (1365) for
+> dmapctl or TREESIZE (341) for dmaptree).
+>
+> The bounds check `if (x + n > max_size)` allows `x + n` to be equal to
+> `max_size`. However, since the array size is `max_size`, the valid
+> indices are `0` to `max_size - 1`. Accessing `tp->dmt_stree[max_size]`
+> results in an array-index-out-of-bounds access.
+>
+> This can occur when the `dmt_height` field in the on-disk structure is
+> corrupted or fuzzed to be larger than the fixed height supported by the
+> `dmt_stree` array.
+>
+> Fix this by changing the condition to `>=` to correctly reject indices
+> equal to or greater than the array size.
+>
+> Signed-off-by: syzbot@kernel.org
+> Signed-off-by: Dmitry Vyukov <dvyukov@google.com>
+> Fixes: 22cad8bc1d36 ("jfs: fix array-index-out-of-bounds in dbFindLeaf")
+> Reported-by: syzbot+1afe7ef2d0062e19eeb3@syzkaller.appspotmail.com
+> To: <jfs-discussion@lists.sourceforge.net>
+> To: "Dave Kleikamp" <shaggy@kernel.org>
+> To: "Manas Ghandat" <ghandatmanas@gmail.com>
+> Cc: <linux-kernel@vger.kernel.org>
+> Cc: <stable@vger.kernel.org>
+> ---
+> This patch was generated by Google Gemini LLM model.
+> It was pre-reviewed and Signed-off-by a human, but please review carefully.
+>
+> Gerrit code review with full side-by-side diffs:
+> https://linux-review.git.corp.google.com/c/linux/kernel/git/torvalds/linux/+/26122
+>
+> Change-Id: I92f694e86518349eafa132b2ba314d8dfff6c86e
+> ---
+>
+> diff --git a/fs/jfs/jfs_dmap.c b/fs/jfs/jfs_dmap.c
+> index cdfa699..18a7dc5 100644
+> --- a/fs/jfs/jfs_dmap.c
+> +++ b/fs/jfs/jfs_dmap.c
+> @@ -2971,7 +2971,7 @@ static int dbFindLeaf(dmtree_t *tp, int l2nb, int *leafidx, bool is_ctl)
+>                         /* sufficient free space found.  move to the next
+>                          * level (or quit if this is the last level).
+>                          */
+> -                       if (x + n > max_size)
+> +                       if (x + n >= max_size)
+>                                 return -ENOSPC;
+>                         if (l2nb <= tp->dmt_stree[x + n])
+>                                 break;
+>
+> base-commit: 63804fed149a6750ffd28610c5c1c98cce6bd377
 
-OOO right now so I'll take a real look when I'm back, but when I
-originally did this work, it's not the issue side that's the issue. It's
-the pruning done from completion context, and you need to ensure that's
-sane context for that (non-irq).
+Hello jfs maintainers,
 
--- 
-Jens Axboe
+Is this patch on anybody radaras? Please merge the fix.
+Or should JFS patches now be sent to a generic FS tree for merging?
 
 
 _______________________________________________
