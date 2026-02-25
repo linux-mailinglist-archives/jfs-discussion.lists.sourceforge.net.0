@@ -2,185 +2,152 @@ Return-Path: <jfs-discussion-bounces@lists.sourceforge.net>
 Delivered-To: lists+jfs-discussion@lfdr.de
 Received: from mail.lfdr.de
 	by lfdr with LMTP
-	id EDOSER17n2lYcQQAu9opvQ
+	id KfAeMKqDn2mVcgQAu9opvQ
 	(envelope-from <jfs-discussion-bounces@lists.sourceforge.net>)
-	for <lists+jfs-discussion@lfdr.de>; Wed, 25 Feb 2026 23:43:41 +0100
+	for <lists+jfs-discussion@lfdr.de>; Thu, 26 Feb 2026 00:20:10 +0100
 X-Original-To: lists+jfs-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9273619E6AC
-	for <lists+jfs-discussion@lfdr.de>; Wed, 25 Feb 2026 23:43:40 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id F080119EB57
+	for <lists+jfs-discussion@lfdr.de>; Thu, 26 Feb 2026 00:20:09 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.sourceforge.net; s=beta; h=Content-Transfer-Encoding:Content-Type:Cc:
-	Reply-To:From:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:Subject:To:Message-ID:Date:In-Reply-To:References:
-	MIME-Version:Sender:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=Xvz1Pg9EAW8g2O7EHVrtB69pu5tXjvGwhO0NJq1ly5o=; b=hUzFX923sytW3jNKqnkFt0oAsU
-	m2PCJCqbj/K4v6ZCqxs2K6ZWjgnOkx8Hw3NRqtlvlKS2alsZG8bTGSyd+QpNSwMcfHU3dXPTGBQf+
-	nXEpdzO+2Ci83EpfMmwHSoVBxfur7qgY1snulEnGYBTGDWbt9suyW4Rfpl9mqM6EKR3k=;
-Received: from [127.0.0.1] (helo=sfs-ml-4.v29.lw.sourceforge.com)
-	by sfs-ml-4.v29.lw.sourceforge.com with esmtp (Exim 4.95)
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	Subject:In-Reply-To:From:References:To:MIME-Version:Date:Message-ID:Sender:
+	Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender
+	:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=S9niF8aFj/S9RYjLR1iyUzfwO0bt6ySo5GHhabC8tNc=; b=BETfB9JHVbZp6SIb8OvF0I+y2o
+	+hroCIP5UkUT8BTNp6A8F3443F+NQbJ7b7IOJ5QN6aUs/86iBUS0fpwv5RDZIgVeLdlCmsBTdwh0g
+	K2dyxSM3Sq8+JT/dHJ6tZmy3eBugw3ZCo+Ar0EIq5VE7cN+jUZoViaHzGRNz7Cb015Fo=;
+Received: from [127.0.0.1] (helo=sfs-ml-3.v29.lw.sourceforge.com)
+	by sfs-ml-3.v29.lw.sourceforge.com with esmtp (Exim 4.95)
 	(envelope-from <jfs-discussion-bounces@lists.sourceforge.net>)
-	id 1vvNbD-0005d4-GJ;
-	Wed, 25 Feb 2026 22:43:19 +0000
+	id 1vvOAE-0006Pf-Hq;
+	Wed, 25 Feb 2026 23:19:30 +0000
 Received: from [172.30.29.66] (helo=mx.sourceforge.net)
- by sfs-ml-4.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
+ by sfs-ml-3.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
  TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (Exim 4.95)
- (envelope-from <tz2294@columbia.edu>) id 1vvNbC-0005cx-7T
+ (envelope-from <axboe@kernel.dk>) id 1vvOAC-0006PY-Qk
  for jfs-discussion@lists.sourceforge.net;
- Wed, 25 Feb 2026 22:43:18 +0000
+ Wed, 25 Feb 2026 23:19:28 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=sourceforge.net; s=x; h=Content-Transfer-Encoding:Content-Type:Cc:To:
- Subject:Message-ID:Date:From:In-Reply-To:References:MIME-Version:Sender:
- Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender
- :Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
+ d=sourceforge.net; s=x; h=Content-Transfer-Encoding:Content-Type:In-Reply-To:
+ From:References:Cc:To:Subject:MIME-Version:Date:Message-ID:Sender:Reply-To:
+ Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
+ Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=pDtBt1IUvockGTD9sAkNQUVYnZ2xavhQA7l7ZDVpiZY=; b=lLhuOP+g6ECK1XCMws9xNY8Isz
- 9jdUiPdRpExl944XmmQfWLrMCC3nUK7VhrcPx5rXj1DZCabnGJLZqX4WLMC9m5otl2Qe3kpx5+IRO
- gYmpwPvZfuIC3NZd6pR+NVCE8YVazPwpqyMz4AcJXyNddqbGyRlzWmdB1/GeyGgVLX4Y=;
+ bh=lV5yfIvdQy795zXZiEFYEcuoFYVuQqyybCf8AopsVu4=; b=XGnrZZ3uzj8jLM8MF1F78XaYQb
+ LMs4HgNDjDz0YyMzPtLN6fwU25h981/I2J22uLRu69qgQdPT23hHJoppIsOhNv968/DM78gFoSpDv
+ v+PDka3wpMocQQuq3TFczpS+4Zzpvv9Q1tRI6pQTT/rQRIAEizlJl3ULx5kOhrpzRtFk=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
- h=Content-Transfer-Encoding:Content-Type:Cc:To:Subject:Message-ID:Date:From
- :In-Reply-To:References:MIME-Version:Sender:Reply-To:Content-ID:
+ h=Content-Transfer-Encoding:Content-Type:In-Reply-To:From:References:Cc:To:
+ Subject:MIME-Version:Date:Message-ID:Sender:Reply-To:Content-ID:
  Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
  :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
  List-Post:List-Owner:List-Archive;
- bh=pDtBt1IUvockGTD9sAkNQUVYnZ2xavhQA7l7ZDVpiZY=; b=bapT3d9bzxl2hj7MfxvXZQe2Ee
- eS5V0KX1Ca3iFkI+Xoo6P3u3JlPHAiOZiFrLN2bU3p7K8adDNGA9CeLfl91rndGI+VOIrR8OGx67i
- XMt8pqLngQloHyPYG5si+JqjGUoPMmWuAwEFlFc4aAb5HooTmP48nZ+AZtFrTq3XHMes=;
-Received: from mx0b-00364e01.pphosted.com ([148.163.139.74])
+ bh=lV5yfIvdQy795zXZiEFYEcuoFYVuQqyybCf8AopsVu4=; b=Y7A1qodPYDBzvrx8FYxgVJEPzP
+ s/qr/3QyBUZlF1UGkqYBe62EXh26mZHOfnrlir8cWG6QXTwemsVDCbGtVOYyb2QTDASYkjkSEBrmH
+ /z1uKN4aO/NkMFAIA3Un97ZvrZc7nVoIteku9bFwOULMdj3ThpJdgmnwfcgoVRa9LMlY=;
+Received: from mail-qt1-f170.google.com ([209.85.160.170])
  by sfi-mx-2.v28.lw.sourceforge.com with esmtps
- (TLS1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.95)
- id 1vvNbB-0005mP-JB for jfs-discussion@lists.sourceforge.net;
- Wed, 25 Feb 2026 22:43:18 +0000
-Received: from pps.filterd (m0499198.ppops.net [127.0.0.1])
- by mx0b-00364e01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id
- 61PMg3fu250390
- for <jfs-discussion@lists.sourceforge.net>; Wed, 25 Feb 2026 17:43:11 -0500
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=columbia.edu; h=
- cc:content-transfer-encoding:content-type:date:from:in-reply-to
- :message-id:mime-version:references:subject:to; s=pps01; bh=pDtB
- t1IUvockGTD9sAkNQUVYnZ2xavhQA7l7ZDVpiZY=; b=nsrj0T6HCt6fbehQN3aM
- mCW3EK4O0E/cM/Qy7KmXDptiP9Si3inQNFYIQScWj2MSnIVqk1bh6Ulf2iHVeiyG
- jOkKvI97CiUm8nbFeOE8ZSU6uEg9o21CwOqyT0zDJZaulMCy+81avk/zmfLBGPpH
- 8zS2au6AvembXSGV6xYbFUcUF5MKKn8LhyrXp7Sf7rQ/fIjdSv01VirEFwBfgwbZ
- WZtyfKQt0yCgnh9sFSfrI9pnPAcpLvFJNu3YOATmrfvTleq6h4woEObun258q4a+
- 8GChmZaWdoX1h6JiicGPjWZ3UYKC3TK6vAzSf9/FhEcslwYYazjWijqQesgqf0ma
- CA==
-Received: from mail-yw1-f198.google.com (mail-yw1-f198.google.com
- [209.85.128.198])
- by mx0b-00364e01.pphosted.com (PPS) with ESMTPS id 4chywywhkc-1
- (version=TLSv1.3 cipher=TLS_AES_128_GCM_SHA256 bits=128 verify=NOT)
+ (TLS1.2:ECDHE-RSA-AES128-GCM-SHA256:128) (Exim 4.95)
+ id 1vvOAB-0008HR-5T for jfs-discussion@lists.sourceforge.net;
+ Wed, 25 Feb 2026 23:19:28 +0000
+Received: by mail-qt1-f170.google.com with SMTP id
+ d75a77b69052e-506c02ec1b3so3200971cf.0
  for <jfs-discussion@lists.sourceforge.net>;
- Wed, 25 Feb 2026 17:43:11 -0500 (EST)
-Received: by mail-yw1-f198.google.com with SMTP id
- 00721157ae682-7942395ecc1so2979347b3.3
- for <jfs-discussion@lists.sourceforge.net>;
- Wed, 25 Feb 2026 14:43:11 -0800 (PST)
-ARC-Seal: i=1; a=rsa-sha256; t=1772059391; cv=none;
- d=google.com; s=arc-20240605;
- b=VGr0wJqbPPlscHveAvuQG6JIagIw/UBhusmbhX2tljzTWZdhhlo2fTOSGobZ9GWoct
- w1/WuLSeqIsKKLQpg0Rn8gDSlZ1C+W5r6IDRgPHJyoiMLwU/jwbNmwsOQlKO4ECfcTS/
- qyq9cLb2aNAyiEuR6AqvYukHZOX9cP5PVWxe2fL+lHmvo3yPCEOqVP0amPR3WlI/31nc
- SFD7Zf1HM2Pjq9ufhm2jdCZgo7llgBZ19W+pilqh3MgHywL9IkyiNJpLdOLSvu9kteAR
- wswOTSSVFFP0CFYxW0nLwlaAhqiKvkpPFeS2TUF8ROJFWSxa/Zr4eJ51V4pv89sz+hEl
- wgjw==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com;
- s=arc-20240605; 
- h=content-transfer-encoding:cc:to:subject:message-id:date:from
- :in-reply-to:references:mime-version;
- bh=pDtBt1IUvockGTD9sAkNQUVYnZ2xavhQA7l7ZDVpiZY=;
- fh=PFTff/ir1Rzntzk1Jg0sVUyDAdHbGgbtWAkP7IhKBtQ=;
- b=kwyz5t8dYrl9x5xFGxdtSidHS2I6gCv1JbahFDJowlg7v6lr6zoN/KyYGHb7uB1JfI
- RwyL1fa+oPk5H23b8K2oMlEtXghNWcZ0f7EXAxGoYA0gs36pgp6ac+gsLudgo9R+iN/+
- 1/fjSrpK+KF39FmmKg7qkNkwcAhTMk6CXtdSe4DKzM6f75s3Ytq2590AiiKE4kj1spNU
- Xv5euFIomF/xVZ2KGZV4SBd5IghBEZE6mjxR1F9eRiS5JT6MKxzmOSv7RMZ7XwVK8z2Z
- qdXGb7DAXG1cHw+GIUDil27D0ky7GiEM8be797vSnrzZI5ADPXX+7Mt5bqUAFYD7JpXF
- HVrg==; darn=lists.sourceforge.net
-ARC-Authentication-Results: i=1; mx.google.com; arc=none
+ Wed, 25 Feb 2026 15:19:27 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=kernel-dk.20230601.gappssmtp.com; s=20230601; t=1772061556; x=1772666356;
+ darn=lists.sourceforge.net; 
+ h=content-transfer-encoding:in-reply-to:from:content-language
+ :references:cc:to:subject:user-agent:mime-version:date:message-id
+ :from:to:cc:subject:date:message-id:reply-to;
+ bh=lV5yfIvdQy795zXZiEFYEcuoFYVuQqyybCf8AopsVu4=;
+ b=xmVUSpiqwqrYteddrAV7CmcJXIptEZUhRCsLSt5r101NeAjty01gPebqRi6WigIl6G
+ yGbmYDwx1OqNRvEfLWuDWXCs8dw5A9VZ6NUQI4Zy5hL7jxNv2+RJWvo74K05Sdc8YD2k
+ /L5HiCznadGdJRH7qqceb3C6hyvJMhFuaVcPO8h7I5krevF0DbBJX6ukPXwj+n2qQoMJ
+ VtqMBwb7DB0APtNAca1/JLVK+NaMsbtQtgRj3+hrWWBXkZlpl+H7tbPcoor5hgZSQZWH
+ L54Xax7J/cCM+SCqEn324hGfQS2QHHB0z4o/xCI3YkcvbtlJ8jYvHdn6rC/5GQowbj5b
+ Tg3w==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20230601; t=1772059391; x=1772664191;
- h=content-transfer-encoding:cc:to:subject:message-id:date:from
- :in-reply-to:references:mime-version:x-gm-gg:x-gm-message-state:from
- :to:cc:subject:date:message-id:reply-to;
- bh=pDtBt1IUvockGTD9sAkNQUVYnZ2xavhQA7l7ZDVpiZY=;
- b=PMST++tfaP0F6LRYnVkfvdRzzPqqgQcGcm5XmO6J9qxwDV8Rr3Xu3XmI4OfvXsqkRZ
- KgwY3gihXBdRnW72yTD5bGpRtYyGMc+sR5hJqbAT/+ioKX2QhGxd/qehpQIlpg5wqPHT
- 5JUSVOS4JnqX2/YOu71z8tFenDdmaJh7MoQYOE7rK4xDTFxSTtd9Fg+NkAE1kI8x7JMX
- MYJ6C1ZwluNVbRAXA5C+hfvewthFnyPtYbhbWRaBzc81+xYwaEA6tvr0AIaZNQpr1s2H
- a9f9qcRMBdjxZzpDozBbH6MQkWH+iYzXJV6h/HzEQhGL26KYDPQmH9UWNutwQ8sCvUqr
- k4uA==
+ d=1e100.net; s=20230601; t=1772061556; x=1772666356;
+ h=content-transfer-encoding:in-reply-to:from:content-language
+ :references:cc:to:subject:user-agent:mime-version:date:message-id
+ :x-gm-gg:x-gm-message-state:from:to:cc:subject:date:message-id
+ :reply-to;
+ bh=lV5yfIvdQy795zXZiEFYEcuoFYVuQqyybCf8AopsVu4=;
+ b=uAaBHjkY25AHKxCl9mMFfAZYHtiL1zh4zQW/RH1pADxUZswm3lLI8hDiZ1z2ID6FFG
+ 7aaYlKvBga9n1Pjw4jxP8cH4AZJoBdNtAYNjNIkgquFNfrYsdSd3Axl/qOWhG8LYCBYs
+ /tWueg3WvJXyhdbhiSVnfOsNuErl6S5UObCeSZtvw7mQy+69Kq09YY9z9tn8Ewh+KTi2
+ DaQjN2m9S5qTWYM4l8ALkQgupia1UmwRjZuzgKK+G6FWQSjT9xv+OUqJsW8nWN846/Up
+ RKNp4nueF3AJGEtpvTI7ketL/GJq/rqMMwbWgq0uh099fAgYWD1CT+k0V1nhwGRkym3c
+ er5g==
 X-Forwarded-Encrypted: i=1;
- AJvYcCUg94fH6LDm8jfb4MXyUe1DCwvzfWR20OKw+JJMC4XuFTpCgWfVouox249EMzM4YLZHtUx6hZLuM/X3aZ/+qw==@lists.sourceforge.net
-X-Gm-Message-State: AOJu0YyDIItmlnn2RkEk9P+DNmQQ2yBzh+Y6fEj6sXlWrQKaTZdwsh4e
- VLhvcPiF6x+IQev5CF8blCbd5k4tjuuGcOsE/sWzg+Cct1XVrsY19n+OXYBiApGOABiyfUvRX0n
- oF1eM3BezSf6iXF307PSaQqZ0aN0phyoynP38c/MNOvwT9kNSYzH/WJoAzIOTnfaap/K7cYEmIK
- MqNjAf5es81Fckojuq/PpNMO1Z2JGrsxTM0JInE6ym/XfKRt0=
-X-Gm-Gg: ATEYQzy2y4lOeluwf24hHVN56bt837U4ficNIb+jJjk/C/jVaQ5PfLIFY5CZ88yQo7G
- JkoPA7MjY0TYV73ph0tMXwAuCMP6G3+CzBRQxBIgFBL77wbPEcWPDEpK/K9D+KBFehuZnsYm6oF
- G09jJs0TLg9Htd5S8Msu6cqBM0Gm0koAW0fncgvtOpu33eDNHPPV6Sesoht8MEcQBH4U3Ij/yM0
- 7xhGSkv
-X-Received: by 2002:a05:690c:4d8a:b0:794:e72a:f664 with SMTP id
- 00721157ae682-7986ff6368dmr23925697b3.60.1772059391041; 
- Wed, 25 Feb 2026 14:43:11 -0800 (PST)
-X-Received: by 2002:a05:690c:4d8a:b0:794:e72a:f664 with SMTP id
- 00721157ae682-7986ff6368dmr23925517b3.60.1772059390662; Wed, 25 Feb 2026
- 14:43:10 -0800 (PST)
+ AJvYcCXqqdPF3CKyzuYa9BtxecHlbq8yBuSqVXVUh/+2T/PB86RucCDcfBfxfxJNYxzCvMOJ7Tc8bOw2cXg9aeSmLg==@lists.sourceforge.net
+X-Gm-Message-State: AOJu0YzcoUFc2dpW66i8i7FxYBF5rhvO7hWDlo/Ao25Rsm2j/mUgAlqP
+ zrM9oiGBep1FNJ7U9rWGd5Mg7tQJaLP8dNDwEG8OrOII9QEnaoBKNKAbNkDn6SLfp/HiU231+T2
+ JEiOj6yo=
+X-Gm-Gg: ATEYQzwx2yacLpVyTT9UHR1vXKl4zu4TiipcFpDczS4DvQqCjgALPmLajqSn/bu63F0
+ or+BiRkrNrOAAI2jd0FIwlKb3jSAZ1IWorOBG9+ekps5LiUoJyTfZ/ttiX9VrN4M19+2+1/toSM
+ NOtLOSxU1rIaQ+KB6FlzQyCzXThyy8C1qQu6wy5gi+8HyksHXFQH3sjXabJnK+6hZcFB3o7TTQj
+ vIlyFH0paRbcYvUQXCP05eg4cACBiy5e+p84zEnd5PeauL8jfIt4KbFyKB3v3UFctXJNuiUZymL
+ v9QPl09km54W7tYV6oOAN5EEoFjAcVROzexBGnH+eS7/VjqPBHJKZnyoBj7XIp/mEgK/1gmTnEz
+ cj5I9cz0DKG2j0MrTxNDwTId3U6O+rQoNc2G69CZyEbOcP1deVESe0ObfdW4+nAX3IymUyf+q92
+ 0xseI7VmLq/CrayABjyilATx25FBxLcT5PO7n1q+LuvFjAXgl3Pz2Wxub5CF61wlOJ2+fRD1ztQ
+ xnVpcS+
+X-Received: by 2002:a05:620a:2807:b0:8cb:2b1f:99e4 with SMTP id
+ af79cd13be357-8cbbf3cf398mr113515285a.34.1772059964616; 
+ Wed, 25 Feb 2026 14:52:44 -0800 (PST)
+Received: from [192.168.1.102] ([96.43.243.2])
+ by smtp.gmail.com with ESMTPSA id
+ af79cd13be357-8cbbf652bb6sm51863585a.4.2026.02.25.14.52.42
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Wed, 25 Feb 2026 14:52:44 -0800 (PST)
+Message-ID: <c8078a80-f801-4f8a-b3cd-e2ccbfca1def@kernel.dk>
+Date: Wed, 25 Feb 2026 15:52:41 -0700
 MIME-Version: 1.0
-References: <20260218-blk-dontcache-v1-1-fad6675ef71f@columbia.edu>
- <35866783-2312-4e31-904d-3746510eaf56@kernel.dk>
-In-Reply-To: <35866783-2312-4e31-904d-3746510eaf56@kernel.dk>
-Date: Wed, 25 Feb 2026 17:42:59 -0500
-X-Gm-Features: AaiRm51munUdTrnZZ7c7FkAWOz4juVf_xR9vg2o7Xlz46s_YpnQLMylaXhWKvd8
-Message-ID: <CAKha_so5z7S6vD-betDLr=GREewxnWxeK9qawhZq8yKt=TD2XA@mail.gmail.com>
-To: Jens Axboe <axboe@kernel.dk>
-X-Proofpoint-ORIG-GUID: UpYVwRT1hFM1OIK5rN2f8IIVfly5FLql
-X-Authority-Analysis: v=2.4 cv=ccTfb3DM c=1 sm=1 tr=0 ts=699f7aff cx=c_pps
- a=g1v0Z557R90hA0UpD/5Yag==:117 a=IkcTkHD0fZMA:10 a=HzLeVaNsDn8A:10
- a=x7bEGLp0ZPQA:10 a=VkNPw1HP01LnGYTKEx00:22 a=Da8U98TiO7q1upZEImrf:22
- a=BpGzv1V74M3SfeTrGa8v:22 a=VwQbUJbxAAAA:8 a=VNoZ5ujv9kIkDPz7VAoA:9
- a=QEXdDO2ut3YA:10 a=MFSWADHSvvjO3QEy5MdX:22
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwMjI1MDIxNyBTYWx0ZWRfXxXeCnhcDccWn
- /xSFb3qIf6mIiIWxZlcBnBI8YaAsNL57hPB50fchqf4/rCIL/MUXPeRO6mME3NFPmtpSxhd5R+c
- L8GkOW888IgpnfVmHqCKOKXuDzK00B8mFTdM6+iMJWS/d5KQLGmHS0IFbUlKo4aDh9SD38D3npJ
- nV3cBzlHUlYlkckQxosWA4v5VnKGW4W4AXlBlml8yHLcSHMgmQ8CfGNJqIvvevZXxgxTkjgz9ds
- u5JFPhapbyHL+g9BE93KNb3PDVApjQvYeCQMurkGyKDy+fNNA3gNb2Z5a7rzsKyYS4e1nwc9PGz
- xz3Eqk94hf1Wdl5yTQHNWiczJW1ij4XHxcfzd5h3YvbDtp3AX9mdYx9sgvhshdbPC8iwz4YWlW/
- pFGLCn4FmSb3M1Oi/fVoHtfPOsYpcIL06z7p7KgUT9td8dUWioVxDZL7ZWUzCGz6TQgzjgz3RD6
- ZdhpEKfrq0vwCpLouvA==
-X-Proofpoint-GUID: UpYVwRT1hFM1OIK5rN2f8IIVfly5FLql
-X-Proofpoint-Virus-Version: vendor=nai engine=6800 definitions=11712
- signatures=596818
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- lowpriorityscore=10 adultscore=0 clxscore=1015 spamscore=0 impostorscore=10
- phishscore=0 priorityscore=1501 malwarescore=0 suspectscore=0 bulkscore=10
- classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
- reason=mlx scancount=1 engine=8.22.0-2602130000 definitions=main-2602250217
-X-Spam-Score: -0.2 (/)
+User-Agent: Mozilla Thunderbird
+To: Tal Zussman <tz2294@columbia.edu>,
+ "Tigran A. Aivazian" <aivazian.tigran@gmail.com>,
+ Alexander Viro <viro@zeniv.linux.org.uk>,
+ Christian Brauner <brauner@kernel.org>, Jan Kara <jack@suse.cz>,
+ Namjae Jeon <linkinjeon@kernel.org>, Sungjong Seo <sj1557.seo@samsung.com>,
+ Yuezhang Mo <yuezhang.mo@sony.com>, Dave Kleikamp <shaggy@kernel.org>,
+ Ryusuke Konishi <konishi.ryusuke@gmail.com>,
+ Viacheslav Dubeyko <slava@dubeyko.com>,
+ Konstantin Komarov <almaz.alexandrovich@paragon-software.com>,
+ Bob Copeland <me@bobcopeland.com>,
+ "Matthew Wilcox (Oracle)" <willy@infradead.org>,
+ Andrew Morton <akpm@linux-foundation.org>
+References: <20260225-blk-dontcache-v2-0-70e7ac4f7108@columbia.edu>
+ <20260225-blk-dontcache-v2-1-70e7ac4f7108@columbia.edu>
+Content-Language: en-US
+From: Jens Axboe <axboe@kernel.dk>
+In-Reply-To: <20260225-blk-dontcache-v2-1-70e7ac4f7108@columbia.edu>
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: Spam detection software,
  running on the system "sfi-spamd-1.hosts.colo.sdot.me", 
  has NOT identified this incoming email as spam.  The original
  message has been attached to this so you can view it or label
  similar future email.  If you have any questions, see
  the administrator of that system for details.
- Content preview:  On Thu, Feb 19, 2026 at 10:24 AM Jens Axboe <axboe@kernel.dk>
- wrote: > On 2/18/26 2:13 PM, Tal Zussman wrote: > > Block device buffered
- reads and writes already pass through > > filemap_read() and iom [...] 
- Content analysis details:   (-0.2 points, 5.0 required)
+ Content preview:  On 2/25/26 3:40 PM,
+ Tal Zussman wrote: > folio_end_dropbehind()
+ is called from folio_end_writeback(), which can > run in IRQ context through
+ buffer_head completion. > > Previously, when folio_end_drop [...] 
+ Content analysis details:   (0.0 points, 5.0 required)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 ARC_SIGNED             Message has a ARC signature
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [209.85.160.170 listed in wl.mailspike.net]
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature,
  not necessarily valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU Message has a valid DKIM or DK signature from author's
- domain
- 0.0 ARC_VALID              Message has a valid ARC signature
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
-X-Headers-End: 1vvNbB-0005mP-JB
-Subject: Re: [Jfs-discussion] [PATCH RFC] block: enable RWF_DONTCACHE for
- block devices
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+X-Headers-End: 1vvOAB-0008HR-5T
+Subject: Re: [Jfs-discussion] [PATCH RFC v2 1/2] filemap: defer dropbehind
+ invalidation from IRQ context
 X-BeenThere: jfs-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -192,89 +159,223 @@ List-Post: <mailto:jfs-discussion@lists.sourceforge.net>
 List-Help: <mailto:jfs-discussion-request@lists.sourceforge.net?subject=help>
 List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/jfs-discussion>, 
  <mailto:jfs-discussion-request@lists.sourceforge.net?subject=subscribe>
-From: Tal Zussman via Jfs-discussion <jfs-discussion@lists.sourceforge.net>
-Reply-To: Tal Zussman <tz2294@columbia.edu>
-Cc: Dave Kleikamp <shaggy@kernel.org>, Christian Brauner <brauner@kernel.org>,
- linux-ext4@vger.kernel.org, Jan Kara <jack@suse.cz>,
- linux-block@vger.kernel.org, Yuezhang Mo <yuezhang.mo@sony.com>,
- ntfs3@lists.linux.dev, Bob Copeland <me@bobcopeland.com>,
- linux-kernel@vger.kernel.org, Ryusuke Konishi <konishi.ryusuke@gmail.com>,
- Konstantin Komarov <almaz.alexandrovich@paragon-software.com>,
- linux-karma-devel@lists.sourceforge.net, linux-nilfs@vger.kernel.org,
- Alexander Viro <viro@zeniv.linux.org.uk>,
- "Tigran A. Aivazian" <aivazian.tigran@gmail.com>,
- linux-fsdevel@vger.kernel.org, Sungjong Seo <sj1557.seo@samsung.com>,
- Namjae Jeon <linkinjeon@kernel.org>, jfs-discussion@lists.sourceforge.net
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: jfs-discussion@lists.sourceforge.net, linux-nilfs@vger.kernel.org,
+ ntfs3@lists.linux.dev, linux-kernel@vger.kernel.org,
+ linux-block@vger.kernel.org, linux-mm@kvack.org, linux-fsdevel@vger.kernel.org,
+ linux-ext4@vger.kernel.org, linux-karma-devel@lists.sourceforge.net
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Errors-To: jfs-discussion-bounces@lists.sourceforge.net
 X-Rspamd-Server: lfdr
-X-Spamd-Result: default: False [-6.01 / 15.00];
-	WHITELIST_DMARC(-7.00)[sourceforge.net:D:+];
+X-Spamd-Result: default: False [0.39 / 15.00];
 	SUSPICIOUS_RECIPS(1.50)[];
-	ARC_REJECT(1.00)[signature check failed: fail, {[1] = sig:google.com:reject}];
-	DMARC_POLICY_ALLOW_WITH_FAILURES(-0.50)[];
 	RWL_MAILSPIKE_EXCELLENT(-0.40)[216.105.38.7:from];
-	R_SPF_ALLOW(-0.20)[+ip4:216.105.38.7:c];
-	MAILLIST(-0.20)[mailman];
 	R_DKIM_ALLOW(-0.20)[lists.sourceforge.net:s=beta];
-	MIME_BASE64_TEXT(0.10)[];
+	MAILLIST(-0.20)[mailman];
+	R_SPF_ALLOW(-0.20)[+ip4:216.105.38.7];
 	MIME_GOOD(-0.10)[text/plain];
 	HAS_LIST_UNSUB(-0.01)[];
 	RCVD_TLS_LAST(0.00)[];
-	DKIM_MIXED(0.00)[];
 	RECEIVED_HELO_LOCALHOST(0.00)[];
-	FORGED_RECIPIENTS(0.00)[m:axboe@kernel.dk,m:shaggy@kernel.org,m:brauner@kernel.org,m:linux-ext4@vger.kernel.org,m:jack@suse.cz,m:linux-block@vger.kernel.org,m:yuezhang.mo@sony.com,m:ntfs3@lists.linux.dev,m:me@bobcopeland.com,m:linux-kernel@vger.kernel.org,m:konishi.ryusuke@gmail.com,m:almaz.alexandrovich@paragon-software.com,m:linux-karma-devel@lists.sourceforge.net,m:linux-nilfs@vger.kernel.org,m:viro@zeniv.linux.org.uk,m:aivazian.tigran@gmail.com,m:linux-fsdevel@vger.kernel.org,m:sj1557.seo@samsung.com,m:linkinjeon@kernel.org,m:jfs-discussion@lists.sourceforge.net,m:konishiryusuke@gmail.com,m:aivaziantigran@gmail.com,s:lists@lfdr.de];
-	FORGED_SENDER(0.00)[jfs-discussion@lists.sourceforge.net,jfs-discussion-bounces@lists.sourceforge.net];
-	RCPT_COUNT_TWELVE(0.00)[20];
-	TO_DN_SOME(0.00)[];
-	FREEMAIL_CC(0.00)[kernel.org,vger.kernel.org,suse.cz,sony.com,lists.linux.dev,bobcopeland.com,gmail.com,paragon-software.com,lists.sourceforge.net,zeniv.linux.org.uk,samsung.com];
+	R_DKIM_REJECT(0.00)[sourceforge.net:s=x,sf.net:s=x,kernel-dk.20230601.gappssmtp.com:s=20230601];
+	FORGED_RECIPIENTS(0.00)[m:tz2294@columbia.edu,m:aivazian.tigran@gmail.com,m:viro@zeniv.linux.org.uk,m:brauner@kernel.org,m:jack@suse.cz,m:linkinjeon@kernel.org,m:sj1557.seo@samsung.com,m:yuezhang.mo@sony.com,m:shaggy@kernel.org,m:konishi.ryusuke@gmail.com,m:slava@dubeyko.com,m:almaz.alexandrovich@paragon-software.com,m:me@bobcopeland.com,m:willy@infradead.org,m:akpm@linux-foundation.org,m:jfs-discussion@lists.sourceforge.net,m:linux-nilfs@vger.kernel.org,m:ntfs3@lists.linux.dev,m:linux-kernel@vger.kernel.org,m:linux-block@vger.kernel.org,m:linux-mm@kvack.org,m:linux-fsdevel@vger.kernel.org,m:linux-ext4@vger.kernel.org,m:linux-karma-devel@lists.sourceforge.net,m:aivaziantigran@gmail.com,m:konishiryusuke@gmail.com,s:lists@lfdr.de];
+	DMARC_NA(0.00)[kernel.dk];
+	FREEMAIL_TO(0.00)[columbia.edu,gmail.com,zeniv.linux.org.uk,kernel.org,suse.cz,samsung.com,sony.com,dubeyko.com,paragon-software.com,bobcopeland.com,infradead.org,linux-foundation.org];
 	MIME_TRACE(0.00)[0:+];
-	FORGED_SENDER_MAILLIST(0.00)[];
+	DKIM_MIXED(0.00)[];
 	FORWARDED(0.00)[jfs-discussion@lists.sourceforge.net];
-	DMARC_POLICY_ALLOW(0.00)[lists.sourceforge.net,none];
-	DKIM_TRACE(0.00)[lists.sourceforge.net:+,sourceforge.net:-,sf.net:-,columbia.edu:-];
-	REPLYTO_DOM_NEQ_FROM_DOM(0.00)[];
-	RCVD_COUNT_FIVE(0.00)[6];
+	FORGED_SENDER(0.00)[axboe@kernel.dk,jfs-discussion-bounces@lists.sourceforge.net];
+	ARC_NA(0.00)[];
+	DKIM_TRACE(0.00)[lists.sourceforge.net:+,sourceforge.net:-,sf.net:-,kernel-dk.20230601.gappssmtp.com:-];
+	ASN(0.00)[asn:11320, ipnet:216.105.32.0/21, country:US];
+	RCPT_COUNT_TWELVE(0.00)[24];
+	RCVD_COUNT_FIVE(0.00)[5];
 	PREVIOUSLY_DELIVERED(0.00)[jfs-discussion@lists.sourceforge.net];
-	NEURAL_HAM(-0.00)[-0.979];
 	FORGED_SENDER_FORWARDING(0.00)[];
 	FROM_HAS_DN(0.00)[];
-	FROM_NEQ_ENVFROM(0.00)[jfs-discussion@lists.sourceforge.net,jfs-discussion-bounces@lists.sourceforge.net];
-	R_DKIM_REJECT(0.00)[sourceforge.net:s=x,sf.net:s=x,columbia.edu:s=pps01];
-	FORGED_RECIPIENTS_FORWARDING(0.00)[];
-	ASN(0.00)[asn:11320, ipnet:216.105.32.0/21, country:US];
-	HAS_REPLYTO(0.00)[tz2294@columbia.edu];
-	TAGGED_RCPT(0.00)[jfs-discussion];
-	REPLYTO_DOM_NEQ_TO_DOM(0.00)[];
-	MISSING_XM_UA(0.00)[];
+	FROM_NEQ_ENVFROM(0.00)[axboe@kernel.dk,jfs-discussion-bounces@lists.sourceforge.net];
 	FORGED_RECIPIENTS_MAILLIST(0.00)[];
-	DBL_BLOCKED_OPENRESOLVER(0.00)[lists.sourceforge.net:rdns,lists.sourceforge.net:helo,lists.sourceforge.net:dkim,columbia.edu:replyto]
-X-Rspamd-Queue-Id: 9273619E6AC
+	NEURAL_HAM(-0.00)[-0.996];
+	FORGED_RECIPIENTS_FORWARDING(0.00)[];
+	RCVD_VIA_SMTP_AUTH(0.00)[];
+	MID_RHS_MATCH_FROM(0.00)[];
+	FORGED_SENDER_MAILLIST(0.00)[];
+	TAGGED_RCPT(0.00)[jfs-discussion];
+	TO_DN_SOME(0.00)[]
+X-Rspamd-Queue-Id: F080119EB57
 X-Rspamd-Action: no action
 
-T24gVGh1LCBGZWIgMTksIDIwMjYgYXQgMTA6MjTigK9BTSBKZW5zIEF4Ym9lIDxheGJvZUBrZXJu
-ZWwuZGs+IHdyb3RlOgo+IE9uIDIvMTgvMjYgMjoxMyBQTSwgVGFsIFp1c3NtYW4gd3JvdGU6Cj4g
-PiBCbG9jayBkZXZpY2UgYnVmZmVyZWQgcmVhZHMgYW5kIHdyaXRlcyBhbHJlYWR5IHBhc3MgdGhy
-b3VnaAo+ID4gZmlsZW1hcF9yZWFkKCkgYW5kIGlvbWFwX2ZpbGVfYnVmZmVyZWRfd3JpdGUoKSBy
-ZXNwZWN0aXZlbHksIGJvdGggb2YKPiA+IHdoaWNoIGhhbmRsZSBJT0NCX0RPTlRDQUNIRS4gRW5h
-YmxlIFJXRl9ET05UQ0FDSEUgZm9yIGJsb2NrIGRldmljZSBmaWxlcwo+ID4gYnkgc2V0dGluZyBG
-T1BfRE9OVENBQ0hFIGluIGRlZl9ibGtfZm9wcy4KPiA+Cj4gPiBGb3IgQ09ORklHX0JVRkZFUl9I
-RUFEIHBhdGhzLCB0aHJlYWQgdGhlIGtpb2NiIHRocm91Z2gKPiA+IGJsb2NrX3dyaXRlX2JlZ2lu
-KCkgc28gdGhhdCBidWZmZXJfaGVhZC1iYXNlZCBJL08gY2FuIHVzZSBET05UQ0FDSEUKPiA+IGJl
-aGF2aW9yIGFzIHdlbGwuIENhbGxlcnMgd2l0aG91dCBhIGtpb2NiIGNvbnRleHQgKGUuZy4gbmls
-ZnMyIHJlY292ZXJ5KQo+ID4gcGFzcyBOVUxMLCB3aGljaCBwcmVzZXJ2ZXMgdGhlIGV4aXN0aW5n
-IGJlaGF2aW9yLgo+ID4KPiA+IFRoaXMgc3VwcG9ydCBpcyB1c2VmdWwgZm9yIGRhdGFiYXNlcyB0
-aGF0IG9wZXJhdGUgb24gcmF3IGJsb2NrIGRldmljZXMsCj4gPiBhbW9uZyBvdGhlciB1c2Vyc3Bh
-Y2UgYXBwbGljYXRpb25zLgo+Cj4gT09PIHJpZ2h0IG5vdyBzbyBJJ2xsIHRha2UgYSByZWFsIGxv
-b2sgd2hlbiBJJ20gYmFjaywgYnV0IHdoZW4gSQo+IG9yaWdpbmFsbHkgZGlkIHRoaXMgd29yaywg
-aXQncyBub3QgdGhlIGlzc3VlIHNpZGUgdGhhdCdzIHRoZSBpc3N1ZS4gSXQncwo+IHRoZSBwcnVu
-aW5nIGRvbmUgZnJvbSBjb21wbGV0aW9uIGNvbnRleHQsIGFuZCB5b3UgbmVlZCB0byBlbnN1cmUg
-dGhhdCdzCj4gc2FuZSBjb250ZXh0IGZvciB0aGF0IChub24taXJxKS4KClRoYW5rcyBmb3IgdGFr
-aW5nIGEgbG9vayEgVGhhdCB3YXMgdmVyeSBoZWxwZnVsIGZlZWRiYWNrLgpJIHNlbnQgb3V0IGEg
-djIgaG9wZWZ1bGx5IGFkZHJlc3NpbmcgdGhhdCBoZXJlOgpodHRwczovL2xvcmUua2VybmVsLm9y
-Zy9sa21sLzIwMjYwMjI1LWJsay1kb250Y2FjaGUtdjItMC03MGU3YWM0ZjcxMDhAY29sdW1iaWEu
-ZWR1LwoKPiAtLQo+IEplbnMgQXhib2UKCgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fXwpKZnMtZGlzY3Vzc2lvbiBtYWlsaW5nIGxpc3QKSmZzLWRpc2N1c3Np
-b25AbGlzdHMuc291cmNlZm9yZ2UubmV0Cmh0dHBzOi8vbGlzdHMuc291cmNlZm9yZ2UubmV0L2xp
-c3RzL2xpc3RpbmZvL2pmcy1kaXNjdXNzaW9uCg==
+On 2/25/26 3:40 PM, Tal Zussman wrote:
+> folio_end_dropbehind() is called from folio_end_writeback(), which can
+> run in IRQ context through buffer_head completion.
+> 
+> Previously, when folio_end_dropbehind() detected !in_task(), it skipped
+> the invalidation entirely. This meant that folios marked for dropbehind
+> via RWF_DONTCACHE would remain in the page cache after writeback when
+> completed from IRQ context, defeating the purpose of using it.
+> 
+> Fix this by deferring the dropbehind invalidation to a work item.  When
+> folio_end_dropbehind() is called from IRQ context, the folio is added to
+> a global folio_batch and the work item is scheduled. The worker drains
+> the batch, locking each folio and calling filemap_end_dropbehind(), and
+> re-drains if new folios arrived while processing.
+> 
+> This unblocks enabling RWF_UNCACHED for block devices and other
+> buffer_head-based I/O.
+> 
+> Signed-off-by: Tal Zussman <tz2294@columbia.edu>
+> ---
+>  mm/filemap.c | 84 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++----
+>  1 file changed, 79 insertions(+), 5 deletions(-)
+> 
+> diff --git a/mm/filemap.c b/mm/filemap.c
+> index ebd75684cb0a..6263f35c5d13 100644
+> --- a/mm/filemap.c
+> +++ b/mm/filemap.c
+> @@ -1085,6 +1085,8 @@ static const struct ctl_table filemap_sysctl_table[] = {
+>  	}
+>  };
+>  
+> +static void __init dropbehind_init(void);
+> +
+>  void __init pagecache_init(void)
+>  {
+>  	int i;
+> @@ -1092,6 +1094,7 @@ void __init pagecache_init(void)
+>  	for (i = 0; i < PAGE_WAIT_TABLE_SIZE; i++)
+>  		init_waitqueue_head(&folio_wait_table[i]);
+>  
+> +	dropbehind_init();
+>  	page_writeback_init();
+>  	register_sysctl_init("vm", filemap_sysctl_table);
+>  }
+> @@ -1613,23 +1616,94 @@ static void filemap_end_dropbehind(struct folio *folio)
+>   * If folio was marked as dropbehind, then pages should be dropped when writeback
+>   * completes. Do that now. If we fail, it's likely because of a big folio -
+>   * just reset dropbehind for that case and latter completions should invalidate.
+> + *
+> + * When called from IRQ context (e.g. buffer_head completion), we cannot lock
+> + * the folio and invalidate. Defer to a workqueue so that callers like
+> + * end_buffer_async_write() that complete in IRQ context still get their folios
+> + * pruned.
+>   */
+> +static DEFINE_SPINLOCK(dropbehind_lock);
+> +static struct folio_batch dropbehind_fbatch;
+> +static struct work_struct dropbehind_work;
+> +
+> +static void dropbehind_work_fn(struct work_struct *w)
+> +{
+> +	struct folio_batch fbatch;
+> +
+> +again:
+> +	spin_lock_irq(&dropbehind_lock);
+> +	fbatch = dropbehind_fbatch;
+> +	folio_batch_reinit(&dropbehind_fbatch);
+> +	spin_unlock_irq(&dropbehind_lock);
+> +
+> +	for (int i = 0; i < folio_batch_count(&fbatch); i++) {
+> +		struct folio *folio = fbatch.folios[i];
+> +
+> +		if (folio_trylock(folio)) {
+> +			filemap_end_dropbehind(folio);
+> +			folio_unlock(folio);
+> +		}
+> +		folio_put(folio);
+> +	}
+> +
+> +	/* Drain folios that were added while we were processing. */
+> +	spin_lock_irq(&dropbehind_lock);
+> +	if (folio_batch_count(&dropbehind_fbatch)) {
+> +		spin_unlock_irq(&dropbehind_lock);
+> +		goto again;
+> +	}
+> +	spin_unlock_irq(&dropbehind_lock);
+> +}
+> +
+> +static void __init dropbehind_init(void)
+> +{
+> +	folio_batch_init(&dropbehind_fbatch);
+> +	INIT_WORK(&dropbehind_work, dropbehind_work_fn);
+> +}
+> +
+> +static void folio_end_dropbehind_irq(struct folio *folio)
+> +{
+> +	unsigned long flags;
+> +
+> +	spin_lock_irqsave(&dropbehind_lock, flags);
+> +
+> +	/* If there is no space in the folio_batch, skip the invalidation. */
+> +	if (!folio_batch_space(&dropbehind_fbatch)) {
+> +		spin_unlock_irqrestore(&dropbehind_lock, flags);
+> +		return;
+> +	}
+> +
+> +	folio_get(folio);
+> +	folio_batch_add(&dropbehind_fbatch, folio);
+> +	spin_unlock_irqrestore(&dropbehind_lock, flags);
+> +
+> +	schedule_work(&dropbehind_work);
+> +}
+
+How well does this scale? I did a patch basically the same as this, but
+not using a folio batch though. But the main sticking point was
+dropbehind_lock contention, to the point where I left it alone and
+thought "ok maybe we just do this when we're done with the awful
+buffer_head stuff". What happens if you have N threads doing IO at the
+same time to N block devices? I suspect it'll look absolutely terrible,
+as each thread will be banging on that dropbehind_lock.
+
+One solution could potentially be to use per-cpu lists for this. If you
+have N threads working on separate block devices, they will tend to be
+sticky to their CPU anyway.
+
+tldr - I don't believe the above will work well enough to scale
+appropriately.
+
+Let me know if you want me to test this on my big box, it's got a bunch
+of drives and CPUs to match.
+
+I did a patch exactly matching this, youc an probably find it 
+
+>  void folio_end_dropbehind(struct folio *folio)
+>  {
+>  	if (!folio_test_dropbehind(folio))
+>  		return;
+>  
+>  	/*
+> -	 * Hitting !in_task() should not happen off RWF_DONTCACHE writeback,
+> -	 * but can happen if normal writeback just happens to find dirty folios
+> -	 * that were created as part of uncached writeback, and that writeback
+> -	 * would otherwise not need non-IRQ handling. Just skip the
+> -	 * invalidation in that case.
+> +	 * Hitting !in_task() can happen for IO completed from IRQ contexts or
+> +	 * if normal writeback just happens to find dirty folios that were
+> +	 * created as part of uncached writeback, and that writeback would
+> +	 * otherwise not need non-IRQ handling.
+>  	 */
+>  	if (in_task() && folio_trylock(folio)) {
+>  		filemap_end_dropbehind(folio);
+>  		folio_unlock(folio);
+> +		return;
+>  	}
+> +
+> +	/*
+> +	 * In IRQ context we cannot lock the folio or call into the
+> +	 * invalidation path. Defer to a workqueue. This happens for
+> +	 * buffer_head-based writeback which runs from bio IRQ context.
+> +	 */
+> +	if (!in_task())
+> +		folio_end_dropbehind_irq(folio);
+>  }
+
+Ideally we'd have the caller be responsible for this, rather than put it
+inside folio_end_dropbehind().
+
+-- 
+Jens Axboe
+
+
+_______________________________________________
+Jfs-discussion mailing list
+Jfs-discussion@lists.sourceforge.net
+https://lists.sourceforge.net/lists/listinfo/jfs-discussion
