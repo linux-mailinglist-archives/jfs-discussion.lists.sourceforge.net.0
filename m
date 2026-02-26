@@ -2,42 +2,42 @@ Return-Path: <jfs-discussion-bounces@lists.sourceforge.net>
 Delivered-To: lists+jfs-discussion@lfdr.de
 Received: from mail.lfdr.de
 	by lfdr with LMTP
-	id YFPHJcHAn2lOdgQAu9opvQ
+	id YNqQILfAn2lOdgQAu9opvQ
 	(envelope-from <jfs-discussion-bounces@lists.sourceforge.net>)
-	for <lists+jfs-discussion@lfdr.de>; Thu, 26 Feb 2026 04:40:49 +0100
+	for <lists+jfs-discussion@lfdr.de>; Thu, 26 Feb 2026 04:40:39 +0100
 X-Original-To: lists+jfs-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id B380F1A0A29
-	for <lists+jfs-discussion@lfdr.de>; Thu, 26 Feb 2026 04:40:48 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id CE8D21A0A20
+	for <lists+jfs-discussion@lfdr.de>; Thu, 26 Feb 2026 04:40:38 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.sourceforge.net; s=beta; h=Content-Transfer-Encoding:Content-Type:Cc:
 	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
 	Subject:In-Reply-To:From:References:To:MIME-Version:Date:Message-ID:Sender:
 	Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender
 	:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=ff0s4KHl9SI2gBem6ceRquTMAEQu1IQ2FgvYMrJSP8Q=; b=b2HXIBl/qk1eJsCdOPrWtHyV+s
-	h6o9qXce648Djh5v61NarnwL+Z1Fq6b3t2VkWNmPZeVfZagK55ycMyGvpCJ2hbtIbsWjGhMTZWb8w
-	RANc4dWc5W5bRy2si0RsK/Lc6NUrgFAoYEgNhhiGYDDowNP/ot1TvErmXEWcMCjWLvbA=;
-Received: from [127.0.0.1] (helo=sfs-ml-4.v29.lw.sourceforge.com)
-	by sfs-ml-4.v29.lw.sourceforge.com with esmtp (Exim 4.95)
+	bh=NcfMY1/sFY2XPjWMBBGoP52eERmft2RhRXSODPgkpDo=; b=ZyYM2csEu9cyP7yTpg4WTpWVPC
+	2n5C0zfO8bcWlQb9/h9jl4SCkbXI4K11Vr1plG2tDwmSFANHBYQXt2PuX9hKls6F/FgzYJHsbLO5B
+	1dBo43bjGidzYNwTca6gadHGBu0aEL8xLJm9VbuSbQ0qgkW0riIQSgljHuQG8ejwpXAQ=;
+Received: from [127.0.0.1] (helo=sfs-ml-3.v29.lw.sourceforge.com)
+	by sfs-ml-3.v29.lw.sourceforge.com with esmtp (Exim 4.95)
 	(envelope-from <jfs-discussion-bounces@lists.sourceforge.net>)
-	id 1vvSEi-00036j-WD;
-	Thu, 26 Feb 2026 03:40:25 +0000
+	id 1vvSEH-00039q-D7;
+	Thu, 26 Feb 2026 03:39:57 +0000
 Received: from [172.30.29.66] (helo=mx.sourceforge.net)
- by sfs-ml-4.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
+ by sfs-ml-3.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
  TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (Exim 4.95)
- (envelope-from <axboe@kernel.dk>) id 1vvSEg-00036b-Re
+ (envelope-from <axboe@kernel.dk>) id 1vvSEG-00039h-4h
  for jfs-discussion@lists.sourceforge.net;
- Thu, 26 Feb 2026 03:40:22 +0000
+ Thu, 26 Feb 2026 03:39:56 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=sourceforge.net; s=x; h=Content-Transfer-Encoding:Content-Type:In-Reply-To:
  From:References:Cc:To:Subject:MIME-Version:Date:Message-ID:Sender:Reply-To:
  Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
  Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=2aeYTgjykkTytqAP0zVL+KvrFyKRcfVgTb0o5/+caF4=; b=DdcS9Xi+gOdW+4PgaxI3/k/Cxc
- S5xKfruOLUWdyes91ktq9eNvKi0osnidULX4Sx8aNTUsh6D9NMA1yCPWBjnB+92f041Cr8QwmtDWQ
- siFp9NEmjIn+TluBmDcKyXpGpo5T3ffQ/nMQ7KEUPukJWZAXSDsS/uu9z3lGQ2C2XMTs=;
+ bh=myOpzKKufRrzTXzkKkTioHHnRh1Fxba9oHbsZ8bSehI=; b=Mt7UeNaKhTaiXHinAAyJ4qIsMp
+ Hs8lNRloUw3EodwF9XaACu/IvXsDuwSb4nuyPCbAQFG0ssYrORmoGybaasEPKSCWk7MKIgLmVHoGL
+ He4oUWwy63KX1bRRjlj4oyzEA6E0Irff96vddwBSod/8KhWKtHiH35jTlPA9aVYpj83Y=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
  h=Content-Transfer-Encoding:Content-Type:In-Reply-To:From:References:Cc:To:
@@ -45,87 +45,87 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
  :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
  List-Post:List-Owner:List-Archive;
- bh=2aeYTgjykkTytqAP0zVL+KvrFyKRcfVgTb0o5/+caF4=; b=S18dggh4SyhTFHxI9WFs3JpiID
- ItxawafxGN2mpTdflE7ZPMJUJ6crry2rKMOKO7Bt6besthBH/CTVwfNK4bm57g1FrMt37zefEgexH
- PXKBj+MUc5NEwlLjENncOloiuU8RMrUyrFJ/DFLDTZjJxtHiJg7NJAiMSlS2gbrF+iNg=;
-Received: from mail-dy1-f172.google.com ([74.125.82.172])
+ bh=myOpzKKufRrzTXzkKkTioHHnRh1Fxba9oHbsZ8bSehI=; b=MMaEyVKD8tVQD9g3K7DnpWXW7C
+ S96CupWpWnSdVNPUkSIaPjh15dy0KtkcsUWfjB9eaNnIQpheyndSVwGKCeAXCgl8hg3oo1bwQnUhR
+ +OoMBCgX/xQRe3u5qNrSt+QIFF6XF4chgX3LDozAoiPLzHS7UxCksQv9ZaDpDQepVJKQ=;
+Received: from mail-dy1-f180.google.com ([74.125.82.180])
  by sfi-mx-2.v28.lw.sourceforge.com with esmtps
  (TLS1.2:ECDHE-RSA-AES128-GCM-SHA256:128) (Exim 4.95)
- id 1vvSEg-0008H6-4P for jfs-discussion@lists.sourceforge.net;
- Thu, 26 Feb 2026 03:40:22 +0000
-Received: by mail-dy1-f172.google.com with SMTP id
- 5a478bee46e88-2bdb17511aaso723104eec.0
+ id 1vvSEF-0008Fk-MW for jfs-discussion@lists.sourceforge.net;
+ Thu, 26 Feb 2026 03:39:56 +0000
+Received: by mail-dy1-f180.google.com with SMTP id
+ 5a478bee46e88-2bdb17511aaso722423eec.0
  for <jfs-discussion@lists.sourceforge.net>;
- Wed, 25 Feb 2026 19:40:22 -0800 (PST)
+ Wed, 25 Feb 2026 19:39:55 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=kernel-dk.20230601.gappssmtp.com; s=20230601; t=1772077216; x=1772682016;
+ d=kernel-dk.20230601.gappssmtp.com; s=20230601; t=1772077190; x=1772681990;
  darn=lists.sourceforge.net; 
  h=content-transfer-encoding:in-reply-to:from:content-language
  :references:cc:to:subject:user-agent:mime-version:date:message-id
  :from:to:cc:subject:date:message-id:reply-to;
- bh=2aeYTgjykkTytqAP0zVL+KvrFyKRcfVgTb0o5/+caF4=;
- b=avkDL4n/OtMdGBqG3qyyzJ3q70hMAq8ihB4ffwdYCFhOqKLo802HW6KoguvBPrqS4b
- kYoW1UXSfCr5PDZKvxxYUundTkoaa+NgWL134/0nkcceQRgJOdnsu96fwYA1LujTmONm
- v9/J3p35jh80OosxBWnpNfbdQFCBB7DDytX4bFUVJOp3VajWKSlo/VXtHUVEUJ+Cr2yj
- ZgryF0W/Ol4y3THz15A91zqV93r+wbjHQ35ANVvH2g65seEmRiq3fA6IMFX0TQLzmPbd
- LLRxMt4y+UBdDOMME3jKfC/XuzQtGMSX9ibKJkYScQ8F4IjpxadivkiXYOwUqtIeifyF
- gzAQ==
+ bh=myOpzKKufRrzTXzkKkTioHHnRh1Fxba9oHbsZ8bSehI=;
+ b=smtcnWVG0TTXahNz4/gmhIXv9j3SWncwCert1HZw1RqObbXpTN2jnzJkux63XVOZld
+ sAVCiCXcNWJqijGISm8koyKCAjs7opteW5ayquoTj8OpwmtASbHzn0LmS9/t2ZD3ioPA
+ TGDQ24XgtYnXVH4fbEFc/1/H52k+fAeQ/es+a+SzdXHN5+QEJ6gb9by8TWSkTda5aJUG
+ I/adSGLPmfiEi9iOts4aN+lk1diWhI0QjCGRDrFWClXdJcBnIpQ5J/TX2LGrgdbU0HVh
+ m3kt3xQrwLTpdj9oir1iyM7sVWiR5D2kECHNqAFWdwPD+ZBstACZQwtDGXPNgntFZoyi
+ +SMg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20230601; t=1772077216; x=1772682016;
+ d=1e100.net; s=20230601; t=1772077190; x=1772681990;
  h=content-transfer-encoding:in-reply-to:from:content-language
  :references:cc:to:subject:user-agent:mime-version:date:message-id
  :x-gm-gg:x-gm-message-state:from:to:cc:subject:date:message-id
  :reply-to;
- bh=2aeYTgjykkTytqAP0zVL+KvrFyKRcfVgTb0o5/+caF4=;
- b=sNsYRLmSXUtjjymvqK1ERpigjI7SRlnDWq0e4HC07ENJHLbkh8PrHRjWlWFso1AQkw
- /6gd0w7sLSvqZYfl7UmsBhKtHU75Py0CbFCzveX/9+WwC8trnJm5L73BzKNsZHNvdlfT
- sqokSVkQJ+H6AW3O4+qED7nVtqB5ocH7QQqZNjUr0IXC/j4aNZ22aGjFiklGg3BZMJrj
- LiBlnqOYm91SsQVuE5aRmL8KJiVv037tFglEvkoMekgICwsKCn7T2q8WxElN0g50bwn/
- SoAW6TURRQYiWYv8I1XCng3EDRMXhjJaMABHeun9AqEarcq6K3eZWOYw87eAVvYtwjWK
- PYWg==
+ bh=myOpzKKufRrzTXzkKkTioHHnRh1Fxba9oHbsZ8bSehI=;
+ b=Aao/ZzoY/OafP0ckrh0egGACoSvoCz3tLBYlmjXl7vHPXBCmwYlh/6xK8pTkeUvlr4
+ fBKzV/PJiP0AUuR+IGDk6m2iwLrc7VQHPKlHVf+r2Fem5Sm1jYP2j9p5JefWDqpNigcQ
+ WWkHAYRABRmCGAKMTmbFYea/+isI6bdDsHI1An2TUuilwMT9rpMqWbccdJG5f3f1Ry3P
+ ZzZv2tIZon0cPQOPOBAnItTOwtl16iKXxXqGOM2CyKqI1P9IOuN/QOyjzHai7W35v6Jv
+ k8XHEOedLRxXCp3c+9ZUOnCFEF+pqyrpnb7AJPNpA9HzRAxbVkojKwC/Lz7lrkQ3EDWr
+ m8iQ==
 X-Forwarded-Encrypted: i=1;
- AJvYcCVv2MmODiERraPO/z3YB7SxgwFUQzB7jji1ti2QHOOiuCNJ/sL3A3DItb6dcb4V+HKhOPaHI8oGghwkOciWBg==@lists.sourceforge.net
-X-Gm-Message-State: AOJu0YyaKNnmB2ogW0tkj5zEexulweAujasUtpv4M092Ivj/BlTD1PtI
- cTRpVyfrVDlh0aoedfo4Hzw/V7UXPsa6MoqucV+RQsLBohKo2uoC6pxr/1v0kDkM7mJySWlseDR
- F65jZQMQ=
-X-Gm-Gg: ATEYQzwceBFrH/VFVfbADkRnUpfjDBhYcZhx0I6RKBSTEwnvzU0JxNU8lYz2BNhfnvz
- 0a6k8Z8YOTlAoDmW1vJcIN9bT0YhBcK2BYOOP+XVVuCRqK9EFO/ZTuD16F3BH5QSCZCxiPepqST
- fklFJzG1xznj9zM9Q0FthYd6+vwErlGJpiq4aDoag3ZGiUWNhbh3JtXXkmObeNlf+sC+nTCfQVe
- IxhQBsMhPaD4j+wPFxReAoI4lHE824oVGoZKCqCPN5tpw2q9XoMv0GucCfxMRtwTNMDfok2i4yG
- f5aMyxavt5L+T303eIEzJZMCdHaah+/lVK/AZhHKhI0CxbynuZ11Rve3t/invD8U8HEsD8Zd9GJ
- cDRWCHriBwyF9+r0o+UHVWH4UXhYarlEIQZGclcGJrA63WQtqwZV/rNvmfqCZHQABd4jtI4y/gf
- YCPjJ3opRJFeHHqand2K5NOldtu4RoskrOBf7TyXgYTb5WQCwPrjtCvHneCbHgZAiGl43c4N4tv
- sIxoUksLg==
-X-Received: by 2002:a05:6808:4fd4:b0:45e:dbda:add6 with SMTP id
- 5614622812f47-464463e38fbmr8708984b6e.57.1772075473379; 
- Wed, 25 Feb 2026 19:11:13 -0800 (PST)
+ AJvYcCXSMeEzc7TaPqRz6E8z/ULm91G30ZzDWszuGUtC1pyct37mfslBrnb3zA6u9QxW3bDAvJBBFWAysJikJ9WWfg==@lists.sourceforge.net
+X-Gm-Message-State: AOJu0YzdWy/emTHUYgug/ZNkiqgKFi+gQhz5fgfPEDTn+vxWJC6SGdCn
+ R4Qn4euwyUSr7Nsi9WQAnY9rpYdJzw3sWL4X8Tv+Ftez8WD+WA7TmlqWXBSqt/6YYxgHU87kjMV
+ DGXGM
+X-Gm-Gg: ATEYQzzYY6UwikGJjdCds7GBkqYkreQNL4pFgMk0rr4Qml74QNp1HZHKRgwnDlxRd3z
+ Wi5lRVuF5u8/5ELfl3XG+uQ9LnRAKJW3BP59/WBIbDikHJGu/hxHmjlFQvW3auYuVf1umwKm5I1
+ T6uH9BRIYfnFa0rWRyTcHd/w+2lHAIF9bWYnHx/p5RkbEG0xWCb+QIU/f2Je/W0S/omtLUYRg3y
+ VL3BfOW51/ICEvM2B69kGEijCEHJ2kDnSeGUq2m3oSK1/sZ6gffEOueRRzkxLyrP+ATjeA7hvGI
+ KPHo7YzW1hJxpvNf7sU4ASZ6TU4sa4l5hm3Jrb17obg89O/uthddxm+7M7No8lqkEeiyegKycYD
+ 07wW/u2Hg0eUjwW0wKuRcmnG1KvHEJkRYqMd2tbyS7MFak6RGXe6TDlWfFdT4eggiu/5m+K8KHH
+ KEpCQeSYbsO6dNr5hy3dSmcVtcUZ8R100XTD5RYu6q1HuhJIRBGwUG8UO/Uo7H0ssfXj3P1dd69
+ mh/fM33Tw==
+X-Received: by 2002:a05:6808:320b:b0:462:d9a2:84e1 with SMTP id
+ 5614622812f47-464463ef61fmr8794809b6e.60.1772075731397; 
+ Wed, 25 Feb 2026 19:15:31 -0800 (PST)
 Received: from [192.168.1.150] ([198.8.77.157])
  by smtp.gmail.com with ESMTPSA id
- 5614622812f47-4644a1f6333sm10281996b6e.19.2026.02.25.19.11.11
+ 586e51a60fabf-4160cf9b240sm786090fac.8.2026.02.25.19.15.29
  (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Wed, 25 Feb 2026 19:11:12 -0800 (PST)
-Message-ID: <2e919e7b-1e75-4e57-b6f1-cdf3da4c0424@kernel.dk>
-Date: Wed, 25 Feb 2026 20:11:04 -0700
+ Wed, 25 Feb 2026 19:15:30 -0800 (PST)
+Message-ID: <44e3e9ea-350b-4357-ba50-726e506feab5@kernel.dk>
+Date: Wed, 25 Feb 2026 20:15:28 -0700
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-To: Tal Zussman <tz2294@columbia.edu>
+To: Matthew Wilcox <willy@infradead.org>
 References: <20260225-blk-dontcache-v2-0-70e7ac4f7108@columbia.edu>
  <20260225-blk-dontcache-v2-1-70e7ac4f7108@columbia.edu>
  <c8078a80-f801-4f8a-b3cd-e2ccbfca1def@kernel.dk>
- <CAKha_srSdS46FM8K-RKaiinP0y6kx_MhxnHjZ0KKP1NOAL+STA@mail.gmail.com>
+ <aZ-2G_6lDZePLSyx@casper.infradead.org>
 Content-Language: en-US
 From: Jens Axboe <axboe@kernel.dk>
-In-Reply-To: <CAKha_srSdS46FM8K-RKaiinP0y6kx_MhxnHjZ0KKP1NOAL+STA@mail.gmail.com>
+In-Reply-To: <aZ-2G_6lDZePLSyx@casper.infradead.org>
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: Spam detection software,
- running on the system "sfi-spamd-2.hosts.colo.sdot.me", 
+ running on the system "sfi-spamd-1.hosts.colo.sdot.me", 
  has NOT identified this incoming email as spam.  The original
  message has been attached to this so you can view it or label
  similar future email.  If you have any questions, see
  the administrator of that system for details.
- Content preview:  On 2/25/26 6:38 PM, Tal Zussman wrote: > On Wed, Feb 25, 2026
- at 5:52?PM Jens Axboe <axboe@kernel.dk> wrote: >> On 2/25/26 3:40 PM, Tal
- Zussman wrote: >>> folio_end_dropbehind() is called from folio_e [...] 
+ Content preview:  On 2/25/26 7:55 PM, Matthew Wilcox wrote: > On Wed, Feb 25, 
+ 2026 at 03:52:41PM -0700, Jens Axboe wrote: >> How well does this scale?
+ I did a patch basically the same as this, but >> not using a folio [...] 
  Content analysis details:   (0.0 points, 5.0 required)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
@@ -133,9 +133,9 @@ X-Spam-Report: Spam detection software,
  not necessarily valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [74.125.82.172 listed in wl.mailspike.net]
+ [74.125.82.180 listed in wl.mailspike.net]
  0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
-X-Headers-End: 1vvSEg-0008H6-4P
+X-Headers-End: 1vvSEF-0008Fk-MW
 Subject: Re: [Jfs-discussion] [PATCH RFC v2 1/2] filemap: defer dropbehind
  invalidation from IRQ context
 X-BeenThere: jfs-discussion@lists.sourceforge.net
@@ -153,16 +153,16 @@ Cc: Dave Kleikamp <shaggy@kernel.org>, jfs-discussion@lists.sourceforge.net,
  Jan Kara <jack@suse.cz>, Yuezhang Mo <yuezhang.mo@sony.com>,
  Bob Copeland <me@bobcopeland.com>,
  Konstantin Komarov <almaz.alexandrovich@paragon-software.com>,
- linux-mm@kvack.org, linux-nilfs@vger.kernel.org,
- "Matthew Wilcox \(Oracle\)" <willy@infradead.org>, linux-ext4@vger.kernel.org,
+ linux-mm@kvack.org, linux-nilfs@vger.kernel.org, linux-ext4@vger.kernel.org,
  Namjae Jeon <linkinjeon@kernel.org>, linux-block@vger.kernel.org,
  Alexander Viro <viro@zeniv.linux.org.uk>,
  "Tigran A. Aivazian" <aivazian.tigran@gmail.com>,
- Ryusuke Konishi <konishi.ryusuke@gmail.com>,
+ Tal Zussman <tz2294@columbia.edu>, Ryusuke Konishi <konishi.ryusuke@gmail.com>,
  Christian Brauner <brauner@kernel.org>, Sungjong Seo <sj1557.seo@samsung.com>,
- linux-kernel@vger.kernel.org, linux-fsdevel@vger.kernel.org,
- Andrew Morton <akpm@linux-foundation.org>, ntfs3@lists.linux.dev,
- linux-karma-devel@lists.sourceforge.net
+ linux-kernel@vger.kernel.org,
+ "Vishal Moola \(Oracle\)" <vishal.moola@gmail.com>,
+ linux-fsdevel@vger.kernel.org, Andrew Morton <akpm@linux-foundation.org>,
+ ntfs3@lists.linux.dev, linux-karma-devel@lists.sourceforge.net
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Errors-To: jfs-discussion-bounces@lists.sourceforge.net
@@ -170,7 +170,7 @@ X-Rspamd-Server: lfdr
 X-Spamd-Result: default: False [0.39 / 15.00];
 	SUSPICIOUS_RECIPS(1.50)[];
 	RWL_MAILSPIKE_EXCELLENT(-0.40)[216.105.38.7:from];
-	R_SPF_ALLOW(-0.20)[+ip4:216.105.38.7:c];
+	R_SPF_ALLOW(-0.20)[+ip4:216.105.38.7];
 	MAILLIST(-0.20)[mailman];
 	R_DKIM_ALLOW(-0.20)[lists.sourceforge.net:s=beta];
 	MIME_GOOD(-0.10)[text/plain];
@@ -178,15 +178,15 @@ X-Spamd-Result: default: False [0.39 / 15.00];
 	DKIM_MIXED(0.00)[];
 	RECEIVED_HELO_LOCALHOST(0.00)[];
 	RCVD_TLS_LAST(0.00)[];
-	FORGED_RECIPIENTS(0.00)[m:tz2294@columbia.edu,m:shaggy@kernel.org,m:jfs-discussion@lists.sourceforge.net,m:jack@suse.cz,m:yuezhang.mo@sony.com,m:me@bobcopeland.com,m:almaz.alexandrovich@paragon-software.com,m:linux-mm@kvack.org,m:linux-nilfs@vger.kernel.org,m:willy@infradead.org,m:linux-ext4@vger.kernel.org,m:linkinjeon@kernel.org,m:linux-block@vger.kernel.org,m:viro@zeniv.linux.org.uk,m:aivazian.tigran@gmail.com,m:konishi.ryusuke@gmail.com,m:brauner@kernel.org,m:sj1557.seo@samsung.com,m:linux-kernel@vger.kernel.org,m:linux-fsdevel@vger.kernel.org,m:akpm@linux-foundation.org,m:ntfs3@lists.linux.dev,m:linux-karma-devel@lists.sourceforge.net,m:aivaziantigran@gmail.com,m:konishiryusuke@gmail.com,s:lists@lfdr.de];
+	FORGED_RECIPIENTS(0.00)[m:willy@infradead.org,m:shaggy@kernel.org,m:jfs-discussion@lists.sourceforge.net,m:jack@suse.cz,m:yuezhang.mo@sony.com,m:me@bobcopeland.com,m:almaz.alexandrovich@paragon-software.com,m:linux-mm@kvack.org,m:linux-nilfs@vger.kernel.org,m:linux-ext4@vger.kernel.org,m:linkinjeon@kernel.org,m:linux-block@vger.kernel.org,m:viro@zeniv.linux.org.uk,m:aivazian.tigran@gmail.com,m:tz2294@columbia.edu,m:konishi.ryusuke@gmail.com,m:brauner@kernel.org,m:sj1557.seo@samsung.com,m:linux-kernel@vger.kernel.org,m:vishal.moola@gmail.com,m:linux-fsdevel@vger.kernel.org,m:akpm@linux-foundation.org,m:ntfs3@lists.linux.dev,m:linux-karma-devel@lists.sourceforge.net,m:aivaziantigran@gmail.com,m:konishiryusuke@gmail.com,m:vishalmoola@gmail.com,s:lists@lfdr.de];
 	DMARC_NA(0.00)[kernel.dk];
 	FORGED_SENDER(0.00)[axboe@kernel.dk,jfs-discussion-bounces@lists.sourceforge.net];
-	RCPT_COUNT_TWELVE(0.00)[23];
+	RCPT_COUNT_TWELVE(0.00)[24];
 	R_DKIM_REJECT(0.00)[sourceforge.net:s=x,sf.net:s=x,kernel-dk.20230601.gappssmtp.com:s=20230601];
 	MIME_TRACE(0.00)[0:+];
 	ARC_NA(0.00)[];
 	FORWARDED(0.00)[jfs-discussion@lists.sourceforge.net];
-	FREEMAIL_CC(0.00)[kernel.org,lists.sourceforge.net,suse.cz,sony.com,bobcopeland.com,paragon-software.com,kvack.org,vger.kernel.org,infradead.org,zeniv.linux.org.uk,gmail.com,samsung.com,linux-foundation.org,lists.linux.dev];
+	FREEMAIL_CC(0.00)[kernel.org,lists.sourceforge.net,suse.cz,sony.com,bobcopeland.com,paragon-software.com,kvack.org,vger.kernel.org,zeniv.linux.org.uk,gmail.com,columbia.edu,samsung.com,linux-foundation.org,lists.linux.dev];
 	FORGED_RECIPIENTS_MAILLIST(0.00)[];
 	TO_DN_SOME(0.00)[];
 	RCVD_COUNT_FIVE(0.00)[5];
@@ -195,131 +195,19 @@ X-Spamd-Result: default: False [0.39 / 15.00];
 	FROM_HAS_DN(0.00)[];
 	FROM_NEQ_ENVFROM(0.00)[axboe@kernel.dk,jfs-discussion-bounces@lists.sourceforge.net];
 	DKIM_TRACE(0.00)[lists.sourceforge.net:+,sourceforge.net:-,sf.net:-,kernel-dk.20230601.gappssmtp.com:-];
-	NEURAL_HAM(-0.00)[-0.954];
+	NEURAL_HAM(-0.00)[-0.951];
 	FORGED_RECIPIENTS_FORWARDING(0.00)[];
 	ASN(0.00)[asn:11320, ipnet:216.105.32.0/21, country:US];
 	MID_RHS_MATCH_FROM(0.00)[];
 	RCVD_VIA_SMTP_AUTH(0.00)[];
 	TAGGED_RCPT(0.00)[jfs-discussion];
 	FORGED_SENDER_MAILLIST(0.00)[];
-	DBL_BLOCKED_OPENRESOLVER(0.00)[kernel.dk:mid,kernel.dk:email,lists.sourceforge.net:rdns,lists.sourceforge.net:helo,lists.sourceforge.net:dkim,columbia.edu:email]
-X-Rspamd-Queue-Id: B380F1A0A29
+	DBL_BLOCKED_OPENRESOLVER(0.00)[lists.sourceforge.net:rdns,lists.sourceforge.net:helo,lists.sourceforge.net:dkim,kernel.dk:mid]
+X-Rspamd-Queue-Id: CE8D21A0A20
 X-Rspamd-Action: no action
 
-On 2/25/26 6:38 PM, Tal Zussman wrote:
-> On Wed, Feb 25, 2026 at 5:52?PM Jens Axboe <axboe@kernel.dk> wrote:
->> On 2/25/26 3:40 PM, Tal Zussman wrote:
->>> folio_end_dropbehind() is called from folio_end_writeback(), which can
->>> run in IRQ context through buffer_head completion.
->>>
->>> Previously, when folio_end_dropbehind() detected !in_task(), it skipped
->>> the invalidation entirely. This meant that folios marked for dropbehind
->>> via RWF_DONTCACHE would remain in the page cache after writeback when
->>> completed from IRQ context, defeating the purpose of using it.
->>>
->>> Fix this by deferring the dropbehind invalidation to a work item.  When
->>> folio_end_dropbehind() is called from IRQ context, the folio is added to
->>> a global folio_batch and the work item is scheduled. The worker drains
->>> the batch, locking each folio and calling filemap_end_dropbehind(), and
->>> re-drains if new folios arrived while processing.
->>>
->>> This unblocks enabling RWF_UNCACHED for block devices and other
->>> buffer_head-based I/O.
->>>
->>> Signed-off-by: Tal Zussman <tz2294@columbia.edu>
->>> ---
->>>  mm/filemap.c | 84 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++----
->>>  1 file changed, 79 insertions(+), 5 deletions(-)
->>>
->>> diff --git a/mm/filemap.c b/mm/filemap.c
->>> index ebd75684cb0a..6263f35c5d13 100644
->>> --- a/mm/filemap.c
->>> +++ b/mm/filemap.c
->>> @@ -1085,6 +1085,8 @@ static const struct ctl_table filemap_sysctl_table[] = {
->>>   }
->>>  };
->>>
->>> +static void __init dropbehind_init(void);
->>> +
->>>  void __init pagecache_init(void)
->>>  {
->>>   int i;
->>> @@ -1092,6 +1094,7 @@ void __init pagecache_init(void)
->>>   for (i = 0; i < PAGE_WAIT_TABLE_SIZE; i++)
->>>   init_waitqueue_head(&folio_wait_table[i]);
->>>
->>> + dropbehind_init();
->>>   page_writeback_init();
->>>   register_sysctl_init("vm", filemap_sysctl_table);
->>>  }
->>> @@ -1613,23 +1616,94 @@ static void filemap_end_dropbehind(struct folio *folio)
->>>   * If folio was marked as dropbehind, then pages should be dropped when writeback
->>>   * completes. Do that now. If we fail, it's likely because of a big folio -
->>>   * just reset dropbehind for that case and latter completions should invalidate.
->>> + *
->>> + * When called from IRQ context (e.g. buffer_head completion), we cannot lock
->>> + * the folio and invalidate. Defer to a workqueue so that callers like
->>> + * end_buffer_async_write() that complete in IRQ context still get their folios
->>> + * pruned.
->>>   */
->>> +static DEFINE_SPINLOCK(dropbehind_lock);
->>> +static struct folio_batch dropbehind_fbatch;
->>> +static struct work_struct dropbehind_work;
->>> +
->>> +static void dropbehind_work_fn(struct work_struct *w)
->>> +{
->>> + struct folio_batch fbatch;
->>> +
->>> +again:
->>> + spin_lock_irq(&dropbehind_lock);
->>> + fbatch = dropbehind_fbatch;
->>> + folio_batch_reinit(&dropbehind_fbatch);
->>> + spin_unlock_irq(&dropbehind_lock);
->>> +
->>> + for (int i = 0; i < folio_batch_count(&fbatch); i++) {
->>> + struct folio *folio = fbatch.folios[i];
->>> +
->>> + if (folio_trylock(folio)) {
->>> + filemap_end_dropbehind(folio);
->>> + folio_unlock(folio);
->>> + }
->>> + folio_put(folio);
->>> + }
->>> +
->>> + /* Drain folios that were added while we were processing. */
->>> + spin_lock_irq(&dropbehind_lock);
->>> + if (folio_batch_count(&dropbehind_fbatch)) {
->>> + spin_unlock_irq(&dropbehind_lock);
->>> + goto again;
->>> + }
->>> + spin_unlock_irq(&dropbehind_lock);
->>> +}
->>> +
->>> +static void __init dropbehind_init(void)
->>> +{
->>> + folio_batch_init(&dropbehind_fbatch);
->>> + INIT_WORK(&dropbehind_work, dropbehind_work_fn);
->>> +}
->>> +
->>> +static void folio_end_dropbehind_irq(struct folio *folio)
->>> +{
->>> + unsigned long flags;
->>> +
->>> + spin_lock_irqsave(&dropbehind_lock, flags);
->>> +
->>> + /* If there is no space in the folio_batch, skip the invalidation. */
->>> + if (!folio_batch_space(&dropbehind_fbatch)) {
->>> + spin_unlock_irqrestore(&dropbehind_lock, flags);
->>> + return;
->>> + }
->>> +
->>> + folio_get(folio);
->>> + folio_batch_add(&dropbehind_fbatch, folio);
->>> + spin_unlock_irqrestore(&dropbehind_lock, flags);
->>> +
->>> + schedule_work(&dropbehind_work);
->>> +}
->>
+On 2/25/26 7:55 PM, Matthew Wilcox wrote:
+> On Wed, Feb 25, 2026 at 03:52:41PM -0700, Jens Axboe wrote:
 >> How well does this scale? I did a patch basically the same as this, but
 >> not using a folio batch though. But the main sticking point was
 >> dropbehind_lock contention, to the point where I left it alone and
@@ -331,41 +219,35 @@ On 2/25/26 6:38 PM, Tal Zussman wrote:
 >> One solution could potentially be to use per-cpu lists for this. If you
 >> have N threads working on separate block devices, they will tend to be
 >> sticky to their CPU anyway.
->>
->> tldr - I don't believe the above will work well enough to scale
->> appropriately.
->>
->> Let me know if you want me to test this on my big box, it's got a bunch
->> of drives and CPUs to match.
->>
->> I did a patch exactly matching this, youc an probably find it
 > 
-> Yep, that makes sense. I think a per-cpu folio_batch, spinlock, and
-> work_struct would solve this (assuming that's what you meant by
-> per-cpu lists) and would be simple enough to implement. I can put that
-> together and send it tomorrow. I'll see if I can find your patch too.
+> Back in 2021, I had Vishal look at switching the page cache from using
+> hardirq-disabling locks to softirq-disabling locks [1].  Some of the
+> feedback (which doesn't seem to be entirely findable on the lists ...)
+> was that we'd be better off punting writeback completion from interrupt
+> context to task context and going from spin_lock_irq() to spin_lock()
+> rather than going to spin_lock_bh().
+> 
+> I recently saw something (possibly XFS?) promoting this idea again.
+> And now there's this.  Perhaps the time has come to process all
+> write-completions in task context, rather than everyone coming up with
+> their own workqueues to solve their little piece of the problem?
 
-Was just looking for my patch as well... I don't think I ever posted it,
-because I didn't like it very much. It's probably sitting in my git tree
-somewhere.
+Perhaps, even though the punting tends to suck... One idea I toyed with
+but had to abandon due to fs freezeing was letting callers that process
+completions in task context anyway just do the necessary work at that
+time. There's literally nothing worse than having part of a completion
+happen in IRQ, then punt parts of that to a worker, and need to wait for
+the worker to finish whatever it needs to do - only to then wake the
+target task. We can trivially do this in io_uring, as the actual
+completion is posted from the task itself anyway. We just need to have
+the task do the bottom half of the completion as well, rather than some
+unrelated kthread worker.
 
-But it looks very much the same as yours, modulo the folio batching.
-
-One thing to keep in mind with per-cpu lists and then a per-cpu work
-item is that you will potentially have all of them running. Hopefully
-they can do that without burning too much CPU. However, might be more
-useful to have one per node or something like that, provided it can keep
-up, and just have that worker iterate the lists in that node. But we can
-experiment with that, I'd say just do the naive version first which is
-basically this patch but turned into a per-cpu collection of
-lock/list/work_item.
-
-> Any testing you can do on that version would be very appreciated! I'm
-> unfortunately disk-limited for the moment...
-
-No problem - I've got 32 drives in that box, and can hit about
-230-240GB/sec of bandwidth off those drives. It'll certainly spot any
-issues with scaling this and having many threads running uncached IO.
+I'd be worried a generic solution would be the worst of all worlds, as
+it prevents optimizations that happen in eg iomap and other spots, where
+only completions that absolutely need to happen in task context get
+punted. There's a big difference between handling a completion inline vs
+needing a round-trip to some worker to do it.
 
 -- 
 Jens Axboe
