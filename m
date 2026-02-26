@@ -2,142 +2,109 @@ Return-Path: <jfs-discussion-bounces@lists.sourceforge.net>
 Delivered-To: lists+jfs-discussion@lfdr.de
 Received: from mail.lfdr.de
 	by lfdr with LMTP
-	id YNqQILfAn2lOdgQAu9opvQ
+	id aHSRHjlvoGk3jgQAu9opvQ
 	(envelope-from <jfs-discussion-bounces@lists.sourceforge.net>)
-	for <lists+jfs-discussion@lfdr.de>; Thu, 26 Feb 2026 04:40:39 +0100
+	for <lists+jfs-discussion@lfdr.de>; Thu, 26 Feb 2026 17:05:13 +0100
 X-Original-To: lists+jfs-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id CE8D21A0A20
-	for <lists+jfs-discussion@lfdr.de>; Thu, 26 Feb 2026 04:40:38 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id EA8A81A98E1
+	for <lists+jfs-discussion@lfdr.de>; Thu, 26 Feb 2026 17:05:09 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.sourceforge.net; s=beta; h=Content-Transfer-Encoding:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	Subject:In-Reply-To:From:References:To:MIME-Version:Date:Message-ID:Sender:
-	Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender
-	:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=NcfMY1/sFY2XPjWMBBGoP52eERmft2RhRXSODPgkpDo=; b=ZyYM2csEu9cyP7yTpg4WTpWVPC
-	2n5C0zfO8bcWlQb9/h9jl4SCkbXI4K11Vr1plG2tDwmSFANHBYQXt2PuX9hKls6F/FgzYJHsbLO5B
-	1dBo43bjGidzYNwTca6gadHGBu0aEL8xLJm9VbuSbQ0qgkW0riIQSgljHuQG8ejwpXAQ=;
-Received: from [127.0.0.1] (helo=sfs-ml-3.v29.lw.sourceforge.com)
-	by sfs-ml-3.v29.lw.sourceforge.com with esmtp (Exim 4.95)
+	d=lists.sourceforge.net; s=beta; h=Content-Transfer-Encoding:Content-Type:
+	Reply-To:From:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:Subject:To:Message-ID:Date:MIME-Version:Sender:Cc:
+	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
+	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
+	bh=qXAqfe4wPg1ZtFJXzQlW+/z6AzL5AfYVDuoZC4sszNU=; b=j/jQu2n7Tp+xvdCUsc7yh4pAD9
+	hhfLS3KzTAYGwI8kZIogK/buwe1XGSwMrYlfwty8l65m4Ed7SG6x/zcj51HpEUo8kFk2fA9dqU1Vg
+	xexJAcrTxcTWzrmouU7CraC/AvX3+KtqHJwvaqxrLP58xp2eo9N6Y9I50mHOf1FbHXQ4=;
+Received: from [127.0.0.1] (helo=sfs-ml-4.v29.lw.sourceforge.com)
+	by sfs-ml-4.v29.lw.sourceforge.com with esmtp (Exim 4.95)
 	(envelope-from <jfs-discussion-bounces@lists.sourceforge.net>)
-	id 1vvSEH-00039q-D7;
-	Thu, 26 Feb 2026 03:39:57 +0000
+	id 1vvdqr-0002UP-O6;
+	Thu, 26 Feb 2026 16:04:33 +0000
 Received: from [172.30.29.66] (helo=mx.sourceforge.net)
- by sfs-ml-3.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
- TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (Exim 4.95)
- (envelope-from <axboe@kernel.dk>) id 1vvSEG-00039h-4h
- for jfs-discussion@lists.sourceforge.net;
- Thu, 26 Feb 2026 03:39:56 +0000
+ by sfs-ml-4.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
+ TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (Exim 4.95) (envelope-from
+ <3e0OgaQkbANYKQRC2DD6J2HHA5.8GG8D6MK6J4GFL6FL.4GE@M3KW2WVRGUFZ5GODRSRYTGD7.apphosting.bounces.google.com>)
+ id 1vvax4-00060P-Fd for jfs-discussion@lists.sourceforge.net;
+ Thu, 26 Feb 2026 12:58:46 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=sourceforge.net; s=x; h=Content-Transfer-Encoding:Content-Type:In-Reply-To:
- From:References:Cc:To:Subject:MIME-Version:Date:Message-ID:Sender:Reply-To:
- Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
- Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
+ d=sourceforge.net; s=x; h=Content-Type:To:From:Subject:Message-ID:Date:
+ MIME-Version:Sender:Reply-To:Cc:Content-Transfer-Encoding:Content-ID:
+ Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+ :Resent-Message-ID:In-Reply-To:References:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=myOpzKKufRrzTXzkKkTioHHnRh1Fxba9oHbsZ8bSehI=; b=Mt7UeNaKhTaiXHinAAyJ4qIsMp
- Hs8lNRloUw3EodwF9XaACu/IvXsDuwSb4nuyPCbAQFG0ssYrORmoGybaasEPKSCWk7MKIgLmVHoGL
- He4oUWwy63KX1bRRjlj4oyzEA6E0Irff96vddwBSod/8KhWKtHiH35jTlPA9aVYpj83Y=;
+ bh=MICk2Mwzr1OpYNne7xcUCPKYCCoytY5dwHOwtKImcQ8=; b=GfXm9dtxL1x0Z4BS03LRBxwj9M
+ GN3h4KRogB6FjoBBJDbr6CidqPGjpOupY5/Kdjm5BFzrJeHMEAiTfr/45I7/V8GbgmIka/WPbj5y8
+ 0V7mD52wJ1x3fFM5woFqCjXxyKkUVXnRA3qHYl+ONZZg6FIUOL1de80VBhbzD/HoHnDs=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
- h=Content-Transfer-Encoding:Content-Type:In-Reply-To:From:References:Cc:To:
- Subject:MIME-Version:Date:Message-ID:Sender:Reply-To:Content-ID:
- Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
- :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
- List-Post:List-Owner:List-Archive;
- bh=myOpzKKufRrzTXzkKkTioHHnRh1Fxba9oHbsZ8bSehI=; b=MMaEyVKD8tVQD9g3K7DnpWXW7C
- S96CupWpWnSdVNPUkSIaPjh15dy0KtkcsUWfjB9eaNnIQpheyndSVwGKCeAXCgl8hg3oo1bwQnUhR
- +OoMBCgX/xQRe3u5qNrSt+QIFF6XF4chgX3LDozAoiPLzHS7UxCksQv9ZaDpDQepVJKQ=;
-Received: from mail-dy1-f180.google.com ([74.125.82.180])
+ h=Content-Type:To:From:Subject:Message-ID:Date:MIME-Version:Sender:Reply-To
+ :Cc:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+ Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+ References:List-Id:List-Help:List-Unsubscribe:List-Subscribe:List-Post:
+ List-Owner:List-Archive; bh=MICk2Mwzr1OpYNne7xcUCPKYCCoytY5dwHOwtKImcQ8=; b=D
+ TpUnwRAOa37BS/+4gpRr6e4tQVdFUwiezkUMCkTcCB7RmAkC3nuJoOSyxeSb62N0Cjqcm7sobNW2h
+ efXKWQ5g+/iIKVMCOF5CxColPS0OeyuZbvBTNsw5ooXjJQLgYQ50P7o5o+xLFYlAfJdIlAILCIOpx
+ 66Ed2yWTULbcwFFM=;
+Received: from mail-oo1-f70.google.com ([209.85.161.70])
  by sfi-mx-2.v28.lw.sourceforge.com with esmtps
  (TLS1.2:ECDHE-RSA-AES128-GCM-SHA256:128) (Exim 4.95)
- id 1vvSEF-0008Fk-MW for jfs-discussion@lists.sourceforge.net;
- Thu, 26 Feb 2026 03:39:56 +0000
-Received: by mail-dy1-f180.google.com with SMTP id
- 5a478bee46e88-2bdb17511aaso722423eec.0
+ id 1vvax3-0008Ni-VQ for jfs-discussion@lists.sourceforge.net;
+ Thu, 26 Feb 2026 12:58:46 +0000
+Received: by mail-oo1-f70.google.com with SMTP id
+ 006d021491bc7-67995e1ecacso18395616eaf.0
  for <jfs-discussion@lists.sourceforge.net>;
- Wed, 25 Feb 2026 19:39:55 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=kernel-dk.20230601.gappssmtp.com; s=20230601; t=1772077190; x=1772681990;
- darn=lists.sourceforge.net; 
- h=content-transfer-encoding:in-reply-to:from:content-language
- :references:cc:to:subject:user-agent:mime-version:date:message-id
- :from:to:cc:subject:date:message-id:reply-to;
- bh=myOpzKKufRrzTXzkKkTioHHnRh1Fxba9oHbsZ8bSehI=;
- b=smtcnWVG0TTXahNz4/gmhIXv9j3SWncwCert1HZw1RqObbXpTN2jnzJkux63XVOZld
- sAVCiCXcNWJqijGISm8koyKCAjs7opteW5ayquoTj8OpwmtASbHzn0LmS9/t2ZD3ioPA
- TGDQ24XgtYnXVH4fbEFc/1/H52k+fAeQ/es+a+SzdXHN5+QEJ6gb9by8TWSkTda5aJUG
- I/adSGLPmfiEi9iOts4aN+lk1diWhI0QjCGRDrFWClXdJcBnIpQ5J/TX2LGrgdbU0HVh
- m3kt3xQrwLTpdj9oir1iyM7sVWiR5D2kECHNqAFWdwPD+ZBstACZQwtDGXPNgntFZoyi
- +SMg==
+ Thu, 26 Feb 2026 04:58:45 -0800 (PST)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20230601; t=1772077190; x=1772681990;
- h=content-transfer-encoding:in-reply-to:from:content-language
- :references:cc:to:subject:user-agent:mime-version:date:message-id
- :x-gm-gg:x-gm-message-state:from:to:cc:subject:date:message-id
- :reply-to;
- bh=myOpzKKufRrzTXzkKkTioHHnRh1Fxba9oHbsZ8bSehI=;
- b=Aao/ZzoY/OafP0ckrh0egGACoSvoCz3tLBYlmjXl7vHPXBCmwYlh/6xK8pTkeUvlr4
- fBKzV/PJiP0AUuR+IGDk6m2iwLrc7VQHPKlHVf+r2Fem5Sm1jYP2j9p5JefWDqpNigcQ
- WWkHAYRABRmCGAKMTmbFYea/+isI6bdDsHI1An2TUuilwMT9rpMqWbccdJG5f3f1Ry3P
- ZzZv2tIZon0cPQOPOBAnItTOwtl16iKXxXqGOM2CyKqI1P9IOuN/QOyjzHai7W35v6Jv
- k8XHEOedLRxXCp3c+9ZUOnCFEF+pqyrpnb7AJPNpA9HzRAxbVkojKwC/Lz7lrkQ3EDWr
- m8iQ==
-X-Forwarded-Encrypted: i=1;
- AJvYcCXSMeEzc7TaPqRz6E8z/ULm91G30ZzDWszuGUtC1pyct37mfslBrnb3zA6u9QxW3bDAvJBBFWAysJikJ9WWfg==@lists.sourceforge.net
-X-Gm-Message-State: AOJu0YzdWy/emTHUYgug/ZNkiqgKFi+gQhz5fgfPEDTn+vxWJC6SGdCn
- R4Qn4euwyUSr7Nsi9WQAnY9rpYdJzw3sWL4X8Tv+Ftez8WD+WA7TmlqWXBSqt/6YYxgHU87kjMV
- DGXGM
-X-Gm-Gg: ATEYQzzYY6UwikGJjdCds7GBkqYkreQNL4pFgMk0rr4Qml74QNp1HZHKRgwnDlxRd3z
- Wi5lRVuF5u8/5ELfl3XG+uQ9LnRAKJW3BP59/WBIbDikHJGu/hxHmjlFQvW3auYuVf1umwKm5I1
- T6uH9BRIYfnFa0rWRyTcHd/w+2lHAIF9bWYnHx/p5RkbEG0xWCb+QIU/f2Je/W0S/omtLUYRg3y
- VL3BfOW51/ICEvM2B69kGEijCEHJ2kDnSeGUq2m3oSK1/sZ6gffEOueRRzkxLyrP+ATjeA7hvGI
- KPHo7YzW1hJxpvNf7sU4ASZ6TU4sa4l5hm3Jrb17obg89O/uthddxm+7M7No8lqkEeiyegKycYD
- 07wW/u2Hg0eUjwW0wKuRcmnG1KvHEJkRYqMd2tbyS7MFak6RGXe6TDlWfFdT4eggiu/5m+K8KHH
- KEpCQeSYbsO6dNr5hy3dSmcVtcUZ8R100XTD5RYu6q1HuhJIRBGwUG8UO/Uo7H0ssfXj3P1dd69
- mh/fM33Tw==
-X-Received: by 2002:a05:6808:320b:b0:462:d9a2:84e1 with SMTP id
- 5614622812f47-464463ef61fmr8794809b6e.60.1772075731397; 
- Wed, 25 Feb 2026 19:15:31 -0800 (PST)
-Received: from [192.168.1.150] ([198.8.77.157])
- by smtp.gmail.com with ESMTPSA id
- 586e51a60fabf-4160cf9b240sm786090fac.8.2026.02.25.19.15.29
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Wed, 25 Feb 2026 19:15:30 -0800 (PST)
-Message-ID: <44e3e9ea-350b-4357-ba50-726e506feab5@kernel.dk>
-Date: Wed, 25 Feb 2026 20:15:28 -0700
+ d=1e100.net; s=20230601; t=1772110715; x=1772715515;
+ h=to:from:subject:message-id:date:mime-version:x-gm-message-state
+ :from:to:cc:subject:date:message-id:reply-to;
+ bh=MICk2Mwzr1OpYNne7xcUCPKYCCoytY5dwHOwtKImcQ8=;
+ b=HIcwcZxBYE83Bw7iQ0Voufn+H9VTO7xQtrjNQmsBuAI8m5fleMVs1JwhufbSkVxIXl
+ Leh3c46SFxTa6Wlbrae7X5jLjOUEy1Y1KO2/6ssed7XVLyWQ5YyLioL0ktGnzW+hAGPj
+ +dVdu+/yDxmaQeCiaqcMOnDIaXPlO8JmPiZC0+ERX+UEZddvhVGJtRnc7GufyYFTYH4u
+ 6cR1d2Ptx0tJ6WviSjl6clbvw8eY237ZLpmOgwt1XDuUL19YmQg6H9IZbU2iRBdjzu8O
+ zwURNM756lY3L8sPSXw7VfU95OK0tuZNm3CK9YzOs+8M6eqMSGG9wN0z5/uQCTs8dnBf
+ cQ1g==
+X-Gm-Message-State: AOJu0Ywk/+RlNjhbzMBwMfU2kVjxe+fw80dpXb31qyDskBap+hp8d82v
+ lRIdJmTUu3tHF/j18+THicIC+F8jFiCXbeQ7p9yCiohLMNWxJxydXGcCz7fVw/QyaXTQxUB0Xwf
+ +u/EW5y3yXkrE8PQHrZ5UmTKBCuKCIX5w4H3Z6PVW6ZVce8h20AFyqgy5zkA=
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-To: Matthew Wilcox <willy@infradead.org>
-References: <20260225-blk-dontcache-v2-0-70e7ac4f7108@columbia.edu>
- <20260225-blk-dontcache-v2-1-70e7ac4f7108@columbia.edu>
- <c8078a80-f801-4f8a-b3cd-e2ccbfca1def@kernel.dk>
- <aZ-2G_6lDZePLSyx@casper.infradead.org>
-Content-Language: en-US
-From: Jens Axboe <axboe@kernel.dk>
-In-Reply-To: <aZ-2G_6lDZePLSyx@casper.infradead.org>
-X-Spam-Score: 0.0 (/)
+X-Received: by 2002:a05:6820:168b:b0:679:a484:fae0 with SMTP id
+ 006d021491bc7-679c466c057mr9028841eaf.28.1772110715391; Thu, 26 Feb 2026
+ 04:58:35 -0800 (PST)
+Date: Thu, 26 Feb 2026 04:58:35 -0800
+X-Google-Appengine-App-Id: s~syzkaller
+X-Google-Appengine-App-Id-Alias: syzkaller
+Message-ID: <69a0437b.a00a0220.21906d.00e7.GAE@google.com>
+To: jfs-discussion@lists.sourceforge.net, linux-kernel@vger.kernel.org, 
+ shaggy@kernel.org, syzkaller-bugs@googlegroups.com
+X-Spam-Score: 0.6 (/)
 X-Spam-Report: Spam detection software,
- running on the system "sfi-spamd-1.hosts.colo.sdot.me", 
+ running on the system "sfi-spamd-2.hosts.colo.sdot.me", 
  has NOT identified this incoming email as spam.  The original
  message has been attached to this so you can view it or label
  similar future email.  If you have any questions, see
  the administrator of that system for details.
- Content preview:  On 2/25/26 7:55 PM, Matthew Wilcox wrote: > On Wed, Feb 25, 
- 2026 at 03:52:41PM -0700, Jens Axboe wrote: >> How well does this scale?
- I did a patch basically the same as this, but >> not using a folio [...] 
- Content analysis details:   (0.0 points, 5.0 required)
+ Content preview:  Hello jfs maintainers/developers, This is a 31-day syzbot
+ report for the jfs subsystem. All related reports/information can be found
+ at: https://syzkaller.appspot.com/upstream/s/jfs During the period, 0 new
+ issues were detected and 0 were fixed. In total, 72 issues are still open
+ and 66 have already been fixed. 
+ Content analysis details:   (0.6 points, 5.0 required)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature,
- not necessarily valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.3 FROM_LOCAL_HEX         From: localpart has long hexadecimal sequence
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level mail
+ domains are different
  0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [74.125.82.180 listed in wl.mailspike.net]
+ [209.85.161.70 listed in wl.mailspike.net]
  0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
-X-Headers-End: 1vvSEF-0008Fk-MW
-Subject: Re: [Jfs-discussion] [PATCH RFC v2 1/2] filemap: defer dropbehind
- invalidation from IRQ context
+X-Headers-End: 1vvax3-0008Ni-VQ
+X-Mailman-Approved-At: Thu, 26 Feb 2026 16:04:31 +0000
+Subject: [Jfs-discussion] [syzbot] Monthly jfs report (Feb 2026)
 X-BeenThere: jfs-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -149,108 +116,94 @@ List-Post: <mailto:jfs-discussion@lists.sourceforge.net>
 List-Help: <mailto:jfs-discussion-request@lists.sourceforge.net?subject=help>
 List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/jfs-discussion>, 
  <mailto:jfs-discussion-request@lists.sourceforge.net?subject=subscribe>
-Cc: Dave Kleikamp <shaggy@kernel.org>, jfs-discussion@lists.sourceforge.net,
- Jan Kara <jack@suse.cz>, Yuezhang Mo <yuezhang.mo@sony.com>,
- Bob Copeland <me@bobcopeland.com>,
- Konstantin Komarov <almaz.alexandrovich@paragon-software.com>,
- linux-mm@kvack.org, linux-nilfs@vger.kernel.org, linux-ext4@vger.kernel.org,
- Namjae Jeon <linkinjeon@kernel.org>, linux-block@vger.kernel.org,
- Alexander Viro <viro@zeniv.linux.org.uk>,
- "Tigran A. Aivazian" <aivazian.tigran@gmail.com>,
- Tal Zussman <tz2294@columbia.edu>, Ryusuke Konishi <konishi.ryusuke@gmail.com>,
- Christian Brauner <brauner@kernel.org>, Sungjong Seo <sj1557.seo@samsung.com>,
- linux-kernel@vger.kernel.org,
- "Vishal Moola \(Oracle\)" <vishal.moola@gmail.com>,
- linux-fsdevel@vger.kernel.org, Andrew Morton <akpm@linux-foundation.org>,
- ntfs3@lists.linux.dev, linux-karma-devel@lists.sourceforge.net
+From: syzbot via Jfs-discussion <jfs-discussion@lists.sourceforge.net>
+Reply-To: syzbot <syzbot+listb3db0d154d5465951dfe@syzkaller.appspotmail.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Errors-To: jfs-discussion-bounces@lists.sourceforge.net
 X-Rspamd-Server: lfdr
-X-Spamd-Result: default: False [0.39 / 15.00];
-	SUSPICIOUS_RECIPS(1.50)[];
+X-Spamd-Result: default: False [-8.61 / 15.00];
+	WHITELIST_DMARC(-7.00)[sourceforge.net:D:+];
+	DMARC_POLICY_ALLOW_WITH_FAILURES(-0.50)[];
 	RWL_MAILSPIKE_EXCELLENT(-0.40)[216.105.38.7:from];
-	R_SPF_ALLOW(-0.20)[+ip4:216.105.38.7];
+	R_SPF_ALLOW(-0.20)[+ip4:216.105.38.7:c];
 	MAILLIST(-0.20)[mailman];
 	R_DKIM_ALLOW(-0.20)[lists.sourceforge.net:s=beta];
 	MIME_GOOD(-0.10)[text/plain];
 	HAS_LIST_UNSUB(-0.01)[];
-	DKIM_MIXED(0.00)[];
-	RECEIVED_HELO_LOCALHOST(0.00)[];
+	FORGED_RECIPIENTS_MAILLIST(0.00)[];
 	RCVD_TLS_LAST(0.00)[];
-	FORGED_RECIPIENTS(0.00)[m:willy@infradead.org,m:shaggy@kernel.org,m:jfs-discussion@lists.sourceforge.net,m:jack@suse.cz,m:yuezhang.mo@sony.com,m:me@bobcopeland.com,m:almaz.alexandrovich@paragon-software.com,m:linux-mm@kvack.org,m:linux-nilfs@vger.kernel.org,m:linux-ext4@vger.kernel.org,m:linkinjeon@kernel.org,m:linux-block@vger.kernel.org,m:viro@zeniv.linux.org.uk,m:aivazian.tigran@gmail.com,m:tz2294@columbia.edu,m:konishi.ryusuke@gmail.com,m:brauner@kernel.org,m:sj1557.seo@samsung.com,m:linux-kernel@vger.kernel.org,m:vishal.moola@gmail.com,m:linux-fsdevel@vger.kernel.org,m:akpm@linux-foundation.org,m:ntfs3@lists.linux.dev,m:linux-karma-devel@lists.sourceforge.net,m:aivaziantigran@gmail.com,m:konishiryusuke@gmail.com,m:vishalmoola@gmail.com,s:lists@lfdr.de];
-	DMARC_NA(0.00)[kernel.dk];
-	FORGED_SENDER(0.00)[axboe@kernel.dk,jfs-discussion-bounces@lists.sourceforge.net];
-	RCPT_COUNT_TWELVE(0.00)[24];
-	R_DKIM_REJECT(0.00)[sourceforge.net:s=x,sf.net:s=x,kernel-dk.20230601.gappssmtp.com:s=20230601];
+	FORGED_SENDER_MAILLIST(0.00)[];
+	DMARC_POLICY_ALLOW(0.00)[lists.sourceforge.net,none];
+	RECEIVED_HELO_LOCALHOST(0.00)[];
 	MIME_TRACE(0.00)[0:+];
 	ARC_NA(0.00)[];
-	FORWARDED(0.00)[jfs-discussion@lists.sourceforge.net];
-	FREEMAIL_CC(0.00)[kernel.org,lists.sourceforge.net,suse.cz,sony.com,bobcopeland.com,paragon-software.com,kvack.org,vger.kernel.org,zeniv.linux.org.uk,gmail.com,columbia.edu,samsung.com,linux-foundation.org,lists.linux.dev];
-	FORGED_RECIPIENTS_MAILLIST(0.00)[];
-	TO_DN_SOME(0.00)[];
-	RCVD_COUNT_FIVE(0.00)[5];
+	DKIM_MIXED(0.00)[];
+	RCVD_COUNT_THREE(0.00)[4];
+	R_DKIM_REJECT(0.00)[sourceforge.net:s=x,sf.net:s=x];
+	REPLYTO_DOM_NEQ_FROM_DOM(0.00)[];
+	RCPT_COUNT_THREE(0.00)[4];
+	DKIM_TRACE(0.00)[lists.sourceforge.net:+,sourceforge.net:-,sf.net:-];
+	TO_DN_NONE(0.00)[];
 	PREVIOUSLY_DELIVERED(0.00)[jfs-discussion@lists.sourceforge.net];
-	FORGED_SENDER_FORWARDING(0.00)[];
+	FROM_NEQ_ENVFROM(0.00)[jfs-discussion@lists.sourceforge.net,jfs-discussion-bounces@lists.sourceforge.net];
 	FROM_HAS_DN(0.00)[];
-	FROM_NEQ_ENVFROM(0.00)[axboe@kernel.dk,jfs-discussion-bounces@lists.sourceforge.net];
-	DKIM_TRACE(0.00)[lists.sourceforge.net:+,sourceforge.net:-,sf.net:-,kernel-dk.20230601.gappssmtp.com:-];
-	NEURAL_HAM(-0.00)[-0.951];
-	FORGED_RECIPIENTS_FORWARDING(0.00)[];
-	ASN(0.00)[asn:11320, ipnet:216.105.32.0/21, country:US];
-	MID_RHS_MATCH_FROM(0.00)[];
-	RCVD_VIA_SMTP_AUTH(0.00)[];
+	REPLYTO_DOM_NEQ_TO_DOM(0.00)[];
+	NEURAL_HAM(-0.00)[-1.000];
+	REDIRECTOR_URL(0.00)[goo.gl];
+	HAS_REPLYTO(0.00)[syzbot+listb3db0d154d5465951dfe@syzkaller.appspotmail.com];
 	TAGGED_RCPT(0.00)[jfs-discussion];
-	FORGED_SENDER_MAILLIST(0.00)[];
-	DBL_BLOCKED_OPENRESOLVER(0.00)[lists.sourceforge.net:rdns,lists.sourceforge.net:helo,lists.sourceforge.net:dkim,kernel.dk:mid]
-X-Rspamd-Queue-Id: CE8D21A0A20
+	MISSING_XM_UA(0.00)[];
+	ASN(0.00)[asn:11320, ipnet:216.105.32.0/21, country:US];
+	DBL_BLOCKED_OPENRESOLVER(0.00)[lists.sourceforge.net:rdns,lists.sourceforge.net:helo,lists.sourceforge.net:dkim,syzkaller.appspot.com:url,googlegroups.com:email,syzkaller.appspotmail.com:replyto]
+X-Rspamd-Queue-Id: EA8A81A98E1
 X-Rspamd-Action: no action
 
-On 2/25/26 7:55 PM, Matthew Wilcox wrote:
-> On Wed, Feb 25, 2026 at 03:52:41PM -0700, Jens Axboe wrote:
->> How well does this scale? I did a patch basically the same as this, but
->> not using a folio batch though. But the main sticking point was
->> dropbehind_lock contention, to the point where I left it alone and
->> thought "ok maybe we just do this when we're done with the awful
->> buffer_head stuff". What happens if you have N threads doing IO at the
->> same time to N block devices? I suspect it'll look absolutely terrible,
->> as each thread will be banging on that dropbehind_lock.
->>
->> One solution could potentially be to use per-cpu lists for this. If you
->> have N threads working on separate block devices, they will tend to be
->> sticky to their CPU anyway.
-> 
-> Back in 2021, I had Vishal look at switching the page cache from using
-> hardirq-disabling locks to softirq-disabling locks [1].  Some of the
-> feedback (which doesn't seem to be entirely findable on the lists ...)
-> was that we'd be better off punting writeback completion from interrupt
-> context to task context and going from spin_lock_irq() to spin_lock()
-> rather than going to spin_lock_bh().
-> 
-> I recently saw something (possibly XFS?) promoting this idea again.
-> And now there's this.  Perhaps the time has come to process all
-> write-completions in task context, rather than everyone coming up with
-> their own workqueues to solve their little piece of the problem?
+Hello jfs maintainers/developers,
 
-Perhaps, even though the punting tends to suck... One idea I toyed with
-but had to abandon due to fs freezeing was letting callers that process
-completions in task context anyway just do the necessary work at that
-time. There's literally nothing worse than having part of a completion
-happen in IRQ, then punt parts of that to a worker, and need to wait for
-the worker to finish whatever it needs to do - only to then wake the
-target task. We can trivially do this in io_uring, as the actual
-completion is posted from the task itself anyway. We just need to have
-the task do the bottom half of the completion as well, rather than some
-unrelated kthread worker.
+This is a 31-day syzbot report for the jfs subsystem.
+All related reports/information can be found at:
+https://syzkaller.appspot.com/upstream/s/jfs
 
-I'd be worried a generic solution would be the worst of all worlds, as
-it prevents optimizations that happen in eg iomap and other spots, where
-only completions that absolutely need to happen in task context get
-punted. There's a big difference between handling a completion inline vs
-needing a round-trip to some worker to do it.
+During the period, 0 new issues were detected and 0 were fixed.
+In total, 72 issues are still open and 66 have already been fixed.
 
--- 
-Jens Axboe
+Some of the still happening issues:
+
+Ref  Crashes Repro Title
+<1>  92526   Yes   kernel BUG in jfs_evict_inode
+                   https://syzkaller.appspot.com/bug?extid=9c0c58ea2e4887ab502e
+<2>  48984   Yes   WARNING in dbAdjTree
+                   https://syzkaller.appspot.com/bug?extid=ab18fa9c959320611727
+<3>  41630   Yes   kernel BUG in txUnlock
+                   https://syzkaller.appspot.com/bug?extid=a63afa301d1258d09267
+<4>  8098    Yes   general protection fault in lmLogSync (2)
+                   https://syzkaller.appspot.com/bug?extid=e14b1036481911ae4d77
+<5>  6968    Yes   KASAN: slab-use-after-free Write in dtSplitPage
+                   https://syzkaller.appspot.com/bug?extid=a939a1121380d3212940
+<6>  6578    Yes   kernel BUG in dbFindLeaf
+                   https://syzkaller.appspot.com/bug?extid=dcea2548c903300a400e
+<7>  5114    Yes   general protection fault in txEnd
+                   https://syzkaller.appspot.com/bug?extid=1d096d31de6a0491b55e
+<8>  4816    Yes   INFO: task hung in lock_metapage
+                   https://syzkaller.appspot.com/bug?extid=1d84a1682e4673d5c4fb
+<9>  4364    Yes   general protection fault in jfs_flush_journal
+                   https://syzkaller.appspot.com/bug?extid=194bfe3476f96782c0b6
+<10> 3550    Yes   KASAN: use-after-free Read in jfs_lazycommit
+                   https://syzkaller.appspot.com/bug?extid=885a4f3281b8d99c48d8
+
+---
+This report is generated by a bot. It may contain errors.
+See https://goo.gl/tpsmEJ for more information about syzbot.
+syzbot engineers can be reached at syzkaller@googlegroups.com.
+
+To disable reminders for individual bugs, reply with the following command:
+#syz set <Ref> no-reminders
+
+To change bug's subsystems, reply with:
+#syz set <Ref> subsystems: new-subsystem
+
+You may send multiple commands in a single email message.
 
 
 _______________________________________________
