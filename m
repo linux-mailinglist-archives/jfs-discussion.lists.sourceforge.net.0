@@ -2,41 +2,41 @@ Return-Path: <jfs-discussion-bounces@lists.sourceforge.net>
 Delivered-To: lists+jfs-discussion@lfdr.de
 Received: from mail.lfdr.de
 	by lfdr with LMTP
-	id mEpVIjbyoWkwxgQAu9opvQ
+	id +FMALGsHommEyQQAu9opvQ
 	(envelope-from <jfs-discussion-bounces@lists.sourceforge.net>)
-	for <lists+jfs-discussion@lfdr.de>; Fri, 27 Feb 2026 20:36:22 +0100
+	for <lists+jfs-discussion@lfdr.de>; Fri, 27 Feb 2026 22:06:51 +0100
 X-Original-To: lists+jfs-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id C3BEB1BCE72
-	for <lists+jfs-discussion@lfdr.de>; Fri, 27 Feb 2026 20:36:21 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8C3941BE173
+	for <lists+jfs-discussion@lfdr.de>; Fri, 27 Feb 2026 22:06:50 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.sourceforge.net; s=beta; h=Content-Transfer-Encoding:Content-Type:Cc:
 	Reply-To:From:List-Subscribe:List-Help:List-Post:List-Archive:
 	List-Unsubscribe:List-Id:Subject:MIME-Version:References:In-Reply-To:Date:To:
 	Message-ID:Sender:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=STH5vqlaJd4WD16rNEI/7Rqox0ocH/PwlSqOw41sU5U=; b=Es3uZN18PdL1RlVc416jfobX4+
-	IR+7flnDYBErdgNpxZgqKw+vynom+wjmv9ZHO6N4QoSRRKoZEbMfEUMryAwgWtarEKRg/IZzlijAC
-	4nSp0IydDQnx5/8o71a7QLJSCdL9bMrHkA0auTEhYgqcH0p2ay3yEpNt3+LL+QsxNrOA=;
-Received: from [127.0.0.1] (helo=sfs-ml-4.v29.lw.sourceforge.com)
-	by sfs-ml-4.v29.lw.sourceforge.com with esmtp (Exim 4.95)
+	bh=2UGC5rw9nJgpiyepfrJCKRcsl4AoPqWTIlJtdjkxp60=; b=Di6lsXaFPhZDGczooXbvVwnSrC
+	/gL62o7+0/NEUR5oT5ODQS3hoHz0ENITCZMxhUpgOBE3ZUUXLhipSlYHisRSu81kC+tEQRQYmxIJ0
+	GsW3bySaMtim1pW3pD1/G/BHN/k7cTVa4l3VfTqBhRximfMC5X6i1z7MvRYn2IobwMSk=;
+Received: from [127.0.0.1] (helo=sfs-ml-1.v29.lw.sourceforge.com)
+	by sfs-ml-1.v29.lw.sourceforge.com with esmtp (Exim 4.95)
 	(envelope-from <jfs-discussion-bounces@lists.sourceforge.net>)
-	id 1vw3cc-00044p-DQ;
-	Fri, 27 Feb 2026 19:35:34 +0000
+	id 1vw526-0001BL-Aj;
+	Fri, 27 Feb 2026 21:05:58 +0000
 Received: from [172.30.29.66] (helo=mx.sourceforge.net)
- by sfs-ml-4.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
+ by sfs-ml-1.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
  TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (Exim 4.95)
- (envelope-from <jlayton@kernel.org>) id 1vw3cb-00044f-KA;
- Fri, 27 Feb 2026 19:35:33 +0000
+ (envelope-from <jlayton@kernel.org>) id 1vw525-0001B9-6M;
+ Fri, 27 Feb 2026 21:05:57 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=sourceforge.net; s=x; h=MIME-Version:Content-Transfer-Encoding:Content-Type
  :References:In-Reply-To:Date:Cc:To:From:Subject:Message-ID:Sender:Reply-To:
  Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
  Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=LKpm7qqgE7tBymAsIP5/pPRqd9KlkLRNY8d74mbVADU=; b=YTmpD51khpDw7rMjRYP2xsmn96
- O3NPT03lTqVUzSocDtK+dn5H8ZChZT5THyEGGbg7RXOGiXVbnyjTO6I+1SoBS+4G9kESJDug654q5
- oeKZSXW39eEs/jqX3bZveGJH1a7l/Hnt1Yv3UG1WLdk31Vh00+fqdkxJOCDDTv24hrSU=;
+ bh=9KkFOX2gcFORK00SECgS6ydQK35Gqs45YGznnL2l8Ro=; b=bqfs6OYFXyl+057KvBEGPeMDaK
+ AqxAyrdWH94J3lhgNZCRF6Yg21KU3ucPwg+iZcgqDgRI23HfodZWUyJAfZeyjjsZH8p2Ddx9lT6ai
+ l7YYtew+iYA4Usxx8jeNMfNohOu+Vt6erYhz1Da02njDE30WNH2Ec5Ur8CybIkyEjdrA=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
  h=MIME-Version:Content-Transfer-Encoding:Content-Type:References:
@@ -44,37 +44,35 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
  :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
  List-Post:List-Owner:List-Archive;
- bh=LKpm7qqgE7tBymAsIP5/pPRqd9KlkLRNY8d74mbVADU=; b=J85m1ZGX54fdP9B5sQm+z5mm+m
- sg/16MFxLOTszHKwPCCEYTaemFaEEpmD0qPY8I4f1rYfE3Nl/6ZYn5f+EBn514gRSgH8nQxRjrh9a
- JCzxd89V+X7d7GNfCEaCWdo10YOziHV6qsuTLVGXTupo6NhUSjQAG8Wu1fhyuj3SDAB0=;
-Received: from tor.source.kernel.org ([172.105.4.254])
+ bh=9KkFOX2gcFORK00SECgS6ydQK35Gqs45YGznnL2l8Ro=; b=YKxxFhY2quT7WOCZLzJwArOzeR
+ /5KtSBVNRAtWkKfhRdu+mri4OaghV+di2t0t/idJ5Rg2s3fgDd3iY149ULFiJshGx4rPGnYuxDYX/
+ ZfkrW/9T9/q7EqkpHz1m1iO2Pz6qbFB3CQi+X/I53Srr8tD+e6rLbd85UfvcT/FXrcxE=;
+Received: from sea.source.kernel.org ([172.234.252.31])
  by sfi-mx-2.v28.lw.sourceforge.com with esmtps
  (TLS1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.95)
- id 1vw3ca-00088F-Uo; Fri, 27 Feb 2026 19:35:33 +0000
+ id 1vw524-0004pF-07; Fri, 27 Feb 2026 21:05:57 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
- by tor.source.kernel.org (Postfix) with ESMTP id 1EE6660126;
- Fri, 27 Feb 2026 19:35:22 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id BA034C116C6;
- Fri, 27 Feb 2026 19:35:09 +0000 (UTC)
+ by sea.source.kernel.org (Postfix) with ESMTP id 33876402E2;
+ Fri, 27 Feb 2026 21:05:45 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 9F988C116C6;
+ Fri, 27 Feb 2026 21:05:32 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=k20201202; t=1772220921;
- bh=x8aY1qdgt0C9tMQnJs5wAf8ATVjxdYsE22ORECBTQj8=;
+ s=k20201202; t=1772226345;
+ bh=sN76rLqXE0cK24sZufwHVodRKcdQtDVJ47IjByNqsBw=;
  h=Subject:From:To:Cc:Date:In-Reply-To:References:From;
- b=HAkmYX5xTgBJmIGTCpFCAMumPV3f8DHhz01MTU4lrlW/PYE/DFJ+TEip9CuHfwFXg
- wnHRz8ZTqfNRIPcBsUq9VTxyJWqdA9nlRsXGMvIckPT60T4/pSY8VCbkQMz+sjJhK+
- mWfZVqS3uf9mDqmTL7J0s+SnfU2wnKlWt403NJJww5ajMnIEf3ZfUnrEEWVuZszNa0
- rG/7QKHn/vcdJlevA3dXj9ATPEG3uYHz4fBjrOh4zYSYsTphR2iVHIcDM/v7NujRPN
- TIXwMfR/DPbY7XmlodpNk5WbW8qaLWuk8MmV9nxkf+H4qvlNLD1pukmeB+4AMz907b
- WqDtYisysW8PA==
-Message-ID: <1b38afe8ff4ba5880835d919c42e094d77a9d5ce.camel@kernel.org>
-To: Mathieu Desnoyers <mathieu.desnoyers@efficios.com>, Matthew Wilcox
- <willy@infradead.org>
-Date: Fri, 27 Feb 2026 14:35:07 -0500
-In-Reply-To: <b808e186-3eeb-46ed-9826-b0ae6cdcdb8b@efficios.com>
+ b=UwUe8T+b402Q2h2UJnif4zzLwpi6pIrKdkNQ9POisExC3E7JVkcKObMOK8flwBBiC
+ FUduAv0LTJYflzySzocQ9+6dXtNgsRXK/ndMe1RfkKP5D9Lg3ffLUSyA+NSfqpAffE
+ KCYzIzzksUwz1uY9GszuN7Cydt4OUQymxHY5jnL0/t/ATy90HlJfcFFQMzzx5IOwAx
+ RSGVc/vBEQ62JXP9pgyZaM9olEp+kLwfMaTJYp1ZNSE5AFzIg7GpWthwEAsb6hQq9F
+ b/thCjcYmhn3rUr9vGlrx58xVPnNE/VHSpOHFt0EjYCan8ZcQ52gkLKoyWSUXhtBxU
+ 6sl2tm6HXAxVQ==
+Message-ID: <4481598d13941191af0369bf204fe577d33f33bb.camel@kernel.org>
+To: Steven Rostedt <rostedt@goodmis.org>
+Date: Fri, 27 Feb 2026 16:05:30 -0500
+In-Reply-To: <20260226124842.5593ed85@gandalf.local.home>
 References: <20260226-iino-u64-v1-0-ccceff366db9@kernel.org>
- <aaB5lgKd8FOIizPg@casper.infradead.org>
- <4a462d40899698586c110add96ce3fab6ddac30b.camel@kernel.org>
- <b808e186-3eeb-46ed-9826-b0ae6cdcdb8b@efficios.com>
+ <20260226-iino-u64-v1-3-ccceff366db9@kernel.org>
+ <20260226124842.5593ed85@gandalf.local.home>
 Autocrypt: addr=jlayton@kernel.org; prefer-encrypt=mutual;
  keydata=mQINBE6V0TwBEADXhJg7s8wFDwBMEvn0qyhAnzFLTOCHooMZyx7XO7dAiIhDSi7G1NPxw
  n8jdFUQMCR/GlpozMFlSFiZXiObE7sef9rTtM68ukUyZM4pJ9l0KjQNgDJ6Fr342Htkjxu/kFV1Wv
@@ -153,28 +151,32 @@ User-Agent: Evolution 3.58.3 (3.58.3-1.fc43)
 MIME-Version: 1.0
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: Spam detection software,
- running on the system "sfi-spamd-2.hosts.colo.sdot.me", 
+ running on the system "sfi-spamd-1.hosts.colo.sdot.me", 
  has NOT identified this incoming email as spam.  The original
  message has been attached to this so you can view it or label
  similar future email.  If you have any questions, see
  the administrator of that system for details.
- Content preview:  On Fri, 2026-02-27 at 14:01 -0500, Mathieu Desnoyers wrote:
- > On 2026-02-27 12:19, Jeff Layton wrote: > > On Thu, 2026-02-26 at 16:49
- +0000, Matthew Wilcox wrote: > > > On Thu, Feb 26, 2026 at 10:55:0 [...] 
+ Content preview:  On Thu, 2026-02-26 at 12:48 -0500, Steven Rostedt wrote: >
+ On Thu, 26 Feb 2026 10:55:05 -0500 > Jeff Layton <jlayton@kernel.org> wrote:
+ > > > Update trace event definitions in VFS-layer trace headers [...] 
  Content analysis details:   (-0.2 points, 5.0 required)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
  -0.1 DKIM_VALID_AU Message has a valid DKIM or DK signature from author's
  domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature,
  not necessarily valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.0 RCVD_IN_DNSWL_BLOCKED  RBL: ADMINISTRATOR NOTICE: The query to DNSWL
+ was blocked.  See
+ http://wiki.apache.org/spamassassin/DnsBlocklists#DnsBlocklists-dnsbl-block
+ for more information. [172.234.252.31 listed in list.dnswl.org]
  -0.0 DKIMWL_WL_HIGH         DKIMwl.org - High trust sender
-X-Headers-End: 1vw3ca-00088F-Uo
-Subject: Re: [Jfs-discussion] [PATCH 00/61] vfs: change inode->i_ino from
- unsigned long to u64
+X-Headers-End: 1vw524-0004pF-07
+Subject: Re: [Jfs-discussion] [PATCH 03/61] trace: update VFS-layer trace
+ events for u64 i_ino
 X-BeenThere: jfs-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -220,23 +222,25 @@ Cc: Latchesar Ionkov <lucho@ionkov.net>, nvdimm@lists.linux.dev,
  Olga Kornievskaia <okorniev@redhat.com>, Yangtao Li <frank.li@vivo.com>,
  selinux@vger.kernel.org, linaro-mm-sig@lists.linaro.org,
  Casey Schaufler <casey@schaufler-ca.com>, netfs@lists.linux.dev,
- Jaegeuk Kim <jaegeuk@kernel.org>, fsverity@lists.linux.dev, "Theodore
- Y. Ts'o" <tytso@mit.edu>, Nicolas Pitre <nico@fluxnic.net>,
+ Jaegeuk Kim <jaegeuk@kernel.org>, fsverity@lists.linux.dev, "Theodore Y.
+ Ts'o" <tytso@mit.edu>, Nicolas Pitre <nico@fluxnic.net>,
  Muchun Song <muchun.song@linux.dev>, Roberto Sassu <roberto.sassu@huawei.com>,
  "David S. Miller" <davem@davemloft.net>, Anna Schumaker <anna@kernel.org>,
  linux-integrity@vger.kernel.org, Alex Markuze <amarkuze@redhat.com>,
  Martin Brandenburg <martin@omnibond.com>,
  Alexander Shishkin <alexander.shishkin@linux.intel.com>,
  ocfs2-devel@lists.linux.dev, jfs-discussion@lists.sourceforge.net,
- linux-mtd@lists.infradead.org, Marc Dionne <marc.dionne@auristor.com>,
- linux-afs@lists.infradead.org, Ian Kent <raven@themaw.net>,
- Naohiro Aota <naohiro.aota@wdc.com>, Eric Biggers <ebiggers@kernel.org>,
- Miklos Szeredi <miklos@szeredi.hu>, amd-gfx@lists.freedesktop.org,
- coda@cs.cmu.edu, NeilBrown <neil@brown.name>,
- Ilya Dryomov <idryomov@gmail.com>, Paolo Abeni <pabeni@redhat.com>, "Serge
+ linux-mtd@lists.infradead.org, amd-gfx@lists.freedesktop.org,
+ Marc Dionne <marc.dionne@auristor.com>, linux-afs@lists.infradead.org,
+ Ian Kent <raven@themaw.net>, Naohiro Aota <naohiro.aota@wdc.com>,
+ Eric Biggers <ebiggers@kernel.org>, Miklos Szeredi <miklos@szeredi.hu>,
+ Matthew Wilcox <willy@infradead.org>, coda@cs.cmu.edu,
+ NeilBrown <neil@brown.name>, Ilya Dryomov <idryomov@gmail.com>,
+ Paolo Abeni <pabeni@redhat.com>, "Serge
  E. Hallyn" <serge@hallyn.com>, Amir Goldstein <amir73il@gmail.com>,
  James Clark <james.clark@linaro.org>, autofs@vger.kernel.org,
- Steven Rostedt <rostedt@goodmis.org>, Damien Le Moal <dlemoal@kernel.org>,
+ Damien Le Moal <dlemoal@kernel.org>,
+ Mathieu Desnoyers <mathieu.desnoyers@efficios.com>,
  Dan Williams <dan.j.williams@intel.com>, Oscar Salvador <osalvador@suse.de>,
  Konstantin Komarov <almaz.alexandrovich@paragon-software.com>,
  linux-nfs@vger.kernel.org, linux-ext4@vger.kernel.org, linux-mm@kvack.org,
@@ -277,103 +281,553 @@ X-Spamd-Result: default: False [-7.11 / 15.00];
 	SUSPICIOUS_RECIPS(1.50)[];
 	DMARC_POLICY_ALLOW_WITH_FAILURES(-0.50)[];
 	RWL_MAILSPIKE_EXCELLENT(-0.40)[216.105.38.7:from];
-	R_SPF_ALLOW(-0.20)[+ip4:216.105.38.7:c];
 	MAILLIST(-0.20)[mailman];
+	R_SPF_ALLOW(-0.20)[+ip4:216.105.38.7:c];
 	R_DKIM_ALLOW(-0.20)[lists.sourceforge.net:s=beta];
 	MIME_GOOD(-0.10)[text/plain];
 	HAS_LIST_UNSUB(-0.01)[];
-	MIME_TRACE(0.00)[0:+];
-	FREEMAIL_CC(0.00)[ionkov.net,lists.linux.dev,manguebit.org,kernel.org,alarsen.net,lists.freedesktop.org,vger.kernel.org,linaro.org,omnibond.com,namei.org,tyhicks.com,infradead.org,lists.orangefs.org,microsoft.com,dev.tdt.de,cs.cmu.edu,google.com,zeniv.linux.org.uk,gmail.com,physik.fu-berlin.de,huawei.com,oracle.com,suse.com,amd.com,arm.com,linux.ibm.com,redhat.com,ffwll.ch,paul-moore.com,coda.cs.cmu.edu,vivo.com,lists.linaro.org,schaufler-ca.com,mit.edu,fluxnic.net,linux.dev,davemloft.net,linux.intel.com,lists.sourceforge.net,lists.infradead.org,auristor.com,themaw.net,wdc.com,szeredi.hu,brown.name,hallyn.com,goodmis.org,intel.com,suse.de,paragon-software.com,kvack.org,lists.samba.org,samba.org,suse.cz,codewreck.org,crudebyte.com,linux.alibaba.com,dilger.ca,artax.karlin.mff.cuni.cz,nod.at,fasheh.com,lists.ubuntu.com,talpey.com,canonical.com,evilplan.org];
-	DMARC_POLICY_ALLOW(0.00)[lists.sourceforge.net,none];
-	TO_DN_SOME(0.00)[];
 	RCVD_TLS_LAST(0.00)[];
 	DKIM_MIXED(0.00)[];
-	R_DKIM_REJECT(0.00)[sourceforge.net:s=x,sf.net:s=x,kernel.org:s=k20201202];
-	ARC_NA(0.00)[];
 	RECEIVED_HELO_LOCALHOST(0.00)[];
-	REPLYTO_DOM_NEQ_FROM_DOM(0.00)[];
-	FORGED_RECIPIENTS_MAILLIST(0.00)[];
+	FREEMAIL_CC(0.00)[ionkov.net,lists.linux.dev,manguebit.org,kernel.org,alarsen.net,lists.freedesktop.org,vger.kernel.org,linaro.org,omnibond.com,namei.org,tyhicks.com,infradead.org,lists.orangefs.org,microsoft.com,dev.tdt.de,cs.cmu.edu,google.com,zeniv.linux.org.uk,gmail.com,physik.fu-berlin.de,huawei.com,oracle.com,suse.com,amd.com,arm.com,linux.ibm.com,redhat.com,ffwll.ch,paul-moore.com,coda.cs.cmu.edu,vivo.com,lists.linaro.org,schaufler-ca.com,mit.edu,fluxnic.net,linux.dev,davemloft.net,linux.intel.com,lists.sourceforge.net,lists.infradead.org,auristor.com,themaw.net,wdc.com,szeredi.hu,brown.name,hallyn.com,efficios.com,intel.com,suse.de,paragon-software.com,kvack.org,lists.samba.org,samba.org,suse.cz,codewreck.org,crudebyte.com,linux.alibaba.com,dilger.ca,artax.karlin.mff.cuni.cz,nod.at,fasheh.com,lists.ubuntu.com,talpey.com,canonical.com,evilplan.org];
+	FORGED_SENDER_MAILLIST(0.00)[];
+	DMARC_POLICY_ALLOW(0.00)[lists.sourceforge.net,none];
+	TO_DN_SOME(0.00)[];
+	ARC_NA(0.00)[];
+	MIME_TRACE(0.00)[0:+];
+	R_DKIM_REJECT(0.00)[sourceforge.net:s=x,sf.net:s=x,kernel.org:s=k20201202];
 	REPLYTO_DOM_NEQ_TO_DOM(0.00)[];
+	DKIM_TRACE(0.00)[lists.sourceforge.net:+,sourceforge.net:-,sf.net:-,kernel.org:-];
 	RCVD_COUNT_FIVE(0.00)[5];
 	RCPT_COUNT_GT_50(0.00)[144];
 	FROM_NEQ_ENVFROM(0.00)[jfs-discussion@lists.sourceforge.net,jfs-discussion-bounces@lists.sourceforge.net];
 	FROM_HAS_DN(0.00)[];
-	DKIM_TRACE(0.00)[lists.sourceforge.net:+,sourceforge.net:-,sf.net:-,kernel.org:-];
+	REPLYTO_DOM_NEQ_FROM_DOM(0.00)[];
 	NEURAL_HAM(-0.00)[-1.000];
 	RCVD_VIA_SMTP_AUTH(0.00)[];
+	HAS_REPLYTO(0.00)[jlayton@kernel.org];
 	TAGGED_RCPT(0.00)[jfs-discussion];
-	FORGED_SENDER_MAILLIST(0.00)[];
+	FORGED_RECIPIENTS_MAILLIST(0.00)[];
 	ASN(0.00)[asn:11320, ipnet:216.105.32.0/21, country:US];
-	HAS_REPLYTO(0.00)[jlayton@kernel.org]
-X-Rspamd-Queue-Id: C3BEB1BCE72
+	DBL_BLOCKED_OPENRESOLVER(0.00)[lists.sourceforge.net:rdns,lists.sourceforge.net:helo,lists.sourceforge.net:dkim]
+X-Rspamd-Queue-Id: 8C3941BE173
 X-Rspamd-Action: no action
 
-On Fri, 2026-02-27 at 14:01 -0500, Mathieu Desnoyers wrote:
-> On 2026-02-27 12:19, Jeff Layton wrote:
-> > On Thu, 2026-02-26 at 16:49 +0000, Matthew Wilcox wrote:
-> > > On Thu, Feb 26, 2026 at 10:55:02AM -0500, Jeff Layton wrote:
-> > > > The bulk of the changes are to format strings and tracepoints, since the
-> > > > kernel itself doesn't care that much about the i_ino field. The first
-> > > > patch changes some vfs function arguments, so check that one out
-> > > > carefully.
-> > > 
-> > > Why are the format strings all done as separate patches?  Don't we get
-> > > bisection hazards by splitting it apart this way?
+On Thu, 2026-02-26 at 12:48 -0500, Steven Rostedt wrote:
+> On Thu, 26 Feb 2026 10:55:05 -0500
+> Jeff Layton <jlayton@kernel.org> wrote:
+> 
+> > Update trace event definitions in VFS-layer trace headers to use u64
+> > instead of ino_t/unsigned long for inode number fields, and change
+> > format strings from %lu/%lx to %llu/%llx to match.
 > > 
-> > Circling back to this...
+> > This is needed because i_ino is now u64. Changing trace event field
+> > types changes the binary trace format, but the self-describing format
+> > metadata handles this transparently for modern trace-cmd and perf.
 > > 
-> > I have a v2 series (~107 patches) that I'm testing now that does this
-> > more bisectably with the typedef and macro scaffolding that Mathieu
-> > suggested. I'll probably send it early next week.
+> > Files updated:
+> >   - cachefiles.h, filelock.h, filemap.h, fs_dax.h, fsverity.h,
+> >     hugetlbfs.h, netfs.h, readahead.h, timestamp.h, writeback.h
 > > 
-> > I had done it this way originally since I figured it was best to break
-> > this up by subsystem. Should I continue with this series as a set of
-> > patches broken up this way, or is it preferable to combine the pile of
-> > format changes into fewer patches?
 > 
-> Here is the approach I would recommend to maximize signal over noise
-> for the follow up email thread discussions:
+> Hmm, on 32 bit systems, this will likely cause "holes" in a lot of these
+> events.
 > 
-> Now that your series is bisectable, you could post a [RFC PATCH v2]
-> series with the following:
+> > Signed-off-by: Jeff Layton <jlayton@kernel.org>
+> > ---
+> >  include/trace/events/cachefiles.h |  18 ++---
+> >  include/trace/events/filelock.h   |  16 ++---
+> >  include/trace/events/filemap.h    |  20 +++---
+> >  include/trace/events/fs_dax.h     |  20 +++---
+> >  include/trace/events/fsverity.h   |  30 ++++----
+> >  include/trace/events/hugetlbfs.h  |  28 ++++----
+> >  include/trace/events/netfs.h      |   4 +-
+> >  include/trace/events/readahead.h  |  12 ++--
+> >  include/trace/events/timestamp.h  |  12 ++--
+> >  include/trace/events/writeback.h  | 148 +++++++++++++++++++-------------------
+> >  10 files changed, 154 insertions(+), 154 deletions(-)
+> > 
+> > diff --git a/include/trace/events/cachefiles.h b/include/trace/events/cachefiles.h
+> > index a743b2a35ea7001447b3e05d41539cb88013bc7f..f967027711ee823f224abc1b8ab03f63da06ae6f 100644
+> > --- a/include/trace/events/cachefiles.h
+> > +++ b/include/trace/events/cachefiles.h
+> > @@ -251,8 +251,8 @@ TRACE_EVENT(cachefiles_lookup,
+> >  	    TP_STRUCT__entry(
+> >  		    __field(unsigned int,		obj)
+> >  		    __field(short,			error)
 > 
-> - Patch 00 introduces the series, points to your git branch implementing
->    the whole series,
-> - The first few patches introduce the new type (kino_t) and macro to
->    do the format string transition. Initially kino_t would typedef to
->    unsigned long (no changes).
-> - Followed by patches implementing the type + format string changes for
->    a few key subsystems.
-> - The final patch would change kino_t and the format string macro to
->    64-bit integers.
+> There was already a 2 byte hole here, but that's not a big deal.
+> 
+> > -		    __field(unsigned long,		dino)
+> > -		    __field(unsigned long,		ino)
+> > +		    __field(u64,			dino)
+> > +		    __field(u64,			ino)
+> >  			     ),
+> >  
+> >  	    TP_fast_assign(
+> > @@ -263,7 +263,7 @@ TRACE_EVENT(cachefiles_lookup,
+> >  		    __entry->error	= IS_ERR(de) ? PTR_ERR(de) : 0;
+> >  			   ),
+> >  
+> > -	    TP_printk("o=%08x dB=%lx B=%lx e=%d",
+> > +	    TP_printk("o=%08x dB=%llx B=%llx e=%d",
+> >  		      __entry->obj, __entry->dino, __entry->ino, __entry->error)
+> >  	    );
+> >  
+> > @@ -579,7 +579,7 @@ TRACE_EVENT(cachefiles_mark_active,
+> >  	    /* Note that obj may be NULL */
+> >  	    TP_STRUCT__entry(
+> >  		    __field(unsigned int,		obj)
+> > -		    __field(ino_t,			inode)
+> > +		    __field(u64,			inode)
+> 
+> Might be better to reorder any of these that have int first.
+> 
+> 		u64	inode;
+> 		int	obj;
+> 
+> Will be packed tighter than:
+> 
+> 		int	obj
+> 		u64	inode;
+> 
+> Probably should have changed that before anyway.
 > 
 
-That's pretty much the approach the set I have takes. The current set
-is here:
+Ok, I'll look at that. Given the number of places that need it though I
+may do it in a separate patch.
 
-    https://git.kernel.org/pub/scm/linux/kernel/git/jlayton/linux.git/log/?h=iino-u64
-
-My question was more about whether I should batch some of the changes
-together. My inclination is that doing it in small, incremental patches
-is a good thing, but I figured I'd ask before I spam everyone with a
-100+ patch series.
-
-> Once everyone agree on those core changes, you could proceed to post
-> patches that change additional subsystems in a subsequent round.
+> >  			     ),
+> >  
+> >  	    TP_fast_assign(
+> > @@ -587,7 +587,7 @@ TRACE_EVENT(cachefiles_mark_active,
+> >  		    __entry->inode	= inode->i_ino;
+> >  			   ),
+> >  
+> > -	    TP_printk("o=%08x B=%lx",
+> > +	    TP_printk("o=%08x B=%llx",
+> >  		      __entry->obj, __entry->inode)
+> >  	    );
+> >  
+> > @@ -600,7 +600,7 @@ TRACE_EVENT(cachefiles_mark_failed,
+> >  	    /* Note that obj may be NULL */
+> >  	    TP_STRUCT__entry(
+> >  		    __field(unsigned int,		obj)
+> > -		    __field(ino_t,			inode)
+> > +		    __field(u64,			inode)
 > 
-> One more comment: have you tried using Coccinelle to do this kind of
-> semantic code change ?
+> Is ino_t being changed? Why the update here?
+> 
 
-I've use coccinelle before for this sort of change, but my skills with
-it are pretty primitive. The problem I saw with using it here is that
-the main set of changes involved format strings, and that didn't look
-straightforward to do with coccinelle. The LLM seems to have sorted it
-out with no trouble though.
+No, ino_t isn't. That's part of the ABI and has to remain unsigned
+long. The point of this series is to make inode->i_ino a u64. Any event
+holding an ino_t today is going to need a 64-bit field to fully
+describe it.
 
-On a related note, has anyone has taught an LLM how to use Coccinelle.
-I wonder if it might give it a better tool for its toolbox, since
-Claude at least seems to mostly use bash, perl or python to make
-changes across the tree.
+And to be clear, this should make things better for 32-bit boxes in the
+long run. Once this change is done, i_ino should be a reliable source
+of info regardless of machine's word size.
+
+For the tracepoints, I think it's best to just extend them to 64-bit
+fields outright rather than using the new (temporary) kino_t typedef
+that I'm adding.
+
+> >  			     ),
+> >  
+> >  	    TP_fast_assign(
+> > @@ -608,7 +608,7 @@ TRACE_EVENT(cachefiles_mark_failed,
+> >  		    __entry->inode	= inode->i_ino;
+> >  			   ),
+> >  
+> > -	    TP_printk("o=%08x B=%lx",
+> > +	    TP_printk("o=%08x B=%llx",
+> >  		      __entry->obj, __entry->inode)
+> >  	    );
+> >  
+> > @@ -621,7 +621,7 @@ TRACE_EVENT(cachefiles_mark_inactive,
+> >  	    /* Note that obj may be NULL */
+> >  	    TP_STRUCT__entry(
+> >  		    __field(unsigned int,		obj)
+> > -		    __field(ino_t,			inode)
+> > +		    __field(u64,			inode)
+> 
+> Ditto.
+> 
+> >  			     ),
+> >  
+> >  	    TP_fast_assign(
+> > @@ -629,7 +629,7 @@ TRACE_EVENT(cachefiles_mark_inactive,
+> >  		    __entry->inode	= inode->i_ino;
+> >  			   ),
+> >  
+> > -	    TP_printk("o=%08x B=%lx",
+> > +	    TP_printk("o=%08x B=%llx",
+> >  		      __entry->obj, __entry->inode)
+> >  	    );
+> >  
+> > diff --git a/include/trace/events/filelock.h b/include/trace/events/filelock.h
+> > index 370016c38a5bbc07d5ba6c102030b49c9eb6424d..41bc752616b25d6cd7955203e2c604029d0b440c 100644
+> > --- a/include/trace/events/filelock.h
+> > +++ b/include/trace/events/filelock.h
+> > @@ -42,7 +42,7 @@ TRACE_EVENT(locks_get_lock_context,
+> >  	TP_ARGS(inode, type, ctx),
+> >  
+> >  	TP_STRUCT__entry(
+> > -		__field(unsigned long, i_ino)
+> > +		__field(u64, i_ino)
+> >  		__field(dev_t, s_dev)
+> >  		__field(unsigned char, type)
+> >  		__field(struct file_lock_context *, ctx)
+> > @@ -55,7 +55,7 @@ TRACE_EVENT(locks_get_lock_context,
+> >  		__entry->ctx = ctx;
+> >  	),
+> >  
+> > -	TP_printk("dev=0x%x:0x%x ino=0x%lx type=%s ctx=%p",
+> > +	TP_printk("dev=0x%x:0x%x ino=0x%llx type=%s ctx=%p",
+> >  		  MAJOR(__entry->s_dev), MINOR(__entry->s_dev),
+> >  		  __entry->i_ino, show_fl_type(__entry->type), __entry->ctx)
+> >  );
+> > @@ -67,7 +67,7 @@ DECLARE_EVENT_CLASS(filelock_lock,
+> >  
+> >  	TP_STRUCT__entry(
+> >  		__field(struct file_lock *, fl)
+> > -		__field(unsigned long, i_ino)
+> > +		__field(u64, i_ino)
+> 
+> Having u64 before a pointer would be tighter on 32 bit systems, and leaves
+> out any holes in the trace.
+>
+> >  		__field(dev_t, s_dev)
+> >  		__field(struct file_lock_core *, blocker)
+> >  		__field(fl_owner_t, owner)
+> > @@ -93,7 +93,7 @@ DECLARE_EVENT_CLASS(filelock_lock,
+> >  		__entry->ret = ret;
+> >  	),
+> >  
+> > -	TP_printk("fl=%p dev=0x%x:0x%x ino=0x%lx fl_blocker=%p fl_owner=%p fl_pid=%u fl_flags=%s fl_type=%s fl_start=%lld fl_end=%lld ret=%d",
+> > +	TP_printk("fl=%p dev=0x%x:0x%x ino=0x%llx fl_blocker=%p fl_owner=%p fl_pid=%u fl_flags=%s fl_type=%s fl_start=%lld fl_end=%lld ret=%d",
+> >  		__entry->fl, MAJOR(__entry->s_dev), MINOR(__entry->s_dev),
+> >  		__entry->i_ino, __entry->blocker, __entry->owner,
+> >  		__entry->pid, show_fl_flags(__entry->flags),
+> > @@ -124,7 +124,7 @@ DECLARE_EVENT_CLASS(filelock_lease,
+> >  
+> >  	TP_STRUCT__entry(
+> >  		__field(struct file_lease *, fl)
+> > -		__field(unsigned long, i_ino)
+> > +		__field(u64, i_ino)
+> 
+> Same here.
+> 
+> >  		__field(dev_t, s_dev)
+> >  		__field(struct file_lock_core *, blocker)
+> >  		__field(fl_owner_t, owner)
+> > @@ -146,7 +146,7 @@ DECLARE_EVENT_CLASS(filelock_lease,
+> >  		__entry->downgrade_time = fl ? fl->fl_downgrade_time : 0;
+> >  	),
+> >  
+> > -	TP_printk("fl=%p dev=0x%x:0x%x ino=0x%lx fl_blocker=%p fl_owner=%p fl_flags=%s fl_type=%s fl_break_time=%lu fl_downgrade_time=%lu",
+> > +	TP_printk("fl=%p dev=0x%x:0x%x ino=0x%llx fl_blocker=%p fl_owner=%p fl_flags=%s fl_type=%s fl_break_time=%lu fl_downgrade_time=%lu",
+> >  		__entry->fl, MAJOR(__entry->s_dev), MINOR(__entry->s_dev),
+> >  		__entry->i_ino, __entry->blocker, __entry->owner,
+> >  		show_fl_flags(__entry->flags),
+> > @@ -175,7 +175,7 @@ TRACE_EVENT(generic_add_lease,
+> >  	TP_ARGS(inode, fl),
+> >  
+> >  	TP_STRUCT__entry(
+> > -		__field(unsigned long, i_ino)
+> > +		__field(u64, i_ino)
+> >  		__field(int, wcount)
+> >  		__field(int, rcount)
+> >  		__field(int, icount)
+> > @@ -196,7 +196,7 @@ TRACE_EVENT(generic_add_lease,
+> >  		__entry->type = fl->c.flc_type;
+> >  	),
+> >  
+> > -	TP_printk("dev=0x%x:0x%x ino=0x%lx wcount=%d rcount=%d icount=%d fl_owner=%p fl_flags=%s fl_type=%s",
+> > +	TP_printk("dev=0x%x:0x%x ino=0x%llx wcount=%d rcount=%d icount=%d fl_owner=%p fl_flags=%s fl_type=%s",
+> >  		MAJOR(__entry->s_dev), MINOR(__entry->s_dev),
+> >  		__entry->i_ino, __entry->wcount, __entry->rcount,
+> >  		__entry->icount, __entry->owner,
+> > diff --git a/include/trace/events/filemap.h b/include/trace/events/filemap.h
+> > index f48fe637bfd25885dc6daaf09336ab60626b4944..153491e57cce6df73e30ddee60a52ed7d8923c24 100644
+> > --- a/include/trace/events/filemap.h
+> > +++ b/include/trace/events/filemap.h
+> > @@ -21,7 +21,7 @@ DECLARE_EVENT_CLASS(mm_filemap_op_page_cache,
+> >  
+> >  	TP_STRUCT__entry(
+> >  		__field(unsigned long, pfn)
+> > -		__field(unsigned long, i_ino)
+> > +		__field(u64, i_ino)
+> 
+> Again, this would cause a 32 bit hole.
+> 
+> >  		__field(unsigned long, index)
+> >  		__field(dev_t, s_dev)
+> >  		__field(unsigned char, order)
+> > @@ -38,7 +38,7 @@ DECLARE_EVENT_CLASS(mm_filemap_op_page_cache,
+> >  		__entry->order = folio_order(folio);
+> >  	),
+> >  
+> > -	TP_printk("dev %d:%d ino %lx pfn=0x%lx ofs=%lu order=%u",
+> > +	TP_printk("dev %d:%d ino %llx pfn=0x%lx ofs=%lu order=%u",
+> >  		MAJOR(__entry->s_dev), MINOR(__entry->s_dev),
+> >  		__entry->i_ino,
+> >  		__entry->pfn,
+> > @@ -67,7 +67,7 @@ DECLARE_EVENT_CLASS(mm_filemap_op_page_cache_range,
+> >  	TP_ARGS(mapping, index, last_index),
+> >  
+> >  	TP_STRUCT__entry(
+> > -		__field(unsigned long, i_ino)
+> > +		__field(u64, i_ino)
+> >  		__field(dev_t, s_dev)
+> >  		__field(unsigned long, index)
+> >  		__field(unsigned long, last_index)
+> > @@ -85,7 +85,7 @@ DECLARE_EVENT_CLASS(mm_filemap_op_page_cache_range,
+> >  	),
+> >  
+> >  	TP_printk(
+> > -		"dev=%d:%d ino=%lx ofs=%lld-%lld",
+> > +		"dev=%d:%d ino=%llx ofs=%lld-%lld",
+> >  		MAJOR(__entry->s_dev),
+> >  		MINOR(__entry->s_dev), __entry->i_ino,
+> >  		((loff_t)__entry->index) << PAGE_SHIFT,
+> > @@ -117,7 +117,7 @@ TRACE_EVENT(mm_filemap_fault,
+> >  	TP_ARGS(mapping, index),
+> >  
+> >  	TP_STRUCT__entry(
+> > -		__field(unsigned long, i_ino)
+> > +		__field(u64, i_ino)
+> >  		__field(dev_t, s_dev)
+> >  		__field(unsigned long, index)
+> >  	),
+> > @@ -133,7 +133,7 @@ TRACE_EVENT(mm_filemap_fault,
+> >  	),
+> >  
+> >  	TP_printk(
+> > -		"dev=%d:%d ino=%lx ofs=%lld",
+> > +		"dev=%d:%d ino=%llx ofs=%lld",
+> >  		MAJOR(__entry->s_dev),
+> >  		MINOR(__entry->s_dev), __entry->i_ino,
+> >  		((loff_t)__entry->index) << PAGE_SHIFT
+> > @@ -146,7 +146,7 @@ TRACE_EVENT(filemap_set_wb_err,
+> >  		TP_ARGS(mapping, eseq),
+> >  
+> >  		TP_STRUCT__entry(
+> > -			__field(unsigned long, i_ino)
+> > +			__field(u64, i_ino)
+> >  			__field(dev_t, s_dev)
+> >  			__field(errseq_t, errseq)
+> >  		),
+> > @@ -160,7 +160,7 @@ TRACE_EVENT(filemap_set_wb_err,
+> >  				__entry->s_dev = mapping->host->i_rdev;
+> >  		),
+> >  
+> > -		TP_printk("dev=%d:%d ino=0x%lx errseq=0x%x",
+> > +		TP_printk("dev=%d:%d ino=0x%llx errseq=0x%x",
+> >  			MAJOR(__entry->s_dev), MINOR(__entry->s_dev),
+> >  			__entry->i_ino, __entry->errseq)
+> >  );
+> > @@ -172,7 +172,7 @@ TRACE_EVENT(file_check_and_advance_wb_err,
+> >  
+> >  		TP_STRUCT__entry(
+> >  			__field(struct file *, file)
+> > -			__field(unsigned long, i_ino)
+> > +			__field(u64, i_ino)
+> 
+> Having a pointer after the u64 is better.
+> 
+> >  			__field(dev_t, s_dev)
+> >  			__field(errseq_t, old)
+> >  			__field(errseq_t, new)
+> > @@ -191,7 +191,7 @@ TRACE_EVENT(file_check_and_advance_wb_err,
+> >  			__entry->new = file->f_wb_err;
+> >  		),
+> >  
+> > -		TP_printk("file=%p dev=%d:%d ino=0x%lx old=0x%x new=0x%x",
+> > +		TP_printk("file=%p dev=%d:%d ino=0x%llx old=0x%x new=0x%x",
+> >  			__entry->file, MAJOR(__entry->s_dev),
+> >  			MINOR(__entry->s_dev), __entry->i_ino, __entry->old,
+> >  			__entry->new)
+> > diff --git a/include/trace/events/fs_dax.h b/include/trace/events/fs_dax.h
+> > index 50ebc1290ab062a9c30ab00049fb96691f9a0f23..11121baa8ece7928c653b4f874fb10ffbdd02fd0 100644
+> > --- a/include/trace/events/fs_dax.h
+> > +++ b/include/trace/events/fs_dax.h
+> > @@ -12,7 +12,7 @@ DECLARE_EVENT_CLASS(dax_pmd_fault_class,
+> >  		pgoff_t max_pgoff, int result),
+> >  	TP_ARGS(inode, vmf, max_pgoff, result),
+> >  	TP_STRUCT__entry(
+> > -		__field(unsigned long, ino)
+> > +		__field(u64, ino)
+> >  		__field(unsigned long, vm_start)
+> >  		__field(unsigned long, vm_end)
+> >  		__field(vm_flags_t, vm_flags)
+> > @@ -35,7 +35,7 @@ DECLARE_EVENT_CLASS(dax_pmd_fault_class,
+> >  		__entry->max_pgoff = max_pgoff;
+> >  		__entry->result = result;
+> >  	),
+> > -	TP_printk("dev %d:%d ino %#lx %s %s address %#lx vm_start "
+> > +	TP_printk("dev %d:%d ino %#llx %s %s address %#lx vm_start "
+> >  			"%#lx vm_end %#lx pgoff %#lx max_pgoff %#lx %s",
+> >  		MAJOR(__entry->dev),
+> >  		MINOR(__entry->dev),
+> > @@ -66,7 +66,7 @@ DECLARE_EVENT_CLASS(dax_pmd_load_hole_class,
+> >  		void *radix_entry),
+> >  	TP_ARGS(inode, vmf, zero_folio, radix_entry),
+> >  	TP_STRUCT__entry(
+> > -		__field(unsigned long, ino)
+> > +		__field(u64, ino)
+> >  		__field(vm_flags_t, vm_flags)
+> >  		__field(unsigned long, address)
+> >  		__field(struct folio *, zero_folio)
+> > @@ -81,7 +81,7 @@ DECLARE_EVENT_CLASS(dax_pmd_load_hole_class,
+> >  		__entry->zero_folio = zero_folio;
+> >  		__entry->radix_entry = radix_entry;
+> >  	),
+> > -	TP_printk("dev %d:%d ino %#lx %s address %#lx zero_folio %p "
+> > +	TP_printk("dev %d:%d ino %#llx %s address %#lx zero_folio %p "
+> >  			"radix_entry %#lx",
+> >  		MAJOR(__entry->dev),
+> >  		MINOR(__entry->dev),
+> > @@ -106,7 +106,7 @@ DECLARE_EVENT_CLASS(dax_pte_fault_class,
+> >  	TP_PROTO(struct inode *inode, struct vm_fault *vmf, int result),
+> >  	TP_ARGS(inode, vmf, result),
+> >  	TP_STRUCT__entry(
+> > -		__field(unsigned long, ino)
+> > +		__field(u64, ino)
+> >  		__field(vm_flags_t, vm_flags)
+> >  		__field(unsigned long, address)
+> >  		__field(pgoff_t, pgoff)
+> > @@ -123,7 +123,7 @@ DECLARE_EVENT_CLASS(dax_pte_fault_class,
+> >  		__entry->pgoff = vmf->pgoff;
+> >  		__entry->result = result;
+> >  	),
+> > -	TP_printk("dev %d:%d ino %#lx %s %s address %#lx pgoff %#lx %s",
+> > +	TP_printk("dev %d:%d ino %#llx %s %s address %#lx pgoff %#lx %s",
+> >  		MAJOR(__entry->dev),
+> >  		MINOR(__entry->dev),
+> >  		__entry->ino,
+> > @@ -150,7 +150,7 @@ DECLARE_EVENT_CLASS(dax_writeback_range_class,
+> >  	TP_PROTO(struct inode *inode, pgoff_t start_index, pgoff_t end_index),
+> >  	TP_ARGS(inode, start_index, end_index),
+> >  	TP_STRUCT__entry(
+> > -		__field(unsigned long, ino)
+> > +		__field(u64, ino)
+> >  		__field(pgoff_t, start_index)
+> >  		__field(pgoff_t, end_index)
+> >  		__field(dev_t, dev)
+> > @@ -161,7 +161,7 @@ DECLARE_EVENT_CLASS(dax_writeback_range_class,
+> >  		__entry->start_index = start_index;
+> >  		__entry->end_index = end_index;
+> >  	),
+> > -	TP_printk("dev %d:%d ino %#lx pgoff %#lx-%#lx",
+> > +	TP_printk("dev %d:%d ino %#llx pgoff %#lx-%#lx",
+> >  		MAJOR(__entry->dev),
+> >  		MINOR(__entry->dev),
+> >  		__entry->ino,
+> > @@ -182,7 +182,7 @@ TRACE_EVENT(dax_writeback_one,
+> >  	TP_PROTO(struct inode *inode, pgoff_t pgoff, pgoff_t pglen),
+> >  	TP_ARGS(inode, pgoff, pglen),
+> >  	TP_STRUCT__entry(
+> > -		__field(unsigned long, ino)
+> > +		__field(u64, ino)
+> >  		__field(pgoff_t, pgoff)
+> >  		__field(pgoff_t, pglen)
+> >  		__field(dev_t, dev)
+> > @@ -193,7 +193,7 @@ TRACE_EVENT(dax_writeback_one,
+> >  		__entry->pgoff = pgoff;
+> >  		__entry->pglen = pglen;
+> >  	),
+> > -	TP_printk("dev %d:%d ino %#lx pgoff %#lx pglen %#lx",
+> > +	TP_printk("dev %d:%d ino %#llx pgoff %#lx pglen %#lx",
+> >  		MAJOR(__entry->dev),
+> >  		MINOR(__entry->dev),
+> >  		__entry->ino,
+> > diff --git a/include/trace/events/fsverity.h b/include/trace/events/fsverity.h
+> > index a8c52f21cbd5eb010c7e7b2fdb8f9de49c8ea326..4477c17e05748360965c4e1840590efe96d6335e 100644
+> > --- a/include/trace/events/fsverity.h
+> > +++ b/include/trace/events/fsverity.h
+> > @@ -16,7 +16,7 @@ TRACE_EVENT(fsverity_enable,
+> >  		 const struct merkle_tree_params *params),
+> >  	TP_ARGS(inode, params),
+> >  	TP_STRUCT__entry(
+> > -		__field(ino_t, ino)
+> > +		__field(u64, ino)
+> 
+> Do you need to convert all these ino_t's?
+> 
+> >  		__field(u64, data_size)
+> >  		__field(u64, tree_size)
+> >  		__field(unsigned int, merkle_block)
+> > @@ -29,8 +29,8 @@ TRACE_EVENT(fsverity_enable,
+> >  		__entry->merkle_block = params->block_size;
+> >  		__entry->num_levels = params->num_levels;
+> >  	),
+> > -	TP_printk("ino %lu data_size %llu tree_size %llu merkle_block %u levels %u",
+> > -		(unsigned long) __entry->ino,
+> > +	TP_printk("ino %llu data_size %llu tree_size %llu merkle_block %u levels %u",
+> > +		__entry->ino,
+> >  		__entry->data_size,
+> >  		__entry->tree_size,
+> >  		__entry->merkle_block,
+> > @@ -42,7 +42,7 @@ TRACE_EVENT(fsverity_tree_done,
+> >  		 const struct merkle_tree_params *params),
+> >  	TP_ARGS(inode, vi, params),
+> >  	TP_STRUCT__entry(
+> > -		__field(ino_t, ino)
+> > +		__field(u64, ino)
+> >  		__field(u64, data_size)
+> >  		__field(u64, tree_size)
+> >  		__field(unsigned int, merkle_block)
+> > @@ -59,8 +59,8 @@ TRACE_EVENT(fsverity_tree_done,
+> >  		memcpy(__get_dynamic_array(root_hash), vi->root_hash, __get_dynamic_array_len(root_hash));
+> >  		memcpy(__get_dynamic_array(file_digest), vi->file_digest, __get_dynamic_array_len(file_digest));
+> >  	),
+> > -	TP_printk("ino %lu data_size %llu tree_size %lld merkle_block %u levels %u root_hash %s digest %s",
+> > -		(unsigned long) __entry->ino,
+> > +	TP_printk("ino %llu data_size %llu tree_size %lld merkle_block %u levels %u root_hash %s digest %s",
+> > +		__entry->ino,
+> >  		__entry->data_size,
+> >  		__entry->tree_size,
+> >  		__entry->merkle_block,
+> > @@ -75,7 +75,7 @@ TRACE_EVENT(fsverity_verify_data_block,
+> >  		 u64 data_pos),
+> >  	TP_ARGS(inode, params, data_pos),
+> >  	TP_STRUCT__entry(
+> > -		__field(ino_t, ino)
+> > +		__field(u64, ino)
+> >  		__field(u64, data_pos)
+> >  		__field(unsigned int, merkle_block)
+> >  	),
+> > @@ -84,8 +84,8 @@ TRACE_EVENT(fsverity_verify_data_block,
+> >  		__entry->data_pos = data_pos;
+> >  		__entry->merkle_block = params->block_size;
+> >  	),
+> > -	TP_printk("ino %lu data_pos %llu merkle_block %u",
+> > -		(unsigned long) __entry->ino,
+> > +	TP_printk("ino %llu data_pos %llu merkle_block %u",
+> > +		__entry->ino,
+> >  		__entry->data_pos,
+> >  		__entry->merkle_block)
+> >  );
+> > @@ -96,7 +96,7 @@ TRACE_EVENT(fsverity_merkle_hit,
+> >  		 unsigned int hidx),
+> >  	TP_ARGS(inode, data_pos, hblock_idx, level, hidx),
+> >  	TP_STRUCT__entry(
+> > -		__field(ino_t, ino)
+> > +		__field(u64, ino)
+> >  		__field(u64, data_pos)
+> 
+> Heh, this actually removed a hole, but again, why convert ino_t?
+> 
+> Anyway, I stopped here. But you get the idea.
+>
+> 
+> >  		__field(unsigned long, hblock_idx)
+> >  		__field(unsigned int, level)
+
+Thanks for the review! I'll definitely look at reordering the
+tracepoint fields for better packing since that has material
+consequences.
 -- 
 Jeff Layton <jlayton@kernel.org>
 
