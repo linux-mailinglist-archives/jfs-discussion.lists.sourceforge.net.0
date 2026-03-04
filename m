@@ -2,93 +2,137 @@ Return-Path: <jfs-discussion-bounces@lists.sourceforge.net>
 Delivered-To: lists+jfs-discussion@lfdr.de
 Received: from mail.lfdr.de
 	by lfdr with LMTP
-	id 8BdzNKKzp2k6jQAAu9opvQ
+	id SB2LAJbWp2kRkQAAu9opvQ
 	(envelope-from <jfs-discussion-bounces@lists.sourceforge.net>)
-	for <lists+jfs-discussion@lfdr.de>; Wed, 04 Mar 2026 05:22:58 +0100
+	for <lists+jfs-discussion@lfdr.de>; Wed, 04 Mar 2026 07:52:06 +0100
 X-Original-To: lists+jfs-discussion@lfdr.de
 Received: from lists.sourceforge.net (lists.sourceforge.net [216.105.38.7])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2B8841FAAD6
-	for <lists+jfs-discussion@lfdr.de>; Wed, 04 Mar 2026 05:22:57 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 36CA81FB50B
+	for <lists+jfs-discussion@lfdr.de>; Wed, 04 Mar 2026 07:52:05 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.sourceforge.net; s=beta; h=Content-Transfer-Encoding:Content-Type:Cc:
 	Reply-To:From:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:Subject:Mime-Version:References:In-Reply-To:
-	Message-Id:To:Date:Sender:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=S4vdM3YIN6EWUn0Ad3VcBr6O8T43ez3s4Mi+VXkkgUk=; b=FyI3d8pepxQXmPFRD0EwrdKhkO
-	w9U/wH9/U5Fum+FMT5PYMZyDl5W9QaUMvtS7woGNeB338t2C0eX7UMaubNhQHCOLHcj+NwYLGC3Cq
-	zciZf7La4lUG0lLk0+j0j5l/g1d7AbFoSB7EUvy16Vbs3//rL4fDCSZ7Bi++EUzm/l9s=;
+	List-Unsubscribe:List-Id:Subject:Message-id:Date:References:In-reply-to:To:
+	MIME-Version:Sender:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=XNVSzuBH5SgSRZp7JIdOjhlU1cCMiuMgSd8OAjBFXxM=; b=ScSrmk+jhqXB9CE9QUN+K6Q5sm
+	G9rwaCdJILo8ep31+o05M3kPCWY6EVf2xg/1dr42kBzGqFVt/1SE+M1b5/KTEndPoUOgQnQ4Pa9qS
+	t9Sk/TpvmojroXs/MkIKy0+QuUbKI6N/1HkU5xSw5Seah6XB2T8ufnVBnKNzTW2LmNyw=;
 Received: from [127.0.0.1] (helo=sfs-ml-3.v29.lw.sourceforge.com)
 	by sfs-ml-3.v29.lw.sourceforge.com with esmtp (Exim 4.95)
 	(envelope-from <jfs-discussion-bounces@lists.sourceforge.net>)
-	id 1vxdkU-0002JL-Dp;
-	Wed, 04 Mar 2026 04:22:14 +0000
+	id 1vxg4m-0005FR-TA;
+	Wed, 04 Mar 2026 06:51:20 +0000
 Received: from [172.30.29.66] (helo=mx.sourceforge.net)
  by sfs-ml-3.v29.lw.sourceforge.com with esmtps (TLS1.2) tls
  TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (Exim 4.95)
- (envelope-from <mhiramat@kernel.org>) id 1vxanK-0006it-4m;
- Wed, 04 Mar 2026 01:12:58 +0000
+ (envelope-from <neilb@ownmail.net>) id 1vxg4l-0005FE-FH;
+ Wed, 04 Mar 2026 06:51:20 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=sourceforge.net; s=x; h=Content-Transfer-Encoding:Content-Type:Mime-Version
- :References:In-Reply-To:Message-Id:Subject:Cc:To:From:Date:Sender:Reply-To:
- Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
+ d=sourceforge.net; s=x; h=Reply-To:Message-id:Date:References:In-reply-to:
+ Subject:Cc:To:From:MIME-Version:Content-Transfer-Encoding:Content-Type:Sender
+ :Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
  Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
  List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=GnSZjh2WNTulGYRVG9NKG5lKH6rypFLXh77lgmoqCuU=; b=bbHeSEekqkGToVuz5gst0/lrjJ
- Mz3r5eQID6n6XV2JdbYwO9Jn1FBIGp//+iaecCD9ncx76YwXQ7OYbvBne+fPPoozfzXUrIokz45oz
- ABXu+TEqi+3KaLDc3zi8aWxHHHv0A4qhIQ4l3QhDNRN/R7pQK5txZlnSFAoDcMgjtLWQ=;
+ bh=5+RTgashw6751XVNDWQdZH+Q/6MhJxiaQle0ycbNIPA=; b=HtQvYLRp/1JzJo7yY5t9Z2XnKY
+ ltLOOKHQCgvfPccteopZuh+HVp3bbmyll0zYMAsF/1QlR9tyyiGTh/FSf0fzio9tzAxHzJ1i/W2jp
+ XPKmLNBbMVFmkz8h1pBiJmliZ/OXZypu//9eZXxy/cx6pLnATbEkN2kFcccboGHrHg3Y=;
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=sf.net; s=x
  ;
- h=Content-Transfer-Encoding:Content-Type:Mime-Version:References:
- In-Reply-To:Message-Id:Subject:Cc:To:From:Date:Sender:Reply-To:Content-ID:
+ h=Reply-To:Message-id:Date:References:In-reply-to:Subject:Cc:To:From:
+ MIME-Version:Content-Transfer-Encoding:Content-Type:Sender:Content-ID:
  Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
  :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
  List-Post:List-Owner:List-Archive;
- bh=GnSZjh2WNTulGYRVG9NKG5lKH6rypFLXh77lgmoqCuU=; b=SsR0nuZHPugFnfS9J14x/Ryw6f
- r+nSG2xKfL/9vtSmCkv1d/tV8GKSfXKLxshyKp9mvOC0TJN1rEpexwUFtywfphr6yoYddKaVeGr/l
- uS27HKCU8EilJ+9clBNnNdRdCYX3xzvFe/gkctBVF3TwnUiL9RaN4P8Mny1JjRwT16OI=;
-Received: from tor.source.kernel.org ([172.105.4.254])
+ bh=5+RTgashw6751XVNDWQdZH+Q/6MhJxiaQle0ycbNIPA=; b=eQSsrJp2svkdiuJVqHmWE4ZLwI
+ ajaPzt1nBkQNU8v67qgJrTudH3i/Wde/r7swa3vG6+LEiSfLpgRNJQkcCskv1XsyXBDq2MdfHTZYd
+ OfNmifqikzPrbARQVbx4BvR/wZ/JjYlP2mZwwLhPL8TacJVlZalFukBuPi0tu/3IAAqM=;
+Received: from flow-a6-smtp.messagingengine.com ([103.168.172.141])
  by sfi-mx-2.v28.lw.sourceforge.com with esmtps
  (TLS1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.95)
- id 1vxanJ-0006m0-7z; Wed, 04 Mar 2026 01:12:58 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
- by tor.source.kernel.org (Postfix) with ESMTP id 0802860097;
- Wed,  4 Mar 2026 01:12:51 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id AC630C116C6;
- Wed,  4 Mar 2026 01:12:31 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=k20201202; t=1772586770;
- bh=GFMrZQJwS7/We+LO7SGzzxn2lFIugPuzG0DMG56Js2Y=;
- h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
- b=WgCKlAsk3bXb+r/1s8b+OdlG4mX+icJAS45Uq+KKMNYvC49iKTzsvQ1tAfDcKjOHO
- pKVaQRChw5HLqCsmNleVgIcsLZe/mxOdeaALYcjfevERMGUkXjesPWWweCyhou7fQl
- VQ4Mb37EKNYYDJ4P3igTTUB/rwlUKWDzyHL6MaEPUYg4GKRNARAdOpQi37TER+bijy
- ujXwk/T7EtjhMi3TyZMPQ0jsSUIHCkGDCCDxAdqRqWs1EQh9//lrZ/RlcnBRfnGFFQ
- Jo6qgWMK/+GUePLR79A6WJNPJzwq2R2bZgMbaePiL9CPpPo5lJ+0GFE54ESH67v3gD
- aYrfgbEpOhAMQ==
-Date: Wed, 4 Mar 2026 10:12:29 +0900
-To: Jeff Layton <jlayton@kernel.org>
-Message-Id: <20260304101229.bc9fba5fcb816b7325fdf57d@kernel.org>
-In-Reply-To: <20260302-iino-u64-v2-53-e5388800dae0@kernel.org>
-References: <20260302-iino-u64-v2-0-e5388800dae0@kernel.org>
- <20260302-iino-u64-v2-53-e5388800dae0@kernel.org>
-X-Mailer: Sylpheed 3.8.0beta1 (GTK+ 2.24.33; x86_64-pc-linux-gnu)
-Mime-Version: 1.0
-X-Spam-Score: -1.0 (-)
+ id 1vxg4j-0005ow-M3; Wed, 04 Mar 2026 06:51:19 +0000
+Received: from phl-compute-03.internal (phl-compute-03.internal [10.202.2.43])
+ by mailflow.phl.internal (Postfix) with ESMTP id C99AF1380E87;
+ Wed,  4 Mar 2026 01:27:55 -0500 (EST)
+Received: from phl-frontend-04 ([10.202.2.163])
+ by phl-compute-03.internal (MEProxy); Wed, 04 Mar 2026 01:27:55 -0500
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ownmail.net; h=
+ cc:cc:content-transfer-encoding:content-type:content-type:date
+ :date:from:from:in-reply-to:in-reply-to:message-id:mime-version
+ :references:reply-to:reply-to:subject:subject:to:to; s=fm1; t=
+ 1772605675; x=1772612875; bh=5+RTgashw6751XVNDWQdZH+Q/6MhJxiaQle
+ 0ycbNIPA=; b=QGqGuB1HfRnACei6sx6c+uNgMwLaYwouTEpFj2VP0mlDfEqPtRY
+ hq1PRy4CBOv70+oVSYpqqZpM0oM/LMhJunekgV3eBzmsgcDG0OI2C4tzloWCpVvl
+ 4i3VE4LhXttp25s0ZK9pW3oyxGl321uWgHvjWqgL414piiUtcU8j/RBBg3lpxTfz
+ hyOETJnm1GZ3Vny7khF6LstdjtjpNA05Sn0+69teOfVwM8bTgFFfpYoCWjZ2d4gj
+ zJQVyFRZl/QUmgQAY8aclFxSMlCDdqzk+ns1JfsxU4GqHtILyAxxV1rlJifkZ7nV
+ XCXCXCRkAeoUwFwEPnGvyan/ZZjUaQt5PAA==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
+ messagingengine.com; h=cc:cc:content-transfer-encoding
+ :content-type:content-type:date:date:feedback-id:feedback-id
+ :from:from:in-reply-to:in-reply-to:message-id:mime-version
+ :references:reply-to:reply-to:subject:subject:to:to:x-me-proxy
+ :x-me-sender:x-me-sender:x-sasl-enc; s=fm1; t=1772605675; x=
+ 1772612875; bh=5+RTgashw6751XVNDWQdZH+Q/6MhJxiaQle0ycbNIPA=; b=o
+ yBs4Cidn0fowkiQNkfBBbpvMteFnmb6KK9N9BnOLF7DAXMw7rLEfq8O8XkeXs0++
+ AItJEKwgOy6+J2k0jKmt5y/gjZkZygq6/z20y552PqK0SvgaS8EPmsW6WcRrV1pP
+ Cka6lApHFX3ajwbAqxHOCPa0WJuwpyjOxVf4rBBc72uzD/6CW2235GcM//0i19W8
+ 7L5pQzsL0OaBqS4U5vUHJiQNiyzDfXHteA0Tj9OpC2tpQ91dxDiKNGlVpY+sXR+u
+ F/1B+M7f+72ADS4w6cTGLYwsrCBQ9Ty53UNfXLWsSJmwJfMdphzrO6855O9pzOSm
+ tL559XeFSYE02Ng/iW/iA==
+X-ME-Sender: <xms:4tCnaSNbDrQ_gxgn-FDSHw2lZNLRjN-bQWFxNuyRrlsjf6GtgESQmg>
+ <xme:4tCnacDbxasyEcYHsybPZFFbKL0qOs4hHCyDZ8PnwLz-6RsB4wLBwEgkGnXcsPOlZ
+ vDBEl8eoy7hp-6BzaC204ogbJpjXhIDJYl7RZzbFer_2uIshg>
+X-ME-Received: <xmr:4tCnaYoX3ksWGbwPjYXqqxsqc0TduUwk20wMvX7c0reLYwrKoLdGz80eJTir0A1PtkE58RYexQ3nSkgmperFT043a9PjJpOJNYr5279CEe3n>
+X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgeefgedrtddtgddviedvjeehucetufdoteggodetrf
+ dotffvucfrrhhofhhilhgvmecuhfgrshhtofgrihhlpdfurfetoffkrfgpnffqhgenuceu
+ rghilhhouhhtmecufedttdenucesvcftvggtihhpihgvnhhtshculddquddttddmnecujf
+ gurheptgfgggfhvfevufgjfhffkfhrsehtjeertddttdejnecuhfhrohhmpefpvghilheu
+ rhhofihnuceonhgvihhlsgesohifnhhmrghilhdrnhgvtheqnecuggftrfgrthhtvghrnh
+ epudetfefhudevhedvfeeufedvffekveekgfdtfefggfekheejgefhteeihffggfelnecu
+ vehluhhsthgvrhfuihiivgeptdenucfrrghrrghmpehmrghilhhfrhhomhepnhgvihhlsg
+ esohifnhhmrghilhdrnhgvthdpnhgspghrtghpthhtohepudejuddpmhhouggvpehsmhht
+ phhouhhtpdhrtghpthhtohepvhhirhhoseiivghnihhvrdhlihhnuhigrdhorhhgrdhukh
+ dprhgtphhtthhopehjrhgvuhhtvghrseihrghinhgrrdguvgdprhgtphhtthhopehnrgho
+ hhhirhhordgrohhtrgesfigutgdrtghomhdprhgtphhtthhopehfrhgrnhhkrdhlihesvh
+ hivhhordgtohhmpdhrtghpthhtohepshgvlhhinhhugiesvhhgvghrrdhkvghrnhgvlhdr
+ ohhrghdprhgtphhtthhopehnvghtuggvvhesvhhgvghrrdhkvghrnhgvlhdrohhrghdprh
+ gtphhtthhopehlihhnuhigqdigfhhssehvghgvrhdrkhgvrhhnvghlrdhorhhgpdhrtghp
+ thhtoheplhhinhhugidqgidvheesvhhgvghrrdhkvghrnhgvlhdrohhrghdprhgtphhtth
+ hopehlihhnuhigqdhunhhiohhnfhhssehvghgvrhdrkhgvrhhnvghlrdhorhhg
+X-ME-Proxy: <xmx:4tCnaVnhO8CafOSbZVc9pJUxfys9OoZeY1Z5ndlwHjH7CSajOCGlDw>
+ <xmx:4tCnafRh4kpYARpWLK-yCUUMUT7nS6ebAyXQDsGD0JLDF2Tv3K7JJQ>
+ <xmx:4tCnac5DU4GRJRJMC10qjpWx3MESrDXeWNEaJqiwQejNUX5p7MDMMw>
+ <xmx:4tCnaZg3__L3okNus_55Ab1m3xjLlY3uKakknX-vQwxPKM6XDQv_Ng>
+ <xmx:69CnafTUulKHVEiWHbvsFlAmyCSQisz6ZPFKNRFf-ai8k8007x9TdQYK>
+Feedback-ID: i9d664b8f:Fastmail
+Received: by mail.messagingengine.com (Postfix) with ESMTPA; Wed,
+ 4 Mar 2026 01:27:03 -0500 (EST)
+MIME-Version: 1.0
+To: "Jeff Layton" <jlayton@kernel.org>
+In-reply-to: <1c28e34c7167acf4e20c3e201476504135aa44e8.camel@kernel.org>
+References: <20260302-iino-u64-v2-0-e5388800dae0@kernel.org>,
+ <1787281.1772535332@warthog.procyon.org.uk>,
+ <1c28e34c7167acf4e20c3e201476504135aa44e8.camel@kernel.org>
+Date: Wed, 04 Mar 2026 17:26:59 +1100
+Message-id: <177260561903.7472.14075475865748618717@noble.neil.brown.name>
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: Spam detection software,
  running on the system "sfi-spamd-2.hosts.colo.sdot.me", 
  has NOT identified this incoming email as spam.  The original
  message has been attached to this so you can view it or label
  similar future email.  If you have any questions, see
  the administrator of that system for details.
- Content preview:  On Mon,
- 02 Mar 2026 15:24:37 -0500 Jeff Layton <jlayton@kernel.org>
- wrote: > Convert uprobes i_ino format strings to use the PRIino format >
- macro in preparation for the widening of i_ino via kino_t. > > Signed-off-by:
- Jeff Layton <jlayton@kernel.org> 
- Content analysis details:   (-1.0 points, 5.0 required)
+ Content preview:  On Tue, 03 Mar 2026, Jeff Layton wrote: > On Tue, 2026-03-03
+ at 10:55 +0000, David Howells wrote: > > Jeff Layton <jlayton@kernel.org>
+ wrote: > > > > > This version splits the change up to be more bis [...] 
+ Content analysis details:   (-0.2 points, 5.0 required)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ 0.0 RCVD_IN_DNSWL_BLOCKED  RBL: ADMINISTRATOR NOTICE: The query to DNSWL
+ was blocked.  See
+ http://wiki.apache.org/spamassassin/DnsBlocklists#DnsBlocklists-dnsbl-block
+ for more information. [103.168.172.141 listed in list.dnswl.org]
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature,
  not necessarily valid
  -0.1 DKIM_VALID_AU Message has a valid DKIM or DK signature from author's
@@ -96,12 +140,11 @@ X-Spam-Report: Spam detection software,
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.8 NICE_REPLY_A           Looks like a legit reply (A)
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - High trust sender
-X-Headers-End: 1vxanJ-0006m0-7z
-X-Mailman-Approved-At: Wed, 04 Mar 2026 04:22:12 +0000
-Subject: Re: [Jfs-discussion] [PATCH v2 053/110] uprobes: use PRIino format
- for i_ino
+ 0.0 FREEMAIL_FROM Sender email is commonly abused enduser mail provider
+ [neilb(at)ownmail.net]
+X-Headers-End: 1vxg4j-0005ow-M3
+Subject: Re: [Jfs-discussion] [PATCH v2 000/110] vfs: change inode->i_ino
+ from unsigned long to u64
 X-BeenThere: jfs-discussion@lists.sourceforge.net
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -113,21 +156,20 @@ List-Post: <mailto:jfs-discussion@lists.sourceforge.net>
 List-Help: <mailto:jfs-discussion-request@lists.sourceforge.net?subject=help>
 List-Subscribe: <https://lists.sourceforge.net/lists/listinfo/jfs-discussion>, 
  <mailto:jfs-discussion-request@lists.sourceforge.net?subject=subscribe>
-From: "Masami Hiramatsu \(Google\) via Jfs-discussion"
- <jfs-discussion@lists.sourceforge.net>
-Reply-To: "Masami Hiramatsu \(Google\)" <mhiramat@kernel.org>
-Cc: Latchesar Ionkov <lucho@ionkov.net>, nvdimm@lists.linux.dev,
- Paulo Alcantara <pc@manguebit.org>, "Darrick J. Wong" <djwong@kernel.org>,
- Anders Larsen <al@alarsen.net>, dri-devel@lists.freedesktop.org,
- linux-sctp@vger.kernel.org, linux-hams@vger.kernel.org,
- Sumit Semwal <sumit.semwal@linaro.org>, Mike Marshall <hubcap@omnibond.com>,
- linux-xfs@vger.kernel.org, Fan Wu <wufan@kernel.org>,
- Xin Long <lucien.xin@gmail.com>, ceph-devel@vger.kernel.org,
- James Morris <jmorris@namei.org>, Tyler Hicks <code@tyhicks.com>,
- Christoph Hellwig <hch@infradead.org>, devel@lists.orangefs.org,
- Shyam Prasad N <sprasad@microsoft.com>, Martin Schiller <ms@dev.tdt.de>,
- Jesper Dangaard Brouer <hawk@kernel.org>, Jan Harkes <jaharkes@cs.cmu.edu>,
- Willem de Bruijn <willemb@google.com>,
+From: NeilBrown via Jfs-discussion <jfs-discussion@lists.sourceforge.net>
+Reply-To: NeilBrown <neil@brown.name>
+Cc: NeilBrown <neilb@ownmail.net>, Latchesar Ionkov <lucho@ionkov.net>,
+ nvdimm@lists.linux.dev, Paulo Alcantara <pc@manguebit.org>,
+ "Darrick J. Wong" <djwong@kernel.org>, Anders Larsen <al@alarsen.net>,
+ dri-devel@lists.freedesktop.org, linux-sctp@vger.kernel.org,
+ linux-hams@vger.kernel.org, Sumit Semwal <sumit.semwal@linaro.org>,
+ Mike Marshall <hubcap@omnibond.com>, linux-xfs@vger.kernel.org,
+ Fan Wu <wufan@kernel.org>, Xin Long <lucien.xin@gmail.com>,
+ ceph-devel@vger.kernel.org, James Morris <jmorris@namei.org>,
+ Tyler Hicks <code@tyhicks.com>, Christoph Hellwig <hch@infradead.org>,
+ devel@lists.orangefs.org, Shyam Prasad N <sprasad@microsoft.com>,
+ Martin Schiller <ms@dev.tdt.de>, Jesper Dangaard Brouer <hawk@kernel.org>,
+ Jan Harkes <jaharkes@cs.cmu.edu>, Willem de Bruijn <willemb@google.com>,
  Arnaldo Carvalho de Melo <acme@kernel.org>, linux-fscrypt@vger.kernel.org,
  Alexander Viro <viro@zeniv.linux.org.uk>,
  Ronnie Sahlberg <ronniesahlberg@gmail.com>,
@@ -139,17 +181,18 @@ Cc: Latchesar Ionkov <lucho@ionkov.net>, nvdimm@lists.linux.dev,
  Dmitry Kasatkin <dmitry.kasatkin@gmail.com>,
  Stephen Smalley <stephen.smalley.work@gmail.com>, linux-kernel@vger.kernel.org,
  Eric Paris <eparis@redhat.com>, linux-perf-users@vger.kernel.org,
- Chuck Lever <chuck.lever@oracle.com>, Jiri Olsa <jolsa@kernel.org>,
- Jan Kara <jack@suse.com>, Alex Deucher <alexander.deucher@amd.com>,
- linux-media@vger.kernel.org, Trond Myklebust <trondmy@kernel.org>,
- Mark Rutland <mark.rutland@arm.com>, Dave Kleikamp <shaggy@kernel.org>,
- Mimi Zohar <zohar@linux.ibm.com>, Oleg Nesterov <oleg@redhat.com>,
- Eric Dumazet <edumazet@google.com>, Johan Hedberg <johan.hedberg@gmail.com>,
- Simona Vetter <simona@ffwll.ch>, linux-cifs@vger.kernel.org,
- Kuniyuki Iwashima <kuniyu@google.com>, linux-nilfs@vger.kernel.org,
- Paul Moore <paul@paul-moore.com>, John Fastabend <john.fastabend@gmail.com>,
- codalist@coda.cs.cmu.edu, Remi Denis-Courmont <courmisch@gmail.com>,
- linux-trace-kernel@vger.kernel.org, Olga Kornievskaia <okorniev@redhat.com>,
+ Chuck Lever <chuck.lever@oracle.com>, Masami Hiramatsu <mhiramat@kernel.org>,
+ Jiri Olsa <jolsa@kernel.org>, Jan Kara <jack@suse.com>,
+ Alex Deucher <alexander.deucher@amd.com>, linux-media@vger.kernel.org,
+ Trond Myklebust <trondmy@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
+ Dave Kleikamp <shaggy@kernel.org>, Mimi Zohar <zohar@linux.ibm.com>,
+ Oleg Nesterov <oleg@redhat.com>, Eric Dumazet <edumazet@google.com>,
+ Johan Hedberg <johan.hedberg@gmail.com>, Simona Vetter <simona@ffwll.ch>,
+ linux-cifs@vger.kernel.org, Kuniyuki Iwashima <kuniyu@google.com>,
+ linux-nilfs@vger.kernel.org, Paul Moore <paul@paul-moore.com>,
+ John Fastabend <john.fastabend@gmail.com>, codalist@coda.cs.cmu.edu,
+ Remi Denis-Courmont <courmisch@gmail.com>, linux-trace-kernel@vger.kernel.org,
+ Olga Kornievskaia <okorniev@redhat.com>,
  Maciej Fijalkowski <maciej.fijalkowski@intel.com>,
  Yangtao Li <frank.li@vivo.com>, selinux@vger.kernel.org, v9fs@lists.linux.dev,
  linux-can@vger.kernel.org, linaro-mm-sig@lists.linaro.org,
@@ -170,12 +213,11 @@ Cc: Latchesar Ionkov <lucho@ionkov.net>, nvdimm@lists.linux.dev,
  Naohiro Aota <naohiro.aota@wdc.com>, Eric Biggers <ebiggers@kernel.org>,
  Daniel Borkmann <daniel@iogearbox.net>, Miklos Szeredi <miklos@szeredi.hu>,
  Matthew Wilcox <willy@infradead.org>, coda@cs.cmu.edu,
- Stanislav Fomichev <sdf@fomichev.me>, NeilBrown <neil@brown.name>,
- Ilya Dryomov <idryomov@gmail.com>, Paolo Abeni <pabeni@redhat.com>,
- jfs-discussion@lists.sourceforge.net, "Serge E. Hallyn" <serge@hallyn.com>,
- Amir Goldstein <amir73il@gmail.com>, James Clark <james.clark@linaro.org>,
- autofs@vger.kernel.org, Steven Rostedt <rostedt@goodmis.org>,
- Damien Le Moal <dlemoal@kernel.org>,
+ Stanislav Fomichev <sdf@fomichev.me>, Ilya Dryomov <idryomov@gmail.com>,
+ Paolo Abeni <pabeni@redhat.com>, jfs-discussion@lists.sourceforge.net,
+ "Serge E. Hallyn" <serge@hallyn.com>, Amir Goldstein <amir73il@gmail.com>,
+ James Clark <james.clark@linaro.org>, autofs@vger.kernel.org,
+ Steven Rostedt <rostedt@goodmis.org>, Damien Le Moal <dlemoal@kernel.org>,
  Mathieu Desnoyers <mathieu.desnoyers@efficios.com>,
  Dan Williams <dan.j.williams@intel.com>, Oscar Salvador <osalvador@suse.de>,
  Konstantin Komarov <almaz.alexandrovich@paragon-software.com>,
@@ -183,7 +225,7 @@ Cc: Latchesar Ionkov <lucho@ionkov.net>, nvdimm@lists.linux.dev,
  samba-technical@lists.samba.org, Ondrej Mosnacek <omosnace@redhat.com>,
  Steve French <sfrench@samba.org>, netdev@vger.kernel.org,
  linux-fsdevel@vger.kernel.org, bpf@vger.kernel.org, ntfs3@lists.linux.dev,
- Christian =?UTF-8?B?S8O2bmln?= <christian.koenig@amd.com>,
+ Christian =?utf-8?q?K=C3=B6nig?= <christian.koenig@amd.com>,
  Ian Rogers <irogers@google.com>, Alexander Aring <alex.aring@gmail.com>,
  Jan Kara <jack@suse.cz>, Peter Zijlstra <peterz@infradead.org>,
  Dominique Martinet <asmadeus@codewreck.org>,
@@ -216,94 +258,68 @@ Cc: Latchesar Ionkov <lucho@ionkov.net>, nvdimm@lists.linux.dev,
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Errors-To: jfs-discussion-bounces@lists.sourceforge.net
-X-Rspamd-Queue-Id: 2B8841FAAD6
+X-Rspamd-Queue-Id: 36CA81FB50B
 X-Rspamd-Server: lfdr
-X-Spamd-Result: default: False [-5.61 / 15.00];
+X-Spamd-Result: default: False [-7.11 / 15.00];
 	WHITELIST_DMARC(-7.00)[sourceforge.net:D:+];
 	SUSPICIOUS_RECIPS(1.50)[];
-	MID_RHS_MATCH_TO(1.00)[];
 	DMARC_POLICY_ALLOW_WITH_FAILURES(-0.50)[];
-	MV_CASE(0.50)[];
 	RWL_MAILSPIKE_EXCELLENT(-0.40)[216.105.38.7:from];
-	R_SPF_ALLOW(-0.20)[+ip4:216.105.38.7];
-	MAILLIST(-0.20)[mailman];
 	R_DKIM_ALLOW(-0.20)[lists.sourceforge.net:s=beta];
+	MAILLIST(-0.20)[mailman];
+	R_SPF_ALLOW(-0.20)[+ip4:216.105.38.7:c];
 	MIME_GOOD(-0.10)[text/plain];
 	HAS_LIST_UNSUB(-0.01)[];
+	DMARC_POLICY_ALLOW(0.00)[lists.sourceforge.net,none];
 	DKIM_MIXED(0.00)[];
 	RCVD_TLS_LAST(0.00)[];
 	RECEIVED_HELO_LOCALHOST(0.00)[];
-	REPLYTO_DOM_EQ_TO_DOM(0.00)[];
-	ARC_NA(0.00)[];
+	FREEMAIL_CC(0.00)[ownmail.net,ionkov.net,lists.linux.dev,manguebit.org,kernel.org,alarsen.net,lists.freedesktop.org,vger.kernel.org,linaro.org,omnibond.com,gmail.com,namei.org,tyhicks.com,infradead.org,lists.orangefs.org,microsoft.com,dev.tdt.de,cs.cmu.edu,google.com,zeniv.linux.org.uk,physik.fu-berlin.de,huawei.com,intel.com,redhat.com,oracle.com,suse.com,amd.com,arm.com,linux.ibm.com,ffwll.ch,paul-moore.com,coda.cs.cmu.edu,vivo.com,lists.linaro.org,schaufler-ca.com,mit.edu,fluxnic.net,linux.dev,davemloft.net,linux.intel.com,lists.infradead.org,auristor.com,themaw.net,wdc.com,iogearbox.net,szeredi.hu,fomichev.me,lists.sourceforge.net,hallyn.com,goodmis.org,efficios.com,suse.de,paragon-software.com,kvack.org,lists.samba.org,samba.org,suse.cz,codewreck.org,crudebyte.com,linux.alibaba.com,dilger.ca,artax.karlin.mff.cuni.cz,secunet.com,gondor.apana.org.au,nod.at,fasheh.com,holtmann.org,yaina.de,lists.ubuntu.com,talpey.com,pengutronix.de,canonical.com,hartkopp.net,evilplan.org];
 	FORGED_SENDER_MAILLIST(0.00)[];
-	R_DKIM_REJECT(0.00)[sourceforge.net:s=x,sf.net:s=x,kernel.org:s=k20201202];
+	R_DKIM_REJECT(0.00)[sourceforge.net:s=x,sf.net:s=x,ownmail.net:s=fm1,messagingengine.com:s=fm1];
 	TO_DN_SOME(0.00)[];
+	ARC_NA(0.00)[];
 	MIME_TRACE(0.00)[0:+];
-	FREEMAIL_CC(0.00)[ionkov.net,lists.linux.dev,manguebit.org,kernel.org,alarsen.net,lists.freedesktop.org,vger.kernel.org,linaro.org,omnibond.com,gmail.com,namei.org,tyhicks.com,infradead.org,lists.orangefs.org,microsoft.com,dev.tdt.de,cs.cmu.edu,google.com,zeniv.linux.org.uk,physik.fu-berlin.de,huawei.com,intel.com,redhat.com,oracle.com,suse.com,amd.com,arm.com,linux.ibm.com,ffwll.ch,paul-moore.com,coda.cs.cmu.edu,vivo.com,lists.linaro.org,schaufler-ca.com,mit.edu,fluxnic.net,linux.dev,davemloft.net,linux.intel.com,lists.infradead.org,auristor.com,themaw.net,wdc.com,iogearbox.net,szeredi.hu,fomichev.me,brown.name,lists.sourceforge.net,hallyn.com,goodmis.org,efficios.com,suse.de,paragon-software.com,kvack.org,lists.samba.org,samba.org,suse.cz,codewreck.org,crudebyte.com,linux.alibaba.com,dilger.ca,artax.karlin.mff.cuni.cz,secunet.com,gondor.apana.org.au,nod.at,fasheh.com,holtmann.org,yaina.de,lists.ubuntu.com,talpey.com,pengutronix.de,canonical.com,hartkopp.net,evilplan.org];
+	REPLYTO_DOM_NEQ_FROM_DOM(0.00)[];
 	FORGED_RECIPIENTS_MAILLIST(0.00)[];
-	DMARC_POLICY_ALLOW(0.00)[lists.sourceforge.net,none];
-	RCVD_COUNT_FIVE(0.00)[5];
-	RCPT_COUNT_GT_50(0.00)[170];
+	REPLYTO_DOM_NEQ_TO_DOM(0.00)[];
+	RCVD_COUNT_FIVE(0.00)[6];
+	RCPT_COUNT_GT_50(0.00)[171];
 	FROM_NEQ_ENVFROM(0.00)[jfs-discussion@lists.sourceforge.net,jfs-discussion-bounces@lists.sourceforge.net];
 	FROM_HAS_DN(0.00)[];
-	REPLYTO_DOM_NEQ_FROM_DOM(0.00)[];
+	DKIM_TRACE(0.00)[lists.sourceforge.net:+,sourceforge.net:-,sf.net:-,ownmail.net:-,messagingengine.com:-];
 	NEURAL_HAM(-0.00)[-1.000];
 	RCVD_VIA_SMTP_AUTH(0.00)[];
-	DKIM_TRACE(0.00)[lists.sourceforge.net:+,sourceforge.net:-,sf.net:-,kernel.org:-];
+	HAS_REPLYTO(0.00)[neil@brown.name];
 	TAGGED_RCPT(0.00)[jfs-discussion];
-	HAS_REPLYTO(0.00)[mhiramat@kernel.org];
+	MISSING_XM_UA(0.00)[];
 	ASN(0.00)[asn:11320, ipnet:216.105.32.0/21, country:US];
-	DBL_BLOCKED_OPENRESOLVER(0.00)[lists.sourceforge.net:dkim,lists.sourceforge.net:rdns,lists.sourceforge.net:helo]
+	DBL_BLOCKED_OPENRESOLVER(0.00)[noble.neil.brown.name:mid,brown.name:replyto,lists.sourceforge.net:dkim,lists.sourceforge.net:rdns,lists.sourceforge.net:helo]
 X-Rspamd-Action: no action
 
-On Mon, 02 Mar 2026 15:24:37 -0500
-Jeff Layton <jlayton@kernel.org> wrote:
-
-> Convert uprobes i_ino format strings to use the PRIino format
-> macro in preparation for the widening of i_ino via kino_t.
+On Tue, 03 Mar 2026, Jeff Layton wrote:
+> On Tue, 2026-03-03 at 10:55 +0000, David Howells wrote:
+> > Jeff Layton <jlayton@kernel.org> wrote:
+> > 
+> > > This version splits the change up to be more bisectable. It first adds a
+> > > new kino_t typedef and a new "PRIino" macro to hold the width specifier
+> > > for format strings. The conversion is done, and then everything is
+> > > changed to remove the new macro and typedef.
+> > 
+> > Why remove the typedef?  It might be better to keep it.
+> > 
 > 
-> Signed-off-by: Jeff Layton <jlayton@kernel.org>
+> Why? After this change, internel kernel inodes will be u64's -- full
+> stop. I don't see what the macro or typedef will buy us at that point.
 
-Looks good to me.
+Implicit documentation?
+ktime_t is (now) always s64, but we still keep the typedef;
 
-Acked-by: Masami Hiramatsu (Google) <mhiramat@kernel.org>
+It would be cool if we could teach vsprintf to understand some new
+specifier to mean "kinode_t" or "ktime_t" etc.  But that would trigger
+gcc warnings.
 
-Thanks,
-
-> ---
->  kernel/events/uprobes.c | 4 ++--
->  1 file changed, 2 insertions(+), 2 deletions(-)
-> 
-> diff --git a/kernel/events/uprobes.c b/kernel/events/uprobes.c
-> index 923b24b321cc0fbdecaf016645cdac0457a74463..d5bf51565851223730c63b50436c493c0c05eafd 100644
-> --- a/kernel/events/uprobes.c
-> +++ b/kernel/events/uprobes.c
-> @@ -344,7 +344,7 @@ __update_ref_ctr(struct mm_struct *mm, unsigned long vaddr, short d)
->  static void update_ref_ctr_warn(struct uprobe *uprobe,
->  				struct mm_struct *mm, short d)
->  {
-> -	pr_warn("ref_ctr %s failed for inode: 0x%lx offset: "
-> +	pr_warn("ref_ctr %s failed for inode: 0x%" PRIino "x offset: "
->  		"0x%llx ref_ctr_offset: 0x%llx of mm: 0x%p\n",
->  		d > 0 ? "increment" : "decrement", uprobe->inode->i_ino,
->  		(unsigned long long) uprobe->offset,
-> @@ -982,7 +982,7 @@ static struct uprobe *insert_uprobe(struct uprobe *uprobe)
->  static void
->  ref_ctr_mismatch_warn(struct uprobe *cur_uprobe, struct uprobe *uprobe)
->  {
-> -	pr_warn("ref_ctr_offset mismatch. inode: 0x%lx offset: 0x%llx "
-> +	pr_warn("ref_ctr_offset mismatch. inode: 0x%" PRIino "x offset: 0x%llx "
->  		"ref_ctr_offset(old): 0x%llx ref_ctr_offset(new): 0x%llx\n",
->  		uprobe->inode->i_ino, (unsigned long long) uprobe->offset,
->  		(unsigned long long) cur_uprobe->ref_ctr_offset,
-> 
-> -- 
-> 2.53.0
-> 
-
-
--- 
-Masami Hiramatsu (Google) <mhiramat@kernel.org>
+NeilBrown
 
 
 _______________________________________________
